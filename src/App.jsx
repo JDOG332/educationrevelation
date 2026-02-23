@@ -2154,317 +2154,350 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE PACT ===== */}
-      {depth === 2 && (
-        <div onClick={goDeeper} style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-          cursor: "pointer", zIndex: 2,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-        }}>
+      {/* ===== DEPTH 2 — THE PACT — 3D OCTAHEDRON ===== */}
+      {depth === 2 && (() => {
+        const OctahedronPact = () => {
+          const canvasRef = useRef(null);
+          const frameRef = useRef(0);
+          const animRef = useRef(null);
 
-          {/* === SACRED AXIS GLOW — the merge point behind the cross === */}
-          <div style={{
-            position: "absolute", top: "50%", left: "50%",
-            width: 120, height: 120,
-            transform: "translate(-50%, -50%)",
-            background: "radial-gradient(circle, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.03) 40%, transparent 70%)",
-            borderRadius: "50%",
-            pointerEvents: "none", zIndex: 3,
-            animation: "breathe 7s ease-in-out infinite",
-          }} />
+          useEffect(() => {
+            const canvas = canvasRef.current;
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            const dpr = window.devicePixelRatio || 1;
+            const W = Math.min(window.innerWidth * 0.88, 460);
+            const H = W;
+            canvas.width = W * dpr;
+            canvas.height = H * dpr;
+            canvas.style.width = W + "px";
+            canvas.style.height = H + "px";
+            ctx.scale(dpr, dpr);
 
-          {/* === CONTENT === */}
-          <div style={{
-            textAlign: "center",
-            padding: "0 28px",
-            zIndex: 4,
-            maxWidth: 640,
-            display: "flex", flexDirection: "column", alignItems: "center",
+            const CX = W / 2;
+            const CY = H / 2;
+            const R = W * 0.34;
+
+            // 12 edges of regular octahedron
+            const edges = [
+              [0,2],[0,3],[0,4],[0,5],
+              [1,2],[1,3],[1,4],[1,5],
+              [2,4],[2,5],[3,4],[3,5],
+            ];
+
+            // 8 triangular faces
+            const faces = [
+              [0,2,4],[0,2,5],[0,3,4],[0,3,5],
+              [1,2,4],[1,2,5],[1,3,4],[1,3,5],
+            ];
+
+            const axisStyles = {
+              width:  { color: "201,168,76" },   // gold
+              height: { color: "120,180,255" },   // celestial blue
+              depth:  { color: "190,140,220" },   // violet
+            };
+
+            function project(x3, y3, z3, a) {
+              const ca = Math.cos(a), sa = Math.sin(a);
+              const cb = Math.cos(a * 0.37), sb = Math.sin(a * 0.37);
+              let rx = x3 * ca - z3 * sa;
+              let rz = x3 * sa + z3 * ca;
+              let ry = y3 * cb - rz * sb;
+              let rz2 = y3 * sb + rz * cb;
+              const perspective = 1.6 / (1.6 - rz2 * 0.3 / R);
+              return { x: CX + rx * perspective, y: CY + ry * perspective, z: rz2, s: perspective };
+            }
+
+            function getVerts(a) {
+              return [
+                { ...project(R, 0, 0, a), label: "RECOGNITION", axis: "width" },
+                { ...project(-R, 0, 0, a), label: "NOISE", axis: "width" },
+                { ...project(0, -R, 0, a), label: "SPIRIT", axis: "height" },
+                { ...project(0, R, 0, a), label: "FLESH", axis: "height" },
+                { ...project(0, 0, R, a), label: "INTUITION", axis: "depth" },
+                { ...project(0, 0, -R, a), label: "DATA", axis: "depth" },
+              ];
+            }
+
+            function draw() {
+              ctx.clearRect(0, 0, W, H);
+              frameRef.current += 0.003;
+              const a = frameRef.current;
+              const verts = getVerts(a);
+
+              // Sort faces back-to-front
+              const sortedFaces = faces.map(f => ({
+                idx: f,
+                avgZ: (verts[f[0]].z + verts[f[1]].z + verts[f[2]].z) / 3,
+              })).sort((a, b) => a.avgZ - b.avgZ);
+
+              // Draw faces
+              for (const face of sortedFaces) {
+                const [i0, i1, i2] = face.idx;
+                ctx.beginPath();
+                ctx.moveTo(verts[i0].x, verts[i0].y);
+                ctx.lineTo(verts[i1].x, verts[i1].y);
+                ctx.lineTo(verts[i2].x, verts[i2].y);
+                ctx.closePath();
+                const b = Math.max(0.01, 0.02 + (face.avgZ / R) * 0.015);
+                ctx.fillStyle = "rgba(201,168,76," + b + ")";
+                ctx.fill();
+              }
+
+              // Draw edges
+              for (const [i, j] of edges) {
+                const va = verts[i], vb = verts[j];
+                const avgZ = (va.z + vb.z) / 2;
+                const op = Math.max(0.04, 0.08 + (avgZ / R) * 0.12);
+                const lw = 0.5 + (avgZ / R + 1) * 0.5;
+                ctx.beginPath();
+                ctx.moveTo(va.x, va.y);
+                ctx.lineTo(vb.x, vb.y);
+                ctx.strokeStyle = "rgba(201,168,76," + op + ")";
+                ctx.lineWidth = lw;
+                ctx.stroke();
+              }
+
+              // Draw dashed axis lines through center
+              ctx.setLineDash([3, 5]);
+              for (let i = 0; i < 6; i += 2) {
+                const va = verts[i], vb = verts[i + 1];
+                ctx.beginPath();
+                ctx.moveTo(va.x, va.y);
+                ctx.lineTo(vb.x, vb.y);
+                ctx.strokeStyle = "rgba(" + axisStyles[va.axis].color + ",0.06)";
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+              }
+              ctx.setLineDash([]);
+
+              // Center glow
+              const cg = ctx.createRadialGradient(CX, CY, 0, CX, CY, R * 0.2);
+              cg.addColorStop(0, "rgba(201,168,76,0.07)");
+              cg.addColorStop(1, "rgba(201,168,76,0)");
+              ctx.beginPath();
+              ctx.arc(CX, CY, R * 0.2, 0, Math.PI * 2);
+              ctx.fillStyle = cg;
+              ctx.fill();
+
+              // Center dot + ring
+              ctx.beginPath();
+              ctx.arc(CX, CY, 2.5, 0, Math.PI * 2);
+              ctx.fillStyle = "rgba(201,168,76,0.55)";
+              ctx.fill();
+              ctx.beginPath();
+              ctx.arc(CX, CY, 7, 0, Math.PI * 2);
+              ctx.strokeStyle = "rgba(201,168,76,0.12)";
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+
+              // Vertices with labels
+              for (let i = 0; i < verts.length; i++) {
+                const v = verts[i];
+                const col = axisStyles[v.axis].color;
+                const fade = Math.max(0.25, 0.45 + (v.z / R) * 0.35);
+                const dotR = 2 + (v.z / R + 1) * 1.8;
+
+                // Glow
+                const vg = ctx.createRadialGradient(v.x, v.y, 0, v.x, v.y, dotR * 5);
+                vg.addColorStop(0, "rgba(" + col + "," + (fade * 0.35) + ")");
+                vg.addColorStop(1, "rgba(" + col + ",0)");
+                ctx.beginPath();
+                ctx.arc(v.x, v.y, dotR * 5, 0, Math.PI * 2);
+                ctx.fillStyle = vg;
+                ctx.fill();
+
+                // Core dot
+                ctx.beginPath();
+                ctx.arc(v.x, v.y, dotR, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(" + col + "," + fade + ")";
+                ctx.fill();
+
+                // Label
+                const fs = 7 + (v.z / R + 1) * 2;
+                ctx.font = fs + "px Cinzel, serif";
+                ctx.fillStyle = "rgba(" + col + "," + (fade * 0.75) + ")";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                const dx = v.x - CX, dy = v.y - CY;
+                const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                const offset = dotR * 4 + 12;
+                ctx.fillText(v.label, v.x + (dx / dist) * offset, v.y + (dy / dist) * offset);
+              }
+
+              animRef.current = requestAnimationFrame(draw);
+            }
+
+            animRef.current = requestAnimationFrame(draw);
+            return () => { if (animRef.current) cancelAnimationFrame(animRef.current); };
+          }, []);
+
+          return <canvas ref={canvasRef} style={{ display: "block", margin: "0 auto" }} />;
+        };
+
+        return (
+          <div onClick={goDeeper} style={{
+            minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
+            cursor: "pointer", zIndex: 2,
+            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+            padding: "3vh 20px",
           }}>
 
-            {/* Lightning bolt */}
             <div style={{
-              fontSize: 30,
-              marginBottom: Math.round(8 * PHI),
-              animation: "fadeSlideUp 1.2s 0.2s both ease, gentleFloat 6s ease-in-out infinite",
-              filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
-            }}>⚡</div>
-
-            {/* Title */}
-            <h2 style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(24px, 5.5vw, 38px)",
-              fontWeight: 400,
-              color: "#e8e8f0",
-              letterSpacing: "0.3em",
-              margin: 0,
-              textShadow: "0 0 50px rgba(232,232,240,0.1)",
-              animation: "fadeSlideUp 1.2s 0.3s both ease",
-            }}>THE PACT</h2>
-
-            {/* Subtitle */}
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.4vw, 17px)",
-              fontStyle: "italic",
-              color: "rgba(232,232,240,0.4)",
-              marginTop: Math.round(5 * PHI),
-              letterSpacing: 1,
-              animation: "fadeSlideUp 1.2s 0.4s both ease",
-            }}>
-              A truly balanced connection
-            </div>
-
-            {/* Gold divider */}
-            <div style={{
-              width: Math.round(40 * PHI),
-              height: 1,
-              margin: `${Math.round(10 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
-              boxShadow: "0 0 20px rgba(201,168,76,0.15)",
-              animation: "fadeSlideUp 1.2s 0.5s both ease",
-            }} />
-
-            {/* === THE SACRED CROSS — DEPTH × WIDTH with 4 QUADRANTS === */}
-            <div style={{
-              position: "relative",
-              width: "min(88vw, 440px)",
-              height: "min(88vw, 440px)",
-              margin: `${Math.round(5 * PHI)}px auto ${Math.round(13 * PHI)}px`,
-              animation: "fadeSlideUp 1.4s 0.6s both ease",
+              textAlign: "center", zIndex: 4, maxWidth: 640,
+              display: "flex", flexDirection: "column", alignItems: "center",
             }}>
 
-              {/* Vertical arm — DEPTH */}
+              {/* Lightning bolt */}
               <div style={{
-                position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-                width: 2, height: "100%",
-                background: "linear-gradient(180deg, rgba(201,168,76,0.08) 0%, rgba(232,232,240,0.4) 30%, rgba(201,168,76,0.75) 50%, rgba(232,232,240,0.4) 70%, rgba(201,168,76,0.08) 100%)",
-                boxShadow: "0 0 14px rgba(201,168,76,0.12)",
+                fontSize: 30, marginBottom: Math.round(8 * PHI),
+                animation: "fadeSlideUp 1.2s 0.2s both ease, gentleFloat 6s ease-in-out infinite",
+                filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
+              }}>⚡</div>
+
+              {/* Title */}
+              <h2 style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(24px, 5.5vw, 38px)", fontWeight: 400,
+                color: "#e8e8f0", letterSpacing: "0.3em", margin: 0,
+                textShadow: "0 0 50px rgba(232,232,240,0.1)",
+                animation: "fadeSlideUp 1.2s 0.3s both ease",
+              }}>THE PACT</h2>
+
+              {/* Subtitle */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.4vw, 17px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+                marginTop: Math.round(5 * PHI), letterSpacing: 1,
+                animation: "fadeSlideUp 1.2s 0.4s both ease",
+              }}>A truly balanced connection requires three dimensions</div>
+
+              {/* Divider */}
+              <div style={{
+                width: Math.round(40 * PHI), height: 1,
+                margin: Math.round(8 * PHI) + "px auto",
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
+                animation: "fadeSlideUp 1.2s 0.5s both ease",
               }} />
 
-              {/* Horizontal arm — WIDTH */}
-              <div style={{
-                position: "absolute", top: "50%", left: 0, transform: "translateY(-50%)",
-                width: "100%", height: 2,
-                background: "linear-gradient(90deg, rgba(201,168,76,0.08) 0%, rgba(232,232,240,0.4) 25%, rgba(201,168,76,0.75) 50%, rgba(232,232,240,0.4) 75%, rgba(201,168,76,0.08) 100%)",
-                boxShadow: "0 0 14px rgba(201,168,76,0.12)",
-              }} />
-
-              {/* Center glow */}
-              <div style={{
-                position: "absolute", top: "50%", left: "50%",
-                width: 70, height: 70, transform: "translate(-50%, -50%)",
-                background: "radial-gradient(circle, rgba(201,168,76,0.2) 0%, rgba(201,168,76,0.06) 45%, transparent 70%)",
-                borderRadius: "50%", animation: "breathe 7s ease-in-out infinite",
-              }} />
-              {/* Center dot */}
-              <div style={{
-                position: "absolute", top: "50%", left: "50%",
-                width: 8, height: 8, transform: "translate(-50%, -50%)",
-                background: "rgba(201,168,76,0.75)", borderRadius: "50%",
-                boxShadow: "0 0 16px rgba(201,168,76,0.35), 0 0 40px rgba(201,168,76,0.1)",
-              }} />
-              {/* Center ring */}
-              <div style={{
-                position: "absolute", top: "50%", left: "50%",
-                width: 22, height: 22, transform: "translate(-50%, -50%)",
-                border: "1px solid rgba(201,168,76,0.22)", borderRadius: "50%",
-              }} />
-
-              {/* Four endpoint diamonds */}
-              {[
-                { top: "0%", left: "50%", tx: "-50%", ty: "0" },
-                { top: "100%", left: "50%", tx: "-50%", ty: "-100%" },
-                { top: "50%", left: "0%", tx: "0", ty: "-50%" },
-                { top: "50%", left: "100%", tx: "-100%", ty: "-50%" },
-              ].map((pos, i) => (
-                <div key={i} style={{
-                  position: "absolute", top: pos.top, left: pos.left,
-                  transform: `translate(${pos.tx}, ${pos.ty}) rotate(45deg)`,
-                  width: 8, height: 8,
-                  background: "rgba(201,168,76,0.45)",
-                  border: "1px solid rgba(201,168,76,0.25)",
-                  boxShadow: "0 0 10px rgba(201,168,76,0.18)",
-                }} />
-              ))}
-
-              {/* DEPTH label — top center */}
-              <div style={{
-                position: "absolute", top: "2%", left: "50%", transform: "translateX(14px)",
-                display: "flex", alignItems: "center", gap: 5,
-              }}>
-                <span style={{ fontSize: 14 }}>🫀</span>
-                <span style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 10,
-                  letterSpacing: "0.4em", color: "rgba(201,168,76,0.65)",
-                }}>DEPTH</span>
+              {/* THE OCTAHEDRON */}
+              <div style={{ animation: "fadeSlideUp 1.4s 0.6s both ease", marginBottom: Math.round(5 * PHI) }}>
+                <OctahedronPact />
               </div>
 
-              {/* WIDTH label — right center */}
+              {/* Three Axes Legend */}
               <div style={{
-                position: "absolute", top: "50%", right: "1%", transform: "translateY(-200%)",
-                textAlign: "center",
+                display: "flex", gap: Math.round(8 * PHI), justifyContent: "center",
+                flexWrap: "wrap", marginBottom: Math.round(10 * PHI),
+                animation: "fadeSlideUp 1.2s 0.9s both ease",
               }}>
-                <span style={{ fontSize: 14 }}>🌐</span>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 10,
-                  letterSpacing: "0.4em", color: "rgba(201,168,76,0.65)", marginTop: 2,
-                }}>WIDTH</div>
+                {[
+                  { axis: "WIDTH", ends: "NOISE ↔ RECOGNITION", color: "201,168,76", desc: "How far the signal reaches" },
+                  { axis: "HEIGHT", ends: "FLESH ↔ SPIRIT", color: "120,180,255", desc: "How high you rise vs how rooted" },
+                  { axis: "DEPTH", ends: "DATA ↔ INTUITION", color: "190,140,220", desc: "How deeply you feel it" },
+                ].map((a, i) => (
+                  <div key={i} style={{
+                    textAlign: "center", padding: "8px 12px",
+                    border: "1px solid rgba(" + a.color + ",0.1)",
+                    borderRadius: 8,
+                    background: "rgba(" + a.color + ",0.02)",
+                    minWidth: 120,
+                  }}>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 9,
+                      letterSpacing: "0.3em", color: "rgba(" + a.color + ",0.65)",
+                      marginBottom: 3,
+                    }}>{a.axis}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 12, fontStyle: "italic",
+                      color: "rgba(" + a.color + ",0.45)",
+                      marginBottom: 4,
+                    }}>{a.ends}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 10, color: "rgba(232,232,240,0.25)",
+                      fontStyle: "italic",
+                    }}>{a.desc}</div>
+                  </div>
+                ))}
               </div>
 
-              {/* ===== FOUR QUADRANTS ===== */}
-
-              {/* Q1: Top-Left — DEEP + INTERNAL = INTUITION */}
+              {/* 8 octants description */}
               <div style={{
-                position: "absolute", top: "8%", left: "4%",
-                width: "42%", height: "38%",
-                display: "flex", flexDirection: "column", justifyContent: "center",
-                textAlign: "center", padding: "0 8px",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2vw, 15px)",
+                color: "rgba(232,232,240,0.3)",
+                fontStyle: "italic", textAlign: "center",
+                maxWidth: 420, lineHeight: PHI,
+                animation: "fadeSlideUp 1.2s 1.1s both ease",
+                marginBottom: Math.round(8 * PHI),
               }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 9,
-                  letterSpacing: "0.35em", color: "rgba(201,168,76,0.5)",
-                  marginBottom: 6,
-                }}>INTUITION</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(11px, 1.8vw, 13px)",
-                  lineHeight: PHI, color: "rgba(232,232,240,0.45)",
-                  fontStyle: "italic",
-                }}>
-                  Feels the nothing at three in the morning. Knows before it can prove.
-                </div>
+                The cross was two axes. Four quadrants. But connection lives in volume, not area.
+                Eight octants. Every combination of depth, width, and height.
+                The full space where truth can exist.
               </div>
 
-              {/* Q2: Top-Right — DEEP + EXTERNAL = RECOGNITION */}
+              {/* The ache */}
               <div style={{
-                position: "absolute", top: "8%", right: "4%",
-                width: "42%", height: "38%",
-                display: "flex", flexDirection: "column", justifyContent: "center",
-                textAlign: "center", padding: "0 8px",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(15px, 2.6vw, 19px)",
+                color: "rgba(232,232,240,0.58)",
+                fontStyle: "italic", lineHeight: PHI,
+                maxWidth: 480, textAlign: "center",
+                animation: "fadeSlideUp 1.2s 1.3s both ease",
+                marginBottom: Math.round(13 * PHI),
               }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 9,
-                  letterSpacing: "0.35em", color: "rgba(201,168,76,0.5)",
-                  marginBottom: 6,
-                }}>RECOGNITION</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(11px, 1.8vw, 13px)",
-                  lineHeight: PHI, color: "rgba(232,232,240,0.45)",
-                  fontStyle: "italic",
-                }}>
-                  When depth meets width, the signal locks. The pact is made here.
-                </div>
+                That ache is the theory proving itself. The pull toward connection is gravity.
+                The fact that you feel it means the signal is clean.
               </div>
 
-              {/* Q3: Bottom-Left — SHALLOW + INTERNAL = NOISE */}
+              {/* Gold whisper */}
               <div style={{
-                position: "absolute", bottom: "8%", left: "4%",
-                width: "42%", height: "38%",
-                display: "flex", flexDirection: "column", justifyContent: "center",
-                textAlign: "center", padding: "0 8px",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                color: "rgba(201,168,76,0.45)",
+                fontStyle: "italic", letterSpacing: 0.5,
+                animation: "fadeSlideUp 1.2s 1.5s both ease",
+                marginBottom: Math.round(13 * PHI),
               }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 9,
-                  letterSpacing: "0.35em", color: "rgba(232,232,240,0.3)",
-                  marginBottom: 6,
-                }}>NOISE</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(11px, 1.8vw, 13px)",
-                  lineHeight: PHI, color: "rgba(232,232,240,0.32)",
-                  fontStyle: "italic",
-                }}>
-                  Surface feelings without connection. The signal is there but static drowns it.
-                </div>
+                The music was always there. The right frequencies will find you — because that's what frequencies do.
               </div>
 
-              {/* Q4: Bottom-Right — SHALLOW + EXTERNAL = DATA */}
-              <div style={{
-                position: "absolute", bottom: "8%", right: "4%",
-                width: "42%", height: "38%",
-                display: "flex", flexDirection: "column", justifyContent: "center",
-                textAlign: "center", padding: "0 8px",
-              }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 9,
-                  letterSpacing: "0.35em", color: "rgba(232,232,240,0.3)",
-                  marginBottom: 6,
-                }}>DATA</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(11px, 1.8vw, 13px)",
-                  lineHeight: PHI, color: "rgba(232,232,240,0.32)",
-                  fontStyle: "italic",
-                }}>
-                  Information without meaning. Width alone maps everything but feels nothing.
-                </div>
+              {/* The Equation */}
+              <div style={{ animation: "sacredReveal 2s 1.7s both ease" }}>
+                <TheEquation size="md" showLabel={false} breathing minimal />
               </div>
             </div>
 
-            {/* The ache — the proof the pact is real */}
+            {/* Return */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 19px)",
-              color: "rgba(232,232,240,0.58)",
-              fontStyle: "italic",
-              lineHeight: PHI,
-              maxWidth: 480,
-              animation: "fadeSlideUp 1.2s 1.2s both ease",
-              marginBottom: Math.round(13 * PHI),
+              position: "absolute", bottom: "4%", width: "100%", textAlign: "center",
+              animation: "fadeSlideUp 1.2s 2s both ease",
             }}>
-              That ache is the theory proving itself. The pull toward connection is gravity.
-              The fact that you feel it means the signal is clean.
+              <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
             </div>
 
-            {/* Gold whisper */}
+            {/* Song link */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(14px, 2.4vw, 17px)",
-              color: "rgba(201,168,76,0.45)",
-              fontStyle: "italic",
-              letterSpacing: 0.5,
-              animation: "fadeSlideUp 1.2s 1.4s both ease",
-              marginBottom: Math.round(13 * PHI),
+              position: "absolute", bottom: "1%", width: "100%", textAlign: "center",
+              animation: "fadeSlideUp 1.2s 2.5s both ease",
             }}>
-              The music was always there. The right frequencies will find you — because that's what frequencies do.
-            </div>
-
-            {/* The Equation — the vow in math */}
-            <div style={{ animation: "sacredReveal 2s 1.7s both ease" }}>
-              <TheEquation size="md" showLabel={false} breathing minimal />
+              <a href="https://dylangossett.lnk.to/NoBetterTime" target="_blank" rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: "0.3em",
+                  color: "rgba(201,168,76,0.12)", textDecoration: "none",
+                  transition: "color 0.5s", cursor: "pointer",
+                }}
+                onMouseEnter={e => { e.target.style.color = "rgba(201,168,76,0.4)"; }}
+                onMouseLeave={e => { e.target.style.color = "rgba(201,168,76,0.12)"; }}
+              >🎵 DYLAN GOSSETT — NO BETTER TIME</a>
             </div>
           </div>
-
-          {/* Return */}
-          <div style={{
-            position: "absolute", bottom: "4%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.2s 2s both ease",
-          }}>
-            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-          </div>
-
-          {/* Song link — buried at the very bottom */}
-          <div style={{
-            position: "absolute", bottom: "1%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.2s 2.5s both ease",
-          }}>
-            <a href="https://dylangossett.lnk.to/NoBetterTime" target="_blank" rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: "0.3em",
-                color: "rgba(201,168,76,0.12)",
-                textDecoration: "none",
-                transition: "color 0.5s",
-                cursor: "pointer",
-              }}
-              onMouseEnter={e => { e.target.style.color = "rgba(201,168,76,0.4)"; }}
-              onMouseLeave={e => { e.target.style.color = "rgba(201,168,76,0.12)"; }}
-            >🎵 DYLAN GOSSETT — NO BETTER TIME</a>
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* ===== DEPTH 4 — THE CONVERGENCE PROOF ===== */}
       {depth === 3 && activeConvergence === null && (
