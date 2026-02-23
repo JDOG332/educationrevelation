@@ -402,7 +402,7 @@ export default function TheoryOfEverything() {
           Bright at surface, fading as you go deeper — the stars are always there. */}
       <Multiverse
         opacity={
-          depth === 0 ? 0.8
+          depth === 0 ? 0
           : depth === 1 ? (
               poemPhase <= 1 ? 1
               : poemPhase === 2 ? 0.85
@@ -447,213 +447,256 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — THE PRISM: OVERHEAD VIEW OF THE PYRAMID ===== */}
+      {/* ===== DEPTH 0 — YIN/YANG/PRISM: Three clicks to truth ===== */}
       {depth === 0 && (() => {
-        // The four triangles of the pyramid seen from above
-        // Black (left), White (right), Grey top (dark→light), Gray bottom (dark→light)
-        // All meeting at the 3rd Eye center point
-        const CX = 50; // center percentages
-        const CY = 50;
+        // Phase 0: Pure black (darkness)
+        // Phase 1: Pure white (light) 
+        // Phase 2: The prism — both sides meet, grey gradient between, 3rd eye at center
+        const [phase, setPhase] = useState(0);
 
-        const triangles = [
-          { id: "black", label: "BLACK", points: "0,0 50,50 0,100", gradient: "linear-gradient(90deg, #000000 0%, #1a1a1a 70%, #333333 100%)", labelPos: { x: "14%", y: "50%" }, labelColor: "rgba(255,255,255,0.5)" },
-          { id: "white", label: "WHITE", points: "100,0 50,50 100,100", gradient: "linear-gradient(270deg, #ffffff 0%, #e0e0e0 70%, #cccccc 100%)", labelPos: { x: "83%", y: "50%" }, labelColor: "rgba(0,0,0,0.45)" },
-          { id: "grey", label: "50 SHADES OF GREY", points: "0,0 50,50 100,0", gradient: "linear-gradient(180deg, #888888 0%, #555555 50%, #2a2a2a 100%)", labelPos: { x: "50%", y: "18%" }, labelColor: "rgba(255,255,255,0.45)" },
-          { id: "gray", label: "50 SHADES OF GRAY", points: "0,100 50,50 100,100", gradient: "linear-gradient(0deg, #999999 0%, #666666 50%, #3a3a3a 100%)", labelPos: { x: "50%", y: "82%" }, labelColor: "rgba(255,255,255,0.45)" },
-        ];
+        const handleClick = () => {
+          if (phase === 0) setPhase(1);
+          else if (phase === 1) setPhase(2);
+          else goDeeper();
+        };
 
+        // Phase 0: DARKNESS
+        if (phase === 0) {
+          return (
+            <div onClick={handleClick} style={{
+              height: "100vh", width: "100%", 
+              background: "#000000",
+              cursor: "pointer", zIndex: 2, position: "relative",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+            }}>
+              {/* Just the faintest whisper so they know to click */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 17px)",
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.08)",
+                letterSpacing: "0.15em",
+                animation: "fadeSlideUp 2s 1s both ease",
+                textAlign: "center",
+                userSelect: "none",
+              }}>close your eyes</div>
+
+              <div style={{
+                position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
+                color: "rgba(255,255,255,0.04)",
+                animation: "fadeSlideUp 2s 2.5s both ease",
+              }}>tap</div>
+            </div>
+          );
+        }
+
+        // Phase 1: LIGHT
+        if (phase === 1) {
+          return (
+            <div onClick={handleClick} style={{
+              height: "100vh", width: "100%",
+              background: "#ffffff",
+              cursor: "pointer", zIndex: 2, position: "relative",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              animation: "fadeIn 0.8s ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 17px)",
+                fontStyle: "italic",
+                color: "rgba(0,0,0,0.08)",
+                letterSpacing: "0.15em",
+                animation: "fadeSlideUp 2s 0.5s both ease",
+                textAlign: "center",
+                userSelect: "none",
+              }}>now open them</div>
+
+              <div style={{
+                position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
+                color: "rgba(0,0,0,0.04)",
+                animation: "fadeSlideUp 2s 2s both ease",
+              }}>tap</div>
+            </div>
+          );
+        }
+
+        // Phase 2: THE PRISM — Black & White meet. Grey between. 3rd Eye at center.
         return (
-          <div style={{
+          <div onClick={handleClick} style={{
             height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-            zIndex: 2, background: "#0a0a0a",
+            zIndex: 2, cursor: "pointer",
+            animation: "fadeIn 1.2s ease",
           }}>
 
-            {/* SVG Prism — four triangles */}
+            {/* SVG — Two triangles with grey gradient between */}
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
             }}>
               <defs>
-                {/* Black triangle: pure black on left edge, fading to dark grey toward center */}
-                <linearGradient id="grad-black" x1="0%" y1="50%" x2="100%" y2="50%">
+                {/* Black triangle: pure black fading toward center */}
+                <linearGradient id="gBlack" x1="0%" y1="50%" x2="100%" y2="50%">
                   <stop offset="0%" stopColor="#000000" />
-                  <stop offset="60%" stopColor="#0a0a0a" />
-                  <stop offset="100%" stopColor="#222222" />
+                  <stop offset="70%" stopColor="#0d0d0d" />
+                  <stop offset="100%" stopColor="#333333" />
                 </linearGradient>
-                {/* White triangle: pure white on right edge, fading to light grey toward center */}
-                <linearGradient id="grad-white" x1="100%" y1="50%" x2="0%" y2="50%">
-                  <stop offset="0%" stopColor="#f5f5f5" />
-                  <stop offset="60%" stopColor="#e8e8e8" />
-                  <stop offset="100%" stopColor="#cccccc" />
+                {/* White triangle: pure white fading toward center */}
+                <linearGradient id="gWhite" x1="100%" y1="50%" x2="0%" y2="50%">
+                  <stop offset="0%" stopColor="#f0f0f0" />
+                  <stop offset="70%" stopColor="#e0e0e0" />
+                  <stop offset="100%" stopColor="#bbbbbb" />
                 </linearGradient>
-                {/* Grey (top): dark near black side, light near white side — left to right gradient */}
-                <linearGradient id="grad-grey" x1="0%" y1="0%" x2="100%" y2="0%">
+                {/* Top grey: dark near black (left), light near white (right) */}
+                <linearGradient id="gGreyTop" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#1a1a1a" />
-                  <stop offset="30%" stopColor="#444444" />
-                  <stop offset="70%" stopColor="#999999" />
+                  <stop offset="25%" stopColor="#3a3a3a" />
+                  <stop offset="50%" stopColor="#6a6a6a" />
+                  <stop offset="75%" stopColor="#a0a0a0" />
                   <stop offset="100%" stopColor="#d0d0d0" />
                 </linearGradient>
-                {/* Gray (bottom): dark near black side, light near white side — left to right gradient */}
-                <linearGradient id="grad-gray" x1="0%" y1="0%" x2="100%" y2="0%">
+                {/* Bottom grey: same gradient direction */}
+                <linearGradient id="gGreyBot" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#1a1a1a" />
-                  <stop offset="30%" stopColor="#444444" />
-                  <stop offset="70%" stopColor="#999999" />
+                  <stop offset="25%" stopColor="#3a3a3a" />
+                  <stop offset="50%" stopColor="#6a6a6a" />
+                  <stop offset="75%" stopColor="#a0a0a0" />
                   <stop offset="100%" stopColor="#d0d0d0" />
                 </linearGradient>
-                {/* Center glow */}
-                <radialGradient id="eyeGlow" cx="50%" cy="50%" r="12%">
-                  <stop offset="0%" stopColor="rgba(201,168,76,0.35)" />
-                  <stop offset="50%" stopColor="rgba(201,168,76,0.08)" />
-                  <stop offset="100%" stopColor="transparent" />
-                </radialGradient>
-                <radialGradient id="eyeCore" cx="50%" cy="50%" r="3%">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.95)" />
-                  <stop offset="40%" stopColor="rgba(201,168,76,0.6)" />
+                {/* 3rd Eye glow */}
+                <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="8%">
+                  <stop offset="0%" stopColor="rgba(201,168,76,0.4)" />
+                  <stop offset="60%" stopColor="rgba(201,168,76,0.08)" />
                   <stop offset="100%" stopColor="transparent" />
                 </radialGradient>
               </defs>
 
-              {/* Four triangles */}
-              <polygon points="0,0 50,50 0,100" fill="url(#grad-black)" />
-              <polygon points="100,0 50,50 100,100" fill="url(#grad-white)" />
-              <polygon points="0,0 50,50 100,0" fill="url(#grad-grey)" />
-              <polygon points="0,100 50,50 100,100" fill="url(#grad-gray)" />
+              {/* LEFT — BLACK */}
+              <polygon points="0,0 50,50 0,100" fill="url(#gBlack)" />
+              {/* RIGHT — WHITE */}
+              <polygon points="100,0 50,50 100,100" fill="url(#gWhite)" />
+              {/* TOP — 50 SHADES OF GREY */}
+              <polygon points="0,0 50,50 100,0" fill="url(#gGreyTop)" />
+              {/* BOTTOM — 50 SHADES OF GRAY */}
+              <polygon points="0,100 50,50 100,100" fill="url(#gGreyBot)" />
 
-              {/* Subtle edge lines where triangles meet */}
-              <line x1="0" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
-              <line x1="100" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
-              <line x1="0" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
-              <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
+              {/* Edge lines where triangles meet — subtle gold */}
+              <line x1="0" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <line x1="100" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <line x1="0" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
 
               {/* 3rd Eye glow */}
-              <circle cx="50" cy="50" r="12" fill="url(#eyeGlow)">
-                <animate attributeName="r" values="10;14;10" dur="6s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="50" cy="50" r="3" fill="url(#eyeCore)">
-                <animate attributeName="r" values="2.5;3.5;2.5" dur="4s" repeatCount="indefinite" />
+              <circle cx="50" cy="50" r="8" fill="url(#eyeGlow2)">
+                <animate attributeName="r" values="7;10;7" dur="6s" repeatCount="indefinite" />
               </circle>
 
-              {/* 3rd Eye shape — almond/vesica piscis */}
-              <ellipse cx="50" cy="50" rx="5" ry="2.5" fill="none" stroke="rgba(201,168,76,0.5)" strokeWidth="0.3">
-                <animate attributeName="ry" values="2.2;3;2.2" dur="5s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite" />
+              {/* Eye shape — almond */}
+              <ellipse cx="50" cy="50" rx="4" ry="2" fill="none" stroke="rgba(201,168,76,0.45)" strokeWidth="0.25">
+                <animate attributeName="ry" values="1.8;2.5;1.8" dur="5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite" />
               </ellipse>
-              {/* Pupil */}
-              <circle cx="50" cy="50" r="1.2" fill="rgba(201,168,76,0.85)">
-                <animate attributeName="r" values="1;1.5;1" dur="4s" repeatCount="indefinite" />
+              {/* Iris */}
+              <circle cx="50" cy="50" r="1" fill="rgba(201,168,76,0.7)">
+                <animate attributeName="r" values="0.8;1.3;0.8" dur="4s" repeatCount="indefinite" />
               </circle>
-              <circle cx="50" cy="50" r="0.4" fill="#ffffff">
-                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+              {/* Pupil */}
+              <circle cx="50" cy="50" r="0.35" fill="#ffffff">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
               </circle>
             </svg>
 
-            {/* Triangle labels — positioned over each quadrant */}
+            {/* Labels */}
             {/* BLACK — left */}
             <div style={{
-              position: "absolute", left: "6%", top: "50%", transform: "translateY(-50%)",
-              zIndex: 10, animation: "fadeSlideUp 1.2s 0.3s both ease",
+              position: "absolute", left: "7%", top: "50%", transform: "translateY(-50%)",
+              zIndex: 10, animation: "fadeSlideUp 1s 0.5s both ease",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 22px)",
-                letterSpacing: "0.2em", color: "rgba(255,255,255,0.5)",
-                textShadow: "0 0 20px rgba(255,255,255,0.1)",
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)",
+                letterSpacing: "0.2em", color: "rgba(255,255,255,0.35)",
                 fontWeight: 400,
               }}>BLACK</div>
             </div>
 
             {/* WHITE — right */}
             <div style={{
-              position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)",
-              zIndex: 10, animation: "fadeSlideUp 1.2s 0.5s both ease",
+              position: "absolute", right: "7%", top: "50%", transform: "translateY(-50%)",
+              zIndex: 10, animation: "fadeSlideUp 1s 0.7s both ease",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 22px)",
-                letterSpacing: "0.2em", color: "rgba(0,0,0,0.45)",
-                textShadow: "0 0 20px rgba(0,0,0,0.1)",
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)",
+                letterSpacing: "0.2em", color: "rgba(0,0,0,0.3)",
                 fontWeight: 400,
               }}>WHITE</div>
             </div>
 
             {/* GREY — top */}
             <div style={{
-              position: "absolute", top: "12%", left: "50%", transform: "translateX(-50%)",
-              zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.2s 0.4s both ease",
+              position: "absolute", top: "14%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1s 0.6s both ease",
             }}>
               <div style={{
-                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 2vw, 15px)",
-                fontStyle: "italic", letterSpacing: "0.15em",
-                color: "rgba(255,255,255,0.4)",
-                textShadow: "0 0 12px rgba(255,255,255,0.06)",
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)",
+                fontStyle: "italic", letterSpacing: "0.12em",
+                color: "rgba(255,255,255,0.3)",
               }}>50 Shades of Grey</div>
             </div>
 
             {/* GRAY — bottom */}
             <div style={{
-              position: "absolute", bottom: "12%", left: "50%", transform: "translateX(-50%)",
-              zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.2s 0.6s both ease",
+              position: "absolute", bottom: "14%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1s 0.8s both ease",
             }}>
               <div style={{
-                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 2vw, 15px)",
-                fontStyle: "italic", letterSpacing: "0.15em",
-                color: "rgba(255,255,255,0.4)",
-                textShadow: "0 0 12px rgba(255,255,255,0.06)",
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)",
+                fontStyle: "italic", letterSpacing: "0.12em",
+                color: "rgba(255,255,255,0.3)",
               }}>50 Shades of Gray</div>
             </div>
 
-            {/* 3RD EYE label — at center */}
+            {/* 3RD EYE label */}
             <div style={{
               position: "absolute", top: "50%", left: "50%",
               transform: "translate(-50%, -50%)",
               zIndex: 10, textAlign: "center",
-              animation: "fadeSlideUp 1.4s 0.8s both ease",
+              animation: "fadeSlideUp 1.2s 1s both ease",
               pointerEvents: "none",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(7px, 1.3vw, 9px)",
-                letterSpacing: "0.4em", color: "rgba(201,168,76,0.6)",
-                marginTop: 28,
-                textShadow: "0 0 12px rgba(201,168,76,0.2)",
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(6px, 1.1vw, 8px)",
+                letterSpacing: "0.4em", color: "rgba(201,168,76,0.5)",
+                marginTop: 22,
               }}>3RD EYE</div>
             </div>
 
-            {/* Title overlay — top center */}
+            {/* Title — subtle at top */}
             <div style={{
               position: "absolute", top: "3%", left: "50%", transform: "translateX(-50%)",
               zIndex: 10, textAlign: "center",
-              animation: "fadeSlideUp 1.6s 0.2s both ease",
+              animation: "fadeSlideUp 1.4s 0.3s both ease",
             }}>
-              <h1 style={{
+              <div style={{
                 fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(13px, 2.8vw, 22px)",
+                fontSize: "clamp(9px, 2vw, 16px)",
                 fontWeight: 400, letterSpacing: "0.35em",
-                color: "rgba(200,200,200,0.6)",
-                margin: 0,
-                textShadow: "0 0 30px rgba(200,200,200,0.1)",
-              }}>THE SECRET THEORY OF EVERYTHING</h1>
+                color: "rgba(150,150,150,0.5)",
+              }}>THE SECRET THEORY OF EVERYTHING</div>
             </div>
 
-            {/* Whisper + enter — bottom center */}
-            <div onClick={goDeeper} style={{
-              position: "absolute", bottom: "3%", left: "50%", transform: "translateX(-50%)",
-              zIndex: 10, textAlign: "center", cursor: "pointer",
-              animation: "fadeSlideUp 1.2s 1s both ease",
+            {/* Enter whisper — bottom */}
+            <div style={{
+              position: "absolute", bottom: "4%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center",
+              animation: "fadeSlideUp 1.2s 1.5s both ease",
             }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(12px, 2vw, 16px)",
-                fontStyle: "italic", color: "rgba(201,168,76,0.4)",
-                letterSpacing: 1, marginBottom: 8,
-                transition: "color 0.4s",
-              }}
-                onMouseEnter={e => e.target.style.color = "rgba(201,168,76,0.7)"}
-                onMouseLeave={e => e.target.style.color = "rgba(201,168,76,0.4)"}
-              >enter the prism</div>
+                fontSize: "clamp(11px, 1.8vw, 14px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.35)",
+                letterSpacing: 1,
+              }}>enter the prism</div>
             </div>
-
-            {/* Clickable overlay — the whole page is the door */}
-            <div onClick={goDeeper} style={{
-              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-              zIndex: 5, cursor: "pointer",
-            }} />
 
           </div>
         );
