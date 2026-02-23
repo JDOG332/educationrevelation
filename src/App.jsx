@@ -1721,6 +1721,32 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
+          {/* The six words */}
+          <div style={{
+            textAlign: "center",
+            marginTop: Math.round(34 * PHI),
+            animation: "fadeSlideUp 1s 2.2s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(14px, 3vw, 20px)",
+              letterSpacing: "0.3em",
+              color: "rgba(232,232,240,0.2)",
+              lineHeight: 2.2,
+            }}>
+              FINISH I START
+            </div>
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(14px, 3vw, 20px)",
+              letterSpacing: "0.3em",
+              color: "rgba(201,168,76,0.35)",
+              lineHeight: 2.2,
+            }}>
+              START WE FINISH
+            </div>
+          </div>
+
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
             <ReturnButton onClick={() => setActiveConvergence(null)} />
