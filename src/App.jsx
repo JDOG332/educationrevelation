@@ -660,9 +660,10 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 1 — THE POEM ===== */}
       {depth === 1 && (
         <div onClick={() => { if (poemPhase >= 5 || poemSeen.current) goDeeper(); }} style={{
-          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
+          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "auto", overflowX: "hidden",
           cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 5000,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start",
+          paddingTop: "3vh",
         }}>
 
           {/* White flash — the Moon filling your vision */}
@@ -1059,7 +1060,7 @@ export default function TheoryOfEverything() {
                   <div style={{
                     fontFamily: "'Cinzel', serif", fontSize: 19,
                     letterSpacing: "0.6em", color: "rgba(201,168,76,0.2)",
-                    marginBottom: Math.round(8 * PHI),
+                    marginBottom: Math.round(3 * PHI),
                     animation: "fadeSlideUp 1.2s 0.1s both ease",
                   }}>OCTOBER 2016</div>
 
@@ -1076,9 +1077,9 @@ export default function TheoryOfEverything() {
                   {/* Subtitle */}
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(24px, 4vw, 31px)",
+                    fontSize: "clamp(19px, 3.5vw, 24px)",
                     fontStyle: "italic", color: "rgba(232,232,240,0.55)",
-                    marginTop: Math.round(5 * PHI),
+                    marginTop: Math.round(3 * PHI),
                     letterSpacing: 0.5, maxWidth: 380, lineHeight: PHI,
                     animation: "fadeSlideUp 1.2s 0.3s both ease",
                   }}>Written ten years before the theory. The seed was already in the ground.</div>
@@ -1086,8 +1087,8 @@ export default function TheoryOfEverything() {
                   {/* Hourglass container — FULL VIEWPORT */}
                   <div style={{
                     position: "relative",
-                    width: "min(80vw, 420px)",
-                    height: "min(120vw, 65vh)",
+                    width: "min(85vw, 440px)",
+                    height: "min(130vw, 75vh)",
                     margin: `${Math.round(5 * PHI)}px auto`,
                     animation: "fadeSlideUp 1.4s 0.4s both ease",
                   }}>
@@ -1336,9 +1337,9 @@ export default function TheoryOfEverything() {
             {/* Title — the word itself is the proof */}
             <h2 style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(39px, 7vw, 50px)",
+              fontSize: "clamp(28px, 6vw, 50px)",
               fontWeight: 400,
-              letterSpacing: "0.35em",
+              letterSpacing: "0.2em",
               margin: 0,
               background: "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(201,168,76,0.6) 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
