@@ -306,14 +306,14 @@ export default function TheoryOfEverything() {
             }}>THE RECURSIVE</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(20px, 4vw, 32px)",
+              fontSize: "clamp(21px, 4vw, 30px)",
               fontWeight: 400, color: "rgba(232,232,240,0.6)",
               letterSpacing: "0.25em", margin: "4px 0",
               textShadow: "0 0 40px rgba(232,232,240,0.06)",
             }}>MULTIVERSE</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.2vw, 16px)",
+              fontSize: "clamp(15px, 2.8vw, 18px)",
               fontStyle: "italic", color: "rgba(232,232,240,0.65)",
             }}>9 × 9 × 9 = 729 universes · Same equation · Every scale</div>
           </div>
@@ -517,7 +517,7 @@ export default function TheoryOfEverything() {
             <div onClick={handleClick} style={{ ...fullScreen, background: dark ? "#000000" : "#ffffff" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 19px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 fontStyle: "italic",
                 color: dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)",
                 letterSpacing: "0.15em",
@@ -526,7 +526,7 @@ export default function TheoryOfEverything() {
               }}>{dark ? "close your eyes" : "open your eyes"}</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.5em",
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.5em",
                 color: dark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
                 animation: "fadeSlideUp 2s 2.5s both ease",
               }}>tap</div>
@@ -540,7 +540,7 @@ export default function TheoryOfEverything() {
             <div onClick={handleClick} style={{ ...fullScreen, background: dark ? "#ffffff" : "#000000", animation: "fadeIn 0.8s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 19px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 fontStyle: "italic",
                 color: dark ? "rgba(0,0,0,0.08)" : "rgba(255,255,255,0.08)",
                 letterSpacing: "0.15em",
@@ -549,7 +549,7 @@ export default function TheoryOfEverything() {
               }}>{dark ? "now open them" : "now close them"}</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.5em",
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.5em",
                 color: dark ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.04)",
                 animation: "fadeSlideUp 2s 2s both ease",
               }}>tap</div>
@@ -1031,18 +1031,18 @@ export default function TheoryOfEverything() {
               // Poem lines shaped to follow hourglass contour
               // Wider at top, narrower in middle, wider at bottom
               const poemLines = [
-                { text: "Every hope, a heartbeat.", size: "clamp(16px, 3.2vw, 21px)", scale: 1.0 },
+                { text: "Every hope, a heartbeat.", size: "clamp(18px, 3.5vw, 24px)", scale: 1.0 },
                 { text: "Every wish, a dream.", size: "clamp(15px, 3vw, 20px)", scale: 0.95 },
                 { text: "The moon always wishing…", size: "clamp(15px, 2.8vw, 19px)", scale: 0.88 },
-                { text: "the sun it could be.", size: "clamp(14px, 2.6vw, 18px)", scale: 0.82 },
-                { text: "Every life, a purpose…", size: "clamp(15px, 2.6vw, 19px)", scale: 0.75 },
-                { text: "hidden inside.", size: "clamp(14px, 2.4vw, 17px)", scale: 0.68 },
-                { text: "Every sinner, a saint…", size: "clamp(14px, 2.4vw, 17px)", scale: 0.68 },
-                { text: "trying to hide.", size: "clamp(15px, 2.6vw, 19px)", scale: 0.75 },
-                { text: "Every baby is born,", size: "clamp(14px, 2.6vw, 18px)", scale: 0.82 },
+                { text: "the sun it could be.", size: "clamp(15px, 2.8vw, 18px)", scale: 0.82 },
+                { text: "Every life, a purpose…", size: "clamp(15px, 3vw, 21px)", scale: 0.75 },
+                { text: "hidden inside.", size: "clamp(15px, 2.8vw, 18px)", scale: 0.68 },
+                { text: "Every sinner, a saint…", size: "clamp(15px, 2.8vw, 18px)", scale: 0.68 },
+                { text: "trying to hide.", size: "clamp(15px, 3vw, 21px)", scale: 0.75 },
+                { text: "Every baby is born,", size: "clamp(15px, 2.8vw, 18px)", scale: 0.82 },
                 { text: "with all that it needs…", size: "clamp(15px, 2.8vw, 19px)", scale: 0.88 },
                 { text: "Just wisdom and love…", size: "clamp(15px, 3vw, 20px)", scale: 0.95 },
-                { text: "and the chance to breathe.", size: "clamp(16px, 3.2vw, 21px)", scale: 1.0 },
+                { text: "and the chance to breathe.", size: "clamp(18px, 3.5vw, 24px)", scale: 1.0 },
               ];
 
               return (
@@ -1057,7 +1057,7 @@ export default function TheoryOfEverything() {
 
                   {/* Date */}
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13,
+                    fontFamily: "'Cinzel', serif", fontSize: 15,
                     letterSpacing: "0.6em", color: "rgba(201,168,76,0.2)",
                     marginBottom: Math.round(8 * PHI),
                     animation: "fadeSlideUp 1.2s 0.1s both ease",
@@ -1076,7 +1076,7 @@ export default function TheoryOfEverything() {
                   {/* Subtitle */}
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    fontSize: "clamp(15px, 2.8vw, 18px)",
                     fontStyle: "italic", color: "rgba(255,255,255,0.18)",
                     marginTop: Math.round(5 * PHI),
                     letterSpacing: 0.5, maxWidth: 380, lineHeight: PHI,
@@ -1106,7 +1106,7 @@ export default function TheoryOfEverything() {
                     }}>
                       <span className="shimmer-gold" style={{
                         fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "clamp(17px, 3.2vw, 22px)",
+                        fontSize: "clamp(18px, 3.5vw, 24px)",
                         fontStyle: "italic", fontWeight: 600, letterSpacing: 3,
                       }}>It's the rhythm of life</span>
                     </div>
@@ -1144,7 +1144,7 @@ export default function TheoryOfEverything() {
                     }}>
                       <span className="shimmer-gold" style={{
                         fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "clamp(17px, 3.2vw, 22px)",
+                        fontSize: "clamp(18px, 3.5vw, 24px)",
                         fontStyle: "italic", fontWeight: 600, letterSpacing: 3,
                         animationDirection: "reverse",
                       }}>It's the rhythm of life</span>
@@ -1206,7 +1206,7 @@ export default function TheoryOfEverything() {
               {/* Subtitle — the thesis */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 19px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 fontStyle: "italic", color: "rgba(232,232,240,0.6)",
                 marginTop: Math.round(5 * PHI), letterSpacing: 1,
                 animation: "fadeSlideUp 1.2s 0.4s both ease",
@@ -1223,7 +1223,7 @@ export default function TheoryOfEverything() {
               {/* "Watch the cross become..." — narrative cue */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(13px, 2.2vw, 16px)",
+                fontSize: "clamp(15px, 2.8vw, 18px)",
                 color: "rgba(232,232,240,0.22)",
                 fontStyle: "italic", letterSpacing: 1,
                 marginBottom: Math.round(5 * PHI),
@@ -1325,7 +1325,7 @@ export default function TheoryOfEverything() {
 
             {/* Eyebrow — barely visible, like a memory */}
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.9em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.9em",
               color: "rgba(201,168,76,0.25)",
               textTransform: "uppercase",
               animation: "fadeSlideUp 2s 0.3s both ease",
@@ -1336,7 +1336,7 @@ export default function TheoryOfEverything() {
             {/* Title — the word itself is the proof */}
             <h2 style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(28px, 6vw, 48px)",
+              fontSize: "clamp(30px, 6vw, 48px)",
               fontWeight: 400,
               letterSpacing: "0.35em",
               margin: 0,
@@ -1426,7 +1426,7 @@ export default function TheoryOfEverything() {
                     {/* Name */}
                     <div style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(13px, 2.4vw, 16px)",
+                      fontSize: "clamp(15px, 2.8vw, 18px)",
                       letterSpacing: "0.2em",
                       color: accentText,
                       fontWeight: 600,
@@ -1435,7 +1435,7 @@ export default function TheoryOfEverything() {
                     {/* Whisper */}
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(13px, 2.4vw, 16px)",
+                      fontSize: "clamp(15px, 2.8vw, 18px)",
                       color: "rgba(255,255,255,0.25)",
                       fontStyle: "italic",
                       marginTop: Math.round(3 * PHI),
@@ -1471,7 +1471,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -1481,12 +1481,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>⚖️</div>
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(22px, 5vw, 34px)", fontWeight: 400,
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
               textShadow: "0 0 50px rgba(232,232,240,0.08)",
             }}>PLAIN ENGLISH</h2>
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+              fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
               fontStyle: "italic", color: "rgba(232,232,240,0.7)",
               marginTop: Math.round(5 * PHI),
             }}>no jargon · no math · just truth</div>
@@ -1556,7 +1556,7 @@ export default function TheoryOfEverything() {
                   background: `linear-gradient(90deg, transparent, rgba(${idea.accent},0.2), transparent)`,
                 }} />
                 <div style={{
-                  fontSize: 26, marginBottom: Math.round(5 * PHI),
+                  fontSize: 24, marginBottom: Math.round(5 * PHI),
                   filter: `drop-shadow(0 0 10px rgba(${idea.accent},0.2))`,
                   animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
                 }}>{idea.icon}</div>
@@ -1565,7 +1565,7 @@ export default function TheoryOfEverything() {
                   color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
                 }}>{idea.title}</div>
                 <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   fontStyle: "italic", color: "rgba(232,232,240,0.7)", lineHeight: 1.5,
                 }}>{idea.hook}</div>
               </div>
@@ -1574,7 +1574,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             textAlign: "center", marginTop: Math.round(21 * PHI),
-            fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+            fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
             fontStyle: "italic", color: "rgba(201,168,76,0.2)",
           }}>FINISH I START · START WE FINISH</div>
         </div>
@@ -1590,7 +1590,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -1624,25 +1624,25 @@ export default function TheoryOfEverything() {
                 animation: `fadeSlideUp 0.8s ${0.3 + i * 0.15}s both ease`,
               }}>
                 <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 22, fontWeight: 700,
+                  fontFamily: "'Cinzel', serif", fontSize: 24, fontWeight: 700,
                   color: "rgba(201,168,76,0.4)", minWidth: 30, textAlign: "right",
                   lineHeight: 1.2,
                 }}>{item.num}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.3em",
+                    fontFamily: "'Cinzel', serif", fontSize: 18, letterSpacing: "0.3em",
                     color: "rgba(201,168,76,0.6)", marginBottom: 4,
                   }}>
                     {item.title}
                     <span style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                       fontStyle: "italic", letterSpacing: 0, color: "rgba(232,232,240,0.55)",
                       marginLeft: 8,
                     }}>({item.aka})</span>
                   </div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(16px, 2.8vw, 19px)",
+                    fontSize: "clamp(18px, 3.2vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.58)",
                   }}>{item.desc}</div>
                 </div>
@@ -1660,7 +1660,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.62)",
             }}>
               <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.6)", fontSize: "1.15em" }}>Ψ</span> is a <strong style={{ color: "rgba(232,232,240,0.75)", fontWeight: 600 }}>Sureness Score</strong> — a number between 0 and 1 that tells you how much you can trust what you found.
@@ -1668,7 +1668,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(8 * PHI) }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic",
             }}>
@@ -1699,7 +1699,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -1712,7 +1712,7 @@ export default function TheoryOfEverything() {
             animation: "fadeSlideUp 0.8s 1s both ease",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.2vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               color: "rgba(232,232,240,0.8)", letterSpacing: "0.2em",
             }}>3 PILLARS OF "AHA!"</div>
           </div>
@@ -1751,16 +1751,16 @@ export default function TheoryOfEverything() {
                 marginBottom: Math.round(8 * PHI),
               }}>
                 <span style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 20, fontWeight: 700,
+                  fontFamily: "'Cinzel', serif", fontSize: 21, fontWeight: 700,
                   color: `${pillar.accent}0.4)`,
                 }}>{pillar.num}</span>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 2.4vw, 17px)",
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(15px, 2.8vw, 18px)",
                     letterSpacing: "0.2em", color: `${pillar.accent}0.65)`,
                   }}>{pillar.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                     fontStyle: "italic", color: "rgba(232,232,240,0.7)",
                     marginTop: 2,
                   }}>{pillar.subtitle}</div>
@@ -1770,7 +1770,7 @@ export default function TheoryOfEverything() {
               {/* Body */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(16px, 2.8vw, 19px)",
+                fontSize: "clamp(18px, 3.2vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.55)",
                 marginBottom: Math.round(8 * PHI),
                 paddingLeft: Math.round(21 * PHI),
@@ -1785,7 +1785,7 @@ export default function TheoryOfEverything() {
               }}>
                 <div style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(15px, 2.6vw, 18px)",
+                  fontSize: "clamp(15px, 3vw, 21px)",
                   lineHeight: PHI, fontStyle: "italic",
                   color: `${pillar.accent}0.5)`,
                 }}>{pillar.lesson}</div>
@@ -1816,7 +1816,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -1829,12 +1829,12 @@ export default function TheoryOfEverything() {
             animation: `fadeSlideUp 0.8s 1.8s both ease`,
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(201,168,76,0.5)", marginBottom: Math.round(8 * PHI),
             }}>YOUR NEXT STEP</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.7)",
               fontStyle: "italic", maxWidth: 480, margin: "0 auto",
             }}>
@@ -1858,7 +1858,7 @@ export default function TheoryOfEverything() {
             }}>THEY ALL DREW THE SAME SHAPES</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               fontStyle: "italic", color: "rgba(232,232,240,0.55)",
               maxWidth: 440, margin: "0 auto",
             }}>
@@ -1954,11 +1954,11 @@ export default function TheoryOfEverything() {
                           color: "rgba(232,232,240,0.55)",
                         }}>{s.tradition}</div>
                         <div style={{
-                          fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                           color: "rgba(232,232,240,0.7)", fontWeight: 600,
                         }}>{s.name}</div>
                         <div style={{
-                          fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                           color: "rgba(232,232,240,0.65)", fontStyle: "italic",
                         }}>{s.note}</div>
                       </div>
@@ -1986,7 +1986,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -1996,15 +1996,15 @@ export default function TheoryOfEverything() {
           {/* 🤘 THE CONNECTION — feel the theory in your body */}
           <div style={{ marginBottom: Math.round(21 * PHI) }}>
             <div style={{ textAlign: "center", marginBottom: Math.round(21 * PHI) }}>
-              <div style={{ fontSize: 28, marginBottom: Math.round(5 * PHI) }}>🤘</div>
+              <div style={{ fontSize: 24, marginBottom: Math.round(5 * PHI) }}>🤘</div>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 20px)",
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(15px, 3vw, 21px)",
                 letterSpacing: "0.3em", color: "rgba(232,232,240,0.7)",
               }}>THE CONNECTION</div>
               <div style={{ height: Math.round(8 * PHI) }} />
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(16px, 2.8vw, 19px)",
+                fontSize: "clamp(18px, 3.2vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
                 fontStyle: "italic", maxWidth: 500, margin: "0 auto",
               }}>
@@ -2033,17 +2033,17 @@ export default function TheoryOfEverything() {
                   animation: `fadeSlideUp 0.6s ${0.1 * i}s both ease`,
                 }}>
                   <div style={{
-                    fontSize: 20, minWidth: 30, textAlign: "center",
+                    fontSize: 21, minWidth: 30, textAlign: "center",
                     filter: "drop-shadow(0 0 8px rgba(201,168,76,0.15))",
                   }}>{s.icon}</div>
                   <div>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                      fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                       color: "rgba(201,168,76,0.45)", marginBottom: 4,
                     }}>{s.sense}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(15px, 2.6vw, 18px)",
+                      fontSize: "clamp(15px, 3vw, 21px)",
                       lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                     }}>{s.text}</div>
                   </div>
@@ -2060,12 +2060,12 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(201,168,76,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
                 color: "rgba(201,168,76,0.3)", marginBottom: Math.round(5 * PHI),
               }}>THE 6TH SENSE CONNECTION</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(16px, 2.8vw, 19px)",
+                fontSize: "clamp(18px, 3.2vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
                 fontStyle: "italic", maxWidth: 460, margin: "0 auto",
               }}>
@@ -2091,7 +2091,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2115,7 +2115,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2125,7 +2125,7 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(13 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>💛</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(21 * PHI),
             }}>THE ACHE</div>
@@ -2137,7 +2137,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 19px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               color: "rgba(232,232,240,0.58)",
               fontStyle: "italic", lineHeight: PHI,
               maxWidth: 480, margin: "0 auto",
@@ -2148,7 +2148,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(13 * PHI) }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               color: "rgba(201,168,76,0.45)",
               fontStyle: "italic", letterSpacing: 0.5,
             }}>
@@ -2163,7 +2163,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(14px, 3vw, 20px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               letterSpacing: "0.3em",
               color: "rgba(232,232,240,0.6)",
               lineHeight: 2.2,
@@ -2172,7 +2172,7 @@ export default function TheoryOfEverything() {
             </div>
             <div style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(14px, 3vw, 20px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               letterSpacing: "0.3em",
               color: "rgba(201,168,76,0.35)",
               lineHeight: 2.2,
@@ -2198,7 +2198,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2208,7 +2208,7 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 9s ease-in-out infinite" }}>🌑</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE SHARED WEIGHT</div>
@@ -2221,7 +2221,7 @@ export default function TheoryOfEverything() {
           {/* Core truth */}
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -2249,17 +2249,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(160,160,180,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(160,160,180,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -2276,12 +2276,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(160,160,180,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(160,160,180,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE ALL-AT-ONCE EXPERIENCE</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -2305,7 +2305,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["The Science of Empathy", "Resilience Through Adversity", "Music & Emotional Healing"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -2325,7 +2325,7 @@ export default function TheoryOfEverything() {
                 "\"Everybody Hurts\" — R.E.M.",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -2349,7 +2349,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2359,12 +2359,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🏠</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE HOUSE BUILT FOR YOU</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(255,200,100,0.3)",
             }}>THE ANTHROPIC PRINCIPLE</div>
             <div style={{
@@ -2375,7 +2375,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -2402,17 +2402,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(255,200,100,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(255,200,100,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -2429,12 +2429,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(255,200,100,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(255,200,100,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE UNIVERSE EXPERIENCING ITSELF</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -2458,7 +2458,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["Fine-Tuning of the Universe", "The Anthropic Principle", "The Goldilocks Enigma"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -2478,7 +2478,7 @@ export default function TheoryOfEverything() {
                 "\"What a Wonderful World\" — Louis Armstrong",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -2502,7 +2502,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2512,7 +2512,7 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>🔥</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE ISLAND</div>
@@ -2524,7 +2524,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -2551,17 +2551,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(255,120,50,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(255,120,50,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -2578,12 +2578,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(255,120,50,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(255,120,50,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE ISLAND</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -2607,7 +2607,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["Psychology of Survivor", "History of Human Cooperation", "Strategy & Community"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -2627,7 +2627,7 @@ export default function TheoryOfEverything() {
                 "\"Lean On Me\" — Bill Withers",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -2651,7 +2651,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2661,12 +2661,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 11s ease-in-out infinite" }}>🕸️</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE WEB</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(140,180,220,0.3)",
             }}>WE ARE ONE WEB</div>
             <div style={{
@@ -2677,7 +2677,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -2704,17 +2704,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(140,180,220,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(140,180,220,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -2731,12 +2731,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(140,180,220,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(140,180,220,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE OCEAN</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -2760,7 +2760,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["Quantum Entanglement", "The Voyager Golden Record", "3 Body Problem Explained"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -2780,7 +2780,7 @@ export default function TheoryOfEverything() {
                 "\"Circle of Life\" — The Lion King",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -2804,7 +2804,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2814,12 +2814,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 9s ease-in-out infinite" }}>🧭</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE SEARCH</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(180,160,120,0.3)",
             }}>THE LOOKING IS THE FINDING</div>
             <div style={{
@@ -2830,7 +2830,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -2857,17 +2857,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(180,160,120,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(180,160,120,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -2884,12 +2884,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(180,160,120,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(180,160,120,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE ALL-AT-ONCE MOMENT</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -2913,7 +2913,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["The Science of Awe", "The Overview Effect", "Interconnectedness"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -2933,7 +2933,7 @@ export default function TheoryOfEverything() {
                 "\"Let It Be\" — The Beatles",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -2957,7 +2957,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -2967,12 +2967,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 12s ease-in-out infinite" }}>🔔</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>LET GO</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(170,140,200,0.3)",
             }}>THE OCEAN CARRIES YOU</div>
             <div style={{
@@ -2983,7 +2983,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3010,17 +3010,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(170,140,200,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(170,140,200,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3037,12 +3037,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(170,140,200,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(170,140,200,0.3)", marginBottom: Math.round(5 * PHI),
             }}>STOP BEING A DROP. START BEING THE OCEAN.</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3066,7 +3066,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["The Science of Entrainment", "Golden Ratio in Nature", "The Overview Effect"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -3086,7 +3086,7 @@ export default function TheoryOfEverything() {
                 "\"What a Wonderful World\" — Armstrong",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -3110,7 +3110,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -3120,12 +3120,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🙌</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE BREATH</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(100,200,160,0.3)",
             }}>ONE BIG LIVING LUNG</div>
             <div style={{
@@ -3136,7 +3136,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3163,17 +3163,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(100,200,160,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(100,200,160,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3190,12 +3190,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(100,200,160,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(100,200,160,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE GOLDEN THREAD</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3219,7 +3219,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["How Oxygen Travels the World", "Science of Deep Breathing", "Connected by Atoms"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -3239,7 +3239,7 @@ export default function TheoryOfEverything() {
                 "\"What a Wonderful World\" — Armstrong",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -3263,7 +3263,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -3273,12 +3273,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 13s ease-in-out infinite" }}>🌌</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE ROOT</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(200,180,255,0.3)",
             }}>THE STARTING SPARK</div>
             <div style={{
@@ -3289,7 +3289,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3316,17 +3316,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(200,180,255,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(200,180,255,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3343,12 +3343,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(200,180,255,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(200,180,255,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE OCEAN</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3372,7 +3372,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["NASA: How the Universe Began", "The Big Bang Explained", "History of the Universe"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -3392,7 +3392,7 @@ export default function TheoryOfEverything() {
                 "\"Somewhere Over The Rainbow\" — IZ",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -3416,7 +3416,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -3426,12 +3426,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 11s ease-in-out infinite" }}>🧠</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE EYE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(220,200,140,0.3)",
             }}>CONSCIOUSNESS & MIND</div>
             <div style={{
@@ -3442,7 +3442,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3469,17 +3469,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(220,200,140,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(220,200,140,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3496,12 +3496,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(220,200,140,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(220,200,140,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE NOT THE CLOUDS. YOU ARE THE SKY.</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3525,7 +3525,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["What Is Consciousness?", "Your Brain Hallucinates Reality", "Philosophy of Mind"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -3545,7 +3545,7 @@ export default function TheoryOfEverything() {
                 "\"Nights in White Satin\" — Moody Blues",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -3569,7 +3569,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -3579,12 +3579,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 9s ease-in-out infinite" }}>🔬</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE BONES</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(100,160,220,0.3)",
             }}>PHYSICS & REALITY</div>
             <div style={{
@@ -3595,7 +3595,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3622,17 +3622,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(100,160,220,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(100,160,220,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3649,12 +3649,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(100,160,220,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(100,160,220,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE UNIVERSE IS A TRAMPOLINE</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3678,7 +3678,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["NASA: Dark Matter & Energy", "CERN: Antimatter Explained", "Quantum Entanglement"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -3698,7 +3698,7 @@ export default function TheoryOfEverything() {
                 "\"Yellow\" — Coldplay",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -3722,7 +3722,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -3732,12 +3732,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🧬</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE SEED</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(80,200,120,0.3)",
             }}>LIFE & BIOLOGY</div>
             <div style={{
@@ -3748,7 +3748,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3775,17 +3775,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(80,200,120,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(80,200,120,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3802,12 +3802,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(80,200,120,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(80,200,120,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE SAP FLOWS THROUGH EVERYTHING</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3831,7 +3831,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["How Life Began", "Decoding DNA", "The Search for Alien Life"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -3851,7 +3851,7 @@ export default function TheoryOfEverything() {
                 "\"What a Wonderful World\" — Armstrong",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -3875,7 +3875,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -3885,12 +3885,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 11s ease-in-out infinite" }}>💭</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE FLASHLIGHT</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(240,180,200,0.3)",
             }}>MIND, LANGUAGE & MEANING</div>
             <div style={{
@@ -3901,7 +3901,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -3928,17 +3928,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(240,180,200,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(240,180,200,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -3955,12 +3955,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(240,180,200,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(240,180,200,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOUR MIND IS THE FLASHLIGHT</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -3984,7 +3984,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["How Did Language Begin?", "Why Humans Create Art", "The Mystery of Why We Cry"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -4004,7 +4004,7 @@ export default function TheoryOfEverything() {
                 "\"Sound of Silence\" — Simon & Garfunkel",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -4028,7 +4028,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -4038,12 +4038,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>❤️</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE PULSE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(220,80,80,0.3)",
             }}>LOVE, CONNECTION & EMOTION</div>
             <div style={{
@@ -4054,7 +4054,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4081,17 +4081,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(220,80,80,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(220,80,80,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -4108,12 +4108,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(220,80,80,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(220,80,80,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE GOLDEN THREADS</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -4137,7 +4137,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["The Chemistry of Love", "What is Altruism?", "Why Loneliness Hurts"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -4157,7 +4157,7 @@ export default function TheoryOfEverything() {
                 "\"All You Need Is Love\" — The Beatles",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -4181,7 +4181,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -4191,12 +4191,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 9s ease-in-out infinite" }}>⚖️</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE SCALE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(200,200,160,0.3)",
             }}>GOOD, EVIL & ETHICS</div>
             <div style={{
@@ -4207,7 +4207,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4234,17 +4234,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(200,200,160,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(200,200,160,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -4261,12 +4261,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(200,200,160,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(200,200,160,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE LANTERN IN YOUR CHEST</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -4290,7 +4290,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["The Definition of Morality", "Is Business Ethics Possible?", "Theories of Ethics"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -4310,7 +4310,7 @@ export default function TheoryOfEverything() {
                 "\"Where Is The Love?\" — Black Eyed Peas",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -4334,7 +4334,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -4344,12 +4344,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 14s ease-in-out infinite" }}>🌀</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE MOON</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(180,180,220,0.3)",
             }}>GOD, SPIRIT & THE UNKNOWN</div>
             <div style={{
@@ -4360,7 +4360,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4387,17 +4387,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(180,180,220,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(180,180,220,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -4414,12 +4414,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(180,180,220,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(180,180,220,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOUR FINGER ON THE DIAL</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -4443,7 +4443,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["Near-Death Experiences", "Why Do We Believe?", "The Science of Meditation"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -4463,7 +4463,7 @@ export default function TheoryOfEverything() {
                 "\"Spirit in the Sky\" — Greenbaum",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -4487,7 +4487,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -4497,14 +4497,14 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>🪙</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em",
               background: "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(201,168,76,0.8))",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
               marginBottom: Math.round(8 * PHI),
             }}>THE PENNY QUESTION</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(201,168,76,0.4)",
             }}>THE ANSWER IS ONE</div>
             <div style={{
@@ -4515,7 +4515,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.55)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4542,17 +4542,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 10px rgba(201,168,76,0.25))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(201,168,76,0.5)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -4569,12 +4569,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(201,168,76,0.08)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(201,168,76,0.35)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE EARTH AND THE UNIVERSE</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.7)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -4598,7 +4598,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["The Law of One", "Universe as a Single Quantum Object", "The Science of Interconnectedness"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -4618,7 +4618,7 @@ export default function TheoryOfEverything() {
                 "\"Dust in the Wind\" — Kansas",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -4642,7 +4642,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -4652,12 +4652,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🎨</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE ONENESS</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(200,120,180,0.3)",
             }}>TWO BECOME ONE</div>
             <div style={{
@@ -4668,7 +4668,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4695,17 +4695,17 @@ export default function TheoryOfEverything() {
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
               }}>
                 <div style={{
-                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  fontSize: 21, minWidth: 30, textAlign: "center",
                   filter: "drop-shadow(0 0 8px rgba(200,120,180,0.2))",
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                     color: "rgba(200,120,180,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(15px, 2.6vw, 18px)",
+                    fontSize: "clamp(15px, 3vw, 21px)",
                     lineHeight: PHI, color: "rgba(232,232,240,0.7)",
                   }}>{s.text}</div>
                 </div>
@@ -4722,12 +4722,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(200,120,180,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(200,120,180,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE ETERNAL WE</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -4751,7 +4751,7 @@ export default function TheoryOfEverything() {
               }}>DIG DEEPER · INFO</div>
               {["Microbiome Sharing", "Heart Beats Sync Between Partners", "Inclusion of Other in Self"].map((link, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{link}</div>
               ))}
@@ -4771,7 +4771,7 @@ export default function TheoryOfEverything() {
                 "\"Every Breath You Take\" — The Police",
               ].map((song, i) => (
                 <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
                 }}>{song}</div>
               ))}
@@ -4794,7 +4794,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -4803,13 +4803,13 @@ export default function TheoryOfEverything() {
 
           {/* Header */}
           <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
-            <div style={{ fontSize: 40, marginBottom: Math.round(8 * PHI) }}>☀️</div>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI) }}>☀️</div>
             <div style={{
               fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: "0.5em",
               color: "rgba(255,180,50,0.4)", marginBottom: Math.round(5 * PHI),
             }}>THE LAW OF THE MIRROR</div>
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 30px)", fontWeight: 400,
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(21px, 4.5vw, 30px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.2em", margin: 0,
               textShadow: "0 0 50px rgba(255,180,50,0.06)",
             }}>RECOGNITION IS GRAVITY</h2>
@@ -4834,7 +4834,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(255,180,50,0.45)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 460, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4855,14 +4855,14 @@ export default function TheoryOfEverything() {
             animation: "fadeSlideUp 0.8s 0.4s both ease",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(255,180,50,0.5)",
             }}>IN PLAIN ENGLISH</div>
           </div>
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.58)",
             maxWidth: 520, margin: `0 auto ${Math.round(8 * PHI)}px`,
             animation: "fadeSlideUp 0.8s 0.5s both ease",
@@ -4872,7 +4872,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(15px, 2.6vw, 18px)",
+            fontSize: "clamp(15px, 3vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.68)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 400, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -4890,7 +4890,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.58)",
             }}>
               In this code, <strong style={{ color: "rgba(232,232,240,0.75)", fontWeight: 600 }}>Mass</strong> is just how clear or true someone is. The more real you are (<span style={{ color: "rgba(79,195,247,0.6)", fontStyle: "italic" }}>C<sub>eff</sub></span>), and the more someone else gets you (<span style={{ color: "rgba(201,168,76,0.6)", fontStyle: "italic" }}>R<sub>12</sub></span>), the stronger the bond.
@@ -4898,7 +4898,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(8 * PHI) }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(255,180,50,0.5)",
               fontStyle: "italic",
             }}>
@@ -4918,7 +4918,7 @@ export default function TheoryOfEverything() {
             animation: "fadeSlideUp 0.8s 0.9s both ease",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 2.8vw, 20px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(15px, 3vw, 21px)",
               color: "rgba(232,232,240,0.75)", letterSpacing: "0.2em",
             }}>3 PROOFS OF HEART & SCIENCE</div>
           </div>
@@ -4951,14 +4951,14 @@ export default function TheoryOfEverything() {
                 display: "flex", alignItems: "baseline", gap: Math.round(5 * PHI),
                 marginBottom: Math.round(8 * PHI),
               }}>
-                <span style={{ fontSize: 22 }}>{proof.icon}</span>
+                <span style={{ fontSize: 24 }}>{proof.icon}</span>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 2.4vw, 17px)",
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(15px, 2.8vw, 18px)",
                     letterSpacing: "0.2em", color: `${proof.accent}0.65)`,
                   }}>{proof.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                     fontStyle: "italic", color: "rgba(232,232,240,0.7)", marginTop: 2,
                   }}>{proof.subtitle}</div>
                 </div>
@@ -4966,7 +4966,7 @@ export default function TheoryOfEverything() {
 
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(16px, 2.8vw, 19px)",
+                fontSize: "clamp(18px, 3.2vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.55)",
                 marginBottom: Math.round(8 * PHI),
                 paddingLeft: Math.round(21 * PHI),
@@ -4980,7 +4980,7 @@ export default function TheoryOfEverything() {
               }}>
                 <div style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(15px, 2.6vw, 18px)",
+                  fontSize: "clamp(15px, 3vw, 21px)",
                   lineHeight: PHI, fontStyle: "italic",
                   color: `${proof.accent}0.5)`,
                 }}>{proof.lesson}</div>
@@ -5000,12 +5000,12 @@ export default function TheoryOfEverything() {
             animation: `fadeSlideUp 0.8s 1.7s both ease`,
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(255,180,50,0.5)", marginBottom: Math.round(8 * PHI),
             }}>THE "AHA" MOMENT</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.55)",
               maxWidth: 500, margin: "0 auto",
             }}>
@@ -5014,7 +5014,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(8 * PHI) }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.6)",
               fontStyle: "italic",
               maxWidth: 420, margin: "0 auto",
@@ -5031,7 +5031,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(17px, 3.2vw, 22px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               fontStyle: "italic", fontWeight: 600,
               letterSpacing: 1,
               color: "rgba(255,180,50,0.55)",
@@ -5060,7 +5060,7 @@ export default function TheoryOfEverything() {
             }}>DIG DEEPER</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.48)",
             }}>
               Look into <strong style={{ color: "rgba(79,195,247,0.55)", fontWeight: 600 }}>Quantum Entanglement</strong> and <strong style={{ color: "rgba(201,168,76,0.55)", fontWeight: 600 }}>Tidal Locking</strong>. If you want to see how this works in your own life, look at the 3 people you talk to the most — calculate their consistency. You'll find you are orbiting the ones who are the most clear, not the ones who are the loudest.
@@ -5082,7 +5082,7 @@ export default function TheoryOfEverything() {
             }}>THE SHARED WEIGHT</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
@@ -5120,7 +5120,7 @@ export default function TheoryOfEverything() {
                     color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
                   }}>{idea.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                     color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
                   }}>{idea.hook}</div>
                 </div>
@@ -5146,7 +5146,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -5204,7 +5204,7 @@ export default function TheoryOfEverything() {
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <div>
                           <div style={{
-                            fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
+                            fontFamily: "'Cinzel', serif", fontSize: 18, letterSpacing: 3,
                             color: `${ac}0.65)`, fontWeight: 600,
                           }}>{p.title}</div>
                           <div style={{
@@ -5223,7 +5223,7 @@ export default function TheoryOfEverything() {
                   </div>
                   {activePillar === i && (
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 16,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                       lineHeight: 1.85, color: "rgba(255,255,255,0.5)",
                       fontStyle: "italic", marginTop: 18, padding: "0 4px",
                       animation: "senseReveal 0.5s ease",
@@ -5243,7 +5243,7 @@ export default function TheoryOfEverything() {
           }}>
             <div className="gold-line" style={{ maxWidth: 200, margin: "0 auto 18px" }} />
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 16,
+              fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
               fontStyle: "italic", color: "rgba(201,168,76,0.3)",
               lineHeight: PHI, maxWidth: 460, margin: "0 auto",
               textShadow: "0 0 20px rgba(201,168,76,0.05)",
@@ -5259,19 +5259,19 @@ export default function TheoryOfEverything() {
             maxWidth: 500, margin: `${Math.round(34 * PHI)}px auto 0`,
           }}>
             <div style={{
-              fontSize: 32, marginBottom: Math.round(5 * PHI),
+              fontSize: 30, marginBottom: Math.round(5 * PHI),
               filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
             }}>🔺</div>
             <div style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(13px, 2.4vw, 16px)",
+              fontSize: "clamp(15px, 2.8vw, 18px)",
               letterSpacing: "0.25em",
               color: "rgba(201,168,76,0.5)",
               marginBottom: Math.round(8 * PHI),
             }}>THE PYRAMID KNEW</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.3vw, 16px)",
+              fontSize: "clamp(15px, 2.8vw, 18px)",
               color: "rgba(232,232,240,0.38)",
               fontStyle: "italic", lineHeight: 1.9,
               maxWidth: 440, margin: "0 auto",
@@ -5289,7 +5289,7 @@ export default function TheoryOfEverything() {
             <span style={{ display: "block", height: Math.round(13 * PHI) }} />
             <div style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(14px, 2.4vw, 17px)",
+              fontSize: "clamp(15px, 2.8vw, 18px)",
               letterSpacing: "0.2em",
               color: "rgba(232,232,240,0.18)",
               lineHeight: 2,
@@ -5333,7 +5333,7 @@ export default function TheoryOfEverything() {
                     color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
                   }}>{idea.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                     color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
                   }}>{idea.hook}</div>
                 </div>
@@ -5355,7 +5355,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -5365,12 +5365,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🧬</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE DNA HANDSHAKE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(100,180,220,0.3)",
             }}>CONVERGENT RECOGNITION IN YOUR CELLS</div>
             <div style={{
@@ -5381,7 +5381,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -5404,13 +5404,13 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(100,180,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                 color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🔬 PILLAR I — SCIENCE: THE LOCK & KEY</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 18px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               }}>
                 Your body uses a Lock and Key mechanism. When protein enters a cell, the cell compares the shape of the new protein to its own. This is Uhlmann Fidelity. If the shapes match perfectly, the Informativeness Gate opens — allowing the protein to build muscle or repair skin. If the protein is noisy — damaged or poor quality — the gate stays shut to protect your system from error.
@@ -5425,13 +5425,13 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(100,180,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                 color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>👑 PILLAR II — HISTORY: THE KING'S SECRET SEAL</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 18px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               }}>
                 A King would send a letter across the world. To prove it was real, he pressed his gold ring into hot wax on the envelope. The receiver had a matching stamp. If the wax shape matched exactly, the message was trusted. If it was even slightly smudged, the letter was thrown away. Your body treats protein exactly like those royal letters — it only accepts the Truth written in the wax.
@@ -5446,13 +5446,13 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(100,180,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                 color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🦸 PILLAR III — CULTURE: THE SUPERHERO TEAM-UP</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 18px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               }}>
                 Think of The Avengers. For the team to work, every hero must be unique but on the same page. Ten Thors but no one can fly the ship? Team fails. Your body looks for Redundancy — different amino acids that all agree on the same mission. When they all converge on one goal, your energy hits maximum.
@@ -5469,12 +5469,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(100,180,220,0.08)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(100,180,220,0.35)", marginBottom: Math.round(8 * PHI),
             }}>THE LEGO VERSION</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               textAlign: "left", maxWidth: 480, margin: "0 auto",
             }}>
@@ -5493,7 +5493,7 @@ export default function TheoryOfEverything() {
             </div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 19px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               lineHeight: PHI, color: "rgba(201,168,76,0.45)",
               fontStyle: "italic", marginTop: Math.round(8 * PHI),
             }}>
@@ -5518,7 +5518,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActiveSamenessProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -5548,7 +5548,7 @@ export default function TheoryOfEverything() {
                 boxShadow: "0 0 20px rgba(232,232,240,0.04)",
               }} />
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 16, letterSpacing: 4,
+                fontFamily: "'Cinzel', serif", fontSize: 18, letterSpacing: 4,
                 color: "rgba(224,80,80,0.4)",
               }}>≠</div>
               <div style={{
@@ -5564,7 +5564,7 @@ export default function TheoryOfEverything() {
               color: "rgba(224,80,80,0.3)",
             }}>THE ALL-IS-ONE TRAP</div>
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(22px, 4.5vw, 30px)", fontWeight: 400,
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 4.5vw, 30px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: 5, margin: "8px 0",
               textShadow: "0 0 40px rgba(232,232,240,0.08)",
             }}>SAMENESS ≠ ALIGNMENT</h2>
@@ -5579,7 +5579,7 @@ export default function TheoryOfEverything() {
 
           {/* Core truth */}
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif", fontSize: 17,
+            fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
             lineHeight: 1.9, color: "rgba(255,255,255,0.52)",
             textAlign: "center", padding: "0 10px",
             marginBottom: 28,
@@ -5594,7 +5594,7 @@ export default function TheoryOfEverything() {
             background: "rgba(201,168,76,0.015)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 5,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 5,
               color: "rgba(255,255,255,0.15)", marginBottom: 14,
             }}>BURIED 6 FEET DEEP</div>
             <div style={{
@@ -5607,7 +5607,7 @@ export default function TheoryOfEverything() {
 
           {/* Three proofs — with unique colors */}
           <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 5,
+            fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 5,
             color: "rgba(255,255,255,0.15)", textAlign: "center", marginBottom: 18,
           }}>PROOF IN THREE MIRRORS</div>
           <div style={{ display: "grid", gap: 12, maxWidth: 540, margin: "0 auto 32px" }}>
@@ -5627,17 +5627,17 @@ export default function TheoryOfEverything() {
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                     <span style={{
-                      fontSize: 26,
+                      fontSize: 24,
                       filter: `drop-shadow(0 0 10px ${pa}0.2))`,
                     }}>{p.icon}</span>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: 3,
+                      fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                       color: `${pa}0.6)`, fontWeight: 600,
                     }}>{p.title}</div>
                   </div>
                   {activeSamenessProof === i && (
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                       lineHeight: PHI, color: "rgba(255,255,255,0.45)",
                       fontStyle: "italic", marginTop: 16,
                       animation: "senseReveal 0.5s ease",
@@ -5652,7 +5652,7 @@ export default function TheoryOfEverything() {
 
           {/* Deeper truths — progressive descent */}
           <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 5,
+            fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 5,
             color: "rgba(224,80,80,0.2)", textAlign: "center", marginBottom: 16,
           }}>GO DEEPER</div>
           <div style={{ display: "grid", gap: 12, maxWidth: 500, margin: "0 auto" }}>
@@ -5664,11 +5664,11 @@ export default function TheoryOfEverything() {
                 border: `1px solid rgba(224,80,80,${0.03 + i * 0.015})`,
               }}>
                 <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                  fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                   color: `rgba(224,80,80,${0.3 + i * 0.1})`, marginBottom: 8,
                 }}>{d.title}</div>
                 <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                   lineHeight: PHI, color: "rgba(255,255,255,0.35)", fontStyle: "italic",
                 }}>{d.text}</div>
               </GlassCard>
@@ -5708,7 +5708,7 @@ export default function TheoryOfEverything() {
                       color: layer.accent, opacity: 0.7,
                     }}>{layer.id} · {layer.names[0]}</div>
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                       color: "rgba(255,255,255,0.25)", fontStyle: "italic",
                     }}>{layer.subtitle}</div>
                   </div>
@@ -5727,7 +5727,7 @@ export default function TheoryOfEverything() {
                     marginLeft: Math.round(13 * PHI),
                   }}>
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                       lineHeight: 1.85, color: "rgba(255,255,255,0.5)",
                       fontStyle: "italic",
                     }}>{CORES[i]}</div>
@@ -5742,7 +5742,7 @@ export default function TheoryOfEverything() {
                         color: "rgba(255,255,255,0.12)", marginBottom: 6,
                       }}>BURIED 6 FEET DEEP</div>
                       <div style={{
-                        fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                         fontStyle: "italic", color: `${layer.accent}`, opacity: 0.45,
                         lineHeight: PHI,
                       }}>{BURIED[i]}</div>
@@ -5783,7 +5783,7 @@ export default function TheoryOfEverything() {
                     color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
                   }}>{idea.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                     color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
                   }}>{idea.hook}</div>
                 </div>
@@ -5805,7 +5805,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -5832,7 +5832,7 @@ export default function TheoryOfEverything() {
               color: "rgba(79,195,247,0.3)",
             }}>THE MATHEMATICS OF</div>
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(22px, 4.5vw, 30px)", fontWeight: 400,
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 4.5vw, 30px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: 5, margin: "8px 0",
               textShadow: "0 0 40px rgba(232,232,240,0.08), 0 0 80px rgba(79,195,247,0.03)",
             }}>UNIVERSAL RECOGNITION</h2>
@@ -5842,7 +5842,7 @@ export default function TheoryOfEverything() {
               boxShadow: "0 0 16px rgba(79,195,247,0.08)",
             }} />
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+              fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
               fontStyle: "italic", color: "rgba(255,255,255,0.2)", marginTop: 8,
               lineHeight: PHI,
             }}>Three levels of depth — each one strips away another layer of noise</div>
@@ -5873,11 +5873,11 @@ export default function TheoryOfEverything() {
                     }}>{d.level}</div>
                     <div>
                       <div style={{
-                        fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: 4,
+                        fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
                         color: `rgba(79,195,247,${depthOpacity})`, fontWeight: 600, marginBottom: 12,
                       }}>{d.title}</div>
                       <div style={{
-                        fontFamily: "'Cormorant Garamond', serif", fontSize: 16,
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                         lineHeight: 1.85, color: `rgba(255,255,255,${depthOpacity})`,
                         fontStyle: "italic",
                       }}>{d.text}</div>
@@ -5903,7 +5903,7 @@ export default function TheoryOfEverything() {
             cursor: "pointer", padding: "40px 0 60px", textAlign: "center",
           }}>
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+              fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
               fontStyle: "italic", color: "rgba(255,255,255,0.06)",
               letterSpacing: 2, transition: "color 0.6s",
             }}
@@ -5923,7 +5923,7 @@ export default function TheoryOfEverything() {
             marginBottom: Math.round(13 * PHI),
           }}>THE MIRROR PAIRS</div>
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+            fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
             fontStyle: "italic", color: "rgba(255,255,255,0.3)",
             textAlign: "center", marginBottom: Math.round(21 * PHI),
             maxWidth: 400, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -5945,16 +5945,16 @@ export default function TheoryOfEverything() {
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: Math.round(5 * PHI) }}>
-                    <span style={{ fontSize: 20 }}>{mirror.glyphs[0]}</span>
-                    <span style={{ fontSize: 15, color: "rgba(79,195,247,0.3)" }}>↔</span>
-                    <span style={{ fontSize: 20 }}>{mirror.glyphs[1]}</span>
+                    <span style={{ fontSize: 21 }}>{mirror.glyphs[0]}</span>
+                    <span style={{ fontSize: 18, color: "rgba(79,195,247,0.3)" }}>↔</span>
+                    <span style={{ fontSize: 21 }}>{mirror.glyphs[1]}</span>
                     <div style={{ marginLeft: 8 }}>
                       <div style={{
                         fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 2,
                         color: "rgba(79,195,247,0.6)",
                       }}>{mirror.name}</div>
                       <div style={{
-                        fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                         color: "rgba(255,255,255,0.2)", fontStyle: "italic",
                       }}>{mirror.connection}</div>
                     </div>
@@ -5974,7 +5974,7 @@ export default function TheoryOfEverything() {
                   }}>
                     {/* Core essay */}
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                       lineHeight: 1.85, color: "rgba(255,255,255,0.48)",
                       fontStyle: "italic", marginBottom: Math.round(8 * PHI),
                     }}>{mirror.core}</div>
@@ -5986,17 +5986,17 @@ export default function TheoryOfEverything() {
                       borderRadius: 8, marginBottom: Math.round(8 * PHI),
                     }}>
                       <div style={{
-                        fontFamily: "monospace", fontSize: 16,
+                        fontFamily: "monospace", fontSize: 18,
                         color: "rgba(79,195,247,0.6)", letterSpacing: 1,
                       }}>{mirror.equation.symbol}</div>
                       <div style={{
-                        fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 18,
                         color: "rgba(255,255,255,0.3)", fontStyle: "italic", marginTop: 6,
                       }}>{mirror.equation.meaning}</div>
                     </div>
                     {/* Buried */}
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                       fontStyle: "italic", color: "rgba(201,168,76,0.4)",
                       textAlign: "center",
                     }}>"{mirror.buried}"</div>
@@ -6036,7 +6036,7 @@ export default function TheoryOfEverything() {
                     color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
                   }}>{idea.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                     color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
                   }}>{idea.hook}</div>
                 </div>
@@ -6058,7 +6058,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(190,140,220,0.6)"}
@@ -6078,7 +6078,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(5 * PHI) }} />
 
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 5vw, 32px)", fontWeight: 400,
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(21px, 5vw, 30px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.2em", margin: 0,
               textShadow: "0 0 50px rgba(190,140,220,0.1)",
               animation: "fadeSlideUp 1.2s 0.2s both ease",
@@ -6088,7 +6088,7 @@ export default function TheoryOfEverything() {
 
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 20px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               fontStyle: "italic", color: "rgba(232,232,240,0.65)",
               maxWidth: 500, margin: "0 auto", lineHeight: PHI,
               animation: "fadeSlideUp 1.2s 0.3s both ease",
@@ -6111,7 +6111,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(17px, 3vw, 22px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               color: "rgba(201,168,76,0.55)", fontStyle: "italic",
               maxWidth: 480, margin: "0 auto", lineHeight: PHI,
             }}>
@@ -6122,7 +6122,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(5 * PHI) }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               color: "rgba(232,232,240,0.7)", fontStyle: "italic",
             }}>
               Every civilization found a piece. None had the whole shape. Until now.
@@ -6194,16 +6194,16 @@ export default function TheoryOfEverything() {
                 {/* Header */}
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: Math.round(5 * PHI) }}>
                   <div style={{
-                    fontSize: 28,
+                    fontSize: 24,
                     filter: `drop-shadow(0 0 12px rgba(${tradition.color},0.2))`,
                   }}>{tradition.glyph}</div>
                   <div>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: "0.2em",
+                      fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.2em",
                       color: `rgba(${tradition.color},0.7)`, fontWeight: 600,
                     }}>{tradition.title}</div>
                     <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                       color: "rgba(255,255,255,0.2)", fontStyle: "italic",
                       marginTop: 2,
                     }}>{tradition.era}</div>
@@ -6213,7 +6213,7 @@ export default function TheoryOfEverything() {
                 {/* Body */}
                 <div style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(15px, 2.6vw, 18px)",
+                  fontSize: "clamp(15px, 3vw, 21px)",
                   color: "rgba(232,232,240,0.7)",
                   lineHeight: PHI, fontStyle: "italic",
                   marginBottom: Math.round(8 * PHI),
@@ -6230,7 +6230,7 @@ export default function TheoryOfEverything() {
                   }}>THE CONNECTION</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(14px, 2.4vw, 17px)",
+                    fontSize: "clamp(15px, 2.8vw, 18px)",
                     color: `rgba(${tradition.color},0.45)`,
                     lineHeight: PHI, fontStyle: "italic",
                   }}>{tradition.connection}</div>
@@ -6251,7 +6251,7 @@ export default function TheoryOfEverything() {
             }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(18px, 3.2vw, 24px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               color: "rgba(232,232,240,0.6)",
               fontStyle: "italic", maxWidth: 500, margin: "0 auto",
               lineHeight: PHI,
@@ -6261,7 +6261,7 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(5 * PHI) }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.8vw, 20px)",
+              fontSize: "clamp(18px, 3.2vw, 21px)",
               color: "rgba(201,168,76,0.45)",
               fontStyle: "italic",
             }}>
@@ -6312,7 +6312,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(18px, 3.2vw, 24px)",
+            fontSize: "clamp(18px, 3.5vw, 24px)",
             fontStyle: "italic", color: "rgba(232,232,240,0.55)",
             textAlign: "center", maxWidth: 380,
             lineHeight: PHI, letterSpacing: 1,
@@ -6371,7 +6371,7 @@ export default function TheoryOfEverything() {
                     color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
                   }}>{idea.title}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
                     color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
                   }}>{idea.hook}</div>
                 </div>
@@ -6393,7 +6393,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
-            fontSize: 14, letterSpacing: 3, padding: "8px 16px",
+            fontSize: 15, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
@@ -6403,12 +6403,12 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🍖</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
               letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
               marginBottom: Math.round(8 * PHI),
             }}>THE LIVING BRIDGE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.4em",
               color: "rgba(190,140,220,0.3)",
             }}>WHY SOME ATE THEIR DEAD</div>
             <div style={{
@@ -6419,7 +6419,7 @@ export default function TheoryOfEverything() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.8vw, 19px)",
+            fontSize: "clamp(18px, 3.2vw, 21px)",
             lineHeight: PHI, color: "rgba(232,232,240,0.7)",
             fontStyle: "italic", textAlign: "center",
             maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
@@ -6443,13 +6443,13 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(190,140,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                 color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>📡 THE SHARED SOUL — SCIENCE</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 18px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               }}>
                 Two radios tuned to the same frequency play the same song. These cultures believed the frequency of a great warrior or beloved grandmother was stored in their body. By eating a part of them, you were tuning your own body to that frequency. Not destroying the person — syncing up so two people could vibrate as one.
@@ -6464,13 +6464,13 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(190,140,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                 color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🐆 THE POWER UP — CULTURE</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 18px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               }}>
                 Think of Black Panther. When T'Challa drinks the Heart-Shaped Herb, he physically connects to the strength and spirits of every King who came before him. He consumes the essence of his ancestors to become the Black Panther. To these cultures, cannibalism was the real-world Power Up. The courage of the person became a permanent part of their own being.
@@ -6485,13 +6485,13 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(190,140,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 3,
                 color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🌉 THE LIVING BRIDGE — HISTORY</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.6vw, 18px)",
+                fontSize: "clamp(15px, 3vw, 21px)",
                 lineHeight: PHI, color: "rgba(232,232,240,0.65)",
               }}>
                 Ancient tribes viewed life as a never-ending circle. If a brave leader died, his wisdom was a treasure chest. Buried underground, the chest was locked. Through the ritual, the tribe was unlocking that chest and moving the treasure into new, younger bodies. Building a bridge so the past could keep walking into the future.
@@ -6517,10 +6517,10 @@ export default function TheoryOfEverything() {
               <div key={i} style={{
                 display: "flex", gap: Math.round(5 * PHI), alignItems: "center",
               }}>
-                <div style={{ fontSize: 16, minWidth: 30, textAlign: "center" }}>{s.icon}</div>
+                <div style={{ fontSize: 18, minWidth: 30, textAlign: "center" }}>{s.icon}</div>
                 <div style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(13px, 2.2vw, 15px)",
+                  fontSize: "clamp(15px, 2.8vw, 18px)",
                   lineHeight: PHI, color: "rgba(232,232,240,0.65)",
                   fontStyle: "italic",
                 }}>{s.text}</div>
@@ -6537,12 +6537,12 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(190,140,220,0.08)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: 4,
               color: "rgba(190,140,220,0.35)", marginBottom: Math.round(5 * PHI),
             }}>TOTAL RECOGNITION</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 2.6vw, 18px)",
+              fontSize: "clamp(15px, 3vw, 21px)",
               lineHeight: PHI, color: "rgba(232,232,240,0.7)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
