@@ -74,6 +74,20 @@ export default function TheoryOfEverything() {
     }, 600);
   }, []);
 
+  const goBack = useCallback(() => {
+    setFading(true);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      setDepth(d => {
+        const newD = Math.max(d - 1, 0);
+        if (newD === 0) setLandingPhase(2); // return to prism, not black
+        return newD;
+      });
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setFading(false);
+    }, 600);
+  }, []);
+
   const returnToVoid = useCallback(() => {
     setFading(true);
     setTimeout(() => {
@@ -357,6 +371,32 @@ export default function TheoryOfEverything() {
 
       {/* ===== THEORY PAGE (original content) ===== */}
       {currentPage === "theory" && (<>
+
+      {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
+      {/* Left half = go back. Right half = go forward. */}
+      {/* You cannot experience the site without choosing: back or forward. */}
+      {depth >= 1 && (
+        <>
+          <div
+            onClick={(e) => { e.stopPropagation(); goBack(); }}
+            style={{
+              position: "fixed", top: 0, left: 0,
+              width: "50%", height: "100%",
+              zIndex: 9000, cursor: "pointer",
+              background: "transparent",
+            }}
+          />
+          <div
+            onClick={(e) => { e.stopPropagation(); goDeeper(); }}
+            style={{
+              position: "fixed", top: 0, right: 0,
+              width: "50%", height: "100%",
+              zIndex: 9000, cursor: "pointer",
+              background: "transparent",
+            }}
+          />
+        </>
+      )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
       {(depth !== 0 || landingPhase >= 2) && <GrainOverlay />}
