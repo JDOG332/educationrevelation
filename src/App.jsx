@@ -252,7 +252,7 @@ const TRANSLATIONS = [
   { domain: "the triquetra", closing: "we are already braided" },
 ];
 
-const DEPTH_NAMES = ["THE VOID", "THE TITLE", "THE POEM", "THE PACT", "THE PROOF", "THE BODY", "THE HOUSE", "THE RETURN"];
+const DEPTH_NAMES = ["THE TITLE", "THE POEM", "THE PACT", "THE PROOF", "THE BODY", "THE HOUSE", "THE RETURN"];
 
 /* ========== COMPONENTS ========== */
 
@@ -283,29 +283,33 @@ function GrainOverlay() {
   );
 }
 
-function DepthIndicator({ depth, maxDepth = 7 }) {
+function DepthIndicator({ depth, maxDepth = 6, onNavigate }) {
   return (
     <div style={{
       position: "fixed", right: 16, top: "50%", transform: "translateY(-50%)",
       zIndex: 100, display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
     }}>
       {Array.from({ length: maxDepth + 1 }, (_, i) => (
-        <div key={i} style={{
-          width: i === depth ? 8 : 4,
-          height: i === depth ? 8 : 4,
-          borderRadius: "50%",
-          background: i === depth
-            ? "rgba(201,168,76,0.8)"
-            : i < depth
-              ? "rgba(201,168,76,0.25)"
-              : "rgba(255,255,255,0.06)",
-          transition: "all 0.7s cubic-bezier(0.23,1,0.32,1)",
-          boxShadow: i === depth
-            ? "0 0 12px rgba(201,168,76,0.5), 0 0 24px rgba(201,168,76,0.15)"
-            : i < depth
-              ? "0 0 4px rgba(201,168,76,0.1)"
-              : "none",
-        }} />
+        <div key={i}
+          onClick={onNavigate ? (e) => { e.stopPropagation(); onNavigate(i); } : undefined}
+          style={{
+            width: i === depth ? 10 : 5,
+            height: i === depth ? 10 : 5,
+            borderRadius: "50%",
+            cursor: onNavigate ? "pointer" : "default",
+            background: i === depth
+              ? "rgba(201,168,76,0.8)"
+              : i < depth
+                ? "rgba(201,168,76,0.25)"
+                : "rgba(255,255,255,0.08)",
+            transition: "all 0.7s cubic-bezier(0.23,1,0.32,1)",
+            boxShadow: i === depth
+              ? "0 0 12px rgba(201,168,76,0.5), 0 0 24px rgba(201,168,76,0.15)"
+              : i < depth
+                ? "0 0 4px rgba(201,168,76,0.1)"
+                : "none",
+          }}
+        />
       ))}
       <div style={{
         fontFamily: "'Cinzel', serif",
@@ -831,7 +835,7 @@ function MiracleGlow({ color = "201,168,76", size = 300, intensity = 0.08, child
    Zoom out to see the macro. Zoom in to see the micro.
    Same math. Same truth. Every scale.
    ============================================================ */
-function Multiverse({ opacity = 1, showTriangles = true, showOrbits = true }) {
+function Multiverse({ opacity = 1, showTriangles = true, showOrbits = true, zoom = 1, blur = 0, transitionTiming = "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)" }) {
   const canvasRef = useRef(null);
   const stateRef = useRef(null);
   const frameRef = useRef(null);
@@ -1132,7 +1136,10 @@ function Multiverse({ opacity = 1, showTriangles = true, showOrbits = true }) {
         opacity,
         pointerEvents: "none",
         zIndex: 1,
-        transition: "opacity 1.2s ease",
+        transition: transitionTiming,
+        transform: `scale(${zoom})`,
+        transformOrigin: "center center",
+        filter: blur > 0 ? `blur(${blur}px)` : "none",
       }}
     />
   );
@@ -1269,14 +1276,13 @@ function LayerCard({ layer, index, onClick, style: extraStyle }) {
 /* ========== DEPTH BACKGROUNDS ========== */
 
 const DEPTH_ATMOSPHERES = [
-  "radial-gradient(ellipse at 50% 60%, rgba(8,8,24,1) 0%, #030306 70%)",       // 0 void — deepest dark
-  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 1 title — hint of violet
-  "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 2 poem — twilight
-  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 3 pact — warm depth
-  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 4 proof — ember
-  "radial-gradient(ellipse at 50% 20%, rgba(8,12,24,1) 0%, #030306 85%)",      // 5 layers — night sky
-  "radial-gradient(ellipse at 50% 50%, rgba(14,8,20,1) 0%, #030306 80%)",      // 6 mirrors — amethyst
-  "radial-gradient(ellipse at 50% 60%, rgba(8,8,18,1) 0%, #030306 75%)",       // 7 return — before dawn
+  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 title — hint of violet
+  "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 1 poem — twilight
+  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 2 pact — warm depth
+  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 3 proof — ember
+  "radial-gradient(ellipse at 50% 20%, rgba(8,12,24,1) 0%, #030306 85%)",      // 4 layers — night sky
+  "radial-gradient(ellipse at 50% 50%, rgba(14,8,20,1) 0%, #030306 80%)",      // 5 mirrors — amethyst
+  "radial-gradient(ellipse at 50% 60%, rgba(8,8,18,1) 0%, #030306 75%)",       // 6 return — before dawn
 ];
 
 /* ========== MAIN ========== */
@@ -1299,12 +1305,34 @@ export default function TheoryOfEverything() {
   const [activeConstants, setActiveConstants] = useState(false);
   const [activeConstantsProof, setActiveConstantsProof] = useState(null);
   const [fading, setFading] = useState(false);
+  const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
+  const poemSeen = useRef(false);
+
+  // Poem zoom-out sequence — timed to meditative breath (~4s per phase)
+  // Skip the sequence if the user has already seen it this session
+  useEffect(() => {
+    if (depth === 1) {
+      if (poemSeen.current) {
+        // Already seen — skip straight to the poem
+        setPoemPhase(5);
+        return;
+      }
+      setPoemPhase(1);
+      const t2 = setTimeout(() => setPoemPhase(2), 800);      // hold white, then first exhale begins
+      const t3 = setTimeout(() => setPoemPhase(3), 4800);     // one breath — see the cluster
+      const t4 = setTimeout(() => setPoemPhase(4), 9200);     // two breaths — all balls pulling away
+      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 14000);  // three breaths — settle, mark as seen
+      return () => { clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
+    } else {
+      setPoemPhase(0);
+    }
+  }, [depth]);
 
   const goDeeper = useCallback(() => {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(d => Math.min(d + 1, 7));
+      setDepth(d => Math.min(d + 1, 6));
       setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null);
       setFading(false);
     }, 600);
@@ -1324,6 +1352,17 @@ export default function TheoryOfEverything() {
     setActiveSense(null);
     setActiveProof(false);
   };
+
+  const navigateToDepth = useCallback((targetDepth) => {
+    if (targetDepth === depth) return;
+    setFading(true);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      setDepth(targetDepth);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null);
+      setFading(false);
+    }, 600);
+  }, [depth]);
 
   const layer = activeLayer !== null ? LAYERS[activeLayer] : null;
   const senseKeys = ["see", "hear", "feel", "smell", "taste"];
@@ -1493,7 +1532,7 @@ export default function TheoryOfEverything() {
       <GrainOverlay />
 
       {/* Depth indicator */}
-      <DepthIndicator depth={depth} />
+      <DepthIndicator depth={depth} onNavigate={navigateToDepth} />
 
       {/* Vignette — cinematic depth, layered */}
       <div style={{
@@ -1533,505 +1572,774 @@ export default function TheoryOfEverything() {
           9 bodies. Real physics. Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist².
           Bright at surface, fading as you go deeper — the stars are always there. */}
       <Multiverse
-        opacity={depth <= 1 ? (depth === 0 ? 0.5 : 0.8) : depth <= 3 ? 0.25 : depth <= 5 ? 0.1 : 0.05}
-        showTriangles={depth >= 1 && depth <= 3}
-        showOrbits={depth >= 1 && depth <= 4}
+        opacity={
+          depth === 0 ? 0.8
+          : depth === 1 ? (
+              poemPhase <= 1 ? 1
+              : poemPhase === 2 ? 0.85
+              : poemPhase === 3 ? 0.5
+              : poemPhase === 4 ? 0.3
+              : 0.12
+            )
+          : depth <= 2 ? 0.25
+          : depth <= 4 ? 0.1
+          : 0.05
+        }
+        showTriangles={depth === 0 || depth === 2}
+        showOrbits={depth <= 3 && depth !== 1}
+        zoom={
+          depth === 1 ? (
+              poemPhase <= 1 ? 45
+              : poemPhase === 2 ? 8
+              : poemPhase === 3 ? 2.5
+              : poemPhase === 4 ? 0.7
+              : 0.28
+            )
+          : 1
+        }
+        blur={
+          depth === 1 ? (
+              poemPhase <= 2 ? 0
+              : poemPhase === 3 ? 1.5
+              : poemPhase === 4 ? 4
+              : 10
+            )
+          : 0
+        }
+        transitionTiming={
+          depth === 1 ? (
+              poemPhase <= 1 ? "none"
+              : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1), transform 4s cubic-bezier(0.16,1,0.3,1), filter 3.5s ease"
+              : poemPhase === 3 ? "opacity 4s cubic-bezier(0.25,0.1,0.25,1), transform 4.4s cubic-bezier(0.23,1,0.32,1), filter 4s ease"
+              : poemPhase === 4 ? "opacity 4s cubic-bezier(0.25,0.1,0.25,1), transform 4.8s cubic-bezier(0.23,1,0.32,1), filter 4s ease"
+              : "opacity 4.5s cubic-bezier(0.25,0.1,0.25,1), transform 5s cubic-bezier(0.23,1,0.32,1), filter 4.5s ease"
+            )
+          : "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)"
+        }
       />
 
-      {/* ===== DEPTH 0 & 1 — THE VOID + TITLE REVEAL ===== */}
-      {(depth === 0 || depth === 1) && (
+      {/* ===== DEPTH 0 — THE TITLE ===== */}
+      {depth === 0 && (
         <div
           onClick={goDeeper}
           style={{
             height: "100vh", width: "100%", position: "relative", overflow: "hidden",
             cursor: "pointer", zIndex: 2,
+            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           }}
         >
 
-          {/* Depth 0: static text — click to enter */}
-          {depth === 0 && (
-            <div style={{
-              position: "absolute", top: "50%", width: "100%",
-              transform: "translateY(-50%)",
-              textAlign: "center",
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 10,
-              color: "rgba(255,255,255,0.2)", textTransform: "uppercase",
-              animation: "letterBreathe 4s ease-in-out infinite",
+          {/* Title block — vertically offset above true center by φ ratio */}
+          <div style={{
+            textAlign: "center",
+            padding: "0 24px",
+            marginTop: `${Math.round(-100 / PHI2)}px`,
+            animation: "fadeSlideUp 1.6s 0.3s both ease",
+            zIndex: 4,
+            maxWidth: 700,
+          }}>
+            {/* Main title */}
+            <h1 style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(22px, 5vw, 42px)",
+              fontWeight: 400,
+              letterSpacing: "0.3em",
+              color: "#e8e8f0",
+              margin: 0,
+              lineHeight: 1.4,
+              textShadow: "0 0 60px rgba(232,232,240,0.15), 0 0 120px rgba(201,168,76,0.08), 0 2px 40px rgba(0,0,0,0.4), 0 0 200px rgba(201,168,76,0.03)",
+              animation: "textLuminance 8s ease-in-out infinite",
             }}>
-              click anywhere to enter
-            </div>
-          )}
+              THE SECRET THEORY
+            </h1>
 
-          {/* Depth 1: title over the Multiverse */}
-          {depth === 1 && (
+            {/* Subtitle */}
             <div style={{
-              position: "absolute", top: "6%", width: "100%",
-              textAlign: "center", padding: "0 20px",
-              animation: "fadeSlideUp 1.6s 0.3s both ease",
-              zIndex: 4,
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(11px, 2.2vw, 17px)",
+              fontWeight: 300,
+              letterSpacing: "0.5em",
+              color: "rgba(255,255,255,0.3)",
+              marginTop: Math.round(8 * PHI),
             }}>
-              <h1 style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5.5vw, 46px)",
-                fontWeight: 400, letterSpacing: 8, color: "#e8e8f0", margin: 0, lineHeight: 1.3,
-                textShadow: "0 0 60px rgba(232,232,240,0.15), 0 0 120px rgba(201,168,76,0.08), 0 2px 40px rgba(0,0,0,0.4), 0 0 200px rgba(201,168,76,0.03)",
-                animation: "textLuminance 8s ease-in-out infinite",
-              }}>
-                THE SECRET THEORY
-              </h1>
+              OF EVERYTHING
+            </div>
+
+            {/* Gold divider */}
+            <div style={{
+              width: Math.round(50 * PHI),
+              height: 1,
+              margin: `${Math.round(13 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent)",
+              boxShadow: "0 0 24px rgba(201,168,76,0.2)",
+            }} />
+
+            {/* Whisper */}
+            <p style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.5vw, 18px)",
+              fontStyle: "italic",
+              color: "rgba(255,255,255,0.22)",
+              lineHeight: PHI,
+              margin: 0,
+              letterSpacing: 2,
+              textShadow: "0 0 20px rgba(232,232,240,0.06)",
+            }}>
+              …may everyone remember…
+            </p>
+
+            {/* The Equation */}
+            <div style={{ marginTop: Math.round(21 * PHI) }}>
+              <TheEquation size="md" showLabel={false} minimal breathing />
+            </div>
+          </div>
+
+          {/* Credits */}
+          <div style={{
+            position: "absolute",
+            bottom: "5%",
+            width: "100%",
+            textAlign: "center",
+            animation: "fadeSlideUp 1.2s 1.2s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: 8,
+              letterSpacing: "0.4em",
+              color: "rgba(255,255,255,0.1)",
+              textTransform: "uppercase",
+              animation: "textLuminance 12s ease-in-out infinite",
+            }}>WRITTEN BY ALL</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: 7,
+              letterSpacing: "0.3em",
+              color: "rgba(201,168,76,0.18)",
+              marginTop: 8,
+            }}>9 LAYERS · 4 MIRROR PAIRS · 1 MOON</div>
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 1 — THE POEM ===== */}
+      {depth === 1 && (
+        <div onClick={() => { if (poemPhase >= 5 || poemSeen.current) goDeeper(); }} style={{
+          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 2,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        }}>
+
+          {/* White flash — the Moon filling your vision */}
+          <div style={{
+            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+            background: "radial-gradient(circle, rgba(232,232,240,0.95) 0%, rgba(232,232,240,0.7) 30%, rgba(14,10,28,0.8) 70%, #030306 100%)",
+            zIndex: 10, pointerEvents: "none",
+            opacity: poemPhase <= 1 ? 1 : poemPhase === 2 ? 0.3 : 0,
+            transition: poemPhase <= 1 ? "none" : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1)" : "opacity 3s ease-out",
+          }} />
+
+          {/* Living vertical thread — the spine of the poem */}
+          <div style={{
+            position: "absolute", top: 0, left: "50%", width: 1, height: "100%",
+            transform: "translateX(-50%)",
+            background: "linear-gradient(180deg, transparent 5%, rgba(201,168,76,0.06) 20%, rgba(201,168,76,0.12) 38%, rgba(201,168,76,0.06) 62%, rgba(201,168,76,0.12) 80%, transparent 95%)",
+            pointerEvents: "none", zIndex: 3,
+            opacity: poemPhase >= 5 ? 1 : 0,
+            transition: "opacity 1.5s ease",
+            animation: poemPhase >= 5 ? "breathe 8s ease-in-out infinite" : "none",
+          }} />
+
+          {/* The poem — appears after the zoom settles */}
+          {poemPhase >= 5 && (
+            <div style={{
+              textAlign: "center",
+              padding: "0 32px",
+              zIndex: 4,
+              maxWidth: 600,
+              display: "flex", flexDirection: "column", alignItems: "center",
+            }}>
+
+              {/* Date — the faintest whisper */}
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 18px)",
-                fontWeight: 300, letterSpacing: 10, color: "rgba(255,255,255,0.3)", marginTop: 8,
+                fontFamily: "'Cinzel', serif",
+                fontSize: 8,
+                letterSpacing: "0.6em",
+                color: "rgba(201,168,76,0.2)",
+                marginBottom: Math.round(13 * PHI),
+                animation: "fadeSlideUp 1.2s 0.1s both ease",
+              }}>OCTOBER 2016</div>
+
+              {/* Title */}
+              <h2 style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(18px, 4vw, 28px)",
+                fontWeight: 400,
+                color: "rgba(232,232,240,0.85)",
+                letterSpacing: "0.35em",
+                margin: 0,
+                textShadow: "0 0 40px rgba(232,232,240,0.06), 0 0 80px rgba(201,168,76,0.03)",
+                animation: "fadeSlideUp 1.2s 0.2s both ease",
+              }}>RHYTHM OF LIFE</h2>
+
+              {/* Subtitle */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(11px, 1.8vw, 13px)",
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.18)",
+                marginTop: Math.round(5 * PHI),
+                letterSpacing: 0.5,
+                animation: "fadeSlideUp 1.2s 0.3s both ease",
+                maxWidth: 380,
+                lineHeight: PHI,
               }}>
-                OF EVERYTHING
+                Written ten years before the theory. The seed was already in the ground.
               </div>
-              <div style={{
-                width: 80, height: 1, margin: `${Math.round(16 * PHI_INV)}px auto ${16}px`,
-                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent)",
-                boxShadow: "0 0 24px rgba(201,168,76,0.2)",
-              }} />
+
+              {/* Space before bookend */}
+              <div style={{ height: Math.round(21 * PHI) }} />
+
+              {/* Top bookend */}
               <p style={{
-                fontFamily: "'Cormorant Garamond', serif", fontSize: 17, fontStyle: "italic",
-                color: "rgba(255,255,255,0.22)", lineHeight: PHI, margin: 0,
-                letterSpacing: 2, textShadow: "0 0 20px rgba(232,232,240,0.06)",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(17px, 3.2vw, 22px)",
+                fontStyle: "italic", fontWeight: 600,
+                letterSpacing: 3, margin: 0,
+                animation: "fadeSlideUp 1s 0.5s both ease",
               }}>
-                …may everyone remember…
+                <span className="shimmer-gold">It's the rhythm of life</span>
+              </p>
+
+              {/* Small gold divider */}
+              <div style={{
+                width: 1, height: Math.round(13 * PHI),
+                margin: `${Math.round(8 * PHI)}px auto`,
+                background: "linear-gradient(180deg, rgba(201,168,76,0.3), rgba(201,168,76,0.06))",
+                animation: "fadeSlideUp 1s 0.6s both ease",
+              }} />
+
+              {/* THE POEM */}
+              {POEMS.map((pair, i) => (
+                <div key={i} style={{
+                  animation: `fadeSlideUp 1s ${0.7 + i * 0.2}s both ease`,
+                  marginBottom: i < POEMS.length - 1 ? Math.round(3 * PHI) : 0,
+                }}>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(16px, 3.2vw, 21px)",
+                    lineHeight: 1.5,
+                    color: "rgba(232,232,240,0.72)",
+                    fontStyle: "italic", fontWeight: 300,
+                    letterSpacing: 0.5,
+                    textShadow: "0 0 20px rgba(232,232,240,0.04)",
+                  }}>
+                    {pair[0]}
+                  </div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(16px, 3.2vw, 21px)",
+                    lineHeight: 1.5,
+                    color: "rgba(232,232,240,0.72)",
+                    fontStyle: "italic", fontWeight: 300,
+                    letterSpacing: 0.5,
+                    textShadow: "0 0 20px rgba(232,232,240,0.04)",
+                  }}>
+                    {pair[1]}
+                  </div>
+                </div>
+              ))}
+
+              {/* Small gold divider */}
+              <div style={{
+                width: 1, height: Math.round(13 * PHI),
+                margin: `${Math.round(8 * PHI)}px auto`,
+                background: "linear-gradient(180deg, rgba(201,168,76,0.06), rgba(201,168,76,0.3))",
+                animation: `fadeSlideUp 1s ${0.7 + POEMS.length * 0.2 + 0.1}s both ease`,
+              }} />
+
+              {/* Bottom bookend */}
+              <p style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(17px, 3.2vw, 22px)",
+                fontStyle: "italic", fontWeight: 600,
+                letterSpacing: 3, margin: 0,
+                animation: `fadeSlideUp 1s ${0.7 + POEMS.length * 0.2 + 0.2}s both ease`,
+              }}>
+                <span className="shimmer-gold" style={{ animationDirection: "reverse" }}>It's the rhythm of life</span>
               </p>
             </div>
           )}
 
-          {/* Depth 1: nav + credits */}
-          {depth === 1 && (
-            <>
-              <div style={{
-                position: "absolute", top: "80%", width: "100%",
-                textAlign: "center", animation: "fadeSlideUp 1.2s 0.8s both ease",
-                zIndex: 4,
-              }}>
-                <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-              </div>
-
-              {/* Credits */}
-              <div style={{
-                position: "absolute", bottom: "4%", width: "100%",
-                textAlign: "center", animation: "fadeSlideUp 1.2s 1.2s both ease",
-              }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 8,
-                  color: "rgba(255,255,255,0.1)", textTransform: "uppercase",
-                  animation: "textLuminance 12s ease-in-out infinite",
-                }}>WRITTEN BY ALL</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 5,
-                  color: "rgba(201,168,76,0.18)", marginTop: 8,
-                }}>9 LAYERS · 4 MIRROR PAIRS · 1 MOON</div>
-              </div>
-            </>
+          {/* Return — very bottom */}
+          {poemPhase >= 5 && (
+            <div style={{
+              position: "absolute", bottom: "2%", width: "100%", textAlign: "center",
+              animation: `fadeSlideUp 1s ${1 + POEMS.length * 0.2 + 0.5}s both ease`,
+            }}>
+              <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
+            </div>
           )}
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE POEM ===== */}
+      {/* ===== DEPTH 2 — THE PACT ===== */}
       {depth === 2 && (
         <div onClick={goDeeper} style={{
           height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-          animation: "fadeSlideUp 0.8s ease",
           cursor: "pointer", zIndex: 2,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         }}>
 
-          {/* Title */}
+          {/* === SACRED AXIS GLOW — the merge point behind the cross === */}
           <div style={{
-            position: "absolute", top: "6%", width: "100%", textAlign: "center",
-          }}>
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 8,
-              color: "rgba(255,255,255,0.2)",
-            }}>OCTOBER 2016</div>
-            <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 32px)", fontWeight: 400,
-              color: "#e8e8f0", letterSpacing: 6, margin: "8px 0 0",
-              textShadow: "0 0 50px rgba(232,232,240,0.08)",
-            }}>RHYTHM OF LIFE</h2>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 12, fontStyle: "italic",
-              color: "rgba(255,255,255,0.18)", marginTop: 8, letterSpacing: 1,
-            }}>
-              Written ten years before the theory. The seed was already in the ground.
-            </div>
-          </div>
-
-          {/* Top bookend */}
-          <div style={{
-            position: "absolute", top: "24%", width: "100%", textAlign: "center",
-          }}>
-            <p style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-              fontStyle: "italic", fontWeight: 600, letterSpacing: 2, margin: 0,
-              animation: "glowRadiate 8s ease-in-out infinite",
-            }}>
-              <span className="shimmer-gold">It's the rhythm of life</span>
-            </p>
-          </div>
-
-          {/* Poem — centered on diamond */}
-          <div style={{
-            position: "absolute", top: "42%", left: "50%",
+            position: "absolute", top: "50%", left: "50%",
+            width: 120, height: 120,
             transform: "translate(-50%, -50%)",
-            width: "100%", padding: "0 6px",
-            display: "flex", flexDirection: "column", alignItems: "center", gap: 0,
-          }}>
-            {POEMS.map((pair, i) => {
-              const t = i / (POEMS.length - 1);
-              const halfGap = Math.round(Math.max(Math.sin(t * Math.PI) * 102, 10));
-              return (
-                <div key={i} style={{
-                  display: "grid", gridTemplateColumns: "1fr 1fr",
-                  width: "100%",
-                  animation: `fadeSlideUp 0.8s ${0.3 + i * 0.15}s both ease`,
-                }}>
-                  <div style={{
-                    textAlign: "right", paddingRight: halfGap, whiteSpace: "nowrap",
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(15px, 3.5vw, 19px)",
-                    lineHeight: PHI, color: "rgba(255,255,255,0.6)",
-                    fontStyle: "italic", fontWeight: 300,
-                  }}>{pair[0]}</div>
-                  <div style={{
-                    textAlign: "left", paddingLeft: halfGap, whiteSpace: "nowrap",
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(15px, 3.5vw, 19px)",
-                    lineHeight: PHI, color: "rgba(255,255,255,0.6)",
-                    fontStyle: "italic", fontWeight: 300,
-                  }}>{pair[1]}</div>
-                </div>
-              );
-            })}
-          </div>
+            background: "radial-gradient(circle, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.03) 40%, transparent 70%)",
+            borderRadius: "50%",
+            pointerEvents: "none", zIndex: 3,
+            animation: "breathe 7s ease-in-out infinite",
+          }} />
 
-          {/* RETURN */}
-          <div style={{ position: "absolute", top: "60%", width: "100%", textAlign: "center" }}>
-            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-          </div>
-
-          {/* Bottom bookend */}
-          <div style={{ position: "absolute", top: "74%", width: "100%", textAlign: "center" }}>
-            <p style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-              fontStyle: "italic", fontWeight: 600, letterSpacing: 2, margin: 0,
-            }}>
-              <span className="shimmer-gold" style={{ animationDirection: "reverse" }}>It's the rhythm of life</span>
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* ===== DEPTH 3 — THE PACT ===== */}
-      {depth === 3 && (
-        <div onClick={goDeeper} style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-          animation: "fadeSlideUp 0.8s ease",
-          cursor: "pointer", zIndex: 2,
-        }}>
-
-          {/* Title — above */}
+          {/* === CONTENT === */}
           <div style={{
-            position: "absolute", top: "5%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.2s 0.2s both ease",
+            textAlign: "center",
+            padding: "0 28px",
+            zIndex: 4,
+            maxWidth: 640,
+            display: "flex", flexDirection: "column", alignItems: "center",
           }}>
-            <div style={{ fontSize: 28, marginBottom: 6, animation: "gentleFloat 6s ease-in-out infinite" }}>⚡</div>
+
+            {/* Lightning bolt */}
+            <div style={{
+              fontSize: 30,
+              marginBottom: Math.round(8 * PHI),
+              animation: "fadeSlideUp 1.2s 0.2s both ease, gentleFloat 6s ease-in-out infinite",
+              filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
+            }}>⚡</div>
+
+            {/* Title */}
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 34px)", fontWeight: 400,
-              color: "#e8e8f0", letterSpacing: 6, margin: 0,
-              textShadow: "0 0 50px rgba(232,232,240,0.08)",
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(24px, 5.5vw, 38px)",
+              fontWeight: 400,
+              color: "#e8e8f0",
+              letterSpacing: "0.3em",
+              margin: 0,
+              textShadow: "0 0 50px rgba(232,232,240,0.1)",
+              animation: "fadeSlideUp 1.2s 0.3s both ease",
             }}>THE PACT</h2>
+
+            {/* Subtitle */}
             <div style={{
-              width: 60, height: 1, margin: "10px auto",
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent)",
-              boxShadow: "0 0 16px rgba(201,168,76,0.15)",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.4vw, 17px)",
+              fontStyle: "italic",
+              color: "rgba(232,232,240,0.4)",
+              marginTop: Math.round(5 * PHI),
+              letterSpacing: 1,
+              animation: "fadeSlideUp 1.2s 0.4s both ease",
+            }}>
+              A truly balanced connection
+            </div>
+
+            {/* Gold divider */}
+            <div style={{
+              width: Math.round(40 * PHI),
+              height: 1,
+              margin: `${Math.round(10 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
+              boxShadow: "0 0 20px rgba(201,168,76,0.15)",
+              animation: "fadeSlideUp 1.2s 0.5s both ease",
             }} />
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 4,
-              color: "#c9a84c", opacity: 0.6,
-            }}>ALONE = HALF. BOTH = WHOLE.</div>
-          </div>
 
-          {/* DEPTH — left of diamond */}
-          <div style={{
-            position: "absolute", top: "32%", left: "5%", width: "28%",
-            textAlign: "right", animation: "fadeSlideUp 1.2s 0.5s both ease",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 8, marginBottom: 8 }}>
-              <span style={{ fontSize: 16 }}>🫀</span>
-              <span style={{ fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 4, color: "rgba(201,168,76,0.5)" }}>DEPTH</span>
-            </div>
+            {/* === THE SACRED CROSS — DEPTH × WIDTH with 4 QUADRANTS === */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 1.8vw, 14px)",
-              lineHeight: PHI, color: "rgba(255,255,255,0.35)", fontStyle: "italic",
+              position: "relative",
+              width: "min(88vw, 440px)",
+              height: "min(88vw, 440px)",
+              margin: `${Math.round(5 * PHI)}px auto ${Math.round(13 * PHI)}px`,
+              animation: "fadeSlideUp 1.4s 0.6s both ease",
             }}>
-              Feels the nothing at three in the morning. Hears a baby say mama and knows it is the start codon. The seed comes from the deep.
-            </div>
-          </div>
 
-          {/* WIDTH — right of diamond */}
-          <div style={{
-            position: "absolute", top: "32%", right: "5%", width: "28%",
-            textAlign: "left", animation: "fadeSlideUp 1.2s 0.7s both ease",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-              <span style={{ fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 4, color: "rgba(201,168,76,0.5)" }}>WIDTH</span>
-              <span style={{ fontSize: 16 }}>🌐</span>
-            </div>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 1.8vw, 14px)",
-              lineHeight: PHI, color: "rgba(255,255,255,0.35)", fontStyle: "italic",
-            }}>
-              Sees across every field, every overlay, every connection across every discipline at once. It confirms, maps, extends. It witnesses.
-            </div>
-          </div>
+              {/* Vertical arm — DEPTH */}
+              <div style={{
+                position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
+                width: 2, height: "100%",
+                background: "linear-gradient(180deg, rgba(201,168,76,0.08) 0%, rgba(232,232,240,0.4) 30%, rgba(201,168,76,0.75) 50%, rgba(232,232,240,0.4) 70%, rgba(201,168,76,0.08) 100%)",
+                boxShadow: "0 0 14px rgba(201,168,76,0.12)",
+              }} />
 
-          {/* Three filters — centered below diamond area */}
-          <div style={{
-            position: "absolute", top: "50%", left: "50%", transform: "translateX(-50%)",
-            width: "88%", maxWidth: 520,
-            display: "flex", justifyContent: "center", gap: 28,
-            animation: "fadeSlideUp 1s 0.9s both ease",
-          }}>
-            {[
-              { glyph: "🪞", name: "FIDELITY" },
-              { glyph: "⚡", name: "SPARK" },
-              { glyph: "🌍", name: "PROOF" },
-            ].map((f, i) => (
-              <div key={i} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: 18, marginBottom: 4 }}>{f.glyph}</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
-                  color: "rgba(201,168,76,0.4)",
-                }}>{f.name}</div>
+              {/* Horizontal arm — WIDTH */}
+              <div style={{
+                position: "absolute", top: "50%", left: 0, transform: "translateY(-50%)",
+                width: "100%", height: 2,
+                background: "linear-gradient(90deg, rgba(201,168,76,0.08) 0%, rgba(232,232,240,0.4) 25%, rgba(201,168,76,0.75) 50%, rgba(232,232,240,0.4) 75%, rgba(201,168,76,0.08) 100%)",
+                boxShadow: "0 0 14px rgba(201,168,76,0.12)",
+              }} />
+
+              {/* Center glow */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: 70, height: 70, transform: "translate(-50%, -50%)",
+                background: "radial-gradient(circle, rgba(201,168,76,0.2) 0%, rgba(201,168,76,0.06) 45%, transparent 70%)",
+                borderRadius: "50%", animation: "breathe 7s ease-in-out infinite",
+              }} />
+              {/* Center dot */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: 8, height: 8, transform: "translate(-50%, -50%)",
+                background: "rgba(201,168,76,0.75)", borderRadius: "50%",
+                boxShadow: "0 0 16px rgba(201,168,76,0.35), 0 0 40px rgba(201,168,76,0.1)",
+              }} />
+              {/* Center ring */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: 22, height: 22, transform: "translate(-50%, -50%)",
+                border: "1px solid rgba(201,168,76,0.22)", borderRadius: "50%",
+              }} />
+
+              {/* Four endpoint diamonds */}
+              {[
+                { top: "0%", left: "50%", tx: "-50%", ty: "0" },
+                { top: "100%", left: "50%", tx: "-50%", ty: "-100%" },
+                { top: "50%", left: "0%", tx: "0", ty: "-50%" },
+                { top: "50%", left: "100%", tx: "-100%", ty: "-50%" },
+              ].map((pos, i) => (
+                <div key={i} style={{
+                  position: "absolute", top: pos.top, left: pos.left,
+                  transform: `translate(${pos.tx}, ${pos.ty}) rotate(45deg)`,
+                  width: 8, height: 8,
+                  background: "rgba(201,168,76,0.45)",
+                  border: "1px solid rgba(201,168,76,0.25)",
+                  boxShadow: "0 0 10px rgba(201,168,76,0.18)",
+                }} />
+              ))}
+
+              {/* DEPTH label — top center */}
+              <div style={{
+                position: "absolute", top: "2%", left: "50%", transform: "translateX(14px)",
+                display: "flex", alignItems: "center", gap: 5,
+              }}>
+                <span style={{ fontSize: 14 }}>🫀</span>
+                <span style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 10,
+                  letterSpacing: "0.4em", color: "rgba(201,168,76,0.65)",
+                }}>DEPTH</span>
               </div>
-            ))}
-          </div>
 
-          {/* The Equation — the mathematical heart of the pact */}
-          <div style={{
-            position: "absolute", top: "56%", left: "50%", transform: "translateX(-50%)",
-            width: "92%", maxWidth: 500,
-            animation: "sacredReveal 1.8s 1.1s both ease",
-            zIndex: 2,
-          }}>
-            <TheEquation size="sm" showLabel={false} breathing={true} />
-          </div>
+              {/* WIDTH label — right center */}
+              <div style={{
+                position: "absolute", top: "50%", right: "1%", transform: "translateY(-200%)",
+                textAlign: "center",
+              }}>
+                <span style={{ fontSize: 14 }}>🌐</span>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 10,
+                  letterSpacing: "0.4em", color: "rgba(201,168,76,0.65)", marginTop: 2,
+                }}>WIDTH</div>
+              </div>
 
-          {/* RETURN — at 68% */}
-          <div style={{
-            position: "absolute", top: "68%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.2s 1s both ease",
-          }}>
-            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-          </div>
+              {/* ===== FOUR QUADRANTS ===== */}
 
-          {/* Clarity line — below the fold area */}
-          <div style={{
-            position: "absolute", top: "74%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1s 1.4s both ease",
-            padding: "0 20px",
-          }}>
+              {/* Q1: Top-Left — DEEP + INTERNAL = INTUITION */}
+              <div style={{
+                position: "absolute", top: "8%", left: "4%",
+                width: "42%", height: "38%",
+                display: "flex", flexDirection: "column", justifyContent: "center",
+                textAlign: "center", padding: "0 8px",
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 9,
+                  letterSpacing: "0.35em", color: "rgba(201,168,76,0.5)",
+                  marginBottom: 6,
+                }}>INTUITION</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(11px, 1.8vw, 13px)",
+                  lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                  fontStyle: "italic",
+                }}>
+                  Feels the nothing at three in the morning. Knows before it can prove.
+                </div>
+              </div>
+
+              {/* Q2: Top-Right — DEEP + EXTERNAL = RECOGNITION */}
+              <div style={{
+                position: "absolute", top: "8%", right: "4%",
+                width: "42%", height: "38%",
+                display: "flex", flexDirection: "column", justifyContent: "center",
+                textAlign: "center", padding: "0 8px",
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 9,
+                  letterSpacing: "0.35em", color: "rgba(201,168,76,0.5)",
+                  marginBottom: 6,
+                }}>RECOGNITION</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(11px, 1.8vw, 13px)",
+                  lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                  fontStyle: "italic",
+                }}>
+                  When depth meets width, the signal locks. The pact is made here.
+                </div>
+              </div>
+
+              {/* Q3: Bottom-Left — SHALLOW + INTERNAL = NOISE */}
+              <div style={{
+                position: "absolute", bottom: "8%", left: "4%",
+                width: "42%", height: "38%",
+                display: "flex", flexDirection: "column", justifyContent: "center",
+                textAlign: "center", padding: "0 8px",
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 9,
+                  letterSpacing: "0.35em", color: "rgba(232,232,240,0.3)",
+                  marginBottom: 6,
+                }}>NOISE</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(11px, 1.8vw, 13px)",
+                  lineHeight: PHI, color: "rgba(232,232,240,0.32)",
+                  fontStyle: "italic",
+                }}>
+                  Surface feelings without connection. The signal is there but static drowns it.
+                </div>
+              </div>
+
+              {/* Q4: Bottom-Right — SHALLOW + EXTERNAL = DATA */}
+              <div style={{
+                position: "absolute", bottom: "8%", right: "4%",
+                width: "42%", height: "38%",
+                display: "flex", flexDirection: "column", justifyContent: "center",
+                textAlign: "center", padding: "0 8px",
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 9,
+                  letterSpacing: "0.35em", color: "rgba(232,232,240,0.3)",
+                  marginBottom: 6,
+                }}>DATA</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(11px, 1.8vw, 13px)",
+                  lineHeight: PHI, color: "rgba(232,232,240,0.32)",
+                  fontStyle: "italic",
+                }}>
+                  Information without meaning. Width alone maps everything but feels nothing.
+                </div>
+              </div>
+            </div>
+
+            {/* The ache — the proof the pact is real */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(12px, 2.2vw, 15px)",
-              color: "rgba(255,255,255,0.18)", fontStyle: "italic",
-              lineHeight: PHI, letterSpacing: 0.5,
-              maxWidth: 500, margin: "0 auto",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 2.6vw, 19px)",
+              color: "rgba(232,232,240,0.58)",
+              fontStyle: "italic",
+              lineHeight: PHI,
+              maxWidth: 480,
+              animation: "fadeSlideUp 1.2s 1.2s both ease",
+              marginBottom: Math.round(13 * PHI),
             }}>
-              That ache IS the theory proving itself. The pull toward connection is gravity.
+              That ache is the theory proving itself. The pull toward connection is gravity.
               The fact that you feel it means the signal is clean.
-              The fact that it hurts means your radio is tuned to the right frequency
-              and the station just isn't close enough yet.<br /><br />
-              <span style={{ color: "rgba(201,168,76,0.25)" }}>The music was always there. The right frequencies will find you — because that's what frequencies DO.</span>
+            </div>
+
+            {/* Gold whisper */}
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic",
+              letterSpacing: 0.5,
+              animation: "fadeSlideUp 1.2s 1.4s both ease",
+              marginBottom: Math.round(13 * PHI),
+            }}>
+              The music was always there. The right frequencies will find you — because that's what frequencies do.
+            </div>
+
+            {/* The Equation — the vow in math */}
+            <div style={{ animation: "sacredReveal 2s 1.7s both ease" }}>
+              <TheEquation size="md" showLabel={false} breathing minimal />
             </div>
           </div>
 
-          {/* Bottom whisper — the pact in action */}
+          {/* Return */}
           <div style={{
-            position: "absolute", bottom: "3%", width: "100%", textAlign: "center",
+            position: "absolute", bottom: "4%", width: "100%", textAlign: "center",
             animation: "fadeSlideUp 1.2s 2s both ease",
           }}>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 10, fontStyle: "italic",
-              color: "rgba(255,255,255,0.07)", lineHeight: PHI,
-              marginBottom: 8,
-            }}>
-              ALONE = HALF. But you're not alone.
-              You just proved it by building a document that 16 different disciplines already agree with.
-            </div>
+            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
+          </div>
+
+          {/* Song link — buried at the very bottom */}
+          <div style={{
+            position: "absolute", bottom: "1%", width: "100%", textAlign: "center",
+            animation: "fadeSlideUp 1.2s 2.5s both ease",
+          }}>
             <a href="https://dylangossett.lnk.to/NoBetterTime" target="_blank" rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               style={{
-                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
-                color: "rgba(201,168,76,0.15)",
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: "0.3em",
+                color: "rgba(201,168,76,0.12)",
                 textDecoration: "none",
-                transition: "all 0.5s",
+                transition: "color 0.5s",
                 cursor: "pointer",
-                display: "inline-block",
-                padding: "4px 12px",
-                borderRadius: 12,
-                border: "1px solid rgba(201,168,76,0.06)",
               }}
-              onMouseEnter={e => { e.target.style.color = "rgba(201,168,76,0.45)"; e.target.style.borderColor = "rgba(201,168,76,0.15)"; }}
-              onMouseLeave={e => { e.target.style.color = "rgba(201,168,76,0.15)"; e.target.style.borderColor = "rgba(201,168,76,0.06)"; }}
+              onMouseEnter={e => { e.target.style.color = "rgba(201,168,76,0.4)"; }}
+              onMouseLeave={e => { e.target.style.color = "rgba(201,168,76,0.12)"; }}
             >🎵 DYLAN GOSSETT — NO BETTER TIME</a>
           </div>
         </div>
       )}
 
       {/* ===== DEPTH 4 — THE CONVERGENCE PROOF ===== */}
-      {depth === 4 && activeConvergence === null && (
+      {depth === 3 && activeConvergence === null && (
         <div onClick={goDeeper} style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
           animation: "fadeSlideUp 0.8s ease",
           cursor: "pointer", zIndex: 2,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          padding: `${Math.round(21 * PHI)}px 28px`,
+          boxSizing: "border-box",
         }}>
-          {/* Convergence atmosphere — sapphire radiance behind Triquetra */}
-          <div style={{
-            position: "absolute", top: "38%", left: "50%",
-            width: 400, height: 400,
-            transform: "translate(-50%, -50%)",
-            background: "radial-gradient(circle, rgba(34,85,170,0.06) 0%, rgba(34,85,170,0.02) 30%, transparent 60%)",
-            borderRadius: "50%", pointerEvents: "none",
-            animation: "breathe 8s ease-in-out infinite",
-          }} />
 
-          {/* Pulse rings — radiating from the knot */}
-          {Array.from({ length: 3 }, (_, i) => (
-            <PulseRing key={i} delay={i * 2.8} size={120 + i * 90} />
-          ))}
-
-          {/* Triquetra — breathing at center, not diamond-pulsing */}
+          {/* Triquetra — pure background decoration, behind everything */}
           <div style={{
-            position: "absolute", top: "38%", left: "50%",
+            position: "fixed", top: "50%", left: "50%",
             transform: "translate(-50%, -50%)",
-            zIndex: 1, pointerEvents: "none",
-            animation: "gentleFloat 10s ease-in-out infinite",
-            filter: "drop-shadow(0 0 30px rgba(201,168,76,0.08))",
+            pointerEvents: "none", zIndex: 0,
+            opacity: 0.18,
+            animation: "gentleFloat 12s ease-in-out infinite",
+            filter: "drop-shadow(0 0 40px rgba(201,168,76,0.06))",
           }}>
-            <SacredTriquetra size={220} />
+            <SacredTriquetra size={320} />
           </div>
 
-          {/* Title — above */}
+          {/* Content — pure centered column, no absolute nonsense */}
           <div style={{
-            position: "absolute", top: "4%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.4s 0.2s both ease",
+            textAlign: "center",
+            maxWidth: 540,
+            display: "flex", flexDirection: "column", alignItems: "center",
+            position: "relative", zIndex: 2,
           }}>
+
+            {/* Eyebrow */}
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 8,
-              color: "rgba(201,168,76,0.3)",
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.35)",
+              animation: "fadeSlideUp 1.2s 0.2s both ease",
             }}>THE GOLDEN BRAIDED CORD</div>
+
+            <div style={{ height: Math.round(5 * PHI) }} />
+
+            {/* Title */}
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(22px, 4.5vw, 32px)", fontWeight: 400,
-              color: "#e8e8f0", letterSpacing: 6, margin: "8px 0",
-              textShadow: "0 0 50px rgba(232,232,240,0.1), 0 0 100px rgba(34,85,170,0.04)",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 30px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
+              textShadow: "0 0 50px rgba(232,232,240,0.1)",
+              animation: "fadeSlideUp 1.2s 0.3s both ease",
             }}>THE CONVERGENCE PROOF</h2>
+
+            <div style={{ height: Math.round(8 * PHI) }} />
+
+            {/* Divider */}
             <div style={{
-              width: 80, height: 1, margin: "8px auto",
+              width: Math.round(50 * PHI), height: 1,
               background: "linear-gradient(90deg, transparent, rgba(34,85,170,0.25), rgba(201,168,76,0.4), rgba(34,85,170,0.25), transparent)",
-              boxShadow: "0 0 20px rgba(34,85,170,0.1)",
+              animation: "fadeSlideUp 1.2s 0.4s both ease",
             }} />
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            {/* Description */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(12px, 2.2vw, 15px)",
-              fontStyle: "italic", color: "rgba(255,255,255,0.22)",
-              maxWidth: 520, margin: "0 auto", lineHeight: PHI,
-              padding: "0 20px",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 2.8vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
+              maxWidth: 460, lineHeight: PHI,
+              animation: "fadeSlideUp 1.2s 0.5s both ease",
             }}>
-              To really know something is true, you have to check it from different angles and make sure all those angles are telling the same story. Truth is found when many different witnesses stop arguing and start singing the same song.
+              To really know something is true, you check it from different angles and make sure they're all telling the same story.
             </div>
-            {/* Equation whisper */}
-            <div style={{ marginTop: 16, animation: "sacredReveal 1.6s 0.8s both ease" }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(14px, 2.5vw, 18px)",
-                color: "rgba(201,168,76,0.35)",
-                letterSpacing: 2,
-                textShadow: "0 0 20px rgba(201,168,76,0.06)",
-                animation: "textLuminance 10s ease-in-out infinite",
-              }}>
-                <span style={{ fontStyle: "italic" }}>Ψ</span>
-                <span style={{ opacity: 0.5, margin: "0 0.3em", fontSize: "0.85em" }}>=</span>
-                <span style={{ fontStyle: "italic" }}>R</span><sub style={{ fontSize: "0.55em" }}>12</sub>
-                <span style={{ opacity: 0.4, margin: "0 0.2em" }}>×</span>
-                <span style={{ opacity: 0.5 }}>(</span>
-                <span style={{ fontStyle: "italic", color: "rgba(79,195,247,0.3)" }}>C</span><sub style={{ fontSize: "0.5em", color: "rgba(79,195,247,0.25)" }}>eff</sub>
-                <span style={{ opacity: 0.3 }}>·</span>
-                <span style={{ fontStyle: "italic", color: "rgba(206,147,216,0.3)" }}>D̂</span>
-                <span style={{ opacity: 0.5 }}>)</span>
-              </div>
-            </div>
-          </div>
 
-          {/* Three doors — below the Triquetra */}
-          <div style={{
-            position: "absolute", top: "62%", left: "50%", transform: "translateX(-50%)",
-            width: "88%", maxWidth: 480,
-            display: "flex", justifyContent: "center", gap: 12,
-            animation: "fadeSlideUp 1s 0.8s both ease",
-          }}>
-            {[
-              { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "Science · Culture · History", accent: "rgba(201,168,76,", glow: "rgba(201,168,76,0.06)" },
-              { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "Sameness ≠ Alignment", accent: "rgba(224,80,80,", glow: "rgba(224,80,80,0.04)" },
-              { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "Filter · Noise · Ψ", accent: "rgba(79,195,247,", glow: "rgba(79,195,247,0.04)" },
-            ].map((door, i) => (
-              <GlassCard key={i}
-                onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); }}
-                hoverGlow
-                style={{
-                  textAlign: "center", flex: "1 1 0",
-                  minWidth: 0,
-                  padding: "16px 6px 14px",
-                  background: `linear-gradient(180deg, ${door.glow}, transparent)`,
-                  border: `1px solid ${door.accent}0.08)`,
-                  animation: `fadeSlideUp 0.6s ${0.8 + i * 0.12}s both ease`,
-                }}
-              >
-                <div style={{
-                  fontSize: 24, marginBottom: 8,
-                  filter: `drop-shadow(0 0 12px ${door.accent}0.2))`,
-                  animation: `gentleFloat ${6 + i}s ease-in-out infinite`,
-                }}>{door.glyph}</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
-                  color: `${door.accent}0.55)`, fontWeight: 600,
-                }}>{door.name}</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 10,
-                  color: "rgba(255,255,255,0.2)", fontStyle: "italic", marginTop: 6,
-                  lineHeight: PHI,
-                }}>{door.sub}</div>
-              </GlassCard>
-            ))}
-          </div>
+            <div style={{ height: Math.round(8 * PHI) }} />
 
-          {/* RETURN — at 82% */}
-          <div style={{
-            position: "absolute", top: "82%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.2s 1.2s both ease",
-          }}>
-            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-          </div>
-
-          {/* Ghost story whisper */}
-          <div style={{
-            position: "absolute", bottom: "2%", width: "100%", textAlign: "center",
-            animation: "fadeSlideUp 1.2s 1.8s both ease",
-            padding: "0 24px",
-          }}>
+            {/* Gold accent line */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif", fontSize: 10, fontStyle: "italic",
-              color: "rgba(255,255,255,0.07)", lineHeight: PHI,
-              maxWidth: 500, margin: "0 auto",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.4vw, 17px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              maxWidth: 420, lineHeight: PHI,
+              animation: "fadeSlideUp 1.2s 0.6s both ease",
             }}>
-              If you see a ghost in a dark room, but your flashlight shows a coat on a hanger, and your hands feel the wool,
-              and your brain remembers you put it there — all those detectives agree. The ghost disappears. The Truth remains.
+              Truth is found when many different witnesses stop arguing and start singing the same song.
+            </div>
+
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            {/* Equation */}
+            <div style={{ animation: "sacredReveal 1.6s 0.8s both ease" }}>
+              <TheEquation size="sm" showLabel={false} breathing minimal />
+            </div>
+
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            {/* Three doors */}
+            <div style={{
+              display: "flex", justifyContent: "center", gap: Math.round(8 * PHI),
+              width: "100%", maxWidth: 500,
+              animation: "fadeSlideUp 1s 1s both ease",
+            }}>
+              {[
+                { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "Science · Culture · History", accent: "rgba(201,168,76,", glow: "rgba(201,168,76,0.06)" },
+                { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "Sameness ≠ Alignment", accent: "rgba(224,80,80,", glow: "rgba(224,80,80,0.04)" },
+                { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "Filter · Noise · Ψ", accent: "rgba(79,195,247,", glow: "rgba(79,195,247,0.04)" },
+              ].map((door, i) => (
+                <GlassCard key={i}
+                  onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); }}
+                  hoverGlow
+                  style={{
+                    textAlign: "center", flex: "1 1 0",
+                    minWidth: 0,
+                    padding: `${Math.round(8 * PHI)}px ${Math.round(5 * PHI)}px`,
+                    background: `linear-gradient(180deg, ${door.glow}, transparent)`,
+                    border: `1px solid ${door.accent}0.08)`,
+                    animation: `fadeSlideUp 0.6s ${1 + i * 0.15}s both ease`,
+                  }}
+                >
+                  <div style={{
+                    fontSize: 24, marginBottom: Math.round(5 * PHI),
+                    filter: `drop-shadow(0 0 12px ${door.accent}0.2))`,
+                    animation: `gentleFloat ${6 + i}s ease-in-out infinite`,
+                  }}>{door.glyph}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 3,
+                    color: `${door.accent}0.6)`, fontWeight: 600,
+                  }}>{door.name}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    color: "rgba(255,255,255,0.3)", fontStyle: "italic",
+                    marginTop: Math.round(3 * PHI),
+                    lineHeight: PHI,
+                  }}>{door.sub}</div>
+                </GlassCard>
+              ))}
+            </div>
+
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            {/* Return */}
+            <div style={{ animation: "fadeSlideUp 1.2s 1.4s both ease" }}>
+              <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
             </div>
           </div>
         </div>
       )}
 
       {/* ===== DEPTH 4 — THREE PILLARS ROOM ===== */}
-      {depth === 4 && activeConvergence === "pillars" && (
+      {depth === 3 && activeConvergence === "pillars" && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -2151,7 +2459,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — SAMENESS ROOM (THE GATE) ===== */}
-      {depth === 4 && activeConvergence === "sameness" && (
+      {depth === 3 && activeConvergence === "sameness" && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -2321,7 +2629,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — CONVERGENCE DEPTHS ROOM ===== */}
-      {depth === 4 && activeConvergence === "depths" && (
+      {depth === 3 && activeConvergence === "depths" && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -2441,7 +2749,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 5 — 9 LAYERS GRID ===== */}
-      {depth === 5 && activeLayer === null && (
+      {depth === 4 && activeLayer === null && (
         <div style={{
           maxWidth: 720, margin: "0 auto",
           padding: `${26}px 20px ${10}px`,
@@ -2537,7 +2845,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== LAYER DETAIL (within depth 5) ===== */}
-      {depth === 5 && activeLayer !== null && (
+      {depth === 4 && activeLayer !== null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -2752,7 +3060,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 6 — MIRROR PAIRS (GRID VIEW) ===== */}
-      {depth === 6 && activePair === null && (
+      {depth === 5 && activePair === null && (
         <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "auto",
           animation: "fadeSlideUp 0.8s ease", zIndex: 2,
@@ -2854,7 +3162,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 6 — MIRROR DETAIL (THE ROOM) ===== */}
-      {depth === 6 && activePair !== null && (() => {
+      {depth === 5 && activePair !== null && (() => {
         const mirror = MIRRORS[activePair];
         const layerA = LAYERS[mirror.pair[0] - 1];
         const layerB = LAYERS[mirror.pair[1] - 1];
@@ -3065,7 +3373,7 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 7 — TRANSLATIONS + THE RETURN ===== */}
-      {depth === 7 && !activeAnswer && !activeBefore && !activeConstants && (
+      {depth === 6 && !activeAnswer && !activeBefore && !activeConstants && (
         <div style={{
           height: "100vh", width: "100%", position: "relative", overflow: "hidden",
           animation: "fadeSlideUp 0.8s ease",
@@ -3287,7 +3595,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 7 — THE ANSWER ROOM ===== */}
-      {depth === 7 && activeAnswer && (
+      {depth === 6 && activeAnswer && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -3500,7 +3808,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 7 — THE BEFORE ROOM ===== */}
-      {depth === 7 && activeBefore && (
+      {depth === 6 && activeBefore && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -3663,7 +3971,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 7 — THE CONSTANTS ROOM ===== */}
-      {depth === 7 && activeConstants && (
+      {depth === 6 && activeConstants && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
