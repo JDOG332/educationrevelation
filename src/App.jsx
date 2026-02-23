@@ -41,7 +41,8 @@ export default function TheoryOfEverything() {
   const [openSection, setOpenSection] = useState(null);
   const [fading, setFading] = useState(false);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
-  const [landingPhase, setLandingPhase] = useState(0); // 0=black, 1=white, 2=prism
+  const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
+  const startDark = useRef(Math.random() < 0.5); // coin flip: dark first or light first
   const poemSeen = useRef(false);
 
   // Poem zoom-out sequence — timed to meditative breath (~4s per phase)
@@ -375,7 +376,8 @@ export default function TheoryOfEverything() {
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
       {/* Left half = go back. Right half = go forward. */}
       {/* You cannot experience the site without choosing: back or forward. */}
-      {depth >= 1 && (
+      {/* Disabled on depth 4 (∞) — that page has its own click handler to loop back */}
+      {depth >= 1 && depth < 4 && (
         <>
           <div
             onClick={(e) => { e.stopPropagation(); goBack(); }}
@@ -492,6 +494,7 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 0 — YIN/YANG/PRISM: Three clicks to truth ===== */}
       {depth === 0 && (() => {
         const phase = landingPhase;
+        const dark = startDark.current;
 
         const handleClick = () => {
           if (phase === 0) setLandingPhase(1);
@@ -506,46 +509,46 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: DARKNESS
+        // Phase 0: FIRST SCREEN (black if dark-first, white if light-first)
         if (phase === 0) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000" }}>
+            <div onClick={handleClick} style={{ ...fullScreen, background: dark ? "#000000" : "#ffffff" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(13px, 2.2vw, 17px)",
                 fontStyle: "italic",
-                color: "rgba(255,255,255,0.08)",
+                color: dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)",
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 2s 1s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>close your eyes</div>
+              }}>{dark ? "close your eyes" : "open your eyes"}</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
                 fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
-                color: "rgba(255,255,255,0.04)",
+                color: dark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
                 animation: "fadeSlideUp 2s 2.5s both ease",
               }}>tap</div>
             </div>
           );
         }
 
-        // Phase 1: LIGHT
+        // Phase 1: SECOND SCREEN (white if dark-first, black if light-first)
         if (phase === 1) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff", animation: "fadeIn 0.8s ease" }}>
+            <div onClick={handleClick} style={{ ...fullScreen, background: dark ? "#ffffff" : "#000000", animation: "fadeIn 0.8s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(13px, 2.2vw, 17px)",
                 fontStyle: "italic",
-                color: "rgba(0,0,0,0.08)",
+                color: dark ? "rgba(0,0,0,0.08)" : "rgba(255,255,255,0.08)",
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 2s 0.5s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>now open them</div>
+              }}>{dark ? "now open them" : "now close them"}</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
                 fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
-                color: "rgba(0,0,0,0.04)",
+                color: dark ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.04)",
                 animation: "fadeSlideUp 2s 2s both ease",
               }}>tap</div>
             </div>
@@ -2891,7 +2894,8 @@ export default function TheoryOfEverything() {
           setTimeout(() => {
             window.scrollTo({ top: 0, behavior: "instant" });
             setDepth(0);
-            setLandingPhase(0); // Back to BLACK. Close your eyes again.
+            setLandingPhase(0);
+            startDark.current = Math.random() < 0.5; // New coin flip each loop
             setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
             setFading(false);
           }, 800);
