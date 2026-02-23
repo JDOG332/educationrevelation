@@ -1690,6 +1690,131 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
+          {/* THE UNIVERSAL SYMBOL MAP — every tradition drew the same shapes */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
+            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+          }} />
+
+          <div style={{ textAlign: "center", marginBottom: Math.round(21 * PHI) }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.35)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THEY ALL DREW THE SAME SHAPES</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.2vw, 16px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.35)",
+              maxWidth: 440, margin: "0 auto",
+            }}>
+              Every concept in the theory has been drawn, carved, sung, and prayed across every civilization. Different names. Same truth.
+            </div>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(10 * PHI) }}>
+            {[
+              { concept: "THE LOOP / INFINITY",
+                symbols: [
+                  { tradition: "Egyptian", symbol: "𓆙", name: "Ouroboros", note: "serpent eating its tail — eternal return" },
+                  { tradition: "Hindu", symbol: "ॐ", name: "Om", note: "the sound that never ends" },
+                  { tradition: "Celtic", symbol: "☘", name: "Triquetra", note: "no beginning, no end" },
+                  { tradition: "Taoist", symbol: "☯", name: "Yin-Yang", note: "opposites in eternal orbit" },
+                  { tradition: "Mathematics", symbol: "∞", name: "Lemniscate", note: "a line that returns to itself" },
+                  { tradition: "Buddhism", symbol: "☸", name: "Dharma Wheel", note: "the cycle of existence" },
+                ],
+              },
+              { concept: "THE CROSS / INTERSECTION",
+                symbols: [
+                  { tradition: "Christianity", symbol: "✝", name: "The Cross", note: "sacrifice at the intersection of heaven & earth" },
+                  { tradition: "Egyptian", symbol: "☥", name: "Ankh", note: "the key of life — cross + loop" },
+                  { tradition: "Native American", symbol: "✚", name: "Medicine Wheel", note: "4 directions, 4 elements, 1 center" },
+                  { tradition: "Astrology", symbol: "⊕", name: "Earth Symbol", note: "cross inside circle — matter in spirit" },
+                  { tradition: "Norse", symbol: "᛭", name: "Solar Cross", note: "the sun's path through 4 seasons" },
+                  { tradition: "Science", symbol: "+", name: "Cartesian Axes", note: "x meets y — location requires intersection" },
+                ],
+              },
+              { concept: "THE TRIANGLE / PYRAMID",
+                symbols: [
+                  { tradition: "Egyptian", symbol: "🔺", name: "Pyramid", note: "spirit rising from earth" },
+                  { tradition: "Christianity", symbol: "△", name: "Trinity", note: "Father, Son, Holy Spirit" },
+                  { tradition: "Hindu", symbol: "▽", name: "Shakti Yantra", note: "downward = divine feminine" },
+                  { tradition: "Judaism", symbol: "✡", name: "Star of David", note: "two triangles — as above, so below" },
+                  { tradition: "Alchemy", symbol: "🜂", name: "Fire Triangle", note: "transformation through heat" },
+                  { tradition: "Hermetic", symbol: "⚠", name: "Emerald Tablet", note: "as above, so below — the oldest instruction" },
+                ],
+              },
+              { concept: "THE SPIRAL / SEED",
+                symbols: [
+                  { tradition: "Celtic", symbol: "🌀", name: "Triskelion", note: "triple spiral — life, death, rebirth" },
+                  { tradition: "Mathematics", symbol: "φ", name: "Golden Ratio", note: "1.618 — nature's growth pattern" },
+                  { tradition: "Hindu", symbol: "🐍", name: "Kundalini", note: "coiled serpent energy at the spine's base" },
+                  { tradition: "Aboriginal", symbol: "◎", name: "Songlines", note: "spiral paths sung into existence" },
+                  { tradition: "Nature", symbol: "🌻", name: "Fibonacci", note: "sunflower seeds, galaxy arms, hurricanes" },
+                  { tradition: "DNA", symbol: "🧬", name: "Double Helix", note: "the spiral that codes all life" },
+                ],
+              },
+              { concept: "THE MIRROR / DUALITY",
+                symbols: [
+                  { tradition: "Taoist", symbol: "☯", name: "Yin-Yang", note: "each half contains the seed of the other" },
+                  { tradition: "Zoroastrian", symbol: "🔥", name: "Ahura vs Angra", note: "light and dark in eternal balance" },
+                  { tradition: "Hindu", symbol: "🕉", name: "Shiva-Shakti", note: "destroyer & creator — same force" },
+                  { tradition: "Jungian", symbol: "🪞", name: "Shadow Self", note: "you cannot see yourself without reflection" },
+                  { tradition: "Physics", symbol: "±", name: "Antimatter", note: "every particle has its mirror twin" },
+                  { tradition: "Biology", symbol: "🧬", name: "Base Pairs", note: "A↔T, C↔G — the mirror makes the message" },
+                ],
+              },
+              { concept: "THE CENTER / THE MOON",
+                symbols: [
+                  { tradition: "Buddhism", symbol: "◉", name: "Bindu", note: "the dimensionless point of origin" },
+                  { tradition: "Islam", symbol: "☪", name: "Crescent & Star", note: "the light that reflects, not generates" },
+                  { tradition: "Kabbalah", symbol: "🌳", name: "Tree of Life", note: "the center pillar — balance" },
+                  { tradition: "Sufi", symbol: "💫", name: "The Beloved", note: "the still point the lovers orbit" },
+                  { tradition: "Physics", symbol: "⊙", name: "Singularity", note: "where all dimensions collapse to one" },
+                  { tradition: "Music", symbol: "🎵", name: "Tonic Note", note: "the home key everything resolves to" },
+                ],
+              },
+            ].map((group, gi) => (
+              <div key={gi}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.2em",
+                  color: "rgba(201,168,76,0.5)", marginBottom: Math.round(5 * PHI),
+                  paddingBottom: 4,
+                  borderBottom: "1px solid rgba(201,168,76,0.08)",
+                }}>{group.concept}</div>
+                <div style={{
+                  display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
+                  gap: `${Math.round(3 * PHI)}px`,
+                }}>
+                  {group.symbols.map((s, si) => (
+                    <div key={si} style={{
+                      display: "flex", gap: 8, alignItems: "flex-start",
+                      padding: `${Math.round(3 * PHI)}px 6px`,
+                    }}>
+                      <div style={{
+                        fontSize: 18, minWidth: 24, textAlign: "center", lineHeight: 1.3,
+                      }}>{s.symbol}</div>
+                      <div>
+                        <div style={{
+                          fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 2,
+                          color: "rgba(232,232,240,0.35)",
+                        }}>{s.tradition}</div>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                          color: "rgba(232,232,240,0.5)", fontWeight: 600,
+                        }}>{s.name}</div>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                          color: "rgba(232,232,240,0.25)", fontStyle: "italic",
+                        }}>{s.note}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* The Ache — from the Pact, the feeling that proves the theory */}
           <div style={{
             width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
