@@ -1077,7 +1077,7 @@ export default function TheoryOfEverything() {
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontSize: "clamp(24px, 4vw, 31px)",
-                    fontStyle: "italic", color: "rgba(255,255,255,0.18)",
+                    fontStyle: "italic", color: "rgba(232,232,240,0.55)",
                     marginTop: Math.round(5 * PHI),
                     letterSpacing: 0.5, maxWidth: 380, lineHeight: PHI,
                     animation: "fadeSlideUp 1.2s 0.3s both ease",
@@ -1086,9 +1086,9 @@ export default function TheoryOfEverything() {
                   {/* Hourglass container — FULL VIEWPORT */}
                   <div style={{
                     position: "relative",
-                    width: "min(94vw, 460px)",
-                    height: "min(145vw, 700px)",
-                    margin: `${Math.round(10 * PHI)}px auto`,
+                    width: "min(80vw, 420px)",
+                    height: "min(120vw, 65vh)",
+                    margin: `${Math.round(5 * PHI)}px auto`,
                     animation: "fadeSlideUp 1.4s 0.4s both ease",
                   }}>
 
@@ -1436,7 +1436,7 @@ export default function TheoryOfEverything() {
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
                       fontSize: "clamp(24px, 4vw, 31px)",
-                      color: "rgba(255,255,255,0.25)",
+                      color: "rgba(232,232,240,0.55)",
                       fontStyle: "italic",
                       marginTop: Math.round(3 * PHI),
                       lineHeight: PHI,
@@ -1470,12 +1470,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← CONVERGENCE</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -1589,12 +1589,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           {/* The Setup */}
@@ -1698,12 +1698,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           {/* The 3 Pillars of Aha */}
@@ -1815,12 +1815,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           {/* Your Next Step */}
@@ -1985,12 +1985,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           {/* 🤘 THE CONNECTION — feel the theory in your body */}
@@ -2090,12 +2090,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
 
@@ -2114,12 +2114,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
@@ -2197,12 +2197,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -2348,12 +2348,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -2501,12 +2501,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -2650,12 +2650,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -2803,12 +2803,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -2956,12 +2956,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -3109,12 +3109,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -3262,12 +3262,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -3415,12 +3415,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -3568,12 +3568,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -3721,12 +3721,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -3874,12 +3874,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -4027,12 +4027,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -4180,12 +4180,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -4333,12 +4333,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -4486,12 +4486,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -4641,12 +4641,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← PLAIN ENGLISH</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -4793,12 +4793,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← THE CONVERGENCE PROOF</button>
 
           {/* Header */}
@@ -5145,12 +5145,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← THE CONVERGENCE PROOF</button>
 
           {/* Header with Triquetra */}
@@ -5354,12 +5354,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← THREE PILLARS</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -5517,12 +5517,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActiveSamenessProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← THE CONVERGENCE PROOF</button>
 
           {/* Header with visual tension — split symbol */}
@@ -5709,7 +5709,7 @@ export default function TheoryOfEverything() {
                     }}>{layer.id} · {layer.names[0]}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                      color: "rgba(255,255,255,0.25)", fontStyle: "italic",
+                      color: "rgba(232,232,240,0.55)", fontStyle: "italic",
                     }}>{layer.subtitle}</div>
                   </div>
                   <div style={{
@@ -5804,12 +5804,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← THE CONVERGENCE PROOF</button>
 
           {/* Header */}
@@ -6057,12 +6057,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(190,140,220,0.6)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← RETURN TO PROOF</button>
 
           <div style={{ height: Math.round(13 * PHI) }} />
@@ -6392,12 +6392,12 @@ export default function TheoryOfEverything() {
         }}>
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
-            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
             transition: "all 0.4s",
           }}
-            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
-            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
+            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
           >← ANCIENT PROOF</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
