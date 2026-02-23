@@ -1520,6 +1520,7 @@ export default function TheoryOfEverything() {
               { key: "bones", icon: "🔬", title: "THE BONES", hook: "Nothing is separate. Everything vibrates the same energy.", accent: "100,160,220" },
               { key: "seed", icon: "🧬", title: "THE SEED", hook: "You are a living book. Every creature is a different chapter.", accent: "80,200,120" },
               { key: "flashlight", icon: "💭", title: "THE FLASHLIGHT", hook: "Your mind paints meaning onto everything it touches.", accent: "240,180,200" },
+              { key: "pulse", icon: "❤️", title: "THE PULSE", hook: "Love is the gravity of the soul. Part of, not apart from.", accent: "220,80,80" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -3997,6 +3998,159 @@ export default function TheoryOfEverything() {
                 "\"Let It Be\" — The Beatles",
                 "\"True Colors\" — Cyndi Lauper",
                 "\"Sound of Silence\" — Simon & Garfunkel",
+              ].map((song, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{song}</div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== PLAIN ENGLISH: THE PULSE (Love, Connection & Emotion) ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "pulse" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>❤️</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE PULSE</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(220,80,80,0.3)",
+            }}>LOVE, CONNECTION & EMOTION</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(220,80,80,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            Love is the gravity of the soul. Just as planets stay together because of invisible pulls, people stay together because we are hard-wired to be part of rather than apart from.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(220,80,80,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THE GRAVITY OF THE SOUL</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {[
+              { icon: "👂", sense: "SOUND", text: "Listen to people laughing or a baby's giggle. You will start to smile too. Your ears are tuned to the radio station of other people's joy." },
+              { icon: "👃", sense: "SMELL", text: "Smell a piece of clothing from someone you love. Even if they aren't there, your brain relaxes. This is your heart's nose recognizing your pack." },
+              { icon: "👅", sense: "TASTE", text: "Share a meal with a friend. Notice how the food tastes better when you aren't eating alone. Your body rewards you for being connected." },
+              { icon: "✋", sense: "TOUCH", text: "Hold someone's hand. Scientists found this can actually make physical pain feel less intense. Your skin is a bridge that carries comfort from one person to another." },
+              { icon: "👁️", sense: "SIGHT", text: "Look into a loved one's eyes. Your pupils will actually grow larger to match theirs. It is a silent handshake between two brains." },
+              { icon: "🧘", sense: "THE 6TH", text: "Sit back-to-back with a friend and breathe at the same time. Eventually your hearts will try to beat in a similar rhythm. You are literally syncing up your engines." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  filter: "drop-shadow(0 0 8px rgba(220,80,80,0.2))",
+                }}>{s.icon}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                    color: "rgba(220,80,80,0.45)", marginBottom: 4,
+                  }}>{s.sense}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                  }}>{s.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Intuition — golden threads */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(10 * PHI)}px`,
+            background: "rgba(220,80,80,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(220,80,80,0.06)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(220,80,80,0.3)", marginBottom: Math.round(5 * PHI),
+            }}>THE GOLDEN THREADS</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Imagine everyone has a glowing golden thread coming out of their chest. When you help someone or love them, your thread ties to theirs. Your gut feeling is that thread pulling tight, telling you that someone needs you or that you are safe with them.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            marginTop: Math.round(13 * PHI),
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+          }}>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(220,80,80,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · INFO</div>
+              {["The Chemistry of Love", "What is Altruism?", "Why Loneliness Hurts"].map((link, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{link}</div>
+              ))}
+            </div>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(220,80,80,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · RHYTHM</div>
+              {[
+                "\"Stand By Me\" — Ben E. King",
+                "\"Lean On Me\" — Bill Withers",
+                "\"All You Need Is Love\" — The Beatles",
               ].map((song, i) => (
                 <div key={i} style={{
                   fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
