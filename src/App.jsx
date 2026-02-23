@@ -1861,108 +1861,242 @@ export default function TheoryOfEverything() {
                 if (!canvas) return;
                 const ctx = canvas.getContext("2d");
                 const dpr = window.devicePixelRatio || 1;
-                const W = canvas.parentElement?.clientWidth || 340;
-                const H = canvas.parentElement?.clientHeight || 700;
+                const W = canvas.parentElement?.clientWidth || 420;
+                const H = canvas.parentElement?.clientHeight || 860;
                 canvas.width = W * dpr;
                 canvas.height = H * dpr;
                 canvas.style.width = W + "px";
                 canvas.style.height = H + "px";
                 ctx.scale(dpr, dpr);
 
-                const midY = H * 0.5;
+                const midY = H * 0.50;
                 const neckX = W * 0.5;
-                const neckW = 6;
-                const topY = H * 0.06;
-                const botY = H * 0.94;
-                const topW = W * 0.42;
-                const botW = W * 0.42;
+                const neckW = 5;
+                const topY = H * 0.04;
+                const botY = H * 0.96;
+                const topW = W * 0.46;
+                const botW = W * 0.46;
+
+                // Hourglass shape function — returns max half-width at given Y
+                function glassWidth(y) {
+                  if (y <= topY) return topW;
+                  if (y >= botY) return botW;
+                  if (y <= midY) {
+                    const t = (y - topY) / (midY - topY);
+                    // Cubic curve: wide at top, pinches to neck
+                    const ease = t * t * (3 - 2 * t);
+                    return topW + (neckW - topW) * ease;
+                  } else {
+                    const t = (y - midY) / (botY - midY);
+                    const ease = t * t * (3 - 2 * t);
+                    return neckW + (botW - neckW) * ease;
+                  }
+                }
 
                 // Sand grains — falling through the neck
                 const grains = [];
                 for (let i = 0; i < grainCount; i++) {
                   grains.push({
                     x: neckX + (Math.random() - 0.5) * neckW,
-                    y: midY + Math.random() * (botY - midY) * 0.8,
-                    vy: 0.3 + Math.random() * 0.8,
-                    size: 0.8 + Math.random() * 1.2,
-                    opacity: 0.15 + Math.random() * 0.35,
+                    y: midY + 4 + Math.random() * (botY - midY) * 0.4,
+                    vy: 0.4 + Math.random() * 1.0,
+                    size: 0.7 + Math.random() * 1.0,
+                    opacity: 0.2 + Math.random() * 0.4,
                     phase: Math.random() * Math.PI * 2,
-                    settled: Math.random() > 0.4,
+                    settled: false,
                   });
                 }
 
-                // Pile of settled sand at bottom
-                const pileGrains = [];
-                for (let i = 0; i < 120; i++) {
-                  const pileY = botY - Math.random() * (botY - midY) * 0.35;
-                  const pileMaxW = botW * ((botY - pileY) / (botY - midY)) * 0.85;
-                  pileGrains.push({
-                    x: neckX + (Math.random() - 0.5) * pileMaxW * 2,
-                    y: pileY,
-                    size: 0.6 + Math.random() * 1.4,
-                    opacity: 0.08 + Math.random() * 0.2,
-                  });
-                }
-
-                // Sand remaining in top
+                // Top sand — ALMOST FULL (90% filled from top down)
                 const topGrains = [];
-                for (let i = 0; i < 50; i++) {
-                  const tY = midY - Math.random() * (midY - topY) * 0.25 - (midY - topY) * 0.08;
-                  const tMaxW = topW * ((tY - topY) / (midY - topY)) * 0.7;
+                const topSandLevel = topY + (midY - topY) * 0.1; // Sand starts 10% down from rim
+                for (let i = 0; i < 350; i++) {
+                  const tY = topSandLevel + Math.random() * (midY - topSandLevel - 12);
+                  const maxW = glassWidth(tY) * 0.88;
                   topGrains.push({
-                    x: neckX + (Math.random() - 0.5) * tMaxW * 2,
+                    x: neckX + (Math.random() - 0.5) * maxW * 2,
                     y: tY,
-                    size: 0.6 + Math.random() * 1.2,
-                    opacity: 0.06 + Math.random() * 0.15,
+                    size: 0.5 + Math.random() * 1.3,
+                    opacity: 0.06 + Math.random() * 0.18,
+                  });
+                }
+
+                // Top sand surface — denser line at the top of the sand
+                const topSurfaceGrains = [];
+                for (let i = 0; i < 80; i++) {
+                  const surfY = topSandLevel + Math.random() * 6;
+                  const maxW = glassWidth(surfY) * 0.85;
+                  topSurfaceGrains.push({
+                    x: neckX + (Math.random() - 0.5) * maxW * 2,
+                    y: surfY,
+                    size: 0.4 + Math.random() * 0.8,
+                    opacity: 0.18 + Math.random() * 0.22,
+                  });
+                }
+
+                // Funnel grains — sand funneling toward neck from above
+                const funnelGrains = [];
+                for (let i = 0; i < 60; i++) {
+                  const fY = midY - 30 + Math.random() * 28;
+                  const fW = neckW + (glassWidth(fY) - neckW) * 0.3;
+                  funnelGrains.push({
+                    x: neckX + (Math.random() - 0.5) * fW * 2,
+                    y: fY,
+                    size: 0.4 + Math.random() * 0.7,
+                    opacity: 0.12 + Math.random() * 0.2,
+                  });
+                }
+
+                // Bottom sand — BARELY filling (small cone at very bottom)
+                const botGrains = [];
+                const botSandTop = botY - (botY - midY) * 0.12; // Only bottom 12% has sand
+                for (let i = 0; i < 80; i++) {
+                  const bY = botSandTop + Math.random() * (botY - botSandTop - 4);
+                  const maxW = glassWidth(bY) * 0.75;
+                  // Cone shape — wider at bottom
+                  const coneW = maxW * ((bY - botSandTop) / (botY - botSandTop));
+                  botGrains.push({
+                    x: neckX + (Math.random() - 0.5) * coneW * 2,
+                    y: bY,
+                    size: 0.5 + Math.random() * 1.2,
+                    opacity: 0.1 + Math.random() * 0.2,
+                  });
+                }
+
+                // Small cone peak at top of bottom pile
+                const conePeakGrains = [];
+                for (let i = 0; i < 25; i++) {
+                  const cpY = botSandTop - 4 + Math.random() * 8;
+                  const spread = 3 + Math.random() * 4;
+                  conePeakGrains.push({
+                    x: neckX + (Math.random() - 0.5) * spread,
+                    y: cpY,
+                    size: 0.3 + Math.random() * 0.6,
+                    opacity: 0.15 + Math.random() * 0.2,
                   });
                 }
 
                 let frame = 0;
+                let animId;
+
+                function drawHourglassShape() {
+                  // Left side top half
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - topW, topY);
+                  ctx.bezierCurveTo(
+                    neckX - topW, topY + (midY - topY) * 0.55,
+                    neckX - neckW * 1.5, midY - (midY - topY) * 0.15,
+                    neckX - neckW, midY
+                  );
+                  ctx.strokeStyle = "rgba(201,168,76,0.14)";
+                  ctx.lineWidth = 1;
+                  ctx.stroke();
+
+                  // Right side top half
+                  ctx.beginPath();
+                  ctx.moveTo(neckX + topW, topY);
+                  ctx.bezierCurveTo(
+                    neckX + topW, topY + (midY - topY) * 0.55,
+                    neckX + neckW * 1.5, midY - (midY - topY) * 0.15,
+                    neckX + neckW, midY
+                  );
+                  ctx.stroke();
+
+                  // Left side bottom half
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - neckW, midY);
+                  ctx.bezierCurveTo(
+                    neckX - neckW * 1.5, midY + (botY - midY) * 0.15,
+                    neckX - botW, botY - (botY - midY) * 0.55,
+                    neckX - botW, botY
+                  );
+                  ctx.stroke();
+
+                  // Right side bottom half
+                  ctx.beginPath();
+                  ctx.moveTo(neckX + neckW, midY);
+                  ctx.bezierCurveTo(
+                    neckX + neckW * 1.5, midY + (botY - midY) * 0.15,
+                    neckX + botW, botY - (botY - midY) * 0.55,
+                    neckX + botW, botY
+                  );
+                  ctx.stroke();
+
+                  // Top cap with decorative ends
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - topW - 14, topY);
+                  ctx.lineTo(neckX + topW + 14, topY);
+                  ctx.strokeStyle = "rgba(201,168,76,0.22)";
+                  ctx.lineWidth = 1.8;
+                  ctx.stroke();
+
+                  // Small decorative serifs on top cap
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - topW - 14, topY - 4);
+                  ctx.lineTo(neckX - topW - 14, topY + 4);
+                  ctx.moveTo(neckX + topW + 14, topY - 4);
+                  ctx.lineTo(neckX + topW + 14, topY + 4);
+                  ctx.strokeStyle = "rgba(201,168,76,0.18)";
+                  ctx.lineWidth = 1.2;
+                  ctx.stroke();
+
+                  // Bottom cap
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - botW - 14, botY);
+                  ctx.lineTo(neckX + botW + 14, botY);
+                  ctx.strokeStyle = "rgba(201,168,76,0.22)";
+                  ctx.lineWidth = 1.8;
+                  ctx.stroke();
+
+                  // Serifs on bottom cap
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - botW - 14, botY - 4);
+                  ctx.lineTo(neckX - botW - 14, botY + 4);
+                  ctx.moveTo(neckX + botW + 14, botY - 4);
+                  ctx.lineTo(neckX + botW + 14, botY + 4);
+                  ctx.strokeStyle = "rgba(201,168,76,0.18)";
+                  ctx.lineWidth = 1.2;
+                  ctx.stroke();
+
+                  // Neck ring detail
+                  ctx.beginPath();
+                  ctx.ellipse(neckX, midY, neckW + 3, 2, 0, 0, Math.PI * 2);
+                  ctx.strokeStyle = "rgba(201,168,76,0.1)";
+                  ctx.lineWidth = 0.8;
+                  ctx.stroke();
+
+                  // Inner reflection lines (glass detail)
+                  ctx.save();
+                  ctx.globalAlpha = 0.04;
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - topW + 12, topY + 4);
+                  ctx.bezierCurveTo(
+                    neckX - topW + 12, topY + (midY - topY) * 0.5,
+                    neckX - neckW * 2, midY - 20,
+                    neckX - neckW - 1, midY
+                  );
+                  ctx.strokeStyle = "rgba(201,168,76,1)";
+                  ctx.lineWidth = 0.8;
+                  ctx.stroke();
+                  ctx.restore();
+                }
 
                 function draw() {
                   ctx.clearRect(0, 0, W, H);
                   frame++;
 
-                  // Draw hourglass outline
-                  ctx.save();
-                  ctx.beginPath();
-                  // Top half — wide at top, narrow at middle
-                  ctx.moveTo(neckX - topW, topY);
-                  ctx.quadraticCurveTo(neckX - topW * 0.3, midY * 0.7, neckX - neckW, midY);
-                  ctx.lineTo(neckX + neckW, midY);
-                  ctx.quadraticCurveTo(neckX + topW * 0.3, midY * 0.7, neckX + topW, topY);
-                  // Bottom half — narrow at middle, wide at bottom
-                  ctx.moveTo(neckX - neckW, midY);
-                  ctx.quadraticCurveTo(neckX - botW * 0.3, midY + (botY - midY) * 0.3, neckX - botW, botY);
-                  ctx.lineTo(neckX + botW, botY);
-                  ctx.quadraticCurveTo(neckX + botW * 0.3, midY + (botY - midY) * 0.3, neckX + neckW, midY);
+                  // Draw the hourglass shape
+                  drawHourglassShape();
 
-                  ctx.strokeStyle = "rgba(201,168,76,0.12)";
-                  ctx.lineWidth = 1;
-                  ctx.stroke();
-
-                  // Top and bottom caps
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - topW - 8, topY);
-                  ctx.lineTo(neckX + topW + 8, topY);
-                  ctx.strokeStyle = "rgba(201,168,76,0.18)";
-                  ctx.lineWidth = 1.5;
-                  ctx.stroke();
-
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - botW - 8, botY);
-                  ctx.lineTo(neckX + botW + 8, botY);
-                  ctx.stroke();
-                  ctx.restore();
-
-                  // Glow at neck
-                  const neckGlow = ctx.createRadialGradient(neckX, midY, 0, neckX, midY, 20);
-                  neckGlow.addColorStop(0, "rgba(201,168,76,0.06)");
+                  // Glow at neck — breathing
+                  const breathe = 0.06 + Math.sin(frame * 0.02) * 0.02;
+                  const neckGlow = ctx.createRadialGradient(neckX, midY, 0, neckX, midY, 28);
+                  neckGlow.addColorStop(0, `rgba(201,168,76,${breathe})`);
                   neckGlow.addColorStop(1, "rgba(201,168,76,0)");
                   ctx.fillStyle = neckGlow;
-                  ctx.fillRect(neckX - 20, midY - 20, 40, 40);
+                  ctx.fillRect(neckX - 28, midY - 28, 56, 56);
 
-                  // Draw top sand pile (remaining)
+                  // TOP SAND — dense fill (almost full)
                   for (const g of topGrains) {
                     ctx.beginPath();
                     ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
@@ -1970,17 +2104,37 @@ export default function TheoryOfEverything() {
                     ctx.fill();
                   }
 
-                  // Draw falling grains
-                  for (const g of grains) {
-                    if (!g.settled) {
-                      g.y += g.vy;
-                      g.x += Math.sin(frame * 0.03 + g.phase) * 0.15;
+                  // Top sand surface line (denser)
+                  for (const g of topSurfaceGrains) {
+                    ctx.beginPath();
+                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
+                    ctx.fill();
+                  }
 
-                      // Reset when reaching bottom pile area
-                      if (g.y > botY - (botY - midY) * 0.3) {
-                        g.y = midY + 2;
-                        g.x = neckX + (Math.random() - 0.5) * neckW;
-                      }
+                  // Funnel grains approaching neck
+                  for (const g of funnelGrains) {
+                    const drift = Math.sin(frame * 0.015 + g.x * 0.05) * 0.3;
+                    ctx.beginPath();
+                    ctx.arc(g.x + drift, g.y, g.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
+                    ctx.fill();
+                  }
+
+                  // FALLING grains through neck
+                  for (const g of grains) {
+                    g.y += g.vy;
+                    g.x += Math.sin(frame * 0.03 + g.phase) * 0.12;
+
+                    // Spread out as they enter bottom half
+                    const belowNeck = g.y - midY;
+                    if (belowNeck > 10) {
+                      g.x += (g.x - neckX) * 0.003;
+                    }
+
+                    if (g.y > botSandTop - 5) {
+                      g.y = midY + 2;
+                      g.x = neckX + (Math.random() - 0.5) * neckW * 0.8;
                     }
 
                     ctx.beginPath();
@@ -1989,27 +2143,36 @@ export default function TheoryOfEverything() {
                     ctx.fill();
                   }
 
-                  // Draw bottom pile
-                  for (const g of pileGrains) {
+                  // Steady stream through neck — visible trickle
+                  for (let i = 0; i < 5; i++) {
+                    const streamY = midY - 6 + i * 3;
+                    const wobble = Math.sin(frame * 0.06 + i * 1.5) * 0.8;
                     ctx.beginPath();
-                    ctx.arc(g.x, g.y + Math.sin(frame * 0.005 + g.x * 0.1) * 0.3, g.size, 0, Math.PI * 2);
+                    ctx.arc(neckX + wobble, streamY, 0.5, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgba(201,168,76,0.3)";
+                    ctx.fill();
+                  }
+
+                  // BOTTOM sand — small cone barely filling
+                  for (const g of botGrains) {
+                    ctx.beginPath();
+                    ctx.arc(g.x, g.y + Math.sin(frame * 0.004 + g.x * 0.1) * 0.2, g.size, 0, Math.PI * 2);
                     ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
                     ctx.fill();
                   }
 
-                  // Steady stream through the neck — the trickle
-                  for (let i = 0; i < 3; i++) {
-                    const streamY = midY - 8 + i * 6;
+                  // Cone peak
+                  for (const g of conePeakGrains) {
                     ctx.beginPath();
-                    ctx.arc(neckX + Math.sin(frame * 0.05 + i) * 1, streamY, 0.6, 0, Math.PI * 2);
-                    ctx.fillStyle = "rgba(201,168,76,0.25)";
+                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
                     ctx.fill();
                   }
 
-                  requestAnimationFrame(draw);
+                  animId = requestAnimationFrame(draw);
                 }
 
-                const animId = requestAnimationFrame(draw);
+                animId = requestAnimationFrame(draw);
                 return () => cancelAnimationFrame(animId);
               }, []);
 
@@ -2068,12 +2231,12 @@ export default function TheoryOfEverything() {
                     animation: "fadeSlideUp 1.2s 0.3s both ease",
                   }}>Written ten years before the theory. The seed was already in the ground.</div>
 
-                  {/* Hourglass container */}
+                  {/* Hourglass container — FULL VIEWPORT */}
                   <div style={{
                     position: "relative",
-                    width: "min(90vw, 380px)",
-                    height: "min(130vw, 560px)",
-                    margin: `${Math.round(13 * PHI)}px auto`,
+                    width: "min(94vw, 460px)",
+                    height: "min(145vw, 700px)",
+                    margin: `${Math.round(10 * PHI)}px auto`,
                     animation: "fadeSlideUp 1.4s 0.4s both ease",
                   }}>
 
