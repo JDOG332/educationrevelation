@@ -4784,7 +4784,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "gravity" && (
+      {depth === 3 && activeConvergence === "gravity" && activeIdea === null && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -5090,6 +5090,44 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
+          {/* ===== GRAVITY: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(255,200,50,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(255,200,50,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "placeholder", icon: "☀️", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "255,200,50" },
+              ].map(idea => (
+                <div key={idea.key} style={{
+                  padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
+                  textAlign: "center", opacity: 0.4,
+                }}>
+                  <div style={{ fontSize: 24, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    color: "rgba(232,232,240,0.25)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
             <ReturnButton onClick={() => setActiveConvergence(null)} />
@@ -5098,7 +5136,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THREE PILLARS ROOM ===== */}
-      {depth === 3 && activeConvergence === "pillars" && (
+      {depth === 3 && activeConvergence === "pillars" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -5261,11 +5299,50 @@ export default function TheoryOfEverything() {
               <span style={{ color: "rgba(201,168,76,0.25)" }}>isn't a phrase. It's a geometric instruction.</span>
             </div>
           </div>
+
+          {/* ===== THREE PILLARS: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(100,180,220,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(100,180,220,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "placeholder", icon: "🔱", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "100,180,220" },
+              ].map(idea => (
+                <div key={idea.key} style={{
+                  padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
+                  textAlign: "center", opacity: 0.4,
+                }}>
+                  <div style={{ fontSize: 24, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    color: "rgba(232,232,240,0.25)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       )}
 
       {/* ===== DEPTH 4 — SAMENESS ROOM (THE GATE) ===== */}
-      {depth === 3 && activeConvergence === "sameness" && (
+      {depth === 3 && activeConvergence === "sameness" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -5509,11 +5586,50 @@ export default function TheoryOfEverything() {
               </div>
             ))}
           </div>
+
+          {/* ===== THE GATE: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(180,220,200,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(180,220,200,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "placeholder", icon: "🪞", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "180,220,200" },
+              ].map(idea => (
+                <div key={idea.key} style={{
+                  padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
+                  textAlign: "center", opacity: 0.4,
+                }}>
+                  <div style={{ fontSize: 24, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    color: "rgba(232,232,240,0.25)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       )}
 
       {/* ===== DEPTH 4 — CONVERGENCE DEPTHS ROOM ===== */}
-      {depth === 3 && activeConvergence === "depths" && (
+      {depth === 3 && activeConvergence === "depths" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -5723,6 +5839,45 @@ export default function TheoryOfEverything() {
               </div>
             ))}
           </div>
+
+          {/* ===== THE MATH: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(201,168,76,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "placeholder", icon: "⬇️", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "201,168,76" },
+              ].map(idea => (
+                <div key={idea.key} style={{
+                  padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
+                  textAlign: "center", opacity: 0.4,
+                }}>
+                  <div style={{ fontSize: 24, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    color: "rgba(232,232,240,0.25)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       )}
 
