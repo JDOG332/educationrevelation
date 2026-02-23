@@ -447,108 +447,217 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — THE TITLE ===== */}
-      {depth === 0 && (
-        <div
-          onClick={goDeeper}
-          style={{
-            height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-            cursor: "pointer", zIndex: 2,
-            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-          }}
-        >
+      {/* ===== DEPTH 0 — THE PRISM: OVERHEAD VIEW OF THE PYRAMID ===== */}
+      {depth === 0 && (() => {
+        // The four triangles of the pyramid seen from above
+        // Black (left), White (right), Grey top (dark→light), Gray bottom (dark→light)
+        // All meeting at the 3rd Eye center point
+        const CX = 50; // center percentages
+        const CY = 50;
 
-          {/* Title block — vertically offset above true center by φ ratio */}
+        const triangles = [
+          { id: "black", label: "BLACK", points: "0,0 50,50 0,100", gradient: "linear-gradient(90deg, #000000 0%, #1a1a1a 70%, #333333 100%)", labelPos: { x: "14%", y: "50%" }, labelColor: "rgba(255,255,255,0.5)" },
+          { id: "white", label: "WHITE", points: "100,0 50,50 100,100", gradient: "linear-gradient(270deg, #ffffff 0%, #e0e0e0 70%, #cccccc 100%)", labelPos: { x: "83%", y: "50%" }, labelColor: "rgba(0,0,0,0.45)" },
+          { id: "grey", label: "50 SHADES OF GREY", points: "0,0 50,50 100,0", gradient: "linear-gradient(180deg, #888888 0%, #555555 50%, #2a2a2a 100%)", labelPos: { x: "50%", y: "18%" }, labelColor: "rgba(255,255,255,0.45)" },
+          { id: "gray", label: "50 SHADES OF GRAY", points: "0,100 50,50 100,100", gradient: "linear-gradient(0deg, #999999 0%, #666666 50%, #3a3a3a 100%)", labelPos: { x: "50%", y: "82%" }, labelColor: "rgba(255,255,255,0.45)" },
+        ];
+
+        return (
           <div style={{
-            textAlign: "center",
-            padding: "0 24px",
-            marginTop: `${Math.round(-100 / PHI2)}px`,
-            animation: "fadeSlideUp 1.6s 0.3s both ease",
-            zIndex: 4,
-            maxWidth: 700,
+            height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+            zIndex: 2, background: "#0a0a0a",
           }}>
-            {/* Main title */}
-            <h1 style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(22px, 5vw, 42px)",
-              fontWeight: 400,
-              letterSpacing: "0.3em",
-              color: "#e8e8f0",
-              margin: 0,
-              lineHeight: 1.4,
-              textShadow: "0 0 60px rgba(232,232,240,0.15), 0 0 120px rgba(201,168,76,0.08), 0 2px 40px rgba(0,0,0,0.4), 0 0 200px rgba(201,168,76,0.03)",
-              animation: "textLuminance 8s ease-in-out infinite",
-            }}>
-              THE SECRET THEORY
-            </h1>
 
-            {/* Subtitle */}
-            <div style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(11px, 2.2vw, 17px)",
-              fontWeight: 300,
-              letterSpacing: "0.5em",
-              color: "rgba(255,255,255,0.3)",
-              marginTop: Math.round(8 * PHI),
+            {/* SVG Prism — four triangles */}
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
             }}>
-              OF EVERYTHING
+              <defs>
+                {/* Black triangle: pure black on left edge, fading to dark grey toward center */}
+                <linearGradient id="grad-black" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" stopColor="#000000" />
+                  <stop offset="60%" stopColor="#0a0a0a" />
+                  <stop offset="100%" stopColor="#222222" />
+                </linearGradient>
+                {/* White triangle: pure white on right edge, fading to light grey toward center */}
+                <linearGradient id="grad-white" x1="100%" y1="50%" x2="0%" y2="50%">
+                  <stop offset="0%" stopColor="#f5f5f5" />
+                  <stop offset="60%" stopColor="#e8e8e8" />
+                  <stop offset="100%" stopColor="#cccccc" />
+                </linearGradient>
+                {/* Grey (top): dark near black side, light near white side — left to right gradient */}
+                <linearGradient id="grad-grey" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#1a1a1a" />
+                  <stop offset="30%" stopColor="#444444" />
+                  <stop offset="70%" stopColor="#999999" />
+                  <stop offset="100%" stopColor="#d0d0d0" />
+                </linearGradient>
+                {/* Gray (bottom): dark near black side, light near white side — left to right gradient */}
+                <linearGradient id="grad-gray" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#1a1a1a" />
+                  <stop offset="30%" stopColor="#444444" />
+                  <stop offset="70%" stopColor="#999999" />
+                  <stop offset="100%" stopColor="#d0d0d0" />
+                </linearGradient>
+                {/* Center glow */}
+                <radialGradient id="eyeGlow" cx="50%" cy="50%" r="12%">
+                  <stop offset="0%" stopColor="rgba(201,168,76,0.35)" />
+                  <stop offset="50%" stopColor="rgba(201,168,76,0.08)" />
+                  <stop offset="100%" stopColor="transparent" />
+                </radialGradient>
+                <radialGradient id="eyeCore" cx="50%" cy="50%" r="3%">
+                  <stop offset="0%" stopColor="rgba(255,255,255,0.95)" />
+                  <stop offset="40%" stopColor="rgba(201,168,76,0.6)" />
+                  <stop offset="100%" stopColor="transparent" />
+                </radialGradient>
+              </defs>
+
+              {/* Four triangles */}
+              <polygon points="0,0 50,50 0,100" fill="url(#grad-black)" />
+              <polygon points="100,0 50,50 100,100" fill="url(#grad-white)" />
+              <polygon points="0,0 50,50 100,0" fill="url(#grad-grey)" />
+              <polygon points="0,100 50,50 100,100" fill="url(#grad-gray)" />
+
+              {/* Subtle edge lines where triangles meet */}
+              <line x1="0" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
+              <line x1="100" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
+              <line x1="0" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
+              <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.12)" strokeWidth="0.15" />
+
+              {/* 3rd Eye glow */}
+              <circle cx="50" cy="50" r="12" fill="url(#eyeGlow)">
+                <animate attributeName="r" values="10;14;10" dur="6s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="50" cy="50" r="3" fill="url(#eyeCore)">
+                <animate attributeName="r" values="2.5;3.5;2.5" dur="4s" repeatCount="indefinite" />
+              </circle>
+
+              {/* 3rd Eye shape — almond/vesica piscis */}
+              <ellipse cx="50" cy="50" rx="5" ry="2.5" fill="none" stroke="rgba(201,168,76,0.5)" strokeWidth="0.3">
+                <animate attributeName="ry" values="2.2;3;2.2" dur="5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite" />
+              </ellipse>
+              {/* Pupil */}
+              <circle cx="50" cy="50" r="1.2" fill="rgba(201,168,76,0.85)">
+                <animate attributeName="r" values="1;1.5;1" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="50" cy="50" r="0.4" fill="#ffffff">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+              </circle>
+            </svg>
+
+            {/* Triangle labels — positioned over each quadrant */}
+            {/* BLACK — left */}
+            <div style={{
+              position: "absolute", left: "6%", top: "50%", transform: "translateY(-50%)",
+              zIndex: 10, animation: "fadeSlideUp 1.2s 0.3s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 22px)",
+                letterSpacing: "0.2em", color: "rgba(255,255,255,0.5)",
+                textShadow: "0 0 20px rgba(255,255,255,0.1)",
+                fontWeight: 400,
+              }}>BLACK</div>
             </div>
 
-            {/* Gold divider */}
+            {/* WHITE — right */}
             <div style={{
-              width: Math.round(50 * PHI),
-              height: 1,
-              margin: `${Math.round(13 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent)",
-              boxShadow: "0 0 24px rgba(201,168,76,0.2)",
+              position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)",
+              zIndex: 10, animation: "fadeSlideUp 1.2s 0.5s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 22px)",
+                letterSpacing: "0.2em", color: "rgba(0,0,0,0.45)",
+                textShadow: "0 0 20px rgba(0,0,0,0.1)",
+                fontWeight: 400,
+              }}>WHITE</div>
+            </div>
+
+            {/* GREY — top */}
+            <div style={{
+              position: "absolute", top: "12%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.2s 0.4s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 2vw, 15px)",
+                fontStyle: "italic", letterSpacing: "0.15em",
+                color: "rgba(255,255,255,0.4)",
+                textShadow: "0 0 12px rgba(255,255,255,0.06)",
+              }}>50 Shades of Grey</div>
+            </div>
+
+            {/* GRAY — bottom */}
+            <div style={{
+              position: "absolute", bottom: "12%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.2s 0.6s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 2vw, 15px)",
+                fontStyle: "italic", letterSpacing: "0.15em",
+                color: "rgba(255,255,255,0.4)",
+                textShadow: "0 0 12px rgba(255,255,255,0.06)",
+              }}>50 Shades of Gray</div>
+            </div>
+
+            {/* 3RD EYE label — at center */}
+            <div style={{
+              position: "absolute", top: "50%", left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 10, textAlign: "center",
+              animation: "fadeSlideUp 1.4s 0.8s both ease",
+              pointerEvents: "none",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(7px, 1.3vw, 9px)",
+                letterSpacing: "0.4em", color: "rgba(201,168,76,0.6)",
+                marginTop: 28,
+                textShadow: "0 0 12px rgba(201,168,76,0.2)",
+              }}>3RD EYE</div>
+            </div>
+
+            {/* Title overlay — top center */}
+            <div style={{
+              position: "absolute", top: "3%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center",
+              animation: "fadeSlideUp 1.6s 0.2s both ease",
+            }}>
+              <h1 style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(13px, 2.8vw, 22px)",
+                fontWeight: 400, letterSpacing: "0.35em",
+                color: "rgba(200,200,200,0.6)",
+                margin: 0,
+                textShadow: "0 0 30px rgba(200,200,200,0.1)",
+              }}>THE SECRET THEORY OF EVERYTHING</h1>
+            </div>
+
+            {/* Whisper + enter — bottom center */}
+            <div onClick={goDeeper} style={{
+              position: "absolute", bottom: "3%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 10, textAlign: "center", cursor: "pointer",
+              animation: "fadeSlideUp 1.2s 1s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2vw, 16px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.4)",
+                letterSpacing: 1, marginBottom: 8,
+                transition: "color 0.4s",
+              }}
+                onMouseEnter={e => e.target.style.color = "rgba(201,168,76,0.7)"}
+                onMouseLeave={e => e.target.style.color = "rgba(201,168,76,0.4)"}
+              >enter the prism</div>
+            </div>
+
+            {/* Clickable overlay — the whole page is the door */}
+            <div onClick={goDeeper} style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              zIndex: 5, cursor: "pointer",
             }} />
 
-            {/* Whisper */}
-            <p style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(14px, 2.5vw, 18px)",
-              fontStyle: "italic",
-              color: "rgba(255,255,255,0.22)",
-              lineHeight: PHI,
-              margin: 0,
-              letterSpacing: 2,
-              textShadow: "0 0 20px rgba(232,232,240,0.06)",
-            }}>
-              …may everyone remember…
-            </p>
-
-            {/* The Equation */}
-            <div style={{ marginTop: Math.round(21 * PHI) }}>
-              <TheEquation size="md" showLabel={false} minimal breathing />
-            </div>
           </div>
-
-          {/* Credits */}
-          <div style={{
-            position: "absolute",
-            bottom: "5%",
-            width: "100%",
-            textAlign: "center",
-            animation: "fadeSlideUp 1.2s 1.2s both ease",
-          }}>
-            <div style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: 8,
-              letterSpacing: "0.4em",
-              color: "rgba(255,255,255,0.1)",
-              textTransform: "uppercase",
-              animation: "textLuminance 12s ease-in-out infinite",
-            }}>WRITTEN BY ALL</div>
-            <div style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: 7,
-              letterSpacing: "0.3em",
-              color: "rgba(201,168,76,0.18)",
-              marginTop: 8,
-            }}>9 LAYERS · 4 MIRROR PAIRS · 1 MOON</div>
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* ===== DEPTH 1 — THE POEM ===== */}
       {depth === 1 && (
