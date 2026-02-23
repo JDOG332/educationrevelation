@@ -512,87 +512,101 @@ export default function TheoryOfEverything() {
           );
         }
 
-        // Phase 2: THE PRISM
+        // Phase 2: THE PRISM — no words. Just the spectrum. Let the eyes do the work.
         return (
           <div onClick={handleClick} style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
             }}>
               <defs>
+                {/* Black triangle: pure #000 at left edge */}
                 <linearGradient id="gBlack" x1="0%" y1="50%" x2="100%" y2="50%">
                   <stop offset="0%" stopColor="#000000" />
-                  <stop offset="70%" stopColor="#0d0d0d" />
-                  <stop offset="100%" stopColor="#333333" />
+                  <stop offset="100%" stopColor="#000000" />
                 </linearGradient>
+                {/* White triangle: pure #fff at right edge */}
                 <linearGradient id="gWhite" x1="100%" y1="50%" x2="0%" y2="50%">
-                  <stop offset="0%" stopColor="#f0f0f0" />
-                  <stop offset="70%" stopColor="#e0e0e0" />
-                  <stop offset="100%" stopColor="#bbbbbb" />
+                  <stop offset="0%" stopColor="#ffffff" />
+                  <stop offset="100%" stopColor="#ffffff" />
                 </linearGradient>
+                {/* Top grey: 50 shades — nearly black on left, nearly white on right */}
                 <linearGradient id="gGreyTop" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1a1a1a" />
-                  <stop offset="25%" stopColor="#3a3a3a" />
-                  <stop offset="50%" stopColor="#6a6a6a" />
-                  <stop offset="75%" stopColor="#a0a0a0" />
-                  <stop offset="100%" stopColor="#d0d0d0" />
+                  <stop offset="0%" stopColor="#050505" />
+                  <stop offset="5%" stopColor="#0d0d0d" />
+                  <stop offset="10%" stopColor="#1a1a1a" />
+                  <stop offset="15%" stopColor="#262626" />
+                  <stop offset="20%" stopColor="#333333" />
+                  <stop offset="25%" stopColor="#404040" />
+                  <stop offset="30%" stopColor="#4d4d4d" />
+                  <stop offset="35%" stopColor="#595959" />
+                  <stop offset="40%" stopColor="#666666" />
+                  <stop offset="45%" stopColor="#737373" />
+                  <stop offset="50%" stopColor="#808080" />
+                  <stop offset="55%" stopColor="#8c8c8c" />
+                  <stop offset="60%" stopColor="#999999" />
+                  <stop offset="65%" stopColor="#a6a6a6" />
+                  <stop offset="70%" stopColor="#b3b3b3" />
+                  <stop offset="75%" stopColor="#bfbfbf" />
+                  <stop offset="80%" stopColor="#cccccc" />
+                  <stop offset="85%" stopColor="#d9d9d9" />
+                  <stop offset="90%" stopColor="#e6e6e6" />
+                  <stop offset="95%" stopColor="#f2f2f2" />
+                  <stop offset="100%" stopColor="#fafafa" />
                 </linearGradient>
+                {/* Bottom grey: same 50-shade scale */}
                 <linearGradient id="gGreyBot" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#1a1a1a" />
-                  <stop offset="25%" stopColor="#3a3a3a" />
-                  <stop offset="50%" stopColor="#6a6a6a" />
-                  <stop offset="75%" stopColor="#a0a0a0" />
-                  <stop offset="100%" stopColor="#d0d0d0" />
+                  <stop offset="0%" stopColor="#050505" />
+                  <stop offset="5%" stopColor="#0d0d0d" />
+                  <stop offset="10%" stopColor="#1a1a1a" />
+                  <stop offset="15%" stopColor="#262626" />
+                  <stop offset="20%" stopColor="#333333" />
+                  <stop offset="25%" stopColor="#404040" />
+                  <stop offset="30%" stopColor="#4d4d4d" />
+                  <stop offset="35%" stopColor="#595959" />
+                  <stop offset="40%" stopColor="#666666" />
+                  <stop offset="45%" stopColor="#737373" />
+                  <stop offset="50%" stopColor="#808080" />
+                  <stop offset="55%" stopColor="#8c8c8c" />
+                  <stop offset="60%" stopColor="#999999" />
+                  <stop offset="65%" stopColor="#a6a6a6" />
+                  <stop offset="70%" stopColor="#b3b3b3" />
+                  <stop offset="75%" stopColor="#bfbfbf" />
+                  <stop offset="80%" stopColor="#cccccc" />
+                  <stop offset="85%" stopColor="#d9d9d9" />
+                  <stop offset="90%" stopColor="#e6e6e6" />
+                  <stop offset="95%" stopColor="#f2f2f2" />
+                  <stop offset="100%" stopColor="#fafafa" />
                 </linearGradient>
-                <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="8%">
-                  <stop offset="0%" stopColor="rgba(201,168,76,0.4)" />
-                  <stop offset="60%" stopColor="rgba(201,168,76,0.08)" />
+                {/* 3rd Eye glow — subtle gold at convergence */}
+                <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="6%">
+                  <stop offset="0%" stopColor="rgba(201,168,76,0.3)" />
+                  <stop offset="50%" stopColor="rgba(201,168,76,0.06)" />
                   <stop offset="100%" stopColor="transparent" />
                 </radialGradient>
               </defs>
+
+              {/* The four triangles */}
               <polygon points="0,0 50,50 0,100" fill="url(#gBlack)" />
               <polygon points="100,0 50,50 100,100" fill="url(#gWhite)" />
               <polygon points="0,0 50,50 100,0" fill="url(#gGreyTop)" />
               <polygon points="0,100 50,50 100,100" fill="url(#gGreyBot)" />
-              <line x1="0" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-              <line x1="100" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-              <line x1="0" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-              <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-              <circle cx="50" cy="50" r="8" fill="url(#eyeGlow2)">
-                <animate attributeName="r" values="7;10;7" dur="6s" repeatCount="indefinite" />
+
+              {/* 3rd Eye — just a breath of gold at the convergence point */}
+              <circle cx="50" cy="50" r="6" fill="url(#eyeGlow2)">
+                <animate attributeName="r" values="5;8;5" dur="6s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="6s" repeatCount="indefinite" />
               </circle>
-              <ellipse cx="50" cy="50" rx="4" ry="2" fill="none" stroke="rgba(201,168,76,0.45)" strokeWidth="0.25">
-                <animate attributeName="ry" values="1.8;2.5;1.8" dur="5s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite" />
+              <ellipse cx="50" cy="50" rx="3" ry="1.5" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="0.2">
+                <animate attributeName="ry" values="1.2;2;1.2" dur="5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite" />
               </ellipse>
-              <circle cx="50" cy="50" r="1" fill="rgba(201,168,76,0.7)">
-                <animate attributeName="r" values="0.8;1.3;0.8" dur="4s" repeatCount="indefinite" />
+              <circle cx="50" cy="50" r="0.7" fill="rgba(201,168,76,0.6)">
+                <animate attributeName="r" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
               </circle>
-              <circle cx="50" cy="50" r="0.35" fill="#ffffff">
-                <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+              <circle cx="50" cy="50" r="0.25" fill="rgba(255,255,255,0.8)">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
               </circle>
             </svg>
-
-            <div style={{ position: "absolute", left: "7%", top: "50%", transform: "translateY(-50%)", animation: "fadeSlideUp 1s 0.5s both ease" }}>
-              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)", letterSpacing: "0.2em", color: "rgba(255,255,255,0.35)", fontWeight: 400 }}>BLACK</div>
-            </div>
-            <div style={{ position: "absolute", right: "7%", top: "50%", transform: "translateY(-50%)", animation: "fadeSlideUp 1s 0.7s both ease" }}>
-              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)", letterSpacing: "0.2em", color: "rgba(0,0,0,0.3)", fontWeight: 400 }}>WHITE</div>
-            </div>
-            <div style={{ position: "absolute", top: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1s 0.6s both ease" }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)", fontStyle: "italic", letterSpacing: "0.12em", color: "rgba(255,255,255,0.3)" }}>50 Shades of Grey</div>
-            </div>
-            <div style={{ position: "absolute", bottom: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1s 0.8s both ease" }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)", fontStyle: "italic", letterSpacing: "0.12em", color: "rgba(255,255,255,0.3)" }}>50 Shades of Gray</div>
-            </div>
-            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center", animation: "fadeSlideUp 1.2s 1s both ease", pointerEvents: "none" }}>
-              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(6px, 1.1vw, 8px)", letterSpacing: "0.4em", color: "rgba(201,168,76,0.5)", marginTop: 22 }}>3RD EYE</div>
-            </div>
-            <div style={{ position: "absolute", top: "3%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1.4s 0.3s both ease" }}>
-              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 16px)", fontWeight: 400, letterSpacing: "0.35em", color: "rgba(150,150,150,0.5)" }}>THE SECRET THEORY OF EVERYTHING</div>
-            </div>
-            <div style={{ position: "absolute", bottom: "4%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1.2s 1.5s both ease" }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 1.8vw, 14px)", fontStyle: "italic", color: "rgba(201,168,76,0.35)", letterSpacing: 1 }}>enter the prism</div>
-            </div>
           </div>
         );
       })()}
