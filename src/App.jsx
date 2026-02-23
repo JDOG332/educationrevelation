@@ -1849,126 +1849,298 @@ export default function TheoryOfEverything() {
             animation: poemPhase >= 5 ? "breathe 8s ease-in-out infinite" : "none",
           }} />
 
-          {/* The poem — appears after the zoom settles */}
-          {poemPhase >= 5 && (
-            <div style={{
-              textAlign: "center",
-              padding: "0 32px",
-              zIndex: 4,
-              maxWidth: 600,
-              display: "flex", flexDirection: "column", alignItems: "center",
-            }}>
+          {/* The poem — HOURGLASS with trickling sand */}
+          {poemPhase >= 5 && (() => {
+            // Hourglass poem component with sand physics
+            const HourglassPoem = () => {
+              const sandRef = useRef(null);
+              const grainCount = 60;
 
-              {/* Date — the faintest whisper */}
-              <div style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: 8,
-                letterSpacing: "0.6em",
-                color: "rgba(201,168,76,0.2)",
-                marginBottom: Math.round(13 * PHI),
-                animation: "fadeSlideUp 1.2s 0.1s both ease",
-              }}>OCTOBER 2016</div>
+              useEffect(() => {
+                const canvas = sandRef.current;
+                if (!canvas) return;
+                const ctx = canvas.getContext("2d");
+                const dpr = window.devicePixelRatio || 1;
+                const W = canvas.parentElement?.clientWidth || 340;
+                const H = canvas.parentElement?.clientHeight || 700;
+                canvas.width = W * dpr;
+                canvas.height = H * dpr;
+                canvas.style.width = W + "px";
+                canvas.style.height = H + "px";
+                ctx.scale(dpr, dpr);
 
-              {/* Title */}
-              <h2 style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(18px, 4vw, 28px)",
-                fontWeight: 400,
-                color: "rgba(232,232,240,0.85)",
-                letterSpacing: "0.35em",
-                margin: 0,
-                textShadow: "0 0 40px rgba(232,232,240,0.06), 0 0 80px rgba(201,168,76,0.03)",
-                animation: "fadeSlideUp 1.2s 0.2s both ease",
-              }}>RHYTHM OF LIFE</h2>
+                const midY = H * 0.5;
+                const neckX = W * 0.5;
+                const neckW = 6;
+                const topY = H * 0.06;
+                const botY = H * 0.94;
+                const topW = W * 0.42;
+                const botW = W * 0.42;
 
-              {/* Subtitle */}
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(11px, 1.8vw, 13px)",
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.18)",
-                marginTop: Math.round(5 * PHI),
-                letterSpacing: 0.5,
-                animation: "fadeSlideUp 1.2s 0.3s both ease",
-                maxWidth: 380,
-                lineHeight: PHI,
-              }}>
-                Written ten years before the theory. The seed was already in the ground.
-              </div>
+                // Sand grains — falling through the neck
+                const grains = [];
+                for (let i = 0; i < grainCount; i++) {
+                  grains.push({
+                    x: neckX + (Math.random() - 0.5) * neckW,
+                    y: midY + Math.random() * (botY - midY) * 0.8,
+                    vy: 0.3 + Math.random() * 0.8,
+                    size: 0.8 + Math.random() * 1.2,
+                    opacity: 0.15 + Math.random() * 0.35,
+                    phase: Math.random() * Math.PI * 2,
+                    settled: Math.random() > 0.4,
+                  });
+                }
 
-              {/* Space before bookend */}
-              <div style={{ height: Math.round(21 * PHI) }} />
+                // Pile of settled sand at bottom
+                const pileGrains = [];
+                for (let i = 0; i < 120; i++) {
+                  const pileY = botY - Math.random() * (botY - midY) * 0.35;
+                  const pileMaxW = botW * ((botY - pileY) / (botY - midY)) * 0.85;
+                  pileGrains.push({
+                    x: neckX + (Math.random() - 0.5) * pileMaxW * 2,
+                    y: pileY,
+                    size: 0.6 + Math.random() * 1.4,
+                    opacity: 0.08 + Math.random() * 0.2,
+                  });
+                }
 
-              {/* Top bookend */}
-              <p style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(17px, 3.2vw, 22px)",
-                fontStyle: "italic", fontWeight: 600,
-                letterSpacing: 3, margin: 0,
-                animation: "fadeSlideUp 1s 0.5s both ease",
-              }}>
-                <span className="shimmer-gold">It's the rhythm of life</span>
-              </p>
+                // Sand remaining in top
+                const topGrains = [];
+                for (let i = 0; i < 50; i++) {
+                  const tY = midY - Math.random() * (midY - topY) * 0.25 - (midY - topY) * 0.08;
+                  const tMaxW = topW * ((tY - topY) / (midY - topY)) * 0.7;
+                  topGrains.push({
+                    x: neckX + (Math.random() - 0.5) * tMaxW * 2,
+                    y: tY,
+                    size: 0.6 + Math.random() * 1.2,
+                    opacity: 0.06 + Math.random() * 0.15,
+                  });
+                }
 
-              {/* Small gold divider */}
-              <div style={{
-                width: 1, height: Math.round(13 * PHI),
-                margin: `${Math.round(8 * PHI)}px auto`,
-                background: "linear-gradient(180deg, rgba(201,168,76,0.3), rgba(201,168,76,0.06))",
-                animation: "fadeSlideUp 1s 0.6s both ease",
-              }} />
+                let frame = 0;
 
-              {/* THE POEM */}
-              {POEMS.map((pair, i) => (
-                <div key={i} style={{
-                  animation: `fadeSlideUp 1s ${0.7 + i * 0.2}s both ease`,
-                  marginBottom: i < POEMS.length - 1 ? Math.round(3 * PHI) : 0,
+                function draw() {
+                  ctx.clearRect(0, 0, W, H);
+                  frame++;
+
+                  // Draw hourglass outline
+                  ctx.save();
+                  ctx.beginPath();
+                  // Top half — wide at top, narrow at middle
+                  ctx.moveTo(neckX - topW, topY);
+                  ctx.quadraticCurveTo(neckX - topW * 0.3, midY * 0.7, neckX - neckW, midY);
+                  ctx.lineTo(neckX + neckW, midY);
+                  ctx.quadraticCurveTo(neckX + topW * 0.3, midY * 0.7, neckX + topW, topY);
+                  // Bottom half — narrow at middle, wide at bottom
+                  ctx.moveTo(neckX - neckW, midY);
+                  ctx.quadraticCurveTo(neckX - botW * 0.3, midY + (botY - midY) * 0.3, neckX - botW, botY);
+                  ctx.lineTo(neckX + botW, botY);
+                  ctx.quadraticCurveTo(neckX + botW * 0.3, midY + (botY - midY) * 0.3, neckX + neckW, midY);
+
+                  ctx.strokeStyle = "rgba(201,168,76,0.12)";
+                  ctx.lineWidth = 1;
+                  ctx.stroke();
+
+                  // Top and bottom caps
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - topW - 8, topY);
+                  ctx.lineTo(neckX + topW + 8, topY);
+                  ctx.strokeStyle = "rgba(201,168,76,0.18)";
+                  ctx.lineWidth = 1.5;
+                  ctx.stroke();
+
+                  ctx.beginPath();
+                  ctx.moveTo(neckX - botW - 8, botY);
+                  ctx.lineTo(neckX + botW + 8, botY);
+                  ctx.stroke();
+                  ctx.restore();
+
+                  // Glow at neck
+                  const neckGlow = ctx.createRadialGradient(neckX, midY, 0, neckX, midY, 20);
+                  neckGlow.addColorStop(0, "rgba(201,168,76,0.06)");
+                  neckGlow.addColorStop(1, "rgba(201,168,76,0)");
+                  ctx.fillStyle = neckGlow;
+                  ctx.fillRect(neckX - 20, midY - 20, 40, 40);
+
+                  // Draw top sand pile (remaining)
+                  for (const g of topGrains) {
+                    ctx.beginPath();
+                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
+                    ctx.fill();
+                  }
+
+                  // Draw falling grains
+                  for (const g of grains) {
+                    if (!g.settled) {
+                      g.y += g.vy;
+                      g.x += Math.sin(frame * 0.03 + g.phase) * 0.15;
+
+                      // Reset when reaching bottom pile area
+                      if (g.y > botY - (botY - midY) * 0.3) {
+                        g.y = midY + 2;
+                        g.x = neckX + (Math.random() - 0.5) * neckW;
+                      }
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
+                    ctx.fill();
+                  }
+
+                  // Draw bottom pile
+                  for (const g of pileGrains) {
+                    ctx.beginPath();
+                    ctx.arc(g.x, g.y + Math.sin(frame * 0.005 + g.x * 0.1) * 0.3, g.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
+                    ctx.fill();
+                  }
+
+                  // Steady stream through the neck — the trickle
+                  for (let i = 0; i < 3; i++) {
+                    const streamY = midY - 8 + i * 6;
+                    ctx.beginPath();
+                    ctx.arc(neckX + Math.sin(frame * 0.05 + i) * 1, streamY, 0.6, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgba(201,168,76,0.25)";
+                    ctx.fill();
+                  }
+
+                  requestAnimationFrame(draw);
+                }
+
+                const animId = requestAnimationFrame(draw);
+                return () => cancelAnimationFrame(animId);
+              }, []);
+
+              // Poem lines shaped to follow hourglass contour
+              // Wider at top, narrower in middle, wider at bottom
+              const poemLines = [
+                { text: "Every hope, a heartbeat.", size: "clamp(16px, 3.2vw, 21px)", scale: 1.0 },
+                { text: "Every wish, a dream.", size: "clamp(15px, 3vw, 20px)", scale: 0.95 },
+                { text: "The moon always wishing…", size: "clamp(15px, 2.8vw, 19px)", scale: 0.88 },
+                { text: "the sun it could be.", size: "clamp(14px, 2.6vw, 18px)", scale: 0.82 },
+                { text: "Every life, a purpose…", size: "clamp(13px, 2.4vw, 17px)", scale: 0.75 },
+                { text: "hidden inside.", size: "clamp(12px, 2.2vw, 16px)", scale: 0.68 },
+                { text: "Every sinner, a saint…", size: "clamp(12px, 2.2vw, 16px)", scale: 0.68 },
+                { text: "trying to hide.", size: "clamp(13px, 2.4vw, 17px)", scale: 0.75 },
+                { text: "Every baby is born,", size: "clamp(14px, 2.6vw, 18px)", scale: 0.82 },
+                { text: "with all that it needs…", size: "clamp(15px, 2.8vw, 19px)", scale: 0.88 },
+                { text: "Just wisdom and love…", size: "clamp(15px, 3vw, 20px)", scale: 0.95 },
+                { text: "and the chance to breathe.", size: "clamp(16px, 3.2vw, 21px)", scale: 1.0 },
+              ];
+
+              return (
+                <div style={{
+                  textAlign: "center",
+                  padding: "0 20px",
+                  zIndex: 4,
+                  maxWidth: 600,
+                  display: "flex", flexDirection: "column", alignItems: "center",
+                  position: "relative",
                 }}>
+
+                  {/* Date */}
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8,
+                    letterSpacing: "0.6em", color: "rgba(201,168,76,0.2)",
+                    marginBottom: Math.round(8 * PHI),
+                    animation: "fadeSlideUp 1.2s 0.1s both ease",
+                  }}>OCTOBER 2016</div>
+
+                  {/* Title */}
+                  <h2 style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: "clamp(18px, 4vw, 28px)",
+                    fontWeight: 400, color: "rgba(232,232,240,0.85)",
+                    letterSpacing: "0.35em", margin: 0,
+                    textShadow: "0 0 40px rgba(232,232,240,0.06)",
+                    animation: "fadeSlideUp 1.2s 0.2s both ease",
+                  }}>RHYTHM OF LIFE</h2>
+
+                  {/* Subtitle */}
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(16px, 3.2vw, 21px)",
-                    lineHeight: 1.5,
-                    color: "rgba(232,232,240,0.72)",
-                    fontStyle: "italic", fontWeight: 300,
-                    letterSpacing: 0.5,
-                    textShadow: "0 0 20px rgba(232,232,240,0.04)",
-                  }}>
-                    {pair[0]}
-                  </div>
+                    fontSize: "clamp(11px, 1.8vw, 13px)",
+                    fontStyle: "italic", color: "rgba(255,255,255,0.18)",
+                    marginTop: Math.round(5 * PHI),
+                    letterSpacing: 0.5, maxWidth: 380, lineHeight: PHI,
+                    animation: "fadeSlideUp 1.2s 0.3s both ease",
+                  }}>Written ten years before the theory. The seed was already in the ground.</div>
+
+                  {/* Hourglass container */}
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(16px, 3.2vw, 21px)",
-                    lineHeight: 1.5,
-                    color: "rgba(232,232,240,0.72)",
-                    fontStyle: "italic", fontWeight: 300,
-                    letterSpacing: 0.5,
-                    textShadow: "0 0 20px rgba(232,232,240,0.04)",
+                    position: "relative",
+                    width: "min(90vw, 380px)",
+                    height: "min(130vw, 560px)",
+                    margin: `${Math.round(13 * PHI)}px auto`,
+                    animation: "fadeSlideUp 1.4s 0.4s both ease",
                   }}>
-                    {pair[1]}
+
+                    {/* Sand canvas — behind the text */}
+                    <canvas ref={sandRef} style={{
+                      position: "absolute", top: 0, left: 0,
+                      width: "100%", height: "100%",
+                      pointerEvents: "none",
+                    }} />
+
+                    {/* Top bookend */}
+                    <div style={{
+                      position: "absolute", top: "2%", width: "100%", textAlign: "center",
+                      animation: "fadeSlideUp 1s 0.5s both ease",
+                    }}>
+                      <span className="shimmer-gold" style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "clamp(17px, 3.2vw, 22px)",
+                        fontStyle: "italic", fontWeight: 600, letterSpacing: 3,
+                      }}>It's the rhythm of life</span>
+                    </div>
+
+                    {/* Poem lines — positioned to follow hourglass shape */}
+                    {poemLines.map((line, i) => {
+                      const totalLines = poemLines.length;
+                      const yPercent = 12 + (i / (totalLines - 1)) * 76;
+                      return (
+                        <div key={i} style={{
+                          position: "absolute",
+                          top: `${yPercent}%`,
+                          width: "100%",
+                          textAlign: "center",
+                          transform: `scale(${line.scale})`,
+                          animation: `fadeSlideUp 1s ${0.6 + i * 0.12}s both ease`,
+                        }}>
+                          <span style={{
+                            fontFamily: "'Cormorant Garamond', serif",
+                            fontSize: line.size,
+                            lineHeight: 1.4,
+                            color: `rgba(232,232,240,${0.55 + line.scale * 0.2})`,
+                            fontStyle: "italic", fontWeight: 300,
+                            letterSpacing: line.scale > 0.9 ? 1 : 0.3,
+                            textShadow: "0 0 20px rgba(232,232,240,0.04)",
+                          }}>{line.text}</span>
+                        </div>
+                      );
+                    })}
+
+                    {/* Bottom bookend */}
+                    <div style={{
+                      position: "absolute", bottom: "2%", width: "100%", textAlign: "center",
+                      animation: `fadeSlideUp 1s ${0.6 + poemLines.length * 0.12 + 0.1}s both ease`,
+                    }}>
+                      <span className="shimmer-gold" style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "clamp(17px, 3.2vw, 22px)",
+                        fontStyle: "italic", fontWeight: 600, letterSpacing: 3,
+                        animationDirection: "reverse",
+                      }}>It's the rhythm of life</span>
+                    </div>
                   </div>
                 </div>
-              ))}
+              );
+            };
 
-              {/* Small gold divider */}
-              <div style={{
-                width: 1, height: Math.round(13 * PHI),
-                margin: `${Math.round(8 * PHI)}px auto`,
-                background: "linear-gradient(180deg, rgba(201,168,76,0.06), rgba(201,168,76,0.3))",
-                animation: `fadeSlideUp 1s ${0.7 + POEMS.length * 0.2 + 0.1}s both ease`,
-              }} />
-
-              {/* Bottom bookend */}
-              <p style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(17px, 3.2vw, 22px)",
-                fontStyle: "italic", fontWeight: 600,
-                letterSpacing: 3, margin: 0,
-                animation: `fadeSlideUp 1s ${0.7 + POEMS.length * 0.2 + 0.2}s both ease`,
-              }}>
-                <span className="shimmer-gold" style={{ animationDirection: "reverse" }}>It's the rhythm of life</span>
-              </p>
-            </div>
-          )}
+            return <HourglassPoem />;
+          })()}
 
           {/* Return — very bottom */}
           {poemPhase >= 5 && (
