@@ -615,8 +615,8 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 1 — THE POEM ===== */}
       {depth === 1 && (
         <div onClick={() => { if (poemPhase >= 5 || poemSeen.current) goDeeper(); }} style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-          cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 2,
+          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
+          cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 5000,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         }}>
 
@@ -624,7 +624,7 @@ export default function TheoryOfEverything() {
           <div style={{
             position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
             background: "radial-gradient(circle, rgba(232,232,240,0.95) 0%, rgba(232,232,240,0.7) 30%, rgba(14,10,28,0.8) 70%, #030306 100%)",
-            zIndex: 10, pointerEvents: "none",
+            zIndex: 5001, pointerEvents: "none",
             opacity: poemPhase <= 1 ? 1 : poemPhase === 2 ? 0.3 : 0,
             transition: poemPhase <= 1 ? "none" : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1)" : "opacity 3s ease-out",
           }} />
@@ -639,7 +639,7 @@ export default function TheoryOfEverything() {
               }}
               style={{
                 position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                zIndex: 20, cursor: "pointer",
+                zIndex: 5002, cursor: "pointer",
                 background: "transparent",
               }}
             />
@@ -650,7 +650,7 @@ export default function TheoryOfEverything() {
             position: "absolute", top: 0, left: "50%", width: 1, height: "100%",
             transform: "translateX(-50%)",
             background: "linear-gradient(180deg, transparent 5%, rgba(201,168,76,0.06) 20%, rgba(201,168,76,0.12) 38%, rgba(201,168,76,0.06) 62%, rgba(201,168,76,0.12) 80%, transparent 95%)",
-            pointerEvents: "none", zIndex: 3,
+            pointerEvents: "none", zIndex: 5003,
             opacity: poemPhase >= 5 ? 1 : 0,
             transition: "opacity 1.5s ease",
             animation: poemPhase >= 5 ? "breathe 8s ease-in-out infinite" : "none",
@@ -1132,7 +1132,7 @@ export default function TheoryOfEverything() {
         return (
           <div onClick={goDeeper} style={{
             minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
-            cursor: "pointer", zIndex: 2,
+            cursor: "pointer", zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
             padding: "3vh 20px",
           }}>
@@ -1450,7 +1450,7 @@ export default function TheoryOfEverything() {
         <div onClick={goDeeper} style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
           animation: "fadeSlideUp 0.8s ease",
-          cursor: "pointer", zIndex: 2,
+          cursor: "pointer", zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           padding: `${Math.round(21 * PHI)}px 28px`,
           boxSizing: "border-box",
@@ -1473,7 +1473,7 @@ export default function TheoryOfEverything() {
             textAlign: "center",
             maxWidth: 540,
             display: "flex", flexDirection: "column", alignItems: "center",
-            position: "relative", zIndex: 2,
+            position: "relative", zIndex: 1500,
           }}>
 
             {/* Eyebrow */}
@@ -1600,7 +1600,7 @@ export default function TheoryOfEverything() {
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -1839,7 +1839,7 @@ export default function TheoryOfEverything() {
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -2130,7 +2130,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActivePillar(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -2250,7 +2250,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveSamenessProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -2420,7 +2420,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -2540,7 +2540,7 @@ export default function TheoryOfEverything() {
           maxWidth: 680, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => setActiveConvergence(null)} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -2936,7 +2936,7 @@ export default function TheoryOfEverything() {
             maxWidth: 680, margin: "0 auto",
             padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
             animation: "fadeSlideUp 0.8s ease",
-            zIndex: 2, position: "relative",
+            zIndex: 1500, position: "relative",
           }}>
 
             {/* Header */}
@@ -3311,7 +3311,7 @@ export default function TheoryOfEverything() {
           maxWidth: 720, margin: "0 auto",
           padding: `${26}px 20px ${10}px`,
           animation: "fadeSlideUp 0.8s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <div style={{ textAlign: "center", marginBottom: `${Math.round(26 * PHI_INV) + 12}px` }}>
             <div style={{
@@ -3407,7 +3407,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => { setActiveLayer(null); setActiveSense(null); setActiveProof(false); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -3620,7 +3620,7 @@ export default function TheoryOfEverything() {
       {depth === 6 && activePair === null && (
         <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "auto",
-          animation: "fadeSlideUp 0.8s ease", zIndex: 2,
+          animation: "fadeSlideUp 0.8s ease", zIndex: 1500,
           padding: "3vh 0 6vh",
         }}>
           <div style={{ textAlign: "center", marginBottom: 28 }}>
@@ -3729,7 +3729,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           {/* BACK BUTTON */}
           <button onClick={() => { setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); }} style={{
@@ -3937,7 +3937,7 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center",
           justifyContent: "space-between",
           padding: "3vh 20px 2.5vh",
-          zIndex: 2,
+          zIndex: 1500,
         }}>
 
           {/* HEADER */}
@@ -4157,7 +4157,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => { setActiveAnswer(false); setActiveAnswerProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -4370,7 +4370,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => { setActiveBefore(false); setActiveBeforeProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -4533,7 +4533,7 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 2, position: "relative",
+          zIndex: 1500, position: "relative",
         }}>
           <button onClick={() => { setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
