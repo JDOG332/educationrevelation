@@ -376,8 +376,9 @@ export default function TheoryOfEverything() {
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
       {/* Left half = go back. Right half = go forward. */}
       {/* You cannot experience the site without choosing: back or forward. */}
+      {/* Disabled on depth 3 (convergence has its own door navigation) */}
       {/* Disabled on depth 4 (∞) — that page has its own click handler to loop back */}
-      {depth >= 1 && depth < 4 && (
+      {depth >= 1 && depth < 3 && (
         <>
           <div
             onClick={(e) => { e.stopPropagation(); goBack(); }}
