@@ -5316,28 +5316,194 @@ export default function TheoryOfEverything() {
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
             }}>
               {[
-                { key: "placeholder", icon: "🔱", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "100,180,220" },
+                { key: "dnahandshake", icon: "🧬", title: "THE DNA HANDSHAKE", hook: "Your body doesn't just eat. It performs a quality check against your DNA.", accent: "100,180,220" },
               ].map(idea => (
-                <div key={idea.key} style={{
-                  padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
-                  textAlign: "center", opacity: 0.4,
-                }}>
+                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                  transition: "all 0.4s ease", textAlign: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                >
                   <div style={{ fontSize: 24, marginBottom: 6 }}>{idea.icon}</div>
                   <div style={{
                     fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
+                    color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
                   }}>{idea.title}</div>
                   <div style={{
                     fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
-                    color: "rgba(232,232,240,0.25)", fontStyle: "italic", lineHeight: 1.4,
+                    color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.4,
                   }}>{idea.hook}</div>
                 </div>
               ))}
             </div>
           </div>
 
+        </div>
+      )}
+
+      {/* ===== THREE PILLARS: THE DNA HANDSHAKE ===== */}
+      {depth === 3 && activeConvergence === "pillars" && activeIdea === "dnahandshake" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← THREE PILLARS</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🧬</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE DNA HANDSHAKE</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(100,180,220,0.3)",
+            }}>CONVERGENT RECOGNITION IN YOUR CELLS</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(100,180,220,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            Your body doesn't just eat protein. It performs a high-stakes quality check to ensure what you consume matches what your cells actually need. A perfect vibe match between food and DNA. If the match is strong, the protein becomes part of you. If it's weak, your body rejects it.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(100,180,220,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THREE PILLARS · ONE TRUTH</div>
+
+          {/* Pillar 1: Science */}
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(13 * PHI) }}>
+            <div style={{
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(100,180,220,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(100,180,220,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
+                textAlign: "center",
+              }}>🔬 PILLAR I — SCIENCE: THE LOCK & KEY</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              }}>
+                Your body uses a Lock and Key mechanism. When protein enters a cell, the cell compares the shape of the new protein to its own. This is Uhlmann Fidelity. If the shapes match perfectly, the Informativeness Gate opens — allowing the protein to build muscle or repair skin. If the protein is noisy — damaged or poor quality — the gate stays shut to protect your system from error.
+              </div>
+            </div>
+
+            {/* Pillar 2: History */}
+            <div style={{
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(100,180,220,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(100,180,220,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
+                textAlign: "center",
+              }}>👑 PILLAR II — HISTORY: THE KING'S SECRET SEAL</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              }}>
+                A King would send a letter across the world. To prove it was real, he pressed his gold ring into hot wax on the envelope. The receiver had a matching stamp. If the wax shape matched exactly, the message was trusted. If it was even slightly smudged, the letter was thrown away. Your body treats protein exactly like those royal letters — it only accepts the Truth written in the wax.
+              </div>
+            </div>
+
+            {/* Pillar 3: Culture */}
+            <div style={{
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(100,180,220,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(100,180,220,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
+                textAlign: "center",
+              }}>🦸 PILLAR III — CULTURE: THE SUPERHERO TEAM-UP</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              }}>
+                Think of The Avengers. For the team to work, every hero must be unique but on the same page. Ten Thors but no one can fly the ship? Team fails. Your body looks for Redundancy — different amino acids that all agree on the same mission. When they all converge on one goal, your energy hits maximum.
+              </div>
+            </div>
+          </div>
+
+          {/* The 3rd Grade Version */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(13 * PHI)}px`,
+            background: "rgba(100,180,220,0.03)",
+            borderRadius: 10,
+            border: "1px solid rgba(100,180,220,0.08)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(100,180,220,0.35)", marginBottom: Math.round(8 * PHI),
+            }}>THE LEGO VERSION</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.2vw, 16px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              textAlign: "left", maxWidth: 480, margin: "0 auto",
+            }}>
+              <div style={{ marginBottom: Math.round(5 * PHI) }}>
+                <strong style={{ color: "rgba(100,180,220,0.5)" }}>The Matching Rule:</strong>{" "}
+                <span style={{ fontStyle: "italic" }}>You can only use a brick if it's the exact right color and size to fit the piece already in your hand.</span>
+              </div>
+              <div style={{ marginBottom: Math.round(5 * PHI) }}>
+                <strong style={{ color: "rgba(100,180,220,0.5)" }}>The Truth Check:</strong>{" "}
+                <span style={{ fontStyle: "italic" }}>Your body asks: Is this a real Lego, or a piece of chewed-up gum? It only keeps the True bricks.</span>
+              </div>
+              <div>
+                <strong style={{ color: "rgba(100,180,220,0.5)" }}>The Team Goal:</strong>{" "}
+                <span style={{ fontStyle: "italic" }}>Once enough True bricks fit together, they stop being pieces and suddenly become a Spaceship. You are the spaceship.</span>
+              </div>
+            </div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic", marginTop: Math.round(8 * PHI),
+            }}>
+              When your food matches your body, you feel a Spirit Bump — that spark of energy that tells you everything is working perfectly.
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
         </div>
       )}
 
