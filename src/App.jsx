@@ -5727,7 +5727,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THE ANCIENT PROOF ROOM ===== */}
-      {depth === 3 && activeConvergence === "ancient" && (
+      {depth === 3 && activeConvergence === "ancient" && activeIdea === null && (
         <div style={{
           maxWidth: 680, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -6016,6 +6016,222 @@ export default function TheoryOfEverything() {
             fontSize: 18, opacity: 0.3,
             animation: "fadeSlideUp 2s 1.3s both ease",
           }}>🪙🪙</div>
+
+          {/* ===== ANCIENT PROOF: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(190,140,220,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(190,140,220,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
+              ].map(idea => (
+                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                  transition: "all 0.4s ease", textAlign: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                >
+                  <div style={{ fontSize: 24, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      )}
+
+      {/* ===== ANCIENT PROOF: THE LIVING BRIDGE (Cannibalism as Connection) ===== */}
+      {depth === 3 && activeConvergence === "ancient" && activeIdea === "livingbridge" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← ANCIENT PROOF</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>🍖</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE LIVING BRIDGE</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(190,140,220,0.3)",
+            }}>WHY SOME ATE THEIR DEAD</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(190,140,220,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            They weren't looking for a snack. They were looking for a connection. They believed that by consuming someone, they could capture that person's strength, wisdom, and soul — to keep it alive within their own tribe forever. A way to make sure nothing valuable was ever truly lost.
+          </div>
+
+          {/* The Three Lenses */}
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(190,140,220,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THREE WAYS TO SEE IT</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(13 * PHI) }}>
+            {/* Lens 1: The Radio */}
+            <div style={{
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(190,140,220,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(190,140,220,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
+                textAlign: "center",
+              }}>📡 THE SHARED SOUL — SCIENCE</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              }}>
+                Two radios tuned to the same frequency play the same song. These cultures believed the frequency of a great warrior or beloved grandmother was stored in their body. By eating a part of them, you were tuning your own body to that frequency. Not destroying the person — syncing up so two people could vibrate as one.
+              </div>
+            </div>
+
+            {/* Lens 2: The Power Up */}
+            <div style={{
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(190,140,220,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(190,140,220,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
+                textAlign: "center",
+              }}>🐆 THE POWER UP — CULTURE</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              }}>
+                Think of Black Panther. When T'Challa drinks the Heart-Shaped Herb, he physically connects to the strength and spirits of every King who came before him. He consumes the essence of his ancestors to become the Black Panther. To these cultures, cannibalism was the real-world Power Up. The courage of the person became a permanent part of their own being.
+              </div>
+            </div>
+
+            {/* Lens 3: The Bridge */}
+            <div style={{
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(190,140,220,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(190,140,220,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
+                textAlign: "center",
+              }}>🌉 THE LIVING BRIDGE — HISTORY</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              }}>
+                Ancient tribes viewed life as a never-ending circle. If a brave leader died, his wisdom was a treasure chest. Buried underground, the chest was locked. Through the ritual, the tribe was unlocking that chest and moving the treasure into new, younger bodies. Building a bridge so the past could keep walking into the future.
+              </div>
+            </div>
+          </div>
+
+          {/* Making it Make Sents */}
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(190,140,220,0.35)", textAlign: "center",
+            marginTop: Math.round(21 * PHI), marginBottom: Math.round(13 * PHI),
+          }}>MAKING IT MAKE "SENTS"</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(5 * PHI) }}>
+            {[
+              { icon: "👁️", text: "You see the strength of your ancestor in your own hands." },
+              { icon: "👂", text: "You hear their voice in your own throat when you speak." },
+              { icon: "✋", text: "You feel their heartbeat under your skin." },
+              { icon: "👃👅", text: "The ceremony creates a memory that never fades." },
+              { icon: "🧘", text: "You just know you aren't alone because you've brought your other half inside you." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(5 * PHI), alignItems: "center",
+              }}>
+                <div style={{ fontSize: 16, minWidth: 30, textAlign: "center" }}>{s.icon}</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(13px, 2.2vw, 15px)",
+                  lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                  fontStyle: "italic",
+                }}>{s.text}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* The Big Idea */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(13 * PHI)}px`,
+            background: "rgba(190,140,220,0.03)",
+            borderRadius: 10,
+            border: "1px solid rgba(190,140,220,0.08)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(190,140,220,0.35)", marginBottom: Math.round(5 * PHI),
+            }}>TOTAL RECOGNITION</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 2.6vw, 18px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              It was the ultimate way to say: I see you, I value you, and I will never let you disappear. Two separate lives becoming one single, powerful force.
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
         </div>
       )}
 
