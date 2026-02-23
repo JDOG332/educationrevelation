@@ -4763,12 +4763,14 @@ export default function TheoryOfEverything() {
           height: "100vh", width: "100%",
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           animation: "fadeSlideUp 1.5s ease",
-          cursor: "pointer", position: "relative",
+          cursor: "pointer", position: "relative", zIndex: 1500,
         }} onClick={() => {
           setFading(true);
           setTimeout(() => {
             window.scrollTo({ top: 0, behavior: "instant" });
-            setCurrentPage("multiverse");
+            setDepth(0);
+            setLandingPhase(0); // Back to BLACK. Close your eyes again.
+            setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
             setFading(false);
           }, 800);
         }}>
@@ -4800,7 +4802,7 @@ export default function TheoryOfEverything() {
             fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
             color: "rgba(201,168,76,0.2)",
             animation: "fadeSlideUp 2s 1s both ease",
-          }}>CLICK TO SEE THE MULTIVERSE</div>
+          }}>FINISH I START</div>
 
           <div style={{ height: Math.round(8 * PHI) }} />
 
