@@ -2877,6 +2877,98 @@ export default function TheoryOfEverything() {
                 ))}
               </div>
 
+              {/* THE PYRAMID REVELATION */}
+              <div style={{
+                animation: "fadeSlideUp 1.4s 1.35s both ease",
+                marginBottom: Math.round(13 * PHI),
+                maxWidth: 500, width: "100%",
+                textAlign: "center",
+              }}>
+                {/* Divider */}
+                <div style={{
+                  width: Math.round(40 * PHI), height: 1, margin: "0 auto",
+                  background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)",
+                  marginBottom: Math.round(10 * PHI),
+                }} />
+
+                {/* The symbol */}
+                <div style={{
+                  fontSize: 32, marginBottom: Math.round(5 * PHI),
+                  filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
+                }}>🔺</div>
+
+                {/* The question */}
+                <div style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(11px, 2.2vw, 14px)",
+                  letterSpacing: "0.25em",
+                  color: "rgba(201,168,76,0.5)",
+                  marginBottom: Math.round(6 * PHI),
+                }}>THE PYRAMID KNEW</div>
+
+                {/* The revelation — line by line */}
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(13px, 2.3vw, 16px)",
+                  color: "rgba(232,232,240,0.38)",
+                  fontStyle: "italic", lineHeight: 1.9,
+                  maxWidth: 440, margin: "0 auto",
+                }}>
+                  An octahedron is two pyramids — one pointing up, one pointing down — fused at the base.
+                  <span style={{ display: "block", height: 10 }} />
+                  The Egyptians built the top half.
+                  <span style={{ display: "block", height: 4 }} />
+                  <span style={{ color: "rgba(201,168,76,0.4)" }}>Spirit reaching toward the sky.</span>
+                  <span style={{ display: "block", height: 10 }} />
+                  But they buried their dead <span style={{ color: "rgba(190,140,220,0.5)" }}>below</span> — in the mirror image.
+                  <span style={{ display: "block", height: 4 }} />
+                  Because they knew the other half was there.
+                </div>
+
+                <span style={{ display: "block", height: Math.round(8 * PHI) }} />
+
+                {/* The geometric truth */}
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(12px, 2vw, 14px)",
+                  color: "rgba(232,232,240,0.25)",
+                  fontStyle: "italic", lineHeight: 1.8,
+                  maxWidth: 420, margin: "0 auto",
+                }}>
+                  The ground is the mirror. What rises must also descend.
+                  <span style={{ display: "block", height: 6 }} />
+                  The base of the pyramid — the flat square where stone meets sand —
+                  <span style={{ display: "block", height: 2 }} />
+                  is the cross. WIDTH × HEIGHT. The visible plane.
+                  <span style={{ display: "block", height: 6 }} />
+                  The Pact's cross was always here — hiding at the equator of the octahedron,
+                  <span style={{ display: "block", height: 2 }} />
+                  where the living pyramid meets its buried mirror.
+                </div>
+
+                <span style={{ display: "block", height: Math.round(8 * PHI) }} />
+
+                {/* The kicker */}
+                <div style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(10px, 1.8vw, 12px)",
+                  letterSpacing: "0.2em",
+                  color: "rgba(232,232,240,0.18)",
+                  lineHeight: 2,
+                }}>
+                  AS ABOVE, SO BELOW
+                  <span style={{ display: "block", height: 2 }} />
+                  <span style={{ color: "rgba(201,168,76,0.25)" }}>isn't a phrase. It's a geometric instruction.</span>
+                </div>
+
+                {/* Divider */}
+                <div style={{
+                  width: Math.round(40 * PHI), height: 1,
+                  margin: Math.round(10 * PHI) + "px auto 0",
+                  background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)",
+                }} />
+              </div>
+
               {/* The ache */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -2884,7 +2976,7 @@ export default function TheoryOfEverything() {
                 color: "rgba(232,232,240,0.58)",
                 fontStyle: "italic", lineHeight: PHI,
                 maxWidth: 480, textAlign: "center",
-                animation: "fadeSlideUp 1.2s 1.4s both ease",
+                animation: "fadeSlideUp 1.2s 1.6s both ease",
                 marginBottom: Math.round(13 * PHI),
               }}>
                 That ache is the theory proving itself. The pull toward connection is gravity.
@@ -4115,8 +4207,8 @@ export default function TheoryOfEverything() {
               title: "THE GREAT PYRAMID",
               era: "c. 2560 BC · Egypt",
               color: "201,168,76",
-              body: "The Great Pyramid of Giza is half an octahedron. The other half is the earth itself. The Egyptians didn't just bury their dead underground — they placed them inside the mirror pyramid. The living structure reaches toward the sky. The burial chamber descends into the reflection. One shape, split by the ground plane. As above, so below.",
-              connection: "The top pyramid = Spirit rising. The mirror below = Flesh descending. The ground they walked on = the equatorial plane where WIDTH meets HEIGHT. The Pact's cross — hiding in plain sight at the base of every pyramid.",
+              body: "The Great Pyramid of Giza is half an octahedron. The other half is the earth itself. An octahedron is two pyramids — one pointing up, one pointing down — fused at the base. The Egyptians built the top half: Spirit reaching toward the sky. But they buried their dead below — in the mirror image. Because they knew the other half was there. The burial chamber doesn't just go underground. It enters the mirror pyramid. The living rise. The dead descend. Same angles. Same truth. The shape is only complete with both halves.",
+              connection: "The top pyramid = Spirit rising. The mirror below = Flesh descending. The ground they walked on = the equatorial plane where WIDTH meets HEIGHT — the Pact's cross, hiding in plain sight at the base of every pyramid. 'As above, so below' isn't a phrase. It's a geometric instruction: what you see above the ground is half the shape. The earth holds the other half. 4,500 years ago they carved this truth into 6 million tons of stone.",
             },
             {
               glyph: "✡️",
