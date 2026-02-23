@@ -1517,6 +1517,7 @@ export default function TheoryOfEverything() {
               { key: "breath", icon: "🙌", title: "THE BREATH", hook: "Same air. Since the beginning. One big living lung.", accent: "100,200,160" },
               { key: "root", icon: "🌌", title: "THE ROOT", hook: "The Starting Spark. You are the universe looking at itself.", accent: "200,180,255" },
               { key: "eye", icon: "🧠", title: "THE EYE", hook: "Your mind is a mirror. You are the part that woke up.", accent: "220,200,140" },
+              { key: "bones", icon: "🔬", title: "THE BONES", hook: "Nothing is separate. Everything vibrates the same energy.", accent: "100,160,220" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -3535,6 +3536,159 @@ export default function TheoryOfEverything() {
                 "\"Imagine\" — John Lennon",
                 "\"Breathe\" — Pink Floyd",
                 "\"Nights in White Satin\" — Moody Blues",
+              ].map((song, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{song}</div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== PLAIN ENGLISH: THE BONES (Physics & Reality) ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "bones" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 9s ease-in-out infinite" }}>🔬</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE BONES</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(100,160,220,0.3)",
+            }}>PHYSICS & REALITY</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(100,160,220,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            The world is a giant web where every tiny thread is pulled by every other thread. Nothing is truly separate — everything is just a different vibration of the same invisible energy.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(100,160,220,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THE SKELETON OF EVERYTHING</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {[
+              { icon: "👂", sense: "SOUND", text: "Rub the rim of a crystal glass with a wet finger until it sings. That sound is a wave you can hear — the whole universe is made of waves you just can't see yet." },
+              { icon: "👃", sense: "SMELL", text: "Walk past a bakery or flower shop. Even if you can't see the bread or the rose, invisible molecules reach you. This is how Dark Matter works — holding things together even when light doesn't show it." },
+              { icon: "👅", sense: "TASTE", text: "Pop a piece of Pop Rocks candy or drink something fizzy. Feel the tiny explosions on your tongue. That is energy being released, just like stars releasing energy into the dark." },
+              { icon: "✋", sense: "TOUCH", text: "Take two magnets and push the same sides together. Feel that invisible wall pushing back? That is a force field. The solid floor you walk on is actually just force fields pushing against your feet." },
+              { icon: "👁️", sense: "SIGHT", text: "Look at a shadow on the ground. The shadow is a 2D version of a 3D object. Some scientists think our 3D world is just a shadow of a higher dimension we can't see." },
+              { icon: "🧘", sense: "THE 6TH", text: "Spin around quickly and then stop. The dizzy feeling is your inner map trying to find straight again. It shows that up and down are just feelings caused by the Earth pulling on you." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  filter: "drop-shadow(0 0 8px rgba(100,160,220,0.2))",
+                }}>{s.icon}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                    color: "rgba(100,160,220,0.45)", marginBottom: 4,
+                  }}>{s.sense}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                  }}>{s.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Intuition — the trampoline */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(10 * PHI)}px`,
+            background: "rgba(100,160,220,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(100,160,220,0.06)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(100,160,220,0.3)", marginBottom: Math.round(5 * PHI),
+            }}>THE UNIVERSE IS A TRAMPOLINE</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Imagine you are standing on a giant trampoline with all your friends. When one person jumps, everyone else feels the bounce. You don't have to touch them to feel them. The whole universe is that trampoline. Your gut feeling is just you sensing a bounce from somewhere else in the web.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            marginTop: Math.round(13 * PHI),
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+          }}>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(100,160,220,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · INFO</div>
+              {["NASA: Dark Matter & Energy", "CERN: Antimatter Explained", "Quantum Entanglement"].map((link, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{link}</div>
+              ))}
+            </div>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(100,160,220,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · RHYTHM</div>
+              {[
+                "\"Bohemian Rhapsody\" — Queen",
+                "\"Space Oddity\" — David Bowie",
+                "\"Yellow\" — Coldplay",
               ].map((song, i) => (
                 <div key={i} style={{
                   fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
