@@ -1508,6 +1508,7 @@ export default function TheoryOfEverything() {
               { key: "connection", icon: "🤘", title: "THE CONNECTION", hook: "Touch the spiderweb. Feel the whole thing wiggle.", accent: "120,180,80" },
               { key: "layering", icon: "♾️", title: "LAYERING LOVE", hook: "Peel back layers. Find the rhythm underneath.", accent: "79,195,247" },
               { key: "ache", icon: "💛", title: "THE ACHE", hook: "The pull is gravity. The signal is clean.", accent: "201,168,76" },
+              { key: "weight", icon: "🌑", title: "THE SHARED WEIGHT", hook: "The heavy backpack. The same rope. Different ends.", accent: "160,160,180" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -2170,6 +2171,157 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
+      {/* ===== PLAIN ENGLISH: THE SHARED WEIGHT ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "weight" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 9s ease-in-out infinite" }}>🌑</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE SHARED WEIGHT</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: "0 auto",
+              background: "linear-gradient(90deg, transparent, rgba(160,160,180,0.25), transparent)",
+            }} />
+          </div>
+
+          {/* Core truth */}
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            We all carry a heavy backpack of pain. When you feel it, you aren't alone — you are plugging into a giant web of everyone who has ever lived. We are all holding the same heavy rope from different ends.
+          </div>
+
+          {/* 6 senses */}
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(160,160,180,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>FEEL THE WEIGHT</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {[
+              { icon: "👂", sense: "SOUND", text: "Close your eyes and listen to a low, humming bass note. Feel the vibration in your chest — it is the same pulse in every living heart." },
+              { icon: "👃", sense: "SMELL", text: "Smell fresh rain on dry dirt — petrichor. It reminds you that even the hardest, driest ground is waiting to drink and change." },
+              { icon: "👅", sense: "TASTE", text: "Taste a single grain of sea salt. It is the flavor of every tear ever shed and every ocean that connects the continents." },
+              { icon: "✋", sense: "TOUCH", text: "Press your palms together firmly. Feel the heat. That warmth is the energy of Us trapped between two hands." },
+              { icon: "👁️", sense: "SIGHT", text: "Watch a candle flame in a dark room. No matter how much dark there is, the light never stops pushing back." },
+              { icon: "🧘", sense: "THE 6TH", text: "Stand on one leg and feel your tiny muscles wobbling to keep you upright. That wobble is you constantly finding balance in a moving world." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  filter: "drop-shadow(0 0 8px rgba(160,160,180,0.2))",
+                }}>{s.icon}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                    color: "rgba(160,160,180,0.45)", marginBottom: 4,
+                  }}>{s.sense}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                  }}>{s.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* The All-At-Once Experience */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(10 * PHI)}px`,
+            background: "rgba(160,160,180,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(160,160,180,0.06)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(160,160,180,0.3)", marginBottom: Math.round(5 * PHI),
+            }}>THE ALL-AT-ONCE EXPERIENCE</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Imagine you are a single leaf on a giant oak tree. When the wind blows, you shake. You might feel lonely, but you are actually feeling the wind that is moving the entire forest. Your roots are tangled with everyone else's under the dirt where no one can see. You aren't falling — you are part of the dance.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            marginTop: Math.round(13 * PHI),
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+          }}>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(160,160,180,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · INFO</div>
+              {["The Science of Empathy", "Resilience Through Adversity", "Music & Emotional Healing"].map((link, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{link}</div>
+              ))}
+            </div>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(160,160,180,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · RHYTHM</div>
+              {[
+                "\"Bridge Over Troubled Water\" — Simon & Garfunkel",
+                "\"Fix You\" — Coldplay",
+                "\"Everybody Hurts\" — R.E.M.",
+              ].map((song, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{song}</div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
       {depth === 3 && activeConvergence === "gravity" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
@@ -2452,6 +2604,29 @@ export default function TheoryOfEverything() {
               Look into <strong style={{ color: "rgba(79,195,247,0.55)", fontWeight: 600 }}>Quantum Entanglement</strong> and <strong style={{ color: "rgba(201,168,76,0.55)", fontWeight: 600 }}>Tidal Locking</strong>. If you want to see how this works in your own life, look at the 3 people you talk to the most — calculate their consistency. You'll find you are orbiting the ones who are the most clear, not the ones who are the loudest.
             </div>
           </GlassCard>
+
+          {/* THE SHARED WEIGHT — gravity fragment */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
+            background: "linear-gradient(90deg, transparent, rgba(255,180,50,0.15), transparent)",
+          }} />
+          <div style={{
+            textAlign: "center", marginBottom: Math.round(13 * PHI),
+          }}>
+            <div style={{ fontSize: 24, marginBottom: Math.round(5 * PHI) }}>🌑</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.3em",
+              color: "rgba(255,180,50,0.4)", marginBottom: Math.round(8 * PHI),
+            }}>THE SHARED WEIGHT</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Pain has mass. Grief has gravity. We are all holding the same heavy rope from different ends — and the pull between us is what proves the rope is real. The backpack gets lighter the moment you realize everyone is carrying one.
+            </div>
+          </div>
 
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
