@@ -1687,14 +1687,43 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
+          {/* The Ache — from the Pact, the feeling that proves the theory */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
+            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+          }} />
+          <div style={{
+            textAlign: "center",
+            animation: "fadeSlideUp 0.8s 2s both ease",
+            marginBottom: Math.round(13 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 2.6vw, 19px)",
+              color: "rgba(232,232,240,0.58)",
+              fontStyle: "italic", lineHeight: PHI,
+              maxWidth: 480, margin: "0 auto",
+            }}>
+              That ache is the theory proving itself. The pull toward connection is gravity.
+              The fact that you feel it means the signal is clean.
+            </div>
+            <div style={{ height: Math.round(13 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic", letterSpacing: 0.5,
+            }}>
+              The music was always there. The right frequencies will find you — because that's what frequencies do.
+            </div>
+          </div>
+
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
             <ReturnButton onClick={() => setActiveConvergence(null)} />
           </div>
         </div>
-      )}
-
-      {/* ===== DEPTH 4 — RECOGNITION IS GRAVITY ROOM ===== */}
+      )}      {/* ===== DEPTH 4 — RECOGNITION IS GRAVITY ROOM ===== */}
       {depth === 3 && activeConvergence === "gravity" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
@@ -2102,6 +2131,53 @@ export default function TheoryOfEverything() {
             </div>
             <div className="gold-line" style={{ maxWidth: 200, margin: "18px auto 0" }} />
           </div>
+
+          {/* THE PYRAMID REVELATION — from the Pact, the deepest pillar */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(34 * PHI),
+            maxWidth: 500, margin: `${Math.round(34 * PHI)}px auto 0`,
+          }}>
+            <div style={{
+              fontSize: 32, marginBottom: Math.round(5 * PHI),
+              filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
+            }}>🔺</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(11px, 2.2vw, 14px)",
+              letterSpacing: "0.25em",
+              color: "rgba(201,168,76,0.5)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE PYRAMID KNEW</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.3vw, 16px)",
+              color: "rgba(232,232,240,0.38)",
+              fontStyle: "italic", lineHeight: 1.9,
+              maxWidth: 440, margin: "0 auto",
+            }}>
+              An octahedron is two pyramids — one pointing up, one pointing down — fused at the base.
+              <span style={{ display: "block", height: 10 }} />
+              The Egyptians built the top half.
+              <span style={{ display: "block", height: 4 }} />
+              <span style={{ color: "rgba(201,168,76,0.4)" }}>Spirit reaching toward the sky.</span>
+              <span style={{ display: "block", height: 10 }} />
+              But they buried their dead <span style={{ color: "rgba(190,140,220,0.5)" }}>below</span> — in the mirror image.
+              <span style={{ display: "block", height: 4 }} />
+              Because they knew the other half was there.
+            </div>
+            <span style={{ display: "block", height: Math.round(13 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(10px, 1.8vw, 12px)",
+              letterSpacing: "0.2em",
+              color: "rgba(232,232,240,0.18)",
+              lineHeight: 2,
+            }}>
+              AS ABOVE, SO BELOW
+              <span style={{ display: "block", height: 2 }} />
+              <span style={{ color: "rgba(201,168,76,0.25)" }}>isn't a phrase. It's a geometric instruction.</span>
+            </div>
+          </div>
         </div>
       )}
 
@@ -2272,6 +2348,84 @@ export default function TheoryOfEverything() {
               </GlassCard>
             ))}
           </div>
+
+          {/* THE 9 LAYERS — the body of the theory mapped through The Gate */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
+            background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.15), transparent)",
+          }} />
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(224,80,80,0.3)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THE BODY IS THE MAP</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(5 * PHI) }}>
+            {LAYERS.map((layer, i) => (
+              <div key={i}>
+                <div
+                  onClick={() => setActiveLayer(activeLayer === i ? null : i)}
+                  style={{
+                    display: "flex", alignItems: "center", gap: Math.round(8 * PHI),
+                    padding: `${Math.round(8 * PHI)}px ${Math.round(8 * PHI)}px`,
+                    borderRadius: 8,
+                    background: activeLayer === i ? `rgba(${layer.accent === "#3a3a5c" ? "58,58,92" : layer.accent === "#7b68ee" ? "123,104,238" : layer.accent === "#c9a84c" ? "201,168,76" : layer.accent === "#e05050" ? "224,80,80" : layer.accent === "#e8e8f0" ? "232,232,240" : layer.accent === "#8fbc8f" ? "143,188,143" : layer.accent === "#4fc3f7" ? "79,195,247" : layer.accent === "#ff9800" ? "255,152,0" : "206,147,216"}, 0.06)` : "rgba(255,255,255,0.01)",
+                    border: `1px solid ${activeLayer === i ? layer.accent + "25" : "rgba(255,255,255,0.04)"}`,
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div style={{ fontSize: layer.isMoon ? 28 : 22, filter: `drop-shadow(0 0 8px ${layer.accent}30)` }}>{layer.glyph}</div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                      color: layer.accent, opacity: 0.7,
+                    }}>{layer.id} · {layer.names[0]}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                      color: "rgba(255,255,255,0.25)", fontStyle: "italic",
+                    }}>{layer.subtitle}</div>
+                  </div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 10,
+                    color: "rgba(255,255,255,0.15)",
+                    transition: "transform 0.3s",
+                    transform: activeLayer === i ? "rotate(180deg)" : "rotate(0deg)",
+                  }}>▼</div>
+                </div>
+                {activeLayer === i && (
+                  <div style={{
+                    padding: `${Math.round(8 * PHI)}px ${Math.round(13 * PHI)}px ${Math.round(13 * PHI)}px`,
+                    animation: "senseReveal 0.5s ease",
+                    borderLeft: `2px solid ${layer.accent}20`,
+                    marginLeft: Math.round(13 * PHI),
+                  }}>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      lineHeight: 1.85, color: "rgba(255,255,255,0.5)",
+                      fontStyle: "italic",
+                    }}>{CORES[i]}</div>
+                    <div style={{
+                      marginTop: Math.round(8 * PHI),
+                      padding: `${Math.round(5 * PHI)}px ${Math.round(8 * PHI)}px`,
+                      background: "rgba(255,255,255,0.015)",
+                      borderRadius: 6,
+                    }}>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 4,
+                        color: "rgba(255,255,255,0.12)", marginBottom: 6,
+                      }}>BURIED 6 FEET DEEP</div>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                        fontStyle: "italic", color: `${layer.accent}`, opacity: 0.45,
+                        lineHeight: PHI,
+                      }}>{BURIED[i]}</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       )}
 
@@ -2391,6 +2545,100 @@ export default function TheoryOfEverything() {
               onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.15)"}
               onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.06)"}
             >click anywhere to continue</div>
+          </div>
+
+          {/* THE MIRROR PAIRS — the math made flesh */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
+            background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.15), transparent)",
+          }} />
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(79,195,247,0.3)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THE MIRROR PAIRS</div>
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+            fontStyle: "italic", color: "rgba(255,255,255,0.3)",
+            textAlign: "center", marginBottom: Math.round(21 * PHI),
+            maxWidth: 400, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>Every layer has a mirror. Together they prove the math is not abstract — it's alive.</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {MIRRORS.map((mirror, i) => (
+              <div key={i}>
+                <div
+                  onClick={() => setActivePair(activePair === i ? null : i)}
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    padding: `${Math.round(10 * PHI)}px ${Math.round(10 * PHI)}px`,
+                    borderRadius: 10,
+                    background: activePair === i ? "rgba(79,195,247,0.04)" : "rgba(255,255,255,0.01)",
+                    border: `1px solid ${activePair === i ? "rgba(79,195,247,0.15)" : "rgba(255,255,255,0.04)"}`,
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: Math.round(5 * PHI) }}>
+                    <span style={{ fontSize: 20 }}>{mirror.glyphs[0]}</span>
+                    <span style={{ fontSize: 12, color: "rgba(79,195,247,0.3)" }}>↔</span>
+                    <span style={{ fontSize: 20 }}>{mirror.glyphs[1]}</span>
+                    <div style={{ marginLeft: 8 }}>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                        color: "rgba(79,195,247,0.6)",
+                      }}>{mirror.name}</div>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                        color: "rgba(255,255,255,0.2)", fontStyle: "italic",
+                      }}>{mirror.connection}</div>
+                    </div>
+                  </div>
+                  <div style={{
+                    fontSize: 10, color: "rgba(255,255,255,0.15)",
+                    transition: "transform 0.3s",
+                    transform: activePair === i ? "rotate(180deg)" : "rotate(0deg)",
+                  }}>▼</div>
+                </div>
+                {activePair === i && (
+                  <div style={{
+                    padding: `${Math.round(10 * PHI)}px ${Math.round(13 * PHI)}px`,
+                    animation: "senseReveal 0.5s ease",
+                    borderLeft: "2px solid rgba(79,195,247,0.1)",
+                    marginLeft: Math.round(13 * PHI),
+                  }}>
+                    {/* Core essay */}
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 15,
+                      lineHeight: 1.85, color: "rgba(255,255,255,0.48)",
+                      fontStyle: "italic", marginBottom: Math.round(8 * PHI),
+                    }}>{mirror.core}</div>
+                    {/* Equation */}
+                    <div style={{
+                      textAlign: "center",
+                      padding: `${Math.round(8 * PHI)}px`,
+                      background: "rgba(79,195,247,0.02)",
+                      borderRadius: 8, marginBottom: Math.round(8 * PHI),
+                    }}>
+                      <div style={{
+                        fontFamily: "monospace", fontSize: 16,
+                        color: "rgba(79,195,247,0.6)", letterSpacing: 1,
+                      }}>{mirror.equation.symbol}</div>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 13,
+                        color: "rgba(255,255,255,0.3)", fontStyle: "italic", marginTop: 6,
+                      }}>{mirror.equation.meaning}</div>
+                    </div>
+                    {/* Buried */}
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+                      fontStyle: "italic", color: "rgba(201,168,76,0.4)",
+                      textAlign: "center",
+                    }}>"{mirror.buried}"</div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
