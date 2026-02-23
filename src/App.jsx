@@ -1292,6 +1292,7 @@ export default function TheoryOfEverything() {
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           boxSizing: "border-box",
+          background: "#030306",
         }}>
 
           {/* Triquetra — massive, ghostly, barely there */}
