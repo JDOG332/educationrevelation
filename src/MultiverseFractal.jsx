@@ -294,23 +294,7 @@ export default function MultiverseFractal({ style }) {
         }
       }
 
-      // === Labels for super-clusters ===
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      for (let si = 0; si < 9; si++) {
-        const sc = state.super[si];
-        ctx.font = `${si === 4 ? 11 : 8}px 'Cinzel', serif`;
-        ctx.fillStyle = LAYER_COLORS[si] + (si === 4 ? "60" : "30");
-        ctx.fillText(LAYER_NAMES[si], sc.x, sc.y - (si === 4 ? 65 : 45));
-      }
 
-      // Center label
-      ctx.font = "10px 'Cinzel', serif";
-      ctx.fillStyle = "rgba(201,168,76,0.2)";
-      ctx.fillText("9 × 9 × 9 = 729", CX, CY + BASE_R + 30);
-      ctx.font = "7px 'Cinzel', serif";
-      ctx.fillStyle = "rgba(201,168,76,0.12)";
-      ctx.fillText("SAME EQUATION · EVERY SCALE", CX, CY + BASE_R + 44);
     }
 
     function loop() {
