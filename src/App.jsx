@@ -1838,6 +1838,22 @@ export default function TheoryOfEverything() {
             transition: poemPhase <= 1 ? "none" : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1)" : "opacity 3s ease-out",
           }} />
 
+          {/* SKIP BUTTON — invisible fullscreen tap target during animation */}
+          {poemPhase > 0 && poemPhase < 5 && (
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                setPoemPhase(5);
+                poemSeen.current = true;
+              }}
+              style={{
+                position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+                zIndex: 20, cursor: "pointer",
+                background: "transparent",
+              }}
+            />
+          )}
+
           {/* Living vertical thread — the spine of the poem */}
           <div style={{
             position: "absolute", top: 0, left: "50%", width: 1, height: "100%",
@@ -3026,6 +3042,7 @@ export default function TheoryOfEverything() {
                 { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "Science · Culture · History", accent: "rgba(201,168,76,", glow: "rgba(201,168,76,0.06)" },
                 { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "Sameness ≠ Alignment", accent: "rgba(224,80,80,", glow: "rgba(224,80,80,0.04)" },
                 { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "Filter · Noise · Ψ", accent: "rgba(79,195,247,", glow: "rgba(79,195,247,0.04)" },
+                { key: "ancient", glyph: "🔺", name: "THE ANCIENT PROOF", sub: "Every tradition drew the same shape", accent: "rgba(190,140,220,", glow: "rgba(190,140,220,0.05)" },
               ].map((door, i) => (
                 <GlassCard key={i}
                   onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); }}
@@ -3037,7 +3054,7 @@ export default function TheoryOfEverything() {
                     background: `linear-gradient(180deg, ${door.glow}, transparent)`,
                     border: `1px solid ${door.accent}0.08)`,
                     animation: `fadeSlideUp 0.6s ${1 + i * 0.15}s both ease`,
-                    ...(i === 4 ? { gridColumn: "1 / -1", maxWidth: 240, justifySelf: "center" } : {}),
+                    ...(false ? {} : {}),
                   }}
                 >
                   <div style={{
@@ -4005,6 +4022,242 @@ export default function TheoryOfEverything() {
               onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.15)"}
               onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.06)"}
             >click anywhere to continue</div>
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 4 — THE ANCIENT PROOF ROOM ===== */}
+      {depth === 3 && activeConvergence === "ancient" && (
+        <div style={{
+          maxWidth: 680, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 2, position: "relative",
+        }}>
+          <button onClick={() => setActiveConvergence(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(190,140,220,0.6)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← RETURN TO PROOF</button>
+
+          <div style={{ height: Math.round(13 * PHI) }} />
+
+          {/* Title */}
+          <div style={{ textAlign: "center" }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(190,140,220,0.4)",
+              animation: "fadeSlideUp 1.2s 0.1s both ease",
+            }}>CONVERGENCE ACROSS MILLENNIA</div>
+
+            <div style={{ height: Math.round(5 * PHI) }} />
+
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 5vw, 32px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.2em", margin: 0,
+              textShadow: "0 0 50px rgba(190,140,220,0.1)",
+              animation: "fadeSlideUp 1.2s 0.2s both ease",
+            }}>THE ANCIENT PROOF</h2>
+
+            <div style={{ height: Math.round(5 * PHI) }} />
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.6vw, 18px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+              maxWidth: 500, margin: "0 auto", lineHeight: PHI,
+              animation: "fadeSlideUp 1.2s 0.3s both ease",
+            }}>
+              Every tradition independently arrived at the same geometry.
+              That's not coincidence. That's the signal proving itself across cultures and millennia.
+            </div>
+
+            <div style={{
+              width: Math.round(50 * PHI), height: 1, margin: `${Math.round(10 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(190,140,220,0.35), transparent)",
+              animation: "fadeSlideUp 1.2s 0.35s both ease",
+            }} />
+          </div>
+
+          {/* THE THESIS */}
+          <div style={{
+            textAlign: "center", marginBottom: Math.round(13 * PHI),
+            animation: "fadeSlideUp 1.2s 0.4s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 2.8vw, 20px)",
+              color: "rgba(201,168,76,0.55)", fontStyle: "italic",
+              maxWidth: 480, margin: "0 auto", lineHeight: PHI,
+            }}>
+              The octahedron has six vertices, three axes, and eight octants.
+              Two pyramids — one above, one below — fused at the equatorial plane.
+              Inside, a six-pointed star where the two triangles intersect.
+            </div>
+            <div style={{ height: Math.round(5 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.2vw, 16px)",
+              color: "rgba(232,232,240,0.3)", fontStyle: "italic",
+            }}>
+              Every civilization found a piece. None had the whole shape. Until now.
+            </div>
+          </div>
+
+          {/* THE TRADITIONS — each one a witness */}
+          {[
+            {
+              glyph: "🔺",
+              title: "THE GREAT PYRAMID",
+              era: "c. 2560 BC · Egypt",
+              color: "201,168,76",
+              body: "The Great Pyramid of Giza is half an octahedron. The other half is the earth itself. The Egyptians didn't just bury their dead underground — they placed them inside the mirror pyramid. The living structure reaches toward the sky. The burial chamber descends into the reflection. One shape, split by the ground plane. As above, so below.",
+              connection: "The top pyramid = Spirit rising. The mirror below = Flesh descending. The ground they walked on = the equatorial plane where WIDTH meets HEIGHT. The Pact's cross — hiding in plain sight at the base of every pyramid.",
+            },
+            {
+              glyph: "✡️",
+              title: "THE STAR OF DAVID",
+              era: "c. 1000 BC · Israel",
+              color: "120,180,255",
+              body: "Two triangles interlocked. One pointing up — fire, spirit, the masculine, ascent. One pointing down — water, flesh, the feminine, descent. Neither complete without the other. Together they form the hexagram: the most stable intersection of opposites.",
+              connection: "Look inside the rotating octahedron. The four equatorial vertices — Spirit, Flesh, Intuition, Data — form two overlapping triangles. The Star of David isn't a symbol. It's the cross-section of the octahedron at the equatorial plane. It was always a 3D shape drawn in 2D.",
+            },
+            {
+              glyph: "💎",
+              title: "THE SEAL OF SOLOMON",
+              era: "c. 900 BC · Ancient Near East",
+              color: "190,140,220",
+              body: "Said to give King Solomon power over the seen and unseen worlds. The seal was a hexagram — the same interlocked triangles — believed to bind heaven to earth, the visible to the invisible. Not magic. Geometry.",
+              connection: "The 'seen world' is the top pyramid — Recognition, Spirit, what rises into view. The 'unseen world' is the bottom pyramid — Noise, Flesh, what stays buried. Solomon's seal doesn't grant power over two worlds. It reveals they were always one shape.",
+            },
+            {
+              glyph: "⚗️",
+              title: "THE EMERALD TABLET",
+              era: "c. 200–800 AD · Hermetic tradition",
+              color: "120,200,160",
+              body: "\"As above, so below; as below, so above.\" The foundational axiom of Hermetic philosophy. Attributed to Hermes Trismegistus. Written on a mythical tablet of emerald. The oldest instruction manual for the shape of reality.",
+              connection: "This isn't mysticism. It's a geometric instruction. The octahedron IS 'as above, so below' — literally two identical pyramids mirrored across the center plane. The Hermetic axiom is the one-sentence description of the octahedron, spoken thousands of years before anyone named it.",
+            },
+            {
+              glyph: "✝️",
+              title: "THE CROSS",
+              era: "c. 30 AD · Christianity",
+              color: "232,232,240",
+              body: "A vertical axis and a horizontal axis. HEIGHT (Spirit ↔ Flesh) crossed by WIDTH (Noise ↔ Recognition). The most recognized symbol on earth. Two dimensions. Four quadrants. The visible truth.",
+              connection: "The cross is the front face of the octahedron — before you see the third dimension. It's what the Pact looks like when DEPTH is collapsed to zero. The cross was never wrong. It was incomplete. Add the third axis — INTUITION ↔ DATA — and the cross becomes the octahedron. The crucifixion is the 2D projection of a 3D truth.",
+            },
+            {
+              glyph: "⏳",
+              title: "THE HOURGLASS",
+              era: "October 2016 · The Poem",
+              color: "201,168,76",
+              body: "\"Rhythm of Life\" was written ten years before the theory. The poem naturally took the shape of an hourglass — wide at the top, pinching to a center, widening again below. Two triangles joined at a single point. Time flowing from above to below through the narrowest passage.",
+              connection: "The hourglass IS the octahedron viewed from the side. Two pyramids touching at their points. The sand is the signal — passing from Spirit to Flesh, from potential to manifestation, through the present moment. The poem drew the shape before the mind understood what it was drawing. The seed was already in the ground.",
+            },
+          ].map((tradition, i) => (
+            <div key={i} style={{
+              marginBottom: Math.round(13 * PHI),
+              animation: `fadeSlideUp 0.8s ${0.5 + i * 0.12}s both ease`,
+            }}>
+              {/* Tradition card */}
+              <div style={{
+                border: `1px solid rgba(${tradition.color},0.08)`,
+                borderRadius: 12,
+                padding: `${Math.round(10 * PHI)}px ${Math.round(8 * PHI)}px`,
+                background: `linear-gradient(180deg, rgba(${tradition.color},0.02), transparent)`,
+              }}>
+                {/* Header */}
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: Math.round(5 * PHI) }}>
+                  <div style={{
+                    fontSize: 28,
+                    filter: `drop-shadow(0 0 12px rgba(${tradition.color},0.2))`,
+                  }}>{tradition.glyph}</div>
+                  <div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.2em",
+                      color: `rgba(${tradition.color},0.7)`, fontWeight: 600,
+                    }}>{tradition.title}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                      color: "rgba(255,255,255,0.2)", fontStyle: "italic",
+                      marginTop: 2,
+                    }}>{tradition.era}</div>
+                  </div>
+                </div>
+
+                {/* Body */}
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(13px, 2.2vw, 16px)",
+                  color: "rgba(232,232,240,0.5)",
+                  lineHeight: PHI, fontStyle: "italic",
+                  marginBottom: Math.round(8 * PHI),
+                }}>{tradition.body}</div>
+
+                {/* Connection — how it maps to the octahedron */}
+                <div style={{
+                  borderTop: `1px solid rgba(${tradition.color},0.06)`,
+                  paddingTop: Math.round(5 * PHI),
+                }}>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: "0.4em",
+                    color: `rgba(${tradition.color},0.35)`, marginBottom: Math.round(3 * PHI),
+                  }}>THE CONNECTION</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(12px, 2vw, 15px)",
+                    color: `rgba(${tradition.color},0.45)`,
+                    lineHeight: PHI, fontStyle: "italic",
+                  }}>{tradition.connection}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* CLOSING — the convergence statement */}
+          <div style={{
+            textAlign: "center",
+            marginTop: Math.round(8 * PHI),
+            animation: `fadeSlideUp 1s ${0.5 + 6 * 0.12 + 0.3}s both ease`,
+          }}>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1, margin: `0 auto ${Math.round(10 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(190,140,220,0.3), transparent)",
+            }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3vw, 22px)",
+              color: "rgba(232,232,240,0.6)",
+              fontStyle: "italic", maxWidth: 500, margin: "0 auto",
+              lineHeight: PHI,
+            }}>
+              Six witnesses. Six thousand years. One shape.
+            </div>
+            <div style={{ height: Math.round(5 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.6vw, 18px)",
+              color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic",
+            }}>
+              They didn't copy each other. They found the same truth.
+              <br />That's what convergence means.
+            </div>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            {/* Equation */}
+            <div style={{ animation: "sacredReveal 2s 0.5s both ease" }}>
+              <TheEquation size="sm" showLabel={false} breathing minimal />
+            </div>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            <ReturnButton onClick={() => setActiveConvergence(null)} />
           </div>
         </div>
       )}
