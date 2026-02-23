@@ -78,7 +78,7 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -451,11 +451,11 @@ export default function TheoryOfEverything() {
 
       {/* ===== DEPTH 0 — YIN/YANG/PRISM: Three clicks to truth ===== */}
       {depth === 0 && (() => {
-        const [phase, setPhase] = useState(0);
+        const phase = landingPhase;
 
         const handleClick = () => {
-          if (phase === 0) setPhase(1);
-          else if (phase === 1) setPhase(2);
+          if (phase === 0) setLandingPhase(1);
+          else if (phase === 1) setLandingPhase(2);
           else goDeeper();
         };
 
