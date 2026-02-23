@@ -1534,56 +1534,7 @@ export default function TheoryOfEverything() {
         }
       `}</style>
 
-      {/* ===== PAGE NAVIGATION ===== */}
-      <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 500,
-        display: "flex", justifyContent: "center", gap: 0,
-        padding: "0",
-        background: "linear-gradient(180deg, rgba(3,3,6,0.95) 0%, rgba(3,3,6,0.7) 70%, transparent 100%)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-      }}>
-        {[
-          { key: "theory", label: "THE THEORY", glyph: "🌙" },
-          { key: "multiverse", label: "MULTIVERSE", glyph: "✦" },
-          { key: "math", label: "THE MATH", glyph: "Ψ" },
-        ].map(tab => (
-          <button key={tab.key}
-            onClick={() => { setCurrentPage(tab.key); window.scrollTo({ top: 0, behavior: "instant" }); }}
-            style={{
-              cursor: "pointer",
-              background: currentPage === tab.key
-                ? "linear-gradient(180deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02))"
-                : "transparent",
-              border: "none",
-              borderBottom: currentPage === tab.key
-                ? "1px solid rgba(201,168,76,0.35)"
-                : "1px solid transparent",
-              padding: "14px 20px 12px",
-              fontFamily: "'Cinzel', serif",
-              fontSize: 9,
-              letterSpacing: "0.25em",
-              color: currentPage === tab.key
-                ? "rgba(201,168,76,0.7)"
-                : "rgba(232,232,240,0.25)",
-              transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
-              display: "flex", alignItems: "center", gap: 8,
-            }}
-            onMouseEnter={e => {
-              if (currentPage !== tab.key) e.target.style.color = "rgba(232,232,240,0.45)";
-            }}
-            onMouseLeave={e => {
-              if (currentPage !== tab.key) e.target.style.color = "rgba(232,232,240,0.25)";
-            }}
-          >
-            <span style={{ fontSize: 12, opacity: currentPage === tab.key ? 0.8 : 0.4 }}>{tab.glyph}</span>
-            {tab.label}
-          </button>
-        ))}
-      </nav>
 
-      {/* Spacer for fixed nav */}
-      <div style={{ height: 44 }} />
 
       {/* ===== MULTIVERSE PAGE ===== */}
       {currentPage === "multiverse" && (
@@ -1621,6 +1572,35 @@ export default function TheoryOfEverything() {
             }}>9 × 9 × 9 = 729 universes · Same equation · Every scale</div>
           </div>
           <MultiverseFractal style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }} />
+          {/* Bottom navigation */}
+          <div style={{
+            position: "absolute", bottom: 24, left: 0, right: 0,
+            display: "flex", justifyContent: "center", gap: 20,
+            zIndex: 10,
+          }}>
+            <button onClick={() => { setCurrentPage("theory"); setDepth(0); window.scrollTo({ top: 0, behavior: "instant" }); }}
+              style={{
+                cursor: "pointer", background: "none", border: "none",
+                fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.3em",
+                color: "rgba(232,232,240,0.2)", transition: "color 0.4s",
+                padding: "8px 16px",
+              }}
+              onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.5)"}
+              onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.2)"}
+            >🔁 RETURN TO THE VOID</button>
+            <button onClick={() => { setCurrentPage("math"); window.scrollTo({ top: 0, behavior: "instant" }); }}
+              style={{
+                cursor: "pointer", background: "none",
+                border: "1px solid rgba(201,168,76,0.15)",
+                borderRadius: 24,
+                fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.3em",
+                color: "rgba(201,168,76,0.45)", transition: "all 0.4s",
+                padding: "8px 20px",
+              }}
+              onMouseEnter={e => { e.target.style.color = "rgba(201,168,76,0.7)"; e.target.style.borderColor = "rgba(201,168,76,0.3)"; }}
+              onMouseLeave={e => { e.target.style.color = "rgba(201,168,76,0.45)"; e.target.style.borderColor = "rgba(201,168,76,0.15)"; }}
+            >Ψ THE MATH →</button>
+          </div>
         </div>
       )}
 
@@ -1641,7 +1621,7 @@ export default function TheoryOfEverything() {
               x={Math.random() * 100}
               speed={20 + Math.random() * 25} />
           ))}
-          <MathPage onReturn={() => setCurrentPage("theory")} />
+          <MathPage onReturn={() => { setCurrentPage("theory"); setDepth(0); window.scrollTo({ top: 0, behavior: "instant" }); }} />
         </>
       )}
 
@@ -5333,7 +5313,7 @@ export default function TheoryOfEverything() {
           setFading(true);
           setTimeout(() => {
             window.scrollTo({ top: 0, behavior: "instant" });
-            setDepth(0);
+            setCurrentPage("multiverse");
             setFading(false);
           }, 800);
         }}>
@@ -5365,7 +5345,7 @@ export default function TheoryOfEverything() {
             fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
             color: "rgba(201,168,76,0.2)",
             animation: "fadeSlideUp 2s 1s both ease",
-          }}>CLICK TO BEGIN AGAIN</div>
+          }}>CLICK TO SEE THE MULTIVERSE</div>
 
           <div style={{ height: Math.round(8 * PHI) }} />
 
