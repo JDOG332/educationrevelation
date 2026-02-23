@@ -1522,6 +1522,7 @@ export default function TheoryOfEverything() {
               { key: "flashlight", icon: "💭", title: "THE FLASHLIGHT", hook: "Your mind paints meaning onto everything it touches.", accent: "240,180,200" },
               { key: "pulse", icon: "❤️", title: "THE PULSE", hook: "Love is the gravity of the soul. Part of, not apart from.", accent: "220,80,80" },
               { key: "scale", icon: "⚖️", title: "THE SCALE", hook: "Born with a compass. Heavy when you hurt. Light when you help.", accent: "200,200,160" },
+              { key: "moon", icon: "🌀", title: "THE MOON", hook: "You are a wave. The water never goes away.", accent: "180,180,220" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -4305,6 +4306,159 @@ export default function TheoryOfEverything() {
                 "\"Man In The Mirror\" — Michael Jackson",
                 "\"Redemption Song\" — Bob Marley",
                 "\"Where Is The Love?\" — Black Eyed Peas",
+              ].map((song, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{song}</div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== PLAIN ENGLISH: THE MOON (God, Spirit & The Unknown) ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "moon" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 14s ease-in-out infinite" }}>🌀</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE MOON</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(180,180,220,0.3)",
+            }}>GOD, SPIRIT & THE UNKNOWN</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(180,180,220,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            You are a wave in the ocean. The wave might disappear when it hits the sand, but the water never goes away. The Unknown is just the part of the ocean you haven't swum in yet.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(180,180,220,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THE OCEAN YOU HAVEN'T SWUM YET</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {[
+              { icon: "👂", sense: "SOUND", text: "Put a seashell to your ear. That ocean sound is actually the echo of your own blood. The big mysteries are often hidden inside your own body." },
+              { icon: "👃", sense: "SMELL", text: "Smell a candle after it's been blown out. The flame is gone, but the smoke stays in the air to tell you it was there. This is how we feel the Spirit — by the traces it leaves behind." },
+              { icon: "👅", sense: "TASTE", text: "Eat a plain piece of bread very slowly. As it breaks down, it starts to taste sweet. Something hidden is revealed just by being still and patient." },
+              { icon: "✋", sense: "TOUCH", text: "Walk barefoot on grass or dirt. Feel the Earth pushing back against your feet. You are physically plugged into a giant, spinning ball of life. You are never floating alone." },
+              { icon: "👁️", sense: "SIGHT", text: "Look at a Magic Eye poster. At first it looks like a mess. Then your eyes shift and a 3D shape pops out. The Truth is often hiding in plain sight." },
+              { icon: "🧘", sense: "THE 6TH", text: "Close your eyes and fall backward into a friend's arms. That floating second before you land is what trust feels like. Letting go of the need to see the why." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  filter: "drop-shadow(0 0 8px rgba(180,180,220,0.2))",
+                }}>{s.icon}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                    color: "rgba(180,180,220,0.45)", marginBottom: 4,
+                  }}>{s.sense}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                  }}>{s.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Intuition — the radio */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(10 * PHI)}px`,
+            background: "rgba(180,180,220,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(180,180,220,0.06)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(180,180,220,0.3)", marginBottom: Math.round(5 * PHI),
+            }}>YOUR FINGER ON THE DIAL</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Imagine the universe is a giant radio. Most of the time, we only hear the static. But sometimes, when you are very quiet or very brave, you tune in to a beautiful song. Your gut feeling is your finger on the dial, telling you there is music playing even when you can't hear it.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            marginTop: Math.round(13 * PHI),
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+          }}>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(180,180,220,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · INFO</div>
+              {["Near-Death Experiences", "Why Do We Believe?", "The Science of Meditation"].map((link, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{link}</div>
+              ))}
+            </div>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(180,180,220,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · RHYTHM</div>
+              {[
+                "\"Hallelujah\" — Jeff Buckley",
+                "\"My Sweet Lord\" — George Harrison",
+                "\"Spirit in the Sky\" — Greenbaum",
               ].map((song, i) => (
                 <div key={i} style={{
                   fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
