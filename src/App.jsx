@@ -450,144 +450,152 @@ export default function TheoryOfEverything() {
       />
 
       {/* ===== DEPTH 0 — YIN/YANG/PRISM: Three clicks to truth ===== */}
-      {depth === 0 && landingPhase === 0 && (
-        <div onClick={() => setLandingPhase(1)} style={{
-          height: "100vh", width: "100%", 
-          background: "#000000",
-          cursor: "pointer", zIndex: 2, position: "relative",
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-        }}>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(13px, 2.2vw, 17px)",
-            fontStyle: "italic",
-            color: "rgba(255,255,255,0.08)",
-            letterSpacing: "0.15em",
-            animation: "fadeSlideUp 2s 1s both ease",
-            textAlign: "center",
-            userSelect: "none",
-          }}>close your eyes</div>
-          <div style={{
-            position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-            fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
-            color: "rgba(255,255,255,0.04)",
-            animation: "fadeSlideUp 2s 2.5s both ease",
-          }}>tap</div>
-        </div>
-      )}
+      {depth === 0 && (() => {
+        const [phase, setPhase] = useState(0);
 
-      {depth === 0 && landingPhase === 1 && (
-        <div onClick={() => setLandingPhase(2)} style={{
-          height: "100vh", width: "100%",
-          background: "#ffffff",
-          cursor: "pointer", zIndex: 2, position: "relative",
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-          animation: "fadeIn 0.8s ease",
-        }}>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(13px, 2.2vw, 17px)",
-            fontStyle: "italic",
-            color: "rgba(0,0,0,0.08)",
-            letterSpacing: "0.15em",
-            animation: "fadeSlideUp 2s 0.5s both ease",
-            textAlign: "center",
-            userSelect: "none",
-          }}>now open them</div>
-          <div style={{
-            position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-            fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
-            color: "rgba(0,0,0,0.04)",
-            animation: "fadeSlideUp 2s 2s both ease",
-          }}>tap</div>
-        </div>
-      )}
+        const handleClick = () => {
+          if (phase === 0) setPhase(1);
+          else if (phase === 1) setPhase(2);
+          else goDeeper();
+        };
 
-      {depth === 0 && landingPhase === 2 && (
-        <div onClick={goDeeper} style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-          zIndex: 2, cursor: "pointer",
-          animation: "fadeIn 1.2s ease",
-        }}>
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
-            position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-          }}>
-            <defs>
-              <linearGradient id="gBlack" x1="0%" y1="50%" x2="100%" y2="50%">
-                <stop offset="0%" stopColor="#000000" />
-                <stop offset="70%" stopColor="#0d0d0d" />
-                <stop offset="100%" stopColor="#333333" />
-              </linearGradient>
-              <linearGradient id="gWhite" x1="100%" y1="50%" x2="0%" y2="50%">
-                <stop offset="0%" stopColor="#f0f0f0" />
-                <stop offset="70%" stopColor="#e0e0e0" />
-                <stop offset="100%" stopColor="#bbbbbb" />
-              </linearGradient>
-              <linearGradient id="gGreyTop" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1a1a1a" />
-                <stop offset="25%" stopColor="#3a3a3a" />
-                <stop offset="50%" stopColor="#6a6a6a" />
-                <stop offset="75%" stopColor="#a0a0a0" />
-                <stop offset="100%" stopColor="#d0d0d0" />
-              </linearGradient>
-              <linearGradient id="gGreyBot" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1a1a1a" />
-                <stop offset="25%" stopColor="#3a3a3a" />
-                <stop offset="50%" stopColor="#6a6a6a" />
-                <stop offset="75%" stopColor="#a0a0a0" />
-                <stop offset="100%" stopColor="#d0d0d0" />
-              </linearGradient>
-              <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="8%">
-                <stop offset="0%" stopColor="rgba(201,168,76,0.4)" />
-                <stop offset="60%" stopColor="rgba(201,168,76,0.08)" />
-                <stop offset="100%" stopColor="transparent" />
-              </radialGradient>
-            </defs>
-            <polygon points="0,0 50,50 0,100" fill="url(#gBlack)" />
-            <polygon points="100,0 50,50 100,100" fill="url(#gWhite)" />
-            <polygon points="0,0 50,50 100,0" fill="url(#gGreyTop)" />
-            <polygon points="0,100 50,50 100,100" fill="url(#gGreyBot)" />
-            <line x1="0" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-            <line x1="100" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-            <line x1="0" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-            <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
-            <circle cx="50" cy="50" r="8" fill="url(#eyeGlow2)">
-              <animate attributeName="r" values="7;10;7" dur="6s" repeatCount="indefinite" />
-            </circle>
-            <ellipse cx="50" cy="50" rx="4" ry="2" fill="none" stroke="rgba(201,168,76,0.45)" strokeWidth="0.25">
-              <animate attributeName="ry" values="1.8;2.5;1.8" dur="5s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite" />
-            </ellipse>
-            <circle cx="50" cy="50" r="1" fill="rgba(201,168,76,0.7)">
-              <animate attributeName="r" values="0.8;1.3;0.8" dur="4s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="50" cy="50" r="0.35" fill="#ffffff">
-              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
-            </circle>
-          </svg>
-          <div style={{ position: "absolute", left: "7%", top: "50%", transform: "translateY(-50%)", zIndex: 10, animation: "fadeSlideUp 1s 0.5s both ease" }}>
-            <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)", letterSpacing: "0.2em", color: "rgba(255,255,255,0.35)", fontWeight: 400 }}>BLACK</div>
+        // SHARED: position fixed, full-screen, ABOVE EVERYTHING (z-index 10000)
+        const fullScreen = {
+          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+          zIndex: 10000, cursor: "pointer",
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        };
+
+        // Phase 0: DARKNESS
+        if (phase === 0) {
+          return (
+            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000" }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 17px)",
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.08)",
+                letterSpacing: "0.15em",
+                animation: "fadeSlideUp 2s 1s both ease",
+                textAlign: "center", userSelect: "none",
+              }}>close your eyes</div>
+              <div style={{
+                position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
+                color: "rgba(255,255,255,0.04)",
+                animation: "fadeSlideUp 2s 2.5s both ease",
+              }}>tap</div>
+            </div>
+          );
+        }
+
+        // Phase 1: LIGHT
+        if (phase === 1) {
+          return (
+            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff", animation: "fadeIn 0.8s ease" }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 17px)",
+                fontStyle: "italic",
+                color: "rgba(0,0,0,0.08)",
+                letterSpacing: "0.15em",
+                animation: "fadeSlideUp 2s 0.5s both ease",
+                textAlign: "center", userSelect: "none",
+              }}>now open them</div>
+              <div style={{
+                position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.5em",
+                color: "rgba(0,0,0,0.04)",
+                animation: "fadeSlideUp 2s 2s both ease",
+              }}>tap</div>
+            </div>
+          );
+        }
+
+        // Phase 2: THE PRISM
+        return (
+          <div onClick={handleClick} style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+            }}>
+              <defs>
+                <linearGradient id="gBlack" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" stopColor="#000000" />
+                  <stop offset="70%" stopColor="#0d0d0d" />
+                  <stop offset="100%" stopColor="#333333" />
+                </linearGradient>
+                <linearGradient id="gWhite" x1="100%" y1="50%" x2="0%" y2="50%">
+                  <stop offset="0%" stopColor="#f0f0f0" />
+                  <stop offset="70%" stopColor="#e0e0e0" />
+                  <stop offset="100%" stopColor="#bbbbbb" />
+                </linearGradient>
+                <linearGradient id="gGreyTop" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#1a1a1a" />
+                  <stop offset="25%" stopColor="#3a3a3a" />
+                  <stop offset="50%" stopColor="#6a6a6a" />
+                  <stop offset="75%" stopColor="#a0a0a0" />
+                  <stop offset="100%" stopColor="#d0d0d0" />
+                </linearGradient>
+                <linearGradient id="gGreyBot" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#1a1a1a" />
+                  <stop offset="25%" stopColor="#3a3a3a" />
+                  <stop offset="50%" stopColor="#6a6a6a" />
+                  <stop offset="75%" stopColor="#a0a0a0" />
+                  <stop offset="100%" stopColor="#d0d0d0" />
+                </linearGradient>
+                <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="8%">
+                  <stop offset="0%" stopColor="rgba(201,168,76,0.4)" />
+                  <stop offset="60%" stopColor="rgba(201,168,76,0.08)" />
+                  <stop offset="100%" stopColor="transparent" />
+                </radialGradient>
+              </defs>
+              <polygon points="0,0 50,50 0,100" fill="url(#gBlack)" />
+              <polygon points="100,0 50,50 100,100" fill="url(#gWhite)" />
+              <polygon points="0,0 50,50 100,0" fill="url(#gGreyTop)" />
+              <polygon points="0,100 50,50 100,100" fill="url(#gGreyBot)" />
+              <line x1="0" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <line x1="100" y1="0" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <line x1="0" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(201,168,76,0.1)" strokeWidth="0.12" />
+              <circle cx="50" cy="50" r="8" fill="url(#eyeGlow2)">
+                <animate attributeName="r" values="7;10;7" dur="6s" repeatCount="indefinite" />
+              </circle>
+              <ellipse cx="50" cy="50" rx="4" ry="2" fill="none" stroke="rgba(201,168,76,0.45)" strokeWidth="0.25">
+                <animate attributeName="ry" values="1.8;2.5;1.8" dur="5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite" />
+              </ellipse>
+              <circle cx="50" cy="50" r="1" fill="rgba(201,168,76,0.7)">
+                <animate attributeName="r" values="0.8;1.3;0.8" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="50" cy="50" r="0.35" fill="#ffffff">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+              </circle>
+            </svg>
+
+            <div style={{ position: "absolute", left: "7%", top: "50%", transform: "translateY(-50%)", animation: "fadeSlideUp 1s 0.5s both ease" }}>
+              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)", letterSpacing: "0.2em", color: "rgba(255,255,255,0.35)", fontWeight: 400 }}>BLACK</div>
+            </div>
+            <div style={{ position: "absolute", right: "7%", top: "50%", transform: "translateY(-50%)", animation: "fadeSlideUp 1s 0.7s both ease" }}>
+              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)", letterSpacing: "0.2em", color: "rgba(0,0,0,0.3)", fontWeight: 400 }}>WHITE</div>
+            </div>
+            <div style={{ position: "absolute", top: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1s 0.6s both ease" }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)", fontStyle: "italic", letterSpacing: "0.12em", color: "rgba(255,255,255,0.3)" }}>50 Shades of Grey</div>
+            </div>
+            <div style={{ position: "absolute", bottom: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1s 0.8s both ease" }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)", fontStyle: "italic", letterSpacing: "0.12em", color: "rgba(255,255,255,0.3)" }}>50 Shades of Gray</div>
+            </div>
+            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center", animation: "fadeSlideUp 1.2s 1s both ease", pointerEvents: "none" }}>
+              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(6px, 1.1vw, 8px)", letterSpacing: "0.4em", color: "rgba(201,168,76,0.5)", marginTop: 22 }}>3RD EYE</div>
+            </div>
+            <div style={{ position: "absolute", top: "3%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1.4s 0.3s both ease" }}>
+              <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 16px)", fontWeight: 400, letterSpacing: "0.35em", color: "rgba(150,150,150,0.5)" }}>THE SECRET THEORY OF EVERYTHING</div>
+            </div>
+            <div style={{ position: "absolute", bottom: "4%", left: "50%", transform: "translateX(-50%)", textAlign: "center", animation: "fadeSlideUp 1.2s 1.5s both ease" }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 1.8vw, 14px)", fontStyle: "italic", color: "rgba(201,168,76,0.35)", letterSpacing: 1 }}>enter the prism</div>
+            </div>
           </div>
-          <div style={{ position: "absolute", right: "7%", top: "50%", transform: "translateY(-50%)", zIndex: 10, animation: "fadeSlideUp 1s 0.7s both ease" }}>
-            <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 20px)", letterSpacing: "0.2em", color: "rgba(0,0,0,0.3)", fontWeight: 400 }}>WHITE</div>
-          </div>
-          <div style={{ position: "absolute", top: "14%", left: "50%", transform: "translateX(-50%)", zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1s 0.6s both ease" }}>
-            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)", fontStyle: "italic", letterSpacing: "0.12em", color: "rgba(255,255,255,0.3)" }}>50 Shades of Grey</div>
-          </div>
-          <div style={{ position: "absolute", bottom: "14%", left: "50%", transform: "translateX(-50%)", zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1s 0.8s both ease" }}>
-            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 14px)", fontStyle: "italic", letterSpacing: "0.12em", color: "rgba(255,255,255,0.3)" }}>50 Shades of Gray</div>
-          </div>
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.2s 1s both ease", pointerEvents: "none" }}>
-            <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(6px, 1.1vw, 8px)", letterSpacing: "0.4em", color: "rgba(201,168,76,0.5)", marginTop: 22 }}>3RD EYE</div>
-          </div>
-          <div style={{ position: "absolute", top: "3%", left: "50%", transform: "translateX(-50%)", zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.4s 0.3s both ease" }}>
-            <div style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 16px)", fontWeight: 400, letterSpacing: "0.35em", color: "rgba(150,150,150,0.5)" }}>THE SECRET THEORY OF EVERYTHING</div>
-          </div>
-          <div style={{ position: "absolute", bottom: "4%", left: "50%", transform: "translateX(-50%)", zIndex: 10, textAlign: "center", animation: "fadeSlideUp 1.2s 1.5s both ease" }}>
-            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 1.8vw, 14px)", fontStyle: "italic", color: "rgba(201,168,76,0.35)", letterSpacing: 1 }}>enter the prism</div>
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
 
       {/* ===== DEPTH 1 — THE POEM ===== */}
