@@ -1902,6 +1902,137 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
+          {/* ♾️ LAYERING LOVE — the second sensory module */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(13 * PHI)}px auto`,
+            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
+          }} />
+
+          <div style={{ marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ textAlign: "center", marginBottom: Math.round(21 * PHI) }}>
+              <div style={{ fontSize: 28, marginBottom: Math.round(5 * PHI) }}>♾️</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 20px)",
+                letterSpacing: "0.3em", color: "rgba(232,232,240,0.7)",
+              }}>LAYERING LOVE</div>
+              <div style={{ height: Math.round(8 * PHI) }} />
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                fontStyle: "italic", maxWidth: 500, margin: "0 auto",
+              }}>
+                Life is about peeling back the old, dry layers to find the solid, quiet truth underneath. Even when things feel empty, there is a steady rhythm that connects everything together. We are never just one thing — we are a beautiful pile of everything we have ever been.
+              </div>
+            </div>
+
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.35)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>PEEL THE LAYERS</div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+              {[
+                { icon: "👂", sense: "SOUND", text: "Close your eyes and listen to your own breath. It sounds like the ocean. The same rhythm in you is the same rhythm in the waves." },
+                { icon: "👃", sense: "SMELL", text: "Smell a crayon or an old book. It's like a time machine that proves your past and your present are part of the same story." },
+                { icon: "👅", sense: "TASTE", text: "Eat a piece of honey. It is sunshine and flowers turned into food by thousands of bees working as one." },
+                { icon: "🖐️", sense: "TOUCH", text: "Press your palms together. Feel the heat. That warmth is the energy of life moving between two sides of the same you." },
+                { icon: "👀", sense: "SIGHT", text: "Look at the veins on a leaf, then look at the veins on your hand. They look like the same map — because they are." },
+                { icon: "🧘", sense: "THE 6TH", text: "Spin in a circle until you stop. Feel the world keep moving while you stay still. You are the steady center of a moving universe." },
+              ].map((s, i) => (
+                <div key={i} style={{
+                  display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+                }}>
+                  <div style={{
+                    fontSize: 20, minWidth: 30, textAlign: "center",
+                    filter: "drop-shadow(0 0 8px rgba(201,168,76,0.15))",
+                  }}>{s.icon}</div>
+                  <div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                      color: "rgba(201,168,76,0.45)", marginBottom: 4,
+                    }}>{s.sense}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(13px, 2.2vw, 16px)",
+                      lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                    }}>{s.text}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Spirit Bumps — the 6th sense deeper */}
+            <div style={{
+              textAlign: "center", marginTop: Math.round(21 * PHI),
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(201,168,76,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(201,168,76,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+                color: "rgba(201,168,76,0.3)", marginBottom: Math.round(5 * PHI),
+              }}>YOUR SPIRIT BUMPS</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+              }}>
+                Imagine you are a single brick in a giant, beautiful castle. You might feel small, but if you moved, the whole wall would change. Your intuition is that knowing feeling that you belong exactly where you are. When you feel a spirit bump — chills — it's your soul's way of clapping because it recognizes the truth: You are a piece of the Everlasting We.
+              </div>
+            </div>
+
+            {/* Dig Deeper links */}
+            <div style={{
+              marginTop: Math.round(13 * PHI),
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              <div style={{
+                padding: `${Math.round(8 * PHI)}px`,
+                background: "rgba(255,255,255,0.01)",
+                borderRadius: 8,
+                border: "1px solid rgba(255,255,255,0.04)",
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                  color: "rgba(201,168,76,0.3)", marginBottom: 8,
+                }}>DIG DEEPER · INFO</div>
+                {["The Science of Chills (Frisson)", "Interconnectedness", "Fibonacci Sequence in Nature"].map((link, i) => (
+                  <div key={i} style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                    color: "rgba(232,232,240,0.35)", fontStyle: "italic",
+                    lineHeight: 1.8,
+                  }}>{link}</div>
+                ))}
+              </div>
+              <div style={{
+                padding: `${Math.round(8 * PHI)}px`,
+                background: "rgba(255,255,255,0.01)",
+                borderRadius: 8,
+                border: "1px solid rgba(255,255,255,0.04)",
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                  color: "rgba(201,168,76,0.3)", marginBottom: 8,
+                }}>DIG DEEPER · RHYTHM</div>
+                {[
+                  "\"Holocene\" — Bon Iver",
+                  "\"Imagine\" — John Lennon",
+                  "\"Fix You\" — Coldplay",
+                ].map((song, i) => (
+                  <div key={i} style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                    color: "rgba(232,232,240,0.35)", fontStyle: "italic",
+                    lineHeight: 1.8,
+                  }}>{song}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div style={{
             width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
