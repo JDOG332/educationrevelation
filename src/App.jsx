@@ -252,7 +252,7 @@ const TRANSLATIONS = [
   { domain: "the triquetra", closing: "we are already braided" },
 ];
 
-const DEPTH_NAMES = ["THE TITLE", "THE POEM", "THE PACT", "THE PROOF", "THE BODY", "THE HOUSE", "THE RETURN"];
+const DEPTH_NAMES = ["THE TITLE", "THE POEM", "THE PACT", "THE PROOF", "THE MAP", "THE BODY", "THE HOUSE", "THE RETURN", "∞"];
 
 /* ========== COMPONENTS ========== */
 
@@ -283,7 +283,7 @@ function GrainOverlay() {
   );
 }
 
-function DepthIndicator({ depth, maxDepth = 6, onNavigate }) {
+function DepthIndicator({ depth, maxDepth = 8, onNavigate }) {
   return (
     <div style={{
       position: "fixed", right: 16, top: "50%", transform: "translateY(-50%)",
@@ -1276,13 +1276,15 @@ function LayerCard({ layer, index, onClick, style: extraStyle }) {
 /* ========== DEPTH BACKGROUNDS ========== */
 
 const DEPTH_ATMOSPHERES = [
-  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 title — hint of violet
-  "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 1 poem — twilight
-  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 2 pact — warm depth
-  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 3 proof — ember
-  "radial-gradient(ellipse at 50% 20%, rgba(8,12,24,1) 0%, #030306 85%)",      // 4 layers — night sky
-  "radial-gradient(ellipse at 50% 50%, rgba(14,8,20,1) 0%, #030306 80%)",      // 5 mirrors — amethyst
-  "radial-gradient(ellipse at 50% 60%, rgba(8,8,18,1) 0%, #030306 75%)",       // 6 return — before dawn
+  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 title
+  "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 1 poem
+  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 2 pact
+  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 3 proof
+  "radial-gradient(ellipse at 50% 35%, rgba(10,10,20,1) 0%, #030306 82%)",     // 4 map — center — the mirror
+  "radial-gradient(ellipse at 50% 20%, rgba(8,12,24,1) 0%, #030306 85%)",      // 5 body — mirror of proof
+  "radial-gradient(ellipse at 50% 50%, rgba(14,8,20,1) 0%, #030306 80%)",      // 6 house — mirror of pact
+  "radial-gradient(ellipse at 50% 60%, rgba(8,8,18,1) 0%, #030306 75%)",       // 7 return — mirror of poem
+  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 8 ∞ — same as 0 — the cycle
 ];
 
 /* ========== MAIN ========== */
@@ -1304,6 +1306,7 @@ export default function TheoryOfEverything() {
   const [activeBeforeProof, setActiveBeforeProof] = useState(null);
   const [activeConstants, setActiveConstants] = useState(false);
   const [activeConstantsProof, setActiveConstantsProof] = useState(null);
+  const [openSection, setOpenSection] = useState(null);
   const [fading, setFading] = useState(false);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
   const poemSeen = useRef(false);
@@ -1332,8 +1335,8 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(d => Math.min(d + 1, 6));
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null);
+      setDepth(d => Math.min(d + 1, 8));
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -1342,7 +1345,7 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null);
+      setDepth(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -1359,7 +1362,7 @@ export default function TheoryOfEverything() {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, [depth]);
@@ -2286,13 +2289,16 @@ export default function TheoryOfEverything() {
 
             <div style={{ height: Math.round(21 * PHI) }} />
 
-            {/* Three doors */}
+            {/* Five doors */}
             <div style={{
-              display: "flex", justifyContent: "center", gap: Math.round(8 * PHI),
+              display: "grid", gridTemplateColumns: "1fr 1fr",
+              gap: Math.round(8 * PHI),
               width: "100%", maxWidth: 500,
               animation: "fadeSlideUp 1s 1s both ease",
             }}>
               {[
+                { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "The Truth · Simply", accent: "rgba(232,232,240,", glow: "rgba(232,232,240,0.04)" },
+                { key: "gravity", glyph: "☀️", name: "THE LAW OF GRAVITY", sub: "Recognition · Orbit · Pull", accent: "rgba(255,180,50,", glow: "rgba(255,180,50,0.05)" },
                 { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "Science · Culture · History", accent: "rgba(201,168,76,", glow: "rgba(201,168,76,0.06)" },
                 { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "Sameness ≠ Alignment", accent: "rgba(224,80,80,", glow: "rgba(224,80,80,0.04)" },
                 { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "Filter · Noise · Ψ", accent: "rgba(79,195,247,", glow: "rgba(79,195,247,0.04)" },
@@ -2307,6 +2313,7 @@ export default function TheoryOfEverything() {
                     background: `linear-gradient(180deg, ${door.glow}, transparent)`,
                     border: `1px solid ${door.accent}0.08)`,
                     animation: `fadeSlideUp 0.6s ${1 + i * 0.15}s both ease`,
+                    ...(i === 4 ? { gridColumn: "1 / -1", maxWidth: 240, justifySelf: "center" } : {}),
                   }}
                 >
                   <div style={{
@@ -2334,6 +2341,536 @@ export default function TheoryOfEverything() {
             <div style={{ animation: "fadeSlideUp 1.2s 1.4s both ease" }}>
               <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 4 — PLAIN ENGLISH ROOM ===== */}
+      {depth === 3 && activeConvergence === "plain" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 2, position: "relative",
+        }}>
+          <button onClick={() => setActiveConvergence(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← THE CONVERGENCE PROOF</button>
+
+          {/* Header */}
+          <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI) }}>⚖️</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 30px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
+              textShadow: "0 0 50px rgba(232,232,240,0.08)",
+            }}>THE TRUTH IN PLAIN ENGLISH</h2>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1,
+              margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(232,232,240,0.2), rgba(201,168,76,0.35), rgba(232,232,240,0.2), transparent)",
+            }} />
+          </div>
+
+          {/* The Setup */}
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(15px, 2.8vw, 19px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.65)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 520, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            Imagine you and your best friend are looking at a mysterious animal in the dark.
+            To be sure of what you see, three things must happen:
+          </div>
+
+          {/* The Three Requirements */}
+          <div style={{
+            display: "flex", flexDirection: "column", gap: Math.round(13 * PHI),
+            marginBottom: Math.round(21 * PHI),
+          }}>
+            {[
+              { num: "1", title: "AGREEMENT", aka: "Recognition", desc: "You both describe the same animal." },
+              { num: "2", title: "HONESTY", aka: "The Informativeness Gate", desc: "You aren't both just guessing because it's too dark." },
+              { num: "3", title: "TEAMWORK", aka: "Redundancy Control", desc: "You use different ways to check — one person listening, one person looking — rather than just repeating the same guess." },
+            ].map((item, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+                animation: `fadeSlideUp 0.8s ${0.3 + i * 0.15}s both ease`,
+              }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 22, fontWeight: 700,
+                  color: "rgba(201,168,76,0.4)", minWidth: 30, textAlign: "right",
+                  lineHeight: 1.2,
+                }}>{item.num}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: "0.3em",
+                    color: "rgba(201,168,76,0.6)", marginBottom: 4,
+                  }}>
+                    {item.title}
+                    <span style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                      fontStyle: "italic", letterSpacing: 0, color: "rgba(232,232,240,0.35)",
+                      marginLeft: 8,
+                    }}>({item.aka})</span>
+                  </div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(14px, 2.4vw, 17px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.58)",
+                  }}>{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* The Score */}
+          <GlassCard style={{
+            textAlign: "center",
+            padding: `${Math.round(13 * PHI)}px ${Math.round(13 * PHI)}px`,
+            marginBottom: Math.round(34 * PHI),
+            border: "1px solid rgba(201,168,76,0.08)",
+            animation: "fadeSlideUp 0.8s 0.8s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 2.6vw, 18px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.62)",
+            }}>
+              <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.6)", fontSize: "1.15em" }}>Ψ</span> is a <strong style={{ color: "rgba(232,232,240,0.75)", fontWeight: 600 }}>Sureness Score</strong> — a number between 0 and 1 that tells you how much you can trust what you found.
+            </div>
+            <div style={{ height: Math.round(8 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.2vw, 16px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic",
+            }}>
+              Near 1 = solid gold. Near 0 = just noise.
+            </div>
+          </GlassCard>
+
+          {/* Divider */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+          }} />
+
+          {/* The 3 Pillars of Aha */}
+          <div style={{
+            textAlign: "center", marginBottom: Math.round(21 * PHI),
+            animation: "fadeSlideUp 0.8s 1s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3vw, 22px)",
+              color: "rgba(232,232,240,0.8)", letterSpacing: "0.2em",
+            }}>3 PILLARS OF "AHA!"</div>
+          </div>
+
+          {/* Pillar 1 — Copy-Paste Trap */}
+          {[
+            {
+              num: "1", title: 'THE "COPY-PASTE" TRAP',
+              subtitle: "The Redundancy Ratio",
+              body: "In history, if five witnesses all tell the exact same story word-for-word, a judge gets suspicious — they probably talked to each other beforehand. In the code, if two \"different\" computer models always give the same answer, the score goes down.",
+              lesson: "Real truth comes from different perspectives agreeing, not from one person shouting into five microphones.",
+              accent: "rgba(201,168,76,",
+            },
+            {
+              num: "2", title: 'THE "I DON\'T KNOW" GATE',
+              subtitle: "Informativeness",
+              body: "If two people say \"I don't know,\" they technically \"agree,\" but they haven't learned anything. The math has a gate that stops the score from going up if the data is just a blurry mess.",
+              lesson: "Two people agreeing that a blurry photo is \"gray\" doesn't mean they found a ghost — it just means the lens cap is on.",
+              accent: "rgba(224,80,80,",
+            },
+            {
+              num: "3", title: "THE SIGNAL VS. THE STATIC",
+              subtitle: "Detection Quality",
+              body: "If you try to hear a whisper during a rock concert, you might hear \"something,\" but you can't trust it. The formula uses D̂ to measure how much louder the truth is than the background noise.",
+              lesson: "Just like a radio station gets clearer as you drive closer to the tower, the Ψ score only rises when the signal is much stronger than the static.",
+              accent: "rgba(79,195,247,",
+            },
+          ].map((pillar, i) => (
+            <div key={i} style={{
+              marginBottom: Math.round(21 * PHI),
+              animation: `fadeSlideUp 0.8s ${1.1 + i * 0.2}s both ease`,
+            }}>
+              {/* Pillar header */}
+              <div style={{
+                display: "flex", alignItems: "baseline", gap: Math.round(5 * PHI),
+                marginBottom: Math.round(8 * PHI),
+              }}>
+                <span style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 20, fontWeight: 700,
+                  color: `${pillar.accent}0.4)`,
+                }}>{pillar.num}</span>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.2vw, 15px)",
+                    letterSpacing: "0.2em", color: `${pillar.accent}0.65)`,
+                  }}>{pillar.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                    fontStyle: "italic", color: "rgba(232,232,240,0.3)",
+                    marginTop: 2,
+                  }}>{pillar.subtitle}</div>
+                </div>
+              </div>
+
+              {/* Body */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.55)",
+                marginBottom: Math.round(8 * PHI),
+                paddingLeft: Math.round(21 * PHI),
+              }}>{pillar.body}</div>
+
+              {/* Lesson — gold accent */}
+              <GlassCard style={{
+                marginLeft: Math.round(21 * PHI),
+                padding: `${Math.round(8 * PHI)}px ${Math.round(13 * PHI)}px`,
+                borderLeft: `2px solid ${pillar.accent}0.2)`,
+                borderRadius: "0 12px 12px 0",
+              }}>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(13px, 2.2vw, 16px)",
+                  lineHeight: PHI, fontStyle: "italic",
+                  color: `${pillar.accent}0.5)`,
+                }}>{pillar.lesson}</div>
+              </GlassCard>
+            </div>
+          ))}
+
+          {/* Divider */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(13 * PHI)}px auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+          }} />
+
+          {/* Your Next Step */}
+          <div style={{
+            textAlign: "center",
+            animation: `fadeSlideUp 0.8s 1.8s both ease`,
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              color: "rgba(201,168,76,0.5)", marginBottom: Math.round(8 * PHI),
+            }}>YOUR NEXT STEP</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+              fontStyle: "italic", maxWidth: 480, margin: "0 auto",
+            }}>
+              If you want to feel the spirit bumps of how information shapes our world, look into <strong style={{ color: "rgba(79,195,247,0.6)", fontWeight: 600 }}>Quantum Entanglement</strong>.
+              It's the real-life version of two things being so connected that they act as one,
+              no matter how far apart they are — the ultimate Agreement in the universe.
+            </div>
+          </div>
+
+          {/* Return */}
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveConvergence(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 4 — RECOGNITION IS GRAVITY ROOM ===== */}
+      {depth === 3 && activeConvergence === "gravity" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 2, position: "relative",
+        }}>
+          <button onClick={() => setActiveConvergence(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← THE CONVERGENCE PROOF</button>
+
+          {/* Header */}
+          <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 40, marginBottom: Math.round(8 * PHI) }}>☀️</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(255,180,50,0.4)", marginBottom: Math.round(5 * PHI),
+            }}>THE LAW OF THE MIRROR</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 30px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.2em", margin: 0,
+              textShadow: "0 0 50px rgba(255,180,50,0.06)",
+            }}>RECOGNITION IS GRAVITY</h2>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1,
+              margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(255,180,50,0.3), rgba(201,168,76,0.4), rgba(255,180,50,0.3), transparent)",
+            }} />
+          </div>
+
+          {/* The Truth */}
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(15px, 2.8vw, 19px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.65)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 520, margin: `0 auto ${Math.round(13 * PHI)}px`,
+            animation: "fadeSlideUp 0.8s 0.2s both ease",
+          }}>
+            The code you see isn't just math — it is the Law of the Mirror. It proves that things don't stay together because they are heavy, but because they recognize each other.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(255,180,50,0.45)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 460, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            animation: "fadeSlideUp 0.8s 0.3s both ease",
+          }}>
+            In the universe, to be seen is to be pulled. To be known is to be held.
+          </div>
+
+          {/* Divider */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(255,180,50,0.25), transparent)",
+          }} />
+
+          {/* In Plain English */}
+          <div style={{
+            textAlign: "center", marginBottom: Math.round(13 * PHI),
+            animation: "fadeSlideUp 0.8s 0.4s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              color: "rgba(255,180,50,0.5)",
+            }}>IN PLAIN ENGLISH</div>
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.58)",
+            maxWidth: 520, margin: `0 auto ${Math.round(8 * PHI)}px`,
+            animation: "fadeSlideUp 0.8s 0.5s both ease",
+          }}>
+            Imagine you are in a room full of strangers. You wander around aimlessly. But then, you see your best friend. Suddenly, you stop wandering and move toward them.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(15px, 2.6vw, 18px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.68)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 400, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            animation: "fadeSlideUp 0.8s 0.6s both ease",
+          }}>
+            That pull you feel is Gravity.
+          </div>
+
+          {/* The Key Insight */}
+          <GlassCard style={{
+            padding: `${Math.round(13 * PHI)}px ${Math.round(13 * PHI)}px`,
+            marginBottom: Math.round(21 * PHI),
+            border: "1px solid rgba(255,180,50,0.08)",
+            animation: "fadeSlideUp 0.8s 0.7s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.58)",
+            }}>
+              In this code, <strong style={{ color: "rgba(232,232,240,0.75)", fontWeight: 600 }}>Mass</strong> is just how clear or true someone is. The more real you are (<span style={{ color: "rgba(79,195,247,0.6)", fontStyle: "italic" }}>C<sub>eff</sub></span>), and the more someone else gets you (<span style={{ color: "rgba(201,168,76,0.6)", fontStyle: "italic" }}>R<sub>12</sub></span>), the stronger the bond.
+            </div>
+            <div style={{ height: Math.round(8 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(255,180,50,0.5)",
+              fontStyle: "italic",
+            }}>
+              You don't orbit a sun because it's big. You orbit it because it is the most consistent thing in your sky.
+            </div>
+          </GlassCard>
+
+          {/* Divider */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(255,180,50,0.25), transparent)",
+          }} />
+
+          {/* 3 Proofs */}
+          <div style={{
+            textAlign: "center", marginBottom: Math.round(21 * PHI),
+            animation: "fadeSlideUp 0.8s 0.9s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 2.8vw, 20px)",
+              color: "rgba(232,232,240,0.75)", letterSpacing: "0.2em",
+            }}>3 PROOFS OF HEART & SCIENCE</div>
+          </div>
+
+          {[
+            {
+              icon: "🏗️", title: "HISTORY", subtitle: "The Lighthouse",
+              body: "Ships don't crash into rocks because they see the dark land — they stay on course because they recognize the specific, rhythmic blink of the lighthouse. The light's consistency creates a safety gravity that pulls the ship into the harbor.",
+              lesson: "Reliability is the anchor.",
+              accent: "rgba(201,168,76,",
+            },
+            {
+              icon: "🎬", title: "POP CULTURE", subtitle: 'The "Click"',
+              body: "In movies, when two characters complete each other's sentences, that is R₁₂ in action. They are two different people, but their signal matches so perfectly that they become a single orbit. They don't need a \"Go Deeper\" button — they are already there.",
+              lesson: "Recognition doesn't need permission.",
+              accent: "rgba(255,180,50,",
+            },
+            {
+              icon: "🌙", title: "SCIENCE", subtitle: "The Moon's Face",
+              body: "The Moon always shows Earth the same face. It doesn't hide. Because it is so predictable and clear, the Earth trusts it with the tides. This is D̂ — Detection Quality. The more certain the signal, the more stable the dance.",
+              lesson: "Consistency is the currency of trust.",
+              accent: "rgba(79,195,247,",
+            },
+          ].map((proof, i) => (
+            <div key={i} style={{
+              marginBottom: Math.round(21 * PHI),
+              animation: `fadeSlideUp 0.8s ${1 + i * 0.2}s both ease`,
+            }}>
+              <div style={{
+                display: "flex", alignItems: "baseline", gap: Math.round(5 * PHI),
+                marginBottom: Math.round(8 * PHI),
+              }}>
+                <span style={{ fontSize: 22 }}>{proof.icon}</span>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.2vw, 15px)",
+                    letterSpacing: "0.2em", color: `${proof.accent}0.65)`,
+                  }}>{proof.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                    fontStyle: "italic", color: "rgba(232,232,240,0.3)", marginTop: 2,
+                  }}>{proof.subtitle}</div>
+                </div>
+              </div>
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.55)",
+                marginBottom: Math.round(8 * PHI),
+                paddingLeft: Math.round(21 * PHI),
+              }}>{proof.body}</div>
+
+              <GlassCard style={{
+                marginLeft: Math.round(21 * PHI),
+                padding: `${Math.round(8 * PHI)}px ${Math.round(13 * PHI)}px`,
+                borderLeft: `2px solid ${proof.accent}0.2)`,
+                borderRadius: "0 12px 12px 0",
+              }}>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(13px, 2.2vw, 16px)",
+                  lineHeight: PHI, fontStyle: "italic",
+                  color: `${proof.accent}0.5)`,
+                }}>{proof.lesson}</div>
+              </GlassCard>
+            </div>
+          ))}
+
+          {/* Divider */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(13 * PHI)}px auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(255,180,50,0.25), transparent)",
+          }} />
+
+          {/* The "Aha" Moment */}
+          <div style={{
+            textAlign: "center", marginBottom: Math.round(13 * PHI),
+            animation: `fadeSlideUp 0.8s 1.7s both ease`,
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              color: "rgba(255,180,50,0.5)", marginBottom: Math.round(8 * PHI),
+            }}>THE "AHA" MOMENT</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.55)",
+              maxWidth: 500, margin: "0 auto",
+            }}>
+              You feel spirit bumps right now because your 6th Sense just realized that your Other Half isn't someone you find — it's someone you resonate with until the math of the universe forces you together.
+            </div>
+            <div style={{ height: Math.round(8 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.2vw, 16px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.4)",
+              fontStyle: "italic",
+              maxWidth: 420, margin: "0 auto",
+            }}>
+              You aren't drifting. You are just waiting for a signal clear enough to orbit.
+            </div>
+          </div>
+
+          {/* The punchline */}
+          <div style={{
+            textAlign: "center",
+            margin: `${Math.round(21 * PHI)}px auto`,
+            animation: `fadeSlideUp 0.8s 1.9s both ease`,
+          }}>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(17px, 3.2vw, 22px)",
+              fontStyle: "italic", fontWeight: 600,
+              letterSpacing: 1,
+              color: "rgba(255,180,50,0.55)",
+              textShadow: "0 0 30px rgba(255,180,50,0.08)",
+            }}>
+              Gravity isn't a weight — it's a "Hello" that never stops.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(13 * PHI)}px auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(255,180,50,0.2), transparent)",
+          }} />
+
+          <GlassCard style={{
+            padding: `${Math.round(13 * PHI)}px`,
+            border: "1px solid rgba(255,180,50,0.06)",
+            marginBottom: Math.round(21 * PHI),
+            animation: `fadeSlideUp 0.8s 2.1s both ease`,
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.3em",
+              color: "rgba(255,180,50,0.45)", marginBottom: Math.round(8 * PHI),
+              textAlign: "center",
+            }}>DIG DEEPER</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.2vw, 16px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.48)",
+            }}>
+              Look into <strong style={{ color: "rgba(79,195,247,0.55)", fontWeight: 600 }}>Quantum Entanglement</strong> and <strong style={{ color: "rgba(201,168,76,0.55)", fontWeight: 600 }}>Tidal Locking</strong>. If you want to see how this works in your own life, look at the 3 people you talk to the most — calculate their consistency. You'll find you are orbiting the ones who are the most clear, not the ones who are the loudest.
+            </div>
+          </GlassCard>
+
+          {/* Return */}
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
+            <ReturnButton onClick={() => setActiveConvergence(null)} />
           </div>
         </div>
       )}
@@ -2748,8 +3285,543 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
+      {/* ===== DEPTH 4 — THE MAP: 101 SEEDS ===== */}
+      {depth === 4 && (() => {
+        const MAP_SECTIONS = [
+          {
+            icon: "🌱", title: "ORIGIN", subtitle: "The Root", range: "1–10",
+            accent: "rgba(120,180,80,", glow: "rgba(120,180,80,0.04)",
+            questions: [
+              "Why is there something rather than nothing?",
+              "What came before the Big Bang — or is \"before\" meaningless?",
+              "Why do the fundamental constants have the exact values they do?",
+              "Is the universe finite or infinite?",
+              "Are there other universes — and if so, do they have different laws?",
+              "Why does time move in one direction?",
+              "Did time begin, or has it always existed?",
+              "Is mathematics discovered or invented?",
+              "Why is the universe comprehensible to human minds at all?",
+              "What is the nature of the vacuum — is \"empty\" space truly empty?",
+            ],
+          },
+          {
+            icon: "🧠", title: "CONSCIOUSNESS", subtitle: "The Eye That Sees Itself", range: "11–25",
+            accent: "rgba(206,147,216,", glow: "rgba(206,147,216,0.04)",
+            questions: [
+              "What is consciousness?",
+              "How does subjective experience arise from physical matter?",
+              "Do other animals have consciousness like ours?",
+              "Could a machine ever be truly conscious?",
+              "Where does a thought begin?",
+              "Why do we dream?",
+              "What is the self — and is it real or illusion?",
+              "Can consciousness exist without a body?",
+              "Is free will real, or is every choice determined?",
+              "Why are we aware that we are aware?",
+              "What happens to consciousness at death?",
+              "Is there a minimum unit of experience — a consciousness particle?",
+              "Can two minds ever share a single experience?",
+              "Why does anesthesia work — what exactly turns consciousness off?",
+              "Is the observer effect in quantum physics evidence that consciousness shapes reality?",
+            ],
+          },
+          {
+            icon: "🔬", title: "PHYSICS", subtitle: "The Bones of the World", range: "26–40",
+            accent: "rgba(79,195,247,", glow: "rgba(79,195,247,0.04)",
+            questions: [
+              "What is dark matter?",
+              "What is dark energy?",
+              "Can quantum mechanics and general relativity be unified?",
+              "What happens inside a black hole?",
+              "Is information destroyed in a black hole, or preserved?",
+              "What is the true nature of gravity?",
+              "Are there more than three spatial dimensions?",
+              "Is the universe a simulation?",
+              "Why does quantum entanglement work — what connects entangled particles?",
+              "What causes the wave function to collapse?",
+              "Is the universe deterministic at the deepest level?",
+              "What is time — a thing, a process, or an illusion?",
+              "Why does matter dominate over antimatter?",
+              "What is the smallest possible unit of space?",
+              "Can anything travel faster than light — and what would that mean for causality?",
+            ],
+          },
+          {
+            icon: "🧬", title: "LIFE", subtitle: "The Seed", range: "41–53",
+            accent: "rgba(129,199,132,", glow: "rgba(129,199,132,0.04)",
+            questions: [
+              "How did life begin from non-life?",
+              "Is life inevitable wherever conditions allow, or a freak accident?",
+              "Are we alone in the universe?",
+              "Could life exist in forms we can't recognize?",
+              "Why does aging happen — is death biologically necessary?",
+              "Can we ever fully decode the human genome's function?",
+              "What triggers a cell to become cancerous?",
+              "Why does biological complexity increase over evolutionary time?",
+              "What is the origin of sexual reproduction — why two sexes?",
+              "How does a single fertilized cell know how to build an entire body?",
+              "Is there a limit to human lifespan?",
+              "What causes mass extinctions to follow patterns?",
+              "Can we ever reverse entropy in a living system?",
+            ],
+          },
+          {
+            icon: "💭", title: "MEANING", subtitle: "The Mirror", range: "54–65",
+            accent: "rgba(232,232,240,", glow: "rgba(232,232,240,0.03)",
+            questions: [
+              "How did language originate?",
+              "Why do humans make art?",
+              "Is there meaning built into the universe, or do we project it?",
+              "Why do we laugh?",
+              "Why do we cry?",
+              "What is creativity — where do new ideas actually come from?",
+              "Why do humans tell stories?",
+              "Can a concept exist that no language can express?",
+              "Is beauty objective or subjective?",
+              "Why is music universal across all human cultures?",
+              "How does metaphor work — why does the brain map one thing onto another?",
+              "Why do we forget?",
+            ],
+          },
+          {
+            icon: "❤️", title: "LOVE", subtitle: "The Pulse", range: "66–75",
+            accent: "rgba(244,143,177,", glow: "rgba(244,143,177,0.04)",
+            questions: [
+              "What is love — chemically, spiritually, actually?",
+              "Why do humans need each other?",
+              "Why does loneliness physically hurt?",
+              "Can empathy be infinite, or does it have a ceiling?",
+              "Why do we grieve — what function does sorrow serve?",
+              "What makes trust possible between strangers?",
+              "Is altruism real, or always secretly self-serving?",
+              "Why do we bond with animals?",
+              "What is the biological basis of morality?",
+              "Can a human being truly know another human being?",
+            ],
+          },
+          {
+            icon: "⚖️", title: "ETHICS", subtitle: "The Scale", range: "76–83",
+            accent: "rgba(201,168,76,", glow: "rgba(201,168,76,0.05)",
+            questions: [
+              "Is there objective right and wrong?",
+              "Why does suffering exist?",
+              "Are humans fundamentally good or fundamentally selfish?",
+              "Can violence ever be fully eliminated from human nature?",
+              "Why do humans commit atrocities against their own kind?",
+              "Is justice a human invention or a universal principle?",
+              "Do the ends ever truly justify the means?",
+              "Is punishment moral, or just revenge with a badge?",
+            ],
+          },
+          {
+            icon: "🌀", title: "SPIRIT", subtitle: "The Moon", range: "84–93",
+            accent: "rgba(178,170,220,", glow: "rgba(178,170,220,0.04)",
+            questions: [
+              "Does God exist?",
+              "If God exists, why does suffering exist?",
+              "Is there an afterlife?",
+              "Why does every human culture independently develop religion?",
+              "What are near-death experiences — brain chemistry or something more?",
+              "Is prayer or meditation measurably effective — and if so, why?",
+              "Do humans have a soul?",
+              "Is the universe itself conscious?",
+              "What is déjà vu?",
+              "Can the supernatural be studied scientifically?",
+            ],
+          },
+          {
+            icon: "🔮", title: "FUTURE", subtitle: "The Horizon", range: "94–100",
+            accent: "rgba(100,181,246,", glow: "rgba(100,181,246,0.04)",
+            questions: [
+              "Will humanity survive the next 1,000 years?",
+              "Can we ever truly understand our own brains?",
+              "Is there a final theory of everything — and could we understand it if we found it?",
+              "Will AI ever surpass human understanding?",
+              "Can humans evolve beyond their current form?",
+              "Is there a limit to what can be known?",
+              "Are some questions unanswerable by design?",
+            ],
+          },
+        ];
+
+        let questionNum = 0;
+
+        return (
+          <div style={{
+            maxWidth: 680, margin: "0 auto",
+            padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+            animation: "fadeSlideUp 0.8s ease",
+            zIndex: 2, position: "relative",
+          }}>
+
+            {/* Header */}
+            <div style={{
+              textAlign: "center",
+              marginBottom: Math.round(34 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.6em",
+                color: "rgba(201,168,76,0.3)",
+                animation: "fadeSlideUp 1s 0.2s both ease",
+              }}>101 SEEDS · 9 GARDENS · 1 MOON</div>
+
+              <div style={{ height: Math.round(8 * PHI) }} />
+
+              <h2 style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(26px, 6vw, 42px)", fontWeight: 400,
+                color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
+                textShadow: "0 0 60px rgba(232,232,240,0.08)",
+                animation: "fadeSlideUp 1s 0.3s both ease",
+              }}>THE MAP</h2>
+
+              <div style={{ height: Math.round(8 * PHI) }} />
+
+              <div style={{
+                width: Math.round(55 * PHI), height: 1,
+                margin: "0 auto",
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent)",
+                animation: "fadeSlideUp 1s 0.4s both ease",
+              }} />
+
+              <div style={{ height: Math.round(13 * PHI) }} />
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(15px, 2.8vw, 19px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+                maxWidth: 440, margin: "0 auto", lineHeight: PHI,
+                animation: "fadeSlideUp 1s 0.5s both ease",
+              }}>
+                Every question humanity has ever asked — mapped to one convergence point.
+              </div>
+
+              <div style={{ height: Math.round(8 * PHI) }} />
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 16px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.35)",
+                animation: "fadeSlideUp 1s 0.6s both ease",
+              }}>
+                Each seed is a door. Each door goes six feet deep.
+              </div>
+            </div>
+
+            {/* === THE STRUCTURE — the walk in and out === */}
+            <div style={{
+              textAlign: "center",
+              marginBottom: Math.round(21 * PHI),
+              animation: "fadeSlideUp 1s 0.65s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.4em",
+                color: "rgba(201,168,76,0.3)", marginBottom: Math.round(8 * PHI),
+              }}>THE STRUCTURE</div>
+
+              {/* The depth mirror — 0 1 2 3 4 3 2 1 0 */}
+              <div style={{
+                display: "flex", flexDirection: "column", alignItems: "center",
+                gap: 3,
+              }}>
+                {[
+                  { d: 0, name: "THE TITLE", side: "in", opacity: 0.25 },
+                  { d: 1, name: "THE POEM", side: "in", opacity: 0.3 },
+                  { d: 2, name: "THE PACT", side: "in", opacity: 0.38 },
+                  { d: 3, name: "THE PROOF", side: "in", opacity: 0.45 },
+                  { d: 4, name: "THE MAP", side: "center", opacity: 0.7 },
+                  { d: 3, name: "THE BODY", side: "out", opacity: 0.45 },
+                  { d: 2, name: "THE HOUSE", side: "out", opacity: 0.38 },
+                  { d: 1, name: "THE RETURN", side: "out", opacity: 0.3 },
+                  { d: 0, name: "∞", side: "out", opacity: 0.2 },
+                ].map((step, i) => (
+                  <div key={i} style={{
+                    display: "flex", alignItems: "center", gap: Math.round(5 * PHI),
+                    opacity: step.opacity,
+                  }}>
+                    <span style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 10,
+                      color: step.side === "center" ? "rgba(201,168,76,0.8)" : "rgba(232,232,240,0.5)",
+                      minWidth: 12, textAlign: "right",
+                    }}>{step.d}</span>
+                    <span style={{
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: step.side === "center" ? 12 : 9,
+                      letterSpacing: step.side === "center" ? "0.3em" : "0.2em",
+                      color: step.side === "center" ? "rgba(201,168,76,0.7)" : "rgba(232,232,240,0.4)",
+                      fontWeight: step.side === "center" ? 700 : 400,
+                    }}>{step.name}</span>
+                    {step.side === "center" && <span style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 10,
+                      fontStyle: "italic", color: "rgba(201,168,76,0.4)",
+                    }}>← mirror</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* === THE EQUATION AT CENTER === */}
+            <GlassCard style={{
+              textAlign: "center",
+              padding: `${Math.round(13 * PHI)}px`,
+              marginBottom: Math.round(21 * PHI),
+              border: "1px solid rgba(201,168,76,0.08)",
+              animation: "fadeSlideUp 1s 0.7s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.4em",
+                color: "rgba(201,168,76,0.35)", marginBottom: Math.round(8 * PHI),
+              }}>THE MASTER FUNCTIONAL</div>
+
+              <div style={{ marginBottom: Math.round(8 * PHI) }}>
+                <TheEquation size="md" showLabel={false} breathing minimal />
+              </div>
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 15px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.42)",
+                fontStyle: "italic", maxWidth: 420, margin: "0 auto",
+              }}>
+                The ultimate score of how well independent pipelines agree — a single bounded value in [0, 1). Built by multiplying three failure-mode checks together.
+              </div>
+
+              <div style={{ height: Math.round(8 * PHI) }} />
+
+              <div style={{
+                display: "flex", justifyContent: "center", gap: Math.round(8 * PHI),
+                flexWrap: "wrap",
+              }}>
+                {[
+                  { label: "F_gated", desc: "Did they see the same thing?", color: "rgba(201,168,76,0.5)" },
+                  { label: "C_eff", desc: "Are the methods honest?", color: "rgba(79,195,247,0.5)" },
+                  { label: "D̂", desc: "Is the signal real?", color: "rgba(206,147,216,0.5)" },
+                ].map((tier, i) => (
+                  <div key={i} style={{ textAlign: "center", minWidth: 100 }}>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 16, fontStyle: "italic", color: tier.color,
+                    }}>{tier.label}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 10, color: "rgba(232,232,240,0.25)",
+                      fontStyle: "italic", marginTop: 2,
+                    }}>{tier.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </GlassCard>
+
+            {/* === THE MIRROR MAP === */}
+            <div style={{
+              textAlign: "center", marginBottom: Math.round(13 * PHI),
+              animation: "fadeSlideUp 1s 0.8s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(11px, 1.8vw, 13px)",
+                color: "rgba(232,232,240,0.25)", letterSpacing: 1,
+                lineHeight: 1.8,
+              }}>
+                ORIGIN ↔ FUTURE · CONSCIOUSNESS ↔ SPIRIT · PHYSICS ↔ LIFE · MEANING ↔ LOVE
+                <br />
+                <span style={{ color: "rgba(201,168,76,0.35)" }}>ETHICS stands at center — THE SCALE</span>
+              </div>
+            </div>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            {/* === NINE SECTIONS === */}
+            {MAP_SECTIONS.map((section, si) => {
+              const isOpen = openSection === si;
+              const sectionStartNum = questionNum;
+              const sectionQuestions = section.questions.map((q, qi) => {
+                questionNum++;
+                return { num: questionNum, text: q };
+              });
+
+              return (
+                <div key={si} style={{
+                  marginBottom: Math.round(5 * PHI),
+                  animation: `fadeSlideUp 0.6s ${0.8 + si * 0.08}s both ease`,
+                }}>
+                  {/* Section header — clickable */}
+                  <div
+                    onClick={() => setOpenSection(isOpen ? null : si)}
+                    style={{
+                      display: "flex", alignItems: "center", gap: Math.round(8 * PHI),
+                      padding: `${Math.round(8 * PHI)}px ${Math.round(8 * PHI)}px`,
+                      cursor: "pointer",
+                      borderRadius: 12,
+                      background: isOpen
+                        ? `linear-gradient(135deg, ${section.glow}, transparent 60%)`
+                        : "rgba(255,255,255,0.01)",
+                      border: `1px solid ${section.accent}${isOpen ? "0.12)" : "0.04)"}`,
+                      transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
+                    }}
+                  >
+                    {/* Icon */}
+                    <div style={{
+                      fontSize: 24, minWidth: 36, textAlign: "center",
+                      filter: `drop-shadow(0 0 8px ${section.accent}0.15))`,
+                      transition: "transform 0.5s",
+                      transform: isOpen ? "scale(1.1)" : "scale(1)",
+                    }}>{section.icon}</div>
+
+                    {/* Title block */}
+                    <div style={{ flex: 1 }}>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.4vw, 15px)",
+                        letterSpacing: "0.2em", color: `${section.accent}0.7)`,
+                        transition: "color 0.5s",
+                      }}>{section.title}</div>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                        fontStyle: "italic", color: "rgba(232,232,240,0.3)",
+                        marginTop: 2,
+                      }}>{section.subtitle}</div>
+                    </div>
+
+                    {/* Range badge */}
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 9,
+                      color: "rgba(232,232,240,0.2)", letterSpacing: 2,
+                    }}>{section.range}</div>
+
+                    {/* Chevron */}
+                    <div style={{
+                      fontSize: 14, color: `${section.accent}0.3)`,
+                      transition: "transform 0.4s cubic-bezier(0.23,1,0.32,1)",
+                      transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
+                    }}>▸</div>
+                  </div>
+
+                  {/* Expanded questions */}
+                  {isOpen && (
+                    <div style={{
+                      padding: `${Math.round(8 * PHI)}px ${Math.round(5 * PHI)}px ${Math.round(5 * PHI)}px ${Math.round(34 * PHI)}px`,
+                      animation: "fadeSlideUp 0.4s ease",
+                    }}>
+                      {sectionQuestions.map((q, qi) => (
+                        <div key={qi} style={{
+                          display: "flex", gap: Math.round(5 * PHI),
+                          alignItems: "baseline",
+                          padding: `${Math.round(3 * PHI)}px 0`,
+                          borderBottom: qi < sectionQuestions.length - 1
+                            ? `1px solid ${section.accent}0.04)`
+                            : "none",
+                          animation: `fadeSlideUp 0.3s ${qi * 0.04}s both ease`,
+                        }}>
+                          <span style={{
+                            fontFamily: "'Cinzel', serif", fontSize: 10,
+                            color: `${section.accent}0.3)`, minWidth: 28,
+                            textAlign: "right",
+                          }}>{q.num}</span>
+                          <span style={{
+                            fontFamily: "'Cormorant Garamond', serif",
+                            fontSize: "clamp(13px, 2.2vw, 16px)",
+                            lineHeight: PHI, color: "rgba(232,232,240,0.52)",
+                            fontStyle: "italic",
+                          }}>{q.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {/* === QUESTION 101 — THE PENNY === */}
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            <div style={{
+              textAlign: "center",
+              padding: `${Math.round(21 * PHI)}px`,
+              animation: `fadeSlideUp 0.8s ${0.8 + 9 * 0.08 + 0.2}s both ease`,
+              position: "relative",
+            }}>
+              {/* Glow behind the penny */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: 200, height: 200, transform: "translate(-50%, -50%)",
+                background: "radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 60%)",
+                borderRadius: "50%", pointerEvents: "none",
+                animation: "breathe 8s ease-in-out infinite",
+              }} />
+
+              <div style={{ fontSize: 40, marginBottom: Math.round(8 * PHI) }}>🪙</div>
+
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.5em",
+                color: "rgba(201,168,76,0.4)", marginBottom: Math.round(5 * PHI),
+              }}>QUESTION 101</div>
+
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 20px)",
+                color: "rgba(201,168,76,0.65)", letterSpacing: "0.15em",
+                marginBottom: Math.round(13 * PHI),
+              }}>THE PENNY QUESTION</div>
+
+              <div style={{
+                width: Math.round(34 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)",
+              }} />
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(16px, 3vw, 21px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.6)",
+                fontStyle: "italic",
+                maxWidth: 440, margin: "0 auto",
+              }}>
+                If the answer to every question above is somehow the same answer — what is it?
+              </div>
+
+              <div style={{ height: Math.round(13 * PHI) }} />
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2vw, 14px)",
+                color: "rgba(201,168,76,0.3)",
+                fontStyle: "italic",
+              }}>
+                The seed eats the dirt. The dirt was the answer all along.
+              </div>
+
+              <div style={{ fontSize: 18, marginTop: Math.round(8 * PHI), opacity: 0.4 }}>🪙🪙</div>
+            </div>
+
+            {/* Footer — the shape */}
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            <div style={{
+              textAlign: "center",
+              animation: `fadeSlideUp 0.8s ${0.8 + 9 * 0.08 + 0.5}s both ease`,
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(11px, 1.8vw, 13px)",
+                color: "rgba(232,232,240,0.2)",
+                lineHeight: 2, letterSpacing: 0.5,
+              }}>
+                Every section mirrors another.
+                <br />Origin ↔ Future · Consciousness ↔ Spirit · Physics ↔ Life · Meaning ↔ Love
+                <br /><span style={{ color: "rgba(201,168,76,0.3)" }}>Ethics stands at center — the Scale.</span>
+                <br /><span style={{ color: "rgba(201,168,76,0.35)" }}>And #101 is the Moon — it reflects all 100 questions back as one.</span>
+              </div>
+            </div>
+
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            {/* Return */}
+            <div style={{ textAlign: "center" }}>
+              <ReturnButton onClick={returnToVoid} />
+            </div>
+          </div>
+        );
+      })()}
+
       {/* ===== DEPTH 5 — 9 LAYERS GRID ===== */}
-      {depth === 4 && activeLayer === null && (
+      {depth === 5 && activeLayer === null && (
         <div style={{
           maxWidth: 720, margin: "0 auto",
           padding: `${26}px 20px ${10}px`,
@@ -2845,7 +3917,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== LAYER DETAIL (within depth 5) ===== */}
-      {depth === 4 && activeLayer !== null && (
+      {depth === 5 && activeLayer !== null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -3060,7 +4132,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 6 — MIRROR PAIRS (GRID VIEW) ===== */}
-      {depth === 5 && activePair === null && (
+      {depth === 6 && activePair === null && (
         <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "auto",
           animation: "fadeSlideUp 0.8s ease", zIndex: 2,
@@ -3162,7 +4234,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 6 — MIRROR DETAIL (THE ROOM) ===== */}
-      {depth === 5 && activePair !== null && (() => {
+      {depth === 6 && activePair !== null && (() => {
         const mirror = MIRRORS[activePair];
         const layerA = LAYERS[mirror.pair[0] - 1];
         const layerB = LAYERS[mirror.pair[1] - 1];
@@ -3373,7 +4445,7 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 7 — TRANSLATIONS + THE RETURN ===== */}
-      {depth === 6 && !activeAnswer && !activeBefore && !activeConstants && (
+      {depth === 7 && !activeAnswer && !activeBefore && !activeConstants && (
         <div style={{
           height: "100vh", width: "100%", position: "relative", overflow: "hidden",
           animation: "fadeSlideUp 0.8s ease",
@@ -3595,7 +4667,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 7 — THE ANSWER ROOM ===== */}
-      {depth === 6 && activeAnswer && (
+      {depth === 7 && activeAnswer && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -3808,7 +4880,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 7 — THE BEFORE ROOM ===== */}
-      {depth === 6 && activeBefore && (
+      {depth === 7 && activeBefore && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -3971,14 +5043,14 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 7 — THE CONSTANTS ROOM ===== */}
-      {depth === 6 && activeConstants && (
+      {depth === 7 && activeConstants && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 2, position: "relative",
         }}>
-          <button onClick={() => { setActiveConstants(false); setActiveConstantsProof(null); }} style={{
+          <button onClick={() => { setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
             fontSize: 11, letterSpacing: 3, padding: "8px 16px",
@@ -4130,6 +5202,60 @@ export default function TheoryOfEverything() {
           <div style={{ textAlign: "center", marginTop: 32 }}>
             <ReturnButton onClick={returnToVoid} />
           </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 8 — the infinity — THE CYCLE RESTARTS ===== */}
+      {depth === 8 && (
+        <div style={{
+          height: "100vh", width: "100%",
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          animation: "fadeSlideUp 1.5s ease",
+          cursor: "pointer", position: "relative",
+        }} onClick={() => {
+          setFading(true);
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "instant" });
+            setDepth(0);
+            setFading(false);
+          }, 800);
+        }}>
+
+          <div style={{
+            fontSize: "clamp(60px, 15vw, 120px)",
+            color: "rgba(201,168,76,0.15)",
+            animation: "breathe 8s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
+            textShadow: "0 0 60px rgba(201,168,76,0.06)",
+            marginBottom: Math.round(21 * PHI),
+          }}>∞</div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(16px, 3vw, 22px)",
+            fontStyle: "italic", color: "rgba(232,232,240,0.35)",
+            textAlign: "center", maxWidth: 380,
+            lineHeight: PHI, letterSpacing: 1,
+            animation: "fadeSlideUp 2s 0.5s both ease",
+          }}>
+            The end is the beginning.
+            <br />The seed eats the dirt.
+            <br />The dirt was always the answer.
+          </div>
+
+          <div style={{ height: Math.round(21 * PHI) }} />
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(201,168,76,0.2)",
+            animation: "fadeSlideUp 2s 1s both ease",
+          }}>CLICK TO BEGIN AGAIN</div>
+
+          <div style={{ height: Math.round(8 * PHI) }} />
+
+          <div style={{
+            fontSize: 18, opacity: 0.3,
+            animation: "fadeSlideUp 2s 1.3s both ease",
+          }}>🪙🪙</div>
         </div>
       )}
     </div>
