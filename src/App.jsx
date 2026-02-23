@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import MultiverseFractal from "./MultiverseFractal.jsx";
+import MathPage from "./MathPage.jsx";
 
 const PHI = 1.618;
 const PHI_INV = 0.618;
@@ -1290,6 +1292,7 @@ const DEPTH_ATMOSPHERES = [
 /* ========== MAIN ========== */
 
 export default function TheoryOfEverything() {
+  const [currentPage, setCurrentPage] = useState("theory"); // "theory" | "multiverse" | "math"
   const [depth, setDepth] = useState(0);
   const [activeLayer, setActiveLayer] = useState(null);
   const [activeSense, setActiveSense] = useState(null);
@@ -1530,6 +1533,120 @@ export default function TheoryOfEverything() {
           .gold-line { margin: 8px 0 !important; }
         }
       `}</style>
+
+      {/* ===== PAGE NAVIGATION ===== */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 500,
+        display: "flex", justifyContent: "center", gap: 0,
+        padding: "0",
+        background: "linear-gradient(180deg, rgba(3,3,6,0.95) 0%, rgba(3,3,6,0.7) 70%, transparent 100%)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+      }}>
+        {[
+          { key: "theory", label: "THE THEORY", glyph: "🌙" },
+          { key: "multiverse", label: "MULTIVERSE", glyph: "✦" },
+          { key: "math", label: "THE MATH", glyph: "Ψ" },
+        ].map(tab => (
+          <button key={tab.key}
+            onClick={() => { setCurrentPage(tab.key); window.scrollTo({ top: 0, behavior: "instant" }); }}
+            style={{
+              cursor: "pointer",
+              background: currentPage === tab.key
+                ? "linear-gradient(180deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02))"
+                : "transparent",
+              border: "none",
+              borderBottom: currentPage === tab.key
+                ? "1px solid rgba(201,168,76,0.35)"
+                : "1px solid transparent",
+              padding: "14px 20px 12px",
+              fontFamily: "'Cinzel', serif",
+              fontSize: 9,
+              letterSpacing: "0.25em",
+              color: currentPage === tab.key
+                ? "rgba(201,168,76,0.7)"
+                : "rgba(232,232,240,0.25)",
+              transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
+              display: "flex", alignItems: "center", gap: 8,
+            }}
+            onMouseEnter={e => {
+              if (currentPage !== tab.key) e.target.style.color = "rgba(232,232,240,0.45)";
+            }}
+            onMouseLeave={e => {
+              if (currentPage !== tab.key) e.target.style.color = "rgba(232,232,240,0.25)";
+            }}
+          >
+            <span style={{ fontSize: 12, opacity: currentPage === tab.key ? 0.8 : 0.4 }}>{tab.glyph}</span>
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+
+      {/* Spacer for fixed nav */}
+      <div style={{ height: 44 }} />
+
+      {/* ===== MULTIVERSE PAGE ===== */}
+      {currentPage === "multiverse" && (
+        <div style={{
+          width: "100%", height: "calc(100vh - 44px)",
+          position: "relative",
+        }}>
+          <GrainOverlay />
+          {/* Vignette */}
+          <div style={{
+            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+            background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.85) 100%)",
+            pointerEvents: "none", zIndex: 1,
+          }} />
+          {/* Title overlay */}
+          <div style={{
+            position: "absolute", top: 20, left: "50%", transform: "translateX(-50%)",
+            textAlign: "center", zIndex: 10, pointerEvents: "none",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.25)",
+            }}>THE RECURSIVE</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(20px, 4vw, 32px)",
+              fontWeight: 400, color: "rgba(232,232,240,0.6)",
+              letterSpacing: "0.25em", margin: "4px 0",
+              textShadow: "0 0 40px rgba(232,232,240,0.06)",
+            }}>MULTIVERSE</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(11px, 1.8vw, 14px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+            }}>9 × 9 × 9 = 729 universes · Same equation · Every scale</div>
+          </div>
+          <MultiverseFractal style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }} />
+        </div>
+      )}
+
+      {/* ===== MATH PAGE ===== */}
+      {currentPage === "math" && (
+        <>
+          <GrainOverlay />
+          {/* Vignette */}
+          <div style={{
+            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+            background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.85) 100%)",
+            pointerEvents: "none", zIndex: 1,
+          }} />
+          {/* Particles */}
+          {Array.from({ length: 16 }, (_, i) => (
+            <Particle key={i} delay={i * 1.5 + Math.random() * 2}
+              size={Math.random() * 2 + 0.5}
+              x={Math.random() * 100}
+              speed={20 + Math.random() * 25} />
+          ))}
+          <MathPage onReturn={() => setCurrentPage("theory")} />
+        </>
+      )}
+
+      {/* ===== THEORY PAGE (original content) ===== */}
+      {currentPage === "theory" && (<>
 
       {/* Grain overlay */}
       <GrainOverlay />
@@ -5258,6 +5375,8 @@ export default function TheoryOfEverything() {
           }}>🪙🪙</div>
         </div>
       )}
+
+      </>)}
     </div>
   );
 }
