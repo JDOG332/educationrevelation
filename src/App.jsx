@@ -1695,6 +1695,92 @@ export default function TheoryOfEverything() {
             width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
           }} />
+
+          {/* 🤘 THE CONNECTION — feel the theory in your body */}
+          <div style={{ marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ textAlign: "center", marginBottom: Math.round(21 * PHI) }}>
+              <div style={{ fontSize: 28, marginBottom: Math.round(5 * PHI) }}>🤘</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 20px)",
+                letterSpacing: "0.3em", color: "rgba(232,232,240,0.7)",
+              }}>THE CONNECTION</div>
+              <div style={{ height: Math.round(8 * PHI) }} />
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                fontStyle: "italic", maxWidth: 500, margin: "0 auto",
+              }}>
+                Everything in the world is like a giant, invisible spiderweb. When you touch one part, the whole thing wiggles. Even when things feel scary or dark, we are all part of the same big story. We aren't alone — because we all feel the same goosebumps together.
+              </div>
+            </div>
+
+            {/* EXPERIENCE THE TRUTH — 6 senses */}
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.35)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>EXPERIENCE THE TRUTH</div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+              {[
+                { icon: "👂", sense: "SOUND", text: "Sit in a quiet room and hum a low note. Feel how the sound vibrates in your chest like a tiny motor. That's the same energy inside everything else." },
+                { icon: "👃", sense: "SMELL", text: "Smell a fresh orange or a piece of pine. That scent is a message the plant is sending out to the whole world — including you." },
+                { icon: "👅", sense: "TASTE", text: "Eat a piece of dark chocolate. Notice how the flavor changes from the front of your tongue to the back. A tiny journey happening in your mouth." },
+                { icon: "✋", sense: "TOUCH", text: "Press your hands together as hard as you can, then let go. Feel the fuzzy heat left behind. That is your own power waking up." },
+                { icon: "👁️", sense: "SIGHT", text: "Look at the veins on a leaf, then look at the lines on your own palm. They are drawn with the same crayons." },
+                { icon: "🧠", sense: "THE 6TH", text: "Close your eyes and stand on one foot. Feel your brain and muscles talking to each other instantly. That is your inner computer connecting you to the Earth." },
+              ].map((s, i) => (
+                <div key={i} style={{
+                  display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+                  animation: `fadeSlideUp 0.6s ${0.1 * i}s both ease`,
+                }}>
+                  <div style={{
+                    fontSize: 20, minWidth: 30, textAlign: "center",
+                    filter: "drop-shadow(0 0 8px rgba(201,168,76,0.15))",
+                  }}>{s.icon}</div>
+                  <div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                      color: "rgba(201,168,76,0.45)", marginBottom: 4,
+                    }}>{s.sense}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(13px, 2.2vw, 16px)",
+                      lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                    }}>{s.text}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* The 6th Sense deeper */}
+            <div style={{
+              textAlign: "center", marginTop: Math.round(21 * PHI),
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(201,168,76,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(201,168,76,0.06)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+                color: "rgba(201,168,76,0.3)", marginBottom: Math.round(5 * PHI),
+              }}>THE 6TH SENSE CONNECTION</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.4vw, 17px)",
+                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+                fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+              }}>
+                Imagine you are a drop of water in the ocean. You can see the waves, smell the salt, and feel the cold. But your intuition is knowing that even though you are one drop, you are the whole ocean at the same time. You aren't just watching the world — you are a part of the world's heartbeat.
+              </div>
+            </div>
+          </div>
+
+          <div style={{
+            width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+          }} />
           <div style={{
             textAlign: "center",
             animation: "fadeSlideUp 0.8s 2s both ease",
