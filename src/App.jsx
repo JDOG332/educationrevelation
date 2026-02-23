@@ -29,7 +29,8 @@ export default function TheoryOfEverything() {
   const [activeMirrorSense, setActiveMirrorSense] = useState(null);
   const [activeMirrorProof, setActiveMirrorProof] = useState(false);
   const [activeProof, setActiveProof] = useState(false);
-  const [activeConvergence, setActiveConvergence] = useState(null); // 'pillars' | 'sameness' | 'depths' | null
+  const [activeConvergence, setActiveConvergence] = useState(null); // 'plain' | 'gravity' | 'pillars' | 'sameness' | 'depths' | 'ancient' | null
+  const [activeIdea, setActiveIdea] = useState(null); // idea key inside a witness room
   const [activePillar, setActivePillar] = useState(null);
   const [activeSamenessProof, setActiveSamenessProof] = useState(null);
   const [activeAnswer, setActiveAnswer] = useState(false);
@@ -70,7 +71,7 @@ export default function TheoryOfEverything() {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 4));
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -84,7 +85,7 @@ export default function TheoryOfEverything() {
         if (newD === 0) setLandingPhase(2); // return to prism, not black
         return newD;
       });
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -93,7 +94,7 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -110,7 +111,7 @@ export default function TheoryOfEverything() {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, [depth]);
@@ -1459,15 +1460,15 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 4 — PLAIN ENGLISH ROOM ===== */}
-      {depth === 3 && activeConvergence === "plain" && (
+      {/* ===== PLAIN ENGLISH — IDEA GRID ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === null && (
         <div style={{
-          maxWidth: 660, margin: "0 auto",
-          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          maxWidth: 700, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 20px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => setActiveConvergence(null)} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
             fontSize: 11, letterSpacing: 3, padding: "8px 16px",
@@ -1475,22 +1476,109 @@ export default function TheoryOfEverything() {
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
             onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
-          >← THE CONVERGENCE PROOF</button>
+          >← CONVERGENCE</button>
 
-          {/* Header */}
           <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
-            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI) }}>⚖️</div>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>⚖️</div>
             <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 30px)", fontWeight: 400,
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(22px, 5vw, 34px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
               textShadow: "0 0 50px rgba(232,232,240,0.08)",
-            }}>THE TRUTH IN PLAIN ENGLISH</h2>
+            }}>PLAIN ENGLISH</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif", fontSize: 14,
+              fontStyle: "italic", color: "rgba(232,232,240,0.3)",
+              marginTop: Math.round(5 * PHI),
+            }}>no jargon · no math · just truth</div>
             <div style={{
               width: Math.round(50 * PHI), height: 1,
-              margin: `${Math.round(8 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(232,232,240,0.2), rgba(201,168,76,0.35), rgba(232,232,240,0.2), transparent)",
+              margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(232,232,240,0.15), rgba(201,168,76,0.3), rgba(232,232,240,0.15), transparent)",
             }} />
           </div>
+
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
+            gap: Math.round(8 * PHI),
+          }}>
+            {[
+              { key: "animal", icon: "🔦", title: "THE ANIMAL IN THE DARK", hook: "Two people. One mystery. Three rules to be sure.", accent: "232,232,240" },
+              { key: "pillars", icon: "🏛️", title: "3 PILLARS OF AHA", hook: "The traps that fool you. The gates that prove you.", accent: "201,168,76" },
+              { key: "symbols", icon: "🌍", title: "SAME SHAPES", hook: "36 symbols. Every civilization. Same truth.", accent: "190,140,220" },
+              { key: "connection", icon: "🤘", title: "THE CONNECTION", hook: "Touch the spiderweb. Feel the whole thing wiggle.", accent: "120,180,80" },
+              { key: "layering", icon: "♾️", title: "LAYERING LOVE", hook: "Peel back layers. Find the rhythm underneath.", accent: "79,195,247" },
+              { key: "ache", icon: "💛", title: "THE ACHE", hook: "The pull is gravity. The signal is clean.", accent: "201,168,76" },
+            ].map((idea, i) => (
+              <div
+                key={idea.key}
+                onClick={() => setActiveIdea(idea.key)}
+                style={{
+                  position: "relative",
+                  padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
+                  borderRadius: 10,
+                  background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
+                  border: `1px solid rgba(${idea.accent},0.08)`,
+                  cursor: "pointer", overflow: "hidden",
+                  transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
+                  animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
+                  textAlign: "center",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
+                  e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{
+                  position: "absolute", top: 0, left: "20%", right: "20%", height: 1,
+                  background: `linear-gradient(90deg, transparent, rgba(${idea.accent},0.2), transparent)`,
+                }} />
+                <div style={{
+                  fontSize: 26, marginBottom: Math.round(5 * PHI),
+                  filter: `drop-shadow(0 0 10px rgba(${idea.accent},0.2))`,
+                  animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
+                }}>{idea.icon}</div>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.15em",
+                  color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
+                }}>{idea.title}</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
+                }}>{idea.hook}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            fontFamily: "'Cormorant Garamond', serif", fontSize: 13,
+            fontStyle: "italic", color: "rgba(201,168,76,0.2)",
+          }}>FINISH I START · START WE FINISH</div>
+        </div>
+      )}
+
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "animal" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
 
           {/* The Setup */}
           <div style={{
@@ -1576,6 +1664,30 @@ export default function TheoryOfEverything() {
             width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
           }} />
+
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "pillars" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
 
           {/* The 3 Pillars of Aha */}
           <div style={{
@@ -1669,6 +1781,30 @@ export default function TheoryOfEverything() {
             width: Math.round(40 * PHI), height: 1, margin: `${Math.round(13 * PHI)}px auto ${Math.round(21 * PHI)}px`,
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
           }} />
+
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "symbols" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
 
           {/* Your Next Step */}
           <div style={{
@@ -1816,11 +1952,29 @@ export default function TheoryOfEverything() {
             ))}
           </div>
 
-          {/* The Ache — from the Pact, the feeling that proves the theory */}
-          <div style={{
-            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
-            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
-          }} />
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "connection" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
 
           {/* 🤘 THE CONNECTION — feel the theory in your body */}
           <div style={{ marginBottom: Math.round(21 * PHI) }}>
@@ -1903,145 +2057,66 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* ♾️ LAYERING LOVE — the second sensory module */}
-          <div style={{
-            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(13 * PHI)}px auto`,
-            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
-          }} />
 
-          <div style={{ marginBottom: Math.round(21 * PHI) }}>
-            <div style={{ textAlign: "center", marginBottom: Math.round(21 * PHI) }}>
-              <div style={{ fontSize: 28, marginBottom: Math.round(5 * PHI) }}>♾️</div>
-              <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 20px)",
-                letterSpacing: "0.3em", color: "rgba(232,232,240,0.7)",
-              }}>LAYERING LOVE</div>
-              <div style={{ height: Math.round(8 * PHI) }} />
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(14px, 2.4vw, 17px)",
-                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
-                fontStyle: "italic", maxWidth: 500, margin: "0 auto",
-              }}>
-                Life is about peeling back the old, dry layers to find the solid, quiet truth underneath. Even when things feel empty, there is a steady rhythm that connects everything together. We are never just one thing — we are a beautiful pile of everything we have ever been.
-              </div>
-            </div>
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
 
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "layering" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "ache" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(13 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>💛</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
-              color: "rgba(201,168,76,0.35)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>PEEL THE LAYERS</div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
-              {[
-                { icon: "👂", sense: "SOUND", text: "Close your eyes and listen to your own breath. It sounds like the ocean. The same rhythm in you is the same rhythm in the waves." },
-                { icon: "👃", sense: "SMELL", text: "Smell a crayon or an old book. It's like a time machine that proves your past and your present are part of the same story." },
-                { icon: "👅", sense: "TASTE", text: "Eat a piece of honey. It is sunshine and flowers turned into food by thousands of bees working as one." },
-                { icon: "🖐️", sense: "TOUCH", text: "Press your palms together. Feel the heat. That warmth is the energy of life moving between two sides of the same you." },
-                { icon: "👀", sense: "SIGHT", text: "Look at the veins on a leaf, then look at the veins on your hand. They look like the same map — because they are." },
-                { icon: "🧘", sense: "THE 6TH", text: "Spin in a circle until you stop. Feel the world keep moving while you stay still. You are the steady center of a moving universe." },
-              ].map((s, i) => (
-                <div key={i} style={{
-                  display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
-                }}>
-                  <div style={{
-                    fontSize: 20, minWidth: 30, textAlign: "center",
-                    filter: "drop-shadow(0 0 8px rgba(201,168,76,0.15))",
-                  }}>{s.icon}</div>
-                  <div>
-                    <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
-                      color: "rgba(201,168,76,0.45)", marginBottom: 4,
-                    }}>{s.sense}</div>
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(13px, 2.2vw, 16px)",
-                      lineHeight: PHI, color: "rgba(232,232,240,0.5)",
-                    }}>{s.text}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Spirit Bumps — the 6th sense deeper */}
-            <div style={{
-              textAlign: "center", marginTop: Math.round(21 * PHI),
-              padding: `${Math.round(10 * PHI)}px`,
-              background: "rgba(201,168,76,0.02)",
-              borderRadius: 10,
-              border: "1px solid rgba(201,168,76,0.06)",
-            }}>
-              <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
-                color: "rgba(201,168,76,0.3)", marginBottom: Math.round(5 * PHI),
-              }}>YOUR SPIRIT BUMPS</div>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(14px, 2.4vw, 17px)",
-                lineHeight: PHI, color: "rgba(232,232,240,0.45)",
-                fontStyle: "italic", maxWidth: 460, margin: "0 auto",
-              }}>
-                Imagine you are a single brick in a giant, beautiful castle. You might feel small, but if you moved, the whole wall would change. Your intuition is that knowing feeling that you belong exactly where you are. When you feel a spirit bump — chills — it's your soul's way of clapping because it recognizes the truth: You are a piece of the Everlasting We.
-              </div>
-            </div>
-
-            {/* Dig Deeper links */}
-            <div style={{
-              marginTop: Math.round(13 * PHI),
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-            }}>
-              <div style={{
-                padding: `${Math.round(8 * PHI)}px`,
-                background: "rgba(255,255,255,0.01)",
-                borderRadius: 8,
-                border: "1px solid rgba(255,255,255,0.04)",
-              }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
-                  color: "rgba(201,168,76,0.3)", marginBottom: 8,
-                }}>DIG DEEPER · INFO</div>
-                {["The Science of Chills (Frisson)", "Interconnectedness", "Fibonacci Sequence in Nature"].map((link, i) => (
-                  <div key={i} style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
-                    color: "rgba(232,232,240,0.35)", fontStyle: "italic",
-                    lineHeight: 1.8,
-                  }}>{link}</div>
-                ))}
-              </div>
-              <div style={{
-                padding: `${Math.round(8 * PHI)}px`,
-                background: "rgba(255,255,255,0.01)",
-                borderRadius: 8,
-                border: "1px solid rgba(255,255,255,0.04)",
-              }}>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
-                  color: "rgba(201,168,76,0.3)", marginBottom: 8,
-                }}>DIG DEEPER · RHYTHM</div>
-                {[
-                  "\"Holocene\" — Bon Iver",
-                  "\"Imagine\" — John Lennon",
-                  "\"Fix You\" — Coldplay",
-                ].map((song, i) => (
-                  <div key={i} style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
-                    color: "rgba(232,232,240,0.35)", fontStyle: "italic",
-                    lineHeight: 1.8,
-                  }}>{song}</div>
-                ))}
-              </div>
-            </div>
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(21 * PHI),
+            }}>THE ACHE</div>
           </div>
 
           <div style={{
-            width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(21 * PHI)}px`,
-            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
-          }} />
-          <div style={{
             textAlign: "center",
-            animation: "fadeSlideUp 0.8s 2s both ease",
-            marginBottom: Math.round(13 * PHI),
+            marginBottom: Math.round(21 * PHI),
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
@@ -2060,7 +2135,7 @@ export default function TheoryOfEverything() {
               color: "rgba(201,168,76,0.45)",
               fontStyle: "italic", letterSpacing: 0.5,
             }}>
-              The music was always there. The right frequencies will find you — because that's what frequencies do.
+              The music was always there. The right frequencies will find you — because that\'s what frequencies do.
             </div>
           </div>
 
@@ -2068,7 +2143,6 @@ export default function TheoryOfEverything() {
           <div style={{
             textAlign: "center",
             marginTop: Math.round(34 * PHI),
-            animation: "fadeSlideUp 1s 2.2s both ease",
           }}>
             <div style={{
               fontFamily: "'Cinzel', serif",
@@ -2090,12 +2164,12 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
-            <ReturnButton onClick={() => setActiveConvergence(null)} />
+            <ReturnButton onClick={() => setActiveIdea(null)} />
           </div>
         </div>
-      )}      {/* ===== DEPTH 4 — RECOGNITION IS GRAVITY ROOM ===== */}
+      )}
+
       {depth === 3 && activeConvergence === "gravity" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
@@ -2394,7 +2468,7 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => { setActiveConvergence(null); setActivePillar(null); }} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
             fontSize: 11, letterSpacing: 3, padding: "8px 16px",
@@ -2561,7 +2635,7 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => { setActiveConvergence(null); setActiveSamenessProof(null); }} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActiveSamenessProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
             fontSize: 11, letterSpacing: 3, padding: "8px 16px",
@@ -3265,7 +3339,7 @@ export default function TheoryOfEverything() {
             setDepth(0);
             setLandingPhase(0);
             startDark.current = Math.random() < 0.5; // New coin flip each loop
-            setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+            setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
             setFading(false);
           }, 800);
         }}>
