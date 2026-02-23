@@ -1516,6 +1516,7 @@ export default function TheoryOfEverything() {
               { key: "letgo", icon: "🔔", title: "LET GO", hook: "Stop controlling. Start feeling. The ocean carries you.", accent: "170,140,200" },
               { key: "breath", icon: "🙌", title: "THE BREATH", hook: "Same air. Since the beginning. One big living lung.", accent: "100,200,160" },
               { key: "root", icon: "🌌", title: "THE ROOT", hook: "The Starting Spark. You are the universe looking at itself.", accent: "200,180,255" },
+              { key: "eye", icon: "🧠", title: "THE EYE", hook: "Your mind is a mirror. You are the part that woke up.", accent: "220,200,140" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -3381,6 +3382,159 @@ export default function TheoryOfEverything() {
                 "\"What a Wonderful World\" — Armstrong",
                 "\"Here Comes The Sun\" — The Beatles",
                 "\"Somewhere Over The Rainbow\" — IZ",
+              ].map((song, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{song}</div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== PLAIN ENGLISH: THE EYE (Consciousness) ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "eye" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 11s ease-in-out infinite" }}>🧠</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE EYE</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(220,200,140,0.3)",
+            }}>CONSCIOUSNESS & MIND</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(220,200,140,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            Your mind is like a mirror. It doesn't just see the world — it reflects the universe back to itself. You are the part of the world that is finally awake.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(220,200,140,0.35)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>THE MIRROR THAT WOKE UP</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {[
+              { icon: "👂", sense: "SOUND", text: "Ring a bell and listen until the very last bit of sound fades into nothing. That nothing is the quiet space where your thoughts are born." },
+              { icon: "👃", sense: "SMELL", text: "Smell a crayon or a flower from a garden you visited long ago. Notice how the smell teleports your mind to a different time. Your mind is a time traveler." },
+              { icon: "👅", sense: "TASTE", text: "Put a tiny bit of salt on your tongue, then sugar. Notice the exact moment your brain labels the feeling. That label is your consciousness working." },
+              { icon: "✋", sense: "TOUCH", text: "Tickle the palm of your hand with a feather or your own hair. You can feel it, but you can't tickle yourself into jumping — because your mind already knows it's you." },
+              { icon: "👁️", sense: "SIGHT", text: "Look into your own eyes in a mirror for two minutes without looking away. You will start to feel like the person in the glass is a friend you've known forever." },
+              { icon: "🧘", sense: "THE 6TH", text: "Close your eyes and try to touch the tip of your nose with your finger. Your mind knows exactly where you are in the dark. That is your inner map." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  filter: "drop-shadow(0 0 8px rgba(220,200,140,0.2))",
+                }}>{s.icon}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                    color: "rgba(220,200,140,0.45)", marginBottom: 4,
+                  }}>{s.sense}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                  }}>{s.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Intuition — the blue sky */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(10 * PHI)}px`,
+            background: "rgba(220,200,140,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(220,200,140,0.06)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(220,200,140,0.3)", marginBottom: Math.round(5 * PHI),
+            }}>YOU ARE NOT THE CLOUDS. YOU ARE THE SKY.</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.45)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Imagine your thoughts are like clouds floating across a blue sky. Sometimes the clouds are dark and stormy, sometimes white and fluffy. But you are not the clouds. You are the blue sky that stays there no matter what. Your gut feeling is the sunlight shining through.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            marginTop: Math.round(13 * PHI),
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+          }}>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(220,200,140,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · INFO</div>
+              {["What Is Consciousness?", "Your Brain Hallucinates Reality", "Philosophy of Mind"].map((link, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{link}</div>
+              ))}
+            </div>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(220,200,140,0.3)", marginBottom: 8,
+              }}>DIG DEEPER · RHYTHM</div>
+              {[
+                "\"Imagine\" — John Lennon",
+                "\"Breathe\" — Pink Floyd",
+                "\"Nights in White Satin\" — Moody Blues",
               ].map((song, i) => (
                 <div key={i} style={{
                   fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
