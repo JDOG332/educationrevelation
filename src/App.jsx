@@ -1523,6 +1523,7 @@ export default function TheoryOfEverything() {
               { key: "pulse", icon: "❤️", title: "THE PULSE", hook: "Love is the gravity of the soul. Part of, not apart from.", accent: "220,80,80" },
               { key: "scale", icon: "⚖️", title: "THE SCALE", hook: "Born with a compass. Heavy when you hurt. Light when you help.", accent: "200,200,160" },
               { key: "moon", icon: "🌀", title: "THE MOON", hook: "You are a wave. The water never goes away.", accent: "180,180,220" },
+              { key: "penny", icon: "🪙", title: "THE PENNY QUESTION", hook: "The answer is One. Same energy. Different shapes.", accent: "201,168,76" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -4459,6 +4460,161 @@ export default function TheoryOfEverything() {
                 "\"Hallelujah\" — Jeff Buckley",
                 "\"My Sweet Lord\" — George Harrison",
                 "\"Spirit in the Sky\" — Greenbaum",
+              ].map((song, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{song}</div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== PLAIN ENGLISH: THE PENNY QUESTION ===== */}
+      {depth === 3 && activeConvergence === "plain" && activeIdea === "penny" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(255,255,255,0.3)", fontFamily: "'Cinzel', serif",
+            fontSize: 11, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.65)"}
+            onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.3)"}
+          >← PLAIN ENGLISH</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>🪙</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 24px)",
+              letterSpacing: "0.25em",
+              background: "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(201,168,76,0.8))",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE PENNY QUESTION</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: "0.4em",
+              color: "rgba(201,168,76,0.4)",
+            }}>THE ANSWER IS ONE</div>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.4vw, 17px)",
+            lineHeight: PHI, color: "rgba(232,232,240,0.55)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            The answer is One. Everything — the stars, your thoughts, the dirt, and your heartbeat — is just the same energy taking different shapes. You are a piece of the whole thing, pretending to be separate for a little while.
+          </div>
+
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
+            color: "rgba(201,168,76,0.4)", textAlign: "center",
+            marginBottom: Math.round(13 * PHI),
+          }}>SAME ENERGY · DIFFERENT SHAPES</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+            {[
+              { icon: "👂", sense: "SOUND", text: "Play a single note on a piano and hold it. As the sound fades, it doesn't stop — it just joins the rest of the air in the room. You are that note." },
+              { icon: "👃", sense: "SMELL", text: "Smell a bowl of vegetable soup. You can smell the onion, the carrot, the salt — but they all come together to make one single soup smell. Everything is an ingredient." },
+              { icon: "👅", sense: "TASTE", text: "Put a drop of honey in a glass of water and stir. You can't see the honey anymore, but every single drop of water now tastes sweet. The One is mixed into everything." },
+              { icon: "✋", sense: "TOUCH", text: "Reach out and touch a wall, a tree, or your own arm. At the tiniest level, the atoms in your finger are talking to the atoms in the object. There is no empty space. Everything is touching." },
+              { icon: "👁️", sense: "SIGHT", text: "Look at a digital photo and zoom in until you only see tiny squares. Each pixel is just a color, but zoom out and they make a beautiful face. You are a pixel in a giant picture." },
+              { icon: "🧘", sense: "THE 6TH", text: "Float on your back in a pool. For a second, you can't tell where your skin ends and the water begins. That oneness is the true state of the universe." },
+            ].map((s, i) => (
+              <div key={i} style={{
+                display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 20, minWidth: 30, textAlign: "center",
+                  filter: "drop-shadow(0 0 10px rgba(201,168,76,0.25))",
+                }}>{s.icon}</div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 3,
+                    color: "rgba(201,168,76,0.5)", marginBottom: 4,
+                  }}>{s.sense}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(13px, 2.2vw, 16px)",
+                    lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+                  }}>{s.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Intuition — the sweater */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(13 * PHI)}px`,
+            background: "rgba(201,168,76,0.03)",
+            borderRadius: 10,
+            border: "1px solid rgba(201,168,76,0.08)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 8, letterSpacing: 4,
+              color: "rgba(201,168,76,0.35)", marginBottom: Math.round(5 * PHI),
+            }}>YOU ARE THE EARTH AND THE UNIVERSE</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.4vw, 17px)",
+              lineHeight: PHI, color: "rgba(232,232,240,0.5)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Imagine you are a thread in a giant, infinite sweater. You might think you are just a blue string, but if you pull on yourself, the whole sweater moves. Your gut feeling is the tug of the rest of the yarn. You aren't on the Earth or in the universe — you are the Earth and the universe.
+            </div>
+          </div>
+
+          {/* Dig Deeper */}
+          <div style={{
+            marginTop: Math.round(13 * PHI),
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+          }}>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(201,168,76,0.35)", marginBottom: 8,
+              }}>DIG DEEPER · INFO</div>
+              {["The Law of One", "Universe as a Single Quantum Object", "The Science of Interconnectedness"].map((link, i) => (
+                <div key={i} style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                  color: "rgba(232,232,240,0.35)", fontStyle: "italic", lineHeight: 1.8,
+                }}>{link}</div>
+              ))}
+            </div>
+            <div style={{
+              padding: `${Math.round(8 * PHI)}px`,
+              background: "rgba(255,255,255,0.01)", borderRadius: 8,
+              border: "1px solid rgba(255,255,255,0.04)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: 3,
+                color: "rgba(201,168,76,0.35)", marginBottom: 8,
+              }}>DIG DEEPER · RHYTHM</div>
+              {[
+                "\"I Am The Walrus\" — The Beatles",
+                "\"One\" — U2",
+                "\"Dust in the Wind\" — Kansas",
               ].map((song, i) => (
                 <div key={i} style={{
                   fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
