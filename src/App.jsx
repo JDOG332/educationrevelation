@@ -1487,57 +1487,61 @@ export default function TheoryOfEverything() {
 
       {/* ===== DEPTH 4 — THE CONVERGENCE PROOF ===== */}
       {depth === 3 && activeConvergence === null && (
-        <div onClick={goDeeper} style={{
+        <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
           animation: "fadeSlideUp 0.8s ease",
-          cursor: "pointer", zIndex: 1500,
+          zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           padding: `${Math.round(21 * PHI)}px 28px`,
           boxSizing: "border-box",
+          perspective: "1000px",
         }}>
 
-          {/* Triquetra — pure background decoration, behind everything */}
+          {/* Triquetra — slow rotation, large, ethereal */}
           <div style={{
             position: "fixed", top: "50%", left: "50%",
             transform: "translate(-50%, -50%)",
             pointerEvents: "none", zIndex: 0,
-            opacity: 0.18,
-            animation: "gentleFloat 12s ease-in-out infinite",
-            filter: "drop-shadow(0 0 40px rgba(201,168,76,0.06))",
+            opacity: 0.1,
+            filter: "blur(1px) drop-shadow(0 0 80px rgba(201,168,76,0.08))",
+            animation: "gentleFloat 60s linear infinite",
           }}>
-            <SacredTriquetra size={320} />
+            <SacredTriquetra size={500} />
           </div>
 
-          {/* Content — pure centered column, no absolute nonsense */}
+          {/* Content */}
           <div style={{
             textAlign: "center",
-            maxWidth: 540,
+            maxWidth: 900,
             display: "flex", flexDirection: "column", alignItems: "center",
             position: "relative", zIndex: 1500,
           }}>
 
             {/* Eyebrow */}
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.5em",
-              color: "rgba(201,168,76,0.35)",
+              fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.8em",
+              color: "rgba(201,168,76,0.45)",
+              textTransform: "uppercase",
               animation: "fadeSlideUp 1.2s 0.2s both ease",
-            }}>THE GOLDEN BRAIDED CORD</div>
-
-            <div style={{ height: Math.round(5 * PHI) }} />
-
-            {/* Title */}
-            <h2 style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 30px)", fontWeight: 400,
-              color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
-              textShadow: "0 0 50px rgba(232,232,240,0.1)",
-              animation: "fadeSlideUp 1.2s 0.3s both ease",
-            }}>THE CONVERGENCE PROOF</h2>
+            }}>The Golden Braided Cord</div>
 
             <div style={{ height: Math.round(8 * PHI) }} />
 
+            {/* Title — gradient text like Gemini suggested */}
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 42px)", fontWeight: 400,
+              letterSpacing: "0.4em", margin: 0,
+              background: "linear-gradient(to bottom, #ffffff 30%, rgba(201,168,76,0.7) 100%)",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 0 20px rgba(255,255,255,0.08))",
+              animation: "fadeSlideUp 1.2s 0.3s both ease",
+            }}>CONVERGENCE</h2>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
             {/* Divider */}
             <div style={{
-              width: Math.round(50 * PHI), height: 1,
+              width: Math.round(80 * PHI), height: 1,
               background: "linear-gradient(90deg, transparent, rgba(34,85,170,0.25), rgba(201,168,76,0.4), rgba(34,85,170,0.25), transparent)",
               animation: "fadeSlideUp 1.2s 0.4s both ease",
             }} />
@@ -1548,74 +1552,57 @@ export default function TheoryOfEverything() {
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(15px, 2.8vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
-              maxWidth: 460, lineHeight: PHI,
+              fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+              maxWidth: 500, lineHeight: 1.8,
               animation: "fadeSlideUp 1.2s 0.5s both ease",
-            }}>
-              To really know something is true, you check it from different angles and make sure they're all telling the same story.
-            </div>
-
-            <div style={{ height: Math.round(8 * PHI) }} />
-
-            {/* Gold accent line */}
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.4vw, 17px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
-              maxWidth: 420, lineHeight: PHI,
-              animation: "fadeSlideUp 1.2s 0.6s both ease",
             }}>
               Truth is found when many different witnesses stop arguing and start singing the same song.
             </div>
 
-            <div style={{ height: Math.round(21 * PHI) }} />
+            <div style={{ height: Math.round(34 * PHI) }} />
 
-            {/* Equation */}
-            <div style={{ animation: "sacredReveal 1.6s 0.8s both ease" }}>
-              <TheEquation size="sm" showLabel={false} breathing minimal />
-            </div>
-
-            <div style={{ height: Math.round(21 * PHI) }} />
-
-            {/* Five doors */}
+            {/* Six doors — 3x2 grid with staggered rows */}
             <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr",
-              gap: Math.round(8 * PHI),
-              width: "100%", maxWidth: 500,
-              animation: "fadeSlideUp 1s 1s both ease",
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: Math.round(13 * PHI),
+              width: "100%", maxWidth: 700,
+              padding: "0 12px",
+              animation: "fadeSlideUp 1s 0.8s both ease",
             }}>
               {[
-                { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "The Truth · Simply", accent: "rgba(232,232,240,", glow: "rgba(232,232,240,0.04)" },
-                { key: "gravity", glyph: "☀️", name: "THE LAW OF GRAVITY", sub: "Recognition · Orbit · Pull", accent: "rgba(255,180,50,", glow: "rgba(255,180,50,0.05)" },
-                { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "Science · Culture · History", accent: "rgba(201,168,76,", glow: "rgba(201,168,76,0.06)" },
-                { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "Sameness ≠ Alignment", accent: "rgba(224,80,80,", glow: "rgba(224,80,80,0.04)" },
-                { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "Filter · Noise · Ψ", accent: "rgba(79,195,247,", glow: "rgba(79,195,247,0.04)" },
-                { key: "ancient", glyph: "🔺", name: "THE ANCIENT PROOF", sub: "Every tradition drew the same shape", accent: "rgba(190,140,220,", glow: "rgba(190,140,220,0.05)" },
+                { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "The Truth · Simply", accent: "232,232,240" },
+                { key: "gravity", glyph: "☀️", name: "GRAVITY", sub: "Recognition · Orbit", accent: "255,180,50" },
+                { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "Science · Culture", accent: "201,168,76" },
+                { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "Sameness ≠ Alignment", accent: "224,80,80" },
+                { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "Filter · Noise · Ψ", accent: "79,195,247" },
+                { key: "ancient", glyph: "🔺", name: "ANCIENT PROOF", sub: "Universal Shape", accent: "190,140,220" },
               ].map((door, i) => (
-                <GlassCard key={i}
+                <GlassCard key={door.key}
                   onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); }}
                   hoverGlow
                   style={{
-                    textAlign: "center", flex: "1 1 0",
-                    minWidth: 0,
-                    padding: `${Math.round(8 * PHI)}px ${Math.round(5 * PHI)}px`,
-                    background: `linear-gradient(180deg, ${door.glow}, transparent)`,
-                    border: `1px solid ${door.accent}0.08)`,
-                    animation: `fadeSlideUp 0.6s ${1 + i * 0.15}s both ease`,
-                    ...(false ? {} : {}),
+                    textAlign: "center",
+                    padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
+                    background: `radial-gradient(circle at top left, rgba(${door.accent}, 0.06), transparent)`,
+                    border: `1px solid rgba(${door.accent}, 0.12)`,
+                    transform: `translateY(${i >= 3 ? Math.round(8 * PHI) + 'px' : '0'})`,
+                    transition: "transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s, border-color 0.4s",
+                    animation: `fadeSlideUp 0.6s ${0.8 + i * 0.12}s both ease`,
+                    cursor: "pointer",
                   }}
                 >
                   <div style={{
-                    fontSize: 24, marginBottom: Math.round(5 * PHI),
-                    filter: `drop-shadow(0 0 12px ${door.accent}0.2))`,
+                    fontSize: 32, marginBottom: Math.round(8 * PHI),
+                    filter: `drop-shadow(0 0 15px rgba(${door.accent}, 0.35))`,
                     animation: `gentleFloat ${6 + i}s ease-in-out infinite`,
                   }}>{door.glyph}</div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: 3,
-                    color: `${door.accent}0.6)`, fontWeight: 600,
+                    fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                    color: `rgba(${door.accent}, 0.7)`, fontWeight: 600,
                   }}>{door.name}</div>
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 11,
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
                     color: "rgba(255,255,255,0.3)", fontStyle: "italic",
                     marginTop: Math.round(3 * PHI),
                     lineHeight: PHI,
@@ -1624,10 +1611,23 @@ export default function TheoryOfEverything() {
               ))}
             </div>
 
+            <div style={{ height: Math.round(34 * PHI) }} />
+
+            {/* Equation — the anchor */}
+            <div style={{
+              padding: `${Math.round(13 * PHI)}px 0`,
+              borderTop: "1px solid rgba(201,168,76,0.08)",
+              width: "100%", maxWidth: 500,
+              display: "flex", justifyContent: "center",
+              animation: "sacredReveal 1.6s 1.2s both ease",
+            }}>
+              <TheEquation size="lg" showLabel={false} breathing minimal />
+            </div>
+
             <div style={{ height: Math.round(21 * PHI) }} />
 
             {/* Return */}
-            <div style={{ animation: "fadeSlideUp 1.2s 1.4s both ease" }}>
+            <div style={{ animation: "fadeSlideUp 1.2s 1.4s both ease", opacity: 0.6 }}>
               <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
             </div>
           </div>
