@@ -526,7 +526,7 @@ export default function TheoryOfEverything() {
               }}>{dark ? "close your eyes" : "open your eyes"}</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.5em",
                 color: dark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
                 animation: "fadeSlideUp 2s 2.5s both ease",
               }}>tap</div>
@@ -549,7 +549,7 @@ export default function TheoryOfEverything() {
               }}>{dark ? "now open them" : "now close them"}</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.5em",
                 color: dark ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.04)",
                 animation: "fadeSlideUp 2s 2s both ease",
               }}>tap</div>
@@ -1057,7 +1057,7 @@ export default function TheoryOfEverything() {
 
                   {/* Date */}
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11,
+                    fontFamily: "'Cinzel', serif", fontSize: 13,
                     letterSpacing: "0.6em", color: "rgba(201,168,76,0.2)",
                     marginBottom: Math.round(8 * PHI),
                     animation: "fadeSlideUp 1.2s 0.1s both ease",
@@ -1255,7 +1255,7 @@ export default function TheoryOfEverything() {
                     position: "relative",
                   }}>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 10,
+                      fontFamily: "'Cinzel', serif", fontSize: 12,
                       letterSpacing: "0.3em", color: "rgba(" + a.color + ",0.7)",
                       marginBottom: 2,
                     }}>{a.icon} {a.axis}</div>
@@ -1272,7 +1272,7 @@ export default function TheoryOfEverything() {
                     }}>{a.ends}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 10.5, color: "rgba(232,232,240,0.28)",
+                      fontSize: 12, color: "rgba(232,232,240,0.28)",
                       fontStyle: "italic", lineHeight: 1.4,
                     }}>{a.desc}</div>
                   </div>
@@ -1325,7 +1325,7 @@ export default function TheoryOfEverything() {
 
             {/* Eyebrow — barely visible, like a memory */}
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.9em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.9em",
               color: "rgba(201,168,76,0.25)",
               textTransform: "uppercase",
               animation: "fadeSlideUp 2s 0.3s both ease",
@@ -1931,7 +1931,7 @@ export default function TheoryOfEverything() {
             ].map((group, gi) => (
               <div key={gi}>
                 <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.2em",
+                  fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: "0.2em",
                   color: "rgba(201,168,76,0.5)", marginBottom: Math.round(5 * PHI),
                   paddingBottom: 4,
                   borderBottom: "1px solid rgba(201,168,76,0.08)",
@@ -1950,7 +1950,7 @@ export default function TheoryOfEverything() {
                       }}>{s.symbol}</div>
                       <div>
                         <div style={{
-                          fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                          fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 2,
                           color: "rgba(232,232,240,0.55)",
                         }}>{s.tradition}</div>
                         <div style={{
@@ -2038,7 +2038,7 @@ export default function TheoryOfEverything() {
                   }}>{s.icon}</div>
                   <div>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                      fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                       color: "rgba(201,168,76,0.45)", marginBottom: 4,
                     }}>{s.sense}</div>
                     <div style={{
@@ -2060,7 +2060,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(201,168,76,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
                 color: "rgba(201,168,76,0.3)", marginBottom: Math.round(5 * PHI),
               }}>THE 6TH SENSE CONNECTION</div>
               <div style={{
@@ -2254,7 +2254,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(160,160,180,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -2276,7 +2276,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(160,160,180,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(160,160,180,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE ALL-AT-ONCE EXPERIENCE</div>
             <div style={{
@@ -2300,7 +2300,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(160,160,180,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["The Science of Empathy", "Resilience Through Adversity", "Music & Emotional Healing"].map((link, i) => (
@@ -2316,7 +2316,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(160,160,180,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -2364,7 +2364,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE HOUSE BUILT FOR YOU</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(255,200,100,0.3)",
             }}>THE ANTHROPIC PRINCIPLE</div>
             <div style={{
@@ -2407,7 +2407,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(255,200,100,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -2429,7 +2429,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(255,200,100,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(255,200,100,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE UNIVERSE EXPERIENCING ITSELF</div>
             <div style={{
@@ -2453,7 +2453,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(255,200,100,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["Fine-Tuning of the Universe", "The Anthropic Principle", "The Goldilocks Enigma"].map((link, i) => (
@@ -2469,7 +2469,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(255,200,100,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -2556,7 +2556,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(255,120,50,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -2578,7 +2578,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(255,120,50,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(255,120,50,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE ISLAND</div>
             <div style={{
@@ -2602,7 +2602,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(255,120,50,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["Psychology of Survivor", "History of Human Cooperation", "Strategy & Community"].map((link, i) => (
@@ -2618,7 +2618,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(255,120,50,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -2666,7 +2666,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE WEB</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(140,180,220,0.3)",
             }}>WE ARE ONE WEB</div>
             <div style={{
@@ -2709,7 +2709,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(140,180,220,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -2731,7 +2731,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(140,180,220,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(140,180,220,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE OCEAN</div>
             <div style={{
@@ -2755,7 +2755,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(140,180,220,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["Quantum Entanglement", "The Voyager Golden Record", "3 Body Problem Explained"].map((link, i) => (
@@ -2771,7 +2771,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(140,180,220,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -2819,7 +2819,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE SEARCH</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(180,160,120,0.3)",
             }}>THE LOOKING IS THE FINDING</div>
             <div style={{
@@ -2862,7 +2862,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(180,160,120,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -2884,7 +2884,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(180,160,120,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(180,160,120,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE ALL-AT-ONCE MOMENT</div>
             <div style={{
@@ -2908,7 +2908,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(180,160,120,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["The Science of Awe", "The Overview Effect", "Interconnectedness"].map((link, i) => (
@@ -2924,7 +2924,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(180,160,120,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -2972,7 +2972,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>LET GO</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(170,140,200,0.3)",
             }}>THE OCEAN CARRIES YOU</div>
             <div style={{
@@ -3015,7 +3015,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(170,140,200,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3037,7 +3037,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(170,140,200,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(170,140,200,0.3)", marginBottom: Math.round(5 * PHI),
             }}>STOP BEING A DROP. START BEING THE OCEAN.</div>
             <div style={{
@@ -3061,7 +3061,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(170,140,200,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["The Science of Entrainment", "Golden Ratio in Nature", "The Overview Effect"].map((link, i) => (
@@ -3077,7 +3077,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(170,140,200,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -3125,7 +3125,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE BREATH</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(100,200,160,0.3)",
             }}>ONE BIG LIVING LUNG</div>
             <div style={{
@@ -3168,7 +3168,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(100,200,160,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3190,7 +3190,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(100,200,160,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(100,200,160,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE GOLDEN THREAD</div>
             <div style={{
@@ -3214,7 +3214,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(100,200,160,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["How Oxygen Travels the World", "Science of Deep Breathing", "Connected by Atoms"].map((link, i) => (
@@ -3230,7 +3230,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(100,200,160,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -3278,7 +3278,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE ROOT</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(200,180,255,0.3)",
             }}>THE STARTING SPARK</div>
             <div style={{
@@ -3321,7 +3321,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(200,180,255,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3343,7 +3343,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(200,180,255,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(200,180,255,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE OCEAN</div>
             <div style={{
@@ -3367,7 +3367,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(200,180,255,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["NASA: How the Universe Began", "The Big Bang Explained", "History of the Universe"].map((link, i) => (
@@ -3383,7 +3383,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(200,180,255,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -3431,7 +3431,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE EYE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(220,200,140,0.3)",
             }}>CONSCIOUSNESS & MIND</div>
             <div style={{
@@ -3474,7 +3474,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(220,200,140,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3496,7 +3496,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(220,200,140,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(220,200,140,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE NOT THE CLOUDS. YOU ARE THE SKY.</div>
             <div style={{
@@ -3520,7 +3520,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(220,200,140,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["What Is Consciousness?", "Your Brain Hallucinates Reality", "Philosophy of Mind"].map((link, i) => (
@@ -3536,7 +3536,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(220,200,140,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -3584,7 +3584,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE BONES</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(100,160,220,0.3)",
             }}>PHYSICS & REALITY</div>
             <div style={{
@@ -3627,7 +3627,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(100,160,220,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3649,7 +3649,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(100,160,220,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(100,160,220,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE UNIVERSE IS A TRAMPOLINE</div>
             <div style={{
@@ -3673,7 +3673,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(100,160,220,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["NASA: Dark Matter & Energy", "CERN: Antimatter Explained", "Quantum Entanglement"].map((link, i) => (
@@ -3689,7 +3689,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(100,160,220,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -3737,7 +3737,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE SEED</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(80,200,120,0.3)",
             }}>LIFE & BIOLOGY</div>
             <div style={{
@@ -3780,7 +3780,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(80,200,120,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3802,7 +3802,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(80,200,120,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(80,200,120,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE SAP FLOWS THROUGH EVERYTHING</div>
             <div style={{
@@ -3826,7 +3826,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(80,200,120,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["How Life Began", "Decoding DNA", "The Search for Alien Life"].map((link, i) => (
@@ -3842,7 +3842,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(80,200,120,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -3890,7 +3890,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE FLASHLIGHT</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(240,180,200,0.3)",
             }}>MIND, LANGUAGE & MEANING</div>
             <div style={{
@@ -3933,7 +3933,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(240,180,200,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -3955,7 +3955,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(240,180,200,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(240,180,200,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOUR MIND IS THE FLASHLIGHT</div>
             <div style={{
@@ -3979,7 +3979,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(240,180,200,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["How Did Language Begin?", "Why Humans Create Art", "The Mystery of Why We Cry"].map((link, i) => (
@@ -3995,7 +3995,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(240,180,200,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -4043,7 +4043,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE PULSE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(220,80,80,0.3)",
             }}>LOVE, CONNECTION & EMOTION</div>
             <div style={{
@@ -4086,7 +4086,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(220,80,80,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -4108,7 +4108,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(220,80,80,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(220,80,80,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE GOLDEN THREADS</div>
             <div style={{
@@ -4132,7 +4132,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(220,80,80,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["The Chemistry of Love", "What is Altruism?", "Why Loneliness Hurts"].map((link, i) => (
@@ -4148,7 +4148,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(220,80,80,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -4196,7 +4196,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE SCALE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(200,200,160,0.3)",
             }}>GOOD, EVIL & ETHICS</div>
             <div style={{
@@ -4239,7 +4239,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(200,200,160,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -4261,7 +4261,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(200,200,160,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(200,200,160,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE LANTERN IN YOUR CHEST</div>
             <div style={{
@@ -4285,7 +4285,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(200,200,160,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["The Definition of Morality", "Is Business Ethics Possible?", "Theories of Ethics"].map((link, i) => (
@@ -4301,7 +4301,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(200,200,160,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -4349,7 +4349,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE MOON</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(180,180,220,0.3)",
             }}>GOD, SPIRIT & THE UNKNOWN</div>
             <div style={{
@@ -4392,7 +4392,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(180,180,220,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -4414,7 +4414,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(180,180,220,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(180,180,220,0.3)", marginBottom: Math.round(5 * PHI),
             }}>YOUR FINGER ON THE DIAL</div>
             <div style={{
@@ -4438,7 +4438,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(180,180,220,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["Near-Death Experiences", "Why Do We Believe?", "The Science of Meditation"].map((link, i) => (
@@ -4454,7 +4454,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(180,180,220,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -4504,7 +4504,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE PENNY QUESTION</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(201,168,76,0.4)",
             }}>THE ANSWER IS ONE</div>
             <div style={{
@@ -4547,7 +4547,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(201,168,76,0.5)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -4569,7 +4569,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(201,168,76,0.08)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(201,168,76,0.35)", marginBottom: Math.round(5 * PHI),
             }}>YOU ARE THE EARTH AND THE UNIVERSE</div>
             <div style={{
@@ -4593,7 +4593,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(201,168,76,0.35)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["The Law of One", "Universe as a Single Quantum Object", "The Science of Interconnectedness"].map((link, i) => (
@@ -4609,7 +4609,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(201,168,76,0.35)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -4657,7 +4657,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE ONENESS</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(200,120,180,0.3)",
             }}>TWO BECOME ONE</div>
             <div style={{
@@ -4700,7 +4700,7 @@ export default function TheoryOfEverything() {
                 }}>{s.icon}</div>
                 <div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                     color: "rgba(200,120,180,0.45)", marginBottom: 4,
                   }}>{s.sense}</div>
                   <div style={{
@@ -4722,7 +4722,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(200,120,180,0.06)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(200,120,180,0.3)", marginBottom: Math.round(5 * PHI),
             }}>THE ETERNAL WE</div>
             <div style={{
@@ -4746,7 +4746,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(200,120,180,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
               {["Microbiome Sharing", "Heart Beats Sync Between Partners", "Inclusion of Other in Self"].map((link, i) => (
@@ -4762,7 +4762,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(255,255,255,0.04)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                 color: "rgba(200,120,180,0.3)", marginBottom: 8,
               }}>DIG DEEPER · RHYTHM</div>
               {[
@@ -5054,7 +5054,7 @@ export default function TheoryOfEverything() {
             animation: `fadeSlideUp 0.8s 2.1s both ease`,
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.3em",
+              fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: "0.3em",
               color: "rgba(255,180,50,0.45)", marginBottom: Math.round(8 * PHI),
               textAlign: "center",
             }}>DIG DEEPER</div>
@@ -5208,12 +5208,12 @@ export default function TheoryOfEverything() {
                             color: `${ac}0.65)`, fontWeight: 600,
                           }}>{p.title}</div>
                           <div style={{
-                            fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 3,
+                            fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 3,
                             color: "rgba(255,255,255,0.2)", marginTop: 4,
                           }}>{p.domain}</div>
                         </div>
                         <div style={{
-                          fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                          fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 2,
                           color: `${ac}0.3)`,
                           transition: "transform 0.3s ease",
                           transform: activePillar === i ? "rotate(180deg)" : "rotate(0deg)",
@@ -5370,7 +5370,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE DNA HANDSHAKE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(100,180,220,0.3)",
             }}>CONVERGENT RECOGNITION IN YOUR CELLS</div>
             <div style={{
@@ -5404,7 +5404,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(100,180,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                 color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🔬 PILLAR I — SCIENCE: THE LOCK & KEY</div>
@@ -5425,7 +5425,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(100,180,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                 color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>👑 PILLAR II — HISTORY: THE KING'S SECRET SEAL</div>
@@ -5446,7 +5446,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(100,180,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                 color: "rgba(100,180,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🦸 PILLAR III — CULTURE: THE SUPERHERO TEAM-UP</div>
@@ -5469,7 +5469,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(100,180,220,0.08)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(100,180,220,0.35)", marginBottom: Math.round(8 * PHI),
             }}>THE LEGO VERSION</div>
             <div style={{
@@ -5594,7 +5594,7 @@ export default function TheoryOfEverything() {
             background: "rgba(201,168,76,0.015)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 5,
               color: "rgba(255,255,255,0.15)", marginBottom: 14,
             }}>BURIED 6 FEET DEEP</div>
             <div style={{
@@ -5607,7 +5607,7 @@ export default function TheoryOfEverything() {
 
           {/* Three proofs — with unique colors */}
           <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
+            fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 5,
             color: "rgba(255,255,255,0.15)", textAlign: "center", marginBottom: 18,
           }}>PROOF IN THREE MIRRORS</div>
           <div style={{ display: "grid", gap: 12, maxWidth: 540, margin: "0 auto 32px" }}>
@@ -5652,7 +5652,7 @@ export default function TheoryOfEverything() {
 
           {/* Deeper truths — progressive descent */}
           <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
+            fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 5,
             color: "rgba(224,80,80,0.2)", textAlign: "center", marginBottom: 16,
           }}>GO DEEPER</div>
           <div style={{ display: "grid", gap: 12, maxWidth: 500, margin: "0 auto" }}>
@@ -5664,7 +5664,7 @@ export default function TheoryOfEverything() {
                 border: `1px solid rgba(224,80,80,${0.03 + i * 0.015})`,
               }}>
                 <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                  fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                   color: `rgba(224,80,80,${0.3 + i * 0.1})`, marginBottom: 8,
                 }}>{d.title}</div>
                 <div style={{
@@ -5704,7 +5704,7 @@ export default function TheoryOfEverything() {
                   <div style={{ fontSize: layer.isMoon ? 28 : 22, filter: `drop-shadow(0 0 8px ${layer.accent}30)` }}>{layer.glyph}</div>
                   <div style={{ flex: 1 }}>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                      fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 2,
                       color: layer.accent, opacity: 0.7,
                     }}>{layer.id} · {layer.names[0]}</div>
                     <div style={{
@@ -5713,7 +5713,7 @@ export default function TheoryOfEverything() {
                     }}>{layer.subtitle}</div>
                   </div>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 10,
+                    fontFamily: "'Cinzel', serif", fontSize: 12,
                     color: "rgba(255,255,255,0.15)",
                     transition: "transform 0.3s",
                     transform: activeLayer === i ? "rotate(180deg)" : "rotate(0deg)",
@@ -5738,7 +5738,7 @@ export default function TheoryOfEverything() {
                       borderRadius: 6,
                     }}>
                       <div style={{
-                        fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 4,
+                        fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 4,
                         color: "rgba(255,255,255,0.12)", marginBottom: 6,
                       }}>BURIED 6 FEET DEEP</div>
                       <div style={{
@@ -5950,7 +5950,7 @@ export default function TheoryOfEverything() {
                     <span style={{ fontSize: 20 }}>{mirror.glyphs[1]}</span>
                     <div style={{ marginLeft: 8 }}>
                       <div style={{
-                        fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: 2,
+                        fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: 2,
                         color: "rgba(79,195,247,0.6)",
                       }}>{mirror.name}</div>
                       <div style={{
@@ -5960,7 +5960,7 @@ export default function TheoryOfEverything() {
                     </div>
                   </div>
                   <div style={{
-                    fontSize: 10, color: "rgba(255,255,255,0.15)",
+                    fontSize: 12, color: "rgba(255,255,255,0.15)",
                     transition: "transform 0.3s",
                     transform: activePair === i ? "rotate(180deg)" : "rotate(0deg)",
                   }}>▼</div>
@@ -6225,7 +6225,7 @@ export default function TheoryOfEverything() {
                   paddingTop: Math.round(5 * PHI),
                 }}>
                   <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.4em",
+                    fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: "0.4em",
                     color: `rgba(${tradition.color},0.35)`, marginBottom: Math.round(3 * PHI),
                   }}>THE CONNECTION</div>
                   <div style={{
@@ -6408,7 +6408,7 @@ export default function TheoryOfEverything() {
               marginBottom: Math.round(8 * PHI),
             }}>THE LIVING BRIDGE</div>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.4em",
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.4em",
               color: "rgba(190,140,220,0.3)",
             }}>WHY SOME ATE THEIR DEAD</div>
             <div style={{
@@ -6443,7 +6443,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(190,140,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                 color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>📡 THE SHARED SOUL — SCIENCE</div>
@@ -6464,7 +6464,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(190,140,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                 color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🐆 THE POWER UP — CULTURE</div>
@@ -6485,7 +6485,7 @@ export default function TheoryOfEverything() {
               border: "1px solid rgba(190,140,220,0.06)",
             }}>
               <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 3,
                 color: "rgba(190,140,220,0.45)", marginBottom: Math.round(5 * PHI),
                 textAlign: "center",
               }}>🌉 THE LIVING BRIDGE — HISTORY</div>
@@ -6537,7 +6537,7 @@ export default function TheoryOfEverything() {
             border: "1px solid rgba(190,140,220,0.08)",
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 4,
+              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 4,
               color: "rgba(190,140,220,0.35)", marginBottom: Math.round(5 * PHI),
             }}>TOTAL RECOGNITION</div>
             <div style={{
