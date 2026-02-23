@@ -2558,6 +2558,68 @@ export default function TheoryOfEverything() {
                 }
                 ctx.setLineDash([]);
 
+                // === STAR OF DAVID — the intersection where two pyramids meet ===
+                // The 4 equatorial vertices (2=Spirit, 3=Flesh, 4=Intuition, 5=Data)
+                // form the base plane. The star is two overlapping triangles:
+                // Triangle 1 (top pyramid base): connects 3 equatorial verts via midpoints
+                // Triangle 2 (bottom pyramid base): the other 3
+                // In a regular octahedron, the equatorial square projected gives us the star.
+                //
+                // We construct 6 star points by taking midpoints of equatorial edges
+                // projected through the center, creating two interlocked triangles.
+                if (morph > 0.5) {
+                  const starOp = Math.min(0.18, (morph - 0.5) * 0.36);
+                  const eq = [verts[2], verts[4], verts[3], verts[5]]; // Spirit, Intuition, Flesh, Data
+
+                  // Midpoints of the equatorial square's edges — these are the star's 6 points
+                  // when we add the triangle vertices offset above and below
+                  // Actually: the Star of David in the octahedron comes from the fact that
+                  // looking along any axis, the 4 equatorial verts project as a square,
+                  // and the two apex verts project to center — giving two overlapping triangles.
+                  //
+                  // For our 3D rotating view, draw two triangles connecting alternating equatorial verts:
+                  // Triangle A (upward-pointing): verts[2](Spirit), verts[4](Intuition), verts[5](Data) — skipping Flesh
+                  // Triangle B (downward-pointing): verts[3](Flesh), verts[4](Intuition), verts[5](Data) — skipping Spirit
+                  // This creates the classic interlocked triangles
+
+                  // Triangle A — Spirit + Intuition + Data (the "above" triangle)
+                  ctx.beginPath();
+                  ctx.moveTo(verts[2].x, verts[2].y);
+                  ctx.lineTo(verts[4].x, verts[4].y);
+                  ctx.lineTo(verts[5].x, verts[5].y);
+                  ctx.closePath();
+                  ctx.strokeStyle = "rgba(120,180,255," + starOp + ")";
+                  ctx.lineWidth = 0.8;
+                  ctx.stroke();
+                  // Subtle fill
+                  ctx.fillStyle = "rgba(120,180,255," + (starOp * 0.15) + ")";
+                  ctx.fill();
+
+                  // Triangle B — Flesh + Intuition + Data (the "below" triangle, inverted)
+                  ctx.beginPath();
+                  ctx.moveTo(verts[3].x, verts[3].y);
+                  ctx.lineTo(verts[4].x, verts[4].y);
+                  ctx.lineTo(verts[5].x, verts[5].y);
+                  ctx.closePath();
+                  ctx.strokeStyle = "rgba(201,168,76," + starOp + ")";
+                  ctx.lineWidth = 0.8;
+                  ctx.stroke();
+                  ctx.fillStyle = "rgba(201,168,76," + (starOp * 0.15) + ")";
+                  ctx.fill();
+
+                  // The hexagonal intersection glow — where the two triangles overlap
+                  // Draw a subtle glow at the center of the equatorial plane
+                  const eqCX = (verts[2].x + verts[3].x + verts[4].x + verts[5].x) / 4;
+                  const eqCY = (verts[2].y + verts[3].y + verts[4].y + verts[5].y) / 4;
+                  const starGlow = ctx.createRadialGradient(eqCX, eqCY, 0, eqCX, eqCY, R * 0.15);
+                  starGlow.addColorStop(0, "rgba(232,232,240," + (starOp * 0.4) + ")");
+                  starGlow.addColorStop(1, "rgba(232,232,240,0)");
+                  ctx.beginPath();
+                  ctx.arc(eqCX, eqCY, R * 0.15, 0, Math.PI * 2);
+                  ctx.fillStyle = starGlow;
+                  ctx.fill();
+                }
+
                 // Center glow — breathing
                 const breathe = 0.05 + Math.sin(elapsed * 1.2) * 0.02;
                 const cg = ctx.createRadialGradient(CX, CY, 0, CX, CY, R * 0.22);
