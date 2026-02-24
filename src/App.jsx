@@ -652,6 +652,26 @@ export default function TheoryOfEverything() {
                 <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
               </circle>
             </svg>
+
+            {/* The instruction */}
+            <div style={{
+              position: "absolute", top: "12%", left: "50%", transform: "translateX(-50%)",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(19px, 3.5vw, 24px)",
+              fontStyle: "italic",
+              color: "rgba(128,128,128,0.4)",
+              letterSpacing: "0.15em",
+              animation: "fadeSlideUp 2s 1s both ease",
+              textAlign: "center", userSelect: "none",
+              textShadow: "0 0 20px rgba(0,0,0,0.5)",
+            }}>now blink them quickly</div>
+
+            <div style={{
+              position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
+              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+              color: "rgba(128,128,128,0.15)",
+              animation: "fadeSlideUp 2s 3s both ease",
+            }}>tap</div>
           </div>
         );
       })()}
