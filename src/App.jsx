@@ -516,18 +516,18 @@ export default function TheoryOfEverything() {
             <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(24px, 4vw, 31px)",
+                fontSize: "clamp(28px, 5.5vw, 42px)",
                 fontStyle: "italic",
-                color: "rgba(0,0,0,0.08)",
+                color: "rgba(0,0,0,0.3)",
                 letterSpacing: "0.15em",
-                animation: "fadeSlideUp 2s 1s both ease",
+                animation: "fadeSlideUp 1.5s 0.5s both ease",
                 textAlign: "center", userSelect: "none",
               }}>close your eyes</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: "rgba(0,0,0,0.04)",
-                animation: "fadeSlideUp 2s 2.5s both ease",
+                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
+                color: "rgba(0,0,0,0.15)",
+                animation: "fadeSlideUp 2s 2s both ease",
               }}>tap</div>
             </div>
           );
@@ -539,18 +539,18 @@ export default function TheoryOfEverything() {
             <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(24px, 4vw, 31px)",
+                fontSize: "clamp(28px, 5.5vw, 42px)",
                 fontStyle: "italic",
-                color: "rgba(255,255,255,0.08)",
+                color: "rgba(255,255,255,0.3)",
                 letterSpacing: "0.15em",
-                animation: "fadeSlideUp 2s 0.5s both ease",
+                animation: "fadeSlideUp 1.5s 0.3s both ease",
                 textAlign: "center", userSelect: "none",
               }}>now open them</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: "rgba(255,255,255,0.04)",
-                animation: "fadeSlideUp 2s 2s both ease",
+                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
+                color: "rgba(255,255,255,0.15)",
+                animation: "fadeSlideUp 2s 1.5s both ease",
               }}>tap</div>
             </div>
           );
@@ -657,7 +657,7 @@ export default function TheoryOfEverything() {
               position: "absolute", top: "14%", left: 0, width: "100%",
               textAlign: "center",
               pointerEvents: "none", userSelect: "none",
-              animation: "fadeSlideUp 2s 1s both ease",
+              animation: "fadeSlideUp 1.5s 0.5s both ease",
             }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -666,11 +666,11 @@ export default function TheoryOfEverything() {
                 letterSpacing: "0.12em",
                 lineHeight: 1.2,
                 animation: "breathe 6s ease-in-out infinite",
-                background: "linear-gradient(90deg, rgba(200,200,200,0.7) 0%, rgba(160,160,160,0.65) 25%, rgba(100,100,100,0.6) 50%, rgba(60,60,60,0.65) 75%, rgba(30,30,30,0.7) 100%)",
+                background: "linear-gradient(90deg, rgba(220,220,220,0.9) 0%, rgba(180,180,180,0.8) 25%, rgba(120,120,120,0.75) 50%, rgba(70,70,70,0.8) 75%, rgba(30,30,30,0.9) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                filter: "drop-shadow(0 0 20px rgba(128,128,128,0.15))",
+                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))",
               }}>now blink them quickly</div>
             </div>
 
@@ -679,27 +679,27 @@ export default function TheoryOfEverything() {
               position: "absolute", bottom: "14%", left: 0, width: "100%",
               textAlign: "center",
               pointerEvents: "none", userSelect: "none",
-              animation: "fadeSlideUp 2s 2s both ease",
+              animation: "fadeSlideUp 2s 1.5s both ease",
             }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(18px, 3.5vw, 30px)",
+                fontSize: "clamp(20px, 4vw, 34px)",
                 fontStyle: "italic",
                 letterSpacing: "0.1em",
                 animation: "breathe 8s ease-in-out 1s infinite",
-                background: "linear-gradient(90deg, rgba(200,200,200,0.55) 0%, rgba(140,140,140,0.5) 30%, rgba(80,80,80,0.5) 60%, rgba(40,40,40,0.55) 100%)",
+                background: "linear-gradient(90deg, rgba(210,210,210,0.85) 0%, rgba(160,160,160,0.75) 30%, rgba(90,90,90,0.75) 60%, rgba(40,40,40,0.85) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                filter: "drop-shadow(0 0 15px rgba(128,128,128,0.1))",
+                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.12))",
               }}>&amp; open your mind's eye to dream</div>
             </div>
 
             <div style={{
               position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)",
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(128,128,128,0.15)",
-              animation: "fadeSlideUp 2s 3s both ease",
+              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
+              color: "rgba(128,128,128,0.25)",
+              animation: "fadeSlideUp 2s 2.5s both ease",
             }}>tap</div>
           </div>
         );
