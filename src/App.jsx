@@ -1438,11 +1438,12 @@ export default function TheoryOfEverything() {
             <div style={{
               textAlign: "center", zIndex: 4, maxWidth: 680,
               display: "flex", flexDirection: "column", alignItems: "center",
+              marginTop: "3vh",
             }}>
 
               {/* Lightning bolt */}
               <div style={{
-                fontSize: 32, marginBottom: Math.round(3 * PHI),
+                fontSize: 32, marginBottom: Math.round(2 * PHI),
                 animation: "fadeSlideUp 1.2s 0.2s both ease, gentleFloat 6s ease-in-out infinite",
                 filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
               }}>⚡</div>
@@ -1461,14 +1462,14 @@ export default function TheoryOfEverything() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(18px, 3.2vw, 24px)",
                 fontStyle: "italic", color: "rgba(232,232,240,0.6)",
-                marginTop: Math.round(8 * PHI), letterSpacing: 1,
+                marginTop: Math.round(10 * PHI), letterSpacing: 1,
                 animation: "fadeSlideUp 1.2s 0.4s both ease",
               }}>Reality isn't flat. Connection lives in volume, not area.</div>
 
               {/* Divider */}
               <div style={{
                 width: Math.round(40 * PHI), height: 1,
-                margin: Math.round(5 * PHI) + "px auto",
+                margin: Math.round(6 * PHI) + "px auto",
                 background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
                 animation: "fadeSlideUp 1.2s 0.5s both ease",
               }} />
@@ -1479,7 +1480,7 @@ export default function TheoryOfEverything() {
                 fontSize: "clamp(18px, 3.2vw, 24px)",
                 color: "rgba(232,232,240,0.6)",
                 fontStyle: "italic", letterSpacing: 1,
-                marginBottom: Math.round(8 * PHI),
+                marginBottom: Math.round(5 * PHI),
                 animation: "fadeSlideUp 1.2s 0.55s both ease",
               }}>The cross you knew was the front face. Now watch the third dimension emerge.</div>
 
@@ -1489,7 +1490,7 @@ export default function TheoryOfEverything() {
                 fontSize: "clamp(13px, 2.5vw, 17px)",
                 color: "rgba(201,168,76,0.4)",
                 fontStyle: "italic", letterSpacing: 0.5,
-                marginBottom: Math.round(5 * PHI),
+                marginBottom: Math.round(8 * PHI),
                 animation: "fadeSlideUp 1.2s 0.65s both ease",
                 lineHeight: 1.7,
               }}>"The weight of the world is love."<br />
