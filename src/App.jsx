@@ -772,56 +772,54 @@ export default function TheoryOfEverything() {
                   }
                 }
 
-                // ====== STATE ======
-                const PHASE_DRIP = 0;   // 0-3s: sand drips
-                const PHASE_TREMBLE = 1; // 3-4s: sand trembles
-                const PHASE_RISE = 2;    // 4-8s: sand rises and forms letters
-                const PHASE_POEM = 3;    // 8s+: poem visible, hourglass fades
+                const PHASE_DRIP = 0;
+                const PHASE_TREMBLE = 1;
+                const PHASE_RISE = 2;
+                const PHASE_POEM = 3;
 
                 if (!stateRef.current) {
-                  // Generate sand grains (both halves)
                   const grains = [];
-
-                  // Top sand: 90% full
                   const topSandStart = topY + (midY - topY) * 0.08;
-                  for (let i = 0; i < 500; i++) {
+                  for (let i = 0; i < 600; i++) {
                     const gy = topSandStart + Math.random() * (midY - topSandStart - 15);
                     const gw = glassWidth(gy) * 0.88;
                     grains.push({
                       x: CX + (Math.random() - 0.5) * gw * 2,
                       y: gy,
-                      homeX: 0, homeY: 0, // will be set for letter targets
+                      origX: 0, origY: 0,
+                      homeX: 0, homeY: 0,
                       size: 0.5 + Math.random() * 1.4,
                       opacity: 0.08 + Math.random() * 0.2,
                       color: Math.random() < 0.85 ? "gold" : "white",
-                      vx: 0, vy: 0,
                       assigned: false,
-                      settled: false,
+                      lineIndex: 0,
+                      isBookend: false,
                       type: "top",
                     });
                   }
-
-                  // Bottom sand: 15% full (small cone)
                   const botSandTop = botY - (botY - midY) * 0.18;
-                  for (let i = 0; i < 200; i++) {
+                  for (let i = 0; i < 250; i++) {
                     const gy = botSandTop + Math.random() * (botY - botSandTop - 6);
                     const gw = glassWidth(gy) * 0.7;
                     const coneW = gw * ((gy - botSandTop) / (botY - botSandTop));
                     grains.push({
                       x: CX + (Math.random() - 0.5) * coneW * 2,
                       y: gy,
+                      origX: 0, origY: 0,
                       homeX: 0, homeY: 0,
                       size: 0.5 + Math.random() * 1.3,
                       opacity: 0.08 + Math.random() * 0.18,
                       color: Math.random() < 0.8 ? "gold" : "white",
-                      vx: 0, vy: 0,
                       assigned: false,
-                      settled: false,
+                      lineIndex: 0,
+                      isBookend: false,
                       type: "bottom",
                     });
                   }
 
-                  // Falling grains (active drip through neck)
+                  // Store original positions
+                  grains.forEach(g => { g.origX = g.x; g.origY = g.y; });
+
                   const drips = [];
                   for (let i = 0; i < 40; i++) {
                     drips.push({
@@ -834,51 +832,58 @@ export default function TheoryOfEverything() {
                     });
                   }
 
-                  // Pre-compute letter targets using offscreen canvas
-                  const offscreen = document.createElement("canvas");
-                  offscreen.width = W; offscreen.height = H;
-                  const octx = offscreen.getContext("2d");
-                  octx.fillStyle = "#fff";
-                  octx.textAlign = "center";
+                  // === BULLETPROOF LETTER TARGETS ===
+                  // Use measureText on a temp canvas with fallback font
+                  const tmpC = document.createElement("canvas");
+                  tmpC.width = W * 2; tmpC.height = H * 2;
+                  const tmpCtx = tmpC.getContext("2d");
 
                   const letterTargets = [];
-                  const lineSpacing = Math.min(H * 0.046, 36);
-                  const startTextY = H * 0.08;
+                  const visibleLines = POEM_LINES.filter(l => l !== "");
+                  const totalVisible = visibleLines.length;
+                  const lineH = Math.min(H / (totalVisible + 4), 42);
+                  const totalTextH = totalVisible * lineH;
+                  const textStartY = (H - totalTextH) / 2;
 
+                  let lineVisIdx = 0;
                   POEM_LINES.forEach((line, li) => {
-                    if (!line) return; // skip blank lines
-                    const yPos = startTextY + li * lineSpacing;
+                    if (!line) return;
                     const isBookend = li === 0 || li === POEM_LINES.length - 1;
                     const fSize = isBookend
-                      ? Math.min(W * 0.055, 28)
-                      : Math.min(W * 0.04, 20);
-                    const font = isBookend
-                      ? `600 italic ${fSize}px 'Cormorant Garamond', serif`
-                      : `300 italic ${fSize}px 'Cormorant Garamond', serif`;
+                      ? Math.max(14, Math.min(W * 0.05, 26))
+                      : Math.max(11, Math.min(W * 0.035, 19));
 
-                    octx.font = font;
-                    octx.clearRect(0, 0, W, H);
-                    octx.fillText(line, CX, yPos);
+                    // Use Georgia as reliable fallback for measurement
+                    const font = `italic ${fSize}px Georgia, serif`;
+                    tmpCtx.font = font;
+                    const yBase = textStartY + lineVisIdx * lineH + lineH * 0.6;
 
-                    // Sample pixels from the text
-                    const imgData = octx.getImageData(0, Math.max(0, Math.floor(yPos - fSize)), W, Math.ceil(fSize * 1.6));
-                    const sampleStep = Math.max(2, Math.floor(3 * (W / 500)));
-                    for (let px = 0; px < imgData.width; px += sampleStep) {
-                      for (let py = 0; py < imgData.height; py += sampleStep) {
-                        const idx = (py * imgData.width + px) * 4;
-                        if (imgData.data[idx + 3] > 80) {
-                          letterTargets.push({
-                            x: px,
-                            y: Math.max(0, Math.floor(yPos - fSize)) + py,
-                            isBookend,
-                            lineIndex: li,
-                          });
-                        }
+                    // For each character, place grain targets
+                    const fullWidth = tmpCtx.measureText(line).width;
+                    let charX = CX - fullWidth / 2;
+
+                    for (let ci = 0; ci < line.length; ci++) {
+                      const ch = line[ci];
+                      const charW = tmpCtx.measureText(ch).width;
+                      if (ch === " ") { charX += charW; continue; }
+
+                      // Place multiple grains per character for density
+                      const grainsPerChar = isBookend ? 5 : 3;
+                      for (let gi = 0; gi < grainsPerChar; gi++) {
+                        letterTargets.push({
+                          x: charX + charW * (0.1 + Math.random() * 0.8),
+                          y: yBase + (Math.random() - 0.5) * fSize * 0.7,
+                          isBookend,
+                          lineIndex: li,
+                          charIndex: ci,
+                        });
                       }
+                      charX += charW;
                     }
+                    lineVisIdx++;
                   });
 
-                  // Assign grains to letter targets
+                  // Shuffle and assign
                   const shuffled = [...grains].sort(() => Math.random() - 0.5);
                   const maxAssign = Math.min(shuffled.length, letterTargets.length);
                   for (let i = 0; i < maxAssign; i++) {
@@ -889,10 +894,22 @@ export default function TheoryOfEverything() {
                     shuffled[i].isBookend = letterTargets[i].isBookend;
                   }
 
+                  // Also render the actual text lines for the POEM phase (crisp text overlay)
+                  const textLines = [];
+                  lineVisIdx = 0;
+                  POEM_LINES.forEach((line, li) => {
+                    if (!line) return;
+                    const isBookend = li === 0 || li === POEM_LINES.length - 1;
+                    const yBase = textStartY + lineVisIdx * lineH + lineH * 0.6;
+                    textLines.push({ text: line, y: yBase, isBookend, li });
+                    lineVisIdx++;
+                  });
+
                   stateRef.current = {
                     grains, drips, phase: PHASE_DRIP,
                     startTime: performance.now(),
                     glassOpacity: 1,
+                    textLines, botSandTop,
                   };
                 }
 
@@ -901,59 +918,31 @@ export default function TheoryOfEverything() {
                 function drawGlass(opacity) {
                   ctx.save();
                   ctx.globalAlpha = opacity;
-
-                  // Glass outline — bezier curves
                   const drawSide = (sign) => {
                     ctx.beginPath();
                     ctx.moveTo(CX + sign * maxW, topY);
-                    ctx.bezierCurveTo(
-                      CX + sign * maxW, topY + (midY - topY) * 0.55,
-                      CX + sign * neckW * 1.5, midY - (midY - topY) * 0.15,
-                      CX + sign * neckW, midY
-                    );
-                    ctx.strokeStyle = "rgba(201,168,76,0.16)";
-                    ctx.lineWidth = 1.2;
-                    ctx.stroke();
-
+                    ctx.bezierCurveTo(CX + sign * maxW, topY + (midY - topY) * 0.55, CX + sign * neckW * 1.5, midY - (midY - topY) * 0.15, CX + sign * neckW, midY);
+                    ctx.strokeStyle = "rgba(201,168,76,0.16)"; ctx.lineWidth = 1.2; ctx.stroke();
                     ctx.beginPath();
                     ctx.moveTo(CX + sign * neckW, midY);
-                    ctx.bezierCurveTo(
-                      CX + sign * neckW * 1.5, midY + (botY - midY) * 0.15,
-                      CX + sign * maxW, botY - (botY - midY) * 0.55,
-                      CX + sign * maxW, botY
-                    );
+                    ctx.bezierCurveTo(CX + sign * neckW * 1.5, midY + (botY - midY) * 0.15, CX + sign * maxW, botY - (botY - midY) * 0.55, CX + sign * maxW, botY);
                     ctx.stroke();
                   };
                   drawSide(-1); drawSide(1);
-
-                  // Caps
-                  ctx.strokeStyle = "rgba(201,168,76,0.24)";
-                  ctx.lineWidth = 2;
+                  ctx.strokeStyle = "rgba(201,168,76,0.24)"; ctx.lineWidth = 2;
                   ctx.beginPath(); ctx.moveTo(CX - maxW - 16, topY); ctx.lineTo(CX + maxW + 16, topY); ctx.stroke();
                   ctx.beginPath(); ctx.moveTo(CX - maxW - 16, botY); ctx.lineTo(CX + maxW + 16, botY); ctx.stroke();
-
-                  // Serifs
-                  ctx.strokeStyle = "rgba(201,168,76,0.2)";
-                  ctx.lineWidth = 1.4;
+                  ctx.strokeStyle = "rgba(201,168,76,0.2)"; ctx.lineWidth = 1.4;
                   [[-1, topY], [1, topY], [-1, botY], [1, botY]].forEach(([s, yy]) => {
-                    const xx = CX + s * (maxW + 16);
-                    ctx.beginPath(); ctx.moveTo(xx, yy - 5); ctx.lineTo(xx, yy + 5); ctx.stroke();
+                    ctx.beginPath(); ctx.moveTo(CX + s * (maxW + 16), yy - 5); ctx.lineTo(CX + s * (maxW + 16), yy + 5); ctx.stroke();
                   });
-
-                  // Neck ring
-                  ctx.beginPath();
-                  ctx.ellipse(CX, midY, neckW + 4, 2.5, 0, 0, Math.PI * 2);
-                  ctx.strokeStyle = "rgba(201,168,76,0.1)";
-                  ctx.lineWidth = 0.8;
-                  ctx.stroke();
-
-                  // Glass reflection
+                  ctx.beginPath(); ctx.ellipse(CX, midY, neckW + 4, 2.5, 0, 0, Math.PI * 2);
+                  ctx.strokeStyle = "rgba(201,168,76,0.1)"; ctx.lineWidth = 0.8; ctx.stroke();
                   ctx.globalAlpha = opacity * 0.04;
                   ctx.beginPath();
                   ctx.moveTo(CX - maxW + 14, topY + 4);
                   ctx.bezierCurveTo(CX - maxW + 14, topY + (midY - topY) * 0.5, CX - neckW * 2, midY - 20, CX - neckW - 1, midY);
                   ctx.strokeStyle = "rgba(201,168,76,1)"; ctx.lineWidth = 1; ctx.stroke();
-
                   ctx.restore();
                 }
 
@@ -961,22 +950,17 @@ export default function TheoryOfEverything() {
                   const elapsed = (now - state.startTime) / 1000;
                   ctx.clearRect(0, 0, W, H);
 
-                  // Phase transitions
                   if (elapsed < 3) state.phase = PHASE_DRIP;
                   else if (elapsed < 4) state.phase = PHASE_TREMBLE;
-                  else if (elapsed < 9) state.phase = PHASE_RISE;
+                  else if (elapsed < 10) state.phase = PHASE_RISE;
                   else state.phase = PHASE_POEM;
 
-                  // Glass fades out during rise
                   if (state.phase >= PHASE_RISE) {
-                    state.glassOpacity = Math.max(0, state.glassOpacity - 0.008);
+                    state.glassOpacity = Math.max(0, state.glassOpacity - 0.006);
                   }
 
-                  // Draw glass
                   if (state.glassOpacity > 0) {
                     drawGlass(state.glassOpacity);
-
-                    // Neck glow
                     if (state.phase <= PHASE_TREMBLE) {
                       const b = 0.06 + Math.sin(elapsed * 2.5) * 0.025;
                       const ng = ctx.createRadialGradient(CX, midY, 0, CX, midY, 30);
@@ -986,110 +970,95 @@ export default function TheoryOfEverything() {
                     }
                   }
 
-                  // ====== DRIP PHASE ======
-                  if (state.phase === PHASE_DRIP || state.phase === PHASE_TREMBLE) {
-                    // Draw static top sand
+                  // DRIP + TREMBLE
+                  if (state.phase <= PHASE_TREMBLE) {
                     for (const g of state.grains) {
-                      if (g.type !== "top" && g.type !== "bottom") continue;
-                      let drawX = g.x, drawY = g.y;
+                      let dx = g.origX, dy = g.origY;
                       if (state.phase === PHASE_TREMBLE) {
-                        drawX += (Math.random() - 0.5) * 2.5;
-                        drawY += (Math.random() - 0.5) * 2.5;
+                        const intensity = (elapsed - 3); // 0→1
+                        dx += (Math.random() - 0.5) * 3 * intensity;
+                        dy += (Math.random() - 0.5) * 3 * intensity;
                       }
-                      const c = g.color === "gold" ? `rgba(201,168,76,${g.opacity * state.glassOpacity})` : `rgba(232,232,240,${g.opacity * 0.6 * state.glassOpacity})`;
-                      ctx.beginPath(); ctx.arc(drawX, drawY, g.size, 0, Math.PI * 2);
+                      const c = g.color === "gold"
+                        ? `rgba(201,168,76,${g.opacity * state.glassOpacity})`
+                        : `rgba(232,232,240,${g.opacity * 0.6 * state.glassOpacity})`;
+                      ctx.beginPath(); ctx.arc(dx, dy, g.size, 0, Math.PI * 2);
                       ctx.fillStyle = c; ctx.fill();
                     }
-
-                    // Falling drips
                     for (const d of state.drips) {
                       d.y += d.vy;
                       d.x += Math.sin(elapsed * 3 + d.phase) * 0.15;
-                      if (d.y > botY - (botY - midY) * 0.18) {
-                        d.y = midY + 2;
-                        d.x = CX + (Math.random() - 0.5) * neckW * 0.6;
-                      }
+                      if (d.y > state.botSandTop) { d.y = midY + 2; d.x = CX + (Math.random() - 0.5) * neckW * 0.6; }
                       ctx.beginPath(); ctx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
-                      ctx.fillStyle = `rgba(201,168,76,${d.opacity * state.glassOpacity})`;
-                      ctx.fill();
+                      ctx.fillStyle = `rgba(201,168,76,${d.opacity * state.glassOpacity})`; ctx.fill();
                     }
-
-                    // Neck stream
                     for (let i = 0; i < 6; i++) {
-                      const sy = midY - 8 + i * 3;
-                      const wobble = Math.sin(elapsed * 5 + i * 1.5) * 0.7;
+                      const sy = midY - 8 + i * 3, wobble = Math.sin(elapsed * 5 + i * 1.5) * 0.7;
                       ctx.beginPath(); ctx.arc(CX + wobble, sy, 0.5, 0, Math.PI * 2);
-                      ctx.fillStyle = `rgba(201,168,76,${0.3 * state.glassOpacity})`;
-                      ctx.fill();
+                      ctx.fillStyle = `rgba(201,168,76,${0.3 * state.glassOpacity})`; ctx.fill();
                     }
                   }
 
-                  // ====== RISE PHASE ======
-                  if (state.phase >= PHASE_RISE) {
-                    const riseT = Math.min(1, (elapsed - 4) / 5); // 0→1 over 5 seconds
-                    const easeRise = riseT * riseT * (3 - 2 * riseT); // smoothstep
-
+                  // RISE
+                  if (state.phase >= PHASE_RISE && state.phase < PHASE_POEM) {
+                    const riseT = Math.min(1, (elapsed - 4) / 6);
                     for (const g of state.grains) {
                       if (g.assigned) {
-                        // Lerp from current pos to letter target
-                        const lineDelay = (g.lineIndex || 0) * 0.05;
+                        const lineDelay = Math.min(0.4, (g.lineIndex || 0) * 0.025);
                         const localT = Math.max(0, Math.min(1, (riseT - lineDelay) / (1 - lineDelay)));
-                        const easeLocal = localT < 0.5
-                          ? 4 * localT * localT * localT
-                          : 1 - Math.pow(-2 * localT + 2, 3) / 2;
-
-                        const drawX = g.x + (g.homeX - g.x) * easeLocal;
-                        const drawY = g.y + (g.homeY - g.y) * easeLocal;
-                        const drawSize = g.size + (0.8 - g.size) * easeLocal;
-
-                        // Brightness increases as grain finds its letter
-                        const brightness = g.isBookend
-                          ? 0.08 + easeLocal * 0.65
-                          : 0.08 + easeLocal * 0.5;
+                        const ease = localT < 0.5 ? 4 * localT * localT * localT : 1 - Math.pow(-2 * localT + 2, 3) / 2;
+                        const drawX = g.origX + (g.homeX - g.origX) * ease;
+                        const drawY = g.origY + (g.homeY - g.origY) * ease;
+                        const drawSize = g.size + (1.0 - g.size) * ease;
+                        const brightness = g.isBookend ? 0.1 + ease * 0.7 : 0.08 + ease * 0.55;
                         const c = g.isBookend
                           ? `rgba(201,168,76,${brightness})`
-                          : g.color === "gold"
-                            ? `rgba(201,168,76,${brightness * 0.7})`
-                            : `rgba(232,232,240,${brightness})`;
-
+                          : `rgba(232,232,240,${brightness})`;
                         ctx.beginPath(); ctx.arc(drawX, drawY, drawSize, 0, Math.PI * 2);
                         ctx.fillStyle = c; ctx.fill();
                       } else {
-                        // Unassigned grains: drift and fade
-                        g.vy -= 0.01;
-                        g.y += g.vy;
-                        g.x += (Math.random() - 0.5) * 0.5;
-                        g.opacity *= 0.997;
-                        if (g.opacity > 0.01) {
-                          ctx.beginPath(); ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
-                          ctx.fillStyle = `rgba(201,168,76,${g.opacity * (1 - easeRise * 0.7)})`;
-                          ctx.fill();
+                        g.origY -= 0.15;
+                        g.origX += (Math.random() - 0.5) * 0.5;
+                        g.opacity *= 0.996;
+                        if (g.opacity > 0.005) {
+                          ctx.beginPath(); ctx.arc(g.origX, g.origY, g.size, 0, Math.PI * 2);
+                          ctx.fillStyle = `rgba(201,168,76,${g.opacity * 0.5})`; ctx.fill();
                         }
                       }
                     }
                   }
 
-                  // ====== POEM PHASE — fully formed, gentle breathing ======
+                  // POEM — crisp text fades in over the grain positions
                   if (state.phase === PHASE_POEM) {
-                    // Title + subtitle as canvas text for clean layering
-                    const headerAlpha = Math.min(1, (elapsed - 9) / 2);
+                    const textAlpha = Math.min(1, (elapsed - 10) / 2);
 
+                    // Still draw assigned grains as subtle texture behind text
+                    for (const g of state.grains) {
+                      if (!g.assigned) continue;
+                      const brightness = g.isBookend ? 0.15 : 0.08;
+                      const wobbleX = Math.sin(elapsed * 0.5 + g.homeX * 0.01) * 0.3;
+                      const wobbleY = Math.cos(elapsed * 0.4 + g.homeY * 0.01) * 0.3;
+                      ctx.beginPath(); ctx.arc(g.homeX + wobbleX, g.homeY + wobbleY, g.size * 0.7, 0, Math.PI * 2);
+                      ctx.fillStyle = g.isBookend
+                        ? `rgba(201,168,76,${brightness})`
+                        : `rgba(232,232,240,${brightness})`;
+                      ctx.fill();
+                    }
+
+                    // Render actual text
                     ctx.save();
-                    ctx.globalAlpha = headerAlpha;
+                    ctx.globalAlpha = textAlpha;
                     ctx.textAlign = "center";
-
-                    // "OCTOBER 2016"
-                    ctx.font = `${Math.min(W * 0.025, 11)}px 'Cinzel', serif`;
-                    ctx.fillStyle = "rgba(201,168,76,0.22)";
-                    ctx.letterSpacing = "6px";
-                    ctx.fillText("O C T O B E R   2 0 1 6", CX, topY - 24);
-
-                    // "RHYTHM OF LIFE"
-                    ctx.font = `400 ${Math.min(W * 0.06, 28)}px 'Cinzel', serif`;
-                    ctx.fillStyle = "rgba(232,232,240,0.75)";
-                    ctx.letterSpacing = "10px";
-                    ctx.fillText("R H Y T H M   O F   L I F E", CX, topY - 6);
-
+                    for (const tl of state.textLines) {
+                      if (tl.isBookend) {
+                        ctx.font = `600 italic ${Math.max(14, Math.min(W * 0.05, 26))}px 'Cormorant Garamond', Georgia, serif`;
+                        ctx.fillStyle = "rgba(201,168,76,0.7)";
+                      } else {
+                        ctx.font = `300 italic ${Math.max(11, Math.min(W * 0.035, 19))}px 'Cormorant Garamond', Georgia, serif`;
+                        ctx.fillStyle = "rgba(232,232,240,0.6)";
+                      }
+                      ctx.fillText(tl.text, CX, tl.y);
+                    }
                     ctx.restore();
                   }
 
