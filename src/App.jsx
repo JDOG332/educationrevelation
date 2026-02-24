@@ -160,6 +160,11 @@ export default function TheoryOfEverything() {
           0%, 100% { opacity: 0.25; }
           50% { opacity: 0.55; }
         }
+        @keyframes textBlink {
+          0%, 18% { opacity: 1; }
+          20%, 24% { opacity: 0; }
+          26%, 100% { opacity: 1; }
+        }
         @keyframes gentleFloat {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-6px); }
@@ -659,9 +664,9 @@ export default function TheoryOfEverything() {
                   fontWeight: 500,
                   letterSpacing: "0.12em",
                   lineHeight: 1.6,
-                  animation: "breathe 6s ease-in-out infinite",
-                  color: "rgba(180,170,150,0.95)",
-                  textShadow: "0 0 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.7), 0 0 48px rgba(0,0,0,0.5), 2px 2px 4px rgba(0,0,0,0.8), -1px -1px 3px rgba(255,255,255,0.3)",
+                  animation: "textBlink 4s ease-in-out infinite",
+                  color: "rgba(140,130,110,1)",
+                  textShadow: "0 0 12px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.8), 0 0 48px rgba(0,0,0,0.6), 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 3px rgba(255,255,255,0.35)",
                 }}>now blink them<br />&amp; make a wish</div>
               </div>
             </div>
