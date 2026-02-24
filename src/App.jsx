@@ -381,16 +381,14 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
       {/* Left half = go back. Right half = go forward. */}
-      {/* You cannot experience the site without choosing: back or forward. */}
-      {/* Disabled on depth 3 (convergence has its own door navigation) */}
-      {/* Disabled on depth 4 (∞) — that page has its own click handler to loop back */}
-      {depth >= 1 && depth < 3 && (
+      {/* Active on all depths except 0 (landing), 4 (convergence has door nav), and 5 (∞ has loop-back) */}
+      {depth >= 1 && depth !== 4 && depth !== 5 && (
         <>
           <div
             onClick={(e) => { e.stopPropagation(); goBack(); }}
             style={{
               position: "fixed", top: 0, left: 0,
-              width: "50%", height: "100%",
+              width: "50%", height: "88%",
               zIndex: 9000, cursor: "pointer",
               background: "transparent",
             }}
@@ -399,12 +397,25 @@ export default function TheoryOfEverything() {
             onClick={(e) => { e.stopPropagation(); goDeeper(); }}
             style={{
               position: "fixed", top: 0, right: 0,
-              width: "50%", height: "100%",
+              width: "50%", height: "88%",
               zIndex: 9000, cursor: "pointer",
               background: "transparent",
             }}
           />
         </>
+      )}
+
+      {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
+      {/* Root-level so it escapes all stacking contexts */}
+      {depth >= 1 && depth <= 3 && (poemPhase >= 5 || depth !== 2) && (
+        <div style={{
+          position: "fixed", bottom: "2%", left: 0, width: "100%",
+          textAlign: "center", zIndex: 9500, pointerEvents: "none",
+        }}>
+          <div style={{ pointerEvents: "auto", display: "inline-block" }}>
+            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
+          </div>
+        </div>
       )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
@@ -684,9 +695,9 @@ export default function TheoryOfEverything() {
 
       {/* ===== DEPTH 2 — THE POEM ===== */}
       {depth === 2 && (
-        <div onClick={() => { if (poemPhase >= 5 || poemSeen.current) goDeeper(); }} style={{
+        <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
-          cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 5000,
+          zIndex: 5000,
         }}>
 
           {/* White flash — the Moon filling your vision */}
@@ -708,7 +719,7 @@ export default function TheoryOfEverything() {
               }}
               style={{
                 position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                zIndex: 5002, cursor: "pointer",
+                zIndex: 9800, cursor: "pointer",
                 background: "transparent",
               }}
             />
@@ -1083,16 +1094,7 @@ export default function TheoryOfEverything() {
             return <HourglassPoem />;
           })()}
 
-          {/* Return — very bottom */}
-          {poemPhase >= 5 && (
-            <div style={{
-              position: "absolute", bottom: "2%", width: "100%", textAlign: "center",
-              zIndex: 5010,
-              animation: "fadeSlideUp 1s 10s both ease",
-            }}>
-              <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-            </div>
-          )}
+          {/* Return button handled by global root-level ReturnButton */}
         </div>
       )}
 
@@ -1336,9 +1338,9 @@ export default function TheoryOfEverything() {
         }
 
         return (
-          <div onClick={goDeeper} style={{
+          <div style={{
             height: "100vh", width: "100%", position: "relative",
-            cursor: "pointer", zIndex: 1500, overflow: "hidden",
+            zIndex: 1500, overflow: "hidden",
           }}>
             {/* 729-body multiverse canvas */}
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
@@ -1415,13 +1417,7 @@ export default function TheoryOfEverything() {
               </div>
             </div>
 
-            {/* Return */}
-            <div style={{
-              position: "absolute", bottom: "3%", left: "50%", transform: "translateX(-50%)",
-              zIndex: 20, pointerEvents: "auto",
-            }}>
-              <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-            </div>
+            {/* Return button handled by global root-level ReturnButton */}
           </div>
         );
       })()}
@@ -1432,9 +1428,9 @@ export default function TheoryOfEverything() {
 
 
         return (
-          <div onClick={goDeeper} style={{
+          <div style={{
             height: "100vh", width: "100%", position: "relative", overflow: "hidden",
-            cursor: "pointer", zIndex: 1500,
+            zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
             padding: "1vh 20px",
           }}>
@@ -6157,8 +6153,8 @@ export default function TheoryOfEverything() {
             </MiracleGlow>
           </div>
 
-          <div style={{ textAlign: "center", marginTop: 32 }}>
-            <ReturnButton onClick={returnToVoid} />
+          <div style={{ textAlign: "center", marginTop: 32, position: "relative", zIndex: 9500 }}>
+            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
           </div>
           {/* The quiet edge */}
           <div onClick={goDeeper} style={{
