@@ -1595,7 +1595,7 @@ export default function TheoryOfEverything() {
 
       {depth === 4 && activeConvergence === null && (
         <div style={{
-          minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
           zIndex: 5000,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           boxSizing: "border-box",
