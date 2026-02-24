@@ -653,18 +653,35 @@ export default function TheoryOfEverything() {
               </circle>
             </svg>
 
-            {/* The instruction */}
+            {/* The instruction IS the yin/yang — white words in dark, dark words in light */}
             <div style={{
-              position: "absolute", top: "12%", left: "50%", transform: "translateX(-50%)",
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(19px, 3.5vw, 24px)",
-              fontStyle: "italic",
-              color: "rgba(128,128,128,0.4)",
-              letterSpacing: "0.15em",
+              position: "absolute", top: "50%", left: 0, width: "100%",
+              transform: "translateY(-50%)",
+              display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center",
+              pointerEvents: "none", userSelect: "none",
               animation: "fadeSlideUp 2s 1s both ease",
-              textAlign: "center", userSelect: "none",
-              textShadow: "0 0 20px rgba(0,0,0,0.5)",
-            }}>now blink them quickly</div>
+            }}>
+              {/* "now blink" — white letters sitting on the black triangle (left side) */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(24px, 5vw, 39px)",
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.7)",
+                letterSpacing: "0.1em",
+                textShadow: "0 0 30px rgba(0,0,0,0.8)",
+                paddingRight: "0.3em",
+              }}>now blink</div>
+              {/* "them quickly" — black letters sitting on the white triangle (right side) */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(24px, 5vw, 39px)",
+                fontStyle: "italic",
+                color: "rgba(0,0,0,0.7)",
+                letterSpacing: "0.1em",
+                textShadow: "0 0 30px rgba(255,255,255,0.8)",
+                paddingLeft: "0.3em",
+              }}>them quickly</div>
+            </div>
 
             <div style={{
               position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
