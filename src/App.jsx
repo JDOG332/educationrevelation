@@ -70,7 +70,7 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(d => Math.min(d + 1, 4));
+      setDepth(d => Math.min(d + 1, 5));
       setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
@@ -460,7 +460,7 @@ export default function TheoryOfEverything() {
           : depth <= 4 ? 0.1
           : 0.05
         }
-        showTriangles={depth === 0 || depth === 2}
+        showTriangles={depth === 0 || depth === 3}
         showOrbits={depth <= 3 && depth !== 1}
         zoom={
           depth === 1 ? (
@@ -1207,8 +1207,318 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE PACT — 3D OCTAHEDRON ===== */}
+      {/* ===== DEPTH 2 — THE DREAM — MULTIVERSE RECURSION ===== */}
       {depth === 2 && (() => {
+        // Next-level fractal: 81 bodies (9 clusters × 9 bodies each)
+        // Same equation at every scale: Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²
+        const CLUSTER_COLORS = [
+          "#3a3a5c", "#7b68ee", "#c9a84c", "#e05050", "#e8e8f0",
+          "#8fbc8f", "#4fc3f7", "#ff9800", "#ce93d8",
+        ];
+        const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
+        const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI * PHI, 2.0, 1.8, 1.4, 1.0];
+
+        function DreamMultiverse() {
+          const canvasRef = useRef(null);
+          const stateRef = useRef(null);
+          const frameRef = useRef(null);
+
+          function getR12(i, j) {
+            let r = 0.5;
+            if (MIRROR_PAIRS.some(([a,b]) => (a===i&&b===j)||(a===j&&b===i))) r += PHI;
+            if (Math.abs(i-j) === 1) r += 0.3;
+            if (i === 4 || j === 4) r += 0.8;
+            return r;
+          }
+
+          useEffect(() => {
+            const canvas = canvasRef.current;
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            const dpr = window.devicePixelRatio || 1;
+
+            function resize() {
+              const W = canvas.parentElement?.clientWidth || window.innerWidth;
+              const H = canvas.parentElement?.clientHeight || window.innerHeight;
+              canvas.width = W * dpr;
+              canvas.height = H * dpr;
+              canvas.style.width = W + "px";
+              canvas.style.height = H + "px";
+              ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+              return { W, H };
+            }
+
+            let { W, H } = resize();
+            const CX = W / 2, CY = H / 2;
+            const BASE_R = Math.min(W, H) * 0.38;
+
+            if (!stateRef.current) {
+              // 9 clusters, each containing 9 bodies = 81 total
+              const clusters = Array.from({ length: 9 }, (_, ci) => {
+                const cAngle = (ci / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.3;
+                const cR = ci === 4 ? 0 : BASE_R * (0.45 + Math.random() * 0.4);
+                const cx = CX + Math.cos(cAngle) * cR;
+                const cy = CY + Math.sin(cAngle) * cR;
+                const cSpeed = ci === 4 ? 0 : Math.sqrt(getR12(ci, 4) * C_EFF[ci] * C_EFF[4] / (cR * 2)) * 0.06;
+                const cvAngle = cAngle + Math.PI / 2;
+
+                const bodies = Array.from({ length: 9 }, (_, bi) => {
+                  const bAngle = (bi / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
+                  const bR = bi === 4 ? 0 : (25 + Math.random() * 20) * (ci === 4 ? 1.3 : 0.9);
+                  const bSpeed = bi === 4 ? 0 : Math.sqrt(getR12(bi, 4) * C_EFF[bi] * C_EFF[4] / Math.max(bR, 1)) * 0.15;
+                  const bvAngle = bAngle + Math.PI / 2;
+                  return {
+                    x: cx + Math.cos(bAngle) * bR,
+                    y: cy + Math.sin(bAngle) * bR,
+                    vx: Math.cos(bvAngle) * bSpeed,
+                    vy: Math.sin(bvAngle) * bSpeed,
+                    cEff: C_EFF[bi], id: bi,
+                    radius: (1.2 + C_EFF[bi] * 0.5) * (ci === 4 && bi === 4 ? 1.8 : 1),
+                  };
+                });
+
+                return {
+                  x: cx, y: cy,
+                  vx: Math.cos(cvAngle) * cSpeed,
+                  vy: Math.sin(cvAngle) * cSpeed,
+                  cEff: C_EFF[ci] * 4, id: ci,
+                  bodies,
+                };
+              });
+              stateRef.current = { clusters };
+            }
+
+            const state = stateRef.current;
+
+            function sim(bodies, dt, softening, damping, anchorX, anchorY, pull) {
+              const N = bodies.length;
+              const fx = new Float64Array(N), fy = new Float64Array(N);
+              for (let i = 0; i < N; i++) {
+                for (let j = i + 1; j < N; j++) {
+                  const dx = bodies[j].x - bodies[i].x;
+                  const dy = bodies[j].y - bodies[i].y;
+                  const distSq = dx*dx + dy*dy + softening*softening;
+                  const dist = Math.sqrt(distSq);
+                  const R12 = getR12(bodies[i].id, bodies[j].id);
+                  const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
+                  fx[i] += psi * dx / dist; fy[i] += psi * dy / dist;
+                  fx[j] -= psi * dx / dist; fy[j] -= psi * dy / dist;
+                }
+                fx[i] += (anchorX - bodies[i].x) * pull * bodies[i].cEff;
+                fy[i] += (anchorY - bodies[i].y) * pull * bodies[i].cEff;
+              }
+              for (let i = 0; i < N; i++) {
+                bodies[i].vx = (bodies[i].vx + fx[i] / bodies[i].cEff * dt) * damping;
+                bodies[i].vy = (bodies[i].vy + fy[i] / bodies[i].cEff * dt) * damping;
+                bodies[i].x += bodies[i].vx * dt;
+                bodies[i].y += bodies[i].vy * dt;
+              }
+            }
+
+            function simulate() {
+              // Cluster-level gravity
+              sim(state.clusters, 0.3, 50, 0.9997, CX, CY, 0.00006);
+              // Body-level gravity within each cluster
+              for (const c of state.clusters) {
+                sim(c.bodies, 0.2, 8, 0.9993, c.x, c.y, 0.001);
+              }
+            }
+
+            let time = 0;
+            function draw() {
+              time += 0.005;
+              ctx.clearRect(0, 0, W, H);
+
+              // Draw mirror pair connections between clusters (faint triangles through center)
+              for (const [a, b] of MIRROR_PAIRS) {
+                const ca = state.clusters[a], cb = state.clusters[b], cm = state.clusters[4];
+                ctx.beginPath();
+                ctx.moveTo(ca.x, ca.y); ctx.lineTo(cm.x, cm.y); ctx.lineTo(cb.x, cb.y);
+                ctx.closePath();
+                ctx.fillStyle = "rgba(201,168,76,0.006)";
+                ctx.strokeStyle = "rgba(201,168,76,0.02)";
+                ctx.lineWidth = 0.3; ctx.fill(); ctx.stroke();
+              }
+
+              // Draw each cluster
+              for (let ci = 0; ci < 9; ci++) {
+                const cluster = state.clusters[ci];
+                const cColor = CLUSTER_COLORS[ci];
+
+                // Cluster halo
+                const hR = ci === 4 ? 70 : 48;
+                const hg = ctx.createRadialGradient(cluster.x, cluster.y, 0, cluster.x, cluster.y, hR);
+                hg.addColorStop(0, cColor + "0a");
+                hg.addColorStop(0.6, cColor + "03");
+                hg.addColorStop(1, cColor + "00");
+                ctx.beginPath(); ctx.arc(cluster.x, cluster.y, hR, 0, Math.PI * 2);
+                ctx.fillStyle = hg; ctx.fill();
+
+                // Internal mirror triangles
+                for (const [a, b] of MIRROR_PAIRS) {
+                  const ba = cluster.bodies[a], bb = cluster.bodies[b], bm = cluster.bodies[4];
+                  ctx.beginPath();
+                  ctx.moveTo(ba.x, ba.y); ctx.lineTo(bm.x, bm.y); ctx.lineTo(bb.x, bb.y);
+                  ctx.closePath();
+                  ctx.fillStyle = cColor + "04";
+                  ctx.strokeStyle = cColor + "0a";
+                  ctx.lineWidth = 0.2; ctx.fill(); ctx.stroke();
+                }
+
+                // Individual bodies
+                for (let bi = 0; bi < 9; bi++) {
+                  const body = cluster.bodies[bi];
+                  const bColor = CLUSTER_COLORS[bi];
+                  const isMoon = bi === 4;
+                  const isCoreMoon = ci === 4 && bi === 4;
+
+                  // Body glow
+                  const glowR = body.radius * (isCoreMoon ? 8 : isMoon ? 5 : 3);
+                  const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
+                  bg.addColorStop(0, bColor + (isCoreMoon ? "25" : isMoon ? "1a" : "12"));
+                  bg.addColorStop(0.5, bColor + "05");
+                  bg.addColorStop(1, bColor + "00");
+                  ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI * 2);
+                  ctx.fillStyle = bg; ctx.fill();
+
+                  // Body core
+                  ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI * 2);
+                  const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
+                  cg.addColorStop(0, isCoreMoon ? "#ffffff" : bColor);
+                  cg.addColorStop(1, bColor + "40");
+                  ctx.fillStyle = cg; ctx.fill();
+                }
+              }
+
+              // Equation overlay pulsing
+              const eqAlpha = 0.25 + Math.sin(time * 2) * 0.08;
+              ctx.fillStyle = `rgba(232,232,240,${eqAlpha})`;
+              ctx.font = `italic ${Math.round(Math.min(W, H) * 0.025)}px 'Cormorant Garamond', serif`;
+              ctx.textAlign = "center";
+              ctx.fillText("Ψ = R₁₂ × (C_eff · D̂) / dist²", CX, H - 28);
+
+              ctx.fillStyle = "rgba(232,232,240,0.12)";
+              ctx.font = `${Math.round(8)}px 'Cinzel', serif`;
+              ctx.letterSpacing = "3px";
+              ctx.fillText("SAME EQUATION · EVERY SCALE", CX, H - 12);
+            }
+
+            function loop() {
+              simulate(); draw();
+              frameRef.current = requestAnimationFrame(loop);
+            }
+            loop();
+
+            const handleResize = () => { ({ W, H } = resize()); };
+            window.addEventListener("resize", handleResize);
+            return () => {
+              if (frameRef.current) cancelAnimationFrame(frameRef.current);
+              window.removeEventListener("resize", handleResize);
+            };
+          }, []);
+
+          return <canvas ref={canvasRef} style={{ width: "100%", height: "100%", display: "block" }} />;
+        }
+
+        return (
+          <div onClick={goDeeper} style={{
+            height: "100vh", width: "100%", position: "relative",
+            cursor: "pointer", zIndex: 1500, overflow: "hidden",
+          }}>
+            {/* Multiverse canvas — fills the whole page */}
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
+              <DreamMultiverse />
+            </div>
+
+            {/* Text overlay */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              pointerEvents: "none", zIndex: 10,
+            }}>
+              {/* The quote */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(20px, 4.5vw, 34px)",
+                fontStyle: "italic", fontWeight: 300,
+                color: "rgba(232,232,240,0.55)",
+                textAlign: "center", maxWidth: 520,
+                lineHeight: PHI, letterSpacing: 1.5,
+                textShadow: "0 0 40px rgba(0,0,0,0.8), 0 0 80px rgba(0,0,0,0.6)",
+                animation: "fadeSlideUp 2s 0.3s both ease",
+                padding: "0 24px",
+              }}>
+                "...we believe in a multiverse<br />where dreams come true..."
+              </div>
+
+              <div style={{ height: Math.round(34 * PHI) }} />
+
+              {/* Scale indicator */}
+              <div style={{
+                animation: "fadeSlideUp 2s 1.2s both ease",
+                textAlign: "center",
+              }}>
+                <div style={{
+                  display: "flex", gap: Math.round(13 * PHI), justifyContent: "center",
+                  flexWrap: "wrap", padding: "0 20px",
+                }}>
+                  {[
+                    { n: "9⁰ = 1", label: "UNIVERSE", active: false },
+                    { n: "9¹ = 9", label: "CLUSTERS", active: false },
+                    { n: "9² = 81", label: "WORLDS", active: true },
+                    { n: "9³ = 729", label: "DREAMS", active: false },
+                  ].map((level, i) => (
+                    <div key={i} style={{
+                      textAlign: "center",
+                      opacity: level.active ? 1 : 0.35,
+                      transition: "opacity 0.5s",
+                    }}>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: level.active ? "clamp(18px, 3vw, 24px)" : "clamp(12px, 2vw, 16px)",
+                        color: level.active ? "rgba(206,147,216,0.7)" : "rgba(232,232,240,0.3)",
+                        fontWeight: level.active ? 600 : 300,
+                        textShadow: level.active ? "0 0 20px rgba(206,147,216,0.15)" : "none",
+                      }}>{level.n}</div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif",
+                        fontSize: 7, letterSpacing: "0.2em",
+                        color: level.active ? "rgba(206,147,216,0.45)" : "rgba(232,232,240,0.15)",
+                        marginTop: 4,
+                      }}>{level.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ height: Math.round(21 * PHI) }} />
+
+              {/* Self-similarity equation */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 17px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.2)",
+                letterSpacing: 2,
+                animation: "fadeSlideUp 2s 1.8s both ease",
+                textShadow: "0 0 30px rgba(0,0,0,0.8)",
+              }}>
+                Ψ<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = Ψ<sub style={{ fontSize: "0.6em" }}>scale(n−1)</sub> &nbsp;∀ n
+              </div>
+            </div>
+
+            {/* Return button */}
+            <div style={{
+              position: "absolute", bottom: "3%", left: "50%", transform: "translateX(-50%)",
+              zIndex: 20, pointerEvents: "auto",
+            }}>
+              <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* ===== DEPTH 3 — THE PACT — 3D OCTAHEDRON ===== */}
+      {depth === 3 && (() => {
         const octantColors = OCTANT_COLORS;
 
 
@@ -1323,7 +1633,7 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 4 — THE CONVERGENCE PROOF ===== */}
-      {depth === 3 && activeConvergence === null && (
+      {depth === 4 && activeConvergence === null && (
         <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
           zIndex: 1500,
@@ -1499,7 +1809,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH — IDEA GRID ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 20px ${Math.round(34 * PHI)}px`,
@@ -1618,7 +1928,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "animal" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "animal" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -1727,7 +2037,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "pillars" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "pillars" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -1844,7 +2154,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "symbols" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "symbols" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2014,7 +2324,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "connection" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "connection" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2119,7 +2429,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "layering" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "layering" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2143,7 +2453,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "ache" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "ache" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2226,7 +2536,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE SHARED WEIGHT ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "weight" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "weight" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2377,7 +2687,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE HOUSE BUILT FOR YOU (Anthropic Principle) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "anthropic" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "anthropic" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2530,7 +2840,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE ISLAND ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "island" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "island" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2679,7 +2989,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE WEB (3 Body Problem) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "web" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "web" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2832,7 +3142,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE SEARCH ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "search" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "search" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -2985,7 +3295,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: LET GO ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "letgo" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "letgo" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -3138,7 +3448,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE BREATH ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "breath" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "breath" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -3291,7 +3601,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE ROOT ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "root" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "root" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -3444,7 +3754,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE EYE (Consciousness) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "eye" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "eye" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -3597,7 +3907,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE BONES (Physics & Reality) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "bones" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "bones" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -3750,7 +4060,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE SEED (Life & Biology) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "seed" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "seed" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -3903,7 +4213,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE FLASHLIGHT (Mind, Language & Meaning) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "flashlight" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "flashlight" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -4056,7 +4366,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE PULSE (Love, Connection & Emotion) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "pulse" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "pulse" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -4209,7 +4519,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE SCALE (Good, Evil & Ethics) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "scale" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "scale" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -4362,7 +4672,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE MOON (God, Spirit & The Unknown) ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "moon" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "moon" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -4515,7 +4825,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE PENNY QUESTION ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "penny" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "penny" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -4670,7 +4980,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== PLAIN ENGLISH: THE ONENESS ===== */}
-      {depth === 3 && activeConvergence === "plain" && activeIdea === "oneness" && (
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "oneness" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -4822,7 +5132,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 3 && activeConvergence === "gravity" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "gravity" && activeIdea === null && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -5174,7 +5484,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THREE PILLARS ROOM ===== */}
-      {depth === 3 && activeConvergence === "pillars" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "pillars" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -5383,7 +5693,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== THREE PILLARS: THE DNA HANDSHAKE ===== */}
-      {depth === 3 && activeConvergence === "pillars" && activeIdea === "dnahandshake" && (
+      {depth === 4 && activeConvergence === "pillars" && activeIdea === "dnahandshake" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -5546,7 +5856,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — SAMENESS ROOM (THE GATE) ===== */}
-      {depth === 3 && activeConvergence === "sameness" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "sameness" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -5833,7 +6143,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — CONVERGENCE DEPTHS ROOM ===== */}
-      {depth === 3 && activeConvergence === "depths" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "depths" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -6086,7 +6396,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THE ANCIENT PROOF ROOM ===== */}
-      {depth === 3 && activeConvergence === "ancient" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "ancient" && activeIdea === null && (
         <div style={{
           maxWidth: 680, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -6322,7 +6632,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THE MAP: 101 SEEDS ===== */}
-      {depth === 4 && (
+      {depth === 5 && (
         <div style={{
           height: "100vh", width: "100%",
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
@@ -6421,7 +6731,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== ANCIENT PROOF: THE LIVING BRIDGE (Cannibalism as Connection) ===== */}
-      {depth === 3 && activeConvergence === "ancient" && activeIdea === "livingbridge" && (
+      {depth === 4 && activeConvergence === "ancient" && activeIdea === "livingbridge" && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
