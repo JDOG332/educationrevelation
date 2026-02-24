@@ -1565,16 +1565,9 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 4 — THE CONVERGENCE CHAMBER ===== */}
+      {/* Chamber page navigation — OUTSIDE the chamber div to escape stacking context */}
       {depth === 4 && activeConvergence === null && (
-        <div style={{
-          minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
-          zIndex: 1500,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-          boxSizing: "border-box",
-          background: "#030306",
-        }}>
-
-          {/* Chamber page navigation — back to Pact / forward to ∞ */}
+        <>
           <div onClick={(e) => { e.stopPropagation(); goBack(); }} style={{
             position: "fixed", top: "50%", left: 8, transform: "translateY(-50%)",
             zIndex: 9500, cursor: "pointer", padding: "20px 12px",
@@ -1597,6 +1590,17 @@ export default function TheoryOfEverything() {
             onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
             onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
           >∞ →</div>
+        </>
+      )}
+
+      {depth === 4 && activeConvergence === null && (
+        <div style={{
+          minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          zIndex: 5000,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          boxSizing: "border-box",
+          background: "#030306",
+        }}>
 
           {/* Triquetra — massive, ghostly, barely there */}
           <div style={{
@@ -1624,7 +1628,7 @@ export default function TheoryOfEverything() {
             textAlign: "center",
             width: "100%", maxWidth: 580,
             display: "flex", flexDirection: "column", alignItems: "center",
-            position: "relative", zIndex: 9100,
+            position: "relative", zIndex: 10,
             padding: "0 16px",
           }}>
 
