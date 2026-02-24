@@ -42,7 +42,7 @@ export default function TheoryOfEverything() {
   const [openSection, setOpenSection] = useState(null);
   const [fading, setFading] = useState(false);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
-  const [landingPhase, setLandingPhase] = useState(2); // skip white/black, start at prism
+  const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
   const startDark = useRef(Math.random() < 0.5); // coin flip: dark first or light first
   const poemSeen = useRef(false);
 
@@ -94,7 +94,7 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0); setLandingPhase(2); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
       setFading(false);
     }, 600);
   }, []);
@@ -380,60 +380,49 @@ export default function TheoryOfEverything() {
       {currentPage === "theory" && (<>
 
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
-      {/* Replaced with visible bottom nav bar */}
+      {/* Left half = go back. Right half = go forward. */}
+      {/* Active on depths 1-3 only. Depth 4 has door cards. Depth 5 has loop-back. */}
+      {depth >= 1 && depth <= 3 && (
+        <>
+          <div
+            onClick={(e) => { e.stopPropagation(); goBack(); }}
+            style={{
+              position: "fixed", top: 0, left: 0,
+              width: "50%", height: "88%",
+              zIndex: 9000, cursor: "pointer",
+              background: "transparent",
+            }}
+          />
+          <div
+            onClick={(e) => { e.stopPropagation(); goDeeper(); }}
+            style={{
+              position: "fixed", top: 0, right: 0,
+              width: "50%", height: "88%",
+              zIndex: 9000, cursor: "pointer",
+              background: "transparent",
+            }}
+          />
+        </>
+      )}
 
-      {/* ===== UNIVERSAL BOTTOM NAV BAR ===== */}
-      {/* Always visible on depths 1-5. Simple, bulletproof, can't miss it. */}
-      {currentPage === "theory" && depth >= 1 && depth <= 5 && (depth !== 4 || activeConvergence === null) && (
+      {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
+      {/* Root-level so it escapes all stacking contexts */}
+      {depth >= 1 && depth <= 4 && (poemPhase >= 5 || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
         <div style={{
-          position: "fixed", bottom: 0, left: 0, width: "100%",
-          zIndex: 9500,
-          display: "flex", justifyContent: "center", alignItems: "center",
-          gap: 24,
-          padding: "12px 20px 20px",
-          background: "linear-gradient(180deg, transparent 0%, rgba(3,3,6,0.9) 40%, rgba(3,3,6,0.98) 100%)",
-          pointerEvents: "auto",
+          position: "fixed", bottom: "2%", left: 0, width: "100%",
+          textAlign: "center", zIndex: 9500, pointerEvents: "none",
         }}>
-          {depth > 0 && (
-            <button onClick={(e) => { e.stopPropagation(); goBack(); }} style={{
-              cursor: "pointer", background: "rgba(232,232,240,0.04)",
-              border: "1px solid rgba(232,232,240,0.12)", borderRadius: 8,
-              padding: "10px 20px", color: "rgba(232,232,240,0.6)",
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 2,
-              transition: "all 0.3s",
-            }}
-              onMouseEnter={e => { e.target.style.background = "rgba(232,232,240,0.08)"; e.target.style.color = "rgba(232,232,240,0.9)"; }}
-              onMouseLeave={e => { e.target.style.background = "rgba(232,232,240,0.04)"; e.target.style.color = "rgba(232,232,240,0.6)"; }}
-            >← BACK</button>
-          )}
-          <button onClick={(e) => { e.stopPropagation(); returnToVoid(); }} style={{
-            cursor: "pointer", background: "none", border: "none",
-            padding: "10px 16px", color: "rgba(201,168,76,0.4)",
-            fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 3,
-            transition: "color 0.3s",
-          }}
-            onMouseEnter={e => e.target.style.color = "rgba(201,168,76,0.7)"}
-            onMouseLeave={e => e.target.style.color = "rgba(201,168,76,0.4)"}
-          >⟳ VOID</button>
-          {depth < 5 && (
-            <button onClick={(e) => { e.stopPropagation(); goDeeper(); }} style={{
-              cursor: "pointer", background: "rgba(201,168,76,0.06)",
-              border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8,
-              padding: "10px 20px", color: "rgba(201,168,76,0.6)",
-              fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 2,
-              transition: "all 0.3s",
-            }}
-              onMouseEnter={e => { e.target.style.background = "rgba(201,168,76,0.12)"; e.target.style.color = "rgba(201,168,76,0.9)"; }}
-              onMouseLeave={e => { e.target.style.background = "rgba(201,168,76,0.06)"; e.target.style.color = "rgba(201,168,76,0.6)"; }}
-            >DEEPER →</button>
-          )}
+          <div style={{ pointerEvents: "auto", display: "inline-block" }}>
+            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
+          </div>
         </div>
       )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
       {(depth !== 0 || landingPhase >= 2) && <GrainOverlay />}
 
-      {/* Depth indicator replaced by bottom nav bar */}
+      {/* Depth indicator — hidden during landing */}
+      {(depth !== 0 || landingPhase >= 2) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
 
       {/* Vignette — hidden during landing */}
       {(depth !== 0 || landingPhase >= 2) && (<>
@@ -1576,16 +1565,38 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 4 — THE CONVERGENCE CHAMBER ===== */}
-      {/* Chamber nav handled by universal bottom bar */}
-
       {depth === 4 && activeConvergence === null && (
         <div style={{
-          minHeight: "100vh", width: "100%", position: "relative",
+          minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           boxSizing: "border-box",
           background: "#030306",
-          paddingBottom: 80,
         }}>
+
+          {/* Chamber page navigation — back to Pact / forward to ∞ */}
+          <div onClick={(e) => { e.stopPropagation(); goBack(); }} style={{
+            position: "fixed", top: "50%", left: 8, transform: "translateY(-50%)",
+            zIndex: 9500, cursor: "pointer", padding: "20px 12px",
+            fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 14px)",
+            letterSpacing: 2, color: "rgba(232,232,240,0.15)",
+            transition: "color 0.4s",
+            writingMode: "vertical-rl", textOrientation: "mixed",
+          }}
+            onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
+            onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
+          >← THE PACT</div>
+          <div onClick={(e) => { e.stopPropagation(); goDeeper(); }} style={{
+            position: "fixed", top: "50%", right: 8, transform: "translateY(-50%)",
+            zIndex: 9500, cursor: "pointer", padding: "20px 12px",
+            fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 14px)",
+            letterSpacing: 2, color: "rgba(232,232,240,0.15)",
+            transition: "color 0.4s",
+            writingMode: "vertical-rl", textOrientation: "mixed",
+          }}
+            onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
+            onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
+          >∞ →</div>
 
           {/* Triquetra — massive, ghostly, barely there */}
           <div style={{
@@ -1613,7 +1624,7 @@ export default function TheoryOfEverything() {
             textAlign: "center",
             width: "100%", maxWidth: 580,
             display: "flex", flexDirection: "column", alignItems: "center",
-            position: "relative", zIndex: 10,
+            position: "relative", zIndex: 9100,
             padding: "0 16px",
           }}>
 
