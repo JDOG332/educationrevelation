@@ -7485,11 +7485,34 @@ export default function TheoryOfEverything() {
                 fontStyle: "italic", color: "rgba(232,232,240,0.4)",
                 lineHeight: 2.0, maxWidth: 400, margin: "0 auto",
               }}>
-                These are not commandments. They are not conditions.<br /><br />
-                They are offerings — freely given, freely received.<br /><br />
-                Because love that must be commanded is not love at all.<br />
-                And the real thing needs no strings.
+                these are not commandments. they are not conditions.<br /><br />
+                they are offerings — freely given, freely received.<br /><br />
+                because love that must be commanded is not love at all.<br />
+                and the real thing needs no strings.
               </div>
+
+              <div style={{
+                width: Math.round(30 * PHI), height: 1,
+                margin: `${Math.round(8 * PHI)}px auto`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent)",
+              }} />
+
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(12px, 2.8vw, 17px)",
+                letterSpacing: "0.15em",
+                color: "rgba(201,168,76,0.4)",
+                marginTop: Math.round(5 * PHI),
+              }}>THANK YOU FOR AGAPE LOVE</div>
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 3vw, 19px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+                lineHeight: 1.9, marginTop: Math.round(5 * PHI),
+                maxWidth: 380, margin: `${Math.round(5 * PHI)}px auto 0`,
+              }}>and that's how the world begins again</div>
+
               <div style={{
                 fontFamily: "'Cinzel', serif",
                 fontSize: "clamp(14px, 3vw, 19px)",
