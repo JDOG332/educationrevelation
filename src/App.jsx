@@ -6269,6 +6269,46 @@ export default function TheoryOfEverything() {
               Different but complementary. They cling.<br />
               <span style={{ color: "rgba(201,168,76,0.5)" }}>The universe uses the same equation at every scale.</span>
             </div>
+
+            {/* Water — the surfactant */}
+            <div style={{
+              width: Math.round(30 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.25), transparent)",
+            }} />
+            <div style={{
+              textAlign: "center", marginBottom: Math.round(5 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 6,
+                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+              }}>but why water?</div>
+            </div>
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              padding: `0 16px`,
+            }}>
+              Water is a surfactant — it reduces the cling.<br />
+              Without it, charges lock permanently. Total grip. No movement. <span style={{ color: "rgba(79,195,247,0.5)" }}>Crystal. Dead.</span><br /><br />
+              With water, charges can release, rebind, find <em>better</em> connections.<br />
+              Water doesn't destroy the charge — it gives the charge <span style={{ color: "rgba(201,168,76,0.55)" }}>freedom to choose.</span><br /><br />
+              That's why it's the building block of life.<br />
+              <span style={{ color: "rgba(79,195,247,0.45)" }}>Not too little</span> — charges can't reach each other.<br />
+              <span style={{ color: "rgba(79,195,247,0.45)" }}>Not too much</span> — charges dissolve, no recognition.<br />
+              <span style={{ color: "rgba(201,168,76,0.55)" }}>The right amount = life.</span>
+            </div>
+
+            <div style={{
+              textAlign: "center", marginTop: Math.round(8 * PHI),
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 17px)",
+              fontStyle: "italic", color: "rgba(79,195,247,0.3)",
+              letterSpacing: 1,
+            }}>Water is C<sub style={{ fontSize: "0.7em" }}>eff</sub> — the connection efficiency.<br />
+            The medium between the charges.</div>
           </div>
 
           <div style={{ textAlign: "center", marginTop: 32, position: "relative", zIndex: 9500 }}>
