@@ -158,14 +158,15 @@ export const CONVERGENCE_DEPTHS = [
   { level: "III", title: "THE CONVERGENCE", text: "The final value (Ψ) is a probability of Universal Recognition. It is the mathematical point where subjective observation meets objective reality through the gate of Shared Ignorance being replaced by Verified Information." },
 ];
 
-export const DEPTH_NAMES = ["THE VOID", "THE POEM", "THE PACT", "CONVERGENCE", "∞"];
+export const DEPTH_NAMES = ["THE VOID", "THE POEM", "THE DREAM", "THE PACT", "CONVERGENCE", "∞"];
 
 export const DEPTH_ATMOSPHERES = [
   "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 void
   "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 1 poem
-  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 2 pact
-  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 3 convergence
-  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 4 ∞ — same as 0
+  "radial-gradient(ellipse at 50% 35%, rgba(8,6,20,1) 0%, #030306 85%)",       // 2 dream — deepest dark, stars live here
+  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 3 pact
+  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 4 convergence
+  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 5 ∞ — same as 0
 ];
 
 export const TRANSLATIONS = [
