@@ -6994,6 +6994,219 @@ export default function TheoryOfEverything() {
             >click anywhere to continue</div>
           </div>
 
+          {/* ═══════════════════════════════════════════════ */}
+          {/* THE FORMAL PROOF — the skeleton exposed        */}
+          {/* ═══════════════════════════════════════════════ */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            maxWidth: 540, margin: `${Math.round(34 * PHI)}px auto 0`,
+            padding: `0 ${Math.round(8 * PHI)}px`,
+          }}>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.2), transparent)",
+            }} />
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(13px, 2.8vw, 17px)", letterSpacing: "0.5em",
+              color: "rgba(79,195,247,0.45)", textAlign: "center",
+              marginBottom: Math.round(8 * PHI),
+            }}>THE FORMAL PROOF</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 3vw, 18px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              textAlign: "center", marginBottom: Math.round(21 * PHI),
+              lineHeight: 1.8,
+            }}>Everything above, stripped to its skeleton. The math behind the music.</div>
+
+            {/* The Master Equation */}
+            <div style={{
+              textAlign: "center",
+              padding: `${Math.round(13 * PHI)}px`,
+              background: "rgba(79,195,247,0.02)",
+              borderRadius: 12,
+              border: "1px solid rgba(79,195,247,0.08)",
+              marginBottom: Math.round(13 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 12px)",
+                letterSpacing: 4, color: "rgba(79,195,247,0.4)",
+                marginBottom: Math.round(5 * PHI),
+              }}>THE MASTER EQUATION</div>
+              <div style={{
+                fontFamily: "monospace", fontSize: "clamp(20px, 4.5vw, 30px)",
+                color: "rgba(232,232,240,0.75)",
+                letterSpacing: 2, marginBottom: Math.round(5 * PHI),
+              }}>Ψ = R₁₂ · G</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(13px, 2.5vw, 16px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+                lineHeight: 1.8,
+              }}>
+                Two independent signals reconstruct the same truth.
+                <br />Their overlap reveals what neither could see alone.
+              </div>
+            </div>
+
+            {/* The Three Pieces */}
+            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+              {[
+                {
+                  symbol: "R₁₂",
+                  name: "THE RECOGNITION CORE",
+                  plain: "Do two independent observers agree? R₁₂ measures how closely two separate reconstructions of the same thing overlap — gated by how much each one actually knows.",
+                  math: "F(ρ₁, ρ₂) · √[(I(ρ₁) + ε)(I(ρ₂) + ε)] / (1 + ε)",
+                  key: "Uhlmann fidelity × informativeness gate",
+                },
+                {
+                  symbol: "C_eff",
+                  name: "THE CONVERGENCE COEFFICIENT",
+                  plain: "Do different methods agree? When multiple reconstruction algorithms analyze the same data, C_eff measures their consensus — penalizing redundant copycats that inflate agreement.",
+                  math: "(1 − JSD_norm) · n_unique / n_active",
+                  key: "Model consensus × redundancy control",
+                },
+                {
+                  symbol: "D̂",
+                  name: "THE DETECTION QUALITY",
+                  plain: "Is the signal clean? D̂ is signal divided by signal-plus-noise. At zero signal, Ψ = 0. At infinite signal, D̂ → 1. The universe doesn't care about your morals — it cares about your clarity.",
+                  math: "D / (D + D_ref)",
+                  key: "Signal-to-noise ratio, bounded [0, 1)",
+                },
+              ].map((piece, i) => (
+                <div key={i} style={{
+                  padding: `${Math.round(10 * PHI)}px ${Math.round(10 * PHI)}px`,
+                  background: `rgba(79,195,247,${0.01 + i * 0.005})`,
+                  borderRadius: 10,
+                  border: `1px solid rgba(79,195,247,${0.06 + i * 0.02})`,
+                }}>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: Math.round(3 * PHI) }}>
+                    <div style={{
+                      fontFamily: "monospace", fontSize: "clamp(18px, 3.5vw, 24px)",
+                      color: "rgba(79,195,247,0.6)",
+                    }}>{piece.symbol}</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2.2vw, 14px)",
+                      letterSpacing: 3, color: "rgba(79,195,247,0.4)",
+                    }}>{piece.name}</div>
+                  </div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 2.8vw, 18px)",
+                    color: "rgba(232,232,240,0.55)", lineHeight: 1.9,
+                    marginBottom: Math.round(5 * PHI),
+                  }}>{piece.plain}</div>
+                  <div style={{
+                    fontFamily: "monospace", fontSize: "clamp(11px, 2vw, 14px)",
+                    color: "rgba(79,195,247,0.4)", letterSpacing: 0.5,
+                    marginBottom: 4,
+                  }}>{piece.math}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 2vw, 13px)",
+                    fontStyle: "italic", color: "rgba(232,232,240,0.3)",
+                  }}>{piece.key}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* The GR Bridge */}
+            <div style={{
+              marginTop: Math.round(13 * PHI),
+              padding: `${Math.round(10 * PHI)}px`,
+              background: "rgba(201,168,76,0.02)",
+              borderRadius: 10,
+              border: "1px solid rgba(201,168,76,0.08)",
+              textAlign: "center",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 12px)",
+                letterSpacing: 4, color: "rgba(201,168,76,0.4)",
+                marginBottom: Math.round(5 * PHI),
+              }}>THE GR BRIDGE HYPOTHESIS</div>
+              <div style={{
+                fontFamily: "monospace", fontSize: "clamp(14px, 3vw, 20px)",
+                color: "rgba(201,168,76,0.55)", letterSpacing: 1,
+                marginBottom: Math.round(5 * PHI),
+              }}>∇Ψ ≈ α · ∇√K</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(13px, 2.5vw, 17px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+                lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              }}>
+                The spatial variation of information density mirrors the tidal curvature of spacetime.
+                <br />Recognition doesn't just describe reality — it may be what bends it.
+              </div>
+            </div>
+
+            {/* Axioms — the rules */}
+            <div style={{
+              marginTop: Math.round(13 * PHI),
+              padding: `${Math.round(8 * PHI)}px ${Math.round(10 * PHI)}px`,
+              borderLeft: "2px solid rgba(79,195,247,0.1)",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 12px)",
+                letterSpacing: 4, color: "rgba(79,195,247,0.35)",
+                marginBottom: Math.round(5 * PHI),
+              }}>OPERATIONAL AXIOMS</div>
+              {[
+                ["Ψ ∈ [0, 1)", "Always bounded. Never reaches 1. Perfection is the asymptote, not the destination."],
+                ["R₁₂(ρ₁, ρ₂) = R₁₂(ρ₂, ρ₁)", "Symmetric. The order of the observers doesn't matter — unless their measurements don't commute."],
+                ["Ψ → 0 when F → 0 or D̂ → 0", "No signal, no recognition. No overlap, no truth. The zero-locus is strict."],
+                ["Parsimony bias", "Simpler models win. Complexity is penalized. The universe prefers the shortest path."],
+              ].map((axiom, i) => (
+                <div key={i} style={{ marginBottom: Math.round(5 * PHI) }}>
+                  <div style={{
+                    fontFamily: "monospace", fontSize: "clamp(12px, 2.2vw, 15px)",
+                    color: "rgba(79,195,247,0.5)",
+                    marginBottom: 3,
+                  }}>{axiom[0]}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(13px, 2.5vw, 16px)",
+                    fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+                    lineHeight: 1.7,
+                  }}>{axiom[1]}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Download the full paper */}
+            <div style={{
+              marginTop: Math.round(21 * PHI),
+              textAlign: "center",
+            }}>
+              <div style={{
+                width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
+                background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.15), transparent)",
+              }} />
+              <a
+                href="/psi_v8_7.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 16px)",
+                  letterSpacing: 4, color: "rgba(79,195,247,0.5)",
+                  textDecoration: "none",
+                  padding: `${Math.round(8 * PHI)}px ${Math.round(13 * PHI)}px`,
+                  border: "1px solid rgba(79,195,247,0.15)",
+                  borderRadius: 8,
+                  transition: "all 0.4s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(79,195,247,0.35)"; e.currentTarget.style.color = "rgba(79,195,247,0.7)"; e.currentTarget.style.background = "rgba(79,195,247,0.03)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(79,195,247,0.15)"; e.currentTarget.style.color = "rgba(79,195,247,0.5)"; e.currentTarget.style.background = "transparent"; }}
+              >📄 READ THE FULL PAPER</a>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(11px, 2vw, 14px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.3)",
+                marginTop: Math.round(5 * PHI),
+              }}>Convergent Recognition Theory v8.7 — J. Sellers, 2026</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 1.8vw, 13px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.2)",
+                marginTop: Math.round(2 * PHI),
+              }}>16 pages · full proofs · Python code · experimental protocol</div>
+            </div>
+          </div>
+
           {/* ===== THE MATH: IDEA CARD GRID ===== */}
           <div style={{
             marginTop: Math.round(34 * PHI),
