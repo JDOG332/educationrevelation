@@ -1433,10 +1433,10 @@ export default function TheoryOfEverything() {
 
         return (
           <div onClick={goDeeper} style={{
-            minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
+            height: "100vh", width: "100%", position: "relative", overflow: "hidden",
             cursor: "pointer", zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-            padding: "3vh 20px",
+            padding: "1vh 20px",
           }}>
 
             <div style={{
@@ -1446,7 +1446,7 @@ export default function TheoryOfEverything() {
 
               {/* Lightning bolt */}
               <div style={{
-                fontSize: 39, marginBottom: Math.round(8 * PHI),
+                fontSize: 32, marginBottom: Math.round(3 * PHI),
                 animation: "fadeSlideUp 1.2s 0.2s both ease, gentleFloat 6s ease-in-out infinite",
                 filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
               }}>⚡</div>
@@ -1454,7 +1454,7 @@ export default function TheoryOfEverything() {
               {/* Title */}
               <h2 style={{
                 fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(31px, 6vw, 39px)", fontWeight: 400,
+                fontSize: "clamp(28px, 5.5vw, 36px)", fontWeight: 400,
                 color: "#e8e8f0", letterSpacing: "0.3em", margin: 0,
                 textShadow: "0 0 50px rgba(232,232,240,0.1)",
                 animation: "fadeSlideUp 1.2s 0.3s both ease",
@@ -1463,16 +1463,16 @@ export default function TheoryOfEverything() {
               {/* Subtitle — the thesis */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(24px, 4vw, 31px)",
+                fontSize: "clamp(18px, 3.2vw, 24px)",
                 fontStyle: "italic", color: "rgba(232,232,240,0.6)",
-                marginTop: Math.round(5 * PHI), letterSpacing: 1,
+                marginTop: Math.round(3 * PHI), letterSpacing: 1,
                 animation: "fadeSlideUp 1.2s 0.4s both ease",
               }}>Reality isn't flat. Connection lives in volume, not area.</div>
 
               {/* Divider */}
               <div style={{
                 width: Math.round(40 * PHI), height: 1,
-                margin: Math.round(8 * PHI) + "px auto",
+                margin: Math.round(4 * PHI) + "px auto",
                 background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
                 animation: "fadeSlideUp 1.2s 0.5s both ease",
               }} />
@@ -1480,22 +1480,22 @@ export default function TheoryOfEverything() {
               {/* "Watch the cross become..." — narrative cue */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(24px, 4vw, 31px)",
+                fontSize: "clamp(18px, 3.2vw, 24px)",
                 color: "rgba(232,232,240,0.6)",
                 fontStyle: "italic", letterSpacing: 1,
-                marginBottom: Math.round(5 * PHI),
+                marginBottom: Math.round(3 * PHI),
                 animation: "fadeSlideUp 1.2s 0.55s both ease",
               }}>The cross you knew was the front face. Now watch the third dimension emerge.</div>
 
               {/* THE OCTAHEDRON — animated cross→octahedron morph */}
-              <div style={{ animation: "fadeSlideUp 1.4s 0.6s both ease", marginBottom: Math.round(5 * PHI) }}>
+              <div style={{ animation: "fadeSlideUp 1.4s 0.6s both ease", marginBottom: Math.round(2 * PHI) }}>
                 <OctahedronPact />
               </div>
 
               {/* Three Axes Legend — full spectrum descriptions */}
               <div style={{
-                display: "flex", gap: Math.round(8 * PHI), justifyContent: "center",
-                flexWrap: "wrap", marginBottom: Math.round(10 * PHI),
+                display: "flex", gap: Math.round(5 * PHI), justifyContent: "center",
+                flexWrap: "wrap", marginBottom: Math.round(3 * PHI),
                 animation: "fadeSlideUp 1.2s 0.9s both ease",
               }}>
                 {[
@@ -1504,33 +1504,33 @@ export default function TheoryOfEverything() {
                   { axis: "DEPTH", dir: "⊙ in / out ⊕", ends: "INTUITION ↔ DATA", color: "190,140,220", desc: "How deeply you feel it", icon: "○" },
                 ].map((a, i) => (
                   <div key={i} style={{
-                    textAlign: "center", padding: "14px 18px",
+                    textAlign: "center", padding: "10px 14px",
                     border: "1px solid rgba(" + a.color + ",0.15)",
                     borderRadius: 8,
                     background: "rgba(" + a.color + ",0.03)",
-                    minWidth: 170, maxWidth: 220,
+                    minWidth: 155, maxWidth: 200,
                     position: "relative",
                   }}>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 19,
+                      fontFamily: "'Cinzel', serif", fontSize: 15,
                       letterSpacing: "0.3em", color: "rgba(" + a.color + ",0.8)",
-                      marginBottom: 4,
+                      marginBottom: 2,
                     }}>{a.icon} {a.axis}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 19, color: "rgba(" + a.color + ",0.55)",
-                      marginBottom: 6, letterSpacing: 1,
+                      fontSize: 15, color: "rgba(" + a.color + ",0.55)",
+                      marginBottom: 3, letterSpacing: 1,
                     }}>{a.dir}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 19, fontStyle: "italic",
+                      fontSize: 15, fontStyle: "italic",
                       color: "rgba(" + a.color + ",0.7)",
-                      marginBottom: 6,
+                      marginBottom: 3,
                     }}>{a.ends}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 19, color: "rgba(232,232,240,0.65)",
-                      fontStyle: "italic", lineHeight: 1.5,
+                      fontSize: 14, color: "rgba(232,232,240,0.65)",
+                      fontStyle: "italic", lineHeight: 1.4,
                     }}>{a.desc}</div>
                   </div>
                 ))}
