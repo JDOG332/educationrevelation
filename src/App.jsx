@@ -654,16 +654,14 @@ export default function TheoryOfEverything() {
               }}>
                 <div style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(26px, 5.5vw, 44px)",
+                  fontSize: "clamp(28px, 6vw, 48px)",
                   fontStyle: "italic",
+                  fontWeight: 500,
                   letterSpacing: "0.12em",
                   lineHeight: 1.6,
                   animation: "breathe 6s ease-in-out infinite",
-                  background: "linear-gradient(90deg, rgba(255,255,255,0.85) 0%, rgba(220,220,220,0.8) 15%, rgba(160,160,160,0.7) 35%, rgba(100,100,100,0.7) 50%, rgba(60,60,60,0.8) 65%, rgba(20,20,20,0.85) 85%, rgba(0,0,0,0.9) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  filter: "drop-shadow(0 1px 3px rgba(128,128,128,0.3))",
+                  color: "rgba(180,170,150,0.95)",
+                  textShadow: "0 0 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.7), 0 0 48px rgba(0,0,0,0.5), 2px 2px 4px rgba(0,0,0,0.8), -1px -1px 3px rgba(255,255,255,0.3)",
                 }}>now blink them<br />&amp; make a wish</div>
               </div>
             </div>
