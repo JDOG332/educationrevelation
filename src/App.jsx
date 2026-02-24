@@ -1322,20 +1322,20 @@ export default function TheoryOfEverything() {
             width: "100%", maxWidth: 600,
             display: "flex", flexDirection: "column", alignItems: "center",
             position: "relative", zIndex: 1500,
-            padding: "0 24px",
+            padding: "0 16px",
           }}>
 
-            {/* Eyebrow — barely visible, like a memory */}
+            {/* Eyebrow */}
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.9em",
+              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.7em",
               color: "rgba(201,168,76,0.25)",
               textTransform: "uppercase",
               animation: "fadeSlideUp 2s 0.3s both ease",
             }}>six witnesses · one truth</div>
 
-            <div style={{ height: Math.round(13 * PHI) }} />
+            <div style={{ height: Math.round(5 * PHI) }} />
 
-            {/* Title — the word itself is the proof */}
+            {/* Title */}
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(28px, 6vw, 50px)",
@@ -1348,23 +1348,22 @@ export default function TheoryOfEverything() {
               animation: "fadeSlideUp 1.6s 0.5s both ease",
             }}>CONVERGENCE</h2>
 
-            <div style={{ height: Math.round(8 * PHI) }} />
+            <div style={{ height: Math.round(3 * PHI) }} />
 
             {/* Gold thread */}
             <div style={{
-              width: Math.round(80 * PHI), height: 1,
+              width: Math.round(60 * PHI), height: 1,
               background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)",
               animation: "fadeSlideUp 1.4s 0.7s both ease",
             }} />
 
-            <div style={{ height: Math.round(21 * PHI) }} />
+            <div style={{ height: Math.round(8 * PHI) }} />
 
             {/* The six doors — each one a portal, not a button */}
-            {/* 2 columns on mobile, breathable, each card is a WINDOW into its world */}
             <div style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
-              gap: Math.round(10 * PHI),
+              gap: Math.round(6 * PHI),
               width: "100%",
               animation: "fadeSlideUp 1.2s 0.9s both ease",
             }}>
@@ -1380,7 +1379,7 @@ export default function TheoryOfEverything() {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
                 const accentGlow = `rgba(${door.r},${door.g},${door.b},0.04)`;
                 const accentBorder = `rgba(${door.r},${door.g},${door.b},0.08)`;
-                const accentText = `rgba(${door.r},${door.g},${door.b},0.6)`;
+                const accentText = `rgba(${door.r},${door.g},${door.b},0.7)`;
                 const accentShadow = `rgba(${door.r},${door.g},${door.b},0.15)`;
 
                 return (
@@ -1389,7 +1388,7 @@ export default function TheoryOfEverything() {
                     onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); }}
                     style={{
                       position: "relative",
-                      padding: `${Math.round(16 * PHI)}px ${Math.round(8 * PHI)}px ${Math.round(13 * PHI)}px`,
+                      padding: `${Math.round(10 * PHI)}px ${Math.round(5 * PHI)}px ${Math.round(8 * PHI)}px`,
                       borderRadius: 12,
                       background: `radial-gradient(ellipse at 50% 0%, ${accentGlow}, transparent 70%)`,
                       border: `1px solid ${accentBorder}`,
@@ -1410,16 +1409,16 @@ export default function TheoryOfEverything() {
                       e.currentTarget.style.boxShadow = "none";
                     }}
                   >
-                    {/* Top glow bar — like light leaking through the door crack */}
+                    {/* Top glow bar */}
                     <div style={{
                       position: "absolute", top: 0, left: "20%", right: "20%", height: 1,
                       background: `linear-gradient(90deg, transparent, ${accentDim}, transparent)`,
                     }} />
 
-                    {/* Glyph — large, floating, alive */}
+                    {/* Glyph */}
                     <div style={{
-                      fontSize: 50,
-                      marginBottom: Math.round(8 * PHI),
+                      fontSize: 39,
+                      marginBottom: Math.round(5 * PHI),
                       filter: `drop-shadow(0 0 20px ${accentShadow})`,
                       animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
                       lineHeight: 1,
@@ -1428,8 +1427,8 @@ export default function TheoryOfEverything() {
                     {/* Name */}
                     <div style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(24px, 4vw, 31px)",
-                      letterSpacing: "0.2em",
+                      fontSize: "clamp(17px, 3.5vw, 24px)",
+                      letterSpacing: "0.18em",
                       color: accentText,
                       fontWeight: 600,
                     }}>{door.name}</div>
@@ -1437,10 +1436,10 @@ export default function TheoryOfEverything() {
                     {/* Whisper */}
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(24px, 4vw, 31px)",
+                      fontSize: "clamp(15px, 3vw, 19px)",
                       color: "rgba(232,232,240,0.55)",
                       fontStyle: "italic",
-                      marginTop: Math.round(3 * PHI),
+                      marginTop: Math.round(2 * PHI),
                       lineHeight: PHI,
                     }}>{door.sub}</div>
                   </div>
@@ -1448,7 +1447,7 @@ export default function TheoryOfEverything() {
               })}
             </div>
 
-            <div style={{ height: Math.round(34 * PHI) }} />
+            <div style={{ height: Math.round(13 * PHI) }} />
 
             {/* The equation — small, quiet, the proof that it all reduces to one line */}
             <div style={{
