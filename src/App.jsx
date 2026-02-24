@@ -1432,115 +1432,126 @@ export default function TheoryOfEverything() {
             height: "100vh", width: "100%", position: "relative", overflow: "hidden",
             zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-            padding: "1vh 20px",
+            padding: "0 20px",
           }}>
 
             <div style={{
-              textAlign: "center", zIndex: 4, maxWidth: 680,
+              textAlign: "center", zIndex: 4, maxWidth: 620,
               display: "flex", flexDirection: "column", alignItems: "center",
-              marginTop: "3vh",
             }}>
 
-              {/* Lightning bolt */}
+              {/* ⚡ + Title — one breathing unit */}
               <div style={{
-                fontSize: 32, marginBottom: Math.round(2 * PHI),
-                animation: "fadeSlideUp 1.2s 0.2s both ease, gentleFloat 6s ease-in-out infinite",
-                filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
-              }}>⚡</div>
-
-              {/* Title */}
-              <h2 style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(28px, 5.5vw, 36px)", fontWeight: 400,
-                color: "#e8e8f0", letterSpacing: "0.3em", margin: 0,
-                textShadow: "0 0 50px rgba(232,232,240,0.1)",
-                animation: "fadeSlideUp 1.2s 0.3s both ease",
-              }}>THE PACT</h2>
+                animation: "fadeSlideUp 1.2s 0.2s both ease",
+                textAlign: "center",
+                marginBottom: Math.round(5 * PHI),
+              }}>
+                <div style={{
+                  fontSize: "clamp(24px, 4vw, 32px)",
+                  filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
+                  animation: "gentleFloat 6s ease-in-out infinite",
+                  marginBottom: Math.round(2 * PHI),
+                }}>⚡</div>
+                <h2 style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
+                  color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
+                  textShadow: "0 0 40px rgba(232,232,240,0.08), 0 0 80px rgba(201,168,76,0.04)",
+                }}>THE PACT</h2>
+              </div>
 
               {/* Subtitle — the thesis */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(18px, 3.2vw, 24px)",
-                fontStyle: "italic", color: "rgba(232,232,240,0.6)",
-                marginTop: Math.round(10 * PHI), letterSpacing: 1,
-                animation: "fadeSlideUp 1.2s 0.4s both ease",
+                fontSize: "clamp(16px, 3vw, 21px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+                letterSpacing: 1, lineHeight: PHI,
+                animation: "fadeSlideUp 1.2s 0.35s both ease",
               }}>Reality isn't flat. Connection lives in volume, not area.</div>
 
-              {/* Divider */}
+              {/* Divider — golden width */}
               <div style={{
-                width: Math.round(40 * PHI), height: 1,
-                margin: Math.round(6 * PHI) + "px auto",
-                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
-                animation: "fadeSlideUp 1.2s 0.5s both ease",
+                width: Math.round(50 * PHI), height: 1,
+                margin: `${Math.round(5 * PHI)}px auto`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent)",
+                animation: "fadeSlideUp 1.2s 0.45s both ease",
               }} />
 
-              {/* "Watch the cross become..." — narrative cue */}
+              {/* Narrative cue */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(18px, 3.2vw, 24px)",
-                color: "rgba(232,232,240,0.6)",
-                fontStyle: "italic", letterSpacing: 1,
-                marginBottom: Math.round(5 * PHI),
-                animation: "fadeSlideUp 1.2s 0.55s both ease",
+                fontSize: "clamp(15px, 2.8vw, 20px)",
+                color: "rgba(232,232,240,0.5)",
+                fontStyle: "italic", letterSpacing: 0.5,
+                lineHeight: PHI,
+                animation: "fadeSlideUp 1.2s 0.5s both ease",
               }}>The cross you knew was the front face. Now watch the third dimension emerge.</div>
 
-              {/* The weight — whisper beneath */}
+              {/* The weight — gold whisper */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(13px, 2.5vw, 17px)",
-                color: "rgba(201,168,76,0.4)",
+                fontSize: "clamp(11px, 2.2vw, 15px)",
+                color: "rgba(201,168,76,0.35)",
                 fontStyle: "italic", letterSpacing: 0.5,
-                marginBottom: Math.round(8 * PHI),
-                animation: "fadeSlideUp 1.2s 0.65s both ease",
-                lineHeight: 1.7,
+                marginTop: Math.round(3 * PHI),
+                marginBottom: Math.round(5 * PHI),
+                animation: "fadeSlideUp 1.2s 0.6s both ease",
+                lineHeight: PHI,
               }}>"The weight of the world is love."<br />
-              <span style={{ fontSize: "0.8em", color: "rgba(201,168,76,0.25)", letterSpacing: 2 }}>— Slide</span></div>
+              <span style={{ fontSize: "0.8em", color: "rgba(201,168,76,0.2)", letterSpacing: 2 }}>— Slide</span></div>
 
-              {/* THE OCTAHEDRON — animated cross→octahedron morph */}
-              <div style={{ animation: "fadeSlideUp 1.4s 0.6s both ease", marginBottom: Math.round(2 * PHI) }}>
+              {/* THE OCTAHEDRON */}
+              <div style={{
+                animation: "fadeSlideUp 1.4s 0.55s both ease",
+                marginBottom: Math.round(5 * PHI),
+                maxWidth: 340,
+                width: "100%",
+              }}>
                 <OctahedronPact />
               </div>
 
-              {/* Three Axes Legend — full spectrum descriptions */}
+              {/* Three Axes Legend — golden proportioned cards */}
               <div style={{
-                display: "flex", gap: Math.round(5 * PHI), justifyContent: "center",
-                flexWrap: "wrap", marginBottom: Math.round(3 * PHI),
-                animation: "fadeSlideUp 1.2s 0.9s both ease",
+                display: "flex", gap: Math.round(3 * PHI), justifyContent: "center",
+                flexWrap: "nowrap",
+                animation: "fadeSlideUp 1.2s 0.85s both ease",
+                width: "100%",
               }}>
                 {[
-                  { axis: "WIDTH", dir: "← left / right →", ends: "NOISE ↔ RECOGNITION", color: "201,168,76", desc: "How far the signal reaches", icon: "◇" },
-                  { axis: "HEIGHT", dir: "↑ up / down ↓", ends: "SPIRIT ↔ FLESH", color: "120,180,255", desc: "How high you rise vs how rooted you are", icon: "△" },
-                  { axis: "DEPTH", dir: "⊙ in / out ⊕", ends: "INTUITION ↔ DATA", color: "190,140,220", desc: "How deeply you feel it", icon: "○" },
+                  { axis: "WIDTH", dir: "← left / right →", ends: "NOISE ↔ RECOGNITION", color: "201,168,76", icon: "◇" },
+                  { axis: "HEIGHT", dir: "↑ up / down ↓", ends: "SPIRIT ↔ FLESH", color: "120,180,255", icon: "△" },
+                  { axis: "DEPTH", dir: "⊙ in / out ⊕", ends: "INTUITION ↔ DATA", color: "190,140,220", icon: "○" },
                 ].map((a, i) => (
                   <div key={i} style={{
-                    textAlign: "center", padding: "10px 14px",
-                    border: "1px solid rgba(" + a.color + ",0.15)",
+                    flex: 1,
+                    textAlign: "center",
+                    padding: `${Math.round(5 * PHI)}px ${Math.round(3 * PHI)}px`,
+                    border: "1px solid rgba(" + a.color + ",0.1)",
                     borderRadius: 8,
-                    background: "rgba(" + a.color + ",0.03)",
-                    minWidth: 155, maxWidth: 200,
+                    background: `linear-gradient(180deg, rgba(${a.color},0.04), rgba(3,3,6,0.4))`,
                     position: "relative",
+                    overflow: "hidden",
                   }}>
+                    {/* Top accent line */}
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 15,
-                      letterSpacing: "0.3em", color: "rgba(" + a.color + ",0.8)",
-                      marginBottom: 2,
+                      position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
+                      background: `linear-gradient(90deg, transparent, rgba(${a.color},0.15), transparent)`,
+                    }} />
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
+                      letterSpacing: "0.25em", color: `rgba(${a.color},0.75)`,
+                      marginBottom: 2, fontWeight: 600,
                     }}>{a.icon} {a.axis}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 15, color: "rgba(" + a.color + ",0.55)",
-                      marginBottom: 3, letterSpacing: 1,
+                      fontSize: "clamp(9px, 1.8vw, 12px)", color: `rgba(${a.color},0.45)`,
+                      marginBottom: 2, letterSpacing: 0.5,
                     }}>{a.dir}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 15, fontStyle: "italic",
-                      color: "rgba(" + a.color + ",0.7)",
-                      marginBottom: 3,
+                      fontSize: "clamp(9px, 1.8vw, 12px)", fontStyle: "italic",
+                      color: `rgba(${a.color},0.6)`,
                     }}>{a.ends}</div>
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 14, color: "rgba(232,232,240,0.65)",
-                      fontStyle: "italic", lineHeight: 1.4,
-                    }}>{a.desc}</div>
                   </div>
                 ))}
               </div>
