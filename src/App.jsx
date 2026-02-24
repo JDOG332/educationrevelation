@@ -49,7 +49,7 @@ export default function TheoryOfEverything() {
   // Poem zoom-out sequence — timed to meditative breath (~4s per phase)
   // Skip the sequence if the user has already seen it this session
   useEffect(() => {
-    if (depth === 1) {
+    if (depth === 2) {
       if (poemSeen.current) {
         // Already seen — skip straight to the poem
         setPoemPhase(5);
@@ -449,21 +449,22 @@ export default function TheoryOfEverything() {
       <Multiverse
         opacity={
           depth === 0 ? 0
-          : depth === 1 ? (
+          : depth === 1 ? 0
+          : depth === 2 ? (
               poemPhase <= 1 ? 1
               : poemPhase === 2 ? 0.85
               : poemPhase === 3 ? 0.5
               : poemPhase === 4 ? 0.3
               : 0.12
             )
-          : depth <= 2 ? 0.25
+          : depth <= 3 ? 0.25
           : depth <= 4 ? 0.1
           : 0.05
         }
         showTriangles={depth === 0 || depth === 3}
-        showOrbits={depth <= 3 && depth !== 1}
+        showOrbits={depth <= 3 && depth !== 2}
         zoom={
-          depth === 1 ? (
+          depth === 2 ? (
               poemPhase <= 1 ? 45
               : poemPhase === 2 ? 8
               : poemPhase === 3 ? 2.5
@@ -473,7 +474,7 @@ export default function TheoryOfEverything() {
           : 1
         }
         blur={
-          depth === 1 ? (
+          depth === 2 ? (
               poemPhase <= 2 ? 0
               : poemPhase === 3 ? 1.5
               : poemPhase === 4 ? 4
@@ -482,7 +483,7 @@ export default function TheoryOfEverything() {
           : 0
         }
         transitionTiming={
-          depth === 1 ? (
+          depth === 2 ? (
               poemPhase <= 1 ? "none"
               : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1), transform 4s cubic-bezier(0.16,1,0.3,1), filter 3.5s ease"
               : poemPhase === 3 ? "opacity 4s cubic-bezier(0.25,0.1,0.25,1), transform 4.4s cubic-bezier(0.23,1,0.32,1), filter 4s ease"
@@ -510,7 +511,7 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: PURE WHITE — "close your eyes"
+        // Phase 0: PURE WHITE — "close your eyes & click"
         if (phase === 0) {
           return (
             <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }}>
@@ -522,18 +523,12 @@ export default function TheoryOfEverything() {
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 1.5s 0.5s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>close your eyes</div>
-              <div style={{
-                position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
-                color: "rgba(0,0,0,0.15)",
-                animation: "fadeSlideUp 2s 2s both ease",
-              }}>tap</div>
+              }}>close your eyes &amp; click</div>
             </div>
           );
         }
 
-        // Phase 1: PURE BLACK — "now open them"
+        // Phase 1: PURE BLACK — "open your eyes & click"
         if (phase === 1) {
           return (
             <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
@@ -545,13 +540,7 @@ export default function TheoryOfEverything() {
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 1.5s 0.3s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>now open them</div>
-              <div style={{
-                position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
-                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
-                color: "rgba(255,255,255,0.15)",
-                animation: "fadeSlideUp 2s 1.5s both ease",
-              }}>tap</div>
+              }}>open your eyes &amp; click</div>
             </div>
           );
         }
@@ -652,47 +641,31 @@ export default function TheoryOfEverything() {
               </circle>
             </svg>
 
-            {/* "now blink them quickly" — in the TOP grey triangle, breathing */}
+            {/* "now blink them & make a wish" — centered on the prism */}
             <div style={{
-              position: "absolute", top: "14%", left: 0, width: "100%",
-              textAlign: "center",
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
               pointerEvents: "none", userSelect: "none",
-              animation: "fadeSlideUp 1.5s 0.5s both ease",
             }}>
               <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(28px, 6vw, 50px)",
-                fontStyle: "italic",
-                letterSpacing: "0.12em",
-                lineHeight: 1.2,
-                animation: "breathe 6s ease-in-out infinite",
-                background: "linear-gradient(90deg, rgba(220,220,220,0.9) 0%, rgba(180,180,180,0.8) 25%, rgba(120,120,120,0.75) 50%, rgba(70,70,70,0.8) 75%, rgba(30,30,30,0.9) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))",
-              }}>now blink them quickly</div>
-            </div>
-
-            {/* "& open your mind's eye to dream" — bottom grey triangle */}
-            <div style={{
-              position: "absolute", bottom: "14%", left: 0, width: "100%",
-              textAlign: "center",
-              pointerEvents: "none", userSelect: "none",
-              animation: "fadeSlideUp 2s 1.5s both ease",
-            }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(20px, 4vw, 34px)",
-                fontStyle: "italic",
-                letterSpacing: "0.1em",
-                animation: "breathe 8s ease-in-out 1s infinite",
-                background: "linear-gradient(90deg, rgba(210,210,210,0.85) 0%, rgba(160,160,160,0.75) 30%, rgba(90,90,90,0.75) 60%, rgba(40,40,40,0.85) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.12))",
-              }}>&amp; open your mind's eye to dream</div>
+                animation: "fadeSlideUp 1.5s 0.5s both ease",
+                textAlign: "center",
+                padding: "0 24px",
+              }}>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(26px, 5.5vw, 44px)",
+                  fontStyle: "italic",
+                  letterSpacing: "0.12em",
+                  lineHeight: 1.6,
+                  animation: "breathe 6s ease-in-out infinite",
+                  background: "linear-gradient(90deg, rgba(220,220,220,0.9) 0%, rgba(180,180,180,0.85) 25%, rgba(120,120,120,0.8) 50%, rgba(70,70,70,0.85) 75%, rgba(30,30,30,0.9) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))",
+                }}>now blink them<br />&amp; make a wish</div>
+              </div>
             </div>
 
             <div style={{
@@ -706,8 +679,8 @@ export default function TheoryOfEverything() {
       })()}
 
 
-      {/* ===== DEPTH 1 — THE POEM ===== */}
-      {depth === 1 && (
+      {/* ===== DEPTH 2 — THE POEM ===== */}
+      {depth === 2 && (
         <div onClick={() => { if (poemPhase >= 5 || poemSeen.current) goDeeper(); }} style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "auto", overflowX: "hidden",
           cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 5000,
@@ -1219,8 +1192,8 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE DREAM — 729-BODY MULTIVERSE ===== */}
-      {depth === 2 && (() => {
+      {/* ===== DEPTH 1 — THE DREAM — 729-BODY MULTIVERSE ===== */}
+      {depth === 1 && (() => {
         // 9³ = 729 bodies. Hierarchical gravity.
         // Level 0: 9 super-clusters orbit the center
         // Level 1: 9 clusters orbit each super-cluster
