@@ -1584,47 +1584,13 @@ export default function TheoryOfEverything() {
           {/* Content */}
           <div style={{
             textAlign: "center",
-            width: "100%", maxWidth: 600,
+            width: "100%", maxWidth: 520,
             display: "flex", flexDirection: "column", alignItems: "center",
             position: "relative", zIndex: 1500,
             padding: "0 16px",
           }}>
 
-            {/* Eyebrow */}
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 15, letterSpacing: "0.7em",
-              color: "rgba(201,168,76,0.25)",
-              textTransform: "uppercase",
-              animation: "fadeSlideUp 2s 0.3s both ease",
-            }}>six witnesses · one truth</div>
-
-            <div style={{ height: Math.round(3 * PHI) }} />
-
-            {/* Title */}
-            <h2 style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(22px, 5vw, 40px)",
-              fontWeight: 400,
-              letterSpacing: "0.2em",
-              margin: 0,
-              background: "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(201,168,76,0.6) 100%)",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0 0 30px rgba(201,168,76,0.08))",
-              animation: "fadeSlideUp 1.6s 0.5s both ease",
-            }}>THE CONVERGENCE CHAMBER</h2>
-
-            <div style={{ height: Math.round(2 * PHI) }} />
-
-            {/* Gold thread */}
-            <div style={{
-              width: Math.round(60 * PHI), height: 1,
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)",
-              animation: "fadeSlideUp 1.4s 0.7s both ease",
-            }} />
-
-            <div style={{ height: Math.round(5 * PHI) }} />
-
-            {/* The six doors — PYRAMID: 1 top, 2 middle, 3 base — stacked on equation foundation */}
+            {/* The six doors — PYRAMID with title as apex crown */}
             {(() => {
               const doors = [
                 { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "the truth, simply", r: 232, g: 232, b: 240 },
@@ -1634,19 +1600,18 @@ export default function TheoryOfEverything() {
                 { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "filter the noise", r: 79, g: 195, b: 247 },
                 { key: "ancient", glyph: "🔺", name: "ANCIENT PROOF", sub: "every tradition drew it", r: 190, g: 140, b: 220 },
               ];
-              // Pyramid rows: top=1, mid=2, base=3
               const rows = [
                 [doors[0]],
                 [doors[1], doors[2]],
                 [doors[3], doors[4], doors[5]],
               ];
-              const cardGap = Math.round(4 * PHI);
+              const cardGap = Math.round(3 * PHI);
 
               const renderCard = (door, i, totalDelay) => {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
-                const accentGlow = `rgba(${door.r},${door.g},${door.b},0.04)`;
-                const accentBorder = `rgba(${door.r},${door.g},${door.b},0.08)`;
-                const accentText = `rgba(${door.r},${door.g},${door.b},0.7)`;
+                const accentGlow = `rgba(${door.r},${door.g},${door.b},0.05)`;
+                const accentBorder = `rgba(${door.r},${door.g},${door.b},0.1)`;
+                const accentText = `rgba(${door.r},${door.g},${door.b},0.75)`;
                 const accentShadow = `rgba(${door.r},${door.g},${door.b},0.15)`;
                 return (
                   <div
@@ -1657,52 +1622,53 @@ export default function TheoryOfEverything() {
                       aspectRatio: "1 / 1",
                       display: "flex", flexDirection: "column",
                       alignItems: "center", justifyContent: "center",
-                      borderRadius: 10,
-                      background: `radial-gradient(ellipse at 50% 0%, ${accentGlow}, transparent 70%)`,
+                      borderRadius: 8,
+                      background: `linear-gradient(180deg, ${accentGlow}, rgba(3,3,6,0.6))`,
                       border: `1px solid ${accentBorder}`,
                       cursor: "pointer",
                       overflow: "hidden",
                       transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.5s",
                       animation: `fadeSlideUp 0.7s ${totalDelay}s both ease`,
                       textAlign: "center",
-                      padding: "8px",
+                      padding: "6px",
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.transform = "translateY(-4px)";
-                      e.currentTarget.style.borderColor = `rgba(${door.r},${door.g},${door.b},0.25)`;
-                      e.currentTarget.style.boxShadow = `0 8px 32px ${accentShadow}, inset 0 1px 0 rgba(255,255,255,0.03)`;
+                      e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                      e.currentTarget.style.borderColor = `rgba(${door.r},${door.g},${door.b},0.3)`;
+                      e.currentTarget.style.boxShadow = `0 6px 24px ${accentShadow}, 0 0 40px rgba(${door.r},${door.g},${door.b},0.06), inset 0 1px 0 rgba(255,255,255,0.04)`;
                     }}
                     onMouseLeave={e => {
-                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.transform = "translateY(0) scale(1)";
                       e.currentTarget.style.borderColor = accentBorder;
                       e.currentTarget.style.boxShadow = "none";
                     }}
                   >
                     <div style={{
-                      position: "absolute", top: 0, left: "20%", right: "20%", height: 1,
+                      position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
                       background: `linear-gradient(90deg, transparent, ${accentDim}, transparent)`,
                     }} />
                     <div style={{
-                      fontSize: 24,
+                      fontSize: "clamp(20px, 4.5vw, 28px)",
                       marginBottom: Math.round(2 * PHI),
-                      filter: `drop-shadow(0 0 16px ${accentShadow})`,
+                      filter: `drop-shadow(0 0 12px ${accentShadow})`,
                       animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
                       lineHeight: 1,
                     }}>{door.glyph}</div>
                     <div style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(10px, 2.2vw, 14px)",
-                      letterSpacing: "0.12em",
+                      fontSize: "clamp(8px, 2vw, 13px)",
+                      letterSpacing: "0.1em",
                       color: accentText,
                       fontWeight: 600,
+                      lineHeight: 1.2,
                     }}>{door.name}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(9px, 2vw, 12px)",
-                      color: "rgba(232,232,240,0.5)",
+                      fontSize: "clamp(7px, 1.8vw, 11px)",
+                      color: "rgba(232,232,240,0.4)",
                       fontStyle: "italic",
                       marginTop: 2,
-                      lineHeight: 1.4,
+                      lineHeight: 1.3,
                     }}>{door.sub}</div>
                   </div>
                 );
@@ -1712,50 +1678,87 @@ export default function TheoryOfEverything() {
                 <div style={{
                   width: "100%",
                   display: "flex", flexDirection: "column", alignItems: "center",
-                  gap: cardGap,
-                  animation: "fadeSlideUp 1.2s 0.9s both ease",
+                  gap: 0,
                 }}>
-                  {/* Row 1: 1 card — the capstone */}
+                  {/* ★ THE APEX — title IS the capstone */}
+                  <div style={{
+                    animation: "fadeSlideUp 1.2s 0.3s both ease",
+                    marginBottom: cardGap,
+                    textAlign: "center",
+                  }}>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 12px)", letterSpacing: "0.5em",
+                      color: "rgba(201,168,76,0.3)",
+                      textTransform: "uppercase",
+                      marginBottom: Math.round(2 * PHI),
+                    }}>six witnesses · one truth</div>
+                    <div style={{
+                      fontSize: "clamp(24px, 5vw, 36px)",
+                      marginBottom: Math.round(2 * PHI),
+                      filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
+                      animation: "gentleFloat 10s ease-in-out infinite",
+                    }}>🔺</div>
+                    <h2 style={{
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: "clamp(16px, 4vw, 28px)",
+                      fontWeight: 400,
+                      letterSpacing: "0.18em",
+                      margin: 0,
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(201,168,76,0.5) 100%)",
+                      WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                      filter: "drop-shadow(0 0 20px rgba(201,168,76,0.06))",
+                    }}>THE CONVERGENCE<br />CHAMBER</h2>
+                    <div style={{
+                      width: Math.round(40 * PHI), height: 1,
+                      margin: `${Math.round(3 * PHI)}px auto 0`,
+                      background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+                    }} />
+                  </div>
+
+                  {/* Row 1: 1 card — capstone stone */}
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr",
-                    gap: cardGap, width: `calc(33.33% - ${cardGap}px)`,
+                    gap: cardGap, width: "30%",
+                    marginBottom: cardGap,
                   }}>
-                    {rows[0].map((d, i) => renderCard(d, i, 0.9))}
+                    {rows[0].map((d, i) => renderCard(d, i, 0.7))}
                   </div>
+
                   {/* Row 2: 2 cards */}
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr 1fr",
-                    gap: cardGap, width: `calc(66.66%)`,
+                    gap: cardGap, width: "62%",
+                    marginBottom: cardGap,
                   }}>
-                    {rows[1].map((d, i) => renderCard(d, i, 1.05 + i * 0.1))}
+                    {rows[1].map((d, i) => renderCard(d, i, 0.9 + i * 0.1))}
                   </div>
-                  {/* Row 3: 3 cards — the base */}
+
+                  {/* Row 3: 3 cards — the base stones */}
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr 1fr 1fr",
-                    gap: cardGap, width: "100%",
+                    gap: cardGap, width: "95%",
+                    marginBottom: cardGap,
                   }}>
-                    {rows[2].map((d, i) => renderCard(d, i, 1.25 + i * 0.1))}
+                    {rows[2].map((d, i) => renderCard(d, i, 1.1 + i * 0.1))}
                   </div>
                 </div>
               );
             })()}
 
-            <div style={{ height: Math.round(5 * PHI) }} />
-
           </div>
 
-          {/* The equation — the FOUNDATION STONE the pyramid rests on */}
+          {/* The equation — the FOUNDATION STONE the temple rests on */}
           <div style={{
-            width: "100%", maxWidth: 600,
+            width: "100%", maxWidth: 520,
             padding: "0 16px",
             boxSizing: "border-box",
-            animation: "sacredReveal 1.8s 1.6s both ease",
+            animation: "sacredReveal 1.8s 1.4s both ease",
             position: "relative", zIndex: 1500,
           }}>
-            <TheEquation size="md" showLabel={false} breathing />
+            <TheEquation size="sm" showLabel={false} breathing minimal />
           </div>
 
-          <div style={{ height: Math.round(8 * PHI) }} />
+          <div style={{ height: Math.round(5 * PHI) }} />
         </div>
       )}
 
