@@ -1207,9 +1207,12 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE DREAM — MULTIVERSE RECURSION ===== */}
+      {/* ===== DEPTH 2 — THE DREAM — 729-BODY MULTIVERSE ===== */}
       {depth === 2 && (() => {
-        // Next-level fractal: 81 bodies (9 clusters × 9 bodies each)
+        // 9³ = 729 bodies. Hierarchical gravity.
+        // Level 0: 9 super-clusters orbit the center
+        // Level 1: 9 clusters orbit each super-cluster
+        // Level 2: 9 bodies orbit each cluster
         // Same equation at every scale: Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²
         const CLUSTER_COLORS = [
           "#3a3a5c", "#7b68ee", "#c9a84c", "#e05050", "#e8e8f0",
@@ -1218,7 +1221,7 @@ export default function TheoryOfEverything() {
         const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
         const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI * PHI, 2.0, 1.8, 1.4, 1.0];
 
-        function DreamMultiverse() {
+        function DreamMultiverse729() {
           const canvasRef = useRef(null);
           const stateRef = useRef(null);
           const frameRef = useRef(null);
@@ -1231,6 +1234,31 @@ export default function TheoryOfEverything() {
             return r;
           }
 
+          function simLevel(bodies, dt, softening, damping, ax, ay, pull) {
+            const N = bodies.length;
+            const fx = new Float64Array(N), fy = new Float64Array(N);
+            for (let i = 0; i < N; i++) {
+              for (let j = i + 1; j < N; j++) {
+                const dx = bodies[j].x - bodies[i].x;
+                const dy = bodies[j].y - bodies[i].y;
+                const distSq = dx*dx + dy*dy + softening*softening;
+                const dist = Math.sqrt(distSq);
+                const R12 = getR12(bodies[i].id, bodies[j].id);
+                const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
+                fx[i] += psi*dx/dist; fy[i] += psi*dy/dist;
+                fx[j] -= psi*dx/dist; fy[j] -= psi*dy/dist;
+              }
+              fx[i] += (ax - bodies[i].x) * pull * bodies[i].cEff;
+              fy[i] += (ay - bodies[i].y) * pull * bodies[i].cEff;
+            }
+            for (let i = 0; i < N; i++) {
+              bodies[i].vx = (bodies[i].vx + fx[i]/bodies[i].cEff*dt) * damping;
+              bodies[i].vy = (bodies[i].vy + fy[i]/bodies[i].cEff*dt) * damping;
+              bodies[i].x += bodies[i].vx*dt;
+              bodies[i].y += bodies[i].vy*dt;
+            }
+          }
+
           useEffect(() => {
             const canvas = canvasRef.current;
             if (!canvas) return;
@@ -1240,175 +1268,173 @@ export default function TheoryOfEverything() {
             function resize() {
               const W = canvas.parentElement?.clientWidth || window.innerWidth;
               const H = canvas.parentElement?.clientHeight || window.innerHeight;
-              canvas.width = W * dpr;
-              canvas.height = H * dpr;
-              canvas.style.width = W + "px";
-              canvas.style.height = H + "px";
+              canvas.width = W * dpr; canvas.height = H * dpr;
+              canvas.style.width = W + "px"; canvas.style.height = H + "px";
               ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
               return { W, H };
             }
 
             let { W, H } = resize();
-            const CX = W / 2, CY = H / 2;
-            const BASE_R = Math.min(W, H) * 0.38;
+            const CX = W/2, CY = H/2;
+            const BASE_R = Math.min(W, H) * 0.40;
 
+            // Initialize 3-tier hierarchy: 9 × 9 × 9 = 729
             if (!stateRef.current) {
-              // 9 clusters, each containing 9 bodies = 81 total
-              const clusters = Array.from({ length: 9 }, (_, ci) => {
-                const cAngle = (ci / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.3;
-                const cR = ci === 4 ? 0 : BASE_R * (0.45 + Math.random() * 0.4);
-                const cx = CX + Math.cos(cAngle) * cR;
-                const cy = CY + Math.sin(cAngle) * cR;
-                const cSpeed = ci === 4 ? 0 : Math.sqrt(getR12(ci, 4) * C_EFF[ci] * C_EFF[4] / (cR * 2)) * 0.06;
-                const cvAngle = cAngle + Math.PI / 2;
+              const supers = Array.from({ length: 9 }, (_, si) => {
+                const angle = (si/9)*Math.PI*2 + (Math.random()-0.5)*0.3;
+                const r = si === 4 ? 0 : BASE_R * (0.5 + Math.random()*0.35);
+                const speed = si === 4 ? 0 : Math.sqrt(getR12(si,4)*C_EFF[si]*C_EFF[4]*5/(Math.max(r,1)*2))*0.05;
+                const va = angle + Math.PI/2;
+                const sx = CX + Math.cos(angle)*r, sy = CY + Math.sin(angle)*r;
 
-                const bodies = Array.from({ length: 9 }, (_, bi) => {
-                  const bAngle = (bi / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
-                  const bR = bi === 4 ? 0 : (25 + Math.random() * 20) * (ci === 4 ? 1.3 : 0.9);
-                  const bSpeed = bi === 4 ? 0 : Math.sqrt(getR12(bi, 4) * C_EFF[bi] * C_EFF[4] / Math.max(bR, 1)) * 0.15;
-                  const bvAngle = bAngle + Math.PI / 2;
+                // 9 clusters per super-cluster
+                const clusters = Array.from({ length: 9 }, (_, ci) => {
+                  const ca = (ci/9)*Math.PI*2 + (Math.random()-0.5)*0.4;
+                  const cr = ci === 4 ? 0 : (si === 4 ? 40 : 28) * (0.7 + Math.random()*0.5);
+                  const cspeed = ci === 4 ? 0 : Math.sqrt(getR12(ci,4)*C_EFF[ci]*C_EFF[4]*3/(Math.max(cr,1)*2))*0.12;
+                  const cva = ca + Math.PI/2;
+                  const ccx = sx + Math.cos(ca)*cr, ccy = sy + Math.sin(ca)*cr;
+
+                  // 9 bodies per cluster
+                  const bodies = Array.from({ length: 9 }, (_, bi) => {
+                    const ba = (bi/9)*Math.PI*2 + (Math.random()-0.5)*0.5;
+                    const br = bi === 4 ? 0 : (8 + Math.random()*8) * (si===4&&ci===4 ? 1.2 : 0.7);
+                    const bspeed = bi === 4 ? 0 : Math.sqrt(getR12(bi,4)*C_EFF[bi]*C_EFF[4]/(Math.max(br,1)))*0.18;
+                    const bva = ba + Math.PI/2;
+                    return {
+                      x: ccx + Math.cos(ba)*br, y: ccy + Math.sin(ba)*br,
+                      vx: Math.cos(bva)*bspeed, vy: Math.sin(bva)*bspeed,
+                      cEff: C_EFF[bi], id: bi,
+                      radius: (0.5 + C_EFF[bi]*0.25) * (si===4&&ci===4&&bi===4 ? 2.5 : 1),
+                    };
+                  });
+
                   return {
-                    x: cx + Math.cos(bAngle) * bR,
-                    y: cy + Math.sin(bAngle) * bR,
-                    vx: Math.cos(bvAngle) * bSpeed,
-                    vy: Math.sin(bvAngle) * bSpeed,
-                    cEff: C_EFF[bi], id: bi,
-                    radius: (1.2 + C_EFF[bi] * 0.5) * (ci === 4 && bi === 4 ? 1.8 : 1),
+                    x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed,
+                    cEff: C_EFF[ci]*3, id: ci, bodies,
                   };
                 });
 
                 return {
-                  x: cx, y: cy,
-                  vx: Math.cos(cvAngle) * cSpeed,
-                  vy: Math.sin(cvAngle) * cSpeed,
-                  cEff: C_EFF[ci] * 4, id: ci,
-                  bodies,
+                  x: sx, y: sy, vx: Math.cos(va)*speed, vy: Math.sin(va)*speed,
+                  cEff: C_EFF[si]*5, id: si, clusters,
                 };
               });
-              stateRef.current = { clusters };
+              stateRef.current = { supers };
             }
 
             const state = stateRef.current;
-
-            function sim(bodies, dt, softening, damping, anchorX, anchorY, pull) {
-              const N = bodies.length;
-              const fx = new Float64Array(N), fy = new Float64Array(N);
-              for (let i = 0; i < N; i++) {
-                for (let j = i + 1; j < N; j++) {
-                  const dx = bodies[j].x - bodies[i].x;
-                  const dy = bodies[j].y - bodies[i].y;
-                  const distSq = dx*dx + dy*dy + softening*softening;
-                  const dist = Math.sqrt(distSq);
-                  const R12 = getR12(bodies[i].id, bodies[j].id);
-                  const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
-                  fx[i] += psi * dx / dist; fy[i] += psi * dy / dist;
-                  fx[j] -= psi * dx / dist; fy[j] -= psi * dy / dist;
-                }
-                fx[i] += (anchorX - bodies[i].x) * pull * bodies[i].cEff;
-                fy[i] += (anchorY - bodies[i].y) * pull * bodies[i].cEff;
-              }
-              for (let i = 0; i < N; i++) {
-                bodies[i].vx = (bodies[i].vx + fx[i] / bodies[i].cEff * dt) * damping;
-                bodies[i].vy = (bodies[i].vy + fy[i] / bodies[i].cEff * dt) * damping;
-                bodies[i].x += bodies[i].vx * dt;
-                bodies[i].y += bodies[i].vy * dt;
-              }
-            }
+            let time = 0;
 
             function simulate() {
-              // Cluster-level gravity
-              sim(state.clusters, 0.3, 50, 0.9997, CX, CY, 0.00006);
-              // Body-level gravity within each cluster
-              for (const c of state.clusters) {
-                sim(c.bodies, 0.2, 8, 0.9993, c.x, c.y, 0.001);
+              // Level 0: super-clusters orbit center
+              simLevel(state.supers, 0.3, 55, 0.9997, CX, CY, 0.00005);
+              // Level 1: clusters orbit their super-cluster
+              for (const sc of state.supers) {
+                simLevel(sc.clusters, 0.25, 14, 0.9994, sc.x, sc.y, 0.0004);
+              }
+              // Level 2: bodies orbit their cluster
+              for (const sc of state.supers) {
+                for (const cl of sc.clusters) {
+                  simLevel(cl.bodies, 0.2, 4, 0.999, cl.x, cl.y, 0.0015);
+                }
               }
             }
 
-            let time = 0;
             function draw() {
-              time += 0.005;
+              time += 0.004;
               ctx.clearRect(0, 0, W, H);
 
-              // Draw mirror pair connections between clusters (faint triangles through center)
+              // Level 0: Super-cluster mirror triangles (barely visible — cosmic web)
               for (const [a, b] of MIRROR_PAIRS) {
-                const ca = state.clusters[a], cb = state.clusters[b], cm = state.clusters[4];
+                const sa = state.supers[a], sb = state.supers[b], sm = state.supers[4];
                 ctx.beginPath();
-                ctx.moveTo(ca.x, ca.y); ctx.lineTo(cm.x, cm.y); ctx.lineTo(cb.x, cb.y);
+                ctx.moveTo(sa.x, sa.y); ctx.lineTo(sm.x, sm.y); ctx.lineTo(sb.x, sb.y);
                 ctx.closePath();
-                ctx.fillStyle = "rgba(201,168,76,0.006)";
-                ctx.strokeStyle = "rgba(201,168,76,0.02)";
+                ctx.fillStyle = "rgba(201,168,76,0.004)";
+                ctx.strokeStyle = "rgba(201,168,76,0.012)";
                 ctx.lineWidth = 0.3; ctx.fill(); ctx.stroke();
               }
 
-              // Draw each cluster
-              for (let ci = 0; ci < 9; ci++) {
-                const cluster = state.clusters[ci];
-                const cColor = CLUSTER_COLORS[ci];
+              for (let si = 0; si < 9; si++) {
+                const sc = state.supers[si];
+                const sColor = CLUSTER_COLORS[si];
 
-                // Cluster halo
-                const hR = ci === 4 ? 70 : 48;
-                const hg = ctx.createRadialGradient(cluster.x, cluster.y, 0, cluster.x, cluster.y, hR);
-                hg.addColorStop(0, cColor + "0a");
-                hg.addColorStop(0.6, cColor + "03");
-                hg.addColorStop(1, cColor + "00");
-                ctx.beginPath(); ctx.arc(cluster.x, cluster.y, hR, 0, Math.PI * 2);
-                ctx.fillStyle = hg; ctx.fill();
+                // Super-cluster halo — outermost glow
+                const shR = si === 4 ? 85 : 55;
+                const shg = ctx.createRadialGradient(sc.x, sc.y, 0, sc.x, sc.y, shR);
+                shg.addColorStop(0, sColor + "06");
+                shg.addColorStop(0.5, sColor + "02");
+                shg.addColorStop(1, sColor + "00");
+                ctx.beginPath(); ctx.arc(sc.x, sc.y, shR, 0, Math.PI*2);
+                ctx.fillStyle = shg; ctx.fill();
 
-                // Internal mirror triangles
-                for (const [a, b] of MIRROR_PAIRS) {
-                  const ba = cluster.bodies[a], bb = cluster.bodies[b], bm = cluster.bodies[4];
-                  ctx.beginPath();
-                  ctx.moveTo(ba.x, ba.y); ctx.lineTo(bm.x, bm.y); ctx.lineTo(bb.x, bb.y);
-                  ctx.closePath();
-                  ctx.fillStyle = cColor + "04";
-                  ctx.strokeStyle = cColor + "0a";
-                  ctx.lineWidth = 0.2; ctx.fill(); ctx.stroke();
-                }
+                for (let ci = 0; ci < 9; ci++) {
+                  const cl = sc.clusters[ci];
+                  const cColor = CLUSTER_COLORS[ci];
 
-                // Individual bodies
-                for (let bi = 0; bi < 9; bi++) {
-                  const body = cluster.bodies[bi];
-                  const bColor = CLUSTER_COLORS[bi];
-                  const isMoon = bi === 4;
-                  const isCoreMoon = ci === 4 && bi === 4;
+                  // Cluster halo — mid-level glow
+                  const chR = ci === 4 ? 16 : 11;
+                  const chg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, chR);
+                  chg.addColorStop(0, cColor + "08");
+                  chg.addColorStop(1, cColor + "00");
+                  ctx.beginPath(); ctx.arc(cl.x, cl.y, chR, 0, Math.PI*2);
+                  ctx.fillStyle = chg; ctx.fill();
 
-                  // Body glow
-                  const glowR = body.radius * (isCoreMoon ? 8 : isMoon ? 5 : 3);
-                  const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
-                  bg.addColorStop(0, bColor + (isCoreMoon ? "25" : isMoon ? "1a" : "12"));
-                  bg.addColorStop(0.5, bColor + "05");
-                  bg.addColorStop(1, bColor + "00");
-                  ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI * 2);
-                  ctx.fillStyle = bg; ctx.fill();
+                  // Internal mirror connections (subtle)
+                  if (si === 4 || ci === 4) {
+                    for (const [a, b] of MIRROR_PAIRS) {
+                      const ba = cl.bodies[a], bb = cl.bodies[b], bm = cl.bodies[4];
+                      ctx.beginPath();
+                      ctx.moveTo(ba.x, ba.y); ctx.lineTo(bm.x, bm.y); ctx.lineTo(bb.x, bb.y);
+                      ctx.closePath();
+                      ctx.fillStyle = cColor + "02";
+                      ctx.strokeStyle = cColor + "06";
+                      ctx.lineWidth = 0.15; ctx.fill(); ctx.stroke();
+                    }
+                  }
 
-                  // Body core
-                  ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI * 2);
-                  const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
-                  cg.addColorStop(0, isCoreMoon ? "#ffffff" : bColor);
-                  cg.addColorStop(1, bColor + "40");
-                  ctx.fillStyle = cg; ctx.fill();
+                  // Individual bodies — the deepest level
+                  for (let bi = 0; bi < 9; bi++) {
+                    const body = cl.bodies[bi];
+                    const bColor = CLUSTER_COLORS[bi];
+                    const isMoon = bi === 4;
+                    const isCoreMoon = si === 4 && ci === 4 && bi === 4;
+                    const isMidMoon = (si === 4 || ci === 4) && bi === 4;
+
+                    // Glow — size depends on hierarchy depth
+                    const glowR = body.radius * (isCoreMoon ? 10 : isMidMoon ? 5 : isMoon ? 3.5 : 2.2);
+                    const glowAlpha = isCoreMoon ? "2a" : isMidMoon ? "18" : isMoon ? "10" : "0a";
+                    const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
+                    bg.addColorStop(0, bColor + glowAlpha);
+                    bg.addColorStop(0.5, bColor + "04");
+                    bg.addColorStop(1, bColor + "00");
+                    ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI*2);
+                    ctx.fillStyle = bg; ctx.fill();
+
+                    // Core dot
+                    ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI*2);
+                    const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
+                    cg.addColorStop(0, isCoreMoon ? "#ffffff" : isMidMoon ? "#e8e8f0" : bColor);
+                    cg.addColorStop(1, bColor + "30");
+                    ctx.fillStyle = cg; ctx.fill();
+                  }
                 }
               }
 
-              // Equation overlay pulsing
-              const eqAlpha = 0.25 + Math.sin(time * 2) * 0.08;
-              ctx.fillStyle = `rgba(232,232,240,${eqAlpha})`;
-              ctx.font = `italic ${Math.round(Math.min(W, H) * 0.025)}px 'Cormorant Garamond', serif`;
+              // Equation overlay
+              const ea = 0.22 + Math.sin(time*2)*0.06;
+              ctx.fillStyle = `rgba(232,232,240,${ea})`;
+              ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
               ctx.textAlign = "center";
-              ctx.fillText("Ψ = R₁₂ × (C_eff · D̂) / dist²", CX, H - 28);
-
-              ctx.fillStyle = "rgba(232,232,240,0.12)";
-              ctx.font = `${Math.round(8)}px 'Cinzel', serif`;
-              ctx.letterSpacing = "3px";
-              ctx.fillText("SAME EQUATION · EVERY SCALE", CX, H - 12);
+              ctx.fillText("Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²", CX, H - 30);
+              ctx.fillStyle = "rgba(232,232,240,0.1)";
+              ctx.font = `${Math.round(7)}px 'Cinzel', serif`;
+              ctx.fillText("SAME EQUATION  ·  EVERY SCALE  ·  729 WORLDS", CX, H - 14);
             }
 
-            function loop() {
-              simulate(); draw();
-              frameRef.current = requestAnimationFrame(loop);
-            }
+            function loop() { simulate(); draw(); frameRef.current = requestAnimationFrame(loop); }
             loop();
-
             const handleResize = () => { ({ W, H } = resize()); };
             window.addEventListener("resize", handleResize);
             return () => {
@@ -1425,9 +1451,9 @@ export default function TheoryOfEverything() {
             height: "100vh", width: "100%", position: "relative",
             cursor: "pointer", zIndex: 1500, overflow: "hidden",
           }}>
-            {/* Multiverse canvas — fills the whole page */}
+            {/* 729-body multiverse canvas */}
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
-              <DreamMultiverse />
+              <DreamMultiverse729 />
             </div>
 
             {/* Text overlay */}
@@ -1436,15 +1462,14 @@ export default function TheoryOfEverything() {
               display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
               pointerEvents: "none", zIndex: 10,
             }}>
-              {/* The quote */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(20px, 4.5vw, 34px)",
                 fontStyle: "italic", fontWeight: 300,
-                color: "rgba(232,232,240,0.55)",
+                color: "rgba(232,232,240,0.6)",
                 textAlign: "center", maxWidth: 520,
                 lineHeight: PHI, letterSpacing: 1.5,
-                textShadow: "0 0 40px rgba(0,0,0,0.8), 0 0 80px rgba(0,0,0,0.6)",
+                textShadow: "0 0 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)",
                 animation: "fadeSlideUp 2s 0.3s both ease",
                 padding: "0 24px",
               }}>
@@ -1453,11 +1478,8 @@ export default function TheoryOfEverything() {
 
               <div style={{ height: Math.round(34 * PHI) }} />
 
-              {/* Scale indicator */}
-              <div style={{
-                animation: "fadeSlideUp 2s 1.2s both ease",
-                textAlign: "center",
-              }}>
+              {/* Scale indicator — 729 highlighted */}
+              <div style={{ animation: "fadeSlideUp 2s 1.2s both ease", textAlign: "center" }}>
                 <div style={{
                   display: "flex", gap: Math.round(13 * PHI), justifyContent: "center",
                   flexWrap: "wrap", padding: "0 20px",
@@ -1465,25 +1487,24 @@ export default function TheoryOfEverything() {
                   {[
                     { n: "9⁰ = 1", label: "UNIVERSE", active: false },
                     { n: "9¹ = 9", label: "CLUSTERS", active: false },
-                    { n: "9² = 81", label: "WORLDS", active: true },
-                    { n: "9³ = 729", label: "DREAMS", active: false },
+                    { n: "9² = 81", label: "WORLDS", active: false },
+                    { n: "9³ = 729", label: "DREAMS", active: true },
                   ].map((level, i) => (
                     <div key={i} style={{
                       textAlign: "center",
-                      opacity: level.active ? 1 : 0.35,
-                      transition: "opacity 0.5s",
+                      opacity: level.active ? 1 : 0.3,
                     }}>
                       <div style={{
                         fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: level.active ? "clamp(18px, 3vw, 24px)" : "clamp(12px, 2vw, 16px)",
-                        color: level.active ? "rgba(206,147,216,0.7)" : "rgba(232,232,240,0.3)",
+                        fontSize: level.active ? "clamp(20px, 3.5vw, 28px)" : "clamp(12px, 2vw, 16px)",
+                        color: level.active ? "rgba(206,147,216,0.8)" : "rgba(232,232,240,0.25)",
                         fontWeight: level.active ? 600 : 300,
-                        textShadow: level.active ? "0 0 20px rgba(206,147,216,0.15)" : "none",
+                        textShadow: level.active ? "0 0 25px rgba(206,147,216,0.2), 0 0 60px rgba(206,147,216,0.08)" : "none",
                       }}>{level.n}</div>
                       <div style={{
                         fontFamily: "'Cinzel', serif",
                         fontSize: 7, letterSpacing: "0.2em",
-                        color: level.active ? "rgba(206,147,216,0.45)" : "rgba(232,232,240,0.15)",
+                        color: level.active ? "rgba(206,147,216,0.5)" : "rgba(232,232,240,0.12)",
                         marginTop: 4,
                       }}>{level.label}</div>
                     </div>
@@ -1493,11 +1514,10 @@ export default function TheoryOfEverything() {
 
               <div style={{ height: Math.round(21 * PHI) }} />
 
-              {/* Self-similarity equation */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(13px, 2.2vw, 17px)",
-                fontStyle: "italic", color: "rgba(232,232,240,0.2)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.18)",
                 letterSpacing: 2,
                 animation: "fadeSlideUp 2s 1.8s both ease",
                 textShadow: "0 0 30px rgba(0,0,0,0.8)",
@@ -1506,7 +1526,7 @@ export default function TheoryOfEverything() {
               </div>
             </div>
 
-            {/* Return button */}
+            {/* Return */}
             <div style={{
               position: "absolute", bottom: "3%", left: "50%", transform: "translateX(-50%)",
               zIndex: 20, pointerEvents: "auto",
