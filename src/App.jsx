@@ -682,10 +682,8 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 2 — THE POEM ===== */}
       {depth === 2 && (
         <div onClick={() => { if (poemPhase >= 5 || poemSeen.current) goDeeper(); }} style={{
-          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "auto", overflowX: "hidden",
+          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
           cursor: (poemPhase >= 5 || poemSeen.current) ? "pointer" : "default", zIndex: 5000,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start",
-          paddingTop: "3vh",
         }}>
 
           {/* White flash — the Moon filling your vision */}
@@ -713,467 +711,400 @@ export default function TheoryOfEverything() {
             />
           )}
 
-          {/* Living vertical thread — the spine of the poem */}
-          <div style={{
-            position: "absolute", top: 0, left: "50%", width: 1, height: "100%",
-            transform: "translateX(-50%)",
-            background: "linear-gradient(180deg, transparent 5%, rgba(201,168,76,0.06) 20%, rgba(201,168,76,0.12) 38%, rgba(201,168,76,0.06) 62%, rgba(201,168,76,0.12) 80%, transparent 95%)",
-            pointerEvents: "none", zIndex: 5003,
-            opacity: poemPhase >= 5 ? 1 : 0,
-            transition: "opacity 1.5s ease",
-            animation: poemPhase >= 5 ? "breathe 8s ease-in-out infinite" : "none",
-          }} />
-
-          {/* The poem — HOURGLASS with trickling sand */}
+          {/* The Hourglass Poem — Full Rebuild */}
           {poemPhase >= 5 && (() => {
-            // Hourglass poem component with sand physics
             const HourglassPoem = () => {
-              const sandRef = useRef(null);
-              const grainCount = 60;
+              const canvasRef = useRef(null);
+              const stateRef = useRef(null);
+              const frameRef = useRef(null);
+
+              const POEM_LINES = [
+                "It's the rhythm of life",
+                "",
+                "Every hope, a heartbeat.",
+                "Every wish, a dream.",
+                "The moon always wishing…",
+                "the sun it could be.",
+                "",
+                "Every life, a purpose…",
+                "hidden inside.",
+                "Every sinner, a saint…",
+                "trying to hide.",
+                "",
+                "Every baby is born,",
+                "with all that it needs…",
+                "Just wisdom and love…",
+                "and the chance to breathe.",
+                "",
+                "It's the rhythm of life",
+              ];
 
               useEffect(() => {
-                const canvas = sandRef.current;
+                const canvas = canvasRef.current;
                 if (!canvas) return;
                 const ctx = canvas.getContext("2d");
                 const dpr = window.devicePixelRatio || 1;
-                const W = canvas.parentElement?.clientWidth || 420;
-                const H = canvas.parentElement?.clientHeight || 860;
-                canvas.width = W * dpr;
-                canvas.height = H * dpr;
-                canvas.style.width = W + "px";
-                canvas.style.height = H + "px";
-                ctx.scale(dpr, dpr);
+                const W = window.innerWidth;
+                const H = window.innerHeight;
+                canvas.width = W * dpr; canvas.height = H * dpr;
+                canvas.style.width = W + "px"; canvas.style.height = H + "px";
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-                const midY = H * 0.50;
-                const neckX = W * 0.5;
+                const CX = W / 2, CY = H / 2;
+                const glassH = H * 0.88;
+                const topY = (H - glassH) / 2;
+                const botY = topY + glassH;
+                const midY = CY;
+                const maxW = Math.min(W * 0.42, 220);
                 const neckW = 5;
-                const topY = H * 0.04;
-                const botY = H * 0.96;
-                const topW = W * 0.46;
-                const botW = W * 0.46;
 
-                // Hourglass shape function — returns max half-width at given Y
                 function glassWidth(y) {
-                  if (y <= topY) return topW;
-                  if (y >= botY) return botW;
+                  if (y <= topY) return maxW;
+                  if (y >= botY) return maxW;
                   if (y <= midY) {
                     const t = (y - topY) / (midY - topY);
-                    // Cubic curve: wide at top, pinches to neck
-                    const ease = t * t * (3 - 2 * t);
-                    return topW + (neckW - topW) * ease;
+                    const e = t * t * (3 - 2 * t);
+                    return maxW + (neckW - maxW) * e;
                   } else {
                     const t = (y - midY) / (botY - midY);
-                    const ease = t * t * (3 - 2 * t);
-                    return neckW + (botW - neckW) * ease;
+                    const e = t * t * (3 - 2 * t);
+                    return neckW + (maxW - neckW) * e;
                   }
                 }
 
-                // Sand grains — falling through the neck
-                const grains = [];
-                for (let i = 0; i < grainCount; i++) {
-                  grains.push({
-                    x: neckX + (Math.random() - 0.5) * neckW,
-                    y: midY + 4 + Math.random() * (botY - midY) * 0.4,
-                    vy: 0.4 + Math.random() * 1.0,
-                    size: 0.7 + Math.random() * 1.0,
-                    opacity: 0.2 + Math.random() * 0.4,
-                    phase: Math.random() * Math.PI * 2,
-                    settled: false,
+                // ====== STATE ======
+                const PHASE_DRIP = 0;   // 0-3s: sand drips
+                const PHASE_TREMBLE = 1; // 3-4s: sand trembles
+                const PHASE_RISE = 2;    // 4-8s: sand rises and forms letters
+                const PHASE_POEM = 3;    // 8s+: poem visible, hourglass fades
+
+                if (!stateRef.current) {
+                  // Generate sand grains (both halves)
+                  const grains = [];
+
+                  // Top sand: 90% full
+                  const topSandStart = topY + (midY - topY) * 0.08;
+                  for (let i = 0; i < 500; i++) {
+                    const gy = topSandStart + Math.random() * (midY - topSandStart - 15);
+                    const gw = glassWidth(gy) * 0.88;
+                    grains.push({
+                      x: CX + (Math.random() - 0.5) * gw * 2,
+                      y: gy,
+                      homeX: 0, homeY: 0, // will be set for letter targets
+                      size: 0.5 + Math.random() * 1.4,
+                      opacity: 0.08 + Math.random() * 0.2,
+                      color: Math.random() < 0.85 ? "gold" : "white",
+                      vx: 0, vy: 0,
+                      assigned: false,
+                      settled: false,
+                      type: "top",
+                    });
+                  }
+
+                  // Bottom sand: 15% full (small cone)
+                  const botSandTop = botY - (botY - midY) * 0.18;
+                  for (let i = 0; i < 200; i++) {
+                    const gy = botSandTop + Math.random() * (botY - botSandTop - 6);
+                    const gw = glassWidth(gy) * 0.7;
+                    const coneW = gw * ((gy - botSandTop) / (botY - botSandTop));
+                    grains.push({
+                      x: CX + (Math.random() - 0.5) * coneW * 2,
+                      y: gy,
+                      homeX: 0, homeY: 0,
+                      size: 0.5 + Math.random() * 1.3,
+                      opacity: 0.08 + Math.random() * 0.18,
+                      color: Math.random() < 0.8 ? "gold" : "white",
+                      vx: 0, vy: 0,
+                      assigned: false,
+                      settled: false,
+                      type: "bottom",
+                    });
+                  }
+
+                  // Falling grains (active drip through neck)
+                  const drips = [];
+                  for (let i = 0; i < 40; i++) {
+                    drips.push({
+                      x: CX + (Math.random() - 0.5) * neckW * 0.6,
+                      y: midY + 4 + Math.random() * (botSandTop - midY) * 0.6,
+                      vy: 0.5 + Math.random() * 1.2,
+                      size: 0.5 + Math.random() * 0.9,
+                      opacity: 0.2 + Math.random() * 0.35,
+                      phase: Math.random() * Math.PI * 2,
+                    });
+                  }
+
+                  // Pre-compute letter targets using offscreen canvas
+                  const offscreen = document.createElement("canvas");
+                  offscreen.width = W; offscreen.height = H;
+                  const octx = offscreen.getContext("2d");
+                  octx.fillStyle = "#fff";
+                  octx.textAlign = "center";
+
+                  const letterTargets = [];
+                  const lineSpacing = Math.min(H * 0.046, 36);
+                  const startTextY = H * 0.08;
+
+                  POEM_LINES.forEach((line, li) => {
+                    if (!line) return; // skip blank lines
+                    const yPos = startTextY + li * lineSpacing;
+                    const isBookend = li === 0 || li === POEM_LINES.length - 1;
+                    const fSize = isBookend
+                      ? Math.min(W * 0.055, 28)
+                      : Math.min(W * 0.04, 20);
+                    const font = isBookend
+                      ? `600 italic ${fSize}px 'Cormorant Garamond', serif`
+                      : `300 italic ${fSize}px 'Cormorant Garamond', serif`;
+
+                    octx.font = font;
+                    octx.clearRect(0, 0, W, H);
+                    octx.fillText(line, CX, yPos);
+
+                    // Sample pixels from the text
+                    const imgData = octx.getImageData(0, Math.max(0, Math.floor(yPos - fSize)), W, Math.ceil(fSize * 1.6));
+                    const sampleStep = Math.max(2, Math.floor(3 * (W / 500)));
+                    for (let px = 0; px < imgData.width; px += sampleStep) {
+                      for (let py = 0; py < imgData.height; py += sampleStep) {
+                        const idx = (py * imgData.width + px) * 4;
+                        if (imgData.data[idx + 3] > 80) {
+                          letterTargets.push({
+                            x: px,
+                            y: Math.max(0, Math.floor(yPos - fSize)) + py,
+                            isBookend,
+                            lineIndex: li,
+                          });
+                        }
+                      }
+                    }
                   });
+
+                  // Assign grains to letter targets
+                  const shuffled = [...grains].sort(() => Math.random() - 0.5);
+                  const maxAssign = Math.min(shuffled.length, letterTargets.length);
+                  for (let i = 0; i < maxAssign; i++) {
+                    shuffled[i].homeX = letterTargets[i].x;
+                    shuffled[i].homeY = letterTargets[i].y;
+                    shuffled[i].assigned = true;
+                    shuffled[i].lineIndex = letterTargets[i].lineIndex;
+                    shuffled[i].isBookend = letterTargets[i].isBookend;
+                  }
+
+                  stateRef.current = {
+                    grains, drips, phase: PHASE_DRIP,
+                    startTime: performance.now(),
+                    glassOpacity: 1,
+                  };
                 }
 
-                // Top sand — ALMOST FULL (90% filled from top down)
-                const topGrains = [];
-                const topSandLevel = topY + (midY - topY) * 0.1; // Sand starts 10% down from rim
-                for (let i = 0; i < 350; i++) {
-                  const tY = topSandLevel + Math.random() * (midY - topSandLevel - 12);
-                  const maxW = glassWidth(tY) * 0.88;
-                  topGrains.push({
-                    x: neckX + (Math.random() - 0.5) * maxW * 2,
-                    y: tY,
-                    size: 0.5 + Math.random() * 1.3,
-                    opacity: 0.06 + Math.random() * 0.18,
+                const state = stateRef.current;
+
+                function drawGlass(opacity) {
+                  ctx.save();
+                  ctx.globalAlpha = opacity;
+
+                  // Glass outline — bezier curves
+                  const drawSide = (sign) => {
+                    ctx.beginPath();
+                    ctx.moveTo(CX + sign * maxW, topY);
+                    ctx.bezierCurveTo(
+                      CX + sign * maxW, topY + (midY - topY) * 0.55,
+                      CX + sign * neckW * 1.5, midY - (midY - topY) * 0.15,
+                      CX + sign * neckW, midY
+                    );
+                    ctx.strokeStyle = "rgba(201,168,76,0.16)";
+                    ctx.lineWidth = 1.2;
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.moveTo(CX + sign * neckW, midY);
+                    ctx.bezierCurveTo(
+                      CX + sign * neckW * 1.5, midY + (botY - midY) * 0.15,
+                      CX + sign * maxW, botY - (botY - midY) * 0.55,
+                      CX + sign * maxW, botY
+                    );
+                    ctx.stroke();
+                  };
+                  drawSide(-1); drawSide(1);
+
+                  // Caps
+                  ctx.strokeStyle = "rgba(201,168,76,0.24)";
+                  ctx.lineWidth = 2;
+                  ctx.beginPath(); ctx.moveTo(CX - maxW - 16, topY); ctx.lineTo(CX + maxW + 16, topY); ctx.stroke();
+                  ctx.beginPath(); ctx.moveTo(CX - maxW - 16, botY); ctx.lineTo(CX + maxW + 16, botY); ctx.stroke();
+
+                  // Serifs
+                  ctx.strokeStyle = "rgba(201,168,76,0.2)";
+                  ctx.lineWidth = 1.4;
+                  [[-1, topY], [1, topY], [-1, botY], [1, botY]].forEach(([s, yy]) => {
+                    const xx = CX + s * (maxW + 16);
+                    ctx.beginPath(); ctx.moveTo(xx, yy - 5); ctx.lineTo(xx, yy + 5); ctx.stroke();
                   });
-                }
 
-                // Top sand surface — denser line at the top of the sand
-                const topSurfaceGrains = [];
-                for (let i = 0; i < 80; i++) {
-                  const surfY = topSandLevel + Math.random() * 6;
-                  const maxW = glassWidth(surfY) * 0.85;
-                  topSurfaceGrains.push({
-                    x: neckX + (Math.random() - 0.5) * maxW * 2,
-                    y: surfY,
-                    size: 0.4 + Math.random() * 0.8,
-                    opacity: 0.18 + Math.random() * 0.22,
-                  });
-                }
-
-                // Funnel grains — sand funneling toward neck from above
-                const funnelGrains = [];
-                for (let i = 0; i < 60; i++) {
-                  const fY = midY - 30 + Math.random() * 28;
-                  const fW = neckW + (glassWidth(fY) - neckW) * 0.3;
-                  funnelGrains.push({
-                    x: neckX + (Math.random() - 0.5) * fW * 2,
-                    y: fY,
-                    size: 0.4 + Math.random() * 0.7,
-                    opacity: 0.12 + Math.random() * 0.2,
-                  });
-                }
-
-                // Bottom sand — BARELY filling (small cone at very bottom)
-                const botGrains = [];
-                const botSandTop = botY - (botY - midY) * 0.12; // Only bottom 12% has sand
-                for (let i = 0; i < 80; i++) {
-                  const bY = botSandTop + Math.random() * (botY - botSandTop - 4);
-                  const maxW = glassWidth(bY) * 0.75;
-                  // Cone shape — wider at bottom
-                  const coneW = maxW * ((bY - botSandTop) / (botY - botSandTop));
-                  botGrains.push({
-                    x: neckX + (Math.random() - 0.5) * coneW * 2,
-                    y: bY,
-                    size: 0.5 + Math.random() * 1.2,
-                    opacity: 0.1 + Math.random() * 0.2,
-                  });
-                }
-
-                // Small cone peak at top of bottom pile
-                const conePeakGrains = [];
-                for (let i = 0; i < 25; i++) {
-                  const cpY = botSandTop - 4 + Math.random() * 8;
-                  const spread = 3 + Math.random() * 4;
-                  conePeakGrains.push({
-                    x: neckX + (Math.random() - 0.5) * spread,
-                    y: cpY,
-                    size: 0.3 + Math.random() * 0.6,
-                    opacity: 0.15 + Math.random() * 0.2,
-                  });
-                }
-
-                let frame = 0;
-                let animId;
-
-                function drawHourglassShape() {
-                  // Left side top half
+                  // Neck ring
                   ctx.beginPath();
-                  ctx.moveTo(neckX - topW, topY);
-                  ctx.bezierCurveTo(
-                    neckX - topW, topY + (midY - topY) * 0.55,
-                    neckX - neckW * 1.5, midY - (midY - topY) * 0.15,
-                    neckX - neckW, midY
-                  );
-                  ctx.strokeStyle = "rgba(201,168,76,0.14)";
-                  ctx.lineWidth = 1;
-                  ctx.stroke();
-
-                  // Right side top half
-                  ctx.beginPath();
-                  ctx.moveTo(neckX + topW, topY);
-                  ctx.bezierCurveTo(
-                    neckX + topW, topY + (midY - topY) * 0.55,
-                    neckX + neckW * 1.5, midY - (midY - topY) * 0.15,
-                    neckX + neckW, midY
-                  );
-                  ctx.stroke();
-
-                  // Left side bottom half
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - neckW, midY);
-                  ctx.bezierCurveTo(
-                    neckX - neckW * 1.5, midY + (botY - midY) * 0.15,
-                    neckX - botW, botY - (botY - midY) * 0.55,
-                    neckX - botW, botY
-                  );
-                  ctx.stroke();
-
-                  // Right side bottom half
-                  ctx.beginPath();
-                  ctx.moveTo(neckX + neckW, midY);
-                  ctx.bezierCurveTo(
-                    neckX + neckW * 1.5, midY + (botY - midY) * 0.15,
-                    neckX + botW, botY - (botY - midY) * 0.55,
-                    neckX + botW, botY
-                  );
-                  ctx.stroke();
-
-                  // Top cap with decorative ends
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - topW - 14, topY);
-                  ctx.lineTo(neckX + topW + 14, topY);
-                  ctx.strokeStyle = "rgba(201,168,76,0.22)";
-                  ctx.lineWidth = 1.8;
-                  ctx.stroke();
-
-                  // Small decorative serifs on top cap
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - topW - 14, topY - 4);
-                  ctx.lineTo(neckX - topW - 14, topY + 4);
-                  ctx.moveTo(neckX + topW + 14, topY - 4);
-                  ctx.lineTo(neckX + topW + 14, topY + 4);
-                  ctx.strokeStyle = "rgba(201,168,76,0.18)";
-                  ctx.lineWidth = 1.2;
-                  ctx.stroke();
-
-                  // Bottom cap
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - botW - 14, botY);
-                  ctx.lineTo(neckX + botW + 14, botY);
-                  ctx.strokeStyle = "rgba(201,168,76,0.22)";
-                  ctx.lineWidth = 1.8;
-                  ctx.stroke();
-
-                  // Serifs on bottom cap
-                  ctx.beginPath();
-                  ctx.moveTo(neckX - botW - 14, botY - 4);
-                  ctx.lineTo(neckX - botW - 14, botY + 4);
-                  ctx.moveTo(neckX + botW + 14, botY - 4);
-                  ctx.lineTo(neckX + botW + 14, botY + 4);
-                  ctx.strokeStyle = "rgba(201,168,76,0.18)";
-                  ctx.lineWidth = 1.2;
-                  ctx.stroke();
-
-                  // Neck ring detail
-                  ctx.beginPath();
-                  ctx.ellipse(neckX, midY, neckW + 3, 2, 0, 0, Math.PI * 2);
+                  ctx.ellipse(CX, midY, neckW + 4, 2.5, 0, 0, Math.PI * 2);
                   ctx.strokeStyle = "rgba(201,168,76,0.1)";
                   ctx.lineWidth = 0.8;
                   ctx.stroke();
 
-                  // Inner reflection lines (glass detail)
-                  ctx.save();
-                  ctx.globalAlpha = 0.04;
+                  // Glass reflection
+                  ctx.globalAlpha = opacity * 0.04;
                   ctx.beginPath();
-                  ctx.moveTo(neckX - topW + 12, topY + 4);
-                  ctx.bezierCurveTo(
-                    neckX - topW + 12, topY + (midY - topY) * 0.5,
-                    neckX - neckW * 2, midY - 20,
-                    neckX - neckW - 1, midY
-                  );
-                  ctx.strokeStyle = "rgba(201,168,76,1)";
-                  ctx.lineWidth = 0.8;
-                  ctx.stroke();
+                  ctx.moveTo(CX - maxW + 14, topY + 4);
+                  ctx.bezierCurveTo(CX - maxW + 14, topY + (midY - topY) * 0.5, CX - neckW * 2, midY - 20, CX - neckW - 1, midY);
+                  ctx.strokeStyle = "rgba(201,168,76,1)"; ctx.lineWidth = 1; ctx.stroke();
+
                   ctx.restore();
                 }
 
-                function draw() {
+                function loop(now) {
+                  const elapsed = (now - state.startTime) / 1000;
                   ctx.clearRect(0, 0, W, H);
-                  frame++;
 
-                  // Draw the hourglass shape
-                  drawHourglassShape();
+                  // Phase transitions
+                  if (elapsed < 3) state.phase = PHASE_DRIP;
+                  else if (elapsed < 4) state.phase = PHASE_TREMBLE;
+                  else if (elapsed < 9) state.phase = PHASE_RISE;
+                  else state.phase = PHASE_POEM;
 
-                  // Glow at neck — breathing
-                  const breathe = 0.06 + Math.sin(frame * 0.02) * 0.02;
-                  const neckGlow = ctx.createRadialGradient(neckX, midY, 0, neckX, midY, 28);
-                  neckGlow.addColorStop(0, `rgba(201,168,76,${breathe})`);
-                  neckGlow.addColorStop(1, "rgba(201,168,76,0)");
-                  ctx.fillStyle = neckGlow;
-                  ctx.fillRect(neckX - 28, midY - 28, 56, 56);
-
-                  // TOP SAND — dense fill (almost full)
-                  for (const g of topGrains) {
-                    ctx.beginPath();
-                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
-                    ctx.fill();
+                  // Glass fades out during rise
+                  if (state.phase >= PHASE_RISE) {
+                    state.glassOpacity = Math.max(0, state.glassOpacity - 0.008);
                   }
 
-                  // Top sand surface line (denser)
-                  for (const g of topSurfaceGrains) {
-                    ctx.beginPath();
-                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
-                    ctx.fill();
+                  // Draw glass
+                  if (state.glassOpacity > 0) {
+                    drawGlass(state.glassOpacity);
+
+                    // Neck glow
+                    if (state.phase <= PHASE_TREMBLE) {
+                      const b = 0.06 + Math.sin(elapsed * 2.5) * 0.025;
+                      const ng = ctx.createRadialGradient(CX, midY, 0, CX, midY, 30);
+                      ng.addColorStop(0, `rgba(201,168,76,${b * state.glassOpacity})`);
+                      ng.addColorStop(1, "rgba(201,168,76,0)");
+                      ctx.fillStyle = ng; ctx.fillRect(CX - 30, midY - 30, 60, 60);
+                    }
                   }
 
-                  // Funnel grains approaching neck
-                  for (const g of funnelGrains) {
-                    const drift = Math.sin(frame * 0.015 + g.x * 0.05) * 0.3;
-                    ctx.beginPath();
-                    ctx.arc(g.x + drift, g.y, g.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
-                    ctx.fill();
-                  }
-
-                  // FALLING grains through neck
-                  for (const g of grains) {
-                    g.y += g.vy;
-                    g.x += Math.sin(frame * 0.03 + g.phase) * 0.12;
-
-                    // Spread out as they enter bottom half
-                    const belowNeck = g.y - midY;
-                    if (belowNeck > 10) {
-                      g.x += (g.x - neckX) * 0.003;
+                  // ====== DRIP PHASE ======
+                  if (state.phase === PHASE_DRIP || state.phase === PHASE_TREMBLE) {
+                    // Draw static top sand
+                    for (const g of state.grains) {
+                      if (g.type !== "top" && g.type !== "bottom") continue;
+                      let drawX = g.x, drawY = g.y;
+                      if (state.phase === PHASE_TREMBLE) {
+                        drawX += (Math.random() - 0.5) * 2.5;
+                        drawY += (Math.random() - 0.5) * 2.5;
+                      }
+                      const c = g.color === "gold" ? `rgba(201,168,76,${g.opacity * state.glassOpacity})` : `rgba(232,232,240,${g.opacity * 0.6 * state.glassOpacity})`;
+                      ctx.beginPath(); ctx.arc(drawX, drawY, g.size, 0, Math.PI * 2);
+                      ctx.fillStyle = c; ctx.fill();
                     }
 
-                    if (g.y > botSandTop - 5) {
-                      g.y = midY + 2;
-                      g.x = neckX + (Math.random() - 0.5) * neckW * 0.8;
+                    // Falling drips
+                    for (const d of state.drips) {
+                      d.y += d.vy;
+                      d.x += Math.sin(elapsed * 3 + d.phase) * 0.15;
+                      if (d.y > botY - (botY - midY) * 0.18) {
+                        d.y = midY + 2;
+                        d.x = CX + (Math.random() - 0.5) * neckW * 0.6;
+                      }
+                      ctx.beginPath(); ctx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
+                      ctx.fillStyle = `rgba(201,168,76,${d.opacity * state.glassOpacity})`;
+                      ctx.fill();
                     }
 
-                    ctx.beginPath();
-                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
-                    ctx.fill();
+                    // Neck stream
+                    for (let i = 0; i < 6; i++) {
+                      const sy = midY - 8 + i * 3;
+                      const wobble = Math.sin(elapsed * 5 + i * 1.5) * 0.7;
+                      ctx.beginPath(); ctx.arc(CX + wobble, sy, 0.5, 0, Math.PI * 2);
+                      ctx.fillStyle = `rgba(201,168,76,${0.3 * state.glassOpacity})`;
+                      ctx.fill();
+                    }
                   }
 
-                  // Steady stream through neck — visible trickle
-                  for (let i = 0; i < 5; i++) {
-                    const streamY = midY - 6 + i * 3;
-                    const wobble = Math.sin(frame * 0.06 + i * 1.5) * 0.8;
-                    ctx.beginPath();
-                    ctx.arc(neckX + wobble, streamY, 0.5, 0, Math.PI * 2);
-                    ctx.fillStyle = "rgba(201,168,76,0.3)";
-                    ctx.fill();
+                  // ====== RISE PHASE ======
+                  if (state.phase >= PHASE_RISE) {
+                    const riseT = Math.min(1, (elapsed - 4) / 5); // 0→1 over 5 seconds
+                    const easeRise = riseT * riseT * (3 - 2 * riseT); // smoothstep
+
+                    for (const g of state.grains) {
+                      if (g.assigned) {
+                        // Lerp from current pos to letter target
+                        const lineDelay = (g.lineIndex || 0) * 0.05;
+                        const localT = Math.max(0, Math.min(1, (riseT - lineDelay) / (1 - lineDelay)));
+                        const easeLocal = localT < 0.5
+                          ? 4 * localT * localT * localT
+                          : 1 - Math.pow(-2 * localT + 2, 3) / 2;
+
+                        const drawX = g.x + (g.homeX - g.x) * easeLocal;
+                        const drawY = g.y + (g.homeY - g.y) * easeLocal;
+                        const drawSize = g.size + (0.8 - g.size) * easeLocal;
+
+                        // Brightness increases as grain finds its letter
+                        const brightness = g.isBookend
+                          ? 0.08 + easeLocal * 0.65
+                          : 0.08 + easeLocal * 0.5;
+                        const c = g.isBookend
+                          ? `rgba(201,168,76,${brightness})`
+                          : g.color === "gold"
+                            ? `rgba(201,168,76,${brightness * 0.7})`
+                            : `rgba(232,232,240,${brightness})`;
+
+                        ctx.beginPath(); ctx.arc(drawX, drawY, drawSize, 0, Math.PI * 2);
+                        ctx.fillStyle = c; ctx.fill();
+                      } else {
+                        // Unassigned grains: drift and fade
+                        g.vy -= 0.01;
+                        g.y += g.vy;
+                        g.x += (Math.random() - 0.5) * 0.5;
+                        g.opacity *= 0.997;
+                        if (g.opacity > 0.01) {
+                          ctx.beginPath(); ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
+                          ctx.fillStyle = `rgba(201,168,76,${g.opacity * (1 - easeRise * 0.7)})`;
+                          ctx.fill();
+                        }
+                      }
+                    }
                   }
 
-                  // BOTTOM sand — small cone barely filling
-                  for (const g of botGrains) {
-                    ctx.beginPath();
-                    ctx.arc(g.x, g.y + Math.sin(frame * 0.004 + g.x * 0.1) * 0.2, g.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
-                    ctx.fill();
+                  // ====== POEM PHASE — fully formed, gentle breathing ======
+                  if (state.phase === PHASE_POEM) {
+                    // Title + subtitle as canvas text for clean layering
+                    const headerAlpha = Math.min(1, (elapsed - 9) / 2);
+
+                    ctx.save();
+                    ctx.globalAlpha = headerAlpha;
+                    ctx.textAlign = "center";
+
+                    // "OCTOBER 2016"
+                    ctx.font = `${Math.min(W * 0.025, 11)}px 'Cinzel', serif`;
+                    ctx.fillStyle = "rgba(201,168,76,0.22)";
+                    ctx.letterSpacing = "6px";
+                    ctx.fillText("O C T O B E R   2 0 1 6", CX, topY - 24);
+
+                    // "RHYTHM OF LIFE"
+                    ctx.font = `400 ${Math.min(W * 0.06, 28)}px 'Cinzel', serif`;
+                    ctx.fillStyle = "rgba(232,232,240,0.75)";
+                    ctx.letterSpacing = "10px";
+                    ctx.fillText("R H Y T H M   O F   L I F E", CX, topY - 6);
+
+                    ctx.restore();
                   }
 
-                  // Cone peak
-                  for (const g of conePeakGrains) {
-                    ctx.beginPath();
-                    ctx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(201,168,76,${g.opacity})`;
-                    ctx.fill();
-                  }
-
-                  animId = requestAnimationFrame(draw);
+                  frameRef.current = requestAnimationFrame(loop);
                 }
 
-                animId = requestAnimationFrame(draw);
-                return () => cancelAnimationFrame(animId);
+                frameRef.current = requestAnimationFrame(loop);
+                return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current); };
               }, []);
 
-              // Poem lines shaped to follow hourglass contour
-              // Wider at top, narrower in middle, wider at bottom
-              const poemLines = [
-                { text: "Every hope, a heartbeat.", size: "clamp(24px, 4vw, 31px)", scale: 1.0 },
-                { text: "Every wish, a dream.", size: "clamp(19px, 3.5vw, 24px)", scale: 0.95 },
-                { text: "The moon always wishing…", size: "clamp(19px, 3.5vw, 24px)", scale: 0.88 },
-                { text: "the sun it could be.", size: "clamp(24px, 4vw, 31px)", scale: 0.82 },
-                { text: "Every life, a purpose…", size: "clamp(24px, 4vw, 31px)", scale: 0.75 },
-                { text: "hidden inside.", size: "clamp(24px, 4vw, 31px)", scale: 0.68 },
-                { text: "Every sinner, a saint…", size: "clamp(24px, 4vw, 31px)", scale: 0.68 },
-                { text: "trying to hide.", size: "clamp(24px, 4vw, 31px)", scale: 0.75 },
-                { text: "Every baby is born,", size: "clamp(24px, 4vw, 31px)", scale: 0.82 },
-                { text: "with all that it needs…", size: "clamp(19px, 3.5vw, 24px)", scale: 0.88 },
-                { text: "Just wisdom and love…", size: "clamp(19px, 3.5vw, 24px)", scale: 0.95 },
-                { text: "and the chance to breathe.", size: "clamp(24px, 4vw, 31px)", scale: 1.0 },
-              ];
-
               return (
-                <div style={{
-                  textAlign: "center",
-                  padding: "0 20px",
-                  zIndex: 4,
-                  maxWidth: 600,
-                  display: "flex", flexDirection: "column", alignItems: "center",
-                  position: "relative",
-                }}>
-
-                  {/* Date */}
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19,
-                    letterSpacing: "0.6em", color: "rgba(201,168,76,0.2)",
-                    marginBottom: Math.round(3 * PHI),
-                    animation: "fadeSlideUp 1.2s 0.1s both ease",
-                  }}>OCTOBER 2016</div>
-
-                  {/* Title */}
-                  <h2 style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: "clamp(24px, 4.5vw, 31px)",
-                    fontWeight: 400, color: "rgba(232,232,240,0.85)",
-                    letterSpacing: "0.35em", margin: 0,
-                    textShadow: "0 0 40px rgba(232,232,240,0.06)",
-                    animation: "fadeSlideUp 1.2s 0.2s both ease",
-                  }}>RHYTHM OF LIFE</h2>
-
-                  {/* Subtitle */}
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(19px, 3.5vw, 24px)",
-                    fontStyle: "italic", color: "rgba(232,232,240,0.55)",
-                    marginTop: Math.round(3 * PHI),
-                    letterSpacing: 0.5, maxWidth: 380, lineHeight: PHI,
-                    animation: "fadeSlideUp 1.2s 0.3s both ease",
-                  }}>Written ten years before the theory. The seed was already in the ground.</div>
-
-                  {/* Hourglass container — FULL VIEWPORT */}
-                  <div style={{
-                    position: "relative",
-                    width: "min(85vw, 440px)",
-                    height: "min(130vw, 75vh)",
-                    margin: `${Math.round(5 * PHI)}px auto`,
-                    animation: "fadeSlideUp 1.4s 0.4s both ease",
-                  }}>
-
-                    {/* Sand canvas — behind the text */}
-                    <canvas ref={sandRef} style={{
-                      position: "absolute", top: 0, left: 0,
-                      width: "100%", height: "100%",
-                      pointerEvents: "none",
-                    }} />
-
-                    {/* Top bookend */}
-                    <div style={{
-                      position: "absolute", top: "2%", width: "100%", textAlign: "center",
-                      animation: "fadeSlideUp 1s 0.5s both ease",
-                    }}>
-                      <span className="shimmer-gold" style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "clamp(24px, 4vw, 31px)",
-                        fontStyle: "italic", fontWeight: 600, letterSpacing: 3,
-                      }}>It's the rhythm of life</span>
-                    </div>
-
-                    {/* Poem lines — positioned to follow hourglass shape */}
-                    {poemLines.map((line, i) => {
-                      const totalLines = poemLines.length;
-                      const yPercent = 12 + (i / (totalLines - 1)) * 76;
-                      return (
-                        <div key={i} style={{
-                          position: "absolute",
-                          top: `${yPercent}%`,
-                          width: "100%",
-                          textAlign: "center",
-                          transform: `scale(${line.scale})`,
-                          animation: `fadeSlideUp 1s ${0.6 + i * 0.12}s both ease`,
-                        }}>
-                          <span style={{
-                            fontFamily: "'Cormorant Garamond', serif",
-                            fontSize: line.size,
-                            lineHeight: 1.4,
-                            color: `rgba(232,232,240,${0.55 + line.scale * 0.2})`,
-                            fontStyle: "italic", fontWeight: 300,
-                            letterSpacing: line.scale > 0.9 ? 1 : 0.3,
-                            textShadow: "0 0 20px rgba(232,232,240,0.04)",
-                          }}>{line.text}</span>
-                        </div>
-                      );
-                    })}
-
-                    {/* Bottom bookend */}
-                    <div style={{
-                      position: "absolute", bottom: "2%", width: "100%", textAlign: "center",
-                      animation: `fadeSlideUp 1s ${0.6 + poemLines.length * 0.12 + 0.1}s both ease`,
-                    }}>
-                      <span className="shimmer-gold" style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "clamp(24px, 4vw, 31px)",
-                        fontStyle: "italic", fontWeight: 600, letterSpacing: 3,
-                        animationDirection: "reverse",
-                      }}>It's the rhythm of life</span>
-                    </div>
-                  </div>
-                </div>
+                <canvas ref={canvasRef} style={{
+                  position: "absolute", top: 0, left: 0,
+                  width: "100%", height: "100%",
+                }} />
               );
             };
 
@@ -1184,7 +1115,8 @@ export default function TheoryOfEverything() {
           {poemPhase >= 5 && (
             <div style={{
               position: "absolute", bottom: "2%", width: "100%", textAlign: "center",
-              animation: `fadeSlideUp 1s ${1 + POEMS.length * 0.2 + 0.5}s both ease`,
+              zIndex: 5010,
+              animation: "fadeSlideUp 1s 10s both ease",
             }}>
               <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
             </div>
