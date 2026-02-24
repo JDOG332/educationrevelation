@@ -1619,7 +1619,7 @@ export default function TheoryOfEverything() {
             <div style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
-              gap: Math.round(6 * PHI),
+              gap: Math.round(4 * PHI),
               width: "100%",
               animation: "fadeSlideUp 1.2s 0.9s both ease",
             }}>
@@ -1644,8 +1644,8 @@ export default function TheoryOfEverything() {
                     onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); }}
                     style={{
                       position: "relative",
-                      padding: `${Math.round(10 * PHI)}px ${Math.round(5 * PHI)}px ${Math.round(8 * PHI)}px`,
-                      borderRadius: 12,
+                      padding: `${Math.round(6 * PHI)}px ${Math.round(4 * PHI)}px ${Math.round(5 * PHI)}px`,
+                      borderRadius: 10,
                       background: `radial-gradient(ellipse at 50% 0%, ${accentGlow}, transparent 70%)`,
                       border: `1px solid ${accentBorder}`,
                       cursor: "pointer",
@@ -1673,9 +1673,9 @@ export default function TheoryOfEverything() {
 
                     {/* Glyph */}
                     <div style={{
-                      fontSize: 39,
-                      marginBottom: Math.round(5 * PHI),
-                      filter: `drop-shadow(0 0 20px ${accentShadow})`,
+                      fontSize: 28,
+                      marginBottom: Math.round(3 * PHI),
+                      filter: `drop-shadow(0 0 16px ${accentShadow})`,
                       animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
                       lineHeight: 1,
                     }}>{door.glyph}</div>
@@ -1683,8 +1683,8 @@ export default function TheoryOfEverything() {
                     {/* Name */}
                     <div style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(17px, 3.5vw, 24px)",
-                      letterSpacing: "0.18em",
+                      fontSize: "clamp(12px, 2.8vw, 17px)",
+                      letterSpacing: "0.15em",
                       color: accentText,
                       fontWeight: 600,
                     }}>{door.name}</div>
@@ -1692,11 +1692,11 @@ export default function TheoryOfEverything() {
                     {/* Whisper */}
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(15px, 3vw, 19px)",
+                      fontSize: "clamp(11px, 2.5vw, 15px)",
                       color: "rgba(232,232,240,0.55)",
                       fontStyle: "italic",
-                      marginTop: Math.round(2 * PHI),
-                      lineHeight: PHI,
+                      marginTop: Math.round(1.5 * PHI),
+                      lineHeight: 1.5,
                     }}>{door.sub}</div>
                   </div>
                 );
