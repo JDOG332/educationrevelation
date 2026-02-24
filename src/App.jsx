@@ -850,8 +850,8 @@ export default function TheoryOfEverything() {
                     if (!line) return;
                     const isBookend = li === 0 || li === POEM_LINES.length - 1;
                     const fSize = isBookend
-                      ? Math.max(14, Math.min(W * 0.05, 26))
-                      : Math.max(11, Math.min(W * 0.035, 19));
+                      ? Math.max(22, Math.min(W * 0.07, 38))
+                      : Math.max(17, Math.min(W * 0.05, 28));
 
                     // Use Georgia as reliable fallback for measurement
                     const font = `italic ${fSize}px Georgia, serif`;
@@ -1051,10 +1051,10 @@ export default function TheoryOfEverything() {
                     ctx.textAlign = "center";
                     for (const tl of state.textLines) {
                       if (tl.isBookend) {
-                        ctx.font = `600 italic ${Math.max(14, Math.min(W * 0.05, 26))}px 'Cormorant Garamond', Georgia, serif`;
+                        ctx.font = `600 italic ${Math.max(22, Math.min(W * 0.07, 38))}px 'Cormorant Garamond', Georgia, serif`;
                         ctx.fillStyle = "rgba(201,168,76,0.7)";
                       } else {
-                        ctx.font = `300 italic ${Math.max(11, Math.min(W * 0.035, 19))}px 'Cormorant Garamond', Georgia, serif`;
+                        ctx.font = `300 italic ${Math.max(17, Math.min(W * 0.05, 28))}px 'Cormorant Garamond', Georgia, serif`;
                         ctx.fillStyle = "rgba(232,232,240,0.6)";
                       }
                       ctx.fillText(tl.text, CX, tl.y);
