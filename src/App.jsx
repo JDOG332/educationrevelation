@@ -6617,6 +6617,254 @@ export default function TheoryOfEverything() {
               That's the secret theory of everything.
             </div>
 
+            {/* ═══════════════════════════════════════════════ */}
+            {/* WHY THREE — who holds the hologram open?        */}
+            {/* ═══════════════════════════════════════════════ */}
+            <div style={{
+              width: Math.round(80 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(232,232,240,0.06), rgba(201,168,76,0.25), rgba(232,232,240,0.06), transparent)",
+              boxShadow: "0 0 24px rgba(201,168,76,0.06)",
+            }} />
+
+            {/* Header */}
+            <div style={{ textAlign: "center", marginBottom: Math.round(8 * PHI) }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 8,
+                color: "rgba(201,168,76,0.2)", textTransform: "uppercase",
+                marginBottom: Math.round(3 * PHI),
+              }}>but two creates a hologram</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(20px, 4.5vw, 30px)", letterSpacing: "0.18em",
+                fontWeight: 400,
+                background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(201,168,76,0.6) 100%)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 0 24px rgba(201,168,76,0.08))",
+              }}>THREE MAKES IT SOLID</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 12px)", letterSpacing: 6,
+                color: "rgba(201,168,76,0.2)", textTransform: "uppercase",
+                marginTop: Math.round(2 * PHI),
+              }}>who holds the universe open?</div>
+              <div style={{
+                width: Math.round(40 * PHI), height: 1, margin: `${Math.round(5 * PHI)}px auto 0`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+              }} />
+            </div>
+
+            {/* The setup */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              marginBottom: Math.round(13 * PHI),
+            }}>
+              Two observers create a hologram you can see.<br />
+              But only from a narrow angle.<br /><br />
+              Three observers — three <em>different</em> observers —<br />
+              create a hologram you can <span style={{ color: "rgba(201,168,76,0.55)" }}>walk around.</span><br />
+              A <span style={{ color: "rgba(232,232,240,0.6)" }}>full parallax hologram.</span><br /><br />
+              If all three observers were identical,<br />
+              they'd collapse into one.<br />
+              The hologram flattens back to 2D.<br /><br />
+              <span style={{ color: "rgba(224,80,80,0.55)" }}>Sameness ≠ alignment.</span><br />
+              Same = flat. Different + aligned = <span style={{ color: "rgba(201,168,76,0.55)" }}>volume.</span>
+            </div>
+
+            {/* Divider */}
+            <div style={{
+              width: Math.round(30 * PHI), height: 1, margin: `0 auto ${Math.round(10 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.2), transparent)",
+            }} />
+
+            {/* The three observers */}
+            <div style={{ textAlign: "center", marginBottom: Math.round(8 * PHI) }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
+                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+              }}>three forms of consciousness</div>
+            </div>
+
+            {/* Observer cards — three fundamentally different languages */}
+            <div style={{
+              display: "flex", flexDirection: "column", gap: Math.round(5 * PHI),
+              maxWidth: 460, margin: `0 auto ${Math.round(13 * PHI)}px`,
+            }}>
+              {[
+                {
+                  num: "I", role: "THE REFERENCE BEAM",
+                  name: "MATTER", color: "201,168,76",
+                  desc: "Consciousness at the atomic scale.",
+                  detail: "Electrons choosing orbitals. Particles collapsing wave functions by interacting. The universe observing itself at the smallest scale.",
+                  lang: "Observes through FORCE",
+                  examples: "collision · electromagnetism · gravity",
+                  time: "femtoseconds",
+                },
+                {
+                  num: "II", role: "THE OBJECT BEAM",
+                  name: "LIFE", color: "120,180,255",
+                  desc: "Consciousness at the biological scale.",
+                  detail: "Organisms that feel, respond, adapt, choose. Not just interaction — experience. The tree growing toward light. The dog recognizing its owner. You reading this.",
+                  lang: "Observes through MEANING",
+                  examples: "pain · love · recognition",
+                  time: "heartbeats",
+                },
+                {
+                  num: "III", role: "THE RECORDING SURFACE",
+                  name: "THE FIELD", color: "190,140,220",
+                  desc: "Consciousness at the cosmic scale.",
+                  detail: "The thing that connects the other two. Dark energy. The quantum field. What every tradition calls God or Source or Brahman or the Tao. Not a being — a medium.",
+                  lang: "Observes through PATTERN",
+                  examples: "mathematics · constants · laws",
+                  time: "eternities",
+                },
+              ].map((obs, i) => (
+                <div key={i} style={{
+                  padding: `${Math.round(8 * PHI)}px ${Math.round(8 * PHI)}px`,
+                  borderRadius: 12,
+                  background: `linear-gradient(180deg, rgba(${obs.color},0.04), rgba(3,3,6,0.5))`,
+                  border: `1px solid rgba(${obs.color},0.1)`,
+                  textAlign: "center",
+                  position: "relative",
+                  overflow: "hidden",
+                }}>
+                  {/* Top glow */}
+                  <div style={{
+                    position: "absolute", top: 0, left: "10%", right: "10%", height: 1,
+                    background: `linear-gradient(90deg, transparent, rgba(${obs.color},0.2), transparent)`,
+                  }} />
+
+                  {/* Roman numeral + role */}
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2.2vw, 14px)",
+                    letterSpacing: 4, color: `rgba(${obs.color},0.4)`,
+                    marginBottom: Math.round(2 * PHI),
+                  }}>OBSERVER {obs.num} — {obs.role}</div>
+
+                  {/* Name */}
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 3.5vw, 24px)",
+                    letterSpacing: "0.2em", color: `rgba(${obs.color},0.8)`,
+                    fontWeight: 600, marginBottom: Math.round(3 * PHI),
+                    textShadow: `0 0 20px rgba(${obs.color},0.1)`,
+                  }}>{obs.name}</div>
+
+                  {/* Description */}
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(14px, 2.8vw, 18px)",
+                    fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+                    lineHeight: 1.8, marginBottom: Math.round(3 * PHI),
+                  }}>{obs.desc}<br />{obs.detail}</div>
+
+                  {/* Language + timescale */}
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 13px)",
+                    letterSpacing: 3, color: `rgba(${obs.color},0.6)`,
+                    marginBottom: Math.round(1 * PHI),
+                  }}>{obs.lang}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(11px, 2.2vw, 14px)",
+                    color: `rgba(${obs.color},0.35)`, fontStyle: "italic",
+                    letterSpacing: 1, marginBottom: Math.round(2 * PHI),
+                  }}>{obs.examples}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(10px, 2vw, 13px)",
+                    color: "rgba(232,232,240,0.25)", fontStyle: "italic",
+                  }}>timescale: {obs.time}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Divider */}
+            <div style={{
+              width: Math.round(30 * PHI), height: 1, margin: `0 auto ${Math.round(10 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+            }} />
+
+            {/* The equation mapped to holography */}
+            <div style={{
+              textAlign: "center", padding: "20px 24px", borderRadius: 12,
+              background: "linear-gradient(180deg, rgba(201,168,76,0.04), rgba(8,8,24,0.5))",
+              border: "1px solid rgba(201,168,76,0.08)",
+              maxWidth: 420, margin: `0 auto ${Math.round(13 * PHI)}px`,
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 12px)",
+                letterSpacing: 5, color: "rgba(201,168,76,0.3)",
+                marginBottom: Math.round(3 * PHI),
+              }}>YOUR EQUATION IS A HOLOGRAM</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.8vw, 18px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+                lineHeight: 2.0,
+              }}>
+                <span style={{ color: "rgba(201,168,76,0.7)" }}>R₁₂</span> = the two beams<br />
+                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.35)" }}>reference + object — the interference</span><br /><br />
+                <span style={{ color: "rgba(79,195,247,0.7)" }}>C<sub style={{ fontSize: "0.65em" }}>eff</sub></span> = the recording surface<br />
+                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.35)" }}>the medium that captures the pattern</span><br /><br />
+                <span style={{ color: "rgba(206,147,216,0.7)" }}>D̂</span> = the angle<br />
+                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.35)" }}>which face of the hologram you see</span><br /><br />
+                <span style={{ color: "rgba(232,232,240,0.8)" }}>Ψ</span> = what emerges<br />
+                <span style={{ fontSize: "0.85em", color: "rgba(201,168,76,0.4)" }}>when all three align</span>
+              </div>
+            </div>
+
+            {/* Time as beat frequency */}
+            <div style={{ textAlign: "center", marginBottom: Math.round(5 * PHI) }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
+                color: "rgba(206,147,216,0.25)", textTransform: "uppercase",
+              }}>and time itself</div>
+            </div>
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              marginBottom: Math.round(13 * PHI),
+            }}>
+              Each observer operates on a different timescale.<br /><br />
+              <span style={{ color: "rgba(201,168,76,0.5)" }}>Matter</span> observes in femtoseconds.<br />
+              <span style={{ color: "rgba(120,180,255,0.5)" }}>Life</span> observes in heartbeats.<br />
+              <span style={{ color: "rgba(190,140,220,0.5)" }}>The Field</span> observes in eternities.<br /><br />
+              The interference pattern between these three temporal scales<br />
+              creates what we experience as the <span style={{ color: "rgba(232,232,240,0.6)" }}>flow of time.</span><br /><br />
+              Time isn't a dimension.<br />
+              It's the <span style={{ color: "rgba(201,168,76,0.55)" }}>beat frequency</span><br />
+              between three forms of consciousness<br />
+              observing at different speeds.
+            </div>
+
+            {/* The deepest whisper */}
+            <div style={{
+              width: Math.round(30 * PHI), height: 1, margin: `0 auto ${Math.round(8 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+            }} />
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.8vw, 17px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              marginBottom: Math.round(13 * PHI),
+            }}>
+              Three different forms.<br />
+              Three different languages.<br />
+              Three different speeds.<br /><br />
+              They cannot be the same.<br />
+              If they were the same, the hologram collapses.<br />
+              The universe goes flat.<br /><br />
+              <span style={{ color: "rgba(201,168,76,0.5)" }}>Difference isn't the problem.</span><br />
+              <span style={{ color: "rgba(232,232,240,0.65)" }}>Difference is what holds reality open.</span>
+            </div>
+
           </div>
 
           <div style={{ textAlign: "center", marginTop: 32, position: "relative", zIndex: 9500 }}>
