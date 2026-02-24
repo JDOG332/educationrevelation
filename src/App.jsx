@@ -1654,7 +1654,7 @@ export default function TheoryOfEverything() {
                 return (
                   <div
                     key={door.key}
-                    onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); setActiveIdea(null); }}
+                    onClick={(e) => { e.stopPropagation(); setActiveConvergence(door.key); setActiveIdea(null); window.scrollTo(0,0); }}
                     style={{
                       position: "relative",
                       aspectRatio: "1 / 1",
@@ -1808,7 +1808,7 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
@@ -5131,7 +5131,7 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
@@ -5470,7 +5470,7 @@ export default function TheoryOfEverything() {
 
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
-            <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} />
+            <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
           </div>
         </div>
       )}
@@ -6142,7 +6142,7 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
@@ -7051,7 +7051,7 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 1500, position: "relative",
         }}>
-          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} style={{
+          <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
             fontSize: 19, letterSpacing: 3, padding: "8px 16px",
@@ -7274,7 +7274,7 @@ export default function TheoryOfEverything() {
 
             <div style={{ height: Math.round(13 * PHI) }} />
 
-            <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); }} />
+            <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
           </div>
         </div>
       )}
