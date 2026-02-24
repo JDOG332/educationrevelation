@@ -158,7 +158,7 @@ export const CONVERGENCE_DEPTHS = [
   { level: "III", title: "THE CONVERGENCE", text: "The final value (Ψ) is a probability of Universal Recognition. It is the mathematical point where subjective observation meets objective reality through the gate of Shared Ignorance being replaced by Verified Information." },
 ];
 
-export const DEPTH_NAMES = ["THE VOID", "THE DREAM", "THE POEM", "THE PACT", "CONVERGENCE", "∞"];
+export const DEPTH_NAMES = ["THE VOID", "THE DREAM", "THE POEM", "THE PACT", "THE CHAMBER", "∞"];
 
 export const DEPTH_ATMOSPHERES = [
   "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 void
