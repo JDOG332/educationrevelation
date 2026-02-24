@@ -1806,7 +1806,8 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 20px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 1500, position: "relative",
+          zIndex: 5000, position: "relative",
+          background: "#030306", minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -5129,7 +5130,8 @@ export default function TheoryOfEverything() {
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 1500, position: "relative",
+          zIndex: 5000, position: "relative",
+          background: "#030306", minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -5481,7 +5483,8 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 1500, position: "relative",
+          zIndex: 5000, position: "relative",
+          background: "#030306", minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -5853,7 +5856,8 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 1500, position: "relative",
+          zIndex: 5000, position: "relative",
+          background: "#030306", minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActiveSamenessProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -6140,7 +6144,9 @@ export default function TheoryOfEverything() {
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 1500, position: "relative",
+          zIndex: 5000, position: "relative",
+          background: "#030306", minHeight: "100vh",
+          minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -7049,7 +7055,8 @@ export default function TheoryOfEverything() {
           maxWidth: 680, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
           animation: "fadeSlideUp 0.6s ease",
-          zIndex: 1500, position: "relative",
+          zIndex: 5000, position: "relative",
+          background: "#030306", minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
