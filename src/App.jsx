@@ -496,7 +496,6 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 0 — YIN/YANG/PRISM: Three clicks to truth ===== */}
       {depth === 0 && (() => {
         const phase = landingPhase;
-        const dark = startDark.current;
 
         const handleClick = () => {
           if (phase === 0) setLandingPhase(1);
@@ -511,46 +510,46 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: FIRST SCREEN (black if dark-first, white if light-first)
+        // Phase 0: PURE WHITE — "close your eyes"
         if (phase === 0) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: dark ? "#000000" : "#ffffff" }}>
+            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(24px, 4vw, 31px)",
                 fontStyle: "italic",
-                color: dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)",
+                color: "rgba(0,0,0,0.08)",
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 2s 1s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>{dark ? "close your eyes" : "open your eyes"}</div>
+              }}>close your eyes</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
                 fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: dark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
+                color: "rgba(0,0,0,0.04)",
                 animation: "fadeSlideUp 2s 2.5s both ease",
               }}>tap</div>
             </div>
           );
         }
 
-        // Phase 1: SECOND SCREEN (white if dark-first, black if light-first)
+        // Phase 1: PURE BLACK — "now open them"
         if (phase === 1) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: dark ? "#ffffff" : "#000000", animation: "fadeIn 0.8s ease" }}>
+            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(24px, 4vw, 31px)",
                 fontStyle: "italic",
-                color: dark ? "rgba(0,0,0,0.08)" : "rgba(255,255,255,0.08)",
+                color: "rgba(255,255,255,0.08)",
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 2s 0.5s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>{dark ? "now open them" : "now close them"}</div>
+              }}>now open them</div>
               <div style={{
                 position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
                 fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: dark ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.04)",
+                color: "rgba(255,255,255,0.04)",
                 animation: "fadeSlideUp 2s 2s both ease",
               }}>tap</div>
             </div>
