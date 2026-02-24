@@ -1700,15 +1700,20 @@ export default function TheoryOfEverything() {
 
             <div style={{ height: Math.round(13 * PHI) }} />
 
-            {/* The equation — small, quiet, the proof that it all reduces to one line */}
-            <div style={{
-              animation: "sacredReveal 1.8s 1.6s both ease",
-              opacity: 0.7,
-            }}>
-              <TheEquation size="sm" showLabel={false} breathing minimal />
-            </div>
-
           </div>
+
+          {/* The equation — FULL WIDTH at the bottom, matching the grid width */}
+          <div style={{
+            width: "100%", maxWidth: 600,
+            padding: "0 16px",
+            boxSizing: "border-box",
+            animation: "sacredReveal 1.8s 1.6s both ease",
+            position: "relative", zIndex: 1500,
+          }}>
+            <TheEquation size="hero" showLabel={false} breathing />
+          </div>
+
+          <div style={{ height: Math.round(13 * PHI) }} />
         </div>
       )}
 
