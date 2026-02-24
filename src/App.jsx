@@ -1461,14 +1461,14 @@ export default function TheoryOfEverything() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(18px, 3.2vw, 24px)",
                 fontStyle: "italic", color: "rgba(232,232,240,0.6)",
-                marginTop: Math.round(3 * PHI), letterSpacing: 1,
+                marginTop: Math.round(8 * PHI), letterSpacing: 1,
                 animation: "fadeSlideUp 1.2s 0.4s both ease",
               }}>Reality isn't flat. Connection lives in volume, not area.</div>
 
               {/* Divider */}
               <div style={{
                 width: Math.round(40 * PHI), height: 1,
-                margin: Math.round(4 * PHI) + "px auto",
+                margin: Math.round(5 * PHI) + "px auto",
                 background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent)",
                 animation: "fadeSlideUp 1.2s 0.5s both ease",
               }} />
@@ -1479,7 +1479,7 @@ export default function TheoryOfEverything() {
                 fontSize: "clamp(18px, 3.2vw, 24px)",
                 color: "rgba(232,232,240,0.6)",
                 fontStyle: "italic", letterSpacing: 1,
-                marginBottom: Math.round(3 * PHI),
+                marginBottom: Math.round(8 * PHI),
                 animation: "fadeSlideUp 1.2s 0.55s both ease",
               }}>The cross you knew was the front face. Now watch the third dimension emerge.</div>
 
