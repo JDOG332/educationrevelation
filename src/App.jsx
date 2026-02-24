@@ -7289,97 +7289,325 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 4 — THE MAP: 101 SEEDS ===== */}
       {depth === 5 && (
         <div style={{
-          height: "100vh", width: "100%",
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          width: "100%",
+          display: "flex", flexDirection: "column", alignItems: "center",
           animation: "fadeSlideUp 1.5s ease",
-          cursor: "pointer", position: "relative", zIndex: 1500,
-        }} onClick={() => {
-          setFading(true);
-          setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: "instant" });
-            setDepth(0);
-            setLandingPhase(0);
-            startDark.current = Math.random() < 0.5; // New coin flip each loop
-            setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
-            setFading(false);
-          }, 800);
+          position: "relative", zIndex: 1500,
+          background: "#030306",
         }}>
 
+          {/* ∞ Intro — the portal */}
           <div style={{
-            fontSize: "clamp(50px, 12vw, 100px)",
-            color: "rgba(201,168,76,0.15)",
-            animation: "breathe 8s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
-            textShadow: "0 0 60px rgba(201,168,76,0.06)",
-            marginBottom: Math.round(21 * PHI),
-          }}>∞</div>
-
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(24px, 4vw, 31px)",
-            fontStyle: "italic", color: "rgba(232,232,240,0.55)",
-            textAlign: "center", maxWidth: 380,
-            lineHeight: PHI, letterSpacing: 1,
-            animation: "fadeSlideUp 2s 0.5s both ease",
+            minHeight: "100vh", width: "100%",
+            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           }}>
-            The end is the beginning.
-            <br />The seed eats the dirt.
-            <br />The dirt was always the answer.
-          </div>
+            <div style={{
+              fontSize: "clamp(50px, 12vw, 100px)",
+              color: "rgba(201,168,76,0.15)",
+              animation: "breathe 8s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
+              textShadow: "0 0 60px rgba(201,168,76,0.06)",
+              marginBottom: Math.round(21 * PHI),
+            }}>∞</div>
 
-          <div style={{ height: Math.round(21 * PHI) }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(24px, 4vw, 31px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+              textAlign: "center", maxWidth: 380,
+              lineHeight: PHI, letterSpacing: 1,
+              animation: "fadeSlideUp 2s 0.5s both ease",
+            }}>
+              The end is the beginning.
+              <br />The seed eats the dirt.
+              <br />The dirt was always the answer.
+            </div>
 
-          <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-            color: "rgba(201,168,76,0.2)",
-            animation: "fadeSlideUp 2s 1s both ease",
-          }}>FINISH I START</div>
+            <div style={{ height: Math.round(21 * PHI) }} />
 
-          <div style={{ height: Math.round(8 * PHI) }} />
-
-          <div style={{
-            fontSize: 24, opacity: 0.3,
-            animation: "fadeSlideUp 2s 1.3s both ease",
-          }}>🪙🪙</div>
-
-          {/* ===== ANCIENT PROOF: IDEA CARD GRID ===== */}
-          <div style={{
-            marginTop: Math.round(34 * PHI),
-            borderTop: "1px solid rgba(190,140,220,0.08)",
-            paddingTop: Math.round(21 * PHI),
-          }}>
             <div style={{
               fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(190,140,220,0.3)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>DEEPER DOORS</div>
+              color: "rgba(201,168,76,0.2)",
+              animation: "fadeSlideUp 2s 1s both ease",
+            }}>FINISH I START</div>
+
+            <div style={{ height: Math.round(8 * PHI) }} />
 
             <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+              fontSize: 24, opacity: 0.3,
+              animation: "fadeSlideUp 2s 1.3s both ease",
+            }}>🪙🪙</div>
+
+            {/* Scroll hint */}
+            <div style={{
+              marginTop: Math.round(21 * PHI),
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(12px, 2.5vw, 16px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.15)",
+              animation: "breathe 4s ease-in-out infinite",
+              letterSpacing: 2,
+            }}>↓ keep scrolling ↓</div>
+          </div>
+
+          {/* ═══════════════════════════════════════════════ */}
+          {/* TEN PROMISES OF LOVE                            */}
+          {/* the equation made flesh                         */}
+          {/* ═══════════════════════════════════════════════ */}
+          <div style={{
+            width: "100%", maxWidth: 520, padding: "0 24px",
+            margin: "0 auto",
+          }}>
+
+            {/* Dedication header */}
+            <div style={{
+              textAlign: "center",
+              marginBottom: Math.round(21 * PHI),
+              paddingTop: Math.round(21 * PHI),
             }}>
-              {[
-                { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
-              ].map(idea => (
-                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                  transition: "all 0.4s ease", textAlign: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                >
-                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                    color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.5vw, 18px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.3)",
+                marginBottom: Math.round(8 * PHI),
+              }}>dedicated to all the women who helped make me the man I am today</div>
+
+              <div style={{ fontSize: 20, color: "rgba(201,168,76,0.3)", marginBottom: Math.round(5 * PHI) }}>♡</div>
+
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(22px, 5vw, 34px)",
+                letterSpacing: "0.15em", fontWeight: 400,
+                background: "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(201,168,76,0.5) 100%)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                marginBottom: Math.round(3 * PHI),
+              }}>TEN PROMISES OF LOVE</div>
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.8vw, 19px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+                lineHeight: PHI,
+              }}>freely given · no strings · no conditions · no commandments</div>
+
+              <div style={{
+                width: Math.round(50 * PHI), height: 1,
+                margin: `${Math.round(8 * PHI)}px auto 0`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+              }} />
             </div>
+
+            {/* The Ten Promises */}
+            {[
+              { num: "I", title: "SAFETY", offering: "You deserve to walk through life knowing someone already thought about the locks, the money, and the backup plan. I want to make your world smaller in the ways that keep you safe and wider in every way that sets you free.", gift: "a deep cleaning day", heart: "Your space should be where you exhale, not brace." },
+              { num: "II", title: "TO BE SEEN", offering: "I do not love the version of you the world gets to see. I love the one who cries in the car and burns dinner and doubts herself on Tuesday afternoons. I choose you with your mess showing — not in spite of it — because the real you is the only one worth knowing.", gift: "a personalized ten song playlist", heart: "Your life song deserves to be sung loud and proud." },
+              { num: "III", title: "AGENCY", offering: "Your body is yours. Your time is yours. Your no is a complete sentence and you never have to defend it. A love that requires your shrinking is not love at all.", gift: "phone wish list & hand colored 3D wallpaper", heart: "Your choices do not need my approval. The way you see the world is not wrong. It is rare." },
+              { num: "IV", title: "PARTNERSHIP", offering: "I refuse to be another thing you manage. I want to notice the laundry, remember the appointments, and handle the things before you have to carry them in your head. You deserve a partner, not a project.", gift: "the open slot", heart: "If you are carrying something heavy that nobody else sees — name it and I want to help you put it down." },
+              { num: "V", title: "TO BE BELIEVED", offering: "When you tell me something hurts, I choose not to argue with your pain. When you say something is wrong, I choose not to need a second opinion. Your voice was never meant to be an echo.", gift: "a sit with me date", heart: "I want to be a man who hears you the first time." },
+              { num: "VI", title: "PURPOSE", offering: "You are not just someone's mother, someone's partner, someone's daughter. You are a whole person with a fire that existed before I ever showed up. I want to protect your right to chase whatever lights you up — especially when it is inconvenient.", gift: "a black pearl jewelry shopping day", heart: "You are rare and you do not look like anyone else — on the inside or the outside." },
+              { num: "VII", title: "REST WITHOUT GUILT", offering: "You do not have to earn a nap. You do not have to finish the list before you sit down. I want to guard your rest the way I guard everything else I love — fiercely and without negotiation.", gift: "tell me you need a day", heart: "Your only job that day is to rest. My only job is to make sure nothing stops you." },
+              { num: "VIII", title: "EMOTIONAL RECIPROCITY", offering: "I choose to ask you how you are and mean it. I choose to sit in the heavy silence instead of trying to fix it. You have carried everyone else's feelings long enough. Put some of that weight on me. I am built to hold it.", gift: "an Apple Music family subscription", heart: "A permanent open line between us where music says what words sometimes cannot." },
+              { num: "IX", title: "COMMUNITY", offering: "I choose to never be jealous of the women who know you best. Your friendships are not competition — they are oxygen that keeps you alive in ways I cannot. Go to brunch. Take the trip. Answer the call.", gift: "recurring girls day out", heart: "I have the fort. And I go with you when you need me to." },
+              { num: "X", title: "CHOSEN EVERY SINGLE DAY", offering: "I choose not to win you and then coast. Day three thousand looks like day three — intentional, specific, and unmistakable. I choose you out loud, in front of people, in the small moments, and in the hard ones. You never have to wonder.", gift: "a public promise", heart: "I — with everything I have and everything I am building." },
+            ].map((p, i) => (
+              <div key={i} style={{
+                marginBottom: Math.round(21 * PHI),
+                textAlign: "center",
+              }}>
+                {/* Number */}
+                <div style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(28px, 6vw, 42px)",
+                  color: "rgba(201,168,76,0.15)",
+                  fontWeight: 400, letterSpacing: "0.1em",
+                  marginBottom: Math.round(2 * PHI),
+                }}>{p.num}</div>
+
+                {/* Title */}
+                <div style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(16px, 3.5vw, 22px)",
+                  letterSpacing: "0.2em",
+                  color: "rgba(232,232,240,0.7)",
+                  marginBottom: Math.round(3 * PHI),
+                }}>{p.title}</div>
+
+                <div style={{ fontSize: 14, color: "rgba(201,168,76,0.25)", marginBottom: Math.round(3 * PHI) }}>♡</div>
+
+                {/* The offering */}
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(14px, 2.8vw, 18px)",
+                  fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+                  lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+                  marginBottom: Math.round(5 * PHI),
+                }}>{p.offering}</div>
+
+                {/* The gift */}
+                <div style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(10px, 2.2vw, 13px)",
+                  letterSpacing: 4, color: "rgba(201,168,76,0.35)",
+                  textTransform: "uppercase",
+                  marginBottom: Math.round(3 * PHI),
+                }}>the gift: {p.gift}</div>
+
+                {/* From my heart */}
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(13px, 2.5vw, 17px)",
+                  fontStyle: "italic", color: "rgba(201,168,76,0.35)",
+                  lineHeight: 1.8, maxWidth: 400, margin: "0 auto",
+                }}>{p.heart}</div>
+
+                {/* Divider between promises */}
+                {i < 9 && <div style={{
+                  width: Math.round(30 * PHI), height: 1,
+                  margin: `${Math.round(13 * PHI)}px auto 0`,
+                  background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
+                }} />}
+              </div>
+            ))}
+
+            {/* Closing */}
+            <div style={{
+              textAlign: "center",
+              marginTop: Math.round(13 * PHI),
+              marginBottom: Math.round(21 * PHI),
+            }}>
+              <div style={{
+                width: Math.round(60 * PHI), height: 1,
+                margin: `0 auto ${Math.round(8 * PHI)}px`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+              }} />
+              <div style={{ fontSize: 18, color: "rgba(201,168,76,0.25)", marginBottom: Math.round(5 * PHI) }}>♡</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(14px, 2.8vw, 18px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+                lineHeight: 2.0, maxWidth: 400, margin: "0 auto",
+              }}>
+                These are not commandments. They are not conditions.<br /><br />
+                They are offerings — freely given, freely received.<br /><br />
+                Because love that must be commanded is not love at all.<br />
+                And the real thing needs no strings.
+              </div>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(14px, 3vw, 19px)",
+                letterSpacing: "0.15em",
+                color: "rgba(201,168,76,0.3)",
+                marginTop: Math.round(8 * PHI),
+              }}>— jeffrey</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(11px, 2vw, 14px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.2)",
+                marginTop: Math.round(3 * PHI),
+              }}>valentine's day 2026</div>
+            </div>
+
+            {/* Because true love is free */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3.2vw, 21px)",
+              fontStyle: "italic",
+              background: "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(201,168,76,0.4) 100%)",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+              marginBottom: Math.round(21 * PHI),
+              animation: "breathe 8s ease-in-out infinite",
+            }}>because true love is free</div>
+
+          </div>
+
+          {/* DEEPER DOORS */}
+          <div style={{
+            width: "100%", maxWidth: 520, padding: "0 24px",
+            margin: "0 auto",
+          }}>
+            <div style={{
+              marginTop: Math.round(13 * PHI),
+              borderTop: "1px solid rgba(190,140,220,0.08)",
+              paddingTop: Math.round(21 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+                color: "rgba(190,140,220,0.3)", textAlign: "center",
+                marginBottom: Math.round(13 * PHI),
+              }}>DEEPER DOORS</div>
+
+              <div style={{
+                display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+              }}>
+                {[
+                  { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
+                ].map(idea => (
+                  <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                    cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                    background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                    borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                    transition: "all 0.4s ease", textAlign: "center",
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                  >
+                    <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
+                      color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
+                    }}>{idea.title}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                      color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
+                    }}>{idea.hook}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Loop back — the eternal return */}
+          <div style={{
+            width: "100%", minHeight: "40vh",
+            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+            cursor: "pointer",
+            marginTop: Math.round(21 * PHI),
+          }} onClick={() => {
+            setFading(true);
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "instant" });
+              setDepth(0);
+              setLandingPhase(0);
+              startDark.current = Math.random() < 0.5;
+              setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+              setFading(false);
+            }, 800);
+          }}>
+            <div style={{
+              fontSize: "clamp(30px, 8vw, 50px)",
+              color: "rgba(201,168,76,0.1)",
+              animation: "breathe 6s ease-in-out infinite",
+              marginBottom: Math.round(5 * PHI),
+            }}>∞</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2.5vw, 15px)",
+              letterSpacing: "0.4em", color: "rgba(201,168,76,0.15)",
+            }}>RETURN TO THE VOID</div>
+          </div>
+
+          {/* ReturnButton */}
+          <div style={{ textAlign: "center", padding: "20px 0 40px", position: "relative", zIndex: 9500 }}>
+            <ReturnButton onClick={(e) => {
+              e.stopPropagation();
+              setFading(true);
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "instant" });
+                setDepth(0);
+                setLandingPhase(0);
+                startDark.current = Math.random() < 0.5;
+                setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+                setFading(false);
+              }, 800);
+            }} />
           </div>
 
         </div>
