@@ -6116,39 +6116,101 @@ export default function TheoryOfEverything() {
             ))}
           </div>
 
-          {/* ===== THE GATE: IDEA CARD GRID ===== */}
+          {/* ===== THE MIRROR PAIRS — the gate made flesh ===== */}
           <div style={{
             marginTop: Math.round(34 * PHI),
-            borderTop: "1px solid rgba(180,220,200,0.08)",
+            borderTop: "1px solid rgba(224,80,80,0.08)",
             paddingTop: Math.round(21 * PHI),
           }}>
             <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(180,220,200,0.3)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>DEEPER DOORS</div>
-
+              width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.15), transparent)",
+            }} />
             <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-            }}>
-              {[
-                { key: "placeholder", icon: "🪞", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "180,220,200" },
-              ].map(idea => (
-                <div key={idea.key} style={{
-                  padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
-                  textAlign: "center", opacity: 0.4,
-                }}>
-                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                    color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{idea.hook}</div>
+              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+              color: "rgba(224,80,80,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>THE MIRROR PAIRS</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+              fontStyle: "italic", color: "rgba(255,255,255,0.3)",
+              textAlign: "center", marginBottom: Math.round(21 * PHI),
+              maxWidth: 400, margin: `0 auto ${Math.round(21 * PHI)}px`,
+            }}>Every layer has a mirror. Together they prove the math is not abstract — it's alive.</div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+              {MIRRORS.map((mirror, i) => (
+                <div key={i}>
+                  <div
+                    onClick={() => setActivePair(activePair === i ? null : i)}
+                    style={{
+                      display: "flex", alignItems: "center", justifyContent: "space-between",
+                      padding: `${Math.round(10 * PHI)}px ${Math.round(10 * PHI)}px`,
+                      borderRadius: 10,
+                      background: activePair === i ? "rgba(224,80,80,0.04)" : "rgba(255,255,255,0.01)",
+                      border: `1px solid ${activePair === i ? "rgba(224,80,80,0.15)" : "rgba(255,255,255,0.04)"}`,
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: Math.round(5 * PHI) }}>
+                      <span style={{ fontSize: 24 }}>{mirror.glyphs[0]}</span>
+                      <span style={{ fontSize: 24, color: "rgba(224,80,80,0.3)" }}>↔</span>
+                      <span style={{ fontSize: 24 }}>{mirror.glyphs[1]}</span>
+                      <div style={{ marginLeft: 8 }}>
+                        <div style={{
+                          fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
+                          color: "rgba(224,80,80,0.6)",
+                        }}>{mirror.name}</div>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                          color: "rgba(255,255,255,0.2)", fontStyle: "italic",
+                        }}>{mirror.connection}</div>
+                      </div>
+                    </div>
+                    <div style={{
+                      fontSize: 19, color: "rgba(255,255,255,0.15)",
+                      transition: "transform 0.3s",
+                      transform: activePair === i ? "rotate(180deg)" : "rotate(0deg)",
+                    }}>▼</div>
+                  </div>
+                  {activePair === i && (
+                    <div style={{
+                      padding: `${Math.round(10 * PHI)}px ${Math.round(13 * PHI)}px`,
+                      animation: "senseReveal 0.5s ease",
+                      borderLeft: "2px solid rgba(224,80,80,0.1)",
+                      marginLeft: Math.round(13 * PHI),
+                    }}>
+                      {/* Core essay */}
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
+                        lineHeight: 1.85, color: "rgba(255,255,255,0.48)",
+                        fontStyle: "italic", marginBottom: Math.round(8 * PHI),
+                      }}>{mirror.core}</div>
+                      {/* Equation */}
+                      <div style={{
+                        textAlign: "center",
+                        padding: `${Math.round(8 * PHI)}px`,
+                        background: "rgba(224,80,80,0.02)",
+                        borderRadius: 8, marginBottom: Math.round(8 * PHI),
+                      }}>
+                        <div style={{
+                          fontFamily: "monospace", fontSize: 24,
+                          color: "rgba(224,80,80,0.6)", letterSpacing: 1,
+                        }}>{mirror.equation.symbol}</div>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
+                          color: "rgba(255,255,255,0.3)", fontStyle: "italic", marginTop: 6,
+                        }}>{mirror.equation.meaning}</div>
+                      </div>
+                      {/* Buried */}
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                        fontStyle: "italic", color: "rgba(201,168,76,0.4)",
+                        textAlign: "center",
+                      }}>"{mirror.buried}"</div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -6931,100 +6993,6 @@ export default function TheoryOfEverything() {
               onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.15)"}
               onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.06)"}
             >click anywhere to continue</div>
-          </div>
-
-          {/* THE MIRROR PAIRS — the math made flesh */}
-          <div style={{
-            width: Math.round(40 * PHI), height: 1, margin: `${Math.round(21 * PHI)}px auto`,
-            background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.15), transparent)",
-          }} />
-          <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-            color: "rgba(79,195,247,0.3)", textAlign: "center",
-            marginBottom: Math.round(13 * PHI),
-          }}>THE MIRROR PAIRS</div>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-            fontStyle: "italic", color: "rgba(255,255,255,0.3)",
-            textAlign: "center", marginBottom: Math.round(21 * PHI),
-            maxWidth: 400, margin: `0 auto ${Math.round(21 * PHI)}px`,
-          }}>Every layer has a mirror. Together they prove the math is not abstract — it's alive.</div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
-            {MIRRORS.map((mirror, i) => (
-              <div key={i}>
-                <div
-                  onClick={() => setActivePair(activePair === i ? null : i)}
-                  style={{
-                    display: "flex", alignItems: "center", justifyContent: "space-between",
-                    padding: `${Math.round(10 * PHI)}px ${Math.round(10 * PHI)}px`,
-                    borderRadius: 10,
-                    background: activePair === i ? "rgba(79,195,247,0.04)" : "rgba(255,255,255,0.01)",
-                    border: `1px solid ${activePair === i ? "rgba(79,195,247,0.15)" : "rgba(255,255,255,0.04)"}`,
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: Math.round(5 * PHI) }}>
-                    <span style={{ fontSize: 24 }}>{mirror.glyphs[0]}</span>
-                    <span style={{ fontSize: 24, color: "rgba(79,195,247,0.3)" }}>↔</span>
-                    <span style={{ fontSize: 24 }}>{mirror.glyphs[1]}</span>
-                    <div style={{ marginLeft: 8 }}>
-                      <div style={{
-                        fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                        color: "rgba(79,195,247,0.6)",
-                      }}>{mirror.name}</div>
-                      <div style={{
-                        fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                        color: "rgba(255,255,255,0.2)", fontStyle: "italic",
-                      }}>{mirror.connection}</div>
-                    </div>
-                  </div>
-                  <div style={{
-                    fontSize: 19, color: "rgba(255,255,255,0.15)",
-                    transition: "transform 0.3s",
-                    transform: activePair === i ? "rotate(180deg)" : "rotate(0deg)",
-                  }}>▼</div>
-                </div>
-                {activePair === i && (
-                  <div style={{
-                    padding: `${Math.round(10 * PHI)}px ${Math.round(13 * PHI)}px`,
-                    animation: "senseReveal 0.5s ease",
-                    borderLeft: "2px solid rgba(79,195,247,0.1)",
-                    marginLeft: Math.round(13 * PHI),
-                  }}>
-                    {/* Core essay */}
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                      lineHeight: 1.85, color: "rgba(255,255,255,0.48)",
-                      fontStyle: "italic", marginBottom: Math.round(8 * PHI),
-                    }}>{mirror.core}</div>
-                    {/* Equation */}
-                    <div style={{
-                      textAlign: "center",
-                      padding: `${Math.round(8 * PHI)}px`,
-                      background: "rgba(79,195,247,0.02)",
-                      borderRadius: 8, marginBottom: Math.round(8 * PHI),
-                    }}>
-                      <div style={{
-                        fontFamily: "monospace", fontSize: 24,
-                        color: "rgba(79,195,247,0.6)", letterSpacing: 1,
-                      }}>{mirror.equation.symbol}</div>
-                      <div style={{
-                        fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                        color: "rgba(255,255,255,0.3)", fontStyle: "italic", marginTop: 6,
-                      }}>{mirror.equation.meaning}</div>
-                    </div>
-                    {/* Buried */}
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                      fontStyle: "italic", color: "rgba(201,168,76,0.4)",
-                      textAlign: "center",
-                    }}>"{mirror.buried}"</div>
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
 
           {/* ===== THE MATH: IDEA CARD GRID ===== */}
