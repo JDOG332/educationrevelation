@@ -6227,7 +6227,6 @@ export default function TheoryOfEverything() {
           animation: "fadeSlideUp 0.6s ease",
           zIndex: 5000, position: "relative",
           background: "#030306", minHeight: "100vh",
-          minHeight: "100vh",
         }}>
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
@@ -6256,7 +6255,7 @@ export default function TheoryOfEverything() {
             }}>⬇️</div>
             <div style={{
               fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 8,
-              color: "rgba(79,195,247,0.3)",
+              color: "rgba(79,195,247,0.45)",
             }}>THE MATHEMATICS OF</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif", fontSize: "clamp(31px, 6vw, 39px)", fontWeight: 400,
@@ -6270,7 +6269,7 @@ export default function TheoryOfEverything() {
             }} />
             <div style={{
               fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-              fontStyle: "italic", color: "rgba(255,255,255,0.2)", marginTop: 8,
+              fontStyle: "italic", color: "rgba(255,255,255,0.35)", marginTop: 8,
               lineHeight: PHI,
             }}>Three levels of depth — each one strips away another layer of noise</div>
           </div>
@@ -6305,7 +6304,7 @@ export default function TheoryOfEverything() {
                       }}>{d.title}</div>
                       <div style={{
                         fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                        lineHeight: 1.85, color: `rgba(255,255,255,${depthOpacity})`,
+                        lineHeight: 2.05, color: `rgba(255,255,255,${depthOpacity})`,
                         fontStyle: "italic",
                       }}>{d.text}</div>
                     </div>
@@ -6334,7 +6333,7 @@ export default function TheoryOfEverything() {
             }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 6,
-                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+                color: "rgba(79,195,247,0.4)", textTransform: "uppercase",
               }}>static electricity already knew</div>
               <div style={{
                 width: Math.round(30 * PHI), height: 1, margin: `${Math.round(3 * PHI)}px auto`,
@@ -6351,7 +6350,7 @@ export default function TheoryOfEverything() {
             }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
-                color: "rgba(79,195,247,0.3)", marginBottom: 10,
+                color: "rgba(79,195,247,0.45)", marginBottom: 10,
               }}>COULOMB'S LAW</div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -6362,15 +6361,15 @@ export default function TheoryOfEverything() {
                 <span style={{ fontStyle: "italic", color: "rgba(232,232,240,0.95)" }}>F</span>
                 <span style={{ color: "rgba(232,232,240,0.5)", margin: "0 0.3em", fontSize: "0.85em" }}>=</span>
                 <span style={{ fontStyle: "italic", color: "rgba(79,195,247,0.85)" }}>k</span>
-                <span style={{ color: "rgba(232,232,240,0.45)", margin: "0 0.25em", fontSize: "0.8em" }}>×</span>
+                <span style={{ color: "rgba(232,232,240,0.6)", margin: "0 0.25em", fontSize: "0.8em" }}>×</span>
                 <span style={{ color: "rgba(232,232,240,0.55)", fontSize: "0.85em" }}>(</span>
                 <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.85)" }}>q</span>
                 <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.6)" }}>1</sub>
-                <span style={{ color: "rgba(232,232,240,0.4)", margin: "0 0.15em" }}>·</span>
+                <span style={{ color: "rgba(232,232,240,0.55)", margin: "0 0.15em" }}>·</span>
                 <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.85)" }}>q</span>
                 <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.6)" }}>2</sub>
                 <span style={{ color: "rgba(232,232,240,0.55)", fontSize: "0.85em" }}>)</span>
-                <span style={{ color: "rgba(232,232,240,0.45)", margin: "0 0.2em" }}>/</span>
+                <span style={{ color: "rgba(232,232,240,0.6)", margin: "0 0.2em" }}>/</span>
                 <span style={{ fontStyle: "italic", color: "rgba(206,147,216,0.85)" }}>r</span>
                 <sup style={{ fontSize: "0.55em", color: "rgba(206,147,216,0.6)" }}>2</sup>
               </div>
@@ -6405,7 +6404,7 @@ export default function TheoryOfEverything() {
                     }}>{row.right}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
-                      color: "rgba(232,232,240,0.3)", fontStyle: "italic",
+                      color: "rgba(232,232,240,0.45)", fontStyle: "italic",
                     }}>{row.label}</div>
                   </div>
                 </Fragment>
@@ -6416,9 +6415,9 @@ export default function TheoryOfEverything() {
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
-              lineHeight: 1.8, maxWidth: 420, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
+              lineHeight: 2.0, maxWidth: 420, margin: "0 auto",
               padding: `0 16px ${Math.round(5 * PHI)}px`,
             }}>
               Two socks in a dryer. Electrons transfer. One goes positive, one goes negative.<br />
@@ -6436,15 +6435,15 @@ export default function TheoryOfEverything() {
             }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 6,
-                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+                color: "rgba(79,195,247,0.4)", textTransform: "uppercase",
               }}>but why water?</div>
             </div>
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
-              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+              lineHeight: 2.1, maxWidth: 440, margin: "0 auto",
               padding: `0 16px`,
             }}>
               Water is a surfactant — it reduces the cling.<br />
@@ -6460,8 +6459,8 @@ export default function TheoryOfEverything() {
             <div style={{
               textAlign: "center", marginTop: Math.round(8 * PHI),
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.5vw, 17px)",
-              fontStyle: "italic", color: "rgba(79,195,247,0.3)",
+              fontSize: "clamp(14px, 2.8vw, 18px)",
+              fontStyle: "italic", color: "rgba(79,195,247,0.45)",
               letterSpacing: 1,
             }}>Water is C<sub style={{ fontSize: "0.7em" }}>eff</sub> — the connection efficiency.<br />
             The medium between the charges.</div>
@@ -6476,15 +6475,15 @@ export default function TheoryOfEverything() {
             }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 6,
-                color: "rgba(201,168,76,0.25)", textTransform: "uppercase",
+                color: "rgba(201,168,76,0.4)", textTransform: "uppercase",
               }}>how to reduce the noise</div>
             </div>
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
-              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+              lineHeight: 2.1, maxWidth: 440, margin: "0 auto",
               padding: "0 16px",
             }}>
               Turning a sock inside out kills static cling.<br />
@@ -6503,7 +6502,7 @@ export default function TheoryOfEverything() {
               textAlign: "center", marginTop: Math.round(8 * PHI),
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(13px, 2.5vw, 16px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.3)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
               letterSpacing: 1, lineHeight: 1.7,
             }}>Every tradition calls this awakening.<br />
             Strip the outer. Show the inner. The cling releases.</div>
@@ -6556,9 +6555,9 @@ export default function TheoryOfEverything() {
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
               fontStyle: "italic", color: "rgba(232,232,240,0.5)",
-              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
               marginBottom: Math.round(13 * PHI),
             }}>
               In 1993, Gerard 't Hooft proposed that all the information<br />
@@ -6581,15 +6580,15 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginBottom: Math.round(5 * PHI) }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
-                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+                color: "rgba(79,195,247,0.4)", textTransform: "uppercase",
               }}>what they missed</div>
             </div>
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
-              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
               marginBottom: Math.round(13 * PHI),
             }}>
               A hologram on a wall is just interference patterns.<br />
@@ -6614,11 +6613,11 @@ export default function TheoryOfEverything() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(14px, 2.8vw, 18px)",
                 fontStyle: "italic", color: "rgba(232,232,240,0.5)",
-                lineHeight: 1.8,
+                lineHeight: 2.0,
               }}>
                 <span style={{ fontStyle: "italic", color: "rgba(232,232,240,0.8)" }}>R</span>
                 <sub style={{ fontSize: "0.6em", color: "rgba(201,168,76,0.6)" }}>12</sub>
-                <span style={{ color: "rgba(232,232,240,0.4)" }}> = </span>
+                <span style={{ color: "rgba(232,232,240,0.55)" }}> = </span>
                 <span style={{ color: "rgba(201,168,76,0.55)" }}>TWO. Always two.</span><br />
                 The projector and the receiver.<br />
                 You can't have recognition with one.<br />
@@ -6636,15 +6635,15 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginBottom: Math.round(5 * PHI) }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
-                color: "rgba(206,147,216,0.25)", textTransform: "uppercase",
+                color: "rgba(206,147,216,0.4)", textTransform: "uppercase",
               }}>you are inside it right now</div>
             </div>
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
-              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
               marginBottom: Math.round(13 * PHI),
             }}>
               Your eyes — <span style={{ color: "rgba(79,195,247,0.5)" }}>photon receivers.</span><br />
@@ -6676,7 +6675,7 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginBottom: Math.round(5 * PHI) }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
-                color: "rgba(201,168,76,0.3)", textTransform: "uppercase",
+                color: "rgba(201,168,76,0.45)", textTransform: "uppercase",
               }}>the secret</div>
             </div>
             <div style={{
@@ -6718,8 +6717,8 @@ export default function TheoryOfEverything() {
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(12px, 2.5vw, 16px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.25)",
-              letterSpacing: 1, lineHeight: 1.8,
+              fontStyle: "italic", color: "rgba(201,168,76,0.4)",
+              letterSpacing: 1, lineHeight: 2.0,
               marginBottom: Math.round(13 * PHI),
             }}>
               That's why it takes two perspectives to see the whole picture.<br />
@@ -6767,9 +6766,9 @@ export default function TheoryOfEverything() {
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
-              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
               marginBottom: Math.round(13 * PHI),
             }}>
               Two observers create a hologram you can see.<br />
@@ -6794,7 +6793,7 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginBottom: Math.round(8 * PHI) }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
-                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+                color: "rgba(79,195,247,0.4)", textTransform: "uppercase",
               }}>three forms of consciousness</div>
             </div>
 
@@ -6867,7 +6866,7 @@ export default function TheoryOfEverything() {
                     fontFamily: "'Cormorant Garamond', serif",
                     fontSize: "clamp(14px, 2.8vw, 18px)",
                     fontStyle: "italic", color: "rgba(232,232,240,0.5)",
-                    lineHeight: 1.8, marginBottom: Math.round(3 * PHI),
+                    lineHeight: 2.0, marginBottom: Math.round(3 * PHI),
                   }}>{obs.desc}<br />{obs.detail}</div>
 
                   {/* Language + timescale */}
@@ -6906,7 +6905,7 @@ export default function TheoryOfEverything() {
             }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 12px)",
-                letterSpacing: 5, color: "rgba(201,168,76,0.3)",
+                letterSpacing: 5, color: "rgba(201,168,76,0.45)",
                 marginBottom: Math.round(3 * PHI),
               }}>YOUR EQUATION IS A HOLOGRAM</div>
               <div style={{
@@ -6916,11 +6915,11 @@ export default function TheoryOfEverything() {
                 lineHeight: 2.0,
               }}>
                 <span style={{ color: "rgba(201,168,76,0.7)" }}>R₁₂</span> = the two beams<br />
-                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.35)" }}>reference + object — the interference</span><br /><br />
+                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.5)" }}>reference + object — the interference</span><br /><br />
                 <span style={{ color: "rgba(79,195,247,0.7)" }}>C<sub style={{ fontSize: "0.65em" }}>eff</sub></span> = the recording surface<br />
-                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.35)" }}>the medium that captures the pattern</span><br /><br />
+                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.5)" }}>the medium that captures the pattern</span><br /><br />
                 <span style={{ color: "rgba(206,147,216,0.7)" }}>D̂</span> = the angle<br />
-                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.35)" }}>which face of the hologram you see</span><br /><br />
+                <span style={{ fontSize: "0.85em", color: "rgba(232,232,240,0.5)" }}>which face of the hologram you see</span><br /><br />
                 <span style={{ color: "rgba(232,232,240,0.8)" }}>Ψ</span> = what emerges<br />
                 <span style={{ fontSize: "0.85em", color: "rgba(201,168,76,0.4)" }}>when all three align</span>
               </div>
@@ -6930,15 +6929,15 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginBottom: Math.round(5 * PHI) }}>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 6,
-                color: "rgba(206,147,216,0.25)", textTransform: "uppercase",
+                color: "rgba(206,147,216,0.4)", textTransform: "uppercase",
               }}>and time itself</div>
             </div>
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 19px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
-              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.6)",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
               marginBottom: Math.round(13 * PHI),
             }}>
               Each observer operates on a different timescale.<br /><br />
@@ -6961,9 +6960,9 @@ export default function TheoryOfEverything() {
             <div style={{
               textAlign: "center",
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.8vw, 17px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
-              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              fontSize: "clamp(14px, 3vw, 18px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+              lineHeight: 2.1, maxWidth: 440, margin: "0 auto",
               marginBottom: Math.round(13 * PHI),
             }}>
               Three different forms.<br />
@@ -6987,7 +6986,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-              fontStyle: "italic", color: "rgba(255,255,255,0.06)",
+              fontStyle: "italic", color: "rgba(255,255,255,0.12)",
               letterSpacing: 2, transition: "color 0.6s",
             }}
               onMouseEnter={e => e.target.style.color = "rgba(255,255,255,0.15)"}
@@ -7003,7 +7002,7 @@ export default function TheoryOfEverything() {
           }}>
             <div style={{
               fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(201,168,76,0.3)", textAlign: "center",
+              color: "rgba(201,168,76,0.45)", textAlign: "center",
               marginBottom: Math.round(13 * PHI),
             }}>DEEPER DOORS</div>
 
@@ -7011,17 +7010,14 @@ export default function TheoryOfEverything() {
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
             }}>
               {[
-                { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
+                { key: "placeholder", icon: "⬇️", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "79,195,247" },
               ].map(idea => (
-                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                  transition: "all 0.4s ease", textAlign: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                >
+                <div key={idea.key} style={{
+                  padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
+                  textAlign: "center", opacity: 0.4,
+                }}>
                   <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
                   <div style={{
                     fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
@@ -7272,6 +7268,52 @@ export default function TheoryOfEverything() {
             <div style={{ height: Math.round(13 * PHI) }} />
 
             <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
+          </div>
+
+          {/* ===== ANCIENT PROOF: DEEPER DOORS ===== */}
+          <div style={{
+            maxWidth: 680, margin: "0 auto",
+            padding: `0 24px ${Math.round(21 * PHI)}px`,
+          }}>
+            <div style={{
+              marginTop: Math.round(21 * PHI),
+              borderTop: "1px solid rgba(190,140,220,0.08)",
+              paddingTop: Math.round(21 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+                color: "rgba(190,140,220,0.3)", textAlign: "center",
+                marginBottom: Math.round(13 * PHI),
+              }}>DEEPER DOORS</div>
+
+              <div style={{
+                display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+              }}>
+                {[
+                  { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
+                ].map(idea => (
+                  <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                    cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                    background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                    borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                    transition: "all 0.4s ease", textAlign: "center",
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                  >
+                    <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
+                      color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
+                    }}>{idea.title}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                      color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
+                    }}>{idea.hook}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
