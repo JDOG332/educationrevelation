@@ -519,7 +519,7 @@ export default function TheoryOfEverything() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
                 fontStyle: "italic",
-                color: "rgba(0,0,0,0.3)",
+                color: "rgba(0,0,0,0.7)",
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 1.5s 0.5s both ease",
                 textAlign: "center", userSelect: "none",
@@ -536,7 +536,7 @@ export default function TheoryOfEverything() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
                 fontStyle: "italic",
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,0.7)",
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 1.5s 0.3s both ease",
                 textAlign: "center", userSelect: "none",
@@ -659,11 +659,11 @@ export default function TheoryOfEverything() {
                   letterSpacing: "0.12em",
                   lineHeight: 1.6,
                   animation: "breathe 6s ease-in-out infinite",
-                  background: "linear-gradient(90deg, rgba(220,220,220,0.9) 0%, rgba(180,180,180,0.85) 25%, rgba(120,120,120,0.8) 50%, rgba(70,70,70,0.85) 75%, rgba(30,30,30,0.9) 100%)",
+                  background: "linear-gradient(90deg, rgba(255,255,255,0.85) 0%, rgba(220,220,220,0.8) 15%, rgba(160,160,160,0.7) 35%, rgba(100,100,100,0.7) 50%, rgba(60,60,60,0.8) 65%, rgba(20,20,20,0.85) 85%, rgba(0,0,0,0.9) 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))",
+                  filter: "drop-shadow(0 1px 3px rgba(128,128,128,0.3))",
                 }}>now blink them<br />&amp; make a wish</div>
               </div>
             </div>
