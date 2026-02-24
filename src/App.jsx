@@ -1595,7 +1595,7 @@ export default function TheoryOfEverything() {
           {/* Content */}
           <div style={{
             textAlign: "center",
-            width: "100%", maxWidth: 520,
+            width: "100%", maxWidth: 580,
             display: "flex", flexDirection: "column", alignItems: "center",
             position: "relative", zIndex: 1500,
             padding: "0 16px",
@@ -1633,7 +1633,7 @@ export default function TheoryOfEverything() {
                       aspectRatio: "1 / 1",
                       display: "flex", flexDirection: "column",
                       alignItems: "center", justifyContent: "center",
-                      borderRadius: 8,
+                      borderRadius: 10,
                       background: `linear-gradient(180deg, ${accentGlow}, rgba(3,3,6,0.6))`,
                       border: `1px solid ${accentBorder}`,
                       cursor: "pointer",
@@ -1641,7 +1641,7 @@ export default function TheoryOfEverything() {
                       transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.5s",
                       animation: `fadeSlideUp 0.7s ${totalDelay}s both ease`,
                       textAlign: "center",
-                      padding: "6px",
+                      padding: "8px",
                     }}
                     onMouseEnter={e => {
                       e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
@@ -1659,7 +1659,7 @@ export default function TheoryOfEverything() {
                       background: `linear-gradient(90deg, transparent, ${accentDim}, transparent)`,
                     }} />
                     <div style={{
-                      fontSize: "clamp(20px, 4.5vw, 28px)",
+                      fontSize: "clamp(24px, 5.5vw, 34px)",
                       marginBottom: Math.round(2 * PHI),
                       filter: `drop-shadow(0 0 12px ${accentShadow})`,
                       animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
@@ -1667,19 +1667,19 @@ export default function TheoryOfEverything() {
                     }}>{door.glyph}</div>
                     <div style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(8px, 2vw, 13px)",
-                      letterSpacing: "0.1em",
+                      fontSize: "clamp(10px, 2.6vw, 16px)",
+                      letterSpacing: "0.12em",
                       color: accentText,
                       fontWeight: 600,
                       lineHeight: 1.2,
                     }}>{door.name}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(7px, 1.8vw, 11px)",
-                      color: "rgba(232,232,240,0.4)",
+                      fontSize: "clamp(9px, 2.2vw, 14px)",
+                      color: "rgba(232,232,240,0.45)",
                       fontStyle: "italic",
-                      marginTop: 2,
-                      lineHeight: 1.3,
+                      marginTop: 3,
+                      lineHeight: 1.4,
                     }}>{door.sub}</div>
                   </div>
                 );
@@ -1694,33 +1694,33 @@ export default function TheoryOfEverything() {
                   {/* ★ THE APEX — title IS the capstone */}
                   <div style={{
                     animation: "fadeSlideUp 1.2s 0.3s both ease",
-                    marginBottom: cardGap,
+                    marginBottom: Math.round(5 * PHI),
                     textAlign: "center",
                   }}>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 12px)", letterSpacing: "0.5em",
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.5vw, 14px)", letterSpacing: "0.5em",
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
-                      marginBottom: Math.round(2 * PHI),
+                      marginBottom: Math.round(3 * PHI),
                     }}>six witnesses · one truth</div>
                     <div style={{
-                      fontSize: "clamp(24px, 5vw, 36px)",
-                      marginBottom: Math.round(2 * PHI),
-                      filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
+                      fontSize: "clamp(28px, 6vw, 42px)",
+                      marginBottom: Math.round(3 * PHI),
+                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
                       animation: "gentleFloat 10s ease-in-out infinite",
                     }}>🔺</div>
                     <h2 style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(16px, 4vw, 28px)",
+                      fontSize: "clamp(20px, 5vw, 34px)",
                       fontWeight: 400,
-                      letterSpacing: "0.18em",
-                      margin: 0,
+                      letterSpacing: "0.2em",
+                      margin: 0, lineHeight: 1.3,
                       background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(201,168,76,0.5) 100%)",
                       WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                       filter: "drop-shadow(0 0 20px rgba(201,168,76,0.06))",
                     }}>THE CONVERGENCE<br />CHAMBER</h2>
                     <div style={{
-                      width: Math.round(40 * PHI), height: 1,
+                      width: Math.round(50 * PHI), height: 1,
                       margin: `${Math.round(3 * PHI)}px auto 0`,
                       background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
                     }} />
@@ -1729,7 +1729,7 @@ export default function TheoryOfEverything() {
                   {/* Row 1: 1 card — capstone stone */}
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr",
-                    gap: cardGap, width: "30%",
+                    gap: cardGap, width: "33%",
                     marginBottom: cardGap,
                   }}>
                     {rows[0].map((d, i) => renderCard(d, i, 0.7))}
@@ -1738,7 +1738,7 @@ export default function TheoryOfEverything() {
                   {/* Row 2: 2 cards */}
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr 1fr",
-                    gap: cardGap, width: "62%",
+                    gap: cardGap, width: "66%",
                     marginBottom: cardGap,
                   }}>
                     {rows[1].map((d, i) => renderCard(d, i, 0.9 + i * 0.1))}
@@ -1747,7 +1747,7 @@ export default function TheoryOfEverything() {
                   {/* Row 3: 3 cards — the base stones */}
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr 1fr 1fr",
-                    gap: cardGap, width: "95%",
+                    gap: cardGap, width: "100%",
                     marginBottom: cardGap,
                   }}>
                     {rows[2].map((d, i) => renderCard(d, i, 1.1 + i * 0.1))}
@@ -1760,7 +1760,7 @@ export default function TheoryOfEverything() {
 
           {/* The equation — the FOUNDATION STONE the temple rests on */}
           <div style={{
-            width: "100%", maxWidth: 520,
+            width: "100%", maxWidth: 580,
             padding: "0 16px",
             boxSizing: "border-box",
             animation: "sacredReveal 1.8s 1.4s both ease",
