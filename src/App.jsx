@@ -7167,7 +7167,7 @@ export default function TheoryOfEverything() {
               ))}
             </div>
 
-            {/* Download the full paper */}
+            {/* The honest statement + download */}
             <div style={{
               marginTop: Math.round(21 * PHI),
               textAlign: "center",
@@ -7176,6 +7176,8 @@ export default function TheoryOfEverything() {
                 width: Math.round(40 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
                 background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.15), transparent)",
               }} />
+
+              {/* Paper link — first, prominent */}
               <a
                 href="/psi_v8_7.pdf"
                 target="_blank"
@@ -7204,6 +7206,28 @@ export default function TheoryOfEverything() {
                 fontStyle: "italic", color: "rgba(232,232,240,0.2)",
                 marginTop: Math.round(2 * PHI),
               }}>16 pages · full proofs · Python code · experimental protocol</div>
+
+              {/* The honest note */}
+              <div style={{
+                marginTop: Math.round(21 * PHI),
+                padding: `${Math.round(10 * PHI)}px ${Math.round(8 * PHI)}px`,
+                maxWidth: 460, margin: `${Math.round(21 * PHI)}px auto 0`,
+              }}>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(14px, 2.8vw, 18px)",
+                  fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+                  lineHeight: 2.0,
+                }}>
+                  I'm not a physicist. I'm a pattern recognizer who found a pattern.
+                  <br /><br />
+                  This paper has survived 30+ adversarial revisions across three AI systems — each one trying to break it. It makes two falsifiable predictions. If they fail, the theory fails.
+                  <br /><br />
+                  <span style={{ color: "rgba(232,232,240,0.55)" }}>That's real science.</span>
+                  <br /><br />
+                  The math is either right or it isn't. Click and decide for yourself.
+                </div>
+              </div>
             </div>
           </div>
 
