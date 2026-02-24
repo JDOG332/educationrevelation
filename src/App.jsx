@@ -1483,6 +1483,18 @@ export default function TheoryOfEverything() {
                 animation: "fadeSlideUp 1.2s 0.55s both ease",
               }}>The cross you knew was the front face. Now watch the third dimension emerge.</div>
 
+              {/* The weight — whisper beneath */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.5vw, 17px)",
+                color: "rgba(201,168,76,0.4)",
+                fontStyle: "italic", letterSpacing: 0.5,
+                marginBottom: Math.round(5 * PHI),
+                animation: "fadeSlideUp 1.2s 0.65s both ease",
+                lineHeight: 1.7,
+              }}>"The weight of the world is love."<br />
+              <span style={{ fontSize: "0.8em", color: "rgba(201,168,76,0.25)", letterSpacing: 2 }}>— Slide</span></div>
+
               {/* THE OCTAHEDRON — animated cross→octahedron morph */}
               <div style={{ animation: "fadeSlideUp 1.4s 0.6s both ease", marginBottom: Math.round(2 * PHI) }}>
                 <OctahedronPact />
