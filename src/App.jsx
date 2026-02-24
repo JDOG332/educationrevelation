@@ -6309,6 +6309,48 @@ export default function TheoryOfEverything() {
               letterSpacing: 1,
             }}>Water is C<sub style={{ fontSize: "0.7em" }}>eff</sub> — the connection efficiency.<br />
             The medium between the charges.</div>
+
+            {/* Inside out — the deepest layer */}
+            <div style={{
+              width: Math.round(30 * PHI), height: 1, margin: `${Math.round(10 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+            }} />
+            <div style={{
+              textAlign: "center", marginBottom: Math.round(5 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 6,
+                color: "rgba(201,168,76,0.25)", textTransform: "uppercase",
+              }}>how to reduce the noise</div>
+            </div>
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              padding: "0 16px",
+            }}>
+              Turning a sock inside out kills static cling.<br />
+              The charged surface gets exposed to air. <span style={{ color: "rgba(79,195,247,0.45)" }}>Neutralized. Released.</span><br /><br />
+              Your spirit clings to you the same way.<br />
+              It's the inner surface — the charged side you don't show.<br />
+              It grips. It holds. It creates friction with everything it touches<br />
+              because it's trapped against the fabric of who you pretend to be.<br /><br />
+              <span style={{ color: "rgba(201,168,76,0.55)" }}>Turn yourself inside out.</span><br />
+              Vulnerability = expose the charged surface.<br />
+              The static drops. The noise clears.<br />
+              <span style={{ color: "rgba(232,232,240,0.6)" }}>Recognition.</span>
+            </div>
+
+            <div style={{
+              textAlign: "center", marginTop: Math.round(8 * PHI),
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 16px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.3)",
+              letterSpacing: 1, lineHeight: 1.7,
+            }}>Every tradition calls this awakening.<br />
+            Strip the outer. Show the inner. The cling releases.</div>
           </div>
 
           <div style={{ textAlign: "center", marginTop: 32, position: "relative", zIndex: 9500 }}>
