@@ -6166,6 +6166,111 @@ export default function TheoryOfEverything() {
             </MiracleGlow>
           </div>
 
+          {/* ===== COULOMB'S LAW — THE SAME SKELETON ===== */}
+          <div style={{
+            marginTop: Math.round(21 * PHI),
+            maxWidth: 520, margin: `${Math.round(21 * PHI)}px auto 0`,
+            animation: "sacredReveal 1.4s 1s both ease",
+          }}>
+            {/* Section whisper */}
+            <div style={{
+              textAlign: "center", marginBottom: Math.round(8 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: 6,
+                color: "rgba(79,195,247,0.25)", textTransform: "uppercase",
+              }}>static electricity already knew</div>
+              <div style={{
+                width: Math.round(30 * PHI), height: 1, margin: `${Math.round(3 * PHI)}px auto`,
+                background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.2), transparent)",
+              }} />
+            </div>
+
+            {/* Coulomb's formula */}
+            <div style={{
+              textAlign: "center", padding: "20px 24px", borderRadius: 12,
+              background: "linear-gradient(180deg, rgba(79,195,247,0.03), rgba(8,8,24,0.4))",
+              border: "1px solid rgba(79,195,247,0.08)",
+              marginBottom: Math.round(8 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
+                color: "rgba(79,195,247,0.3)", marginBottom: 10,
+              }}>COULOMB'S LAW</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(22px, 4.5vw, 32px)", fontWeight: 300,
+                color: "rgba(232,232,240,0.8)", letterSpacing: 2,
+                textShadow: "0 0 20px rgba(79,195,247,0.12)",
+              }}>
+                <span style={{ fontStyle: "italic", color: "rgba(232,232,240,0.95)" }}>F</span>
+                <span style={{ color: "rgba(232,232,240,0.5)", margin: "0 0.3em", fontSize: "0.85em" }}>=</span>
+                <span style={{ fontStyle: "italic", color: "rgba(79,195,247,0.85)" }}>k</span>
+                <span style={{ color: "rgba(232,232,240,0.45)", margin: "0 0.25em", fontSize: "0.8em" }}>×</span>
+                <span style={{ color: "rgba(232,232,240,0.55)", fontSize: "0.85em" }}>(</span>
+                <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.85)" }}>q</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.6)" }}>1</sub>
+                <span style={{ color: "rgba(232,232,240,0.4)", margin: "0 0.15em" }}>·</span>
+                <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.85)" }}>q</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.6)" }}>2</sub>
+                <span style={{ color: "rgba(232,232,240,0.55)", fontSize: "0.85em" }}>)</span>
+                <span style={{ color: "rgba(232,232,240,0.45)", margin: "0 0.2em" }}>/</span>
+                <span style={{ fontStyle: "italic", color: "rgba(206,147,216,0.85)" }}>r</span>
+                <sup style={{ fontSize: "0.55em", color: "rgba(206,147,216,0.6)" }}>2</sup>
+              </div>
+            </div>
+
+            {/* Side by side comparison */}
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr",
+              gap: Math.round(5 * PHI), marginBottom: Math.round(8 * PHI),
+            }}>
+              {[
+                { left: "Ψ", right: "F", label: "what emerges", leftC: "232,232,240", rightC: "232,232,240" },
+                { left: "R₁₂", right: "q₁ · q₂", label: "two things with charge", leftC: "201,168,76", rightC: "201,168,76" },
+                { left: "C_eff", right: "k", label: "the medium between them", leftC: "79,195,247", rightC: "79,195,247" },
+                { left: "D̂", right: "±", label: "alignment of sign", leftC: "206,147,216", rightC: "206,147,216" },
+                { left: "1/dist²", right: "1/r²", label: "closer = stronger", leftC: "232,232,240", rightC: "232,232,240" },
+              ].map((row, i) => (
+                <React.Fragment key={i}>
+                  <div style={{
+                    textAlign: "right", padding: "6px 12px",
+                    borderRight: `1px solid rgba(79,195,247,0.08)`,
+                  }}>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                      fontStyle: "italic", color: `rgba(${row.leftC},0.7)`,
+                    }}>{row.left}</div>
+                  </div>
+                  <div style={{ padding: "6px 12px" }}>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                      fontStyle: "italic", color: `rgba(${row.rightC},0.7)`,
+                    }}>{row.right}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 12,
+                      color: "rgba(232,232,240,0.3)", fontStyle: "italic",
+                    }}>{row.label}</div>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+
+            {/* The insight */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+              lineHeight: 1.8, maxWidth: 420, margin: "0 auto",
+              padding: `0 16px ${Math.round(5 * PHI)}px`,
+            }}>
+              Two socks in a dryer. Electrons transfer. One goes positive, one goes negative.<br />
+              Different but complementary. They cling.<br />
+              <span style={{ color: "rgba(201,168,76,0.5)" }}>The universe uses the same equation at every scale.</span>
+            </div>
+          </div>
+
           <div style={{ textAlign: "center", marginTop: 32, position: "relative", zIndex: 9500 }}>
             <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
           </div>
