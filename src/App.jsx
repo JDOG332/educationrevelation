@@ -381,8 +381,8 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
       {/* Left half = go back. Right half = go forward. */}
-      {/* Active on depths 1-3 always, depth 4 only on main chamber (not sub-rooms), excluded on depth 5 */}
-      {depth >= 1 && depth !== 5 && (depth !== 4 || activeConvergence === null) && (
+      {/* Active on depths 1-3 only. Depth 4 has door cards. Depth 5 has loop-back. */}
+      {depth >= 1 && depth <= 3 && (
         <>
           <div
             onClick={(e) => { e.stopPropagation(); goBack(); }}
@@ -1573,6 +1573,30 @@ export default function TheoryOfEverything() {
           boxSizing: "border-box",
           background: "#030306",
         }}>
+
+          {/* Chamber page navigation — back to Pact / forward to ∞ */}
+          <div onClick={(e) => { e.stopPropagation(); goBack(); }} style={{
+            position: "fixed", top: "50%", left: 8, transform: "translateY(-50%)",
+            zIndex: 9500, cursor: "pointer", padding: "20px 12px",
+            fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 14px)",
+            letterSpacing: 2, color: "rgba(232,232,240,0.15)",
+            transition: "color 0.4s",
+            writingMode: "vertical-rl", textOrientation: "mixed",
+          }}
+            onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
+            onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
+          >← THE PACT</div>
+          <div onClick={(e) => { e.stopPropagation(); goDeeper(); }} style={{
+            position: "fixed", top: "50%", right: 8, transform: "translateY(-50%)",
+            zIndex: 9500, cursor: "pointer", padding: "20px 12px",
+            fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 14px)",
+            letterSpacing: 2, color: "rgba(232,232,240,0.15)",
+            transition: "color 0.4s",
+            writingMode: "vertical-rl", textOrientation: "mixed",
+          }}
+            onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
+            onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
+          >∞ →</div>
 
           {/* Triquetra — massive, ghostly, barely there */}
           <div style={{
