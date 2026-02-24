@@ -7681,7 +7681,7 @@ export default function TheoryOfEverything() {
                 color: "rgba(40,30,10,0.4)",
                 letterSpacing: 2,
                 animation: "fadeSlideUp 2s 2.5s both ease",
-              }}>tap to begin again</div>
+              }}>click to begin again</div>
             </div>
           )}
 
