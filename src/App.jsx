@@ -652,38 +652,51 @@ export default function TheoryOfEverything() {
               </circle>
             </svg>
 
-            {/* The instruction IS the yin/yang — white words in dark, dark words in light */}
+            {/* "now blink them quickly" — in the TOP grey triangle, breathing */}
             <div style={{
-              position: "absolute", top: "50%", left: 0, width: "100%",
-              transform: "translateY(-50%)",
-              display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center",
+              position: "absolute", top: "14%", left: 0, width: "100%",
+              textAlign: "center",
               pointerEvents: "none", userSelect: "none",
               animation: "fadeSlideUp 2s 1s both ease",
             }}>
-              {/* "now blink" — white letters sitting on the black triangle (left side) */}
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(24px, 5vw, 39px)",
+                fontSize: "clamp(28px, 6vw, 50px)",
                 fontStyle: "italic",
-                color: "rgba(255,255,255,0.7)",
-                letterSpacing: "0.1em",
-                textShadow: "0 0 30px rgba(0,0,0,0.8)",
-                paddingRight: "0.3em",
-              }}>now blink</div>
-              {/* "them quickly" — black letters sitting on the white triangle (right side) */}
+                letterSpacing: "0.12em",
+                lineHeight: 1.2,
+                animation: "breathe 6s ease-in-out infinite",
+                background: "linear-gradient(90deg, rgba(200,200,200,0.7) 0%, rgba(160,160,160,0.65) 25%, rgba(100,100,100,0.6) 50%, rgba(60,60,60,0.65) 75%, rgba(30,30,30,0.7) 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                filter: "drop-shadow(0 0 20px rgba(128,128,128,0.15))",
+              }}>now blink them quickly</div>
+            </div>
+
+            {/* "& open your mind's eye to dream" — bottom grey triangle */}
+            <div style={{
+              position: "absolute", bottom: "14%", left: 0, width: "100%",
+              textAlign: "center",
+              pointerEvents: "none", userSelect: "none",
+              animation: "fadeSlideUp 2s 2s both ease",
+            }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(24px, 5vw, 39px)",
+                fontSize: "clamp(18px, 3.5vw, 30px)",
                 fontStyle: "italic",
-                color: "rgba(0,0,0,0.7)",
                 letterSpacing: "0.1em",
-                textShadow: "0 0 30px rgba(255,255,255,0.8)",
-                paddingLeft: "0.3em",
-              }}>them quickly</div>
+                animation: "breathe 8s ease-in-out 1s infinite",
+                background: "linear-gradient(90deg, rgba(200,200,200,0.55) 0%, rgba(140,140,140,0.5) 30%, rgba(80,80,80,0.5) 60%, rgba(40,40,40,0.55) 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                filter: "drop-shadow(0 0 15px rgba(128,128,128,0.1))",
+              }}>&amp; open your mind's eye to dream</div>
             </div>
 
             <div style={{
-              position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)",
+              position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)",
               fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
               color: "rgba(128,128,128,0.15)",
               animation: "fadeSlideUp 2s 3s both ease",
