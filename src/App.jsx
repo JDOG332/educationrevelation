@@ -7007,7 +7007,7 @@ export default function TheoryOfEverything() {
             }}>DEEPER DOORS</div>
 
             <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+              display: "flex", justifyContent: "center",
             }}>
               {[
                 { key: "placeholder", icon: "⬇️", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "79,195,247" },
@@ -7017,6 +7017,7 @@ export default function TheoryOfEverything() {
                   background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
                   borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
                   textAlign: "center", opacity: 0.4,
+                  maxWidth: 220,
                 }}>
                   <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
                   <div style={{
