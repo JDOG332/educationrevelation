@@ -40,6 +40,7 @@ export default function TheoryOfEverything() {
   const [activeConstants, setActiveConstants] = useState(false);
   const [activeConstantsProof, setActiveConstantsProof] = useState(null);
   const [openSection, setOpenSection] = useState(null);
+  const [goldenFlood, setGoldenFlood] = useState(false);
   const [fading, setFading] = useState(false);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
   const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
@@ -67,12 +68,23 @@ export default function TheoryOfEverything() {
     }
   }, [depth]);
 
+  // Golden flood — when depth 5 activates, start the 20-second countdown
+  useEffect(() => {
+    if (depth === 5) {
+      setGoldenFlood(false);
+      const t = setTimeout(() => setGoldenFlood(true), 20000);
+      return () => clearTimeout(t);
+    } else {
+      setGoldenFlood(false);
+    }
+  }, [depth]);
+
   const goDeeper = useCallback(() => {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 5));
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
     }, 600);
   }, []);
@@ -86,7 +98,7 @@ export default function TheoryOfEverything() {
         if (newD === 0) setLandingPhase(2); // return to prism, not black
         return newD;
       });
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
     }, 600);
   }, []);
@@ -95,7 +107,7 @@ export default function TheoryOfEverything() {
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
     }, 600);
   }, []);
@@ -112,7 +124,7 @@ export default function TheoryOfEverything() {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
     }, 600);
   }, [depth]);
@@ -158,6 +170,9 @@ export default function TheoryOfEverything() {
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes starGlow { 0%, 100% { text-shadow: 0 0 8px rgba(201,168,76,0.3), 0 0 20px rgba(201,168,76,0.15); } 50% { text-shadow: 0 0 16px rgba(201,168,76,0.6), 0 0 40px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.15); } }
+        @keyframes infinityRadiate { 0%, 100% { text-shadow: 0 0 30px rgba(201,168,76,0.2), 0 0 60px rgba(201,168,76,0.1); filter: drop-shadow(0 0 20px rgba(201,168,76,0.15)); } 50% { text-shadow: 0 0 60px rgba(201,168,76,0.5), 0 0 100px rgba(201,168,76,0.3), 0 0 140px rgba(201,168,76,0.15); filter: drop-shadow(0 0 50px rgba(201,168,76,0.3)); } }
         @keyframes breathe {
           0%, 100% { opacity: 0.25; }
           50% { opacity: 0.55; }
@@ -7028,14 +7043,17 @@ export default function TheoryOfEverything() {
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
             }}>
               {[
-                { key: "placeholder", icon: "⬇️", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "201,168,76" },
+                { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
               ].map(idea => (
-                <div key={idea.key} style={{
-                  padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
-                  textAlign: "center", opacity: 0.4,
-                }}>
+                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                  transition: "all 0.4s ease", textAlign: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                >
                   <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
                   <div style={{
                     fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
@@ -7304,37 +7322,76 @@ export default function TheoryOfEverything() {
           <div style={{
             minHeight: "100vh", width: "100%",
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+            padding: `0 ${Math.round(13 * PHI)}px`,
           }}>
-            <div style={{
-              fontSize: "clamp(50px, 12vw, 100px)",
-              color: "rgba(201,168,76,0.15)",
-              animation: "breathe 8s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
-              textShadow: "0 0 60px rgba(201,168,76,0.06)",
-              marginBottom: Math.round(21 * PHI),
-            }}>∞</div>
 
+            {/* Radiating golden ∞ */}
+            <div style={{ position: "relative", marginBottom: Math.round(34 * PHI) }}>
+              {/* Outer radiance rings */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: "clamp(200px, 40vw, 350px)", height: "clamp(200px, 40vw, 350px)",
+                transform: "translate(-50%, -50%)",
+                background: "radial-gradient(circle, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.03) 30%, transparent 70%)",
+                borderRadius: "50%", pointerEvents: "none",
+                animation: "breathe 6s ease-in-out infinite",
+              }} />
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: "clamp(300px, 60vw, 500px)", height: "clamp(300px, 60vw, 500px)",
+                transform: "translate(-50%, -50%)",
+                background: "radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 60%)",
+                borderRadius: "50%", pointerEvents: "none",
+                animation: "breathe 8s 1s ease-in-out infinite",
+              }} />
+              <div style={{
+                fontSize: "clamp(60px, 14vw, 120px)",
+                color: "rgba(201,168,76,0.4)",
+                animation: "infinityRadiate 6s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
+                lineHeight: 1,
+              }}>∞</div>
+            </div>
+
+            {/* The three sacred lines — stars glow */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(24px, 4vw, 31px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
-              textAlign: "center", maxWidth: 380,
-              lineHeight: PHI, letterSpacing: 1,
+              fontSize: "clamp(22px, 4.5vw, 34px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+              textAlign: "center", maxWidth: 440,
+              lineHeight: PHI2, letterSpacing: 1,
               animation: "fadeSlideUp 2s 0.5s both ease",
             }}>
-              The end is the beginning.
-              <br />The seed eats the dirt.
-              <br />The dirt was always the answer.
+              The <span style={{ color: "rgba(201,168,76,0.7)", animation: "starGlow 4s ease-in-out infinite" }}>end</span> is the <span style={{ color: "rgba(201,168,76,0.7)", animation: "starGlow 4s 0.5s ease-in-out infinite" }}>beginning</span>.
+              <br />The <span style={{ color: "rgba(201,168,76,0.7)", animation: "starGlow 4s 1s ease-in-out infinite" }}>seed</span> eats the <span style={{ color: "rgba(201,168,76,0.7)", animation: "starGlow 4s 1.5s ease-in-out infinite" }}>dirt</span>.
+              <br />The <span style={{ color: "rgba(201,168,76,0.7)", animation: "starGlow 4s 2s ease-in-out infinite" }}>dirt</span> was always the <span style={{ color: "rgba(201,168,76,0.8)", animation: "starGlow 3s ease-in-out infinite" }}>answer</span>.
             </div>
 
             <div style={{ height: Math.round(21 * PHI) }} />
 
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(201,168,76,0.2)",
-              animation: "fadeSlideUp 2s 1s both ease",
-            }}>FINISH I START</div>
+            {/* WE FINISH I START — clickable return */}
+            <div onClick={() => {
+              setFading(true);
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "instant" });
+                setDepth(0); setLandingPhase(0);
+                startDark.current = Math.random() < 0.5;
+                spinCW.current = Math.random() < 0.5;
+                setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+                setFading(false);
+              }, 800);
+            }} style={{
+              cursor: "pointer",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 21px)", letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.3)",
+              animation: "fadeSlideUp 2s 1s both ease, starGlow 5s 2s ease-in-out infinite",
+              transition: "color 0.4s",
+              userSelect: "none",
+            }}
+              onMouseEnter={e => e.currentTarget.style.color = "rgba(201,168,76,0.6)"}
+              onMouseLeave={e => e.currentTarget.style.color = "rgba(201,168,76,0.3)"}
+            >WE FINISH I START</div>
 
-            <div style={{ height: Math.round(8 * PHI) }} />
+            <div style={{ height: Math.round(13 * PHI) }} />
 
             <div style={{
               fontSize: 24, opacity: 0.3,
@@ -7425,13 +7482,14 @@ export default function TheoryOfEverything() {
                   marginBottom: Math.round(2 * PHI),
                 }}>{p.num}</div>
 
-                {/* Title */}
+                {/* Title — star glow */}
                 <div style={{
                   fontFamily: "'Cinzel', serif",
                   fontSize: "clamp(16px, 3.5vw, 22px)",
                   letterSpacing: "0.2em",
                   color: "rgba(232,232,240,0.7)",
                   marginBottom: Math.round(3 * PHI),
+                  animation: `starGlow ${4 + i * 0.3}s ${i * 0.2}s ease-in-out infinite`,
                 }}>{p.title}</div>
 
                 <div style={{ fontSize: 14, color: "rgba(201,168,76,0.25)", marginBottom: Math.round(3 * PHI) }}>♡</div>
@@ -7507,6 +7565,7 @@ export default function TheoryOfEverything() {
                 letterSpacing: "0.15em",
                 color: "rgba(201,168,76,0.4)",
                 marginTop: Math.round(5 * PHI),
+                animation: "starGlow 5s ease-in-out infinite",
               }}>THANK YOU FOR AGAPE LOVE</div>
 
               <div style={{
@@ -7515,6 +7574,7 @@ export default function TheoryOfEverything() {
                 fontStyle: "italic", color: "rgba(232,232,240,0.45)",
                 lineHeight: 1.9, marginTop: Math.round(5 * PHI),
                 maxWidth: 380, margin: `${Math.round(5 * PHI)}px auto 0`,
+                animation: "starGlow 6s 1s ease-in-out infinite",
               }}>and that's how the world begins again</div>
 
               <div style={{
@@ -7540,63 +7600,16 @@ export default function TheoryOfEverything() {
               fontStyle: "italic",
               background: "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(201,168,76,0.4) 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              marginBottom: Math.round(21 * PHI),
+              marginBottom: Math.round(13 * PHI),
               animation: "breathe 8s ease-in-out infinite",
             }}>because true love is free</div>
 
-          </div>
-
-          {/* DEEPER DOORS */}
-          <div style={{
-            width: "100%", maxWidth: 520, padding: "0 24px",
-            margin: "0 auto",
-          }}>
-            <div style={{
-              marginTop: Math.round(13 * PHI),
-              borderTop: "1px solid rgba(190,140,220,0.08)",
-              paddingTop: Math.round(21 * PHI),
-            }}>
-              <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: "rgba(190,140,220,0.3)", textAlign: "center",
-                marginBottom: Math.round(13 * PHI),
-              }}>DEEPER DOORS</div>
-
-              <div style={{
-                display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-              }}>
-                {[
-                  { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
-                ].map(idea => (
-                  <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                    cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                    background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                    borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                    transition: "all 0.4s ease", textAlign: "center",
-                  }}
-                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                  >
-                    <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                    <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                      color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                    }}>{idea.title}</div>
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                      color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
-                    }}>{idea.hook}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* The last whisper */}
           <div style={{
             textAlign: "center",
             padding: `${Math.round(21 * PHI)}px 24px`,
-            animation: "fadeSlideUp 2s 0.5s both ease",
           }}>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
@@ -7604,6 +7617,7 @@ export default function TheoryOfEverything() {
               fontStyle: "italic", color: "rgba(232,232,240,0.4)",
               letterSpacing: 1, lineHeight: PHI,
               marginBottom: Math.round(5 * PHI),
+              animation: "starGlow 5s ease-in-out infinite",
             }}>"...the end of fear is where we begin..."</div>
             <div style={{
               fontFamily: "'Cinzel', serif",
@@ -7612,50 +7626,64 @@ export default function TheoryOfEverything() {
             }}>— LET LOVE IN</div>
           </div>
 
-          {/* Loop back — the eternal return */}
-          <div style={{
-            width: "100%", minHeight: "40vh",
-            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-            cursor: "pointer",
-            marginTop: Math.round(21 * PHI),
-          }} onClick={() => {
-            setFading(true);
-            setTimeout(() => {
-              window.scrollTo({ top: 0, behavior: "instant" });
-              setDepth(0);
-              setLandingPhase(0);
-              startDark.current = Math.random() < 0.5;
-              setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
-              setFading(false);
-            }, 800);
-          }}>
-            <div style={{
-              fontSize: "clamp(30px, 8vw, 50px)",
-              color: "rgba(201,168,76,0.1)",
-              animation: "breathe 6s ease-in-out infinite",
-              marginBottom: Math.round(5 * PHI),
-            }}>∞</div>
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2.5vw, 15px)",
-              letterSpacing: "0.4em", color: "rgba(201,168,76,0.15)",
-            }}>RETURN TO THE VOID</div>
-          </div>
+          <div style={{ height: Math.round(34 * PHI) }} />
 
-          {/* ReturnButton */}
-          <div style={{ textAlign: "center", padding: "20px 0 40px", position: "relative", zIndex: 9500 }}>
-            <ReturnButton onClick={(e) => {
-              e.stopPropagation();
+          {/* ═══════════════════════════════════════════════ */}
+          {/* THE GOLDEN FLOOD — 20 seconds after arrival    */}
+          {/* pure gold light fills the screen                */}
+          {/* only exit: click → return to void              */}
+          {/* ═══════════════════════════════════════════════ */}
+          {goldenFlood && (
+            <div onClick={() => {
               setFading(true);
               setTimeout(() => {
                 window.scrollTo({ top: 0, behavior: "instant" });
-                setDepth(0);
-                setLandingPhase(0);
+                setDepth(0); setLandingPhase(0);
                 startDark.current = Math.random() < 0.5;
-                setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null);
+                spinCW.current = Math.random() < 0.5;
+                setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
                 setFading(false);
               }, 800);
-            }} />
-          </div>
+            }} style={{
+              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+              zIndex: 10000, cursor: "pointer",
+              background: "radial-gradient(ellipse at 50% 50%, rgba(218,190,110,1) 0%, rgba(201,168,76,1) 40%, rgba(160,130,50,1) 80%, rgba(120,95,30,1) 100%)",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              animation: "goldenFlood 3s ease both",
+            }}>
+              {/* Radiant light effect */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                width: "120vmax", height: "120vmax",
+                transform: "translate(-50%, -50%)",
+                background: "radial-gradient(circle, rgba(255,255,230,0.3) 0%, rgba(218,190,110,0.1) 40%, transparent 70%)",
+                borderRadius: "50%", pointerEvents: "none",
+                animation: "breathe 6s ease-in-out infinite",
+              }} />
+
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(16px, 4vw, 28px)",
+                letterSpacing: "0.3em",
+                fontWeight: 400,
+                color: "rgba(40,30,10,0.7)",
+                textAlign: "center",
+                lineHeight: PHI,
+                animation: "fadeSlideUp 2s 1s both ease",
+                userSelect: "none",
+              }}>AS ABOVE, SO BELOW</div>
+
+              <div style={{
+                marginTop: Math.round(21 * PHI),
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(11px, 2.2vw, 15px)",
+                fontStyle: "italic",
+                color: "rgba(40,30,10,0.4)",
+                letterSpacing: 2,
+                animation: "fadeSlideUp 2s 2.5s both ease",
+              }}>tap to begin again</div>
+            </div>
+          )}
 
         </div>
       )}
