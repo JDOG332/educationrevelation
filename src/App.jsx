@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, Fragment } from "react";
 import MultiverseFractal from "./MultiverseFractal.jsx";
 import MathPage from "./MathPage.jsx";
 import {
@@ -6307,7 +6307,7 @@ export default function TheoryOfEverything() {
                 { left: "D̂", right: "±", label: "alignment of sign", leftC: "206,147,216", rightC: "206,147,216" },
                 { left: "1/dist²", right: "1/r²", label: "closer = stronger", leftC: "232,232,240", rightC: "232,232,240" },
               ].map((row, i) => (
-                <React.Fragment key={i}>
+                <Fragment key={i}>
                   <div style={{
                     textAlign: "right", padding: "6px 12px",
                     borderRight: `1px solid rgba(79,195,247,0.08)`,
@@ -6327,7 +6327,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(232,232,240,0.3)", fontStyle: "italic",
                     }}>{row.label}</div>
                   </div>
-                </React.Fragment>
+                </Fragment>
               ))}
             </div>
 
