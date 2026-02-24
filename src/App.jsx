@@ -44,6 +44,7 @@ export default function TheoryOfEverything() {
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
   const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
   const startDark = useRef(Math.random() < 0.5); // coin flip: dark first or light first
+  const spinCW = useRef(Math.random() < 0.5);   // coin flip: prism spins clockwise or counter
   const poemSeen = useRef(false);
 
   // Poem zoom-out sequence — timed to meditative breath (~4s per phase)
@@ -156,6 +157,7 @@ export default function TheoryOfEverything() {
           100% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes breathe {
           0%, 100% { opacity: 0.25; }
           50% { opacity: 0.55; }
@@ -565,7 +567,9 @@ export default function TheoryOfEverything() {
         return (
           <div onClick={handleClick} style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
-              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
+              animation: `prismSpin 120s linear infinite ${spinCW.current ? "" : "reverse"}`,
+              transformOrigin: "center center",
             }}>
               <defs>
                 {/* Black triangle: pure #000 at left edge */}
