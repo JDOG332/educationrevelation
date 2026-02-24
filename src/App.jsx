@@ -7592,6 +7592,26 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
+          {/* The last whisper */}
+          <div style={{
+            textAlign: "center",
+            padding: `${Math.round(21 * PHI)}px 24px`,
+            animation: "fadeSlideUp 2s 0.5s both ease",
+          }}>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(18px, 3.5vw, 26px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              letterSpacing: 1, lineHeight: PHI,
+              marginBottom: Math.round(5 * PHI),
+            }}>"...the end of fear is where we begin..."</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(10px, 2vw, 13px)",
+              letterSpacing: 4, color: "rgba(201,168,76,0.25)",
+            }}>— LET LOVE IN</div>
+          </div>
+
           {/* Loop back — the eternal return */}
           <div style={{
             width: "100%", minHeight: "40vh",
