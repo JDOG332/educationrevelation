@@ -381,8 +381,8 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
       {/* Left half = go back. Right half = go forward. */}
-      {/* Active on all depths except 0 (landing), 4 (convergence has door nav), and 5 (∞ has loop-back) */}
-      {depth >= 1 && depth !== 4 && depth !== 5 && (
+      {/* Active on depths 1-3 always, depth 4 only on main chamber (not sub-rooms), excluded on depth 5 */}
+      {depth >= 1 && depth !== 5 && (depth !== 4 || activeConvergence === null) && (
         <>
           <div
             onClick={(e) => { e.stopPropagation(); goBack(); }}
@@ -407,7 +407,7 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
       {/* Root-level so it escapes all stacking contexts */}
-      {depth >= 1 && depth <= 3 && (poemPhase >= 5 || depth !== 2) && (
+      {depth >= 1 && depth <= 4 && (poemPhase >= 5 || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
         <div style={{
           position: "fixed", bottom: "2%", left: 0, width: "100%",
           textAlign: "center", zIndex: 9500, pointerEvents: "none",
@@ -1597,7 +1597,7 @@ export default function TheoryOfEverything() {
             textAlign: "center",
             width: "100%", maxWidth: 580,
             display: "flex", flexDirection: "column", alignItems: "center",
-            position: "relative", zIndex: 1500,
+            position: "relative", zIndex: 9100,
             padding: "0 16px",
           }}>
 
