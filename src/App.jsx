@@ -1504,10 +1504,13 @@ export default function TheoryOfEverything() {
               <div style={{
                 animation: "fadeSlideUp 1.4s 0.55s both ease",
                 marginBottom: Math.round(5 * PHI),
-                maxWidth: 340,
                 width: "100%",
+                display: "flex", justifyContent: "center",
+                overflow: "hidden",
               }}>
-                <OctahedronPact />
+                <div style={{ transform: "scale(0.65)", transformOrigin: "center center" }}>
+                  <OctahedronPact />
+                </div>
               </div>
 
               {/* Three Axes Legend — golden proportioned cards */}
