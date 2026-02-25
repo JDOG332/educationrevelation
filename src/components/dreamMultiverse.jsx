@@ -137,17 +137,17 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
     }
 
     function drawMultiverse(elapsed) {
-      // Camera zoom — only starts once the veil is fully lifted (depth === 1)
+      // Camera zoom — starts zoomed IN (blurry close-up), zooms OUT to see the dance
       const zoomEnabled = depthRef.current === 1;
       const zoomStart = zoomEnabled ? 1.0 : 99999;
       const zoomEnd = zoomStart + 7;
       const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
       const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress);
-      const targetZoom = 5;
-      const zoom = 1 + (targetZoom - 1) * eased;
+      const startZoom = 5;
+      const zoom = startZoom + (1 - startZoom) * eased;  // 5x → 1x (zoomed in → zoomed out)
       const target = state.hypers[zoomTarget];
-      const panX = (CX - target.x) * eased;
-      const panY = (CY - target.y) * eased;
+      const panX = (CX - target.x) * (1 - eased);  // pan away as we zoom out
+      const panY = (CY - target.y) * (1 - eased);
 
       ctx.save();
       ctx.translate(CX, CY);
