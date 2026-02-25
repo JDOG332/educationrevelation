@@ -57,20 +57,29 @@ export default function TheoryOfEverything() {
   // Auto-advance landing phases — only on first load or golden flood loop-back
   useEffect(() => {
     if (depth !== 0 || !autoLanding.current) return;
+    // Phase 0: PURE BLACK (0.618s)
     if (landingPhase === 0) {
       const t = setTimeout(() => setLandingPhase(1), 618);
       return () => clearTimeout(t);
     }
+    // Phase 1: PURE WHITE (0.618s)
     if (landingPhase === 1) {
       const t = setTimeout(() => setLandingPhase(2), 618);
       return () => clearTimeout(t);
     }
+    // Phase 2: PRISM — spins and accelerates, then blurs into depth 1
+    // Total prism time: ~4.5s (enough to feel the acceleration)
     if (landingPhase === 2) {
+      const t = setTimeout(() => setLandingPhase(3), 4500);
+      return () => clearTimeout(t);
+    }
+    // Phase 3: BLUR-OUT — prism blurs away as we transition to depth 1
+    if (landingPhase === 3) {
       const t = setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
         setDepth(1);
         autoLanding.current = false;
-      }, 1000);
+      }, 800);
       return () => clearTimeout(t);
     }
   }, [depth, landingPhase]);
@@ -296,6 +305,20 @@ export default function TheoryOfEverything() {
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes prismAccelSpin {
+          /* Starts slow (4.236s feel), accelerates to fast (0.618s feel)
+             Over 4.5s total, makes ~6 full rotations with exponential acceleration
+             First rotation takes ~2s, last takes ~0.3s */
+          0%    { transform: rotate(0deg); }
+          15%   { transform: rotate(90deg); }    /* slow: ~0.675s for 90° */
+          28%   { transform: rotate(270deg); }   /* picking up */
+          40%   { transform: rotate(540deg); }   /* 1.5 rotations by 40% */
+          52%   { transform: rotate(900deg); }   /* 2.5 rotations */
+          64%   { transform: rotate(1350deg); }  /* 3.75 rotations — accelerating */
+          76%   { transform: rotate(1800deg); }  /* 5 rotations */
+          88%   { transform: rotate(2340deg); }  /* 6.5 rotations — fast */
+          100%  { transform: rotate(2880deg); }  /* 8 full rotations */
+        }
         @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
         @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
         @keyframes textShrinkAway {
@@ -731,7 +754,7 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — YIN/YANG/PRISM: Auto-advance ===== */}
+      {/* ===== DEPTH 0 — BLACK / WHITE / ACCELERATING PRISM ===== */}
       {depth === 0 && (() => {
         const phase = landingPhase;
 
@@ -742,26 +765,42 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: PURE WHITE
+        // Phase 0: PURE BLACK — the nothing before the something
         if (phase === 0) {
           return (
-            <div style={{ ...fullScreen, background: "#ffffff" }} />
+            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.1s ease" }} />
           );
         }
 
-        // Phase 1: PURE BLACK
+        // Phase 1: PURE WHITE — the flash of existence
         if (phase === 1) {
           return (
-            <div style={{ ...fullScreen, background: "#000000" }} />
+            <div style={{ ...fullScreen, background: "#ffffff", animation: "fadeIn 0.08s ease" }} />
           );
         }
 
-        // Phase 2: THE PRISM — no words. Just the spectrum and the golden eye.
+        // Phase 2: THE PRISM — accelerating spin from 4.236s/rev to 0.618s/rev
+        // Phase 3: PRISM BLUR-OUT — spinning fast + blurring away into depth 1
+        const isBlurring = phase === 3;
         return (
-          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 0.5s ease" }}>
+          <div style={{
+            ...fullScreen,
+            background: "#000",
+            overflow: "hidden",
+            animation: "fadeIn 0.3s ease",
+            // Phase 3: blur + fade out
+            filter: isBlurring ? "blur(20px)" : "blur(0px)",
+            opacity: isBlurring ? 0 : 1,
+            transition: isBlurring
+              ? "filter 0.8s cubic-bezier(0.4, 0, 1, 1), opacity 0.8s cubic-bezier(0.4, 0, 1, 1)"
+              : "none",
+          }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
-              animation: `prismSpin 8s linear infinite ${spinCW.current ? "" : "reverse"}`,
+              /* CSS animation with accelerating spin:
+                 Start at 4.236s/rev, end at 0.618s/rev over 4.5s
+                 We use a custom animation that accelerates */
+              animation: `prismAccelSpin 4.5s cubic-bezier(0.1, 0, 0.2, 1) infinite ${spinCW.current ? "" : "reverse"}`,
               transformOrigin: "center center",
             }}>
               <defs>
