@@ -49,24 +49,17 @@ export default function TheoryOfEverything() {
   const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
   const [prevDepth, setPrevDepth] = useState(null);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
-  const [veilProgress, setVeilProgress] = useState(0); // 0=sealed, 1=fully open
+  // veilProgress removed — opening act now uses direct DOM manipulation via refs
   const poemSeen = useRef(false);
 
   // THE OPENING ACT — words devour the darkness, then the light
-  // One continuous curve. No steps. No stairs. A stream.
-  //
-  // PHASE 1: 0s–1.618s = pure black silence (arrival)
-  //          1.618s–5.854s = white words grow from nothing, devouring the dark (4.236s)
-  // PHASE 2: 5.854s–8.09s = black words grow from nothing, devouring the light (2.236s)
-  //          8.09s = multiverse appears
-  //
-  // veilProgress: continuous 0→2 driven by requestAnimationFrame
-  //   0.0 = pure black, silence
-  //   0.0→1.0 = phase 1 (black→white, white words growing)
-  //   1.0→2.0 = phase 2 (white→black, black words growing)
-  //   2.0+ = done, multiverse
-  const veilStartRef = useRef(null);
+  // Direct DOM manipulation — React doesn't re-render during the animation.
+  // One rAF loop mutates .style properties on 3 refs at 60fps. Zero jitter.
+  const openingRef = useRef(null);    // the full-screen container
+  const words1Ref = useRef(null);     // phase 1 text
+  const words2Ref = useRef(null);     // phase 2 text
   const veilFrameRef = useRef(null);
+  const veilStartRef = useRef(null);
 
   useEffect(() => {
     if (depth !== 0) {
@@ -74,41 +67,77 @@ export default function TheoryOfEverything() {
       if (veilFrameRef.current) cancelAnimationFrame(veilFrameRef.current);
       return;
     }
-    setVeilProgress(0);
 
-    // Total timing: 8.09s
-    const SILENCE   = 1.618;  // pure black
-    const PHASE1    = 4.236;  // white words devour black
-    const PHASE2    = 2.236;  // black words devour white
-    const TOTAL     = SILENCE + PHASE1 + PHASE2; // 8.09s
+    const container = openingRef.current;
+    const w1 = words1Ref.current;
+    const w2 = words2Ref.current;
+    if (!container || !w1 || !w2) return;
+
+    // Reset visibility
+    container.style.display = "flex";
+    w1.style.opacity = "0";
+    w2.style.opacity = "0";
+
+    const SILENCE = 1.618;
+    const PHASE1  = 4.236;
+    const PHASE2  = 2.236;
+    const TOTAL   = SILENCE + PHASE1 + PHASE2; // 8.09s
 
     function tick(now) {
       if (!veilStartRef.current) veilStartRef.current = now;
       const elapsed = (now - veilStartRef.current) / 1000;
 
-      let progress;
-      if (elapsed < SILENCE) {
-        // Pure black silence — progress stays at 0
-        progress = 0;
-      } else if (elapsed < SILENCE + PHASE1) {
-        // Phase 1: white words devouring black
-        // Use t^φ easing for organic acceleration (slow start, beautiful swell)
-        const t = (elapsed - SILENCE) / PHASE1;
-        const eased = Math.pow(t, 1.15); // gentle power curve — not too slow, not too fast
-        progress = eased;
-      } else if (elapsed < TOTAL) {
-        // Phase 2: black words devouring white
-        const t = (elapsed - SILENCE - PHASE1) / PHASE2;
-        const eased = Math.pow(t, 1.1); // slightly faster curve — urgency builds
-        progress = 1.0 + eased;
-      } else {
-        // Done
-        setVeilProgress(2.01);
+      if (elapsed >= TOTAL) {
+        // Done — hide the opening act and transition
+        container.style.display = "none";
         setDepth(1);
         return;
       }
 
-      setVeilProgress(progress);
+      let p1 = 0, p2 = 0;
+
+      if (elapsed < SILENCE) {
+        // Pure black silence
+        p1 = 0;
+      } else if (elapsed < SILENCE + PHASE1) {
+        const t = (elapsed - SILENCE) / PHASE1;
+        p1 = Math.pow(t, 1.15);
+      } else {
+        p1 = 1;
+        const t = (elapsed - SILENCE - PHASE1) / PHASE2;
+        p2 = Math.pow(t, 1.1);
+      }
+
+      // Background: black→white→black
+      const lum = p2 > 0 ? 255 * (1 - p2) : 255 * p1;
+      container.style.background = `rgb(${lum|0},${lum|0},${lum|0})`;
+
+      // Phase 1: white words growing on black
+      const scale1 = p1 < 0.001 ? 0.15 : 0.15 + Math.pow(p1, 0.7) * 5.5;
+      const alpha1 = Math.min(1, p1 * 5);
+      const fade1 = p2 > 0 ? Math.max(0, 1 - p2 * 4) : 1;
+      const vis1 = alpha1 * fade1;
+      w1.style.opacity = vis1 > 0.001 ? vis1 : 0;
+      w1.style.transform = `scale(${scale1})`;
+      if (p1 > 0.3 && fade1 > 0.01) {
+        const g1 = 0.4 * p1 * fade1;
+        const g2 = 0.15 * p1 * fade1;
+        w1.style.textShadow = `0 0 ${60*p1}px rgba(255,255,255,${g1}), 0 0 ${180*p1}px rgba(255,255,255,${g2})`;
+      } else {
+        w1.style.textShadow = "none";
+      }
+
+      // Phase 2: black words growing on white
+      const scale2 = p2 < 0.001 ? 0.15 : 0.15 + Math.pow(p2, 0.7) * 5.5;
+      const alpha2 = Math.min(1, p2 * 5);
+      w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
+      w2.style.transform = `scale(${scale2})`;
+      if (p2 > 0.3) {
+        w2.style.textShadow = `0 0 ${60*p2}px rgba(0,0,0,${0.25*p2}), 0 0 ${150*p2}px rgba(0,0,0,${0.08*p2})`;
+      } else {
+        w2.style.textShadow = "none";
+      }
+
       veilFrameRef.current = requestAnimationFrame(tick);
     }
 
@@ -203,7 +232,7 @@ export default function TheoryOfEverything() {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => {
         const newD = Math.max(d - 1, 0);
-        if (newD === 0) setVeilProgress(0); // re-seal the veil for replay
+        if (newD === 0) // Opening act replays via useEffect when depth returns to 0
         return newD;
       });
       clearAllSubs();
@@ -231,7 +260,7 @@ export default function TheoryOfEverything() {
 
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0); setVeilProgress(0);
+      setDepth(0);
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
@@ -264,7 +293,7 @@ export default function TheoryOfEverything() {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      if (targetDepth === 0) setVeilProgress(0);
+      // Opening act replays automatically when depth returns to 0
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
@@ -781,90 +810,49 @@ export default function TheoryOfEverything() {
         }
       />}
 
-      {/* ===== THE OPENING ACT — words devour the darkness, then the light ===== */}
-      {depth === 0 && veilProgress < 2.01 && (() => {
-        // p1: 0→1 during phase 1 (white words on black)
-        // p2: 0→1 during phase 2 (black words on white)
-        const p1 = Math.min(1, Math.max(0, veilProgress));
-        const p2 = Math.min(1, Math.max(0, veilProgress - 1.0));
-
-        // Background: smooth black→white→black
-        // Phase 1: black(0)→white(255) as p1 goes 0→1
-        // Phase 2: white(255)→black(0) as p2 goes 0→1
-        const lum = p2 > 0
-          ? Math.round(255 * (1 - p2))
-          : Math.round(255 * p1);
-
-        // Phase 1 word scale: emerges tiny, swells to fill
-        // Cubic ease-out for that "growing from a seed" feel
-        const scale1 = p1 < 0.001 ? 0.15 : 0.15 + Math.pow(p1, 0.7) * 5.5;
-
-        // Phase 1 word opacity: gentle fade-in over first 20% of phase
-        const alpha1 = Math.min(1, p1 * 5);
-
-        // Phase 1 fade-OUT: words dissolve into the whiteness at the very end
-        const fade1 = p2 > 0 ? Math.max(0, 1 - p2 * 4) : 1;
-
-        // Phase 2 word scale: same organic growth
-        const scale2 = p2 < 0.001 ? 0.15 : 0.15 + Math.pow(p2, 0.7) * 5.5;
-
-        // Phase 2 word opacity: gentle fade-in
-        const alpha2 = Math.min(1, p2 * 5);
-
-        return (
-          <div style={{
-            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-            zIndex: 10000,
-            background: `rgb(${lum},${lum},${lum})`,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            overflow: "hidden",
+      {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
+      {depth === 0 && (
+        <div ref={openingRef} style={{
+          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+          zIndex: 10000,
+          background: "#000000",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          overflow: "hidden",
+        }}>
+          <div ref={words1Ref} style={{
+            position: "absolute",
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(16px, 4vw, 32px)",
+            fontStyle: "italic", fontWeight: 300,
+            color: "#ffffff",
+            textAlign: "center",
+            lineHeight: 1.618,
+            letterSpacing: 2,
+            padding: "0 10%",
+            opacity: 0,
+            transform: "scale(0.15)",
+            willChange: "transform, opacity, text-shadow",
           }}>
-            {/* Phase 1: white words on darkening background */}
-            {p1 > 0 && fade1 > 0 && (
-              <div style={{
-                position: "absolute",
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(16px, 4vw, 32px)",
-                fontStyle: "italic", fontWeight: 300,
-                color: `rgba(255,255,255,${(alpha1 * fade1).toFixed(3)})`,
-                textAlign: "center",
-                lineHeight: 1.618,
-                letterSpacing: 2,
-                padding: "0 10%",
-                transform: `scale(${scale1.toFixed(4)})`,
-                willChange: "transform, opacity",
-                textShadow: p1 > 0.3
-                  ? `0 0 ${60 * p1}px rgba(255,255,255,${(0.4 * p1 * fade1).toFixed(3)}), 0 0 ${180 * p1}px rgba(255,255,255,${(0.15 * p1 * fade1).toFixed(3)})`
-                  : "none",
-              }}>
-                ...we believe in a multiverse<br />where all dreams come true...
-              </div>
-            )}
-
-            {/* Phase 2: black words on brightening background */}
-            {p2 > 0 && (
-              <div style={{
-                position: "absolute",
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(16px, 4vw, 32px)",
-                fontStyle: "italic", fontWeight: 300,
-                color: `rgba(0,0,0,${alpha2.toFixed(3)})`,
-                textAlign: "center",
-                lineHeight: 1.618,
-                letterSpacing: 2,
-                padding: "0 10%",
-                transform: `scale(${scale2.toFixed(4)})`,
-                willChange: "transform, opacity",
-                textShadow: p2 > 0.3
-                  ? `0 0 ${60 * p2}px rgba(0,0,0,${(0.25 * p2).toFixed(3)}), 0 0 ${150 * p2}px rgba(0,0,0,${(0.08 * p2).toFixed(3)})`
-                  : "none",
-              }}>
-                ...we believe we are just one<br />tiny glimpse of those dreams...
-              </div>
-            )}
+            ...we believe in a multiverse<br />where all dreams come true...
           </div>
-        );
-      })()}
+          <div ref={words2Ref} style={{
+            position: "absolute",
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(16px, 4vw, 32px)",
+            fontStyle: "italic", fontWeight: 300,
+            color: "#000000",
+            textAlign: "center",
+            lineHeight: 1.618,
+            letterSpacing: 2,
+            padding: "0 10%",
+            opacity: 0,
+            transform: "scale(0.15)",
+            willChange: "transform, opacity, text-shadow",
+          }}>
+            ...we believe we are just one<br />tiny glimpse of those dreams...
+          </div>
+        </div>
+      )}
 
       {/* DREAM MULTIVERSE — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
@@ -7691,7 +7679,7 @@ export default function TheoryOfEverything() {
               setFading(true);
               setTimeout(() => {
                 window.scrollTo({ top: 0, behavior: "instant" });
-                setDepth(0); setVeilProgress(0);
+                setDepth(0);
                 clearAllSubs();
                 setFading(false);
               }, 800);
@@ -7954,7 +7942,7 @@ export default function TheoryOfEverything() {
               setFading(true);
               setTimeout(() => {
                 window.scrollTo({ top: 0, behavior: "instant" });
-                setDepth(0); setVeilProgress(0);
+                setDepth(0);
                 clearAllSubs();
                 setFading(false);
               }, 800);
