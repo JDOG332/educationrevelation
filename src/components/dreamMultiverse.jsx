@@ -137,17 +137,39 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
     }
 
     function drawMultiverse(elapsed) {
-      // Camera zoom — starts zoomed IN (blurry close-up), zooms OUT to see the dance
-      const zoomEnabled = depthRef.current === 1;
-      const zoomStart = zoomEnabled ? 1.0 : 99999;
-      const zoomEnd = zoomStart + 7;
-      const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
-      const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress);
-      const startZoom = 5;
-      const zoom = startZoom + (1 - startZoom) * eased;  // 5x → 1x (zoomed in → zoomed out)
+      // Camera zoom — 3 phases:
+      // Phase 1 (1s-8s): Zoom OUT from 5x → 1x (see the dance)
+      // Phase 2 (8s-13s): Keep zooming OUT from 1x → 0.04x (collapse to a dot)
+      // Phase 3: dot glows white → trigger depth 2
+      const zoomEnabled = depthRef.current >= 1;
+      
+      // Phase 1: zoom out to see everything
+      const z1Start = 1.0, z1End = 8.0;
+      const z1t = Math.max(0, Math.min(1, (elapsed - z1Start) / (z1End - z1Start)));
+      const z1eased = z1t * z1t * (3 - 2 * z1t);
+      
+      // Phase 2: keep zooming out — collapse to dot
+      const z2Start = 8.0, z2End = 13.0;
+      const z2t = Math.max(0, Math.min(1, (elapsed - z2Start) / (z2End - z2Start)));
+      const z2eased = z2t * z2t * (3 - 2 * z2t);
+      
+      let zoom, panX, panY;
       const target = state.hypers[zoomTarget];
-      const panX = (CX - target.x) * (1 - eased);  // pan away as we zoom out
-      const panY = (CY - target.y) * (1 - eased);
+      
+      if (elapsed < z2Start) {
+        // Phase 1: 5x → 1x
+        zoom = 5 + (1 - 5) * z1eased;
+        panX = (CX - target.x) * (1 - z1eased);
+        panY = (CY - target.y) * (1 - z1eased);
+      } else {
+        // Phase 2: 1x → 0.04x (everything shrinks to center dot)
+        zoom = 1 + (0.04 - 1) * z2eased;
+        panX = 0;
+        panY = 0;
+      }
+      
+      // During phase 2, brighten everything toward white
+      const whitenAmount = z2eased;
 
       ctx.save();
       ctx.translate(CX, CY);
@@ -217,8 +239,20 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
       }
       ctx.restore();
 
+      // During phase 2: draw a growing white glow at center as everything converges
+      if (whitenAmount > 0.01) {
+        const glowRadius = 20 + whitenAmount * 80;
+        const glowAlpha = whitenAmount * 0.9;
+        const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
+        wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
+        wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
+        wg.addColorStop(1, `rgba(232,232,240,0)`);
+        ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
+        ctx.fillStyle = wg; ctx.fill();
+      }
+
       // Equation overlay — fades out during zoom
-      const textFade = Math.max(0, 1 - eased * 1.5);
+      const textFade = Math.max(0, 1 - z1eased * 1.5);
       if (textFade > 0.01 && depthRef.current === 1) {
         mvTime += 0.005;
         const ea = (0.22 + Math.sin(mvTime*2)*0.06) * textFade;
@@ -231,7 +265,7 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
         ctx.fillText("SAME EQUATION  \u00B7  EVERY SCALE  \u00B7  6,561 WORLDS", CX, H - 14);
       }
 
-      return eased;
+      return z2eased;
     }
 
     // Track when depth transitions to 1 for zoom timing
@@ -250,8 +284,8 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
       simulate();
       drawMultiverse(depthRef.current === 1 ? zoomElapsed : -1);
 
-      // Auto-transition to depth 2 after zoom completes
-      if (depthRef.current === 1 && zoomElapsed > 8.5 && !transitioned) {
+      // Auto-transition to depth 2 after collapse to dot completes
+      if (depthRef.current === 1 && zoomElapsed > 14 && !transitioned) {
         transitioned = true;
         goDeeperRef.current(true); // skipTransition — canvas handles its own visual transition
         return;
