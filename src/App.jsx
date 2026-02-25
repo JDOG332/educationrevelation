@@ -53,34 +53,69 @@ export default function TheoryOfEverything() {
   const poemSeen = useRef(false);
 
   // THE OPENING ACT — words devour the darkness, then the light
-  // T=0.000s  Pure black
-  // T=1.618s  White words begin growing: "...we believe in a multiverse where all dreams come true..."
-  // T=5.854s  Words consumed the black → screen is 100% WHITE
-  // T=5.854s  Black words begin growing: "...we believe we are just one tiny glimpse of those dreams..."
-  // T=8.090s  Words consumed the white → screen is 100% BLACK
-  // T=8.090s  Multiverse appears. Depth → 1.
+  // One continuous curve. No steps. No stairs. A stream.
+  //
+  // PHASE 1: 0s–1.618s = pure black silence (arrival)
+  //          1.618s–5.854s = white words grow from nothing, devouring the dark (4.236s)
+  // PHASE 2: 5.854s–8.09s = black words grow from nothing, devouring the light (2.236s)
+  //          8.09s = multiverse appears
+  //
+  // veilProgress: continuous 0→2 driven by requestAnimationFrame
+  //   0.0 = pure black, silence
+  //   0.0→1.0 = phase 1 (black→white, white words growing)
+  //   1.0→2.0 = phase 2 (white→black, black words growing)
+  //   2.0+ = done, multiverse
+  const veilStartRef = useRef(null);
+  const veilFrameRef = useRef(null);
+
   useEffect(() => {
-    if (depth !== 0) return;
+    if (depth !== 0) {
+      veilStartRef.current = null;
+      if (veilFrameRef.current) cancelAnimationFrame(veilFrameRef.current);
+      return;
+    }
     setVeilProgress(0);
-    const timers = [];
-    const schedule = (fn, ms) => timers.push(setTimeout(fn, ms));
-    // Phase 1: black silence → white words grow
-    schedule(() => setVeilProgress(0.10), 1618);   // words begin
-    schedule(() => setVeilProgress(0.30), 2618);   // growing
-    schedule(() => setVeilProgress(0.50), 3618);   // bigger
-    schedule(() => setVeilProgress(0.70), 4618);   // almost there
-    schedule(() => setVeilProgress(0.80), 5236);   // consuming
-    schedule(() => setVeilProgress(1.00), 5854);   // screen is WHITE — phase 1 done
-    // Phase 2: white screen → black words grow → black
-    schedule(() => setVeilProgress(1.10), 5854);   // flip to phase 2 (white bg, black words)
-    schedule(() => setVeilProgress(1.30), 6236);   // growing
-    schedule(() => setVeilProgress(1.50), 6618);   // bigger
-    schedule(() => setVeilProgress(1.70), 7236);   // almost there
-    schedule(() => setVeilProgress(1.90), 7618);   // consuming
-    schedule(() => setVeilProgress(2.00), 8090);   // screen is BLACK — phase 2 done
-    // Multiverse appears
-    schedule(() => { setVeilProgress(2.01); setDepth(1); }, 8090);
-    return () => timers.forEach(clearTimeout);
+
+    // Total timing: 8.09s
+    const SILENCE   = 1.618;  // pure black
+    const PHASE1    = 4.236;  // white words devour black
+    const PHASE2    = 2.236;  // black words devour white
+    const TOTAL     = SILENCE + PHASE1 + PHASE2; // 8.09s
+
+    function tick(now) {
+      if (!veilStartRef.current) veilStartRef.current = now;
+      const elapsed = (now - veilStartRef.current) / 1000;
+
+      let progress;
+      if (elapsed < SILENCE) {
+        // Pure black silence — progress stays at 0
+        progress = 0;
+      } else if (elapsed < SILENCE + PHASE1) {
+        // Phase 1: white words devouring black
+        // Use t^φ easing for organic acceleration (slow start, beautiful swell)
+        const t = (elapsed - SILENCE) / PHASE1;
+        const eased = Math.pow(t, 1.15); // gentle power curve — not too slow, not too fast
+        progress = eased;
+      } else if (elapsed < TOTAL) {
+        // Phase 2: black words devouring white
+        const t = (elapsed - SILENCE - PHASE1) / PHASE2;
+        const eased = Math.pow(t, 1.1); // slightly faster curve — urgency builds
+        progress = 1.0 + eased;
+      } else {
+        // Done
+        setVeilProgress(2.01);
+        setDepth(1);
+        return;
+      }
+
+      setVeilProgress(progress);
+      veilFrameRef.current = requestAnimationFrame(tick);
+    }
+
+    veilFrameRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (veilFrameRef.current) cancelAnimationFrame(veilFrameRef.current);
+    };
   }, [depth]);
 
   // Poem zoom-out sequence — timed to hold interest without losing suspense
@@ -747,73 +782,82 @@ export default function TheoryOfEverything() {
       />}
 
       {/* ===== THE OPENING ACT — words devour the darkness, then the light ===== */}
-
-      {/* PHASE 1: Black screen → white words grow → screen becomes white */}
-      {/* PHASE 2: White screen → black words grow → screen becomes black */}
-      {/* Then: multiverse pops on */}
       {depth === 0 && veilProgress < 2.01 && (() => {
-        const phase1 = veilProgress <= 1.0;   // black bg, white words
-        const phase2 = veilProgress > 1.0;    // white bg, black words
-
-        // Phase 1: progress 0→1 maps to word growth during black→white
-        // Phase 2: progress 1.1→2.0 maps to word growth during white→black
+        // p1: 0→1 during phase 1 (white words on black)
+        // p2: 0→1 during phase 2 (black words on white)
         const p1 = Math.min(1, Math.max(0, veilProgress));
-        const p2 = Math.min(1, Math.max(0, (veilProgress - 1.1) / 0.9));
+        const p2 = Math.min(1, Math.max(0, veilProgress - 1.0));
 
-        // Background interpolation
-        const bg = phase2
-          ? `rgb(${Math.round(255 * (1 - p2))},${Math.round(255 * (1 - p2))},${Math.round(255 * (1 - p2))})`
-          : `rgb(${Math.round(255 * p1)},${Math.round(255 * p1)},${Math.round(255 * p1)})`;
+        // Background: smooth black→white→black
+        // Phase 1: black(0)→white(255) as p1 goes 0→1
+        // Phase 2: white(255)→black(0) as p2 goes 0→1
+        const lum = p2 > 0
+          ? Math.round(255 * (1 - p2))
+          : Math.round(255 * p1);
 
-        // Word scale: starts tiny, grows to fill
-        const wordScale1 = p1 < 0.01 ? 0 : 0.3 + p1 * 4.5;
-        const wordScale2 = p2 < 0.01 ? 0 : 0.3 + p2 * 4.5;
+        // Phase 1 word scale: emerges tiny, swells to fill
+        // Cubic ease-out for that "growing from a seed" feel
+        const scale1 = p1 < 0.001 ? 0.15 : 0.15 + Math.pow(p1, 0.7) * 5.5;
 
-        // Word opacity: fade in quickly then hold
-        const wordOpacity1 = Math.min(1, p1 * 3);
-        const wordOpacity2 = Math.min(1, p2 * 3);
+        // Phase 1 word opacity: gentle fade-in over first 20% of phase
+        const alpha1 = Math.min(1, p1 * 5);
+
+        // Phase 1 fade-OUT: words dissolve into the whiteness at the very end
+        const fade1 = p2 > 0 ? Math.max(0, 1 - p2 * 4) : 1;
+
+        // Phase 2 word scale: same organic growth
+        const scale2 = p2 < 0.001 ? 0.15 : 0.15 + Math.pow(p2, 0.7) * 5.5;
+
+        // Phase 2 word opacity: gentle fade-in
+        const alpha2 = Math.min(1, p2 * 5);
 
         return (
           <div style={{
             position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
             zIndex: 10000,
-            background: bg,
+            background: `rgb(${lum},${lum},${lum})`,
             display: "flex", alignItems: "center", justifyContent: "center",
             overflow: "hidden",
           }}>
-            {/* Phase 1 words: white on black → grow until they devour the black */}
-            {phase1 && p1 > 0 && (
+            {/* Phase 1: white words on darkening background */}
+            {p1 > 0 && fade1 > 0 && (
               <div style={{
+                position: "absolute",
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(16px, 4vw, 32px)",
                 fontStyle: "italic", fontWeight: 300,
-                color: `rgba(255,255,255,${wordOpacity1})`,
+                color: `rgba(255,255,255,${(alpha1 * fade1).toFixed(3)})`,
                 textAlign: "center",
                 lineHeight: 1.618,
                 letterSpacing: 2,
                 padding: "0 10%",
-                transform: `scale(${wordScale1})`,
-                transition: "transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), color 0.8s ease",
-                textShadow: `0 0 ${40 * p1}px rgba(255,255,255,${0.3 * p1}), 0 0 ${120 * p1}px rgba(255,255,255,${0.15 * p1})`,
+                transform: `scale(${scale1.toFixed(4)})`,
+                willChange: "transform, opacity",
+                textShadow: p1 > 0.3
+                  ? `0 0 ${60 * p1}px rgba(255,255,255,${(0.4 * p1 * fade1).toFixed(3)}), 0 0 ${180 * p1}px rgba(255,255,255,${(0.15 * p1 * fade1).toFixed(3)})`
+                  : "none",
               }}>
                 ...we believe in a multiverse<br />where all dreams come true...
               </div>
             )}
 
-            {/* Phase 2 words: black on white → grow until they devour the white */}
-            {phase2 && (
+            {/* Phase 2: black words on brightening background */}
+            {p2 > 0 && (
               <div style={{
+                position: "absolute",
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(16px, 4vw, 32px)",
                 fontStyle: "italic", fontWeight: 300,
-                color: `rgba(0,0,0,${wordOpacity2})`,
+                color: `rgba(0,0,0,${alpha2.toFixed(3)})`,
                 textAlign: "center",
                 lineHeight: 1.618,
                 letterSpacing: 2,
                 padding: "0 10%",
-                transform: `scale(${wordScale2})`,
-                transition: "transform 1s cubic-bezier(0.23, 1, 0.32, 1), color 0.6s ease",
-                textShadow: `0 0 ${40 * p2}px rgba(0,0,0,${0.2 * p2}), 0 0 ${100 * p2}px rgba(0,0,0,${0.1 * p2})`,
+                transform: `scale(${scale2.toFixed(4)})`,
+                willChange: "transform, opacity",
+                textShadow: p2 > 0.3
+                  ? `0 0 ${60 * p2}px rgba(0,0,0,${(0.25 * p2).toFixed(3)}), 0 0 ${150 * p2}px rgba(0,0,0,${(0.08 * p2).toFixed(3)})`
+                  : "none",
               }}>
                 ...we believe we are just one<br />tiny glimpse of those dreams...
               </div>
