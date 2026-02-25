@@ -49,34 +49,35 @@ export default function TheoryOfEverything() {
   const poemSeen = useRef(false);
 
   // Auto-advance landing phases — no clicks needed, the site breathes them through
+  // All timing in PHI: 1.618s base unit
   useEffect(() => {
     if (depth !== 0) return;
     if (landingPhase === 0) {
-      const t = setTimeout(() => setLandingPhase(1), 3000); // white → black after 3s
+      const t = setTimeout(() => setLandingPhase(1), Math.round(PHI * 1000)); // PHI¹ = 1.618s
       return () => clearTimeout(t);
     }
     if (landingPhase === 1) {
-      const t = setTimeout(() => setLandingPhase(2), 3000); // black → prism after 3s
+      const t = setTimeout(() => setLandingPhase(2), Math.round(PHI * 1000)); // PHI¹ = 1.618s
       return () => clearTimeout(t);
     }
     if (landingPhase === 2) {
-      const t = setTimeout(() => goDeeper(), 5000); // prism → multiverse after 5s
+      const t = setTimeout(() => goDeeper(), Math.round(PHI * PHI * 1000)); // PHI² = 2.618s
       return () => clearTimeout(t);
     }
   }, [depth, landingPhase, goDeeper]);
 
-  // Auto-advance poem page — after the poem settles, hold 15s then pull them deeper
+  // Auto-advance poem page — PHI⁴ × 2 = 13.7s after settle
   useEffect(() => {
     if (depth === 2 && poemPhase === 5) {
-      const t = setTimeout(() => goDeeper(), 15000);
+      const t = setTimeout(() => goDeeper(), Math.round(PHI * PHI * PHI * PHI * 2 * 1000));
       return () => clearTimeout(t);
     }
   }, [depth, poemPhase, goDeeper]);
 
-  // Auto-advance pact page — 10s to absorb the octahedron, then onward
+  // Auto-advance pact page — PHI⁴ = 6.85s
   useEffect(() => {
     if (depth === 3) {
-      const t = setTimeout(() => goDeeper(), 10000);
+      const t = setTimeout(() => goDeeper(), Math.round(PHI * PHI * PHI * PHI * 1000));
       return () => clearTimeout(t);
     }
   }, [depth, goDeeper]);
@@ -549,43 +550,23 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: PURE WHITE — "close your eyes & click"
+        // Phase 0: PURE WHITE — nothing. Just light.
         if (phase === 0) {
           return (
-            <div style={{ ...fullScreen, background: "#ffffff" }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(28px, 5.5vw, 42px)",
-                fontStyle: "italic",
-                color: "rgba(0,0,0,0.7)",
-                letterSpacing: "0.15em",
-                animation: "fadeSlideUp 1.5s 0.5s both ease",
-                textAlign: "center", userSelect: "none",
-              }}>close your eyes</div>
-            </div>
+            <div style={{ ...fullScreen, background: "#ffffff" }} />
           );
         }
 
-        // Phase 1: PURE BLACK — "open your eyes & click"
+        // Phase 1: PURE BLACK — nothing. Just void.
         if (phase === 1) {
           return (
-            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(28px, 5.5vw, 42px)",
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.7)",
-                letterSpacing: "0.15em",
-                animation: "fadeSlideUp 1.5s 0.3s both ease",
-                textAlign: "center", userSelect: "none",
-              }}>open your eyes</div>
-            </div>
+            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.6s ease" }} />
           );
         }
 
-        // Phase 2: THE PRISM — no words. Just the spectrum. Let the eyes do the work.
+        // Phase 2: THE PRISM — no words. Just the spectrum and the golden eye.
         return (
-          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
+          <div style={{ ...fullScreen, background: "#000", overflow: "hidden" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
               animation: `prismSpin 120s linear infinite ${spinCW.current ? "" : "reverse"}`,
@@ -680,31 +661,6 @@ export default function TheoryOfEverything() {
                 <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
               </circle>
             </svg>
-
-            {/* "now blink them & make a wish" — centered on the prism */}
-            <div style={{
-              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-              pointerEvents: "none", userSelect: "none",
-            }}>
-              <div style={{
-                animation: "fadeSlideUp 1.5s 0.5s both ease",
-                textAlign: "center",
-                padding: "0 24px",
-              }}>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(28px, 6vw, 48px)",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                  letterSpacing: "0.12em",
-                  lineHeight: 1.6,
-                  animation: "textBlink 4s ease-in-out infinite",
-                  color: "rgba(140,130,110,1)",
-                  textShadow: "0 0 12px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.8), 0 0 48px rgba(0,0,0,0.6), 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 3px rgba(255,255,255,0.35)",
-                }}>now blink<br />&amp; make a wish</div>
-              </div>
-            </div>
 
             {/* removed tap hint — auto-advance now */}
           </div>
