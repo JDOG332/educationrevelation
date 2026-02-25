@@ -545,17 +545,37 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: PURE WHITE — nothing. Just light. Click to continue.
+        // Phase 0: PURE WHITE — "close your eyes & click"
         if (phase === 0) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }} />
+            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(28px, 5.5vw, 42px)",
+                fontStyle: "italic",
+                color: "rgba(0,0,0,0.7)",
+                letterSpacing: "0.15em",
+                animation: "fadeSlideUp 1.5s 0.5s both ease",
+                textAlign: "center", userSelect: "none",
+              }}>close your eyes &amp; click</div>
+            </div>
           );
         }
 
-        // Phase 1: PURE BLACK — nothing. Just void. Click to continue.
+        // Phase 1: PURE BLACK — "open your eyes & click"
         if (phase === 1) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }} />
+            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(28px, 5.5vw, 42px)",
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.7)",
+                letterSpacing: "0.15em",
+                animation: "fadeSlideUp 1.5s 0.3s both ease",
+                textAlign: "center", userSelect: "none",
+              }}>open your eyes &amp; click</div>
+            </div>
           );
         }
 
@@ -657,7 +677,37 @@ export default function TheoryOfEverything() {
               </circle>
             </svg>
 
-            {/* No text. The eye speaks. */}
+            {/* "now blink them & make a wish" — centered on the prism */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              pointerEvents: "none", userSelect: "none",
+            }}>
+              <div style={{
+                animation: "fadeSlideUp 1.5s 0.5s both ease",
+                textAlign: "center",
+                padding: "0 24px",
+              }}>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(28px, 6vw, 48px)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  letterSpacing: "0.12em",
+                  lineHeight: 1.6,
+                  animation: "textBlink 4s ease-in-out infinite",
+                  color: "rgba(140,130,110,1)",
+                  textShadow: "0 0 12px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.8), 0 0 48px rgba(0,0,0,0.6), 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 3px rgba(255,255,255,0.35)",
+                }}>now blink<br />&amp; make a wish</div>
+              </div>
+            </div>
+
+            <div style={{
+              position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)",
+              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
+              color: "rgba(128,128,128,0.25)",
+              animation: "fadeSlideUp 2s 2.5s both ease",
+            }}>tap</div>
           </div>
         );
       })()}
