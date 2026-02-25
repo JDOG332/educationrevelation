@@ -70,15 +70,31 @@ export default function TheoryOfEverything() {
       const t = setTimeout(() => setLandingPhase(2), 1618);
       return () => clearTimeout(t);
     }
-    // Phase 2: PRISM FAN — 11.09s — a thought completed.
-    // Canvas handles its own blur-out in the final 1.618s.
-    // After 11.09s total, transition to depth 1.
+    // Phase 2: PRISM FAN — Canvas handles its own 11.09s with blur-out in final 1.618s.
+    // Canvas opacity at time T: 1 - ((T - 9.472) / 1.618)²
+    // At T=10.85: opacity = 1 - (0.852)² = 1 - 0.726 = 0.274 (27%)
+    // At T=11.00: opacity = 1 - (0.944)² = 1 - 0.891 = 0.109 (11%)
+    // At T=11.05: opacity = 1 - (0.975)² = 1 - 0.951 = 0.049 (5%) ← sweet spot
+    // Depth 1's waterfallEnter takes 1.000s to reach full opacity.
+    // The 5% remaining fan dissolves under depth 1's rising opacity.
     if (landingPhase === 2) {
       const t = setTimeout(() => {
+        autoLanding.current = false;
         window.scrollTo({ top: 0, behavior: "instant" });
         setDepth(1);
-        autoLanding.current = false;
-      }, 11090);
+        // Trigger enter animation for depth 1
+        setTransDir('deeper');
+        setTransPhase('enter');
+        setTransitioning(true);
+        setTimeout(() => {
+          setTransPhase('settle');
+          setTimeout(() => {
+            setTransPhase('idle');
+            setTransitioning(false);
+            setPrevDepth(null);
+          }, 618);  // 0.618s settle
+        }, 1000);   // 1.000s enter
+      }, 11050);    // Fire at 11.05s — Canvas at ~5% opacity
       return () => clearTimeout(t);
     }
   }, [depth, landingPhase]);
@@ -845,6 +861,7 @@ export default function TheoryOfEverything() {
             let angle = 0;
             let startTime = null;
             let blurAmount = 0;
+            let blurCommitted = false; // once blur starts, it finishes — no cancellation
 
             // 50-shade grey ramp for the gradient triangles
             function greyAt(t) {
@@ -962,18 +979,19 @@ export default function TheoryOfEverything() {
               angle += speed * dt;
 
               // Blur ramp in final 1.618s — the breeze sweeps you away
-              // Only when auto-advancing (first load), not on manual return
+              // Once blur starts, it commits — autoLanding changes can't cancel it
               const blurStart = duration - 1.618;
-              if (autoLanding.current && elapsed > blurStart) {
-                const bt = (elapsed - blurStart) / 1.618;
+              if (elapsed > blurStart && (autoLanding.current || blurCommitted)) {
+                blurCommitted = true;
+                const bt = Math.min((elapsed - blurStart) / 1.618, 1);
                 blurAmount = bt * bt * 25; // quadratic ramp to 25px blur
               }
 
-              // Fade out opacity in final 1.618s (only on auto-advance)
+              // Fade out opacity in final 1.618s (committed once started)
               let opacity = 1;
-              if (autoLanding.current && elapsed > blurStart) {
-                const ft = (elapsed - blurStart) / 1.618;
-                opacity = 1 - ft * ft; // quadratic fade
+              if (blurCommitted) {
+                const ft = Math.min((elapsed - blurStart) / 1.618, 1);
+                opacity = Math.max(0, 1 - ft * ft); // quadratic fade, clamp to 0
               }
 
               ctx.clearRect(0, 0, W, H);
