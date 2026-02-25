@@ -42,6 +42,11 @@ export default function TheoryOfEverything() {
   const [openSection, setOpenSection] = useState(null);
   const [goldenFlood, setGoldenFlood] = useState(false);
   const [fading, setFading] = useState(false);
+  // Waterfall transition system
+  const [transitioning, setTransitioning] = useState(false);
+  const [transDir, setTransDir] = useState('deeper'); // 'deeper' | 'back' | 'void'
+  const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
+  const [prevDepth, setPrevDepth] = useState(null);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
   const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
   const startDark = useRef(Math.random() < 0.5); // coin flip: dark first or light first
@@ -101,18 +106,48 @@ export default function TheoryOfEverything() {
     }
   }, [depth]);
 
+  const clearAllSubs = useCallback(() => {
+    setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+  }, []);
+
   const goDeeper = useCallback(() => {
+    if (transitioning) return;
+    setTransDir('deeper');
+    setTransPhase('exit');
+    setTransitioning(true);
+    setPrevDepth(depth);
     setFading(true);
+
+    // Phase 1: EXIT — current content falls away (500ms)
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 5));
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+      clearAllSubs();
       setFading(false);
-    }, 600);
-  }, []);
+      setTransPhase('enter');
+
+      // Phase 2: ENTER — new content rises (600ms)
+      setTimeout(() => {
+        setTransPhase('settle');
+
+        // Phase 3: SETTLE — final ease (400ms)
+        setTimeout(() => {
+          setTransPhase('idle');
+          setTransitioning(false);
+          setPrevDepth(null);
+        }, 400);
+      }, 600);
+    }, 500);
+  }, [depth, transitioning, clearAllSubs]);
 
   const goBack = useCallback(() => {
+    if (transitioning) return;
+    setTransDir('back');
+    setTransPhase('exit');
+    setTransitioning(true);
+    setPrevDepth(depth);
     setFading(true);
+
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => {
@@ -120,20 +155,47 @@ export default function TheoryOfEverything() {
         if (newD === 0) setLandingPhase(2); // return to prism, not black
         return newD;
       });
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+      clearAllSubs();
       setFading(false);
-    }, 600);
-  }, []);
+      setTransPhase('enter');
+
+      setTimeout(() => {
+        setTransPhase('settle');
+        setTimeout(() => {
+          setTransPhase('idle');
+          setTransitioning(false);
+          setPrevDepth(null);
+        }, 400);
+      }, 600);
+    }, 500);
+  }, [depth, transitioning, clearAllSubs]);
 
   const returnToVoid = useCallback(() => {
+    if (transitioning) return;
+    setTransDir('void');
+    setTransPhase('exit');
+    setTransitioning(true);
+    setPrevDepth(depth);
     setFading(true);
+
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       autoLanding.current = true;
-      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+      setDepth(0); setLandingPhase(0);
+      clearAllSubs();
       setFading(false);
-    }, 600);
-  }, []);
+      setTransPhase('enter');
+
+      setTimeout(() => {
+        setTransPhase('settle');
+        setTimeout(() => {
+          setTransPhase('idle');
+          setTransitioning(false);
+          setPrevDepth(null);
+        }, 400);
+      }, 600);
+    }, 500);
+  }, [depth, transitioning, clearAllSubs]);
 
   const openLayer = (i) => {
     setActiveLayer(i);
@@ -142,18 +204,58 @@ export default function TheoryOfEverything() {
   };
 
   const navigateToDepth = useCallback((targetDepth) => {
-    if (targetDepth === depth) return;
+    if (targetDepth === depth || transitioning) return;
+    const dir = targetDepth > depth ? 'deeper' : 'back';
+    setTransDir(dir);
+    setTransPhase('exit');
+    setTransitioning(true);
+    setPrevDepth(depth);
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+      if (targetDepth === 0) setLandingPhase(2);
+      clearAllSubs();
       setFading(false);
-    }, 600);
-  }, [depth]);
+      setTransPhase('enter');
+      setTimeout(() => {
+        setTransPhase('settle');
+        setTimeout(() => {
+          setTransPhase('idle');
+          setTransitioning(false);
+          setPrevDepth(null);
+        }, 400);
+      }, 600);
+    }, 500);
+  }, [depth, transitioning, clearAllSubs]);
 
   const layer = activeLayer !== null ? LAYERS[activeLayer] : null;
   const senseKeys = ["see", "hear", "feel", "smell", "taste"];
+
+  // Waterfall animation for each depth screen
+  const getDepthWrap = useCallback((screenDepth) => {
+    if (transPhase === 'idle') return {};
+    if (transPhase === 'exit') {
+      // Current screen = screenDepth is still showing, animate it out
+      const anim = transDir === 'deeper' ? 'waterfallExit'
+                 : transDir === 'back' ? 'waterfallExitUp'
+                 : 'voidCollapse';
+      return {
+        animation: `${anim} 0.5s cubic-bezier(0.4, 0, 1, 1) forwards`,
+        willChange: 'transform, opacity, filter',
+      };
+    }
+    if (transPhase === 'enter' || transPhase === 'settle') {
+      const anim = transDir === 'deeper' ? 'waterfallEnter'
+                 : transDir === 'back' ? 'waterfallEnterUp'
+                 : 'waterfallEnter';
+      return {
+        animation: `${anim} 0.6s cubic-bezier(0, 0, 0.2, 1) forwards`,
+        willChange: 'transform, opacity, filter',
+      };
+    }
+    return {};
+  }, [transPhase, transDir]);
 
   return (
     <div style={{
@@ -162,7 +264,7 @@ export default function TheoryOfEverything() {
       color: "#d4d4d8",
       fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
       position: "relative", overflow: "hidden",
-      transition: "background 1.8s cubic-bezier(0.23,1,0.32,1)",
+      transition: "background 2.8s cubic-bezier(0.23, 1, 0.32, 1)",
     }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -180,8 +282,9 @@ export default function TheoryOfEverything() {
           100% { transform: translate(-50%,-50%) scale(3); opacity: 0; }
         }
         @keyframes fadeSlideUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; transform: translateY(28px); filter: blur(2px); }
+          60% { opacity: 0.85; filter: blur(0.3px); }
+          to { opacity: 1; transform: translateY(0); filter: blur(0px); }
         }
         @keyframes diamondPulse {
           0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
@@ -277,6 +380,45 @@ export default function TheoryOfEverything() {
         @keyframes diamondCounterSpin {
           from { transform: translate(-50%, -50%) rotate(0deg); }
           to { transform: translate(-50%, -50%) rotate(-360deg); }
+        }
+
+        /* ===== WATERFALL TRANSITION SYSTEM ===== */
+        @keyframes waterfallExit {
+          0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
+          35% { opacity: 0.6; transform: translateY(2.5vh) scale(0.985); filter: blur(1.5px); }
+          100% { opacity: 0; transform: translateY(10vh) scale(0.95); filter: blur(6px); }
+        }
+        @keyframes waterfallExitUp {
+          0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
+          35% { opacity: 0.6; transform: translateY(-2.5vh) scale(0.985); filter: blur(1.5px); }
+          100% { opacity: 0; transform: translateY(-10vh) scale(0.95); filter: blur(6px); }
+        }
+        @keyframes waterfallEnter {
+          0% { opacity: 0; transform: translateY(-6vh) scale(0.97); filter: blur(5px); }
+          25% { opacity: 0.3; filter: blur(3px); }
+          65% { opacity: 0.8; transform: translateY(-0.8vh) scale(0.998); filter: blur(0.5px); }
+          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
+        }
+        @keyframes waterfallEnterUp {
+          0% { opacity: 0; transform: translateY(6vh) scale(0.97); filter: blur(5px); }
+          25% { opacity: 0.3; filter: blur(3px); }
+          65% { opacity: 0.8; transform: translateY(0.8vh) scale(0.998); filter: blur(0.5px); }
+          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
+        }
+        @keyframes voidCollapse {
+          0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+          50% { opacity: 0.3; transform: scale(0.65); filter: blur(3px); }
+          100% { opacity: 0; transform: scale(0.25); filter: blur(10px); }
+        }
+        @keyframes rippleOverlay {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+          45% { opacity: 0.12; }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(3.5); }
+        }
+        @keyframes streamMist {
+          0% { opacity: 0; background-position: 50% 100%; }
+          35% { opacity: 0.25; }
+          100% { opacity: 0; background-position: 50% -50%; }
         }
 
         .gold-line {
@@ -485,15 +627,52 @@ export default function TheoryOfEverything() {
       }} />
       </>)}
 
-      {/* Transition overlay — cinematic dissolve */}
+      {/* Waterfall transition — multi-layer directional dissolve */}
+      {transPhase !== 'idle' && (<>
+        {/* Layer 1: Directional gradient mist */}
+        <div style={{
+          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+          zIndex: 998, pointerEvents: "none",
+          background: transDir === 'deeper'
+            ? "linear-gradient(to bottom, transparent 15%, rgba(3,3,6,0.5) 45%, rgba(3,3,6,0.85) 75%)"
+            : transDir === 'back'
+            ? "linear-gradient(to top, transparent 15%, rgba(3,3,6,0.5) 45%, rgba(3,3,6,0.85) 75%)"
+            : "radial-gradient(ellipse at center, rgba(3,3,6,0.9), rgba(3,3,6,0.6))",
+          opacity: transPhase === 'exit' ? 1 : transPhase === 'enter' ? 0.4 : 0,
+          transition: transPhase === 'exit'
+            ? "opacity 0.45s cubic-bezier(0.4, 0, 1, 1)"
+            : "opacity 0.55s cubic-bezier(0, 0, 0.2, 1)",
+        }} />
+        {/* Layer 2: Golden ripple — the 3rd eye blinks at the crossing */}
+        <div style={{
+          position: "fixed", top: "50%", left: "50%",
+          width: "100vmin", height: "100vmin",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%)",
+          zIndex: 999, pointerEvents: "none",
+          animation: transPhase === 'exit' ? "rippleOverlay 1s cubic-bezier(0.23,1,0.32,1) forwards" : "none",
+          transform: "translate(-50%, -50%) scale(0)",
+        }} />
+        {/* Layer 3: Directional mist streaks — water vapor */}
+        <div style={{
+          position: "fixed", top: 0, left: 0, width: "100%", height: "150%",
+          zIndex: 997, pointerEvents: "none",
+          background: transDir === 'deeper'
+            ? "linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.012) 30%, rgba(201,168,76,0.025) 50%, transparent 80%)"
+            : "linear-gradient(0deg, transparent 0%, rgba(201,168,76,0.012) 30%, rgba(201,168,76,0.025) 50%, transparent 80%)",
+          animation: "streamMist 1s ease-out forwards",
+        }} />
+      </>)}
+
+      {/* Legacy fading overlay — kept as safety fallback with softer settings */}
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-        background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.85), #030306)",
-        zIndex: 999, pointerEvents: "none",
-        opacity: fading ? 1 : 0,
-        backdropFilter: fading ? "blur(8px)" : "blur(0px)",
-        WebkitBackdropFilter: fading ? "blur(8px)" : "blur(0px)",
-        transition: "opacity 0.7s ease, backdrop-filter 0.7s ease, -webkit-backdrop-filter 0.7s ease",
+        background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.7), #030306)",
+        zIndex: 996, pointerEvents: "none",
+        opacity: fading ? 0.6 : 0,
+        backdropFilter: fading ? "blur(4px)" : "blur(0px)",
+        WebkitBackdropFilter: fading ? "blur(4px)" : "blur(0px)",
+        transition: "opacity 0.5s ease, backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease",
       }} />
 
       {/* Particles — hidden during pure black/white landing */}
@@ -684,6 +863,7 @@ export default function TheoryOfEverything() {
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
           zIndex: 5000,
+          ...getDepthWrap(2),
         }}>
 
           {/* White flash — the Moon filling your vision */}
@@ -1399,6 +1579,7 @@ export default function TheoryOfEverything() {
           <div style={{
             height: "100vh", width: "100%", position: "relative",
             zIndex: 1500, overflow: "hidden",
+            ...getDepthWrap(1),
           }}>
             {/* 6561-body multiverse canvas */}
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
@@ -1493,6 +1674,7 @@ export default function TheoryOfEverything() {
             zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
             padding: "0 20px",
+            ...getDepthWrap(3),
           }}>
 
             <div style={{
@@ -1632,6 +1814,7 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           boxSizing: "border-box",
           background: "#030306",
+          ...getDepthWrap(4),
         }}>
 
           {/* Chamber page navigation — back to Pact / forward to ∞ */}
