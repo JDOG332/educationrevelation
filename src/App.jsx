@@ -1235,18 +1235,20 @@ export default function TheoryOfEverything() {
 
             const state = stateRef.current;
             let time = 0;
+            // Mobile screens are smaller — scale speed so visual motion matches desktop
+            const speedScale = Math.max(1, 1200 / Math.max(W, H));
 
             function simulate() {
               // Level 0: super-clusters orbit center
-              simLevel(state.supers, 0.3, 55, 0.9997, CX, CY, 0.00005);
+              simLevel(state.supers, 0.3 * speedScale, 55, 0.9997, CX, CY, 0.00005 * speedScale);
               // Level 1: clusters orbit their super-cluster
               for (const sc of state.supers) {
-                simLevel(sc.clusters, 0.25, 14, 0.9994, sc.x, sc.y, 0.0004);
+                simLevel(sc.clusters, 0.25 * speedScale, 14, 0.9994, sc.x, sc.y, 0.0004 * speedScale);
               }
               // Level 2: bodies orbit their cluster
               for (const sc of state.supers) {
                 for (const cl of sc.clusters) {
-                  simLevel(cl.bodies, 0.2, 4, 0.999, cl.x, cl.y, 0.0015);
+                  simLevel(cl.bodies, 0.2 * speedScale, 4, 0.999, cl.x, cl.y, 0.0015 * speedScale);
                 }
               }
             }
