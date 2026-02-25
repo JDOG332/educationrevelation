@@ -55,31 +55,32 @@ export default function TheoryOfEverything() {
   const autoLanding = useRef(true); // true on first load + golden flood loop-back, false after goBack
 
   // Auto-advance landing phases — only on first load or golden flood loop-back
+  // ALL TIMING LOCKED TO PHI LADDER:
+  // 0.618s = blink | 1.618s = breath | 4.236s = gaze | 6.854s = sentence | 11.09s = thought
   useEffect(() => {
     if (depth !== 0 || !autoLanding.current) return;
-    // Phase 0: PURE BLACK (0.618s)
+    // Phase 0: PURE BLACK — the nothing (0.618s = a blink)
     if (landingPhase === 0) {
       const t = setTimeout(() => setLandingPhase(1), 618);
       return () => clearTimeout(t);
     }
-    // Phase 1: PURE WHITE (0.618s)
+    // Phase 1: PURE WHITE — the flash (0.618s = a blink)
     if (landingPhase === 1) {
       const t = setTimeout(() => setLandingPhase(2), 618);
       return () => clearTimeout(t);
     }
-    // Phase 2: PRISM — spins and accelerates, then blurs into depth 1
-    // Total prism time: ~4.5s (enough to feel the acceleration)
+    // Phase 2: PRISM — slowly turning faucet (11.09s = a thought completed)
     if (landingPhase === 2) {
-      const t = setTimeout(() => setLandingPhase(3), 4500);
+      const t = setTimeout(() => setLandingPhase(3), 11090);
       return () => clearTimeout(t);
     }
-    // Phase 3: BLUR-OUT — prism blurs away as we transition to depth 1
+    // Phase 3: BLUR-OUT — dissolve into depth 1 (1.618s = a breath in)
     if (landingPhase === 3) {
       const t = setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
         setDepth(1);
         autoLanding.current = false;
-      }, 800);
+      }, 1618);
       return () => clearTimeout(t);
     }
   }, [depth, landingPhase]);
@@ -306,18 +307,42 @@ export default function TheoryOfEverything() {
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes prismAccelSpin {
-          /* Starts slow (4.236s feel), accelerates to fast (0.618s feel)
-             Over 4.5s total, makes ~6 full rotations with exponential acceleration
-             First rotation takes ~2s, last takes ~0.3s */
+          /* FAUCET FLOW — not an engine rev.
+             Total: 11.09s (a thought completed). Plays ONCE.
+             First rotation: ~4.236s (a held gaze)
+             Last rotation:  ~0.618s (a blink)
+             Smooth logarithmic acceleration — water finding its path.
+             
+             Rotation budget: ~7 full rotations = 2520°
+             Distribution follows PHI spiral:
+               0-38%  of time = 1st rotation    (4.236s feel)
+               38-58% of time = 2nd rotation    (2.618s feel) 
+               58-72% of time = 3rd rotation    (1.618s feel)
+               72-82% of time = 4th rotation    (1.000s feel)
+               82-89% of time = 5th rotation    (0.618s feel)
+               89-94% of time = 6th rotation    (0.382s feel)
+               94-100% of time = 7th rotation   (0.618s feel — settling) */
           0%    { transform: rotate(0deg); }
-          15%   { transform: rotate(90deg); }    /* slow: ~0.675s for 90° */
-          28%   { transform: rotate(270deg); }   /* picking up */
-          40%   { transform: rotate(540deg); }   /* 1.5 rotations by 40% */
-          52%   { transform: rotate(900deg); }   /* 2.5 rotations */
-          64%   { transform: rotate(1350deg); }  /* 3.75 rotations — accelerating */
-          76%   { transform: rotate(1800deg); }  /* 5 rotations */
-          88%   { transform: rotate(2340deg); }  /* 6.5 rotations — fast */
-          100%  { transform: rotate(2880deg); }  /* 8 full rotations */
+          5%    { transform: rotate(12deg); }      /* barely moving — drip */
+          10%   { transform: rotate(35deg); }      /* first trickle */
+          15%   { transform: rotate(68deg); }      /* finding the path */
+          20%   { transform: rotate(110deg); }     /* stream forming */
+          25%   { transform: rotate(165deg); }     /* steady trickle */
+          30%   { transform: rotate(230deg); }     /* opening up */
+          38%   { transform: rotate(360deg); }     /* 1st full rotation — 4.236s feel */
+          45%   { transform: rotate(480deg); }     /* water flowing */
+          50%   { transform: rotate(560deg); }     /* rhythm establishing */
+          58%   { transform: rotate(720deg); }     /* 2nd rotation — 2.618s feel */
+          65%   { transform: rotate(880deg); }     /* momentum building */
+          72%   { transform: rotate(1080deg); }    /* 3rd rotation — 1.618s feel */
+          78%   { transform: rotate(1260deg); }    /* flowing freely now */
+          82%   { transform: rotate(1440deg); }    /* 4th rotation — 1.000s feel */
+          86%   { transform: rotate(1620deg); }    /* stream is full */
+          89%   { transform: rotate(1800deg); }    /* 5th rotation — 0.618s feel */
+          92%   { transform: rotate(1980deg); }    /* rushing */
+          94%   { transform: rotate(2160deg); }    /* 6th rotation — 0.382s feel */
+          97%   { transform: rotate(2340deg); }    /* full flow */
+          100%  { transform: rotate(2520deg); }    /* 7th rotation — complete */
         }
         @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
         @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
@@ -788,19 +813,19 @@ export default function TheoryOfEverything() {
             background: "#000",
             overflow: "hidden",
             animation: "fadeIn 0.3s ease",
-            // Phase 3: blur + fade out
+            // Phase 3: blur + fade out over 1.618s (a breath in)
             filter: isBlurring ? "blur(20px)" : "blur(0px)",
             opacity: isBlurring ? 0 : 1,
             transition: isBlurring
-              ? "filter 0.8s cubic-bezier(0.4, 0, 1, 1), opacity 0.8s cubic-bezier(0.4, 0, 1, 1)"
+              ? "filter 1.618s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.618s cubic-bezier(0.4, 0, 0.2, 1)"
               : "none",
           }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
-              /* CSS animation with accelerating spin:
-                 Start at 4.236s/rev, end at 0.618s/rev over 4.5s
-                 We use a custom animation that accelerates */
-              animation: `prismAccelSpin 4.5s cubic-bezier(0.1, 0, 0.2, 1) infinite ${spinCW.current ? "" : "reverse"}`,
+              /* Faucet flow: 11.09s = a thought completed. Plays ONCE.
+                 ease-in timing lets CSS interpolate smoothly between keyframes
+                 creating the gradually-opening-faucet feel */
+              animation: `prismAccelSpin 11.09s ease-in forwards ${spinCW.current ? "" : "reverse"}`,
               transformOrigin: "center center",
             }}>
               <defs>
