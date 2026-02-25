@@ -52,12 +52,12 @@ export default function TheoryOfEverything() {
   // veilProgress removed — opening act now uses direct DOM manipulation via refs
   const poemSeen = useRef(false);
 
-  // THE OPENING ACT — words devour the darkness, then the light
-  // Direct DOM manipulation — React doesn't re-render during the animation.
-  // One rAF loop mutates .style properties on 3 refs at 60fps. Zero jitter.
-  const openingRef = useRef(null);    // the full-screen container
-  const words1Ref = useRef(null);     // phase 1 text
-  const words2Ref = useRef(null);     // phase 2 text
+  // THE OPENING ACT — breathe in, breathe out
+  // Phase 1: words grow small→big, black→white (breathe in)
+  // Phase 2: same words shrink big→small, white→black (breathe out) — PERFECT MIRROR
+  // Same words. Same curve. Same duration. Reversed.
+  const openingRef = useRef(null);
+  const wordsRef = useRef(null);
   const veilFrameRef = useRef(null);
   const veilStartRef = useRef(null);
 
@@ -69,62 +69,70 @@ export default function TheoryOfEverything() {
     }
 
     const container = openingRef.current;
-    const w1 = words1Ref.current;
-    const w2 = words2Ref.current;
-    if (!container || !w1 || !w2) return;
+    const words = wordsRef.current;
+    if (!container || !words) return;
 
-    // Reset visibility
+    // Reset
     container.style.display = "flex";
-    w1.style.opacity = "0";
-    w2.style.opacity = "0";
+    container.style.background = "#000000";
+    words.style.opacity = "0";
+    words.style.color = "#ffffff";
+    words.style.transform = "scale(0.15)";
 
-    const SILENCE = 1.618;
-    const PHASE1  = 4.236;
-    const PHASE2  = 2.236;
-    const TOTAL   = SILENCE + PHASE1 + PHASE2; // 8.09s
+    const SILENCE = 1.618;   // pure black arrival
+    const BREATHE = 4.236;   // each half of the breath
+    const TOTAL   = SILENCE + BREATHE + BREATHE; // 10.09s
 
     function tick(now) {
       if (!veilStartRef.current) veilStartRef.current = now;
       const elapsed = (now - veilStartRef.current) / 1000;
 
       if (elapsed >= TOTAL) {
-        // Done — hide the opening act and transition
         container.style.display = "none";
         setDepth(1);
         return;
       }
 
-      let p1 = 0, p2 = 0;
-
       if (elapsed < SILENCE) {
-        // Pure black silence
-        p1 = 0;
-      } else if (elapsed < SILENCE + PHASE1) {
-        const t = (elapsed - SILENCE) / PHASE1;
-        p1 = Math.pow(t, 1.15);
-      } else {
-        p1 = 1;
-        const t = (elapsed - SILENCE - PHASE1) / PHASE2;
-        p2 = Math.pow(t, 1.1);
+        // Pure black silence — nothing moves
+        veilFrameRef.current = requestAnimationFrame(tick);
+        return;
       }
 
-      // Background: black→white→black
-      const lum = p2 > 0 ? 255 * (1 - p2) : 255 * p1;
+      const breathTime = elapsed - SILENCE;
+      const inPhase1 = breathTime < BREATHE;
+
+      // t goes 0→1 in each phase
+      const t = inPhase1
+        ? breathTime / BREATHE
+        : (breathTime - BREATHE) / BREATHE;
+
+      // The curve: t^1.15 — organic swell
+      const curved = Math.pow(t, 1.15);
+
+      // Phase 1: curved goes 0→1 (small→big, black→white)
+      // Phase 2: curved goes 0→1 but we REVERSE it (big→small, white→black)
+      const progress = inPhase1 ? curved : 1 - curved;
+
+      // Background: luminance follows progress
+      const lum = 255 * progress;
       container.style.background = `rgb(${lum|0},${lum|0},${lum|0})`;
 
-      // Phase 1: white words growing on black
-      const scale1 = p1 < 0.001 ? 0.15 : 0.15 + Math.pow(p1, 0.7) * 5.5;
-      const alpha1 = Math.min(1, p1 * 5);
-      const fade1 = p2 > 0 ? Math.max(0, 1 - p2 * 4) : 1;
-      const vis1 = alpha1 * fade1;
-      w1.style.opacity = vis1 > 0.001 ? vis1 : 0;
-      w1.style.transform = `scale(${scale1})`;
+      // Words: scale follows progress
+      const scale = 0.15 + progress * 5.5;
+      words.style.transform = `scale(${scale})`;
 
-      // Phase 2: black words growing on white
-      const scale2 = p2 < 0.001 ? 0.15 : 0.15 + Math.pow(p2, 0.7) * 5.5;
-      const alpha2 = Math.min(1, p2 * 5);
-      w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
-      w2.style.transform = `scale(${scale2})`;
+      // Words: color flips at the peak
+      // Phase 1: white text on darkening bg
+      // Phase 2: black text on brightening bg (but going dark)
+      // The text color needs to contrast the background
+      if (inPhase1) {
+        const alpha = Math.min(1, curved * 5);
+        words.style.color = `rgba(255,255,255,${alpha})`;
+      } else {
+        const alpha = Math.min(1, t * 5);
+        words.style.color = `rgba(0,0,0,${alpha})`;
+      }
 
       veilFrameRef.current = requestAnimationFrame(tick);
     }
@@ -798,7 +806,7 @@ export default function TheoryOfEverything() {
         }
       />}
 
-      {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
+      {/* ===== THE OPENING ACT — breathe in, breathe out ===== */}
       {depth === 0 && (
         <div ref={openingRef} style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
@@ -807,8 +815,7 @@ export default function TheoryOfEverything() {
           display: "flex", alignItems: "center", justifyContent: "center",
           overflow: "hidden",
         }}>
-          <div ref={words1Ref} style={{
-            position: "absolute",
+          <div ref={wordsRef} style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(16px, 4vw, 32px)",
             fontStyle: "italic", fontWeight: 300,
@@ -822,22 +829,6 @@ export default function TheoryOfEverything() {
             willChange: "transform, opacity",
           }}>
             ...we believe in a multiverse<br />where all dreams come true...
-          </div>
-          <div ref={words2Ref} style={{
-            position: "absolute",
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 4vw, 32px)",
-            fontStyle: "italic", fontWeight: 300,
-            color: "#000000",
-            textAlign: "center",
-            lineHeight: 1.618,
-            letterSpacing: 2,
-            padding: "0 10%",
-            opacity: 0,
-            transform: "scale(0.15)",
-            willChange: "transform, opacity",
-          }}>
-            ...we believe we are just one<br />tiny glimpse of those dreams...
           </div>
         </div>
       )}
