@@ -565,34 +565,14 @@ export default function TheoryOfEverything() {
         // Phase 0: PURE WHITE
         if (phase === 0) {
           return (
-            <div style={{ ...fullScreen, background: "#ffffff" }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(28px, 5.5vw, 42px)",
-                fontStyle: "italic",
-                color: "rgba(0,0,0,0.7)",
-                letterSpacing: "0.15em",
-                animation: "fadeSlideUp 0.4s both ease",
-                textAlign: "center", userSelect: "none",
-              }}>close your eyes</div>
-            </div>
+            <div style={{ ...fullScreen, background: "#ffffff" }} />
           );
         }
 
         // Phase 1: PURE BLACK
         if (phase === 1) {
           return (
-            <div style={{ ...fullScreen, background: "#000000" }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(28px, 5.5vw, 42px)",
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.7)",
-                letterSpacing: "0.15em",
-                animation: "fadeSlideUp 0.3s both ease",
-                textAlign: "center", userSelect: "none",
-              }}>now open them</div>
-            </div>
+            <div style={{ ...fullScreen, background: "#000000" }} />
           );
         }
 
