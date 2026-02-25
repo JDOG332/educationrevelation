@@ -42,11 +42,6 @@ export default function TheoryOfEverything() {
   const [openSection, setOpenSection] = useState(null);
   const [goldenFlood, setGoldenFlood] = useState(false);
   const [fading, setFading] = useState(false);
-  // Waterfall transition system
-  const [transitioning, setTransitioning] = useState(false);
-  const [transDir, setTransDir] = useState('deeper'); // 'deeper' | 'back' | 'void'
-  const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
-  const [prevDepth, setPrevDepth] = useState(null);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
   const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
   const startDark = useRef(Math.random() < 0.5); // coin flip: dark first or light first
@@ -55,24 +50,24 @@ export default function TheoryOfEverything() {
   const autoLanding = useRef(true); // true on first load + golden flood loop-back, false after goBack
 
   // Auto-advance landing phases — only on first load or golden flood loop-back
-  // ALL TIMING LOCKED TO PHI LADDER:
-  // 0.382s = synapse | 0.618s = blink | 1.000s = heartbeat | 1.618s = breath in
-  // 2.618s = slow breath out | 4.236s = held gaze | 11.09s = thought completed
   useEffect(() => {
     if (depth !== 0 || !autoLanding.current) return;
-    // Phase 0: PURE BLACK — 2.618s — a slow breath out. Time to arrive. Time to think.
     if (landingPhase === 0) {
-      const t = setTimeout(() => setLandingPhase(1), 2618);
+      const t = setTimeout(() => setLandingPhase(1), 618);
       return () => clearTimeout(t);
     }
-    // Phase 1: PURE WHITE — 1.618s — a breath in. BAM. The light finds you.
     if (landingPhase === 1) {
-      const t = setTimeout(() => setLandingPhase(2), 1618);
+      const t = setTimeout(() => setLandingPhase(2), 618);
       return () => clearTimeout(t);
     }
-    // Phase 2: PRISM FAN — the unified FanToMultiverse Canvas handles everything
-    // from here: fan acceleration, birth of multiverse, depth 0→1 transition,
-    // zoom, and auto-transition to depth 2. No external timers needed.
+    if (landingPhase === 2) {
+      const t = setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+        setDepth(1);
+        autoLanding.current = false;
+      }, 1000);
+      return () => clearTimeout(t);
+    }
   }, [depth, landingPhase]);
 
   // Poem zoom-out sequence — timed to hold interest without losing suspense
@@ -106,48 +101,18 @@ export default function TheoryOfEverything() {
     }
   }, [depth]);
 
-  const clearAllSubs = useCallback(() => {
-    setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
-  }, []);
-
   const goDeeper = useCallback(() => {
-    if (transitioning) return;
-    setTransDir('deeper');
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
     setFading(true);
-
-    // Phase 1: EXIT — current content falls away (500ms)
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 5));
-      clearAllSubs();
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
-      setTransPhase('enter');
-
-      // Phase 2: ENTER — new content rises (600ms)
-      setTimeout(() => {
-        setTransPhase('settle');
-
-        // Phase 3: SETTLE — final ease (400ms)
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
-  }, [depth, transitioning, clearAllSubs]);
+    }, 600);
+  }, []);
 
   const goBack = useCallback(() => {
-    if (transitioning) return;
-    setTransDir('back');
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
     setFading(true);
-
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => {
@@ -155,47 +120,20 @@ export default function TheoryOfEverything() {
         if (newD === 0) setLandingPhase(2); // return to prism, not black
         return newD;
       });
-      clearAllSubs();
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
-      setTransPhase('enter');
-
-      setTimeout(() => {
-        setTransPhase('settle');
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
-  }, [depth, transitioning, clearAllSubs]);
+    }, 600);
+  }, []);
 
   const returnToVoid = useCallback(() => {
-    if (transitioning) return;
-    setTransDir('void');
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
     setFading(true);
-
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       autoLanding.current = true;
-      setDepth(0); setLandingPhase(0);
-      clearAllSubs();
+      setDepth(0); setLandingPhase(0); setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
-      setTransPhase('enter');
-
-      setTimeout(() => {
-        setTransPhase('settle');
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
-  }, [depth, transitioning, clearAllSubs]);
+    }, 600);
+  }, []);
 
   const openLayer = (i) => {
     setActiveLayer(i);
@@ -204,58 +142,18 @@ export default function TheoryOfEverything() {
   };
 
   const navigateToDepth = useCallback((targetDepth) => {
-    if (targetDepth === depth || transitioning) return;
-    const dir = targetDepth > depth ? 'deeper' : 'back';
-    setTransDir(dir);
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
+    if (targetDepth === depth) return;
     setFading(true);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      if (targetDepth === 0) setLandingPhase(2);
-      clearAllSubs();
+      setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
       setFading(false);
-      setTransPhase('enter');
-      setTimeout(() => {
-        setTransPhase('settle');
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
-  }, [depth, transitioning, clearAllSubs]);
+    }, 600);
+  }, [depth]);
 
   const layer = activeLayer !== null ? LAYERS[activeLayer] : null;
   const senseKeys = ["see", "hear", "feel", "smell", "taste"];
-
-  // Waterfall animation for each depth screen
-  const getDepthWrap = useCallback((screenDepth) => {
-    if (transPhase === 'idle') return {};
-    if (transPhase === 'exit') {
-      // Current screen = screenDepth is still showing, animate it out
-      const anim = transDir === 'deeper' ? 'waterfallExit'
-                 : transDir === 'back' ? 'waterfallExitUp'
-                 : 'voidCollapse';
-      return {
-        animation: `${anim} 0.5s cubic-bezier(0.4, 0, 1, 1) forwards`,
-        willChange: 'transform, opacity, filter',
-      };
-    }
-    if (transPhase === 'enter' || transPhase === 'settle') {
-      const anim = transDir === 'deeper' ? 'waterfallEnter'
-                 : transDir === 'back' ? 'waterfallEnterUp'
-                 : 'waterfallEnter';
-      return {
-        animation: `${anim} 0.6s cubic-bezier(0, 0, 0.2, 1) forwards`,
-        willChange: 'transform, opacity, filter',
-      };
-    }
-    return {};
-  }, [transPhase, transDir]);
 
   return (
     <div style={{
@@ -264,7 +162,7 @@ export default function TheoryOfEverything() {
       color: "#d4d4d8",
       fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
       position: "relative", overflow: "hidden",
-      transition: "background 2.8s cubic-bezier(0.23, 1, 0.32, 1)",
+      transition: "background 1.8s cubic-bezier(0.23,1,0.32,1)",
     }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -282,9 +180,8 @@ export default function TheoryOfEverything() {
           100% { transform: translate(-50%,-50%) scale(3); opacity: 0; }
         }
         @keyframes fadeSlideUp {
-          from { opacity: 0; transform: translateY(28px); filter: blur(2px); }
-          60% { opacity: 0.85; filter: blur(0.3px); }
-          to { opacity: 1; transform: translateY(0); filter: blur(0px); }
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         @keyframes diamondPulse {
           0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
@@ -296,44 +193,6 @@ export default function TheoryOfEverything() {
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes prismAccelSpin {
-          /* FAUCET FLOW — not an engine rev.
-             Total: 11.09s (a thought completed). Plays ONCE.
-             First rotation: ~4.236s (a held gaze)
-             Last rotation:  ~0.618s (a blink)
-             Smooth logarithmic acceleration — water finding its path.
-             
-             Rotation budget: ~7 full rotations = 2520°
-             Distribution follows PHI spiral:
-               0-38%  of time = 1st rotation    (4.236s feel)
-               38-58% of time = 2nd rotation    (2.618s feel) 
-               58-72% of time = 3rd rotation    (1.618s feel)
-               72-82% of time = 4th rotation    (1.000s feel)
-               82-89% of time = 5th rotation    (0.618s feel)
-               89-94% of time = 6th rotation    (0.382s feel)
-               94-100% of time = 7th rotation   (0.618s feel — settling) */
-          0%    { transform: rotate(0deg); }
-          5%    { transform: rotate(12deg); }      /* barely moving — drip */
-          10%   { transform: rotate(35deg); }      /* first trickle */
-          15%   { transform: rotate(68deg); }      /* finding the path */
-          20%   { transform: rotate(110deg); }     /* stream forming */
-          25%   { transform: rotate(165deg); }     /* steady trickle */
-          30%   { transform: rotate(230deg); }     /* opening up */
-          38%   { transform: rotate(360deg); }     /* 1st full rotation — 4.236s feel */
-          45%   { transform: rotate(480deg); }     /* water flowing */
-          50%   { transform: rotate(560deg); }     /* rhythm establishing */
-          58%   { transform: rotate(720deg); }     /* 2nd rotation — 2.618s feel */
-          65%   { transform: rotate(880deg); }     /* momentum building */
-          72%   { transform: rotate(1080deg); }    /* 3rd rotation — 1.618s feel */
-          78%   { transform: rotate(1260deg); }    /* flowing freely now */
-          82%   { transform: rotate(1440deg); }    /* 4th rotation — 1.000s feel */
-          86%   { transform: rotate(1620deg); }    /* stream is full */
-          89%   { transform: rotate(1800deg); }    /* 5th rotation — 0.618s feel */
-          92%   { transform: rotate(1980deg); }    /* rushing */
-          94%   { transform: rotate(2160deg); }    /* 6th rotation — 0.382s feel */
-          97%   { transform: rotate(2340deg); }    /* full flow */
-          100%  { transform: rotate(2520deg); }    /* 7th rotation — complete */
-        }
         @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
         @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
         @keyframes textShrinkAway {
@@ -418,45 +277,6 @@ export default function TheoryOfEverything() {
         @keyframes diamondCounterSpin {
           from { transform: translate(-50%, -50%) rotate(0deg); }
           to { transform: translate(-50%, -50%) rotate(-360deg); }
-        }
-
-        /* ===== WATERFALL TRANSITION SYSTEM ===== */
-        @keyframes waterfallExit {
-          0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-          35% { opacity: 0.6; transform: translateY(2.5vh) scale(0.985); filter: blur(1.5px); }
-          100% { opacity: 0; transform: translateY(10vh) scale(0.95); filter: blur(6px); }
-        }
-        @keyframes waterfallExitUp {
-          0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-          35% { opacity: 0.6; transform: translateY(-2.5vh) scale(0.985); filter: blur(1.5px); }
-          100% { opacity: 0; transform: translateY(-10vh) scale(0.95); filter: blur(6px); }
-        }
-        @keyframes waterfallEnter {
-          0% { opacity: 0; transform: translateY(-6vh) scale(0.97); filter: blur(5px); }
-          25% { opacity: 0.3; filter: blur(3px); }
-          65% { opacity: 0.8; transform: translateY(-0.8vh) scale(0.998); filter: blur(0.5px); }
-          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-        }
-        @keyframes waterfallEnterUp {
-          0% { opacity: 0; transform: translateY(6vh) scale(0.97); filter: blur(5px); }
-          25% { opacity: 0.3; filter: blur(3px); }
-          65% { opacity: 0.8; transform: translateY(0.8vh) scale(0.998); filter: blur(0.5px); }
-          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-        }
-        @keyframes voidCollapse {
-          0% { opacity: 1; transform: scale(1); filter: blur(0px); }
-          50% { opacity: 0.3; transform: scale(0.65); filter: blur(3px); }
-          100% { opacity: 0; transform: scale(0.25); filter: blur(10px); }
-        }
-        @keyframes rippleOverlay {
-          0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-          45% { opacity: 0.12; }
-          100% { opacity: 0; transform: translate(-50%, -50%) scale(3.5); }
-        }
-        @keyframes streamMist {
-          0% { opacity: 0; background-position: 50% 100%; }
-          35% { opacity: 0.25; }
-          100% { opacity: 0; background-position: 50% -50%; }
         }
 
         .gold-line {
@@ -665,52 +485,15 @@ export default function TheoryOfEverything() {
       }} />
       </>)}
 
-      {/* Waterfall transition — multi-layer directional dissolve */}
-      {transPhase !== 'idle' && (<>
-        {/* Layer 1: Directional gradient mist */}
-        <div style={{
-          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-          zIndex: 998, pointerEvents: "none",
-          background: transDir === 'deeper'
-            ? "linear-gradient(to bottom, transparent 15%, rgba(3,3,6,0.5) 45%, rgba(3,3,6,0.85) 75%)"
-            : transDir === 'back'
-            ? "linear-gradient(to top, transparent 15%, rgba(3,3,6,0.5) 45%, rgba(3,3,6,0.85) 75%)"
-            : "radial-gradient(ellipse at center, rgba(3,3,6,0.9), rgba(3,3,6,0.6))",
-          opacity: transPhase === 'exit' ? 1 : transPhase === 'enter' ? 0.4 : 0,
-          transition: transPhase === 'exit'
-            ? "opacity 0.45s cubic-bezier(0.4, 0, 1, 1)"
-            : "opacity 0.55s cubic-bezier(0, 0, 0.2, 1)",
-        }} />
-        {/* Layer 2: Golden ripple — the 3rd eye blinks at the crossing */}
-        <div style={{
-          position: "fixed", top: "50%", left: "50%",
-          width: "100vmin", height: "100vmin",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%)",
-          zIndex: 999, pointerEvents: "none",
-          animation: transPhase === 'exit' ? "rippleOverlay 1s cubic-bezier(0.23,1,0.32,1) forwards" : "none",
-          transform: "translate(-50%, -50%) scale(0)",
-        }} />
-        {/* Layer 3: Directional mist streaks — water vapor */}
-        <div style={{
-          position: "fixed", top: 0, left: 0, width: "100%", height: "150%",
-          zIndex: 997, pointerEvents: "none",
-          background: transDir === 'deeper'
-            ? "linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.012) 30%, rgba(201,168,76,0.025) 50%, transparent 80%)"
-            : "linear-gradient(0deg, transparent 0%, rgba(201,168,76,0.012) 30%, rgba(201,168,76,0.025) 50%, transparent 80%)",
-          animation: "streamMist 1s ease-out forwards",
-        }} />
-      </>)}
-
-      {/* Legacy fading overlay — kept as safety fallback with softer settings */}
+      {/* Transition overlay — cinematic dissolve */}
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-        background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.7), #030306)",
-        zIndex: 996, pointerEvents: "none",
-        opacity: fading ? 0.6 : 0,
-        backdropFilter: fading ? "blur(4px)" : "blur(0px)",
-        WebkitBackdropFilter: fading ? "blur(4px)" : "blur(0px)",
-        transition: "opacity 0.5s ease, backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease",
+        background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.85), #030306)",
+        zIndex: 999, pointerEvents: "none",
+        opacity: fading ? 1 : 0,
+        backdropFilter: fading ? "blur(8px)" : "blur(0px)",
+        WebkitBackdropFilter: fading ? "blur(8px)" : "blur(0px)",
+        transition: "opacity 0.7s ease, backdrop-filter 0.7s ease, -webkit-backdrop-filter 0.7s ease",
       }} />
 
       {/* Particles — hidden during pure black/white landing */}
@@ -769,479 +552,128 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — BLACK / WHITE / FAN→MULTIVERSE BIRTH ===== */}
-      {/* This Canvas handles depth 0 (fan) AND depth 1 (multiverse) as ONE continuous animation.
-          No handoff. No seam. The multiverse is born from the eye of the fan. */}
-      {(depth === 0 || depth === 1) && (() => {
-        const phase = depth === 0 ? landingPhase : 99; // 99 = we're past landing, in multiverse
+      {/* ===== DEPTH 0 — YIN/YANG/PRISM: Auto-advance ===== */}
+      {depth === 0 && (() => {
+        const phase = landingPhase;
 
-        // Phase 0: PURE BLACK — 2.618s
+        // SHARED: position fixed, full-screen, ABOVE EVERYTHING (z-index 10000)
+        const fullScreen = {
+          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+          zIndex: 10000,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        };
+
+        // Phase 0: PURE WHITE
         if (phase === 0) {
           return (
-            <div style={{
-              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-              zIndex: 10000, background: "#000000",
-            }} />
+            <div style={{ ...fullScreen, background: "#ffffff" }} />
           );
         }
 
-        // Phase 1: PURE WHITE — 1.618s
+        // Phase 1: PURE BLACK
         if (phase === 1) {
           return (
-            <div style={{
-              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-              zIndex: 10000, background: "#ffffff",
-            }} />
+            <div style={{ ...fullScreen, background: "#000000" }} />
           );
         }
 
-        // Phase 2+ and depth 1: THE UNIFIED CANVAS
-        const CLUSTER_COLORS = [
-          "#3a3a5c", "#7b68ee", "#c9a84c", "#e05050", "#e8e8f0",
-          "#8fbc8f", "#4fc3f7", "#ff9800", "#ce93d8",
-        ];
-        const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
-        const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI * PHI, 2.0, 1.8, 1.4, 1.0];
-
-        function FanToMultiverse() {
-          const canvasRef = useRef(null);
-          const stateRef = useRef(null);
-          const frameRef = useRef(null);
-          const depthRef = useRef(depth);
-          depthRef.current = depth;
-
-          function getR12(i, j) {
-            let r = 0.5;
-            if (MIRROR_PAIRS.some(([a,b]) => (a===i&&b===j)||(a===j&&b===i))) r += PHI;
-            if (Math.abs(i-j) === 1) r += 0.3;
-            if (i === 4 || j === 4) r += 0.8;
-            return r;
-          }
-
-          function simLevel(bodies, dt, softening, damping, ax, ay, pull) {
-            const N = bodies.length;
-            const fx = new Float64Array(N), fy = new Float64Array(N);
-            for (let i = 0; i < N; i++) {
-              for (let j = i + 1; j < N; j++) {
-                const dx = bodies[j].x - bodies[i].x;
-                const dy = bodies[j].y - bodies[i].y;
-                const distSq = dx*dx + dy*dy + softening*softening;
-                const dist = Math.sqrt(distSq);
-                const R12 = getR12(bodies[i].id, bodies[j].id);
-                const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
-                fx[i] += psi*dx/dist; fy[i] += psi*dy/dist;
-                fx[j] -= psi*dx/dist; fy[j] -= psi*dy/dist;
-              }
-              fx[i] += (ax - bodies[i].x) * pull * bodies[i].cEff;
-              fy[i] += (ay - bodies[i].y) * pull * bodies[i].cEff;
-            }
-            for (let i = 0; i < N; i++) {
-              bodies[i].vx = (bodies[i].vx + fx[i]/bodies[i].cEff*dt) * damping;
-              bodies[i].vy = (bodies[i].vy + fy[i]/bodies[i].cEff*dt) * damping;
-              bodies[i].x += bodies[i].vx*dt;
-              bodies[i].y += bodies[i].vy*dt;
-            }
-          }
-
-          useEffect(() => {
-            const canvas = canvasRef.current;
-            if (!canvas) return;
-            const ctx = canvas.getContext("2d");
-            const dpr = window.devicePixelRatio || 1;
-
-            function resize() {
-              const W = canvas.parentElement?.clientWidth || window.innerWidth;
-              const H = canvas.parentElement?.clientHeight || window.innerHeight;
-              canvas.width = W * dpr; canvas.height = H * dpr;
-              canvas.style.width = W + "px"; canvas.style.height = H + "px";
-              ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-              return { W, H };
-            }
-
-            let { W, H } = resize();
-            const CX = W / 2, CY = H / 2;
-            const R = Math.sqrt(W * W + H * H); // diagonal for fan coverage
-            const BASE_R = Math.min(W, H) * 0.40;
-            const dir = spinCW.current ? 1 : -1;
-
-            // ===== FAN PHYSICS =====
-            const fanStartSpeed = (2 * Math.PI) / 4.236;
-            const fanEndSpeed = (2 * Math.PI) / 0.382;
-            const fanDuration = 11.09;
-            // Birth period: fan fades out while multiverse fades in
-            const birthStart = fanDuration - 2.618; // birth begins 2.618s before fan ends
-            const birthEnd = fanDuration + 1.618;   // birth completes 1.618s after fan ends
-
-            let fanAngle = 0;
-            let blurCommitted = false;
-
-            // ===== MULTIVERSE INIT =====
-            if (!stateRef.current) {
-              const hypers = Array.from({ length: 9 }, (_, hi) => {
-                const angle = (hi/9)*Math.PI*2 + (Math.random()-0.5)*0.3;
-                const r = hi === 4 ? 0 : BASE_R * (0.55 + Math.random()*0.35);
-                const speed = hi === 4 ? 0 : Math.sqrt(getR12(hi,4)*C_EFF[hi]*C_EFF[4]*5/(Math.max(r,1)*2))*0.03;
-                const va = angle + Math.PI/2;
-                const hx = CX + Math.cos(angle)*r, hy = CY + Math.sin(angle)*r;
-                const supers = Array.from({ length: 9 }, (_, si) => {
-                  const sa = (si/9)*Math.PI*2 + (Math.random()-0.5)*0.4;
-                  const sr = si === 4 ? 0 : (hi === 4 ? 50 : 35) * (0.6 + Math.random()*0.5);
-                  const sspeed = si === 4 ? 0 : Math.sqrt(getR12(si,4)*C_EFF[si]*C_EFF[4]*4/(Math.max(sr,1)*2))*0.07;
-                  const sva = sa + Math.PI/2;
-                  const sx = hx + Math.cos(sa)*sr, sy = hy + Math.sin(sa)*sr;
-                  const clusters = Array.from({ length: 9 }, (_, ci) => {
-                    const ca = (ci/9)*Math.PI*2 + (Math.random()-0.5)*0.5;
-                    const cr = ci === 4 ? 0 : (hi===4&&si===4 ? 18 : 12) * (0.6 + Math.random()*0.5);
-                    const cspeed = ci === 4 ? 0 : Math.sqrt(getR12(ci,4)*C_EFF[ci]*C_EFF[4]*2/(Math.max(cr,1)*2))*0.14;
-                    const cva = ca + Math.PI/2;
-                    const ccx = sx + Math.cos(ca)*cr, ccy = sy + Math.sin(ca)*cr;
-                    const bodies = Array.from({ length: 9 }, (_, bi) => {
-                      const ba = (bi/9)*Math.PI*2 + (Math.random()-0.5)*0.6;
-                      const br = bi === 4 ? 0 : (3 + Math.random()*4) * (hi===4&&si===4&&ci===4 ? 1.3 : 0.6);
-                      const bspeed = bi === 4 ? 0 : Math.sqrt(getR12(bi,4)*C_EFF[bi]*C_EFF[4]/(Math.max(br,1)))*0.2;
-                      const bva = ba + Math.PI/2;
-                      return {
-                        x: ccx + Math.cos(ba)*br, y: ccy + Math.sin(ba)*br,
-                        vx: Math.cos(bva)*bspeed, vy: Math.sin(bva)*bspeed,
-                        cEff: C_EFF[bi], id: bi,
-                        radius: (0.3 + C_EFF[bi]*0.15) * (hi===4&&si===4&&ci===4&&bi===4 ? 2.5 : 1),
-                      };
-                    });
-                    return { x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed, cEff: C_EFF[ci]*2, id: ci, bodies };
-                  });
-                  return { x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed, cEff: C_EFF[si]*4, id: si, clusters };
-                });
-                return { x: hx, y: hy, vx: Math.cos(va)*speed, vy: Math.sin(va)*speed, cEff: C_EFF[hi]*7, id: hi, supers };
-              });
-              stateRef.current = { hypers };
-            }
-
-            const state = stateRef.current;
-            const speedScale = Math.max(1, 1200 / Math.max(W, H));
-            const zoomTarget = [0,1,2,3,5,6,7,8][Math.floor(Math.random()*8)];
-
-            let startTime = null;
-            let mvTime = 0;
-            let transitioned = false;
-
-            function greyAt(t) {
-              const v = Math.round(t * 250 + 5);
-              return `rgb(${v},${v},${v})`;
-            }
-
-            function simulate() {
-              simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
-              for (const hc of state.hypers) simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
-              for (const hc of state.hypers) for (const sc of hc.supers) simLevel(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
-              for (const hc of state.hypers) for (const sc of hc.supers) for (const cl of sc.clusters) simLevel(cl.bodies, 0.22 * speedScale, 2.5, 0.999, cl.x, cl.y, 0.003 * speedScale);
-            }
-
-            function drawFan(elapsed) {
-              const t = Math.min(elapsed / fanDuration, 1);
-              const tPhi = Math.pow(t, 1.618);
-              const speed = fanStartSpeed + (fanEndSpeed - fanStartSpeed) * tPhi;
-              const dt = 1 / 60;
-              fanAngle += speed * dt;
-
-              // Fan fade: starts fading at birthStart, gone by fanDuration
-              let fanOpacity = 1;
-              if (elapsed > birthStart) {
-                blurCommitted = true;
-                const ft = Math.min((elapsed - birthStart) / 2.618, 1);
-                fanOpacity = Math.max(0, 1 - ft * ft);
-              }
-
-              // Fan blur ramp
-              let blur = 0;
-              if (blurCommitted) {
-                const bt = Math.min((elapsed - birthStart) / 2.618, 1);
-                blur = bt * bt * 20;
-              }
-
-              if (fanOpacity <= 0.01) return; // fully gone
-
-              ctx.save();
-              ctx.globalAlpha = fanOpacity;
-              ctx.translate(CX, CY);
-              ctx.rotate(fanAngle * dir);
-              if (blur > 0.5) ctx.filter = `blur(${blur}px)`;
-
-              // Black triangle (left)
-              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-R, -R); ctx.lineTo(-R, R); ctx.closePath();
-              ctx.fillStyle = "#000"; ctx.fill();
-              // White triangle (right)
-              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(R, -R); ctx.lineTo(R, R); ctx.closePath();
-              ctx.fillStyle = "#fff"; ctx.fill();
-              // Grey gradient triangles (40 slices each)
-              const slices = 40;
-              for (let i = 0; i < slices; i++) {
-                const t0 = i / slices, t1 = (i+1) / slices;
-                const a0 = -Math.PI/2 + t0*(Math.PI/2), a1 = -Math.PI/2 + t1*(Math.PI/2);
-                ctx.beginPath(); ctx.moveTo(0,0);
-                ctx.lineTo(Math.cos(a0)*R, Math.sin(a0)*R);
-                ctx.lineTo(Math.cos(a1)*R, Math.sin(a1)*R);
-                ctx.closePath(); ctx.fillStyle = greyAt(t0); ctx.fill();
-              }
-              for (let i = 0; i < slices; i++) {
-                const t0 = i / slices, t1 = (i+1) / slices;
-                const a0 = Math.PI/2 - t0*(Math.PI/2), a1 = Math.PI/2 - t1*(Math.PI/2);
-                ctx.beginPath(); ctx.moveTo(0,0);
-                ctx.lineTo(Math.cos(a0)*R*-1, Math.sin(a0)*R);
-                ctx.lineTo(Math.cos(a1)*R*-1, Math.sin(a1)*R);
-                ctx.closePath(); ctx.fillStyle = greyAt(1-t0); ctx.fill();
-              }
-              ctx.filter = "none";
-              ctx.restore();
-
-              // Golden eye at center (doesn't spin, doesn't blur)
-              if (fanOpacity > 0.1) {
-                const eyePulse = 0.5 + Math.sin(fanAngle * 0.3) * 0.3;
-                const eyeR = 6 + eyePulse * 4;
-                const eyeGrad = ctx.createRadialGradient(CX, CY, 0, CX, CY, eyeR * 3);
-                eyeGrad.addColorStop(0, `rgba(201,168,76,${0.25 * eyePulse * fanOpacity})`);
-                eyeGrad.addColorStop(0.5, `rgba(201,168,76,${0.06 * eyePulse * fanOpacity})`);
-                eyeGrad.addColorStop(1, "rgba(201,168,76,0)");
-                ctx.beginPath(); ctx.arc(CX, CY, eyeR * 3, 0, Math.PI * 2);
-                ctx.fillStyle = eyeGrad; ctx.fill();
-                ctx.beginPath(); ctx.arc(CX, CY, 2 + eyePulse, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(201,168,76,${(0.5 + eyePulse*0.3) * fanOpacity})`; ctx.fill();
-              }
-            }
-
-            function drawMultiverse(elapsed, mvElapsed) {
-              // Multiverse opacity: fades in during birth period
-              let mvOpacity = 1;
-              if (elapsed < birthEnd) {
-                const ft = Math.max(0, (elapsed - birthStart) / (birthEnd - birthStart));
-                mvOpacity = ft * ft; // quadratic fade-in from center
-              }
-              if (mvOpacity <= 0.01) return;
-
-              // Birth scale: starts tiny at center, expands to full
-              let birthScale = 1;
-              if (elapsed < birthEnd) {
-                const ft = Math.max(0, (elapsed - birthStart) / (birthEnd - birthStart));
-                birthScale = 0.05 + 0.95 * ft * ft; // starts at 5%, grows to 100%
-              }
-
-              // Camera zoom (after birth completes)
-              const zoomStart = birthEnd + 1;
-              const zoomEnd = zoomStart + 7;
-              const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
-              const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress);
-              const targetZoom = 5;
-              const zoom = (1 + (targetZoom - 1) * eased) * birthScale;
-              const target = state.hypers[zoomTarget];
-              const panX = (CX - target.x) * eased;
-              const panY = (CY - target.y) * eased;
-
-              ctx.save();
-              ctx.globalAlpha = mvOpacity;
-              ctx.translate(CX, CY);
-              ctx.scale(zoom, zoom);
-              ctx.translate(-CX + panX, -CY + panY);
-
-              // Mirror triangles
-              for (const [a, b] of MIRROR_PAIRS) {
-                const ha = state.hypers[a], hb = state.hypers[b], hm = state.hypers[4];
-                ctx.beginPath(); ctx.moveTo(ha.x, ha.y); ctx.lineTo(hm.x, hm.y); ctx.lineTo(hb.x, hb.y); ctx.closePath();
-                ctx.fillStyle = "rgba(201,168,76,0.003)"; ctx.strokeStyle = "rgba(201,168,76,0.008)";
-                ctx.lineWidth = 0.3; ctx.fill(); ctx.stroke();
-              }
-
-              for (let hi = 0; hi < 9; hi++) {
-                const hc = state.hypers[hi];
-                const hColor = CLUSTER_COLORS[hi];
-                const hhR = hi === 4 ? 100 : 65;
-                const hhg = ctx.createRadialGradient(hc.x, hc.y, 0, hc.x, hc.y, hhR);
-                hhg.addColorStop(0, hColor + "04"); hhg.addColorStop(0.5, hColor + "01"); hhg.addColorStop(1, hColor + "00");
-                ctx.beginPath(); ctx.arc(hc.x, hc.y, hhR, 0, Math.PI*2); ctx.fillStyle = hhg; ctx.fill();
-
-                for (let si = 0; si < 9; si++) {
-                  const sc = hc.supers[si];
-                  const sColor = CLUSTER_COLORS[si];
-                  if (hi === 4) {
-                    for (const [a, b] of MIRROR_PAIRS) {
-                      if (a === si || b === si) {
-                        const sa = hc.supers[a], sb = hc.supers[b], sm = hc.supers[4];
-                        ctx.beginPath(); ctx.moveTo(sa.x, sa.y); ctx.lineTo(sm.x, sm.y); ctx.lineTo(sb.x, sb.y); ctx.closePath();
-                        ctx.fillStyle = "rgba(201,168,76,0.002)"; ctx.strokeStyle = "rgba(201,168,76,0.006)";
-                        ctx.lineWidth = 0.2; ctx.fill(); ctx.stroke(); break;
-                      }
-                    }
-                  }
-                  const shR = (hi===4&&si===4) ? 40 : si===4 ? 25 : 18;
-                  const shg = ctx.createRadialGradient(sc.x, sc.y, 0, sc.x, sc.y, shR);
-                  shg.addColorStop(0, sColor + "05"); shg.addColorStop(0.6, sColor + "02"); shg.addColorStop(1, sColor + "00");
-                  ctx.beginPath(); ctx.arc(sc.x, sc.y, shR, 0, Math.PI*2); ctx.fillStyle = shg; ctx.fill();
-
-                  for (let ci = 0; ci < 9; ci++) {
-                    const cl = sc.clusters[ci];
-                    const cColor = CLUSTER_COLORS[ci];
-                    const chR = ci === 4 ? 7 : 4;
-                    const chg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, chR);
-                    chg.addColorStop(0, cColor + "06"); chg.addColorStop(1, cColor + "00");
-                    ctx.beginPath(); ctx.arc(cl.x, cl.y, chR, 0, Math.PI*2); ctx.fillStyle = chg; ctx.fill();
-
-                    for (let bi = 0; bi < 9; bi++) {
-                      const body = cl.bodies[bi];
-                      const bColor = CLUSTER_COLORS[bi];
-                      const isCoreMoon = hi===4&&si===4&&ci===4&&bi===4;
-                      const isDeepMoon = (hi===4&&si===4&&ci===4)||(hi===4&&si===4&&bi===4);
-                      const isMoon = bi === 4;
-                      const glowR = body.radius * (isCoreMoon ? 12 : isDeepMoon ? 4 : isMoon ? 2.5 : 1.5);
-                      const glowAlpha = isCoreMoon ? "20" : isDeepMoon ? "10" : isMoon ? "08" : "04";
-                      const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
-                      bg.addColorStop(0, bColor + glowAlpha); bg.addColorStop(0.5, bColor + "02"); bg.addColorStop(1, bColor + "00");
-                      ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI*2); ctx.fillStyle = bg; ctx.fill();
-                      ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI*2);
-                      const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
-                      cg.addColorStop(0, isCoreMoon ? "#ffffff" : isDeepMoon ? "#e8e8f0" : bColor);
-                      cg.addColorStop(1, bColor + "20"); ctx.fillStyle = cg; ctx.fill();
-                    }
-                  }
-                }
-              }
-              ctx.restore();
-
-              // Equation overlay
-              const textFade = Math.max(0, 1 - eased * 1.5);
-              if (textFade > 0.01 && mvOpacity > 0.5) {
-                mvTime += 0.005;
-                const ea = (0.22 + Math.sin(mvTime*2)*0.06) * textFade * mvOpacity;
-                ctx.fillStyle = `rgba(232,232,240,${ea})`;
-                ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
-                ctx.textAlign = "center";
-                ctx.fillText("\u03A8\u2081\u2082 = R\u2081\u2082 \u00D7 (C_eff \u00B7 D\u0302) / dist\u00B2", CX, H - 30);
-                ctx.fillStyle = `rgba(232,232,240,${0.1 * textFade * mvOpacity})`;
-                ctx.font = `${Math.round(7)}px 'Cinzel', serif`;
-                ctx.fillText("SAME EQUATION  \u00B7  EVERY SCALE  \u00B7  6,561 WORLDS", CX, H - 14);
-              }
-
-              return eased; // return zoom progress for auto-transition
-            }
-
-            function loop(now) {
-              if (!startTime) startTime = now;
-              const elapsed = (now - startTime) / 1000;
-
-              ctx.clearRect(0, 0, W, H);
-
-              // Always simulate multiverse (starts orbiting from frame 1)
-              simulate();
-
-              // Draw multiverse FIRST (behind fan during birth)
-              const eased = drawMultiverse(elapsed, 0);
-
-              // Draw fan ON TOP (fades out during birth)
-              if (elapsed < fanDuration + 1) {
-                drawFan(elapsed);
-              }
-
-              // Auto-transition to depth 1 (state change for text overlay)
-              // Happens when fan is fully gone and multiverse is at full opacity
-              if (depthRef.current === 0 && elapsed > birthEnd && autoLanding.current) {
-                autoLanding.current = false;
-                setDepth(1);
-              }
-
-              // Auto-transition to depth 2 after zoom completes
-              const zoomDone = elapsed > birthEnd + 1 + 7 + 1; // after zoom finishes
-              if (depthRef.current === 1 && zoomDone && !transitioned) {
-                transitioned = true;
-                goDeeper();
-                return;
-              }
-
-              frameRef.current = requestAnimationFrame(loop);
-            }
-
-            frameRef.current = requestAnimationFrame(loop);
-            const handleResize = () => { ({ W, H } = resize()); };
-            window.addEventListener("resize", handleResize);
-            return () => {
-              if (frameRef.current) cancelAnimationFrame(frameRef.current);
-              window.removeEventListener("resize", handleResize);
-            };
-          }, []);
-
-          return <canvas ref={canvasRef} style={{ width: "100%", height: "100%", display: "block" }} />;
-        }
-
+        // Phase 2: THE PRISM — no words. Just the spectrum and the golden eye.
         return (
-          <div style={{
-            height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
-            zIndex: depth === 0 ? 10000 : 1500, overflow: "hidden",
-          }}>
-            <FanToMultiverse />
+          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 0.5s ease" }}>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
+              position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
+              animation: `prismSpin 8s linear infinite ${spinCW.current ? "" : "reverse"}`,
+              transformOrigin: "center center",
+            }}>
+              <defs>
+                {/* Black triangle: pure #000 at left edge */}
+                <linearGradient id="gBlack" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" stopColor="#000000" />
+                  <stop offset="100%" stopColor="#000000" />
+                </linearGradient>
+                {/* White triangle: pure #fff at right edge */}
+                <linearGradient id="gWhite" x1="100%" y1="50%" x2="0%" y2="50%">
+                  <stop offset="0%" stopColor="#ffffff" />
+                  <stop offset="100%" stopColor="#ffffff" />
+                </linearGradient>
+                {/* Top grey: 50 shades — nearly black on left, nearly white on right */}
+                <linearGradient id="gGreyTop" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#050505" />
+                  <stop offset="5%" stopColor="#0d0d0d" />
+                  <stop offset="10%" stopColor="#1a1a1a" />
+                  <stop offset="15%" stopColor="#262626" />
+                  <stop offset="20%" stopColor="#333333" />
+                  <stop offset="25%" stopColor="#404040" />
+                  <stop offset="30%" stopColor="#4d4d4d" />
+                  <stop offset="35%" stopColor="#595959" />
+                  <stop offset="40%" stopColor="#666666" />
+                  <stop offset="45%" stopColor="#737373" />
+                  <stop offset="50%" stopColor="#808080" />
+                  <stop offset="55%" stopColor="#8c8c8c" />
+                  <stop offset="60%" stopColor="#999999" />
+                  <stop offset="65%" stopColor="#a6a6a6" />
+                  <stop offset="70%" stopColor="#b3b3b3" />
+                  <stop offset="75%" stopColor="#bfbfbf" />
+                  <stop offset="80%" stopColor="#cccccc" />
+                  <stop offset="85%" stopColor="#d9d9d9" />
+                  <stop offset="90%" stopColor="#e6e6e6" />
+                  <stop offset="95%" stopColor="#f2f2f2" />
+                  <stop offset="100%" stopColor="#fafafa" />
+                </linearGradient>
+                {/* Bottom grey: same 50-shade scale */}
+                <linearGradient id="gGreyBot" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#050505" />
+                  <stop offset="5%" stopColor="#0d0d0d" />
+                  <stop offset="10%" stopColor="#1a1a1a" />
+                  <stop offset="15%" stopColor="#262626" />
+                  <stop offset="20%" stopColor="#333333" />
+                  <stop offset="25%" stopColor="#404040" />
+                  <stop offset="30%" stopColor="#4d4d4d" />
+                  <stop offset="35%" stopColor="#595959" />
+                  <stop offset="40%" stopColor="#666666" />
+                  <stop offset="45%" stopColor="#737373" />
+                  <stop offset="50%" stopColor="#808080" />
+                  <stop offset="55%" stopColor="#8c8c8c" />
+                  <stop offset="60%" stopColor="#999999" />
+                  <stop offset="65%" stopColor="#a6a6a6" />
+                  <stop offset="70%" stopColor="#b3b3b3" />
+                  <stop offset="75%" stopColor="#bfbfbf" />
+                  <stop offset="80%" stopColor="#cccccc" />
+                  <stop offset="85%" stopColor="#d9d9d9" />
+                  <stop offset="90%" stopColor="#e6e6e6" />
+                  <stop offset="95%" stopColor="#f2f2f2" />
+                  <stop offset="100%" stopColor="#fafafa" />
+                </linearGradient>
+                {/* 3rd Eye glow — subtle gold at convergence */}
+                <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="6%">
+                  <stop offset="0%" stopColor="rgba(201,168,76,0.3)" />
+                  <stop offset="50%" stopColor="rgba(201,168,76,0.06)" />
+                  <stop offset="100%" stopColor="transparent" />
+                </radialGradient>
+              </defs>
 
-            {/* Text overlay — only visible during depth 1 */}
-            {depth === 1 && (
-              <div style={{
-                position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                pointerEvents: "none", zIndex: 10,
-                animation: "textShrinkAway 3s 1s both cubic-bezier(0.23,1,0.32,1)",
-              }}>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(20px, 4.5vw, 34px)",
-                  fontStyle: "italic", fontWeight: 300,
-                  color: "rgba(232,232,240,0.6)",
-                  textAlign: "center", maxWidth: 520,
-                  lineHeight: PHI, letterSpacing: 1.5,
-                  textShadow: "0 0 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)",
-                  animation: "fadeSlideUp 0.5s both ease",
-                  padding: "0 24px",
-                }}>
-                  "...we believe in a multiverse<br />where dreams come true..."
-                </div>
+              {/* The four triangles */}
+              <polygon points="0,0 50,50 0,100" fill="url(#gBlack)" />
+              <polygon points="100,0 50,50 100,100" fill="url(#gWhite)" />
+              <polygon points="0,0 50,50 100,0" fill="url(#gGreyTop)" />
+              <polygon points="0,100 50,50 100,100" fill="url(#gGreyBot)" />
 
-                <div style={{ height: Math.round(34 * PHI) }} />
-
-                <div style={{ animation: "fadeSlideUp 2s 1.2s both ease", textAlign: "center" }}>
-                  <div style={{
-                    display: "flex", gap: Math.round(8 * PHI), justifyContent: "center",
-                    flexWrap: "wrap", padding: "0 20px",
-                  }}>
-                    {[
-                      { n: "9⁰ = 1", label: "UNIVERSE", active: false },
-                      { n: "9¹ = 9", label: "CLUSTERS", active: false },
-                      { n: "9² = 81", label: "WORLDS", active: false },
-                      { n: "9³ = 729", label: "GALAXIES", active: false },
-                      { n: "9⁴ = 6,561", label: "DREAMS", active: true },
-                    ].map((level, i) => (
-                      <div key={i} style={{ textAlign: "center", opacity: level.active ? 1 : 0.3 }}>
-                        <div style={{
-                          fontFamily: "'Cormorant Garamond', serif",
-                          fontSize: level.active ? "clamp(20px, 3.5vw, 28px)" : "clamp(12px, 2vw, 16px)",
-                          color: level.active ? "rgba(206,147,216,0.8)" : "rgba(232,232,240,0.25)",
-                          fontWeight: level.active ? 600 : 300,
-                          textShadow: level.active ? "0 0 25px rgba(206,147,216,0.2), 0 0 60px rgba(206,147,216,0.08)" : "none",
-                        }}>{level.n}</div>
-                        <div style={{
-                          fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: "0.2em",
-                          color: level.active ? "rgba(206,147,216,0.5)" : "rgba(232,232,240,0.12)", marginTop: 4,
-                        }}>{level.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ height: Math.round(21 * PHI) }} />
-
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(13px, 2.2vw, 17px)",
-                  fontStyle: "italic", color: "rgba(232,232,240,0.18)",
-                  letterSpacing: 2,
-                  animation: "fadeSlideUp 2s 1.8s both ease",
-                  textShadow: "0 0 30px rgba(0,0,0,0.8)",
-                }}>
-                  Ψ<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = Ψ<sub style={{ fontSize: "0.6em" }}>scale(n−1)</sub> &nbsp;∀ n
-                </div>
-              </div>
-            )}
+              {/* 3rd Eye — just a breath of gold at the convergence point */}
+              <circle cx="50" cy="50" r="6" fill="url(#eyeGlow2)">
+                <animate attributeName="r" values="5;8;5" dur="6s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="6s" repeatCount="indefinite" />
+              </circle>
+              <ellipse cx="50" cy="50" rx="3" ry="1.5" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="0.2">
+                <animate attributeName="ry" values="1.2;2;1.2" dur="5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite" />
+              </ellipse>
+              <circle cx="50" cy="50" r="0.7" fill="rgba(201,168,76,0.6)">
+                <animate attributeName="r" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="50" cy="50" r="0.25" fill="rgba(255,255,255,0.8)">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+              </circle>
+            </svg>
           </div>
         );
       })()}
@@ -1252,7 +684,6 @@ export default function TheoryOfEverything() {
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
           zIndex: 5000,
-          ...getDepthWrap(2),
         }}>
 
           {/* White flash — the Moon filling your vision */}
@@ -1653,7 +1084,403 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 1 handled by unified FanToMultiverse canvas above ===== */}
+      {/* ===== DEPTH 1 — THE DREAM — 6561-BODY MULTIVERSE ===== */}
+      {depth === 1 && (() => {
+        // 9⁴ = 6,561 bodies. Hierarchical gravity.
+        // Level 0: 9 super-clusters orbit the center
+        // Level 1: 9 clusters orbit each super-cluster
+        // Level 2: 9 bodies orbit each cluster
+        // Same equation at every scale: Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²
+        const CLUSTER_COLORS = [
+          "#3a3a5c", "#7b68ee", "#c9a84c", "#e05050", "#e8e8f0",
+          "#8fbc8f", "#4fc3f7", "#ff9800", "#ce93d8",
+        ];
+        const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
+        const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI * PHI, 2.0, 1.8, 1.4, 1.0];
+
+        function DreamMultiverse729() {
+          const canvasRef = useRef(null);
+          const stateRef = useRef(null);
+          const frameRef = useRef(null);
+
+          function getR12(i, j) {
+            let r = 0.5;
+            if (MIRROR_PAIRS.some(([a,b]) => (a===i&&b===j)||(a===j&&b===i))) r += PHI;
+            if (Math.abs(i-j) === 1) r += 0.3;
+            if (i === 4 || j === 4) r += 0.8;
+            return r;
+          }
+
+          function simLevel(bodies, dt, softening, damping, ax, ay, pull) {
+            const N = bodies.length;
+            const fx = new Float64Array(N), fy = new Float64Array(N);
+            for (let i = 0; i < N; i++) {
+              for (let j = i + 1; j < N; j++) {
+                const dx = bodies[j].x - bodies[i].x;
+                const dy = bodies[j].y - bodies[i].y;
+                const distSq = dx*dx + dy*dy + softening*softening;
+                const dist = Math.sqrt(distSq);
+                const R12 = getR12(bodies[i].id, bodies[j].id);
+                const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
+                fx[i] += psi*dx/dist; fy[i] += psi*dy/dist;
+                fx[j] -= psi*dx/dist; fy[j] -= psi*dy/dist;
+              }
+              fx[i] += (ax - bodies[i].x) * pull * bodies[i].cEff;
+              fy[i] += (ay - bodies[i].y) * pull * bodies[i].cEff;
+            }
+            for (let i = 0; i < N; i++) {
+              bodies[i].vx = (bodies[i].vx + fx[i]/bodies[i].cEff*dt) * damping;
+              bodies[i].vy = (bodies[i].vy + fy[i]/bodies[i].cEff*dt) * damping;
+              bodies[i].x += bodies[i].vx*dt;
+              bodies[i].y += bodies[i].vy*dt;
+            }
+          }
+
+          useEffect(() => {
+            const canvas = canvasRef.current;
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            const dpr = window.devicePixelRatio || 1;
+
+            function resize() {
+              const W = canvas.parentElement?.clientWidth || window.innerWidth;
+              const H = canvas.parentElement?.clientHeight || window.innerHeight;
+              canvas.width = W * dpr; canvas.height = H * dpr;
+              canvas.style.width = W + "px"; canvas.style.height = H + "px";
+              ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+              return { W, H };
+            }
+
+            let { W, H } = resize();
+            const CX = W/2, CY = H/2;
+            const BASE_R = Math.min(W, H) * 0.40;
+
+            // Initialize 4-tier hierarchy: 9 × 9 × 9 × 9 = 6,561
+            if (!stateRef.current) {
+              const hypers = Array.from({ length: 9 }, (_, hi) => {
+                const angle = (hi/9)*Math.PI*2 + (Math.random()-0.5)*0.3;
+                const r = hi === 4 ? 0 : BASE_R * (0.55 + Math.random()*0.35);
+                const speed = hi === 4 ? 0 : Math.sqrt(getR12(hi,4)*C_EFF[hi]*C_EFF[4]*5/(Math.max(r,1)*2))*0.03;
+                const va = angle + Math.PI/2;
+                const hx = CX + Math.cos(angle)*r, hy = CY + Math.sin(angle)*r;
+
+                // 9 super-clusters per hyper-cluster
+                const supers = Array.from({ length: 9 }, (_, si) => {
+                  const sa = (si/9)*Math.PI*2 + (Math.random()-0.5)*0.4;
+                  const sr = si === 4 ? 0 : (hi === 4 ? 50 : 35) * (0.6 + Math.random()*0.5);
+                  const sspeed = si === 4 ? 0 : Math.sqrt(getR12(si,4)*C_EFF[si]*C_EFF[4]*4/(Math.max(sr,1)*2))*0.07;
+                  const sva = sa + Math.PI/2;
+                  const sx = hx + Math.cos(sa)*sr, sy = hy + Math.sin(sa)*sr;
+
+                  // 9 clusters per super-cluster
+                  const clusters = Array.from({ length: 9 }, (_, ci) => {
+                    const ca = (ci/9)*Math.PI*2 + (Math.random()-0.5)*0.5;
+                    const cr = ci === 4 ? 0 : (hi===4&&si===4 ? 18 : 12) * (0.6 + Math.random()*0.5);
+                    const cspeed = ci === 4 ? 0 : Math.sqrt(getR12(ci,4)*C_EFF[ci]*C_EFF[4]*2/(Math.max(cr,1)*2))*0.14;
+                    const cva = ca + Math.PI/2;
+                    const ccx = sx + Math.cos(ca)*cr, ccy = sy + Math.sin(ca)*cr;
+
+                    // 9 bodies per cluster (the dust)
+                    const bodies = Array.from({ length: 9 }, (_, bi) => {
+                      const ba = (bi/9)*Math.PI*2 + (Math.random()-0.5)*0.6;
+                      const br = bi === 4 ? 0 : (3 + Math.random()*4) * (hi===4&&si===4&&ci===4 ? 1.3 : 0.6);
+                      const bspeed = bi === 4 ? 0 : Math.sqrt(getR12(bi,4)*C_EFF[bi]*C_EFF[4]/(Math.max(br,1)))*0.2;
+                      const bva = ba + Math.PI/2;
+                      return {
+                        x: ccx + Math.cos(ba)*br, y: ccy + Math.sin(ba)*br,
+                        vx: Math.cos(bva)*bspeed, vy: Math.sin(bva)*bspeed,
+                        cEff: C_EFF[bi], id: bi,
+                        radius: (0.3 + C_EFF[bi]*0.15) * (hi===4&&si===4&&ci===4&&bi===4 ? 2.5 : 1),
+                      };
+                    });
+
+                    return {
+                      x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed,
+                      cEff: C_EFF[ci]*2, id: ci, bodies,
+                    };
+                  });
+
+                  return {
+                    x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed,
+                    cEff: C_EFF[si]*4, id: si, clusters,
+                  };
+                });
+
+                return {
+                  x: hx, y: hy, vx: Math.cos(va)*speed, vy: Math.sin(va)*speed,
+                  cEff: C_EFF[hi]*7, id: hi, supers,
+                };
+              });
+              stateRef.current = { hypers };
+            }
+
+            const state = stateRef.current;
+            let time = 0;
+            let elapsed = 0;
+            let transitioned = false;
+            const speedScale = Math.max(1, 1200 / Math.max(W, H));
+            // Pick a random non-center hyper-cluster to zoom toward
+            const zoomTarget = [0,1,2,3,5,6,7,8][Math.floor(Math.random()*8)];
+
+            function simulate() {
+              // Level 0: hyper-clusters orbit center (faster)
+              simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
+              // Level 1: super-clusters orbit their hyper-cluster
+              for (const hc of state.hypers) {
+                simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
+              }
+              // Level 2: clusters orbit their super-cluster
+              for (const hc of state.hypers) {
+                for (const sc of hc.supers) {
+                  simLevel(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
+                }
+              }
+              // Level 3: bodies orbit their cluster (the dust)
+              for (const hc of state.hypers) {
+                for (const sc of hc.supers) {
+                  for (const cl of sc.clusters) {
+                    simLevel(cl.bodies, 0.22 * speedScale, 2.5, 0.999, cl.x, cl.y, 0.003 * speedScale);
+                  }
+                }
+              }
+            }
+
+            function draw() {
+              time += 0.005;
+              elapsed += 1/60;
+              ctx.clearRect(0, 0, W, H);
+
+              // Camera zoom — starts at t=1s (synced with text shrink), fully zoomed by t=8s
+              const zoomStart = 1, zoomEnd = 8;
+              const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
+              const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress); // smoothstep
+              const targetZoom = 5;
+              const zoom = 1 + (targetZoom - 1) * eased;
+              const target = state.hypers[zoomTarget];
+              const panX = (CX - target.x) * eased;
+              const panY = (CY - target.y) * eased;
+
+              ctx.save();
+              ctx.translate(CX, CY);
+              ctx.scale(zoom, zoom);
+              ctx.translate(-CX + panX, -CY + panY);
+
+              // Level 0: Hyper-cluster mirror triangles (cosmic web)
+              for (const [a, b] of MIRROR_PAIRS) {
+                const ha = state.hypers[a], hb = state.hypers[b], hm = state.hypers[4];
+                ctx.beginPath();
+                ctx.moveTo(ha.x, ha.y); ctx.lineTo(hm.x, hm.y); ctx.lineTo(hb.x, hb.y);
+                ctx.closePath();
+                ctx.fillStyle = "rgba(201,168,76,0.003)";
+                ctx.strokeStyle = "rgba(201,168,76,0.008)";
+                ctx.lineWidth = 0.3; ctx.fill(); ctx.stroke();
+              }
+
+              for (let hi = 0; hi < 9; hi++) {
+                const hc = state.hypers[hi];
+                const hColor = CLUSTER_COLORS[hi];
+
+                // Hyper-cluster halo
+                const hhR = hi === 4 ? 100 : 65;
+                const hhg = ctx.createRadialGradient(hc.x, hc.y, 0, hc.x, hc.y, hhR);
+                hhg.addColorStop(0, hColor + "04");
+                hhg.addColorStop(0.5, hColor + "01");
+                hhg.addColorStop(1, hColor + "00");
+                ctx.beginPath(); ctx.arc(hc.x, hc.y, hhR, 0, Math.PI*2);
+                ctx.fillStyle = hhg; ctx.fill();
+
+                for (let si = 0; si < 9; si++) {
+                  const sc = hc.supers[si];
+                  const sColor = CLUSTER_COLORS[si];
+
+                  // Super-cluster mirror triangles (only in central hyper-cluster)
+                  if (hi === 4) {
+                    for (const [a, b] of MIRROR_PAIRS) {
+                      if (a === si || b === si) {
+                        const sa = hc.supers[a], sb = hc.supers[b], sm = hc.supers[4];
+                        ctx.beginPath();
+                        ctx.moveTo(sa.x, sa.y); ctx.lineTo(sm.x, sm.y); ctx.lineTo(sb.x, sb.y);
+                        ctx.closePath();
+                        ctx.fillStyle = "rgba(201,168,76,0.002)";
+                        ctx.strokeStyle = "rgba(201,168,76,0.006)";
+                        ctx.lineWidth = 0.2; ctx.fill(); ctx.stroke();
+                        break;
+                      }
+                    }
+                  }
+
+                  // Super-cluster halo
+                  const shR = (hi === 4 && si === 4) ? 40 : si === 4 ? 25 : 18;
+                  const shg = ctx.createRadialGradient(sc.x, sc.y, 0, sc.x, sc.y, shR);
+                  shg.addColorStop(0, sColor + "05");
+                  shg.addColorStop(0.6, sColor + "02");
+                  shg.addColorStop(1, sColor + "00");
+                  ctx.beginPath(); ctx.arc(sc.x, sc.y, shR, 0, Math.PI*2);
+                  ctx.fillStyle = shg; ctx.fill();
+
+                  for (let ci = 0; ci < 9; ci++) {
+                    const cl = sc.clusters[ci];
+                    const cColor = CLUSTER_COLORS[ci];
+
+                    // Cluster halo
+                    const chR = ci === 4 ? 7 : 4;
+                    const chg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, chR);
+                    chg.addColorStop(0, cColor + "06");
+                    chg.addColorStop(1, cColor + "00");
+                    ctx.beginPath(); ctx.arc(cl.x, cl.y, chR, 0, Math.PI*2);
+                    ctx.fillStyle = chg; ctx.fill();
+
+                    // Bodies — the dust
+                    for (let bi = 0; bi < 9; bi++) {
+                      const body = cl.bodies[bi];
+                      const bColor = CLUSTER_COLORS[bi];
+                      const isCoreMoon = hi===4 && si===4 && ci===4 && bi===4;
+                      const isDeepMoon = (hi===4 && si===4 && ci===4) || (hi===4 && si===4 && bi===4);
+                      const isMoon = bi === 4;
+
+                      const glowR = body.radius * (isCoreMoon ? 12 : isDeepMoon ? 4 : isMoon ? 2.5 : 1.5);
+                      const glowAlpha = isCoreMoon ? "20" : isDeepMoon ? "10" : isMoon ? "08" : "04";
+                      const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
+                      bg.addColorStop(0, bColor + glowAlpha);
+                      bg.addColorStop(0.5, bColor + "02");
+                      bg.addColorStop(1, bColor + "00");
+                      ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI*2);
+                      ctx.fillStyle = bg; ctx.fill();
+
+                      ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI*2);
+                      const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
+                      cg.addColorStop(0, isCoreMoon ? "#ffffff" : isDeepMoon ? "#e8e8f0" : bColor);
+                      cg.addColorStop(1, bColor + "20");
+                      ctx.fillStyle = cg; ctx.fill();
+                    }
+                  }
+                }
+              }
+
+              ctx.restore();
+
+              // Equation overlay (drawn AFTER restore so it stays fixed on screen)
+              const textFade = Math.max(0, 1 - eased * 1.5); // fade out as we zoom
+              if (textFade > 0.01) {
+                const ea = (0.22 + Math.sin(time*2)*0.06) * textFade;
+                ctx.fillStyle = `rgba(232,232,240,${ea})`;
+                ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
+                ctx.textAlign = "center";
+                ctx.fillText("Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²", CX, H - 30);
+                ctx.fillStyle = `rgba(232,232,240,${0.1 * textFade})`;
+                ctx.font = `${Math.round(7)}px 'Cinzel', serif`;
+                ctx.fillText("SAME EQUATION  ·  EVERY SCALE  ·  6,561 WORLDS", CX, H - 14);
+              }
+            }
+
+            function loop() {
+              simulate(); draw();
+              // Auto-transition to depth 2 when zoom completes
+              if (elapsed > 9 && !transitioned) {
+                transitioned = true;
+                goDeeper();
+                return;
+              }
+              frameRef.current = requestAnimationFrame(loop);
+            }
+            loop();
+            const handleResize = () => { ({ W, H } = resize()); };
+            window.addEventListener("resize", handleResize);
+            return () => {
+              if (frameRef.current) cancelAnimationFrame(frameRef.current);
+              window.removeEventListener("resize", handleResize);
+            };
+          }, []);
+
+          return <canvas ref={canvasRef} style={{ width: "100%", height: "100%", display: "block" }} />;
+        }
+
+        return (
+          <div style={{
+            height: "100vh", width: "100%", position: "relative",
+            zIndex: 1500, overflow: "hidden",
+          }}>
+            {/* 6561-body multiverse canvas */}
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
+              <DreamMultiverse729 />
+            </div>
+
+            {/* Text overlay — holds 1s then shrinks as we zoom out */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              pointerEvents: "none", zIndex: 10,
+              animation: "textShrinkAway 3s 1s both cubic-bezier(0.23,1,0.32,1)",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(20px, 4.5vw, 34px)",
+                fontStyle: "italic", fontWeight: 300,
+                color: "rgba(232,232,240,0.6)",
+                textAlign: "center", maxWidth: 520,
+                lineHeight: PHI, letterSpacing: 1.5,
+                textShadow: "0 0 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)",
+                animation: "fadeSlideUp 0.5s both ease",
+                padding: "0 24px",
+              }}>
+                "...we believe in a multiverse<br />where dreams come true..."
+              </div>
+
+              <div style={{ height: Math.round(34 * PHI) }} />
+
+              {/* Scale indicator — 6561 highlighted */}
+              <div style={{ animation: "fadeSlideUp 2s 1.2s both ease", textAlign: "center" }}>
+                <div style={{
+                  display: "flex", gap: Math.round(8 * PHI), justifyContent: "center",
+                  flexWrap: "wrap", padding: "0 20px",
+                }}>
+                  {[
+                    { n: "9⁰ = 1", label: "UNIVERSE", active: false },
+                    { n: "9¹ = 9", label: "CLUSTERS", active: false },
+                    { n: "9² = 81", label: "WORLDS", active: false },
+                    { n: "9³ = 729", label: "GALAXIES", active: false },
+                    { n: "9⁴ = 6,561", label: "DREAMS", active: true },
+                  ].map((level, i) => (
+                    <div key={i} style={{
+                      textAlign: "center",
+                      opacity: level.active ? 1 : 0.3,
+                    }}>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: level.active ? "clamp(20px, 3.5vw, 28px)" : "clamp(12px, 2vw, 16px)",
+                        color: level.active ? "rgba(206,147,216,0.8)" : "rgba(232,232,240,0.25)",
+                        fontWeight: level.active ? 600 : 300,
+                        textShadow: level.active ? "0 0 25px rgba(206,147,216,0.2), 0 0 60px rgba(206,147,216,0.08)" : "none",
+                      }}>{level.n}</div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif",
+                        fontSize: 7, letterSpacing: "0.2em",
+                        color: level.active ? "rgba(206,147,216,0.5)" : "rgba(232,232,240,0.12)",
+                        marginTop: 4,
+                      }}>{level.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ height: Math.round(21 * PHI) }} />
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.2vw, 17px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.18)",
+                letterSpacing: 2,
+                animation: "fadeSlideUp 2s 1.8s both ease",
+                textShadow: "0 0 30px rgba(0,0,0,0.8)",
+              }}>
+                Ψ<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = Ψ<sub style={{ fontSize: "0.6em" }}>scale(n−1)</sub> &nbsp;∀ n
+              </div>
+            </div>
+
+            {/* Return button handled by global root-level ReturnButton */}
+          </div>
+        );
+      })()}
 
       {/* ===== DEPTH 3 — THE PACT — 3D OCTAHEDRON ===== */}
       {depth === 3 && (() => {
@@ -1666,7 +1493,6 @@ export default function TheoryOfEverything() {
             zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
             padding: "0 20px",
-            ...getDepthWrap(3),
           }}>
 
             <div style={{
@@ -1806,7 +1632,6 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           boxSizing: "border-box",
           background: "#030306",
-          ...getDepthWrap(4),
         }}>
 
           {/* Chamber page navigation — back to Pact / forward to ∞ */}
