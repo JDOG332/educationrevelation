@@ -5514,14 +5514,17 @@ export default function TheoryOfEverything() {
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
             }}>
               {[
-                { key: "placeholder", icon: "☀️", title: "SEEDS INCOMING", hook: "Idea cards will appear here as content is planted.", accent: "255,200,50" },
+                { key: "regrets", icon: "⏳", title: "THE WEIGHT OF LEAVING", hook: "10 regrets from the dying. The mirror you can only read at the end.", accent: "255,200,50" },
               ].map(idea => (
-                <div key={idea.key} style={{
-                  padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.03), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.06)`,
-                  textAlign: "center", opacity: 0.4,
-                }}>
+                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                  transition: "all 0.4s ease", textAlign: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                >
                   <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
                   <div style={{
                     fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
@@ -5539,6 +5542,125 @@ export default function TheoryOfEverything() {
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
             <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== GRAVITY: THE WEIGHT OF LEAVING ===== */}
+      {depth === 4 && activeConvergence === "gravity" && activeIdea === "regrets" && (
+        <div style={{
+          maxWidth: 660, margin: "0 auto",
+          padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+          animation: "fadeSlideUp 0.6s ease",
+          zIndex: 1500, position: "relative",
+        }}>
+          <button onClick={() => setActiveIdea(null)} style={{
+            cursor: "pointer", background: "none", border: "none",
+            color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
+            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            transition: "all 0.4s",
+          }}
+            onMouseEnter={e => e.target.style.color = "rgba(255,200,50,0.6)"}
+            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
+          >← GRAVITY</button>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI), marginBottom: Math.round(21 * PHI) }}>
+            <div style={{ fontSize: 50, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 10s ease-in-out infinite" }}>⏳</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 4vw, 31px)",
+              letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+              marginBottom: Math.round(5 * PHI),
+            }}>THE WEIGHT OF LEAVING</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2vw, 14px)", letterSpacing: "0.4em",
+              color: "rgba(255,200,50,0.3)",
+            }}>WHAT THE DYING WISH THEY KNEW</div>
+            <div style={{
+              width: Math.round(40 * PHI), height: 1, margin: `${Math.round(8 * PHI)}px auto 0`,
+              background: "linear-gradient(90deg, transparent, rgba(255,200,50,0.25), transparent)",
+            }} />
+          </div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(16px, 3.2vw, 21px)",
+            lineHeight: 2.0, color: "rgba(232,232,240,0.55)",
+            fontStyle: "italic", textAlign: "center",
+            maxWidth: 500, margin: `0 auto ${Math.round(21 * PHI)}px`,
+          }}>
+            Thinking about the end of life can be heavy, but it is also one of the most grounding ways to figure out what truly matters right now. These insights come from palliative care nurse Bronnie Ware, who recorded the most common themes she heard from patients in their final weeks.
+          </div>
+
+          {/* The Ten Regrets */}
+          <div style={{ display: "flex", flexDirection: "column", gap: Math.round(13 * PHI) }}>
+            {[
+              { num: "I", title: "LIVE YOUR OWN LIFE", text: "I wish I'd had the courage to live a life true to myself, not the life others expected of me. Many people realize at the end that their dreams went unfulfilled because they made choices based on societal pressure, familial expectations, or a fear of judgment." },
+              { num: "II", title: "DON'T OVERWORK", text: "I wish I hadn't worked so hard. People deeply regret missing their children's youth, their partner's companionship, and the simple joys of life because they were overly dedicated to the treadmill of career and making money." },
+              { num: "III", title: "SPEAK YOUR TRUTH", text: "I wish I'd had the courage to express my feelings. Many people suppress their feelings to keep peace with others. Unspoken love, unvoiced apologies, and swallowed frustrations weigh heavily at the end." },
+              { num: "IV", title: "KEEP YOUR FRIENDS", text: "I wish I had stayed in touch with my friends. In the hustle of daily life, it is easy to let profound friendships slip away. Relationships — not money or status — are what hold the most value in the end." },
+              { num: "V", title: "CHOOSE HAPPINESS", text: "I wish that I had let myself be happier. Many people do not realize until the end that happiness is a choice. Fear of change and comfort with the familiar keep people stuck in old patterns, pretending to be content when they long to laugh properly and be silly again." },
+              { num: "VI", title: "STOP WORRYING", text: "I wish I hadn't worried so much. The vast majority of things people spend their lives stressing over never come to pass, or simply don't matter in the grand scheme of things. Time spent worrying is ultimately recognized as wasted time." },
+              { num: "VII", title: "CARE FOR YOUR BODY", text: "I wish I had taken better care of my health. When health fails, people often regret taking their bodies for granted. The regret usually centers on not eating well, not exercising, or ignoring early warning signs." },
+              { num: "VIII", title: "FORGIVE", text: "I wish I hadn't held onto grudges. The energy spent on anger and resentment feels incredibly trivial at the end of a life. Many wish they had forgiven others — and forgiven themselves — sooner, rather than carrying the heavy burden of bitterness." },
+              { num: "IX", title: "TAKE THE RISK", text: "I wish I had taken more risks. Whether it was starting a business, traveling to a new place, or telling someone they loved them, people regret the chances they didn't take. The pain of failure is almost always less painful than the haunting feeling of what if." },
+              { num: "X", title: "BE PRESENT", text: "I wish I had spent more time with my family. This is the active regret of not being fully present. People wish they had prioritized dinner at the table, weekend outings, and simple, undistracted conversations with the people they love." },
+            ].map((regret, i) => (
+              <div key={i} style={{
+                padding: `${Math.round(10 * PHI)}px ${Math.round(10 * PHI)}px`,
+                background: `rgba(255,200,50,${0.01 + i * 0.003})`,
+                borderRadius: 10,
+                border: `1px solid rgba(255,200,50,${0.04 + i * 0.008})`,
+              }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: Math.round(3 * PHI) }}>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4vw, 28px)",
+                    color: "rgba(255,200,50,0.2)", fontWeight: 400, letterSpacing: "0.1em",
+                    minWidth: 40,
+                  }}>{regret.num}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(13px, 2.5vw, 17px)",
+                    letterSpacing: "0.2em", color: "rgba(255,200,50,0.5)",
+                  }}>{regret.title}</div>
+                </div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(15px, 3vw, 19px)",
+                  lineHeight: 2.0, color: "rgba(232,232,240,0.55)",
+                  fontStyle: "italic",
+                  paddingLeft: 52,
+                }}>{regret.text}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* The Golden Thread */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(13 * PHI)}px`,
+            background: "rgba(255,200,50,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(255,200,50,0.06)",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 4,
+              color: "rgba(255,200,50,0.3)", marginBottom: Math.round(8 * PHI),
+            }}>THE GOLDEN THREAD</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3.2vw, 21px)",
+              lineHeight: 2.0, color: "rgba(232,232,240,0.6)",
+              fontStyle: "italic", maxWidth: 460, margin: "0 auto",
+            }}>
+              Every one of these regrets is about the same thing: the gap between what you built and what mattered. The dying don't wish for more money, more status, more stuff. They wish for more truth, more presence, more love.
+              <br /><br />
+              <span style={{ color: "rgba(255,200,50,0.5)" }}>The weight of leaving is the weight of everything you didn't say, didn't do, didn't feel.</span>
+              <br /><br />
+              You're still here. The signal is still clean. The door is still open.
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
+            <ReturnButton onClick={() => setActiveIdea(null)} />
           </div>
         </div>
       )}
