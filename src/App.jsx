@@ -837,7 +837,7 @@ export default function TheoryOfEverything() {
             transform: "scale(0.15)",
             willChange: "transform, opacity",
           }}>
-            ...we believe we are just one<br />tiny glimpse of those dreams...
+            ...we believe in a multiverse<br />where all dreams come true...
           </div>
         </div>
       )}
