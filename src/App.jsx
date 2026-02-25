@@ -150,12 +150,13 @@ export default function TheoryOfEverything() {
         setPoemPhase(5);
         return;
       }
-      setPoemPhase(1);
-      const t2 = setTimeout(() => setPoemPhase(2), 300);       // quick hold, then first exhale
-      const t3 = setTimeout(() => setPoemPhase(3), 1500);      // see the cluster
-      const t4 = setTimeout(() => setPoemPhase(4), 2800);      // all balls pulling away
-      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 4200);  // settle
-      return () => { clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
+      setPoemPhase(0.5);  // NEW: start tiny — matches the collapsed dot
+      const tGrow = setTimeout(() => setPoemPhase(1), 2000);   // grow to full white ball over 2s
+      const t2 = setTimeout(() => setPoemPhase(2), 2300);       // quick hold, then first exhale
+      const t3 = setTimeout(() => setPoemPhase(3), 3500);      // see the cluster
+      const t4 = setTimeout(() => setPoemPhase(4), 4800);      // all balls pulling away
+      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 6200);  // settle
+      return () => { clearTimeout(tGrow); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
     } else {
       setPoemPhase(0);
     }
@@ -764,7 +765,8 @@ export default function TheoryOfEverything() {
       {depth >= 2 && <Multiverse
         opacity={
           depth === 2 ? (
-              poemPhase <= 1 ? 1
+              poemPhase < 1 ? 0.6    // growing — partially visible
+              : poemPhase <= 1 ? 1
               : poemPhase === 2 ? 0.85
               : poemPhase === 3 ? 0.5
               : poemPhase === 4 ? 0.3
@@ -778,7 +780,8 @@ export default function TheoryOfEverything() {
         showOrbits={depth <= 3 && depth !== 2}
         zoom={
           depth === 2 ? (
-              poemPhase <= 1 ? 45
+              poemPhase < 1 ? 0.5    // tiny — matches the collapsed dot
+              : poemPhase <= 1 ? 45
               : poemPhase === 2 ? 8
               : poemPhase === 3 ? 2.5
               : poemPhase === 4 ? 0.7
@@ -788,7 +791,8 @@ export default function TheoryOfEverything() {
         }
         blur={
           depth === 2 ? (
-              poemPhase <= 2 ? 0
+              poemPhase < 1 ? 0      // no blur while tiny
+              : poemPhase <= 2 ? 0
               : poemPhase === 3 ? 1.5
               : poemPhase === 4 ? 4
               : 10
@@ -797,7 +801,8 @@ export default function TheoryOfEverything() {
         }
         transitionTiming={
           depth === 2 ? (
-              poemPhase <= 1 ? "none"
+              poemPhase < 1 ? "none"
+              : poemPhase <= 1 ? "opacity 2s cubic-bezier(0.25,0.1,0.25,1), transform 2s cubic-bezier(0.25,0.1,0.25,1), filter 2s cubic-bezier(0.25,0.1,0.25,1)"
               : "opacity 1.4s cubic-bezier(0.25,0.1,0.25,1), transform 1.4s cubic-bezier(0.25,0.1,0.25,1), filter 1.4s cubic-bezier(0.25,0.1,0.25,1)"
             )
           : "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)"
@@ -947,8 +952,8 @@ export default function TheoryOfEverything() {
             position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
             background: "radial-gradient(circle, rgba(232,232,240,0.95) 0%, rgba(232,232,240,0.7) 30%, rgba(14,10,28,0.8) 70%, #030306 100%)",
             zIndex: 5001, pointerEvents: "none",
-            opacity: poemPhase <= 1 ? 1 : poemPhase === 2 ? 0.3 : 0,
-            transition: poemPhase <= 1 ? "none" : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1)" : "opacity 3s ease-out",
+            opacity: poemPhase < 1 ? 0 : poemPhase <= 1 ? 1 : poemPhase === 2 ? 0.3 : 0,
+            transition: poemPhase < 1 ? "opacity 1.5s ease" : poemPhase <= 1 ? "opacity 0.5s ease" : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1)" : "opacity 3s ease-out",
           }} />
 
           {/* SKIP BUTTON — invisible fullscreen tap target during animation */}
