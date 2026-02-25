@@ -80,10 +80,10 @@ export default function TheoryOfEverything() {
         return;
       }
       setPoemPhase(1);
-      const t2 = setTimeout(() => setPoemPhase(2), 500);       // quick hold, then first exhale
-      const t3 = setTimeout(() => setPoemPhase(3), 2800);      // see the cluster
-      const t4 = setTimeout(() => setPoemPhase(4), 5200);      // all balls pulling away
-      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 8000);  // settle
+      const t2 = setTimeout(() => setPoemPhase(2), 300);       // quick hold, then first exhale
+      const t3 = setTimeout(() => setPoemPhase(3), 1500);      // see the cluster
+      const t4 = setTimeout(() => setPoemPhase(4), 2800);      // all balls pulling away
+      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 4200);  // settle
       return () => { clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
     } else {
       setPoemPhase(0);
@@ -546,10 +546,7 @@ export default function TheoryOfEverything() {
         transitionTiming={
           depth === 2 ? (
               poemPhase <= 1 ? "none"
-              : poemPhase === 2 ? "opacity 2s cubic-bezier(0.25,0.1,0.25,1), transform 2.3s cubic-bezier(0.16,1,0.3,1), filter 2s ease"
-              : poemPhase === 3 ? "opacity 2.2s cubic-bezier(0.25,0.1,0.25,1), transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.2s ease"
-              : poemPhase === 4 ? "opacity 2.5s cubic-bezier(0.25,0.1,0.25,1), transform 2.8s cubic-bezier(0.23,1,0.32,1), filter 2.5s ease"
-              : "opacity 3s cubic-bezier(0.25,0.1,0.25,1), transform 3s cubic-bezier(0.23,1,0.32,1), filter 3s ease"
+              : "opacity 1.4s cubic-bezier(0.25,0.1,0.25,1), transform 1.4s cubic-bezier(0.25,0.1,0.25,1), filter 1.4s cubic-bezier(0.25,0.1,0.25,1)"
             )
           : "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)"
         }
