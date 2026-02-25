@@ -848,6 +848,25 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
+      {/* SECRET PASSAGE — invisible bottom quartile skips to convergence chamber */}
+      {depth <= 1 && (
+        <div
+          onClick={() => {
+            // Kill the opening act animation if running
+            if (veilFrameRef.current) cancelAnimationFrame(veilFrameRef.current);
+            if (openingRef.current) openingRef.current.style.display = "none";
+            setDepth(4);
+          }}
+          style={{
+            position: "fixed", bottom: 0, left: 0,
+            width: "100%", height: "25%",
+            zIndex: 99999,
+            cursor: "default",
+            background: "transparent",
+          }}
+        />
+      )}
+
       {/* DREAM MULTIVERSE — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
       {depth <= 2 && (
