@@ -48,6 +48,23 @@ export default function TheoryOfEverything() {
   const spinCW = useRef(Math.random() < 0.5);   // coin flip: prism spins clockwise or counter
   const poemSeen = useRef(false);
 
+  // Auto-advance landing phases — PHI⁻¹, PHI⁻¹, PHI⁰
+  useEffect(() => {
+    if (depth !== 0) return;
+    if (landingPhase === 0) {
+      const t = setTimeout(() => setLandingPhase(1), 618);  // PHI⁻¹ = 0.618s
+      return () => clearTimeout(t);
+    }
+    if (landingPhase === 1) {
+      const t = setTimeout(() => setLandingPhase(2), 618);  // PHI⁻¹ = 0.618s
+      return () => clearTimeout(t);
+    }
+    if (landingPhase === 2) {
+      const t = setTimeout(() => goDeeper(), 1000);          // PHI⁰ = 1.0s
+      return () => clearTimeout(t);
+    }
+  }, [depth, landingPhase, goDeeper]);
+
   // Poem zoom-out sequence — timed to hold interest without losing suspense
   // Skip the sequence if the user has already seen it this session
   useEffect(() => {
@@ -528,27 +545,21 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — YIN/YANG/PRISM: Three clicks to truth ===== */}
+      {/* ===== DEPTH 0 — YIN/YANG/PRISM: Auto-advance ===== */}
       {depth === 0 && (() => {
         const phase = landingPhase;
-
-        const handleClick = () => {
-          if (phase === 0) setLandingPhase(1);
-          else if (phase === 1) setLandingPhase(2);
-          else goDeeper();
-        };
 
         // SHARED: position fixed, full-screen, ABOVE EVERYTHING (z-index 10000)
         const fullScreen = {
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-          zIndex: 10000, cursor: "pointer",
+          zIndex: 10000,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: PURE WHITE — "close your eyes & click"
+        // Phase 0: PURE WHITE
         if (phase === 0) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }}>
+            <div style={{ ...fullScreen, background: "#ffffff" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
@@ -562,10 +573,10 @@ export default function TheoryOfEverything() {
           );
         }
 
-        // Phase 1: PURE BLACK — "open your eyes & click"
+        // Phase 1: PURE BLACK
         if (phase === 1) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
+            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
@@ -579,9 +590,9 @@ export default function TheoryOfEverything() {
           );
         }
 
-        // Phase 2: THE PRISM — no words. Just the spectrum. Let the eyes do the work.
+        // Phase 2: THE PRISM
         return (
-          <div onClick={handleClick} style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
+          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
               animation: `prismSpin 120s linear infinite ${spinCW.current ? "" : "reverse"}`,
