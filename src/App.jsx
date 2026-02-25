@@ -48,32 +48,27 @@ export default function TheoryOfEverything() {
   const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
   const [prevDepth, setPrevDepth] = useState(null);
   const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
-  const [landingPhase, setLandingPhase] = useState(0); // 0=first, 1=second, 2=prism
-  const startDark = useRef(Math.random() < 0.5); // coin flip: dark first or light first
-  const spinCW = useRef(Math.random() < 0.5);   // coin flip: prism spins clockwise or counter
+  const [veilProgress, setVeilProgress] = useState(0); // 0=sealed, 1=fully open
   const poemSeen = useRef(false);
-  const autoLanding = useRef(true); // true on first load + golden flood loop-back, false after goBack
 
-  // Auto-advance landing phases — only on first load or golden flood loop-back
-  // ALL TIMING LOCKED TO PHI LADDER:
+  // THE VEIL — PHI-timed reveal of the multiverse underneath
+  // The multiverse canvas runs from frame 1. The veil is a CSS layer ABOVE it
+  // that dissolves away on the PHI ladder. No handoff. No remount. No race conditions.
   // 0.382s = synapse | 0.618s = blink | 1.000s = heartbeat | 1.618s = breath in
-  // 2.618s = slow breath out | 4.236s = held gaze | 11.09s = thought completed
+  // 2.618s = slow breath out | 4.236s = held gaze | 6.854s = full reveal
   useEffect(() => {
-    if (depth !== 0 || !autoLanding.current) return;
-    // Phase 0: PURE BLACK — 2.618s — a slow breath out. Time to arrive. Time to think.
-    if (landingPhase === 0) {
-      const t = setTimeout(() => setLandingPhase(1), 2618);
-      return () => clearTimeout(t);
-    }
-    // Phase 1: PURE WHITE — 1.618s — a breath in. BAM. The light finds you.
-    if (landingPhase === 1) {
-      const t = setTimeout(() => setLandingPhase(2), 1618);
-      return () => clearTimeout(t);
-    }
-    // Phase 2: PRISM FAN — the unified FanToMultiverse Canvas handles everything
-    // from here: fan acceleration, birth of multiverse, depth 0→1 transition,
-    // zoom, and auto-transition to depth 2. No external timers needed.
-  }, [depth, landingPhase]);
+    if (depth !== 0) return;
+    setVeilProgress(0);
+    const timers = [];
+    const schedule = (fn, ms) => timers.push(setTimeout(fn, ms));
+    schedule(() => setVeilProgress(0.05),  382);   // first pulse — synapse
+    schedule(() => setVeilProgress(0.12),  1000);  // heartbeat
+    schedule(() => setVeilProgress(0.25),  1618);  // breath — veil thins
+    schedule(() => setVeilProgress(0.50),  2618);  // crack — stars bleed through
+    schedule(() => setVeilProgress(0.80),  4236);  // flood begins
+    schedule(() => { setVeilProgress(1.0); setDepth(1); }, 6854);  // fully revealed → depth 1
+    return () => timers.forEach(clearTimeout);
+  }, [depth]);
 
   // Poem zoom-out sequence — timed to hold interest without losing suspense
   // Skip the sequence if the user has already seen it this session
@@ -152,7 +147,7 @@ export default function TheoryOfEverything() {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => {
         const newD = Math.max(d - 1, 0);
-        if (newD === 0) setLandingPhase(2); // return to prism, not black
+        if (newD === 0) setVeilProgress(0); // re-seal the veil for replay
         return newD;
       });
       clearAllSubs();
@@ -180,8 +175,7 @@ export default function TheoryOfEverything() {
 
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      autoLanding.current = true;
-      setDepth(0); setLandingPhase(0);
+      setDepth(0); setVeilProgress(0);
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
@@ -214,7 +208,7 @@ export default function TheoryOfEverything() {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      if (targetDepth === 0) setLandingPhase(2);
+      if (targetDepth === 0) setVeilProgress(0);
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
@@ -296,44 +290,7 @@ export default function TheoryOfEverything() {
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes prismAccelSpin {
-          /* FAUCET FLOW — not an engine rev.
-             Total: 11.09s (a thought completed). Plays ONCE.
-             First rotation: ~4.236s (a held gaze)
-             Last rotation:  ~0.618s (a blink)
-             Smooth logarithmic acceleration — water finding its path.
-             
-             Rotation budget: ~7 full rotations = 2520°
-             Distribution follows PHI spiral:
-               0-38%  of time = 1st rotation    (4.236s feel)
-               38-58% of time = 2nd rotation    (2.618s feel) 
-               58-72% of time = 3rd rotation    (1.618s feel)
-               72-82% of time = 4th rotation    (1.000s feel)
-               82-89% of time = 5th rotation    (0.618s feel)
-               89-94% of time = 6th rotation    (0.382s feel)
-               94-100% of time = 7th rotation   (0.618s feel — settling) */
-          0%    { transform: rotate(0deg); }
-          5%    { transform: rotate(12deg); }      /* barely moving — drip */
-          10%   { transform: rotate(35deg); }      /* first trickle */
-          15%   { transform: rotate(68deg); }      /* finding the path */
-          20%   { transform: rotate(110deg); }     /* stream forming */
-          25%   { transform: rotate(165deg); }     /* steady trickle */
-          30%   { transform: rotate(230deg); }     /* opening up */
-          38%   { transform: rotate(360deg); }     /* 1st full rotation — 4.236s feel */
-          45%   { transform: rotate(480deg); }     /* water flowing */
-          50%   { transform: rotate(560deg); }     /* rhythm establishing */
-          58%   { transform: rotate(720deg); }     /* 2nd rotation — 2.618s feel */
-          65%   { transform: rotate(880deg); }     /* momentum building */
-          72%   { transform: rotate(1080deg); }    /* 3rd rotation — 1.618s feel */
-          78%   { transform: rotate(1260deg); }    /* flowing freely now */
-          82%   { transform: rotate(1440deg); }    /* 4th rotation — 1.000s feel */
-          86%   { transform: rotate(1620deg); }    /* stream is full */
-          89%   { transform: rotate(1800deg); }    /* 5th rotation — 0.618s feel */
-          92%   { transform: rotate(1980deg); }    /* rushing */
-          94%   { transform: rotate(2160deg); }    /* 6th rotation — 0.382s feel */
-          97%   { transform: rotate(2340deg); }    /* full flow */
-          100%  { transform: rotate(2520deg); }    /* 7th rotation — complete */
-        }
+
         @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
         @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
         @keyframes textShrinkAway {
@@ -644,13 +601,13 @@ export default function TheoryOfEverything() {
       )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
-      {(depth !== 0 || landingPhase >= 2) && <GrainOverlay />}
+      {(depth >= 1) && <GrainOverlay />}
 
       {/* Depth indicator — hidden during landing */}
-      {(depth !== 0 || landingPhase >= 2) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
+      {(depth >= 1) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
 
       {/* Vignette — hidden during landing */}
-      {(depth !== 0 || landingPhase >= 2) && (<>
+      {(depth >= 1) && (<>
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
         background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.85) 100%)",
@@ -714,7 +671,7 @@ export default function TheoryOfEverything() {
       }} />
 
       {/* Particles — hidden during pure black/white landing */}
-      {(depth !== 0 || landingPhase >= 2) && Array.from({ length: 32 }, (_, i) => (
+      {(depth >= 1) && Array.from({ length: 32 }, (_, i) => (
         <Particle key={i} delay={i * 1.1 + Math.random() * 2}
           size={Math.random() * 2.8 + 0.5}
           x={Math.random() * 100}
@@ -769,33 +726,76 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — BLACK / WHITE / FAN→MULTIVERSE BIRTH ===== */}
-      {/* This Canvas handles depth 0 (fan) AND depth 1 (multiverse) as ONE continuous animation.
-          No handoff. No seam. The multiverse is born from the eye of the fan. */}
-      {(depth === 0 || depth === 1) && (() => {
-        const phase = depth === 0 ? landingPhase : 99; // 99 = we're past landing, in multiverse
+      {/* ===== DEPTH 0+1 — THE VEIL + DREAM MULTIVERSE ===== */}
+      {/* The multiverse runs from mount. The veil is a CSS layer above it that dissolves away. */}
+      {/* No fan. No handoff. No remount. The multiverse was always there. */}
 
-        // Phase 0: PURE BLACK — 2.618s
-        if (phase === 0) {
-          return (
+      {/* THE VEIL — dissolves to reveal the multiverse underneath */}
+      {depth === 0 && veilProgress < 1 && (() => {
+        // Radial reveal: circle grows from center
+        const revealRadius = veilProgress < 0.25
+          ? 0
+          : ((veilProgress - 0.25) / 0.75) * 150;
+        // Opacity: starts at 1, eases to 0
+        const opacity = veilProgress < 0.5
+          ? 1 - veilProgress * 0.6
+          : Math.max(0, 1 - veilProgress * 1.1);
+        // Golden pulse at center (visible in early phases)
+        const pulseOpacity = veilProgress < 0.04 ? 0
+          : veilProgress < 0.5 ? Math.min(1, (veilProgress - 0.04) * 2.5)
+          : Math.max(0, 1 - (veilProgress - 0.5) * 4);
+        // Heartbeat scale (at veilProgress ~0.12)
+        const heartbeat = veilProgress > 0.08 && veilProgress < 0.20;
+
+        return (
+          <div style={{
+            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+            zIndex: 10000,
+            pointerEvents: veilProgress > 0.80 ? "none" : "auto",
+            background: "#000000",
+            opacity,
+            // CSS mask creates the radial reveal from center outward
+            WebkitMaskImage: revealRadius > 0
+              ? `radial-gradient(circle at 50% 50%, transparent ${revealRadius}%, black ${revealRadius + 18}%)`
+              : "none",
+            maskImage: revealRadius > 0
+              ? `radial-gradient(circle at 50% 50%, transparent ${revealRadius}%, black ${revealRadius + 18}%)`
+              : "none",
+            transition: `opacity 1.618s cubic-bezier(0.23, 1, 0.32, 1)`,
+          }}>
+            {/* Golden pulse — the first sign of life behind the darkness */}
             <div style={{
-              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-              zIndex: 10000, background: "#000000",
+              position: "absolute",
+              top: "50%", left: "50%",
+              transform: `translate(-50%, -50%) scale(${heartbeat ? 1.4 : 1})`,
+              width: 4 + pulseOpacity * 50,
+              height: 4 + pulseOpacity * 50,
+              borderRadius: "50%",
+              background: `radial-gradient(circle, rgba(201,168,76,${0.2 * pulseOpacity}) 0%, rgba(201,168,76,${0.06 * pulseOpacity}) 40%, transparent 70%)`,
+              boxShadow: `0 0 ${80 * pulseOpacity}px rgba(201,168,76,${0.1 * pulseOpacity}), 0 0 ${160 * pulseOpacity}px rgba(201,168,76,${0.03 * pulseOpacity})`,
+              transition: "transform 0.618s cubic-bezier(0.23, 1, 0.32, 1)",
+              animation: pulseOpacity > 0.1 ? "breathe 2.618s ease-in-out infinite" : "none",
             }} />
-          );
-        }
+            {/* Inner ring — appears during crack phase */}
+            {veilProgress > 0.25 && (
+              <div style={{
+                position: "absolute",
+                top: "50%", left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 30 + (veilProgress - 0.25) * 200,
+                height: 30 + (veilProgress - 0.25) * 200,
+                borderRadius: "50%",
+                border: `1px solid rgba(201,168,76,${Math.max(0, 0.12 - (veilProgress - 0.25) * 0.2)})`,
+                boxShadow: `0 0 40px rgba(201,168,76,${Math.max(0, 0.04 - (veilProgress - 0.25) * 0.08)})`,
+                transition: "all 2.618s cubic-bezier(0.23, 1, 0.32, 1)",
+              }} />
+            )}
+          </div>
+        );
+      })()}
 
-        // Phase 1: PURE WHITE — 1.618s
-        if (phase === 1) {
-          return (
-            <div style={{
-              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-              zIndex: 10000, background: "#ffffff",
-            }} />
-          );
-        }
-
-        // Phase 2+ and depth 1: THE UNIFIED CANVAS
+      {/* DREAM MULTIVERSE — the crown jewel, running from frame 1 */}
+      {depth <= 1 && (() => {
         const CLUSTER_COLORS = [
           "#3a3a5c", "#7b68ee", "#c9a84c", "#e05050", "#e8e8f0",
           "#8fbc8f", "#4fc3f7", "#ff9800", "#ce93d8",
@@ -803,12 +803,14 @@ export default function TheoryOfEverything() {
         const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
         const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI * PHI, 2.0, 1.8, 1.4, 1.0];
 
-        function FanToMultiverse() {
+        function DreamMultiverse() {
           const canvasRef = useRef(null);
           const stateRef = useRef(null);
           const frameRef = useRef(null);
           const depthRef = useRef(depth);
+          const veilRef = useRef(veilProgress);
           depthRef.current = depth;
+          veilRef.current = veilProgress;
 
           function getR12(i, j) {
             let r = 0.5;
@@ -860,20 +862,7 @@ export default function TheoryOfEverything() {
 
             let { W, H } = resize();
             const CX = W / 2, CY = H / 2;
-            const R = Math.sqrt(W * W + H * H); // diagonal for fan coverage
             const BASE_R = Math.min(W, H) * 0.40;
-            const dir = spinCW.current ? 1 : -1;
-
-            // ===== FAN PHYSICS =====
-            const fanStartSpeed = (2 * Math.PI) / 4.236;
-            const fanEndSpeed = (2 * Math.PI) / 0.382;
-            const fanDuration = 11.09;
-            // Birth period: fan fades out while multiverse fades in
-            const birthStart = fanDuration - 2.618; // birth begins 2.618s before fan ends
-            const birthEnd = fanDuration + 1.618;   // birth completes 1.618s after fan ends
-
-            let fanAngle = 0;
-            let blurCommitted = false;
 
             // ===== MULTIVERSE INIT =====
             if (!stateRef.current) {
@@ -924,11 +913,6 @@ export default function TheoryOfEverything() {
             let mvTime = 0;
             let transitioned = false;
 
-            function greyAt(t) {
-              const v = Math.round(t * 250 + 5);
-              return `rgb(${v},${v},${v})`;
-            }
-
             function simulate() {
               simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
               for (const hc of state.hypers) simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
@@ -936,107 +920,20 @@ export default function TheoryOfEverything() {
               for (const hc of state.hypers) for (const sc of hc.supers) for (const cl of sc.clusters) simLevel(cl.bodies, 0.22 * speedScale, 2.5, 0.999, cl.x, cl.y, 0.003 * speedScale);
             }
 
-            function drawFan(elapsed) {
-              const t = Math.min(elapsed / fanDuration, 1);
-              const tPhi = Math.pow(t, 1.618);
-              const speed = fanStartSpeed + (fanEndSpeed - fanStartSpeed) * tPhi;
-              const dt = 1 / 60;
-              fanAngle += speed * dt;
-
-              // Fan fade: starts fading at birthStart, gone by fanDuration
-              let fanOpacity = 1;
-              if (elapsed > birthStart) {
-                blurCommitted = true;
-                const ft = Math.min((elapsed - birthStart) / 2.618, 1);
-                fanOpacity = Math.max(0, 1 - ft * ft);
-              }
-
-              // Fan blur ramp
-              let blur = 0;
-              if (blurCommitted) {
-                const bt = Math.min((elapsed - birthStart) / 2.618, 1);
-                blur = bt * bt * 20;
-              }
-
-              if (fanOpacity <= 0.01) return; // fully gone
-
-              ctx.save();
-              ctx.globalAlpha = fanOpacity;
-              ctx.translate(CX, CY);
-              ctx.rotate(fanAngle * dir);
-              if (blur > 0.5) ctx.filter = `blur(${blur}px)`;
-
-              // Black triangle (left)
-              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-R, -R); ctx.lineTo(-R, R); ctx.closePath();
-              ctx.fillStyle = "#000"; ctx.fill();
-              // White triangle (right)
-              ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(R, -R); ctx.lineTo(R, R); ctx.closePath();
-              ctx.fillStyle = "#fff"; ctx.fill();
-              // Grey gradient triangles (40 slices each)
-              const slices = 40;
-              for (let i = 0; i < slices; i++) {
-                const t0 = i / slices, t1 = (i+1) / slices;
-                const a0 = -Math.PI/2 + t0*(Math.PI/2), a1 = -Math.PI/2 + t1*(Math.PI/2);
-                ctx.beginPath(); ctx.moveTo(0,0);
-                ctx.lineTo(Math.cos(a0)*R, Math.sin(a0)*R);
-                ctx.lineTo(Math.cos(a1)*R, Math.sin(a1)*R);
-                ctx.closePath(); ctx.fillStyle = greyAt(t0); ctx.fill();
-              }
-              for (let i = 0; i < slices; i++) {
-                const t0 = i / slices, t1 = (i+1) / slices;
-                const a0 = Math.PI/2 - t0*(Math.PI/2), a1 = Math.PI/2 - t1*(Math.PI/2);
-                ctx.beginPath(); ctx.moveTo(0,0);
-                ctx.lineTo(Math.cos(a0)*R*-1, Math.sin(a0)*R);
-                ctx.lineTo(Math.cos(a1)*R*-1, Math.sin(a1)*R);
-                ctx.closePath(); ctx.fillStyle = greyAt(1-t0); ctx.fill();
-              }
-              ctx.filter = "none";
-              ctx.restore();
-
-              // Golden eye at center (doesn't spin, doesn't blur)
-              if (fanOpacity > 0.1) {
-                const eyePulse = 0.5 + Math.sin(fanAngle * 0.3) * 0.3;
-                const eyeR = 6 + eyePulse * 4;
-                const eyeGrad = ctx.createRadialGradient(CX, CY, 0, CX, CY, eyeR * 3);
-                eyeGrad.addColorStop(0, `rgba(201,168,76,${0.25 * eyePulse * fanOpacity})`);
-                eyeGrad.addColorStop(0.5, `rgba(201,168,76,${0.06 * eyePulse * fanOpacity})`);
-                eyeGrad.addColorStop(1, "rgba(201,168,76,0)");
-                ctx.beginPath(); ctx.arc(CX, CY, eyeR * 3, 0, Math.PI * 2);
-                ctx.fillStyle = eyeGrad; ctx.fill();
-                ctx.beginPath(); ctx.arc(CX, CY, 2 + eyePulse, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(201,168,76,${(0.5 + eyePulse*0.3) * fanOpacity})`; ctx.fill();
-              }
-            }
-
-            function drawMultiverse(elapsed, mvElapsed) {
-              // Multiverse opacity: fades in during birth period
-              let mvOpacity = 1;
-              if (elapsed < birthEnd) {
-                const ft = Math.max(0, (elapsed - birthStart) / (birthEnd - birthStart));
-                mvOpacity = ft * ft; // quadratic fade-in from center
-              }
-              if (mvOpacity <= 0.01) return;
-
-              // Birth scale: starts tiny at center, expands to full
-              let birthScale = 1;
-              if (elapsed < birthEnd) {
-                const ft = Math.max(0, (elapsed - birthStart) / (birthEnd - birthStart));
-                birthScale = 0.05 + 0.95 * ft * ft; // starts at 5%, grows to 100%
-              }
-
-              // Camera zoom (after birth completes)
-              const zoomStart = birthEnd + 1;
+            function drawMultiverse(elapsed) {
+              // Camera zoom — only starts once the veil is fully lifted (depth === 1)
+              const zoomEnabled = depthRef.current === 1;
+              const zoomStart = zoomEnabled ? 1.0 : 99999;  // 1s delay after depth transition
               const zoomEnd = zoomStart + 7;
               const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
               const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress);
               const targetZoom = 5;
-              const zoom = (1 + (targetZoom - 1) * eased) * birthScale;
+              const zoom = 1 + (targetZoom - 1) * eased;
               const target = state.hypers[zoomTarget];
               const panX = (CX - target.x) * eased;
               const panY = (CY - target.y) * eased;
 
               ctx.save();
-              ctx.globalAlpha = mvOpacity;
               ctx.translate(CX, CY);
               ctx.scale(zoom, zoom);
               ctx.translate(-CX + panX, -CY + panY);
@@ -1104,50 +1001,43 @@ export default function TheoryOfEverything() {
               }
               ctx.restore();
 
-              // Equation overlay
+              // Equation overlay — fades out during zoom
               const textFade = Math.max(0, 1 - eased * 1.5);
-              if (textFade > 0.01 && mvOpacity > 0.5) {
+              if (textFade > 0.01 && depthRef.current === 1) {
                 mvTime += 0.005;
-                const ea = (0.22 + Math.sin(mvTime*2)*0.06) * textFade * mvOpacity;
+                const ea = (0.22 + Math.sin(mvTime*2)*0.06) * textFade;
                 ctx.fillStyle = `rgba(232,232,240,${ea})`;
                 ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
                 ctx.textAlign = "center";
                 ctx.fillText("\u03A8\u2081\u2082 = R\u2081\u2082 \u00D7 (C_eff \u00B7 D\u0302) / dist\u00B2", CX, H - 30);
-                ctx.fillStyle = `rgba(232,232,240,${0.1 * textFade * mvOpacity})`;
+                ctx.fillStyle = `rgba(232,232,240,${0.1 * textFade})`;
                 ctx.font = `${Math.round(7)}px 'Cinzel', serif`;
                 ctx.fillText("SAME EQUATION  \u00B7  EVERY SCALE  \u00B7  6,561 WORLDS", CX, H - 14);
               }
 
-              return eased; // return zoom progress for auto-transition
+              return eased;
             }
+
+            // Track when depth transitions to 1 for zoom timing
+            let depthOneStart = null;
 
             function loop(now) {
               if (!startTime) startTime = now;
               const elapsed = (now - startTime) / 1000;
 
+              // Track when zoom should start
+              if (depthRef.current === 1 && depthOneStart === null) {
+                depthOneStart = now;
+              }
+              const zoomElapsed = depthOneStart ? (now - depthOneStart) / 1000 : 0;
+
               ctx.clearRect(0, 0, W, H);
-
-              // Always simulate multiverse (starts orbiting from frame 1)
               simulate();
-
-              // Draw multiverse FIRST (behind fan during birth)
-              const eased = drawMultiverse(elapsed, 0);
-
-              // Draw fan ON TOP (fades out during birth)
-              if (elapsed < fanDuration + 1) {
-                drawFan(elapsed);
-              }
-
-              // Auto-transition to depth 1 (state change for text overlay)
-              // Happens when fan is fully gone and multiverse is at full opacity
-              if (depthRef.current === 0 && elapsed > birthEnd && autoLanding.current) {
-                autoLanding.current = false;
-                setDepth(1);
-              }
+              const eased = drawMultiverse(depthRef.current === 1 ? zoomElapsed : -1);
 
               // Auto-transition to depth 2 after zoom completes
-              const zoomDone = elapsed > birthEnd + 1 + 7 + 1; // after zoom finishes
-              if (depthRef.current === 1 && zoomDone && !transitioned) {
+              const zoomDone = depthRef.current === 1 && zoomElapsed > 8.5;
+              if (zoomDone && !transitioned) {
                 transitioned = true;
                 goDeeper();
                 return;
@@ -1171,11 +1061,11 @@ export default function TheoryOfEverything() {
         return (
           <div style={{
             height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
-            zIndex: depth === 0 ? 10000 : 1500, overflow: "hidden",
+            zIndex: 1500, overflow: "hidden",
           }}>
-            <FanToMultiverse />
+            <DreamMultiverse />
 
-            {/* Text overlay — only visible during depth 1 */}
+            {/* Text overlay — only visible during depth 1 (after veil lifts) */}
             {depth === 1 && (
               <div style={{
                 position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
@@ -1205,11 +1095,11 @@ export default function TheoryOfEverything() {
                     flexWrap: "wrap", padding: "0 20px",
                   }}>
                     {[
-                      { n: "9⁰ = 1", label: "UNIVERSE", active: false },
-                      { n: "9¹ = 9", label: "CLUSTERS", active: false },
-                      { n: "9² = 81", label: "WORLDS", active: false },
-                      { n: "9³ = 729", label: "GALAXIES", active: false },
-                      { n: "9⁴ = 6,561", label: "DREAMS", active: true },
+                      { n: "9\u2070 = 1", label: "UNIVERSE", active: false },
+                      { n: "9\u00B9 = 9", label: "CLUSTERS", active: false },
+                      { n: "9\u00B2 = 81", label: "WORLDS", active: false },
+                      { n: "9\u00B3 = 729", label: "GALAXIES", active: false },
+                      { n: "9\u2074 = 6,561", label: "DREAMS", active: true },
                     ].map((level, i) => (
                       <div key={i} style={{ textAlign: "center", opacity: level.active ? 1 : 0.3 }}>
                         <div style={{
@@ -1238,7 +1128,7 @@ export default function TheoryOfEverything() {
                   animation: "fadeSlideUp 2s 1.8s both ease",
                   textShadow: "0 0 30px rgba(0,0,0,0.8)",
                 }}>
-                  Ψ<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = Ψ<sub style={{ fontSize: "0.6em" }}>scale(n−1)</sub> &nbsp;∀ n
+                  \u03A8<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = \u03A8<sub style={{ fontSize: "0.6em" }}>scale(n\u22121)</sub> &nbsp;\u2200 n
                 </div>
               </div>
             )}
@@ -1246,6 +1136,8 @@ export default function TheoryOfEverything() {
         );
       })()}
 
+
+      {/* ===== DEPTH 1 — multiverse handled by DreamMultiverse canvas above ===== */}
 
       {/* ===== DEPTH 2 — THE POEM ===== */}
       {depth === 2 && (
@@ -1653,7 +1545,6 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 1 handled by unified FanToMultiverse canvas above ===== */}
 
       {/* ===== DEPTH 3 — THE PACT — 3D OCTAHEDRON ===== */}
       {depth === 3 && (() => {
@@ -8006,11 +7897,8 @@ export default function TheoryOfEverything() {
               setFading(true);
               setTimeout(() => {
                 window.scrollTo({ top: 0, behavior: "instant" });
-                autoLanding.current = true;
-                setDepth(0); setLandingPhase(0);
-                startDark.current = Math.random() < 0.5;
-                spinCW.current = Math.random() < 0.5;
-                setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+                setDepth(0); setVeilProgress(0);
+                clearAllSubs();
                 setFading(false);
               }, 800);
             }} style={{
@@ -8272,11 +8160,8 @@ export default function TheoryOfEverything() {
               setFading(true);
               setTimeout(() => {
                 window.scrollTo({ top: 0, behavior: "instant" });
-                autoLanding.current = true;
-                setDepth(0); setLandingPhase(0);
-                startDark.current = Math.random() < 0.5;
-                spinCW.current = Math.random() < 0.5;
-                setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+                setDepth(0); setVeilProgress(0);
+                clearAllSubs();
                 setFading(false);
               }, 800);
             }} style={{
