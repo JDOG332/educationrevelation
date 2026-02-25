@@ -697,7 +697,7 @@ export default function TheoryOfEverything() {
                   animation: "textBlink 4s ease-in-out infinite",
                   color: "rgba(140,130,110,1)",
                   textShadow: "0 0 12px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.8), 0 0 48px rgba(0,0,0,0.6), 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 3px rgba(255,255,255,0.35)",
-                }}>now blink them<br />&amp; make a wish</div>
+                }}>now blink<br />&amp; make a wish</div>
               </div>
             </div>
 
