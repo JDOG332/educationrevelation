@@ -52,22 +52,34 @@ export default function TheoryOfEverything() {
   const [veilProgress, setVeilProgress] = useState(0); // 0=sealed, 1=fully open
   const poemSeen = useRef(false);
 
-  // THE VEIL — PHI-timed reveal of the multiverse underneath
-  // The multiverse canvas runs from frame 1. The veil is a CSS layer ABOVE it
-  // that dissolves away on the PHI ladder. No handoff. No remount. No race conditions.
-  // 0.382s = synapse | 0.618s = blink | 1.000s = heartbeat | 1.618s = breath in
-  // 2.618s = slow breath out | 4.236s = held gaze | 6.854s = full reveal
+  // THE OPENING ACT — words devour the darkness, then the light
+  // T=0.000s  Pure black
+  // T=1.618s  White words begin growing: "...we believe in a multiverse where all dreams come true..."
+  // T=5.854s  Words consumed the black → screen is 100% WHITE
+  // T=5.854s  Black words begin growing: "...we believe we are just one tiny glimpse of those dreams..."
+  // T=8.090s  Words consumed the white → screen is 100% BLACK
+  // T=8.090s  Multiverse appears. Depth → 1.
   useEffect(() => {
     if (depth !== 0) return;
     setVeilProgress(0);
     const timers = [];
     const schedule = (fn, ms) => timers.push(setTimeout(fn, ms));
-    schedule(() => setVeilProgress(0.05),  382);   // first pulse — synapse
-    schedule(() => setVeilProgress(0.12),  1000);  // heartbeat
-    schedule(() => setVeilProgress(0.25),  1618);  // breath — veil thins
-    schedule(() => setVeilProgress(0.50),  2618);  // crack — stars bleed through
-    schedule(() => setVeilProgress(0.80),  4236);  // flood begins
-    schedule(() => { setVeilProgress(1.0); setDepth(1); }, 6854);  // fully revealed → depth 1
+    // Phase 1: black silence → white words grow
+    schedule(() => setVeilProgress(0.10), 1618);   // words begin
+    schedule(() => setVeilProgress(0.30), 2618);   // growing
+    schedule(() => setVeilProgress(0.50), 3618);   // bigger
+    schedule(() => setVeilProgress(0.70), 4618);   // almost there
+    schedule(() => setVeilProgress(0.80), 5236);   // consuming
+    schedule(() => setVeilProgress(1.00), 5854);   // screen is WHITE — phase 1 done
+    // Phase 2: white screen → black words grow → black
+    schedule(() => setVeilProgress(1.10), 5854);   // flip to phase 2 (white bg, black words)
+    schedule(() => setVeilProgress(1.30), 6236);   // growing
+    schedule(() => setVeilProgress(1.50), 6618);   // bigger
+    schedule(() => setVeilProgress(1.70), 7236);   // almost there
+    schedule(() => setVeilProgress(1.90), 7618);   // consuming
+    schedule(() => setVeilProgress(2.00), 8090);   // screen is BLACK — phase 2 done
+    // Multiverse appears
+    schedule(() => { setVeilProgress(2.01); setDepth(1); }, 8090);
     return () => timers.forEach(clearTimeout);
   }, [depth]);
 
@@ -734,75 +746,83 @@ export default function TheoryOfEverything() {
         }
       />}
 
-      {/* ===== DEPTH 0+1 — THE VEIL + DREAM MULTIVERSE ===== */}
-      {/* The multiverse runs from mount. The veil is a CSS layer above it that dissolves away. */}
-      {/* No fan. No handoff. No remount. The multiverse was always there. */}
+      {/* ===== THE OPENING ACT — words devour the darkness, then the light ===== */}
 
-      {/* THE VEIL — dissolves to reveal the multiverse underneath */}
-      {depth === 0 && veilProgress < 1 && (() => {
-        // Radial reveal: circle grows from center
-        const revealRadius = veilProgress < 0.25
-          ? 0
-          : ((veilProgress - 0.25) / 0.75) * 150;
-        // Opacity: starts at 1, eases to 0
-        const opacity = veilProgress < 0.5
-          ? 1 - veilProgress * 0.6
-          : Math.max(0, 1 - veilProgress * 1.1);
-        // Golden pulse at center (visible in early phases)
-        const pulseOpacity = veilProgress < 0.04 ? 0
-          : veilProgress < 0.5 ? Math.min(1, (veilProgress - 0.04) * 2.5)
-          : Math.max(0, 1 - (veilProgress - 0.5) * 4);
-        // Heartbeat scale (at veilProgress ~0.12)
-        const heartbeat = veilProgress > 0.08 && veilProgress < 0.20;
+      {/* PHASE 1: Black screen → white words grow → screen becomes white */}
+      {/* PHASE 2: White screen → black words grow → screen becomes black */}
+      {/* Then: multiverse pops on */}
+      {depth === 0 && veilProgress < 2.01 && (() => {
+        const phase1 = veilProgress <= 1.0;   // black bg, white words
+        const phase2 = veilProgress > 1.0;    // white bg, black words
+
+        // Phase 1: progress 0→1 maps to word growth during black→white
+        // Phase 2: progress 1.1→2.0 maps to word growth during white→black
+        const p1 = Math.min(1, Math.max(0, veilProgress));
+        const p2 = Math.min(1, Math.max(0, (veilProgress - 1.1) / 0.9));
+
+        // Background interpolation
+        const bg = phase2
+          ? `rgb(${Math.round(255 * (1 - p2))},${Math.round(255 * (1 - p2))},${Math.round(255 * (1 - p2))})`
+          : `rgb(${Math.round(255 * p1)},${Math.round(255 * p1)},${Math.round(255 * p1)})`;
+
+        // Word scale: starts tiny, grows to fill
+        const wordScale1 = p1 < 0.01 ? 0 : 0.3 + p1 * 4.5;
+        const wordScale2 = p2 < 0.01 ? 0 : 0.3 + p2 * 4.5;
+
+        // Word opacity: fade in quickly then hold
+        const wordOpacity1 = Math.min(1, p1 * 3);
+        const wordOpacity2 = Math.min(1, p2 * 3);
 
         return (
           <div style={{
             position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
             zIndex: 10000,
-            pointerEvents: veilProgress > 0.80 ? "none" : "auto",
-            background: "#000000",
-            opacity,
-            // CSS mask creates the radial reveal from center outward
-            WebkitMaskImage: revealRadius > 0
-              ? `radial-gradient(circle at 50% 50%, transparent ${revealRadius}%, black ${revealRadius + 18}%)`
-              : "none",
-            maskImage: revealRadius > 0
-              ? `radial-gradient(circle at 50% 50%, transparent ${revealRadius}%, black ${revealRadius + 18}%)`
-              : "none",
-            transition: `opacity 1.618s cubic-bezier(0.23, 1, 0.32, 1)`,
+            background: bg,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            overflow: "hidden",
           }}>
-            {/* Golden pulse — the first sign of life behind the darkness */}
-            <div style={{
-              position: "absolute",
-              top: "50%", left: "50%",
-              transform: `translate(-50%, -50%) scale(${heartbeat ? 1.4 : 1})`,
-              width: 4 + pulseOpacity * 50,
-              height: 4 + pulseOpacity * 50,
-              borderRadius: "50%",
-              background: `radial-gradient(circle, rgba(201,168,76,${0.2 * pulseOpacity}) 0%, rgba(201,168,76,${0.06 * pulseOpacity}) 40%, transparent 70%)`,
-              boxShadow: `0 0 ${80 * pulseOpacity}px rgba(201,168,76,${0.1 * pulseOpacity}), 0 0 ${160 * pulseOpacity}px rgba(201,168,76,${0.03 * pulseOpacity})`,
-              transition: "transform 0.618s cubic-bezier(0.23, 1, 0.32, 1)",
-              animation: pulseOpacity > 0.1 ? "breathe 2.618s ease-in-out infinite" : "none",
-            }} />
-            {/* Inner ring — appears during crack phase */}
-            {veilProgress > 0.25 && (
+            {/* Phase 1 words: white on black → grow until they devour the black */}
+            {phase1 && p1 > 0 && (
               <div style={{
-                position: "absolute",
-                top: "50%", left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: 30 + (veilProgress - 0.25) * 200,
-                height: 30 + (veilProgress - 0.25) * 200,
-                borderRadius: "50%",
-                border: `1px solid rgba(201,168,76,${Math.max(0, 0.12 - (veilProgress - 0.25) * 0.2)})`,
-                boxShadow: `0 0 40px rgba(201,168,76,${Math.max(0, 0.04 - (veilProgress - 0.25) * 0.08)})`,
-                transition: "all 2.618s cubic-bezier(0.23, 1, 0.32, 1)",
-              }} />
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(16px, 4vw, 32px)",
+                fontStyle: "italic", fontWeight: 300,
+                color: `rgba(255,255,255,${wordOpacity1})`,
+                textAlign: "center",
+                lineHeight: 1.618,
+                letterSpacing: 2,
+                padding: "0 10%",
+                transform: `scale(${wordScale1})`,
+                transition: "transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), color 0.8s ease",
+                textShadow: `0 0 ${40 * p1}px rgba(255,255,255,${0.3 * p1}), 0 0 ${120 * p1}px rgba(255,255,255,${0.15 * p1})`,
+              }}>
+                ...we believe in a multiverse<br />where all dreams come true...
+              </div>
+            )}
+
+            {/* Phase 2 words: black on white → grow until they devour the white */}
+            {phase2 && (
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(16px, 4vw, 32px)",
+                fontStyle: "italic", fontWeight: 300,
+                color: `rgba(0,0,0,${wordOpacity2})`,
+                textAlign: "center",
+                lineHeight: 1.618,
+                letterSpacing: 2,
+                padding: "0 10%",
+                transform: `scale(${wordScale2})`,
+                transition: "transform 1s cubic-bezier(0.23, 1, 0.32, 1), color 0.6s ease",
+                textShadow: `0 0 ${40 * p2}px rgba(0,0,0,${0.2 * p2}), 0 0 ${100 * p2}px rgba(0,0,0,${0.1 * p2})`,
+              }}>
+                ...we believe we are just one<br />tiny glimpse of those dreams...
+              </div>
             )}
           </div>
         );
       })()}
 
-      {/* DREAM MULTIVERSE — the crown jewel, running from frame 1 */}
+      {/* DREAM MULTIVERSE — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
       {depth <= 2 && (
         <div style={{
@@ -815,7 +835,7 @@ export default function TheoryOfEverything() {
         }}>
           <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} />
 
-          {/* Text overlay — only visible during depth 1 (after veil lifts) */}
+          {/* Scale indicators — visible during depth 1 */}
           {depth === 1 && (
             <div style={{
               position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
@@ -823,25 +843,9 @@ export default function TheoryOfEverything() {
               pointerEvents: "none", zIndex: 10,
               animation: "textShrinkAway 3s 1s both cubic-bezier(0.23,1,0.32,1)",
             }}>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(20px, 4.5vw, 34px)",
-                fontStyle: "italic", fontWeight: 300,
-                color: "rgba(232,232,240,0.6)",
-                textAlign: "center", maxWidth: 520,
-                lineHeight: 1.618, letterSpacing: 1.5,
-                textShadow: "0 0 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)",
-                animation: "fadeSlideUp 0.5s both ease",
-                padding: "0 24px",
-              }}>
-                "...we believe in a multiverse<br />where dreams come true..."
-              </div>
-
-              <div style={{ height: Math.round(34 * 1.618) }} />
-
-              <div style={{ animation: "fadeSlideUp 2s 1.2s both ease", textAlign: "center" }}>
+              <div style={{ animation: "fadeSlideUp 2s 0.5s both ease", textAlign: "center" }}>
                 <div style={{
-                  display: "flex", gap: Math.round(8 * 1.618), justifyContent: "center",
+                  display: "flex", gap: Math.round(8 * PHI), justifyContent: "center",
                   flexWrap: "wrap", padding: "0 20px",
                 }}>
                   {[
@@ -868,14 +872,14 @@ export default function TheoryOfEverything() {
                 </div>
               </div>
 
-              <div style={{ height: Math.round(21 * 1.618) }} />
+              <div style={{ height: Math.round(21 * PHI) }} />
 
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(13px, 2.2vw, 17px)",
                 fontStyle: "italic", color: "rgba(232,232,240,0.18)",
                 letterSpacing: 2,
-                animation: "fadeSlideUp 2s 1.8s both ease",
+                animation: "fadeSlideUp 2s 1s both ease",
                 textShadow: "0 0 30px rgba(0,0,0,0.8)",
               }}>
                 {"\u03A8"}<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = {"\u03A8"}<sub style={{ fontSize: "0.6em" }}>scale(n{"\u2212"}1)</sub> &nbsp;{"\u2200"} n
