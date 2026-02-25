@@ -48,7 +48,7 @@ export default function TheoryOfEverything() {
   const spinCW = useRef(Math.random() < 0.5);   // coin flip: prism spins clockwise or counter
   const poemSeen = useRef(false);
 
-  // Poem zoom-out sequence — timed to meditative breath (~4s per phase)
+  // Poem zoom-out sequence — timed to hold interest without losing suspense
   // Skip the sequence if the user has already seen it this session
   useEffect(() => {
     if (depth === 2) {
@@ -58,10 +58,10 @@ export default function TheoryOfEverything() {
         return;
       }
       setPoemPhase(1);
-      const t2 = setTimeout(() => setPoemPhase(2), 800);      // hold white, then first exhale begins
-      const t3 = setTimeout(() => setPoemPhase(3), 4800);     // one breath — see the cluster
-      const t4 = setTimeout(() => setPoemPhase(4), 9200);     // two breaths — all balls pulling away
-      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 14000);  // three breaths — settle, mark as seen
+      const t2 = setTimeout(() => setPoemPhase(2), 500);       // quick hold, then first exhale
+      const t3 = setTimeout(() => setPoemPhase(3), 2800);      // see the cluster
+      const t4 = setTimeout(() => setPoemPhase(4), 5200);      // all balls pulling away
+      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 8000);  // settle
       return () => { clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
     } else {
       setPoemPhase(0);
@@ -171,6 +171,7 @@ export default function TheoryOfEverything() {
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
         @keyframes starGlow { 0%, 100% { text-shadow: 0 0 8px rgba(201,168,76,0.3), 0 0 20px rgba(201,168,76,0.15); } 50% { text-shadow: 0 0 16px rgba(201,168,76,0.6), 0 0 40px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.15); } }
         @keyframes infinityRadiate { 0%, 100% { text-shadow: 0 0 30px rgba(201,168,76,0.2), 0 0 60px rgba(201,168,76,0.1); filter: drop-shadow(0 0 20px rgba(201,168,76,0.15)); } 50% { text-shadow: 0 0 60px rgba(201,168,76,0.5), 0 0 100px rgba(201,168,76,0.3), 0 0 140px rgba(201,168,76,0.15); filter: drop-shadow(0 0 50px rgba(201,168,76,0.3)); } }
         @keyframes breathe {
@@ -518,10 +519,10 @@ export default function TheoryOfEverything() {
         transitionTiming={
           depth === 2 ? (
               poemPhase <= 1 ? "none"
-              : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1), transform 4s cubic-bezier(0.16,1,0.3,1), filter 3.5s ease"
-              : poemPhase === 3 ? "opacity 4s cubic-bezier(0.25,0.1,0.25,1), transform 4.4s cubic-bezier(0.23,1,0.32,1), filter 4s ease"
-              : poemPhase === 4 ? "opacity 4s cubic-bezier(0.25,0.1,0.25,1), transform 4.8s cubic-bezier(0.23,1,0.32,1), filter 4s ease"
-              : "opacity 4.5s cubic-bezier(0.25,0.1,0.25,1), transform 5s cubic-bezier(0.23,1,0.32,1), filter 4.5s ease"
+              : poemPhase === 2 ? "opacity 2s cubic-bezier(0.25,0.1,0.25,1), transform 2.3s cubic-bezier(0.16,1,0.3,1), filter 2s ease"
+              : poemPhase === 3 ? "opacity 2.2s cubic-bezier(0.25,0.1,0.25,1), transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.2s ease"
+              : poemPhase === 4 ? "opacity 2.5s cubic-bezier(0.25,0.1,0.25,1), transform 2.8s cubic-bezier(0.23,1,0.32,1), filter 2.5s ease"
+              : "opacity 3s cubic-bezier(0.25,0.1,0.25,1), transform 3s cubic-bezier(0.23,1,0.32,1), filter 3s ease"
             )
           : "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)"
         }
@@ -1249,34 +1250,54 @@ export default function TheoryOfEverything() {
 
             const state = stateRef.current;
             let time = 0;
+            let elapsed = 0;
+            let transitioned = false;
             const speedScale = Math.max(1, 1200 / Math.max(W, H));
+            // Pick a random non-center hyper-cluster to zoom toward
+            const zoomTarget = [0,1,2,3,5,6,7,8][Math.floor(Math.random()*8)];
 
             function simulate() {
-              // Level 0: hyper-clusters orbit center
-              simLevel(state.hypers, 0.25 * speedScale, 70, 0.9998, CX, CY, 0.00003 * speedScale);
+              // Level 0: hyper-clusters orbit center (faster)
+              simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
               // Level 1: super-clusters orbit their hyper-cluster
               for (const hc of state.hypers) {
-                simLevel(hc.supers, 0.22 * speedScale, 28, 0.9996, hc.x, hc.y, 0.00015 * speedScale);
+                simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
               }
               // Level 2: clusters orbit their super-cluster
               for (const hc of state.hypers) {
                 for (const sc of hc.supers) {
-                  simLevel(sc.clusters, 0.18 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0006 * speedScale);
+                  simLevel(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
                 }
               }
               // Level 3: bodies orbit their cluster (the dust)
               for (const hc of state.hypers) {
                 for (const sc of hc.supers) {
                   for (const cl of sc.clusters) {
-                    simLevel(cl.bodies, 0.15 * speedScale, 2.5, 0.999, cl.x, cl.y, 0.002 * speedScale);
+                    simLevel(cl.bodies, 0.22 * speedScale, 2.5, 0.999, cl.x, cl.y, 0.003 * speedScale);
                   }
                 }
               }
             }
 
             function draw() {
-              time += 0.004;
+              time += 0.005;
+              elapsed += 1/60;
               ctx.clearRect(0, 0, W, H);
+
+              // Camera zoom — starts at t=4s, fully zoomed by t=11s
+              const zoomStart = 4, zoomEnd = 11;
+              const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
+              const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress); // smoothstep
+              const targetZoom = 5;
+              const zoom = 1 + (targetZoom - 1) * eased;
+              const target = state.hypers[zoomTarget];
+              const panX = (CX - target.x) * eased;
+              const panY = (CY - target.y) * eased;
+
+              ctx.save();
+              ctx.translate(CX, CY);
+              ctx.scale(zoom, zoom);
+              ctx.translate(-CX + panX, -CY + panY);
 
               // Level 0: Hyper-cluster mirror triangles (cosmic web)
               for (const [a, b] of MIRROR_PAIRS) {
@@ -1293,7 +1314,7 @@ export default function TheoryOfEverything() {
                 const hc = state.hypers[hi];
                 const hColor = CLUSTER_COLORS[hi];
 
-                // Hyper-cluster halo — the biggest, faintest glow
+                // Hyper-cluster halo
                 const hhR = hi === 4 ? 100 : 65;
                 const hhg = ctx.createRadialGradient(hc.x, hc.y, 0, hc.x, hc.y, hhR);
                 hhg.addColorStop(0, hColor + "04");
@@ -1335,7 +1356,7 @@ export default function TheoryOfEverything() {
                     const cl = sc.clusters[ci];
                     const cColor = CLUSTER_COLORS[ci];
 
-                    // Cluster halo — small, subtle
+                    // Cluster halo
                     const chR = ci === 4 ? 7 : 4;
                     const chg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, chR);
                     chg.addColorStop(0, cColor + "06");
@@ -1343,7 +1364,7 @@ export default function TheoryOfEverything() {
                     ctx.beginPath(); ctx.arc(cl.x, cl.y, chR, 0, Math.PI*2);
                     ctx.fillStyle = chg; ctx.fill();
 
-                    // Bodies — the dust of the universe
+                    // Bodies — the dust
                     for (let bi = 0; bi < 9; bi++) {
                       const body = cl.bodies[bi];
                       const bColor = CLUSTER_COLORS[bi];
@@ -1351,7 +1372,6 @@ export default function TheoryOfEverything() {
                       const isDeepMoon = (hi===4 && si===4 && ci===4) || (hi===4 && si===4 && bi===4);
                       const isMoon = bi === 4;
 
-                      // Glow
                       const glowR = body.radius * (isCoreMoon ? 12 : isDeepMoon ? 4 : isMoon ? 2.5 : 1.5);
                       const glowAlpha = isCoreMoon ? "20" : isDeepMoon ? "10" : isMoon ? "08" : "04";
                       const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
@@ -1361,7 +1381,6 @@ export default function TheoryOfEverything() {
                       ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI*2);
                       ctx.fillStyle = bg; ctx.fill();
 
-                      // Core dot
                       ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI*2);
                       const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
                       cg.addColorStop(0, isCoreMoon ? "#ffffff" : isDeepMoon ? "#e8e8f0" : bColor);
@@ -1372,18 +1391,32 @@ export default function TheoryOfEverything() {
                 }
               }
 
-              // Equation overlay
-              const ea = 0.22 + Math.sin(time*2)*0.06;
-              ctx.fillStyle = `rgba(232,232,240,${ea})`;
-              ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
-              ctx.textAlign = "center";
-              ctx.fillText("Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²", CX, H - 30);
-              ctx.fillStyle = "rgba(232,232,240,0.1)";
-              ctx.font = `${Math.round(7)}px 'Cinzel', serif`;
-              ctx.fillText("SAME EQUATION  ·  EVERY SCALE  ·  6,561 WORLDS", CX, H - 14);
+              ctx.restore();
+
+              // Equation overlay (drawn AFTER restore so it stays fixed on screen)
+              const textFade = Math.max(0, 1 - eased * 1.5); // fade out as we zoom
+              if (textFade > 0.01) {
+                const ea = (0.22 + Math.sin(time*2)*0.06) * textFade;
+                ctx.fillStyle = `rgba(232,232,240,${ea})`;
+                ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
+                ctx.textAlign = "center";
+                ctx.fillText("Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²", CX, H - 30);
+                ctx.fillStyle = `rgba(232,232,240,${0.1 * textFade})`;
+                ctx.font = `${Math.round(7)}px 'Cinzel', serif`;
+                ctx.fillText("SAME EQUATION  ·  EVERY SCALE  ·  6,561 WORLDS", CX, H - 14);
+              }
             }
 
-            function loop() { simulate(); draw(); frameRef.current = requestAnimationFrame(loop); }
+            function loop() {
+              simulate(); draw();
+              // Auto-transition to depth 2 when zoom completes
+              if (elapsed > 12 && !transitioned) {
+                transitioned = true;
+                goDeeper();
+                return;
+              }
+              frameRef.current = requestAnimationFrame(loop);
+            }
             loop();
             const handleResize = () => { ({ W, H } = resize()); };
             window.addEventListener("resize", handleResize);
@@ -1406,11 +1439,12 @@ export default function TheoryOfEverything() {
               <DreamMultiverse729 />
             </div>
 
-            {/* Text overlay */}
+            {/* Text overlay — fades as zoom begins */}
             <div style={{
               position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
               display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
               pointerEvents: "none", zIndex: 10,
+              animation: "fadeSlideUp 0.5s ease, textOverlayFade 3s 4s both ease",
             }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
