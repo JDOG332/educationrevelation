@@ -56,31 +56,29 @@ export default function TheoryOfEverything() {
 
   // Auto-advance landing phases — only on first load or golden flood loop-back
   // ALL TIMING LOCKED TO PHI LADDER:
-  // 0.618s = blink | 1.618s = breath | 4.236s = gaze | 6.854s = sentence | 11.09s = thought
+  // 0.382s = synapse | 0.618s = blink | 1.000s = heartbeat | 1.618s = breath in
+  // 2.618s = slow breath out | 4.236s = held gaze | 11.09s = thought completed
   useEffect(() => {
     if (depth !== 0 || !autoLanding.current) return;
-    // Phase 0: PURE BLACK — the nothing (0.618s = a blink)
+    // Phase 0: PURE BLACK — 2.618s — a slow breath out. Time to arrive. Time to think.
     if (landingPhase === 0) {
-      const t = setTimeout(() => setLandingPhase(1), 618);
+      const t = setTimeout(() => setLandingPhase(1), 2618);
       return () => clearTimeout(t);
     }
-    // Phase 1: PURE WHITE — the flash (0.618s = a blink)
+    // Phase 1: PURE WHITE — 1.618s — a breath in. BAM. The light finds you.
     if (landingPhase === 1) {
-      const t = setTimeout(() => setLandingPhase(2), 618);
+      const t = setTimeout(() => setLandingPhase(2), 1618);
       return () => clearTimeout(t);
     }
-    // Phase 2: PRISM — slowly turning faucet (11.09s = a thought completed)
+    // Phase 2: PRISM FAN — 11.09s — a thought completed.
+    // Canvas handles its own blur-out in the final 1.618s.
+    // After 11.09s total, transition to depth 1.
     if (landingPhase === 2) {
-      const t = setTimeout(() => setLandingPhase(3), 11090);
-      return () => clearTimeout(t);
-    }
-    // Phase 3: BLUR-OUT — dissolve into depth 1 (1.618s = a breath in)
-    if (landingPhase === 3) {
       const t = setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
         setDepth(1);
         autoLanding.current = false;
-      }, 1618);
+      }, 11090);
       return () => clearTimeout(t);
     }
   }, [depth, landingPhase]);
@@ -779,144 +777,230 @@ export default function TheoryOfEverything() {
         }
       />
 
-      {/* ===== DEPTH 0 — BLACK / WHITE / ACCELERATING PRISM ===== */}
+      {/* ===== DEPTH 0 — BLACK / WHITE / FAN-PHYSICS PRISM ===== */}
       {depth === 0 && (() => {
         const phase = landingPhase;
 
-        // SHARED: position fixed, full-screen, ABOVE EVERYTHING (z-index 10000)
         const fullScreen = {
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
           zIndex: 10000,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
-        // Phase 0: PURE BLACK — the nothing before the something
+        // Phase 0: PURE BLACK — 2.618s — a slow breath out. Time to arrive.
         if (phase === 0) {
           return (
-            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.1s ease" }} />
+            <div style={{ ...fullScreen, background: "#000000" }} />
           );
         }
 
-        // Phase 1: PURE WHITE — the flash of existence
+        // Phase 1: PURE WHITE — 1.618s — a breath in. BAM. Light.
         if (phase === 1) {
           return (
-            <div style={{ ...fullScreen, background: "#ffffff", animation: "fadeIn 0.08s ease" }} />
+            <div style={{ ...fullScreen, background: "#ffffff" }} />
           );
         }
 
-        // Phase 2: THE PRISM — accelerating spin from 4.236s/rev to 0.618s/rev
-        // Phase 3: PRISM BLUR-OUT — spinning fast + blurring away into depth 1
-        const isBlurring = phase === 3;
+        // Phase 2+3: THE FAN — Canvas with real angular momentum physics
+        // No keyframes. No steps. requestAnimationFrame + smooth acceleration.
+        // Like a fan: you don't notice it speeding up until the breeze is too strong.
+        const PrismFan = () => {
+          const canvasRef = useRef(null);
+          const frameRef = useRef(null);
+
+          useEffect(() => {
+            const canvas = canvasRef.current;
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            const dpr = window.devicePixelRatio || 1;
+            const W = window.innerWidth;
+            const H = window.innerHeight;
+            canvas.width = W * dpr;
+            canvas.height = H * dpr;
+            canvas.style.width = W + "px";
+            canvas.style.height = H + "px";
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            const CX = W / 2;
+            const CY = H / 2;
+            // Diagonal of screen = radius needed to cover all corners
+            const R = Math.sqrt(W * W + H * H);
+            const dir = spinCW.current ? 1 : -1;
+
+            // PHI-based physics:
+            // Start speed:  1 full rotation per 4.236s = 2π / 4.236 ≈ 1.483 rad/s
+            // End speed:    1 full rotation per 0.382s = 2π / 0.382 ≈ 16.45 rad/s
+            // Over 11.09s (a thought completed)
+            // Acceleration = smooth continuous ramp
+            const startSpeed = (2 * Math.PI) / 4.236;  // ~1.483 rad/s
+            const endSpeed = (2 * Math.PI) / 0.382;    // ~16.45 rad/s
+            const duration = 11.09;                      // seconds
+
+            // Use power curve for "fan motor" feel:
+            // speed(t) = startSpeed + (endSpeed - startSpeed) * (t/duration)^PHI
+            // PHI exponent = the acceleration is itself golden-ratio-shaped
+            // Early on, almost no change. Later, it compounds fast.
+            // You don't notice it... then the breeze hits.
+
+            let angle = 0;
+            let startTime = null;
+            let blurAmount = 0;
+
+            // 50-shade grey ramp for the gradient triangles
+            function greyAt(t) {
+              // t: 0=black, 1=white
+              const v = Math.round(t * 250 + 5);
+              return `rgb(${v},${v},${v})`;
+            }
+
+            function drawPrism(blur) {
+              ctx.save();
+              ctx.translate(CX, CY);
+              ctx.rotate(angle * dir);
+
+              // Apply motion blur by drawing slightly transparent overlapping frames
+              // The blur effect comes from the canvas filter
+              if (blur > 0.5) {
+                ctx.filter = `blur(${blur}px)`;
+              }
+
+              // Four triangles meeting at center, extending past screen edges
+              // Black triangle (left)
+              ctx.beginPath();
+              ctx.moveTo(0, 0);
+              ctx.lineTo(-R, -R);
+              ctx.lineTo(-R, R);
+              ctx.closePath();
+              ctx.fillStyle = "#000000";
+              ctx.fill();
+
+              // White triangle (right)
+              ctx.beginPath();
+              ctx.moveTo(0, 0);
+              ctx.lineTo(R, -R);
+              ctx.lineTo(R, R);
+              ctx.closePath();
+              ctx.fillStyle = "#ffffff";
+              ctx.fill();
+
+              // Top grey triangle — gradient from black(left) to white(right)
+              // Draw as many thin slices for smooth gradient
+              const slices = 40;
+              for (let i = 0; i < slices; i++) {
+                const t0 = i / slices;
+                const t1 = (i + 1) / slices;
+                const a0 = -Math.PI / 2 + t0 * (Math.PI / 2);  // -90° to 0°
+                const a1 = -Math.PI / 2 + t1 * (Math.PI / 2);
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(Math.cos(a0) * R, Math.sin(a0) * R);
+                ctx.lineTo(Math.cos(a1) * R, Math.sin(a1) * R);
+                ctx.closePath();
+                ctx.fillStyle = greyAt(t0);
+                ctx.fill();
+              }
+
+              // Bottom grey triangle — same gradient
+              for (let i = 0; i < slices; i++) {
+                const t0 = i / slices;
+                const t1 = (i + 1) / slices;
+                const a0 = Math.PI / 2 - t0 * (Math.PI / 2);  // 90° to 0°
+                const a1 = Math.PI / 2 - t1 * (Math.PI / 2);
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(Math.cos(a0) * R * -1, Math.sin(a0) * R);
+                ctx.lineTo(Math.cos(a1) * R * -1, Math.sin(a1) * R);
+                ctx.closePath();
+                ctx.fillStyle = greyAt(1 - t0);
+                ctx.fill();
+              }
+
+              ctx.restore();
+
+              // 3rd Eye — golden glow at center (drawn after restore so it doesn't spin)
+              const eyePulse = 0.5 + Math.sin(angle * 0.3) * 0.3;
+              const eyeR = 6 + eyePulse * 4;
+              const eyeGrad = ctx.createRadialGradient(CX, CY, 0, CX, CY, eyeR * 3);
+              eyeGrad.addColorStop(0, `rgba(201,168,76,${0.25 * eyePulse})`);
+              eyeGrad.addColorStop(0.5, `rgba(201,168,76,${0.06 * eyePulse})`);
+              eyeGrad.addColorStop(1, "rgba(201,168,76,0)");
+              ctx.beginPath();
+              ctx.arc(CX, CY, eyeR * 3, 0, Math.PI * 2);
+              ctx.fillStyle = eyeGrad;
+              ctx.fill();
+
+              // Inner eye dot
+              ctx.beginPath();
+              ctx.arc(CX, CY, 2 + eyePulse, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(201,168,76,${0.5 + eyePulse * 0.3})`;
+              ctx.fill();
+
+              // White core
+              ctx.beginPath();
+              ctx.arc(CX, CY, 0.8, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(255,255,255,${0.5 + eyePulse * 0.4})`;
+              ctx.fill();
+            }
+
+            function loop(now) {
+              if (!startTime) startTime = now;
+              const elapsed = (now - startTime) / 1000; // seconds
+
+              // Clamp to duration (speed caps at endSpeed, doesn't keep accelerating)
+              const t = Math.min(elapsed / duration, 1);
+
+              // Fan motor curve: speed(t) = start + (end-start) * t^PHI
+              // PHI ≈ 1.618 — golden exponent
+              // Early: almost no acceleration (imperceptible)
+              // Late: compounds fast (the breeze hits you)
+              const tPhi = Math.pow(t, 1.618);
+              const speed = startSpeed + (endSpeed - startSpeed) * tPhi;
+
+              // Integrate: angle accumulates based on current speed
+              // dt ≈ 1/60s at 60fps
+              const dt = elapsed > 0 && frameRef.current ? 1 / 60 : 0;
+              angle += speed * dt;
+
+              // Blur ramp in final 1.618s — the breeze sweeps you away
+              // Only when auto-advancing (first load), not on manual return
+              const blurStart = duration - 1.618;
+              if (autoLanding.current && elapsed > blurStart) {
+                const bt = (elapsed - blurStart) / 1.618;
+                blurAmount = bt * bt * 25; // quadratic ramp to 25px blur
+              }
+
+              // Fade out opacity in final 1.618s (only on auto-advance)
+              let opacity = 1;
+              if (autoLanding.current && elapsed > blurStart) {
+                const ft = (elapsed - blurStart) / 1.618;
+                opacity = 1 - ft * ft; // quadratic fade
+              }
+
+              ctx.clearRect(0, 0, W, H);
+              ctx.globalAlpha = Math.max(0, opacity);
+              drawPrism(blurAmount);
+              ctx.globalAlpha = 1;
+
+              frameRef.current = requestAnimationFrame(loop);
+            }
+
+            frameRef.current = requestAnimationFrame(loop);
+            return () => {
+              if (frameRef.current) cancelAnimationFrame(frameRef.current);
+            };
+          }, []);
+
+          return (
+            <canvas ref={canvasRef} style={{
+              position: "absolute", top: 0, left: 0,
+              width: "100%", height: "100%",
+            }} />
+          );
+        };
+
         return (
-          <div style={{
-            ...fullScreen,
-            background: "#000",
-            overflow: "hidden",
-            animation: "fadeIn 0.3s ease",
-            // Phase 3: blur + fade out over 1.618s (a breath in)
-            filter: isBlurring ? "blur(20px)" : "blur(0px)",
-            opacity: isBlurring ? 0 : 1,
-            transition: isBlurring
-              ? "filter 1.618s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.618s cubic-bezier(0.4, 0, 0.2, 1)"
-              : "none",
-          }}>
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
-              position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
-              /* Faucet flow: 11.09s = a thought completed. Plays ONCE.
-                 ease-in timing lets CSS interpolate smoothly between keyframes
-                 creating the gradually-opening-faucet feel */
-              animation: `prismAccelSpin 11.09s ease-in forwards ${spinCW.current ? "" : "reverse"}`,
-              transformOrigin: "center center",
-            }}>
-              <defs>
-                {/* Black triangle: pure #000 at left edge */}
-                <linearGradient id="gBlack" x1="0%" y1="50%" x2="100%" y2="50%">
-                  <stop offset="0%" stopColor="#000000" />
-                  <stop offset="100%" stopColor="#000000" />
-                </linearGradient>
-                {/* White triangle: pure #fff at right edge */}
-                <linearGradient id="gWhite" x1="100%" y1="50%" x2="0%" y2="50%">
-                  <stop offset="0%" stopColor="#ffffff" />
-                  <stop offset="100%" stopColor="#ffffff" />
-                </linearGradient>
-                {/* Top grey: 50 shades — nearly black on left, nearly white on right */}
-                <linearGradient id="gGreyTop" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#050505" />
-                  <stop offset="5%" stopColor="#0d0d0d" />
-                  <stop offset="10%" stopColor="#1a1a1a" />
-                  <stop offset="15%" stopColor="#262626" />
-                  <stop offset="20%" stopColor="#333333" />
-                  <stop offset="25%" stopColor="#404040" />
-                  <stop offset="30%" stopColor="#4d4d4d" />
-                  <stop offset="35%" stopColor="#595959" />
-                  <stop offset="40%" stopColor="#666666" />
-                  <stop offset="45%" stopColor="#737373" />
-                  <stop offset="50%" stopColor="#808080" />
-                  <stop offset="55%" stopColor="#8c8c8c" />
-                  <stop offset="60%" stopColor="#999999" />
-                  <stop offset="65%" stopColor="#a6a6a6" />
-                  <stop offset="70%" stopColor="#b3b3b3" />
-                  <stop offset="75%" stopColor="#bfbfbf" />
-                  <stop offset="80%" stopColor="#cccccc" />
-                  <stop offset="85%" stopColor="#d9d9d9" />
-                  <stop offset="90%" stopColor="#e6e6e6" />
-                  <stop offset="95%" stopColor="#f2f2f2" />
-                  <stop offset="100%" stopColor="#fafafa" />
-                </linearGradient>
-                {/* Bottom grey: same 50-shade scale */}
-                <linearGradient id="gGreyBot" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#050505" />
-                  <stop offset="5%" stopColor="#0d0d0d" />
-                  <stop offset="10%" stopColor="#1a1a1a" />
-                  <stop offset="15%" stopColor="#262626" />
-                  <stop offset="20%" stopColor="#333333" />
-                  <stop offset="25%" stopColor="#404040" />
-                  <stop offset="30%" stopColor="#4d4d4d" />
-                  <stop offset="35%" stopColor="#595959" />
-                  <stop offset="40%" stopColor="#666666" />
-                  <stop offset="45%" stopColor="#737373" />
-                  <stop offset="50%" stopColor="#808080" />
-                  <stop offset="55%" stopColor="#8c8c8c" />
-                  <stop offset="60%" stopColor="#999999" />
-                  <stop offset="65%" stopColor="#a6a6a6" />
-                  <stop offset="70%" stopColor="#b3b3b3" />
-                  <stop offset="75%" stopColor="#bfbfbf" />
-                  <stop offset="80%" stopColor="#cccccc" />
-                  <stop offset="85%" stopColor="#d9d9d9" />
-                  <stop offset="90%" stopColor="#e6e6e6" />
-                  <stop offset="95%" stopColor="#f2f2f2" />
-                  <stop offset="100%" stopColor="#fafafa" />
-                </linearGradient>
-                {/* 3rd Eye glow — subtle gold at convergence */}
-                <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="6%">
-                  <stop offset="0%" stopColor="rgba(201,168,76,0.3)" />
-                  <stop offset="50%" stopColor="rgba(201,168,76,0.06)" />
-                  <stop offset="100%" stopColor="transparent" />
-                </radialGradient>
-              </defs>
-
-              {/* The four triangles */}
-              <polygon points="0,0 50,50 0,100" fill="url(#gBlack)" />
-              <polygon points="100,0 50,50 100,100" fill="url(#gWhite)" />
-              <polygon points="0,0 50,50 100,0" fill="url(#gGreyTop)" />
-              <polygon points="0,100 50,50 100,100" fill="url(#gGreyBot)" />
-
-              {/* 3rd Eye — just a breath of gold at the convergence point */}
-              <circle cx="50" cy="50" r="6" fill="url(#eyeGlow2)">
-                <animate attributeName="r" values="5;8;5" dur="6s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.6;1;0.6" dur="6s" repeatCount="indefinite" />
-              </circle>
-              <ellipse cx="50" cy="50" rx="3" ry="1.5" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="0.2">
-                <animate attributeName="ry" values="1.2;2;1.2" dur="5s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite" />
-              </ellipse>
-              <circle cx="50" cy="50" r="0.7" fill="rgba(201,168,76,0.6)">
-                <animate attributeName="r" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="50" cy="50" r="0.25" fill="rgba(255,255,255,0.8)">
-                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
-              </circle>
-            </svg>
+          <div style={{ ...fullScreen, background: "#000", overflow: "hidden" }}>
+            <PrismFan />
           </div>
         );
       })()}
