@@ -60,7 +60,11 @@ export default function TheoryOfEverything() {
       return () => clearTimeout(t);
     }
     if (landingPhase === 2) {
-      const t = setTimeout(() => goDeeper(), 1000);          // PHI⁰ = 1.0s
+      // Skip the fading overlay — go straight to multiverse
+      const t = setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+        setDepth(1);
+      }, 1000);  // PHI⁰ = 1.0s
       return () => clearTimeout(t);
     }
   }, [depth, landingPhase, goDeeper]);
@@ -576,7 +580,7 @@ export default function TheoryOfEverything() {
         // Phase 1: PURE BLACK
         if (phase === 1) {
           return (
-            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
+            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.3s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
@@ -592,7 +596,7 @@ export default function TheoryOfEverything() {
 
         // Phase 2: THE PRISM
         return (
-          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
+          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 0.4s ease" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
               animation: `prismSpin 120s linear infinite ${spinCW.current ? "" : "reverse"}`,
