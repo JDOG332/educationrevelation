@@ -1874,7 +1874,7 @@ export default function TheoryOfEverything() {
               { key: "web", icon: "🕸️", title: "THE WEB", hook: "One string shakes. The whole web feels it. You are the ocean.", accent: "140,180,220" },
               { key: "search", icon: "🧭", title: "THE SEARCH", hook: "The looking IS the finding. The search tiles us together.", accent: "180,160,120" },
               { key: "letgo", icon: "🔔", title: "LET GO", hook: "Stop controlling. Start feeling. The ocean carries you.", accent: "170,140,200" },
-              { key: "breath", icon: "🙌", title: "THE BREATH", hook: "Same air. Since the beginning. One big living lung.", accent: "100,200,160" },
+              { key: "breath", icon: "🌬️", title: "THE BREATH", hook: "Chi. Life energy. One big living lung. Signal out, signal back.", accent: "100,200,160" },
               { key: "root", icon: "🌌", title: "THE ROOT", hook: "The Starting Spark. You are the universe looking at itself.", accent: "200,180,255" },
               { key: "eye", icon: "🧠", title: "THE EYE", hook: "Your mind is a mirror. You are the part that woke up.", accent: "220,200,140" },
               { key: "bones", icon: "🔬", title: "THE BONES", hook: "Nothing is separate. Everything vibrates the same energy.", accent: "100,160,220" },
@@ -3512,12 +3512,12 @@ export default function TheoryOfEverything() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
             {[
-              { icon: "👂", sense: "SOUND", text: "Close your eyes. Listen to your own heartbeat. It is the same rhythm as the person next to you. It is the drum of the world." },
-              { icon: "👃", sense: "SMELL", text: "Step outside after it rains. That fresh smell is the earth breathing with you. It smells the same to everyone, everywhere." },
-              { icon: "👅", sense: "TASTE", text: "Drink a glass of plain water. It is the same water that has traveled through clouds and rivers for billions of years. You are tasting history." },
-              { icon: "✋", sense: "TOUCH", text: "Put your hand on a cool stone or a tree trunk. Feel the solidness. It is holding onto the earth just like you are." },
-              { icon: "👁️", sense: "SIGHT", text: "Look at a flickering candle flame. It moves like it's dancing. No matter where you are in the world, fire looks and acts exactly the same." },
-              { icon: "🧘", sense: "THE 6TH", text: "Stand tall and reach your arms out wide. Feel how much space you take up. Now imagine everyone else doing the same until all our hands touch. You are a puzzle piece that fits perfectly into the world." },
+              { icon: "👂", sense: "SOUND", text: "Listen to the wind blowing through the trees. It is the sound of the earth breathing. Close your eyes — your heartbeat is the same rhythm as the person next to you." },
+              { icon: "👃", sense: "SMELL", text: "Step outside and take a deep breath of fresh air after it rains. That smell is the earth exhaling with you. It smells the same to everyone, everywhere." },
+              { icon: "👅", sense: "TASTE", text: "Drink a glass of crisp, cold water and feel how it wakes up your mouth and throat. It is the same water that has traveled through clouds and rivers for billions of years." },
+              { icon: "✋", sense: "TOUCH", text: "Place your hand on your belly. Feel it expand like a balloon as you breathe in, and deflate as you breathe out. That rhythm is as old as life itself." },
+              { icon: "👁️", sense: "SIGHT", text: "Watch a candle flame flicker, or watch the leaves on a tree move in the breeze. No matter where you are in the world, fire and wind behave exactly the same." },
+              { icon: "🧘", sense: "THE 6TH", text: "Stand with your feet flat on the ground. Feel how gravity pulls you down while your breath lifts your chest up. You are taking the outside world and making it part of your inside world. That feeling of calm, buzzing alertness is your chi waking up." },
             ].map((s, i) => (
               <div key={i} style={{
                 display: "flex", gap: Math.round(8 * PHI), alignItems: "flex-start",
@@ -3541,9 +3541,42 @@ export default function TheoryOfEverything() {
             ))}
           </div>
 
-          {/* The Golden Thread */}
+          {/* CHI — the science of life energy */}
           <div style={{
             textAlign: "center", marginTop: Math.round(21 * PHI),
+            padding: `${Math.round(13 * PHI)}px`,
+            background: "rgba(100,200,160,0.02)",
+            borderRadius: 10,
+            border: "1px solid rgba(100,200,160,0.06)",
+          }}>
+            <div style={{ fontSize: 36, marginBottom: Math.round(5 * PHI) }}>🌬️</div>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 4,
+              color: "rgba(100,200,160,0.4)", marginBottom: Math.round(8 * PHI),
+            }}>CHI · YOUR LIFE ENERGY</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 20px)",
+              lineHeight: 2.0, color: "rgba(232,232,240,0.6)",
+              fontStyle: "italic", maxWidth: 480, margin: "0 auto",
+              marginBottom: Math.round(8 * PHI),
+            }}>
+              The number one thing you can do to boost your chi — your life energy — is deep, mindful breathing. While chi is an ancient idea, science shows that pulling deep breaths into your belly gives your brain oxygen, calms your nerves, and wakes up your body. It is the easiest way to pull fresh energy from the world into yourself.
+            </div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.8vw, 18px)",
+              color: "rgba(232,232,240,0.45)", fontStyle: "italic",
+              lineHeight: 1.8,
+            }}>
+              Signal goes out. Comes back same.
+              <br />Exhale. Inhale. Mirror loop.
+            </div>
+          </div>
+
+          {/* The Golden Thread */}
+          <div style={{
+            textAlign: "center", marginTop: Math.round(13 * PHI),
             padding: `${Math.round(10 * PHI)}px`,
             background: "rgba(100,200,160,0.02)",
             borderRadius: 10,
@@ -3555,15 +3588,15 @@ export default function TheoryOfEverything() {
             }}>THE GOLDEN THREAD</div>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(24px, 4vw, 31px)",
-              lineHeight: PHI, color: "rgba(232,232,240,0.65)",
+              fontSize: "clamp(15px, 3vw, 20px)",
+              lineHeight: 2.0, color: "rgba(232,232,240,0.65)",
               fontStyle: "italic", maxWidth: 460, margin: "0 auto",
             }}>
               The next time you take a deep breath, don't just feel your chest move. Imagine a golden thread pulling air from the sky, through your nose, into your heart, and back out to the trees. You aren't just in the world — you are the world breathing.
             </div>
           </div>
 
-          {/* Dig Deeper */}
+          {/* Dig Deeper — real links */}
           <div style={{
             marginTop: Math.round(13 * PHI),
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
@@ -3577,11 +3610,20 @@ export default function TheoryOfEverything() {
                 fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 3,
                 color: "rgba(100,200,160,0.3)", marginBottom: 8,
               }}>DIG DEEPER · INFO</div>
-              {["How Oxygen Travels the World", "Science of Deep Breathing", "Connected by Atoms"].map((link, i) => (
-                <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                  color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
-                }}>{link}</div>
+              {[
+                { label: "Breath Control & Stress Response", url: "https://www.health.harvard.edu/mind-and-mood/relaxation-techniques-breath-control-helps-quell-errant-stress-response" },
+                { label: "Diaphragmatic Breathing", url: "https://my.clevelandclinic.org/health/articles/9445-diaphragmatic-breathing" },
+                { label: "Qigong: Moving Meditation", url: "https://www.nccih.nih.gov/health/qigong-what-you-need-to-know" },
+              ].map((link, i) => (
+                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" style={{
+                  display: "block",
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 2.5vw, 18px)",
+                  color: "rgba(100,200,160,0.5)", fontStyle: "italic", lineHeight: 1.8,
+                  textDecoration: "none", transition: "color 0.3s",
+                }}
+                  onMouseEnter={e => e.target.style.color = "rgba(100,200,160,0.8)"}
+                  onMouseLeave={e => e.target.style.color = "rgba(100,200,160,0.5)"}
+                >{link.label}</a>
               ))}
             </div>
             <div style={{
@@ -3592,16 +3634,21 @@ export default function TheoryOfEverything() {
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 3,
                 color: "rgba(100,200,160,0.3)", marginBottom: 8,
-              }}>DIG DEEPER · RHYTHM</div>
+              }}>DIG DEEPER · MUSIC</div>
               {[
-                "\"TESTIFY\" — NEEDTOBREATHE",
-                "\"Three Little Birds\" — Bob Marley",
-                "\"What a Wonderful World\" — Armstrong",
+                { label: "\"Breathe (In the Air)\" — Pink Floyd", url: "https://www.youtube.com/watch?v=mrojrDCI02k" },
+                { label: "\"Here Comes The Sun\" — The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+                { label: "\"Three Little Birds\" — Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" },
               ].map((song, i) => (
-                <div key={i} style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                  color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.8,
-                }}>{song}</div>
+                <a key={i} href={song.url} target="_blank" rel="noopener noreferrer" style={{
+                  display: "block",
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 2.5vw, 18px)",
+                  color: "rgba(232,232,240,0.5)", fontStyle: "italic", lineHeight: 1.8,
+                  textDecoration: "none", transition: "color 0.3s",
+                }}
+                  onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+                  onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.5)"}
+                >{song.label}</a>
               ))}
             </div>
           </div>
