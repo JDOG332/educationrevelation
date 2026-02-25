@@ -120,8 +120,8 @@ export default function TheoryOfEverything() {
       w1.style.opacity = vis1 > 0.001 ? vis1 : 0;
       w1.style.transform = `scale(${scale1})`;
 
-      // Phase 2: black words growing on white
-      const scale2 = p2 < 0.001 ? 0.15 : 0.15 + Math.pow(p2, 0.7) * 5.5;
+      // Phase 2: black words START large (fully zoomed in)
+      const scale2 = 0.15 + 5.5;
       const alpha2 = Math.min(1, p2 * 5);
       w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
       w2.style.transform = `scale(${scale2})`;
