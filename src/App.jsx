@@ -601,7 +601,7 @@ export default function TheoryOfEverything() {
           <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 0.5s ease" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
-              animation: `prismSpin 120s linear infinite ${spinCW.current ? "" : "reverse"}`,
+              animation: `prismSpin 8s linear infinite ${spinCW.current ? "" : "reverse"}`,
               transformOrigin: "center center",
             }}>
               <defs>
