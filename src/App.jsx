@@ -80,8 +80,8 @@ export default function TheoryOfEverything() {
 
     const SILENCE = 1.618;
     const PHASE1  = 4.236;
-    const PHASE2  = 2.236;
-    const TOTAL   = SILENCE + PHASE1 + PHASE2; // 8.09s
+    const PHASE2  = 4.236;   // mirror — same duration as phase 1
+    const TOTAL   = SILENCE + PHASE1 + PHASE2; // 10.09s
 
     function tick(now) {
       if (!veilStartRef.current) veilStartRef.current = now;
@@ -120,9 +120,9 @@ export default function TheoryOfEverything() {
       w1.style.opacity = vis1 > 0.001 ? vis1 : 0;
       w1.style.transform = `scale(${scale1})`;
 
-      // Phase 2: black words START large (fully zoomed in)
-      const scale2 = 0.15 + 5.5;
-      const alpha2 = Math.min(1, p2 * 5);
+      // Phase 2: black words SHRINK from large→small (mirror of phase 1)
+      const scale2 = 0.15 + (1 - Math.pow(p2, 1.15)) * 5.5;
+      const alpha2 = Math.min(1, (1 - p2) * 5);
       w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
       w2.style.transform = `scale(${scale2})`;
 
