@@ -119,24 +119,12 @@ export default function TheoryOfEverything() {
       const vis1 = alpha1 * fade1;
       w1.style.opacity = vis1 > 0.001 ? vis1 : 0;
       w1.style.transform = `scale(${scale1})`;
-      if (p1 > 0.3 && fade1 > 0.01) {
-        const g1 = 0.4 * p1 * fade1;
-        const g2 = 0.15 * p1 * fade1;
-        w1.style.textShadow = `0 0 ${60*p1}px rgba(255,255,255,${g1}), 0 0 ${180*p1}px rgba(255,255,255,${g2})`;
-      } else {
-        w1.style.textShadow = "none";
-      }
 
       // Phase 2: black words growing on white
       const scale2 = p2 < 0.001 ? 0.15 : 0.15 + Math.pow(p2, 0.7) * 5.5;
       const alpha2 = Math.min(1, p2 * 5);
       w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
       w2.style.transform = `scale(${scale2})`;
-      if (p2 > 0.3) {
-        w2.style.textShadow = `0 0 ${60*p2}px rgba(0,0,0,${0.25*p2}), 0 0 ${150*p2}px rgba(0,0,0,${0.08*p2})`;
-      } else {
-        w2.style.textShadow = "none";
-      }
 
       veilFrameRef.current = requestAnimationFrame(tick);
     }
@@ -831,7 +819,7 @@ export default function TheoryOfEverything() {
             padding: "0 10%",
             opacity: 0,
             transform: "scale(0.15)",
-            willChange: "transform, opacity, text-shadow",
+            willChange: "transform, opacity",
           }}>
             ...we believe in a multiverse<br />where all dreams come true...
           </div>
@@ -847,7 +835,7 @@ export default function TheoryOfEverything() {
             padding: "0 10%",
             opacity: 0,
             transform: "scale(0.15)",
-            willChange: "transform, opacity, text-shadow",
+            willChange: "transform, opacity",
           }}>
             ...we believe we are just one<br />tiny glimpse of those dreams...
           </div>
