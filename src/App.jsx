@@ -122,17 +122,12 @@ export default function TheoryOfEverything() {
       const scale = 0.15 + progress * 5.5;
       words.style.transform = `scale(${scale})`;
 
-      // Words: color flips at the peak
-      // Phase 1: white text on darkening bg
-      // Phase 2: black text on brightening bg (but going dark)
-      // The text color needs to contrast the background
-      if (inPhase1) {
-        const alpha = Math.min(1, curved * 5);
-        words.style.color = `rgba(255,255,255,${alpha})`;
-      } else {
-        const alpha = Math.min(1, t * 5);
-        words.style.color = `rgba(0,0,0,${alpha})`;
-      }
+      // Words: color is always the inverse of the background
+      // bg=black(0) → text=white(255). bg=white(255) → text=black(0).
+      // This guarantees contrast at every single frame.
+      const textLum = 255 - (lum|0);
+      const alpha = inPhase1 ? Math.min(1, curved * 5) : Math.min(1, t * 5);
+      words.style.color = `rgba(${textLum},${textLum},${textLum},${alpha})`;
 
       veilFrameRef.current = requestAnimationFrame(tick);
     }
