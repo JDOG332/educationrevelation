@@ -48,6 +48,39 @@ export default function TheoryOfEverything() {
   const spinCW = useRef(Math.random() < 0.5);   // coin flip: prism spins clockwise or counter
   const poemSeen = useRef(false);
 
+  // Auto-advance landing phases — no clicks needed, the site breathes them through
+  useEffect(() => {
+    if (depth !== 0) return;
+    if (landingPhase === 0) {
+      const t = setTimeout(() => setLandingPhase(1), 3000); // white → black after 3s
+      return () => clearTimeout(t);
+    }
+    if (landingPhase === 1) {
+      const t = setTimeout(() => setLandingPhase(2), 3000); // black → prism after 3s
+      return () => clearTimeout(t);
+    }
+    if (landingPhase === 2) {
+      const t = setTimeout(() => goDeeper(), 5000); // prism → multiverse after 5s
+      return () => clearTimeout(t);
+    }
+  }, [depth, landingPhase, goDeeper]);
+
+  // Auto-advance poem page — after the poem settles, hold 15s then pull them deeper
+  useEffect(() => {
+    if (depth === 2 && poemPhase === 5) {
+      const t = setTimeout(() => goDeeper(), 15000);
+      return () => clearTimeout(t);
+    }
+  }, [depth, poemPhase, goDeeper]);
+
+  // Auto-advance pact page — 10s to absorb the octahedron, then onward
+  useEffect(() => {
+    if (depth === 3) {
+      const t = setTimeout(() => goDeeper(), 10000);
+      return () => clearTimeout(t);
+    }
+  }, [depth, goDeeper]);
+
   // Poem zoom-out sequence — timed to hold interest without losing suspense
   // Skip the sequence if the user has already seen it this session
   useEffect(() => {
@@ -397,31 +430,8 @@ export default function TheoryOfEverything() {
       {/* ===== THEORY PAGE (original content) ===== */}
       {currentPage === "theory" && (<>
 
-      {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
-      {/* Left half = go back. Right half = go forward. */}
-      {/* Active on depths 1-3 only. Depth 4 has door cards. Depth 5 has loop-back. */}
-      {depth >= 1 && depth <= 3 && (
-        <>
-          <div
-            onClick={(e) => { e.stopPropagation(); goBack(); }}
-            style={{
-              position: "fixed", top: 0, left: 0,
-              width: "50%", height: "88%",
-              zIndex: 9000, cursor: "pointer",
-              background: "transparent",
-            }}
-          />
-          <div
-            onClick={(e) => { e.stopPropagation(); goDeeper(); }}
-            style={{
-              position: "fixed", top: 0, right: 0,
-              width: "50%", height: "88%",
-              zIndex: 9000, cursor: "pointer",
-              background: "transparent",
-            }}
-          />
-        </>
-      )}
+      {/* ===== GLOBAL LEFT/RIGHT NAVIGATION — REMOVED ===== */}
+      {/* Depths 0-3 are now fully automatic. No clicks needed. */}
 
       {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
       {/* Root-level so it escapes all stacking contexts */}
@@ -532,23 +542,17 @@ export default function TheoryOfEverything() {
       {depth === 0 && (() => {
         const phase = landingPhase;
 
-        const handleClick = () => {
-          if (phase === 0) setLandingPhase(1);
-          else if (phase === 1) setLandingPhase(2);
-          else goDeeper();
-        };
-
         // SHARED: position fixed, full-screen, ABOVE EVERYTHING (z-index 10000)
         const fullScreen = {
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-          zIndex: 10000, cursor: "pointer",
+          zIndex: 10000, cursor: "default",
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         };
 
         // Phase 0: PURE WHITE — "close your eyes & click"
         if (phase === 0) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#ffffff" }}>
+            <div style={{ ...fullScreen, background: "#ffffff" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
@@ -557,7 +561,7 @@ export default function TheoryOfEverything() {
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 1.5s 0.5s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>close your eyes &amp; click</div>
+              }}>close your eyes</div>
             </div>
           );
         }
@@ -565,7 +569,7 @@ export default function TheoryOfEverything() {
         // Phase 1: PURE BLACK — "open your eyes & click"
         if (phase === 1) {
           return (
-            <div onClick={handleClick} style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
+            <div style={{ ...fullScreen, background: "#000000", animation: "fadeIn 0.8s ease" }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(28px, 5.5vw, 42px)",
@@ -574,14 +578,14 @@ export default function TheoryOfEverything() {
                 letterSpacing: "0.15em",
                 animation: "fadeSlideUp 1.5s 0.3s both ease",
                 textAlign: "center", userSelect: "none",
-              }}>open your eyes &amp; click</div>
+              }}>open your eyes</div>
             </div>
           );
         }
 
         // Phase 2: THE PRISM — no words. Just the spectrum. Let the eyes do the work.
         return (
-          <div onClick={handleClick} style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
+          <div style={{ ...fullScreen, background: "#000", overflow: "hidden", animation: "fadeIn 1.2s ease" }}>
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{
               position: "absolute", top: "-50%", left: "-50%", width: "200%", height: "200%",
               animation: `prismSpin 120s linear infinite ${spinCW.current ? "" : "reverse"}`,
@@ -702,12 +706,7 @@ export default function TheoryOfEverything() {
               </div>
             </div>
 
-            <div style={{
-              position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)",
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.5em",
-              color: "rgba(128,128,128,0.25)",
-              animation: "fadeSlideUp 2s 2.5s both ease",
-            }}>tap</div>
+            {/* removed tap hint — auto-advance now */}
           </div>
         );
       })()}
