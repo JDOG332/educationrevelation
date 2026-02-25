@@ -195,6 +195,10 @@ export default function TheoryOfEverything() {
         @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
         @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
+        @keyframes textShrinkAway {
+          0% { transform: scale(1); opacity: 1; }
+          100% { transform: scale(0.15); opacity: 0; }
+        }
         @keyframes starGlow { 0%, 100% { text-shadow: 0 0 8px rgba(201,168,76,0.3), 0 0 20px rgba(201,168,76,0.15); } 50% { text-shadow: 0 0 16px rgba(201,168,76,0.6), 0 0 40px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.15); } }
         @keyframes infinityRadiate { 0%, 100% { text-shadow: 0 0 30px rgba(201,168,76,0.2), 0 0 60px rgba(201,168,76,0.1); filter: drop-shadow(0 0 20px rgba(201,168,76,0.15)); } 50% { text-shadow: 0 0 60px rgba(201,168,76,0.5), 0 0 100px rgba(201,168,76,0.3), 0 0 140px rgba(201,168,76,0.15); filter: drop-shadow(0 0 50px rgba(201,168,76,0.3)); } }
         @keyframes breathe {
@@ -1249,8 +1253,8 @@ export default function TheoryOfEverything() {
               elapsed += 1/60;
               ctx.clearRect(0, 0, W, H);
 
-              // Camera zoom — starts at t=4s, fully zoomed by t=11s
-              const zoomStart = 4, zoomEnd = 11;
+              // Camera zoom — starts at t=1s (synced with text shrink), fully zoomed by t=8s
+              const zoomStart = 1, zoomEnd = 8;
               const zoomProgress = Math.max(0, Math.min(1, (elapsed - zoomStart) / (zoomEnd - zoomStart)));
               const eased = zoomProgress * zoomProgress * (3 - 2 * zoomProgress); // smoothstep
               const targetZoom = 5;
@@ -1375,7 +1379,7 @@ export default function TheoryOfEverything() {
             function loop() {
               simulate(); draw();
               // Auto-transition to depth 2 when zoom completes
-              if (elapsed > 12 && !transitioned) {
+              if (elapsed > 9 && !transitioned) {
                 transitioned = true;
                 goDeeper();
                 return;
@@ -1404,12 +1408,12 @@ export default function TheoryOfEverything() {
               <DreamMultiverse729 />
             </div>
 
-            {/* Text overlay — fades as zoom begins */}
+            {/* Text overlay — holds 1s then shrinks as we zoom out */}
             <div style={{
               position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
               display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
               pointerEvents: "none", zIndex: 10,
-              animation: "fadeSlideUp 0.5s ease, textOverlayFade 3s 4s both ease",
+              animation: "textShrinkAway 3s 1s both cubic-bezier(0.23,1,0.32,1)",
             }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -1419,7 +1423,7 @@ export default function TheoryOfEverything() {
                 textAlign: "center", maxWidth: 520,
                 lineHeight: PHI, letterSpacing: 1.5,
                 textShadow: "0 0 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)",
-                animation: "fadeSlideUp 2s 0.3s both ease",
+                animation: "fadeSlideUp 0.5s both ease",
                 padding: "0 24px",
               }}>
                 "...we believe in a multiverse<br />where dreams come true..."
