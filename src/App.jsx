@@ -823,7 +823,7 @@ export default function TheoryOfEverything() {
             const totalH = scroller.scrollHeight;
             const viewH = container.clientHeight;
             const scrollDist = totalH + viewH;
-            const DURATION = 55 * 1000;
+            const DURATION = 80 * 1000; // ~80 seconds — slow enough to read, feel, breathe
             const PAUSE_BETWEEN = 1000; // 1 second between loops
 
             // CRITICAL: start fully below viewport so nothing flashes
