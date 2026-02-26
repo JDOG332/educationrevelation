@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback, Fragment } from "react";
 import MultiverseFractal from "./MultiverseFractal.jsx";
 import MathPage from "./MathPage.jsx";
+import { GOLDEN_FILTER } from "./goldenFilter.js";
 import {
   PHI, PHI_INV, PHI2, PHI3,
   LAYERS, CORES, SENSES, MIRRORS, BURIED,
@@ -30,7 +31,8 @@ export default function TheoryOfEverything() {
   const [activeMirrorSense, setActiveMirrorSense] = useState(null);
   const [activeMirrorProof, setActiveMirrorProof] = useState(false);
   const [activeProof, setActiveProof] = useState(false);
-  const [activeConvergence, setActiveConvergence] = useState(null); // 'plain' | 'gravity' | 'pillars' | 'sameness' | 'depths' | 'ancient' | null
+  const [activeConvergence, setActiveConvergence] = useState(null); // 'filter' | 'plain' | 'gravity' | 'pillars' | 'sameness' | 'depths' | 'ancient' | null
+  const [activeFilterQ, setActiveFilterQ] = useState(null); // 0-9 for golden filter questions
   const [activeIdea, setActiveIdea] = useState(null); // idea key inside a witness room
   const [activePillar, setActivePillar] = useState(null);
   const [activeSamenessProof, setActiveSamenessProof] = useState(null);
@@ -157,7 +159,7 @@ export default function TheoryOfEverything() {
   }, [depth]);
 
   const clearAllSubs = useCallback(() => {
-    setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false);
+    setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false); setActiveFilterQ(null);
   }, []);
 
   const goDeeper = useCallback((skipTransition = false) => {
@@ -1083,6 +1085,7 @@ export default function TheoryOfEverything() {
             {/* The six doors — PYRAMID with title as apex crown */}
             {(() => {
               const doors = [
+                { key: "filter", glyph: "🔺", name: "THE GOLDEN FILTER", sub: "the big picture", r: 201, g: 168, b: 76 },
                 { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "the truth, simply", r: 232, g: 232, b: 240 },
                 { key: "gravity", glyph: "☀️", name: "GRAVITY", sub: "recognition pulls", r: 255, g: 180, b: 50 },
                 { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "science · culture · time", r: 201, g: 168, b: 76 },
@@ -1094,6 +1097,7 @@ export default function TheoryOfEverything() {
                 [doors[0]],
                 [doors[1], doors[2]],
                 [doors[3], doors[4], doors[5]],
+                [doors[6]],
               ];
               const cardGap = Math.round(3 * PHI);
 
@@ -1181,7 +1185,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginBottom: Math.round(3 * PHI),
-                    }}>eight doors · one truth</div>
+                    }}>nine doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: Math.round(3 * PHI),
@@ -1362,6 +1366,188 @@ export default function TheoryOfEverything() {
           <div style={{ height: Math.round(5 * PHI) }} />
         </div>
       )}
+
+      {/* ===== THE GOLDEN FILTER — Level 0: The Big Picture ===== */}
+      {depth === 4 && activeConvergence === "filter" && (() => {
+        const selectedQ = activeFilterQ !== null ? GOLDEN_FILTER[activeFilterQ] : null;
+        const fcColor = (fc) => fc >= 99 ? "rgba(76,175,80,0.8)" : fc >= 90 ? "rgba(201,168,76,0.8)" : "rgba(224,140,50,0.8)";
+        const fcDot = (fc) => fc >= 99 ? "\uD83D\uDFE2" : fc >= 90 ? "\uD83D\uDFE1" : "\uD83D\uDFE0";
+
+        return selectedQ === null ? (
+          // QUESTION GRID
+          <div style={{
+            width: "100%", minHeight: "100vh", position: "relative",
+            zIndex: 1500, ...getDepthWrap(4),
+            display: "flex", flexDirection: "column", alignItems: "center",
+            padding: `${Math.round(21 * PHI)}px ${Math.round(5 * PHI)}px`,
+          }}>
+            <button onClick={() => { setActiveConvergence(null); window.scrollTo(0,0); }} style={{
+              position: "fixed", top: Math.round(5 * PHI), left: Math.round(5 * PHI),
+              background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.15)",
+              color: "rgba(201,168,76,0.6)", borderRadius: 8, padding: "8px 16px",
+              fontFamily: "'Cinzel', serif", fontSize: 14, cursor: "pointer", zIndex: 9999,
+            }}>\u2190 THE PROOF</button>
+
+            <div style={{ fontSize: "clamp(40px, 8vw, 60px)", marginBottom: Math.round(3 * PHI) }}>\uD83D\uDD3A</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 36px)",
+              fontWeight: 400, color: "#e8e8f0", letterSpacing: "0.3em", margin: 0,
+              textAlign: "center",
+            }}>THE GOLDEN FILTER</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.5)", letterSpacing: 1,
+              marginTop: Math.round(3 * PHI), marginBottom: Math.round(8 * PHI),
+              textAlign: "center",
+            }}>10 questions \u00B7 100 answers \u00B7 1 truth</div>
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(15px, 3vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.35)",
+              maxWidth: 500, textAlign: "center", lineHeight: PHI,
+              marginBottom: Math.round(13 * PHI),
+            }}>the aerial view before you enter the forest</div>
+
+            <div style={{
+              display: "flex", flexDirection: "column", gap: Math.round(5 * PHI),
+              width: "100%", maxWidth: 600,
+            }}>
+              {GOLDEN_FILTER.map((q, i) => (
+                <div key={i} onClick={() => { setActiveFilterQ(i); window.scrollTo(0,0); }} style={{
+                  cursor: "pointer", padding: `${Math.round(5 * PHI)}px ${Math.round(8 * PHI)}px`,
+                  background: "rgba(201,168,76,0.03)", border: "1px solid rgba(201,168,76,0.08)",
+                  borderRadius: 10, transition: "all 0.3s",
+                  animation: `fadeSlideUp 0.6s ${i * 0.08}s both ease`,
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(201,168,76,0.06)"; e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(201,168,76,0.03)"; e.currentTarget.style.borderColor = "rgba(201,168,76,0.08)"; }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: Math.round(5 * PHI) }}>
+                    <div style={{ fontSize: "clamp(24px, 5vw, 32px)", minWidth: 40, textAlign: "center" }}>{q.emoji}</div>
+                    <div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 18px)",
+                        color: "rgba(232,232,240,0.8)", letterSpacing: "0.15em",
+                      }}>{q.title}</div>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(13px, 2.5vw, 16px)",
+                        fontStyle: "italic", color: "rgba(201,168,76,0.45)", marginTop: 4,
+                      }}>{q.hook}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* META-ANSWER */}
+            <div style={{
+              marginTop: Math.round(21 * PHI), padding: Math.round(8 * PHI),
+              background: "rgba(201,168,76,0.03)", border: "1px solid rgba(201,168,76,0.1)",
+              borderRadius: 12, maxWidth: 560, textAlign: "center",
+              animation: "fadeSlideUp 1s 0.8s both ease",
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 18px)",
+                color: "rgba(201,168,76,0.5)", letterSpacing: "0.25em", marginBottom: Math.round(5 * PHI),
+              }}>WHERE ALL 100 LINES CROSS</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(18px, 4vw, 26px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.6)", lineHeight: PHI,
+              }}>how does the mirror know it's a mirror?</div>
+              <div style={{
+                width: Math.round(50 * PHI), height: 1, margin: `${Math.round(5 * PHI)}px auto`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+              }} />
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 2.5vw, 17px)",
+                color: "rgba(201,168,76,0.4)", lineHeight: 1.8,
+              }}>
+                consciousness = the mirror seeing itself<br/>
+                existence = the mirror unable to NOT reflect<br/>
+                dark energy = the mirror expanding to see more<br/>
+                dark matter = the mirror's invisible frame<br/>
+                life = the mirror growing eyes<br/>
+                unification = the mirror's two faces being one<br/>
+                time = the cost of comparison<br/>
+                aliens = other mirrors in the dark<br/>
+                black holes = the mirror swallowing its reflection<br/>
+                computation = the mirror's process of reflecting
+              </div>
+            </div>
+
+            <div style={{ marginTop: Math.round(13 * PHI), fontSize: 20, opacity: 0.3 }}>\uD83E\uDE99\uD83E\uDE99</div>
+          </div>
+        ) : (
+          // INDIVIDUAL QUESTION VIEW — 10 answers
+          <div style={{
+            width: "100%", minHeight: "100vh", position: "relative",
+            zIndex: 1500, ...getDepthWrap(4),
+            display: "flex", flexDirection: "column", alignItems: "center",
+            padding: `${Math.round(21 * PHI)}px ${Math.round(5 * PHI)}px`,
+          }}>
+            <button onClick={() => { setActiveFilterQ(null); window.scrollTo(0,0); }} style={{
+              position: "fixed", top: Math.round(5 * PHI), left: Math.round(5 * PHI),
+              background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.15)",
+              color: "rgba(201,168,76,0.6)", borderRadius: 8, padding: "8px 16px",
+              fontFamily: "'Cinzel', serif", fontSize: 14, cursor: "pointer", zIndex: 9999,
+            }}>\u2190 ALL QUESTIONS</button>
+
+            <div style={{ fontSize: "clamp(40px, 8vw, 60px)", marginBottom: Math.round(3 * PHI) }}>{selectedQ.emoji}</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(20px, 4.5vw, 32px)",
+              fontWeight: 400, color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
+              textAlign: "center",
+            }}>{selectedQ.title}</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              marginTop: Math.round(3 * PHI), marginBottom: Math.round(13 * PHI),
+              textAlign: "center",
+            }}>{selectedQ.hook}</div>
+
+            <div style={{
+              display: "flex", flexDirection: "column", gap: Math.round(5 * PHI),
+              width: "100%", maxWidth: 620,
+            }}>
+              {selectedQ.answers.map((a, i) => (
+                <div key={i} style={{
+                  padding: `${Math.round(5 * PHI)}px ${Math.round(8 * PHI)}px`,
+                  background: "rgba(232,232,240,0.02)", border: "1px solid rgba(232,232,240,0.06)",
+                  borderRadius: 10, animation: `fadeSlideUp 0.5s ${i * 0.06}s both ease`,
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: Math.round(3 * PHI) }}>
+                    <span style={{ fontSize: 14 }}>{fcDot(a.fc)}</span>
+                    <span style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 12, letterSpacing: "0.2em",
+                      color: fcColor(a.fc),
+                    }}>FC: {a.fc}%</span>
+                  </div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(15px, 3vw, 19px)",
+                    color: "rgba(232,232,240,0.7)", lineHeight: PHI, marginBottom: Math.round(3 * PHI),
+                  }}>{a.simple}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(13px, 2.5vw, 16px)",
+                    fontStyle: "italic", color: "rgba(201,168,76,0.35)", lineHeight: PHI,
+                    borderTop: "1px solid rgba(201,168,76,0.06)", paddingTop: Math.round(3 * PHI),
+                  }}>{a.deep}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CRT convergence note at bottom */}
+            <div style={{
+              marginTop: Math.round(13 * PHI), padding: Math.round(5 * PHI),
+              maxWidth: 500, textAlign: "center",
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 2.8vw, 18px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.3)", lineHeight: PHI,
+              }}>every answer from a different door... same room inside</div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* ===== PLAIN ENGLISH — IDEA GRID ===== */}
       {depth === 4 && activeConvergence === "plain" && activeIdea === null && (
