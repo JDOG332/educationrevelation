@@ -903,7 +903,7 @@ export default function TheoryOfEverything() {
             const viewH = container.clientHeight;
             const scrollDist = totalH + viewH;
             const DURATION = 55 * 1000;
-            const PAUSE_BETWEEN = 1618; // PHI seconds between loops
+            const PAUSE_BETWEEN = 1000; // 1 second between loops
 
             // CRITICAL: start fully below viewport so nothing flashes
             scroller.style.transform = `translateY(${viewH + 100}px)`;
