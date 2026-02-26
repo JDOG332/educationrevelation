@@ -1060,7 +1060,7 @@ export default function TheoryOfEverything() {
         );
       })()}
 
-      {/* ===== DEPTH 4 — THE CONVERGENCE CHAMBER ===== */}
+      {/* ===== DEPTH 4 — THE PROOF ===== */}
       {depth === 4 && activeConvergence === null && (
         <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
@@ -1070,51 +1070,6 @@ export default function TheoryOfEverything() {
           background: "#030306",
           ...getDepthWrap(4),
         }}>
-
-          {/* Chamber page navigation — back to Pact / forward to ∞ */}
-          <div onClick={(e) => { e.stopPropagation(); goBack(); }} style={{
-            position: "fixed", top: "50%", left: 8, transform: "translateY(-50%)",
-            zIndex: 9500, cursor: "pointer", padding: "20px 12px",
-            fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 14px)",
-            letterSpacing: 2, color: "rgba(232,232,240,0.15)",
-            transition: "color 0.4s",
-            writingMode: "vertical-rl", textOrientation: "mixed",
-          }}
-            onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
-            onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
-          >← THE PACT</div>
-          <div onClick={(e) => { e.stopPropagation(); goDeeper(); }} style={{
-            position: "fixed", top: "50%", right: 8, transform: "translateY(-50%)",
-            zIndex: 9500, cursor: "pointer", padding: "20px 12px",
-            fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2vw, 14px)",
-            letterSpacing: 2, color: "rgba(232,232,240,0.15)",
-            transition: "color 0.4s",
-            writingMode: "vertical-rl", textOrientation: "mixed",
-          }}
-            onMouseEnter={e => e.currentTarget.style.color = "rgba(232,232,240,0.5)"}
-            onMouseLeave={e => e.currentTarget.style.color = "rgba(232,232,240,0.15)"}
-          >∞ →</div>
-
-          {/* Triquetra — massive, ghostly, barely there */}
-          <div style={{
-            position: "fixed", top: "50%", left: "50%",
-            transform: "translate(-50%, -50%) scale(1)",
-            pointerEvents: "none", zIndex: 0,
-            opacity: 0.06,
-            filter: "blur(2px)",
-            animation: "gentleFloat 90s linear infinite",
-          }}>
-            <SacredTriquetra size={700} />
-          </div>
-
-          {/* Living breathing vertical line — the spine */}
-          <div style={{
-            position: "fixed", top: 0, left: "50%", width: 1, height: "100%",
-            transform: "translateX(-50%)",
-            background: "linear-gradient(180deg, transparent 5%, rgba(201,168,76,0.04) 30%, rgba(201,168,76,0.08) 50%, rgba(201,168,76,0.04) 70%, transparent 95%)",
-            pointerEvents: "none", zIndex: 0,
-            animation: "breathe 8s ease-in-out infinite",
-          }} />
 
           {/* Content */}
           <div style={{
@@ -1226,7 +1181,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginBottom: Math.round(3 * PHI),
-                    }}>six witnesses · one truth</div>
+                    }}>seven doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: Math.round(3 * PHI),
@@ -1242,7 +1197,7 @@ export default function TheoryOfEverything() {
                       background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(201,168,76,0.5) 100%)",
                       WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                       filter: "drop-shadow(0 0 20px rgba(201,168,76,0.06))",
-                    }}>THE CONVERGENCE<br />CHAMBER</h2>
+                    }}>THE PROOF</h2>
                     <div style={{
                       width: Math.round(50 * PHI), height: 1,
                       margin: `${Math.round(3 * PHI)}px auto 0`,
@@ -1364,7 +1319,7 @@ export default function TheoryOfEverything() {
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
             onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-          >← THE CONVERGENCE CHAMBER</button>
+          >← THE PROOF</button>
 
           <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
             <div style={{ fontSize: 50, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>⚖️</div>
@@ -4735,7 +4690,7 @@ export default function TheoryOfEverything() {
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
             onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-          >← THE CONVERGENCE CHAMBER</button>
+          >← THE PROOF</button>
 
           {/* Header */}
           <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
@@ -5210,7 +5165,7 @@ export default function TheoryOfEverything() {
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
             onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-          >← THE CONVERGENCE CHAMBER</button>
+          >← THE PROOF</button>
 
           {/* Header with Triquetra */}
           <div style={{ textAlign: "center", marginTop: 16, marginBottom: 20, position: "relative" }}>
@@ -5583,7 +5538,7 @@ export default function TheoryOfEverything() {
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
             onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-          >← THE CONVERGENCE CHAMBER</button>
+          >← THE PROOF</button>
 
           {/* Header with visual tension — split symbol */}
           <div style={{ textAlign: "center", marginTop: 16, marginBottom: 24, position: "relative" }}>
@@ -6052,7 +6007,7 @@ export default function TheoryOfEverything() {
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
             onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-          >← THE CONVERGENCE CHAMBER</button>
+          >← THE PROOF</button>
 
           {/* Header */}
           <div style={{ textAlign: "center", marginTop: 16, marginBottom: 24, position: "relative" }}>
@@ -7418,7 +7373,7 @@ export default function TheoryOfEverything() {
             }}
               onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
               onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-            >← THE CONVERGENCE CHAMBER</button>
+            >← THE PROOF</button>
 
             <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
               <div style={{ fontSize: 50, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>🪨</div>
