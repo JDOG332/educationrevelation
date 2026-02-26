@@ -893,12 +893,20 @@ export default function TheoryOfEverything() {
           const scrollRef = useRef(null);
           const startRef = useRef(null);
           const frameRef = useRef(null);
-          const doneRef = useRef(false);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
             const container = wheelRef.current;
             const scroller = scrollRef.current;
+
+            const totalH = scroller.scrollHeight;
+            const viewH = container.clientHeight;
+            const scrollDist = totalH + viewH;
+            const DURATION = 55 * 1000;
+            const PAUSE_BETWEEN = 3236; // ~2 × PHI seconds pause between loops
+
+            // CRITICAL: start fully below viewport so nothing flashes
+            scroller.style.transform = `translateY(${viewH + 100}px)`;
 
             // Wait for veil to part before starting
             const checkReady = () => {
@@ -906,39 +914,34 @@ export default function TheoryOfEverything() {
                 frameRef.current = requestAnimationFrame(checkReady);
                 return;
               }
-              // Small delay after veil parts
               setTimeout(() => {
+                startRef.current = null;
                 frameRef.current = requestAnimationFrame(tick);
-              }, 1618); // PHI milliseconds of silence before words begin
+              }, 1618);
             };
-
-            const totalH = scroller.scrollHeight;
-            const viewH = container.clientHeight;
-            // Total scroll distance: push all content from below viewport to above it
-            const scrollDist = totalH + viewH;
-            // Duration: 150 wpm ≈ 55 seconds for this poem
-            const DURATION = 55 * 1000;
 
             function tick(now) {
               if (!startRef.current) startRef.current = now;
               const elapsed = now - startRef.current;
               const t = Math.min(1, elapsed / DURATION);
 
-              // Smooth scroll — slight ease in/out
+              // Smooth ease in/out
               const eased = t < 0.02 ? t * t * (1/0.02) * 0.5
                 : t > 0.98 ? 1 - (1-t)*(1-t)*(1/0.02)*0.5
                 : t;
 
-              // Position: start fully below viewport, end fully above
               const y = viewH - eased * scrollDist;
               scroller.style.transform = `translateY(${y}px)`;
 
               if (t < 1) {
                 frameRef.current = requestAnimationFrame(tick);
-              } else if (!doneRef.current) {
-                doneRef.current = true;
-                // Auto-advance after the poem finishes + golden pause
-                setTimeout(() => goDeeper(), 2618);
+              } else {
+                // Loop: pause, then restart from below
+                scroller.style.transform = `translateY(${viewH + 100}px)`;
+                setTimeout(() => {
+                  startRef.current = null;
+                  frameRef.current = requestAnimationFrame(tick);
+                }, PAUSE_BETWEEN);
               }
             }
 
