@@ -1305,7 +1305,7 @@ export default function TheoryOfEverything() {
 
           </div>
 
-          {/* The equation — the FOUNDATION STONE the temple rests on */}
+          {/* HIT THE ROCK — the FOUNDATION STONE the temple rests on */}
           <div style={{
             width: "100%", maxWidth: 580,
             padding: "0 16px",
@@ -1313,7 +1313,57 @@ export default function TheoryOfEverything() {
             animation: "sacredReveal 1.8s 1.4s both ease",
             position: "relative", zIndex: 1500,
           }}>
-            <TheEquation size="sm" showLabel={false} breathing minimal />
+            <div
+              onClick={(e) => { e.stopPropagation(); setActiveConvergence("rock"); setActiveIdea(null); window.scrollTo(0,0); }}
+              style={{
+                width: "100%",
+                padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
+                borderRadius: 10,
+                background: "linear-gradient(180deg, rgba(201,168,76,0.06), rgba(3,3,6,0.6))",
+                border: "1px solid rgba(201,168,76,0.12)",
+                cursor: "pointer", overflow: "hidden",
+                transition: "transform 0.5s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
+                textAlign: "center",
+                position: "relative",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-3px) scale(1.01)";
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.35)";
+                e.currentTarget.style.boxShadow = "0 6px 30px rgba(201,168,76,0.12), 0 0 60px rgba(201,168,76,0.04)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.12)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              {/* Top accent */}
+              <div style={{
+                position: "absolute", top: 0, left: "10%", right: "10%", height: 1,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+              }} />
+              <div style={{
+                fontSize: "clamp(28px, 6vw, 38px)",
+                marginBottom: Math.round(3 * PHI),
+                filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
+                animation: "gentleFloat 8s ease-in-out infinite",
+              }}>🪨</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(14px, 3.2vw, 20px)",
+                letterSpacing: "0.2em",
+                color: "rgba(201,168,76,0.75)",
+                fontWeight: 600,
+                marginBottom: Math.round(2 * PHI),
+              }}>HIT THE ROCK</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2.5vw, 16px)",
+                color: "rgba(232,232,240,0.5)",
+                fontStyle: "italic",
+                lineHeight: PHI,
+              }}>the first time you strike... the second time you speak</div>
+            </div>
           </div>
 
           <div style={{ height: Math.round(5 * PHI) }} />
@@ -7341,6 +7391,152 @@ export default function TheoryOfEverything() {
           </div>
         </div>
       )}
+
+      {/* ===== DEPTH 4 — HIT THE ROCK ROOM ===== */}
+      {depth === 4 && activeConvergence === "rock" && (() => {
+        const sections = [
+          {
+            icon: "✊",
+            title: "THE FIST BUMP",
+            layer: "SURFACE",
+            color: "232,232,240",
+            text: "modern slang... two closed fists meet. greeting. recognition. I see you. you see me. two halves making a whole. convergent recognition hiding in plain sight on every street corner.",
+          },
+          {
+            icon: "⚓",
+            title: "THE SHIPWRECK",
+            layer: "DEEPER",
+            color: "79,195,247",
+            text: "nautical origin... a vessel runs aground on what was always there but couldn't be seen. the rocks were below the surface the whole time. the hidden thing destroys what floats above. every relationship that \"hit the rocks\" crashed into a truth it was sailing over.",
+          },
+          {
+            icon: "🪨",
+            title: "THE STAFF & THE STONE",
+            layer: "DEEPEST",
+            color: "201,168,76",
+            text: "exodus 17... no water. people dying of thirst. god tells moses to STRIKE the rock. he does. water pours out. force works.\n\nnumbers 20... same crisis. but this time god says SPEAK to the rock. just use your voice. moses is angry... calls the people rebels... and HITS the rock again instead. water still comes... but god bars moses from the promised land.\n\nthe lesson buried six feet deep...\n\nthe first time you need force. the second time you need voice.\n\nyou only strike the rock once. after that you speak to it. the method must evolve. moses used a layer 1 tool on a layer 9 problem. he used the fist when he needed the word.",
+          },
+          {
+            icon: "🔺",
+            title: "THE CONVERGENCE",
+            layer: "ALL LINES CROSS",
+            color: "206,147,216",
+            text: "fist bump = two people recognizing each other\n\nshipwreck = crashing into what you can't see\n\nmoses = knowing when to stop hitting and start speaking\n\nthree meanings. one phrase. same truth at different depths. force becomes voice. collision becomes resonance. the rock was always christ. the water was always there. you just had to learn how to ask.",
+          },
+        ];
+
+        return (
+          <div style={{
+            maxWidth: 620, margin: "0 auto",
+            padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+            animation: "fadeSlideUp 0.6s ease",
+            zIndex: 5000, position: "relative",
+            background: "#030306", minHeight: "100vh",
+          }}>
+            <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
+              cursor: "pointer", background: "none", border: "none",
+              color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
+              fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+              transition: "all 0.4s",
+            }}
+              onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+              onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
+            >← THE CONVERGENCE CHAMBER</button>
+
+            <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
+              <div style={{ fontSize: 50, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>🪨</div>
+              <h2 style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(28px, 6vw, 38px)", fontWeight: 400,
+                color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
+                textShadow: "0 0 50px rgba(201,168,76,0.1)",
+              }}>HIT THE ROCK</h2>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                fontStyle: "italic", color: "rgba(201,168,76,0.5)",
+                marginTop: Math.round(5 * PHI), lineHeight: PHI,
+              }}>the first time you strike... the second time you speak</div>
+              <div style={{
+                width: Math.round(50 * PHI), height: 1,
+                margin: `${Math.round(8 * PHI)}px auto 0`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)",
+              }} />
+            </div>
+
+            {/* The layers — surface to deepest */}
+            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(13 * PHI) }}>
+              {sections.map((s, i) => (
+                <div key={i} style={{
+                  padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
+                  borderRadius: 10,
+                  background: `linear-gradient(180deg, rgba(${s.color},0.04), rgba(3,3,6,0.6))`,
+                  border: `1px solid rgba(${s.color},0.1)`,
+                  position: "relative", overflow: "hidden",
+                  animation: `fadeSlideUp 0.8s ${0.3 + i * 0.2}s both ease`,
+                }}>
+                  <div style={{
+                    position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
+                    background: `linear-gradient(90deg, transparent, rgba(${s.color},0.15), transparent)`,
+                  }} />
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: Math.round(5 * PHI) }}>
+                    <div style={{ fontSize: 28 }}>{s.icon}</div>
+                    <div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 18px)",
+                        letterSpacing: "0.15em", color: `rgba(${s.color},0.8)`, fontWeight: 600,
+                      }}>{s.title}</div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: 9,
+                        letterSpacing: "0.4em", color: `rgba(${s.color},0.35)`,
+                        marginTop: 2,
+                      }}>{s.layer}</div>
+                    </div>
+                  </div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "clamp(15px, 3vw, 19px)",
+                    fontStyle: "italic", color: "rgba(232,232,240,0.7)",
+                    lineHeight: PHI, letterSpacing: 0.3,
+                    whiteSpace: "pre-line",
+                  }}>{s.text}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* The mirror — holy shit wow mom */}
+            <div style={{
+              textAlign: "center",
+              marginTop: Math.round(21 * PHI),
+              animation: `fadeSlideUp 0.8s 1.2s both ease`,
+            }}>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(16px, 3.5vw, 22px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.4)",
+                lineHeight: PHI,
+                letterSpacing: 1,
+              }}>
+                holy = sacred<br />
+                shit = dirt<br />
+                wow = W🔄W<br />
+                mom = M🔄M
+              </div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.5vw, 16px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.25)",
+                marginTop: Math.round(8 * PHI),
+                lineHeight: PHI,
+              }}>
+                the seed eats the dirt
+              </div>
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI) }}>
+              <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
+            </div>
+          </div>
+        );
+      })()}
 
       {/* ===== DEPTH 4 — THE MAP: 101 SEEDS ===== */}
       {depth === 5 && (
