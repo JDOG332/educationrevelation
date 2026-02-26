@@ -201,32 +201,35 @@ export const ETYMOLOGIES = [
 ];
 
 export const POEMS = [
-  ["Every hope,", "A heartbeat."],
-  ["Every wish,", "A dream."],
-  ["The moon always wishing...", ""],
-  ["The sun it could be.", ""],
-  ["Every life,", "A purpose..."],
-  ["Hidden inside.", ""],
-  ["Every sinner,", "A saint..."],
-  ["Trying to hide.", ""],
-  ["Every girl needs a mountain,", ""],
-  ["To climb up and slide.", ""],
-  ["Every man has a boy...", ""],
-  ["Growing inside.", ""],
-  ["Every beast has the burden...", ""],
-  ["Of scary and mean.", ""],
-  ["Every eagle,", "An eaglet..."],
-  ["Waiting to scream.", ""],
-  ["Every deck", ""],
-  ["Needs a dealer...", ""],
-  ["For trump she will make.", ""],
-  ["But don't make hard rules,", ""],
-  ["You're not ready to break.", ""],
-  ["Every baby is born,", ""],
-  ["With all that it needs...", ""],
-  ["Just wisdom and love...", ""],
-  ["And the chance to breathe.", ""],
-  ["It's the rhythm of life.", ""],
+  // Stanza 1 — THE DREAM (4 lines)
+  "The rhythm of life is fast and it's mean...",
+  "every hope is a heartbeat, every wish is a dream.",
+  "And the moon's always wishing the sun it could be...",
+  "never knowing her light is the reason we see.",
+  "",
+  // Stanza 2 — THE HIDDEN (4 lines)
+  "Every life holds a secret too heavy to show.",
+  "Every sinner's a saint with too far still to go.",
+  "Every girl needs a mountain to climb up and slide.",
+  "Every man holds a boy growing loudly inside.",
+  "",
+  // Stanza 3 — THE FALL (3 lines)
+  "Every beast wears a burden it never deserved.",
+  "Every eagle's an eaglet too frightened to serve...",
+  "till the branch finally breaks and the sky calms its nerves.",
+  "",
+  // Stanza 4 — THE DEALER (2 lines)
+  "Every deck needs a dealer, for trump she will play.",
+  "Don't carve it in stone or it crumbles like clay.",
+  "",
+  // Stanza 5 — THE BIRTH (2 lines)
+  "Every baby is born with all that it needs...",
+  "just wisdom and love and the chance to breathe.",
+  "",
+  // Stanza 6 — THE RETURN (3 lines)
+  "The rhythm of life is fast and it's mean...",
+  "every hope is a heartbeat...",
+  "every wish is a dream.",
 ];
 
 export const THE_ANSWER = {

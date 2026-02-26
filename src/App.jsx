@@ -883,55 +883,135 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE POEM (behind the veil) ===== */}
-      {depth === 2 && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-          zIndex: 4999, pointerEvents: 'none',
-          display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
-          padding: '5% 10%',
-          opacity: veilParted ? 1 : 0,
-          transition: 'opacity 2.5s ease',
-        }}>
-          {POEMS.map((line, i) => {
-            const text = line.join(' ');
-            return (
-              <div key={i} style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: 'clamp(13px, 3vw, 22px)',
-                fontStyle: 'italic',
-                fontWeight: 300,
-                color: 'rgba(232,232,240,0.8)',
-                textAlign: 'center',
-                lineHeight: 1.618,
-                letterSpacing: 1.5,
-                marginBottom: 2,
-              }}>
-                {text}
-              </div>
-            );
-          })}
+      {/* ===== DEPTH 2 — THE POEM (grist mill wheel) ===== */}
+      {depth === 2 && (() => {
+        // 150 words per minute = 2.5 words per second
+        // Poem has ~130 words + stanza breaks ≈ 52 seconds of scroll
+        // PHI-enhanced: total duration = ~55s (golden breathing room)
+        const PoemWheel = () => {
+          const wheelRef = useRef(null);
+          const scrollRef = useRef(null);
+          const startRef = useRef(null);
+          const frameRef = useRef(null);
+          const doneRef = useRef(false);
 
-          {/* Tap to go deeper */}
-          {veilParted && (
-            <div
-              onClick={() => goDeeper()}
-              style={{
-                marginTop: 30,
-                fontFamily: "'Cinzel', serif",
-                fontSize: 12,
-                letterSpacing: 6,
-                color: 'rgba(201,168,76,0.3)',
-                cursor: 'pointer',
-                opacity: 1,
-                animation: 'letterBreathe 4s ease-in-out infinite',
-                pointerEvents: 'auto',
-              }}
-            >GO DEEPER</div>
-          )}
-        </div>
-      )}
+          useEffect(() => {
+            if (!wheelRef.current || !scrollRef.current) return;
+            const container = wheelRef.current;
+            const scroller = scrollRef.current;
+
+            // Wait for veil to part before starting
+            const checkReady = () => {
+              if (!veilParted) {
+                frameRef.current = requestAnimationFrame(checkReady);
+                return;
+              }
+              // Small delay after veil parts
+              setTimeout(() => {
+                frameRef.current = requestAnimationFrame(tick);
+              }, 1618); // PHI milliseconds of silence before words begin
+            };
+
+            const totalH = scroller.scrollHeight;
+            const viewH = container.clientHeight;
+            // Total scroll distance: push all content from below viewport to above it
+            const scrollDist = totalH + viewH;
+            // Duration: 150 wpm ≈ 55 seconds for this poem
+            const DURATION = 55 * 1000;
+
+            function tick(now) {
+              if (!startRef.current) startRef.current = now;
+              const elapsed = now - startRef.current;
+              const t = Math.min(1, elapsed / DURATION);
+
+              // Smooth scroll — slight ease in/out
+              const eased = t < 0.02 ? t * t * (1/0.02) * 0.5
+                : t > 0.98 ? 1 - (1-t)*(1-t)*(1/0.02)*0.5
+                : t;
+
+              // Position: start fully below viewport, end fully above
+              const y = viewH - eased * scrollDist;
+              scroller.style.transform = `translateY(${y}px)`;
+
+              if (t < 1) {
+                frameRef.current = requestAnimationFrame(tick);
+              } else if (!doneRef.current) {
+                doneRef.current = true;
+                // Auto-advance after the poem finishes + golden pause
+                setTimeout(() => goDeeper(), 2618);
+              }
+            }
+
+            frameRef.current = requestAnimationFrame(checkReady);
+            return () => {
+              if (frameRef.current) cancelAnimationFrame(frameRef.current);
+            };
+          }, []);
+
+          return (
+            <div ref={wheelRef} style={{
+              position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+              zIndex: 5001, overflow: 'hidden', pointerEvents: 'none',
+            }}>
+              {/* Top fade — words disappear into darkness above */}
+              <div style={{
+                position: 'absolute', top: 0, left: 0, width: '100%', height: '38.2%',
+                background: 'linear-gradient(to bottom, rgba(3,3,6,1) 0%, rgba(3,3,6,0.95) 30%, rgba(3,3,6,0) 100%)',
+                zIndex: 2, pointerEvents: 'none',
+              }} />
+              {/* Bottom fade — words emerge from darkness below */}
+              <div style={{
+                position: 'absolute', bottom: 0, left: 0, width: '100%', height: '38.2%',
+                background: 'linear-gradient(to top, rgba(3,3,6,1) 0%, rgba(3,3,6,0.95) 30%, rgba(3,3,6,0) 100%)',
+                zIndex: 2, pointerEvents: 'none',
+              }} />
+
+              {/* The scrolling poem */}
+              <div ref={scrollRef} style={{
+                position: 'absolute', left: 0, width: '100%',
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+                padding: '0 10%',
+              }}>
+                {POEMS.map((line, i) => {
+                  if (line === "") {
+                    // Stanza break — golden pause (extra space)
+                    return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
+                  }
+                  return (
+                    <div key={i} style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 'clamp(16px, 4vw, 28px)',
+                      fontStyle: 'italic',
+                      fontWeight: 300,
+                      color: 'rgba(232,232,240,0.85)',
+                      textAlign: 'center',
+                      lineHeight: PHI,
+                      letterSpacing: 1.5,
+                      marginBottom: Math.round(8 * PHI),
+                      maxWidth: '618px',
+                    }}>
+                      {line}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Tap to skip — bottom quartile */}
+              <div
+                onClick={() => goDeeper()}
+                style={{
+                  position: 'absolute', bottom: 0, left: 0,
+                  width: '100%', height: '25%',
+                  zIndex: 3, cursor: 'default',
+                  pointerEvents: 'auto',
+                  background: 'transparent',
+                }}
+              />
+            </div>
+          );
+        };
+        return <PoemWheel />;
+      })()}
 
 
 
