@@ -970,7 +970,7 @@ export default function TheoryOfEverything() {
                   filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
                   animation: "gentleFloat 6s ease-in-out infinite",
                   marginBottom: Math.round(2 * PHI),
-                }}>⚡</div>
+                }}>💎</div>
                 <h2 style={{
                   fontFamily: "'Cinzel', serif",
                   fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
@@ -995,29 +995,6 @@ export default function TheoryOfEverything() {
                 background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent)",
                 animation: "fadeSlideUp 1.2s 0.45s both ease",
               }} />
-
-              {/* Narrative cue */}
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(15px, 2.8vw, 20px)",
-                color: "rgba(232,232,240,0.5)",
-                fontStyle: "italic", letterSpacing: 0.5,
-                lineHeight: PHI,
-                animation: "fadeSlideUp 1.2s 0.5s both ease",
-              }}>The cross you knew was the front face. Now watch the third dimension emerge.</div>
-
-              {/* The weight — gold whisper */}
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(11px, 2.2vw, 15px)",
-                color: "rgba(201,168,76,0.35)",
-                fontStyle: "italic", letterSpacing: 0.5,
-                marginTop: Math.round(3 * PHI),
-                marginBottom: Math.round(5 * PHI),
-                animation: "fadeSlideUp 1.2s 0.6s both ease",
-                lineHeight: PHI,
-              }}>"The weight of the world is love."<br />
-              <span style={{ fontSize: "0.8em", color: "rgba(201,168,76,0.2)", letterSpacing: 2 }}>— Slide</span></div>
 
               {/* THE OCTAHEDRON */}
               <div style={{
