@@ -8380,9 +8380,74 @@ export default function TheoryOfEverything() {
               fontStyle: "italic",
               background: "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(201,168,76,0.4) 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              marginBottom: Math.round(13 * PHI),
+              marginBottom: Math.round(21 * PHI),
               animation: "breathe 8s ease-in-out infinite",
             }}>because true love is free</div>
+
+            {/* ═══════════════════════════════════════════════ */}
+            {/* THE FOUR WOMEN · WOW MOM WOW                   */}
+            {/* the bedrock beneath the bedrock                 */}
+            {/* ═══════════════════════════════════════════════ */}
+            <div style={{
+              textAlign: "center",
+              marginBottom: Math.round(21 * PHI),
+            }}>
+              <div style={{
+                width: Math.round(60 * PHI), height: 1,
+                margin: `0 auto ${Math.round(13 * PHI)}px`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent)",
+              }} />
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(13px, 2.5vw, 16px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+                letterSpacing: 2, marginBottom: Math.round(8 * PHI),
+              }}>for the four who loved me before I earned it</div>
+
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(16px, 3.5vw, 24px)",
+                letterSpacing: "0.25em", color: "rgba(232,232,240,0.5)",
+                lineHeight: 2.2,
+              }}>
+                KATHY<br />
+                JOHANNA<br />
+                NICOLE<br />
+                PAM
+              </div>
+
+              <div style={{
+                width: Math.round(30 * PHI), height: 1,
+                margin: `${Math.round(8 * PHI)}px auto`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
+              }} />
+
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(20px, 5vw, 34px)",
+                letterSpacing: "0.3em",
+                background: "linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(201,168,76,0.5) 100%)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                marginTop: Math.round(8 * PHI),
+                animation: "breathe 8s ease-in-out infinite",
+              }}>WOW MOM WOW</div>
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(11px, 2vw, 14px)",
+                fontStyle: "italic", color: "rgba(201,168,76,0.2)",
+                marginTop: Math.round(5 * PHI),
+                letterSpacing: 1,
+              }}>read it forward · read it backward · flip it upside down</div>
+
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2.2vw, 15px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.3)",
+                marginTop: Math.round(3 * PHI),
+              }}>it cannot be broken</div>
+            </div>
 
           </div>
 
