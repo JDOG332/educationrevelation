@@ -894,7 +894,7 @@ export default function TheoryOfEverything() {
               <div ref={scrollRef} style={{
                 position: 'absolute', left: 0, width: '100%',
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
-                padding: '0 10%',
+                padding: '0 5%',
               }}>
                 {POEMS.map((line, i) => {
                   if (line === "") {
@@ -904,13 +904,14 @@ export default function TheoryOfEverything() {
                   return (
                     <div key={i} style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 'clamp(16px, 4vw, 28px)',
+                      fontSize: 'clamp(14px, 3.6vw, 26px)',
                       fontStyle: 'italic',
                       fontWeight: 300,
                       color: 'rgba(232,232,240,0.85)',
                       textAlign: 'center',
                       lineHeight: PHI,
-                      letterSpacing: 1.5,
+                      letterSpacing: 0.8,
+                      whiteSpace: 'nowrap',
                       marginBottom: Math.round(8 * PHI),
                       maxWidth: '618px',
                     }}>

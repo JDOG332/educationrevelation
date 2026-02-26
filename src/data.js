@@ -216,19 +216,19 @@ export const POEMS = [
   // Stanza 3 — THE FALL (3 lines)
   "every beast wears a burden it never deserved",
   "every eagle's an eaglet too frightened to serve...",
-  "till the branch finally breaks and the sky calms its nerves",
+  "till the branch finally breaks... and the sky calms its nerves",
   "",
   // Stanza 4 — THE DEALER (2 lines)
   "every deck needs a dealer for trump she will play",
   "don't carve it in stone or it'll crumble to clay",
   "",
   // Stanza 5 — THE BIRTH (2 lines)
-  "every baby is born with all that it needs",
+  "every baby is born with all that it needs...",
   "just wisdom and love and the chance to breathe",
   "",
   // Stanza 6 — THE RETURN (3 lines)
   "the rhythm of life is fast and it's mean",
-  "every hope is a heartbeat",
+  "every hope is a heartbeat...",
   "every wish is a dream",
 ];
 
