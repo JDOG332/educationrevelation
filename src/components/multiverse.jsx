@@ -108,7 +108,7 @@ export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = tru
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = (window.innerWidth < 768 || navigator.maxTouchPoints > 0) ? Math.min(window.devicePixelRatio || 1, 2) : (window.devicePixelRatio || 1);
     const W = window.innerWidth;
     const H = window.innerHeight;
     canvas.width = W * dpr;
