@@ -6186,6 +6186,125 @@ export default function TheoryOfEverything() {
                         lineHeight: PHI,
                       }}>{BURIED[i]}</div>
                     </div>
+
+                    {/* THE TRUTH IS INSIDE YOU — Layer 8 special content */}
+                    {i === 7 && (
+                      <div style={{
+                        marginTop: Math.round(21 * PHI),
+                        padding: `${Math.round(13 * PHI)}px`,
+                        background: "rgba(255,152,0,0.02)",
+                        borderRadius: 10,
+                        border: "1px solid rgba(255,152,0,0.08)",
+                      }}>
+                        <div style={{
+                          fontSize: 28, textAlign: "center", marginBottom: Math.round(5 * PHI),
+                        }}>☀️</div>
+                        <div style={{
+                          fontFamily: "'Cinzel', serif", fontSize: 22, letterSpacing: 6,
+                          color: "rgba(255,152,0,0.5)", textAlign: "center",
+                          marginBottom: Math.round(13 * PHI),
+                        }}>THE TRUTH IS INSIDE YOU</div>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 21,
+                          lineHeight: 1.85, color: "rgba(255,255,255,0.45)",
+                          fontStyle: "italic", marginBottom: Math.round(13 * PHI),
+                        }}>
+                          The ancient secrets all say the same thing: You are not just a person looking at the world. You are the whole world looking through a person. Imagine a giant ocean that thinks it is just one tiny wave. When the wave realizes it is the ocean, it stops being afraid.
+                        </div>
+
+                        {/* Sensory anchors */}
+                        <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+                          {[
+                            { icon: "👂", sense: "Sound", text: "Close your eyes and listen to your own breath. It sounds like the waves of the ocean coming in and going out, connecting you to every living thing that breathes." },
+                            { icon: "👃", sense: "Smell", text: "Smell a piece of fresh fruit or a flower. That scent is a \"hello\" from the earth, reminding you that you are made of the same stuff as the garden." },
+                            { icon: "👅", sense: "Taste", text: "Eat a piece of honey or salt. Notice how your body knows exactly what it is without being told. Your tongue remembers the earth's flavors because you belong to it." },
+                            { icon: "✋", sense: "Touch", text: "Press your two hands together firmly. You can't tell where the \"feeling\" hand ends and the \"felt\" hand begins. You are both the giver and the receiver." },
+                            { icon: "👁️", sense: "Sight", text: "Look into a mirror and stare at your own pupils. You are seeing the only part of your brain that touches the outside world. You are the universe looking at itself." },
+                            { icon: "🧘", sense: "Proprioception", text: "Close your eyes and feel the weight of your body in your chair. Even without looking, you know exactly where you are. That \"knowing\" is your inner compass that never turns off." },
+                          ].map((s, si) => (
+                            <div key={si} style={{
+                              padding: `${Math.round(5 * PHI)}px ${Math.round(8 * PHI)}px`,
+                              background: "rgba(255,255,255,0.01)",
+                              borderRadius: 6,
+                              borderLeft: "2px solid rgba(255,152,0,0.12)",
+                            }}>
+                              <div style={{
+                                fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: 3,
+                                color: "rgba(255,152,0,0.4)", marginBottom: 4,
+                              }}>{s.icon} {s.sense.toUpperCase()}</div>
+                              <div style={{
+                                fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                                fontStyle: "italic", color: "rgba(255,255,255,0.35)",
+                                lineHeight: 1.618,
+                              }}>{s.text}</div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* The Sensory Connection */}
+                        <div style={{
+                          marginTop: Math.round(13 * PHI),
+                          padding: `${Math.round(8 * PHI)}px`,
+                          background: "rgba(255,152,0,0.03)",
+                          borderRadius: 8,
+                          textAlign: "center",
+                        }}>
+                          <div style={{
+                            fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: 4,
+                            color: "rgba(255,152,0,0.35)", marginBottom: Math.round(5 * PHI),
+                          }}>THE SENSORY CONNECTION</div>
+                          <div style={{
+                            fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                            fontStyle: "italic", color: "rgba(255,255,255,0.4)",
+                            lineHeight: 1.85,
+                          }}>
+                            Sit quietly and try to feel all these things at once. Feel your breath (sound), your weight (touch), and the space around you (intuition). You will feel a "spirit bump" — a shiver that tells you that you aren't just in the universe, you are the universe. The "inside" and the "outside" are just two sides of the same golden coin.
+                          </div>
+                        </div>
+
+                        {/* Dig Deeper */}
+                        <div style={{
+                          marginTop: Math.round(13 * PHI),
+                          display: "flex", flexDirection: "column", gap: Math.round(5 * PHI),
+                        }}>
+                          <div style={{
+                            fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: 4,
+                            color: "rgba(255,152,0,0.3)",
+                          }}>DIG DEEPER WITH INFO</div>
+                          {[
+                            { title: "The Kybalion: Seven Hermetic Principles", url: "https://www.sacred-texts.com/eso/kyb/" },
+                            { title: "Tat Tvam Asi: The Meaning of 'Thou Art That'", url: "https://en.wikipedia.org/wiki/Tat_Tvam_Asi" },
+                            { title: "The Science of Interconnectedness", url: "https://www.scientificamerican.com/article/the-hippies-were-right-its-all-about-vibrations-man/" },
+                          ].map((link, li) => (
+                            <a key={li} href={link.url} target="_blank" rel="noopener noreferrer" style={{
+                              fontFamily: "'Cormorant Garamond', serif", fontSize: 17,
+                              color: "rgba(255,152,0,0.45)", textDecoration: "none",
+                              fontStyle: "italic",
+                              borderBottom: "1px solid rgba(255,152,0,0.1)",
+                              paddingBottom: 2,
+                            }}>{link.title}</a>
+                          ))}
+
+                          <div style={{
+                            fontFamily: "'Cinzel', serif", fontSize: 14, letterSpacing: 4,
+                            color: "rgba(255,152,0,0.3)", marginTop: Math.round(5 * PHI),
+                          }}>DIG DEEPER WITH MUSIC</div>
+                          {[
+                            { title: "Louis Armstrong — What A Wonderful World", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+                            { title: "The Beatles — Across The Universe", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+                            { title: "Somewhere Over the Rainbow — Israel Kamakawiwo'ole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" },
+                          ].map((link, li) => (
+                            <a key={li} href={link.url} target="_blank" rel="noopener noreferrer" style={{
+                              fontFamily: "'Cormorant Garamond', serif", fontSize: 17,
+                              color: "rgba(255,152,0,0.45)", textDecoration: "none",
+                              fontStyle: "italic",
+                              borderBottom: "1px solid rgba(255,152,0,0.1)",
+                              paddingBottom: 2,
+                            }}>{link.title}</a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
