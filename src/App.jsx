@@ -7558,15 +7558,6 @@ export default function TheoryOfEverything() {
               animation: "fadeSlideUp 2s 1.3s both ease",
             }}>🪙🪙</div>
 
-            {/* Scroll hint */}
-            <div style={{
-              marginTop: Math.round(21 * PHI),
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(12px, 2.5vw, 16px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.15)",
-              animation: "breathe 4s ease-in-out infinite",
-              letterSpacing: 2,
-            }}>↓ keep scrolling ↓</div>
           </div>
 
           {/* ═══════════════════════════════════════════════ */}
