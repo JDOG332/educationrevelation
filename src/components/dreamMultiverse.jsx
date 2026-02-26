@@ -317,43 +317,38 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
         }
       }
 
-      // === DEPTH 2: The Veil ===
+      // === DEPTH 2: White hole expands back to multiverse, then poem appears ===
       if (depthRef.current === 2) {
-        // Phase timing
-        const GATHER_END = 3;     // 0-3s: bodies gather into curtain
-        const HOLD_END = 5;       // 3-5s: curtain holds
-        const PART_END = 9;       // 5-9s: curtain parts
+        // Reverse the collapse: zoom from 0.04x back to 1x over 7 seconds
+        const EXPAND_DUR = 7;
+        const expandT = Math.min(1, veilElapsed / EXPAND_DUR);
+        const expandEased = expandT * expandT * (3 - 2 * expandT);
 
-        let morphPhase, partProgress, brightness;
+        // Zoom: 0.04 → 1 (reverse of the collapse)
+        const zoom = 0.04 + (1 - 0.04) * expandEased;
 
-        if (veilElapsed < GATHER_END) {
-          // Gathering into curtain
-          morphPhase = "gather";
-          partProgress = 0;
-          brightness = Math.min(1, veilElapsed / GATHER_END);
-        } else if (veilElapsed < HOLD_END) {
-          // Curtain holding
-          morphPhase = "hold";
-          partProgress = 0;
-          brightness = 1;
-        } else if (veilElapsed < PART_END) {
-          // Curtain parting
-          morphPhase = "part";
-          const t = (veilElapsed - HOLD_END) / (PART_END - HOLD_END);
-          partProgress = t * t * (3 - 2 * t); // smoothstep
-          brightness = 1 - partProgress * 0.5; // dim as they part
-        } else {
-          // Fully parted
-          morphPhase = "parted";
-          partProgress = 1;
-          brightness = 0.5;
+        // White glow fades as we expand
+        const glowFade = 1 - expandEased;
+
+        // Keep simulation running
+        simulate("dance", 0);
+
+        drawBodies(zoom, 0, 0, true, 0);
+
+        // White glow shrinking as multiverse re-emerges
+        if (glowFade > 0.01) {
+          const glowRadius = 20 + glowFade * 80;
+          const glowAlpha = glowFade * 0.9;
+          const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
+          wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
+          wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
+          wg.addColorStop(1, "rgba(232,232,240,0)");
+          ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
+          ctx.fillStyle = wg; ctx.fill();
         }
 
-        simulate(morphPhase, partProgress);
-        drawBodies(1, 0, 0, false, brightness);
-
-        // Signal poem reveal when curtain starts parting
-        if (veilElapsed >= HOLD_END && !veilParted) {
+        // Signal poem reveal once expansion is complete
+        if (expandT >= 1 && !veilParted) {
           veilParted = true;
           if (onVeilPartedRef.current) onVeilPartedRef.current();
         }
