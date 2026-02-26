@@ -202,34 +202,34 @@ export const ETYMOLOGIES = [
 
 export const POEMS = [
   // Stanza 1 — THE DREAM (4 lines)
-  "The rhythm of life is fast and it's mean...",
-  "every hope is a heartbeat, every wish is a dream.",
-  "And the moon's always wishing the sun it could be...",
-  "never knowing her light is the reason we see.",
+  "the rhythm of life is fast and it's mean",
+  "where hope is the heartbeat & wishes have dreams...",
+  "but the moon's never wishing the sun it could be",
+  "always showing her light in the dark for we...",
   "",
   // Stanza 2 — THE HIDDEN (4 lines)
-  "Every life holds a secret too heavy to show.",
-  "Every sinner's a saint with too far still to go.",
-  "Every girl needs a mountain to climb up and slide.",
-  "Every man holds a boy growing loudly inside.",
+  "every life holds a secret too heavy to show",
+  "every sinner's a saint with more path to go",
+  "every girl needs a mountain to climb up and slide",
+  "every man holds a boy growing loudly inside",
   "",
   // Stanza 3 — THE FALL (3 lines)
-  "Every beast wears a burden it never deserved.",
-  "Every eagle's an eaglet too frightened to serve...",
-  "till the branch finally breaks and the sky calms its nerves.",
+  "every beast wears a burden it never deserved",
+  "every eagle's an eaglet too frightened to serve...",
+  "till the branch finally breaks and the sky calms its nerves",
   "",
   // Stanza 4 — THE DEALER (2 lines)
-  "Every deck needs a dealer, for trump she will play.",
-  "Don't carve it in stone or it crumbles like clay.",
+  "every deck needs a dealer for trump she will play",
+  "don't carve it in stone or it'll crumble to clay",
   "",
   // Stanza 5 — THE BIRTH (2 lines)
-  "Every baby is born with all that it needs...",
-  "just wisdom and love and the chance to breathe.",
+  "every baby is born with all that it needs",
+  "just wisdom and love and the chance to breathe",
   "",
   // Stanza 6 — THE RETURN (3 lines)
-  "The rhythm of life is fast and it's mean...",
-  "every hope is a heartbeat...",
-  "every wish is a dream.",
+  "the rhythm of life is fast and it's mean",
+  "every hope is a heartbeat",
+  "every wish is a dream",
 ];
 
 export const THE_ANSWER = {
