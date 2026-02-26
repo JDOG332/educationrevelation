@@ -206,34 +206,34 @@ export const ETYMOLOGIES = [
 
 export const POEMS = [
   // 1 — MIRROR OPEN
-  "the rhythm of life is fast & so slow...",
+  "the rhythm of life is fast & its slow...",
   "",
   // 2
-  "hello hope, heartbeats & wishes below...",
-  "every life holds your secrets too heavy to show...",
+  "in the heartbeats & wishes & feelings below...",
+  "every life holds the secret so heavy to show...",
   "",
   // 3
-  "though the moon's never wishing the sun it could be...",
-  "always sharing her light in the dark for me...",
-  "every sinner's a saint with more path to grow...",
+  "but the moon never wishes the sun it could be...",
+  "always sharing her light in the darkness for me...",
+  "inner sinner gets sainthood so precious to see...",
   "",
   // 4 — THE WIDEST POINT — THE EYE OPENS
   "every girl needs a mountain to climb up and slide...",
-  "every man holds a boy growing loudly inside...",
+  "every man holds a boy growing wildly inside...",
   "every beast wears a burden it never deserved...",
   "every eagle's an eaglet too frightened to serve...",
   "",
   // 3
-  "'til the branch finally breaks... and the sky calms our nerves...",
+  "til the branch finally breaks... and the sky calms her nerves...",
   "every deck has a dealer for trump she will play...",
-  "just don't carve it in stone or it'll crumble to clay...",
+  "just don't carve hard rules or we'll crumble to clay...",
   "",
   // 2
   "every baby is born with all that it needs...",
   "just wisdom & love & the chance to breathe...",
   "",
   // 1 — MIRROR CLOSE
-  "the rhythm of life is fast & so slow...",
+  "the rhythm of life is fast & its slow...",
 ];
 
 export const THE_ANSWER = {
