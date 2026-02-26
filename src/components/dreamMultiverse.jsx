@@ -2,14 +2,14 @@ import { useRef, useEffect } from "react";
 import { PHI } from "../data.js";
 
 /* ============================================================
-   DREAM MULTIVERSE — 9⁴ = 6,561-body N-body gravitational simulation
+   DREAM MULTIVERSE — 9³ = 729-body N-body gravitational simulation
    
-   4-tier hierarchy: hyper-clusters → super-clusters → clusters → dust
+   3-tier hierarchy: hyper-clusters → super-clusters → clusters
    Same equation at every scale: Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²
    Mirror pairs: [0,8] [1,7] [2,6] [3,5] — Moon at center (4)
    
-   This is a STABLE top-level component. It must NOT be defined
-   inside a render function or it will remount on every state change.
+   729 bodies = smooth 60fps everywhere. Phone or desktop.
+   Same dance. Same math. Same truth.
    ============================================================ */
 
 const CLUSTER_COLORS = [
@@ -65,8 +65,7 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    const isMobile = window.innerWidth < 768 || (navigator.maxTouchPoints > 0 && window.innerWidth < 1024);
-    const dpr = isMobile ? Math.min(window.devicePixelRatio || 1, 2) : (window.devicePixelRatio || 1);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     function resize() {
       const W = canvas.parentElement?.clientWidth || window.innerWidth;
@@ -101,19 +100,7 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
             const cspeed = ci === 4 ? 0 : Math.sqrt(getR12(ci,4)*C_EFF[ci]*C_EFF[4]*2/(Math.max(cr,1)*2))*0.14;
             const cva = ca + Math.PI/2;
             const ccx = sx + Math.cos(ca)*cr, ccy = sy + Math.sin(ca)*cr;
-            const bodies = isMobile ? [] : Array.from({ length: 9 }, (_, bi) => {
-              const ba = (bi/9)*Math.PI*2 + (Math.random()-0.5)*0.6;
-              const br = bi === 4 ? 0 : (3 + Math.random()*4) * (hi===4&&si===4&&ci===4 ? 1.3 : 0.6);
-              const bspeed = bi === 4 ? 0 : Math.sqrt(getR12(bi,4)*C_EFF[bi]*C_EFF[4]/(Math.max(br,1)))*0.2;
-              const bva = ba + Math.PI/2;
-              return {
-                x: ccx + Math.cos(ba)*br, y: ccy + Math.sin(ba)*br,
-                vx: Math.cos(bva)*bspeed, vy: Math.sin(bva)*bspeed,
-                cEff: C_EFF[bi], id: bi,
-                radius: (0.3 + C_EFF[bi]*0.15) * (hi===4&&si===4&&ci===4&&bi===4 ? 2.5 : 1),
-              };
-            });
-            return { x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed, cEff: C_EFF[ci]*2, id: ci, bodies };
+            return { x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed, cEff: C_EFF[ci]*2, id: ci };
           });
           return { x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed, cEff: C_EFF[si]*4, id: si, clusters };
         });
@@ -134,9 +121,6 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
       simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
       for (const hc of state.hypers) simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
       for (const hc of state.hypers) for (const sc of hc.supers) simLevel(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
-      if (!isMobile) {
-        for (const hc of state.hypers) for (const sc of hc.supers) for (const cl of sc.clusters) simLevel(cl.bodies, 0.22 * speedScale, 2.5, 0.999, cl.x, cl.y, 0.003 * speedScale);
-      }
     }
 
     function drawMultiverse(elapsed) {
@@ -216,45 +200,18 @@ export default function DreamMultiverseCanvas({ depth, goDeeper }) {
           for (let ci = 0; ci < 9; ci++) {
             const cl = sc.clusters[ci];
             const cColor = CLUSTER_COLORS[ci];
-
-            if (isMobile) {
-              // MOBILE: clusters ARE the visible particles — bigger, brighter
-              const isCoreMoon = hi===4&&si===4&&ci===4;
-              const isMoonCluster = ci === 4;
-              const mRadius = isCoreMoon ? 2.0 : isMoonCluster ? 1.2 : 0.7;
-              const mGlowR = mRadius * (isCoreMoon ? 10 : isMoonCluster ? 5 : 3);
-              const mGlowAlpha = isCoreMoon ? "25" : isMoonCluster ? "12" : "08";
-              const mg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mGlowR);
-              mg.addColorStop(0, cColor + mGlowAlpha); mg.addColorStop(0.5, cColor + "04"); mg.addColorStop(1, cColor + "00");
-              ctx.beginPath(); ctx.arc(cl.x, cl.y, mGlowR, 0, Math.PI*2); ctx.fillStyle = mg; ctx.fill();
-              ctx.beginPath(); ctx.arc(cl.x, cl.y, mRadius, 0, Math.PI*2);
-              const mcg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mRadius);
-              mcg.addColorStop(0, isCoreMoon ? "#ffffff" : isMoonCluster ? "#e8e8f0" : cColor);
-              mcg.addColorStop(1, cColor + "30"); ctx.fillStyle = mcg; ctx.fill();
-            } else {
-              // DESKTOP: clusters are faint halos, bodies are the visible particles
-              const chR = ci === 4 ? 7 : 4;
-              const chg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, chR);
-              chg.addColorStop(0, cColor + "06"); chg.addColorStop(1, cColor + "00");
-              ctx.beginPath(); ctx.arc(cl.x, cl.y, chR, 0, Math.PI*2); ctx.fillStyle = chg; ctx.fill();
-
-              for (let bi = 0; bi < 9; bi++) {
-                const body = cl.bodies[bi];
-                const bColor = CLUSTER_COLORS[bi];
-                const isCoreMoon = hi===4&&si===4&&ci===4&&bi===4;
-                const isDeepMoon = (hi===4&&si===4&&ci===4)||(hi===4&&si===4&&bi===4);
-                const isMoon = bi === 4;
-                const glowR = body.radius * (isCoreMoon ? 12 : isDeepMoon ? 4 : isMoon ? 2.5 : 1.5);
-                const glowAlpha = isCoreMoon ? "20" : isDeepMoon ? "10" : isMoon ? "08" : "04";
-                const bg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, glowR);
-                bg.addColorStop(0, bColor + glowAlpha); bg.addColorStop(0.5, bColor + "02"); bg.addColorStop(1, bColor + "00");
-                ctx.beginPath(); ctx.arc(body.x, body.y, glowR, 0, Math.PI*2); ctx.fillStyle = bg; ctx.fill();
-                ctx.beginPath(); ctx.arc(body.x, body.y, body.radius, 0, Math.PI*2);
-                const cg = ctx.createRadialGradient(body.x, body.y, 0, body.x, body.y, body.radius);
-                cg.addColorStop(0, isCoreMoon ? "#ffffff" : isDeepMoon ? "#e8e8f0" : bColor);
-                cg.addColorStop(1, bColor + "20"); ctx.fillStyle = cg; ctx.fill();
-              }
-            }
+            const isCoreMoon = hi===4&&si===4&&ci===4;
+            const isMoonCluster = ci === 4;
+            const mRadius = isCoreMoon ? 2.0 : isMoonCluster ? 1.2 : 0.7;
+            const mGlowR = mRadius * (isCoreMoon ? 10 : isMoonCluster ? 5 : 3);
+            const mGlowAlpha = isCoreMoon ? "25" : isMoonCluster ? "12" : "08";
+            const mg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mGlowR);
+            mg.addColorStop(0, cColor + mGlowAlpha); mg.addColorStop(0.5, cColor + "04"); mg.addColorStop(1, cColor + "00");
+            ctx.beginPath(); ctx.arc(cl.x, cl.y, mGlowR, 0, Math.PI*2); ctx.fillStyle = mg; ctx.fill();
+            ctx.beginPath(); ctx.arc(cl.x, cl.y, mRadius, 0, Math.PI*2);
+            const mcg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mRadius);
+            mcg.addColorStop(0, isCoreMoon ? "#ffffff" : isMoonCluster ? "#e8e8f0" : cColor);
+            mcg.addColorStop(1, cColor + "30"); ctx.fillStyle = mcg; ctx.fill();
           }
         }
       }
