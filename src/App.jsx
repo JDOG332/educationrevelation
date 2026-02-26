@@ -55,9 +55,8 @@ export default function TheoryOfEverything() {
   // Direct DOM manipulation — React doesn't re-render during the animation.
   // One rAF loop mutates .style properties on 3 refs at 60fps. Zero jitter.
   const openingRef = useRef(null);    // the full-screen container
-  const words1Ref = useRef(null);     // phase 1 text (question — white on black)
-  const words2Ref = useRef(null);     // phase 2 text (question — black on white)
-  const words3Ref = useRef(null);     // phase 3 text (answer — black on white)
+  const words1Ref = useRef(null);     // phase 1 text
+  const words2Ref = useRef(null);     // phase 2 text
   const veilFrameRef = useRef(null);
   const veilStartRef = useRef(null);
 
@@ -71,107 +70,65 @@ export default function TheoryOfEverything() {
     const container = openingRef.current;
     const w1 = words1Ref.current;
     const w2 = words2Ref.current;
-    const w3 = words3Ref.current;
-    if (!container || !w1 || !w2 || !w3) return;
+    if (!container || !w1 || !w2) return;
 
     // Reset visibility
     container.style.display = "flex";
     w1.style.opacity = "0";
     w2.style.opacity = "0";
-    w3.style.opacity = "0";
 
-    // THE TODDLER'S VOID — five acts in 10 seconds
-    const SILENCE = 1.618;   // pure black — the void before the wish
-    const GROW    = 3.236;   // question breathes in — white on black
-    const HOLD    = 1.0;     // peak white — the wish granted — blinding everything
-    const ANSWER  = 2.0;     // "you'd be all alone" fades in quiet
-    const FADE    = 2.236;   // everything fades to black — the void returns
-    const TOTAL   = SILENCE + GROW + HOLD + ANSWER + FADE; // ~10.09s
+    const SILENCE = 1.618;
+    const PHASE1  = 4.236;
+    const PHASE2  = 4.236;   // mirror — same duration as phase 1
+    const TOTAL   = SILENCE + PHASE1 + PHASE2; // 10.09s
 
     function tick(now) {
       if (!veilStartRef.current) veilStartRef.current = now;
       const elapsed = (now - veilStartRef.current) / 1000;
 
       if (elapsed >= TOTAL) {
+        // Done — hide the opening act and transition
         container.style.display = "none";
         setDepth(1);
         return;
       }
 
-      const t1end = SILENCE;
-      const t2end = SILENCE + GROW;
-      const t3end = SILENCE + GROW + HOLD;
-      const t4end = SILENCE + GROW + HOLD + ANSWER;
+      let p1 = 0, p2 = 0;
 
-      if (elapsed < t1end) {
-        // ACT 1: SILENCE — pure black void
-        container.style.background = "#000000";
-        w1.style.opacity = "0";
-        w2.style.opacity = "0";
-        w3.style.opacity = "0";
-
-      } else if (elapsed < t2end) {
-        // ACT 2: QUESTION GROWS — white text on black, growing
-        const t = (elapsed - t1end) / GROW;
-        const p = Math.pow(t, 1.15);
-
-        // Background: black → white
-        const lum = Math.round(255 * p);
-        container.style.background = `rgb(${lum},${lum},${lum})`;
-
-        // White text grows
-        const scale = p < 0.001 ? 0.15 : 0.15 + Math.pow(p, 0.7) * 5.5;
-        const alpha = Math.min(1, p * 5);
-        w1.style.opacity = alpha > 0.001 ? alpha : 0;
-        w1.style.transform = `scale(${scale})`;
-
-        // Black text mirrors — ready for the flip
-        w2.style.opacity = "0";
-        w3.style.opacity = "0";
-
-      } else if (elapsed < t3end) {
-        // ACT 3: THE WISH GRANTED — pure white, question shrinks away
-        const t = (elapsed - t2end) / HOLD;
-        container.style.background = "#ffffff";
-
-        // White text gone
-        w1.style.opacity = "0";
-
-        // Black question text appears then shrinks away
-        const shrink = 1 - Math.pow(t, 0.8);
-        const qAlpha = Math.max(0, 1 - t * 2.5);
-        w2.style.opacity = qAlpha > 0.001 ? qAlpha : 0;
-        w2.style.transform = `scale(${0.8 * shrink + 0.15})`;
-
-        w3.style.opacity = "0";
-
-      } else if (elapsed < t4end) {
-        // ACT 4: THE ANSWER — quiet, small, devastating
-        const t = (elapsed - t3end) / ANSWER;
-        container.style.background = "#ffffff";
-
-        w1.style.opacity = "0";
-        w2.style.opacity = "0";
-
-        // Answer fades in gently — doesn't grow. just appears.
-        const answerAlpha = Math.min(1, t * 1.8);
-        w3.style.opacity = answerAlpha > 0.001 ? answerAlpha : 0;
-        w3.style.transform = "scale(1)";
-
+      if (elapsed < SILENCE) {
+        // Pure black silence
+        p1 = 0;
+      } else if (elapsed < SILENCE + PHASE1) {
+        const t = (elapsed - SILENCE) / PHASE1;
+        p1 = Math.pow(t, 1.15);
       } else {
-        // ACT 5: THE VOID RETURNS — everything fades to black
-        const t = (elapsed - t4end) / FADE;
-        const p = Math.pow(t, 1.2);
+        p1 = 1;
+        const t = (elapsed - SILENCE - PHASE1) / PHASE2;
+        p2 = Math.pow(t, 1.1);
+      }
 
-        const lum = Math.round(255 * (1 - p));
-        container.style.background = `rgb(${lum},${lum},${lum})`;
+      // Background: black→white→black
+      const lum = p2 > 0 ? 255 * (1 - p2) : 255 * p1;
+      container.style.background = `rgb(${lum|0},${lum|0},${lum|0})`;
 
-        // Answer fades out with the light
-        const answerAlpha = Math.max(0, 1 - p * 1.5);
-        w3.style.opacity = answerAlpha > 0.001 ? answerAlpha : 0;
+      // Phase 1: white words growing on black — w1 is visible, w2 is hidden
+      // Phase 2: black words shrinking on white — w2 is visible, w1 is hidden
+      // Sharp switch at the peak. Same words. Color flips instantly.
 
-        w1.style.opacity = "0";
-        w2.style.opacity = "0";
+      if (p2 === 0) {
+        // PHASE 1: white words grow
+        const scale1 = p1 < 0.001 ? 0.15 : 0.15 + Math.pow(p1, 0.7) * 5.5;
+        const alpha1 = Math.min(1, p1 * 5);
+        w1.style.opacity = alpha1 > 0.001 ? alpha1 : 0;
+        w1.style.transform = `scale(${scale1})`;
+        w2.style.opacity = 0;
+      } else {
+        // PHASE 2: black words shrink (mirror)
+        const scale2 = 0.15 + (1 - Math.pow(p2, 1.15)) * 5.5;
+        const alpha2 = Math.min(1, (1 - p2) * 5);
+        w1.style.opacity = 0;
+        w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
+        w2.style.transform = `scale(${scale2})`;
       }
 
       veilFrameRef.current = requestAnimationFrame(tick);
@@ -809,22 +766,6 @@ export default function TheoryOfEverything() {
             willChange: "transform, opacity",
           }}>
             ..what if every dream came true...
-          </div>
-          <div ref={words3Ref} style={{
-            position: "absolute",
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(14px, 3.2vw, 24px)",
-            fontStyle: "italic", fontWeight: 300,
-            color: "rgba(0,0,0,0.6)",
-            textAlign: "center",
-            lineHeight: 1.618,
-            letterSpacing: 3,
-            padding: "0 10%",
-            opacity: 0,
-            transform: "scale(1)",
-            willChange: "opacity",
-          }}>
-            ..you'd be all alone...
           </div>
         </div>
       )}
