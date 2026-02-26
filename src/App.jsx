@@ -5365,7 +5365,7 @@ export default function TheoryOfEverything() {
           {/* Pillar cards with unique domain colors */}
           <div style={{ display: "grid", gap: 14, maxWidth: 540, margin: "16px auto 0" }}>
             {THREE_PILLARS.map((p, i) => {
-              const accents = ["rgba(79,195,247,", "rgba(201,168,76,", "rgba(206,147,216,"];
+              const accents = ["rgba(79,195,247,", "rgba(201,168,76,", "rgba(206,147,216,", "rgba(129,199,132,"];
               const ac = accents[i];
               return (
                 <GlassCard key={i}
@@ -5415,7 +5415,18 @@ export default function TheoryOfEverything() {
                       animation: "senseReveal 0.5s ease",
                       borderTop: `1px solid ${ac}0.06)`,
                       paddingTop: 16,
-                    }}>{p.text}</div>
+                    }}>
+                      {p.text}
+                      {p.deep && (
+                        <div style={{
+                          marginTop: 18, paddingTop: 14,
+                          borderTop: `1px solid ${ac}0.06)`,
+                          fontFamily: "'Cormorant Garamond', serif", fontSize: 20,
+                          lineHeight: 1.8, color: "rgba(201,168,76,0.4)",
+                          fontStyle: "normal",
+                        }}>{p.deep}</div>
+                      )}
+                    </div>
                   )}
                 </GlassCard>
               );

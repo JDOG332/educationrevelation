@@ -150,6 +150,11 @@ export const THREE_PILLARS = [
     icon: "🗿", title: "THE ROSETTA STONE", domain: "HISTORY",
     text: "Long ago, no one could read Egyptian hieroglyphics. They were just pretty pictures. Then, soldiers found a stone that had the same message written in three different languages. Because they knew one language, they could bridge to the others. When all three versions matched up perfectly, the mystery was solved. Truth is the bridge that connects the unknown to the known.",
   },
+  {
+    icon: "🦠", title: "THE WALKING REEF", domain: "BIOLOGY",
+    text: "Your body hosts 38 trillion bacteria, fungi, viruses, and ancient archaea — roughly one microbe for every human cell. By gene count, you are only 1% 'you.' The other 99% is a coral reef of competing and cooperating life forms that were never yours to begin with. Without them, digestion fails, immunity collapses, even your mood breaks. You are not a self. You are an ecosystem. The 'I' only exists because millions of things that are NOT you chose to stay.",
+    deep: "CRT proof: R₁₂ requires two DIFFERENT systems recognizing each other. If they merge into one, information drops to zero — extinction. Your body literally runs on this principle. 38 trillion bacteria are System B. You are System A. The fidelity between them keeps you alive. Identity is not a thing — it is a convergence score between the landlord and the tenants.",
+  },
 ];
 
 export const CONVERGENCE_DEPTHS = [
