@@ -1181,7 +1181,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginBottom: Math.round(3 * PHI),
-                    }}>seven doors · one truth</div>
+                    }}>eight doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: Math.round(3 * PHI),
@@ -1235,6 +1235,67 @@ export default function TheoryOfEverything() {
               );
             })()}
 
+          </div>
+
+          {/* THE LAYERS — the 9 layers of the theory, sensory deep dives */}
+          <div style={{
+            width: "100%", maxWidth: 580,
+            padding: "0 16px",
+            boxSizing: "border-box",
+            animation: "sacredReveal 1.8s 1.3s both ease",
+            position: "relative", zIndex: 1500,
+            marginBottom: Math.round(3 * PHI),
+          }}>
+            <div
+              onClick={(e) => { e.stopPropagation(); setActiveConvergence("layers"); setActiveIdea(null); window.scrollTo(0,0); }}
+              style={{
+                width: "100%",
+                padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
+                borderRadius: 10,
+                background: "linear-gradient(180deg, rgba(190,140,220,0.06), rgba(3,3,6,0.6))",
+                border: "1px solid rgba(190,140,220,0.12)",
+                cursor: "pointer", overflow: "hidden",
+                transition: "transform 0.5s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
+                textAlign: "center",
+                position: "relative",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-3px) scale(1.01)";
+                e.currentTarget.style.borderColor = "rgba(190,140,220,0.35)";
+                e.currentTarget.style.boxShadow = "0 6px 30px rgba(190,140,220,0.12), 0 0 60px rgba(190,140,220,0.04)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.borderColor = "rgba(190,140,220,0.12)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              <div style={{
+                position: "absolute", top: 0, left: "10%", right: "10%", height: 1,
+                background: "linear-gradient(90deg, transparent, rgba(190,140,220,0.2), transparent)",
+              }} />
+              <div style={{
+                fontSize: "clamp(28px, 6vw, 38px)",
+                marginBottom: Math.round(3 * PHI),
+                filter: "drop-shadow(0 0 16px rgba(190,140,220,0.2))",
+                animation: "gentleFloat 8s ease-in-out infinite",
+              }}>〰️</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(14px, 3.2vw, 20px)",
+                letterSpacing: "0.2em",
+                color: "rgba(190,140,220,0.75)",
+                fontWeight: 600,
+                marginBottom: Math.round(2 * PHI),
+              }}>THE LAYERS</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2.5vw, 16px)",
+                color: "rgba(232,232,240,0.5)",
+                fontStyle: "italic",
+                lineHeight: PHI,
+              }}>9 layers · 5 senses · feel the theory</div>
+            </div>
           </div>
 
           {/* HIT THE ROCK — the FOUNDATION STONE the temple rests on */}
@@ -7323,6 +7384,276 @@ export default function TheoryOfEverything() {
           </div>
         </div>
       )}
+
+      {/* ===== DEPTH 4 — THE LAYERS ROOM ===== */}
+      {depth === 4 && activeConvergence === "layers" && (() => {
+        const layers = [
+          {
+            num: 1,
+            icon: "〰️",
+            title: "STRING THEORY",
+            color: "190,140,220",
+            subtitle: "everything is vibrating music",
+            explain: "everything in the entire universe — you, me, the stars, and your favorite toy — might be made of incredibly tiny, invisible, vibrating rubber bands. just like the strings on a guitar play different notes depending on how they are plucked, these microscopic strings make up everything in existence just by wiggling in different ways. we are all made of the same vibrating music.",
+            senses: [
+              { icon: "👂", name: "SOUND", text: "close your eyes and hum one steady note. now imagine every single object around you is humming its own quiet, secret note, all blending together into a giant, invisible song that makes up the room." },
+              { icon: "👃", name: "SMELL", text: "breathe in deeply. imagine that instead of breathing in invisible particles, you are breathing in tiny, floating chords that pluck the strings inside your nose to play a specific \"smell melody.\"" },
+              { icon: "👅", name: "TASTE", text: "let a piece of fruit melt in your mouth. imagine the flavor isn't a chemical, but a specific, fast rhythm of tiny strings dancing on your tongue." },
+              { icon: "✋", name: "TOUCH", text: "press your hand flat against a solid wall. that feeling of hardness is actually trillions of tiny strings buzzing and vibrating so fast against the strings in your hand that they push each other away." },
+              { icon: "👁️", name: "SIGHT", text: "look at the sky or a bright light. imagine the light isn't a beam, but a wave of countless, shimmering little loops vibrating as they fly into your eyes." },
+              { icon: "🧘", name: "PROPRIOCEPTION", text: "close your eyes, stand up, and slowly wave your arms. feel the space your body takes up. imagine you aren't a solid block, but a complex, tightly woven knot of vibrating strings moving smoothly through a giant, invisible ocean of other strings." },
+              { icon: "💫", name: "INTUITION", text: "sit perfectly still and take a deep breath. imagine that the boundary between \"you\" and the \"outside world\" isn't real. the vibrating strings that make up your body are constantly humming, vibrating, and interacting with the strings that make up the air, the floor, and the whole universe. you are not just in the universe — you are a continuous part of its giant, vibrating web." },
+            ],
+            links: [
+              { type: "INFO", items: [
+                { label: "Space.com — String Theory Overview", url: "https://www.space.com/17594-string-theory.html" },
+                { label: "CERN — String Theory", url: "https://home.cern/science/physics/string-theory" },
+                { label: "Kurzgesagt — String Theory Explained", url: "https://www.youtube.com/watch?v=Da-2h2B4faU" },
+              ]},
+              { type: "SONGS", items: [
+                { label: "The Beach Boys — Good Vibrations", url: "https://www.youtube.com/watch?v=apBWI6xrbLY" },
+                { label: "The Beatles — Across The Universe", url: "https://www.youtube.com/watch?v=9B1yWbI2OaU" },
+                { label: "David Bowie — Space Oddity", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+              ]},
+            ],
+          },
+        ];
+
+        const activeLayerIdx = activeIdea !== null ? parseInt(activeIdea) : null;
+        const layer = activeLayerIdx !== null ? layers[activeLayerIdx] : null;
+
+        // LAYER DETAIL VIEW
+        if (layer) {
+          return (
+            <div style={{
+              maxWidth: 620, margin: "0 auto",
+              padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+              animation: "fadeSlideUp 0.6s ease",
+              zIndex: 5000, position: "relative",
+              background: "#030306", minHeight: "100vh",
+            }}>
+              <button onClick={() => setActiveIdea(null)} style={{
+                cursor: "pointer", background: "none", border: "none",
+                color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
+                fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+                transition: "all 0.4s",
+              }}
+                onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+                onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
+              >← THE LAYERS</button>
+
+              {/* Header */}
+              <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(13 * PHI) }}>
+                <div style={{ fontSize: 50, marginBottom: Math.round(5 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>{layer.icon}</div>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.5vw, 14px)",
+                  letterSpacing: "0.5em", color: `rgba(${layer.color},0.4)`,
+                  marginBottom: Math.round(3 * PHI),
+                }}>LAYER {layer.num} OF 9</div>
+                <h2 style={{
+                  fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5.5vw, 34px)", fontWeight: 400,
+                  color: "#e8e8f0", letterSpacing: "0.2em", margin: 0,
+                }}>{layer.title}</h2>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                  fontStyle: "italic", color: `rgba(${layer.color},0.6)`,
+                  marginTop: Math.round(5 * PHI),
+                }}>{layer.subtitle}</div>
+                <div style={{
+                  width: Math.round(50 * PHI), height: 1,
+                  margin: `${Math.round(8 * PHI)}px auto 0`,
+                  background: `linear-gradient(90deg, transparent, rgba(${layer.color},0.3), transparent)`,
+                }} />
+              </div>
+
+              {/* Explanation */}
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(16px, 3.2vw, 20px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.75)",
+                lineHeight: PHI, letterSpacing: 0.3,
+                textAlign: "center",
+                padding: `${Math.round(8 * PHI)}px 0`,
+                animation: "fadeSlideUp 0.8s 0.2s both ease",
+              }}>{layer.explain}</div>
+
+              {/* Senses */}
+              <div style={{
+                display: "flex", flexDirection: "column", gap: Math.round(8 * PHI),
+                marginTop: Math.round(13 * PHI),
+              }}>
+                {layer.senses.map((s, i) => (
+                  <div key={i} style={{
+                    padding: `${Math.round(8 * PHI)}px ${Math.round(8 * PHI)}px`,
+                    borderRadius: 10,
+                    background: `linear-gradient(180deg, rgba(${layer.color},0.03), rgba(3,3,6,0.5))`,
+                    border: `1px solid rgba(${layer.color},0.08)`,
+                    animation: `fadeSlideUp 0.6s ${0.3 + i * 0.1}s both ease`,
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: Math.round(3 * PHI) }}>
+                      <span style={{ fontSize: 22 }}>{s.icon}</span>
+                      <span style={{
+                        fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2.5vw, 14px)",
+                        letterSpacing: "0.2em", color: `rgba(${layer.color},0.7)`, fontWeight: 600,
+                      }}>{s.name}</span>
+                    </div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(14px, 2.8vw, 17px)",
+                      fontStyle: "italic", color: "rgba(232,232,240,0.65)",
+                      lineHeight: PHI, letterSpacing: 0.3,
+                    }}>{s.text}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Dig Deeper */}
+              <div style={{ marginTop: Math.round(21 * PHI) }}>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: "clamp(12px, 2.5vw, 16px)",
+                  letterSpacing: "0.3em", color: "rgba(201,168,76,0.4)",
+                  textAlign: "center", marginBottom: Math.round(8 * PHI),
+                }}>DIG DEEPER</div>
+                {layer.links.map((group, gi) => (
+                  <div key={gi} style={{ marginBottom: Math.round(8 * PHI) }}>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 11,
+                      letterSpacing: "0.3em", color: "rgba(232,232,240,0.3)",
+                      marginBottom: Math.round(3 * PHI),
+                    }}>{group.type}</div>
+                    {group.items.map((link, li) => (
+                      <a key={li} href={link.url} target="_blank" rel="noopener noreferrer" style={{
+                        display: "block",
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "clamp(14px, 2.8vw, 17px)",
+                        fontStyle: "italic", color: `rgba(${layer.color},0.6)`,
+                        textDecoration: "none",
+                        padding: `${Math.round(2 * PHI)}px 0`,
+                        transition: "color 0.3s",
+                      }}
+                        onMouseEnter={e => e.target.style.color = `rgba(${layer.color},0.9)`}
+                        onMouseLeave={e => e.target.style.color = `rgba(${layer.color},0.6)`}
+                      >→ {link.label}</a>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI) }}>
+                <ReturnButton onClick={() => setActiveIdea(null)} />
+              </div>
+            </div>
+          );
+        }
+
+        // LAYERS GRID VIEW
+        return (
+          <div style={{
+            maxWidth: 620, margin: "0 auto",
+            padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
+            animation: "fadeSlideUp 0.6s ease",
+            zIndex: 5000, position: "relative",
+            background: "#030306", minHeight: "100vh",
+          }}>
+            <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
+              cursor: "pointer", background: "none", border: "none",
+              color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
+              fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+              transition: "all 0.4s",
+            }}
+              onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
+              onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
+            >← THE PROOF</button>
+
+            <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI), marginBottom: Math.round(21 * PHI) }}>
+              <div style={{ fontSize: 50, marginBottom: Math.round(8 * PHI), animation: "gentleFloat 8s ease-in-out infinite" }}>〰️</div>
+              <h2 style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(28px, 6vw, 38px)", fontWeight: 400,
+                color: "#e8e8f0", letterSpacing: "0.25em", margin: 0,
+              }}>THE LAYERS</h2>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                fontStyle: "italic", color: "rgba(190,140,220,0.5)",
+                marginTop: Math.round(5 * PHI), lineHeight: PHI,
+              }}>9 layers · 5 senses · feel the theory</div>
+              <div style={{
+                width: Math.round(50 * PHI), height: 1,
+                margin: `${Math.round(8 * PHI)}px auto 0`,
+                background: "linear-gradient(90deg, transparent, rgba(190,140,220,0.3), transparent)",
+              }} />
+            </div>
+
+            {/* Layer cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: Math.round(8 * PHI) }}>
+              {layers.map((l, i) => (
+                <div key={i}
+                  onClick={() => setActiveIdea(String(i))}
+                  style={{
+                    padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
+                    borderRadius: 10,
+                    background: `linear-gradient(180deg, rgba(${l.color},0.04), rgba(3,3,6,0.6))`,
+                    border: `1px solid rgba(${l.color},0.1)`,
+                    cursor: "pointer", overflow: "hidden",
+                    transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
+                    animation: `fadeSlideUp 0.7s ${0.3 + i * 0.15}s both ease`,
+                    display: "flex", alignItems: "center", gap: Math.round(8 * PHI),
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = "translateY(-2px) scale(1.01)";
+                    e.currentTarget.style.borderColor = `rgba(${l.color},0.3)`;
+                    e.currentTarget.style.boxShadow = `0 4px 20px rgba(${l.color},0.1)`;
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.borderColor = `rgba(${l.color},0.1)`;
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  <div style={{ fontSize: 32, flexShrink: 0 }}>{l.icon}</div>
+                  <div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 11px)",
+                      letterSpacing: "0.4em", color: `rgba(${l.color},0.4)`,
+                      marginBottom: 2,
+                    }}>LAYER {l.num}</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 18px)",
+                      letterSpacing: "0.15em", color: `rgba(${l.color},0.8)`, fontWeight: 600,
+                    }}>{l.title}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(12px, 2.5vw, 15px)",
+                      fontStyle: "italic", color: "rgba(232,232,240,0.45)",
+                      marginTop: 3,
+                    }}>{l.subtitle}</div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Placeholder for remaining layers */}
+              {Array.from({ length: 8 }, (_, i) => (
+                <div key={`empty-${i}`} style={{
+                  padding: `${Math.round(10 * PHI)}px ${Math.round(8 * PHI)}px`,
+                  borderRadius: 10,
+                  border: "1px dashed rgba(190,140,220,0.06)",
+                  display: "flex", alignItems: "center", gap: Math.round(8 * PHI),
+                  animation: `fadeSlideUp 0.7s ${0.45 + i * 0.08}s both ease`,
+                }}>
+                  <div style={{ fontSize: 24, opacity: 0.15 }}>〰️</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: "clamp(11px, 2.5vw, 14px)",
+                    letterSpacing: "0.3em", color: "rgba(190,140,220,0.12)",
+                  }}>LAYER {i + 2}</div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI) }}>
+              <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
+            </div>
+          </div>
+        );
+      })()}
 
       {/* ===== DEPTH 4 — HIT THE ROCK ROOM ===== */}
       {depth === 4 && activeConvergence === "rock" && (() => {
