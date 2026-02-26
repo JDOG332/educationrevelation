@@ -211,7 +211,7 @@ export const POEMS = [
   // 3
   "though the moon's never wishing the sun it could be...",
   "always sharing her light in the dark for me...",
-  "every sinner's a saint with more path to go...",
+  "every sinner's a saint with more path to grow...",
   "",
   // 4 — THE WIDEST POINT — THE EYE OPENS
   "every girl needs a mountain to climb up and slide...",
@@ -220,16 +220,16 @@ export const POEMS = [
   "every eagle's an eaglet too frightened to serve...",
   "",
   // 3
-  "till the branch finally breaks... and the sky calms our nerves...",
+  "'til the branch finally breaks... and the sky calms our nerves...",
   "every deck has a dealer for trump she will play...",
-  "don't carve it in stone or it'll crumble to clay...",
+  "just don't carve it in stone or it'll crumble to clay...",
   "",
   // 2
   "every baby is born with all that it needs...",
-  "just wisdom and love and the chance to breathe...",
+  "just wisdom & love & the chance to breathe...",
   "",
   // 1 — MIRROR CLOSE
-  "the rhythm of life is fast & it's slow...",
+  "the rhythm of life is fast & so slow...",
 ];
 
 export const THE_ANSWER = {
