@@ -147,7 +147,7 @@ export default function TheoryOfEverything() {
 
   // Golden flood — when depth 5 activates, start the 20-second countdown
   useEffect(() => {
-    if (depth === 5) {
+    if (depth === 8) {
       setGoldenFlood(false);
       const t = setTimeout(() => setGoldenFlood(true), 20000);
       return () => clearTimeout(t);
@@ -166,7 +166,7 @@ export default function TheoryOfEverything() {
       // Instant transition — used by DreamMultiverse canvas auto-advance (depth 1→2)
       // No waterfall overlays, no fading, no delay. The canvas handles its own visual transition.
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(d => Math.min(d + 1, 5));
+      setDepth(d => Math.min(d + 1, 9));
       clearAllSubs();
       return;
     }
@@ -179,7 +179,7 @@ export default function TheoryOfEverything() {
     // Phase 1: EXIT — current content falls away (500ms)
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(d => Math.min(d + 1, 5));
+      setDepth(d => Math.min(d + 1, 9));
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
@@ -7801,8 +7801,140 @@ export default function TheoryOfEverything() {
         );
       })()}
 
-      {/* ===== DEPTH 4 — THE MAP: 101 SEEDS ===== */}
+      {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
       {depth === 5 && (
+        <div style={{
+          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          zIndex: 1500,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          ...getDepthWrap(5),
+        }}>
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease" }}>
+            <div style={{
+              fontSize: "clamp(40px, 8vw, 60px)",
+              marginBottom: Math.round(8 * PHI),
+              animation: "gentleFloat 8s ease-in-out infinite",
+              filter: "drop-shadow(0 0 20px rgba(224,80,80,0.2))",
+            }}>⚡</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
+              textShadow: "0 0 40px rgba(224,80,80,0.08)",
+            }}>THE BREAK</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3vw, 21px)",
+              fontStyle: "italic", color: "rgba(224,80,80,0.45)",
+              letterSpacing: 1, lineHeight: PHI,
+              marginTop: Math.round(5 * PHI),
+            }}>I crack</div>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1,
+              margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.25), transparent)",
+            }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.8vw, 18px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+              marginTop: Math.round(8 * PHI),
+              animation: "breathe 6s ease-in-out infinite",
+            }}>what breaks you open so the light gets in...</div>
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 6 — THE SELF — I am ===== */}
+      {depth === 6 && (
+        <div style={{
+          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          zIndex: 1500,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          ...getDepthWrap(6),
+        }}>
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease" }}>
+            <div style={{
+              fontSize: "clamp(40px, 8vw, 60px)",
+              marginBottom: Math.round(8 * PHI),
+              animation: "gentleFloat 8s ease-in-out infinite",
+              filter: "drop-shadow(0 0 20px rgba(79,195,247,0.2))",
+            }}>🪞</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
+              textShadow: "0 0 40px rgba(79,195,247,0.08)",
+            }}>THE SELF</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3vw, 21px)",
+              fontStyle: "italic", color: "rgba(79,195,247,0.45)",
+              letterSpacing: 1, lineHeight: PHI,
+              marginTop: Math.round(5 * PHI),
+            }}>I am</div>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1,
+              margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.25), transparent)",
+            }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.8vw, 18px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+              marginTop: Math.round(8 * PHI),
+              animation: "breathe 6s ease-in-out infinite",
+            }}>meeting yourself inside the mirror...</div>
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 7 — THE OTHER — you are ===== */}
+      {depth === 7 && (
+        <div style={{
+          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          zIndex: 1500,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          ...getDepthWrap(7),
+        }}>
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease" }}>
+            <div style={{
+              fontSize: "clamp(40px, 8vw, 60px)",
+              marginBottom: Math.round(8 * PHI),
+              animation: "gentleFloat 8s ease-in-out infinite",
+              filter: "drop-shadow(0 0 20px rgba(201,168,76,0.2))",
+            }}>🤝</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
+              textShadow: "0 0 40px rgba(201,168,76,0.08)",
+            }}>THE OTHER</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3vw, 21px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              letterSpacing: 1, lineHeight: PHI,
+              marginTop: Math.round(5 * PHI),
+            }}>you are</div>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1,
+              margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+            }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.8vw, 18px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+              marginTop: Math.round(8 * PHI),
+              animation: "breathe 6s ease-in-out infinite",
+            }}>7 uses 8 to become 9...</div>
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 8 — THE RETURN — we become ===== */}
+      {depth === 8 && (
         <div style={{
           width: "100%",
           display: "flex", flexDirection: "column", alignItems: "center",
@@ -7861,16 +7993,8 @@ export default function TheoryOfEverything() {
 
             <div style={{ height: Math.round(21 * PHI) }} />
 
-            {/* WE FINISH I START — clickable return */}
-            <div onClick={() => {
-              setFading(true);
-              setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: "instant" });
-                setDepth(0);
-                clearAllSubs();
-                setFading(false);
-              }, 800);
-            }} style={{
+            {/* Advance to THE MIRROR */}
+            <div onClick={() => goDeeper()} style={{
               cursor: "pointer",
               fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 21px)", letterSpacing: "0.5em",
               color: "rgba(201,168,76,0.3)",
@@ -7880,7 +8004,7 @@ export default function TheoryOfEverything() {
             }}
               onMouseEnter={e => e.currentTarget.style.color = "rgba(201,168,76,0.6)"}
               onMouseLeave={e => e.currentTarget.style.color = "rgba(201,168,76,0.3)"}
-            >WE FINISH I START</div>
+            >WE BECOME</div>
 
             <div style={{ height: Math.round(13 * PHI) }} />
 
@@ -8338,6 +8462,80 @@ export default function TheoryOfEverything() {
 
           <div style={{ textAlign: "center", marginTop: Math.round(34 * PHI) }}>
             <ReturnButton onClick={() => setActiveIdea(null)} />
+          </div>
+        </div>
+      )}
+
+      {/* ===== DEPTH 9 — THE MIRROR — it is what it is ===== */}
+      {depth === 9 && (
+        <div style={{
+          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          zIndex: 1500,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        }}>
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.5s ease" }}>
+            <div style={{
+              fontSize: "clamp(60px, 14vw, 100px)",
+              marginBottom: Math.round(13 * PHI),
+              animation: "moonRadiate 6s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
+              filter: "drop-shadow(0 0 40px rgba(232,232,240,0.1))",
+            }}>🌕</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
+              color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
+              textShadow: "0 0 40px rgba(201,168,76,0.08)",
+            }}>THE MIRROR</h2>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3vw, 21px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              letterSpacing: 1, lineHeight: PHI,
+              marginTop: Math.round(5 * PHI),
+            }}>it is what it is</div>
+            <div style={{
+              width: Math.round(50 * PHI), height: 1,
+              margin: `${Math.round(8 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+            }} />
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(18px, 3.5vw, 26px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              marginTop: Math.round(13 * PHI),
+              lineHeight: PHI,
+              maxWidth: 440,
+              animation: "fadeSlideUp 2s 0.5s both ease",
+            }}>
+              not <span style={{ color: "rgba(201,168,76,0.6)" }}>perfection</span>
+              <br />
+              <span style={{ color: "rgba(201,168,76,0.6)" }}>completion</span>
+            </div>
+            <div style={{ height: Math.round(21 * PHI) }} />
+            <div onClick={() => {
+              setFading(true);
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "instant" });
+                setDepth(0);
+                clearAllSubs();
+                setFading(false);
+              }, 800);
+            }} style={{
+              cursor: "pointer",
+              fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 21px)", letterSpacing: "0.5em",
+              color: "rgba(201,168,76,0.3)",
+              animation: "fadeSlideUp 2s 1s both ease, starGlow 5s 2s ease-in-out infinite",
+              transition: "color 0.4s",
+              userSelect: "none",
+            }}
+              onMouseEnter={e => e.currentTarget.style.color = "rgba(201,168,76,0.6)"}
+              onMouseLeave={e => e.currentTarget.style.color = "rgba(201,168,76,0.3)"}
+            >WE FINISH I START</div>
+            <div style={{ height: Math.round(13 * PHI) }} />
+            <div style={{
+              fontSize: 24, opacity: 0.3,
+              animation: "fadeSlideUp 2s 1.3s both ease",
+            }}>🪙🪙</div>
           </div>
         </div>
       )}

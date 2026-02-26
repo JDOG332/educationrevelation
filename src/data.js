@@ -158,15 +158,19 @@ export const CONVERGENCE_DEPTHS = [
   { level: "III", title: "THE CONVERGENCE", text: "The final value (Ψ) is a probability of Universal Recognition. It is the mathematical point where subjective observation meets objective reality through the gate of Shared Ignorance being replaced by Verified Information." },
 ];
 
-export const DEPTH_NAMES = ["THE VOID", "THE DREAM", "THE POEM", "THE PACT", "THE PROOF", "∞"];
+export const DEPTH_NAMES = ["THE VOID", "THE DREAM", "THE POEM", "THE PACT", "THE PROOF", "THE BREAK", "THE SELF", "THE OTHER", "THE RETURN", "THE MIRROR"];
 
 export const DEPTH_ATMOSPHERES = [
-  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 void
-  "radial-gradient(ellipse at 50% 35%, rgba(8,6,20,1) 0%, #030306 85%)",       // 1 dream — deepest dark, stars live here
-  "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 2 poem
-  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 3 pact
-  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 4 convergence
-  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 5 ∞ — same as 0
+  "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 void — I want
+  "radial-gradient(ellipse at 50% 35%, rgba(8,6,20,1) 0%, #030306 85%)",       // 1 dream — I see
+  "radial-gradient(ellipse at 50% 50%, rgba(10,8,22,1) 0%, #030306 75%)",      // 2 poem — I feel
+  "radial-gradient(ellipse at 50% 40%, rgba(18,10,22,1) 0%, #030306 80%)",     // 3 pact — I shape
+  "radial-gradient(ellipse at 50% 45%, rgba(18,12,16,1) 0%, #030306 80%)",     // 4 proof — I know
+  "radial-gradient(ellipse at 50% 40%, rgba(28,8,8,1) 0%, #030306 80%)",       // 5 break — I crack
+  "radial-gradient(ellipse at 50% 45%, rgba(12,18,28,1) 0%, #030306 80%)",     // 6 self — I am
+  "radial-gradient(ellipse at 50% 50%, rgba(22,14,10,1) 0%, #030306 80%)",     // 7 other — you are
+  "radial-gradient(ellipse at 50% 35%, rgba(14,10,28,1) 0%, #030306 80%)",     // 8 return — we become
+  "radial-gradient(ellipse at 50% 50%, rgba(20,16,10,1) 0%, #030306 75%)",     // 9 mirror — it is what it is
 ];
 
 export const TRANSLATIONS = [
