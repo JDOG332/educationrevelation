@@ -48,8 +48,7 @@ export default function TheoryOfEverything() {
   const [transDir, setTransDir] = useState('deeper'); // 'deeper' | 'back' | 'void'
   const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
   const [prevDepth, setPrevDepth] = useState(null);
-  const [poemRevealLine, setPoemRevealLine] = useState(-1); // which poem line the stars have revealed (-1 = none)
-  // veilProgress removed — opening act now uses direct DOM manipulation via refs
+  const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
   const poemSeen = useRef(false);
 
   // THE OPENING ACT — words devour the darkness, then the light
@@ -141,10 +140,9 @@ export default function TheoryOfEverything() {
     };
   }, [depth]);
 
-  // Poem reveal is now handled by DreamMultiverseCanvas via onPoemLine callback
-  // Reset poem reveal when leaving depth 2
+  // Reset veil state when leaving depth 2
   useEffect(() => {
-    if (depth !== 2) setPoemRevealLine(-1);
+    if (depth !== 2) setVeilParted(false);
   }, [depth]);
 
   // Golden flood — when depth 5 activates, start the 20-second countdown
@@ -654,7 +652,7 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
       {/* Root-level so it escapes all stacking contexts */}
-      {depth >= 1 && depth <= 4 && (poemRevealLine >= 16 || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
+      {depth >= 1 && depth <= 4 && (veilParted || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
         <div style={{
           position: "fixed", bottom: "2%", left: 0, width: "100%",
           textAlign: "center", zIndex: 9500, pointerEvents: "none",
@@ -829,7 +827,7 @@ export default function TheoryOfEverything() {
           opacity: 1,
           pointerEvents: depth <= 1 ? "auto" : "none",
         }}>
-          <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onPoemLine={(line) => setPoemRevealLine(line)} />
+          <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onVeilParted={() => setVeilParted(true)} />
 
           {/* Scale indicators — visible during depth 1 */}
           {depth === 1 && (
@@ -885,31 +883,29 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE POEM (stars become words) ===== */}
+      {/* ===== DEPTH 2 — THE POEM (behind the veil) ===== */}
       {depth === 2 && (
         <div style={{
           position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-          zIndex: 5001, pointerEvents: 'none',
+          zIndex: 4999, pointerEvents: 'none',
           display: 'flex', flexDirection: 'column',
           alignItems: 'center', justifyContent: 'center',
           padding: '5% 10%',
+          opacity: veilParted ? 1 : 0,
+          transition: 'opacity 2.5s ease',
         }}>
           {POEMS.map((line, i) => {
             const text = line.join(' ');
-            const revealed = i <= poemRevealLine;
             return (
               <div key={i} style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: 'clamp(14px, 3.2vw, 24px)',
+                fontSize: 'clamp(13px, 3vw, 22px)',
                 fontStyle: 'italic',
                 fontWeight: 300,
-                color: 'rgba(232,232,240,0.85)',
+                color: 'rgba(232,232,240,0.8)',
                 textAlign: 'center',
                 lineHeight: 1.618,
                 letterSpacing: 1.5,
-                opacity: revealed ? 1 : 0,
-                transform: revealed ? 'translateY(0)' : 'translateY(8px)',
-                transition: 'opacity 1.2s ease, transform 1.2s ease',
                 marginBottom: 2,
               }}>
                 {text}
@@ -917,8 +913,8 @@ export default function TheoryOfEverything() {
             );
           })}
 
-          {/* Tap to go deeper — appears after all lines revealed */}
-          {poemRevealLine >= 16 && (
+          {/* Tap to go deeper */}
+          {veilParted && (
             <div
               onClick={() => goDeeper()}
               style={{

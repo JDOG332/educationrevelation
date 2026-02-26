@@ -1,14 +1,14 @@
 import { useRef, useEffect } from "react";
-import { PHI, POEMS } from "../data.js";
+import { PHI } from "../data.js";
 
 /* ============================================================
    DREAM MULTIVERSE — 9³ = 729-body N-body gravitational simulation
    
    DEPTH 1: The Dance — zoom in, zoom out, collapse to dot
-   DEPTH 2: The Poem — 729 bodies rearrange into constellation lines
+   DEPTH 2: The Veil Parts — stars gather into a curtain, then split
+            apart to reveal the poem waiting behind them.
    
-   The universe doesn't disappear. It transforms.
-   Same equation at every scale: Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²
+   The universe was hiding the truth. Then it steps aside.
    ============================================================ */
 
 const CLUSTER_COLORS = [
@@ -51,21 +51,16 @@ function simLevel(bodies, dt, softening, damping, ax, ay, pull) {
   }
 }
 
-// Poem lines for target distribution
-const POEM_LINES = POEMS.map(p => p.join(" "));
-const POEM_CHAR_COUNTS = POEM_LINES.map(l => l.replace(/\s/g, "").length);
-const TOTAL_CHARS = POEM_CHAR_COUNTS.reduce((a, b) => a + b, 0);
-
-export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
+export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted }) {
   const canvasRef = useRef(null);
   const stateRef = useRef(null);
   const frameRef = useRef(null);
   const depthRef = useRef(depth);
   const goDeeperRef = useRef(goDeeper);
-  const onPoemLineRef = useRef(onPoemLine);
+  const onVeilPartedRef = useRef(onVeilParted);
   depthRef.current = depth;
   goDeeperRef.current = goDeeper;
-  onPoemLineRef.current = onPoemLine;
+  onVeilPartedRef.current = onVeilParted;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -111,7 +106,9 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
             return {
               x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed,
               cEff: C_EFF[ci]*2, id: ci,
-              targetX: 0, targetY: 0, lineIndex: -1,
+              // Veil target: random position spread across screen
+              veilX: Math.random() * W,
+              veilY: Math.random() * H,
               hi, si, ci,
             };
           });
@@ -130,67 +127,66 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
         for (const cl of sc.clusters)
           allClusters.push(cl);
 
-    // ===== ASSIGN POEM TARGETS =====
-    const lineHeight = H / (POEM_LINES.length + 2);
-    const maxLineWidth = W * 0.70;
-    const maxChars = Math.max(...POEM_CHAR_COUNTS);
-    let bodyIndex = 0;
-
-    for (let li = 0; li < POEM_LINES.length; li++) {
-      const proportion = POEM_CHAR_COUNTS[li] / TOTAL_CHARS;
-      const bodiesForLine = Math.max(10, Math.round(729 * proportion));
-      const lineY = lineHeight * (li + 1.5);
-      const lineW = maxLineWidth * (POEM_CHAR_COUNTS[li] / maxChars);
-
-      for (let b = 0; b < bodiesForLine && bodyIndex < 729; b++) {
-        const cl = allClusters[bodyIndex];
-        const spreadT = bodiesForLine > 1 ? b / (bodiesForLine - 1) : 0.5;
-        cl.targetX = CX - lineW / 2 + spreadT * lineW + (Math.random() - 0.5) * 5;
-        cl.targetY = lineY + (Math.random() - 0.5) * 3;
-        cl.lineIndex = li;
-        bodyIndex++;
-      }
-    }
-    while (bodyIndex < 729) {
-      const cl = allClusters[bodyIndex];
-      cl.targetX = CX + (Math.random() - 0.5) * 30;
-      cl.targetY = lineHeight * POEM_LINES.length + (Math.random() - 0.5) * 10;
-      cl.lineIndex = POEM_LINES.length - 1;
-      bodyIndex++;
-    }
+    // Assign veil targets — evenly spread across screen like a curtain
+    allClusters.forEach((cl, i) => {
+      const cols = Math.ceil(Math.sqrt(729 * (W / H)));
+      const rows = Math.ceil(729 / cols);
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      cl.veilX = (col + 0.5) / cols * W + (Math.random() - 0.5) * (W / cols * 0.6);
+      cl.veilY = (row + 0.5) / rows * H + (Math.random() - 0.5) * (H / rows * 0.6);
+    });
 
     const speedScale = Math.max(1, 1200 / Math.max(W, H));
     const zoomTarget = [0,1,2,3,5,6,7,8][Math.floor(Math.random()*8)];
 
     let mvTime = 0;
     let transitioned = false;
-    let morphProgress = 0;
     let depth2Start = null;
-    let revealedLines = -1;
+    let veilParted = false;
 
-    function simulate() {
-      const morphDamp = 1 - morphProgress * 0.97;
-      simLevel(state.hypers, 0.4 * speedScale * morphDamp, 70, 0.9998, CX, CY, 0.00004 * speedScale);
-      for (const hc of state.hypers)
-        simLevel(hc.supers, 0.35 * speedScale * morphDamp, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
-      for (const hc of state.hypers)
-        for (const sc of hc.supers)
-          simLevel(sc.clusters, 0.28 * speedScale * morphDamp, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
+    // Veil phases:
+    // 0-3s: bodies gather from collapsed dot into curtain (spread across screen)
+    // 3-6s: curtain holds — dense veil of shimmering stars
+    // 6-10s: curtain parts — left half drifts left, right half drifts right
+    // 10s+: fully parted, stars shimmer at edges
 
-      if (morphProgress > 0) {
-        const pull = morphProgress * morphProgress;
-        for (const cl of allClusters) {
-          const dx = cl.targetX - cl.x;
-          const dy = cl.targetY - cl.y;
-          cl.vx += dx * pull * 0.04;
-          cl.vy += dy * pull * 0.04;
-          cl.vx *= 1 - pull * 0.1;
-          cl.vy *= 1 - pull * 0.1;
+    function simulate(morphPhase, partProgress) {
+      // During dance: full orbital simulation
+      if (morphPhase === "dance") {
+        simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
+        for (const hc of state.hypers)
+          simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
+        for (const hc of state.hypers)
+          for (const sc of hc.supers)
+            simLevel(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
+        return;
+      }
+
+      // During veil: pull toward veil positions (+ part offset)
+      for (const cl of allClusters) {
+        let tx = cl.veilX;
+        let ty = cl.veilY;
+
+        // Parting: left side goes left, right side goes right
+        if (partProgress > 0) {
+          const side = cl.veilX < CX ? -1 : 1;
+          tx += side * partProgress * W * 0.55;
         }
+
+        const dx = tx - cl.x;
+        const dy = ty - cl.y;
+        const pull = morphPhase === "gather" ? 0.06 : 0.02;
+        cl.vx += dx * pull;
+        cl.vy += dy * pull;
+        cl.vx *= 0.88;
+        cl.vy *= 0.88;
+        cl.x += cl.vx;
+        cl.y += cl.vy;
       }
     }
 
-    function drawBodies(cameraZoom, cameraPanX, cameraPanY, useCamera) {
+    function drawBodies(cameraZoom, cameraPanX, cameraPanY, useCamera, brightness) {
       if (useCamera) {
         ctx.save();
         ctx.translate(CX, CY);
@@ -198,16 +194,14 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
         ctx.translate(-CX + cameraPanX, -CY + cameraPanY);
       }
 
-      // Halos only during dance (morph < 0.3)
-      if (morphProgress < 0.3) {
-        const haloFade = 1 - morphProgress / 0.3;
+      // Halos — only during dance when not collapsing
+      if (brightness < 0.1) {
         for (let hi = 0; hi < 9; hi++) {
           const hc = state.hypers[hi];
           const hColor = CLUSTER_COLORS[hi];
           const hhR = hi === 4 ? 100 : 65;
           const hhg = ctx.createRadialGradient(hc.x, hc.y, 0, hc.x, hc.y, hhR);
           hhg.addColorStop(0, hColor + "04"); hhg.addColorStop(0.5, hColor + "01"); hhg.addColorStop(1, hColor + "00");
-          ctx.globalAlpha = haloFade;
           ctx.beginPath(); ctx.arc(hc.x, hc.y, hhR, 0, Math.PI*2); ctx.fillStyle = hhg; ctx.fill();
 
           for (let si = 0; si < 9; si++) {
@@ -219,16 +213,12 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
             ctx.beginPath(); ctx.arc(sc.x, sc.y, shR, 0, Math.PI*2); ctx.fillStyle = shg; ctx.fill();
           }
         }
-        ctx.globalAlpha = 1;
-      }
 
-      // Mirror triangles — only during dance
-      if (morphProgress < 0.2) {
-        const triFade = 1 - morphProgress / 0.2;
+        // Mirror triangles
         for (const [a, b] of MIRROR_PAIRS) {
           const ha = state.hypers[a], hb = state.hypers[b], hm = state.hypers[4];
           ctx.beginPath(); ctx.moveTo(ha.x, ha.y); ctx.lineTo(hm.x, hm.y); ctx.lineTo(hb.x, hb.y); ctx.closePath();
-          ctx.fillStyle = `rgba(201,168,76,${0.003 * triFade})`; ctx.strokeStyle = `rgba(201,168,76,${0.008 * triFade})`;
+          ctx.fillStyle = "rgba(201,168,76,0.003)"; ctx.strokeStyle = "rgba(201,168,76,0.008)";
           ctx.lineWidth = 0.3; ctx.fill(); ctx.stroke();
         }
       }
@@ -238,38 +228,22 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
         const cColor = CLUSTER_COLORS[cl.ci];
         const isCoreMoon = cl.hi===4 && cl.si===4 && cl.ci===4;
         const isMoon = cl.ci === 4;
-
-        const baseR = isCoreMoon ? 2.0 : isMoon ? 1.2 : 0.7;
-        // Bodies grow slightly as they settle into poem
-        const mRadius = baseR + morphProgress * 0.3;
+        const mRadius = (isCoreMoon ? 2.0 : isMoon ? 1.2 : 0.7) + brightness * 0.2;
         const mGlowR = mRadius * (isCoreMoon ? 8 : isMoon ? 4 : 2.5);
-
         const baseAlpha = isCoreMoon ? 0.15 : isMoon ? 0.07 : 0.03;
-        const glowAlpha = baseAlpha + morphProgress * 0.1;
+        const glowAlpha = baseAlpha + brightness * 0.08;
 
-        // Glow
         const mg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mGlowR);
         mg.addColorStop(0, `rgba(232,232,240,${glowAlpha})`);
         mg.addColorStop(0.5, `rgba(232,232,240,${glowAlpha * 0.3})`);
         mg.addColorStop(1, "rgba(232,232,240,0)");
         ctx.beginPath(); ctx.arc(cl.x, cl.y, mGlowR, 0, Math.PI*2); ctx.fillStyle = mg; ctx.fill();
 
-        // Core — blend cluster color → warm gold as morph progresses
         ctx.beginPath(); ctx.arc(cl.x, cl.y, mRadius, 0, Math.PI*2);
-        const m = morphProgress;
-        if (m < 0.3) {
-          const mcg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mRadius);
-          mcg.addColorStop(0, isCoreMoon ? "#ffffff" : isMoon ? "#e8e8f0" : cColor);
-          mcg.addColorStop(1, cColor + "30");
-          ctx.fillStyle = mcg;
-        } else {
-          const t = (m - 0.3) / 0.7; // 0→1 over the settling phase
-          const r = Math.round(200 + t * 55);  // → 255
-          const g = Math.round(200 + t * (220 - 200)); // → 220
-          const b = Math.round(210 + t * (180 - 210)); // → 180 (warm)
-          ctx.fillStyle = `rgba(${r},${g},${b},${0.25 + t * 0.45})`;
-        }
-        ctx.fill();
+        const mcg = ctx.createRadialGradient(cl.x, cl.y, 0, cl.x, cl.y, mRadius);
+        mcg.addColorStop(0, isCoreMoon ? "#ffffff" : isMoon ? "#e8e8f0" : cColor);
+        mcg.addColorStop(1, cColor + "30");
+        ctx.fillStyle = mcg; ctx.fill();
       }
 
       if (useCamera) ctx.restore();
@@ -279,25 +253,18 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
     let depthOneStart = null;
 
     function loop(now) {
-      // Track depth 1 start
-      if (depthRef.current >= 1 && depthOneStart === null) {
-        depthOneStart = now;
-      }
+      if (depthRef.current >= 1 && depthOneStart === null) depthOneStart = now;
       const zoomElapsed = depthOneStart ? (now - depthOneStart) / 1000 : 0;
 
-      // Track depth 2 start
-      if (depthRef.current >= 2 && depth2Start === null) {
-        depth2Start = now;
-      }
-      const poemElapsed = depth2Start ? (now - depth2Start) / 1000 : 0;
+      if (depthRef.current >= 2 && depth2Start === null) depth2Start = now;
+      const veilElapsed = depth2Start ? (now - depth2Start) / 1000 : 0;
 
       ctx.clearRect(0, 0, W, H);
 
       // === DEPTH 1: The Dance ===
       if (depthRef.current === 1) {
-        simulate();
+        simulate("dance", 0);
 
-        // Camera
         const z1Start = 1.0, z1End = 8.0;
         const z1t = Math.max(0, Math.min(1, (zoomElapsed - z1Start) / (z1End - z1Start)));
         const z1eased = z1t * z1t * (3 - 2 * z1t);
@@ -318,7 +285,7 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
           panX = 0; panY = 0;
         }
 
-        drawBodies(zoom, panX, panY, true);
+        drawBodies(zoom, panX, panY, true, 0);
 
         // White glow during collapse
         if (z2eased > 0.01) {
@@ -350,29 +317,49 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onPoemLine }) {
         }
       }
 
-      // === DEPTH 2: The Poem Formation ===
+      // === DEPTH 2: The Veil ===
       if (depthRef.current === 2) {
-        // Morph: 0→1 over 8 seconds (slow, organic)
-        morphProgress = Math.min(1, poemElapsed / 8);
+        // Phase timing
+        const GATHER_END = 3;     // 0-3s: bodies gather into curtain
+        const HOLD_END = 5;       // 3-5s: curtain holds
+        const PART_END = 9;       // 5-9s: curtain parts
 
-        // Reveal lines progressively
-        const revealStart = 0.12;
-        const revealEnd = 0.88;
-        const newRevealedLines = morphProgress < revealStart ? -1
-          : Math.min(POEM_LINES.length - 1,
-              Math.floor(((morphProgress - revealStart) / (revealEnd - revealStart)) * POEM_LINES.length));
+        let morphPhase, partProgress, brightness;
 
-        if (newRevealedLines > revealedLines) {
-          revealedLines = newRevealedLines;
-          if (onPoemLineRef.current) onPoemLineRef.current(revealedLines);
+        if (veilElapsed < GATHER_END) {
+          // Gathering into curtain
+          morphPhase = "gather";
+          partProgress = 0;
+          brightness = Math.min(1, veilElapsed / GATHER_END);
+        } else if (veilElapsed < HOLD_END) {
+          // Curtain holding
+          morphPhase = "hold";
+          partProgress = 0;
+          brightness = 1;
+        } else if (veilElapsed < PART_END) {
+          // Curtain parting
+          morphPhase = "part";
+          const t = (veilElapsed - HOLD_END) / (PART_END - HOLD_END);
+          partProgress = t * t * (3 - 2 * t); // smoothstep
+          brightness = 1 - partProgress * 0.5; // dim as they part
+        } else {
+          // Fully parted
+          morphPhase = "parted";
+          partProgress = 1;
+          brightness = 0.5;
         }
 
-        simulate();
-        drawBodies(1, 0, 0, false); // no camera transform — screen coords
+        simulate(morphPhase, partProgress);
+        drawBodies(1, 0, 0, false, brightness);
+
+        // Signal poem reveal when curtain starts parting
+        if (veilElapsed >= HOLD_END && !veilParted) {
+          veilParted = true;
+          if (onVeilPartedRef.current) onVeilPartedRef.current();
+        }
       }
 
       if (depthRef.current > 2) return;
-
       frameRef.current = requestAnimationFrame(loop);
     }
 
