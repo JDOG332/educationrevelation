@@ -48,7 +48,7 @@ export default function TheoryOfEverything() {
   const [transDir, setTransDir] = useState('deeper'); // 'deeper' | 'back' | 'void'
   const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
   const [prevDepth, setPrevDepth] = useState(null);
-  const [poemPhase, setPoemPhase] = useState(0); // 0=not on poem, 1=whiteout, 2=first exhale, 3=inhale/cluster, 4=exhale/all, 5=settle/poem
+  const [poemRevealLine, setPoemRevealLine] = useState(-1); // which poem line the stars have revealed (-1 = none)
   // veilProgress removed — opening act now uses direct DOM manipulation via refs
   const poemSeen = useRef(false);
 
@@ -141,25 +141,10 @@ export default function TheoryOfEverything() {
     };
   }, [depth]);
 
-  // Poem zoom-out sequence — timed to hold interest without losing suspense
-  // Skip the sequence if the user has already seen it this session
+  // Poem reveal is now handled by DreamMultiverseCanvas via onPoemLine callback
+  // Reset poem reveal when leaving depth 2
   useEffect(() => {
-    if (depth === 2) {
-      if (poemSeen.current) {
-        // Already seen — skip straight to the poem
-        setPoemPhase(5);
-        return;
-      }
-      setPoemPhase(0.5);  // NEW: start tiny — matches the collapsed dot
-      const tGrow = setTimeout(() => setPoemPhase(1), 2000);   // grow to full white ball over 2s
-      const t2 = setTimeout(() => setPoemPhase(2), 2300);       // quick hold, then first exhale
-      const t3 = setTimeout(() => setPoemPhase(3), 3500);      // see the cluster
-      const t4 = setTimeout(() => setPoemPhase(4), 4800);      // all balls pulling away
-      const t5 = setTimeout(() => { setPoemPhase(5); poemSeen.current = true; }, 6200);  // settle
-      return () => { clearTimeout(tGrow); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
-    } else {
-      setPoemPhase(0);
-    }
+    if (depth !== 2) setPoemRevealLine(-1);
   }, [depth]);
 
   // Golden flood — when depth 5 activates, start the 20-second countdown
@@ -669,7 +654,7 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
       {/* Root-level so it escapes all stacking contexts */}
-      {depth >= 1 && depth <= 4 && (poemPhase >= 5 || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
+      {depth >= 1 && depth <= 4 && (poemRevealLine >= 16 || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
         <div style={{
           position: "fixed", bottom: "2%", left: 0, width: "100%",
           textAlign: "center", zIndex: 9500, pointerEvents: "none",
@@ -760,53 +745,15 @@ export default function TheoryOfEverything() {
 
       {/* THE MULTIVERSE — persistent gravitational simulation behind ALL depths.
           9 bodies. Real physics. Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist².
-          NOT rendered at depths 0-1 — DreamMultiverseCanvas handles those.
+          NOT rendered at depths 0-2 — DreamMultiverseCanvas handles those.
           Bright at surface, fading as you go deeper — the stars are always there. */}
-      {depth >= 2 && <Multiverse
-        opacity={
-          depth === 2 ? (
-              poemPhase < 1 ? 0.6    // growing — partially visible
-              : poemPhase <= 1 ? 1
-              : poemPhase === 2 ? 0.85
-              : poemPhase === 3 ? 0.5
-              : poemPhase === 4 ? 0.3
-              : 0.12
-            )
-          : depth <= 3 ? 0.25
-          : depth <= 4 ? 0.1
-          : 0.05
-        }
+      {depth >= 3 && <Multiverse
+        opacity={depth <= 3 ? 0.25 : depth <= 4 ? 0.1 : 0.05}
         showTriangles={depth === 3}
-        showOrbits={depth <= 3 && depth !== 2}
-        zoom={
-          depth === 2 ? (
-              poemPhase < 1 ? 0.5    // tiny — matches the collapsed dot
-              : poemPhase <= 1 ? 45
-              : poemPhase === 2 ? 8
-              : poemPhase === 3 ? 2.5
-              : poemPhase === 4 ? 0.7
-              : 0.28
-            )
-          : 1
-        }
-        blur={
-          depth === 2 ? (
-              poemPhase < 1 ? 0      // no blur while tiny
-              : poemPhase <= 2 ? 0
-              : poemPhase === 3 ? 1.5
-              : poemPhase === 4 ? 4
-              : 10
-            )
-          : 0
-        }
-        transitionTiming={
-          depth === 2 ? (
-              poemPhase < 1 ? "none"
-              : poemPhase <= 1 ? "opacity 2s cubic-bezier(0.25,0.1,0.25,1), transform 2s cubic-bezier(0.25,0.1,0.25,1), filter 2s cubic-bezier(0.25,0.1,0.25,1)"
-              : "opacity 1.4s cubic-bezier(0.25,0.1,0.25,1), transform 1.4s cubic-bezier(0.25,0.1,0.25,1), filter 1.4s cubic-bezier(0.25,0.1,0.25,1)"
-            )
-          : "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)"
-        }
+        showOrbits={depth <= 3}
+        zoom={1}
+        blur={0}
+        transitionTiming={"opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)"}
       />}
 
       {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
@@ -877,13 +824,12 @@ export default function TheoryOfEverything() {
       {depth <= 2 && (
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
-          zIndex: depth <= 1 ? 1500 : 2,
+          zIndex: depth <= 1 ? 1500 : 5000,
           overflow: "hidden",
-          opacity: depth <= 1 ? 1 : 0,
-          transition: "opacity 1.5s cubic-bezier(0.23, 1, 0.32, 1)",
+          opacity: 1,
           pointerEvents: depth <= 1 ? "auto" : "none",
         }}>
-          <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} />
+          <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onPoemLine={(line) => setPoemRevealLine(line)} />
 
           {/* Scale indicators — visible during depth 1 */}
           {depth === 1 && (
@@ -939,411 +885,58 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 2 — THE POEM ===== */}
+      {/* ===== DEPTH 2 — THE POEM (stars become words) ===== */}
       {depth === 2 && (
         <div style={{
-          height: "100vh", width: "100%", position: "fixed", top: 0, left: 0, overflow: "hidden",
-          zIndex: 5000,
-          ...getDepthWrap(2),
+          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+          zIndex: 5001, pointerEvents: 'none',
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center',
+          padding: '5% 10%',
         }}>
+          {POEMS.map((line, i) => {
+            const text = line.join(' ');
+            const revealed = i <= poemRevealLine;
+            return (
+              <div key={i} style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: 'clamp(14px, 3.2vw, 24px)',
+                fontStyle: 'italic',
+                fontWeight: 300,
+                color: 'rgba(232,232,240,0.85)',
+                textAlign: 'center',
+                lineHeight: 1.618,
+                letterSpacing: 1.5,
+                opacity: revealed ? 1 : 0,
+                transform: revealed ? 'translateY(0)' : 'translateY(8px)',
+                transition: 'opacity 1.2s ease, transform 1.2s ease',
+                marginBottom: 2,
+              }}>
+                {text}
+              </div>
+            );
+          })}
 
-          {/* White flash — the Moon filling your vision */}
-          <div style={{
-            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-            background: "radial-gradient(circle, rgba(232,232,240,0.95) 0%, rgba(232,232,240,0.7) 30%, rgba(14,10,28,0.8) 70%, #030306 100%)",
-            zIndex: 5001, pointerEvents: "none",
-            opacity: poemPhase < 1 ? 0 : poemPhase <= 1 ? 1 : poemPhase === 2 ? 0.3 : 0,
-            transition: poemPhase < 1 ? "opacity 1.5s ease" : poemPhase <= 1 ? "opacity 0.5s ease" : poemPhase === 2 ? "opacity 3.5s cubic-bezier(0.25,0.1,0.25,1)" : "opacity 3s ease-out",
-          }} />
-
-          {/* SKIP BUTTON — invisible fullscreen tap target during animation */}
-          {poemPhase > 0 && poemPhase < 5 && (
+          {/* Tap to go deeper — appears after all lines revealed */}
+          {poemRevealLine >= 16 && (
             <div
-              onClick={(e) => {
-                e.stopPropagation();
-                setPoemPhase(5);
-                poemSeen.current = true;
-              }}
+              onClick={() => goDeeper()}
               style={{
-                position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                zIndex: 9800, cursor: "pointer",
-                background: "transparent",
+                marginTop: 30,
+                fontFamily: "'Cinzel', serif",
+                fontSize: 12,
+                letterSpacing: 6,
+                color: 'rgba(201,168,76,0.3)',
+                cursor: 'pointer',
+                opacity: 1,
+                animation: 'letterBreathe 4s ease-in-out infinite',
+                pointerEvents: 'auto',
               }}
-            />
+            >GO DEEPER</div>
           )}
-
-          {/* The Hourglass Poem — Full Rebuild */}
-          {poemPhase >= 5 && (() => {
-            const HourglassPoem = () => {
-              const canvasRef = useRef(null);
-              const stateRef = useRef(null);
-              const frameRef = useRef(null);
-
-              const POEM_LINES = [
-                "It's the rhythm of life",
-                "",
-                "Every hope, a heartbeat.",
-                "Every wish, a dream.",
-                "The moon always wishing…",
-                "the sun it could be.",
-                "",
-                "Every life, a purpose…",
-                "hidden inside.",
-                "Every sinner, a saint…",
-                "trying to hide.",
-                "",
-                "Every baby is born,",
-                "with all that it needs…",
-                "Just wisdom and love…",
-                "and the chance to breathe.",
-                "",
-                "It's the rhythm of life",
-              ];
-
-              useEffect(() => {
-                const canvas = canvasRef.current;
-                if (!canvas) return;
-                const ctx = canvas.getContext("2d");
-                const dpr = window.devicePixelRatio || 1;
-                const W = window.innerWidth;
-                const H = window.innerHeight;
-                canvas.width = W * dpr; canvas.height = H * dpr;
-                canvas.style.width = W + "px"; canvas.style.height = H + "px";
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-                const CX = W / 2, CY = H / 2;
-                const glassH = H * 0.88;
-                const topY = (H - glassH) / 2;
-                const botY = topY + glassH;
-                const midY = CY;
-                const maxW = Math.min(W * 0.42, 220);
-                const neckW = 5;
-
-                function glassWidth(y) {
-                  if (y <= topY) return maxW;
-                  if (y >= botY) return maxW;
-                  if (y <= midY) {
-                    const t = (y - topY) / (midY - topY);
-                    const e = t * t * (3 - 2 * t);
-                    return maxW + (neckW - maxW) * e;
-                  } else {
-                    const t = (y - midY) / (botY - midY);
-                    const e = t * t * (3 - 2 * t);
-                    return neckW + (maxW - neckW) * e;
-                  }
-                }
-
-                const PHASE_DRIP = 0;
-                const PHASE_TREMBLE = 1;
-                const PHASE_RISE = 2;
-                const PHASE_POEM = 3;
-
-                if (!stateRef.current) {
-                  const grains = [];
-                  const topSandStart = topY + (midY - topY) * 0.08;
-                  for (let i = 0; i < 600; i++) {
-                    const gy = topSandStart + Math.random() * (midY - topSandStart - 15);
-                    const gw = glassWidth(gy) * 0.88;
-                    grains.push({
-                      x: CX + (Math.random() - 0.5) * gw * 2,
-                      y: gy,
-                      origX: 0, origY: 0,
-                      homeX: 0, homeY: 0,
-                      size: 0.5 + Math.random() * 1.4,
-                      opacity: 0.08 + Math.random() * 0.2,
-                      color: Math.random() < 0.85 ? "gold" : "white",
-                      assigned: false,
-                      lineIndex: 0,
-                      isBookend: false,
-                      type: "top",
-                    });
-                  }
-                  const botSandTop = botY - (botY - midY) * 0.18;
-                  for (let i = 0; i < 250; i++) {
-                    const gy = botSandTop + Math.random() * (botY - botSandTop - 6);
-                    const gw = glassWidth(gy) * 0.7;
-                    const coneW = gw * ((gy - botSandTop) / (botY - botSandTop));
-                    grains.push({
-                      x: CX + (Math.random() - 0.5) * coneW * 2,
-                      y: gy,
-                      origX: 0, origY: 0,
-                      homeX: 0, homeY: 0,
-                      size: 0.5 + Math.random() * 1.3,
-                      opacity: 0.08 + Math.random() * 0.18,
-                      color: Math.random() < 0.8 ? "gold" : "white",
-                      assigned: false,
-                      lineIndex: 0,
-                      isBookend: false,
-                      type: "bottom",
-                    });
-                  }
-
-                  // Store original positions
-                  grains.forEach(g => { g.origX = g.x; g.origY = g.y; });
-
-                  const drips = [];
-                  for (let i = 0; i < 40; i++) {
-                    drips.push({
-                      x: CX + (Math.random() - 0.5) * neckW * 0.6,
-                      y: midY + 4 + Math.random() * (botSandTop - midY) * 0.6,
-                      vy: 0.5 + Math.random() * 1.2,
-                      size: 0.5 + Math.random() * 0.9,
-                      opacity: 0.2 + Math.random() * 0.35,
-                      phase: Math.random() * Math.PI * 2,
-                    });
-                  }
-
-                  // === BULLETPROOF LETTER TARGETS ===
-                  // Use measureText on a temp canvas with fallback font
-                  const tmpC = document.createElement("canvas");
-                  tmpC.width = W * 2; tmpC.height = H * 2;
-                  const tmpCtx = tmpC.getContext("2d");
-
-                  const letterTargets = [];
-                  const visibleLines = POEM_LINES.filter(l => l !== "");
-                  const totalVisible = visibleLines.length;
-                  const lineH = Math.min(H / (totalVisible + 4), 42);
-                  const totalTextH = totalVisible * lineH;
-                  const textStartY = (H - totalTextH) / 2;
-
-                  let lineVisIdx = 0;
-                  POEM_LINES.forEach((line, li) => {
-                    if (!line) return;
-                    const isBookend = li === 0 || li === POEM_LINES.length - 1;
-                    const fSize = isBookend
-                      ? Math.max(22, Math.min(W * 0.07, 38))
-                      : Math.max(17, Math.min(W * 0.05, 28));
-
-                    // Use Georgia as reliable fallback for measurement
-                    const font = `italic ${fSize}px Georgia, serif`;
-                    tmpCtx.font = font;
-                    const yBase = textStartY + lineVisIdx * lineH + lineH * 0.6;
-
-                    // For each character, place grain targets
-                    const fullWidth = tmpCtx.measureText(line).width;
-                    let charX = CX - fullWidth / 2;
-
-                    for (let ci = 0; ci < line.length; ci++) {
-                      const ch = line[ci];
-                      const charW = tmpCtx.measureText(ch).width;
-                      if (ch === " ") { charX += charW; continue; }
-
-                      // Place multiple grains per character for density
-                      const grainsPerChar = isBookend ? 5 : 3;
-                      for (let gi = 0; gi < grainsPerChar; gi++) {
-                        letterTargets.push({
-                          x: charX + charW * (0.1 + Math.random() * 0.8),
-                          y: yBase + (Math.random() - 0.5) * fSize * 0.7,
-                          isBookend,
-                          lineIndex: li,
-                          charIndex: ci,
-                        });
-                      }
-                      charX += charW;
-                    }
-                    lineVisIdx++;
-                  });
-
-                  // Shuffle and assign
-                  const shuffled = [...grains].sort(() => Math.random() - 0.5);
-                  const maxAssign = Math.min(shuffled.length, letterTargets.length);
-                  for (let i = 0; i < maxAssign; i++) {
-                    shuffled[i].homeX = letterTargets[i].x;
-                    shuffled[i].homeY = letterTargets[i].y;
-                    shuffled[i].assigned = true;
-                    shuffled[i].lineIndex = letterTargets[i].lineIndex;
-                    shuffled[i].isBookend = letterTargets[i].isBookend;
-                  }
-
-                  // Also render the actual text lines for the POEM phase (crisp text overlay)
-                  const textLines = [];
-                  lineVisIdx = 0;
-                  POEM_LINES.forEach((line, li) => {
-                    if (!line) return;
-                    const isBookend = li === 0 || li === POEM_LINES.length - 1;
-                    const yBase = textStartY + lineVisIdx * lineH + lineH * 0.6;
-                    textLines.push({ text: line, y: yBase, isBookend, li });
-                    lineVisIdx++;
-                  });
-
-                  stateRef.current = {
-                    grains, drips, phase: PHASE_DRIP,
-                    startTime: performance.now(),
-                    glassOpacity: 1,
-                    textLines, botSandTop,
-                  };
-                }
-
-                const state = stateRef.current;
-
-                function drawGlass(opacity) {
-                  ctx.save();
-                  ctx.globalAlpha = opacity;
-                  const drawSide = (sign) => {
-                    ctx.beginPath();
-                    ctx.moveTo(CX + sign * maxW, topY);
-                    ctx.bezierCurveTo(CX + sign * maxW, topY + (midY - topY) * 0.55, CX + sign * neckW * 1.5, midY - (midY - topY) * 0.15, CX + sign * neckW, midY);
-                    ctx.strokeStyle = "rgba(201,168,76,0.16)"; ctx.lineWidth = 1.2; ctx.stroke();
-                    ctx.beginPath();
-                    ctx.moveTo(CX + sign * neckW, midY);
-                    ctx.bezierCurveTo(CX + sign * neckW * 1.5, midY + (botY - midY) * 0.15, CX + sign * maxW, botY - (botY - midY) * 0.55, CX + sign * maxW, botY);
-                    ctx.stroke();
-                  };
-                  drawSide(-1); drawSide(1);
-                  ctx.strokeStyle = "rgba(201,168,76,0.24)"; ctx.lineWidth = 2;
-                  ctx.beginPath(); ctx.moveTo(CX - maxW - 16, topY); ctx.lineTo(CX + maxW + 16, topY); ctx.stroke();
-                  ctx.beginPath(); ctx.moveTo(CX - maxW - 16, botY); ctx.lineTo(CX + maxW + 16, botY); ctx.stroke();
-                  ctx.strokeStyle = "rgba(201,168,76,0.2)"; ctx.lineWidth = 1.4;
-                  [[-1, topY], [1, topY], [-1, botY], [1, botY]].forEach(([s, yy]) => {
-                    ctx.beginPath(); ctx.moveTo(CX + s * (maxW + 16), yy - 5); ctx.lineTo(CX + s * (maxW + 16), yy + 5); ctx.stroke();
-                  });
-                  ctx.beginPath(); ctx.ellipse(CX, midY, neckW + 4, 2.5, 0, 0, Math.PI * 2);
-                  ctx.strokeStyle = "rgba(201,168,76,0.1)"; ctx.lineWidth = 0.8; ctx.stroke();
-                  ctx.globalAlpha = opacity * 0.04;
-                  ctx.beginPath();
-                  ctx.moveTo(CX - maxW + 14, topY + 4);
-                  ctx.bezierCurveTo(CX - maxW + 14, topY + (midY - topY) * 0.5, CX - neckW * 2, midY - 20, CX - neckW - 1, midY);
-                  ctx.strokeStyle = "rgba(201,168,76,1)"; ctx.lineWidth = 1; ctx.stroke();
-                  ctx.restore();
-                }
-
-                function loop(now) {
-                  const elapsed = (now - state.startTime) / 1000;
-                  ctx.clearRect(0, 0, W, H);
-
-                  if (elapsed < 3) state.phase = PHASE_DRIP;
-                  else if (elapsed < 4) state.phase = PHASE_TREMBLE;
-                  else if (elapsed < 10) state.phase = PHASE_RISE;
-                  else state.phase = PHASE_POEM;
-
-                  if (state.phase >= PHASE_RISE) {
-                    state.glassOpacity = Math.max(0, state.glassOpacity - 0.006);
-                  }
-
-                  if (state.glassOpacity > 0) {
-                    drawGlass(state.glassOpacity);
-                    if (state.phase <= PHASE_TREMBLE) {
-                      const b = 0.06 + Math.sin(elapsed * 2.5) * 0.025;
-                      const ng = ctx.createRadialGradient(CX, midY, 0, CX, midY, 30);
-                      ng.addColorStop(0, `rgba(201,168,76,${b * state.glassOpacity})`);
-                      ng.addColorStop(1, "rgba(201,168,76,0)");
-                      ctx.fillStyle = ng; ctx.fillRect(CX - 30, midY - 30, 60, 60);
-                    }
-                  }
-
-                  // DRIP + TREMBLE
-                  if (state.phase <= PHASE_TREMBLE) {
-                    for (const g of state.grains) {
-                      let dx = g.origX, dy = g.origY;
-                      if (state.phase === PHASE_TREMBLE) {
-                        const intensity = (elapsed - 3); // 0→1
-                        dx += (Math.random() - 0.5) * 3 * intensity;
-                        dy += (Math.random() - 0.5) * 3 * intensity;
-                      }
-                      const c = g.color === "gold"
-                        ? `rgba(201,168,76,${g.opacity * state.glassOpacity})`
-                        : `rgba(232,232,240,${g.opacity * 0.6 * state.glassOpacity})`;
-                      ctx.beginPath(); ctx.arc(dx, dy, g.size, 0, Math.PI * 2);
-                      ctx.fillStyle = c; ctx.fill();
-                    }
-                    for (const d of state.drips) {
-                      d.y += d.vy;
-                      d.x += Math.sin(elapsed * 3 + d.phase) * 0.15;
-                      if (d.y > state.botSandTop) { d.y = midY + 2; d.x = CX + (Math.random() - 0.5) * neckW * 0.6; }
-                      ctx.beginPath(); ctx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
-                      ctx.fillStyle = `rgba(201,168,76,${d.opacity * state.glassOpacity})`; ctx.fill();
-                    }
-                    for (let i = 0; i < 6; i++) {
-                      const sy = midY - 8 + i * 3, wobble = Math.sin(elapsed * 5 + i * 1.5) * 0.7;
-                      ctx.beginPath(); ctx.arc(CX + wobble, sy, 0.5, 0, Math.PI * 2);
-                      ctx.fillStyle = `rgba(201,168,76,${0.3 * state.glassOpacity})`; ctx.fill();
-                    }
-                  }
-
-                  // RISE
-                  if (state.phase >= PHASE_RISE && state.phase < PHASE_POEM) {
-                    const riseT = Math.min(1, (elapsed - 4) / 6);
-                    for (const g of state.grains) {
-                      if (g.assigned) {
-                        const lineDelay = Math.min(0.4, (g.lineIndex || 0) * 0.025);
-                        const localT = Math.max(0, Math.min(1, (riseT - lineDelay) / (1 - lineDelay)));
-                        const ease = localT < 0.5 ? 4 * localT * localT * localT : 1 - Math.pow(-2 * localT + 2, 3) / 2;
-                        const drawX = g.origX + (g.homeX - g.origX) * ease;
-                        const drawY = g.origY + (g.homeY - g.origY) * ease;
-                        const drawSize = g.size + (1.0 - g.size) * ease;
-                        const brightness = g.isBookend ? 0.1 + ease * 0.7 : 0.08 + ease * 0.55;
-                        const c = g.isBookend
-                          ? `rgba(201,168,76,${brightness})`
-                          : `rgba(232,232,240,${brightness})`;
-                        ctx.beginPath(); ctx.arc(drawX, drawY, drawSize, 0, Math.PI * 2);
-                        ctx.fillStyle = c; ctx.fill();
-                      } else {
-                        g.origY -= 0.15;
-                        g.origX += (Math.random() - 0.5) * 0.5;
-                        g.opacity *= 0.996;
-                        if (g.opacity > 0.005) {
-                          ctx.beginPath(); ctx.arc(g.origX, g.origY, g.size, 0, Math.PI * 2);
-                          ctx.fillStyle = `rgba(201,168,76,${g.opacity * 0.5})`; ctx.fill();
-                        }
-                      }
-                    }
-                  }
-
-                  // POEM — crisp text fades in over the grain positions
-                  if (state.phase === PHASE_POEM) {
-                    const textAlpha = Math.min(1, (elapsed - 10) / 2);
-
-                    // Still draw assigned grains as subtle texture behind text
-                    for (const g of state.grains) {
-                      if (!g.assigned) continue;
-                      const brightness = g.isBookend ? 0.15 : 0.08;
-                      const wobbleX = Math.sin(elapsed * 0.5 + g.homeX * 0.01) * 0.3;
-                      const wobbleY = Math.cos(elapsed * 0.4 + g.homeY * 0.01) * 0.3;
-                      ctx.beginPath(); ctx.arc(g.homeX + wobbleX, g.homeY + wobbleY, g.size * 0.7, 0, Math.PI * 2);
-                      ctx.fillStyle = g.isBookend
-                        ? `rgba(201,168,76,${brightness})`
-                        : `rgba(232,232,240,${brightness})`;
-                      ctx.fill();
-                    }
-
-                    // Render actual text
-                    ctx.save();
-                    ctx.globalAlpha = textAlpha;
-                    ctx.textAlign = "center";
-                    for (const tl of state.textLines) {
-                      if (tl.isBookend) {
-                        ctx.font = `600 italic ${Math.max(22, Math.min(W * 0.07, 38))}px 'Cormorant Garamond', Georgia, serif`;
-                        ctx.fillStyle = "rgba(201,168,76,0.7)";
-                      } else {
-                        ctx.font = `300 italic ${Math.max(17, Math.min(W * 0.05, 28))}px 'Cormorant Garamond', Georgia, serif`;
-                        ctx.fillStyle = "rgba(232,232,240,0.6)";
-                      }
-                      ctx.fillText(tl.text, CX, tl.y);
-                    }
-                    ctx.restore();
-                  }
-
-                  frameRef.current = requestAnimationFrame(loop);
-                }
-
-                frameRef.current = requestAnimationFrame(loop);
-                return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current); };
-              }, []);
-
-              return (
-                <canvas ref={canvasRef} style={{
-                  position: "absolute", top: 0, left: 0,
-                  width: "100%", height: "100%",
-                }} />
-              );
-            };
-
-            return <HourglassPoem />;
-          })()}
-
-          {/* Return button handled by global root-level ReturnButton */}
         </div>
       )}
+
 
 
       {/* ===== DEPTH 3 — THE PACT — 3D OCTAHEDRON ===== */}
