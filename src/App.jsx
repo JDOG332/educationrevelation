@@ -561,11 +561,6 @@ export default function TheoryOfEverything() {
               letterSpacing: "0.25em", margin: "4px 0",
               textShadow: "0 0 40px rgba(232,232,240,0.06)",
             }}>MULTIVERSE</h2>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(24px, 4vw, 31px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.65)",
-            }}>9 × 9 × 9 × 9 = 6,561 universes · Same equation · Every scale</div>
           </div>
           <MultiverseFractal style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }} />
           {/* Bottom navigation */}
@@ -574,16 +569,6 @@ export default function TheoryOfEverything() {
             display: "flex", justifyContent: "center", gap: 20,
             zIndex: 10,
           }}>
-            <button onClick={() => { setCurrentPage("theory"); setDepth(0); window.scrollTo({ top: 0, behavior: "instant" }); }}
-              style={{
-                cursor: "pointer", background: "none", border: "none",
-                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.3em",
-                color: "rgba(232,232,240,0.6)", transition: "color 0.4s",
-                padding: "8px 16px",
-              }}
-              onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.7)"}
-              onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.6)"}
-            >🔁 RETURN TO THE VOID</button>
             <button onClick={() => { setCurrentPage("math"); window.scrollTo({ top: 0, behavior: "instant" }); }}
               style={{
                 cursor: "pointer", background: "none",
@@ -648,19 +633,6 @@ export default function TheoryOfEverything() {
             }}
           />
         </>
-      )}
-
-      {/* ===== GLOBAL RETURN TO VOID BUTTON ===== */}
-      {/* Root-level so it escapes all stacking contexts */}
-      {depth >= 1 && depth <= 4 && (veilParted || depth !== 2) && (depth !== 4 || activeConvergence === null) && (
-        <div style={{
-          position: "fixed", bottom: "2%", left: 0, width: "100%",
-          textAlign: "center", zIndex: 9500, pointerEvents: "none",
-        }}>
-          <div style={{ pointerEvents: "auto", display: "inline-block" }}>
-            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-          </div>
-        </div>
       )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
@@ -829,57 +801,6 @@ export default function TheoryOfEverything() {
         }}>
           <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onVeilParted={() => setVeilParted(true)} />
 
-          {/* Scale indicators — visible during depth 1 */}
-          {depth === 1 && (
-            <div style={{
-              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-              pointerEvents: "none", zIndex: 10,
-              animation: "textShrinkAway 3s 1s both cubic-bezier(0.23,1,0.32,1)",
-            }}>
-              <div style={{ animation: "fadeSlideUp 2s 0.5s both ease", textAlign: "center" }}>
-                <div style={{
-                  display: "flex", gap: Math.round(8 * PHI), justifyContent: "center",
-                  flexWrap: "wrap", padding: "0 20px",
-                }}>
-                  {[
-                    { n: "9\u2070 = 1", label: "UNIVERSE", active: false },
-                    { n: "9\u00B9 = 9", label: "CLUSTERS", active: false },
-                    { n: "9\u00B2 = 81", label: "WORLDS", active: false },
-                    { n: "9\u00B3 = 729", label: "GALAXIES", active: false },
-                    { n: "9\u2074 = 6,561", label: "DREAMS", active: true },
-                  ].map((level, i) => (
-                    <div key={i} style={{ textAlign: "center", opacity: level.active ? 1 : 0.3 }}>
-                      <div style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: level.active ? "clamp(20px, 3.5vw, 28px)" : "clamp(12px, 2vw, 16px)",
-                        color: level.active ? "rgba(206,147,216,0.8)" : "rgba(232,232,240,0.25)",
-                        fontWeight: level.active ? 600 : 300,
-                        textShadow: level.active ? "0 0 25px rgba(206,147,216,0.2), 0 0 60px rgba(206,147,216,0.08)" : "none",
-                      }}>{level.n}</div>
-                      <div style={{
-                        fontFamily: "'Cinzel', serif", fontSize: 7, letterSpacing: "0.2em",
-                        color: level.active ? "rgba(206,147,216,0.5)" : "rgba(232,232,240,0.12)", marginTop: 4,
-                      }}>{level.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{ height: Math.round(21 * PHI) }} />
-
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(13px, 2.2vw, 17px)",
-                fontStyle: "italic", color: "rgba(232,232,240,0.18)",
-                letterSpacing: 2,
-                animation: "fadeSlideUp 2s 1s both ease",
-                textShadow: "0 0 30px rgba(0,0,0,0.8)",
-              }}>
-                {"\u03A8"}<sub style={{ fontSize: "0.6em" }}>scale(n)</sub> = {"\u03A8"}<sub style={{ fontSize: "0.6em" }}>scale(n{"\u2212"}1)</sub> &nbsp;{"\u2200"} n
-              </div>
-            </div>
-          )}
         </div>
       )}
 
@@ -6844,9 +6765,6 @@ export default function TheoryOfEverything() {
 
           </div>
 
-          <div style={{ textAlign: "center", marginTop: 32, position: "relative", zIndex: 9500 }}>
-            <ReturnButton onClick={(e) => { e.stopPropagation(); returnToVoid(); }} />
-          </div>
           {/* The quiet edge */}
           <div onClick={goDeeper} style={{
             cursor: "pointer", padding: "40px 0 60px", textAlign: "center",

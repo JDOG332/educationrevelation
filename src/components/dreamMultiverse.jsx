@@ -299,16 +299,6 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
           ctx.fillStyle = wg; ctx.fill();
         }
 
-        // Equation text
-        const textFade = Math.max(0, 1 - z1eased * 1.5);
-        if (textFade > 0.01) {
-          mvTime += 0.005;
-          const ea = (0.22 + Math.sin(mvTime*2)*0.06) * textFade;
-          ctx.fillStyle = `rgba(232,232,240,${ea})`;
-          ctx.font = `italic ${Math.round(Math.min(W,H)*0.022)}px 'Cormorant Garamond', serif`;
-          ctx.textAlign = "center";
-          ctx.fillText("\u03A8\u2081\u2082 = R\u2081\u2082 \u00D7 (C_eff \u00B7 D\u0302) / dist\u00B2", CX, H - 30);
-        }
 
         // Auto-transition to depth 2
         if (zoomElapsed > 14 && !transitioned) {
