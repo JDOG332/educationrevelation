@@ -1082,22 +1082,35 @@ export default function TheoryOfEverything() {
             padding: "0 16px",
           }}>
 
-            {/* The six doors — PYRAMID with title as apex crown */}
+            {/* The ten doors — TETRACTYS PYRAMID 1+2+3+4=10 */}
             {(() => {
               const doors = [
+                // ROW 1 — WHAT IS IT (metaphysics — seeing)
                 { key: "filter", glyph: "🔺", name: "THE GOLDEN FILTER", sub: "the big picture", r: 201, g: 168, b: 76 },
+                // ROW 2 — HOW DO WE KNOW (epistemology — connecting)
                 { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "the truth, simply", r: 232, g: 232, b: 240 },
-                { key: "gravity", glyph: "☀️", name: "GRAVITY", sub: "recognition pulls", r: 255, g: 180, b: 50 },
-                { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "science · culture · time", r: 201, g: 168, b: 76 },
+                { key: "ancient", glyph: "🔺", name: "ANCIENT PROOF", sub: "every tradition drew it", r: 190, g: 140, b: 220 },
+                // ROW 3 — HOW DOES IT WORK (logic — understanding)
                 { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "sameness ≠ alignment", r: 224, g: 80, b: 80 },
                 { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "filter the noise", r: 79, g: 195, b: 247 },
-                { key: "ancient", glyph: "🔺", name: "ANCIENT PROOF", sub: "every tradition drew it", r: 190, g: 140, b: 220 },
+                { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "science · culture · time", r: 201, g: 168, b: 76 },
+                // ROW 4 — HOW DO WE LIVE IT (ethics — being)
+                { key: "gravity", glyph: "☀️", name: "GRAVITY", sub: "recognition pulls", r: 255, g: 180, b: 50 },
+                { key: "layers", glyph: "〰️", name: "THE LAYERS", sub: "9 layers · feel the theory", r: 190, g: 140, b: 220 },
+                { key: "rock", glyph: "🪨", name: "HIT THE ROCK", sub: "force becomes voice", r: 201, g: 168, b: 76 },
+                { key: "promise", glyph: "🫀", name: "THE PROMISE", sub: "how do we live it?", r: 224, g: 120, b: 140 },
+              ];
+              const rowLabels = [
+                "what is it",
+                "how do we know",
+                "how does it work",
+                "how do we live it",
               ];
               const rows = [
                 [doors[0]],
                 [doors[1], doors[2]],
                 [doors[3], doors[4], doors[5]],
-                [doors[6]],
+                [doors[6], doors[7], doors[8], doors[9]],
               ];
               const cardGap = Math.round(3 * PHI);
 
@@ -1185,7 +1198,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginBottom: Math.round(3 * PHI),
-                    }}>nine doors · one truth</div>
+                    }}>ten doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: Math.round(3 * PHI),
@@ -1209,7 +1222,10 @@ export default function TheoryOfEverything() {
                     }} />
                   </div>
 
-                  {/* Row 1: 1 card — capstone stone */}
+                  {/* Row 1: 1 card — THE POINT (what is it?) */}
+                  <div style={{ textAlign: "center", marginBottom: 4 }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.3)", letterSpacing: 2 }}>{rowLabels[0]}</div>
+                  </div>
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr",
                     gap: cardGap, width: "33%",
@@ -1218,7 +1234,10 @@ export default function TheoryOfEverything() {
                     {rows[0].map((d, i) => renderCard(d, i, 0.7))}
                   </div>
 
-                  {/* Row 2: 2 cards */}
+                  {/* Row 2: 2 cards — THE LINE (how do we know?) */}
+                  <div style={{ textAlign: "center", marginBottom: 4 }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.25)", letterSpacing: 2 }}>{rowLabels[1]}</div>
+                  </div>
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr 1fr",
                     gap: cardGap, width: "66%",
@@ -1227,7 +1246,10 @@ export default function TheoryOfEverything() {
                     {rows[1].map((d, i) => renderCard(d, i, 0.9 + i * 0.1))}
                   </div>
 
-                  {/* Row 3: 3 cards — the base stones */}
+                  {/* Row 3: 3 cards — THE SURFACE (how does it work?) */}
+                  <div style={{ textAlign: "center", marginBottom: 4 }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.2)", letterSpacing: 2 }}>{rowLabels[2]}</div>
+                  </div>
                   <div style={{
                     display: "grid", gridTemplateColumns: "1fr 1fr 1fr",
                     gap: cardGap, width: "100%",
@@ -1235,132 +1257,35 @@ export default function TheoryOfEverything() {
                   }}>
                     {rows[2].map((d, i) => renderCard(d, i, 1.1 + i * 0.1))}
                   </div>
+
+                  {/* Row 4: 4 cards — THE SOLID (how do we live it?) */}
+                  <div style={{ textAlign: "center", marginBottom: 4 }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.15)", letterSpacing: 2 }}>{rowLabels[3]}</div>
+                  </div>
+                  <div style={{
+                    display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr",
+                    gap: cardGap, width: "100%",
+                    marginBottom: cardGap,
+                  }}>
+                    {rows[3].map((d, i) => renderCard(d, i, 1.3 + i * 0.1))}
+                  </div>
                 </div>
               );
             })()}
 
           </div>
 
-          {/* THE LAYERS — the 9 layers of the theory, sensory deep dives */}
+          {/* Tetractys note */}
           <div style={{
-            width: "100%", maxWidth: 580,
-            padding: "0 16px",
-            boxSizing: "border-box",
-            animation: "sacredReveal 1.8s 1.3s both ease",
-            position: "relative", zIndex: 1500,
-            marginBottom: Math.round(3 * PHI),
+            textAlign: "center", marginTop: Math.round(5 * PHI),
+            animation: "fadeSlideUp 1.5s 1.6s both ease",
           }}>
-            <div
-              onClick={(e) => { e.stopPropagation(); setActiveConvergence("layers"); setActiveIdea(null); window.scrollTo(0,0); }}
-              style={{
-                width: "100%",
-                padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
-                borderRadius: 10,
-                background: "linear-gradient(180deg, rgba(190,140,220,0.06), rgba(3,3,6,0.6))",
-                border: "1px solid rgba(190,140,220,0.12)",
-                cursor: "pointer", overflow: "hidden",
-                transition: "transform 0.5s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                textAlign: "center",
-                position: "relative",
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = "translateY(-3px) scale(1.01)";
-                e.currentTarget.style.borderColor = "rgba(190,140,220,0.35)";
-                e.currentTarget.style.boxShadow = "0 6px 30px rgba(190,140,220,0.12), 0 0 60px rgba(190,140,220,0.04)";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.borderColor = "rgba(190,140,220,0.12)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
-            >
-              <div style={{
-                position: "absolute", top: 0, left: "10%", right: "10%", height: 1,
-                background: "linear-gradient(90deg, transparent, rgba(190,140,220,0.2), transparent)",
-              }} />
-              <div style={{
-                fontSize: "clamp(28px, 6vw, 38px)",
-                marginBottom: Math.round(3 * PHI),
-                filter: "drop-shadow(0 0 16px rgba(190,140,220,0.2))",
-                animation: "gentleFloat 8s ease-in-out infinite",
-              }}>〰️</div>
-              <div style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(14px, 3.2vw, 20px)",
-                letterSpacing: "0.2em",
-                color: "rgba(190,140,220,0.75)",
-                fontWeight: 600,
-                marginBottom: Math.round(2 * PHI),
-              }}>THE LAYERS</div>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(12px, 2.5vw, 16px)",
-                color: "rgba(232,232,240,0.5)",
-                fontStyle: "italic",
-                lineHeight: PHI,
-              }}>9 layers · 5 senses · feel the theory</div>
-            </div>
-          </div>
-
-          {/* HIT THE ROCK — the FOUNDATION STONE the temple rests on */}
-          <div style={{
-            width: "100%", maxWidth: 580,
-            padding: "0 16px",
-            boxSizing: "border-box",
-            animation: "sacredReveal 1.8s 1.4s both ease",
-            position: "relative", zIndex: 1500,
-          }}>
-            <div
-              onClick={(e) => { e.stopPropagation(); setActiveConvergence("rock"); setActiveIdea(null); window.scrollTo(0,0); }}
-              style={{
-                width: "100%",
-                padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
-                borderRadius: 10,
-                background: "linear-gradient(180deg, rgba(201,168,76,0.06), rgba(3,3,6,0.6))",
-                border: "1px solid rgba(201,168,76,0.12)",
-                cursor: "pointer", overflow: "hidden",
-                transition: "transform 0.5s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                textAlign: "center",
-                position: "relative",
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = "translateY(-3px) scale(1.01)";
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.35)";
-                e.currentTarget.style.boxShadow = "0 6px 30px rgba(201,168,76,0.12), 0 0 60px rgba(201,168,76,0.04)";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.12)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
-            >
-              {/* Top accent */}
-              <div style={{
-                position: "absolute", top: 0, left: "10%", right: "10%", height: 1,
-                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
-              }} />
-              <div style={{
-                fontSize: "clamp(28px, 6vw, 38px)",
-                marginBottom: Math.round(3 * PHI),
-                filter: "drop-shadow(0 0 16px rgba(201,168,76,0.2))",
-                animation: "gentleFloat 8s ease-in-out infinite",
-              }}>🪨</div>
-              <div style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(14px, 3.2vw, 20px)",
-                letterSpacing: "0.2em",
-                color: "rgba(201,168,76,0.75)",
-                fontWeight: 600,
-                marginBottom: Math.round(2 * PHI),
-              }}>HIT THE ROCK</div>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(12px, 2.5vw, 16px)",
-                color: "rgba(232,232,240,0.5)",
-                fontStyle: "italic",
-                lineHeight: PHI,
-              }}>the first time you strike... the second time you speak</div>
-            </div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(12px, 2.5vw, 16px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.2)",
+              letterSpacing: 3,
+            }}>1 + 2 + 3 + 4 = 10</div>
           </div>
 
           <div style={{ height: Math.round(5 * PHI) }} />
@@ -7986,6 +7911,58 @@ export default function TheoryOfEverything() {
           </div>
         );
       })()}
+
+      {/* ===== DEPTH 4 — THE PROMISE ROOM ===== */}
+      {depth === 4 && activeConvergence === "promise" && (
+        <div style={{
+          width: "100%", minHeight: "100vh", position: "relative",
+          zIndex: 1500, ...getDepthWrap(4),
+          display: "flex", flexDirection: "column", alignItems: "center",
+          padding: `${Math.round(21 * PHI)}px ${Math.round(5 * PHI)}px`,
+        }}>
+          <button onClick={() => { setActiveConvergence(null); window.scrollTo(0,0); }} style={{
+            position: "fixed", top: Math.round(5 * PHI), left: Math.round(5 * PHI),
+            background: "rgba(224,120,140,0.08)", border: "1px solid rgba(224,120,140,0.15)",
+            color: "rgba(224,120,140,0.6)", borderRadius: 8, padding: "8px 16px",
+            fontFamily: "'Cinzel', serif", fontSize: 14, cursor: "pointer", zIndex: 9999,
+          }}>{"\u2190"} THE PROOF</button>
+
+          <div style={{ fontSize: "clamp(40px, 8vw, 60px)", marginBottom: Math.round(3 * PHI) }}>{"\uD83E\uDEC0"}</div>
+          <h2 style={{
+            fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 36px)",
+            fontWeight: 400, color: "#e8e8f0", letterSpacing: "0.3em", margin: 0,
+            textAlign: "center",
+          }}>THE PROMISE</h2>
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 3vw, 19px)",
+            fontStyle: "italic", color: "rgba(224,120,140,0.45)", letterSpacing: 1,
+            marginTop: Math.round(3 * PHI), marginBottom: Math.round(8 * PHI),
+            textAlign: "center",
+          }}>now that you see the truth... how do you live it?</div>
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(15px, 3vw, 20px)",
+            fontStyle: "italic", color: "rgba(232,232,240,0.35)",
+            maxWidth: 480, textAlign: "center", lineHeight: PHI,
+            marginBottom: Math.round(13 * PHI),
+          }}>the other 9 doors prove what is true... this door asks what you do with truth once you hold it</div>
+
+          <div style={{
+            width: Math.round(50 * PHI), height: 1,
+            margin: `0 auto ${Math.round(13 * PHI)}px`,
+            background: "linear-gradient(90deg, transparent, rgba(224,120,140,0.2), transparent)",
+          }} />
+
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(16px, 3.5vw, 22px)",
+            fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+            textAlign: "center", lineHeight: PHI * 1.2,
+            animation: "breathe 6s ease-in-out infinite",
+          }}>ten promises are growing here...</div>
+
+          <div style={{ marginTop: Math.round(21 * PHI), fontSize: 20, opacity: 0.2 }}>{"\uD83E\uDE99\uD83E\uDE99"}</div>
+        </div>
+      )}
 
       {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
       {depth === 5 && (
