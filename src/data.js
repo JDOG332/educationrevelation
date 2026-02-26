@@ -209,7 +209,7 @@ export const POEMS = [
   "though the moon's never wishing the sun it could be...",
   "",
   // 3 lines
-  "always sharing her light in the dark for we...",
+  "always sharing her light in the dark for me...",
   "every life holds a secret too heavy to show...",
   "every sinner's a saint with more path to go...",
   "",
