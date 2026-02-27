@@ -716,14 +716,12 @@ export default function TheoryOfEverything() {
 
       {/* ===== DEPTH 2 — THE POEM (grist mill wheel) ===== */}
       {depth === 2 && (() => {
-        // 150 words per minute = 2.5 words per second
-        // Poem has ~130 words + stanza breaks ≈ 52 seconds of scroll
-        // PHI-enhanced: total duration = ~55s (golden breathing room)
         const PoemWheel = () => {
           const wheelRef = useRef(null);
           const scrollRef = useRef(null);
           const startRef = useRef(null);
           const frameRef = useRef(null);
+          const [loopCount, setLoopCount] = useState(0);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
@@ -733,13 +731,11 @@ export default function TheoryOfEverything() {
             const totalH = scroller.scrollHeight;
             const viewH = container.clientHeight;
             const scrollDist = totalH + viewH;
-            const DURATION = 100 * 1000; // ~100 seconds — taller lines need more breath
-            const PAUSE_BETWEEN = 1000; // 1 second between loops
+            const DURATION = 100 * 1000;
+            const PAUSE_BETWEEN = 1000;
 
-            // CRITICAL: start fully below viewport so nothing flashes
             scroller.style.transform = `translateY(${viewH + 100}px)`;
 
-            // Wait for veil to part before starting
             const checkReady = () => {
               if (!veilParted) {
                 frameRef.current = requestAnimationFrame(checkReady);
@@ -756,7 +752,6 @@ export default function TheoryOfEverything() {
               const elapsed = now - startRef.current;
               const t = Math.min(1, elapsed / DURATION);
 
-              // Smooth ease in/out
               const eased = t < 0.02 ? t * t * (1/0.02) * 0.5
                 : t > 0.98 ? 1 - (1-t)*(1-t)*(1/0.02)*0.5
                 : t;
@@ -767,8 +762,8 @@ export default function TheoryOfEverything() {
               if (t < 1) {
                 frameRef.current = requestAnimationFrame(tick);
               } else {
-                // Loop: pause, then restart from below
                 scroller.style.transform = `translateY(${viewH + 100}px)`;
+                setLoopCount(c => c + 1);
                 setTimeout(() => {
                   startRef.current = null;
                   frameRef.current = requestAnimationFrame(tick);
@@ -782,18 +777,22 @@ export default function TheoryOfEverything() {
             };
           }, []);
 
+          // Golden ratio font sizes: base 14 × PHI = 23, × PHI² = 37
+          const poemFontMin = Math.round(14 * PHI);
+          const poemFontMax = Math.round(14 * PHI * PHI);
+
           return (
             <div ref={wheelRef} style={{
               position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
               zIndex: 5001, overflow: 'hidden', pointerEvents: 'none',
             }}>
-              {/* Top fade — words disappear into darkness above */}
+              {/* Top fade */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, width: '100%', height: '38.2%',
                 background: 'linear-gradient(to bottom, rgba(3,3,6,1) 0%, rgba(3,3,6,0.95) 30%, rgba(3,3,6,0) 100%)',
                 zIndex: 2, pointerEvents: 'none',
               }} />
-              {/* Bottom fade — words emerge from darkness below */}
+              {/* Bottom fade */}
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, width: '100%', height: '38.2%',
                 background: 'linear-gradient(to top, rgba(3,3,6,1) 0%, rgba(3,3,6,0.95) 30%, rgba(3,3,6,0) 100%)',
@@ -808,14 +807,13 @@ export default function TheoryOfEverything() {
               }}>
                 {POEMS.map((line, i) => {
                   if (line === "") {
-                    // Stanza break — golden pause (extra space)
                     return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
                   }
                   const parts = line.split("\n");
                   return (
                     <div key={i} style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 'clamp(18px, 4.8vw, 32px)',
+                      fontSize: `clamp(${poemFontMin}px, 5.5vw, ${poemFontMax}px)`,
                       fontStyle: 'italic',
                       fontWeight: 300,
                       color: 'rgba(232,232,240,0.85)',
@@ -833,7 +831,38 @@ export default function TheoryOfEverything() {
                 })}
               </div>
 
-              {/* Tap to skip — bottom quartile */}
+              {/* MOVE ON — appears after poem plays once */}
+              {loopCount >= 1 && (
+                <div
+                  onClick={() => goDeeper()}
+                  style={{
+                    position: 'absolute',
+                    bottom: `${Math.round(13 * PHI)}%`,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    zIndex: 10,
+                    pointerEvents: 'auto',
+                    cursor: 'pointer',
+                    textAlign: 'center',
+                    animation: 'fadeSlideUp 1.5s ease',
+                    WebkitTapHighlightColor: 'transparent',
+                  }}
+                >
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: `clamp(${Math.round(8 * PHI)}px, 3.5vw, ${Math.round(8 * PHI * PHI)}px)`,
+                    fontStyle: 'italic',
+                    color: 'rgba(201,168,76,0.45)',
+                    letterSpacing: '0.2em',
+                    padding: `${Math.round(5 * PHI)}px ${Math.round(10 * PHI)}px`,
+                    border: '1px solid rgba(201,168,76,0.12)',
+                    borderRadius: 8,
+                    background: 'rgba(3,3,6,0.8)',
+                  }}>continue</div>
+                </div>
+              )}
+
+              {/* Tap to skip — bottom quartile (silent, always present) */}
               <div
                 onClick={() => goDeeper()}
                 style={{
