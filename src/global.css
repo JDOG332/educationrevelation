@@ -231,3 +231,21 @@ div:active > .nav-chevron-right {
   opacity: 0.8 !important;
   text-shadow: 0 0 30px rgba(201,168,76,0.7), 0 0 60px rgba(201,168,76,0.3) !important;
 }
+
+/* ===== MOBILE PERFORMANCE OVERRIDES ===== */
+/* Reduce GPU compositing load on A15 and older chips. */
+@media (max-width: 767px), (hover: none) and (pointer: coarse) {
+  /* Lighter backdrop-filter on sense buttons */
+  .sense-btn {
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+  /* Disable box-shadow on floating particles — saves compositing layers */
+  .particle-float {
+    box-shadow: none !important;
+  }
+  /* Reduce transition complexity */
+  .glass-transition {
+    transition-duration: 0.3s !important;
+  }
+}

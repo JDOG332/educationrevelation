@@ -2,14 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { PHI, PHI_INV, PHI2, LAYERS } from "../data.js";
 
 export function GrainOverlay() {
+  const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
   return (
     <>
-      <div style={{
+      {/* SVG noise — skip on mobile (feTurbulence is expensive to composite) */}
+      {!isMobile && <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
         pointerEvents: "none", zIndex: 998, mixBlendMode: "overlay", opacity: 0.04,
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
         backgroundRepeat: "repeat", backgroundSize: "128px",
-      }} />
+      }} />}
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
         pointerEvents: "none", zIndex: 0, opacity: 0.022,
@@ -83,8 +85,8 @@ export function Particle({ delay, size, x, speed }) {
       left: `${x}%`, bottom: "-10px",
       animation: `floatUp ${speed}s ${delay}s ease-in infinite`,
       pointerEvents: "none",
-      boxShadow: `0 0 ${size * 6}px ${isGolden ? "rgba(201,168,76,0.08)" : "rgba(232,232,240,0.04)"}, 0 0 ${size * 2}px ${isGolden ? "rgba(201,168,76,0.06)" : "rgba(201,168,76,0.03)"}`,
-      filter: size > 2 ? "blur(0.5px)" : "none",
+      boxShadow: isGolden ? `0 0 ${size * 4}px rgba(201,168,76,0.06)` : "none",
+      willChange: "transform, opacity",
     }} />
   );
 }
@@ -307,6 +309,7 @@ export function TheEquation({ size = "md", showMeaning = false, showLabel = true
     hero: { eq: "clamp(32px, 7vw, 52px)", label: 10, meaning: 17, pad: "36px 48px", glow: 70 },
   };
   const s = sizes[size] || sizes.md;
+  const isMobileEq = typeof window !== 'undefined' && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
   return (
     <div className={className} style={{ textAlign: "center", position: "relative" }}>
       <div style={{
@@ -324,8 +327,8 @@ export function TheEquation({ size = "md", showMeaning = false, showLabel = true
           : "linear-gradient(180deg, rgba(201,168,76,0.04), rgba(201,168,76,0.015), rgba(8,8,24,0.3))",
         border: `1px solid rgba(201,168,76,${minimal ? 0.18 : 0.12})`,
         boxShadow: `0 8px ${s.glow}px rgba(201,168,76,0.06), 0 0 ${s.glow * 2}px rgba(201,168,76,0.02), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(201,168,76,0.04)`,
-        backdropFilter: "blur(20px) saturate(1.3)",
-        WebkitBackdropFilter: "blur(20px) saturate(1.3)",
+        backdropFilter: isMobileEq ? "blur(8px)" : "blur(20px) saturate(1.3)",
+        WebkitBackdropFilter: isMobileEq ? "blur(8px)" : "blur(20px) saturate(1.3)",
         animation: breathing ? "equationPulse 10s ease-in-out infinite" : "none",
       }}>
         <div style={{

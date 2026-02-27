@@ -294,9 +294,11 @@ export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = tru
       }
     }
 
+    const isMobileMulti = window.innerWidth < 768 || navigator.maxTouchPoints > 0;
+
     function loop() {
       simulate();
-      simulate();
+      if (!isMobileMulti) simulate(); // desktop gets double-step for smoother orbits
       draw();
       frameRef.current = requestAnimationFrame(loop);
     }

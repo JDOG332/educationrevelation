@@ -113,8 +113,9 @@ export default function TheoryOfEverything() {
       speed: 20 + Math.random() * 25,
     })), []);
 
+  const isMobileDevice = typeof window !== 'undefined' && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
   const theoryParticles = useMemo(() =>
-    Array.from({ length: 32 }, (_, i) => ({
+    Array.from({ length: isMobileDevice ? 14 : 32 }, (_, i) => ({
       delay: i * 1.1 + Math.random() * 2,
       size: Math.random() * 2.8 + 0.5,
       x: Math.random() * 100,
@@ -614,15 +615,13 @@ export default function TheoryOfEverything() {
         }} />
       </>)}
 
-      {/* Legacy fading overlay — kept as safety fallback with softer settings */}
+      {/* Legacy fading overlay — opacity-only for performance (no backdrop-filter) */}
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-        background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.7), #030306)",
+        background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.85), #030306)",
         zIndex: 996, pointerEvents: "none",
-        opacity: fading ? 0.6 : 0,
-        backdropFilter: fading ? "blur(4px)" : "blur(0px)",
-        WebkitBackdropFilter: fading ? "blur(4px)" : "blur(0px)",
-        transition: "opacity 0.5s ease, backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease",
+        opacity: fading ? 0.7 : 0,
+        transition: "opacity 0.5s ease",
       }} />
 
       {/* Particles — hidden during pure black/white landing */}
