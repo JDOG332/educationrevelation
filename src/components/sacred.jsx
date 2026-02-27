@@ -1,6 +1,25 @@
 import { PHI, PHI_INV, LAYERS } from "../data.js";
 
 export function SacredDiamond({ size = 200 }) {
+  /* ═══ THE GOLDEN RHOMBUS ═══
+     D(long) / d(short) = Φ exactly.
+     Every nested diamond scales by Φ⁻¹.
+     Not a shape — a proof. */
+  const C = 100; // center
+  const longHalf = 80; // half of vertical diagonal
+  const shortHalf = longHalf / PHI; // half of horizontal diagonal — THIS IS THE FIX
+  // Outer diamond points: top, right, bottom, left
+  const oT = C - longHalf, oB = C + longHalf;
+  const oL = +(C - shortHalf).toFixed(1), oR = +(C + shortHalf).toFixed(1);
+  // Inner diamond: scale by Φ⁻¹
+  const iLong = longHalf * PHI_INV, iShort = iLong / PHI;
+  const iT = +(C - iLong).toFixed(1), iB = +(C + iLong).toFixed(1);
+  const iL = +(C - iShort).toFixed(1), iR = +(C + iShort).toFixed(1);
+  // Innermost diamond: scale by Φ⁻²
+  const iiLong = iLong * PHI_INV, iiShort = iiLong / PHI;
+  const iiT = +(C - iiLong).toFixed(1), iiB = +(C + iiLong).toFixed(1);
+  const iiL = +(C - iiShort).toFixed(1), iiR = +(C + iiShort).toFixed(1);
+
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} style={{ margin: "0 auto", display: "block" }}>
       <defs>
@@ -35,95 +54,92 @@ export function SacredDiamond({ size = 200 }) {
         </filter>
       </defs>
       {/* Outermost breath ring */}
-      <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(201,168,76,0.015)" strokeWidth="0.3">
+      <circle cx={C} cy={C} r="90" fill="none" stroke="rgba(201,168,76,0.015)" strokeWidth="0.3">
         <animate attributeName="r" values="85;95;85" dur="16s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.5;1;0.5" dur="16s" repeatCount="indefinite" />
       </circle>
       {/* φ-scaled rings — golden ratio orbits */}
-      <circle cx="100" cy="100" r={62 * PHI_INV} fill="none" stroke="rgba(232,232,240,0.025)" strokeWidth="0.3" strokeDasharray="1 8">
-        <animateTransform attributeName="transform" type="rotate" values="0 100 100;-360 100 100" dur="180s" repeatCount="indefinite" />
+      <circle cx={C} cy={C} r={62 * PHI_INV} fill="none" stroke="rgba(232,232,240,0.025)" strokeWidth="0.3" strokeDasharray="1 8">
+        <animateTransform attributeName="transform" type="rotate" values={`0 ${C} ${C};-360 ${C} ${C}`} dur="180s" repeatCount="indefinite" />
       </circle>
       {/* Outer ambient ring */}
-      <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(201,168,76,0.04)" strokeWidth="0.5">
+      <circle cx={C} cy={C} r="80" fill="none" stroke="rgba(201,168,76,0.04)" strokeWidth="0.5">
         <animate attributeName="r" values="75;85;75" dur="12s" repeatCount="indefinite" />
       </circle>
       {/* Sacred circle */}
-      <circle cx="100" cy="100" r="62" fill="none" stroke="rgba(232,232,240,0.04)" strokeWidth="0.3" strokeDasharray="2 6">
-        <animateTransform attributeName="transform" type="rotate" values="0 100 100;360 100 100" dur="120s" repeatCount="indefinite" />
+      <circle cx={C} cy={C} r="62" fill="none" stroke="rgba(232,232,240,0.04)" strokeWidth="0.3" strokeDasharray="2 6">
+        <animateTransform attributeName="transform" type="rotate" values={`0 ${C} ${C};360 ${C} ${C}`} dur="120s" repeatCount="indefinite" />
       </circle>
       {/* Deep ambient glow — layered */}
-      <circle cx="100" cy="100" r="70" fill="url(#moonGlow)" filter="url(#deepGlow)">
+      <circle cx={C} cy={C} r="70" fill="url(#moonGlow)" filter="url(#deepGlow)">
         <animate attributeName="r" values="60;80;60" dur="10s" repeatCount="indefinite" />
       </circle>
       {/* Ambient glow */}
-      <circle cx="100" cy="100" r="60" fill="url(#centerGlow)">
+      <circle cx={C} cy={C} r="60" fill="url(#centerGlow)">
         <animate attributeName="r" values="55;70;55" dur="8s" repeatCount="indefinite" />
       </circle>
-      {/* Soft bloom behind diamond */}
-      <polygon points="100,20 40,100 160,100" fill="rgba(201,168,76,0.02)" filter="url(#softGlow)">
+      {/* Soft bloom behind diamond — GOLDEN RHOMBUS */}
+      <polygon points={`${C},${oT} ${oL},${C} ${C},${oB} ${oR},${C}`} fill="rgba(201,168,76,0.02)" filter="url(#softGlow)">
         <animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite" />
       </polygon>
-      <polygon points="100,180 40,100 160,100" fill="rgba(232,232,240,0.02)" filter="url(#softGlow)">
-        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="6s" repeatCount="indefinite" />
-      </polygon>
-      {/* Upper triangle */}
-      <polygon points="100,20 40,100 160,100" fill="none" stroke="url(#dg1)" strokeWidth="1" opacity="0.7" filter="url(#diamondBloom)">
+      {/* Upper triangle — GOLDEN RHOMBUS */}
+      <polygon points={`${C},${oT} ${oL},${C} ${oR},${C}`} fill="none" stroke="url(#dg1)" strokeWidth="1" opacity="0.7" filter="url(#diamondBloom)">
         <animate attributeName="opacity" values="0.4;0.85;0.4" dur="6s" repeatCount="indefinite" />
       </polygon>
-      {/* Lower triangle */}
-      <polygon points="100,180 40,100 160,100" fill="none" stroke="url(#dg1)" strokeWidth="1" opacity="0.7" filter="url(#diamondBloom)">
+      {/* Lower triangle — GOLDEN RHOMBUS */}
+      <polygon points={`${C},${oB} ${oL},${C} ${oR},${C}`} fill="none" stroke="url(#dg1)" strokeWidth="1" opacity="0.7" filter="url(#diamondBloom)">
         <animate attributeName="opacity" values="0.85;0.4;0.85" dur="6s" repeatCount="indefinite" />
       </polygon>
-      {/* Inner diamond — φ scaled */}
-      <polygon points="100,50 70,100 100,150 130,100" fill="none" stroke="url(#dg2)" strokeWidth="0.5" opacity="0.4">
+      {/* Inner diamond — Φ⁻¹ scaled Golden Rhombus */}
+      <polygon points={`${C},${iT} ${iL},${C} ${C},${iB} ${iR},${C}`} fill="none" stroke="url(#dg2)" strokeWidth="0.5" opacity="0.4">
         <animate attributeName="opacity" values="0.2;0.5;0.2" dur="8s" repeatCount="indefinite" />
       </polygon>
-      {/* Innermost diamond — φ² scaled */}
-      <polygon points="100,69 81,100 100,131 119,100" fill="none" stroke="rgba(232,232,240,0.04)" strokeWidth="0.3">
+      {/* Innermost diamond — Φ⁻² scaled Golden Rhombus */}
+      <polygon points={`${C},${iiT} ${iiL},${C} ${C},${iiB} ${iiR},${C}`} fill="none" stroke="rgba(232,232,240,0.04)" strokeWidth="0.3">
         <animate attributeName="opacity" values="0.15;0.35;0.15" dur="10s" repeatCount="indefinite" />
       </polygon>
       {/* Horizon line */}
-      <line x1="35" y1="100" x2="165" y2="100" stroke="rgba(232,232,240,0.12)" strokeWidth="0.5" />
+      <line x1={oL - 15} y1={C} x2={oR + 15} y2={C} stroke="rgba(232,232,240,0.12)" strokeWidth="0.5" />
       {/* Vertical axis */}
-      <line x1="100" y1="15" x2="100" y2="185" stroke="rgba(232,232,240,0.07)" strokeWidth="0.5" />
+      <line x1={C} y1={oT - 5} x2={C} y2={oB + 5} stroke="rgba(232,232,240,0.07)" strokeWidth="0.5" />
       {/* Diagonal axes — sacred geometry */}
       <line x1="50" y1="50" x2="150" y2="150" stroke="rgba(201,168,76,0.04)" strokeWidth="0.3" />
       <line x1="150" y1="50" x2="50" y2="150" stroke="rgba(201,168,76,0.04)" strokeWidth="0.3" />
       {/* Center point — living light, miracle core */}
-      <circle cx="100" cy="100" r="1.5" fill="rgba(255,255,255,0.95)">
+      <circle cx={C} cy={C} r="1.5" fill="rgba(255,255,255,0.95)">
         <animate attributeName="r" values="1;2.5;1" dur="3s" repeatCount="indefinite" />
         <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
       </circle>
-      <circle cx="100" cy="100" r="4" fill="rgba(232,232,240,0.5)">
+      <circle cx={C} cy={C} r="4" fill="rgba(232,232,240,0.5)">
         <animate attributeName="r" values="3;8;3" dur="4s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.4;0.85;0.4" dur="4s" repeatCount="indefinite" />
       </circle>
       {/* Golden miracle ring */}
-      <circle cx="100" cy="100" r="6" fill="none" stroke="rgba(201,168,76,0.08)" strokeWidth="0.5">
+      <circle cx={C} cy={C} r="6" fill="none" stroke="rgba(201,168,76,0.08)" strokeWidth="0.5">
         <animate attributeName="r" values="5;15;5" dur="5s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.08;0.2;0.08" dur="5s" repeatCount="indefinite" />
       </circle>
-      <circle cx="100" cy="100" r="12" fill="none" stroke="rgba(232,232,240,0.06)" strokeWidth="0.5">
+      <circle cx={C} cy={C} r="12" fill="none" stroke="rgba(232,232,240,0.06)" strokeWidth="0.5">
         <animate attributeName="r" values="10;20;10" dur="6s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.06;0.15;0.06" dur="6s" repeatCount="indefinite" />
       </circle>
-      <circle cx="100" cy="100" r="28" fill="none" stroke="rgba(201,168,76,0.03)" strokeWidth="0.3">
+      <circle cx={C} cy={C} r="28" fill="none" stroke="rgba(201,168,76,0.03)" strokeWidth="0.3">
         <animate attributeName="r" values="24;34;24" dur="8s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.03;0.08;0.03" dur="8s" repeatCount="indefinite" />
       </circle>
-      {/* 9 layer dots around the diamond */}
+      {/* 9 layer dots around the diamond — orbit at Φ⁻¹ × outer longHalf */}
       {LAYERS.map((l, i) => {
         const angle = (i / 9) * Math.PI * 2 - Math.PI / 2;
-        const r = 72;
-        const cx = 100 + Math.cos(angle) * r;
-        const cy = 100 + Math.sin(angle) * r;
+        const r = longHalf * PHI_INV * PHI_INV + longHalf * PHI_INV; // ≈72, but derived from Φ
+        const dotX = C + Math.cos(angle) * r;
+        const dotY = C + Math.sin(angle) * r;
         return (
-          <circle key={i} cx={cx} cy={cy} r="1.5" fill={l.accent} opacity="0.3">
+          <circle key={i} cx={dotX} cy={dotY} r="1.5" fill={l.accent} opacity="0.3">
             <animate attributeName="opacity" values="0.15;0.4;0.15" dur={`${4 + i * 0.5}s`} repeatCount="indefinite" />
           </circle>
         );
       })}
-      <text x="100" y="104" textAnchor="middle" fill="#e8e8f0" fontSize="8" fontFamily="serif" opacity="0.9">🌙</text>
+      <text x={C} y={C + 4} textAnchor="middle" fill="#e8e8f0" fontSize="8" fontFamily="serif" opacity="0.9">🌙</text>
     </svg>
   );
 }
