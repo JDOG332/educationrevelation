@@ -1075,9 +1075,24 @@ export default function TheoryOfEverything() {
                     }}>ten doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
-                      marginBottom: Math.round(3 * PHI),
+                      marginBottom: 0,
                       filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
                       animation: "gentleFloat 10s ease-in-out infinite",
+                      lineHeight: 1,
+                    }}>🔺</div>
+                    <div style={{
+                      fontSize: "clamp(20px, 4.5vw, 32px)",
+                      margin: `${Math.round(2 * PHI)}px 0`,
+                      animation: "breathe 6s ease-in-out infinite",
+                      filter: "drop-shadow(0 0 12px rgba(201,168,76,0.2))",
+                    }}>👁️</div>
+                    <div style={{
+                      fontSize: "clamp(28px, 6vw, 42px)",
+                      marginBottom: Math.round(3 * PHI),
+                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
+                      animation: "gentleFloat 10s 5s ease-in-out infinite",
+                      lineHeight: 1,
+                      transform: "rotate(180deg)",
                     }}>🔺</div>
                     <h2 style={{
                       fontFamily: "'Cinzel', serif",
