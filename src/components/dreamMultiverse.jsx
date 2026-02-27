@@ -1,14 +1,22 @@
 import { useRef, useEffect } from "react";
 import { PHI } from "../data.js";
+import {
+  psiSimulateStep, initializeBlochVectors,
+  computeR12, computeInertia
+} from "../psi-engine.js";
 
 /* ============================================================
-   DREAM MULTIVERSE — 9³ = 729-body N-body gravitational simulation
+   DREAM MULTIVERSE — Exact Ψ N-body simulation
+   
+   Every force: Ψ₁₂ = R₁₂ × (C_eff · D̂) / r²
+   R₁₂ = Uhlmann fidelity × informativeness gate (Bloch vectors)
+   C_eff = weighted JSD convergence × redundancy penalty
+   D̂ = detection quality (structured vs unstructured signal)
+   
+   Same equation at every scale. The recursion IS the proof.
    
    DEPTH 1: The Dance — zoom in, zoom out, collapse to dot
-   DEPTH 2: The Veil Parts — stars gather into a curtain, then split
-            apart to reveal the poem waiting behind them.
-   
-   The universe was hiding the truth. Then it steps aside.
+   DEPTH 2: The Veil Parts — stars gather, split, reveal truth
    ============================================================ */
 
 const CLUSTER_COLORS = [
@@ -16,40 +24,6 @@ const CLUSTER_COLORS = [
   "#8fbc8f", "#4fc3f7", "#ff9800", "#ce93d8",
 ];
 const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
-const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI * PHI, 2.0, 1.8, 1.4, 1.0];
-
-function getR12(i, j) {
-  let r = 0.5;
-  if (MIRROR_PAIRS.some(([a,b]) => (a===i&&b===j)||(a===j&&b===i))) r += PHI;
-  if (Math.abs(i-j) === 1) r += 0.3;
-  if (i === 4 || j === 4) r += 0.8;
-  return r;
-}
-
-function simLevel(bodies, dt, softening, damping, ax, ay, pull) {
-  const N = bodies.length;
-  const fx = new Float64Array(N), fy = new Float64Array(N);
-  for (let i = 0; i < N; i++) {
-    for (let j = i + 1; j < N; j++) {
-      const dx = bodies[j].x - bodies[i].x;
-      const dy = bodies[j].y - bodies[i].y;
-      const distSq = dx*dx + dy*dy + softening*softening;
-      const dist = Math.sqrt(distSq);
-      const R12 = getR12(bodies[i].id, bodies[j].id);
-      const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
-      fx[i] += psi*dx/dist; fy[i] += psi*dy/dist;
-      fx[j] -= psi*dx/dist; fy[j] -= psi*dy/dist;
-    }
-    fx[i] += (ax - bodies[i].x) * pull * bodies[i].cEff;
-    fy[i] += (ay - bodies[i].y) * pull * bodies[i].cEff;
-  }
-  for (let i = 0; i < N; i++) {
-    bodies[i].vx = (bodies[i].vx + fx[i]/bodies[i].cEff*dt) * damping;
-    bodies[i].vy = (bodies[i].vy + fy[i]/bodies[i].cEff*dt) * damping;
-    bodies[i].x += bodies[i].vx*dt;
-    bodies[i].y += bodies[i].vy*dt;
-  }
-}
 
 export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted }) {
   const canvasRef = useRef(null);
@@ -90,58 +64,82 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
     if (!stateRef.current || stateRef.current._levels !== DEPTH_LEVELS) {
       if (DEPTH_LEVELS === 3) {
         // Desktop: 9 hyper × 9 super × 9 cluster = 729
+        // Each level gets its own Bloch vectors — same equation at every scale
+        const hyperBloch = initializeBlochVectors();
         const hypers = Array.from({ length: 9 }, (_, hi) => {
+          const bloch = hyperBloch[hi];
+          const inertia = computeInertia(bloch);
           const angle = (hi/9)*Math.PI*2 + (Math.random()-0.5)*0.3;
           const r = hi === 4 ? 0 : BASE_R * (0.55 + Math.random()*0.35);
-          const speed = hi === 4 ? 0 : Math.sqrt(getR12(hi,4)*C_EFF[hi]*C_EFF[4]*5/(Math.max(r,1)*2))*0.03;
+          const R12_init = hi === 4 ? 0 : computeR12(bloch, hyperBloch[4]);
+          const speed = hi === 4 ? 0 : Math.sqrt(R12_init/(Math.max(r,1)*2*inertia))*0.03;
           const va = angle + Math.PI/2;
           const hx = CX + Math.cos(angle)*r, hy = CY + Math.sin(angle)*r;
+          const superBloch = initializeBlochVectors();
           const supers = Array.from({ length: 9 }, (_, si) => {
+            const sbloch = superBloch[si];
+            const sinertia = computeInertia(sbloch);
             const sa = (si/9)*Math.PI*2 + (Math.random()-0.5)*0.4;
             const sr = si === 4 ? 0 : (hi === 4 ? 50 : 35) * (0.6 + Math.random()*0.5);
-            const sspeed = si === 4 ? 0 : Math.sqrt(getR12(si,4)*C_EFF[si]*C_EFF[4]*4/(Math.max(sr,1)*2))*0.07;
+            const sR12 = si === 4 ? 0 : computeR12(sbloch, superBloch[4]);
+            const sspeed = si === 4 ? 0 : Math.sqrt(sR12/(Math.max(sr,1)*2*sinertia))*0.07;
             const sva = sa + Math.PI/2;
             const sx = hx + Math.cos(sa)*sr, sy = hy + Math.sin(sa)*sr;
+            const clusterBloch = initializeBlochVectors();
             const clusters = Array.from({ length: 9 }, (_, ci) => {
+              const cbloch = clusterBloch[ci];
+              const cinertia = computeInertia(cbloch);
               const ca = (ci/9)*Math.PI*2 + (Math.random()-0.5)*0.5;
               const cr = ci === 4 ? 0 : (hi===4&&si===4 ? 18 : 12) * (0.6 + Math.random()*0.5);
-              const cspeed = ci === 4 ? 0 : Math.sqrt(getR12(ci,4)*C_EFF[ci]*C_EFF[4]*2/(Math.max(cr,1)*2))*0.14;
+              const cR12 = ci === 4 ? 0 : computeR12(cbloch, clusterBloch[4]);
+              const cspeed = ci === 4 ? 0 : Math.sqrt(cR12/(Math.max(cr,1)*2*cinertia))*0.14;
               const cva = ca + Math.PI/2;
               const ccx = sx + Math.cos(ca)*cr, ccy = sy + Math.sin(ca)*cr;
               return {
                 x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed,
-                cEff: C_EFF[ci]*2, id: ci,
+                id: ci, bloch: cbloch, _forceMagnitudes: new Float64Array(8),
                 veilX: Math.random() * W, veilY: Math.random() * H,
                 hi, si, ci,
               };
             });
-            return { x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed, cEff: C_EFF[si]*4, id: si, clusters };
+            return { x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed,
+              id: si, bloch: sbloch, _forceMagnitudes: new Float64Array(8), clusters };
           });
-          return { x: hx, y: hy, vx: Math.cos(va)*speed, vy: Math.sin(va)*speed, cEff: C_EFF[hi]*7, id: hi, supers };
+          return { x: hx, y: hy, vx: Math.cos(va)*speed, vy: Math.sin(va)*speed,
+            id: hi, bloch, _forceMagnitudes: new Float64Array(8), supers };
         });
         stateRef.current = { hypers, _levels: 3 };
       } else {
         // Mobile: 9 super × 9 cluster = 81 (skip hyper level)
+        const superBloch = initializeBlochVectors();
         const supers = Array.from({ length: 9 }, (_, si) => {
+          const bloch = superBloch[si];
+          const inertia = computeInertia(bloch);
           const sa = (si/9)*Math.PI*2 + (Math.random()-0.5)*0.3;
           const sr = si === 4 ? 0 : BASE_R * (0.55 + Math.random()*0.35);
-          const sspeed = si === 4 ? 0 : Math.sqrt(getR12(si,4)*C_EFF[si]*C_EFF[4]*5/(Math.max(sr,1)*2))*0.04;
+          const R12_init = si === 4 ? 0 : computeR12(bloch, superBloch[4]);
+          const sspeed = si === 4 ? 0 : Math.sqrt(R12_init/(Math.max(sr,1)*2*inertia))*0.04;
           const sva = sa + Math.PI/2;
           const sx = CX + Math.cos(sa)*sr, sy = CY + Math.sin(sa)*sr;
+          const clusterBloch = initializeBlochVectors();
           const clusters = Array.from({ length: 9 }, (_, ci) => {
+            const cbloch = clusterBloch[ci];
+            const cinertia = computeInertia(cbloch);
             const ca = (ci/9)*Math.PI*2 + (Math.random()-0.5)*0.5;
             const cr = ci === 4 ? 0 : (si===4 ? 35 : 22) * (0.6 + Math.random()*0.5);
-            const cspeed = ci === 4 ? 0 : Math.sqrt(getR12(ci,4)*C_EFF[ci]*C_EFF[4]*3/(Math.max(cr,1)*2))*0.1;
+            const cR12 = ci === 4 ? 0 : computeR12(cbloch, clusterBloch[4]);
+            const cspeed = ci === 4 ? 0 : Math.sqrt(cR12/(Math.max(cr,1)*2*cinertia))*0.1;
             const cva = ca + Math.PI/2;
             const ccx = sx + Math.cos(ca)*cr, ccy = sy + Math.sin(ca)*cr;
             return {
               x: ccx, y: ccy, vx: Math.cos(cva)*cspeed, vy: Math.sin(cva)*cspeed,
-              cEff: C_EFF[ci]*3, id: ci,
+              id: ci, bloch: cbloch, _forceMagnitudes: new Float64Array(8),
               veilX: Math.random() * W, veilY: Math.random() * H,
               hi: 0, si, ci,
             };
           });
-          return { x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed, cEff: C_EFF[si]*5, id: si, clusters };
+          return { x: sx, y: sy, vx: Math.cos(sva)*sspeed, vy: Math.sin(sva)*sspeed,
+            id: si, bloch, _forceMagnitudes: new Float64Array(8), clusters };
         });
         stateRef.current = { supers, _levels: 2 };
       }
@@ -183,17 +181,20 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
     function simulate(morphPhase, partProgress) {
       if (morphPhase === "dance") {
         if (state._levels === 3) {
-          simLevel(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
+          // Exact Ψ at hyper level
+          psiSimulateStep(state.hypers, 0.4 * speedScale, 70, 0.9998, CX, CY, 0.00004 * speedScale);
+          // Exact Ψ at super level — same equation, smaller scale
           for (const hc of state.hypers)
-            simLevel(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
+            psiSimulateStep(hc.supers, 0.35 * speedScale, 28, 0.9996, hc.x, hc.y, 0.0002 * speedScale);
+          // Exact Ψ at cluster level — same equation, smallest scale
           for (const hc of state.hypers)
             for (const sc of hc.supers)
-              simLevel(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
+              psiSimulateStep(sc.clusters, 0.28 * speedScale, 8, 0.9993, sc.x, sc.y, 0.0008 * speedScale);
         } else {
-          // Mobile 2-level: super → cluster
-          simLevel(state.supers, 0.4 * speedScale, 50, 0.9998, CX, CY, 0.00006 * speedScale);
+          // Mobile 2-level: exact Ψ at both scales
+          psiSimulateStep(state.supers, 0.4 * speedScale, 50, 0.9998, CX, CY, 0.00006 * speedScale);
           for (const sc of state.supers)
-            simLevel(sc.clusters, 0.32 * speedScale, 10, 0.9994, sc.x, sc.y, 0.0006 * speedScale);
+            psiSimulateStep(sc.clusters, 0.32 * speedScale, 10, 0.9994, sc.x, sc.y, 0.0006 * speedScale);
         }
         return;
       }

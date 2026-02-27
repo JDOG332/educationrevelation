@@ -1,23 +1,21 @@
 import { useState, useEffect, useRef } from "react";
 import { PHI, PHI2 } from "../data.js";
+import {
+  psiSimulateStep, createPsiSystem, initializeBlochVectors,
+  computeR12, computeInertia, isMirrorPair
+} from "../psi-engine.js";
 
 /* ============================================================
-   THE MULTIVERSE — Real N-Body Gravitational Simulation
-   9 bodies = 9 layers. The Moon (layer 5) at center with 5x mass.
-   4 mirror pairs (1↔9, 2↔8, 3↔7, 4↔6) as gravitationally bound binaries.
-   Triangles drawn between every 3 nearby bodies = gravitational relationships.
-   The math is real. F = Gm₁m₂/r². Velocity Verlet integration.
-   ============================================================ */
-/* ============================================================
-   THE MULTIVERSE — Recursive N-Body Gravitational Simulation
+   THE MULTIVERSE — Recursive N-Body Ψ Simulation (EXACT)
    
-   Level 1: 9 clusters, each orbiting by Ψ₁₂ = R₁₂ × (C_eff · D̂) / dist²
+   Every force computed by Ψ₁₂ = R₁₂ × (C_eff · D̂)
+   R₁₂ = Uhlmann fidelity × informativeness gate (Bloch vectors)
+   C_eff = 1 - JSD/H weighted convergence × redundancy penalty
+   D̂ = structured / (structured + unstructured) signal quality
+   
+   Level 1: 9 clusters, each orbiting by Ψ₁₂ / r²
    Level 2: Inside each cluster, 9 bodies orbit by the same equation
-   Total: 81 universes. 9² = 81. Two layers of the infinite recursion.
-   
-   The Moon cluster sits at center. Mirror pairs bind.
-   Zoom out to see the macro. Zoom in to see the micro.
-   Same math. Same truth. Every scale.
+   Total: 81 universes. Same math. Same truth. Every scale.
    ============================================================ */
 export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = true, zoom = 1, blur = 0, transitionTiming = "opacity 1.2s ease, transform 2.5s cubic-bezier(0.23,1,0.32,1), filter 2.5s cubic-bezier(0.23,1,0.32,1)" }) {
   const canvasRef = useRef(null);
@@ -30,79 +28,6 @@ export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = tru
   ];
 
   const mirrorPairs = [[0,8], [1,7], [2,6], [3,5]];
-
-  const C_EFF = [1.0, 1.4, 1.8, 2.0, PHI2, 2.0, 1.8, 1.4, 1.0];
-
-  const R_BASE = 0.5;
-  const R_MIRROR_BONUS = PHI;
-  const R_ADJACENT_BONUS = 0.3;
-  const R_MOON_BONUS = 0.8;
-
-  function getR12(i, j) {
-    let r = R_BASE;
-    if (mirrorPairs.some(([a, b]) => (a === i && b === j) || (a === j && b === i))) r += R_MIRROR_BONUS;
-    if (Math.abs(i - j) === 1) r += R_ADJACENT_BONUS;
-    if (i === 4 || j === 4) r += R_MOON_BONUS;
-    return r;
-  }
-
-  // Create a 9-body system at a given center with a given scale
-  function createSystem(cx, cy, scale, velocityBase) {
-    return Array.from({ length: 9 }, (_, i) => {
-      const cEff = C_EFF[i];
-      if (i === 4) {
-        return { x: cx, y: cy, vx: 0, vy: 0, cEff, radius: 3 * scale, id: i, _trail: [] };
-      }
-      const angle = (i / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.4;
-      const r = scale * (35 + Math.random() * 25);
-      const psi = getR12(i, 4) * cEff * C_EFF[4];
-      const speed = Math.sqrt(psi / (r * 0.5)) * velocityBase * (0.8 + Math.random() * 0.4);
-      const vAngle = angle + Math.PI / 2;
-      return {
-        x: cx + Math.cos(angle) * r,
-        y: cy + Math.sin(angle) * r,
-        vx: Math.cos(vAngle) * speed,
-        vy: Math.sin(vAngle) * speed,
-        cEff,
-        radius: (1.5 + cEff * 0.6) * scale,
-        id: i,
-        _trail: [],
-      };
-    });
-  }
-
-  // Simulate one 9-body system — the core equation applied
-  function simulateSystem(bodies, dt, softening, damping, centerX, centerY, centerPull) {
-    const N = bodies.length;
-    const fx = new Float64Array(N);
-    const fy = new Float64Array(N);
-
-    for (let i = 0; i < N; i++) {
-      for (let j = i + 1; j < N; j++) {
-        const dx = bodies[j].x - bodies[i].x;
-        const dy = bodies[j].y - bodies[i].y;
-        const distSq = dx * dx + dy * dy + softening * softening;
-        const dist = Math.sqrt(distSq);
-        const R12 = getR12(bodies[i].id, bodies[j].id);
-        const psi = R12 * bodies[i].cEff * bodies[j].cEff / distSq;
-        const forceX = psi * dx / dist;
-        const forceY = psi * dy / dist;
-        fx[i] += forceX; fy[i] += forceY;
-        fx[j] -= forceX; fy[j] -= forceY;
-      }
-      fx[i] += (centerX - bodies[i].x) * centerPull * bodies[i].cEff;
-      fy[i] += (centerY - bodies[i].y) * centerPull * bodies[i].cEff;
-    }
-
-    for (let i = 0; i < N; i++) {
-      const ax = fx[i] / bodies[i].cEff;
-      const ay = fy[i] / bodies[i].cEff;
-      bodies[i].vx = (bodies[i].vx + ax * dt) * damping;
-      bodies[i].vy = (bodies[i].vy + ay * dt) * damping;
-      bodies[i].x += bodies[i].vx * dt;
-      bodies[i].y += bodies[i].vy * dt;
-    }
-  }
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -121,33 +46,62 @@ export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = tru
     const CY = H / 2;
     const MACRO_R = Math.min(W, H) * 0.32;
 
-    // Initialize state: 9 macro clusters, each containing 9 micro bodies
+    // Initialize: 9 macro clusters × 9 micro bodies = 81 bodies
+    // Each group has its own Bloch vectors — same equation at every scale
     if (!stateRef.current) {
-      // Macro level: 9 cluster centers
+      const macroBloch = initializeBlochVectors();
       const macroBodies = Array.from({ length: 9 }, (_, i) => {
-        const cEff = C_EFF[i] * 3; // macro clarity = sum of inner system
+        const bloch = macroBloch[i];
+        const inertia = computeInertia(bloch);
         if (i === 4) {
-          return { x: CX, y: CY, vx: 0, vy: 0, cEff, id: i };
+          return { x: CX, y: CY, vx: 0, vy: 0, id: i, bloch, _forceMagnitudes: new Float64Array(8) };
         }
         const angle = (i / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.3;
         const r = MACRO_R * (0.6 + Math.random() * 0.5);
-        const psi = getR12(i, 4) * cEff * C_EFF[4] * 3;
-        const speed = Math.sqrt(psi / (r * 2)) * 0.15;
+        const R12_init = computeR12(bloch, macroBloch[4]);
+        const speed = Math.sqrt(R12_init / (r * 0.5 * inertia)) * 0.15;
         const vAngle = angle + Math.PI / 2;
         return {
           x: CX + Math.cos(angle) * r,
           y: CY + Math.sin(angle) * r,
           vx: Math.cos(vAngle) * speed,
           vy: Math.sin(vAngle) * speed,
-          cEff,
-          id: i,
+          id: i, bloch,
+          _forceMagnitudes: new Float64Array(8),
         };
       });
 
-      // Micro level: 9 bodies inside each cluster
-      const microSystems = macroBodies.map((mb, i) =>
-        createSystem(mb.x, mb.y, i === 4 ? 1.3 : 0.9, 0.4)
-      );
+      // Micro level: 9 bodies inside each cluster — own Bloch vectors per group
+      const microSystems = macroBodies.map((mb, i) => {
+        const scale = i === 4 ? 1.3 : 0.9;
+        const microBloch = initializeBlochVectors();
+        return Array.from({ length: 9 }, (_, j) => {
+          const bloch = microBloch[j];
+          const inertia = computeInertia(bloch);
+          if (j === 4) {
+            return {
+              x: mb.x, y: mb.y, vx: 0, vy: 0, id: j, bloch,
+              radius: 3 * scale, _trail: [],
+              _forceMagnitudes: new Float64Array(8),
+            };
+          }
+          const angle = (j / 9) * Math.PI * 2 + (Math.random() - 0.5) * 0.4;
+          const r = scale * (35 + Math.random() * 25);
+          const R12_init = computeR12(bloch, microBloch[4]);
+          const speed = Math.sqrt(R12_init / (r * 0.5 * inertia)) * 0.4 * (0.8 + Math.random() * 0.4);
+          const vAngle = angle + Math.PI / 2;
+          return {
+            x: mb.x + Math.cos(angle) * r,
+            y: mb.y + Math.sin(angle) * r,
+            vx: Math.cos(vAngle) * speed,
+            vy: Math.sin(vAngle) * speed,
+            id: j, bloch,
+            radius: (1.5 + inertia * 0.6) * scale,
+            _trail: [],
+            _forceMagnitudes: new Float64Array(8),
+          };
+        });
+      });
 
       stateRef.current = { macro: macroBodies, micro: microSystems };
     }
@@ -155,13 +109,13 @@ export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = tru
     const state = stateRef.current;
 
     function simulate() {
-      // Simulate macro system (cluster centers)
-      simulateSystem(state.macro, 0.4, 40, 0.9996, CX, CY, 0.00015);
+      // Exact Ψ simulation at macro level
+      psiSimulateStep(state.macro, 0.4, 40, 0.9996, CX, CY, 0.00015);
 
-      // Simulate each micro system (9 bodies within each cluster)
+      // Exact Ψ simulation at micro level — same equation, smaller scale
       for (let c = 0; c < 9; c++) {
         const center = state.macro[c];
-        simulateSystem(state.micro[c], 0.3, 8, 0.9992, center.x, center.y, 0.001);
+        psiSimulateStep(state.micro[c], 0.3, 8, 0.9992, center.x, center.y, 0.001);
       }
     }
 
