@@ -990,7 +990,7 @@ export default function TheoryOfEverything() {
             padding: "0 16px",
           }}>
 
-            {/* The ten doors — TETRACTYS PYRAMID 1+2+3+4=10 */}
+            {/* Nine doors + the house that holds them — TETRACTYS PYRAMID 1+2+3+4=10 */}
             {(() => {
               const doors = [
                 // ROW 1 — WHAT IS IT (metaphysics — seeing)
@@ -1106,7 +1106,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginBottom: Math.round(3 * PHI),
-                    }}>ten doors · one truth</div>
+                    }}>nine doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: 0,
