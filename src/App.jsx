@@ -1332,7 +1332,7 @@ export default function TheoryOfEverything() {
 
             {/* ===== THE 10 DOORS — Interactive Classifier ===== */}
             <div style={{
-              marginTop: Math.round(21 * PHI), width: "100%", maxWidth: 560,
+              marginTop: Math.round(21 * PHI), width: "100%", maxWidth: 560, paddingBottom: 150,
               animation: "fadeSlideUp 1s 1s both ease",
             }}>
               <div style={{
