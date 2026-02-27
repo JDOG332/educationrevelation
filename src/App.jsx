@@ -8106,7 +8106,7 @@ export default function TheoryOfEverything() {
             <div style={{
               fontSize: 24, opacity: 0.3,
               animation: "fadeSlideUp 2s 1.3s both ease",
-            }}>🌙🌙🌙</div>
+            }}>🪙🪙🪙</div>
 
           </div>
 
