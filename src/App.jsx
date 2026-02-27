@@ -8149,16 +8149,16 @@ export default function TheoryOfEverything() {
 
             {/* The Ten Promises */}
             {[
-              { num: "I", title: "SAFETY", offering: "You deserve to walk through life knowing someone already thought about the locks, the money, and the backup plan. I want to make your world smaller in the ways that keep you safe and wider in every way that sets you free.", gift: "a deep cleaning day", heart: "Your space should be where you exhale, not brace." },
-              { num: "II", title: "TO BE SEEN", offering: "I do not love the version of you the world gets to see. I love the one who cries in the car and burns dinner and doubts herself on Tuesday afternoons. I choose you with your mess showing — not in spite of it — because the real you is the only one worth knowing.", gift: "a personalized ten song playlist", heart: "Your life song deserves to be sung loud and proud." },
-              { num: "III", title: "AGENCY", offering: "Your body is yours. Your time is yours. Your no is a complete sentence and you never have to defend it. A love that requires your shrinking is not love at all.", gift: "phone wish list & hand colored 3D wallpaper", heart: "Your choices do not need my approval. The way you see the world is not wrong. It is rare." },
-              { num: "IV", title: "PARTNERSHIP", offering: "I refuse to be another thing you manage. I want to notice the laundry, remember the appointments, and handle the things before you have to carry them in your head. You deserve a partner, not a project.", gift: "the open slot", heart: "If you are carrying something heavy that nobody else sees — name it and I want to help you put it down." },
-              { num: "V", title: "TO BE BELIEVED", offering: "When you tell me something hurts, I choose not to argue with your pain. When you say something is wrong, I choose not to need a second opinion. Your voice was never meant to be an echo.", gift: "a sit with me date", heart: "I want to be a man who hears you the first time." },
-              { num: "VI", title: "PURPOSE", offering: "You are not just someone's mother, someone's partner, someone's daughter. You are a whole person with a fire that existed before I ever showed up. I want to protect your right to chase whatever lights you up — especially when it is inconvenient.", gift: "a black pearl jewelry shopping day", heart: "You are rare and you do not look like anyone else — on the inside or the outside." },
-              { num: "VII", title: "REST WITHOUT GUILT", offering: "You do not have to earn a nap. You do not have to finish the list before you sit down. I want to guard your rest the way I guard everything else I love — fiercely and without negotiation.", gift: "tell me you need a day", heart: "Your only job that day is to rest. My only job is to make sure nothing stops you." },
-              { num: "VIII", title: "EMOTIONAL RECIPROCITY", offering: "I choose to ask you how you are and mean it. I choose to sit in the heavy silence instead of trying to fix it. You have carried everyone else's feelings long enough. Put some of that weight on me. I am built to hold it.", gift: "an Apple Music family subscription", heart: "A permanent open line between us where music says what words sometimes cannot." },
-              { num: "IX", title: "COMMUNITY", offering: "I choose to never be jealous of the women who know you best. Your friendships are not competition — they are oxygen that keeps you alive in ways I cannot. Go to brunch. Take the trip. Answer the call.", gift: "recurring girls day out", heart: "I have the fort. And I go with you when you need me to." },
-              { num: "X", title: "CHOSEN EVERY SINGLE DAY", offering: "I choose not to win you and then coast. Day three thousand looks like day three — intentional, specific, and unmistakable. I choose you out loud, in front of people, in the small moments, and in the hard ones. You never have to wonder.", gift: "a public promise", heart: "I — with everything I have and everything I am building." },
+              { num: "I", title: "SAFETY", offering: "You deserve to walk through life knowing someone already thought about the locks, the money, and the backup plan. I want to make your world smaller in the ways that keep you safe and wider in every way that sets you free.", heart: "Your space should be where you exhale, not brace." },
+              { num: "II", title: "TO BE SEEN", offering: "I do not love the version of you the world gets to see. I love the one who cries in the car and burns dinner and doubts herself on Tuesday afternoons. I choose you with your mess showing — not in spite of it — because the real you is the only one worth knowing.", heart: "Your life song deserves to be sung loud and proud." },
+              { num: "III", title: "AGENCY", offering: "Your body is yours. Your time is yours. Your no is a complete sentence and you never have to defend it. A love that requires your shrinking is not love at all.", heart: "Your choices do not need my approval. The way you see the world is not wrong. It is rare." },
+              { num: "IV", title: "PARTNERSHIP", offering: "I refuse to be another thing you manage. I want to notice the laundry, remember the appointments, and handle the things before you have to carry them in your head. You deserve a partner, not a project.", heart: "If you are carrying something heavy that nobody else sees — name it and I want to help you put it down." },
+              { num: "V", title: "TO BE BELIEVED", offering: "When you tell me something hurts, I choose not to argue with your pain. When you say something is wrong, I choose not to need a second opinion. Your voice was never meant to be an echo.", heart: "I want to be a man who hears you the first time." },
+              { num: "VI", title: "PURPOSE", offering: "You are not just someone's mother, someone's partner, someone's daughter. You are a whole person with a fire that existed before I ever showed up. I want to protect your right to chase whatever lights you up — especially when it is inconvenient.", heart: "You are rare and you do not look like anyone else — on the inside or the outside." },
+              { num: "VII", title: "REST WITHOUT GUILT", offering: "You do not have to earn a nap. You do not have to finish the list before you sit down. I want to guard your rest the way I guard everything else I love — fiercely and without negotiation.", heart: "Your only job that day is to rest. My only job is to make sure nothing stops you." },
+              { num: "VIII", title: "EMOTIONAL RECIPROCITY", offering: "I choose to ask you how you are and mean it. I choose to sit in the heavy silence instead of trying to fix it. You have carried everyone else's feelings long enough. Put some of that weight on me. I am built to hold it.", heart: "A permanent open line between us where music says what words sometimes cannot." },
+              { num: "IX", title: "COMMUNITY", offering: "I choose to never be jealous of the women who know you best. Your friendships are not competition — they are oxygen that keeps you alive in ways I cannot. Go to brunch. Take the trip. Answer the call.", heart: "I have the fort. And I go with you when you need me to." },
+              { num: "X", title: "CHOSEN EVERY SINGLE DAY", offering: "I choose not to win you and then coast. Day three thousand looks like day three — intentional, specific, and unmistakable. I choose you out loud, in front of people, in the small moments, and in the hard ones. You never have to wonder.", heart: "I — with everything I have and everything I am building." },
             ].map((p, i) => (
               <div key={i} style={{
                 marginBottom: Math.round(21 * PHI),
@@ -8193,15 +8193,6 @@ export default function TheoryOfEverything() {
                   lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
                   marginBottom: Math.round(5 * PHI),
                 }}>{p.offering}</div>
-
-                {/* The gift */}
-                <div style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontSize: "clamp(10px, 2.2vw, 13px)",
-                  letterSpacing: 4, color: "rgba(201,168,76,0.35)",
-                  textTransform: "uppercase",
-                  marginBottom: Math.round(3 * PHI),
-                }}>the gift: {p.gift}</div>
 
                 {/* From my heart */}
                 <div style={{
