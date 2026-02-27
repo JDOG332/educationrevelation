@@ -487,7 +487,7 @@ export default function TheoryOfEverything() {
 
       {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
       {/* Left half = go back. Right half = go forward. */}
-      {/* Active on depths 1-3 only. Depth 4 has door cards. Depth 5 has loop-back. */}
+      {/* Depths 1-3: full left/right zones */}
       {depth >= 1 && depth <= 3 && (
         <>
           <div
@@ -509,6 +509,18 @@ export default function TheoryOfEverything() {
             }}
           />
         </>
+      )}
+      {/* Depth 4+: narrow left-edge back zone (only when no door is open) */}
+      {depth >= 4 && activeConvergence === null && (
+        <div
+          onClick={(e) => { e.stopPropagation(); goBack(); }}
+          style={{
+            position: "fixed", top: 0, left: 0,
+            width: "15%", height: "88%",
+            zIndex: 9000, cursor: "w-resize",
+            background: "transparent",
+          }}
+        />
       )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
