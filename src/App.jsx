@@ -5323,46 +5323,7 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* ===== GRAVITY: IDEA CARD GRID ===== */}
-          <div style={{
-            marginTop: Math.round(34 * PHI),
-            borderTop: "1px solid rgba(255,200,50,0.08)",
-            paddingTop: Math.round(21 * PHI),
-          }}>
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(255,200,50,0.3)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>DEEPER DOORS</div>
-
-            <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-            }}>
-              {[
-                { key: "regrets", icon: "⏳", title: "THE WEIGHT OF LEAVING", hook: "10 regrets from the dying. The mirror you can only read at the end.", accent: "255,200,50" },
-              ].map(idea => (
-                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                  transition: "all 0.4s ease", textAlign: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                >
-                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                    color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Gravity card grid removed — cards reclassified to correct doors */}
 
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
@@ -5667,46 +5628,7 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* ===== THREE PILLARS: IDEA CARD GRID ===== */}
-          <div style={{
-            marginTop: Math.round(34 * PHI),
-            borderTop: "1px solid rgba(100,180,220,0.08)",
-            paddingTop: Math.round(21 * PHI),
-          }}>
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(100,180,220,0.3)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>DEEPER DOORS</div>
-
-            <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-            }}>
-              {[
-                { key: "dnahandshake", icon: "🧬", title: "THE DNA HANDSHAKE", hook: "Your body doesn't just eat. It performs a quality check against your DNA.", accent: "100,180,220" },
-              ].map(idea => (
-                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                  transition: "all 0.4s ease", textAlign: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                >
-                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                    color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Old pillars grid removed — cards reclassified to correct doors */}
 
           {/* ═══ KNOWLEDGE CARDS ═══ */}
           <div style={{
@@ -7948,50 +7870,7 @@ export default function TheoryOfEverything() {
             <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
           </div>
 
-          {/* ===== ANCIENT PROOF: DEEPER DOORS ===== */}
-          <div style={{
-            maxWidth: 680, margin: "0 auto",
-            padding: `0 24px ${Math.round(21 * PHI)}px`,
-          }}>
-            <div style={{
-              marginTop: Math.round(21 * PHI),
-              borderTop: "1px solid rgba(190,140,220,0.08)",
-              paddingTop: Math.round(21 * PHI),
-            }}>
-              <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: "rgba(190,140,220,0.3)", textAlign: "center",
-                marginBottom: Math.round(13 * PHI),
-              }}>DEEPER DOORS</div>
-
-              <div style={{
-                display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-              }}>
-                {[
-                  { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
-                ].map(idea => (
-                  <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                    cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                    background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                    borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                    transition: "all 0.4s ease", textAlign: "center",
-                  }}
-                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                  >
-                    <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                    <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                      color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                    }}>{idea.title}</div>
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                      color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
-                    }}>{idea.hook}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Old ancient grid removed — cards reclassified to correct doors */}
 
           {/* ═══ KNOWLEDGE CARDS ═══ */}
           <div style={{
