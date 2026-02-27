@@ -960,7 +960,7 @@ export default function TheoryOfEverything() {
             {(() => {
               const doors = [
                 // ROW 1 — WHAT IS IT (metaphysics — seeing)
-                { key: "filter", glyph: "🔺", name: "THE GOLDEN FILTER", sub: "the big picture", r: 201, g: 168, b: 76 },
+                { key: "filter", glyph: "💛", name: "THE GOLDEN FILTER", sub: "the big picture", r: 201, g: 168, b: 76 },
                 // ROW 2 — HOW DO WE KNOW (epistemology — connecting)
                 { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "the truth, simply", r: 232, g: 232, b: 240 },
                 { key: "ancient", glyph: "🔺", name: "ANCIENT PROOF", sub: "every tradition drew it", r: 190, g: 140, b: 220 },
@@ -1202,7 +1202,7 @@ export default function TheoryOfEverything() {
               fontFamily: "'Cinzel', serif", fontSize: 14, cursor: "pointer", zIndex: 9999,
             }}>\u2190 THE PROOF</button>
 
-            <div style={{ fontSize: "clamp(40px, 8vw, 60px)", marginBottom: Math.round(3 * PHI) }}>\uD83D\uDD3A</div>
+            <div style={{ fontSize: "clamp(40px, 8vw, 60px)", marginBottom: Math.round(3 * PHI) }}>💛</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif", fontSize: "clamp(24px, 5vw, 36px)",
               fontWeight: 400, color: "#e8e8f0", letterSpacing: "0.3em", margin: 0,
