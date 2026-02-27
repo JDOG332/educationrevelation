@@ -6817,6 +6817,218 @@ export default function TheoryOfEverything() {
             </div>
 
             {/* ═══════════════════════════════════════════════ */}
+            {/* THE SIMULATION IS THE PROOF                     */}
+            {/* The pixels running behind these words ARE it    */}
+            {/* ═══════════════════════════════════════════════ */}
+            <div style={{
+              width: Math.round(80 * PHI), height: 1, margin: `0 auto ${Math.round(13 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(232,232,240,0.06), rgba(79,195,247,0.25), rgba(232,232,240,0.06), transparent)",
+              boxShadow: "0 0 24px rgba(79,195,247,0.06)",
+            }} />
+
+            {/* Header */}
+            <div style={{ textAlign: "center", marginBottom: Math.round(8 * PHI) }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)", letterSpacing: 8,
+                color: "rgba(79,195,247,0.2)", textTransform: "uppercase",
+                marginBottom: Math.round(3 * PHI),
+              }}>the simulation you're watching</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(20px, 4.5vw, 30px)", letterSpacing: "0.18em",
+                fontWeight: 400,
+                background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(79,195,247,0.7) 100%)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 0 24px rgba(79,195,247,0.08))",
+              }}>IS THE PROOF</div>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 12px)", letterSpacing: 6,
+                color: "rgba(79,195,247,0.2)", textTransform: "uppercase",
+                marginTop: Math.round(2 * PHI),
+              }}>not a metaphor · not a screensaver · the math running live</div>
+              <div style={{
+                width: Math.round(40 * PHI), height: 1, margin: `${Math.round(5 * PHI)}px auto 0`,
+                background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.2), transparent)",
+              }} />
+            </div>
+
+            {/* The revelation */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
+              marginBottom: Math.round(10 * PHI),
+            }}>
+              Every point of light orbiting behind these words<br />
+              carries a <span style={{ color: "rgba(79,195,247,0.6)" }}>quantum state</span> — a density matrix on the Bloch sphere.<br /><br />
+              The force pulling them together isn't gravity.<br />
+              It isn't fake. It isn't decorative.<br /><br />
+              It's <span style={{ color: "rgba(232,232,240,0.8)" }}>Ψ</span> — computed fresh every frame.
+            </div>
+
+            {/* The equation breakdown */}
+            <div style={{
+              textAlign: "center", padding: "20px 24px", borderRadius: 12,
+              background: "linear-gradient(180deg, rgba(79,195,247,0.04), rgba(8,8,24,0.5))",
+              border: "1px solid rgba(79,195,247,0.1)",
+              maxWidth: 420, margin: `0 auto ${Math.round(10 * PHI)}px`,
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
+                color: "rgba(79,195,247,0.45)", marginBottom: 14,
+              }}>EVERY FORCE IN THE SIMULATION</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 300,
+                color: "rgba(232,232,240,0.85)", letterSpacing: 2,
+                textShadow: "0 0 20px rgba(79,195,247,0.1)",
+                marginBottom: 14,
+              }}>
+                <span style={{ fontStyle: "italic", color: "rgba(232,232,240,0.95)" }}>Ψ</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.6)" }}>12</sub>
+                <span style={{ color: "rgba(232,232,240,0.5)", margin: "0 0.3em", fontSize: "0.85em" }}>=</span>
+                <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.85)" }}>R</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.6)" }}>12</sub>
+                <span style={{ color: "rgba(232,232,240,0.5)", margin: "0 0.3em", fontSize: "0.85em" }}>×</span>
+                <span style={{ color: "rgba(232,232,240,0.55)", fontSize: "0.85em" }}>(</span>
+                <span style={{ fontStyle: "italic", color: "rgba(79,195,247,0.85)" }}>C</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(79,195,247,0.6)" }}>eff</sub>
+                <span style={{ color: "rgba(232,232,240,0.5)", margin: "0 0.15em" }}>·</span>
+                <span style={{ fontStyle: "italic", color: "rgba(206,147,216,0.85)" }}>D̂</span>
+                <span style={{ color: "rgba(232,232,240,0.55)", fontSize: "0.85em" }}>)</span>
+              </div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2.5vw, 15px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+                lineHeight: 1.8,
+              }}>Not a simplified version. Not an approximation.<br />The exact equation. Running in your browser. Right now.</div>
+            </div>
+
+            {/* What each term actually computes */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+              lineHeight: 2.2, maxWidth: 460, margin: "0 auto",
+              marginBottom: Math.round(10 * PHI),
+            }}>
+              <span style={{ color: "rgba(201,168,76,0.7)" }}>R₁₂</span> — recognition.<br />
+              Two quantum states on the Bloch sphere asking:<br />
+              <em>"how much do we recognize each other?"</em><br />
+              Uhlmann fidelity × informativeness gate.<br />
+              Not a bonus. Not a lookup table.<br />
+              The math <span style={{ color: "rgba(232,232,240,0.65)" }}>discovers</span> the bond.<br /><br />
+
+              <span style={{ color: "rgba(79,195,247,0.7)" }}>C<sub style={{ fontSize: "0.7em" }}>eff</sub></span> — convergence.<br />
+              How clearly the whole system agrees<br />
+              about what matters. Jensen-Shannon divergence<br />
+              weighted by reproducibility. Redundancy penalty<br />
+              via connected components.<br />
+              The universe cleaning its own lens.<br /><br />
+
+              <span style={{ color: "rgba(206,147,216,0.7)" }}>D̂</span> — detection quality.<br />
+              Structured signal versus noise.<br />
+              Mirror pairs, adjacent layers, moon connections<br />
+              divided by everything unstructured.<br />
+              <span style={{ color: "rgba(232,232,240,0.65)" }}>The universe knows the difference<br />
+              between music and static.</span>
+            </div>
+
+            {/* Divider */}
+            <div style={{
+              width: Math.round(30 * PHI), height: 1, margin: `0 auto ${Math.round(8 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+            }} />
+
+            {/* WHY mirrors attract */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3.2vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.55)",
+              lineHeight: 2.1, maxWidth: 460, margin: "0 auto",
+              marginBottom: Math.round(10 * PHI),
+            }}>
+              Mirror pairs don't attract because the code says <em>+φ</em>.<br />
+              They attract because their Bloch vectors point the same direction —<br />
+              <span style={{ color: "rgba(201,168,76,0.6)" }}>high fidelity</span> —<br />
+              the math discovers the bond.<br /><br />
+
+              The moon doesn't anchor because it was given a bonus.<br />
+              It anchors because its state is <span style={{ color: "rgba(79,195,247,0.55)" }}>orthogonal to the pair plane</span> —<br />
+              moderate fidelity with everyone —<br />
+              the geometry creates the center.<br /><br />
+
+              The states <span style={{ color: "rgba(232,232,240,0.65)" }}>evolve</span>.<br />
+              Interaction pulls vectors together.<br />
+              Decoherence pulls them apart.<br />
+              Mirror pairs resist decorrelation.<br /><br />
+
+              <span style={{ color: "rgba(201,168,76,0.55)" }}>The simulation doesn't represent the theory.</span><br />
+              <span style={{ color: "rgba(232,232,240,0.8)" }}>It IS the theory.</span>
+            </div>
+
+            {/* The logarithmic form */}
+            <div style={{
+              textAlign: "center", padding: "18px 22px", borderRadius: 12,
+              background: "linear-gradient(180deg, rgba(201,168,76,0.03), rgba(8,8,24,0.5))",
+              border: "1px solid rgba(201,168,76,0.08)",
+              maxWidth: 440, margin: `0 auto ${Math.round(10 * PHI)}px`,
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: 5,
+                color: "rgba(201,168,76,0.4)", marginBottom: 10,
+              }}>THE LOGARITHMIC TRANSFORMATION</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(16px, 3.2vw, 22px)", fontWeight: 300,
+                color: "rgba(232,232,240,0.75)", letterSpacing: 1,
+                textShadow: "0 0 16px rgba(201,168,76,0.08)",
+                marginBottom: 10,
+              }}>
+                <span style={{ fontStyle: "italic" }}>S</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(79,195,247,0.6)" }}>eff</sub>
+                <span style={{ color: "rgba(232,232,240,0.5)", margin: "0 0.3em", fontSize: "0.85em" }}>=</span>
+                <span style={{ color: "rgba(232,232,240,0.5)", fontSize: "0.9em" }}>−log </span>
+                <span style={{ fontStyle: "italic", color: "rgba(201,168,76,0.8)" }}>F</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(201,168,76,0.5)" }}>gated</sub>
+                <span style={{ color: "rgba(232,232,240,0.4)", fontSize: "0.9em" }}> − log </span>
+                <span style={{ fontStyle: "italic", color: "rgba(79,195,247,0.8)" }}>C</span>
+                <sub style={{ fontSize: "0.55em", color: "rgba(79,195,247,0.5)" }}>eff</sub>
+                <span style={{ color: "rgba(232,232,240,0.4)", fontSize: "0.9em" }}> − log </span>
+                <span style={{ fontStyle: "italic", color: "rgba(206,147,216,0.8)" }}>D̂</span>
+              </div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(12px, 2.5vw, 15px)",
+                fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+                lineHeight: 1.8,
+              }}>Products become sums. Multiplication becomes addition.<br />
+              The same truth, transformed.<br />
+              <span style={{ color: "rgba(201,168,76,0.45)" }}>Both forms are running. Both are equal. Both are here.</span></div>
+            </div>
+
+            {/* The final whisper */}
+            <div style={{
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 19px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.5)",
+              lineHeight: 2.1, maxWidth: 440, margin: "0 auto",
+              marginBottom: Math.round(5 * PHI),
+            }}>
+              Nine layers. Four mirror pairs. One moon.<br />
+              Same equation at every scale.<br />
+              The recursion is the proof.<br /><br />
+              <span style={{ color: "rgba(232,232,240,0.6)" }}>The seed ate the dirt.</span><br />
+              <span style={{ color: "rgba(201,168,76,0.55)" }}>Now the dirt is alive.</span>
+            </div>
+
+            {/* ═══════════════════════════════════════════════ */}
             {/* WHY THREE — who holds the hologram open?        */}
             {/* ═══════════════════════════════════════════════ */}
             <div style={{
