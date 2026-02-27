@@ -997,16 +997,16 @@ export default function TheoryOfEverything() {
                 { key: "filter", glyph: "❤️", name: "LOVE", sub: "the mirror lens", r: 220, g: 80, b: 80 },
                 // ROW 2 — THE TWO INNER PATHS — direct experience
                 { key: "plain", glyph: "🕯️", name: "MYSTICISM", sub: "direct experience · no middleman", r: 200, g: 160, b: 100 },
-                { key: "ancient", glyph: "🧠", name: "CONSCIOUSNESS", sub: "the self examining itself", r: 180, g: 160, b: 220 },
+                { key: "ancient", glyph: "🧠", name: "SELF", sub: "the self examining itself", r: 180, g: 160, b: 220 },
                 // ROW 3 — THE THREE BRIDGES — faith · feeling · witness
                 { key: "sameness", glyph: "✝️", name: "RELIGION", sub: "organized faith · scripture · ritual", r: 201, g: 168, b: 76 },
                 { key: "depths", glyph: "🎨", name: "ART", sub: "creation as communion", r: 190, g: 140, b: 220 },
                 { key: "pillars", glyph: "🌿", name: "NATURE", sub: "the oldest temple", r: 100, g: 180, b: 120 },
                 // ROW 4 — THE FOUR FOUNDATIONS — story · reason · observation · pattern
-                { key: "gravity", glyph: "📖", name: "MYTHOLOGY", sub: "archetypes · legends · dreams", r: 200, g: 160, b: 100 },
+                { key: "gravity", glyph: "📖", name: "MYTH", sub: "archetypes · legends · dreams", r: 200, g: 160, b: 100 },
                 { key: "layers", glyph: "🤔", name: "PHILOSOPHY", sub: "reason as the path", r: 160, g: 180, b: 200 },
                 { key: "rock", glyph: "🔬", name: "SCIENCE", sub: "observation · measurement · law", r: 79, g: 195, b: 247 },
-                { key: "promise", glyph: "🔢", name: "MATHEMATICS", sub: "pattern as proof · God's fingerprint", r: 201, g: 168, b: 76 },
+                { key: "promise", glyph: "🔢", name: "MATH", sub: "pattern as proof · God's fingerprint", r: 201, g: 168, b: 76 },
               ];
               const rowLabels = [
                 "the capstone",
@@ -1021,7 +1021,7 @@ export default function TheoryOfEverything() {
                 [doors[6], doors[7], doors[8], doors[9]],
               ];
               const cardGap = Math.round(3 * PHI);
-              const cardSize = `clamp(70px, 20vw, 110px)`;
+              const cardSize = `clamp(80px, 22vw, 130px)`;
 
               const renderCard = (door, i, totalDelay) => {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
