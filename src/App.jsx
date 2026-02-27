@@ -977,13 +977,12 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 4 — THE PROOF ===== */}
       {depth === 4 && activeConvergence === null && (
         <div style={{
-          width: "100%", position: "relative",
-          zIndex: 1500,
+          width: "100%",
           display: "flex", flexDirection: "column", alignItems: "center",
-          paddingTop: Math.round(21 * PHI),
-          boxSizing: "border-box",
+          animation: "fadeSlideUp 1.5s ease",
+          position: "relative", zIndex: 1500,
           background: "#030306",
-          ...getDepthWrap(4),
+          paddingTop: Math.round(21 * PHI),
         }}>
 
           {/* Content */}
