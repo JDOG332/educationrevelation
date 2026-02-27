@@ -990,29 +990,29 @@ export default function TheoryOfEverything() {
             padding: "0 16px",
           }}>
 
-            {/* Nine doors + the house that holds them — TETRACTYS PYRAMID 1+2+3+4=10 */}
+            {/* Ten doors + the eye (11th) — TETRACTYS PYRAMID 1+2+3+4=10 */}
             {(() => {
               const doors = [
-                // ROW 1 — WHAT IS IT (metaphysics — seeing)
-                { key: "filter", glyph: "💛", name: "THE GOLDEN FILTER", sub: "the big picture", r: 201, g: 168, b: 76 },
-                // ROW 2 — HOW DO WE KNOW (epistemology — connecting)
-                { key: "plain", glyph: "⚖️", name: "PLAIN ENGLISH", sub: "the truth, simply", r: 232, g: 232, b: 240 },
-                { key: "ancient", glyph: "🔺", name: "ANCIENT PROOF", sub: "every tradition drew it", r: 190, g: 140, b: 220 },
-                // ROW 3 — HOW DOES IT WORK (logic — understanding)
-                { key: "sameness", glyph: "🪞", name: "THE GATE", sub: "sameness ≠ alignment", r: 224, g: 80, b: 80 },
-                { key: "depths", glyph: "⬇️", name: "THE MATH", sub: "filter the noise", r: 79, g: 195, b: 247 },
-                { key: "pillars", glyph: "🔱", name: "THREE PILLARS", sub: "science · culture · time", r: 201, g: 168, b: 76 },
-                // ROW 4 — HOW DO WE LIVE IT (ethics — being)
-                { key: "gravity", glyph: "☀️", name: "GRAVITY", sub: "recognition pulls", r: 255, g: 180, b: 50 },
-                { key: "layers", glyph: "〰️", name: "THE LAYERS", sub: "9 layers · feel the theory", r: 190, g: 140, b: 220 },
-                { key: "rock", glyph: "🪨", name: "HIT THE ROCK", sub: "force becomes voice", r: 201, g: 168, b: 76 },
-                { key: "promise", glyph: "🫀", name: "THE PROMISE", sub: "how do we live it?", r: 224, g: 120, b: 140 },
+                // ROW 1 — THE CAPSTONE — where all paths converge
+                { key: "filter", glyph: "❤️", name: "LOVE", sub: "the mirror lens", r: 220, g: 80, b: 80 },
+                // ROW 2 — THE TWO INNER PATHS — direct experience
+                { key: "plain", glyph: "🕯️", name: "MYSTICISM", sub: "direct experience · no middleman", r: 200, g: 160, b: 100 },
+                { key: "ancient", glyph: "🧠", name: "CONSCIOUSNESS", sub: "the self examining itself", r: 180, g: 160, b: 220 },
+                // ROW 3 — THE THREE BRIDGES — faith · feeling · witness
+                { key: "sameness", glyph: "✝️", name: "RELIGION", sub: "organized faith · scripture · ritual", r: 201, g: 168, b: 76 },
+                { key: "depths", glyph: "🎨", name: "ART", sub: "creation as communion", r: 190, g: 140, b: 220 },
+                { key: "pillars", glyph: "🌿", name: "NATURE", sub: "the oldest temple", r: 100, g: 180, b: 120 },
+                // ROW 4 — THE FOUR FOUNDATIONS — story · reason · observation · pattern
+                { key: "gravity", glyph: "📖", name: "MYTHOLOGY", sub: "archetypes · legends · dreams", r: 200, g: 160, b: 100 },
+                { key: "layers", glyph: "🤔", name: "PHILOSOPHY", sub: "reason as the path", r: 160, g: 180, b: 200 },
+                { key: "rock", glyph: "🔬", name: "SCIENCE", sub: "observation · measurement · law", r: 79, g: 195, b: 247 },
+                { key: "promise", glyph: "🔢", name: "MATHEMATICS", sub: "pattern as proof · God's fingerprint", r: 201, g: 168, b: 76 },
               ];
               const rowLabels = [
-                "what is it",
-                "how do we know",
-                "how does it work",
-                "how do we live it",
+                "the capstone",
+                "the inner paths",
+                "the bridges",
+                "the foundations",
               ];
               const rows = [
                 [doors[0]],
@@ -1107,7 +1107,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginBottom: Math.round(3 * PHI),
-                    }}>nine doors · one truth</div>
+                    }}>ten doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: 0,
