@@ -110,6 +110,10 @@ export default function TheoryOfEverything() {
       speed: 18 + Math.random() * 30,
     })), []);
 
+  // Sacred easing — zero derivative at both ends (organic breath, not mechanical slide)
+  const smoothstep = (t) => t * t * (3 - 2 * t);
+  const smootherstep = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+
   // THE OPENING ACT — words devour the darkness, then the light
   // Direct DOM manipulation — React doesn't re-render during the animation.
   // One rAF loop mutates .style properties on 3 refs at 60fps. Zero jitter.
@@ -159,11 +163,11 @@ export default function TheoryOfEverything() {
         p1 = 0;
       } else if (elapsed < SILENCE + PHASE1) {
         const t = (elapsed - SILENCE) / PHASE1;
-        p1 = Math.pow(t, 1.15);
+        p1 = smootherstep(t);
       } else {
         p1 = 1;
         const t = (elapsed - SILENCE - PHASE1) / PHASE2;
-        p2 = Math.pow(t, 1.1);
+        p2 = smootherstep(t);
       }
 
       // Background: black→white→black
@@ -176,14 +180,14 @@ export default function TheoryOfEverything() {
 
       if (p2 === 0) {
         // PHASE 1: white words grow
-        const scale1 = p1 < 0.001 ? 0.15 : 0.15 + Math.pow(p1, 0.7) * 5.5;
+        const scale1 = p1 < 0.001 ? 0.15 : 0.15 + smoothstep(p1) * 5.5;
         const alpha1 = Math.min(1, p1 * 5);
         w1.style.opacity = alpha1 > 0.001 ? alpha1 : 0;
         w1.style.transform = `scale(${scale1})`;
         w2.style.opacity = 0;
       } else {
         // PHASE 2: black words shrink (mirror)
-        const scale2 = 0.15 + (1 - Math.pow(p2, 1.15)) * 5.5;
+        const scale2 = 0.15 + (1 - smootherstep(p2)) * 5.5;
         const alpha2 = Math.min(1, (1 - p2) * 5);
         w1.style.opacity = 0;
         w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
@@ -669,7 +673,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* SECRET PASSAGE — invisible bottom quartile skips to convergence chamber */}
+      {/* SECRET PASSAGE — invisible bottom zone (1/φ² ≈ 38.2%) skips to convergence chamber */}
       {depth <= 1 && (
         <div
           onClick={() => {
@@ -680,7 +684,7 @@ export default function TheoryOfEverything() {
           }}
           style={{
             position: "fixed", bottom: 0, left: 0,
-            width: "100%", height: "25%",
+            width: "100%", height: `${(PHI_INV * PHI_INV * 100).toFixed(1)}%`,
             zIndex: 99999,
             cursor: "default",
             background: "transparent",
@@ -1397,7 +1401,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -1516,7 +1520,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -1625,7 +1629,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -1742,7 +1746,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -1912,7 +1916,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2017,7 +2021,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2041,7 +2045,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2124,7 +2128,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2275,7 +2279,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2428,7 +2432,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2577,7 +2581,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2730,7 +2734,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -2883,7 +2887,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -3036,7 +3040,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -3236,7 +3240,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -3389,7 +3393,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -3542,7 +3546,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -3695,7 +3699,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -3848,7 +3852,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -4001,7 +4005,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -4154,7 +4158,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -4307,7 +4311,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -4460,7 +4464,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -4615,7 +4619,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -4768,7 +4772,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -5123,7 +5127,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(255,200,50,0.6)"}
@@ -5243,7 +5247,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -5463,7 +5467,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -5627,7 +5631,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); setActiveSamenessProof(null); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -6096,7 +6100,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -7147,7 +7151,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(190,140,220,0.6)"}
@@ -7468,7 +7472,7 @@ export default function TheoryOfEverything() {
               <button onClick={() => setActiveIdea(null)} style={{
                 cursor: "pointer", background: "none", border: "none",
                 color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-                fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+                fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
                 transition: "all 0.4s",
               }}
                 onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -7591,7 +7595,7 @@ export default function TheoryOfEverything() {
             <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
               cursor: "pointer", background: "none", border: "none",
               color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-              fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+              fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
               transition: "all 0.4s",
             }}
               onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -7732,7 +7736,7 @@ export default function TheoryOfEverything() {
             <button onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} style={{
               cursor: "pointer", background: "none", border: "none",
               color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-              fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+              fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
               transition: "all 0.4s",
             }}
               onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
@@ -8444,7 +8448,7 @@ export default function TheoryOfEverything() {
           <button onClick={() => setActiveIdea(null)} style={{
             cursor: "pointer", background: "none", border: "none",
             color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-            fontSize: 19, letterSpacing: 3, padding: "8px 16px",
+            fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1), padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
             transition: "all 0.4s",
           }}
             onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
