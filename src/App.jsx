@@ -977,9 +977,10 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 4 — THE PROOF ===== */}
       {depth === 4 && activeConvergence === null && (
         <div style={{
-          minHeight: "100vh", width: "100%", position: "relative", overflow: "visible",
+          width: "100%", position: "relative",
           zIndex: 1500,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: Math.round(21 * PHI),
+          display: "flex", flexDirection: "column", alignItems: "center",
+          paddingTop: Math.round(21 * PHI),
           boxSizing: "border-box",
           background: "#030306",
           ...getDepthWrap(4),
@@ -1231,8 +1232,8 @@ export default function TheoryOfEverything() {
         return selectedQ === null ? (
           // QUESTION GRID
           <div style={{
-            width: "100%", minHeight: "max-content", position: "relative",
-            zIndex: 1500, ...getDepthWrap(4),
+            width: "100%", position: "relative",
+            zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center",
             padding: `${Math.round(21 * PHI)}px ${Math.round(5 * PHI)}px`,
           }}>
