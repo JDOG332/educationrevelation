@@ -3,6 +3,7 @@ import MultiverseFractal from "./MultiverseFractal.jsx";
 import MathPage from "./MathPage.jsx";
 import ConvergenceCards from "./ConvergenceCards.jsx";
 import { GOLDEN_FILTER } from "./goldenFilter.js";
+import { TEN_DOORS, classifyContent } from "./tenDoors.js";
 import "./global.css";
 import {
   PHI, PHI_INV, PHI2, PHI3,
@@ -98,6 +99,9 @@ export default function TheoryOfEverything() {
   const SACRED_ENTER  = Math.round(PHI * 618);  // 1000ms — The Manifestation  
   const SACRED_SETTLE = Math.round(PHI_INV * 618); // 382ms — The Settling
   const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
+  const [doorInput, setDoorInput] = useState("");
+  const [doorResults, setDoorResults] = useState(null);
+  const [doorExpanded, setDoorExpanded] = useState(null);
   const poemSeen = useRef(false);
 
   // Stable particle seeds — generated once, never re-randomized on re-render
@@ -1324,6 +1328,222 @@ export default function TheoryOfEverything() {
                 black holes = the mirror swallowing its reflection<br/>
                 computation = the mirror's process of reflecting
               </div>
+            </div>
+
+            {/* ===== THE 10 DOORS — Interactive Classifier ===== */}
+            <div style={{
+              marginTop: Math.round(21 * PHI), width: "100%", maxWidth: 560,
+              animation: "fadeSlideUp 1s 1s both ease",
+            }}>
+              <div style={{
+                width: Math.round(50 * PHI), height: 1,
+                margin: `0 auto ${Math.round(13 * PHI)}px`,
+                background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
+              }} />
+              <div style={{ textAlign: "center", marginBottom: Math.round(8 * PHI) }}>
+                <div style={{ fontSize: "clamp(28px, 6vw, 38px)", marginBottom: Math.round(3 * PHI) }}>🔺👁️🔻</div>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: "clamp(16px, 3.5vw, 22px)",
+                  letterSpacing: "0.25em", color: "rgba(232,232,240,0.7)",
+                  marginBottom: Math.round(3 * PHI),
+                }}>THE 10 DOORS</div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(13px, 2.5vw, 17px)",
+                  fontStyle: "italic", color: "rgba(201,168,76,0.35)", letterSpacing: 1,
+                }}>paste anything · we'll show you which door you walked through</div>
+              </div>
+
+              <textarea
+                value={doorInput}
+                onChange={e => { setDoorInput(e.target.value); setDoorResults(null); setDoorExpanded(null); }}
+                onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); if (doorInput.trim().length >= 3) { setDoorResults(classifyContent(doorInput)); setDoorExpanded(null); } }}}
+                placeholder="What's on your mind? A question, a belief, a doubt, anything..."
+                style={{
+                  width: "100%", minHeight: 100, padding: Math.round(5 * PHI),
+                  background: "rgba(201,168,76,0.03)", border: "1px solid rgba(201,168,76,0.12)",
+                  borderRadius: 10, color: "#e8e8f0",
+                  fontFamily: "'Cormorant Garamond', serif", fontSize: 16,
+                  lineHeight: 1.8, resize: "vertical", outline: "none",
+                  transition: "border-color 0.3s", boxSizing: "border-box",
+                }}
+                onFocus={e => e.currentTarget.style.borderColor = "rgba(201,168,76,0.3)"}
+                onBlur={e => e.currentTarget.style.borderColor = "rgba(201,168,76,0.12)"}
+              />
+              <div style={{ display: "flex", justifyContent: "flex-end", marginTop: Math.round(3 * PHI) }}>
+                <button
+                  onClick={() => { if (doorInput.trim().length >= 3) { setDoorResults(classifyContent(doorInput)); setDoorExpanded(null); } }}
+                  style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 13, letterSpacing: "0.15em",
+                    padding: `${Math.round(3 * PHI)}px ${Math.round(8 * PHI)}px`,
+                    background: doorInput.trim().length >= 3 ? "rgba(201,168,76,0.1)" : "rgba(201,168,76,0.03)",
+                    border: `1px solid ${doorInput.trim().length >= 3 ? "rgba(201,168,76,0.2)" : "rgba(201,168,76,0.06)"}`,
+                    color: doorInput.trim().length >= 3 ? "rgba(201,168,76,0.6)" : "rgba(201,168,76,0.2)",
+                    borderRadius: 8, cursor: doorInput.trim().length >= 3 ? "pointer" : "default",
+                    transition: "all 0.3s",
+                  }}
+                >FIND MY DOOR</button>
+              </div>
+
+              {/* RESULTS */}
+              {doorResults && (() => {
+                const top = doorResults.filter(r => r.pct > 0);
+                const primary = top[0];
+                if (!primary || primary.pct === 0) return null;
+                const maxPct = primary.pct;
+                const [pr, pg, pb] = primary.door.color;
+                return (
+                  <div style={{ marginTop: Math.round(8 * PHI), animation: "fadeSlideUp 0.6s ease" }}>
+                    {/* Primary door */}
+                    <div style={{
+                      textAlign: "center", padding: Math.round(8 * PHI),
+                      background: `rgba(${pr},${pg},${pb},0.04)`,
+                      border: `1px solid rgba(${pr},${pg},${pb},0.15)`,
+                      borderRadius: 12, marginBottom: Math.round(8 * PHI),
+                    }}>
+                      <div style={{ fontSize: 44, marginBottom: Math.round(2 * PHI) }}>{primary.door.emoji}</div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: "clamp(9px, 2vw, 11px)",
+                        letterSpacing: "0.4em", color: `rgba(${pr},${pg},${pb},0.45)`,
+                        marginBottom: Math.round(2 * PHI),
+                      }}>YOUR PRIMARY DOOR</div>
+                      <div style={{
+                        fontFamily: "'Cinzel', serif", fontSize: "clamp(18px, 4vw, 26px)",
+                        letterSpacing: "0.2em", color: `rgba(${pr},${pg},${pb},0.75)`,
+                        marginBottom: Math.round(3 * PHI),
+                      }}>{primary.door.num}. {primary.door.name.toUpperCase()}</div>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "clamp(14px, 2.8vw, 18px)", fontStyle: "italic",
+                        color: "rgba(232,232,240,0.4)", lineHeight: PHI,
+                        maxWidth: 420, margin: "0 auto", marginBottom: Math.round(3 * PHI),
+                      }}>"{primary.door.question}"</div>
+                      <div style={{
+                        fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 700,
+                        color: `rgba(${pr},${pg},${pb},0.5)`,
+                      }}>{primary.pct.toFixed(1)}%</div>
+                    </div>
+
+                    {/* All 10 bars */}
+                    <div style={{ marginBottom: Math.round(8 * PHI) }}>
+                      {doorResults.map((r, i) => {
+                        const [cr, cg, cb] = r.door.color;
+                        const barW = maxPct > 0 ? (r.pct / maxPct) * 100 : 0;
+                        return (
+                          <div key={r.door.name}
+                            onClick={() => r.pct > 0 && setDoorExpanded(doorExpanded === i ? null : i)}
+                            style={{
+                              display: "flex", alignItems: "center", gap: Math.round(2 * PHI),
+                              padding: `${Math.round(1.5 * PHI)}px 0`,
+                              cursor: r.pct > 0 ? "pointer" : "default",
+                              opacity: r.pct > 0 ? 1 : 0.25,
+                            }}>
+                            <div style={{ fontSize: 18, width: 28, textAlign: "center" }}>{r.door.emoji}</div>
+                            <div style={{
+                              width: 90, fontSize: 11, letterSpacing: "0.08em",
+                              color: `rgba(${cr},${cg},${cb},0.5)`,
+                              overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+                            }}>{r.door.name}</div>
+                            <div style={{
+                              flex: 1, height: 5, background: "rgba(255,255,255,0.03)",
+                              borderRadius: 3, overflow: "hidden",
+                            }}>
+                              <div style={{
+                                width: `${barW}%`, height: "100%",
+                                background: `linear-gradient(90deg, rgba(${cr},${cg},${cb},0.4), rgba(${cr},${cg},${cb},0.12))`,
+                                borderRadius: 3, transition: "width 0.8s cubic-bezier(0.23,1,0.32,1)",
+                              }} />
+                            </div>
+                            <div style={{
+                              width: 45, textAlign: "right", fontSize: 12,
+                              color: i < 3 && r.pct > 0 ? `rgba(${cr},${cg},${cb},0.65)` : "rgba(232,232,240,0.2)",
+                              fontWeight: i < 3 ? 600 : 400,
+                            }}>{r.pct.toFixed(1)}%</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Evidence for clicked door */}
+                    {doorExpanded !== null && doorResults[doorExpanded] && doorResults[doorExpanded].matches.length > 0 && (() => {
+                      const r = doorResults[doorExpanded];
+                      const [cr, cg, cb] = r.door.color;
+                      return (
+                        <div style={{
+                          padding: Math.round(5 * PHI),
+                          background: `rgba(${cr},${cg},${cb},0.03)`,
+                          border: `1px solid rgba(${cr},${cg},${cb},0.1)`,
+                          borderRadius: 10, marginBottom: Math.round(8 * PHI),
+                          animation: "fadeSlideUp 0.3s ease",
+                        }}>
+                          <div style={{
+                            fontFamily: "'Cinzel', serif", fontSize: 11,
+                            letterSpacing: "0.2em", color: `rgba(${cr},${cg},${cb},0.45)`,
+                            marginBottom: Math.round(3 * PHI),
+                          }}>EVIDENCE — {r.door.name.toUpperCase()}</div>
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
+                            {r.matches.map((m, j) => (
+                              <span key={j} style={{
+                                fontFamily: "'Cormorant Garamond', serif",
+                                fontSize: 12, padding: "2px 8px",
+                                background: m.startsWith("⚡") ? `rgba(${cr},${cg},${cb},0.1)` : `rgba(${cr},${cg},${cb},0.04)`,
+                                border: `1px solid rgba(${cr},${cg},${cb},${m.startsWith("⚡") ? 0.18 : 0.07})`,
+                                borderRadius: 16, color: `rgba(${cr},${cg},${cb},0.6)`,
+                              }}>{m}</span>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })()}
+
+                    {/* Convergence message */}
+                    {top.length >= 2 && top[1].pct > 15 && (
+                      <div style={{ textAlign: "center", marginBottom: Math.round(5 * PHI) }}>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif",
+                          fontSize: "clamp(14px, 2.8vw, 18px)", fontStyle: "italic",
+                          color: "rgba(232,232,240,0.3)", lineHeight: PHI,
+                        }}>
+                          {top.filter(d => d.pct > 15).length >= 3
+                            ? "your words walk through many doors at once — convergence"
+                            : `your words walk through ${top[0].door.name} and ${top[1].door.name} simultaneously`}
+                        </div>
+                        <div style={{
+                          fontFamily: "'Cormorant Garamond', serif",
+                          fontSize: "clamp(12px, 2.2vw, 15px)", fontStyle: "italic",
+                          color: "rgba(201,168,76,0.2)", marginTop: Math.round(2 * PHI),
+                        }}>every door is the same door wearing a different mask</div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+
+              {/* 10 doors grid — shown when no results yet */}
+              {!doorResults && (
+                <div style={{
+                  display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+                  gap: Math.round(3 * PHI), marginTop: Math.round(5 * PHI),
+                }}>
+                  {TEN_DOORS.map((door, i) => {
+                    const [r, g, b] = door.color;
+                    return (
+                      <div key={door.name} style={{
+                        padding: Math.round(4 * PHI), textAlign: "center",
+                        background: `rgba(${r},${g},${b},0.03)`,
+                        border: `1px solid rgba(${r},${g},${b},0.07)`,
+                        borderRadius: 8,
+                        animation: `fadeSlideUp 0.5s ${i * 0.06}s both ease`,
+                      }}>
+                        <div style={{ fontSize: 24, marginBottom: Math.round(1 * PHI) }}>{door.emoji}</div>
+                        <div style={{
+                          fontFamily: "'Cinzel', serif", fontSize: 10,
+                          letterSpacing: "0.15em", color: `rgba(${r},${g},${b},0.5)`,
+                        }}>{door.num}. {door.name}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             <div style={{ marginTop: Math.round(13 * PHI), fontSize: 20, opacity: 0.3 }}>\uD83E\uDE99\uD83E\uDE99</div>
