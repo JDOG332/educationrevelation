@@ -1025,7 +1025,7 @@ export default function TheoryOfEverything() {
                 [doors[6], doors[7], doors[8], doors[9]],
               ];
               const cardGap = Math.round(3 * PHI);
-              const cardSize = `clamp(80px, 22vw, 130px)`;
+              const cardSize = `clamp(90px, 24vw, 140px)`;
 
               const renderCard = (door, i, totalDelay) => {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
@@ -1050,7 +1050,7 @@ export default function TheoryOfEverything() {
                       transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.5s",
                       animation: `fadeSlideUp 0.7s ${totalDelay}s both ease`,
                       textAlign: "center",
-                      padding: "8px",
+                      padding: `${Math.round(3 * PHI)}px`,
                     }}
                     onMouseEnter={e => {
                       e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
