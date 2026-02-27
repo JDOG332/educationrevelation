@@ -250,7 +250,20 @@ export function OctahedronPact() {
     }
 
     animRef.current = requestAnimationFrame(draw);
-    return () => { if (animRef.current) cancelAnimationFrame(animRef.current); };
+
+    const handleResize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const newW = Math.min(window.innerWidth * 0.88, 520);
+      const newH = newW;
+      canvas.width = newW * dpr; canvas.height = newH * dpr;
+      canvas.style.width = newW + "px"; canvas.style.height = newH + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return <canvas ref={canvasRef} style={{ display: "block", margin: "0 auto" }} />;

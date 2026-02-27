@@ -303,8 +303,18 @@ export function Multiverse({ opacity = 1, showTriangles = true, showOrbits = tru
 
     loop();
 
+    const handleResize = () => {
+      const newW = window.innerWidth;
+      const newH = window.innerHeight;
+      canvas.width = newW * dpr; canvas.height = newH * dpr;
+      canvas.style.width = newW + "px"; canvas.style.height = newH + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    window.addEventListener("resize", handleResize);
+
     return () => {
       if (frameRef.current) cancelAnimationFrame(frameRef.current);
+      window.removeEventListener("resize", handleResize);
     };
   }, [showTriangles, showOrbits]);
 

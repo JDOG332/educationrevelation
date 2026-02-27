@@ -109,6 +109,9 @@ export function SenseIcon({ type }) {
 
 export function GlassCard({ children, style, onClick, className = "", hoverGlow = false }) {
   const [hover, setHover] = useState(false);
+  // Detect mobile once at mount — lighter blur saves GPU
+  const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
+  const blurVal = isMobile ? "blur(8px)" : "blur(16px) saturate(1.2)";
   return (
     <div
       className={className}
@@ -118,8 +121,8 @@ export function GlassCard({ children, style, onClick, className = "", hoverGlow 
       style={{
         borderRadius: 14,
         background: "rgba(255,255,255,0.02)",
-        backdropFilter: "blur(16px) saturate(1.2)",
-        WebkitBackdropFilter: "blur(16px) saturate(1.2)",
+        backdropFilter: blurVal,
+        WebkitBackdropFilter: blurVal,
         border: "1px solid rgba(255,255,255,0.06)",
         transition: "all 0.6s cubic-bezier(0.23,1,0.32,1)",
         position: "relative", overflow: "hidden",
@@ -234,23 +237,42 @@ export function LayerCard({ layer, index, onClick, style: extraStyle }) {
 }
 
 export function StringVibration() {
-  const [phase, setPhase] = useState(0);
+  const phaseRef = useRef(0);
+  const svgRef = useRef(null);
+  const fundamentalRef = useRef(null);
+  const harmonicRef = useRef(null);
+  const frameRef = useRef(null);
+
   useEffect(() => {
-    const id = setInterval(() => setPhase(p => p + 0.04), 50);
-    return () => clearInterval(id);
+    let lastTime = 0;
+    function tick(now) {
+      if (lastTime) phaseRef.current += (now - lastTime) * 0.0008; // ~same speed as old 50ms/0.04
+      lastTime = now;
+      const phase = phaseRef.current;
+
+      const fund = Array.from({ length: 80 }, (_, i) => {
+        const x = (i / 79) * 300;
+        const y = 30 + Math.sin(i * 0.25 + phase) * 16 * Math.sin(i * Math.PI / 79);
+        return `${x},${y}`;
+      }).join(" ");
+
+      const harm = Array.from({ length: 80 }, (_, i) => {
+        const x = (i / 79) * 300;
+        const y = 30 + Math.sin(i * 0.5 + phase * PHI) * 6 * Math.sin(i * Math.PI / 79);
+        return `${x},${y}`;
+      }).join(" ");
+
+      if (harmonicRef.current) harmonicRef.current.setAttribute("points", harm);
+      if (fundamentalRef.current) fundamentalRef.current.setAttribute("points", fund);
+
+      frameRef.current = requestAnimationFrame(tick);
+    }
+    frameRef.current = requestAnimationFrame(tick);
+    return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current); };
   }, []);
-  const fundamental = Array.from({ length: 80 }, (_, i) => {
-    const x = (i / 79) * 300;
-    const y = 30 + Math.sin(i * 0.25 + phase) * 16 * Math.sin(i * Math.PI / 79);
-    return `${x},${y}`;
-  }).join(" ");
-  const harmonic = Array.from({ length: 80 }, (_, i) => {
-    const x = (i / 79) * 300;
-    const y = 30 + Math.sin(i * 0.5 + phase * PHI) * 6 * Math.sin(i * Math.PI / 79);
-    return `${x},${y}`;
-  }).join(" ");
+
   return (
-    <svg viewBox="0 0 300 60" width="100%" height="50" style={{ display: "block", margin: "12px 0", opacity: 0.8 }}>
+    <svg ref={svgRef} viewBox="0 0 300 60" width="100%" height="50" style={{ display: "block", margin: "12px 0", opacity: 0.8 }}>
       <defs>
         <linearGradient id="stringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="rgba(201,168,76,0)" />
@@ -271,8 +293,8 @@ export function StringVibration() {
           <feComposite in="SourceGraphic" in2="glow" operator="over" />
         </filter>
       </defs>
-      <polyline points={harmonic} fill="none" stroke="url(#stringGrad2)" strokeWidth="0.6" opacity="0.5" />
-      <polyline points={fundamental} fill="none" stroke="url(#stringGrad)" strokeWidth="1.2" filter="url(#stringBloom)" />
+      <polyline ref={harmonicRef} points="0,30 300,30" fill="none" stroke="url(#stringGrad2)" strokeWidth="0.6" opacity="0.5" />
+      <polyline ref={fundamentalRef} points="0,30 300,30" fill="none" stroke="url(#stringGrad)" strokeWidth="1.2" filter="url(#stringBloom)" />
     </svg>
   );
 }
