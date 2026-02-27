@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef, useCallback, Fragment } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo, Fragment } from "react";
 import MultiverseFractal from "./MultiverseFractal.jsx";
 import MathPage from "./MathPage.jsx";
 import { GOLDEN_FILTER } from "./goldenFilter.js";
+import "./global.css";
 import {
   PHI, PHI_INV, PHI2, PHI3,
   LAYERS, CORES, SENSES, MIRRORS, BURIED,
@@ -25,25 +26,64 @@ import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
 export default function TheoryOfEverything() {
   const [currentPage, setCurrentPage] = useState("theory"); // "theory" | "multiverse" | "math"
   const [depth, setDepth] = useState(0);
-  const [activeLayer, setActiveLayer] = useState(null);
-  const [activeSense, setActiveSense] = useState(null);
-  const [activePair, setActivePair] = useState(null);
-  const [activeMirrorSense, setActiveMirrorSense] = useState(null);
-  const [activeMirrorProof, setActiveMirrorProof] = useState(false);
-  const [activeProof, setActiveProof] = useState(false);
-  const [activeConvergence, setActiveConvergence] = useState(null); // 'filter' | 'plain' | 'gravity' | 'pillars' | 'sameness' | 'depths' | 'ancient' | null
-  const [activeFilterQ, setActiveFilterQ] = useState(null); // 0-9 for golden filter questions
-  const [activeIdea, setActiveIdea] = useState(null); // idea key inside a witness room
-  const [activePillar, setActivePillar] = useState(null);
-  const [activeSamenessProof, setActiveSamenessProof] = useState(null);
-  const [activeAnswer, setActiveAnswer] = useState(false);
-  const [activeAnswerProof, setActiveAnswerProof] = useState(null);
-  const [activeBefore, setActiveBefore] = useState(false);
-  const [activeBeforeProof, setActiveBeforeProof] = useState(null);
-  const [activeConstants, setActiveConstants] = useState(false);
-  const [activeConstantsProof, setActiveConstantsProof] = useState(null);
-  const [openSection, setOpenSection] = useState(null);
-  const [goldenFlood, setGoldenFlood] = useState(false);
+  // ═══ UI FOCUS STATE — single source of truth ═══
+  const uiInitial = {
+    activeLayer: null,
+    activeSense: null,
+    activePair: null,
+    activeMirrorSense: null,
+    activeMirrorProof: false,
+    activeProof: false,
+    activeConvergence: null,
+    activeFilterQ: null,
+    activeIdea: null,
+    activePillar: null,
+    activeSamenessProof: null,
+    activeAnswer: false,
+    activeAnswerProof: null,
+    activeBefore: false,
+    activeBeforeProof: null,
+    activeConstants: false,
+    activeConstantsProof: null,
+    openSection: null,
+    goldenFlood: false,
+  };
+  const uiReducer = (state, action) => {
+    switch (action.type) {
+      case 'CLEAR': return { ...uiInitial };
+      case 'SET': return { ...state, [action.key]: action.value };
+      case 'BATCH': return { ...state, ...action.payload };
+      default: return state;
+    }
+  };
+  const [ui, dispatch] = React.useReducer(uiReducer, uiInitial);
+
+  // Convenience setters — keep call sites readable
+  const setActiveLayer = (v) => dispatch({ type: 'SET', key: 'activeLayer', value: v });
+  const setActiveSense = (v) => dispatch({ type: 'SET', key: 'activeSense', value: v });
+  const setActivePair = (v) => dispatch({ type: 'SET', key: 'activePair', value: v });
+  const setActiveMirrorSense = (v) => dispatch({ type: 'SET', key: 'activeMirrorSense', value: v });
+  const setActiveMirrorProof = (v) => dispatch({ type: 'SET', key: 'activeMirrorProof', value: v });
+  const setActiveProof = (v) => dispatch({ type: 'SET', key: 'activeProof', value: v });
+  const setActiveConvergence = (v) => dispatch({ type: 'SET', key: 'activeConvergence', value: v });
+  const setActiveFilterQ = (v) => dispatch({ type: 'SET', key: 'activeFilterQ', value: v });
+  const setActiveIdea = (v) => dispatch({ type: 'SET', key: 'activeIdea', value: v });
+  const setActivePillar = (v) => dispatch({ type: 'SET', key: 'activePillar', value: v });
+  const setActiveSamenessProof = (v) => dispatch({ type: 'SET', key: 'activeSamenessProof', value: v });
+  const setActiveAnswer = (v) => dispatch({ type: 'SET', key: 'activeAnswer', value: v });
+  const setActiveAnswerProof = (v) => dispatch({ type: 'SET', key: 'activeAnswerProof', value: v });
+  const setActiveBefore = (v) => dispatch({ type: 'SET', key: 'activeBefore', value: v });
+  const setActiveBeforeProof = (v) => dispatch({ type: 'SET', key: 'activeBeforeProof', value: v });
+  const setActiveConstants = (v) => dispatch({ type: 'SET', key: 'activeConstants', value: v });
+  const setActiveConstantsProof = (v) => dispatch({ type: 'SET', key: 'activeConstantsProof', value: v });
+  const setOpenSection = (v) => dispatch({ type: 'SET', key: 'openSection', value: v });
+  const setGoldenFlood = (v) => dispatch({ type: 'SET', key: 'goldenFlood', value: v });
+
+  // Destructure for existing code compatibility
+  const { activeLayer, activeSense, activePair, activeMirrorSense, activeMirrorProof,
+    activeProof, activeConvergence, activeFilterQ, activeIdea, activePillar,
+    activeSamenessProof, activeAnswer, activeAnswerProof, activeBefore, activeBeforeProof,
+    activeConstants, activeConstantsProof, openSection, goldenFlood } = ui;
   const [fading, setFading] = useState(false);
   // Waterfall transition system
   const [transitioning, setTransitioning] = useState(false);
@@ -52,6 +92,23 @@ export default function TheoryOfEverything() {
   const [prevDepth, setPrevDepth] = useState(null);
   const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
   const poemSeen = useRef(false);
+
+  // Stable particle seeds — generated once, never re-randomized on re-render
+  const mathParticles = useMemo(() =>
+    Array.from({ length: 16 }, (_, i) => ({
+      delay: i * 1.5 + Math.random() * 2,
+      size: Math.random() * 2 + 0.5,
+      x: Math.random() * 100,
+      speed: 20 + Math.random() * 25,
+    })), []);
+
+  const theoryParticles = useMemo(() =>
+    Array.from({ length: 32 }, (_, i) => ({
+      delay: i * 1.1 + Math.random() * 2,
+      size: Math.random() * 2.8 + 0.5,
+      x: Math.random() * 100,
+      speed: 18 + Math.random() * 30,
+    })), []);
 
   // THE OPENING ACT — words devour the darkness, then the light
   // Direct DOM manipulation — React doesn't re-render during the animation.
@@ -158,102 +215,118 @@ export default function TheoryOfEverything() {
     }
   }, [depth]);
 
+  // Cancellable delay utility for clean async transitions
+  const transAbortRef = useRef(null);
+  const wait = (ms, signal) =>
+    new Promise((res, rej) => {
+      const id = setTimeout(res, ms);
+      signal?.addEventListener("abort", () => { clearTimeout(id); rej(new Error("aborted")); });
+    });
+
   const clearAllSubs = useCallback(() => {
-    setActiveLayer(null); setActiveSense(null); setActivePair(null); setActiveMirrorSense(null); setActiveMirrorProof(false); setActiveProof(false); setActiveConvergence(null); setActiveIdea(null); setActivePillar(null); setActiveSamenessProof(null); setActiveAnswer(false); setActiveAnswerProof(null); setActiveBefore(false); setActiveBeforeProof(null); setActiveConstants(false); setActiveConstantsProof(null); setOpenSection(null); setGoldenFlood(false); setActiveFilterQ(null);
+    dispatch({ type: 'CLEAR' });
   }, []);
 
-  const goDeeper = useCallback((skipTransition = false) => {
+  const goDeeper = useCallback(async (skipTransition = false) => {
     if (transitioning) return;
     if (skipTransition) {
-      // Instant transition — used by DreamMultiverse canvas auto-advance (depth 1→2)
-      // No waterfall overlays, no fading, no delay. The canvas handles its own visual transition.
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 9));
       clearAllSubs();
       return;
     }
-    setTransDir('deeper');
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
-    setFading(true);
 
-    // Phase 1: EXIT — current content falls away (500ms)
-    setTimeout(() => {
+    transAbortRef.current?.abort();
+    const controller = new AbortController();
+    transAbortRef.current = controller;
+
+    try {
+      setTransDir('deeper');
+      setTransPhase('exit');
+      setTransitioning(true);
+      setPrevDepth(depth);
+      setFading(true);
+
+      await wait(500, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 9));
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
 
-      // Phase 2: ENTER — new content rises (600ms)
-      setTimeout(() => {
-        setTransPhase('settle');
+      await wait(600, controller.signal);
+      setTransPhase('settle');
 
-        // Phase 3: SETTLE — final ease (400ms)
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
+      await wait(400, controller.signal);
+      setTransPhase('idle');
+      setTransitioning(false);
+      setPrevDepth(null);
+    } catch (e) { /* aborted — user clicked again */ }
   }, [depth, transitioning, clearAllSubs]);
 
-  const goBack = useCallback(() => {
+  const goBack = useCallback(async () => {
     if (transitioning) return;
-    setTransDir('back');
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
-    setFading(true);
 
-    setTimeout(() => {
+    transAbortRef.current?.abort();
+    const controller = new AbortController();
+    transAbortRef.current = controller;
+
+    try {
+      setTransDir('back');
+      setTransPhase('exit');
+      setTransitioning(true);
+      setPrevDepth(depth);
+      setFading(true);
+
+      await wait(500, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => {
         const newD = Math.max(d - 1, 0);
-        if (newD === 0) // Opening act replays via useEffect when depth returns to 0
         return newD;
       });
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
 
-      setTimeout(() => {
-        setTransPhase('settle');
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
+      await wait(600, controller.signal);
+      setTransPhase('settle');
+
+      await wait(400, controller.signal);
+      setTransPhase('idle');
+      setTransitioning(false);
+      setPrevDepth(null);
+    } catch (e) { /* aborted */ }
   }, [depth, transitioning, clearAllSubs]);
 
-  const returnToVoid = useCallback(() => {
+  const returnToVoid = useCallback(async () => {
     if (transitioning) return;
-    setTransDir('void');
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
-    setFading(true);
 
-    setTimeout(() => {
+    transAbortRef.current?.abort();
+    const controller = new AbortController();
+    transAbortRef.current = controller;
+
+    try {
+      setTransDir('void');
+      setTransPhase('exit');
+      setTransitioning(true);
+      setPrevDepth(depth);
+      setFading(true);
+
+      await wait(500, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(0);
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
 
-      setTimeout(() => {
-        setTransPhase('settle');
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
+      await wait(600, controller.signal);
+      setTransPhase('settle');
+
+      await wait(400, controller.signal);
+      setTransPhase('idle');
+      setTransitioning(false);
+      setPrevDepth(null);
+    } catch (e) { /* aborted */ }
   }, [depth, transitioning, clearAllSubs]);
 
   const openLayer = (i) => {
@@ -262,30 +335,37 @@ export default function TheoryOfEverything() {
     setActiveProof(false);
   };
 
-  const navigateToDepth = useCallback((targetDepth) => {
+  const navigateToDepth = useCallback(async (targetDepth) => {
     if (targetDepth === depth || transitioning) return;
+
+    transAbortRef.current?.abort();
+    const controller = new AbortController();
+    transAbortRef.current = controller;
+
     const dir = targetDepth > depth ? 'deeper' : 'back';
-    setTransDir(dir);
-    setTransPhase('exit');
-    setTransitioning(true);
-    setPrevDepth(depth);
-    setFading(true);
-    setTimeout(() => {
+
+    try {
+      setTransDir(dir);
+      setTransPhase('exit');
+      setTransitioning(true);
+      setPrevDepth(depth);
+      setFading(true);
+
+      await wait(500, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
-      // Opening act replays automatically when depth returns to 0
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
-      setTimeout(() => {
-        setTransPhase('settle');
-        setTimeout(() => {
-          setTransPhase('idle');
-          setTransitioning(false);
-          setPrevDepth(null);
-        }, 400);
-      }, 600);
-    }, 500);
+
+      await wait(600, controller.signal);
+      setTransPhase('settle');
+
+      await wait(400, controller.signal);
+      setTransPhase('idle');
+      setTransitioning(false);
+      setPrevDepth(null);
+    } catch (e) { /* aborted */ }
   }, [depth, transitioning, clearAllSubs]);
 
   const layer = activeLayer !== null ? LAYERS[activeLayer] : null;
@@ -325,212 +405,6 @@ export default function TheoryOfEverything() {
       position: "relative", overflow: "hidden",
       transition: "background 2.8s cubic-bezier(0.23, 1, 0.32, 1)",
     }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
-
-        * { box-sizing: border-box; }
-
-        @keyframes floatUp {
-          0% { transform: translateY(0) scale(1); opacity: 0; }
-          8% { opacity: 0.6; }
-          50% { opacity: 0.3; }
-          100% { transform: translateY(-100vh) scale(0.2); opacity: 0; }
-        }
-        @keyframes pulseExpand {
-          0% { transform: translate(-50%,-50%) scale(0.3); opacity: 0.3; }
-          100% { transform: translate(-50%,-50%) scale(3); opacity: 0; }
-        }
-        @keyframes fadeSlideUp {
-          from { opacity: 0; transform: translateY(28px); filter: blur(2px); }
-          60% { opacity: 0.85; filter: blur(0.3px); }
-          to { opacity: 1; transform: translateY(0); filter: blur(0px); }
-        }
-        @keyframes diamondPulse {
-          0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-          1% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.03); }
-          49% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-          50% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-          99% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.03); }
-          100% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes prismSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-        @keyframes goldenFlood { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes textOverlayFade { from { opacity: 1; } to { opacity: 0; } }
-        @keyframes textShrinkAway {
-          0% { transform: scale(1); opacity: 1; }
-          100% { transform: scale(0.15); opacity: 0; }
-        }
-        @keyframes starGlow { 0%, 100% { text-shadow: 0 0 8px rgba(201,168,76,0.3), 0 0 20px rgba(201,168,76,0.15); } 50% { text-shadow: 0 0 16px rgba(201,168,76,0.6), 0 0 40px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.15); } }
-        @keyframes infinityRadiate { 0%, 100% { text-shadow: 0 0 30px rgba(201,168,76,0.2), 0 0 60px rgba(201,168,76,0.1); filter: drop-shadow(0 0 20px rgba(201,168,76,0.15)); } 50% { text-shadow: 0 0 60px rgba(201,168,76,0.5), 0 0 100px rgba(201,168,76,0.3), 0 0 140px rgba(201,168,76,0.15); filter: drop-shadow(0 0 50px rgba(201,168,76,0.3)); } }
-        @keyframes breathe {
-          0%, 100% { opacity: 0.25; }
-          50% { opacity: 0.55; }
-        }
-        @keyframes textBlink {
-          0%, 18% { opacity: 1; }
-          20%, 24% { opacity: 0; }
-          26%, 100% { opacity: 1; }
-        }
-        @keyframes gentleFloat {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-6px); }
-        }
-        @keyframes doorReveal {
-          0% { opacity: 0; transform: translateX(-50%) scale(0.97); filter: blur(6px); }
-          40% { opacity: 0.3; transform: translateX(-50%) scale(0.99); filter: blur(3px); }
-          100% { opacity: 1; transform: translateX(-50%) scale(1); filter: blur(0px); }
-        }
-        @keyframes shimmerLine {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        @keyframes vignettePulse {
-          0%, 100% { opacity: 0.7; }
-          50% { opacity: 0.9; }
-        }
-        @keyframes auroraShift {
-          0% { transform: rotate(0deg) scale(1); }
-          50% { transform: rotate(3deg) scale(1.1); }
-          100% { transform: rotate(-2deg) scale(1.05); }
-        }
-        @keyframes letterBreathe {
-          0%, 100% { letter-spacing: 8px; opacity: 0.2; }
-          50% { letter-spacing: 12px; opacity: 0.3; }
-        }
-        @keyframes moonRadiate {
-          0%, 100% { box-shadow: 0 0 40px rgba(232,232,240,0.08), 0 0 80px rgba(232,232,240,0.03); }
-          50% { box-shadow: 0 0 60px rgba(232,232,240,0.15), 0 0 120px rgba(232,232,240,0.05), 0 0 200px rgba(201,168,76,0.02); }
-        }
-        @keyframes senseReveal {
-          from { opacity: 0; transform: translateY(12px) scale(0.97); filter: blur(4px); }
-          to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-        }
-        @keyframes equationPulse {
-          0%, 100% { box-shadow: 0 8px 30px rgba(201,168,76,0.06), 0 0 60px rgba(201,168,76,0.02), inset 0 1px 0 rgba(255,255,255,0.05); border-color: rgba(201,168,76,0.12); }
-          50% { box-shadow: 0 12px 50px rgba(201,168,76,0.1), 0 0 100px rgba(201,168,76,0.04), 0 0 160px rgba(201,168,76,0.015), inset 0 1px 0 rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.18); }
-        }
-        @keyframes miracleBloom {
-          0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-          33% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
-          66% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.95); }
-        }
-        @keyframes sacredReveal {
-          0% { opacity: 0; transform: translateY(30px) scale(0.95); filter: blur(8px); }
-          60% { opacity: 0.8; filter: blur(1px); }
-          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-        }
-        @keyframes glowRadiate {
-          0%, 100% { filter: drop-shadow(0 0 8px rgba(201,168,76,0.08)); }
-          50% { filter: drop-shadow(0 0 20px rgba(201,168,76,0.18)) drop-shadow(0 0 40px rgba(201,168,76,0.06)); }
-        }
-        @keyframes textLuminance {
-          0%, 100% { text-shadow: 0 0 20px rgba(201,168,76,0.06); }
-          50% { text-shadow: 0 0 40px rgba(201,168,76,0.12), 0 0 80px rgba(201,168,76,0.04); }
-        }
-        @keyframes formulaOrbitSpin {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        @keyframes formulaCounterSpin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(-360deg); }
-        }
-        @keyframes diamondCounterSpin {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to { transform: translate(-50%, -50%) rotate(-360deg); }
-        }
-
-        /* ===== WATERFALL TRANSITION SYSTEM ===== */
-        @keyframes waterfallExit {
-          0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-          35% { opacity: 0.6; transform: translateY(2.5vh) scale(0.985); filter: blur(1.5px); }
-          100% { opacity: 0; transform: translateY(10vh) scale(0.95); filter: blur(6px); }
-        }
-        @keyframes waterfallExitUp {
-          0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-          35% { opacity: 0.6; transform: translateY(-2.5vh) scale(0.985); filter: blur(1.5px); }
-          100% { opacity: 0; transform: translateY(-10vh) scale(0.95); filter: blur(6px); }
-        }
-        @keyframes waterfallEnter {
-          0% { opacity: 0; transform: translateY(-6vh) scale(0.97); filter: blur(5px); }
-          25% { opacity: 0.3; filter: blur(3px); }
-          65% { opacity: 0.8; transform: translateY(-0.8vh) scale(0.998); filter: blur(0.5px); }
-          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-        }
-        @keyframes waterfallEnterUp {
-          0% { opacity: 0; transform: translateY(6vh) scale(0.97); filter: blur(5px); }
-          25% { opacity: 0.3; filter: blur(3px); }
-          65% { opacity: 0.8; transform: translateY(0.8vh) scale(0.998); filter: blur(0.5px); }
-          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
-        }
-        @keyframes voidCollapse {
-          0% { opacity: 1; transform: scale(1); filter: blur(0px); }
-          50% { opacity: 0.3; transform: scale(0.65); filter: blur(3px); }
-          100% { opacity: 0; transform: scale(0.25); filter: blur(10px); }
-        }
-        @keyframes rippleOverlay {
-          0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-          45% { opacity: 0.12; }
-          100% { opacity: 0; transform: translate(-50%, -50%) scale(3.5); }
-        }
-        @keyframes streamMist {
-          0% { opacity: 0; background-position: 50% 100%; }
-          35% { opacity: 0.25; }
-          100% { opacity: 0; background-position: 50% -50%; }
-        }
-
-        .gold-line {
-          height: 1px; margin: 12px 0;
-          background: linear-gradient(90deg, transparent 2%, rgba(201,168,76,0.15) 15%, rgba(201,168,76,0.45) 50%, rgba(201,168,76,0.15) 85%, transparent 98%);
-          box-shadow: 0 0 24px rgba(201,168,76,0.1), 0 0 4px rgba(201,168,76,0.2), 0 0 48px rgba(201,168,76,0.03);
-          animation: breathe 6s ease-in-out infinite;
-          position: relative;
-        }
-        .gold-line::after {
-          content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px;
-          background: linear-gradient(90deg, transparent 5%, rgba(201,168,76,0.03) 30%, rgba(201,168,76,0.06) 50%, rgba(201,168,76,0.03) 70%, transparent 95%);
-          filter: blur(2px);
-        }
-
-        .shimmer-gold {
-          background: linear-gradient(90deg, rgba(201,168,76,0.35) 0%, rgba(232,232,240,0.8) 25%, rgba(255,245,220,0.95) 50%, rgba(232,232,240,0.8) 75%, rgba(201,168,76,0.35) 100%);
-          background-size: 200% 100%;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmerLine 6s ease-in-out infinite;
-          filter: drop-shadow(0 0 12px rgba(201,168,76,0.1)) drop-shadow(0 0 30px rgba(201,168,76,0.04));
-        }
-
-        .sense-btn {
-          cursor: pointer; transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
-          padding: 7px 16px; border-radius: 22px;
-          border: 1px solid rgba(255,255,255,0.08);
-          background: rgba(255,255,255,0.02); font-size: 13px;
-          backdrop-filter: blur(10px);
-          position: relative; overflow: hidden;
-        }
-        .sense-btn:hover {
-          background: rgba(255,255,255,0.06);
-          border-color: rgba(255,255,255,0.18);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-        }
-        .sense-btn:active {
-          transform: translateY(0) scale(0.98);
-        }
-
-        ::-webkit-scrollbar { width: 2px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.08); border-radius: 2px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(201,168,76,0.15); }
-
-        @media (max-width: 480px) {
-          .gold-line { margin: 8px 0 !important; }
-        }
-      `}</style>
 
 
 
@@ -598,11 +472,11 @@ export default function TheoryOfEverything() {
             pointerEvents: "none", zIndex: 1,
           }} />
           {/* Particles */}
-          {Array.from({ length: 16 }, (_, i) => (
-            <Particle key={i} delay={i * 1.5 + Math.random() * 2}
-              size={Math.random() * 2 + 0.5}
-              x={Math.random() * 100}
-              speed={20 + Math.random() * 25} />
+          {mathParticles.map((p, i) => (
+            <Particle key={i} delay={p.delay}
+              size={p.size}
+              x={p.x}
+              speed={p.speed} />
           ))}
           <MathPage onReturn={() => { setCurrentPage("theory"); setDepth(0); window.scrollTo({ top: 0, behavior: "instant" }); }} />
         </>
@@ -708,11 +582,11 @@ export default function TheoryOfEverything() {
       }} />
 
       {/* Particles — hidden during pure black/white landing */}
-      {(depth >= 1) && Array.from({ length: 32 }, (_, i) => (
-        <Particle key={i} delay={i * 1.1 + Math.random() * 2}
-          size={Math.random() * 2.8 + 0.5}
-          x={Math.random() * 100}
-          speed={18 + Math.random() * 30} />
+      {(depth >= 1) && theoryParticles.map((p, i) => (
+        <Particle key={i} delay={p.delay}
+          size={p.size}
+          x={p.x}
+          speed={p.speed} />
       ))}
 
       {/* THE MULTIVERSE — persistent gravitational simulation behind ALL depths.
