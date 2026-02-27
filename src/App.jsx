@@ -510,17 +510,28 @@ export default function TheoryOfEverything() {
           />
         </>
       )}
-      {/* Depth 4+: narrow left-edge back zone (only when no door is open) */}
+      {/* Depth 4+: edge zones when no door is open — left=back, right=forward */}
       {depth >= 4 && activeConvergence === null && (
-        <div
-          onClick={(e) => { e.stopPropagation(); goBack(); }}
-          style={{
-            position: "fixed", top: 0, left: 0,
-            width: "15%", height: "88%",
-            zIndex: 9000, cursor: "w-resize",
-            background: "transparent",
-          }}
-        />
+        <>
+          <div
+            onClick={(e) => { e.stopPropagation(); goBack(); }}
+            style={{
+              position: "fixed", top: 0, left: 0,
+              width: "15%", height: "88%",
+              zIndex: 9000, cursor: "w-resize",
+              background: "transparent",
+            }}
+          />
+          {depth < 9 && <div
+            onClick={(e) => { e.stopPropagation(); goDeeper(); }}
+            style={{
+              position: "fixed", top: 0, right: 0,
+              width: "15%", height: "88%",
+              zIndex: 9000, cursor: "e-resize",
+              background: "transparent",
+            }}
+          />}
+        </>
       )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
