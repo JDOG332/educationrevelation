@@ -29,17 +29,23 @@ export function GrainOverlay() {
 export function DepthIndicator({ depth, maxDepth = 8, onNavigate, depthNames }) {
   return (
     <div style={{
-      position: "fixed", right: 16, top: "50%", transform: "translateY(-50%)",
-      zIndex: 100, display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+      position: "fixed", right: 8, top: "50%", transform: "translateY(-50%)",
+      zIndex: 100, display: "flex", flexDirection: "column", alignItems: "center", gap: 0,
     }}>
       {Array.from({ length: maxDepth + 1 }, (_, i) => (
         <div key={i}
           onClick={onNavigate ? (e) => { e.stopPropagation(); onNavigate(i); } : undefined}
           style={{
+            /* 44px minimum tap target wrapping a smaller visible dot */
+            width: 44, height: 44,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            cursor: onNavigate ? "pointer" : "default",
+          }}
+        >
+          <div style={{
             width: i === depth ? 10 : 5,
             height: i === depth ? 10 : 5,
             borderRadius: "50%",
-            cursor: onNavigate ? "pointer" : "default",
             background: i === depth
               ? "rgba(201,168,76,0.8)"
               : i < depth
@@ -51,8 +57,9 @@ export function DepthIndicator({ depth, maxDepth = 8, onNavigate, depthNames }) 
               : i < depth
                 ? "0 0 4px rgba(201,168,76,0.1)"
                 : "none",
-          }}
-        />
+            pointerEvents: "none",
+          }} />
+        </div>
       ))}
       <div style={{
         fontFamily: "'Cinzel', serif",

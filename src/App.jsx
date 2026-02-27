@@ -500,52 +500,58 @@ export default function TheoryOfEverything() {
       {/* ===== THEORY PAGE (original content) ===== */}
       {currentPage === "theory" && (<>
 
-      {/* ===== GLOBAL LEFT/RIGHT NAVIGATION ===== */}
-      {/* Left half = go back. Right half = go forward. */}
-      {/* Depths 1-3: full left/right zones */}
-      {depth >= 1 && depth <= 3 && (
+      {/* ===== GLOBAL EDGE NAVIGATION ===== */}
+      {/* Narrow edge strips (48px) + visible chevron arrows. */}
+      {/* Content in the center of the screen is now fully tappable. */}
+      {depth >= 1 && (
         <>
+          {/* LEFT EDGE — go back */}
           <div
             onClick={(e) => { e.stopPropagation(); goBack(); }}
             style={{
               position: "fixed", top: 0, left: 0,
-              width: "50%", height: "88%",
+              width: 48, height: "88%",
               zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
               background: "transparent",
+              display: "flex", alignItems: "center", justifyContent: "flex-start",
+              paddingLeft: 6,
             }}
-          />
-          <div
-            onClick={(e) => { e.stopPropagation(); goDeeper(); }}
-            style={{
-              position: "fixed", top: 0, right: 0,
-              width: "50%", height: "88%",
-              zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
-              background: "transparent",
+          >
+            <div style={{
+              opacity: 0.15, fontSize: 22, color: "rgba(201,168,76,0.8)",
+              fontFamily: "'Cinzel', serif",
+              transition: "opacity 0.4s ease",
+              pointerEvents: "none",
+              textShadow: "0 0 12px rgba(201,168,76,0.3)",
             }}
-          />
-        </>
-      )}
-      {/* Depth 4+: edge zones when no door is open — left=back, right=forward */}
-      {depth >= 4 && activeConvergence === null && (
-        <>
-          <div
-            onClick={(e) => { e.stopPropagation(); goBack(); }}
-            style={{
-              position: "fixed", top: 0, left: 0,
-              width: "15%", height: "88%",
-              zIndex: 9000, cursor: "w-resize", touchAction: "pan-y",
-              background: "transparent",
-            }}
-          />
-          {depth < 9 && <div
-            onClick={(e) => { e.stopPropagation(); goDeeper(); }}
-            style={{
-              position: "fixed", top: 0, right: 0,
-              width: "15%", height: "88%",
-              zIndex: 9000, cursor: "e-resize", touchAction: "pan-y",
-              background: "transparent",
-            }}
-          />}
+              className="nav-chevron-left"
+            >‹</div>
+          </div>
+
+          {/* RIGHT EDGE — go deeper */}
+          {depth < 9 && (
+            <div
+              onClick={(e) => { e.stopPropagation(); goDeeper(); }}
+              style={{
+                position: "fixed", top: 0, right: 0,
+                width: 48, height: "88%",
+                zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
+                background: "transparent",
+                display: "flex", alignItems: "center", justifyContent: "flex-end",
+                paddingRight: 6,
+              }}
+            >
+              <div style={{
+                opacity: 0.15, fontSize: 22, color: "rgba(201,168,76,0.8)",
+                fontFamily: "'Cinzel', serif",
+                transition: "opacity 0.4s ease",
+                pointerEvents: "none",
+                textShadow: "0 0 12px rgba(201,168,76,0.3)",
+              }}
+                className="nav-chevron-right"
+              >›</div>
+            </div>
+          )}
         </>
       )}
 
@@ -684,24 +690,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* SECRET PASSAGE — invisible bottom zone (1/φ² ≈ 38.2%) skips to convergence chamber */}
-      {depth <= 1 && (
-        <div
-          onClick={() => {
-            // Kill the opening act animation if running
-            if (veilFrameRef.current) cancelAnimationFrame(veilFrameRef.current);
-            if (openingRef.current) openingRef.current.style.display = "none";
-            setDepth(4);
-          }}
-          style={{
-            position: "fixed", bottom: 0, left: 0,
-            width: "100%", height: `${(PHI_INV * PHI_INV * 100).toFixed(1)}%`,
-            zIndex: 99999,
-            cursor: "default",
-            background: "transparent",
-          }}
-        />
-      )}
+      {/* SECRET PASSAGE — removed for now. Hidden in plain sight later. */}
 
       {/* DREAM MULTIVERSE — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
