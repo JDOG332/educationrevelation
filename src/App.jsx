@@ -4,6 +4,8 @@ import MathPage from "./MathPage.jsx";
 import ConvergenceCards from "./ConvergenceCards.jsx";
 import { GOLDEN_FILTER } from "./goldenFilter.js";
 import { TEN_DOORS, classifyContent } from "./tenDoors.js";
+import SubcategoryGrid, { SubcategoryView } from "./SubcategoryGrid.jsx";
+import { SUBCATEGORIES, DOOR_META } from "./subcategories.js";
 import "./global.css";
 import {
   PHI, PHI_INV, PHI2, PHI3,
@@ -39,6 +41,7 @@ export default function TheoryOfEverything() {
     activeConvergence: null,
     activeFilterQ: null,
     activeIdea: null,
+    activeSubcategory: null,
     activePillar: null,
     activeSamenessProof: null,
     activeAnswer: false,
@@ -70,6 +73,7 @@ export default function TheoryOfEverything() {
   const setActiveConvergence = (v) => dispatch({ type: 'SET', key: 'activeConvergence', value: v });
   const setActiveFilterQ = (v) => dispatch({ type: 'SET', key: 'activeFilterQ', value: v });
   const setActiveIdea = (v) => dispatch({ type: 'SET', key: 'activeIdea', value: v });
+  const setActiveSubcategory = (v) => dispatch({ type: 'SET', key: 'activeSubcategory', value: v });
   const setActivePillar = (v) => dispatch({ type: 'SET', key: 'activePillar', value: v });
   const setActiveSamenessProof = (v) => dispatch({ type: 'SET', key: 'activeSamenessProof', value: v });
   const setActiveAnswer = (v) => dispatch({ type: 'SET', key: 'activeAnswer', value: v });
@@ -83,7 +87,7 @@ export default function TheoryOfEverything() {
 
   // Destructure for existing code compatibility
   const { activeLayer, activeSense, activePair, activeMirrorSense, activeMirrorProof,
-    activeProof, activeConvergence, activeFilterQ, activeIdea, activePillar,
+    activeProof, activeConvergence, activeFilterQ, activeIdea, activeSubcategory, activePillar,
     activeSamenessProof, activeAnswer, activeAnswerProof, activeBefore, activeBeforeProof,
     activeConstants, activeConstantsProof, openSection, goldenFlood } = ui;
   const [fading, setFading] = useState(false);
@@ -1210,8 +1214,27 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
+      {/* ===== SUBCATEGORY GRID — 10 Rooms inside each Door ===== */}
+      {depth === 4 && activeConvergence !== null && activeSubcategory === null && activeIdea === null && activeFilterQ === null && (
+        <SubcategoryGrid
+          doorKey={activeConvergence}
+          onSelectSub={(subId) => { setActiveSubcategory(subId); window.scrollTo(0,0); }}
+          onSelectContent={() => { setActiveSubcategory("__essay__"); window.scrollTo(0,0); }}
+          onBack={() => { setActiveConvergence(null); setActiveSubcategory(null); setActiveIdea(null); window.scrollTo(0,0); }}
+        />
+      )}
+
+      {/* ===== SUBCATEGORY VIEW — Inside a single Room ===== */}
+      {depth === 4 && activeConvergence !== null && activeSubcategory !== null && activeSubcategory !== "__essay__" && activeIdea === null && (
+        <SubcategoryView
+          doorKey={activeConvergence}
+          subId={activeSubcategory}
+          onBack={() => { setActiveSubcategory(null); window.scrollTo(0,0); }}
+        />
+      )}
+
       {/* ===== THE GOLDEN FILTER — Level 0: The Big Picture ===== */}
-      {depth === 4 && activeConvergence === "filter" && (() => {
+      {depth === 4 && activeConvergence === "filter" && activeSubcategory === "__essay__" && (() => {
         const selectedQ = activeFilterQ !== null ? GOLDEN_FILTER[activeFilterQ] : null;
         const fcColor = (fc) => fc >= 99 ? "rgba(76,175,80,0.8)" : fc >= 90 ? "rgba(201,168,76,0.8)" : "rgba(224,140,50,0.8)";
         const fcDot = (fc) => fc >= 99 ? "\uD83D\uDFE2" : fc >= 90 ? "\uD83D\uDFE1" : "\uD83D\uDFE0";
@@ -1667,7 +1690,7 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== PLAIN ENGLISH — IDEA GRID ===== */}
-      {depth === 4 && activeConvergence === "plain" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "plain" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 20px ${Math.round(34 * PHI)}px`,
@@ -5016,7 +5039,7 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {depth === 4 && activeConvergence === "gravity" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "gravity" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -5323,7 +5346,46 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* Gravity card grid removed — cards reclassified to correct doors */}
+          {/* ===== GRAVITY: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(255,200,50,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+              color: "rgba(255,200,50,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "regrets", icon: "⏳", title: "THE WEIGHT OF LEAVING", hook: "10 regrets from the dying. The mirror you can only read at the end.", accent: "255,200,50" },
+              ].map(idea => (
+                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                  transition: "all 0.4s ease", textAlign: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                >
+                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                    color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
@@ -5452,7 +5514,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THREE PILLARS ROOM ===== */}
-      {depth === 4 && activeConvergence === "pillars" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "pillars" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -5628,7 +5690,46 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* Old pillars grid removed — cards reclassified to correct doors */}
+          {/* ===== THREE PILLARS: IDEA CARD GRID ===== */}
+          <div style={{
+            marginTop: Math.round(34 * PHI),
+            borderTop: "1px solid rgba(100,180,220,0.08)",
+            paddingTop: Math.round(21 * PHI),
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+              color: "rgba(100,180,220,0.3)", textAlign: "center",
+              marginBottom: Math.round(13 * PHI),
+            }}>DEEPER DOORS</div>
+
+            <div style={{
+              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+            }}>
+              {[
+                { key: "dnahandshake", icon: "🧬", title: "THE DNA HANDSHAKE", hook: "Your body doesn't just eat. It performs a quality check against your DNA.", accent: "100,180,220" },
+              ].map(idea => (
+                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                  transition: "all 0.4s ease", textAlign: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                >
+                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
+                    color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
+                  }}>{idea.title}</div>
+                  <div style={{
+                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                    color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
+                  }}>{idea.hook}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* ═══ KNOWLEDGE CARDS ═══ */}
           <div style={{
@@ -5851,7 +5952,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — SAMENESS ROOM (THE GATE) ===== */}
-      {depth === 4 && activeConvergence === "sameness" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "sameness" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -6373,7 +6474,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — CONVERGENCE DEPTHS ROOM ===== */}
-      {depth === 4 && activeConvergence === "depths" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "depths" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 700, margin: "0 auto",
           padding: `${30}px 20px ${60}px`,
@@ -7636,7 +7737,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THE ANCIENT PROOF ROOM ===== */}
-      {depth === 4 && activeConvergence === "ancient" && activeIdea === null && (
+      {depth === 4 && activeConvergence === "ancient" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 680, margin: "0 auto",
           padding: `${Math.round(21 * PHI)}px 24px ${Math.round(34 * PHI)}px`,
@@ -7870,7 +7971,50 @@ export default function TheoryOfEverything() {
             <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
           </div>
 
-          {/* Old ancient grid removed — cards reclassified to correct doors */}
+          {/* ===== ANCIENT PROOF: DEEPER DOORS ===== */}
+          <div style={{
+            maxWidth: 680, margin: "0 auto",
+            padding: `0 24px ${Math.round(21 * PHI)}px`,
+          }}>
+            <div style={{
+              marginTop: Math.round(21 * PHI),
+              borderTop: "1px solid rgba(190,140,220,0.08)",
+              paddingTop: Math.round(21 * PHI),
+            }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
+                color: "rgba(190,140,220,0.3)", textAlign: "center",
+                marginBottom: Math.round(13 * PHI),
+              }}>DEEPER DOORS</div>
+
+              <div style={{
+                display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
+              }}>
+                {[
+                  { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
+                ].map(idea => (
+                  <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
+                    cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
+                    background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
+                    borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
+                    transition: "all 0.4s ease", textAlign: "center",
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
+                  >
+                    <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
+                      color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
+                    }}>{idea.title}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
+                      color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
+                    }}>{idea.hook}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
           {/* ═══ KNOWLEDGE CARDS ═══ */}
           <div style={{
@@ -7930,7 +8074,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== DEPTH 4 — THE LAYERS ROOM ===== */}
-      {depth === 4 && activeConvergence === "layers" && (() => {
+      {depth === 4 && activeConvergence === "layers" && activeSubcategory === "__essay__" && (() => {
         const layers = [
           {
             num: 1,
@@ -8252,7 +8396,7 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 4 — HIT THE ROCK ROOM ===== */}
-      {depth === 4 && activeConvergence === "rock" && (() => {
+      {depth === 4 && activeConvergence === "rock" && activeSubcategory === "__essay__" && (() => {
         const sections = [
           {
             icon: "✊",
@@ -8455,7 +8599,7 @@ export default function TheoryOfEverything() {
       })()}
 
       {/* ===== DEPTH 4 — THE PROMISE ROOM ===== */}
-      {depth === 4 && activeConvergence === "promise" && (
+      {depth === 4 && activeConvergence === "promise" && activeSubcategory === "__essay__" && (
         <div style={{
           width: "100%", minHeight: "100vh", position: "relative",
           zIndex: 1500, ...getDepthWrap(4),
