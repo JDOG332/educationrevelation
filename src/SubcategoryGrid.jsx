@@ -1,136 +1,82 @@
 /* ═══════════════════════════════════════════════════════════════
    SUBCATEGORY GRID — The 10 Rooms inside each Door
-   Click a door → see 10 rooms → click a room → see topic cards
-   Navigation: ARROWS OF TIME — larger, directional, with momentum
+   Navigation: ARROWS OF TIME — clean, mobile-safe
    ═══════════════════════════════════════════════════════════════ */
 
 import { useState } from "react";
 import { PHI } from "./data.js";
 import { SUBCATEGORIES, DOOR_META } from "./subcategories.js";
 
-/* ── THE ARROW OF TIME ──────────────────────────────────────────
-   A navigation button shaped like a temporal vector.
-   direction: "back" (←) or "forward" (→)
-   The arrow glow trails behind, like time leaving a mark.
-   ─────────────────────────────────────────────────────────────── */
+/* ── ARROW OF TIME — mobile-safe nav button ─────────────────── */
 function ArrowOfTime({ label, direction = "back", onClick, accent = "201,168,76" }) {
   const isBack = direction === "back";
-  const [hovered, setHovered] = useState(false);
+  const arrow = isBack ? "◂" : "▸";
 
   return (
     <button
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       style={{
         cursor: "pointer",
-        background: "none",
-        border: "none",
+        background: `rgba(${accent},0.04)`,
+        border: `1px solid rgba(${accent},0.12)`,
+        borderRadius: 8,
         display: "flex",
         alignItems: "center",
-        gap: Math.round(3 * PHI),
-        padding: `${Math.round(5 * PHI)}px ${Math.round(5 * PHI)}px`,
-        transition: "all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)",
-        transform: hovered
-          ? `translateX(${isBack ? -6 : 6}px)`
-          : "translateX(0)",
+        gap: 10,
+        padding: `${Math.round(4 * PHI)}px ${Math.round(6 * PHI)}px`,
         flexDirection: isBack ? "row" : "row-reverse",
+        WebkitTapHighlightColor: "transparent",
       }}
     >
-      {/* The Arrow Head */}
-      <div style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}>
-        {/* Glow trail — the wake of time */}
-        <div style={{
-          position: "absolute",
-          width: hovered ? 40 : 20,
-          height: 2,
-          background: `linear-gradient(${isBack ? "270deg" : "90deg"}, rgba(${accent},${hovered ? 0.35 : 0.08}), transparent)`,
-          [isBack ? "right" : "left"]: -4,
-          transition: "all 0.5s ease",
-          borderRadius: 1,
-        }} />
-        {/* The chevron */}
-        <svg
-          width="28" height="28" viewBox="0 0 28 28"
-          style={{
-            transform: isBack ? "rotate(180deg)" : "rotate(0deg)",
-            filter: hovered ? `drop-shadow(0 0 8px rgba(${accent},0.3))` : "none",
-            transition: "filter 0.4s",
-          }}
-        >
-          {/* Arrow shape — angular, temporal, decisive */}
-          <path
-            d="M8 14 L18 6 L18 11 L22 11 L22 17 L18 17 L18 22 Z"
-            fill={`rgba(${accent},${hovered ? 0.7 : 0.35})`}
-            stroke={`rgba(${accent},${hovered ? 0.5 : 0.15})`}
-            strokeWidth="0.5"
-            style={{ transition: "all 0.4s" }}
-          />
-        </svg>
-      </div>
-
-      {/* The Label */}
+      <span style={{
+        fontSize: 20,
+        color: `rgba(${accent},0.5)`,
+        lineHeight: 1,
+      }}>{arrow}</span>
       <span style={{
         fontFamily: "'Cinzel', serif",
-        fontSize: "clamp(13px, 3vw, 17px)",
+        fontSize: "clamp(13px, 3vw, 16px)",
         letterSpacing: "0.15em",
-        color: `rgba(232,232,240,${hovered ? 0.85 : 0.5})`,
-        transition: "color 0.4s",
-        whiteSpace: "nowrap",
+        color: "rgba(232,232,240,0.55)",
       }}>{label}</span>
     </button>
   );
 }
 
-/* ── SMALLER INLINE ARROW — for prev/next at bottom ───────────── */
+/* ── SMALL ARROW — prev/next at bottom ──────────────────────── */
 function SmallArrow({ label, direction = "back", onClick, accent = "201,168,76" }) {
   const isBack = direction === "back";
-  const [hovered, setHovered] = useState(false);
+  const arrow = isBack ? "◂" : "▸";
 
   return (
     <button
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       style={{
         cursor: "pointer",
-        background: hovered ? `rgba(${accent},0.04)` : "none",
-        border: `1px solid rgba(${accent},${hovered ? 0.15 : 0.06})`,
-        borderRadius: 8,
+        background: `rgba(${accent},0.03)`,
+        border: `1px solid rgba(${accent},0.08)`,
+        borderRadius: 6,
         display: "flex",
         alignItems: "center",
-        gap: 8,
-        padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
-        transition: "all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)",
-        transform: hovered ? `translateX(${isBack ? -3 : 3}px)` : "translateX(0)",
+        gap: 6,
+        padding: `${Math.round(3 * PHI)}px ${Math.round(4 * PHI)}px`,
         flexDirection: isBack ? "row" : "row-reverse",
+        WebkitTapHighlightColor: "transparent",
+        maxWidth: "45vw",
       }}
     >
-      <svg
-        width="16" height="16" viewBox="0 0 28 28"
-        style={{
-          transform: isBack ? "rotate(180deg)" : "rotate(0deg)",
-          opacity: hovered ? 0.7 : 0.35,
-          transition: "opacity 0.4s",
-        }}
-      >
-        <path
-          d="M8 14 L18 6 L18 11 L22 11 L22 17 L18 17 L18 22 Z"
-          fill={`rgba(${accent},0.8)`}
-          stroke="none"
-        />
-      </svg>
+      <span style={{
+        fontSize: 14,
+        color: `rgba(${accent},0.4)`,
+        lineHeight: 1,
+      }}>{arrow}</span>
       <span style={{
         fontFamily: "'Cinzel', serif",
         fontSize: "clamp(9px, 2vw, 12px)",
-        letterSpacing: "0.12em",
-        color: `rgba(232,232,240,${hovered ? 0.6 : 0.3})`,
-        transition: "color 0.4s",
+        letterSpacing: "0.1em",
+        color: "rgba(232,232,240,0.35)",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
         whiteSpace: "nowrap",
       }}>{label}</span>
     </button>
@@ -144,7 +90,6 @@ function SmallArrow({ label, direction = "back", onClick, accent = "201,168,76" 
 export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent, onBack }) {
   const meta = DOOR_META[doorKey];
   const subs = SUBCATEGORIES[doorKey] || [];
-  const [hoveredIdx, setHoveredIdx] = useState(null);
 
   if (!meta || subs.length === 0) return null;
 
@@ -183,7 +128,6 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
           color: "#e8e8f0",
           letterSpacing: "0.25em",
           margin: 0,
-          textShadow: "0 0 50px rgba(201,168,76,0.08)",
         }}>{meta.name}</h2>
 
         <div style={{
@@ -221,82 +165,68 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
         gap: Math.round(5 * PHI),
         marginBottom: Math.round(21 * PHI),
       }}>
-        {subs.map((sub, i) => {
-          const isHovered = hoveredIdx === i;
+        {subs.map((sub, i) => (
+          <div
+            key={sub.id}
+            onClick={() => { onSelectSub(sub.id); window.scrollTo(0, 0); }}
+            style={{
+              position: "relative",
+              padding: `${Math.round(8 * PHI)}px ${Math.round(5 * PHI)}px`,
+              borderRadius: 10,
+              background: `linear-gradient(180deg, rgba(${sub.accent},0.04), rgba(3,3,6,0.7))`,
+              border: `1px solid rgba(${sub.accent},0.1)`,
+              cursor: "pointer",
+              overflow: "hidden",
+              animation: `fadeSlideUp 0.6s ${0.08 + i * 0.06}s both ease`,
+              textAlign: "center",
+              WebkitTapHighlightColor: "transparent",
+            }}
+          >
+            {/* Top glow line */}
+            <div style={{
+              position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
+              background: `linear-gradient(90deg, transparent, rgba(${sub.accent},0.12), transparent)`,
+            }} />
 
-          return (
-            <div
-              key={sub.id}
-              onClick={() => { onSelectSub(sub.id); window.scrollTo(0, 0); }}
-              onMouseEnter={() => setHoveredIdx(i)}
-              onMouseLeave={() => setHoveredIdx(null)}
-              style={{
-                position: "relative",
-                padding: `${Math.round(8 * PHI)}px ${Math.round(5 * PHI)}px`,
-                borderRadius: 10,
-                background: `linear-gradient(180deg, rgba(${sub.accent},${isHovered ? 0.08 : 0.04}), rgba(3,3,6,0.7))`,
-                border: `1px solid rgba(${sub.accent},${isHovered ? 0.25 : 0.1})`,
-                cursor: "pointer",
-                overflow: "hidden",
-                transition: "all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)",
-                animation: `fadeSlideUp 0.6s ${0.08 + i * 0.06}s both ease`,
-                textAlign: "center",
-                transform: isHovered ? "translateY(-3px)" : "translateY(0)",
-                boxShadow: isHovered
-                  ? `0 8px 30px rgba(${sub.accent},0.1), inset 0 1px 0 rgba(255,255,255,0.03)`
-                  : "none",
-              }}
-            >
-              {/* Top glow line */}
-              <div style={{
-                position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
-                background: `linear-gradient(90deg, transparent, rgba(${sub.accent},${isHovered ? 0.25 : 0.12}), transparent)`,
-                transition: "all 0.4s",
-              }} />
+            {/* Icon */}
+            <div style={{
+              fontSize: "clamp(24px, 5vw, 32px)",
+              marginBottom: Math.round(2 * PHI),
+            }}>{sub.icon}</div>
 
-              {/* Icon */}
-              <div style={{
-                fontSize: "clamp(24px, 5vw, 32px)",
-                marginBottom: Math.round(2 * PHI),
-                filter: isHovered ? `drop-shadow(0 0 10px rgba(${sub.accent},0.3))` : "none",
-                transition: "filter 0.4s",
-              }}>{sub.icon}</div>
+            {/* Name */}
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(10px, 2.4vw, 14px)",
+              letterSpacing: "0.1em",
+              color: `rgba(${sub.accent},0.7)`,
+              fontWeight: 600,
+              lineHeight: 1.3,
+            }}>{sub.name}</div>
 
-              {/* Name */}
-              <div style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(10px, 2.4vw, 14px)",
-                letterSpacing: "0.1em",
-                color: `rgba(${sub.accent},${isHovered ? 0.9 : 0.7})`,
-                fontWeight: 600,
-                lineHeight: 1.3,
-                transition: "color 0.4s",
-              }}>{sub.name}</div>
+            {/* Description */}
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(11px, 2.2vw, 14px)",
+              color: "rgba(232,232,240,0.4)",
+              fontStyle: "italic",
+              marginTop: Math.round(2 * PHI),
+              lineHeight: 1.5,
+            }}>{sub.desc}</div>
 
-              {/* Description */}
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(11px, 2.2vw, 14px)",
-                color: "rgba(232,232,240,0.4)",
-                fontStyle: "italic",
-                marginTop: Math.round(2 * PHI),
-                lineHeight: 1.5,
-              }}>{sub.desc}</div>
-
-              {/* Ψ score — subtle */}
-              <div style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: 8,
-                letterSpacing: "0.2em",
-                color: `rgba(${sub.accent},0.2)`,
-                marginTop: Math.round(3 * PHI),
-              }}>Ψ {sub.psi.toFixed(2)}</div>
-            </div>
-          );
-        })}
+            {/* Ψ score */}
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: 8,
+              letterSpacing: "0.2em",
+              color: `rgba(${sub.accent},0.2)`,
+              marginTop: Math.round(3 * PHI),
+            }}>Ψ {sub.psi.toFixed(2)}</div>
+          </div>
+        ))}
       </div>
 
-      {/* Door Essay link — access existing door content */}
+      {/* Door Essay link */}
       {onSelectContent && (
         <div style={{ textAlign: "center", marginBottom: Math.round(13 * PHI) }}>
           <button
@@ -311,21 +241,13 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
               fontSize: 12,
               letterSpacing: "0.2em",
               color: "rgba(201,168,76,0.5)",
-              transition: "all 0.4s",
-            }}
-            onMouseEnter={e => {
-              e.target.style.borderColor = "rgba(201,168,76,0.3)";
-              e.target.style.color = "rgba(201,168,76,0.7)";
-            }}
-            onMouseLeave={e => {
-              e.target.style.borderColor = "rgba(201,168,76,0.12)";
-              e.target.style.color = "rgba(201,168,76,0.5)";
+              WebkitTapHighlightColor: "transparent",
             }}
           >✦ DOOR ESSAY ✦</button>
         </div>
       )}
 
-      {/* Bottom wisdom */}
+      {/* Bottom */}
       <div style={{
         textAlign: "center",
         fontFamily: "'Cormorant Garamond', serif",
@@ -339,17 +261,15 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
       <div style={{
         textAlign: "center",
         marginTop: Math.round(5 * PHI),
-        fontSize: 18,
-        opacity: 0.25,
+        fontSize: 18, opacity: 0.25,
       }}>🪙🪙</div>
     </div>
   );
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SUBCATEGORY VIEW — Inside a single Room (placeholder for topic cards)
+   SUBCATEGORY VIEW — Inside a single Room
    ═══════════════════════════════════════════════════════════════ */
-
 export function SubcategoryView({ doorKey, subId, onBack }) {
   const meta = DOOR_META[doorKey];
   const subs = SUBCATEGORIES[doorKey] || [];
@@ -357,7 +277,6 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
   
   if (!meta || !sub) return null;
 
-  // Find position in list for prev/next navigation
   const idx = subs.findIndex(s => s.id === subId);
   const prev = idx > 0 ? subs[idx - 1] : null;
   const next = idx < subs.length - 1 ? subs[idx + 1] : null;
@@ -383,7 +302,6 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
         marginTop: Math.round(13 * PHI),
         marginBottom: Math.round(13 * PHI),
       }}>
-        {/* Parent door breadcrumb */}
         <div style={{
           fontFamily: "'Cinzel', serif",
           fontSize: 10,
@@ -437,7 +355,6 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
               width: `${sub.psi * 100}%`, height: "100%",
               background: `rgba(${sub.accent},0.4)`,
               borderRadius: 2,
-              transition: "width 1.5s ease",
             }} />
           </div>
           <div style={{
@@ -453,7 +370,7 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
         }} />
       </div>
 
-      {/* Topic Cards area — Coming Soon */}
+      {/* Topic Cards — Coming Soon */}
       <div style={{
         textAlign: "center",
         fontFamily: "'Cinzel', serif",
@@ -463,7 +380,6 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
         marginBottom: Math.round(5 * PHI),
       }}>TOPIC CARDS</div>
 
-      {/* 10 placeholder slots */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
@@ -505,7 +421,6 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
       {/* ── ARROWS OF TIME: PREV / NEXT ── */}
       <div style={{
         display: "flex", justifyContent: "space-between",
-        padding: `0 ${Math.round(1 * PHI)}px`,
         marginBottom: Math.round(13 * PHI),
       }}>
         {prev ? (
@@ -539,8 +454,7 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
       <div style={{
         textAlign: "center",
         marginTop: Math.round(5 * PHI),
-        fontSize: 18,
-        opacity: 0.25,
+        fontSize: 18, opacity: 0.25,
       }}>🪙🪙</div>
     </div>
   );
