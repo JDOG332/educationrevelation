@@ -417,7 +417,7 @@ export default function TheoryOfEverything() {
       background: DEPTH_ATMOSPHERES[depth] || DEPTH_ATMOSPHERES[0],
       color: "#d4d4d8",
       fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
-      position: "relative", overflowX: "hidden",
+      position: "relative", overflowX: "hidden", overflowY: "auto",
       transition: `background ${(PHI * PHI).toFixed(3)}s cubic-bezier(0.23, 1, 0.32, 1)`,
     }}>
 
@@ -510,7 +510,7 @@ export default function TheoryOfEverything() {
             style={{
               position: "fixed", top: 0, left: 0,
               width: "50%", height: "88%",
-              zIndex: 9000, cursor: "pointer",
+              zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
               background: "transparent",
             }}
           />
@@ -519,7 +519,7 @@ export default function TheoryOfEverything() {
             style={{
               position: "fixed", top: 0, right: 0,
               width: "50%", height: "88%",
-              zIndex: 9000, cursor: "pointer",
+              zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
               background: "transparent",
             }}
           />
@@ -533,7 +533,7 @@ export default function TheoryOfEverything() {
             style={{
               position: "fixed", top: 0, left: 0,
               width: "15%", height: "88%",
-              zIndex: 9000, cursor: "w-resize",
+              zIndex: 9000, cursor: "w-resize", touchAction: "pan-y",
               background: "transparent",
             }}
           />
@@ -542,7 +542,7 @@ export default function TheoryOfEverything() {
             style={{
               position: "fixed", top: 0, right: 0,
               width: "15%", height: "88%",
-              zIndex: 9000, cursor: "e-resize",
+              zIndex: 9000, cursor: "e-resize", touchAction: "pan-y",
               background: "transparent",
             }}
           />}
@@ -977,7 +977,7 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 4 — THE PROOF ===== */}
       {depth === 4 && activeConvergence === null && (
         <div style={{
-          minHeight: "100vh", width: "100%", position: "relative", overflowX: "hidden",
+          minHeight: "100vh", width: "100%", position: "relative", overflow: "visible",
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: Math.round(21 * PHI),
           boxSizing: "border-box",
@@ -1231,7 +1231,7 @@ export default function TheoryOfEverything() {
         return selectedQ === null ? (
           // QUESTION GRID
           <div style={{
-            width: "100%", minHeight: "100vh", position: "relative",
+            width: "100%", minHeight: "max-content", position: "relative",
             zIndex: 1500, ...getDepthWrap(4),
             display: "flex", flexDirection: "column", alignItems: "center",
             padding: `${Math.round(21 * PHI)}px ${Math.round(5 * PHI)}px`,
