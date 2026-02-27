@@ -1021,6 +1021,7 @@ export default function TheoryOfEverything() {
                 [doors[6], doors[7], doors[8], doors[9]],
               ];
               const cardGap = Math.round(3 * PHI);
+              const cardSize = `clamp(70px, 20vw, 110px)`;
 
               const renderCard = (door, i, totalDelay) => {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
@@ -1149,11 +1150,10 @@ export default function TheoryOfEverything() {
                     <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.3)", letterSpacing: 2 }}>{rowLabels[0]}</div>
                   </div>
                   <div style={{
-                    display: "grid", gridTemplateColumns: "1fr",
-                    gap: cardGap, width: "33%",
-                    marginBottom: cardGap,
+                    display: "flex", justifyContent: "center",
+                    gap: cardGap, marginBottom: cardGap,
                   }}>
-                    {rows[0].map((d, i) => renderCard(d, i, 0.7))}
+                    {rows[0].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 0.7)}</div>)}
                   </div>
 
                   {/* Row 2: 2 cards — THE LINE (how do we know?) */}
@@ -1161,11 +1161,10 @@ export default function TheoryOfEverything() {
                     <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.25)", letterSpacing: 2 }}>{rowLabels[1]}</div>
                   </div>
                   <div style={{
-                    display: "grid", gridTemplateColumns: "1fr 1fr",
-                    gap: cardGap, width: "66%",
-                    marginBottom: cardGap,
+                    display: "flex", justifyContent: "center",
+                    gap: cardGap, marginBottom: cardGap,
                   }}>
-                    {rows[1].map((d, i) => renderCard(d, i, 0.9 + i * 0.1))}
+                    {rows[1].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 0.9 + i * 0.1)}</div>)}
                   </div>
 
                   {/* Row 3: 3 cards — THE SURFACE (how does it work?) */}
@@ -1173,11 +1172,10 @@ export default function TheoryOfEverything() {
                     <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.2)", letterSpacing: 2 }}>{rowLabels[2]}</div>
                   </div>
                   <div style={{
-                    display: "grid", gridTemplateColumns: "1fr 1fr 1fr",
-                    gap: cardGap, width: "100%",
-                    marginBottom: cardGap,
+                    display: "flex", justifyContent: "center",
+                    gap: cardGap, marginBottom: cardGap,
                   }}>
-                    {rows[2].map((d, i) => renderCard(d, i, 1.1 + i * 0.1))}
+                    {rows[2].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 1.1 + i * 0.1)}</div>)}
                   </div>
 
                   {/* Row 4: 4 cards — THE SOLID (how do we live it?) */}
@@ -1185,11 +1183,10 @@ export default function TheoryOfEverything() {
                     <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.15)", letterSpacing: 2 }}>{rowLabels[3]}</div>
                   </div>
                   <div style={{
-                    display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr",
-                    gap: cardGap, width: "100%",
-                    marginBottom: cardGap,
+                    display: "flex", justifyContent: "center",
+                    gap: cardGap, marginBottom: cardGap,
                   }}>
-                    {rows[3].map((d, i) => renderCard(d, i, 1.3 + i * 0.1))}
+                    {rows[3].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 1.3 + i * 0.1)}</div>)}
                   </div>
                 </div>
               );
