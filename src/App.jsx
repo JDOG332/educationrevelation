@@ -861,7 +861,7 @@ export default function TheoryOfEverything() {
 
         return (
           <div style={{
-            height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+            height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
             zIndex: 1500,
             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
             padding: "0 20px",
@@ -977,9 +977,9 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 4 — THE PROOF ===== */}
       {depth === 4 && activeConvergence === null && (
         <div style={{
-          minHeight: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          minHeight: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: Math.round(21 * PHI),
           boxSizing: "border-box",
           background: "#030306",
           ...getDepthWrap(4),
@@ -8130,7 +8130,7 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
       {depth === 5 && (
         <div style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           ...getDepthWrap(5),
@@ -8174,7 +8174,7 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 6 — THE SELF — I am ===== */}
       {depth === 6 && (
         <div style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           ...getDepthWrap(6),
@@ -8218,7 +8218,7 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 7 — THE OTHER — you are ===== */}
       {depth === 7 && (
         <div style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           ...getDepthWrap(7),
@@ -8851,7 +8851,7 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 9 — THE MIRROR — it is what it is ===== */}
       {depth === 9 && (
         <div style={{
-          height: "100vh", width: "100%", position: "relative", overflow: "hidden",
+          height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         }}>
