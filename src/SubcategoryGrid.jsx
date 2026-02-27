@@ -1,12 +1,146 @@
 /* ═══════════════════════════════════════════════════════════════
    SUBCATEGORY GRID — The 10 Rooms inside each Door
    Click a door → see 10 rooms → click a room → see topic cards
+   Navigation: ARROWS OF TIME — larger, directional, with momentum
    ═══════════════════════════════════════════════════════════════ */
 
-import { useState, useCallback } from "react";
-import { PHI, PHI_INV } from "./data.js";
+import { useState } from "react";
+import { PHI } from "./data.js";
 import { SUBCATEGORIES, DOOR_META } from "./subcategories.js";
 
+/* ── THE ARROW OF TIME ──────────────────────────────────────────
+   A navigation button shaped like a temporal vector.
+   direction: "back" (←) or "forward" (→)
+   The arrow glow trails behind, like time leaving a mark.
+   ─────────────────────────────────────────────────────────────── */
+function ArrowOfTime({ label, direction = "back", onClick, accent = "201,168,76" }) {
+  const isBack = direction === "back";
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        cursor: "pointer",
+        background: "none",
+        border: "none",
+        display: "flex",
+        alignItems: "center",
+        gap: Math.round(3 * PHI),
+        padding: `${Math.round(5 * PHI)}px ${Math.round(5 * PHI)}px`,
+        transition: "all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)",
+        transform: hovered
+          ? `translateX(${isBack ? -6 : 6}px)`
+          : "translateX(0)",
+        flexDirection: isBack ? "row" : "row-reverse",
+      }}
+    >
+      {/* The Arrow Head */}
+      <div style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+        {/* Glow trail — the wake of time */}
+        <div style={{
+          position: "absolute",
+          width: hovered ? 40 : 20,
+          height: 2,
+          background: `linear-gradient(${isBack ? "270deg" : "90deg"}, rgba(${accent},${hovered ? 0.35 : 0.08}), transparent)`,
+          [isBack ? "right" : "left"]: -4,
+          transition: "all 0.5s ease",
+          borderRadius: 1,
+        }} />
+        {/* The chevron */}
+        <svg
+          width="28" height="28" viewBox="0 0 28 28"
+          style={{
+            transform: isBack ? "rotate(180deg)" : "rotate(0deg)",
+            filter: hovered ? `drop-shadow(0 0 8px rgba(${accent},0.3))` : "none",
+            transition: "filter 0.4s",
+          }}
+        >
+          {/* Arrow shape — angular, temporal, decisive */}
+          <path
+            d="M8 14 L18 6 L18 11 L22 11 L22 17 L18 17 L18 22 Z"
+            fill={`rgba(${accent},${hovered ? 0.7 : 0.35})`}
+            stroke={`rgba(${accent},${hovered ? 0.5 : 0.15})`}
+            strokeWidth="0.5"
+            style={{ transition: "all 0.4s" }}
+          />
+        </svg>
+      </div>
+
+      {/* The Label */}
+      <span style={{
+        fontFamily: "'Cinzel', serif",
+        fontSize: "clamp(13px, 3vw, 17px)",
+        letterSpacing: "0.15em",
+        color: `rgba(232,232,240,${hovered ? 0.85 : 0.5})`,
+        transition: "color 0.4s",
+        whiteSpace: "nowrap",
+      }}>{label}</span>
+    </button>
+  );
+}
+
+/* ── SMALLER INLINE ARROW — for prev/next at bottom ───────────── */
+function SmallArrow({ label, direction = "back", onClick, accent = "201,168,76" }) {
+  const isBack = direction === "back";
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        cursor: "pointer",
+        background: hovered ? `rgba(${accent},0.04)` : "none",
+        border: `1px solid rgba(${accent},${hovered ? 0.15 : 0.06})`,
+        borderRadius: 8,
+        display: "flex",
+        alignItems: "center",
+        gap: 8,
+        padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
+        transition: "all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)",
+        transform: hovered ? `translateX(${isBack ? -3 : 3}px)` : "translateX(0)",
+        flexDirection: isBack ? "row" : "row-reverse",
+      }}
+    >
+      <svg
+        width="16" height="16" viewBox="0 0 28 28"
+        style={{
+          transform: isBack ? "rotate(180deg)" : "rotate(0deg)",
+          opacity: hovered ? 0.7 : 0.35,
+          transition: "opacity 0.4s",
+        }}
+      >
+        <path
+          d="M8 14 L18 6 L18 11 L22 11 L22 17 L18 17 L18 22 Z"
+          fill={`rgba(${accent},0.8)`}
+          stroke="none"
+        />
+      </svg>
+      <span style={{
+        fontFamily: "'Cinzel', serif",
+        fontSize: "clamp(9px, 2vw, 12px)",
+        letterSpacing: "0.12em",
+        color: `rgba(232,232,240,${hovered ? 0.6 : 0.3})`,
+        transition: "color 0.4s",
+        whiteSpace: "nowrap",
+      }}>{label}</span>
+    </button>
+  );
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SUBCATEGORY GRID — The 10 Rooms
+   ═══════════════════════════════════════════════════════════════ */
 export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent, onBack }) {
   const meta = DOOR_META[doorKey];
   const subs = SUBCATEGORIES[doorKey] || [];
@@ -22,19 +156,12 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
       zIndex: 5000, position: "relative",
       background: "#030306", minHeight: "100vh",
     }}>
-      {/* Back button */}
-      <button
+      {/* ── ARROW OF TIME: BACK ── */}
+      <ArrowOfTime
+        label="THE PROOF"
+        direction="back"
         onClick={() => { onBack(); window.scrollTo(0, 0); }}
-        style={{
-          cursor: "pointer", background: "none", border: "none",
-          color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-          fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1),
-          padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
-          transition: "all 0.4s",
-        }}
-        onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
-        onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-      >← THE PROOF</button>
+      />
 
       {/* Door Header */}
       <div style={{
@@ -96,7 +223,6 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
       }}>
         {subs.map((sub, i) => {
           const isHovered = hoveredIdx === i;
-          const [acR, acG, acB] = sub.accent.split(",").map(Number);
 
           return (
             <div
@@ -244,19 +370,12 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
       zIndex: 5000, position: "relative",
       background: "#030306", minHeight: "100vh",
     }}>
-      {/* Back button */}
-      <button
+      {/* ── ARROW OF TIME: BACK TO DOOR ── */}
+      <ArrowOfTime
+        label={meta.name}
+        direction="back"
         onClick={() => { onBack(); window.scrollTo(0, 0); }}
-        style={{
-          cursor: "pointer", background: "none", border: "none",
-          color: "rgba(232,232,240,0.55)", fontFamily: "'Cinzel', serif",
-          fontSize: Math.round(8 * PHI + 6), letterSpacing: Math.round(PHI + 1),
-          padding: `${Math.round(3 * PHI)}px ${Math.round(5 * PHI)}px`,
-          transition: "all 0.4s",
-        }}
-        onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.8)"}
-        onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.55)"}
-      >← {meta.name}</button>
+      />
 
       {/* Subcategory Header */}
       <div style={{
@@ -383,41 +502,27 @@ export function SubcategoryView({ doorKey, subId, onBack }) {
         ))}
       </div>
 
-      {/* Prev / Next nav */}
+      {/* ── ARROWS OF TIME: PREV / NEXT ── */}
       <div style={{
         display: "flex", justifyContent: "space-between",
-        padding: `0 ${Math.round(3 * PHI)}px`,
+        padding: `0 ${Math.round(1 * PHI)}px`,
         marginBottom: Math.round(13 * PHI),
       }}>
         {prev ? (
-          <button
-            onClick={() => { onBack(); setTimeout(() => {
-              // Navigate to prev sub - handled by parent
-            }, 50); }}
-            style={{
-              cursor: "pointer", background: "none", border: "none",
-              fontFamily: "'Cinzel', serif", fontSize: 11,
-              letterSpacing: "0.15em", color: "rgba(232,232,240,0.3)",
-              transition: "color 0.3s",
-            }}
-            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.6)"}
-            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.3)"}
-          >← {prev.name}</button>
+          <SmallArrow
+            label={prev.name}
+            direction="back"
+            onClick={() => { onBack(); }}
+            accent={prev.accent}
+          />
         ) : <div />}
         {next ? (
-          <button
-            onClick={() => { onBack(); setTimeout(() => {
-              // Navigate to next sub - handled by parent  
-            }, 50); }}
-            style={{
-              cursor: "pointer", background: "none", border: "none",
-              fontFamily: "'Cinzel', serif", fontSize: 11,
-              letterSpacing: "0.15em", color: "rgba(232,232,240,0.3)",
-              transition: "color 0.3s",
-            }}
-            onMouseEnter={e => e.target.style.color = "rgba(232,232,240,0.6)"}
-            onMouseLeave={e => e.target.style.color = "rgba(232,232,240,0.3)"}
-          >{next.name} →</button>
+          <SmallArrow
+            label={next.name}
+            direction="forward"
+            onClick={() => { onBack(); }}
+            accent={next.accent}
+          />
         ) : <div />}
       </div>
 
