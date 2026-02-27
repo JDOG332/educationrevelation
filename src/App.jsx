@@ -733,7 +733,7 @@ export default function TheoryOfEverything() {
             const totalH = scroller.scrollHeight;
             const viewH = container.clientHeight;
             const scrollDist = totalH + viewH;
-            const DURATION = 80 * 1000; // ~80 seconds — slow enough to read, feel, breathe
+            const DURATION = 100 * 1000; // ~100 seconds — taller lines need more breath
             const PAUSE_BETWEEN = 1000; // 1 second between loops
 
             // CRITICAL: start fully below viewport so nothing flashes
@@ -811,21 +811,23 @@ export default function TheoryOfEverything() {
                     // Stanza break — golden pause (extra space)
                     return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
                   }
+                  const parts = line.split("\n");
                   return (
                     <div key={i} style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 'clamp(14px, 3.6vw, 26px)',
+                      fontSize: 'clamp(18px, 4.8vw, 32px)',
                       fontStyle: 'italic',
                       fontWeight: 300,
                       color: 'rgba(232,232,240,0.85)',
                       textAlign: 'center',
-                      lineHeight: PHI,
+                      lineHeight: 1.5,
                       letterSpacing: 0.8,
-                      whiteSpace: 'nowrap',
                       marginBottom: Math.round(8 * PHI),
                       maxWidth: '618px',
                     }}>
-                      {line}
+                      {parts.map((p, j) => (
+                        <span key={j}>{j > 0 && <br/>}{p}</span>
+                      ))}
                     </div>
                   );
                 })}

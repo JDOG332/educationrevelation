@@ -211,34 +211,34 @@ export const ETYMOLOGIES = [
 
 export const POEMS = [
   // 1 — MIRROR OPEN
-  "the rhythm of life is fast & its slow...",
+  "the rhythm of life\nis fast & its slow...",
   "",
   // 2
-  "in the heartbeats & wishes & feelings below...",
-  "every life holds the secret so heavy to show...",
+  "in the heartbeats & wishes\n& feelings below...",
+  "every life holds the secret\nso heavy to show...",
   "",
   // 3
-  "but the moon never wishes the sun it could be...",
-  "always sharing her light in the darkness for me...",
-  "inner sinner gets sainthood so precious to see...",
+  "but the moon never wishes\nthe sun it could be...",
+  "always sharing her light\nin the darkness for me...",
+  "inner sinner gets sainthood\nso precious to see...",
   "",
   // 4 — THE WIDEST POINT — THE EYE OPENS
-  "every girl needs a mountain to climb up and slide...",
-  "every man holds a boy growing wildly inside...",
-  "every beast wears a burden it never deserved...",
-  "every eagle's an eaglet too frightened to serve...",
+  "every girl needs a mountain\nto climb up and slide...",
+  "every man holds a boy\ngrowing wildly inside...",
+  "every beast wears a burden\nit never deserved...",
+  "every eagle's an eaglet\ntoo frightened to serve...",
   "",
   // 3
-  "til the branch finally breaks... and the sky calms her nerves...",
-  "every deck has a dealer for trump she will play...",
-  "just don't carve hard rules or we'll crumble to clay...",
+  "til the branch finally breaks...\nand the sky calms her nerves...",
+  "every deck has a dealer\nfor trump she will play...",
+  "just don't carve hard rules\nor we'll crumble to clay...",
   "",
   // 2
-  "every baby is born with all that it needs...",
-  "just wisdom & love & the chance to breathe...",
+  "every baby is born\nwith all that it needs...",
+  "just wisdom & love\n& the chance to breathe...",
   "",
   // 1 — MIRROR CLOSE
-  "the rhythm of life is fast & its slow...",
+  "the rhythm of life\nis fast & its slow...",
 ];
 
 export const THE_ANSWER = {
