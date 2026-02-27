@@ -1096,38 +1096,25 @@ export default function TheoryOfEverything() {
                   display: "flex", flexDirection: "column", alignItems: "center",
                   gap: 0,
                 }}>
-                  {/* ★ THE APEX — title IS the capstone */}
+                  {/* ★ THE PROOF — title at top with arrows */}
                   <div style={{
                     animation: "fadeSlideUp 1.2s 0.3s both ease",
-                    marginBottom: Math.round(5 * PHI),
+                    marginBottom: Math.round(13 * PHI),
                     textAlign: "center",
                   }}>
                     <div style={{
                       fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.5vw, 14px)", letterSpacing: "0.5em",
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
-                      marginBottom: Math.round(3 * PHI),
+                      marginBottom: Math.round(5 * PHI),
                     }}>ten doors · one truth</div>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
-                      marginBottom: 0,
+                      marginBottom: Math.round(3 * PHI),
                       filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
                       animation: "gentleFloat 10s ease-in-out infinite",
                       lineHeight: 1,
                     }}>🔺</div>
-                    <div style={{
-                      fontSize: "clamp(20px, 4.5vw, 32px)",
-                      margin: `${Math.round(2 * PHI)}px 0`,
-                      animation: "breathe 6s ease-in-out infinite",
-                      filter: "drop-shadow(0 0 12px rgba(201,168,76,0.2))",
-                    }}>👁️</div>
-                    <div style={{
-                      fontSize: "clamp(28px, 6vw, 42px)",
-                      marginBottom: Math.round(3 * PHI),
-                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
-                      animation: "gentleFloat 10s 5s ease-in-out infinite",
-                      lineHeight: 1,
-                    }}>🔻</div>
                     <h2 style={{
                       fontFamily: "'Cinzel', serif",
                       fontSize: "clamp(20px, 5vw, 34px)",
@@ -1138,6 +1125,26 @@ export default function TheoryOfEverything() {
                       WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                       filter: "drop-shadow(0 0 20px rgba(201,168,76,0.06))",
                     }}>THE PROOF</h2>
+                    <div style={{
+                      fontSize: "clamp(28px, 6vw, 42px)",
+                      marginTop: Math.round(3 * PHI),
+                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
+                      animation: "gentleFloat 10s 5s ease-in-out infinite",
+                      lineHeight: 1,
+                    }}>🔻</div>
+                  </div>
+
+                  {/* ★ THE EYE — floating above the pyramid like the Great Seal */}
+                  <div style={{
+                    animation: "fadeSlideUp 1.2s 0.6s both ease",
+                    textAlign: "center",
+                    marginBottom: Math.round(5 * PHI),
+                  }}>
+                    <div style={{
+                      fontSize: "clamp(24px, 5vw, 36px)",
+                      animation: "breathe 6s ease-in-out infinite",
+                      filter: "drop-shadow(0 0 16px rgba(201,168,76,0.25))",
+                    }}>👁️</div>
                     <div style={{
                       width: Math.round(50 * PHI), height: 1,
                       margin: `${Math.round(3 * PHI)}px auto 0`,
