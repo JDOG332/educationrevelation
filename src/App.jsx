@@ -648,7 +648,7 @@ export default function TheoryOfEverything() {
             transform: "scale(0.15)",
             willChange: "transform, opacity",
           }}>
-            ...dreaming & building together...
+            ...dreaming & building...
           </div>
           <div ref={words2Ref} style={{
             position: "absolute",
@@ -664,7 +664,7 @@ export default function TheoryOfEverything() {
             transform: "scale(0.15)",
             willChange: "transform, opacity",
           }}>
-            ...dreaming & building together...
+            ...dreaming & building...
           </div>
         </div>
       )}
