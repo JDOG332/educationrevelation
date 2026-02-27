@@ -1007,7 +1007,6 @@ export default function TheoryOfEverything() {
                 { key: "layers", glyph: "〰️", name: "THE LAYERS", sub: "9 layers · feel the theory", r: 190, g: 140, b: 220 },
                 { key: "rock", glyph: "🪨", name: "HIT THE ROCK", sub: "force becomes voice", r: 201, g: 168, b: 76 },
                 { key: "promise", glyph: "🫀", name: "THE PROMISE", sub: "how do we live it?", r: 224, g: 120, b: 140 },
-                { key: "convergencelist", glyph: "🪙", name: "2 → 1", sub: "33 triads · 99 proofs", r: 201, g: 168, b: 76 },
               ];
               const rowLabels = [
                 "what is it",
@@ -1019,7 +1018,7 @@ export default function TheoryOfEverything() {
                 [doors[0]],
                 [doors[1], doors[2]],
                 [doors[3], doors[4], doors[5]],
-                [doors[6], doors[7], doors[8], doors[9], doors[10]],
+                [doors[6], doors[7], doors[8], doors[9]],
               ];
               const cardGap = Math.round(3 * PHI);
 
@@ -1463,6 +1462,7 @@ export default function TheoryOfEverything() {
               { key: "moon", icon: "🌀", title: "THE MOON", hook: "You are a wave. The water never goes away.", accent: "180,180,220" },
               { key: "penny", icon: "🪙", title: "THE PENNY QUESTION", hook: "The answer is One. Same energy. Different shapes.", accent: "201,168,76" },
               { key: "oneness", icon: "🎨", title: "THE ONENESS", hook: "Two colors swirl together. A new color stronger than both.", accent: "200,120,180" },
+              { key: "convergencelist", icon: "🪙", title: "2 → 1", hook: "33 triads. 99 proofs. Every pair is the same equation.", accent: "201,168,76" },
             ].map((idea, i) => (
               <div
                 key={idea.key}
@@ -7898,9 +7898,9 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== DEPTH 4 — THE CONVERGENCE LIST — 33 triads × 3 = 99 proofs ===== */}
-      {depth === 4 && activeConvergence === "convergencelist" && (
-        <ConvergenceCards onReturn={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
+      {/* ===== PLAIN ENGLISH — CONVERGENCE LIST — 33 triads × 3 = 99 proofs ===== */}
+      {depth === 4 && activeConvergence === "plain" && activeIdea === "convergencelist" && (
+        <ConvergenceCards onReturn={() => { setActiveIdea(null); window.scrollTo(0,0); }} />
       )}
 
       {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
