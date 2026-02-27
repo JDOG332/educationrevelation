@@ -90,6 +90,12 @@ export default function TheoryOfEverything() {
   const [transDir, setTransDir] = useState('deeper'); // 'deeper' | 'back' | 'void'
   const [transPhase, setTransPhase] = useState('idle'); // 'idle' | 'exit' | 'enter' | 'settle'
   const [prevDepth, setPrevDepth] = useState(null);
+
+  // ═══ SACRED TIMING ═══
+  // All transitions breathe at PHI rhythm — the nervous system recognizes this cadence
+  const SACRED_EXIT   = Math.round(PHI * 382);  // 618ms — The Dissolve
+  const SACRED_ENTER  = Math.round(PHI * 618);  // 1000ms — The Manifestation  
+  const SACRED_SETTLE = Math.round(PHI_INV * 618); // 382ms — The Settling
   const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
   const poemSeen = useRef(false);
 
@@ -251,17 +257,17 @@ export default function TheoryOfEverything() {
       setPrevDepth(depth);
       setFading(true);
 
-      await wait(500, controller.signal);
+      await wait(SACRED_EXIT, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => Math.min(d + 1, 9));
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
 
-      await wait(600, controller.signal);
+      await wait(SACRED_ENTER, controller.signal);
       setTransPhase('settle');
 
-      await wait(400, controller.signal);
+      await wait(SACRED_SETTLE, controller.signal);
       setTransPhase('idle');
       setTransitioning(false);
       setPrevDepth(null);
@@ -282,7 +288,7 @@ export default function TheoryOfEverything() {
       setPrevDepth(depth);
       setFading(true);
 
-      await wait(500, controller.signal);
+      await wait(SACRED_EXIT, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(d => {
         const newD = Math.max(d - 1, 0);
@@ -292,10 +298,10 @@ export default function TheoryOfEverything() {
       setFading(false);
       setTransPhase('enter');
 
-      await wait(600, controller.signal);
+      await wait(SACRED_ENTER, controller.signal);
       setTransPhase('settle');
 
-      await wait(400, controller.signal);
+      await wait(SACRED_SETTLE, controller.signal);
       setTransPhase('idle');
       setTransitioning(false);
       setPrevDepth(null);
@@ -316,17 +322,17 @@ export default function TheoryOfEverything() {
       setPrevDepth(depth);
       setFading(true);
 
-      await wait(500, controller.signal);
+      await wait(SACRED_EXIT, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(0);
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
 
-      await wait(600, controller.signal);
+      await wait(SACRED_ENTER, controller.signal);
       setTransPhase('settle');
 
-      await wait(400, controller.signal);
+      await wait(SACRED_SETTLE, controller.signal);
       setTransPhase('idle');
       setTransitioning(false);
       setPrevDepth(null);
@@ -355,17 +361,17 @@ export default function TheoryOfEverything() {
       setPrevDepth(depth);
       setFading(true);
 
-      await wait(500, controller.signal);
+      await wait(SACRED_EXIT, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
       setDepth(targetDepth);
       clearAllSubs();
       setFading(false);
       setTransPhase('enter');
 
-      await wait(600, controller.signal);
+      await wait(SACRED_ENTER, controller.signal);
       setTransPhase('settle');
 
-      await wait(400, controller.signal);
+      await wait(SACRED_SETTLE, controller.signal);
       setTransPhase('idle');
       setTransitioning(false);
       setPrevDepth(null);
@@ -407,7 +413,7 @@ export default function TheoryOfEverything() {
       color: "#d4d4d8",
       fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
       position: "relative", overflow: "hidden",
-      transition: "background 2.8s cubic-bezier(0.23, 1, 0.32, 1)",
+      transition: `background ${(PHI * PHI).toFixed(3)}s cubic-bezier(0.23, 1, 0.32, 1)`,
     }}>
 
 
