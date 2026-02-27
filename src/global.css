@@ -3,8 +3,13 @@
 html, body {
   overflow-x: hidden;
   overflow-y: auto;
-  height: auto;
+  min-height: 100vh;
   -webkit-overflow-scrolling: touch;
+}
+#root {
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 100vh;
 }
 
 * { box-sizing: border-box; }
