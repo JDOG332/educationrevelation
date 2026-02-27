@@ -1230,6 +1230,7 @@ export default function TheoryOfEverything() {
           doorKey={activeConvergence}
           subId={activeSubcategory}
           onBack={() => { setActiveSubcategory(null); window.scrollTo(0,0); }}
+          onNavigate={(newSubId) => { setActiveSubcategory(newSubId); window.scrollTo(0,0); }}
         />
       )}
 
