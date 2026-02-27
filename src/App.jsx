@@ -1103,12 +1103,6 @@ export default function TheoryOfEverything() {
                     textAlign: "center",
                   }}>
                     <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.5vw, 14px)", letterSpacing: "0.5em",
-                      color: "rgba(201,168,76,0.3)",
-                      textTransform: "uppercase",
-                      marginBottom: Math.round(5 * PHI),
-                    }}>ten doors · one truth</div>
-                    <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: Math.round(3 * PHI),
                       filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
@@ -1132,6 +1126,12 @@ export default function TheoryOfEverything() {
                       animation: "gentleFloat 10s 5s ease-in-out infinite",
                       lineHeight: 1,
                     }}>🔻</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.5vw, 14px)", letterSpacing: "0.5em",
+                      color: "rgba(201,168,76,0.3)",
+                      textTransform: "uppercase",
+                      marginTop: Math.round(5 * PHI),
+                    }}>ten doors · one truth</div>
                   </div>
 
                   {/* ★ THE EYE — floating above the pyramid like the Great Seal */}
