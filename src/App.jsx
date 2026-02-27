@@ -1115,8 +1115,7 @@ export default function TheoryOfEverything() {
                       filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
                       animation: "gentleFloat 10s 5s ease-in-out infinite",
                       lineHeight: 1,
-                      transform: "rotate(180deg)",
-                    }}>🔺</div>
+                    }}>🔻</div>
                     <h2 style={{
                       fontFamily: "'Cinzel', serif",
                       fontSize: "clamp(20px, 5vw, 34px)",
