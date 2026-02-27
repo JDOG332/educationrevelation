@@ -731,7 +731,7 @@ export default function TheoryOfEverything() {
             const totalH = scroller.scrollHeight;
             const viewH = container.clientHeight;
             const scrollDist = totalH + viewH;
-            const DURATION = 100 * 1000;
+            const DURATION = 110 * 1000; // ~110 seconds — bigger font, more breath
             const PAUSE_BETWEEN = 1000;
 
             scroller.style.transform = `translateY(${viewH + 100}px)`;
@@ -777,9 +777,9 @@ export default function TheoryOfEverything() {
             };
           }, []);
 
-          // Golden ratio font sizes: base 14 × PHI = 23, × PHI² = 37
-          const poemFontMin = Math.round(14 * PHI);
-          const poemFontMax = Math.round(14 * PHI * PHI);
+          // Golden ratio font sizes: base 17 × PHI = 28, × PHI² = 44
+          const poemFontMin = Math.round(17 * PHI);
+          const poemFontMax = Math.round(17 * PHI * PHI);
 
           return (
             <div ref={wheelRef} style={{
@@ -849,16 +849,15 @@ export default function TheoryOfEverything() {
                   }}
                 >
                   <div style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: `clamp(${Math.round(8 * PHI)}px, 3.5vw, ${Math.round(8 * PHI * PHI)}px)`,
-                    fontStyle: 'italic',
-                    color: 'rgba(201,168,76,0.45)',
-                    letterSpacing: '0.2em',
-                    padding: `${Math.round(5 * PHI)}px ${Math.round(10 * PHI)}px`,
-                    border: '1px solid rgba(201,168,76,0.12)',
-                    borderRadius: 8,
-                    background: 'rgba(3,3,6,0.8)',
-                  }}>continue</div>
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
+                    color: 'rgba(201,168,76,0.6)',
+                    letterSpacing: '0.25em',
+                    padding: `${Math.round(6 * PHI)}px ${Math.round(13 * PHI)}px`,
+                    border: '1px solid rgba(201,168,76,0.2)',
+                    borderRadius: 10,
+                    background: 'rgba(3,3,6,0.85)',
+                  }}>MOVE ON</div>
                 </div>
               )}
 
