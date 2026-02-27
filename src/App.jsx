@@ -417,7 +417,7 @@ export default function TheoryOfEverything() {
       background: DEPTH_ATMOSPHERES[depth] || DEPTH_ATMOSPHERES[0],
       color: "#d4d4d8",
       fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif",
-      position: "relative", overflow: "hidden",
+      position: "relative", overflowX: "hidden",
       transition: `background ${(PHI * PHI).toFixed(3)}s cubic-bezier(0.23, 1, 0.32, 1)`,
     }}>
 
