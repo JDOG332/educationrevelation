@@ -8011,7 +8011,7 @@ export default function TheoryOfEverything() {
               fontStyle: "italic", color: "rgba(201,168,76,0.45)",
               letterSpacing: 1, lineHeight: PHI,
               marginTop: Math.round(5 * PHI),
-            }}>you are</div>
+            }}>we are</div>
             <div style={{
               width: Math.round(50 * PHI), height: 1,
               margin: `${Math.round(8 * PHI)}px auto`,
@@ -8023,7 +8023,7 @@ export default function TheoryOfEverything() {
               fontStyle: "italic", color: "rgba(232,232,240,0.25)",
               marginTop: Math.round(8 * PHI),
               animation: "breathe 6s ease-in-out infinite",
-            }}>7 uses 8 to become 9...</div>
+            }}>to become whole</div>
           </div>
         </div>
       )}
@@ -8099,14 +8099,14 @@ export default function TheoryOfEverything() {
             }}
               onMouseEnter={e => e.currentTarget.style.color = "rgba(201,168,76,0.6)"}
               onMouseLeave={e => e.currentTarget.style.color = "rgba(201,168,76,0.3)"}
-            >WE BECOME</div>
+            >WE BECOME ONE</div>
 
             <div style={{ height: Math.round(13 * PHI) }} />
 
             <div style={{
               fontSize: 24, opacity: 0.3,
               animation: "fadeSlideUp 2s 1.3s both ease",
-            }}>🪙🪙</div>
+            }}>🌙🌙🌙</div>
 
           </div>
 
