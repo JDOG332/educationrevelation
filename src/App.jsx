@@ -1025,7 +1025,7 @@ export default function TheoryOfEverything() {
                 [doors[6], doors[7], doors[8], doors[9]],
               ];
               const cardGap = Math.round(3 * PHI);
-              const cardSize = `clamp(90px, 24vw, 140px)`;
+              const cardSize = `clamp(93px, 25vw, 145px)`;
 
               const renderCard = (door, i, totalDelay) => {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
