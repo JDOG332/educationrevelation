@@ -671,10 +671,13 @@ export default function TheoryOfEverything() {
             opacity: 0,
             transform: "scale(0.15)",
             willChange: "transform, opacity",
-          }}>
+            cursor: "pointer",
+          }}
+          onClick={() => { setDepth(4); window.scrollTo(0, 0); }}
+          >
             dreaming & building
           </div>
-          <div ref={words2Ref} style={{
+          <div ref={words2Ref} onClick={() => { setDepth(4); window.scrollTo(0, 0); }} style={{
             position: "absolute",
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(16px, 4vw, 32px)",
@@ -687,6 +690,7 @@ export default function TheoryOfEverything() {
             opacity: 0,
             transform: "scale(0.15)",
             willChange: "transform, opacity",
+            cursor: "pointer",
           }}>
             dreaming & building
           </div>
