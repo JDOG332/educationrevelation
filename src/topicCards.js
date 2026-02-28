@@ -1245,6 +1245,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → ⚡ ENERGY & THERMODYNAMICS (energy)
+    // "Nothing is created or destroyed — it just changes form"
+    // ═══════════════════════════════════════════════════════════════
+
+    energy: [
+
+      // ── 1 ── CONSERVATION OF ENERGY (1ST LAW) ───────────────
+      {
+        id: "first-law-thermo",
+        num: 1,
+        icon: "♾️",
+        title: "Conservation of Energy",
+        subtitle: "The Cosmic Lego Set",
+        simple: "Energy is like a cosmic Lego set. You can't make new bricks and you can't throw any away. You can only rebuild them into different shapes. If you stop moving, your energy didn't vanish; it just turned into heat or sound.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a drum hit; the movement of the stick becomes the vibration you hear." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a match — chemical energy turning into heat and aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eating an apple — the sun's stored energy becoming fuel for your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Rub your hands together fast; feel the \"work\" turn into warmth." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A lightbulb glowing — electricity transforming into visible waves." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Jump up; feel your muscles convert \"potential\" energy into height." },
+        ],
+        intuition: "Every breath you take is a recycled gift from a star that lived long ago. You are a continuous flow, never truly beginning or ending.",
+        links: [
+          { label: "First Law of Thermodynamics — NASA", url: "https://www.grc.nasa.gov/www/k-12/airplane/thermo1.html" },
+          { label: "Conservation of Energy — Britannica", url: "https://www.britannica.com/science/conservation-of-energy" },
+          { label: "Conservation of Energy — Khan Academy", url: "https://www.khanacademy.org/science/physics/work-and-energy/work-and-energy-tutorial/a/what-is-conservation-of-energy" },
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Energy", artist: "Drake", url: "https://www.youtube.com/watch?v=7LnBvuzjpr4" },
+          { title: "Radioactive", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=ktvTqknDobU" },
+        ],
+        advanced: "The First Law (ΔU = Q − W) establishes a closed-loop accounting system for the universe. It posits that the internal energy of an isolated system is constant. This connects to the \"Law of Continuity\" — nothing comes from nothing (Ex nihilo nihil fit). It suggests a fundamental \"oneness\" where all phenomena are merely phase shifts of a single, underlying essence.",
+      },
+
+      // ── 2 ── ENTROPY & UNIVERSAL DECAY (2ND LAW) ─────────────
+      {
+        id: "entropy-thermo",
+        num: 2,
+        icon: "⏳",
+        title: "Entropy and Universal Decay",
+        subtitle: "Neat to Messy",
+        simple: "Everything naturally moves from \"neat\" to \"messy.\" A sandcastle eventually turns back into flat sand, but the sand never builds a castle by itself. Time only moves forward because things are spreading out.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"hiss\" of static between radio stations." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A perfume bottle left open; the scent spreads until it fills the whole room." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Hot cocoa cooling down until it matches the air around it." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a sand dune — thousands of rocks broken down into tiny grains." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a drop of food coloring slowly cloud a glass of clear water." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your body get tired at the end of a long day." },
+        ],
+        intuition: "It's easier to break things than fix them. This \"stretch\" of the universe is why \"now\" feels different than \"later.\"",
+        links: [
+          { label: "What is Entropy? — Science Museum", url: "https://www.sciencemuseum.org.uk/objects-and-stories/what-entropy" },
+          { label: "The Second Law — All About Science", url: "https://www.allaboutscience.org/second-law-of-thermodynamics.htm" },
+          { label: "The Arrow of Time — Highbrow", url: "https://gohighbrow.com/the-arrow-of-time/" },
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Stop This Train", artist: "John Mayer", url: "https://www.youtube.com/watch?v=mS2o4q760Yg" },
+        ],
+        advanced: "Entropy (S) is a measure of molecular disorder or \"multiplicity.\" The Second Law (ΔS ≥ 0) dictates the irreversibility of natural processes. This creates the \"Arrow of Time,\" distinguishing the past from the future. Philosophically, it connects to Impermanence in Eastern traditions — the recognition that all structured forms must eventually dissipate into the void.",
+      },
+
+      // ── 3 ── THE ABSOLUTE ZERO LIMIT (3RD LAW) ──────────────
+      {
+        id: "third-law-thermo",
+        num: 3,
+        icon: "🧊",
+        title: "The Absolute Zero Limit",
+        subtitle: "The Impossible Stillness",
+        simple: "As things get colder, they stop moving. Absolute Zero is the point where everything is perfectly still. But the universe has a rule: you can get very, very close to being perfectly still, but you can never actually stop 100%.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The absolute silence of a snowy night." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The crisp, \"sharp\" smell of ice in a freezer." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A plain ice cube — the absence of flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Touching a piece of dry ice (carefully!) and feeling the \"burn\" of no heat." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a crystal — atoms lined up in a perfect, still pattern." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Holding a \"statue\" pose and feeling the tiny wobbles you can't stop." },
+        ],
+        intuition: "Even in total stillness, there is a tiny spark of life that cannot be put out.",
+        links: [
+          { label: "Third Law — Chemistry LibreTexts", url: "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Thermodynamics/The_Four_Laws_of_Thermodynamics/Third_Law_of_Thermodynamics" },
+          { label: "Absolute Zero Explained — Live Science", url: "https://www.livescience.com/39884-absolute-zero.html" },
+          { label: "Quantum Fluids at Ultra-Low Temps — NIST", url: "https://www.nist.gov/topics/physics/absolute-zero" },
+        ],
+        songs: [
+          { title: "Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4zLfCnGVeL4" },
+          { title: "Ice Ice Baby", artist: "Vanilla Ice", url: "https://www.youtube.com/watch?v=rog8ou-ZepE" },
+          { title: "Cold As Ice", artist: "Foreigner", url: "https://www.youtube.com/watch?v=yPAl_vsz_9U" },
+        ],
+        advanced: "The Third Law states that the entropy of a perfect crystal at 0 K is zero. However, the Nernst Heat Theorem suggests this state is an asymptote — unreachable in a finite sequence of operations. It represents a boundary condition of reality, echoing the \"Stillpoint\" in metaphysical thought — a theoretical state of perfect order and zero vibration.",
+      },
+
+      // ── 4 ── THERMAL EQUILIBRIUM (ZEROTH LAW) ────────────────
+      {
+        id: "zeroth-law",
+        num: 4,
+        icon: "⚖️",
+        title: "Thermal Equilibrium",
+        subtitle: "The Law of Balance",
+        simple: "If you are as warm as a chair, and your friend is as warm as the chair, then you and your friend are the same temperature. It's the \"Law of Balance.\" Everything wants to share until everyone is equal.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Two singers hitting the exact same note (unison)." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The way a house smells exactly like the cookies baking in the kitchen." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Mixing hot tea and cold milk until the whole cup is \"just right.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Putting your hand in lukewarm water — it feels like nothing because it matches you." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a thermometer stop moving when it \"agrees\" with the room." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Floating in a pool where the water is the same temp as your skin." },
+        ],
+        intuition: "Feeling a \"vibe\" in a room where everyone is suddenly calm and on the same page.",
+        links: [
+          { label: "The Zeroth Law — Britannica", url: "https://www.britannica.com/science/zeroth-law-of-thermodynamics" },
+          { label: "Thermal Equilibrium — Physics Classroom", url: "https://www.physicsclassroom.com/class/thermalP/u18l1e.cfm" },
+          { label: "Temperature Measurement History — BIPM", url: "https://www.bipm.org/en/measurement-units/history-si/temperature" },
+        ],
+        songs: [
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=NUNXGXHpxwc" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Equal Rights", artist: "Peter Tosh", url: "https://www.youtube.com/watch?v=4A_mN8OidjA" },
+        ],
+        advanced: "The Zeroth Law is the logical foundation for temperature (T). It defines the equivalence relation of \"being in thermal equilibrium.\" If A ~ C and B ~ C, then A ~ B. This transitive property is the bedrock of measurement. It mirrors the \"Golden Rule\" across social and ethical epistemologies — the necessity of a common standard for interaction.",
+      },
+
+      // ── 5 ── MASS-ENERGY EQUIVALENCE ─────────────────────────
+      {
+        id: "mass-energy",
+        num: 5,
+        icon: "⚛️",
+        title: "The Equivalence of Mass and Energy",
+        subtitle: "Frozen Light",
+        simple: "Matter (stuff you can touch) is just super-packed energy. A tiny bit of \"stuff\" is actually a giant explosion of \"power\" waiting to be let out. You aren't just made of dust; you are made of frozen light.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"boom\" of thunder — energy shaking the air." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The ozone smell after a lightning strike." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"zing\" of a spicy pepper — energy reacting with your nerves." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the heavy weight of a stone, then feeling the sun's heat on it." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at the Sun — it is turning its own body into light for us." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"power\" in your legs when you sprint." },
+        ],
+        intuition: "Even when you feel small, the atoms inside you have enough power to light up a city.",
+        links: [
+          { label: "Einstein's Big Idea — PBS NOVA", url: "https://www.pbs.org/wgbh/nova/einstein/" },
+          { label: "Mass-Energy Relation — Stanford Encyclopedia", url: "https://plato.stanford.edu/entries/equivME/" },
+          { label: "E=mc² Explained — Britannica", url: "https://www.britannica.com/science/E-mc2-equation" },
+        ],
+        songs: [
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=aBKEt3M6N6U" },
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Black Hole Sun", artist: "Soundgarden", url: "https://www.youtube.com/watch?v=3mbBbFH9fAg" },
+        ],
+        advanced: "E=mc² demonstrates that mass is an intrinsic property of energy. This unification suggests that the distinction between \"substance\" and \"action\" is an illusion of scale. In particle physics, this allows for pair production and annihilation. It aligns with the non-dualist view that the \"dancer\" (matter) and the \"dance\" (energy) are fundamentally inseparable.",
+      },
+
+      // ── 6 ── WORK-ENERGY THEOREM ─────────────────────────────
+      {
+        id: "work-energy",
+        num: 6,
+        icon: "⚙️",
+        title: "The Work-Energy Theorem",
+        subtitle: "Nothing Moves for Free",
+        simple: "If you want to move faster, you have to put in the \"work.\" The effort you spend pushing a swing is exactly equal to how high and fast the swing goes. Nothing moves for free.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"clink\" of a hammer hitting a nail." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of sweat after a hard workout." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The burst of flavor when you bite down on a grape." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pushing a heavy door and feeling it finally swing open." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A bowling ball knocking down pins — passing its movement to them." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the tension in your arms as you pull a wagon." },
+        ],
+        intuition: "Every change you want to see in your life requires a bit of your inner \"push.\"",
+        links: [
+          { label: "Work-Energy Theorem — HyperPhysics", url: "http://hyperphysics.phy-astr.gsu.edu/hbase/work.html" },
+          { label: "Work and Kinetic Energy — Physics LibreTexts", url: "https://phys.libretexts.org/Bookshelves/University_Physics/Book%3A_University_Physics_(OpenStax)/Map%3A_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/07%3A_Work_and_Kinetic_Energy" },
+          { label: "Mechanical Work — Britannica", url: "https://www.britannica.com/science/work-physics" },
+        ],
+        songs: [
+          { title: "Workin' Day and Night", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=S20m0p7m_4A" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+        ],
+        advanced: "The Work-Energy Theorem states W_net = ΔK. It is a scalar representation of Newton's Second Law, providing a bridge between kinematics and dynamics. This maps to the \"Law of Cause and Effect\" — the belief that every manifestation in the physical world is the direct result of an intentional expenditure of force from a source.",
+      },
+
+      // ── 7 ── CARNOT'S PRINCIPLE ──────────────────────────────
+      {
+        id: "carnot",
+        num: 7,
+        icon: "🏎️",
+        title: "Carnot's Principle",
+        subtitle: "No Machine Is Perfect",
+        simple: "No machine is perfect. Even the best car or robot wastes some energy as heat. There is a \"limit\" to how much work you can get out of a fire or a battery. You can't win, and you can't even break even.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"hum\" of a refrigerator working hard." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The hot, metallic smell of an engine after a long drive." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The slightly \"burnt\" taste of toast (wasted heat)." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the back of a TV — it's warm because it's not 100% efficient." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Steam rising from a pot — energy escaping into the air." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your heart race when you run; your body is a \"heat engine.\"" },
+        ],
+        intuition: "Accepting that nothing is \"perfect\" helps you appreciate the beauty in things that work at all.",
+        links: [
+          { label: "The Carnot Cycle — Energy Education", url: "https://energyeducation.ca/encyclopedia/Carnot_cycle" },
+          { label: "Efficiency Limits — MIT News", url: "https://news.mit.edu/2012/thermodynamics-limits-0223" },
+          { label: "Sadi Carnot — APS Physics", url: "https://www.aps.org/publications/apsnews/200812/physicshistory.cfm" },
+        ],
+        songs: [
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DWRh_IQHpx0" },
+          { title: "The Machine", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=AdKjEHfH_KM" },
+          { title: "Keep the Car Running", artist: "Arcade Fire", url: "https://www.youtube.com/watch?v=j_aFmzlL06g" },
+        ],
+        advanced: "Carnot efficiency (η = 1 − T_L/T_H) defines the theoretical maximum for converting thermal energy into work. It proves that \"waste\" is a fundamental requirement of the universe, not a flaw in design. This connects to the concept of \"Sacrifice\" — the idea that for something to be gained (work), something must be released or lost (exhaust).",
+      },
+
+      // ── 8 ── STATISTICAL MECHANICS ───────────────────────────
+      {
+        id: "stat-mech",
+        num: 8,
+        icon: "🎲",
+        title: "Statistical Mechanics",
+        subtitle: "The Crowd Dance",
+        simple: "Temperature is just a \"crowd\" of atoms dancing. If they dance fast, it's hot. If they dance slow, it's cold. The \"rules\" of heat are just the average behavior of trillions of tiny, bouncing balls.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The roar of a stadium crowd; you can't hear one person, but you hear the \"group.\"" },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A bakery — millions of tiny \"scent balls\" bouncing into your nose." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"fizz\" of soda — bubbles of gas hitting your tongue at random." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The \"pressure\" of a balloon — it feels solid because atoms are hitting it." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Dust motes dancing in a beam of sunlight." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"buzz\" in your muscles after a long walk." },
+        ],
+        intuition: "Even if one person is unpredictable, \"we\" as a whole follow a beautiful pattern.",
+        links: [
+          { label: "Ludwig Boltzmann — Britannica", url: "https://www.britannica.com/biography/Ludwig-Boltzmann" },
+          { label: "Statistical Mechanics Intro — Stanford", url: "https://statisticalmechanics.stanford.edu/" },
+          { label: "Microstates vs Macrostates — Khan Academy", url: "https://www.khanacademy.org/science/physics/thermodynamics/laws-of-thermodynamics/v/statistical-mechanics" },
+        ],
+        songs: [
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" },
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKWT74" },
+          { title: "Tiny Dancer", artist: "Elton John", url: "https://www.youtube.com/watch?v=Al7OnV7u77k" },
+        ],
+        advanced: "Boltzmann's equation (S = k ln W) bridges the microscopic (atoms) and macroscopic (entropy). It reveals that thermodynamic laws are probabilistic, not deterministic, on a quantum level. This aligns with the \"Holistic\" view — the \"Whole\" has properties (like temperature) that don't exist in the \"Parts,\" emerging only through collective interaction.",
+      },
+
+      // ── 9 ── GIBBS FREE ENERGY ───────────────────────────────
+      {
+        id: "gibbs",
+        num: 9,
+        icon: "⚡",
+        title: "Gibbs Free Energy",
+        subtitle: "Spending Money of Energy",
+        simple: "Gibbs is the \"Spending Money\" of energy. It's the energy that is actually free to go do something cool, like growing a flower or moving your arm. If a reaction has enough \"spending money,\" it happens all by itself!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"fizz\" of an Alka-Seltzer in water — a spontaneous reaction." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a ripening banana — chemicals changing on their own." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The sour kick of a lemon — acid reacting with your taste buds." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Hand-warmers — chemicals releasing \"useful\" heat when you click them." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A rusty nail — nature \"deciding\" to turn iron into rust over time." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "That feeling of \"I'm ready to go!\" before a race." },
+        ],
+        intuition: "Knowing when a moment is \"ripe\" — when everything is lined up for something to happen naturally without being forced.",
+        links: [
+          { label: "Gibbs Free Energy — Khan Academy", url: "https://www.khanacademy.org/science/biology/energy-and-enzymes/free-energy-tutorial/a/gibbs-free-energy" },
+          { label: "Spontaneous Processes — Chemistry LibreTexts", url: "https://chem.libretexts.org/Bookshelves/General_Chemistry/Map%3A_Chemistry_-_The_Central_Science_(Brown_et_al.)/19%3A_Chemical_Thermodynamics/19.5%3A_Gibbs_Free_Energy" },
+          { label: "Gibbs Free Energy — Britannica", url: "https://www.britannica.com/science/Gibbs-free-energy" },
+        ],
+        songs: [
+          { title: "Free Fallin'", artist: "Tom Petty", url: "https://www.youtube.com/watch?v=1lWJXDG2iGu" },
+          { title: "Unstoppable", artist: "Sia", url: "https://www.youtube.com/watch?v=cxjvTXo9WWM" },
+          { title: "Electric Feel", artist: "MGMT", url: "https://www.youtube.com/watch?v=MmZexg8sxyk" },
+        ],
+        advanced: "Gibbs Free Energy (ΔG = ΔH − TΔS) determines chemical spontaneity. If ΔG is negative, the process is exergonic (it happens \"voluntarily\"). This concept is the gateway to understanding biological life as a series of coupled reactions. It connects to \"Vitalism\" — the spark that allows systems to act upon their environment.",
+      },
+
+      // ── 10 ── OPEN VS CLOSED SYSTEMS ─────────────────────────
+      {
+        id: "open-closed-systems",
+        num: 10,
+        icon: "🌱",
+        title: "Open vs. Closed Systems",
+        subtitle: "Islands of Order",
+        simple: "The universe is getting messier (entropy), but you are getting smarter and stronger. How? Because you are an \"Open Door.\" You take in energy (food and sun) and push the \"messy\" energy out. Life is a beautiful island of order in a big, messy ocean.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A baby crying — the sound of a new, complex system demanding energy." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Fresh cut grass — the smell of a living system reacting to the world." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A fresh salad — eating sunlight that was captured by leaves." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling your own pulse — the rhythm of an open system pumping life." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A forest growing upward while the rocks below break down." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stretching and feeling your body \"recharge\" after a meal." },
+        ],
+        intuition: "As long as you keep \"opening your door\" to love and learning, you can keep growing even when things around you seem to be falling apart.",
+        links: [
+          { label: "Open Systems in Biology — Nature Education", url: "https://www.nature.com/scitable/topicpage/biological-energy-production-14356373/" },
+          { label: "Life as Anti-Entropy — Scientific American", url: "https://www.scientificamerican.com/article/is-life-an-inevitable-consequence-of-physics/" },
+          { label: "Schrödinger's 'What is Life?' — Wikipedia", url: "https://en.wikipedia.org/wiki/What_Is_Life%3F" },
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=rBrd_3VMC3c" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Life is a Highway", artist: "Rascal Flatts", url: "https://www.youtube.com/watch?v=6TQ3S-uSTpE" },
+        ],
+        advanced: "Life is a \"dissipative structure\" (as described by Ilya Prigogine). By maintaining a flux of energy and matter, open systems can decrease local entropy at the expense of increasing global entropy. This explains how complexity emerges despite the Second Law. It mirrors the \"Hero's Journey\" — the individual's effort to create meaning and order within a chaotic world.",
+      },
+
+    ],
   },
 };
 
