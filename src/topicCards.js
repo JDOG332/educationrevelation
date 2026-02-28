@@ -8185,6 +8185,249 @@ export const TOPIC_CARDS = {
 
 
   },
+
+  // ═══════════════════════════════════════════════════════════════
+  // DOOR 4: MYTHOLOGY & STORYTELLING (gravity) — "archetypes · legends · dreams"
+  // ═══════════════════════════════════════════════════════════════
+  gravity: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > CREATION MYTHS (creationmyth)
+    // ═══════════════════════════════════════════════════════════════
+
+    creationmyth: [
+      { id: "ex-nihilo", num: 1, icon: "🌌", title: "Ex Nihilo (Creation from Nothing)", subtitle: "The Blank Page Before the First Word",
+        simple: "Imagine the whole world started as a giant, quiet nothing until a great thought or word made everything pop into being. It is like when you have a totally blank piece of paper and suddenly you draw a beautiful sun; before you drew it, the sun was not there at all! This tells us that ideas are very powerful and can create real things. We all come from a place of perfect peace and potential. When we are quiet, we can feel that same nothing inside us that is ready to become something amazing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The Om or a single, clear bell ringing in a silent room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of ozone right before a thunderstorm starts." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A drop of cold, pure water on a dry tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of a completely still, cool breeze." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single white dot appearing on a black screen." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your body expand as you take a very deep breath: nothing becoming something." }
+        ],
+        intuition: "Before the word, there was silence. Before the drawing, there was a blank page. Everything you see was once nothing. And nothing was always ready.",
+        links: [
+          { label: "Wikipedia: Ex Nihilo", url: "https://en.wikipedia.org/wiki/Ex_nihilo" },
+          { label: "The Physics of Nothing", url: "https://en.wikipedia.org/wiki/Vacuum_state" },
+          { label: "Creation by Word", url: "https://en.wikipedia.org/wiki/Logos" }
+        ],
+        songs: [
+          { title: "Let There Be Love", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=0S2k4YLSq-A" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" }
+        ],
+        advanced: "Ex Nihilo represents the Big Bang of consciousness: the transition from void to manifest. In physics and metaphysics, it aligns with the singularity where space-time begins. Suggests that the observer's gaze collapses the wave function of nothingness into the reality of somethingness. The blank page that writes itself." },
+
+      { id: "cosmic-egg", num: 2, icon: "🥚", title: "The Cosmic Egg", subtitle: "All of Everything Packed in One Shell",
+        simple: "Everything in the universe — the stars, the trees, and even you — was once squeezed into one tiny, glowing egg. This egg held all the colors and all the life that would ever exist, just waiting for the right moment to crack open. When it finally broke, the top of the shell became the sky and the bottom became the ground. This teaches us that even small things have big secrets hidden inside them. You are like a little seed that has a whole giant forest waiting to come out!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound of a shell gently cracking or a soft pop." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The warm, earthy smell of a greenhouse or a nest." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The richness of a golden honey drop." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a warm, smooth stone in your palm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A golden glow coming from behind a closed door." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Curling into a tight ball and then stretching out your arms and legs: the egg cracking open." }
+        ],
+        intuition: "You are the egg. Everything you will ever become is already inside you. The crack is not destruction. It is birth.",
+        links: [
+          { label: "World Egg Mythology", url: "https://en.wikipedia.org/wiki/World_egg" },
+          { label: "The Brahmanda Purana", url: "https://en.wikipedia.org/wiki/Brahmanda_Purana" },
+          { label: "Biological Gestation and Cosmology", url: "https://en.wikipedia.org/wiki/Cosmogony" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Golden", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=P3cffdsEXXw" },
+          { title: "Egg", artist: "The Garden", url: "https://www.youtube.com/watch?v=5cDLGzHVyBM" }
+        ],
+        advanced: "The Cosmic Egg (Orphic Egg, Brahmanda) is a pan-cultural archetype for the Primordial Singularity. Represents the Enfolded Order where all complexity is latent within a unified state. Connects biological gestation to cosmological evolution, suggesting the universe itself is a living, developing organism." },
+
+      { id: "emergence-myths", num: 3, icon: "🌱", title: "Emergence Myths", subtitle: "Climbing from Dark to Light",
+        simple: "Long ago, people lived in dark tunnels under the ground and had to climb up, layer by layer, to find the light. Each time they moved to a new level, they learned new things and became more awake. Finally, they reached the surface and saw the sun and the stars for the very first time. This shows us that growing up is a journey of moving from the dark into the light. We are always learning and climbing to a better version of ourselves every single day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Echoing footsteps in a cave leading toward an exit." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp earth and wet rocks turning into the scent of fresh grass." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The first bite of a sweet fruit after being hungry." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of the sun on your skin after being in the shade." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Emerging from a dark tunnel into a bright, colorful meadow." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of climbing a ladder and reaching the top rung: your whole body knows you made it." }
+        ],
+        intuition: "You started in the dark. You climbed. You are still climbing. Every new thing you learn is another rung toward the light.",
+        links: [
+          { label: "Navajo Creation Story", url: "https://en.wikipedia.org/wiki/Din%C3%A9_Bahane%27" },
+          { label: "Hopi Mythology", url: "https://en.wikipedia.org/wiki/Hopi_mythology" },
+          { label: "Stages of Consciousness", url: "https://en.wikipedia.org/wiki/Piaget%27s_theory_of_cognitive_development" }
+        ],
+        songs: [
+          { title: "The Climb", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=NG2zyeVRcbs" },
+          { title: "Coming Out of the Dark", artist: "Gloria Estefan", url: "https://www.youtube.com/watch?v=kSQ8tMnSY6c" },
+          { title: "Higher Ground", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=4wZ3ZG_Wams" }
+        ],
+        advanced: "Emergence myths (Navajo, Hopi) mirror the evolutionary process of consciousness. A vertical epistemology where awareness transcends dimensions. Aligns with developmental psychology (Piaget/Erikson) where the psyche navigates stages of underworlds before achieving integrated selfhood." },
+
+      { id: "earth-diver", num: 4, icon: "🐢", title: "Earth-Diver", subtitle: "The Tiny Brave One Who Found the Mud",
+        simple: "In the beginning, there was only water everywhere, and a great spirit asked the animals to dive down and find some land. Many animals tried and failed because the water was so deep, but one tiny, brave creature finally made it to the bottom. It brought back a small piece of mud and placed it on the back of a turtle, where it grew into the whole world. This reminds us that even if we feel small, we can do big things that help everyone. Cooperation between all living things is what makes our home strong and beautiful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The splash of a diver hitting the water and the silence beneath the waves." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The salty, wet smell of the ocean and rich, dark mud." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of sea-spray on your lips." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Squeezing soft, cool clay between your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tiny green island in the middle of a huge blue ocean." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water and then feeling the solid ground under your feet: the moment land was born." }
+        ],
+        intuition: "The biggest ones failed. The smallest one dove deepest. Size does not matter. Courage does. One handful of mud built the world.",
+        links: [
+          { label: "Earth-Diver Myth Overview", url: "https://en.wikipedia.org/wiki/Earth-diver" },
+          { label: "Iroquois Creation Myth", url: "https://en.wikipedia.org/wiki/Iroquois_creation_myth" },
+          { label: "Symbolism of the Turtle", url: "https://en.wikipedia.org/wiki/World_Turtle" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Under the Bridge", artist: "Red Hot Chili Peppers", url: "https://www.youtube.com/watch?v=GLvohMXgcBo" },
+          { title: "Ocean Eyes", artist: "Billie Eilish", url: "https://www.youtube.com/watch?v=viimfQi_pUw" }
+        ],
+        advanced: "The Earth-Diver motif (Native American, Siberian) highlights bottom-up creation: the divine requires the agency of the mundane (animals) to manifest physical reality. Suggests a participatory universe where consciousness and matter collaborate to build Turtle Island." },
+
+      { id: "world-parents", num: 5, icon: "⛰️", title: "World Parents", subtitle: "The Sky and Earth That Had to Let Go",
+        simple: "A long time ago, the Sky Father and the Earth Mother were hugging so tightly that there was no room for anything to grow between them. Their children were cramped in the dark, so they worked together to push the Sky Father up high and keep the Earth Mother down low. This created the space for the wind to blow, the trees to grow, and for us to live and breathe. It teaches us that sometimes we need to make space for new things to happen. Even though the sky and earth are far apart, they are still a family that takes care of us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep, rumbling mountain and the whistling wind." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: the scent of rain hitting dry dirt." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crispness of a fresh, cold apple from a tree." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "One hand on the ground and the other reaching toward the clouds." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The horizon line where the blue sky meets the green land." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the weight of your body on the floor while your head feels light: earth below, sky above, you in between." }
+        ],
+        intuition: "They had to let go of each other so everything between them could live. Separation is not loss. It is the space where life grows.",
+        links: [
+          { label: "Separation of the World Parents", url: "https://en.wikipedia.org/wiki/World_parent" },
+          { label: "Egyptian Mythology: Nut and Geb", url: "https://en.wikipedia.org/wiki/Nut_(goddess)" },
+          { label: "Maori Creation Myth", url: "https://en.wikipedia.org/wiki/Rangi_and_Papa" }
+        ],
+        songs: [
+          { title: "Ain't No Mountain High Enough", artist: "Marvin Gaye & Tammi Terrell", url: "https://www.youtube.com/watch?v=IC5PL0XImjw" },
+          { title: "A Sky Full of Stars", artist: "Coldplay", url: "https://www.youtube.com/watch?v=VPRjCeoBqrI" },
+          { title: "Mother Nature's Son", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Qr7iMPRYCT4" }
+        ],
+        advanced: "World Parents (Nut/Geb in Egypt, Rangi/Papa in Maori) represent the Duality of Existence: separation of subject and object, necessary for experience to occur. The separation is an illusion maintained so that the Divine can witness itself through the lens of space and time." },
+
+      { id: "primordial-chaos", num: 6, icon: "🌀", title: "Primordial Chaos", subtitle: "The Beautiful Mess Before the Sorting",
+        simple: "Before the world was neat and tidy, it was like a giant, swirling soup where everything was mixed up and messy. There was no up or down and no hot or cold, just a wild dance of energy. Then, a special force came along and started sorting the colors, the shapes, and the sounds into their right places. This shows us that even when things feel confusing or messy in our lives, there is always a way to find order. Your inner light is the tool you use to turn a messy room or a messy thought into something beautiful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Static on a radio that slowly turns into a beautiful song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The complex, mixed-up smell of a busy kitchen before the meal is ready." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon that suddenly turns sweet with a miracle berry." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Swirling your hand in a bowl of loose sand or beads." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A kaleidoscope turning and settling into a perfect pattern." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling dizzy from spinning and then standing perfectly still: chaos becoming order in your own bones." }
+        ],
+        intuition: "The mess is not the enemy. It is the raw material. Every beautiful thing you have ever seen was once a swirl of chaos waiting to be sorted.",
+        links: [
+          { label: "Chaos in Greek Mythology", url: "https://en.wikipedia.org/wiki/Chaos_(cosmogony)" },
+          { label: "Entropy and Information Theory", url: "https://en.wikipedia.org/wiki/Entropy_(information_theory)" },
+          { label: "The Concept of Hundun", url: "https://en.wikipedia.org/wiki/Hundun" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Order From Chaos", artist: "Max Richter", url: "https://www.youtube.com/watch?v=rVN1B-tUpgs" },
+          { title: "Everything in Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" }
+        ],
+        advanced: "Primordial Chaos (Greek Khaos, Chinese Hundun) represents maximum entropy: the raw material for information. Applying Logos or Order reduces uncertainty. Maps to the Measurement Problem in quantum mechanics: observation turns the chaotic smear of probability into definite reality." },
+
+      { id: "sacrifice-of-giant", num: 7, icon: "🦴", title: "Sacrifice of a Giant", subtitle: "The World Is Made of Someone's Body",
+        simple: "In some stories, the world was made from the body of a giant who was very kind or very powerful. His hair became the forests, his bones became the mountains, and his tears became the salty oceans. This means that everything we see around us is actually part of a living being. When you walk on the grass, you are walking on a story, and when you look at the moon, you are looking at a piece of history. We are all made of the same stuff as the world, so we must treat everything with love.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep thumping of a drum that sounds like a giant's heartbeat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of iron in the earth or a forest floor." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of your own tears or sweat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the hard bones of a rock under soft moss." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A mountain range that looks like a sleeping person." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Realizing your own body is made of the same atoms as the stars: the giant lives in you." }
+        ],
+        intuition: "The mountains are bones. The rivers are tears. The forests are hair. You are walking on someone's story. And you are made of the same stuff.",
+        links: [
+          { label: "Purusha Sukta: The Cosmic Man", url: "https://en.wikipedia.org/wiki/Purusha_sukta" },
+          { label: "Ymir and Norse Creation", url: "https://en.wikipedia.org/wiki/Ymir" },
+          { label: "Panentheism Explained", url: "https://en.wikipedia.org/wiki/Panentheism" }
+        ],
+        songs: [
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=q3LAkMfinGY" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "He's Got the Whole World in His Hands", artist: "Nina Simone", url: "https://www.youtube.com/watch?v=bYjVFGBPCiQ" }
+        ],
+        advanced: "The Sacrifice of a Giant (Purusha in Hinduism, Ymir in Norse myth) highlights the Immanence of the Divine. The Creator did not just make the world; the Creator became the world. Root of Panentheism: the Divine resides within every atom of the material plane." },
+
+      { id: "supreme-architect", num: 8, icon: "📐", title: "The Supreme Architect", subtitle: "The Master Builder with the Blueprint",
+        simple: "Imagine a master builder who has a big blueprint for the whole universe. Instead of making things out of nothing, this builder takes the clay and the stars that are already there and shapes them into a perfect system. He makes sure the planets spin the right way and the seasons change on time, like a giant, beautiful clock. This tells us that the world is not an accident; it is a smart design. You are part of that design, and you have a special job to do in the Big Plan of the world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic tick-tock of a clock or the hum of a machine." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut wood or the clean scent of a new building." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A perfectly balanced recipe where every ingredient is just right." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth, straight edge of a ruler or a planed board." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The perfect symmetry of a snowflake or a honeycomb." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your joints working together perfectly when you run: the design in motion." }
+        ],
+        intuition: "The clock does not tick by accident. The snowflake does not form by mistake. Something drew the blueprint. And you are part of the plan.",
+        links: [
+          { label: "The Demiurge in Philosophy", url: "https://en.wikipedia.org/wiki/Demiurge" },
+          { label: "The Fine-Tuning Argument", url: "https://en.wikipedia.org/wiki/Fine-tuned_universe" },
+          { label: "Sacred Geometry Overview", url: "https://en.wikipedia.org/wiki/Sacred_geometry" }
+        ],
+        songs: [
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" },
+          { title: "The Planner's Dream Goes Wrong", artist: "The Jam", url: "https://www.youtube.com/watch?v=E-VQogMjJSQ" },
+          { title: "Wonder", artist: "Natalie Merchant", url: "https://www.youtube.com/watch?v=6zpYFAzhAZY" }
+        ],
+        advanced: "The Demiurge or Grand Architect represents Intelligent Order. Aligns with Fine-Tuning of physical constants. Suggests the cosmos operates through mathematical laws and geometry to maintain a stable environment for life. The blueprint was drawn before the building began." },
+
+      { id: "celestial-ancestry", num: 9, icon: "✨", title: "Celestial Ancestry", subtitle: "You Fell from the Stars",
+        simple: "Some people believe that we did not just come from the dirt, but that we actually fell from the stars. Long ago, Sky People came down to earth and planted the seeds of humanity, or perhaps we are just star-stuff that woke up and started walking. This means that when you look up at the night sky, you are looking at your very first home. You have a little bit of starlight inside you, and that is why you always want to explore and learn new things. You belong to the whole universe, not just one small spot!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The high-pitched, shimmering tinkling of wind chimes." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, cold smell of winter air at night." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The tingle of a fizzy drink that feels like stars on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The cold, sparkling feeling of a snowflake melting on your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking through a telescope at a distant, glowing nebula." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling light and weightless, like you are floating in space: your body remembering where it came from." }
+        ],
+        intuition: "Carl Sagan was right. You are star-stuff. The iron in your blood was forged in a dying sun. When you look up, you are looking home.",
+        links: [
+          { label: "The Dogon and Sirius", url: "https://en.wikipedia.org/wiki/Dogon_people" },
+          { label: "Starstuff: The Origin of Elements", url: "https://en.wikipedia.org/wiki/Nucleosynthesis" },
+          { label: "Pleiades in Mythology", url: "https://en.wikipedia.org/wiki/Pleiades_in_folklore_and_literature" }
+        ],
+        songs: [
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "Rewrite the Stars", artist: "Zac Efron & Zendaya", url: "https://www.youtube.com/watch?v=RI-M0RMBW0I" },
+          { title: "Counting Stars", artist: "OneRepublic", url: "https://www.youtube.com/watch?v=hT_nvWreIhg" }
+        ],
+        advanced: "Celestial Ancestry bridges ancient myths (Pleiadian, Dogon traditions) and modern science. Carl Sagan: We are made of star-stuff. Most elements in our bodies were forged in dying stars. Our ancestry is literally nuclear, connecting us to the lifecycle of the galaxy." },
+
+      { id: "cyclical-destruction-rebirth", num: 10, icon: "🔄", title: "Cyclical Destruction/Rebirth", subtitle: "The Ferris Wheel That Never Stops Turning",
+        simple: "The world is like a giant Ferris wheel that never stops turning. Instead of having a beginning and an end, the world finishes one story and then immediately starts a new one, over and over again. It is like how winter always turns into spring, or how you go to sleep at night and wake up to a brand new day. This teaches us that even when something ends, it is just getting ready for a fresh start. We never really go away; we just change into something new and exciting.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Waves crashing on the shore and then pulling back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A garden after it has been cleared for new planting." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A palate cleanser like lemon sorbet: reset." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Old skin peeling after a sunburn to reveal new skin underneath." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset that slowly turns into a sunrise." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Exhaling all your air and then taking a new breath: the cycle you live every second." }
+        ],
+        intuition: "Nothing ends. It turns. Winter becomes spring. Night becomes day. The last breath becomes the first. The wheel never stops.",
+        links: [
+          { label: "Hindu Cycles of Time (Yugas)", url: "https://en.wikipedia.org/wiki/Yuga" },
+          { label: "Conformal Cyclic Cosmology", url: "https://en.wikipedia.org/wiki/Conformal_cyclic_cosmology" },
+          { label: "The Phoenix Myth", url: "https://en.wikipedia.org/wiki/Phoenix_(mythology)" }
+        ],
+        songs: [
+          { title: "The End", artist: "The Doors", url: "https://www.youtube.com/watch?v=BXqPNlng6uI" },
+          { title: "Closing Time", artist: "Semisonic", url: "https://www.youtube.com/watch?v=xGytDsqkQY8" },
+          { title: "Circle Game", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=V9VoLCO-d6U" }
+        ],
+        advanced: "Cyclical Destruction/Rebirth (Kalpa in Hinduism, the Phoenix) mirrors Conformal Cyclic Cosmology in physics. Time is not linear but a series of expansions and contractions. Death is merely a phase of transformation within the conservation of energy. The wheel turns. It has always turned." },
+    ],
+
+  },
 };
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
