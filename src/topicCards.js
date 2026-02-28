@@ -3100,6 +3100,323 @@ export const TOPIC_CARDS = {
 
     ],
   },
+
+  // ╔═══════════════════════════════════════════════════════════════╗
+  // ║  🔢 MATHEMATICS (promise)                                    ║
+  // ║  "What is the hidden structure beneath all things?"           ║
+  // ╚═══════════════════════════════════════════════════════════════╝
+
+  promise: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔢 MATHEMATICS (promise) → 🔢 ARITHMETIC & NUMBER (number)
+    // "Counting, adding, subtracting — the first language humans ever shared"
+    // ═══════════════════════════════════════════════════════════════
+
+    number: [
+
+      // ── 1 ── UNITY (THE NUMBER ONE) ──────────────────────────
+      {
+        id: "unity",
+        num: 1,
+        icon: "⚪",
+        title: "Unity (The Number One)",
+        subtitle: "The Circle That Starts Everything",
+        simple: "Numbers start with one, and one is the most important part of everything. Think of a single seed that holds the plan for a whole forest or one drop of water that is part of the giant ocean. When you see the number one, it reminds you that even though there are billions of people, we are all part of one big human family. You are a \"one,\" and without you, the count would be incomplete.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A single, clear bell strike ringing in a silent room." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a single, fresh-cut orange." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "One grain of pure sea salt on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pressing your thumb against your index finger." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A single candle burning in a dark hall." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Standing perfectly still on one leg, finding your center." },
+        ],
+        intuition: "That \"aha\" moment when you realize you aren't separate from the world, but a vital piece of it.",
+        links: [
+          { label: "Wolfram MathWorld: Unity", url: "https://mathworld.wolfram.com/Unity.html" },
+          { label: "Britannica: Number Symbolism", url: "https://www.britannica.com/topic/number-symbolism" },
+          { label: "Wikipedia: Monad (Philosophy)", url: "https://en.wikipedia.org/wiki/Monad_(philosophy)" },
+        ],
+        songs: [
+          { title: "One", artist: "Three Dog Night", url: "https://www.youtube.com/watch?v=d5ab8BOu4LE" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "The 1", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=HOap05N0ZYk" },
+        ],
+        advanced: "In mathematics, unity refers to the identity element under multiplication — the only number that, when multiplied by any other number, leaves it unchanged, acting as the \"mirror\" of the numerical realm. In quantum mechanics, the normalization condition requires the sum of probabilities to equal one, ensuring a closed, consistent system of existence. This connects to the philosophical Monad, suggesting all complexity is an unfolding of a singular, underlying source.",
+      },
+
+      // ── 2 ── BINARY (POLARITY) ───────────────────────────────
+      {
+        id: "binary-polarity",
+        num: 2,
+        icon: "☯️",
+        title: "Binary (Polarity)",
+        subtitle: "The Language of Yes and No",
+        simple: "Binary is the language of \"yes\" and \"no,\" or \"on\" and \"off.\" It is like a light switch that can only be in two spots, but by flipping it fast enough, you can create a whole computer world. In life, we see this as day and night, hot and cold, or happy and sad. You need both sides to understand the whole story, just like a coin needs two sides to be worth something.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Two sticks clicking together in a steady beat." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The contrast between sweet vanilla and sharp vinegar." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eating something sour, then something sweet." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling something ice cold with one hand and warm with the other." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a black-and-white checkerboard." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Shifting your weight from your left foot to your right foot." },
+        ],
+        intuition: "Sensing the balance between your \"inner\" thoughts and the \"outer\" world.",
+        links: [
+          { label: "Computer Hope: Binary", url: "https://www.computerhope.com/jargon/b/binary.htm" },
+          { label: "Stanford Encyclopedia: Yin-Yang", url: "https://plato.stanford.edu/entries/chinese-phil-yinyang/" },
+          { label: "Math is Fun: Binary Numbers", url: "https://www.mathsisfun.com/binary-number-system.html" },
+        ],
+        songs: [
+          { title: "Side 2", artist: "Dressy Bessy", url: "https://www.youtube.com/watch?v=qXkxMOVKa2U" },
+          { title: "Opposites Attract", artist: "Paula Abdul", url: "https://www.youtube.com/watch?v=xweiQukBM_k" },
+          { title: "Binary", artist: "The Horrors", url: "https://www.youtube.com/watch?v=1GxKnFDHgFU" },
+        ],
+        advanced: "Binary logic (Boolean algebra) provides the functional framework for all digital architecture. By reducing information to its most fundamental state — the bit — we can quantify entropy and information flow. This reflects the \"law of excluded middle\" in classical logic. Spiritually, binary systems represent the Duality of existence. While higher mathematics moves into manifolds and infinities, the foundation remains anchored in the resolution of opposites.",
+      },
+
+      // ── 3 ── THE ZERO (EMPTINESS) ────────────────────────────
+      {
+        id: "zero-emptiness",
+        num: 3,
+        icon: "🕳️",
+        title: "The Zero (Emptiness)",
+        subtitle: "The Nothing That Changed Everything",
+        simple: "Zero is a magical number because it represents having nothing, yet it makes every other number bigger when it sits next to them. Think of it like a stage before the actors come out — it is the quiet space that allows the music to happen. Without zero, we couldn't count to ten or understand that sometimes \"nothing\" is a very important thing. It is the \"reset\" button that lets us start over.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The silence between two deep breaths." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of clean air after a rainstorm." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Pure, cool water that cleans your palate." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of weightlessness when you jump on a trampoline." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Staring at a perfectly blank white piece of paper." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Relaxing every muscle until you feel like you are floating." },
+        ],
+        intuition: "Feeling a sense of peace when you let go of all your worries.",
+        links: [
+          { label: "Scientific American: The History of Zero", url: "https://www.scientificamerican.com/article/what-is-the-origin-of-zer/" },
+          { label: "The Guardian: The Power of Zero", url: "https://www.theguardian.com/science/2019/mar/11/zero-the-number-that-changed-everything" },
+          { label: "Wikipedia: Emptiness (Buddhism)", url: "https://en.wikipedia.org/wiki/%C5%9A%C5%ABnyat%C4%81" },
+        ],
+        songs: [
+          { title: "Zero", artist: "The Smashing Pumpkins", url: "https://www.youtube.com/watch?v=PjsYKJuflEE" },
+          { title: "Nothing Compares 2 U", artist: "Sinéad O'Connor", url: "https://www.youtube.com/watch?v=0-EF60neguk" },
+          { title: "Start from Zero", artist: "T-Square", url: "https://www.youtube.com/watch?v=QYEqk5gV3HA" },
+        ],
+        advanced: "Zero is the additive identity in arithmetic and the origin point (0,0) in Cartesian coordinates. Its introduction by Indian mathematicians revolutionized the world by enabling calculus and limits. Zero acts as the boundary between positive and negative realms — the cosmic null point. In physics, zero-point energy suggests even \"empty\" space teems with potential, aligning with the idea that the Void is pure, unmanifested potentiality from which all numbers and forms arise.",
+      },
+
+      // ── 4 ── RATIO & PROPORTION ──────────────────────────────
+      {
+        id: "ratio-proportion",
+        num: 4,
+        icon: "⚖️",
+        title: "Ratio & Proportion",
+        subtitle: "The Secret Behind Why Things Fit",
+        simple: "Ratio is how we compare things to see if they fit together nicely, like the way a small key fits into a big lock. It is the secret behind why some music sounds happy and why some buildings look beautiful and strong. When things are in the right proportion, they feel \"correct\" to our eyes and ears, helping us feel at home in the world.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A perfect \"Power Chord\" on a guitar." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A balanced perfume where no one scent is too strong." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The perfect mix of peanut butter and jelly." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Holding hands with someone where your fingers interlock perfectly." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a photo that follows the \"Rule of Thirds.\"" },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Balancing a broomstick on your fingertip." },
+        ],
+        intuition: "Knowing exactly how much effort to put into a task without overdoing it.",
+        links: [
+          { label: "Khan Academy: Ratios", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic" },
+          { label: "Britannica: Golden Ratio", url: "https://www.britannica.com/science/golden-ratio" },
+          { label: "Wikipedia: Musical Temperament", url: "https://en.wikipedia.org/wiki/Musical_temperament" },
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" },
+        ],
+        advanced: "Proportion is the cornerstone of Euclidean geometry and classical aesthetics. A ratio represents a relationship between two quantities (a:b) that remains invariant regardless of scale — the basis for similarity in geometric shapes. The \"Harmony of the Spheres\" suggested celestial bodies follow the same ratios found in musical intervals, connecting arithmetic directly to cosmology.",
+      },
+
+      // ── 5 ── ITERATION (COUNTING) ────────────────────────────
+      {
+        id: "iteration-counting",
+        num: 5,
+        icon: "👣",
+        title: "Iteration (Counting)",
+        subtitle: "One Step at a Time to the Top",
+        simple: "Iteration is just doing something over and over again to get somewhere new, like taking one step at a time to climb a mountain. Every time you count \"1, 2, 3,\" you are using iteration to build a bigger number. It shows us that big changes don't happen all at once; they happen because we keep going. If you practice a little bit every day, that is iteration working to make you a master.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The steady \"tick-tock\" of a grandfather clock." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of baking cookies, one tray after another." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Taking small bites of a meal until the plate is empty." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the ridges on a seashell, one by one." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a line of ants walking in a row." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your heartbeat rhythmically thumping in your chest." },
+        ],
+        intuition: "Realizing that \"showing up\" every day is the secret to success.",
+        links: [
+          { label: "Wikipedia: Iteration", url: "https://en.wikipedia.org/wiki/Iteration" },
+          { label: "Math is Fun: Sequences", url: "https://www.mathsisfun.com/algebra/sequences-sums-arithmetic.html" },
+          { label: "Nature: Biological Rhythms", url: "https://www.nature.com/subjects/biological-rhythms" },
+        ],
+        songs: [
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "7 Rings", artist: "Ariana Grande", url: "https://www.youtube.com/watch?v=QYh6mYIJG2Y" },
+        ],
+        advanced: "Iteration is the fundamental process behind Algorithms and Chaos Theory. By repeatedly applying a function (x_n+1 = f(x_n)), complex behaviors emerge from simple rules — modeling weather, stock markets, and population growth. Iteration is the mathematical expression of Time: each moment is an iteration of the state of the universe, linking the discrete nature of counting to the continuous experience of living.",
+      },
+
+      // ── 6 ── RECURSION (FRACTALS) ────────────────────────────
+      {
+        id: "recursion-fractals",
+        num: 6,
+        icon: "🥦",
+        title: "Recursion (Fractals)",
+        subtitle: "A Dream Within a Dream",
+        simple: "Recursion is when a pattern contains a smaller version of itself inside, like a dream within a dream. If you look at a fern leaf, each little part looks like a tiny version of the whole leaf. This shows us that the same \"rules\" apply to small things and big things alike. The same patterns that make a galaxy also make the veins in your own hand.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "An echo that gets quieter and quieter but keeps the same tone." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a pine forest, where every tree smells like the whole woods." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A Russian nesting doll of flavors, like a chocolate-filled strawberry." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the repetitive texture of a honeycomb." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Holding two mirrors facing each other to see a \"tunnel\" of yous." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Noticing how your small finger movements mimic your whole arm." },
+        ],
+        intuition: "Feeling that \"as above, so below\" connection to the stars.",
+        links: [
+          { label: "Fractal Foundation: What are Fractals?", url: "https://fractalfoundation.org/resources/what-are-fractals/" },
+          { label: "Wikipedia: Recursion", url: "https://en.wikipedia.org/wiki/Recursion" },
+          { label: "Wired: The Math of Fractals", url: "https://www.wired.com/story/the-math-of-fractals/" },
+        ],
+        songs: [
+          { title: "The End", artist: "The Doors", url: "https://www.youtube.com/watch?v=BXqPNlng6uI" },
+          { title: "Reflection", artist: "Tool", url: "https://www.youtube.com/watch?v=4MzVuHqsNoM" },
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+        ],
+        advanced: "Recursion solves problems by depending on solutions to smaller instances of the same problem — the basis for the Mandelbrot Set, an infinitely complex shape. It challenges Euclidean views by introducing fractal dimensions that exist between 1D, 2D, and 3D. This bridges mathematics to biology (DNA replication) and linguistics (sentence structure), suggesting a Holonomic universe where the whole is contained within every part.",
+      },
+
+      // ── 7 ── PRIME NUMBERS ───────────────────────────────────
+      {
+        id: "prime-numbers",
+        num: 7,
+        icon: "💎",
+        title: "Prime Numbers",
+        subtitle: "The Unbreakable Diamonds",
+        simple: "Prime numbers are the \"lonely\" numbers like 3, 7, and 11 that can't be divided into smaller groups. They are the strongest numbers because they are made of only themselves and \"One.\" Think of them like special Lego bricks you can't take apart. Because they are so unique, they are used to keep all the secrets on the internet safe, acting like a super-strong lock nobody can pick.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A sharp, unexpected \"ping\" in a steady rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The singular, unmistakable smell of pure peppermint." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The intense, un-mixed flavor of a lemon slice." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a single sharp point of a needle (carefully!)." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a single bright star that stands out from the rest." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of standing perfectly still and \"indivisible.\"" },
+        ],
+        intuition: "That feeling of being totally unique and \"one-of-a-kind.\"",
+        links: [
+          { label: "Wikipedia: Prime Number", url: "https://en.wikipedia.org/wiki/Prime_number" },
+          { label: "RSA Encryption Explained", url: "https://www.comparitech.com/blog/information-security/rsa-encryption/" },
+          { label: "The Music of Primes", url: "https://en.wikipedia.org/wiki/The_Music_of_the_Primes" },
+        ],
+        songs: [
+          { title: "3 Is A Magic Number", artist: "Blind Melon", url: "https://www.youtube.com/watch?v=aU4pyiB-kq0" },
+          { title: "Seven Nation Army", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=0J2QdDbelmY" },
+          { title: "Edge of Seventeen", artist: "Stevie Nicks", url: "https://www.youtube.com/watch?v=Dn8-4tjPxD8" },
+        ],
+        advanced: "The Fundamental Theorem of Arithmetic states every integer greater than 1 is either a prime or a unique product of primes — making primes the \"atomic\" level of the number line. Their distribution is linked to the Riemann Hypothesis, arguably the most important unsolved problem in mathematics. Primes are essential in RSA cryptography because multiplying two large primes is easy, but factoring the result back is nearly impossible — a \"one-way door\" securing the global economy.",
+      },
+
+      // ── 8 ── THE GOLDEN RATIO ────────────────────────────────
+      {
+        id: "golden-ratio",
+        num: 8,
+        icon: "🌀",
+        title: "The Golden Ratio (φ)",
+        subtitle: "Nature's Secret Recipe for Beauty",
+        simple: "The Golden Ratio is a special number found in nature that makes things look \"perfect\" to us. If you look at a seashell or a hurricane, they often follow this special curve. It is like a secret recipe that nature uses to grow things so they are both beautiful and strong. Artists and architects use it too, so when you look at a famous painting, you might be seeing this secret math!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A melody that slowly rises and falls in a natural way." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a rose, which grows in a golden spiral." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A perfectly balanced soup where all flavors \"bloom\" at once." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Tracing the spiral on your own fingertip." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a sunflower's face." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Moving your body in a smooth, flowing dance move." },
+        ],
+        intuition: "Feeling a sense of \"correctness\" when you see a beautiful sunset.",
+        links: [
+          { label: "National Geographic: The Golden Ratio", url: "https://www.nationalgeographic.com/science/article/golden-ratio" },
+          { label: "Fibonacci Sequence in Nature", url: "https://www.mathsisfun.com/numbers/fibonacci-sequence.html" },
+          { label: "The Math Behind Beauty", url: "https://www.britannica.com/science/golden-ratio" },
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Fibonacci Sequence", artist: "BT", url: "https://www.youtube.com/watch?v=yFGPU7PSS5s" },
+          { title: "Golden", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=P3cffdsEXXw" },
+        ],
+        advanced: "The Golden Ratio (φ = (1+√5)/2 ≈ 1.618) is the limit of successive Fibonacci numbers. In geometry, it is the only ratio allowing self-scaling growth without changing shape — ubiquitous in phyllotaxis (leaf arrangement). It is the most \"irrational\" of all numbers, hardest to approximate with fractions. This unique property minimizes interference in natural systems, allowing maximum efficiency in seed packing and energy distribution.",
+      },
+
+      // ── 9 ── SETS AND GROUPS ─────────────────────────────────
+      {
+        id: "sets-groups",
+        num: 9,
+        icon: "🧺",
+        title: "Sets and Groups",
+        subtitle: "Collections That Make Sense of the Mess",
+        simple: "A \"Set\" is just a fancy way of saying a \"collection\" of things that belong together, like a box of crayons or a team of players. It shows us that even though things are different, they can work together as one group. You belong to many sets: your family, your class, and the set of all kids who like pizza! Understanding sets helps us organize the world so it doesn't feel like a big, messy pile.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "An orchestra tuning up, then playing together as one \"set\" of music." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"smell of home\" — a mix of laundry, cooking, and family." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A salad where you can taste the \"set\" of different veggies." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a bunch of marbles in a bag." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a flock of birds flying together in a \"V\" shape." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your fingers and toes as \"sub-sets\" of your whole body." },
+        ],
+        intuition: "Knowing which group of friends makes you feel the most \"you.\"",
+        links: [
+          { label: "Set Theory for Kids", url: "https://www.mathsisfun.com/sets/sets-introduction.html" },
+          { label: "Stanford: Set Theory", url: "https://plato.stanford.edu/entries/set-theory/" },
+          { label: "Wikipedia: Group Theory", url: "https://en.wikipedia.org/wiki/Group_theory" },
+        ],
+        songs: [
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=eBpYgpF1bqQ" },
+          { title: "Come Together", artist: "The Beatles", url: "https://www.youtube.com/watch?v=45cYwms990A" },
+          { title: "All Together Now", artist: "The Beatles", url: "https://www.youtube.com/watch?v=73lj5qJbrms" },
+        ],
+        advanced: "Set Theory (Zermelo-Fraenkel) is the foundational logic upon which all modern mathematics is built, defining how elements interact within universes. Group Theory studies the symmetries within these sets — vital for particle physics and the standard model. Philosophically, this addresses the \"One and the Many\" problem, suggesting identity is defined by the relationships and sets we inhabit.",
+      },
+
+      // ── 10 ── BASE SYSTEMS ───────────────────────────────────
+      {
+        id: "base-systems",
+        num: 10,
+        icon: "🖐️",
+        title: "Base Systems",
+        subtitle: "Different Glasses, Same World",
+        simple: "A base system is just a rule for how we group numbers to count them. Most of us use \"Base 10\" because we have ten fingers, but clocks use \"Base 60\" (60 seconds in a minute). It shows us that there isn't just one \"right\" way to look at the world — it depends on what \"glasses\" you are wearing. By learning different bases, we see that truth can look different depending on how you choose to measure it.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A drummer counting \"1, 2, 3, 4\" over and over (Base 4)." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a bakery that changes every hour on the clock." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eating a \"dozen\" (Base 12) donuts." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Counting your knuckles with your thumb." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a digital clock and seeing the minutes flip at 60." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the rhythm of your walking — Left, Right, Left, Right (Base 2)." },
+        ],
+        intuition: "Realizing that people from different cultures just \"count\" the world differently.",
+        links: [
+          { label: "Number Bases Explained", url: "https://www.mathsisfun.com/numbers/bases.html" },
+          { label: "History of Sexagesimal (Base 60)", url: "https://en.wikipedia.org/wiki/Sexagesimal" },
+          { label: "Binary, Octal, and Hexadecimal", url: "https://www.electronics-tutorials.ws/binary/bin_2.html" },
+        ],
+        songs: [
+          { title: "10-20-30", artist: "Big Sean", url: "https://www.youtube.com/watch?v=ZK_j8BwYBng" },
+          { title: "9 to 5", artist: "Dolly Parton", url: "https://www.youtube.com/watch?v=UbxUSsFXYo4" },
+          { title: "24K Magic", artist: "Bruno Mars", url: "https://www.youtube.com/watch?v=UqyT8IEBkvY" },
+        ],
+        advanced: "The choice of a numerical base is a representational convention. While decimal (Base 10) is standard due to human anatomy, hexadecimal (Base 16) and binary (Base 2) are more efficient for machine logic. The ancient Sumerian Base 60 survives in our measurement of time and angles (360 degrees). This reveals that while numerical values are universal truths, the symbols we use are cultural constructs — teaching the importance of Frame of Reference, a key concept in both linguistics and Einstein's Relativity.",
+      },
+
+    ],
+  },
 };
 
 // ═══ UTILITY ═══
