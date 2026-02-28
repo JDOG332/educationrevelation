@@ -4652,6 +4652,478 @@ export const TOPIC_CARDS = {
       },
 
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MATHEMATICS (promise) > ZERO & NOTHING (zero)
+    // ═══════════════════════════════════════════════════════════════
+
+    zero: [
+      { id: "placeholder-zero", num: 1, icon: "○", title: "The Power of the Placeholder", subtitle: "The Silent Hero",
+        simple: "Zero is like a seat saver in a row of chairs that tells you someone is supposed to be there, even if the chair is empty. Without this little circle, we could not tell the difference between ten dollars and one hundred dollars. It acts as a gatekeeper that helps all the other numbers stay in their correct spots.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between two notes in your favorite song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of clean, crisp air after a heavy rain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sip of cool, plain water that clears your mouth before a meal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of a calm, still breeze you can barely feel on your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear night sky where the black space makes the stars look brighter." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still with your eyes closed, feeling the balance of your body." }
+        ],
+        intuition: "Even when something looks empty, it still has a very important job. The nothing between the somethings gives them meaning.",
+        links: [
+          { label: "Scientific American: A History of Zero", url: "https://www.scientificamerican.com/article/history-of-zero/" },
+          { label: "Britannica: The Number Zero", url: "https://www.britannica.com/science/zero-mathematics" },
+          { label: "BBC: The Discovery of Nothing", url: "https://www.bbc.com/future/article/20151203-the-strange-history-of-nothing" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Nothing Else Matters", artist: "Metallica", url: "https://www.youtube.com/watch?v=tAGnKpE4NCI" },
+          { title: "Zero", artist: "Smashing Pumpkins", url: "https://www.youtube.com/watch?v=NBkjcvNztKQ" }
+        ],
+        advanced: "Zero revolutionized the Hindu-Arabic numeral system via positional notation. Digit value determined by position relative to zero, enabling arithmetic impossible with additive systems like Roman numerals. Zero as placeholder is a cognitive anchor transitioning from concrete counting to abstract algebraic thinking." },
+
+      { id: "additive-identity", num: 2, icon: "+0", title: "The Additive Identity", subtitle: "The Mirror That Changes Nothing",
+        simple: "Zero is the only number that is invisible when you add it. Five apples plus zero more is still five. This makes zero the Identity because it lets every other number keep its own name and value. It is a mirror that does not change what it sees. Zero is the ground we stand on that stays still while we move.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A steady, unchanging hum or Om sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of a fresh, unprinted piece of paper." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The neutral taste of a plain cracker." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Resting your hand on a flat, level table." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly flat, white wall with nothing on it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feet firmly planted on the ground while standing." }
+        ],
+        intuition: "Add nothing, lose nothing, stay exactly who you are. Zero is the ground that stays still while everything moves.",
+        links: [
+          { label: "Wolfram: Identity Element", url: "https://mathworld.wolfram.com/IdentityElement.html" },
+          { label: "Khan Academy: Identity Property", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/properties-of-numbers/v/identity-property-of-1-and-0" },
+          { label: "Math is Fun: Adding Zero", url: "https://www.mathsisfun.com/numbers/identity.html" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=NUnXxh5U25Y" },
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" }
+        ],
+        advanced: "The additive identity (a+0=a) defines zero as the identity element within a group or ring. This enables inverse operations and negative numbers: for every positive force, a negative force returns the system to identity, ensuring conservation." },
+
+      { id: "origin-point", num: 3, icon: "⊕", title: "The Origin Point (0,0)", subtitle: "Where Everything Starts",
+        simple: "Imagine a giant map with a tiny dot in the middle where everything starts. That dot is zero, the Origin. Every direction is measured from that starting dot. Without it, we would not know where here is. Zero gives us a home base to return to. It is the center of the circle and the start of every race.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The very first thump of a drum at the start of a parade." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of a brand new box of crayons before you draw." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The first bite of a fresh fruit." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your finger onto a single point on a map." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single bright light in a dark room." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the exact center of your chest where your heart beats." }
+        ],
+        intuition: "You are the origin of your own coordinate system. Everything is measured from where you stand.",
+        links: [
+          { label: "National Geographic: Latitude and Longitude", url: "https://education.nationalgeographic.org/resource/latitude/" },
+          { label: "NASA: Space Coordinates", url: "https://spaceplace.nasa.gov/coordinate-system/en/" },
+          { label: "MIT: Coordinates", url: "https://ocw.mit.edu/courses/mathematics/" }
+        ],
+        songs: [
+          { title: "Start Me Up", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=SGyOaCXr8Lw" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Home", artist: "Edward Sharpe & The Magnetic Zeros", url: "https://www.youtube.com/watch?v=DHEOF_rcND8" }
+        ],
+        advanced: "The origin (0,0) is the foundational reference for Cartesian coordinates. In physics, selecting the origin is gauge fixing: defining the zero-potential state. Arbitrary but necessary for calculating relative motion, energy, and universal expansion from a singular departure." },
+
+      { id: "vacuum-physics", num: 4, icon: "∅", title: "The Physics of the Vacuum", subtitle: "Nothing Is Full of Everything",
+        simple: "Scientists discovered that even nothing is full of energy! A vacuum is like a quiet ocean waiting for a wave. Zero in physics does not mean dead, it means ready. It is the stage where particles dance. Even when the stage is empty, the stage is still there.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ringing in your ears when a room is perfectly quiet." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The cold, metallic scent of a freezer." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A breath of cold winter air on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of weightlessness when you jump on a trampoline." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A pitch-black room where you cannot see your own hand." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The floaty feeling right before you fall asleep." }
+        ],
+        intuition: "Zero does not mean dead. It means ready. The empty stage is where all particles dance.",
+        links: [
+          { label: "Physics Girl: What is a Vacuum?", url: "https://www.youtube.com/c/physicsgirl" },
+          { label: "CERN: The Vacuum of Space", url: "https://home.cern/science/physics/vacuum" },
+          { label: "Space.com: What is a Vacuum?", url: "https://www.space.com/what-is-a-vacuum.html" }
+        ],
+        songs: [
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "The Great Gig in the Sky", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=cVBCE3gaNxc" },
+          { title: "Champagne Supernova", artist: "Oasis", url: "https://www.youtube.com/watch?v=tI-5uv4wryI" }
+        ],
+        advanced: "In QFT, nothingness is the vacuum state: lowest possible energy. Per Heisenberg, energy fluctuates, creating virtual particles. Physical zero is a boiling sea of potentiality. The Higgs VEV gives particles mass: the nothing determines the something." },
+
+      { id: "sunyata", num: 5, icon: "〇", title: "Sunyata: The Great Emptiness", subtitle: "The Empty Cup Ready to Be Filled",
+        simple: "Wise people in India thought of zero as Shunya: emptiness as potential. An empty cup is ready to be filled. If your mind is full of old thoughts, you cannot learn anything new. Zero reminds us to clear our minds and be open. Without empty space, there would be no room to grow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft sound of a singing bowl fading away." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense smoke disappearing into the air." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spicy flavor slowly fading until your mouth is clear." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Letting go of a heavy bag and feeling your hand become light." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear blue sky with not a single cloud." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Taking a deep breath and feeling the emptiness in your lungs before inhaling." }
+        ],
+        intuition: "If your mind is full of old thoughts, you cannot learn anything new. Zero is the clearing that makes room for everything.",
+        links: [
+          { label: "Stanford: Sunyata", url: "https://plato.stanford.edu/entries/buddhism-chan/" },
+          { label: "The Atlantic: History of Zero", url: "https://www.theatlantic.com/technology/archive/2014/03/the-origin-of-zero/284420/" },
+          { label: "Tricycle: What is Emptiness?", url: "https://tricycle.org/beginners/buddhism/what-does-emptiness-mean-in-buddhism/" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Lotus Flower", artist: "Radiohead", url: "https://www.youtube.com/watch?v=cfOa1a8hYP8" }
+        ],
+        advanced: "Sunyata means relational origination: no entity has independent, permanent essence. Everything exists only in relation. Zero embodies this mathematically. The null is the source from which all differentiated forms emerge and return." },
+
+      { id: "binary-zero", num: 6, icon: "01", title: "Binary Code: The Digital Heart", subtitle: "Off and On Build Everything",
+        simple: "Your computer talks in a secret language of Zero and One. Zero means Off, One means On. By switching really fast, the computer creates pictures, music, and movies. Zero is the darkness that lets the light of the One make a pattern. We need the Off to understand the On.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A light switch clicking on and off." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The faint smell of electricity or a warm computer." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A yes/no taste test between salt and sugar." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tapping a touch screen and feeling the tiny vibration." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering candle or a blinking traffic light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tensing a muscle (1) and then completely relaxing it (0)." }
+        ],
+        intuition: "We need the Off to understand the On. Without darkness, light is just a blur. Zero gives the One its meaning.",
+        links: [
+          { label: "Code.org: How Computers Work", url: "https://code.org/educate" },
+          { label: "Computer Hope: Binary", url: "https://www.computerhope.com/jargon/b/binary.htm" },
+          { label: "Explain That Stuff: Computers", url: "https://www.explainthatstuff.com/howcomputerswork.html" }
+        ],
+        songs: [
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+          { title: "Computer Love", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=ZtWTUt2RZh0" },
+          { title: "Mr. Roboto", artist: "Styx", url: "https://www.youtube.com/watch?v=uc6f_2nPSX8" }
+        ],
+        advanced: "Binary (Leibniz, base-2): zero is low-voltage (gate closed), one is high-voltage (gate open). The fundamental bit. Without a distinct zero state, signals would be continuous and indistinguishable. Zero is the space between signals enabling discrete data." },
+
+      { id: "limits-zero", num: 7, icon: "→0", title: "Limits and the Infinite Small", subtitle: "Approaching But Never Arriving",
+        simple: "Imagine cutting a cookie in half, then half again, forever. The pieces get so tiny you can barely see them! Zero is the goal the cookie tries to reach. This helps us measure how fast a car moves at one exact tiny second. It captures things too small to see but still important.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sound that gets quieter and quieter until it disappears." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The last faint hint of a flower after it has been moved away." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single drop of juice in a whole glass of water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A feather-light touch you can almost but not quite feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A dot in the distance that gets smaller until it is gone." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Slowing your movement until you are perfectly, infinitely still." }
+        ],
+        intuition: "An infinite series of smaller steps can still reach a destination. Zero is the vanishing point where change is captured in a single instant.",
+        links: [
+          { label: "Khan Academy: Limits", url: "https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new" },
+          { label: "MathIsFun: Limits", url: "https://www.mathsisfun.com/calculus/limits.html" },
+          { label: "MIT: Calculus", url: "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" }
+        ],
+        songs: [
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+          { title: "Fade to Black", artist: "Metallica", url: "https://www.youtube.com/watch?v=WEQnzs1PFZo" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" }
+        ],
+        advanced: "Calculus relies on lim(x->0) for derivatives and integrals. Zero is the infinitesimal boundary enabling transition from discrete to continuous math. Resolves Zeno Paradoxes: infinite diminishing steps produce a finite sum. Zero captures the moment of change." },
+
+      { id: "zero-balance", num: 8, icon: "⚖️", title: "The Great Balancing Act", subtitle: "The Middle Where Everything Meets",
+        simple: "If two friends on a see-saw weigh the same, it stays perfectly flat. That middle point is Zero. If you have three cookies (+3) and eat three (-3), you are at zero. The world likes to be even. Zero is the middle that keeps everything from tipping too far.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two people singing the exact same note together." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A neutral smell that is neither sweet nor sour." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Perfectly seasoned food, not too salty, not too bland." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding your hands together with equal pressure." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A horizon where the ocean meets the sky perfectly." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot without wobbling." }
+        ],
+        intuition: "For every push, a pull. For every gain, a cost. The universe balances itself at zero.",
+        links: [
+          { label: "Physics Classroom: Newton Third Law", url: "https://www.physicsclassroom.com/class/newtlaws/Lesson-4/Newton-s-Third-Law" },
+          { label: "Investopedia: Zero-Sum Game", url: "https://www.investopedia.com/terms/z/zero-sumgame.asp" },
+          { label: "Math is Fun: Integers", url: "https://www.mathsisfun.com/whole-numbers.html" }
+        ],
+        songs: [
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" },
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" }
+        ],
+        advanced: "Equilibrium is net-zero change. Forces sum to zero, indicating stability through synchronized opposition. Zero-sum game theory: total gains minus losses equals zero. Models competition, conservation laws, where creation necessitates a corresponding void." },
+
+      { id: "absolute-zero", num: 9, icon: "0K", title: "Absolute Zero: The Big Freeze", subtitle: "The Ultimate Pause Button",
+        simple: "Temperature measures how much atoms wiggle. Absolute Zero is so cold they stop entirely! It is the zero of movement. Scientists have never reached it perfectly. At this zero, the rules of the world act very strange and magical.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sound so low you feel it in your bones but cannot hear it." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of ice or snow in the air." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An ice cube melting on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Touching a cold metal pole in winter." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A frozen lake that looks like glass." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Being so still you cannot feel your own heartbeat." }
+        ],
+        intuition: "Even at ultimate zero, quantum mechanics says particles never truly stop. Zero-point energy remains. True nothing is impossible.",
+        links: [
+          { label: "NASA: Absolute Zero", url: "https://science.nasa.gov/" },
+          { label: "Live Science: Absolute Zero", url: "https://www.livescience.com/37055-absolute-zero.html" },
+          { label: "Scientific American: Absolute Zero", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Cold as Ice", artist: "Foreigner", url: "https://www.youtube.com/watch?v=0XoyPBg4sII" },
+          { title: "Ice Ice Baby", artist: "Vanilla Ice", url: "https://www.youtube.com/watch?v=rog8ou-ZepE" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" }
+        ],
+        advanced: "At 0K, classical motion ceases but quantum zero-point energy persists. Near absolute zero, Bose-Einstein Condensates form: atoms lose individuality and behave as a single super-atom. Superconductivity and superfluidity occur, defying classical physics." },
+
+      { id: "zero-sum", num: 10, icon: "±0", title: "The Zero-Sum Game", subtitle: "One Side Gain Is the Other Loss",
+        simple: "A Zero-Sum Game is like a pie with a set number of slices. If you take an extra slice, your friend has one less. Your gain (+1) and their loss (-1) total zero. It teaches us about sharing and connection. The whole world is one big system balanced in the end.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A seesaw going up and down with a rhythmic creak." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A garden where some flowers bloom while others return to soil." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Mixing sour with sweet to make it just right." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Playing tug-of-war where nobody is winning." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Checkers: one gains a piece every time the other loses one." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your weight shift from one leg to the other." }
+        ],
+        intuition: "Your gain plus their loss always equals zero. The universe keeps score, and the total is always balanced.",
+        links: [
+          { label: "Game Theory Academy", url: "https://en.wikipedia.org/wiki/Game_theory" },
+          { label: "Investopedia: Zero-Sum", url: "https://www.investopedia.com/terms/z/zero-sumgame.asp" },
+          { label: "Khan Academy: Game Theory", url: "https://www.khanacademy.org/economics-finance-domain/microeconomics/nash-equilibrium-tutorial" }
+        ],
+        songs: [
+          { title: "The Winner Takes It All", artist: "ABBA", url: "https://www.youtube.com/watch?v=92cwKCU8Z5c" },
+          { title: "Another One Bites the Dust", artist: "Queen", url: "https://www.youtube.com/watch?v=rY0WxgSXdEE" },
+          { title: "Karma Police", artist: "Radiohead", url: "https://www.youtube.com/watch?v=1uYWYWPc9HU" }
+        ],
+        advanced: "In game theory, zero-sum means each gain/loss is exactly balanced by others. Total gains minus losses sum to zero. Models competition, conservation laws (mass, energy, charge): creation necessitates a corresponding void." },
+    ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // MATHEMATICS (promise) > FRACTALS & SELF-SIMILARITY (fractals)
+    // ═══════════════════════════════════════════════════════════════
+
+    fractals: [
+      { id: "self-similarity", num: 1, icon: "🌀", title: "Self-Similarity", subtitle: "The Whole Lives Inside the Part",
+        simple: "Imagine broccoli that looks like a tiny green tower. Break off one piece, and that piece looks exactly like the whole tower. This happens in clouds, coastlines, and your own lungs! Nature uses the same recipe over and over, no matter the size. You carry the patterns of the whole world inside you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A Shepard Tone: a sound that feels like it rises forever but never gets higher." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A pine forest where every needle smells like the whole tree." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Biting into cauliflower; every crumb tastes like the whole vegetable." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a fern leaf where every leaflet feels like the big branch." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two mirrors facing each other: seeing yourself go on forever." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your heartbeat and realizing it follows the same rhythm as the seasons." }
+        ],
+        intuition: "You carry the patterns of the whole world inside you. The part contains the whole. As above, so below.",
+        links: [
+          { label: "Fractal Foundation: What are Fractals?", url: "https://fractalfoundation.org/resources/what-are-fractals/" },
+          { label: "BBC: The Secret Life of Chaos", url: "https://www.bbc.co.uk/programmes/b00pv1c3" },
+          { label: "TED: Mandelbrot on Roughness", url: "https://www.ted.com/talks/benoit_mandelbrot_fractals_and_the_art_of_roughness" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" }
+        ],
+        advanced: "Self-similarity is invariance under scaling transformation. Foundation of fractal geometry, moving beyond Euclidean shapes toward rough structures maintaining complexity at every scale. Simple feedback loops generate infinite morphological variety." },
+
+      { id: "recursion-fractals", num: 2, icon: "🔄", title: "Recursion", subtitle: "The Story Inside the Story",
+        simple: "Recursion is a story that says: Once upon a time, there was a girl who told a story about a girl who told a story... It never ends because the rule repeats inside itself. In math, a simple rule draws a line, then the same rule is used on the new line. This creates snowflakes and stars. Big beautiful things come from doing one small thing over and over with love.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo in a deep canyon that repeats until it fades." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of rain (petrichor) that returns with every water cycle." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sourdough starter fed and regrown day after day for years." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing a spiral seashell with your finger." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Droste effect picture: a person holds a picture of themselves." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your breath going in and out, a loop that keeps you alive." }
+        ],
+        intuition: "Big beautiful things come from doing one small simple thing over and over with love. The recipe calls for itself.",
+        links: [
+          { label: "Khan Academy: Recursion", url: "https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion" },
+          { label: "Beauty of Recursion", url: "https://www.youtube.com/results?search_query=beauty+of+recursion" },
+          { label: "Wolfram: Recursion", url: "https://mathworld.wolfram.com/Recursion.html" }
+        ],
+        songs: [
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "The Song That Never Ends", artist: "Lamb Chop", url: "https://www.youtube.com/watch?v=0U2zJOryHKQ" }
+        ],
+        advanced: "Recursion: a solution depends on smaller instances of itself. In fractals, the geometric generator is applied indefinitely. Relates to strange loops in cognitive science where hierarchical systems cycle back to their own starting point." },
+
+      { id: "iterative-functions", num: 3, icon: "⚙️", title: "Iterative Functions", subtitle: "Doing It Again and Again",
+        simple: "Iteration means doing it again. A magic box changes a number and gives you a new one. Put that new number right back in! After thousands of times, a secret shape appears. This is how computers draw mountains in video games. Our daily habits eventually shape who we are.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A drum beat that repeats, building a rhythm you can dance to." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Baking bread: the yeast works its magic over and over." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Layers of puff pastry made by folding dough again and again." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the ridges on corduroy fabric." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a pendulum swing back and forth." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking: the repeated cycle of one foot in front of the other." }
+        ],
+        intuition: "Our daily habits eventually shape who we are. Put yourself into the box, come out changed, go back in. Repeat until the secret shape appears.",
+        links: [
+          { label: "Britannica: Iterative Methods", url: "https://www.britannica.com/science/iterative-method" },
+          { label: "Generative Art", url: "https://en.wikipedia.org/wiki/Generative_art" },
+          { label: "Veritasium: The Logistic Map", url: "https://www.youtube.com/watch?v=ovJcsL7vyrk" }
+        ],
+        songs: [
+          { title: "One More Time", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=FGBhQbmPwH8" },
+          { title: "Seven Nation Army", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=0J2QdDbelmY" },
+          { title: "Interstellar Theme", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=UDVtMYqUAyw" }
+        ],
+        advanced: "Repeated application of f(x) can produce fixed points, limit cycles, or chaotic attractors. Complexity arises from simplicity. Truth is often emergent from repeated interactions rather than a single static fact." },
+
+      { id: "mandelbrot-set", num: 4, icon: "👑", title: "The Mandelbrot Set", subtitle: "The Thumbprint of God",
+        simple: "The Mandelbrot Set is an infinite map of a magical island. A simple math rule creates the most complicated shape in the world. Zoom in and find swirls, seahorses, and tiny copies of the whole island hidden inside. Even in a tiny dot, there can be a whole universe of beauty if you just look closer.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A complex symphony: you can hear one violin or the whole orchestra." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A perfume that changes scent the longer you wear it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A complex mole sauce with 30 ingredients blending into one taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Touching a textured map with mountains and valleys." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking through a kaleidoscope." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot, feeling all tiny muscles working together." }
+        ],
+        intuition: "In a tiny dot, a whole universe of beauty waits. Simple rules create infinite complexity. The thumbprint of God.",
+        links: [
+          { label: "Numberphile: The Mandelbrot Set", url: "https://www.youtube.com/watch?v=NGMRB4O922I" },
+          { label: "Mandelbrot Explorer", url: "https://mandelbrot.ophir.dev/" },
+          { label: "Scientific American: Mandelbrot Set", url: "https://www.scientificamerican.com/article/what-is-the-mandelbrot-set/" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Mandelbrot Set", artist: "Jonathan Coulton", url: "https://www.youtube.com/watch?v=ES-yKOYaXq0" }
+        ],
+        advanced: "The set of complex numbers c where f(z)=z^2+c does not diverge from z=0. A locus of connectedness in parameter space. Teaches about boundary layers: the thin line where order meets chaos, where all information interconnects at the edge." },
+
+      { id: "scaling-invariance", num: 5, icon: "⚖️", title: "Scaling Invariance", subtitle: "Size Does Not Change the Rules",
+        simple: "Have you ever mistaken a photo of a rock for a giant mountain? Some things look the same whether an inch or a mile long. Rivers branch like lightning bolts. Being big or important is not about size. A small child can follow the same rules of kindness as a grown-up.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise: sounds the same at any volume." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ocean: the same in a drop as in a wave." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure honey: a tiny drop is just as sweet as a whole jar." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling sand: one grain feels like the whole beach." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A V of geese flying looks like the V of a river delta." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your arms out and feeling the same shape as a star." }
+        ],
+        intuition: "The laws governing the small mirror the large. As above, so below. Size is just a frame; the pattern is eternal.",
+        links: [
+          { label: "Wikipedia: Scale Invariance", url: "https://en.wikipedia.org/wiki/Scale_invariance" },
+          { label: "The Physics of Scaling", url: "https://en.wikipedia.org/wiki/Scaling_law" },
+          { label: "NASA: Fractal Coastlines", url: "https://earthobservatory.nasa.gov/" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Tiny Dancer", artist: "Elton John", url: "https://www.youtube.com/watch?v=yYcyacLRPNs" }
+        ],
+        advanced: "Scale invariance: objects or laws unchanged when scales are multiplied by a common factor. Hallmark of phase transitions and critical phenomena. Scientific basis for the hermetic axiom As Above So Below." },
+
+      { id: "fractal-dimension", num: 6, icon: "📏", title: "Fractal Dimension", subtitle: "More Than a Line, Less Than a Plane",
+        simple: "A line is 1D, a square is 2D. But fractals are in-between! A fractal line is so wiggly it is more than a line but not quite a square. Like crumpling paper: more than flat, but not a solid block. You do not have to fit into one category. The crinkles in your life make you more interesting.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The graininess of a distorted guitar." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The layered smell of a garden after rain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The texture of a blackberry made of many tiny bubbles." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling a sponge or a piece of coral." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at a mountain range against the sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the complexity of your joints moving together." }
+        ],
+        intuition: "You do not have to fit into one category. The crinkles make you more interesting. You exist in fractional dimensions.",
+        links: [
+          { label: "Yale: Fractal Dimension", url: "https://users.math.yale.edu/public_html/People/frame/Fractals/" },
+          { label: "Coastline of Britain", url: "https://en.wikipedia.org/wiki/How_Long_Is_the_Coast_of_Britain%3F" },
+          { label: "3Blue1Brown: Fractal Dimensions", url: "https://www.youtube.com/watch?v=gB9n2gHsHN4" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Smooth", artist: "Santana ft. Rob Thomas", url: "https://www.youtube.com/watch?v=6Whgn_iE5uc" }
+        ],
+        advanced: "Fractal dimension (Hausdorff) provides a statistical index of complexity. Roughness is measurable, and nature exists in fractional spaces, reflecting a universe far more informationally dense than smooth Euclidean models suggest." },
+
+      { id: "l-systems", num: 7, icon: "🌿", title: "L-Systems", subtitle: "Nature Secret Growth Code",
+        simple: "L-Systems are a secret code for how plants grow. A seed code says: grow a stem, split into two, grow two more. By following simple rules, nature builds giant oaks and delicate flowers. We do not need a giant plan for a beautiful life. Just a few good rules: be kind and keep growing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A canon or round where voices follow each other." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sweet smell of a blooming flower." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fresh salad where you taste the different rules of the plants." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the veins on a leaf." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a time-lapse of a plant growing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your own bones grow as you get taller." }
+        ],
+        intuition: "A few good rules, applied with love and consistency, build beautiful lives. The seed contains the tree.",
+        links: [
+          { label: "Algorithmic Beauty of Plants", url: "http://algorithmicbotany.org/papers/#abop" },
+          { label: "L-System Generator", url: "https://onlinemathtools.com/l-system-generator" },
+          { label: "PBS Nova: Nature Code", url: "https://www.pbs.org/wgbh/nova/" }
+        ],
+        songs: [
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "Tree Village", artist: "Dance Gavin Dance", url: "https://www.youtube.com/watch?v=07PY6q5Dg48" },
+          { title: "Growth", artist: "The Alchemist", url: "https://www.youtube.com/watch?v=G4_DdBO5kPA" }
+        ],
+        advanced: "Lindenmayer systems are parallel rewriting systems modeling organism morphology. Biological complexity is algorithmic, connecting biology to computer science and linguistics. A universal language of growth transcending species." },
+
+      { id: "golden-ratio-fractals", num: 8, icon: "✨", title: "The Golden Ratio in Fractals", subtitle: "Nature Favorite Spiral",
+        simple: "The Golden Ratio (1.618) is the universe favorite shape. You find it in sunflower seeds, hurricanes, and even your face. It feels balanced. There is a natural rhythm and harmony to everything, and when we find that rhythm, we feel at home in the world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A perfect musical chord that feels right to your ears." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The balanced scent of a rose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A perfectly balanced sweet-and-sour candy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth curve of a nautilus shell." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at the Parthenon or a beautiful painting." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still and feeling your balance." }
+        ],
+        intuition: "Beauty is a sign of mathematical efficiency. The Golden Ratio bridges the Ideal and the Manifest.",
+        links: [
+          { label: "National Geographic: Golden Ratio", url: "https://www.nationalgeographic.com/science/article/golden-ratio" },
+          { label: "Fibonacci in Nature", url: "https://www.mathsisfun.com/numbers/fibonacci-sequence.html" },
+          { label: "Wolfram: Golden Ratio", url: "https://mathworld.wolfram.com/GoldenRatio.html" }
+        ],
+        songs: [
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=EkPy18xW1j8" },
+          { title: "Golden", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=P3cffdsEXXw" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" }
+        ],
+        advanced: "Phi = (1+sqrt5)/2: the most efficient packing ratio. Its prevalence in art and nature suggests deep mathematical aesthetics in reality. Beauty is often mathematical efficiency and structural integrity." },
+
+      { id: "chaos-theory", num: 9, icon: "🦋", title: "Chaos Theory", subtitle: "The Butterfly Effect",
+        simple: "Chaos Theory says even messy things have secret order underneath. The Butterfly Effect: a butterfly flapping wings in one country could cause a storm in another. Small things matter! One kind word could change someone life forever. Even in chaos, the universe follows a beautiful hidden pattern.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A waterfall: loud and messy but with a steady roar." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A busy kitchen during a holiday." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pop rocks candy: surprising and chaotic in your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the wind change direction suddenly." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching smoke curl into the air." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Trying to stay upright on a moving bus." }
+        ],
+        intuition: "Small things matter. One kind word can change a life. Free will and determinism are woven together.",
+        links: [
+          { label: "Britannica: Chaos Theory", url: "https://www.britannica.com/science/chaos-theory" },
+          { label: "The Butterfly Effect", url: "https://en.wikipedia.org/wiki/Butterfly_effect" },
+          { label: "Lorenz Attractor", url: "https://www.youtube.com/results?search_query=lorenz+attractor" }
+        ],
+        songs: [
+          { title: "Butterfly Effect", artist: "Travis Scott", url: "https://www.youtube.com/watch?v=_EyZUTDAH0U" },
+          { title: "Chaos Theory", artist: "The Enid", url: "https://www.youtube.com/results?search_query=the+enid+chaos+theory" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" }
+        ],
+        advanced: "Nonlinear dynamical systems sensitive to initial conditions settle into fractal attractors. Free will and determinism coexist: small actions feed back into the whole, creating a tapestry unpredictable short-term but structured long-term." },
+
+      { id: "holographic-principle", num: 10, icon: "💠", title: "The Holographic Principle", subtitle: "Every Part Contains the Whole",
+        simple: "Imagine a magic picture of a puppy. Rip it in half and you do not get half a puppy; you get two smaller pictures of the whole puppy! Scientists think the universe works like this. Every atom contains information for the whole universe. You are a little universe yourself, carrying the light of everything inside you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A recording where you can hear the room the music was played in." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of home, made of many tiny memories." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A soup where every spoonful has all the spices combined." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a handful of water; it feels like the whole ocean." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at an iridescent soap bubble." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and knowing exactly where your whole body is." }
+        ],
+        intuition: "You are a little universe, carrying the light of everything inside you. Separation is an illusion of scale.",
+        links: [
+          { label: "Scientific American: Holographic Universe", url: "https://www.scientificamerican.com/article/the-holographic-universe/" },
+          { label: "Susskind: Holographic Principle", url: "https://www.youtube.com/watch?v=2DIl3Hfh9tY" },
+          { label: "Holonomic Brain Theory", url: "https://en.wikipedia.org/wiki/Holonomic_brain_theory" }
+        ],
+        songs: [
+          { title: "Mirrors", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Reflection", artist: "Lea Salonga (Mulan)", url: "https://www.youtube.com/watch?v=1AfNOKQdY-U" }
+        ],
+        advanced: "From string theory and quantum gravity: a volume of space can be described by information encoded on a lower-dimensional boundary. The information of the totality is present at every point. Separation is a perspective illusion caused by our scale of observation." },
+    ],
+
   },
 };
 
