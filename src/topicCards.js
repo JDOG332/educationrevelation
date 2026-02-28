@@ -2481,6 +2481,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 🌋 EARTH & GEOLOGY (earth)
+    // "The planet under your feet — rocks, plates, volcanoes"
+    // ═══════════════════════════════════════════════════════════════
+
+    earth: [
+
+      // ── 1 ── PLATE TECTONICS ─────────────────────────────────
+      {
+        id: "plate-tectonics",
+        num: 1,
+        icon: "🧩",
+        title: "Plate Tectonics",
+        subtitle: "The Giant Jigsaw Puzzle",
+        simple: "The Earth's skin isn't one solid piece; it's a giant jigsaw puzzle. These puzzle pieces (plates) float on hot, gooey rock. When they move, they bump, slide, or pull apart, making mountains grow and the ground shake. It's the Earth's way of recycling itself.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to the low, rhythmic rumble of a heavy stone sliding across pavement." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The sharp, metallic scent of wet rocks or \"petrichor\" after a rain." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A pinch of sea salt — reminding you that the ocean floor is constantly being reborn." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Press your palms together and slide them hard until they \"snap\" forward." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a map and see how South America and Africa fit together like lost friends." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stand still and feel your weight shifting; you are standing on a moving ship." },
+        ],
+        intuition: "You are not standing on \"dead\" ground. You are riding a slow-moving, living raft that connects every continent into one single, breathing story.",
+        links: [
+          { label: "National Geographic: Plate Tectonics", url: "https://www.nationalgeographic.org/encyclopedia/plate-tectonics/" },
+          { label: "IRIS: Earthquake Science", url: "https://www.iris.edu/hq/inclass/animation/plate_tectonics_subduction_zone" },
+          { label: "NOAA: Ocean Floor Mapping", url: "https://oceanexplorer.noaa.gov/facts/plate-tectonics.html" },
+        ],
+        songs: [
+          { title: "I Feel The Earth Move", artist: "Carole King", url: "https://www.youtube.com/watch?v=6913K297T-w" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Shake, Rattle and Roll", artist: "Big Joe Turner", url: "https://www.youtube.com/watch?v=20Feq_Nt3nM" },
+        ],
+        advanced: "Plate Tectonics is the unifying theory of geology, describing the lithosphere's kinematics driven by mantle convection. It reconciles biogeography (fossil distribution) with physical geography (trench formation and orogeny). This is the Earth's thermal management system — dissipating internal heat while maintaining the geochemical cycles necessary for life. It mirrors Societal Evolution: plates collide to form heights (mountains) or pull apart to create new paths (rifts), just as ideologies clash and merge to shape the topography of culture.",
+      },
+
+      // ── 2 ── DEEP TIME ───────────────────────────────────────
+      {
+        id: "deep-time",
+        num: 2,
+        icon: "⏳",
+        title: "Deep Time",
+        subtitle: "4.5 Billion Years of Patience",
+        simple: "Earth is very, very, very old — 4.5 billion years! If the Earth's whole life was one single day, humans only showed up in the very last second before midnight. Most of what happens to the Earth happens so slowly we can't see it, like a fingernail growing.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The slow, steady drip of water in a cave, one drop every minute." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The dusty, ancient scent of a very old library book." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Water from a deep well that has been underground for thousands of years." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Run your hand over a smooth river stone that took a million years to polish." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at the stars; the light you see started its journey long before you were born." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and imagine your life as one tiny spark in a giant, endless fire." },
+        ],
+        intuition: "Your \"now\" is a tiny part of a massive \"forever.\" You are a descendant of billions of years of success.",
+        links: [
+          { label: "Smithsonian: Geologic Time", url: "https://paleobiology.si.edu/geotime/main/" },
+          { label: "The Anthropocene Project", url: "https://www.theanthropocene.org/" },
+          { label: "PBS Eons (YouTube)", url: "https://www.youtube.com/c/eons" },
+        ],
+        songs: [
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2rk" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOtWgeA" },
+        ],
+        advanced: "Deep Time (Chronostratigraphy) detaches human perception from geological reality. It utilizes radioactive decay (isochron dating) to establish a terminal baseline for planetary development. It challenges our \"temporal parochialism,\" forcing us to view the Earth as a dynamic equilibrium rather than a static backdrop. It connects to Asymptotic Mathematics: as we look further back, individual events blur into trends, like data points disappearing into a single predictable curve.",
+      },
+
+      // ── 3 ── INTERNAL LAYERING ───────────────────────────────
+      {
+        id: "internal-layers",
+        num: 3,
+        icon: "🧅",
+        title: "Internal Layering",
+        subtitle: "Earth Is Like a Giant Peach",
+        simple: "Earth is like a giant peach. It has a thin skin (the crust), a thick fruity part (the mantle), and a hard pit in the middle (the core). The middle is so hot it stays liquid, while the very center is a solid ball of metal squeezed tight by the weight of the whole world.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The muffled \"thump-thump\" of your heart, protected deep inside you." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The sulfurous, eggy smell near a hot spring." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A hard-boiled egg — feeling the difference between the shell, the white, and the yolk." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Hold a warm stone in your cold hand; feel the heat hiding inside." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a nesting doll (Matryoshka) where one world lives inside another." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel your bones supporting your skin; you are layered too." },
+        ],
+        intuition: "What you see on the outside is only possible because of the power and heat hidden deep within.",
+        links: [
+          { label: "NASA: Structure of the Earth", url: "https://science.nasa.gov/earth/structure/" },
+          { label: "Geology.com: Earth's Interior", url: "https://geology.com/nsta/earth-internal-structure.shtml" },
+          { label: "National Geographic: Core", url: "https://www.nationalgeographic.org/encyclopedia/core/" },
+        ],
+        songs: [
+          { title: "Inner City Blues", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=57Ykv1D0qEE" },
+          { title: "Heart of Gold", artist: "Neil Young", url: "https://www.youtube.com/watch?v=X3iaR9SAs68" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=kBYHwH1Vb-c" },
+        ],
+        advanced: "Planetary differentiation, driven by gravity and heat, organized Earth into a density-stratified system. The Core-Mantle Boundary (CMB) is a zone of intense thermal and chemical exchange. This internal structure facilitates the magnetosphere and plate tectonics, acting as the planet's primary heat engine. It mirrors Psychology: the crust is the Conscious ego, the mantle the Subconscious, and the core the Primal Unconscious — the hidden heat that drives our visible actions.",
+      },
+
+      // ── 4 ── THE ROCK CYCLE ──────────────────────────────────
+      {
+        id: "rock-cycle",
+        num: 4,
+        icon: "🔄",
+        title: "The Rock Cycle",
+        subtitle: "Nothing Is Ever Lost",
+        simple: "Rocks never die; they just change shape! A rock can melt into liquid (Igneous), crumble into sand and stick back together (Sedimentary), or get squeezed by heat until it changes completely (Metamorphic). Every rock you find was once something else.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"clack\" of two different rocks hitting each other." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of hot asphalt (like melting lava)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The gritty feel of a tiny grain of sand (weathered rock)." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel the difference between rough sandstone and smooth marble." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a candle melt and then harden again." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stretch your muscles; like rocks, you are being \"reshaped\" by pressure." },
+        ],
+        intuition: "Nothing is ever truly lost. Everything — including you — is just in a different stage of a beautiful, never-ending change.",
+        links: [
+          { label: "Annenberg Learner: Rock Cycle", url: "https://www.learner.org/series/interactive-rock-cycle/" },
+          { label: "The Geological Society: Rock Cycle", url: "https://www.geolsoc.org.uk/ks3/gsl/education/resources/rockcycle.html" },
+          { label: "Mineralogical Society of America", url: "http://www.minsocam.org/msa/collectors_corner/id/rock_key.htm" },
+        ],
+        songs: [
+          { title: "Like a Rolling Stone", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=g1S5ITDTzno" },
+          { title: "Solid", artist: "Ashford & Simpson", url: "https://www.youtube.com/watch?v=9_pP86o92kc" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=xMQ0Ryy01yE" },
+        ],
+        advanced: "The Rock Cycle represents the lithospheric manifestation of the Law of Conservation of Mass. Through subduction, lithification, and metamorphism, the crust undergoes constant chemical and textural re-equilibration. It is a closed-loop system powered by both internal (geothermal) and external (solar/tidal) energy. It connects to Reincarnation and Continuity: the \"form\" is temporary, but the \"substance\" is eternal.",
+      },
+
+      // ── 5 ── HYDROLOGICAL CYCLE ──────────────────────────────
+      {
+        id: "water-cycle",
+        num: 5,
+        icon: "💧",
+        title: "Hydrological Cycle",
+        subtitle: "Dinosaur Bath Water",
+        simple: "The Earth drinks the same water over and over. Water travels from the ocean to the sky, turns into clouds, falls as rain, and flows back to the sea. The water you drank today might have been part of a dinosaur's bath millions of years ago!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The peaceful sound of a bubbling brook or rain hitting a window." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The fresh, clean scent of the air after a thunderstorm (ozone)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A cold glass of water — taste the \"life\" in it." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Dip your hand in a bowl of water and watch it disappear (evaporate)." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch steam rise from a hot cup of cocoa." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel the sweat on your skin cooling you down; you are part of the cycle." },
+        ],
+        intuition: "You are physically connected to every ocean, every cloud, and every living thing through the water that flows through us all.",
+        links: [
+          { label: "USGS: The Water Cycle", url: "https://www.usgs.gov/special-topics/water-science-school/science/fundamentals-water-cycle" },
+          { label: "NASA Earth Observatory: Water Cycle", url: "https://earthobservatory.nasa.gov/features/Water" },
+          { label: "UN Water: The Cycle", url: "https://www.unwater.org/water-facts/water-cycle" },
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsWw" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Waterfalls", artist: "TLC", url: "https://www.youtube.com/watch?v=8WEtxJ4-sh4" },
+        ],
+        advanced: "The Hydrological Cycle is the planet's primary thermoregulatory and erosive mechanism. It involves phase changes (solid, liquid, gas) that facilitate latent heat transfer across latitudes. This cycle is the \"connective tissue\" between the atmosphere, hydrosphere, and lithosphere, driving global climate and nutrient transport. It connects to Economics: value, like water, must flow to sustain the system; stagnation in either leads to the death of the local environment.",
+      },
+
+      // ── 6 ── MANTLE CONVECTION ───────────────────────────────
+      {
+        id: "mantle-convection",
+        num: 6,
+        icon: "♨️",
+        title: "Mantle Convection",
+        subtitle: "The Engine Below",
+        simple: "Inside the Earth, hot rock acts like boiling soup. The hot parts rise up, cool down, and then sink back down. This \"circular\" motion is the engine that pushes the giant tectonic plates around on the surface.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The low \"glub-glub\" of a thick pot of oatmeal simmering." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of steam rising from a hot pavement." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A warm soup that is hot at the bottom and cooler on top." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Hold your hand above a heater and feel the warm air rising (convection)." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch the \"lava\" move up and down inside a lava lamp." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel the heat rising from your body after you run fast." },
+        ],
+        intuition: "Deep, invisible forces are the reason the world looks the way it does on the outside.",
+        links: [
+          { label: "National Geographic: Mantle", url: "https://www.nationalgeographic.org/encyclopedia/mantle/" },
+          { label: "ScienceDirect: Mantle Dynamics", url: "https://www.sciencedirect.com/topics/earth-and-planetary-sciences/mantle-convection" },
+          { label: "Education Perfect: Mantle Convection", url: "https://www.youtube.com/watch?v=MmS6_S_x6O4" },
+        ],
+        songs: [
+          { title: "Great Balls of Fire", artist: "Jerry Lee Lewis", url: "https://www.youtube.com/watch?v=7IjgZGhHrYY" },
+          { title: "Burnin' For You", artist: "Blue Öyster Cult", url: "https://www.youtube.com/watch?v=kn-8n4_YnN0" },
+          { title: "Ring of Fire", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=It7107ELQvY" },
+        ],
+        advanced: "Mantle Convection is a Rayleigh-Bénard instability on a planetary scale. It is the process by which Earth sheds its primordial and radiogenic heat. The viscosity of the mantle allows for plastic flow over geological timescales, creating the advection currents that drive plate kinematics and volcanic hotspots. It mirrors Grassroots Movements: small, \"hot\" ideas at the bottom of a hierarchy rise, circulate, and eventually move the massive \"plates\" of established law.",
+      },
+
+      // ── 7 ── MAGNETIC FIELD GENERATION ───────────────────────
+      {
+        id: "magnetic-field",
+        num: 7,
+        icon: "🧲",
+        title: "Magnetic Field Generation",
+        subtitle: "Earth's Invisible Shield",
+        simple: "Earth is a giant magnet! Deep inside, swirling liquid metal creates an invisible shield. This shield protects us from the sun's \"solar wind\" which would otherwise blow away our air. Without this magnet, we couldn't breathe.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The static \"crackle\" on a radio." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"electric\" smell near a large battery or a copy machine." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The tingle of a 9-volt battery on your tongue — imagine the \"zing.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel the \"push\" and \"pull\" of two magnets resisting each other." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a compass needle always pointing North." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel the gravity pulling you down; now imagine a \"pull\" protecting you from above." },
+        ],
+        intuition: "You are being protected by a silent, invisible force field every single second of your life.",
+        links: [
+          { label: "NASA: Earth's Magnetosphere", url: "https://science.nasa.gov/heliophysics/focus-areas/magnetosphere/" },
+          { label: "ESA: The Magnetic Earth", url: "https://www.esa.int/Applications/Observing_the_Earth/FutureEO/Swarm/The_magnetic_Earth" },
+          { label: "National Ocean Service: Magnetic Pole", url: "https://oceanservice.noaa.gov/facts/magnetic.html" },
+        ],
+        songs: [
+          { title: "You Got The Love", artist: "Candi Staton", url: "https://www.youtube.com/watch?v=H73S8yD53m4" },
+          { title: "Electric Avenue", artist: "Eddy Grant", url: "https://www.youtube.com/watch?v=vtPk5IUbdH0" },
+          { title: "Magnetic", artist: "Earth, Wind & Fire", url: "https://www.youtube.com/watch?v=J_6_0LhP-p4" },
+        ],
+        advanced: "The \"Geodynamo\" is generated by the helical motion of molten iron in the outer core, driven by Coriolis forces and convection. This creates a dipolar magnetic field that deflects ionizing solar radiation. This magnetohydrodynamic process is essential for atmospheric retention and the shielding of biological DNA from cosmic rays. It connects to Integrity and Character: your \"inner core\" (values) creates an invisible field (reputation) that protects you from external storms.",
+      },
+
+      // ── 8 ── PRINCIPLES OF STRATIGRAPHY ──────────────────────
+      {
+        id: "stratigraphy",
+        num: 8,
+        icon: "📖",
+        title: "Principles of Stratigraphy",
+        subtitle: "Earth's History Book",
+        simple: "Rocks are like a giant history book. The oldest stories are at the bottom, and the newest stories are at the top. By looking at the layers, we can \"read\" what happened millions of years ago, like who lived there and what the weather was like.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"thud\" of a heavy book closing." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The damp, earthy smell of a freshly dug hole in the ground." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A multi-layered cake — tasting each flavor as you go down." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Run your fingers over the ridges of a stack of papers." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a tall canyon with different colored stripes of rock." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Think of your own memories; the oldest ones are \"buried\" deepest." },
+        ],
+        intuition: "The ground you walk on is a library. Every layer is a page waiting to be read.",
+        links: [
+          { label: "British Geological Survey: Stratigraphy", url: "https://www.bgs.ac.uk/discovering-geology/fossils-and-geological-time/stratigraphy/" },
+          { label: "Grand Canyon: Layers of Time", url: "https://www.nps.gov/grca/learn/nature/geologicformations.htm" },
+          { label: "Digital Encyclopedia of Ancient Life", url: "https://www.digitalatlasofancientlife.org/learn/stratigraphy/" },
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Levels", artist: "Avicii", url: "https://www.youtube.com/watch?v=_ovdm2yX4MA" },
+          { title: "The Story", artist: "Brandi Carlile", url: "https://www.youtube.com/watch?v=o8pQLtGz_xM" },
+        ],
+        advanced: "Stratigraphy relies on the Principle of Superposition and Faunal Succession to establish relative chronologies. It is the spatial representation of temporal events. Through correlation, geologists synchronize disparate rock units across continents, reconstructing the paleogeography and paleoecology of the past. It connects to Archetypal Psychology: just as Earth layers its history, the human mind layers its experiences, where foundational childhood layers dictate the surface landscape of adulthood.",
+      },
+
+      // ── 9 ── ISOSTASY ────────────────────────────────────────
+      {
+        id: "isostasy",
+        num: 9,
+        icon: "⚖️",
+        title: "Isostasy",
+        subtitle: "The Earth's Perfect Balance",
+        simple: "The Earth's crust \"floats\" on the mantle like a boat on water. If you put something heavy on it (like a giant ice sheet), the crust sinks. If the ice melts, the crust slowly pops back up! It's all about finding a perfect balance.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"creak\" of a wooden floor when you step on it." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The fresh, salty air of a floating dock." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A marshmallow floating in hot chocolate — press it down and watch it rise." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Push a sponge into a bowl of water and feel it push back." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a boat sink a little deeper when people climb on board." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel your feet sink into a soft mattress and then the mattress rise when you get up." },
+        ],
+        intuition: "Everything in nature is constantly trying to find a peaceful balance. Even the giant mountains are \"floating\" in a perfect spot.",
+        links: [
+          { label: "Britannica: Isostasy", url: "https://www.britannica.com/science/isostasy-geology" },
+          { label: "Post-Glacial Rebound", url: "https://www.universetoday.com/142345/the-earth-is-still-rebounding-from-the-last-ice-age/" },
+          { label: "Phys.org: Crustal Balance", url: "https://phys.org/news/2021-09-earth-crust-isostatic-rebound.html" },
+        ],
+        songs: [
+          { title: "Balance", artist: "Sara Bareilles", url: "https://www.youtube.com/watch?v=rEInXfDscXw" },
+          { title: "The Weight", artist: "The Band", url: "https://www.youtube.com/watch?v=sjCw3-YjkU0" },
+          { title: "Upside Down", artist: "Diana Ross", url: "https://www.youtube.com/watch?v=GIAtE6LbbM4" },
+        ],
+        advanced: "Isostasy is the state of gravitational equilibrium between the lithosphere and asthenosphere. It follows Archimedes' Principle: the crust floats at an elevation dependent on its thickness and density. This explains Post-Glacial Rebound, where landmasses continue to rise thousands of years after ice sheets melted. It mirrors Personal Resilience: when heavy burdens are placed on us we sink; when they are removed, we have an innate \"isostatic\" ability to rebound to our true level.",
+      },
+
+      // ── 10 ── HOTSPOT VOLCANISM ──────────────────────────────
+      {
+        id: "hotspot-volcanism",
+        num: 10,
+        icon: "🌋",
+        title: "Hotspot Volcanism",
+        subtitle: "The Steady Flame Below",
+        simple: "Most volcanoes happen where plates meet, but some come from a \"hot spot\" deep underground that stays in one place. As the plate moves over the hot spot, it creates a chain of islands, like Hawaii. It's like moving a piece of paper over a steady candle flame.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"hiss\" of steam escaping a tea kettle." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smoky, burnt smell of a campfire." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A spicy chili pepper — a \"hot spot\" on your tongue!" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel the warmth of a heating pad in one specific spot on your back." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a line of bubbles rising in a glass of soda." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Imagine walking across a hot beach; you keep moving, but the heat stays in the sand." },
+        ],
+        intuition: "Even when everything else is moving, there are steady \"sources\" of power that stay exactly where they are to create something new.",
+        links: [
+          { label: "USGS: Hawaii Hotspot", url: "https://www.usgs.gov/observatories/hvo/how-volcanoes-work" },
+          { label: "National Geographic: Hotspots", url: "https://www.nationalgeographic.org/encyclopedia/hot-spot/" },
+          { label: "UNESCO: Volcanoes of the World", url: "https://whc.unesco.org/en/list/234" },
+        ],
+        songs: [
+          { title: "Hot Stuff", artist: "Donna Summer", url: "https://www.youtube.com/watch?v=1IdEhvuNxV8" },
+          { title: "Island in the Sun", artist: "Weezer", url: "https://www.youtube.com/watch?v=0C3zgYW_FAM" },
+          { title: "Firework", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=QGJuMBdaqIw" },
+        ],
+        advanced: "Hotspot Volcanism (Mantle Plumes) provides a \"fixed\" reference frame for plate motion. Unlike boundary volcanism, hotspots are intraplate phenomena. They create volcanic \"age-progressive\" chains (like the Hawaiian-Emperor seamount chain), allowing geologists to calculate the absolute velocity and direction of tectonic plates over millions of years. Certain people act as \"hotspots\" in history — they stay fixed in their truth while the plate of humanity moves over them, creating chains of new ideas and islands of progress.",
+      },
+
+    ],
   },
 };
 
