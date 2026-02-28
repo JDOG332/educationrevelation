@@ -1863,8 +1863,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
-  },
-};
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 🧪 CHEMISTRY & BONDS (chemistry)
+    // "What things are made of and how they stick together"
+    // ═══════════════════════════════════════════════════════════════
+
+    chemistry: [
+
+      // ── 1 ── CONSERVATION OF MASS & ENERGY ───────────────────
+      {
+        id: "conservation-mass",
+        num: 1,
+        icon: "♾️",
+        title: "The Conservation of Mass and Energy",
+        subtitle: "Nothing Is Ever Lost",
+        simple: "Nothing is ever truly lost, and nothing is ever truly new. Everything that exists just changes its \"outfit.\" If you bake a cake, every tiny bit of flour and sugar is still there, just mixed into a new form.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a constant waterfall; the water changes position but the roar remains one." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of rain (petrichor); it is the earth's old dust meeting recycled clouds." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A piece of ice melting in your mouth; it changes from solid to liquid but stays the same \"stuff.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Rubbing your hands together; kinetic energy becomes heat. It didn't vanish; it moved." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a candle burn; the wax becomes invisible gas, but it still weighs the same in the air." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your breath go in and out; you are a vessel for air that has been here for billions of years." },
+        ],
+        intuition: "That oxygen was once inside a star, then a dinosaur, then a tree. You are holding the history of the universe in your lungs right now.",
+        links: [
+          { label: "Conservation of Mass — Britannica", url: "https://www.britannica.com/science/law-of-conservation-of-mass" },
+          { label: "First Law of Thermodynamics — Energy Education", url: "https://energyeducation.ca/encyclopedia/Law_of_conservation_of_energy" },
+          { label: "Matter & Energy in Ecosystems — Nat Geo", url: "https://education.nationalgeographic.org/resource/resource-library-biogeochemical-cycles" },
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=cRjQCvfcXn0" },
+        ],
+        advanced: "The First Law of Thermodynamics and Conservation of Mass dictate a closed-system reality where total E and m remain invariant. This aligns with Stoichiometry in chemistry and Noether's Theorem in physics, suggesting that for every symmetry in nature, there is a corresponding conservation law.",
+      },
+
+      // ── 2 ── ELECTROSTATIC ATTRACTION ─────────────────────────
+      {
+        id: "coulombs-law",
+        num: 2,
+        icon: "🧲",
+        title: "Electrostatic Attraction",
+        subtitle: "The Universal Glue",
+        simple: "The whole world stays together because opposites love to be near each other. Tiny \"plus\" parts and \"minus\" parts pull on one another like the strongest invisible magnets in the universe.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"crackle\" of a static spark on a rug." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The sharp scent of ozone after a lightning strike (huge static attraction)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The zing of a battery on the tongue — a \"pull\" you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pulling a sweater off and feeling your hair stand up to reach it." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching lint cling to a screen." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"pull\" in your chest when you are near someone you love — a social \"static.\"" },
+        ],
+        intuition: "Rub a balloon on your hair and feel the tug. That tiny pull is the exact same force holding every atom in your body together.",
+        links: [
+          { label: "Coulomb's Law — Physics Classroom", url: "https://www.physicsclassroom.com/class/estatics/Lesson-3/Coulomb-s-Law" },
+          { label: "Fundamental Forces — CERN", url: "https://home.cern/science/physics/standard-model" },
+          { label: "Static Electricity — Library of Congress", url: "https://www.loc.gov/everyday-mysteries/item/how-does-static-electricity-work/" },
+        ],
+        songs: [
+          { title: "Electric Feel", artist: "MGMT", url: "https://www.youtube.com/watch?v=MmZexg8sxyk" },
+          { title: "Opposites Attract", artist: "Paula Abdul", url: "https://www.youtube.com/watch?v=xweiQukBM_k" },
+          { title: "Suspicious Minds", artist: "Elvis Presley", url: "https://www.youtube.com/watch?v=Wb0Jmy-JYbA" },
+        ],
+        advanced: "Coulomb's Law (F = k·q₁q₂/r²) defines the force between two point charges. This electrostatic interaction is the foundation of the electromagnetic force. It relates to Jungian Psychology (Anima/Animus) and Taoist Dualism (Yin/Yang), where tension between opposing poles creates the movement and binding of life.",
+      },
+
+      // ── 3 ── THE OCTET RULE ──────────────────────────────────
+      {
+        id: "octet-rule",
+        num: 3,
+        icon: "🧩",
+        title: "The Octet Rule & Electron Stability",
+        subtitle: "Full Hands, Happy Atom",
+        simple: "Atoms are like people who feel better when their \"hands\" are full. Most atoms want exactly eight electrons to feel calm and happy. They will trade or share until they get that perfect number.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"click\" of two Lego bricks snapping together perfectly." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of clean, salty air (stable salt crystals)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The balanced taste of pure water (Hydrogen and Oxygen finding peace)." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Holding hands with someone where your fingers interlock perfectly." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A finished 8-piece puzzle." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of \"fullness\" after a good meal." },
+        ],
+        intuition: "Imagine having 7 fingers and finding one more to make a perfect set of 8. That \"sigh\" of relief is what an atom feels when it bonds.",
+        links: [
+          { label: "The Octet Rule — Chemistry LibreTexts", url: "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introduction_to_General_Chemistry/03%253A_Ionic_Bonding/3.02%253A_The_Octet_Rule" },
+          { label: "Noble Gases and Stability — RSC", url: "https://www.rsc.org/periodic-table/groups/18/" },
+          { label: "Lewis Dot Structures — Khan Academy", url: "https://www.khanacademy.org/science/ap-chemistry-beta/x2eefde699e1a122:molecular-and-ionic-compound-structure-and-properties/x2eefde699e1a122:lewis-diagrams/v/lewis-structures-part-1" },
+        ],
+        songs: [
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "Better Together", artist: "Jack Johnson", url: "https://www.youtube.com/watch?v=u57d4_b_YgI" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+        ],
+        advanced: "The Octet Rule reflects the filling of s and p valence orbitals (ns²np⁶), representing a drive toward a Global Energy Minimum. This mirrors Gestalt Theory's \"Law of Closure\" — where the mind seeks to complete unfinished shapes to reach equilibrium.",
+      },
+
+      // ── 4 ── COVALENT BONDING ────────────────────────────────
+      {
+        id: "covalent-bond",
+        num: 4,
+        icon: "🤝",
+        title: "Covalent Bonding",
+        subtitle: "Sharing to Win",
+        simple: "This is when two atoms decide to share what they have so they both win. They hold onto the same electrons like two kids holding onto the same toy so they can both play.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Two voices singing in perfect harmony." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a rose (complex shared carbon bonds)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Sugar — Carbon, Hydrogen, and Oxygen sharing everything." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "A firm \"pinky swear\" link." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Two circles overlapping to make a heart shape." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Leaning your back against a friend's back to stay standing." },
+        ],
+        intuition: "Lock your fingers together tightly. Try to pull them apart. That strength you feel is the same strength holding your DNA together.",
+        links: [
+          { label: "What is a Covalent Bond? — Scientific American", url: "https://www.scientificamerican.com/article/chemical-bonding-covalent-bonds/" },
+          { label: "Organic Chemistry Basics", url: "https://www.masterorganicchemistry.com/2010/05/19/introduction-to-covalent-bonding/" },
+          { label: "Structure of DNA — Oxford", url: "https://academic.oup.com/nar/article/31/13/3406/1103323" },
+        ],
+        songs: [
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsWw" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6AszNE" },
+        ],
+        advanced: "Covalent bonding involves the sharing of electron pairs. It creates discrete molecular entities with specific bond angles and lengths determined by orbital hybridization (sp, sp², sp³). This is the chemical equivalent of Mutualism in biology or Game Theory's \"Win-Win\" scenarios.",
+      },
+
+      // ── 5 ── IONIC BONDING ───────────────────────────────────
+      {
+        id: "ionic-bond",
+        num: 5,
+        icon: "💎",
+        title: "Ionic Bonding",
+        subtitle: "The Give and Take",
+        simple: "One atom is a \"giver\" and one is a \"taker.\" The taker grabs an electron, and now they are both charged up like magnets. They stay stuck together not by sharing, but by the \"pull\" of their new charges.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"clack\" of two heavy magnets hitting." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a salt flat or the ocean spray." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Table salt — the classic \"stuck together\" pair." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the sharp, hard edge of a crystal." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A perfectly organized grid or checkerboard." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of being \"anchored\" or heavy." },
+        ],
+        intuition: "Press two magnets together. You aren't \"sharing\" anything, but the pull makes them one. That \"snap\" is an ionic bond.",
+        links: [
+          { label: "Ionic vs Covalent Bonds — Diffen", url: "https://www.diffen.com/difference/Covalent_Bonds_vs_Ionic_Bonds" },
+          { label: "Crystal Lattice Structure — Britannica", url: "https://www.britannica.com/science/crystal-lattice" },
+          { label: "Properties of Salts — Purdue", url: "https://chemed.chem.purdue.edu/genchem/topicreview/bp/ch3/properties.html" },
+        ],
+        songs: [
+          { title: "You Really Got a Hold on Me", artist: "The Miracles", url: "https://www.youtube.com/watch?v=AdD6T7-mK_s" },
+          { title: "Under My Thumb", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=nYYTLJ8YHi4" },
+          { title: "Magnetic", artist: "Earth, Wind & Fire", url: "https://www.youtube.com/watch?v=XpWp_Uo4_tA" },
+        ],
+        advanced: "Ionic bonding results from the complete transfer of valence electrons, leading to a crystalline lattice rather than discrete molecules. The bond energy is described by Lattice Energy equations. This mirrors Economic Transactions (transfer of capital) or Social Hierarchy, where stability is maintained through clear roles.",
+      },
+
+      // ── 6 ── ATOMIC ORBITALS ─────────────────────────────────
+      {
+        id: "orbitals",
+        num: 6,
+        icon: "☁️",
+        title: "Atomic Orbitals & Quantum Shells",
+        subtitle: "The Fuzzy Cloud",
+        simple: "Electrons don't fly in circles like bees. They \"teleport\" inside fuzzy clouds. Bonding happens when two fuzzy clouds melt into one big cloud.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"hum\" of a beehive where you can't see the individual bees." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of fog or mist in a forest." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Cotton candy melting — it's there, then it's everywhere." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Moving your hand through thick smoke." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A blurry photo that looks like a beautiful shape." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of \"dizziness\" or spinning without moving." },
+        ],
+        intuition: "Try to catch a shadow. You can see where it is, but you can't grab it. That \"fuzzy\" presence is exactly how an electron exists.",
+        links: [
+          { label: "Quantum Mechanical Model — Khan Academy", url: "https://www.khanacademy.org/science/physics/quantum-physics/quantum-numbers-and-orbitals/a/the-quantum-mechanical-model-of-the-atom" },
+          { label: "Schrödinger — Nobel Prize", url: "https://www.nobelprize.org/prizes/physics/1933/schrodinger/biographical/" },
+          { label: "Visualizing Atomic Orbitals", url: "https://www.orbitals.com/orb/orbtable.htm" },
+        ],
+        songs: [
+          { title: "Strawberry Fields Forever", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HtUH9z_Oey8" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=Y3ywicffOj4" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=u9Dg-g7t2LI" },
+        ],
+        advanced: "Orbitals are probability density functions derived from the Schrödinger wave equation (Ψ). Bonding is the Linear Combination of Atomic Orbitals (LCAO) to form molecular orbitals. This aligns with Probability Theory and Post-Structuralism, where reality is a range of possibilities until an interaction occurs.",
+      },
+
+      // ── 7 ── ELECTRONEGATIVITY ───────────────────────────────
+      {
+        id: "electronegativity",
+        num: 7,
+        icon: "➰",
+        title: "Electronegativity",
+        subtitle: "The Tug-of-War",
+        simple: "Some atoms are \"greedy\" and pull harder on the shared electrons. This makes one side of the molecule a little bit \"plus\" and the other \"minus,\" like a battery.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The straining sound of a rope in tug-of-war." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"sharp\" smell of vinegar or lemon (acids are \"pullers\")." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Sourness! It's the \"tug\" on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of a rubber band stretched tight." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Water droplets sticking to a window (they stick because they are polar!)." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling \"off-balance\" or leaning to one side." },
+        ],
+        intuition: "Pull on a towel with a friend, but you pull much harder. The towel moves toward you. That \"unevenness\" is why water lets you live!",
+        links: [
+          { label: "Pauling's Electronegativity Scale — Live Science", url: "https://www.livescience.com/62453-electronegativity.html" },
+          { label: "Polar vs Nonpolar Bonds", url: "https://academic.oup.com/book/26913/chapter/195971485" },
+          { label: "Why Water is Polar — USGS", url: "https://www.usgs.gov/special-topics/water-science-school/science/water-molecules-and-polarity" },
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Chain of Fools", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=fDxzQJaA228" },
+          { title: "Tug of War", artist: "Paul McCartney", url: "https://www.youtube.com/watch?v=I6D0v2G_HhI" },
+        ],
+        advanced: "Electronegativity (χ) determines the dipole moment of a bond. High differences result in ionic character, while small differences result in nonpolar covalent bonds. This mirrors Power Dynamics in sociology or Potential Difference in electrical engineering, where \"flow\" is created by uneven distribution.",
+      },
+
+      // ── 8 ── METALLIC BONDING ────────────────────────────────
+      {
+        id: "metallic-bond",
+        num: 8,
+        icon: "🌊",
+        title: "Metallic Bonding",
+        subtitle: "The Electron Sea",
+        simple: "In metals, no atom \"owns\" its electrons. They all put them into a big, communal swimming pool. Because the electrons can swim around, metals can bend and carry electricity.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The ringing of a bell." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"metallic\" scent of coins or a playground slide." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"copper\" taste of a penny." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The cold, smooth feeling of a spoon." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "The shiny \"glare\" of a mirror." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of being in a large crowd moving together, like a wave at a stadium." },
+        ],
+        intuition: "Dip your hand in a bowl of water. You can't \"hold\" the water, but it surrounds you. This \"sea\" is what holds a piece of gold together.",
+        links: [
+          { label: "Metallic Bonding Basics — Chemguide", url: "https://www.chemguide.co.uk/atoms/bonding/metallic.html" },
+          { label: "Why Metals Conduct — Scientific American", url: "https://www.scientificamerican.com/article/how-do-metals-conduct-ele/" },
+          { label: "Malleability and Ductility — ThoughtCo", url: "https://www.thoughtco.com/definition-of-malleable-605876" },
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsWw" },
+          { title: "We Are the Champions", artist: "Queen", url: "https://www.youtube.com/watch?v=04854XqcfCY" },
+          { title: "Shiny", artist: "Jemaine Clement", url: "https://www.youtube.com/watch?v=93lrosBEW-Q" },
+        ],
+        advanced: "Metallic bonding is characterized by delocalized electrons in a \"conduction band\" (Band Theory). This accounts for high thermal and electrical conductivity. It is the chemical equivalent of Collectivism or Open Source Communities, where free flow of information creates a resilient whole.",
+      },
+
+      // ── 9 ── INTERMOLECULAR FORCES ───────────────────────────
+      {
+        id: "imf",
+        num: 9,
+        icon: "🤝",
+        title: "Intermolecular Forces",
+        subtitle: "The Gentle Handshake",
+        simple: "These aren't \"super glue\" bonds; they are more like \"handshakes\" or \"sticky notes.\" They let water be liquid and help geckos walk on walls, but they are easy to break.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"peel\" of a sticker being pulled off." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Perfume wafting — the bonds are weak enough to let the scent fly away." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The way honey sticks to your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The \"tackiness\" of tape." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A spider web shimmering in the sun." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"drag\" when walking through water." },
+        ],
+        intuition: "Lightly touch your fingertips together and pull apart. That tiny \"stick\" is a Van der Waals force. It's the \"Gentle Hug\" of the universe.",
+        links: [
+          { label: "Hydrogen Bonding in Water — Khan Academy", url: "https://www.khanacademy.org/science/biology/water-acids-and-bases/hydrogen-bonding-in-water/a/hydrogen-bonding-in-water" },
+          { label: "How Geckos Defy Gravity — Live Science", url: "https://www.livescience.com/21703-how-geckos-walk-on-ceilings.html" },
+          { label: "Van der Waals Forces — Britannica", url: "https://www.britannica.com/science/van-der-Waals-forces" },
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Tiny Dancer", artist: "Elton John", url: "https://www.youtube.com/watch?v=hoskDZRLOCs" },
+          { title: "Stuck on You", artist: "Lionel Richie", url: "https://www.youtube.com/watch?v=ZfOAs_R9N_o" },
+        ],
+        advanced: "Intermolecular forces (London Dispersion, Dipole-Dipole, Hydrogen Bonding) dictate the physical phase (Solid, Liquid, Gas) of a substance. This relates to Social Cohesion, where \"weak ties\" (acquaintances) are often more important for overall structure than \"strong ties\" (family).",
+      },
+
+      // ── 10 ── VSEPR THEORY ───────────────────────────────────
+      {
+        id: "vsepr",
+        num: 10,
+        icon: "📐",
+        title: "VSEPR Theory",
+        subtitle: "The Shape of Reality",
+        simple: "Electrons hate being near other electrons. They push each other away as far as possible. This \"pushing\" decides if a molecule looks like a line, a triangle, or a pyramid.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"pop\" of a balloon when the shape can't hold anymore." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of mint — its shape fits a specific \"lock\" in your nose." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Key-and-lock: how \"sweet\" fits your tongue's shape." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pushing two same-side magnets away from each other." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A 3D tripod or a pyramid." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stretching your arms out wide so you don't bump into anyone." },
+        ],
+        intuition: "Blow up three balloons and tie them together. They will naturally push into a triangle. That \"push\" is why everything in the world has a shape.",
+        links: [
+          { label: "VSEPR Geometry — Chemistry LibreTexts", url: "https://chem.libretexts.org/Bookshelves/General_Chemistry/Map%3A_Chemistry_-_The_Central_Science_(Brown_et_al.)/09%3A_Molecular_Geometry_and_Bonding_Theories/9.02%3A_The_VSEPR_Model" },
+          { label: "The Geometry of Life — Nature", url: "https://www.nature.com/articles/35011531" },
+          { label: "Molecular Shapes and Functions", url: "https://academic.oup.com/book/26913/chapter/195972018" },
+        ],
+        songs: [
+          { title: "Shape of You", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=JGwWNGJdvx8" },
+          { title: "The Distance", artist: "Cake", url: "https://www.youtube.com/watch?v=cno20onK9dY" },
+          { title: "Geometry of Love", artist: "Jean-Michel Jarre", url: "https://www.youtube.com/watch?v=2v-p7U5m324" },
+        ],
+        advanced: "VSEPR Theory predicts molecular geometry based on minimization of electron-pair repulsion. It explains why H₂O is bent (~104.5°) rather than linear, which is foundational for life's chemistry. This mirrors Architecture and Urban Planning, where the \"space between\" is just as important as the objects themselves.",
+      },
+
+    ],
 
 // ═══ UTILITY ═══
 export function getTopicCards(doorKey, subId) {
