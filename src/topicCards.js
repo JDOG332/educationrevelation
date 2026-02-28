@@ -4034,6 +4034,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔢 MATHEMATICS (promise) → ❌ ALGEBRA & THE UNKNOWN (algebra)
+    // "Using letters to find numbers you don't know yet"
+    // ═══════════════════════════════════════════════════════════════
+
+    algebra: [
+
+      // ── 1 ── VARIABLES: THE PLACEHOLDER ──────────────────────
+      {
+        id: "variables",
+        num: 1,
+        icon: "𝓧",
+        title: "Variables: The Placeholder",
+        subtitle: "X Marks the Spot",
+        simple: "Algebra is like a treasure hunt where a letter like \"x\" acts as the \"X marks the spot.\" Even though we can't see the treasure yet, we know it is there, and we use the clues around it to find its value. By treating the unknown letter like a regular number, we can move it around and solve the mystery. This helps us understand that in life, we can handle things we don't fully understand yet by using what we do know.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"click\" of a key turning in a lock." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a fresh, blank notebook waiting for a story." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A \"mystery flavor\" candy where you try to guess the fruit." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Reaching into a dark bag to feel an object and guess what it is." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a silhouette of a person and knowing it's a friend before they step into the light." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Closing your eyes and knowing exactly where your hand is, even if you can't see it." },
+        ],
+        intuition: "You feel the presence of the answer before you calculate it, like a humming in your chest that gets louder as you get closer to the truth.",
+        links: [
+          { label: "Khan Academy: What is a Variable?", url: "https://www.khanacademy.org/math/algebra/introduction-to-algebra/overview-hist-alg/v/what-is-a-variable" },
+          { label: "Math is Fun: Variables", url: "https://www.mathsisfun.com/algebra/variable.html" },
+          { label: "Cool Math: Variables", url: "https://www.coolmath.com/algebra/01-solving-equations" },
+        ],
+        songs: [
+          { title: "The Unanswered Question", artist: "Charles Ives", url: "https://www.youtube.com/watch?v=vXD4tIp8M_8" },
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=NUnXxh5U25Y" },
+          { title: "X Marks The Spot", artist: "Coldplay", url: "https://www.youtube.com/watch?v=HzHUiPnMh_s" },
+        ],
+        advanced: "In higher mathematics, a variable is not merely a hidden number but an element of a set, often representing a dimension in a vector space. It serves as the foundational unit for functions f(x), where the variable maps input to output — illustrating the interconnectedness of cause and effect. This connects deeply to epistemology: the variable represents the \"Known Unknown.\" In physics, variables allow us to calculate invisible forces, proving that the unseen dictates the behavior of the seen.",
+      },
+
+      // ── 2 ── EQUALITY: THE GREAT BALANCE ─────────────────────
+      {
+        id: "equality",
+        num: 2,
+        icon: "=",
+        title: "Equality: The Great Balance",
+        subtitle: "The Universe's Scale",
+        simple: "Equality is the rule that says the universe likes to be fair and balanced. If you have a scale and you add two pounds to one side, you must add two pounds to the other side to keep it level. In math, the equals sign is the middle of that scale, making sure both sides are the same. When we solve equations, we are just cleaning up the scale until the mystery number is all by itself.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Two musical notes played at the exact same volume and pitch." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a symmetrical garden with the same flowers on both sides." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The perfect mix of sweet and salty that cancels each other out." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Holding two identical stones, one in each hand, feeling the same weight." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at your reflection in a perfectly still lake." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Standing on one leg and feeling your muscles twitch to keep your center of gravity perfect." },
+        ],
+        intuition: "A feeling of \"rightness\" or \"settling\" in your gut when a problem is finally solved and the balance is restored.",
+        links: [
+          { label: "Math Antics: Basics of Equations", url: "https://www.youtube.com/c/mathantics" },
+          { label: "Wolfram MathWorld: Equality", url: "https://mathworld.wolfram.com/Equal.html" },
+          { label: "PBS Learning: Balancing Equations", url: "https://www.pbslearningmedia.org/subjects/mathematics/" },
+        ],
+        songs: [
+          { title: "Equal Rights", artist: "Peter Tosh", url: "https://www.youtube.com/watch?v=6m2YDaGzFJ8" },
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" },
+          { title: "Balance", artist: "Earl Sweatshirt", url: "https://www.youtube.com/watch?v=r70goaDbjZE" },
+        ],
+        advanced: "Equality in algebra is an equivalence relation defined by reflexivity, symmetry, and transitivity. It is the symbolic bedrock of conservation — nothing is lost, only rearranged. When we manipulate an equation, we perform an isomorphism: changing the form without altering the underlying essence. This mirrors the philosophical concept of Unity — the observer and the observed are two sides of the same equation, balanced perfectly within the vacuum of existence.",
+      },
+
+      // ── 3 ── INVERSE OPERATIONS: THE WAY BACK HOME ───────────
+      {
+        id: "inverse-operations",
+        num: 3,
+        icon: "⟲",
+        title: "Inverse Operations: The Way Back Home",
+        subtitle: "Untying Every Knot",
+        simple: "Inverse operations are like being able to walk backward to where you started if you get lost. If a math problem adds 5 to a secret number, you can subtract 5 to find out what the number was. It is like untying a knot by doing the opposite of how it was tied. This shows us that every path can be retraced and every mistake can be undone if we know the right steps.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A recording of a bell being played in reverse." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Walking out of a smoky room into the fresh, crisp air." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eating a slice of lemon to wash away the taste of something too sugary." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a tight muscle finally relax and let go." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a video of a glass shattering played backward until it is whole again." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Walking backward through a doorway you just entered." },
+        ],
+        intuition: "A sudden \"unwinding\" feeling in your mind, like a puzzle piece finally clicking into place after being turned the right way.",
+        links: [
+          { label: "BBC Bitesize: Inverse Operations", url: "https://www.bbc.co.uk/bitesize/guides/z3xbcwx/revision/1" },
+          { label: "MathIsFun: Inverse Operations", url: "https://www.mathsisfun.com/numbers/inverse-operations.html" },
+          { label: "Study.com: Inverse Operations in Algebra", url: "https://study.com/academy/lesson/inverse-operations-in-math-definition-examples.html" },
+        ],
+        songs: [
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Reverse", artist: "Greg Laswell", url: "https://www.youtube.com/watch?v=SJhBTnECnnE" },
+          { title: "Backwards", artist: "Tame Impala", url: "https://www.youtube.com/watch?v=V2fpgpanZAw" },
+        ],
+        advanced: "In abstract algebra, this is the Inverse Element within a group. For every operation in a system, there exists a counter-operation returning the system to its identity state (0 or 1), ensuring the system is reversible and logically consistent. This connects to the concept of Reciprocity — for every winding of the soul's journey, there is a winding back toward the source, a path of return mathematically guaranteed by the laws of the universe.",
+      },
+
+      // ── 4 ── CONSTANTS: THE NORTH STAR ───────────────────────
+      {
+        id: "constants",
+        num: 4,
+        icon: "⚓",
+        title: "Constants: The North Star",
+        subtitle: "The Rock in the River",
+        simple: "A constant is a number that never, ever changes, no matter what else is happening in the problem. While the \"x\" and \"y\" are jumping around and changing their values, the constant stays exactly where it is. It is like a sturdy rock in the middle of a rushing river that you can hold onto to keep from being swept away. Even when life feels crazy and everything is moving, there are some truths that are always solid.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A single, steady hum that stays at the same volume forever." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of old books in a library that never changes." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The taste of pure water, which is always the same everywhere." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Leaning your back against a giant oak tree that doesn't budge." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at the North Star in the sky while all the other stars seem to move." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your feet planted firmly on the ground while you spin your arms." },
+        ],
+        intuition: "A deep sense of knowing that something is permanent, like the love of a parent or the rising of the sun.",
+        links: [
+          { label: "MathIsFun: Constants", url: "https://www.mathsisfun.com/algebra/constant.html" },
+          { label: "Britannica: Mathematical Constants", url: "https://www.britannica.com/science/mathematical-constant" },
+          { label: "Constants in Algebra", url: "https://en.wikipedia.org/wiki/Constant_(mathematics)" },
+        ],
+        songs: [
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "True", artist: "Spandau Ballet", url: "https://www.youtube.com/watch?v=AR8D2yqgQ1U" },
+          { title: "Constant Craving", artist: "k.d. lang", url: "https://www.youtube.com/watch?v=oXqPjl9WlKw" },
+        ],
+        advanced: "Constants represent the Invariants of a system. In physics, constants like c (the speed of light) or G (the gravitational constant) define the very fabric of our reality. Without these fixed values, the universe would lack the coherence required for complex life to emerge. They are the Still Point in the turning world, providing the framework for all relational dynamics.",
+      },
+
+      // ── 5 ── EXPRESSIONS VS. EQUATIONS ───────────────────────
+      {
+        id: "expressions-equations",
+        num: 5,
+        icon: "📖",
+        title: "Expressions vs. Equations",
+        subtitle: "The Story vs. The Truth",
+        simple: "Think of an expression like a phrase, like saying \"three red apples.\" It tells you something, but it doesn't tell the whole story yet. An equation is like a full sentence that says, \"Three red apples cost five dollars.\" The equation uses an equals sign to connect two ideas and tell us a complete truth. Expressions are the building blocks we use to describe things, and equations are the tools we use to solve things.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A single musical chord (expression) versus a finished song (equation)." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of ingredients (expression) versus the smell of a finished cake (equation)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Tasting a pinch of salt (expression) versus a perfectly seasoned soup (equation)." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Touching a single brick (expression) versus leaning against a finished wall (equation)." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a single puzzle piece (expression) versus the finished picture (equation)." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Moving your arm (expression) versus catching a ball perfectly (equation)." },
+        ],
+        intuition: "The feeling of a lightbulb going off when a bunch of random thoughts finally click into a realization.",
+        links: [
+          { label: "Difference: Expression vs Equation", url: "https://www.mathsisfun.com/algebra/equation-expression.html" },
+          { label: "Khan Academy: Equations vs Expressions", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:foundation-algebra" },
+          { label: "MathIsFun: Algebraic Expressions", url: "https://www.mathsisfun.com/algebra/algebraic-expressions.html" },
+        ],
+        songs: [
+          { title: "Words", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=MbBwBbqSUfg" },
+          { title: "The Way It Is", artist: "Bruce Hornsby", url: "https://www.youtube.com/watch?v=GlRQjzltaMQ" },
+          { title: "Logical Song", artist: "Supertramp", url: "https://www.youtube.com/watch?v=low6Coqrw9Y" },
+        ],
+        advanced: "Expressions are elements of a formal language, while equations are predicates asserting a relationship. In formal logic, an expression is a \"term\" while an equation is a \"formula\" with a truth value. This distinction is vital for understanding Syntax (how we say things) versus Semantics (what those things actually mean) — the architecture underlying all mathematical communication.",
+      },
+
+      // ── 6 ── SUBSTITUTION: THE GREAT EXCHANGE ────────────────
+      {
+        id: "substitution",
+        num: 6,
+        icon: "🔄",
+        title: "Substitution: The Great Exchange",
+        subtitle: "Swapping Symbols for Truth",
+        simple: "Substitution is like having a substitute teacher take the place of your regular teacher for a day. In math, if we find out that x is actually the number 5, we can take x out and put 5 in its place. This helps us check our work and see if the balance of the equation still holds up. By swapping symbols for numbers, we turn a mystery into a fact.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A singer covering a song and making it sound the same but different." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Swapping a real lemon for lemon zest in a recipe." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Replacing sugar with honey in your tea." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Changing from a heavy winter coat to a light jacket that covers the same skin." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a stunt double in a movie who looks just like the actor." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Using a prosthetic limb that moves exactly like your real one used to." },
+        ],
+        intuition: "The feeling of \"Aha!\" when you realize that two different things are actually telling the same story.",
+        links: [
+          { label: "Substitution in Algebra", url: "https://www.mathsisfun.com/algebra/substitution.html" },
+          { label: "Khan Academy: Evaluating with Substitution", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:foundation-algebra/x2f8bb11595b61c86:eval-expressions/v/expression-terms-factors-and-coefficients" },
+          { label: "Purplemath: Substitution", url: "https://www.purplemath.com/modules/evaluate.htm" },
+        ],
+        songs: [
+          { title: "The Substitute", artist: "The Who", url: "https://www.youtube.com/watch?v=SG4oYaiBTnY" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+        ],
+        advanced: "Substitution is the operationalization of Identity. In calculus, u-substitution simplifies complex integrals by mapping them into a more manageable space. It is a fundamental tool for Reductionism — breaking a complex problem into simpler, equal components without losing any information. It proves that the same truth can wear different masks.",
+      },
+
+      // ── 7 ── ORDER OF OPERATIONS ─────────────────────────────
+      {
+        id: "order-of-operations",
+        num: 7,
+        icon: "🪜",
+        title: "Order of Operations",
+        subtitle: "The Universal Recipe",
+        simple: "The Order of Operations (PEMDAS) is like a recipe that tells you which ingredient to put in the bowl first. If you bake a cake by putting the frosting in the oven before the flour, it will be a mess! In math, we always do Parentheses first, then Exponents, then Multiplication and Division, and finally Addition and Subtraction. This rule makes sure that everyone in the whole world gets the same answer to the same problem.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A conductor starting the violins before the drums in an orchestra." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of onions sautéing before you add the garlic." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Tasting the layers of a sandwich in the order they were stacked." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Putting on your socks before your shoes." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a flower bloom in stages — bud, then petal, then full flower." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your knees bend before you jump into the air." },
+        ],
+        intuition: "A feeling of flow when you do things in the right sequence, like a dance where every step follows the beat.",
+        links: [
+          { label: "Math Antics: Order of Operations", url: "https://www.youtube.com/watch?v=dAgfnK528RA" },
+          { label: "Purplemath: PEMDAS", url: "https://www.purplemath.com/modules/orderops.htm" },
+          { label: "Study.com: Order of Operations", url: "https://study.com/academy/lesson/order-of-operations-definition-examples.html" },
+        ],
+        songs: [
+          { title: "Step by Step", artist: "New Kids on the Block", url: "https://www.youtube.com/watch?v=ay6GjmiJTPM" },
+          { title: "Chain Reaction", artist: "Diana Ross", url: "https://www.youtube.com/watch?v=lfBdGT4dn4E" },
+          { title: "One Step at a Time", artist: "Jordin Sparks", url: "https://www.youtube.com/watch?v=IFAbootCwbk" },
+        ],
+        advanced: "This is the Hierarchy of Operations. In computer science, it is known as Operator Precedence — ensuring algorithms are deterministic, meaning the same input always produces the same output. This reflects the Causal Order of the universe, where certain events must precede others to create a stable reality. Without hierarchy, communication collapses into ambiguity.",
+      },
+
+      // ── 8 ── THE COORDINATE PLANE ────────────────────────────
+      {
+        id: "coordinate-plane",
+        num: 8,
+        icon: "🌐",
+        title: "The Coordinate Plane",
+        subtitle: "The Map of Truth",
+        simple: "The coordinate plane is like a giant map where every point has a special address made of two numbers. One number tells you how far to move left or right, and the other tells you how far to move up or down. By connecting these points, we can turn math problems into beautiful shapes and lines. It shows us that math isn't just numbers on a page; it is something we can see and move through.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Hearing a sound move from your left ear to your right ear." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smelling a grill and walking toward it as the scent gets stronger." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Tasting a \"map\" of flavors on your tongue — sweet at the tip, bitter at the back." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the bumps on a globe to find where you are." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing the grid lines on a piece of graph paper or a city map." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Knowing exactly where your body is in a dark room." },
+        ],
+        intuition: "The click of orientation — that feeling when you finally know exactly where you are and which way to go.",
+        links: [
+          { label: "Khan Academy: Coordinate Plane", url: "https://www.khanacademy.org/math/basic-geo/basic-geo-coord-plane" },
+          { label: "MathIsFun: Cartesian Coordinates", url: "https://www.mathsisfun.com/data/cartesian-coordinates.html" },
+          { label: "Coordinate Plane Games", url: "https://www.mathplayground.com/locate_aliens.html" },
+        ],
+        songs: [
+          { title: "Maps", artist: "Maroon 5", url: "https://www.youtube.com/watch?v=PYa7b3gM5TA" },
+          { title: "Point of No Return", artist: "Kansas", url: "https://www.youtube.com/watch?v=t7OBwxfOdHs" },
+          { title: "Directions", artist: "Josh Rouse", url: "https://www.youtube.com/watch?v=5YqW_eMqpFk" },
+        ],
+        advanced: "The Cartesian plane is the foundation of Analytic Geometry — the bridge between algebra and shape. It allows us to visualize complex functions as physical manifolds. This represents Dimensionality: reality can be mapped across multiple axes (time, space, probability) to find the intersection of truth. Every choice we make has coordinates.",
+      },
+
+      // ── 9 ── SIMPLIFYING: FINDING THE DIAMOND ────────────────
+      {
+        id: "simplifying",
+        num: 9,
+        icon: "💎",
+        title: "Simplifying: Finding the Diamond",
+        subtitle: "Clearing the Mess to See the Truth",
+        simple: "Simplifying is like cleaning your room so you can finally find your favorite toy buried under all the mess. In math, problems often look scary and long, but we can use rules to make them shorter and easier to read. We combine \"like terms\" until the true answer shines through. The most complicated things in life usually have a very simple heart. If we clear away the extra stuff, the truth will be easy to see.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A loud, messy noise turning into a single, clear note." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of clean air after a rainstorm washes away the dust." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The simple, perfect taste of a fresh strawberry without any sugar added." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Peeling away a rough shell to find a smooth pearl inside." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Squinting your eyes until a blurry picture becomes clear." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Taking a deep breath and feeling your body become light and calm." },
+        ],
+        intuition: "A feeling of relief and clarity, like a heavy weight being lifted off your shoulders.",
+        links: [
+          { label: "Simplifying Expressions", url: "https://www.mathsisfun.com/algebra/simplifying.html" },
+          { label: "Khan Academy: Combining Like Terms", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:foundation-algebra/x2f8bb11595b61c86:combine-like-terms/v/combining-like-terms" },
+          { label: "Simplify Math Problems Online", url: "https://www.symbolab.com/solver/simplify-calculator" },
+        ],
+        songs: [
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" },
+          { title: "Pure and Simple", artist: "Hear'Say", url: "https://www.youtube.com/watch?v=GkwTP02MMYQ" },
+          { title: "Simplify", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+        ],
+        advanced: "Simplifying is the practice of Lossless Compression and Occam's Razor. It is the process of reducing entropy within a symbolic system. By identifying the Lowest Common Denominator or the Essential Form, we move closer to the Singularity of truth where all complexity resolves into a unified principle. Simple equals strong.",
+      },
+
+      // ── 10 ── WORD PROBLEMS: MATH IN THE REAL WORLD ──────────
+      {
+        id: "word-problems",
+        num: 10,
+        icon: "🌍",
+        title: "Word Problems: Math in the Real World",
+        subtitle: "Translating Stories Into Equations",
+        simple: "Word problems are math stories that happen in real life. Instead of just seeing x + 2 = 5, you might hear a story about a kid who has some cookies, gets 2 more, and now has 5. Our job is to be \"math translators\" who turn the words of the story into the language of algebra. Math isn't just a school subject; it is a superpower that helps us solve real problems in the world.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Hearing a secret message and knowing exactly what it means." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smelling wood smoke and knowing someone is having a campfire nearby." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eating a dish and being able to name every spice the chef used." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the wind on your face and knowing which direction it is blowing." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Reading a book and seeing the movie play out in your head." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the way your body moves to understand how to ride a bike." },
+        ],
+        intuition: "The feeling of Connection — the moment you realize that the math on your paper is the same thing as the world outside your window.",
+        links: [
+          { label: "Algebra Word Problems", url: "https://www.mathsisfun.com/algebra/word-questions-solving.html" },
+          { label: "Khan Academy: Linear Equation Word Problems", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:linear-equations-word-problems" },
+          { label: "Purplemath: Translating Word Problems", url: "https://www.purplemath.com/modules/translat.htm" },
+        ],
+        songs: [
+          { title: "Story of My Life", artist: "One Direction", url: "https://www.youtube.com/watch?v=W-TE_Iibqko" },
+          { title: "Real World", artist: "Matchbox Twenty", url: "https://www.youtube.com/watch?v=OdlVuBs0hHs" },
+          { title: "Everything is Everything", artist: "Lauryn Hill", url: "https://www.youtube.com/watch?v=i3_dOWYHS7I" },
+        ],
+        advanced: "Word problems are Mathematical Modeling — the mapping of reality onto a formal system. This is the essence of science: taking a phenomenon (the story) and extracting its mathematical invariants to predict future behavior. It connects Subjective Experience to Objective Logic, proving that we are all part of one giant, solvable equation.",
+      },
+
+    ],
   },
 };
 
