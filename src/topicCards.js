@@ -5828,6 +5828,10 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Induction: premises supply strong evidence for probabilistic conclusions. The basis of the scientific method: hypotheses from repeated observations. Hume's Problem of Induction asks how we justify belief in nature's uniformity when experience covers only the past, not the future." },
     ],
+
+  },
+
+  layers: {
     // ═══════════════════════════════════════════════════════════════
     // PHILOSOPHY (layers) > TRUTH & KNOWLEDGE (truth)
     // ═══════════════════════════════════════════════════════════════
