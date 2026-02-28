@@ -9836,6 +9836,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The Catalyst represents Novelty in Evolutionary Dynamics. Populations stuck on local fitness peaks cannot reach global peaks without variance. The trickster introduces enough chaos to bump the system off the local peak. In Genetic Algorithms, stochasticity prevents models from stalling. The trickster is the biological and cultural embodiment: the essential error that leads to the next stage of development." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > DEATH & REBIRTH (rebirth)
+    // ═══════════════════════════════════════════════════════════════
+
+    rebirth: [
+      { id: "conservation-of-energy", num: 1, icon: "⚛️", title: "The Law of Conservation of Energy", subtitle: "Nothing Is Ever Really Gone — It Just Moves",
+        simple: "Energy is the stuff that makes everything happen, and it can never be truly destroyed or used up. Instead, it just changes from one form into another, like how a battery powers a toy or how food gives you strength to run. Even when something seems to stop or die, its energy is just moving into a new home in the universe. This means nothing is ever really gone forever; it is just being recycled into something different. It is like a big game of tag where the energy keeps moving from person to person. You are part of this big, never-ending cycle of moving power.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low hum of a transformer or a distant thunderstorm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Ozone in the air after a lightning strike: energy changing form." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zap of lemon juice on your tongue: chemical energy becoming sensation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of your own skin after you jump up and down." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering candle flame dancing in a dark room." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The buzz in your muscles after a long race: energy spent but not lost, just transformed." }
+        ],
+        intuition: "Feel your own warmth. That heat leaving your body is the same energy that moves the clouds. Nothing disappears. It just changes address.",
+        links: [
+          { label: "First Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/First_law_of_thermodynamics" },
+          { label: "Energy Transformation Examples", url: "https://en.wikipedia.org/wiki/Energy_transformation" },
+          { label: "NASA: What Is Energy?", url: "https://en.wikipedia.org/wiki/Energy" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" }
+        ],
+        advanced: "The First Law of Thermodynamics (dE=δQ−δW): total internal energy is preserved across phase transitions. In Death & Rebirth, this provides the physical foundation — something always remains. The state changes from organized biological matter to disparate thermal and chemical components, but the fundamental essence (energy) is conserved. Death is a transformation, not an annihilation." },
+
+      { id: "biological-decomposition", num: 2, icon: "🌱", title: "Biological Decomposition", subtitle: "The Old Becomes Food for the New",
+        simple: "When a plant or animal dies, it becomes a very special gift for the earth. Tiny bugs and invisible decomposers break the old body down into vitamins and minerals for the soil. This healthy soil then helps new flowers, trees, and grass grow big and strong. Without the old thing going away, the new thing would not have the food it needs to start its life. It is like nature's way of cleaning up and planting a new garden at the same time. This cycle ensures that life always has a way to keep going.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft crunch of dry leaves under your feet." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rich, damp earthy dirt in a forest: the library of everything that lived before." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A ripe berry grown from the ground: sweetness from decay." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cool, wet mud squeezed between your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A small sprout growing out of an old, fallen log." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The ground pushing back against your feet as you walk: it is holding everything that came before you." }
+        ],
+        intuition: "Breathe in the forest. The ground beneath you is a library of everything that lived before, now feeding you. The dead are not gone. They are the soil.",
+        links: [
+          { label: "The Science of Decomposition", url: "https://en.wikipedia.org/wiki/Decomposition" },
+          { label: "Nutrient Cycling Basics", url: "https://en.wikipedia.org/wiki/Nutrient_cycle" },
+          { label: "USDA: Soil Health", url: "https://en.wikipedia.org/wiki/Soil_health" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Dirt", artist: "Alice in Chains", url: "https://www.youtube.com/watch?v=sM3gFUgOx-Q" }
+        ],
+        advanced: "Biogeochemical cycling moves carbon, nitrogen, and phosphorus through lithosphere and biosphere. Decomposition is the catabolic process releasing trapped nutrients from organic matrices. A biological rebirth where molecular building blocks of one organism become structural foundation for the next, maintaining the entropy balance of the ecosystem." },
+
+      { id: "phoenix-archetype", num: 3, icon: "🐦‍🔥", title: "The Phoenix Archetype", subtitle: "Rising from the Ashes Stronger Than Before",
+        simple: "When you face a really hard time, it can feel like your old happy self is gone. But just like the legend of the Phoenix bird, you can rise up from the ashes of that hard time even stronger than before. This means that being sad or failing at something is not the end of your story; it is just the start of a better version of you. You learn new things from your mistakes and your heart gets tougher and kinder. Every time you get back up, you are reborn as a hero. You have the power to change and grow whenever you need to.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep, steady breath in and out: the rhythm of starting over." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Campfire smoke still warm: evidence of what burned." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate: bitter then sweet, like surviving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The rough scar on your knee that has healed: proof you are still here." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright sunrise after a very dark night." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up straight and tall after feeling small: the phoenix pose." }
+        ],
+        intuition: "Feel your heart beating. Every ouch you have ever had turned into the strong you feel right now. The fire did not destroy you. The fire forged you.",
+        links: [
+          { label: "Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Post-Traumatic Growth Research", url: "https://en.wikipedia.org/wiki/Post-traumatic_growth" },
+          { label: "The Legend of the Phoenix", url: "https://en.wikipedia.org/wiki/Phoenix_(mythology)" }
+        ],
+        songs: [
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" },
+          { title: "Rise Up", artist: "Andra Day", url: "https://www.youtube.com/watch?v=FBuIBaDSOa4" },
+          { title: "Phoenix", artist: "Fall Out Boy", url: "https://www.youtube.com/watch?v=5hDZbroaQDc" }
+        ],
+        advanced: "Mirrors Post-Traumatic Growth (PTG) and Jungian Individuation. The ego undergoes symbolic death — shattering of previous worldviews — to integrate new experiences. A cognitive restructuring allowing higher psychological complexity and resilience, like the mythological bird rising from its own destruction." },
+
+      { id: "stellar-evolution", num: 4, icon: "🌟", title: "Stellar Evolution", subtitle: "The Star That Died So You Could Be Born",
+        simple: "Long ago, big stars in the sky exploded in a giant flash of light called a supernova. When those stars died, they threw out tiny bits of stardust into the universe. Those tiny bits eventually clumped together to make the Earth and even the cells inside your body! This means you are actually made of old stars that had to explode so you could be born. Every person you see is a little piece of the sky walking around. The death of a star was the birth of you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silent ringing you hear when everything is very quiet: the hum of space." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of a shiny new coin: iron forged in a star." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of your own tears: stars made that salt." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A rock: solid and old, forged in cosmic fire." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Tiny sparkles in a piece of granite: star fragments." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body pulled by Earth: gravity holding stardust together." }
+        ],
+        intuition: "Look at your hand. The atoms inside it once glowed in the middle of a sun billions of miles away. A star had to die so your hand could exist. You are the afterlife of a star.",
+        links: [
+          { label: "NASA: Stellar Evolution", url: "https://en.wikipedia.org/wiki/Stellar_evolution" },
+          { label: "The Origin of Elements", url: "https://en.wikipedia.org/wiki/Nucleosynthesis" },
+          { label: "Carl Sagan: We Are Stardust", url: "https://en.wikipedia.org/wiki/Carl_Sagan" }
+        ],
+        songs: [
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "Starlight", artist: "Muse", url: "https://www.youtube.com/watch?v=Pgum6OT_VH8" },
+          { title: "Yellow", artist: "Coldplay", url: "https://www.youtube.com/watch?v=yKNxeF4KMsY" }
+        ],
+        advanced: "Nucleosynthesis in high-mass stars creates elements up to iron; heavier elements are forged during supernova explosions. We are stardust literally. The cessation of fusion is the prerequisite for chemical complexity required for biological life. Cosmic-scale death links directly to microscopic-scale existence." },
+
+      { id: "heros-journey-rebirth", num: 5, icon: "⚔️", title: "The Hero's Journey (Symbolic Death)", subtitle: "Letting Go of the Old You So the New You Can Arrive",
+        simple: "In almost every movie or book, a hero has to leave home and face a scary challenge. They often have to give up their old way of thinking or let go of something they love to win the day. This is called a symbolic death because the person they used to be disappears. When they finish their journey, they come home as a brand new, wiser person. You are the hero of your own life, and every time you try something scary, you are growing into a better version of yourself. Letting go of the old you helps the new you arrive.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A triumphant trumpet blast or a loud cheer." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: rain on hot pavement, the world refreshing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cold, refreshing water after a long walk." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five from a good friend: connection after struggle." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The finish line at the end of a race." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Finding your balance as you learn to ride a bike: the old wobble dying, the new skill being born." }
+        ],
+        intuition: "Think of the scariest thing you ever did. Feel the brave feeling in your chest that stayed with you afterward. That feeling is the new you. The old you had to leave so it could arrive.",
+        links: [
+          { label: "The Hero with a Thousand Faces", url: "https://en.wikipedia.org/wiki/The_Hero_with_a_Thousand_Faces" },
+          { label: "The Monomyth Breakdown", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Archetypal Journeys in Literature", url: "https://en.wikipedia.org/wiki/Archetype" }
+        ],
+        songs: [
+          { title: "Heroes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=lXgkuM2NhYI" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" }
+        ],
+        advanced: "Campbell's monomyth: Departure, Initiation, Return. The Inmost Cave is where the old self is sacrificed. This narrative structure mirrors biological and psychological reality: growth requires abandonment of obsolete behaviors and beliefs. The symbolic death is cognitive restructuring at the deepest level." },
+
+      { id: "neuroplasticity-pruning", num: 6, icon: "🧠", title: "Neuroplasticity (Synaptic Pruning)", subtitle: "Your Brain Kills Old Paths So New Ones Can Run Fast",
+        simple: "Your brain is like a giant, magical forest with billions of paths. When you learn something new, you build a path; when you stop using an old habit, the brain prunes or cuts away that old path. This death of old connections is actually great because it makes your brain faster and smarter. It clears out the clutter so the most important thoughts can travel quickly. Your brain is constantly dying and being reborn so you can keep learning and growing every single day. It is how you get better at video games, music, or math!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The click of a puzzle piece fitting perfectly." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new box of crayons: the scent of potential." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Peppermint: the zing that helps you focus." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Smooth piano keys or a guitar string: muscle memory being born." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A lightbulb moment when you finally understand." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That woah feeling when you first find your balance: old paths dying, new ones lighting up." }
+        ],
+        intuition: "When you struggle to learn something, feel the stretch in your mind. That is old paths making room for new ones. The struggle is the pruning. The pruning is the growth.",
+        links: [
+          { label: "Neuroplasticity Explained", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "What Is Synaptic Pruning?", url: "https://en.wikipedia.org/wiki/Synaptic_pruning" },
+          { label: "Brain Architecture", url: "https://en.wikipedia.org/wiki/Neural_development" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Think", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=Kpxm2jVBRDY" }
+        ],
+        advanced: "Synaptic pruning removes extra neurons and connections to increase efficiency of neuronal transmissions. Most prominent between childhood and adulthood. Cellular death essential for rebirth of refined, functional cognitive architecture. Subtraction is a form of addition in biological systems." },
+
+      { id: "forest-fire-ecology", num: 7, icon: "🔥", title: "Forest Fire Ecology", subtitle: "The Fire That Wakes Up Sleeping Seeds",
+        simple: "Sometimes a big fire happens in a forest, and it looks very sad and black. But some trees actually need the heat of the fire to open their seeds and drop them on the ground. The fire also clears away old, dead bushes that were blocking the sun. Very soon, tiny green plants start popping up in the ashes because they finally have room and light to grow. The death of the old forest is exactly what the new forest needs to be born healthy and strong. It is nature's way of starting over and staying young.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle and pop of a warm fireplace." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Heavy, sweet woodsmoke: the scent of transformation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A toasted marshmallow: sweetness born from fire." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of sun on your face on a cool day." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tiny green leaf against black, burnt wood: life refusing to quit." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The springiness of soft ash under your boots: walking on what was." }
+        ],
+        intuition: "Close your eyes and feel the warmth. It is not a fire that destroys. It is a light that wakes up sleeping seeds. The ash is the cradle.",
+        links: [
+          { label: "Fire Ecology", url: "https://en.wikipedia.org/wiki/Fire_ecology" },
+          { label: "How Forests Rebound from Fire", url: "https://en.wikipedia.org/wiki/Ecological_succession" },
+          { label: "The Role of Fire in Ecosystems", url: "https://en.wikipedia.org/wiki/Wildfire" }
+        ],
+        songs: [
+          { title: "Girl on Fire", artist: "Alicia Keys", url: "https://www.youtube.com/watch?v=J91ti_MpdHA" },
+          { title: "Setting Fires", artist: "The Chainsmokers", url: "https://www.youtube.com/watch?v=Y0WlRBsZrg0" },
+          { title: "Burning Heart", artist: "Survivor", url: "https://www.youtube.com/watch?v=Kl0lYcBB4kk" }
+        ],
+        advanced: "Ecological succession requires disturbance to reset the biological clock. Pyrophytic plants use serotiny (resin-sealed cones) to time seed release with clearing of competitors. Destruction is a vital ecological service ensuring biodiversity and habitat rebirth. The fire is not the enemy of the forest. The fire is the forest's strategy." },
+
+      { id: "butterfly-metamorphosis", num: 8, icon: "🦋", title: "The Butterfly Metamorphosis", subtitle: "You Have to Become Liquid Before You Can Fly",
+        simple: "A caterpillar spends its whole life crawling on leaves and eating until one day it builds a little house called a chrysalis. Inside that house, the caterpillar's body actually turns into a liquid — the caterpillar part completely dies! But from that liquid, a beautiful butterfly with wings begins to grow. It has to go through this mushy stage to become something that can fly. If the caterpillar were afraid to change, it would never get to see the world from the sky. Your big changes might feel mushy or scary, but they are turning you into a butterfly.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft flutter of wings near your ear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower full of nectar: the reward for transforming." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A drop of honey: sweetness earned through change." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tickle of a tiny insect walking on your arm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Bright, colorful patterns on a butterfly's wing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling light like you could float away: the body remembering it was always meant to fly." }
+        ],
+        intuition: "Imagine your old worries melting away like the caterpillar, leaving only the wings of your new ideas. You have to become liquid before you can fly. The mush is the miracle.",
+        links: [
+          { label: "The Science of Metamorphosis", url: "https://en.wikipedia.org/wiki/Metamorphosis" },
+          { label: "National Geographic: Butterflies", url: "https://en.wikipedia.org/wiki/Butterfly" },
+          { label: "How a Chrysalis Works", url: "https://en.wikipedia.org/wiki/Pupa" }
+        ],
+        songs: [
+          { title: "Butterfly", artist: "Mariah Carey", url: "https://www.youtube.com/watch?v=e_oKXlCMuHg" },
+          { title: "Fly Away", artist: "Lenny Kravitz", url: "https://www.youtube.com/watch?v=EvuL5jyCHOw" },
+          { title: "Change", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=pv-MwYoXELg" }
+        ],
+        advanced: "Metamorphosis: imaginal cells survive enzymatic breakdown of larval tissues, directing construction of the adult form. Total structural and functional death of the previous identity to achieve higher mobility and capability. The biological proof that dissolution is not destruction — it is reconstruction from the inside out." },
+
+      { id: "seasonal-periodicity", num: 9, icon: "❄️", title: "Seasonal Periodicity", subtitle: "Winter Is Not the End — It Is the Nap Before the Bloom",
+        simple: "Every year, the world goes through a giant cycle of death and rebirth called the seasons. In the winter, the trees lose their leaves, the ground gets hard, and it looks like everything has stopped living. But the plants are actually just sleeping and saving their energy deep underground. When spring comes, the warmth wakes them up, and everything turns green and beautiful again. Winter is not the end; it is just a time for nature to rest before its big rebirth in the spring. You also have times when you need to rest so you can bloom later!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The quiet shhh of falling snow." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Crisp, cold winter air: the scent of patience." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A snowflake on your tongue: cold and clean." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The soft, velvet feel of a new flower petal." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The very first tiny green bud on a branch." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The shiver that tells your body to get warm: the signal that spring is being built underground." }
+        ],
+        intuition: "When you feel tired or bored, imagine you are a tree in winter, saving your energy underground. Your spring is coming. The nap is not the end. The nap is the plan.",
+        links: [
+          { label: "Phenology: Nature's Calendar", url: "https://en.wikipedia.org/wiki/Phenology" },
+          { label: "The Science of Seasons", url: "https://en.wikipedia.org/wiki/Season" },
+          { label: "Why Leaves Change Color", url: "https://en.wikipedia.org/wiki/Autumn_leaf_color" }
+        ],
+        songs: [
+          { title: "September", artist: "Earth, Wind & Fire", url: "https://www.youtube.com/watch?v=Gs069dndIYk" },
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "A Hazy Shade of Winter", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=bnZdlhUDEGE" }
+        ],
+        advanced: "Phenology studies periodic life cycle events. Dormancy is a physiological death-like state allowing survival through adverse conditions. This cyclical nature is fundamental to Earth's biological rhythms: death is strategic withdrawal, not finality. The season teaches what the ego refuses to learn — rest is not failure." },
+
+      { id: "creative-destruction-rebirth", num: 10, icon: "🏗️", title: "Creative Destruction", subtitle: "Breaking the Old Castle to Build the Spaceship",
+        simple: "To build something brand new and amazing, sometimes you have to take apart the old thing first. Think about playing with Legos: you have to break down your old castle so you can use the bricks to build a cool spaceship. In the world, old ideas or old buildings are sometimes destroyed to make room for newer, better things that help more people. This destruction is not mean or bad; it is a way of making sure we do not get stuck in the past. It is how we invent things like the internet or better cars. Letting go of the old way is how the new way gets born.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The loud boom and crash of a construction site: demolition and creation in one sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dusty, stony smell of old bricks being moved." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp apple: the fresh taste of starting over." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A brand-new toy or tool: smooth, unused, full of potential." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A big empty space where something old used to be: the blank page." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your hand knocking down a tower of blocks: the spark of the even better idea coming next." }
+        ],
+        intuition: "When you have to start a drawing over, do not be sad. Feel the spark of the better idea coming. The eraser is not the enemy of the artist. The eraser is the artist's best friend.",
+        links: [
+          { label: "Creative Destruction", url: "https://en.wikipedia.org/wiki/Creative_destruction" },
+          { label: "The Philosophy of the Blank Slate", url: "https://en.wikipedia.org/wiki/Tabula_rasa" },
+          { label: "Innovation and Growth", url: "https://en.wikipedia.org/wiki/Innovation" }
+        ],
+        songs: [
+          { title: "Wrecking Ball", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=My2FRPA3Gf8" },
+          { title: "Another One Bites the Dust", artist: "Queen", url: "https://www.youtube.com/watch?v=rY0WxgSXdEE" },
+          { title: "Starting Over", artist: "Chris Stapleton", url: "https://www.youtube.com/watch?v=kYYyG31BIFA" }
+        ],
+        advanced: "Schumpeter's Creative Destruction: innovation deconstructs long-standing practices for more efficient ones. Relates to Tabula Rasa — the blank slate. Progress is not just additive but requires active removal of the obsolete. The bricks do not disappear. They just change shape. And the spaceship was always hiding inside the castle." },
+    ],
 
 
   },
