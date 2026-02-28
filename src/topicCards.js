@@ -6070,3 +6070,15 @@ export const TOPIC_CARDS = {
 
   },
 };
+
+/* ═══════════════════════════════════════════════════════════════
+   HELPER FUNCTIONS — used by SubcategoryGrid.jsx
+   ═══════════════════════════════════════════════════════════════ */
+
+export function getTopicCards(doorKey, subId) {
+  return TOPIC_CARDS[doorKey]?.[subId] || null;
+}
+
+export function hasTopicCards(doorKey, subId) {
+  return !!(TOPIC_CARDS[doorKey]?.[subId]?.length);
+}
