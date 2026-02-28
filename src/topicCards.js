@@ -936,6 +936,8 @@ export const TOPIC_CARDS = {
       },
 
     ],
+  },
+};
 
 // ═══ UTILITY ═══
 export function getTopicCards(doorKey, subId) {
