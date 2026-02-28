@@ -6772,6 +6772,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Leibniz proposed Pre-established Harmony to solve the mind-body problem. Monads (simple substances) do not interact, but internal states are coordinated by God. Suggests a deep underlying Source Code ensuring all seemingly separate parts of the universe maintain constant rhythmic alignment. Freedom is the unfolding of one's internal nature in perfect timing with existence." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > LOGIC & REASON (logic)
+    // ═══════════════════════════════════════════════════════════════
+
+    logic: [
+      { id: "deductive-reasoning", num: 1, icon: "📐", title: "Deductive Reasoning", subtitle: "The Locked Door That Will Not Budge",
+        simple: "Imagine you have a box of only red crayons. If you reach in and pull one out, it has to be red. That is deductive reasoning. It starts with a big rule we know is true and follows it down to a specific answer. Because the starting rule is solid, the ending answer is like a locked door that will not budge. There is no guessing involved. When you use this, you are thinking like a master builder.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic thud of a heartbeat: certainty you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The crisp, sharp scent of pine needles in a cold forest." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The undeniable pop of a fresh sea-salt crystal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand along a perfectly smooth, cold marble countertop." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A laser beam cutting through a dark room in a perfectly straight line." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still with eyes closed, knowing exactly where the floor is: certainty in the bones." }
+        ],
+        intuition: "If the box holds only red, the crayon is red. No faith required. No guessing. The answer was inside the rule all along.",
+        links: [
+          { label: "Britannica: Deductive Reasoning", url: "https://www.britannica.com/topic/deduction-logic" },
+          { label: "Khan Academy: Deductive vs Inductive", url: "https://www.khanacademy.org/" },
+          { label: "Stanford: Rules of Logic", url: "https://plato.stanford.edu/entries/logic-classical/" }
+        ],
+        songs: [
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Logical Song", artist: "Supertramp", url: "https://www.youtube.com/watch?v=low6Coqrw9Y" },
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=NUnXxh5U25Y" }
+        ],
+        advanced: "Deductive reasoning operates on validity and soundness. A deductive argument is valid if the conclusion logically follows from premises; sound only if premises are actually true. Top-down logic: universal truths to particular instances (P→Q). Connects to Rationalism: certain truths knowable through reason alone, independent of sensory experience." },
+
+      { id: "syllogisms", num: 2, icon: "⛓️", title: "Syllogisms", subtitle: "The Three-Step Ladder",
+        simple: "A syllogism is like a three-step ladder. The first step is a big fact, the second is a smaller fact, and the third is where they both lead you. If the first two steps are strong, you can stand on the third without falling. It is a way of proving things are true by connecting them together. When you see how things fit, it feels like a puzzle piece clicking into place. You start to see that the world has a secret order.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Three distinct notes on a piano forming a perfect chord." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain followed by wet pavement: cause then effect." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Peanut butter and jelly creating a familiar third flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The click of a seatbelt locking into its base." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A key turning in a lock and the bolt moving: connection made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning back into a chair and knowing it will catch you: trust built from structure." }
+        ],
+        intuition: "Two truths walk into a room. A third truth walks out. That is a syllogism. The conclusion was hiding inside the premises.",
+        links: [
+          { label: "Stanford: Aristotle's Logic", url: "https://plato.stanford.edu/entries/aristotle-logic/" },
+          { label: "Syllogism Examples", url: "https://en.wikipedia.org/wiki/Syllogism" },
+          { label: "Philosophy Basics: Logic", url: "https://www.philosophybasics.com/branch_logic.html" }
+        ],
+        songs: [
+          { title: "Chain of Fools", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=mOmdg3epcMc" },
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" },
+          { title: "Three Is a Magic Number", artist: "Blind Melon", url: "https://www.youtube.com/watch?v=aU4pyiB-kq0" }
+        ],
+        advanced: "The Aristotelian syllogism is the fundamental unit of categorical logic: major premise, minor premise, conclusion. Categorizes objects into sets and subsets to derive necessary truths about existence. Relates to Transitivity in mathematics, bridging abstract classification and concrete reality." },
+
+      { id: "logical-fallacies-lr", num: 3, icon: "🎭", title: "Logical Fallacies", subtitle: "The Mask That Looks Real",
+        simple: "Sometimes people try to win an argument by using trick moves that do not actually make sense. These are called fallacies. It is like trying to win a soccer game by picking up the ball with your hands: it might look like you are playing, but you are breaking the rules. Learning these helps you spot when someone is trying to fool you. You become like a detective who can see through a disguise.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A record scratching or a note played out of tune." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fake fruit flavor compared to a real orange: close but wrong." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Food that looks delicious but tastes like cardboard." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Static electricity: a sudden zap that should not be there." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A desert mirage that looks like water but is just heat." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stepping onto an escalator that is not moving: your body expected one thing and got another." }
+        ],
+        intuition: "The mask looks like a face. But it has no eyes behind it. Learn to see the emptiness behind a beautiful argument.",
+        links: [
+          { label: "Your Logical Fallacy Is", url: "https://yourlogicalfallacyis.com/" },
+          { label: "Purdue OWL: Common Fallacies", url: "https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html" },
+          { label: "The Fallacy Files", url: "https://www.fallacyfiles.org/" }
+        ],
+        songs: [
+          { title: "Liar", artist: "Three Dog Night", url: "https://www.youtube.com/watch?v=O0RhwBuy0QI" },
+          { title: "Bad Moon Rising", artist: "Creedence Clearwater Revival", url: "https://www.youtube.com/watch?v=zUQiUFa5spo" },
+          { title: "Fake Plastic Trees", artist: "Radiohead", url: "https://www.youtube.com/watch?v=n5h0qHwNrHk" }
+        ],
+        advanced: "Logical fallacies are structural failures in argument. Formal fallacies break syllogistic structure; informal fallacies (Ad Hominem, Straw Man) use irrelevant content to distract. Essential for Rhetoric and Dialectic. Connects to Cognitive Dissonance: the mind trying to reconcile faulty logic with reality." },
+
+      { id: "critical-thinking", num: 4, icon: "🔍", title: "Critical Thinking", subtitle: "The Judge of Your Own Thoughts",
+        simple: "Critical thinking is like being the judge of your own thoughts. Instead of believing everything you hear, you stop and ask: Is this really true? It is like checking fruit at the grocery store for bruises before you buy it. This helps you make choices that are good for you and the people around you. You are not easily pushed around. You start to trust your own inner compass.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clean, clear ring of a bell." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, awakening scent of peppermint oil." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure, clean water that washes away other flavors." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the grain of wood to see if it is real or plastic." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Cleaning foggy glasses and seeing the world snap into focus." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot and finding your center of gravity: clarity as physical stillness." }
+        ],
+        intuition: "Do not eat the fruit without checking it. Do not believe the thought without testing it. Your mind deserves the same care as your body.",
+        links: [
+          { label: "Foundation for Critical Thinking", url: "https://www.criticalthinking.org/" },
+          { label: "SkillsYouNeed: Critical Thinking", url: "https://www.skillsyouneed.com/learn/critical-thinking.html" },
+          { label: "Harvard: Developing Critical Thinking", url: "https://www.harvard.edu/" }
+        ],
+        songs: [
+          { title: "Think", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=Nnz8q6GVJvY" },
+          { title: "Eye in the Sky", artist: "Alan Parsons Project", url: "https://www.youtube.com/watch?v=NNiie_zmSr8" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Critical Thinking is self-directed, self-disciplined, self-corrective thought. Requires mastery of abstract concepts to analyze and evaluate information from observation, experience, or communication. Deeply linked to the Socratic Method. Bridges information processing and true wisdom (Phronesis)." },
+
+      { id: "first-principles", num: 5, icon: "🌱", title: "First Principles Thinking", subtitle: "Take It Apart to Build It New",
+        simple: "Imagine you want to build a new toy. Instead of looking at other toys, you look at the plastic, the screws, and the paint. You ask: What are the basic things I have? This is First Principles Thinking. It is like taking a LEGO castle apart to see all the tiny blocks it started with. When you do this, you can build anything you want from scratch. It feels like having a superpower of creativity.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single, pure note from a tuning fork." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh earth before anything grows in it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The basic taste of salt, sugar, or lemon: irreducible flavors." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Raw clay in your hands: formless potential." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blank white canvas waiting for paint." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feet flat on the ground, supporting your whole weight: the foundation you can feel." }
+        ],
+        intuition: "Take the castle apart. See the blocks. Now build something no one has ever seen. The answer is always in the pieces, not the picture on the box.",
+        links: [
+          { label: "Farnam Street: First Principles", url: "https://fs.blog/first-principles/" },
+          { label: "Elon Musk on First Principles", url: "https://www.youtube.com/watch?v=NV3sBlRgzTI" },
+          { label: "James Clear: First Principles", url: "https://jamesclear.com/first-principles" }
+        ],
+        songs: [
+          { title: "Start Me Up", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=SGyOaCXr8Lw" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Origins", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=qAFjQxJOmSM" }
+        ],
+        advanced: "First principles thinking is a physics-based approach to problem-solving. Deconstructs systems to fundamental axioms (truths that cannot be deduced from other truths) and rebuilds from there. Contrasted with reasoning by analogy. Strips away tradition and assumption to find solutions that are physically possible but culturally unimagined." },
+
+      { id: "cognitive-biases", num: 6, icon: "🌫️", title: "Cognitive Biases", subtitle: "The Tinted Sunglasses",
+        simple: "Our brains sometimes play tricks by taking shortcuts that are not always right. This is called a cognitive bias. It is like wearing tinted sunglasses: everything looks a certain color even if it is not. Sometimes we only listen to people who agree with us, which is one of these tricks. When you learn about them, it is like taking those sunglasses off. You see the world in its real colors.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that changes how the original sound is heard." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A room you have been in so long you cannot smell it anymore." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Expecting apple juice but drinking milk: the shock of the wrong taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A phantom feeling or a trick of the nerves." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An optical illusion where two lines look different but are the same length." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Still feeling motion after stepping off a treadmill: the body believing what is no longer true." }
+        ],
+        intuition: "You cannot see the tint while you are wearing the glasses. The first step is knowing you have them on. Then you can take them off.",
+        links: [
+          { label: "Cognitive Bias Codex", url: "https://en.wikipedia.org/wiki/List_of_cognitive_biases" },
+          { label: "Decision Lab: Biases & Heuristics", url: "https://thedecisionlab.com/" },
+          { label: "VeryWell Mind: Psychology of Bias", url: "https://www.verywellmind.com/what-is-a-cognitive-bias-2794963" }
+        ],
+        songs: [
+          { title: "You're So Vain", artist: "Carly Simon", url: "https://www.youtube.com/watch?v=j13oJajXx0M" },
+          { title: "Behind Blue Eyes", artist: "The Who", url: "https://www.youtube.com/watch?v=BfuWXRZe9yA" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Cognitive biases are systematic deviations from rational judgment, resulting from evolutionary heuristics for quick decisions. Confirmation Bias, Dunning-Kruger Effect distort perception of reality. In Meta-cognition, recognizing biases is the first step toward intellectual humility. Connects to Plato's Allegory of the Cave." },
+
+      { id: "bayesian-inference", num: 7, icon: "📈", title: "Bayesian Inference", subtitle: "I Changed My Mind Because I Learned",
+        simple: "Bayesian inference is a fancy way of saying I changed my mind because I learned something new. Imagine you think it is going to rain, but then the sun comes out. You update your guess! It is like being a scientist who keeps adding clues to a map. The more clues you get, the closer you get to the treasure. You are not stuck in one way of thinking forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song that slowly gets louder and clearer as you get closer." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Baking bread getting stronger as you walk toward the kitchen." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A soup that tastes better as you add the right spices." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling around in a dark room until you find the light switch." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blurry photo slowly coming into focus." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Learning to ride a bike and feeling your balance improve every second: knowledge as motion." }
+        ],
+        intuition: "The map is never finished. Every new clue redraws it. The smartest person in the room is the one still willing to update.",
+        links: [
+          { label: "3Blue1Brown: Bayes' Theorem", url: "https://www.youtube.com/watch?v=HZGCoVF3YvM" },
+          { label: "Towards Data Science: Bayesian Thinking", url: "https://towardsdatascience.com/" },
+          { label: "Stanford: Probability and Logic", url: "https://plato.stanford.edu/entries/logic-probability/" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "I Can See Clearly Now", artist: "Jimmy Cliff", url: "https://www.youtube.com/watch?v=MrHxhQPOO2c" },
+          { title: "Learning to Fly", artist: "Tom Petty", url: "https://www.youtube.com/watch?v=s5BJXwNeKsQ" }
+        ],
+        advanced: "Bayesian inference uses Bayes' Theorem to calculate hypothesis probability as evidence accumulates. Central to modern AI and scientific inquiry. Moves from binary True/False toward probabilistic worldview. Connects to Fallibilism: no belief is totally immune to future revision." },
+
+      { id: "inductive-reasoning", num: 8, icon: "🎲", title: "Inductive Reasoning", subtitle: "The Pattern Spotter",
+        simple: "Inductive reasoning is like being a pattern-spotter. If you see that every cat you meet purrs, you might guess that all cats purr. It is not a 100% guarantee like deductive reasoning, but it is a very good guess based on what you have seen. It is how we learn about the world through experience. You start to feel the rhythm of the world around you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The repetitive sound of waves crashing on shore." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Coffee every morning: the smell that tells you the day has started." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The reliable sweetness of a ripe strawberry." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The soft texture of a blanket you have used for years." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sun setting every evening in the west." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking without thinking about your feet: muscle memory built from repetition." }
+        ],
+        intuition: "The sun rose yesterday. It rose today. It will probably rise tomorrow. Probably is not proof. But it is how we learn to trust the world.",
+        links: [
+          { label: "Stanford: Inductive Logic", url: "https://plato.stanford.edu/entries/logic-inductive/" },
+          { label: "Problem of Induction", url: "https://1000wordphilosophy.com/2014/10/06/the-problem-of-induction/" },
+          { label: "Khan Academy: Induction", url: "https://www.khanacademy.org/" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Patterns", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=ZFWRO0qRl-E" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "Inductive reasoning moves from specific observations to broader generalizations. While deductive logic is truth-preserving, inductive logic is ampliative: adds knowledge but introduces error possibility. Hume's Problem of Induction questions our justification for believing the future resembles the past. Foundation of Empirical Sciences. Connects to Emergence." },
+
+      { id: "occams-razor-lr", num: 9, icon: "🪒", title: "Occam's Razor", subtitle: "Horses, Not Unicorns",
+        simple: "If you hear hoofbeats outside, you should think horses, not unicorns. Occam's Razor is the idea that the simplest answer is usually the right one. It tells us not to make things more complicated than they need to be. When you use this, you stop worrying about what-ifs and focus on what is likely. It makes your mind feel light and clear. Like cleaning your room so you can finally see the floor.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single, clear whistle in a quiet room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The simple, clean scent of plain soap." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cool glass of plain water on a hot day." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth, flat stone with no bumps or cracks." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single black dot on a huge white piece of paper." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall with perfect, simple posture: nothing extra, nothing missing." }
+        ],
+        intuition: "If the simple answer works, the complicated one was never needed. Cut away the extra. What remains is true.",
+        links: [
+          { label: "New Scientist: Occam's Razor", url: "https://www.newscientist.com/" },
+          { label: "Stanford: Simplicity", url: "https://plato.stanford.edu/entries/simplicity/" },
+          { label: "Philosophy Index: Parsimony", url: "https://www.philosophybasics.com/" }
+        ],
+        songs: [
+          { title: "Simple Gifts", artist: "Yo-Yo Ma", url: "https://www.youtube.com/watch?v=HqQDjxRI5_8" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Keep It Simple", artist: "James Bay", url: "https://www.youtube.com/watch?v=2fA8VPwGNGg" }
+        ],
+        advanced: "Occam's Razor (Principle of Parsimony): entities should not be multiplied beyond necessity. In science, if two theories explain data equally well, fewer assumptions wins. Not a law of nature but a heuristic for theory selection. Relates to Information Theory and Kolmogorov Complexity: the simplest description is the most fundamental truth." },
+
+      { id: "abductive-reasoning", num: 10, icon: "💡", title: "Abductive Reasoning", subtitle: "The Best Guess",
+        simple: "Abductive reasoning is like being a doctor. You look at all the symptoms: a cough, a fever, a sore throat, and you make the best guess that it is a cold. It is not 100% certain, but it is the smartest guess you can make right now. It helps us act quickly even when we do not know everything. It feels like a spark of intuition hitting you. You feel connected to the mystery of solving a problem.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The Aha! sound when you find a lost toy." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke that tells you something might be burning." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Identifying a hidden ingredient in a cake by one bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling for a light switch in a dark, unfamiliar room." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A shape in the shadows that turns out to be just a coat rack." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Catching a falling cup before you realize it is slipping: your body solved it before your mind did." }
+        ],
+        intuition: "You do not need all the pieces to see the picture. The best guess is not a guess at all. It is wisdom moving faster than proof.",
+        links: [
+          { label: "Stanford: Abductive Reasoning", url: "https://plato.stanford.edu/entries/abduction/" },
+          { label: "Types of Reasoning", url: "https://en.wikipedia.org/wiki/Abductive_reasoning" },
+          { label: "Peirce and Abduction", url: "https://plato.stanford.edu/entries/peirce/" }
+        ],
+        songs: [
+          { title: "I Still Haven't Found What I'm Looking For", artist: "U2", url: "https://www.youtube.com/watch?v=e3-5YC_oHjE" },
+          { title: "Clues", artist: "Robert Palmer", url: "https://www.youtube.com/watch?v=zQ5zslCfuRw" },
+          { title: "The Pretender", artist: "Foo Fighters", url: "https://www.youtube.com/watch?v=SBjQ9tuuTJQ" }
+        ],
+        advanced: "Abduction forms explanatory hypotheses: the logic of discovery. Unlike induction which finds rules from cases, abduction seeks a single explanation for a surprising observation. Peirce argued abduction is the only logical operation introducing new ideas. Inference to the Best Explanation. Connects to the Hermeneutic Circle." },
+    ],
 
 
   },
