@@ -7477,6 +7477,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The Arrow of Time: time has a preferred direction not inherent in fundamental laws (mostly T-symmetric). The Thermodynamic Arrow is based on entropy increase. Other arrows: Cosmological (universe expansion), Radiative (waves spread outward), Causal. The Past Hypothesis: the universe began in an exceptionally low-entropy state, setting the arrow in motion at the Big Bang." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > LANGUAGE & MEANING (language)
+    // ═══════════════════════════════════════════════════════════════
+
+    language: [
+      { id: "linguistic-relativity", num: 1, icon: "👁️‍🗨️", title: "Linguistic Relativity", subtitle: "Your Words Are Your Crayons",
+        simple: "Imagine if you had a box of crayons with only three colors. You would describe the whole world using just those three names. If you get a bigger box with sixty-four colors, you start to notice tiny differences you never saw before. The words we know act like those crayons. They help us pick out details and make sense of things. When you learn new words, it is like getting a bigger box of crayons for your brain. You can see more, think more, and explain your feelings better.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two people speaking languages you do not understand: feel the different energy and rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A citrus fruit: name every scent (lemon, lime, orange) and watch the smell sharpen." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A complex sauce: finding the word salty or sweet makes that flavor pop out." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Velvet vs silk while saying the words: the name helps you feel the difference." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sky: find five different blues by naming them (sky, navy, teal, cobalt, ice)." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and describe where your hand is using left/right versus north/south: language changes your sense of space." }
+        ],
+        intuition: "You are the painter and the paint. The words you choose determine the masterpiece of your life. More words, more colors, more world.",
+        links: [
+          { label: "Wikipedia: Linguistic Relativity", url: "https://en.wikipedia.org/wiki/Linguistic_relativity" },
+          { label: "TED: Lera Boroditsky", url: "https://www.youtube.com/watch?v=RKK7wGAYP6k" },
+          { label: "Sapir-Whorf Hypothesis", url: "https://plato.stanford.edu/entries/relativism/supplement2.html" }
+        ],
+        songs: [
+          { title: "Words", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=jMSFpDml8Gk" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Lost in Translation", artist: "Sofia Coppola (Soundtrack)", url: "https://www.youtube.com/watch?v=sU0oZsqeG_s" }
+        ],
+        advanced: "The Sapir-Whorf hypothesis: language influences perception and conceptualization. Strong determinism (language dictates thought) vs weak (language influences thought). Grammatical structures force attention to specific details: languages using absolute cardinal directions create speakers with extraordinary orientation. Our internal map is drawn in the ink of our native tongue." },
+
+      { id: "universal-grammar", num: 2, icon: "🧬", title: "Universal Grammar", subtitle: "The Starter Kit Every Baby Is Born With",
+        simple: "Have you ever wondered how every baby in the whole world learns to talk without going to baby school? Our brains come with a starter kit for language already inside. Just like a bird is born knowing how to build a nest, humans are born knowing how to put words together. Even if languages sound totally different, the rules deep down are very similar. It is like having the same basic LEGO bricks, but different kids build different houses. We are all connected by a shared human operating system for sharing our hearts.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A heartbeat: the first grammar of rhythm we all share." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library: the scent of millions of shared human rules." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain bread: a universal base every culture flavors differently." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a baby's hand: feeling the potential for every word they will ever say." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Children who speak different languages playing together and understanding the game." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The structure of your own throat and tongue making sounds: a built-in instrument you never had to learn." }
+        ],
+        intuition: "You were born with the song of humanity already written in your code. You are just learning the lyrics. The melody was always there.",
+        links: [
+          { label: "Wikipedia: Universal Grammar", url: "https://en.wikipedia.org/wiki/Universal_grammar" },
+          { label: "Chomsky on Universal Grammar", url: "https://www.youtube.com/watch?v=hdUbIlwHRkY" },
+          { label: "Steven Pinker: The Language Instinct", url: "https://en.wikipedia.org/wiki/The_Language_Instinct" }
+        ],
+        songs: [
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=M9BNoNFKCBI" },
+          { title: "ABC", artist: "The Jackson 5", url: "https://www.youtube.com/watch?v=ho7796-au8U" },
+          { title: "One Love", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=vdB-8eLEW8g" }
+        ],
+        advanced: "Chomsky's Universal Grammar: the ability to acquire language is innate. Underlying structural rules (principles and parameters) are shared by all languages despite surface differences. Explains the Poverty of the Stimulus: children learn complex rules with insufficient data for imitation alone. Implies a Language Acquisition Device (LAD) and biological unity of the human mind." },
+
+      { id: "semantics-signification", num: 3, icon: "🏷️", title: "Semantics and Signification", subtitle: "The Sticker Is Not the Thing",
+        simple: "A word is like a tiny sticker we put on things so we can talk about them when they are not there. If I say Apple, you see a red, crunchy fruit in your head even if there is not one in the room. But the word Apple is not the fruit itself; it is just a sign. Sometimes we use stickers for things we cannot see, like Love or Bravery. We have to agree on what the stickers mean, or we get confused. When we understand each other, our brain stickers are matching up perfectly.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Say a word over and over until it sounds like nonsense: the sticker falling off." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A crayon: the word Crayon instantly brings up memories of school." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The word sour makes your mouth pucker before you even eat the candy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Close your eyes and touch an object: try to feel it without naming it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Stop sign: red color and the word Stop mean the same thing to your brain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Move your body to dance versus wiggle: the meaning of the word changes your movement." }
+        ],
+        intuition: "Words are bridges to the world. But do not forget to walk across them to the real thing. The map is not the territory.",
+        links: [
+          { label: "Wikipedia: Semantics", url: "https://en.wikipedia.org/wiki/Semantics" },
+          { label: "Semiotics for Beginners", url: "https://www.cs.princeton.edu/~chazelle/courses/BIB/semio2.htm" },
+          { label: "Language and Meaning", url: "https://plato.stanford.edu/entries/meaning/" }
+        ],
+        songs: [
+          { title: "Sign of the Times", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=qN4ooNx77u0" },
+          { title: "Words Get in the Way", artist: "Gloria Estefan", url: "https://www.youtube.com/watch?v=AJJYwU8M8kU" },
+          { title: "What's in a Name", artist: "Trans-Siberian Orchestra", url: "https://www.youtube.com/watch?v=3mCnao4GN6U" }
+        ],
+        advanced: "Saussure's Signification: the signifier (sound/image of a word) and the signified (concept) create the sign. This relationship is arbitrary: no natural reason dog represents a canine. Meaning is found not within a word but in how it differs from other words (hot only means something because cold exists). Language is a social contract of differences." },
+
+      { id: "neuroplasticity-language", num: 4, icon: "🧠", title: "Neuroplasticity and Language", subtitle: "Words Build Roads in Your Brain",
+        simple: "Your brain is like a big, soft piece of clay that gets shaped by everything you do. When you learn a new language or even a big new word, your brain actually grows new roads between its cells. It is like building a shortcut through the woods. People who speak two languages have brains like multi-tools: good at switching tasks and solving puzzles. Every time you read or speak, you are literally upgrading your own brain's hardware. You are never stuck. Your mind is a garden that grows with every new word you plant.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song in a foreign language: your brain trying to find patterns in the noise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain (petrichor): the brain instantly connects scent to word to feeling." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A totally new food: feel your brain recording the flavor and finding a word for it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Learning a few Braille dots with your fingers: feel the new roads being built." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An optical illusion: your brain shifting as it tries to label what it sees." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Writing your name with your other hand: slow, new roads forming in real time." }
+        ],
+        intuition: "Every word you learn builds a new road in your brain. The more roads, the more places you can go. Language is not just talking. It is building.",
+        links: [
+          { label: "Wikipedia: Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "How Language Changes Your Brain", url: "https://www.youtube.com/watch?v=MMmOLN5zBLY" },
+          { label: "The Bilingual Brain", url: "https://www.youtube.com/watch?v=4bLbVjK4UYw" }
+        ],
+        songs: [
+          { title: "Change", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=g5qU7p7yOY8" },
+          { title: "Mind Games", artist: "John Lennon", url: "https://www.youtube.com/watch?v=ONFYG-YOFbY" },
+          { title: "Brain Damage", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=pnExahMPPFI" }
+        ],
+        advanced: "Neuroplasticity: the brain reorganizes by forming new neural connections throughout life. Language acquisition drives this powerfully. fMRI shows second-language learning increases grey matter density in the left inferior parietal cortex. The Bilingual Advantage: managing two systems develops higher-level conflict management skills. Even in old age, complex language builds cognitive reserve against neurodegeneration." },
+
+      { id: "pragmatics", num: 5, icon: "🎭", title: "Pragmatics", subtitle: "The Hidden Rules of Talking",
+        simple: "Have you ever had a friend ask Do you know what time it is? and you just said Yes? They were not asking a Yes or No question; they wanted you to tell them the time! This is Pragmatics: the hidden rules of talking. It is not just about what words say, but why the person is saying them and how they feel. It is like reading between the lines of a book. Mastering this helps you become a social detective who understands people's hearts, not just their mouths.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Say Great in a happy way, then sarcastically: the meaning flips completely." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Burnt toast: a silent signal that something is wrong without any words." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something bitter while someone says Isn't this sweet? Feel the mismatch." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five versus a firm handshake: different social meanings of the same hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A silent movie: understanding the story just from faces." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "How close you stand to a friend versus a stranger: that space is a wordless sentence." }
+        ],
+        intuition: "The most important things people say are often the words they never use. Listen to the silence between the sentences.",
+        links: [
+          { label: "Wikipedia: Pragmatics", url: "https://en.wikipedia.org/wiki/Pragmatics" },
+          { label: "Grice's Maxims of Conversation", url: "https://en.wikipedia.org/wiki/Cooperative_principle" },
+          { label: "Intro to Pragmatics", url: "https://www.youtube.com/watch?v=1L0k8nPXKLs" }
+        ],
+        songs: [
+          { title: "Say Something", artist: "A Great Big World", url: "https://www.youtube.com/watch?v=-2U0Ivkn2Ds" },
+          { title: "Read My Mind", artist: "The Killers", url: "https://www.youtube.com/watch?v=zc8hbSM1zVo" },
+          { title: "More Than Words", artist: "Extreme", url: "https://www.youtube.com/watch?v=UrIiLvg58SY" }
+        ],
+        advanced: "Pragmatics studies how context contributes to meaning. Speech Act Theory: talking is doing (promising, threatening, requesting). Grice's Cooperative Principle: speakers aim to be informative, truthful, relevant, clear. Flouting these maxims creates implicature: meaning suggested, not stated. Sarcasm flouts literal meaning. Understanding pragmatics requires Theory of Mind: attributing mental states to others." },
+
+      { id: "limits-of-language", num: 6, icon: "🔲", title: "The Limits of Language", subtitle: "When Words Are Too Small",
+        simple: "Think about your favorite dream or how much you love your family. Sometimes when you try to explain it, the words feel too small, like trying to catch the ocean in a tiny cup. A famous thinker named Wittgenstein said our world is only as big as the words we have. If we do not have a word for a feeling, it is hard to share it. But some things, like the way a sunset makes you feel quiet inside, are just too big for talking. That is why we have art and hugs!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A beautiful piece of music with no words: it says things language cannot." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A scent that triggers a memory you cannot explain: feeling without vocabulary." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Umami: a flavor people struggled to describe until they finally named it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A hug when someone is sad: touch doing more work than any sentence." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A deep starry night: the silence that happens when words fail." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spinning until dizzy, then trying to explain the feeling: the body outrunning the dictionary." }
+        ],
+        intuition: "Beyond the wall of words lies the vast garden of the soul. Some truths can only be felt, never spoken. And that is not a failure. That is depth.",
+        links: [
+          { label: "Wittgenstein: Tractatus (Summary)", url: "https://plato.stanford.edu/entries/wittgenstein/" },
+          { label: "Limits of Language", url: "https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus" },
+          { label: "Ineffability", url: "https://en.wikipedia.org/wiki/Ineffability" }
+        ],
+        songs: [
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Words", artist: "F.R. David", url: "https://www.youtube.com/watch?v=rGsAiB87grM" }
+        ],
+        advanced: "Wittgenstein: language pictures the world, so anything that cannot be logically pictured (ethics, aesthetics, meaning of life) falls outside what can be meaningfully said. 'Whereof one cannot speak, thereof one must be silent.' Language games work within specific contexts but fail to capture totality. Recognizing limits allows appreciation of the ineffable: real experiences beyond the dictionary." },
+
+      { id: "metaphor-cognition", num: 7, icon: "🏹", title: "Metaphor as Cognition", subtitle: "You Are a Poet Every Day",
+        simple: "Did you know you are a poet every single day? When you say I am feeling down or Time is flying, you are using metaphors. You are not actually flying through the air or physically down in the ground. You are using a word bridge to explain a hard idea by using an easy idea. This is how our brains learn everything. We take what we already know and stretch it to cover new things. It is a secret code that makes the whole world easier to understand.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clashing sound: we use clash for colors or people fighting too." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh laundry: we use fresh to mean a new start." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something bitter: we call an upset person bitter too." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Something sharp: we call a smart person sharp." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright light: we call a good idea bright." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot: we try to balance schoolwork and play. The body knows the metaphor." }
+        ],
+        intuition: "You understand the unknown by seeing its reflection in the known. Every metaphor is a mirror held up between two worlds.",
+        links: [
+          { label: "Lakoff: Metaphors We Live By", url: "https://en.wikipedia.org/wiki/Metaphors_We_Live_By" },
+          { label: "Conceptual Metaphor", url: "https://en.wikipedia.org/wiki/Conceptual_metaphor" },
+          { label: "The Power of Metaphor", url: "https://www.youtube.com/watch?v=lmDkIF4-f5U" }
+        ],
+        songs: [
+          { title: "Firework", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=QGJuMBdaqIw" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Life Is a Highway", artist: "Rascal Flatts", url: "https://www.youtube.com/watch?v=5tXh_MfrMe0" }
+        ],
+        advanced: "Lakoff and Johnson: metaphor is not just literary but a fundamental feature of cognition. We map source domains (concrete, physical) onto target domains (abstract). Argument is structured by War (attacked my points, won the debate). If we thought of Argument as Dance instead of War, social interactions would transform. Metaphors create the rules of engagement for how we live." },
+
+      { id: "lexical-color", num: 8, icon: "🎨", title: "Lexical Labels and Color Perception", subtitle: "Name It and Your Eyes Find It",
+        simple: "If you went to a place where they did not have a word for Orange, they might just call it Yellow-Red. Scientists found that if your language has a special name for a color, your eyes actually find it faster in a crowd! It is like having a searchlight in your brain. Once you give a color a name, it pops out at you. The words we use do not just change how we talk; they actually change what our eyes see when we look at a rainbow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two different birds: names Robin and Crow help you hear the difference." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Mint versus menthol: the labels help you separate the two." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Two types of apples: label one sweet and one tart and the taste gets stronger." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough wood versus sandpaper: different words help you feel the tiny bumps." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Go outside and find a color you have no name for. Can you make one up?" },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your posture: use the word tall and see if your body moves to match it." }
+        ],
+        intuition: "To name something is to invite it into your sight. The unnamed stays invisible. Language is not a mirror. It is a spotlight.",
+        links: [
+          { label: "Wikipedia: Color Term", url: "https://en.wikipedia.org/wiki/Color_term" },
+          { label: "Do We See the Same Colors?", url: "https://www.youtube.com/watch?v=evQsOFQju08" },
+          { label: "The Himba Color Experiment", url: "https://www.youtube.com/watch?v=4b71rT9fU-I" }
+        ],
+        songs: [
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+          { title: "Yellow", artist: "Coldplay", url: "https://www.youtube.com/watch?v=yKNxeF4KMsY" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" }
+        ],
+        advanced: "Color nomenclature provides strong evidence for weak Sapir-Whorf. Cross-cultural studies (Himba tribe, Russian speakers with distinct words for light/dark blue) show lexical categories influence categorical perception. Brain scans show language centers activate before conscious color decision. A top-down processing effect: culture provides a linguistic filter sorting raw data before it reaches consciousness." },
+
+      { id: "social-constructivism", num: 9, icon: "🧱", title: "Social Constructivism", subtitle: "We Built This World with Words",
+        simple: "Think about Money. It is just pieces of green paper or numbers on a screen. The only reason we can use it to buy toys is because everyone agrees it is valuable. We used words to make that rule. Language is like the glue that holds all our shared rules together. We use it to decide what is fair, what is a holiday, and even who is the boss. We are all building a giant world made of shared ideas, and words are the bricks.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A school chant or pledge: feel the power of saying words together." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Birthday cake: it smells like a social rule (we eat this on special days)." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cultural food: words make it feel like home." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five versus a pinky-swear: invisible rules made with your hands." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A uniform: the outfit is a wordless rule." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sitting properly in a chair: the word proper changes how you hold your body." }
+        ],
+        intuition: "We are the architects of the world we live in. Money is paper we agreed to believe in. Rules are words we agreed to follow. Choose your words to build a kind world.",
+        links: [
+          { label: "Wikipedia: Social Constructivism", url: "https://en.wikipedia.org/wiki/Social_constructivism" },
+          { label: "The Social Construction of Reality", url: "https://en.wikipedia.org/wiki/The_Social_Construction_of_Reality" },
+          { label: "What Is Social Construction?", url: "https://www.youtube.com/watch?v=qw2_mB6_-pU" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" }
+        ],
+        advanced: "Berger and Luckmann: reality is socially constructed through language and interaction. We externalize ideas through speech, objectify them into institutions (law, marriage), then internalize them as objective truths. Truth is consensus reached through linguistic negotiation. Changing language (global warming to climate crisis) physically changes social reality and actions." },
+
+      { id: "etymological-roots", num: 10, icon: "🌳", title: "Etymological Roots", subtitle: "Every Word Has a Secret History",
+        simple: "Every word has a secret history, like a family tree. The word Believe comes from an old word meaning to hold dear or to love. So when you believe in someone, you are actually loving them with your mind! When we learn where words come from, it is like being a time traveler. You can feel the ghosts of what people were thinking thousands of years ago. It helps you understand the deep feelings hidden inside the words you use every day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The word Mother sounds like Mamma in almost every language: the deepest shared root." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old book: it smells like the history of all the words inside it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honey: the word has stayed almost the same across languages for ages." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A stone: the word stone feels hard just like the object." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The letter A used to look like an ox's head turned upside down." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Understand: feel how you stand under an idea to support it. The body is in the word." }
+        ],
+        intuition: "You are speaking the wisdom of your ancestors every time you open your mouth. The word remembers what the speaker forgot.",
+        links: [
+          { label: "Etymonline: Etymology Dictionary", url: "https://www.etymonline.com/" },
+          { label: "History of English", url: "https://www.youtube.com/watch?v=H3r9bOkYW9s" },
+          { label: "Proto-Indo-European Language", url: "https://en.wikipedia.org/wiki/Proto-Indo-European_language" }
+        ],
+        songs: [
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Roots", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=e4RMhMEFf70" }
+        ],
+        advanced: "Etymology reveals cognitive archaeology of early human thought. The PIE root gno- (to know) appears in knowledge, gnostic, and ignore (not knowing). Language is an evolving organism. Dead metaphors are words used literally now that began as vivid comparisons. Tracing roots shows how ancestors categorized the world: diachronic perspective enriching synchronic use." },
+    ],
 
 
   },
