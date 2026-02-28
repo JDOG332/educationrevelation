@@ -2173,6 +2173,317 @@ export const TOPIC_CARDS = {
 
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 🧬 GENETICS & DNA (genetics)
+    // "The code of life and how it writes you"
+    // ═══════════════════════════════════════════════════════════════
+
+    genetics: [
+
+      // ── 1 ── THE DOUBLE HELIX ────────────────────────────────
+      {
+        id: "double-helix",
+        num: 1,
+        icon: "🧬",
+        title: "The Double Helix Structure",
+        subtitle: "The Spiral Staircase of Life",
+        simple: "Imagine two long ladders twisted together like a spiral slide. This slide holds the secret recipe for making you. It uses only four special \"letters\" to write every instruction your body needs. It is the strongest, most trusted notebook in the world.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a grandfather clock ticking; the steady, rhythmic beat of time keeping the code safe." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of an old library book — layers of information preserved for ages." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A pinch of salt; simple crystals that form a perfect, repeating structure." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Twist two pieces of string together until they kink; feel the tension and strength of the spiral." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a spiral staircase and see how it climbs upward using the same repeating steps." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Interlock your fingers and twist your forearms; feel how two separate sides become one solid unit." },
+        ],
+        intuition: "You are a living library. Every cell contains the entire story of \"Us,\" twisted into a beautiful, unbreakable bond.",
+        links: [
+          { label: "NHGRI: DNA", url: "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid" },
+          { label: "Nature: DNA Structure — Watson & Crick", url: "https://www.nature.com/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/" },
+          { label: "Khan Academy: Molecular Structure of DNA", url: "https://www.khanacademy.org/science/biology/dna-as-the-genetic-material/dna-structure-and-replication/a/dna-structure-and-function" },
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9nmU" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+        ],
+        advanced: "The Double Helix represents the convergence of information theory and physical chemistry. The antiparallel strands (5' to 3') stabilized by hydrogen bonding between purines and pyrimidines create a digital-to-analog bridge. This mirrors the \"As Above, So Below\" hermetic principle, where microscopic geometry dictates macroscopic reality.",
+      },
+
+      // ── 2 ── THE CENTRAL DOGMA ───────────────────────────────
+      {
+        id: "central-dogma",
+        num: 2,
+        icon: "⟿",
+        title: "The Central Dogma",
+        subtitle: "The One-Way Street",
+        simple: "Life has a strict \"One-Way Street\" for its rules. DNA is the master book that stays in the library. It gets copied onto a small note (RNA), and that note is used to build the \"machines\" (proteins) that do all the work.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "An echo in a canyon; the original sound (DNA) creates a moving wave (RNA) that hits the other side." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of baking bread; the recipe in the book becomes the aroma in the air." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Tasting the finished bread; the final result of the recipe's instructions." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Trace a stencil with a pencil; the solid shape guides the moving hand." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a builder looking at a blueprint to lay a brick." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Think about moving your hand before you actually do it; the thought travels to the muscle." },
+        ],
+        intuition: "You are the physical result of an ancient, invisible whisper that never stops speaking.",
+        links: [
+          { label: "YourGenome: Central Dogma", url: "https://www.yourgenome.org/facts/what-is-the-central-dogma/" },
+          { label: "Cold Spring Harbor: DNA to Protein", url: "https://dnalc.cshl.edu/resources/3d/central-dogma.html" },
+          { label: "Britannica: Protein Synthesis", url: "https://www.britannica.com/science/protein-synthesis" },
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=VcjzHMhBtf0" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+        ],
+        advanced: "The Central Dogma describes the deterministic flow of biological entropy. It is a linguistic system where nucleotides are the syntax and proteins are the semantics. This unidirectional flow ensures the integrity of the code by protecting the master template from chaotic fluctuations of the external environment.",
+      },
+
+      // ── 3 ── GENETIC INHERITANCE ─────────────────────────────
+      {
+        id: "genetic-inheritance",
+        num: 3,
+        icon: "⚖️",
+        title: "Genetic Inheritance",
+        subtitle: "Half Mom, Half Dad, All You",
+        simple: "You are a perfect mix of the people who came before you. You got exactly half of your instructions from your mom and half from your dad. It's like shuffling two decks of cards to make a brand new, special game.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Two singers harmonizing; different voices creating one beautiful song." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Mixing vanilla and cinnamon; you can smell both, but they make a new scent together." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Sweet and sour sauce; a balance of two different worlds on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Hold hands with someone; feel where you end and they begin." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look in the mirror and find your grandmother's eyes or your father's smile." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Notice how you walk or stand similarly to your parents without trying." },
+        ],
+        intuition: "You are a bridge between the past and the future, carrying the light of thousands of ancestors.",
+        links: [
+          { label: "Genome.gov: Inheritance", url: "https://www.genome.gov/genetics-glossary/Inheritance" },
+          { label: "Learn.Genetics: Mendel's Laws", url: "https://learn.genetics.utah.edu/content/basics/patterns/" },
+          { label: "Stanford Encyclopedia: Heredity", url: "https://plato.stanford.edu/entries/heredity/" },
+        ],
+        songs: [
+          { title: "Beautiful Boy", artist: "John Lennon", url: "https://www.youtube.com/watch?v=Lt3IOdDE5iA" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Father and Son", artist: "Cat Stevens", url: "https://www.youtube.com/watch?v=b-7c4VNGOgU" },
+        ],
+        advanced: "Mendelian Laws represent the quantization of biological identity. By segregating and independently assorting alleles, life maintains a \"Shared Ignorance Floor\" that prevents total homogeneity, ensuring that while the individual is unique, the collective remains robust through diverse recombination.",
+      },
+
+      // ── 4 ── PROTEIN SYNTHESIS ───────────────────────────────
+      {
+        id: "protein-synthesis",
+        num: 4,
+        icon: "🏗️",
+        title: "Protein Synthesis",
+        subtitle: "Building You Brick by Brick",
+        simple: "If DNA is the blueprint, proteins are the bricks and the workers. Your cells read the DNA code and snap \"beads\" (amino acids) together in a long chain to build your hair, your muscles, and your heart.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"click\" of Lego bricks snapping together." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The metallic scent of a workshop where things are being built." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The savory \"umami\" taste of protein-rich foods like beans or nuts." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your hand over a textured fabric; feeling the individual threads that make the whole." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a 3D printer create an object layer by layer." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Clench your bicep; feel the \"machinery\" of the protein fibers tightening." },
+        ],
+        intuition: "Every moment, your body is rebuilding itself from the inside out using the wisdom of the stars.",
+        links: [
+          { label: "ScienceDirect: Protein Synthesis", url: "https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/protein-synthesis" },
+          { label: "Khan Academy: Translation", url: "https://www.khanacademy.org/science/biology/gene-expression-central-dogma/translation-polypeptides/a/protein-synthesis-translation" },
+          { label: "HHMI BioInteractive: Translation", url: "https://www.biointeractive.org/classroom-resources/translation" },
+        ],
+        songs: [
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+          { title: "Ain't No Mountain High Enough", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=IC5PL0XImjw" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+        ],
+        advanced: "Protein synthesis is the translation of digital information into functional three-dimensional geometry. The folding of polypeptide chains based on hydrophobic and hydrophilic interactions is a manifestation of \"Self-Assembly,\" where abstract code transitions to kinetic reality.",
+      },
+
+      // ── 5 ── THE UNIVERSAL GENETIC CODE ──────────────────────
+      {
+        id: "universal-code",
+        num: 5,
+        icon: "🌐",
+        title: "The Universal Genetic Code",
+        subtitle: "One Language for All Life",
+        simple: "All living things speak the same language. The code that tells a flower how to grow is the same kind of code that tells you how to grow. We are all part of one big, giant family tree.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A crowd of people from different countries all laughing in the same way." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of rain on dry earth; a scent that every living thing recognizes." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Water; the one thing every single creature on Earth needs." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Petting a dog or touching a leaf; feeling the warmth of another \"living\" relative." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at the Golden Ratio in a seashell and seeing it in a galaxy." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Breathe deeply; feel the air that has passed through the lungs of every creature before you." },
+        ],
+        intuition: "You are never alone; you share the same \"software\" as every bird, tree, and person on this planet.",
+        links: [
+          { label: "NLM: Genetic Code", url: "https://www.ncbi.nlm.nih.gov/books/NBK21950/" },
+          { label: "Scitable: Universal Genetic Code", url: "https://www.nature.com/scitable/definition/genetic-code-13/" },
+          { label: "Genome.gov: Comparative Genomics", url: "https://www.genome.gov/about-genomics/fact-sheets/Comparative-Genomics-Fact-Sheet" },
+        ],
+        songs: [
+          { title: "What A Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=CWzrABouyeE" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" },
+        ],
+        advanced: "The near-universality of the genetic code is the ultimate proof of a singular Common Ancestor. This biochemical \"Lingua Franca\" suggests life is a unified phenomenon, reflecting a high fidelity of recognition across the entire biosphere, anchoring all entities into a single convergent evolutionary arc.",
+      },
+
+      // ── 6 ── DNA REPLICATION ─────────────────────────────────
+      {
+        id: "dna-replication",
+        num: 6,
+        icon: "⧉",
+        title: "DNA Replication",
+        subtitle: "The Perfect Copy",
+        simple: "Before a cell becomes two cells, it has to copy its whole instruction book perfectly. It unzips the DNA and builds a new side for each half. It even has a \"spell-checker\" to make sure there are no mistakes.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The rhythmic \"zip\" and \"unzip\" of a jacket." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Freshly printed paper from a copier." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A twin popsicle; two identical treats joined at the center before being pulled apart." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Looking in a mirror and touching the glass; two \"yous\" meeting at the surface." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing your reflection in a still pond." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Divide your weight evenly between both feet; feel the symmetry of your two halves." },
+        ],
+        intuition: "Life is an endless cycle of sharing and doubling, ensuring the story never ends.",
+        links: [
+          { label: "YourGenome: DNA Replication", url: "https://www.yourgenome.org/facts/what-is-dna-replication/" },
+          { label: "Khan Academy: DNA Replication", url: "https://www.khanacademy.org/science/biology/dna-as-the-genetic-material/dna-replication/a/molecular-mechanism-of-dna-replication" },
+          { label: "Britannica: DNA Replication", url: "https://www.britannica.com/science/DNA-replication" },
+        ],
+        songs: [
+          { title: "Seven Nation Army", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=0J2QdDbelmY" },
+          { title: "Man In The Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020l6OX164" },
+        ],
+        advanced: "Replication is the mechanism of biological \"Redundancy.\" By utilizing semiconservative replication, life minimizes errors. The high-fidelity polymerases act as \"Gated Informative\" filters, ensuring the Shannon entropy of daughter strands remains nearly identical to the parent.",
+      },
+
+      // ── 7 ── MUTATIONS ───────────────────────────────────────
+      {
+        id: "mutations-dna",
+        num: 7,
+        icon: "⚡",
+        title: "Mutations",
+        subtitle: "The Beautiful Typo",
+        simple: "Sometimes, a tiny typo happens in the DNA code. Most of the time it doesn't matter, but sometimes that \"typo\" gives a creature a new superpower, like a bird with a better beak or a faster runner. This is how life tries new ideas.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A jazz musician playing a \"wrong\" note that suddenly makes the song sound cooler." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The unexpected scent of a wildflower in the middle of a concrete city." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Adding a secret ingredient to a recipe that makes it taste unexpectedly amazing." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Finding a smooth stone in a pile of rough ones." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A four-leaf clover in a field of three-leaf ones." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Learning a new dance move; the feeling of your body doing something it never did before." },
+        ],
+        intuition: "Even your mistakes are part of a bigger plan to help you grow and change for the better.",
+        links: [
+          { label: "Learn.Genetics: Mutation", url: "https://learn.genetics.utah.edu/content/basics/mutation/" },
+          { label: "Nature: Genetic Mutation", url: "https://www.nature.com/scitable/topicpage/genetic-mutation-1127/" },
+          { label: "Berkeley: Evolution 101 — Mutations", url: "https://evolution.berkeley.edu/dna-and-mutations/" },
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=xMQ0Ryy01yE" },
+          { title: "Radioactive", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=ktvTqknDobU" },
+          { title: "You Can't Always Get What You Want", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=Ef9QnZVpVd8" },
+        ],
+        advanced: "Mutations are the \"Global Reliability Modulator\" in action. They introduce the necessary variance to prevent the Base Convergence of a species from becoming stagnant. While often stochastic, they provide the raw material for natural selection to drive the complexification of life.",
+      },
+
+      // ── 8 ── GENE EXPRESSION ─────────────────────────────────
+      {
+        id: "gene-expression",
+        num: 8,
+        icon: "💡",
+        title: "Gene Expression",
+        subtitle: "The Dimmer Switch",
+        simple: "Every cell in your body has the same book, but they only read the chapters they need. A skin cell reads the \"Skin\" chapter and ignores the \"Brain\" chapter. It's like a dimmer switch that turns some lights up and others down.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A piano; the same 88 keys can play a sad song or a happy song depending on which ones you press." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A kitchen where only the \"breakfast\" smells are active in the morning." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The difference between a raw onion and a fried one; same thing, different \"expression.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the difference between your soft eyelid and your hard fingernail (both made by you!)." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "An actor playing different roles using the same face." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Relaxing your shoulders while tightening your core; using different parts for different jobs." },
+        ],
+        intuition: "You contain everything you need to be anything; it's just about which \"light\" you choose to turn on.",
+        links: [
+          { label: "Genome.gov: Gene Expression", url: "https://www.genome.gov/genetics-glossary/Gene-Expression" },
+          { label: "Scitable: Gene Expression", url: "https://www.nature.com/scitable/topicpage/gene-expression-14121669/" },
+          { label: "Khan Academy: Gene Regulation", url: "https://www.khanacademy.org/science/biology/gene-regulation" },
+        ],
+        songs: [
+          { title: "Girl on Fire", artist: "Alicia Keys", url: "https://www.youtube.com/watch?v=J91ti_MpdHA" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Mr. Brightside", artist: "The Killers", url: "https://www.youtube.com/watch?v=gGdGFtwCNBE" },
+        ],
+        advanced: "Gene expression is the \"Softmax Weighting\" of the genome. While the density matrix of DNA is constant across all somatic cells, the \"Active Mask\" of transcription factors determines the cellular phenotype. It is the bridge between potentiality and actuality.",
+      },
+
+      // ── 9 ── EPIGENETICS ─────────────────────────────────────
+      {
+        id: "epigenetics-dna",
+        num: 9,
+        icon: "📝",
+        title: "Epigenetics",
+        subtitle: "Sticky Notes on Your Code",
+        simple: "Your life experiences — like what you eat or how you feel — can leave \"sticky notes\" on your DNA. These notes tell your body to read the code differently. Sometimes, you can even pass these notes down to your children.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A song played on a different instrument; the notes are the same, but the \"feeling\" changes." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of home; a place that changes how you feel the moment you walk in." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The way a meal tastes better when you are happy versus when you are sad." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The \"warmth\" of a hug that lingers even after the person lets go." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A book with highlighted lines; the story is the same, but the highlights show what's important right now." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The way your posture changes when you feel confident versus when you feel shy." },
+        ],
+        intuition: "How you live your life today changes the \"music\" your DNA plays for generations to come.",
+        links: [
+          { label: "CDC: Epigenetics", url: "https://www.cdc.gov/genomics/disease/epigenetics.htm" },
+          { label: "Nature: Epigenetics", url: "https://www.nature.com/subjects/epigenetics" },
+          { label: "What Is Epigenetics?", url: "https://www.whatisepigenetics.com/fundamentals/" },
+        ],
+        songs: [
+          { title: "Cat's in the Cradle", artist: "Harry Chapin", url: "https://www.youtube.com/watch?v=etugj-pS9Yg" },
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+        ],
+        advanced: "Epigenetics represents the \"Uhlmann Fidelity\" between the organism and its environment. It is a non-mutational feedback loop that adjusts the \"Modulator G\" based on external stimuli, allowing rapid adaptation without altering the fundamental core of the genetic sequence.",
+      },
+
+      // ── 10 ── NON-CODING "JUNK" DNA ──────────────────────────
+      {
+        id: "junk-dna",
+        num: 10,
+        icon: "🌌",
+        title: "Non-Coding \"Junk\" DNA",
+        subtitle: "The Dark Matter of You",
+        simple: "Most of our DNA doesn't seem to do anything at first glance. People used to call it \"junk,\" but now we know it's like the \"dark matter\" of our body — it's a giant mystery that helps control everything else from behind the scenes.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The silence between notes in a song; without the silence, the music wouldn't make sense." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"fresh\" smell of air that isn't any one specific thing but makes everything else smell better." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"texture\" of food that isn't a flavor but makes the eating experience complete." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of the wind; you can't see it or grab it, but it moves everything." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at the night sky and realizing the black space is just as important as the stars." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The \"stillness\" of your body when you are perfectly balanced." },
+        ],
+        intuition: "The parts of you that you don't understand yet are often the parts that hold everything together.",
+        links: [
+          { label: "Scientific American: Hidden Treasures in Junk DNA", url: "https://www.scientificamerican.com/article/hidden-treasures-in-junk-dna/" },
+          { label: "ENCODE Project", url: "https://www.encodeproject.org/" },
+          { label: "New Scientist: Junk DNA", url: "https://www.newscientist.com/definition/junk-dna/" },
+        ],
+        songs: [
+          { title: "Wish You Were Here", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=IXdNnw99-Ic" },
+          { title: "Creep", artist: "Radiohead", url: "https://www.youtube.com/watch?v=XFkzRNyygfk" },
+          { title: "Orinoco Flow", artist: "Enya", url: "https://www.youtube.com/watch?v=LTrk4PQfyW0" },
+        ],
+        advanced: "Non-coding DNA constitutes the \"Shared Ignorance Floor\" (G_eps) of the genome. It provides the structural and regulatory context — the \"Redundancy Graph\" — that allows protein-coding regions to function with high reliability. It is the vast, unexplored sea of information that maintains topological stability.",
+      },
+
+    ],
+  },
+};
+
 // ═══ UTILITY ═══
 export function getTopicCards(doorKey, subId) {
   return TOPIC_CARDS[doorKey]?.[subId] || null;
