@@ -9366,6 +9366,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Divination is active set thresholding of the subconscious. Using a randomized operator (Tarot, I-Ching), the practitioner bypasses ego noise. Mathematically akin to Monte Carlo simulations: running thousands of possible futures to find the most reliable path. The already-written story is the path of highest probability. Understanding this allows alignment with the most coherent version of destiny." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > THE SACRIFICE (sacrifice)
+    // ═══════════════════════════════════════════════════════════════
+
+    sacrifice: [
+      { id: "altruism-sacrifice", num: 1, icon: "❤️", title: "Altruism", subtitle: "The Last Cookie You Gave Away",
+        simple: "Altruism is when you do something kind for someone else without wanting anything back. Imagine you have the very last cookie, but you see a friend who is really hungry and has not eaten all day. Even though you really want that cookie, you give it to them because making sure they are okay is more important than your own snack. This makes the world a better place because it shows we are all looking out for each other. When we help others, it makes a special kind of heart-happiness that everyone can feel. It is like planting a seed of love that grows into a big tree for everyone to sit under.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft, steady rhythm of a heartbeat shared between two people hugging." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: rain on dry earth, life arriving for everyone." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A plain piece of bread shared equally between two friends." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of a hand holding yours when you are scared." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle lighting another candle without losing its own flame." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body relaxing when you realize you are not alone." }
+        ],
+        intuition: "The candle does not lose its flame by lighting another. You do not lose yourself by giving. You grow. That is the secret the selfish never learn.",
+        links: [
+          { label: "Greater Good Science Center: Altruism", url: "https://en.wikipedia.org/wiki/Altruism" },
+          { label: "Wikipedia: Altruism", url: "https://en.wikipedia.org/wiki/Altruism_(biology)" },
+          { label: "Stanford Encyclopedia: Biological Altruism", url: "https://plato.stanford.edu/entries/altruism-biological/" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "In evolutionary biology and game theory, altruism is analyzed through Kin Selection and Reciprocal Altruism. Hamilton's Rule (rb>c): self-sacrifice is a sophisticated mechanism for survival of the collective information system. Phenomenologically, altruism dissolves the boundary between self and other, moving from closed ego to open-system contributor." },
+
+      { id: "greater-good", num: 2, icon: "🌐", title: "The Greater Good", subtitle: "Giving Up a Little Mine to Build a Giant Ours",
+        simple: "The Greater Good means making a choice that helps the most people possible, even if it is hard for just one person. Think of a team playing a game where one player stays back to defend the goal so the rest of the team can score and win. They might not get the star moment, but the whole team celebrates the victory together. It is like everyone in a town giving up a little bit of their backyard to build a big, beautiful park for all the kids to play in. We give up a small mine to create a giant ours.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A choir where many voices blend into one beautiful song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly baked bread in a communal kitchen." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Water from a community well that everyone worked to dig." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Many hands lifting a heavy object together." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A colony of ants working together to move a giant leaf." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of balance when you are part of a moving crowd: many feet, one direction." }
+        ],
+        intuition: "The ant does not ask why it carries the leaf. It knows the colony eats. Your small sacrifice feeds the whole. That is the math of love.",
+        links: [
+          { label: "Utilitarianism: The Greater Good", url: "https://en.wikipedia.org/wiki/Utilitarianism" },
+          { label: "Britannica: Common Good", url: "https://www.britannica.com/topic/common-good" },
+          { label: "Philosophy Now: The Greater Good", url: "https://en.wikipedia.org/wiki/Common_good" }
+        ],
+        songs: [
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Where Is the Love?", artist: "Black Eyed Peas", url: "https://www.youtube.com/watch?v=WpYeekQkAdc" }
+        ],
+        advanced: "Rooted in Utilitarian ethics (Bentham, Mill): maximize the greatest happiness for the greatest number. Systemically, the Greater Good stabilizes complex networks — individual units sacrificing peak local optimization prevents catastrophic global failure. Connects to Tragedy of the Commons solutions where regulated sacrifice preserves resources for the ecosystem." },
+
+      { id: "substitutionary-atonement", num: 3, icon: "⚖️", title: "Substitutionary Atonement", subtitle: "Taking the Hard Part So Others Get the Good Part",
+        simple: "This is the idea that someone takes a punishment or a hard job so that others do not have to. Imagine a classroom where a vase gets broken, and instead of everyone losing recess, one person offers to stay inside and clean it up for everyone. It shows a very deep love because that person chooses to take the bad part so everyone else can have the good part. It is a way of fixing something that was broken by using your own effort and time. It turns a mistake into a moment of grace.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single bell ringing to signal the end of a long debt." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense used in ancient ceremonies of cleaning." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitterness of a medicine that heals the whole body." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy backpack being lifted off your shoulders by a friend." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bridge made of stone that lets people cross a dangerous river." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The lightness when a secret or a guilt is finally shared." }
+        ],
+        intuition: "Someone stayed behind so you could go. Someone carried the weight so you could walk. That is not weakness. That is the strongest kind of love.",
+        links: [
+          { label: "Theology 101: Theories of Atonement", url: "https://en.wikipedia.org/wiki/Atonement_in_Christianity" },
+          { label: "Wikipedia: Substitutionary Atonement", url: "https://en.wikipedia.org/wiki/Substitutionary_atonement" },
+          { label: "The Meaning of Atonement", url: "https://en.wikipedia.org/wiki/Atonement" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Amazing Grace", artist: "Pentatonix", url: "https://www.youtube.com/watch?v=Obgk0E8kkGs" }
+        ],
+        advanced: "Central to Christian soteriology with secular parallels in legal scapegoating. Functions on the principle of exchange: a debt (moral or financial) transferred to satisfy justice. Challenges individualistic justice — if one can suffer for another, the self is not a fortress but a node in a connected web. Sacrifice becomes the currency of reconciliation." },
+
+      { id: "moral-heroism", num: 4, icon: "🛡️", title: "Moral Heroism", subtitle: "Standing Up When Your Knees Are Shaking",
+        simple: "Moral heroism is when you stand up for what is right, even if it makes you unpopular or costs you something precious. Think of a kid who stands up to a bully to protect a smaller child, even though the bully might get mad at them too. It is not just about being strong; it is about being brave in your heart. You give up your safety or your coolness to make sure the truth is told. This kind of bravery inspires everyone else to be a little bit better too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clear, lone trumpet playing a high note." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Crisp air at the top of a mountain after a hard climb." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure, cold water after doing a very difficult job." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The rough texture of a rope you are holding to keep someone safe." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single green plant growing through a crack in concrete." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up straight and tall even when your knees are shaking." }
+        ],
+        intuition: "The plant does not ask permission to break through concrete. The hero does not ask permission to stand. The knees shake. The spine stays straight. That is enough.",
+        links: [
+          { label: "The Heroic Imagination Project", url: "https://en.wikipedia.org/wiki/Heroic_Imagination_Project" },
+          { label: "Psychology Today: What Makes a Hero?", url: "https://en.wikipedia.org/wiki/Moral_courage" },
+          { label: "Wikipedia: Moral Courage", url: "https://en.wikipedia.org/wiki/Moral_courage" }
+        ],
+        songs: [
+          { title: "Heroes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=lXgkuM2NhYI" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "The Impossible Dream", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=wPYqnJCIKco" }
+        ],
+        advanced: "Moral Heroism prioritizes Deontological (duty-based) ethics over Consequentialist self-preservation. Operates under a Categorical Imperative: acting in a way that should be universal law, regardless of cost. Breaks the Bystander Effect's diffusion of responsibility. The sacrifice of social anonymity or physical safety restarts the moral engine of a community." },
+
+      { id: "intergenerational-equity", num: 5, icon: "🌱", title: "Intergenerational Equity", subtitle: "Planting a Tree Whose Shade You Will Never Sit In",
+        simple: "This is a big word that means being fair to the people who will be born a long time from now. Imagine you are in a forest and you plant a tiny oak tree; you will never be big enough to sit in its shade, but your grandkids will. By sacrificing your time and energy now to take care of the Earth, you are giving a gift to the future. It is like saving the best part of a meal for someone else who has not arrived yet. We protect the trees, the water, and the air because they belong to everyone who comes after us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Wind whistling through ancient trees planted long ago." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rich, dark healthy soil: the scent of the future growing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An apple from a tree planted before you were born." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth river stone worn down over hundreds of years." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset you know will still be beautiful in a thousand years." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your feet on the ground: you are a link in a long chain." }
+        ],
+        intuition: "Someone planted a tree 200 years ago so you could sit here today. Now it is your turn. Plant. You will never see the shade. But someone will. And they will thank the wind.",
+        links: [
+          { label: "United Nations: Future Generations", url: "https://en.wikipedia.org/wiki/Intergenerational_equity" },
+          { label: "Wikipedia: Intergenerational Equity", url: "https://en.wikipedia.org/wiki/Intergenerational_equity" },
+          { label: "Stanford: Intergenerational Justice", url: "https://plato.stanford.edu/entries/justice-intergenerational/" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Big Yellow Taxi", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=94bdMSCdw20" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Intergenerational Equity: current generations hold Earth in trust for future ones. Requires Temporal Sacrifice — limiting present consumption for just distribution across time. Reflected in the Social Discount Rate: lower rate means higher present sacrifice but more stable future. Challenges hyperbolic discounting where we overvalue immediate rewards." },
+
+      { id: "ego-death-sacrifice", num: 6, icon: "💧", title: "Ego Death", subtitle: "The Raindrop That Became the Ocean",
+        simple: "Ego death is when you stop thinking about I and start thinking about Everything. Imagine a raindrop falling into the ocean; it gives up being a tiny drop to become the giant, powerful sea. It sounds scary to lose your self, but it actually means you are never lonely again because you are part of everything. You give up the precious idea that you are the most important person to realize you are a part of a beautiful, endless pattern. It is the sacrifice of the Me to find the We.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Om or white noise that contains all sounds at once." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A burning candle that disappears to give light." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt melting into water until you cannot see it anymore." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sand slipping through your fingers back to the beach." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stars: realizing how small and how big you are at the same time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating where you cannot tell where your skin ends and the air begins." }
+        ],
+        intuition: "The raindrop did not die. It became the ocean. You do not lose yourself. You find everything. The Me was always the We wearing a costume.",
+        links: [
+          { label: "Psychology Today: Ego Death", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Wikipedia: Ego Death", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Scientific American: Losing the Self", url: "https://en.wikipedia.org/wiki/Default_mode_network" }
+        ],
+        songs: [
+          { title: "Within You Without You", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HsffxGyY4uo" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "In transpersonal psychology and Eastern philosophy (Sunyata), Ego Death is sacrifice of the Subjective Self. Cessation of the Default Mode Network allows Unitive Consciousness. The precious thing sacrificed is the Illusion of Separateness. When ego boundaries breach, the individual experiences maximum Convergent Recognition: internal state and external reality achieve perfect fidelity." },
+
+      { id: "sunk-cost-fallacy", num: 7, icon: "🛑", title: "Sunk Cost Fallacy (The Counter-Truth)", subtitle: "Holding Onto a Mistake Is Not a Sacrifice",
+        simple: "Sometimes, people think they are making a sacrifice, but they are actually just holding onto a mistake. Imagine you are halfway through a movie that you really hate, but you stay until the end because you already paid for the ticket. You sacrifice your time, but it does not help anyone! True sacrifice should have a good reason. Learning to let go of a precious mistake is a different kind of sacrifice — it is giving up your pride to start something better.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A stop sign clanging in the wind: the signal to turn around." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old, dusty book that is finally being recycled." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spitting out something that has gone bad instead of swallowing it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Letting go of a heavy rock you have been carrying for no reason." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Turning off a light in a room where nobody is sitting." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Turning your whole body around to walk a new way: the relief of quitting the wrong path." }
+        ],
+        intuition: "The bravest thing is not holding on. Sometimes the bravest thing is letting go. Dropping the rock is not giving up. It is choosing to fly.",
+        links: [
+          { label: "The Sunk Cost Fallacy", url: "https://en.wikipedia.org/wiki/Sunk_cost" },
+          { label: "Harvard Business Review: Knowing When to Quit", url: "https://en.wikipedia.org/wiki/Escalation_of_commitment" },
+          { label: "Wikipedia: Sunk Cost", url: "https://en.wikipedia.org/wiki/Sunk_cost" }
+        ],
+        songs: [
+          { title: "Let It Go", artist: "Idina Menzel", url: "https://www.youtube.com/watch?v=moSFlvxnbgk" },
+          { title: "The Gambler", artist: "Kenny Rogers", url: "https://www.youtube.com/watch?v=7hx4gdlfamo" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" }
+        ],
+        advanced: "The Sunk Cost Fallacy: continuing investment due to prior cost rather than current utility. In sacrifice terms, this is False Sacrifice — loss that does not serve the Greater Good but protects ego from admitting error. True sacrifice requires Informativeness: if the gate does not lead to higher fidelity with a meaningful outcome, it is entropy, not evolution. Distinguishing Holy Sacrifice from Sunk Cost is the work of wisdom." },
+
+      { id: "scapegoat-mechanism", num: 8, icon: "🐐", title: "The Scapegoat Mechanism", subtitle: "Blaming One to Save the Rest Is Not Real Sacrifice",
+        simple: "Sometimes a group of people feels stressed or angry, and instead of fixing the problem, they pick one person to blame for everything. They sacrifice that person's feelings or place in the group to make themselves feel better. This is a fake sacrifice because it is mean and does not actually fix the real trouble. It is important to see when this is happening so we can stop it. True sacrifice helps others; scapegoating hurts someone to hide a lie.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A group shouting at once, drowning out one quiet voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke from a fire that should not have been lit." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sour lemon when you expected something sweet: betrayal on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of being pushed out of a circle." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "One sheep standing alone while all the others stay together." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling off-balance because the group is acting unfairly." }
+        ],
+        intuition: "In sacrifice, the I offers itself for the We. In scapegoating, the We destroys an I to hide from its own shadow. One is love. The other is a lie wearing love's clothes.",
+        links: [
+          { label: "René Girard: Scapegoat Mechanism", url: "https://en.wikipedia.org/wiki/Ren%C3%A9_Girard" },
+          { label: "Psychology Today: Scapegoating", url: "https://en.wikipedia.org/wiki/Scapegoating" },
+          { label: "Wikipedia: Scapegoating", url: "https://en.wikipedia.org/wiki/Scapegoating" }
+        ],
+        songs: [
+          { title: "Another Brick in the Wall", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=YR5ApYxkU-U" },
+          { title: "They Don't Care About Us", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=QNJL6nfu__Q" },
+          { title: "Jeremy", artist: "Pearl Jam", url: "https://www.youtube.com/watch?v=MS91knuzoOA" }
+        ],
+        advanced: "René Girard's Scapegoat Mechanism: societies manage mimetic desire and conflict by focusing aggression on a single victim, achieving temporary accidental peace. But this peace is fragile because built on a lie. True Convergent Recognition requires transparency. Scapegoating is the inverse of sacrifice: sacrifice offers the I for the We; scapegoating destroys an I so the We can hide from its own shadows." },
+
+      { id: "asceticism-sacrifice", num: 9, icon: "🧘", title: "Asceticism", subtitle: "Having Less in Your Hands So There Is More Room in Your Heart",
+        simple: "Asceticism is when you choose to live very simply to help your mind and heart stay focused on what really matters. It is like giving up video games for a week so you can spend more time outside or reading. You sacrifice a little bit of fun or stuff to gain a lot of peace. It teaches us that we do not need things to be happy. When we have less stuff in our hands, we have more room in our hearts for what truly matters.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Complete silence in a room that is usually noisy." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean air and nothing else: the scent of simplicity." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain, cold water: the taste of enough." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sitting on the floor instead of a soft couch." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A room with only one window and a beautiful view." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling very light, as if you have no heavy clothes on: freedom through less." }
+        ],
+        intuition: "Empty your hands. Now look at them. They can hold anything. That is what less gives you: everything. The monk with nothing owns the whole sky.",
+        links: [
+          { label: "Britannica: Asceticism", url: "https://www.britannica.com/topic/asceticism" },
+          { label: "Wikipedia: Asceticism", url: "https://en.wikipedia.org/wiki/Asceticism" },
+          { label: "The School of Life: Minimalism", url: "https://en.wikipedia.org/wiki/Simple_living" }
+        ],
+        songs: [
+          { title: "Simple Gifts", artist: "Yo-Yo Ma", url: "https://www.youtube.com/watch?v=HVxSrwYMaqo" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" }
+        ],
+        advanced: "Asceticism is Regularization of the human state. Removing interior singularities of extreme desire achieves a more stable consciousness. Voluntary reduction of entropy increases the signal-to-noise ratio of spiritual life. A rejection of hedonic adaptation: sacrificing the pursuit of pleasure to find Ataraxia (tranquility). Strategic sacrifice of local, temporary happiness spikes for global, sustained contentment." },
+
+      { id: "martyrdom", num: 10, icon: "🕊️", title: "Martyrdom", subtitle: "The Seed That Falls So the Forest Can Grow",
+        simple: "Martyrdom is the biggest sacrifice of all. It is when someone gives up their life because they believe in a message of love or truth so much that they want it to live forever. Even though that person is gone, their light stays behind and helps millions of other people see. It is like a seed that falls to the ground and dies so that a whole forest can grow. It is the ultimate moment where someone says the truth is more important than my own breath.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song that people keep singing long after the singer is gone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower pressed in a book for years: beauty preserved." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The salt of a tear that leads to a smile later." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A name carved into a stone monument: permanent." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A star we see at night even though it burned out long ago." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A shiver or spirit bump when you hear a hero's story: the truth vibrating in your bones." }
+        ],
+        intuition: "The star burned out a million years ago. But the light is still here. The martyr is gone. But the truth is still walking. Some things are bigger than a heartbeat.",
+        links: [
+          { label: "Wikipedia: Martyr", url: "https://en.wikipedia.org/wiki/Martyr" },
+          { label: "BBC: The History of Martyrdom", url: "https://en.wikipedia.org/wiki/Martyrdom" },
+          { label: "Stanford Encyclopedia: Sacrifice and Death", url: "https://plato.stanford.edu/entries/death/" }
+        ],
+        songs: [
+          { title: "Wind Beneath My Wings", artist: "Bette Midler", url: "https://www.youtube.com/watch?v=0iAGLBiRHv8" },
+          { title: "Candle in the Wind", artist: "Elton John", url: "https://www.youtube.com/watch?v=NoOhnrjdYOc" },
+          { title: "The Show Must Go On", artist: "Queen", url: "https://www.youtube.com/watch?v=t99KH0TR-J4" }
+        ],
+        advanced: "Martyrdom is the Phase Transition of a concept. When an individual sacrifices physical existence for an idea, the idea is validated with maximum Informativeness. Death of the physical carrier ensures immortality of informational content. The martyr's life becomes perfectly aligned with the Universal Ideal. No accidental benefit to dying for a cause — only the coincidence of the person and the truth." },
+    ],
 
 
   },
