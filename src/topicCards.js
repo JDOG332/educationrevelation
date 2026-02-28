@@ -7947,6 +7947,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "David Chalmers' Hard Problem: why do physical processes give rise to subjective experience (qualia) at all? Distinguishes functional Easy Problems (processing sensory data) from the mystery of inner experience. Challenges pure materialism. Consciousness might be a fundamental property of the universe like space or time, not just a byproduct of complexity. The ultimate frontier where physics meets philosophy." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > JUSTICE & FAIRNESS (justice)
+    // ═══════════════════════════════════════════════════════════════
+
+    justice: [
+      { id: "reciprocity-justice", num: 1, icon: "⚖️", title: "Reciprocity (The Golden Rule)", subtitle: "The Mirror for How You Treat People",
+        simple: "Fairness is like a mirror that shows you how to treat your friends. If you want someone to share their toys with you, you should share your toys with them first. It is the simplest way to make sure everyone is happy and feels loved. When we follow this rule, we create a circle of kindness that never ends. What we do to others eventually comes back to us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The harmonious echo of a choir singing in unison." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly baked bread meant to be shared with a neighbor." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp apple split perfectly in half." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm, mutual handshake: equal pressure, equal respect." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two children holding hands in a circle." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning against someone who is also leaning against you: mutual support you can feel." }
+        ],
+        intuition: "The mirror does not lie. What you send out comes back. Share first. The circle of kindness has no end because it has no beginning.",
+        links: [
+          { label: "Stanford: The Golden Rule", url: "https://plato.stanford.edu/entries/golden-rule/" },
+          { label: "Game Theory: Tit-for-Tat", url: "https://en.wikipedia.org/wiki/Tit_for_tat" },
+          { label: "Ubuntu Philosophy", url: "https://en.wikipedia.org/wiki/Ubuntu_philosophy" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" }
+        ],
+        advanced: "Reciprocity is the foundational recognition core of ethical systems. Operates on symmetry: the moral status of self is recognized as identical to the other, creating stable equilibrium. Connects to Newton's Third Law and Game Theory's Tit-for-Tat strategy. Reflects the Universal We by dissolving the boundary between subject and object." },
+
+      { id: "impartiality", num: 2, icon: "⚖️", title: "Impartiality", subtitle: "The Blindfold That Sees Only Facts",
+        simple: "Imagine playing a game where the referee does not care who wins or loses. Impartiality means being blind to who people are so that you only look at the facts. It is like a judge who wears a blindfold so they cannot see if someone is wearing fancy clothes or rags. This makes sure the rules stay the same for everyone, no matter what. It is the only way to make sure a win is a real win.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, unbiased tick of a metronome." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The neutral, clean scent of rain on pavement." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain, pure water that quenches everyone's thirst the same." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth, cold surface of a marble statue: unmoved by emotion." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly balanced set of scales." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still in the dark, feeling your own center of gravity: balance without bias." }
+        ],
+        intuition: "The blindfold is not weakness. It is the strongest thing a judge can wear. When you cannot see the face, you can finally see the truth.",
+        links: [
+          { label: "Ethics Unwrapped: Impartiality", url: "https://ethicsunwrapped.utexas.edu/" },
+          { label: "Double-Blind Studies", url: "https://en.wikipedia.org/wiki/Blinded_experiment" },
+          { label: "Kant: Categorical Imperative", url: "https://plato.stanford.edu/entries/kant-moral/" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Get Up, Stand Up", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=F690MQGIvEA" },
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=vWwgrjjIMXA" }
+        ],
+        advanced: "Impartiality requires stripping away idiosyncratic variables to reach a shared-ignorance floor. Removing personal bias achieves higher fidelity of truth reproducible across all observers. Aligns with the scientific method's requirement for blind testing. Ensures the reliability of justice systems by preventing favoritism from skewing results." },
+
+      { id: "equity-vs-equality", num: 3, icon: "⚖️", title: "Equity vs. Equality", subtitle: "Same Box or Right Box?",
+        simple: "Equality means everyone gets the same size box to stand on to see over a fence. But if one person is short and another is tall, the short person still cannot see! Equity means giving the short person two boxes so they can see just as well. It is about making sure everyone gets to the same finish line, even if they start in different places. This is how we make sure no one is left behind.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A band where quiet instruments are amplified so you can hear them all." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Different flowers in a garden getting just the right amount of water." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A meal seasoned differently to suit each person's health needs." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A shoe custom-fitted to your specific foot shape." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A ramp next to a set of stairs: same destination, different path." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Adjusting your stance to stay upright on a moving boat: balance is not standing still, it is constant adjustment." }
+        ],
+        intuition: "Same is not always fair. Fair is not always same. The short kid needs two boxes. The tall kid needs one. Both see the game. That is justice.",
+        links: [
+          { label: "GWU: Equity vs Equality", url: "https://onlinepublichealth.gwu.edu/resources/equity-vs-equality/" },
+          { label: "Distributive Justice", url: "https://plato.stanford.edu/entries/justice-distributive/" },
+          { label: "Universal Design", url: "https://en.wikipedia.org/wiki/Universal_design" }
+        ],
+        songs: [
+          { title: "Changes", artist: "Tupac Shakur", url: "https://www.youtube.com/watch?v=eXvBjCO19QY" },
+          { title: "Where Is the Love?", artist: "Black Eyed Peas", url: "https://www.youtube.com/watch?v=WpYeekQkAdc" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Equality is a linear function; Equity is a multi-variant optimization problem. Equity accounts for initial state entropy, adjusting inputs to ensure convergent outcomes regardless of starting status. In biology, reflected in homeostasis: organs receive different blood flow based on demand. Fairness is not a fixed ratio but dynamic adjustment for systemic health." },
+
+      { id: "restorative-justice", num: 4, icon: "⚖️", title: "Restorative Justice", subtitle: "Glue the Vase Back Together with Gold",
+        simple: "When a vase breaks, you do not just get in trouble; you help glue it back together. Restorative justice is about fixing what was broken and making things right between people. It is not just about saying you are grounded; it is about saying how can we make this better? This helps the person who was hurt feel better and the person who did it learn a lesson. It turns a sad story into a story about healing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The click of two puzzle pieces fitting together." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Earth after a forest fire begins to grow back." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter medicine that eventually makes you feel strong." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A bandage being gently applied to a cut." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Kintsugi: Japanese pottery mended with gold, more beautiful for having been broken." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The release of tension in your shoulders after saying I am sorry: the body letting go of the weight." }
+        ],
+        intuition: "The vase broke. But the gold that fills the crack makes it stronger and more beautiful than before. Healing is not hiding the break. It is honoring it.",
+        links: [
+          { label: "Centre for Justice & Reconciliation", url: "https://www.restorativejustice.org/" },
+          { label: "Truth and Reconciliation Commission", url: "https://en.wikipedia.org/wiki/Truth_and_Reconciliation_Commission_(South_Africa)" },
+          { label: "Conflict Transformation", url: "https://en.wikipedia.org/wiki/Conflict_transformation" }
+        ],
+        songs: [
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=QrY9eHkXTa4" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Sorry", artist: "Justin Bieber", url: "https://www.youtube.com/watch?v=fRh_vgS2dFE" }
+        ],
+        advanced: "Restorative justice focuses on the social connection graph. Instead of isolating the offender, it reintegrates the individual into community through active accountability. Mirrors error correction in computing or cellular repair mechanisms. The social fabric is damaged by conflict and requires deliberate energetic input to restore coherence." },
+
+      { id: "veil-of-ignorance", num: 5, icon: "⚖️", title: "The Veil of Ignorance", subtitle: "Make the Rules Before You Know Who You Are",
+        simple: "Imagine you are making rules for a new world, but you do not know who you will be. You might be a king, or you might be a person with no home. Because you do not know, you will make the rules fair for everyone just in case! This helps us think about what is truly fair for every single person. It stops us from being selfish and makes us think about the We.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise that masks all specific voices." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book that has not been read yet: blank possibility." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A mystery flavor candy before you know what it is." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching into a bag and feeling shapes without seeing them." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A thick fog where everyone looks like a shadow." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water where you cannot feel the ground: no position, no advantage, just fairness." }
+        ],
+        intuition: "If you did not know who you would be, you would make the world kind. The veil strips away selfishness. What remains is justice.",
+        links: [
+          { label: "Britannica: Veil of Ignorance", url: "https://www.britannica.com/topic/veil-of-ignorance" },
+          { label: "John Rawls: A Theory of Justice", url: "https://plato.stanford.edu/entries/rawls/" },
+          { label: "Zero-Knowledge Proofs", url: "https://en.wikipedia.org/wiki/Zero-knowledge_proof" }
+        ],
+        songs: [
+          { title: "Everyday People", artist: "Sly & The Family Stone", url: "https://www.youtube.com/watch?v=YUUhDoCx8zc" },
+          { title: "Born This Way", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=wV1FrqwZyKw" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Rawls' Veil of Ignorance forces shared ignorance: participants are incentivized to maximize outcomes for the least advantaged. In computer science, parallels zero-knowledge proofs where truth is established without revealing identities. Creates a framework resistant to personal greed, ensuring systemic fairness." },
+
+      { id: "distributive-justice", num: 6, icon: "⚖️", title: "Distributive Justice", subtitle: "How to Cut the Pizza",
+        simple: "Think of a big pizza that needs to be shared with the whole class. Distributive justice is the plan for how we cut the slices. Should the hungriest person get more? Should the person who helped cook get the first piece? It is about finding the best way to share the world's treasures. When we do it right, everyone's tummy is full and no one feels cheated.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic thud of a heart pumping blood to every limb." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The aroma of a community potluck dinner." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A complex stew where every ingredient adds to the flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Passing a heavy bucket down a long line of people." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map of a city with parks and libraries in every neighborhood." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A group of people lifting a heavy object together: distributed weight, shared strength." }
+        ],
+        intuition: "The pizza is big enough. The question was never if there is enough. The question is how we cut it. The knife is in our hands.",
+        links: [
+          { label: "Investopedia: Distributive Justice", url: "https://www.investopedia.com/" },
+          { label: "Stanford: Distributive Justice", url: "https://plato.stanford.edu/entries/justice-distributive/" },
+          { label: "Universal Basic Income", url: "https://en.wikipedia.org/wiki/Universal_basic_income" }
+        ],
+        songs: [
+          { title: "What's Going On", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=H-kA3UtBj4M" },
+          { title: "Fortunate Son", artist: "Creedence Clearwater Revival", url: "https://www.youtube.com/watch?v=ec0XKhAHR5I" },
+          { title: "Talkin' Bout a Revolution", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=Xv8FBjo1Y8I" }
+        ],
+        advanced: "Distributive justice maps resources via optimization: calculating divergence between resource availability and population need to ensure convergence. Relates to Pareto Efficiency and resource allocation. Aims to minimize redundancy where some have excess while others have none, optimizing systemic reliability." },
+
+      { id: "due-process", num: 7, icon: "⚖️", title: "Due Process", subtitle: "Listen Before You Judge",
+        simple: "Due process is like the rules of the game for being in trouble. It says that before anyone takes your toys away, they have to listen to your side of the story. You get a fair shake and a chance to explain what happened. It stops people in charge from making mean or fast decisions. It protects you by making sure the truth is found before anything else happens.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clear, final sound of a judge's gavel." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dry, papery scent of an old law book." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The slow, deliberate taste of a multi-course meal: each step matters." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a signed document: weight of agreement." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A courtroom where everyone has a specific place to sit." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up straight when it is your turn to speak: the body rising to meet the moment." }
+        ],
+        intuition: "Before the hammer falls, both sides speak. Before the verdict, both sides are heard. The process is the protection. Skip it and justice dies.",
+        links: [
+          { label: "Legal Information Institute: Due Process", url: "https://www.law.cornell.edu/wex/due_process" },
+          { label: "The Magna Carta", url: "https://en.wikipedia.org/wiki/Magna_Carta" },
+          { label: "5th and 14th Amendments", url: "https://en.wikipedia.org/wiki/Due_Process_Clause" }
+        ],
+        songs: [
+          { title: "I Fought the Law", artist: "The Clash", url: "https://www.youtube.com/watch?v=AL8chWFuM-s" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" },
+          { title: "Freedom", artist: "Beyonce ft. Kendrick Lamar", url: "https://www.youtube.com/watch?v=dMQwmodYvWA" }
+        ],
+        advanced: "Due process prevents accidental outcomes by providing a structured functional that must execute before moving from accused to judged, ensuring high fidelity to truth. In logic, parallels a step-through proof where every assertion is validated. Preserves the informativeness gate: system output based on verified data, not noise." },
+
+      { id: "meritocracy", num: 8, icon: "⚖️", title: "Meritocracy", subtitle: "The Race Where Effort Wins",
+        simple: "Meritocracy is like a race where the fastest person wins the gold medal. It means that if you work hard and practice, you can get the best rewards. It is a way of saying your effort matters and your skills are important. In a fair world, it should not matter who your parents are; only how hard you try. This encourages everyone to be their very best self.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The cheering crowd when a runner crosses the finish line." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sweat and grass on a sports field: the scent of effort." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold, celebratory drink after a hard day's work." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The weight of a trophy or medal in your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A leaderboard where names climb higher based on points." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The burn in your muscles after pushing yourself to a new limit: effort the body remembers." }
+        ],
+        intuition: "Hard work should be rewarded. But the race is only fair if everyone starts at the same line. Merit without equity is just privilege with extra steps.",
+        links: [
+          { label: "The Meritocracy Trap", url: "https://en.wikipedia.org/wiki/The_Meritocracy_Trap" },
+          { label: "The Guardian: Myth of Meritocracy", url: "https://www.theguardian.com/" },
+          { label: "Survival of the Fittest", url: "https://en.wikipedia.org/wiki/Survival_of_the_fittest" }
+        ],
+        songs: [
+          { title: "Started From the Bottom", artist: "Drake", url: "https://www.youtube.com/watch?v=RubBzkZzpUA" },
+          { title: "Work Hard, Play Hard", artist: "Wiz Khalifa", url: "https://www.youtube.com/watch?v=mM1AOZ5c24Y" },
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" }
+        ],
+        advanced: "Meritocracy posits that system outcomes are maximized when resources are directed toward nodes with highest fidelity to system goals. Critics note initial states are rarely equal, meaning pure meritocracy requires constant regularization to ensure fair competition. Connects to evolutionary biology's survival of the fittest and its limitations." },
+
+      { id: "social-contract-j", num: 9, icon: "⚖️", title: "The Social Contract", subtitle: "The Invisible Promise We All Made",
+        simple: "The social contract is an invisible promise we all make to each other. It is like saying I will not take your lunch if you do not take mine. We follow rules and are nice so that everyone can live in peace. We give up a little bit of being wild so we can be safe. It is the We deciding that we are better together than we are alone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low hum of a busy, peaceful city." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library or shared public space: community you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A shared loaf of bread." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A pinky promise: the smallest gesture holding the biggest weight." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stop sign that everyone actually stops for." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking through a crowd without bumping into anyone: invisible cooperation you can feel." }
+        ],
+        intuition: "Nobody signed a paper. But everybody follows the rules. The contract is invisible. The proof is that we are all still here, together.",
+        links: [
+          { label: "IEP: Social Contract Theory", url: "https://iep.utm.edu/soc-cont/" },
+          { label: "Hobbes: Leviathan", url: "https://en.wikipedia.org/wiki/Leviathan_(Hobbes_book)" },
+          { label: "Rousseau: Social Contract", url: "https://plato.stanford.edu/entries/rousseau/" }
+        ],
+        songs: [
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=M9BNoNFKCBI" },
+          { title: "With a Little Help From My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" }
+        ],
+        advanced: "The social contract reduces social entropy through collective agreement. Individuals form connected components more resilient than the sum of parts. Basis of political science from Hobbes to Rousseau. Mirrors symbiosis in ecology: different species providing mutual benefits to ensure survival of the larger ecosystem." },
+
+      { id: "retributive-justice", num: 10, icon: "⚖️", title: "Retributive Justice", subtitle: "The Equation That Must Balance",
+        simple: "If someone takes your pencil on purpose, retributive justice says they have to give it back or lose one of theirs. It is the idea that for every bad thing, there must be a matching consequence to make it even. It is like a math problem where both sides of the equals sign have to be the same. While it can be tough, it is meant to show that rules have power and must be followed.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sharp crack of a gavel." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of iron or old coins." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something very sour that makes your face pucker." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The hard, cold bars of a gate." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A mirror reflecting exactly what is in front of it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The push back when you push against a wall: Newton's Third Law in your bones." }
+        ],
+        intuition: "The equation must balance. What was taken must be returned. What was broken must cost something. Not cruelty. Math. The universe demands the equals sign.",
+        links: [
+          { label: "Britannica: Retributive Justice", url: "https://www.britannica.com/topic/retributive-justice" },
+          { label: "Hammurabi's Code", url: "https://en.wikipedia.org/wiki/Code_of_Hammurabi" },
+          { label: "Proportionality in Law", url: "https://en.wikipedia.org/wiki/Proportionality_(law)" }
+        ],
+        songs: [
+          { title: "Karma", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=Z48GUhw-g6g" },
+          { title: "Instant Karma!", artist: "John Lennon", url: "https://www.youtube.com/watch?v=xLy2SaSQAtA" },
+          { title: "The Man Comes Around", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=k9IfHDi-2EA" }
+        ],
+        advanced: "Retributive justice seeks 1:1 fidelity between offense and penalty. Operates on a recognition core where balance is restored through subtraction. In physics, relates to Conservation of Energy: every debt must be paid to maintain equilibrium. In legal history, represented by Lex Talionis. Contrasts with restorative approaches." },
+    ],
 
 
   },
