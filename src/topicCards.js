@@ -10306,6 +10306,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Creative Destruction (Schumpeter): innovation deconstructs long-standing practices to make way for more efficient ones. Relates to Tabula Rasa: progress is not just additive but requires active removal of the obsolete. The Lego principle: the bricks do not disappear when you break the castle. They become available for the spaceship. Destruction is liberation of raw material." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > THE UNDERWORLD & DESCENT (underworld)
+    // ═══════════════════════════════════════════════════════════════
+
+    underworld: [
+      { id: "shadow-integration-underworld", num: 1, icon: "☯️", title: "The Shadow Integration", subtitle: "Going Into the Basement With a Flashlight",
+        simple: "Sometimes we hide parts of ourselves because we think they are bad or scary, like a basement full of old boxes. But to be a whole person, you have to go into that basement with a flashlight and see what is inside. When you stop being afraid of your own shadow, it cannot trip you up anymore. You learn that your anger or sadness actually has a job to do, like protecting you or helping you heal. By being brave enough to look at the dark parts, you become much stronger in the light. This is how you find your true power.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low, vibrating hum of a heavy cello string." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp earth and old library books." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate: slightly bitter but turns sweet." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking barefoot on cold, smooth stone." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own reflection in a moving puddle of water." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body pulling toward the center of the earth: gravity holding you accountable." }
+        ],
+        intuition: "Your shadow is not your enemy. Your shadow is you in a costume you forgot you were wearing. Turn on the light. The monster was always just a friend you had not met yet.",
+        links: [
+          { label: "The Shadow - Carl Jung", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Carl Jung's Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Integrating the Shadow", url: "https://en.wikipedia.org/wiki/Individuation" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" },
+          { title: "Behind Blue Eyes", artist: "The Who", url: "https://www.youtube.com/watch?v=BfuWXRZe9yA" }
+        ],
+        advanced: "In analytical psychology, the Shadow represents the unknown dark side of the personality. Integration means acknowledging primitive impulses and repressed memories rather than projecting them. Essential for individuation. Failure to integrate results in splitting — perceiving the world in extremes. Traversing the internal underworld reconciles opposites into a unified, resilient sense of being." },
+
+      { id: "katabasis", num: 2, icon: "🏛️", title: "Katabasis: The Heroic Descent", subtitle: "Going Down Into the Cave to Find the Key",
+        simple: "Katabasis is a fancy word for a hero going down into a deep, dark place to find an answer. Think of a hero going into a cave to talk to a ghost or a wise person who has died. They do not go there to stay; they go there to get a key that will save their home. You might feel like you are in a cave when you are very sad or confused. If you stay brave, you will find a special truth that you could not see when things were easy. Then, you climb back out and share that truth with everyone else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo of your own voice in a large, empty hall." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp woodsmoke in the winter air." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single, tart pomegranate seed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A rough rope in your hands as you climb." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tiny pinprick of white light at the end of a long, black tunnel." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The dropping sensation in your stomach during a sudden descent: the body knowing you are going deeper." }
+        ],
+        intuition: "You are walking down a spiral staircase made of starlight. Every step down makes your heart feel more solid. The answer is not up. The answer is down. Go get it.",
+        links: [
+          { label: "The Myth of Orpheus and Eurydice", url: "https://en.wikipedia.org/wiki/Orpheus" },
+          { label: "Katabasis in Literature", url: "https://en.wikipedia.org/wiki/Katabasis" },
+          { label: "The Hero's Journey Structure", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Go Your Own Way", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=6ul-cZyuYw4" },
+          { title: "The Sound of Silence", artist: "Disturbed", url: "https://www.youtube.com/watch?v=u9Dg-g7t2l4" }
+        ],
+        advanced: "Katabasis is a fundamental narrative arc in classical mythology (Orpheus, Odysseus, Aeneas): voluntary descent into the realm of the dead to retrieve information or divine favor. Philosophically, the descent into the particular — moving from abstract ideals into painful reality. Transcendence is found not by escaping the world but by diving deeper into its most challenging depths." },
+
+      { id: "metamorphosis-through-loss", num: 3, icon: "🦋", title: "Metamorphosis Through Loss", subtitle: "You Have to Become Mush Before You Get Wings",
+        simple: "When a caterpillar turns into a butterfly, it does not just grow wings; its whole body turns into a kind of mush first. This is like how we feel when we lose something important, like a move to a new school or a toy breaking. It feels like everything is falling apart and getting messy. But that mushy feeling is actually your life getting ready to rearrange into something new and beautiful. You have to let go of the caterpillar parts of your life to fly. Without the going down into the mush, the coming up into a butterfly could never happen.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackling of an old dry leaf being crushed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: rain hitting dry pavement." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Saltwater from a tear." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The shedding of a sunburnt layer of skin: the old falling away." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A forest floor of dead leaves with tiny green sprouts poking through." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water where you cannot feel your limbs: total surrender before total transformation." }
+        ],
+        intuition: "Feel your breath leave your body entirely. Now notice the automatic, powerful rush of the new breath coming back. That is loss and rebirth in one second. You do it 20,000 times a day.",
+        links: [
+          { label: "The Science of Metamorphosis", url: "https://en.wikipedia.org/wiki/Metamorphosis" },
+          { label: "Kübler-Ross Five Stages", url: "https://en.wikipedia.org/wiki/K%C3%BCbler-Ross_model" },
+          { label: "Resilience After Loss", url: "https://en.wikipedia.org/wiki/Psychological_resilience" }
+        ],
+        songs: [
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=gYkACVDFmeg" }
+        ],
+        advanced: "Metamorphosis requires liminality — neither here nor there. In alchemical traditions: the nigredo or blackening, decomposition as first step toward the Great Work. In human development, post-traumatic growth: disruption of core beliefs allows construction of a more complex, adaptive worldview. The descent clears away old, insufficient structures." },
+
+      { id: "dark-night-of-soul", num: 4, icon: "🌌", title: "The Dark Night of the Soul", subtitle: "The Quiet Time When Your Soul Grows in the Dark",
+        simple: "Sometimes it feels like the sun has gone down and will never come back up. You might feel very lonely or like nothing you do matters anymore. This dark night is not a punishment; it is like a quiet time when your soul is resting and growing in the dark, just like a seed under the snow. In the quiet, you start to hear your own heart better. When the sun finally does come up, you will see the world in a much brighter and more wonderful way because you survived the dark. It teaches you that your own inner light is enough to keep you warm.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The absolute silence of a snowy night." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh, cold air that makes your nose tingle." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain, cool water: the taste of nothing but truth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A soft, heavy blanket wrapped tightly around you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "One single star visible through a thick layer of clouds." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your heart beating in your chest while you lie still: the only sound left is you." }
+        ],
+        intuition: "Your body is a hollow vessel being filled with cool, calm moonlight from the top of your head to your toes. The dark is not empty. The dark is where the light learns its own name.",
+        links: [
+          { label: "St. John of the Cross: Dark Night", url: "https://en.wikipedia.org/wiki/Dark_Night_of_the_Soul" },
+          { label: "Understanding Spiritual Crisis", url: "https://en.wikipedia.org/wiki/Spiritual_crisis" },
+          { label: "The Value of Sadness", url: "https://en.wikipedia.org/wiki/Melancholia" }
+        ],
+        songs: [
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Coined by 16th-century mystic St. John of the Cross: a spiritual crisis where one feels abandoned by the divine. This purgation strips away ego attachments to external spiritual rewards. A profound epistemological shift: from knowing about truth to being truth. Losing all external comforts forces discovery of an unshakeable foundation within, leading to unitive consciousness." },
+
+      { id: "ego-dissolution-underworld", num: 5, icon: "🌊", title: "Ego Dissolution", subtitle: "The Ice Cube That Became the Whole Ocean",
+        simple: "Imagine you are a small ice cube floating in a big, warm ocean. You think you are special because you are square and cold, but eventually, you start to melt. At first, it feels scary because the ice cube version of you is disappearing! But then you realize you are not disappearing at all — you are becoming the whole ocean. When we descend, we let go of the ice cube ideas of who we are, like being the smartest or the best. We realize we are connected to everyone and everything else, which is much better than being a lonely ice cube.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic crashing of ocean waves." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salty, fresh mist of the sea." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pinch of salt on the tongue: the taste of dissolving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sinking your hands into soft, wet sand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A drop of ink spreading out and disappearing in a glass of water." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Weightlessness while floating on your back: the body forgetting where it ends." }
+        ],
+        intuition: "The borders of your skin turn into mist. You cannot tell where you end and the air begins. That is not death. That is the biggest life. The ice cube did not die. It graduated.",
+        links: [
+          { label: "What Is Ego Death?", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Eastern Philosophy on the Self", url: "https://en.wikipedia.org/wiki/Anatt%C4%81" },
+          { label: "Neuroscience of the Self", url: "https://en.wikipedia.org/wiki/Default_mode_network" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" },
+          { title: "Reflections", artist: "The Supremes", url: "https://www.youtube.com/watch?v=Rfob0LGtmrM" }
+        ],
+        advanced: "Ego dissolution — temporary loss of the subjective self — is discussed in contemplative traditions and modern neuroscience (Default Mode Network). In the Underworld context, this is the death that must occur before rebirth: stripping away the social persona. When the ego-construct dissolves, the boundary between observer and observed collapses, allowing non-dual experience and deep interconnectedness." },
+
+      { id: "treasure-hard-to-attain", num: 6, icon: "💎", title: "The Treasure Hard to Attain", subtitle: "The Gold Was Inside You — You Just Needed the Cave to See It",
+        simple: "In many stories, a dragon guards a pile of gold in a dark cave. The dragon represents our fears, and the gold represents the wisdom we can only get by facing those fears. You cannot find this treasure in the sunshine or on the playground; you have to go deep underground to get it. This treasure might be learning how to be truly kind, or finding a talent you did not know you had. Once you fight your dragon and get the gold, you realize the gold was inside you all along. You just needed the cave to help you see it shine.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ting of a metal hammer hitting a crystal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of a new coin: treasure forged in pressure." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honey after a long fast: sweetness earned." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The sharp, cold edge of a diamond." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A gemstone caught in a single beam of light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A sudden click or alignment in your posture when you stand tall: the body finding its gold." }
+        ],
+        intuition: "There is a golden key hidden in your heart. Feel it turn. It unlocks a door you did not know was there. The dragon was never guarding the gold from you. The dragon was guarding it for you.",
+        links: [
+          { label: "Archetype of the Treasure", url: "https://en.wikipedia.org/wiki/Treasure" },
+          { label: "The Dragon in Mythology", url: "https://en.wikipedia.org/wiki/Dragon" },
+          { label: "Psychology of Hidden Talents", url: "https://en.wikipedia.org/wiki/Self-actualization" }
+        ],
+        songs: [
+          { title: "Gold Dust Woman", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=dRdFl7jGN4s" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" },
+          { title: "Diamonds", artist: "Rihanna", url: "https://www.youtube.com/watch?v=lWA2pjMjpBs" }
+        ],
+        advanced: "A classic Jungian motif: the Treasure represents the Self (totality of the psyche), guarded by the Shadow (the dragon). The descent penetrates the unconscious mind. The treasure is not material but gnosis — direct experiential knowledge. Links to Alchemical Gold: purifying base lead of common experience. Value is created through pressure and heat. The cave provides the necessary environment for transmutation." },
+
+      { id: "liminality-hallway", num: 7, icon: "🚪", title: "Liminality: The Hallway", subtitle: "The Space Between Who You Were and Who You Will Be",
+        simple: "Liminality is like being in a long hallway between two rooms. You have left your old bedroom, but you have not reached the new one yet. It can feel a bit spooky because you are not anywhere specific. In the underworld, this is the time when you are not the person you used to be, but you do not know who you are going to become. It is a magical time because anything is possible in the hallway. You learn to trust your feet even when you cannot see the next door. It is the space where the old you finishes changing into the new you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of a fluorescent light in a quiet room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of nothing: completely clean, filtered air." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A plain rice cracker: neutral, waiting for flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking through a thick fog: touching everything and nothing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A horizon where the gray sky meets a gray sea: no line between them." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling unbalanced or tilting slightly while standing still: the hallway wobble." }
+        ],
+        intuition: "You are standing on a bridge where both ends are hidden by mist. You cannot see the land. But feel the strength of the bridge beneath you. The hallway is not nowhere. The hallway is everywhere at once.",
+        links: [
+          { label: "The Concept of Liminality", url: "https://en.wikipedia.org/wiki/Liminality" },
+          { label: "Rites of Passage - Van Gennep", url: "https://en.wikipedia.org/wiki/Arnold_van_Gennep" },
+          { label: "Dealing with Uncertainty", url: "https://en.wikipedia.org/wiki/Uncertainty" }
+        ],
+        songs: [
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Waiting on the World to Change", artist: "John Mayer", url: "https://www.youtube.com/watch?v=oBIxScJ5rlY" }
+        ],
+        advanced: "Liminality (Latin limen: threshold), developed by van Gennep and Victor Turner: a period of transition where normal social hierarchies and identities dissolve. During descent, liminality is the stripping phase — the traveler reduced to basic elements. Essential for innovation and growth because the liminal space, betwixt and between, is a site of pure potentiality allowing re-seeding of personality." },
+
+      { id: "ancestral-connection", num: 8, icon: "🌳", title: "Ancestral Connection", subtitle: "A Giant Family Tree Underground Where All the Roots Touch",
+        simple: "When you go deep into the underworld, you are not alone; you are walking where your grandparents and great-grandparents once walked. It is like finding a giant family tree underground where all the roots touch. You can talk to them by remembering their stories or feeling their love in your heart. They are like a cheering section in the dark, reminding you that they survived hard times, and so can you. You realize that you are a part of a very long, very strong chain that stretches back forever and goes forward into the future.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic thump-thump of a drum like a heartbeat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old cedar chest: the scent of kept promises." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe passed down for years." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a very old, smooth wooden tool or heirloom." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own eyes in an old black-and-white photo of an ancestor." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A sense of belonging in your bones, like your skeleton is a sturdy house built by everyone who came before." }
+        ],
+        intuition: "Picture a long line of people standing behind you, each with a hand on the shoulder of the person in front, ending with a hand on your shoulder. You are never alone. You are the front of a very long line.",
+        links: [
+          { label: "The Importance of Family History", url: "https://en.wikipedia.org/wiki/Family_history" },
+          { label: "Ancestors in Myth and Religion", url: "https://en.wikipedia.org/wiki/Ancestor_veneration" },
+          { label: "Epigenetics and Ancestry", url: "https://en.wikipedia.org/wiki/Epigenetics" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Unforgettable", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=vDN5rG3wLa4" },
+          { title: "Family Affair", artist: "Mary J. Blige", url: "https://www.youtube.com/watch?v=znlFu_lemsU" }
+        ],
+        advanced: "In descent myths, the protagonist meets shades or spirits of the dead. Psychologically: accessing the Collective Unconscious, the shared reservoir of evolutionary wisdom. Connecting with ancestors contextualizes personal suffering within a larger biological framework. Provides transgenerational resilience: shifting from isolated ego to participant in an Eternal We where one's life is a vital chapter in an ongoing narrative." },
+
+      { id: "heros-return", num: 9, icon: "☀️", title: "The Hero's Return", subtitle: "The Descent Was for You — The Return Is for Everybody",
+        simple: "The journey is not finished when you find the treasure; you have to climb back up! A hero who stays in the cave is just a person in a cave. You have to take the wisdom, the gold, and the lessons you learned and bring them back to your friends and family. Maybe you learned how to be a better listener, or how to stay calm when things are scary. By bringing that back to the light, you help everyone else's world get a little bit better. The descent was for you, but the return is for everybody.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A trumpet blast or a loud, joyful shout." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass and sunshine." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp, juicy apple: the taste of the surface world." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm, firm hug from a best friend." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sun rising over a mountain peak." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Rising or standing on your tiptoes with joy: the body lifting after the descent." }
+        ],
+        intuition: "Your heart is a lantern. As you walk, the light from your chest makes the path clear for everyone walking behind you. You went down alone. You come back for everyone.",
+        links: [
+          { label: "The Return Phase of the Hero's Journey", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Integrative Therapy", url: "https://en.wikipedia.org/wiki/Integrative_psychotherapy" },
+          { label: "Service to Others and Mental Health", url: "https://en.wikipedia.org/wiki/Altruism" }
+        ],
+        songs: [
+          { title: "Coming Home", artist: "Leon Bridges", url: "https://www.youtube.com/watch?v=MTrKkqE9p1o" },
+          { title: "Higher Ground", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=4wZ3ZG_Wams" },
+          { title: "Lovely Day", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=bEeaS6fuUoA" }
+        ],
+        advanced: "The Return is the final monomyth stage. Without it, descent is merely escape or obsession with darkness. The returning hero must translate alien underworld wisdom into common everyday language — often the hardest part. Represents the Master of Two Worlds: navigating both spiritual depths and practical social reality. Wisdom gained is not for personal enlightenment alone but a functional tool for the community." },
+
+      { id: "universal-entropy-underworld", num: 10, icon: "🍂", title: "Universal Entropy", subtitle: "The Sandcastle Washes Away So Tomorrow Can Build a New One",
+        simple: "Entropy is a big word that means everything in the universe eventually gets tired and falls apart. Think of a sandcastle that gets washed away by the tide. This sounds sad, but it is actually how the universe stays fresh! If the sandcastle never washed away, there would be no room to build a new one tomorrow. Going down into the underworld is just a part of the universe's natural cycle of cleaning up the old stuff to make room for the new. It reminds us that even when things break, it is just the universe getting ready to start over.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft shhh of wind blowing through autumn leaves." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dry wood and dust: the scent of time passing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bitter herb or tea: the taste of letting go." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a crumbling, dry stone." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A star-filled sky: even stars eventually run out of fuel." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Relaxing every muscle until you are completely limp: the body practicing entropy." }
+        ],
+        intuition: "You are a grain of sand being blown by the wind. Feel how easy it is to go where the universe takes you. The sandcastle was beautiful. The sand is still here. Tomorrow it will be something new.",
+        links: [
+          { label: "Second Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics" },
+          { label: "Entropy and Life", url: "https://en.wikipedia.org/wiki/Entropy_and_life" },
+          { label: "The Concept of Wabi-Sabi", url: "https://en.wikipedia.org/wiki/Wabi-sabi" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "The End", artist: "The Doors", url: "https://www.youtube.com/watch?v=BXqPNlng6uI" }
+        ],
+        advanced: "Entropy measures disorder in a system. In closed systems, entropy always increases. But in dissipative structures (like life), entropy drives complexity. Systems must break down (descent/disorder) to reorganize at higher complexity (ascent/order). Decay is not system failure but a prerequisite for evolution. Accepting the descent into entropy aligns with fundamental cosmic mechanics." },
+    ],
 
 
   },
