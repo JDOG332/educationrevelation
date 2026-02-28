@@ -1554,6 +1554,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 🐒 EVOLUTION & ADAPTATION (evolution)
+    // "How life changes over millions of years to survive"
+    // ═══════════════════════════════════════════════════════════════
+
+    evolution: [
+
+      // ── 1 ── NATURAL SELECTION ───────────────────────────────
+      {
+        id: "natural-selection",
+        num: 1,
+        icon: "⚖️",
+        title: "Natural Selection",
+        subtitle: "The Race of the Fittest",
+        simple: "Imagine a race where the fastest runners get a gold medal and a snack, but the slowest runners don't. Because the fast runners are healthy and strong, they have kids who are also fast runners. Over a long time, everyone in the family becomes a great runner. This is how nature picks the best \"tools\" for animals to stay alive.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to bird calls in a forest; the ones heard over the wind are the ones that survive to find mates." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smell a flower. It smells sweet specifically to trick a bee into visiting so the flower can make seeds." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Bite into a sour lemon. That \"zing\" is the plant's way of saying \"don't eat me yet.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel the thick fur of a dog. That fur is there because his ancestors would have frozen without it." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a green grasshopper on a green leaf. It is \"invisible\" so it doesn't get eaten." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Balance on one foot. Your ability to stay upright is a \"tool\" honed over millions of years." },
+        ],
+        intuition: "You are a living collection of \"winning\" traits. Every breath you take is a \"thank you\" to the billions of ancestors who were fast enough, smart enough, or tough enough to pass the baton to you.",
+        links: [
+          { label: "National Geographic: Natural Selection", url: "https://www.nationalgeographic.org/encyclopedia/natural-selection/" },
+          { label: "Darwin's Manuscripts Project", url: "https://www.amnh.org/research/darwin-manuscripts" },
+          { label: "HHMI BioInteractive: Selection in Action", url: "https://www.biointeractive.org/itunes-u/natural-selection" },
+        ],
+        songs: [
+          { title: "The Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+        ],
+        advanced: "Natural Selection operates as a non-random filter on random genetic variation. It is the differential survival and reproduction of genotypes. By modulating allele frequencies within a population's gene pool, it optimizes \"fitness.\" It connects to Game Theory, where strategies yielding the highest payoff (survival) become the dominant Nash Equilibrium in a biological ecosystem.",
+      },
+
+      // ── 2 ── COMMON ANCESTRY ─────────────────────────────────
+      {
+        id: "common-ancestry",
+        num: 2,
+        icon: "🌳",
+        title: "Common Ancestry",
+        subtitle: "One Giant Family Tree",
+        simple: "Every living thing — you, a blade of grass, and a giant whale — is part of one giant family tree. If you go back far enough in time, we all share the exact same great-great-great... grandparent. We are all made of the same \"Lego bricks.\"",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Your heartbeat. Almost every mammal has a heartbeat that follows a similar rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of rain (petrichor). It triggers a deep, ancient feeling because water is life for everyone." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The taste of sugar. Almost every living cell on Earth uses sugar for energy." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Press your palm against a tree trunk. Both you and the tree use water and sunlight to grow." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at your five fingers, then a cat's paw or a bat's wing. The bone shapes are almost identical." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and feel your lungs expand. That need for oxygen is a trait you share with fish using gills." },
+        ],
+        intuition: "You aren't in the world; you are the world. Every person you meet is a distant cousin, and every animal is a brother or sister in the long story of life.",
+        links: [
+          { label: "The Tree of Life Web Project", url: "http://tolweb.org/tree/" },
+          { label: "OneZoom Tree of Life Explorer", url: "https://www.onezoom.org/" },
+          { label: "Smithsonian: What Does It Mean To Be Human?", url: "https://humanorigins.si.edu/" },
+        ],
+        songs: [
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=uyGY2NfYpeE" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "One Love", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=vdB-8eLEW8g" },
+        ],
+        advanced: "Common Ancestry is evidenced by Molecular Homology, specifically the near-universality of the genetic code (DNA/RNA) and highly conserved proteins like Cytochrome c. This links to Phylogenetics, the study of evolutionary relationships. It suggests a \"Singularity of Life,\" connecting biology to Information Theory (the transmission of a singular code through time).",
+      },
+
+      // ── 3 ── GENETIC MUTATION ────────────────────────────────
+      {
+        id: "genetic-mutation",
+        num: 3,
+        icon: "⚡",
+        title: "Genetic Mutation",
+        subtitle: "Beautiful Mistakes",
+        simple: "Sometimes, when nature is copying the instructions to build a new baby, it makes a tiny \"typo.\" Most of the time, the mistake doesn't matter, but sometimes that \"typo\" gives a bird a stronger beak or a person blue eyes. These happy accidents are how life tries out new ideas.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Static on a radio. It's random noise, but sometimes you hear a new song through the fuzz." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a mutant flower that smells slightly different than the others in the garden." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The difference between a sweet apple and a tart one. Mutations changed the sugar levels." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The texture of a scar. It's a change in your \"normal\" skin, showing how things can alter." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing someone with two different colored eyes (heterochromia). That is a visible \"typo.\"" },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Flexing a muscle you didn't know you had. Some people can wiggle their ears because of tiny \"typos\" in their muscle instructions." },
+        ],
+        intuition: "Perfection is boring. The \"glitches\" in life are actually the seeds of the future. You are a unique masterpiece created by a billion tiny, beautiful mistakes.",
+        links: [
+          { label: "Learn.Genetics: What is Mutation?", url: "https://learn.genetics.utah.edu/content/basics/mutation/" },
+          { label: "Nature Education: Genetic Mutation", url: "https://www.nature.com/scitable/topicpage/genetic-mutation-1127/" },
+          { label: "DNA Learning Center", url: "https://dnalc.cshl.edu/" },
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=xMQ0Ryy01yE" },
+          { title: "Radioactive", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=ktvTqknDobU" },
+          { title: "Born This Way", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=wV1FrqwZyKw" },
+        ],
+        advanced: "Mutations are stochastic alterations in the nucleotide sequence of the genome. While often deleterious or neutral, they provide the Phenotypic Plasticity and raw variance necessary for adaptation. This connects to Entropy and Thermodynamics; life uses localized \"disorder\" (mutations) to create higher-order \"complexity\" (evolution).",
+      },
+
+      // ── 4 ── SPECIATION ──────────────────────────────────────
+      {
+        id: "speciation",
+        num: 4,
+        icon: "🛤️",
+        title: "Speciation",
+        subtitle: "Two Teams, One Origin",
+        simple: "Imagine two groups of the same birds. One group moves to a cold mountain, and the other stays in a hot desert. After a long, long time, they change so much to fit their homes that they can't even have babies together anymore. They have become two totally different \"teams.\"",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The difference between a wolf's howl and a dog's bark. They used to be the same, but now they speak different \"languages.\"" },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The different scents of two types of pine trees that live on different sides of a valley." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Comparing a wild strawberry to a store-bought one. They have separated into different \"versions\" of tasty." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the difference between a rough-scaled lizard and a smooth-skinned salamander." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a map of islands. Each island often has its own special version of an animal found nowhere else." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of walking on sand versus walking on ice. Animals adapt their \"balance\" to where they live until they are different species." },
+        ],
+        intuition: "We are all part of the same \"water,\" but we are poured into different \"cups.\" Diversity is the way the universe makes sure life can live everywhere.",
+        links: [
+          { label: "Berkeley: Defining Speciation", url: "https://evolution.berkeley.edu/evolibrary/article/evo_40" },
+          { label: "Biology Online: Speciation", url: "https://www.biologyonline.com/dictionary/speciation" },
+          { label: "Khan Academy: Speciation", url: "https://www.khanacademy.org/science/ap-biology/natural-selection/speciation/a/species-speciation" },
+        ],
+        songs: [
+          { title: "Go Your Own Way", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=6ul-cZyuYq4" },
+          { title: "Two Tribes", artist: "Frankie Goes To Hollywood", url: "https://www.youtube.com/watch?v=pAnvYfOnfLk" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60KAx67U" },
+        ],
+        advanced: "Speciation occurs via Allopatric, Sympatric, or Parapatric mechanisms, fundamentally driven by cessation of gene flow. This bridges Microevolution (changes within a population) and Macroevolution (large-scale patterns). It illustrates Emergence, where simple reproductive barriers lead to the complex branching of the entire biosphere.",
+      },
+
+      // ── 5 ── ADAPTATION ──────────────────────────────────────
+      {
+        id: "adaptation",
+        num: 5,
+        icon: "🛠️",
+        title: "Adaptation",
+        subtitle: "Superpowers for Where You Live",
+        simple: "Adaptation is like having a \"superpower\" for where you live. A polar bear has a white coat to hide in the snow; a camel has a hump to store food for the desert. It is life's way of \"dressing up\" for the party it was invited to.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The silent flight of an owl. Its feathers are adapted to make no noise so it can sneak up on mice." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"wet dog\" smell. It's actually oils on the skin adapted to keep the dog's skin dry and warm." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The bitter taste of some mushrooms. They adapted that taste so you won't eat them." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The prick of a cactus spine. It's a \"leaf\" adapted to protect water in a dry place." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "The huge eyes of a cat. They are adapted to see in the dark where we are blind." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The \"sea legs\" you get on a boat. Your body is trying to adapt its balance to a moving world." },
+        ],
+        intuition: "You are perfectly designed for right now. Your body and mind are a toolkit built over eons to help you handle exactly what you are facing today.",
+        links: [
+          { label: "National Geographic: Adaptation", url: "https://www.nationalgeographic.org/encyclopedia/adaptation/" },
+          { label: "BBC Bitesize: Evolutionary Adaptation", url: "https://www.bbc.co.uk/bitesize/guides/zth97p3/revision/1" },
+          { label: "Britannica: Adaptation", url: "https://www.britannica.com/science/adaptation-biology" },
+        ],
+        songs: [
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=fGDQ9IukMOc" },
+          { title: "Survivor", artist: "Destiny's Child", url: "https://www.youtube.com/watch?v=Wmc8bQnH-40" },
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" },
+        ],
+        advanced: "Adaptation is the process of Teleonomy, where organisms appear \"designed\" for a purpose. It involves the fixation of beneficial alleles through selective pressure. This is fundamental to Biomimicry, where human engineering copies biological adaptations (e.g., Velcro from burrs), connecting biology to Functional Design and Engineering.",
+      },
+
+      // ── 6 ── GENETIC DRIFT ───────────────────────────────────
+      {
+        id: "genetic-drift",
+        num: 6,
+        icon: "🎲",
+        title: "Genetic Drift",
+        subtitle: "The Luck of the Draw",
+        simple: "Sometimes, what happens in life isn't about who is the \"best,\" but who is the \"luckiest.\" If a giant foot steps on a bunch of red bugs but misses the blue ones by accident, the world gets more blue bugs. It wasn't because blue was better — it was just a roll of the dice.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The random \"pop\" of a bubble in a stream. It doesn't happen for a reason; it just happens." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A random gust of wind carrying the smell of cookies from a bakery you didn't know was there." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Finding one extra-salty chip in a bag. It's a random accident of the seasoning." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Catching a falling leaf before it hits the ground. It was just chance that you were there." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a cloud that looks like a face. It's just random shapes coming together by luck." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Tripping over a sidewalk crack. It wasn't a choice; it was just a random interaction with the world." },
+        ],
+        intuition: "Life is a mix of choices and chances. We must respect the \"mystery\" and the \"luck\" of the universe, knowing that sometimes things just happen, and that is okay.",
+        links: [
+          { label: "Berkeley: Genetic Drift", url: "https://evolution.berkeley.edu/evolibrary/article/evo_24" },
+          { label: "Nature Education: Genetic Drift", url: "https://www.nature.com/scitable/definition/genetic-drift-201/" },
+          { label: "Khan Academy: Genetic Drift", url: "https://www.khanacademy.org/science/ap-biology/natural-selection/population-genetics/a/genetic-drift-biology" },
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Rolling in the Deep", artist: "Adele", url: "https://www.youtube.com/watch?v=rYEDA3JcQqw" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" },
+        ],
+        advanced: "Genetic Drift is a Stochastic Process that leads to fluctuations in allele frequencies, particularly in small populations (Founder Effect/Bottleneck Effect). Unlike selection, it is non-adaptive. This connects to Probability Theory and Chaos Theory, illustrating that \"History\" is a path-dependent process where random initial conditions can dictate long-term outcomes.",
+      },
+
+      // ── 7 ── COEVOLUTION ─────────────────────────────────────
+      {
+        id: "coevolution",
+        num: 7,
+        icon: "♾️",
+        title: "Coevolution",
+        subtitle: "The Dance Partners",
+        simple: "Coevolution is like two friends who learn a secret handshake. A bee needs a flower for food, and the flower needs the bee to carry its pollen. They grow and change together so they can help each other perfectly. They are \"dance partners\" in life.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"buzz\" of a bee that matches the vibration a flower needs to release its pollen." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The heavy scent of a flower that only blooms at night to attract moths that can only see in the dark." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Spicy peppers are spicy to stop mammals, but birds can't feel the heat — so they eat them and spread the seeds!" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The way a burr sticks to your clothes. It \"hired\" you to move its seeds to a new place." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "The bright orange of a butterfly matching the bright orange of a specific milkweed flower." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Holding hands with someone. You adjust your grip to match theirs — that is co-moving." },
+        ],
+        intuition: "You are never alone. You are always in a \"dance\" with the world around you. Every time you help someone else, you participate in the ancient rhythm of together-growth.",
+        links: [
+          { label: "Encyclopedia of Life: Coevolution", url: "https://eol.org/docs/discover/coevolution" },
+          { label: "PBS: Coevolution", url: "https://www.pbs.org/wgbh/evolution/library/01/3/l_013_01.html" },
+          { label: "UT Austin: Coevolutionary Arms Race", url: "https://www.bio.utexas.edu/courses/evolution/Coevolution.html" },
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=q6E7v6_Y08Q" },
+        ],
+        advanced: "Coevolution represents Reciprocal Selection Pressures. It can be mutualistic (bees/flowers) or antagonistic (predator/prey \"arms races\"). This is the biological equivalent of Coupled Oscillators in physics or Symbiosis in sociology, where the evolution of one agent is intrinsically linked to the state of another within the same system.",
+      },
+
+      // ── 8 ── THE FOSSIL RECORD ───────────────────────────────
+      {
+        id: "fossil-record",
+        num: 8,
+        icon: "🦴",
+        title: "The Fossil Record",
+        subtitle: "Earth's Scrapbook",
+        simple: "The Earth is a giant scrapbook. When things die, sometimes they leave a \"stamp\" in the mud that turns to stone. These fossils are like photos from millions of years ago that show us exactly how animals looked before they changed into what they are today.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"clink\" of a rock hammer hitting stone. It sounds like a bell ringing from the past." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The earthy, dusty smell of a museum or an old cave." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The mineral \"tang\" of water that has filtered through ancient limestone." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your fingers over the ridges of a fossilized shell. You are touching something that lived 100 million years ago." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing the skeleton of a T-Rex. It's a \"ghost\" made of rock." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the weight of a heavy stone in your hand — knowing that stone used to be a living creature." },
+        ],
+        intuition: "Time is very deep. You are a small part of a story that has been being \"written\" for billions of years. Your life is a page in the most amazing book ever.",
+        links: [
+          { label: "Paleontology Portal", url: "http://paleoportal.org/" },
+          { label: "The Paleobiology Database", url: "https://paleobiodb.org/" },
+          { label: "Digital Atlas of Ancient Life", url: "https://www.digitalatlasofancientlife.org/" },
+        ],
+        songs: [
+          { title: "Solsbury Hill", artist: "Peter Gabriel", url: "https://www.youtube.com/watch?v=_OO2PuGz-H8" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+        ],
+        advanced: "The Fossil Record provides the Chronostratigraphic evidence for evolution. While biased by Taphonomy (the process of fossilization), it confirms Transitional Forms (e.g., Tiktaalik or Archaeopteryx). It connects biology to Geology and Thermodynamics, serving as a physical \"Entropy Trace\" of life's progression through deep time.",
+      },
+
+      // ── 9 ── HORIZONTAL GENE TRANSFER ────────────────────────
+      {
+        id: "hgt",
+        num: 9,
+        icon: "🕸️",
+        title: "Horizontal Gene Transfer",
+        subtitle: "Swapping Trading Cards",
+        simple: "Usually, you get your genes from your parents. But tiny things like bacteria can \"swap\" genes like kids swapping trading cards! It's like if you could high-five a friend and suddenly have their hair color. It helps life learn new tricks very, very fast.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"hum\" of a busy city where everyone is sharing ideas at the same time." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of bread rising. Yeast cells share \"recipes\" to help the bread grow." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"funk\" of blue cheese or yogurt. This comes from many tiny microbes swapping genes to live together." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of \"slime\" on a rock in a creek. That slime is a \"city\" of bacteria all talking and swapping traits." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a biofilm (like the plaque on your teeth). It's a community where everyone shares their best tools." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of \"belonging\" in a crowd. You pick up the \"vibe\" of everyone around you, just like bacteria pick up genes." },
+        ],
+        intuition: "We are all \"open books.\" We influence each other just by being near each other. You don't just grow from your past; you grow from everyone you meet right now.",
+        links: [
+          { label: "Nature: Horizontal Gene Transfer", url: "https://www.nature.com/scitable/definition/horizontal-gene-transfer-235/" },
+          { label: "Quanta: How Gene Sharing Shapes Life", url: "https://www.quantamagazine.org/how-gene-sharing-shapes-the-biosphere-20191022/" },
+          { label: "ScienceDirect: HGT in Evolution", url: "https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/horizontal-gene-transfer" },
+        ],
+        songs: [
+          { title: "Come Together", artist: "The Beatles", url: "https://www.youtube.com/watch?v=uol7wMi7SSc" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Intergalactic", artist: "Beastie Boys", url: "https://www.youtube.com/watch?v=qORYO0atB6g" },
+        ],
+        advanced: "Horizontal Gene Transfer (HGT) challenges the \"Tree of Life\" model, suggesting a \"Web of Life\" or Phylogenetic Network. It is the primary driver of antibiotic resistance and metabolic innovation in prokaryotes. This connects to Network Theory and Open-Source Systems, where information is shared laterally rather than just vertically, accelerating systemic evolution.",
+      },
+
+      // ── 10 ── PUNCTUATED EQUILIBRIUM ─────────────────────────
+      {
+        id: "punctuated-equilibrium",
+        num: 10,
+        icon: "💥",
+        title: "Punctuated Equilibrium",
+        subtitle: "The Big Jump",
+        simple: "Evolution isn't always a slow walk. Sometimes, life stays the same for a long time (like a long nap), and then — BOOM! — everything changes very fast because of a big storm or a volcano. It's like a movie that has long boring parts and then a lot of action all at once.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A clap of thunder after a long, quiet afternoon." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of smoke after a fire. It signals that the old forest is gone and a new one is starting." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A sour patch kid — sweet for a long time, then a sudden burst of sour." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The sudden \"snap\" of a rubber band. It holds still, then moves fast." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a butterfly come out of a cocoon. It looked still for weeks, then suddenly it's a flying flower." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of a \"growth spurt\" when your knees ache because you are getting taller overnight." },
+        ],
+        intuition: "It is okay to feel \"stuck.\" Sometimes the quiet times are just getting you ready for a big \"jump\" forward. Change happens in its own time, often when you least expect it.",
+        links: [
+          { label: "PBS: Punctuated Equilibrium", url: "https://www.pbs.org/wgbh/evolution/library/03/5/l_035_01.html" },
+          { label: "Gould and Eldredge: Original Paper Summary", url: "https://www.nature.com/articles/d41586-017-04753-1" },
+          { label: "Berkeley: Punctuated Equilibrium", url: "https://evolution.berkeley.edu/evolibrary/article/0_0_0/punc_grad_01" },
+        ],
+        songs: [
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90M60KAx67U" },
+          { title: "Waiting on the World to Change", artist: "John Mayer", url: "https://www.youtube.com/watch?v=oBIxScJ5rlY" },
+          { title: "Thunder", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=fKopy74weus" },
+        ],
+        advanced: "Proposed by Eldredge and Gould, Punctuated Equilibrium posits that the fossil record's \"gaps\" are not missing data, but reflections of Cladogenesis (rapid branching). This connects to Catastrophe Theory and Self-Organized Criticality, where systems remain in \"Stasis\" until a threshold is crossed, leading to a rapid phase transition to a new equilibrium.",
+      },
+
+    ],
   },
 };
 
