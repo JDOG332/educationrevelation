@@ -8896,6 +8896,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The concept of a Golden Age or high-civilization before cataclysm (Plato's Atlantis) suggests human progress is not a straight line but peaks and valleys. The Antediluvian idea challenges us to consider lost knowledge: the Reset so thorough it left only Ooparts (Out of Place Artifacts) and myths as clues to a forgotten chapter of the human story." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > GODS & SPIRITS (gods)
+    // ═══════════════════════════════════════════════════════════════
+
+    gods: [
+      { id: "the-transcendent", num: 1, icon: "⚡", title: "The Transcendent", subtitle: "The Big Something Behind Everything",
+        simple: "Everything you see is like a small piece of a much bigger puzzle that we cannot fully see yet. Think of it like a giant ocean, and we are just little fish swimming in it; the ocean is everywhere, but it is much larger than us. It is the feeling that there is something very special and powerful behind the stars and the wind. This Big Something does not have a body like ours, but it is the reason everything exists. When you feel a sense of wonder, you are touching this big secret. It helps us feel brave because we know we are not alone in the dark.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep, low hum of a large bell or Om chanting." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: the scent of rain on dry earth." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure, cold spring water that feels alive." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration in your chest during a loud thunderclap." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The black space between stars at night: what lives in the gap." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Weightlessness or floating when you close your eyes in a quiet room." }
+        ],
+        intuition: "You cannot see it. You cannot touch it. But you can feel it in the silence between heartbeats. The Big Something is not far away. It is the room you are sitting in.",
+        links: [
+          { label: "Stanford Encyclopedia: Divine Transcendence", url: "https://plato.stanford.edu/entries/divine-simplicity/" },
+          { label: "Britannica: The Absolute", url: "https://www.britannica.com/topic/the-Absolute" },
+          { label: "Big Think: What is God?", url: "https://en.wikipedia.org/wiki/God" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Spirit in the Sky", artist: "Norman Greenbaum", url: "https://www.youtube.com/watch?v=AZQxH_8raCI" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "The Transcendent represents the A Priori condition of existence — the Ground of Being (Paul Tillich). The Unmoved Mover sitting outside time and entropy. Suggests our sensory data is a user interface for deeper reality. Connects to Quantum Field Theory: visible particles are merely excitations in invisible, all-encompassing fields." },
+
+      { id: "animism-living-world", num: 2, icon: "🌱", title: "Animism (The Living World)", subtitle: "Everything Has a Spark Inside It",
+        simple: "Imagine that everything around you — the trees, the rocks, and even the rivers — has its own little spark of life or a spirit. It means the world is not just a bunch of stuff, but a big family of living things that can feel and talk in their own way. When you walk in the woods, the trees are like old grandfathers watching over you. This teaches us to be very kind to nature because you are talking to a friend, not just a thing. If you treat the world like it is alive, it starts to feel like it is talking back to you. Everything is connected by a secret golden thread of life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whispering of wind through pine needles." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Spicy, sharp scent of crushed pine needles or cedar." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A wild berry picked straight from a bush." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Palms pressed against the rough, warm bark of an oak tree." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A river flowing with sunlight dancing on the ripples." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the sway of the earth beneath you as if it is breathing." }
+        ],
+        intuition: "The tree is not furniture. The river is not plumbing. They are alive. Talk to them. They have been listening the whole time.",
+        links: [
+          { label: "British Museum: What Is Animism?", url: "https://en.wikipedia.org/wiki/Animism" },
+          { label: "Does Consciousness Pervade the Universe?", url: "https://en.wikipedia.org/wiki/Panpsychism" },
+          { label: "The Gaia Hypothesis", url: "https://en.wikipedia.org/wiki/Gaia_hypothesis" }
+        ],
+        songs: [
+          { title: "Colors of the Wind", artist: "Judy Kuhn", url: "https://www.youtube.com/watch?v=O9MvdMqKvpU" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" }
+        ],
+        advanced: "Animism is the foundational layer of human religiosity: anima (soul/life) is not exclusive to humans. Aligns with panpsychism — consciousness as a fundamental property of matter. Collapses Cartesian dualism of Subject vs. Object. Resonates with the Gaia Hypothesis: Earth as a self-regulating living system." },
+
+      { id: "divine-order-cosmic-law", num: 3, icon: "⚖️", title: "Divine Order (Cosmic Law)", subtitle: "The Invisible Rules That Keep Everything Running",
+        simple: "The universe has a set of invisible rules that keep everything running perfectly, like a giant, beautiful clock. The sun always rises, the seasons always change, and kindness always feels better than being mean. These rules are called Order, and they make sure that life keeps moving forward instead of falling into a mess. When we follow these rules, like being honest and fair, we are dancing in tune with the stars. It is the feeling that even when things are scary, there is a plan making sure things turn out right. You are a small but important part of this big, orderly dance.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic ticking of a grandfather clock." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean, crisp salt air by the ocean." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect balance of sweet and salty in a piece of bread." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Geometric patterns on a seashell: order you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A honeycomb or a snowflake's perfect shape." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balance while standing perfectly still on one leg: your body knows the rules." }
+        ],
+        intuition: "The sun does not forget to rise. The seasons do not skip. The rules are invisible but they never break. You feel them when you know what is right.",
+        links: [
+          { label: "Ancient History: Ma'at", url: "https://en.wikipedia.org/wiki/Maat" },
+          { label: "The Concept of Logos", url: "https://en.wikipedia.org/wiki/Logos" },
+          { label: "Dharma in Hinduism and Buddhism", url: "https://en.wikipedia.org/wiki/Dharma" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Bridge Over Troubled Water", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=XbKHtKjO45o" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Divine Order (Dharma, Logos, Ma'at) suggests the universe is intelligible — the cornerstone of both theology and science. Argues against Chaos as a final state: chaos is simply order we have not recognized yet. In ethics, Right and Wrong are not mere social constructs but woven into reality's fabric, like gravity." },
+
+      { id: "heros-journey-deified", num: 4, icon: "⚔️", title: "The Hero's Journey (Deified Ancestors)", subtitle: "The People Who Became Gods",
+        simple: "A long time ago, there were people just like us who did amazing things and became legends that we still talk about today. These heroes showed us how to be brave when we are scared and how to help others even when it is hard. Sometimes, people felt these heroes were so special that they became like spirits or gods who watch over us from the sky. When you try your best to be a good person, you are following the path they walked. Their stories are like maps that show us how to grow up and become wise. You have a little bit of that hero magic inside you too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single trumpet playing a bold, rising note." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books and paper: the scent of history and stories." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Hearty, warm soup that tastes like home." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding an old family photo or a heavy, smooth stone." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A campfire burning brightly in the middle of a dark night." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your feet hitting the ground firmly while running toward something: the hero in motion." }
+        ],
+        intuition: "They were not born gods. They became gods by doing what scared them. The map they left behind is the same map you are holding right now.",
+        links: [
+          { label: "Joseph Campbell Foundation", url: "https://www.jcf.org/" },
+          { label: "Euhemerism Definition", url: "https://en.wikipedia.org/wiki/Euhemerism" },
+          { label: "The Hero with a Thousand Faces", url: "https://en.wikipedia.org/wiki/The_Hero_with_a_Thousand_Faces" }
+        ],
+        songs: [
+          { title: "Heroes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=lXgkuM2NhYI" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" }
+        ],
+        advanced: "Euhemerism: gods were originally historical heroes deified through legend. Bridges human and divine, suggesting divinity is an attainable state of Excellence (Arete). Campbell's Monomyth identifies the universal pattern: Separation, Initiation, Return. A psychic structure common to all humans — the drive to transcend ego and return with The Boon." },
+
+      { id: "archetypes-faces-soul", num: 5, icon: "🎭", title: "Archetypes (The Faces of the Soul)", subtitle: "The Characters Living Inside You",
+        simple: "Inside every person, there are many different characters like the Brave Warrior, the Kind Mother, or the Wise Teacher. These characters are like the blueprints for how humans think and feel all over the world, no matter where they live. Gods and spirits are often like giant versions of these characters that help us understand ourselves better. If you feel protective, you are like a guardian spirit; if you are curious, you are like a trickster spirit. Seeing these faces in stories helps us recognize the different parts of our own hearts. It is like looking into a mirror that shows who you can become.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A theater audience gasping or laughing at the same time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender (calming like a mother) or smoke (strong like a warrior)." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon followed by sweet sugar: the change in character." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Wearing a mask and feeling like someone else." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A classic Wise Man or Queen character in a movie." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your posture changing when you pretend to be a king or a beggar: the body knows the role." }
+        ],
+        intuition: "The warrior, the mother, the trickster, the sage — they all live inside you. The gods are not out there. They are in here. You are the pantheon.",
+        links: [
+          { label: "Simply Psychology: Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "The Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Jung's Theory of Spirits", url: "https://en.wikipedia.org/wiki/Analytical_psychology" }
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Just Like Fire", artist: "P!nk", url: "https://www.youtube.com/watch?v=5301Fg0VcJw" }
+        ],
+        advanced: "Jung proposed archetypes as archaic remnants or universal patterns in the Collective Unconscious. Gods and spirits are externalized versions of internal psychic structures. By interacting with a deity, one constellates a part of their own psyche. Allows psychological interpretation of the divine: functional truth. If The Mother goddess provides comfort, the psychological effect is empirically real." },
+
+      { id: "creation-destruction-cycle", num: 6, icon: "🌋", title: "Creation & Destruction", subtitle: "The Fire That Clears the Ground for New Growth",
+        simple: "Life is like a big circle where things are born, they grow, and eventually, they go away to make room for something new. Think of a forest fire: it looks scary and destructive, but it clears the ground so new, green plants can grow even better. Gods of destruction are not bad; they are just the part of the world that cleans up the old to make way for the new. It is like cleaning your room so you have space to play with new toys. This cycle makes sure that life never gets stuck and always stays fresh. Without the end of one thing, you can never have the beginning of another.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a fire or the crashing of a wave." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Woodsmoke or fresh-cut grass: endings and beginnings." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spicy chili that burns but then feels warm and good." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heat of the sun followed by a cool breeze." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A butterfly leaving its cocoon: the old shell dies, the new lives." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscles tired after exercise, then feeling stronger the next day: destruction building strength." }
+        ],
+        intuition: "The fire is not the enemy of the forest. It is the forest's way of starting over. Everything that ends is making room for something that has not been born yet.",
+        links: [
+          { label: "Triple Goddess: Creator, Preserver, Destroyer", url: "https://en.wikipedia.org/wiki/Triple_deity" },
+          { label: "Entropy and the Arrow of Time", url: "https://en.wikipedia.org/wiki/Entropy_(arrow_of_time)" },
+          { label: "Shiva: The Destroyer of Worlds", url: "https://en.wikipedia.org/wiki/Shiva" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Carmen Twillie", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Live and Let Die", artist: "Paul McCartney & Wings", url: "https://www.youtube.com/watch?v=e7aGAIWe3uE" }
+        ],
+        advanced: "Creator and Destroyer are two sides of the same coin (Shiva, entropy/enthalpy balance). Reflects the Second Law of Thermodynamics: for order in one place, energy transforms elsewhere. Evil is often Destruction viewed narrowly; cosmically it is necessary. Connects to apoptosis (programmed cell death): essential for the health of the organism." },
+
+      { id: "intercession-sacrifice", num: 7, icon: "🙏", title: "Intercession & Sacrifice", subtitle: "Giving Something Small to Reach Something Big",
+        simple: "Intercession is a big word that just means asking for help from a higher power. Sometimes, people give a little bit of what they have — like food, flowers, or their time — to show they are thankful and to ask the spirits to look after them. It is like giving a gift to a teacher to show you appreciate their help. This helps us remember that we are part of a team and that we should be generous with what we have. When we sacrifice or give up a small treat to help a friend, we are doing the same thing. It connects our hearts to the Big Something through the act of giving.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft shhh of a prayer or a whispered wish." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sweet incense or a scented candle." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A special meal shared with family during a holiday." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Clasping your hands together or holding a lucky charm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A coin disappearing into a wishing well." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Bowing your head or kneeling: feeling the weight of your own humbleness." }
+        ],
+        intuition: "You give something small. You get something you cannot buy. The coin in the well is not payment. It is proof that you believe the well is listening.",
+        links: [
+          { label: "The Psychology of Prayer", url: "https://en.wikipedia.org/wiki/Prayer" },
+          { label: "Sacrifice in Ancient Religions", url: "https://en.wikipedia.org/wiki/Sacrifice" },
+          { label: "Reciprocity and the Divine", url: "https://en.wikipedia.org/wiki/Do_ut_des" }
+        ],
+        songs: [
+          { title: "Like a Prayer", artist: "Madonna", url: "https://www.youtube.com/watch?v=79fzeNUqQbQ" },
+          { title: "Losing My Religion", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=xwtdhWltSIg" },
+          { title: "Prayer in C", artist: "Lilly Wood & The Prick", url: "https://www.youtube.com/watch?v=fiore9Z5iUg" }
+        ],
+        advanced: "Ritual sacrifice and intercessory prayer are technologies of Reciprocity: Do ut des (I give so that you might give). Psychologically reduces anxiety regarding the Unknown. By offering something of value, the individual enters perceived contract with the divine, creating agency in chaos. Socially strengthens community bonds through shared sacred spaces and shared costs." },
+
+      { id: "pantheism-god-is-all", num: 8, icon: "🌌", title: "Pantheism (God Is the All)", subtitle: "You Are Swimming Inside God Right Now",
+        simple: "Pantheism is the idea that God is not a person living in the clouds, but that God is the clouds, the trees, the stars, and even you! It means the whole universe is one giant, living being, and we are all tiny parts of its body. Imagine if your hand thought it was all alone, but it is actually part of you; we are like that with the universe. This means that everywhere you go is a holy place because everything is made of God-stuff. It makes you feel very important and very connected to everything else in existence. You are never truly alone because the whole world is with you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise of a waterfall: everything at once." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A whole garden in bloom: every flower is the same thing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A piece of fruit: tasting the sun, the rain, and the earth in one bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dipping your feet in a lake and feeling water surround you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Earth from space: the Blue Marble, one living thing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Gravity pulling you down, holding you close: the universe hugging you." }
+        ],
+        intuition: "Your hand does not know it is part of your body. But it is. You do not know you are part of everything. But you are. There is no outside. Only inside.",
+        links: [
+          { label: "Stanford Encyclopedia: Pantheism", url: "https://plato.stanford.edu/entries/pantheism/" },
+          { label: "Spinoza's Concept of God", url: "https://en.wikipedia.org/wiki/Baruch_Spinoza" },
+          { label: "Einstein's Belief in Spinoza's God", url: "https://en.wikipedia.org/wiki/Religious_and_philosophical_views_of_Albert_Einstein" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "God", artist: "John Lennon", url: "https://www.youtube.com/watch?v=nZ2ucr74YNk" },
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" }
+        ],
+        advanced: "Pantheism (Spinoza: Deus sive Natura) identifies God with the universe and laws of nature. Removes Personhood of God, replaces with Infinite Substance. A bridge between religion and science: studying the universe via science becomes intellectual love of God. Provides spiritual framework compatible with a purely physicalist worldview." },
+
+      { id: "liminality-thin-places", num: 9, icon: "🚪", title: "Liminality (Thin Places)", subtitle: "Where the Wall Between Worlds Gets Thin",
+        simple: "Have you ever been somewhere that felt magic, like a foggy morning in a forest or an old, quiet church? These are called thin places, where it feels like the wall between our world and the spirit world is very, very thin. It is like a doorway that is slightly open. In these places, it is easier to feel peaceful and to hear your own inner voice or the whispers of spirits. These moments do not last forever, but they remind us that there is more to the world than just what we see every day. They are the in-between times, like sunset or sunrise.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence right after a heavy snowfall." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old stone and cold air: the scent of a threshold." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool, thin mountain air on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking through thick fog: the world dissolving around you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The Golden Hour when the sun sets and everything glows orange." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That dizzy, tingly feeling right before you fall asleep: the threshold of consciousness." }
+        ],
+        intuition: "Some places are thinner than others. The fog, the twilight, the old church. The wall gets thin and you can almost hear the other side whispering. That is real.",
+        links: [
+          { label: "The Concept of Liminality", url: "https://en.wikipedia.org/wiki/Liminality" },
+          { label: "Thin Places in Celtic Mythology", url: "https://en.wikipedia.org/wiki/Thin_place" },
+          { label: "The Neuroscience of Awe", url: "https://en.wikipedia.org/wiki/Awe" }
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "Where the Streets Have No Name", artist: "U2", url: "https://www.youtube.com/watch?v=GzZWSrr5wFI" }
+        ],
+        advanced: "Liminality (Latin limen: threshold) — a state betwixt and between. Victor Turner: normal hierarchies dissolve. Thin Places are where the veil between profane and sacred is porous. Crucial for mystical experience: the Default Mode Network quiets, allowing unity with the external world. The psychological basis for Awe in cathedrals and vast landscapes." },
+
+      { id: "personification-faces-power", num: 10, icon: "🌬️", title: "Personification (The Faces of Power)", subtitle: "Giving the Storm a Name So You Can Talk to It",
+        simple: "Sometimes the world is so big that it is hard to understand, so we give names and faces to the big things. Instead of just The Storm, people imagined a giant with a hammer named Thor. Instead of just The Sun, they imagined a golden chariot. Giving the forces of nature a person to talk to makes them feel less scary and more like neighbors. It helps us tell stories about how the world works. Even if we know the wind is just air moving, imagining it has a spirit helps us feel more connected to it. It turns the world into a giant storybook.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep roll of thunder that sounds like a giant's voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Ozone before a lightning strike: the god arriving." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sharpness of a lemon: like a sharp goddess." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A sudden, strong gust of wind that pushes against you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Faces in the shapes of clouds or the moon." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling small while standing at the base of a huge mountain: the god looking down." }
+        ],
+        intuition: "We named the storm Thor because we needed someone to talk to. We named the sun Apollo because we needed someone to thank. The names are ours. The power is real.",
+        links: [
+          { label: "Hyperactive Agent Detection", url: "https://en.wikipedia.org/wiki/Agent_detection" },
+          { label: "History of Personification in Art", url: "https://en.wikipedia.org/wiki/Personification" },
+          { label: "Mythology and Personification of Nature", url: "https://en.wikipedia.org/wiki/Nature_deity" }
+        ],
+        songs: [
+          { title: "Thunderstruck", artist: "AC/DC", url: "https://www.youtube.com/watch?v=v2AC41dglnM" },
+          { title: "Riders on the Storm", artist: "The Doors", url: "https://www.youtube.com/watch?v=iv8GW1GaoIc" },
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" }
+        ],
+        advanced: "Personification leverages the Agent Detection Device: humans are primed to see intent as a survival mechanism. Safer to mistake a bush for a tiger than a tiger for a bush. By personifying forces, we translate abstract phenomena into the Language of Relationships. Science uses math to describe the wind; mythology uses The North Wind to describe its character and impact on the human spirit." },
+    ],
 
 
   },
