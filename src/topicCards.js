@@ -6537,6 +6537,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Legacy relates to generativity: the desire to guide the next generation and create things that outlast the self. A form of symbolic immortality. Whether through offspring, creative works, or systemic change, legacy lets an individual participate in the future and contribute to the Everlasting We." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > FREE WILL & FATE (freewill)
+    // ═══════════════════════════════════════════════════════════════
+
+    freewill: [
+      { id: "compatibilism", num: 1, icon: "🧩", title: "Compatibilism", subtitle: "The River That Chooses to Flow",
+        simple: "Imagine you are playing a video game where you can move your character anywhere you want. Even though the game has rules and code, it is still you making the choice to move left or right. This idea says your choices are real because they come from what you want, even if there is a reason why you want those things. You are like a river that follows a path but is still the one doing the flowing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two different instruments playing the same song in harmony." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of rain (petrichor) that always follows the clouds." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salty and sweet working together in a single bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a leash while walking a dog: you lead, but you are connected." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A train moving on tracks, yet choosing how fast to go." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expand automatically while you choose to take a deep breath: freedom inside the rules." }
+        ],
+        intuition: "The river does not fight the banks. It flows because of them. Your will is not less free because it has a channel.",
+        links: [
+          { label: "Britannica: Compatibilism", url: "https://www.britannica.com/topic/compatibilism" },
+          { label: "Stanford: Compatibilism", url: "https://plato.stanford.edu/entries/compatibilism/" },
+          { label: "Philosophy News: Compatibilism", url: "https://www.philosophynews.com/" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" },
+          { title: "Closer to Free", artist: "BoDeans", url: "https://www.youtube.com/watch?v=ad4-hurh_Yw" }
+        ],
+        advanced: "Compatibilism (Soft Determinism) posits the conflict between free will and determinism is a false dichotomy. Freedom is redefined not as absence of causation, but absence of external coercion. If actions proceed from internal motivations, the action is free even if those states result from a deterministic chain. Grounds moral responsibility in a scientific world." },
+
+      { id: "causal-determinism", num: 2, icon: "⚙️", title: "Causal Determinism", subtitle: "The Infinite Domino Line",
+        simple: "Think of a giant line of millions of dominoes stretching forever. When the first one falls, every single other domino must fall in a specific way because of the one before it. This idea says the whole world is like those dominoes, and everything that happens today happened because of what happened yesterday. Even the thoughts in your head are like tiny dominoes clicking together. The world is a very organized place where nothing happens by total accident.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady ticking rhythm of a grandfather clock." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly baked bread that smells exactly like the ingredients used." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The predictable sourness of a lemon." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a machine working perfectly." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A ball rolling down a hill in a straight line." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your heart beating without you asking it to: the body as domino chain." }
+        ],
+        intuition: "Every domino falls because the one before it fell. You are not outside the chain. You are one of its most beautiful pieces.",
+        links: [
+          { label: "Determinism in Physics", url: "https://en.wikipedia.org/wiki/Determinism" },
+          { label: "Information Philosopher: Determinism", url: "https://www.informationphilosopher.com/freedom/determinism.html" },
+          { label: "Philosophy Basics: Determinism", url: "https://www.philosophybasics.com/branch_determinism.html" }
+        ],
+        songs: [
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" }
+        ],
+        advanced: "Causal Determinism is the metaphysical backbone of classical physics: the state of the universe at time t is a direct function of t-1. Implies a singular unfolding World Line. Neurologically challenges the ghost in the machine: if neurons fire on electrochemical gradients, choice is the subjective experience of a biological calculation." },
+
+      { id: "alternative-possibilities", num: 3, icon: "🌿", title: "Principle of Alternative Possibilities", subtitle: "The Forking Path",
+        simple: "Imagine standing at a fork in the road where you could go left or right. This rule says that for you to be truly responsible for your choice, you must have really been able to pick the other way. If a giant wall was blocking the left path and you did not know it, did you really choose the right path? It helps us think about when it is fair to give someone a gold star or a timeout. Being free means having more than one real door open.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between two notes where you decide which to sing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Two different ice cream flavors and the pause before you pick." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The burst of a mystery flavor candy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Picking a smooth stone out of a pile of rough ones." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Choose Your Own Adventure book with many endings." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tension in your muscles before you decide to jump: your body holding two futures at once." }
+        ],
+        intuition: "A door you cannot open is not a choice. Freedom requires at least two real doors. Otherwise you are just walking down a hallway.",
+        links: [
+          { label: "Frankfurt Cases Explanation", url: "https://en.wikipedia.org/wiki/Frankfurt_cases" },
+          { label: "Philosophy Now: Free Will", url: "https://philosophynow.org/" },
+          { label: "Stanford: Moral Responsibility", url: "https://plato.stanford.edu/entries/moral-responsibility/" }
+        ],
+        songs: [
+          { title: "Should I Stay or Should I Go", artist: "The Clash", url: "https://www.youtube.com/watch?v=BN1WwnEDWAM" },
+          { title: "Make Your Own Kind of Music", artist: "Cass Elliot", url: "https://www.youtube.com/watch?v=dSyQz_ygIFY" },
+          { title: "Crossroads", artist: "Robert Johnson", url: "https://www.youtube.com/watch?v=Yd60nI4sa9A" }
+        ],
+        advanced: "PAP is a cornerstone of moral philosophy, challenged by Harry Frankfurt. Frankfurt argued one can be morally responsible even without alternatives, provided the action stems from one's own desires. Shifts focus from alternative paths to internal sourcehood. Asks whether the universe is a garden of forking paths or a single thread." },
+
+      { id: "neuroscience-decisions", num: 4, icon: "🧠", title: "Neuroscience of Decision Making", subtitle: "The Brain That Moves Before You Speak",
+        simple: "Scientists looked at people's brains and found something super cool and a little spooky. Your brain actually starts getting ready to move your hand a tiny bit before you even decide to move it! It is like your brain is a fast computer that finishes the job before you press the Enter button. This makes us wonder if our will is like a captain who thinks he is steering a ship that is actually on autopilot. Even so, your brain is still you, just working very fast behind the scenes.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of static electricity." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp scent of ozone after a lightning strike." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zing of electricity: instant and involuntary." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pins and needles when your foot wakes up." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Rapid flashes of light in a dark room." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscle memory when you ride a bike: your body decided before your mind caught up." }
+        ],
+        intuition: "Your brain is faster than your story about your brain. You are not the narrator. You are the whole orchestra.",
+        links: [
+          { label: "Nature: Decoding Decisions", url: "https://www.nature.com/" },
+          { label: "The Libet Experiment", url: "https://en.wikipedia.org/wiki/Benjamin_Libet" },
+          { label: "Scientific American: Free Will Illusion?", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Mind Games", artist: "John Lennon", url: "https://www.youtube.com/watch?v=LlF3SOgMeGQ" },
+          { title: "Electric Feel", artist: "MGMT", url: "https://www.youtube.com/watch?v=MmZexg8sxyk" },
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" }
+        ],
+        advanced: "Modern neuroscience uses fMRI and EEG to track readiness potentials preceding conscious awareness. Suggests the self is a narrative construct generated post-hoc to explain deterministic neural activity. Challenges the Cartesian I and replaces it with a distributed processing network. We are not just the observer but the entire biological process." },
+
+      { id: "amor-fati", num: 5, icon: "❤️‍🔥", title: "Amor Fati", subtitle: "Love Your Fate",
+        simple: "This is a secret way to be happy no matter what happens. It means Loving your Fate, like loving a movie even when there are sad parts because you know the whole story is beautiful. Instead of wishing things were different, you say Yes to everything that comes your way. It turns I have to into I get to. When you love your fate, you are never a prisoner of what happens because you chose to want it all.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady roar of the ocean that never stops." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books and history: the scent of what cannot be changed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter chocolate that you learn to love." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Leaning back into a strong wind and letting it hold you up." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset you cannot change but can only enjoy." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water and letting go: surrender as the highest act of will." }
+        ],
+        intuition: "Rejecting one moment is rejecting the entire universe. Loving fate is the ultimate act of integration. Say yes to the whole story.",
+        links: [
+          { label: "Daily Stoic: Amor Fati", url: "https://dailystoic.com/amor-fati/" },
+          { label: "Nietzsche: Eternal Recurrence", url: "https://en.wikipedia.org/wiki/Eternal_return" },
+          { label: "Philosophy Break: Amor Fati", url: "https://philosophybreak.com/" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Que Sera, Sera", artist: "Doris Day", url: "https://www.youtube.com/watch?v=SdhAfMor9BM" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "Amor Fati collapses the distinction between actor and stage. By accepting the totality of one's life as a necessary cosmic unfolding, one achieves heroic fatalism. Free will is expressed as the power to affirm the inevitable. If every event is linked through a causal web, rejecting one moment is rejecting the entire universe." },
+
+      { id: "quantum-indeterminacy-fw", num: 6, icon: "🌌", title: "Quantum Indeterminacy", subtitle: "The Dance of Possibilities",
+        simple: "If you look at the tiniest pieces of the world, way smaller than atoms, things get very wiggly and weird. You cannot always say exactly where something will be; you can only guess the chance of it being there. It is like a coin that is both heads and tails at the same time until you look at it. Some people think this wiggle room is where our choices come from. At the very bottom of everything, the world is not a stiff machine but a dance of possibilities.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise of a radio between stations: pure potential." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A forest where everything is growing at once." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fizzing candy that tingles everywhere." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Trying to hold a handful of dry sand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blurry photo that becomes clear when you blink." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Being dizzy and not knowing which way is up: the body in superposition." }
+        ],
+        intuition: "At the bottom of the machine there is no machine. There is a dance. The universe is not a recording. It is a live performance.",
+        links: [
+          { label: "Heisenberg Uncertainty Principle", url: "https://en.wikipedia.org/wiki/Uncertainty_principle" },
+          { label: "Quantum Mechanics and Free Will", url: "https://plato.stanford.edu/entries/qt-quantlog/" },
+          { label: "Scientific American: Quantum Randomness", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Stardust", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=DjU6ZjbJgtE" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Particle Man", artist: "They Might Be Giants", url: "https://www.youtube.com/watch?v=LsAiCs66l40" }
+        ],
+        advanced: "Quantum Indeterminacy (Heisenberg) suggests certain physical variables are fundamentally undecided until observation occurs. Introduces stochastic elements breaking rigid Newtonian clockwork. Does not directly prove free will but removes the physical impossibility of non-deterministic events. The universe is fundamentally creative and open-ended." },
+
+      { id: "libertarian-freewill", num: 7, icon: "🕊️", title: "Libertarian Free Will", subtitle: "The Unbound Bird",
+        simple: "This is the feeling that you are the boss of you, no matter what! It says that even if your brain and your past try to tell you what to do, you can always say No and pick something else. You are like a superhero whose power is making a brand-new start in every moment. It feels like you are a spark of light that can fly in any direction it wants. This idea makes us feel very powerful because it means our choices are truly our own.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden, loud trumpet blast in a quiet room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new car or new notebook: the scent of a blank slate." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Taking a bite of something you have never tried before." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of snapping your fingers: instant agency." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blank white piece of paper waiting for a drawing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Suddenly changing direction while running: the body proving it can break the pattern." }
+        ],
+        intuition: "You are not a domino. You are the hand. Every moment is a fresh start. The bird does not ask the cage for permission to fly.",
+        links: [
+          { label: "Metaphysical Libertarianism", url: "https://en.wikipedia.org/wiki/Libertarianism_(metaphysics)" },
+          { label: "IEP: Free Will", url: "https://iep.utm.edu/freewill/" },
+          { label: "Philosophy Now: Case for Free Will", url: "https://philosophynow.org/" }
+        ],
+        songs: [
+          { title: "I'm Still Standing", artist: "Elton John", url: "https://www.youtube.com/watch?v=ZHwVBirqD2s" },
+          { title: "Born to Run", artist: "Bruce Springsteen", url: "https://www.youtube.com/watch?v=IxuThNgl3YA" },
+          { title: "Free Bird", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=QxIWDmmqZzY" }
+        ],
+        advanced: "Libertarian free will argues determinism is false and agents possess causa sui: being the cause of themselves. Human agency is a unique causality initiating new chains without being fully determined by prior states. Scientifically difficult to reconcile with closed physical systems, yet aligns with intuition of the human spirit as a singularity where the universe reflects upon itself." },
+
+      { id: "butterfly-effect", num: 8, icon: "🦋", title: "The Butterfly Effect", subtitle: "The Tiny Ripple That Moves the World",
+        simple: "Have you ever heard that a butterfly flapping its wings in China could cause a storm in New York? This idea says every tiny thing you do matters way more than you think. One small smile or one tiny choice can change the whole future like a giant ripple in a pond. Free Will and Fate are woven together because your tiny choices become part of the big world's plan. You are a small part of a big, beautiful mystery.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single pebble falling into a deep well." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A tiny hint of smoke that leads to a big campfire." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "One drop of hot sauce changing the whole bowl of soup." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A light tickle that makes you jump." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single spark turning into a glowing flame." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A tiny shift in your toe changing your whole balance: small causes, large effects." }
+        ],
+        intuition: "You are not too small to matter. One butterfly moved the storm. One choice moved the future. You are that butterfly.",
+        links: [
+          { label: "Chaos Theory Explained", url: "https://en.wikipedia.org/wiki/Chaos_theory" },
+          { label: "MIT: The Butterfly Effect", url: "https://math.mit.edu/" },
+          { label: "Science of Unpredictability", url: "https://www.britannica.com/science/chaos-theory" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Everything Changes", artist: "Take That", url: "https://www.youtube.com/watch?v=gZBQ_GJv_hQ" }
+        ],
+        advanced: "In Chaos Theory, the Butterfly Effect is sensitive dependence on initial conditions. While a system may be deterministic in principle, it is unpredictable in practice. Bridges fate (the laws) and freedom (the emergence of novelty). No part of the whole is insignificant: localized choices are amplified by complexity." },
+
+      { id: "fatalism", num: 9, icon: "🕸️", title: "Fatalism", subtitle: "The Book Already Written",
+        simple: "Imagine reading a book that has already been printed. No matter how much you want the hero to turn left, if the book says he turns right, he will turn right. Fatalism is the feeling that the ending of our lives is already written in the stars. It can feel scary, but it can also feel very peaceful because it means you do not have to worry about making wrong moves. You are just here to see how the story goes!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The heavy thud of a book closing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain you knew was coming." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe that followed the instructions perfectly." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The floor beneath you: it is always there." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A movie playing on a screen that you cannot pause." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of falling when you know the ground is coming: surrender without fear." }
+        ],
+        intuition: "The book is already printed. But you still turn the page. Knowing the ending does not erase the experience of reading.",
+        links: [
+          { label: "Stanford: Fatalism", url: "https://plato.stanford.edu/entries/fatalism/" },
+          { label: "Fatalism vs Determinism", url: "https://en.wikipedia.org/wiki/Fatalism" },
+          { label: "History of Fate and Destiny", url: "https://www.britannica.com/topic/fate" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "The Winner Takes It All", artist: "ABBA", url: "https://www.youtube.com/watch?v=92cwKCU8Z5c" },
+          { title: "Fate", artist: "H.E.R.", url: "https://www.youtube.com/watch?v=R8jX0oS-Mhg" }
+        ],
+        advanced: "Fatalism holds what will be, will be. Unlike determinism which focuses on cause and effect, fatalism focuses on outcome inevitability. Block Universe theory suggests past, present, and future all exist simultaneously. We are not creating the future but discovering it. Recognition of the Totality." },
+
+      { id: "preestablished-harmony", num: 10, icon: "🎼", title: "Pre-established Harmony", subtitle: "The Silent Conductor",
+        simple: "Imagine two clocks perfectly synchronized. They both chime at exactly the same time, but they are not connected by any wires. This idea says your soul and your body are like those two clocks. They do not actually talk to each other, but they were both set to start at the same time by the Great Spirit. Your Free Will and your Fate are like two dancers who know the steps so well they do not even need to look at each other to move together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two clocks ticking at the exact same time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Two different flowers that bloom on the same day." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Milk and cookies: they just go together." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Two hands clapping together at the same time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Mirrors reflecting each other perfectly." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your left and right feet walking in rhythm: two systems, one dance." }
+        ],
+        intuition: "The two clocks were never connected. They were set by the same hand. Freedom and fate are not enemies. They are dance partners.",
+        links: [
+          { label: "Leibniz: Pre-established Harmony", url: "https://en.wikipedia.org/wiki/Pre-established_harmony" },
+          { label: "The Monadology Summary", url: "https://plato.stanford.edu/entries/leibniz/" },
+          { label: "Philosophy of Mind: Parallelism", url: "https://plato.stanford.edu/entries/dualism/" }
+        ],
+        songs: [
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=EkPy18xW1j8" },
+          { title: "Synchronicity I", artist: "The Police", url: "https://www.youtube.com/watch?v=Si5CSpUCDGY" }
+        ],
+        advanced: "Leibniz proposed Pre-established Harmony to solve the mind-body problem. Monads (simple substances) do not interact, but internal states are coordinated by God. Suggests a deep underlying Source Code ensuring all seemingly separate parts of the universe maintain constant rhythmic alignment. Freedom is the unfolding of one's internal nature in perfect timing with existence." },
+    ],
 
 
   },
