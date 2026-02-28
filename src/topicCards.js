@@ -4343,6 +4343,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔢 MATHEMATICS (promise) → 🎲 PROBABILITY & CHANCE (probability)
+    // "The Math of Maybe — how the universe negotiates chaos & order"
+    // ═══════════════════════════════════════════════════════════════
+
+    probability: [
+
+      // ── 1 ── LAW OF LARGE NUMBERS ────────────────────────────
+      {
+        id: "law-large-numbers",
+        num: 1,
+        icon: "📈",
+        title: "The Law of Large Numbers",
+        subtitle: "Luck Balances Out",
+        simple: "Imagine you have a magic coin that you flip over and over again. If you only flip it three times, you might get three heads in a row. But if you flip it a thousand times, it ends up landing on heads about half the time and tails about half the time. The more we try something, the more the \"luck\" balances out into a steady pattern. It's like watching a big crowd from far away; you can't guess what one person will do, but you can see where the whole group is moving.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The steady, rhythmic patter of rain on a roof that eventually creates a constant hum." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a pine forest where a million needles combine to create one single, strong aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A single grain of salt vs. a spoonful; the flavor only becomes \"true\" when there is enough of it." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the smoothness of a polished river stone shaped by millions of tiny water splashes." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching thousands of beads fall into a perfect bell curve." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of finding your balance on a bike after practicing for many hours." },
+        ],
+        intuition: "The world has an underlying order even when things seem random at first. Flip the coin enough times, and truth emerges from chaos.",
+        links: [
+          { label: "Wolfram MathWorld: Law of Large Numbers", url: "https://mathworld.wolfram.com/LawofLargeNumbers.html" },
+          { label: "Khan Academy: Probability & Statistics", url: "https://www.khanacademy.org/math/statistics-probability" },
+          { label: "Britannica: Law of Large Numbers", url: "https://www.britannica.com/science/law-of-large-numbers" },
+        ],
+        songs: [
+          { title: "The Gambler", artist: "Kenny Rogers", url: "https://www.youtube.com/watch?v=7hx4gdlfamo" },
+          { title: "Keep on Pushing", artist: "The Impressions", url: "https://www.youtube.com/watch?v=UVxUOFPrUF0" },
+          { title: "Every Little Thing She Does Is Magic", artist: "The Police", url: "https://www.youtube.com/watch?v=aENX1Sf3fgQ" },
+        ],
+        advanced: "The Law of Large Numbers (LLN) guarantees the stability of long-term results of random variables. The Weak form (Khinchin's Law) states sample averages converge in probability toward the expected value. The Strong form (Kolmogorov's Law) asserts convergence almost surely. It is the mathematical bridge between theoretical probability and empirical observation — connecting to the thermodynamic limit in physics and the wisdom of the crowd in social sciences.",
+      },
+
+      // ── 2 ── PROBABILITY AXIOMS ──────────────────────────────
+      {
+        id: "probability-axioms",
+        num: 2,
+        icon: "⚖️",
+        title: "Probability Axioms (Kolmogorov)",
+        subtitle: "The Floor and the Ceiling of Maybe",
+        simple: "Probability is like a set of rules for a fair game that everyone in the universe has to play. The first rule is that something can't have a \"less than zero\" or \"more than 100%\" chance of happening. The second rule is that if you add up every single thing that could happen, it always equals exactly one whole. These rules act like the floor and the ceiling of a room, keeping all the math safe and organized.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A single, clear note on a piano that represents \"1\" vs. total silence which is \"0.\"" },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of clean air — the baseline zero from which all other scents start." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Pure water, the neutral state before you add flavors." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Touching a flat, level table that shows you exactly where the surface of reality is." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A line showing \"Impossible\" on one side and \"Certain\" on the other." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Standing perfectly still and feeling your center of gravity — the baseline of balance." },
+        ],
+        intuition: "Without these boundaries, we couldn't measure hope or calculate risk. Everything adds up to One.",
+        links: [
+          { label: "Stanford Encyclopedia: Interpretations of Probability", url: "https://plato.stanford.edu/entries/probability-interpret/" },
+          { label: "Wikipedia: Probability Axioms", url: "https://en.wikipedia.org/wiki/Probability_axioms" },
+          { label: "Stat Trek: Axioms of Probability", url: "https://stattrek.com/probability/probability-rules" },
+        ],
+        songs: [
+          { title: "One", artist: "Three Dog Night", url: "https://www.youtube.com/watch?v=d5ab8BOu4LE" },
+          { title: "Balance", artist: "Earl Sweatshirt", url: "https://www.youtube.com/watch?v=r70goaDbjZE" },
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=NUnXxh5U25Y" },
+        ],
+        advanced: "Kolmogorov's Axioms provide the formal logical framework for measure-theoretic probability. By defining probability as a measure on a sigma-algebra of subsets of a sample space, we ensure internal consistency — enabling stochastic calculus and rigorous hypothesis testing. This mirrors the Golden Mean in philosophy and Ma'at in ancient Egyptian thought: existence is bound by cosmic laws that prevent chaos from overwhelming the design.",
+      },
+
+      // ── 3 ── BAYES' THEOREM ──────────────────────────────────
+      {
+        id: "bayes-theorem",
+        num: 3,
+        icon: "🔄",
+        title: "Bayes' Theorem",
+        subtitle: "The Detective Who Changes Their Mind",
+        simple: "Bayes' Theorem is like being a detective who changes their mind when they find a new clue. Usually, people pick an idea and stick to it, but this math says we should start with what we think is true and then move that idea every time we see something new. If you think it's going to rain, but then you see blue sky, you use it to update your \"rain score.\" It turns \"maybe\" into a living, breathing number that grows as we learn.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A song that starts with one instrument and slowly adds more, changing how the music feels." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Walking toward a bakery and the smell getting stronger with every step." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Adding a pinch of sugar to a sauce and tasting how it changes the whole flavor profile." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the temperature of bathwater and adjusting the tap until it's just right." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A circle shifting its position as new data points appear." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Adjusting your lean while walking against a strong wind." },
+        ],
+        intuition: "Truth is not a destination but a process of constant refinement. Every new clue reshapes the map.",
+        links: [
+          { label: "3Blue1Brown: Bayes' Theorem (Video)", url: "https://www.youtube.com/watch?v=HZGCoVF3YvM" },
+          { label: "Bayesian Statistics Explained", url: "https://en.wikipedia.org/wiki/Bayesian_statistics" },
+          { label: "Britannica: Bayes' Theorem", url: "https://www.britannica.com/topic/Bayes-theorem" },
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "New Person, Same Old Mistakes", artist: "Tame Impala", url: "https://www.youtube.com/watch?v=pepUCL3FLWU" },
+          { title: "I Can See Clearly Now", artist: "Johnny Nash", url: "https://www.youtube.com/watch?v=FscIgtDJFXg" },
+        ],
+        advanced: "Bayes' Theorem — P(A|B) = P(B|A)P(A)/P(B) — describes the probability of an event based on prior knowledge of conditions related to the event. It is the mathematical heart of learning. Unlike frequentist statistics (fixed limits), Bayesianism treats probability as a degree of belief that evolves. This aligns with continuous revelation and the Hegelian dialectic — the synthesis of old ideas with new evidence to reach a higher state of truth.",
+      },
+
+      // ── 4 ── CENTRAL LIMIT THEOREM ───────────────────────────
+      {
+        id: "central-limit-theorem",
+        num: 4,
+        icon: "🔔",
+        title: "Central Limit Theorem",
+        subtitle: "The Universe's Favorite Shape",
+        simple: "The Central Limit Theorem is a miracle of math that shows how \"messy\" things like to become \"neat\" when they gather together. If you take a bunch of random numbers from almost anywhere and add them up, they will almost always form a beautiful bell shape. This bell curve is the universe's favorite shape. It shows that most things are \"average\" and sit in the middle, while very few things are at the far edges. Even though everyone is different, when we stand together we create a balanced pattern.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A large choir where many different voices blend into one smooth, ringing chord." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The combined scent of a grocery store produce section — many smells becoming one \"fresh\" smell." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A well-blended smoothie where you can't taste the individual fruits anymore, just a unified flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your hand over a fleece blanket; feeling the softness of millions of tiny fibers together." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "The iconic, symmetrical bell curve where the peak is the average." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of a groove when walking in a large, synchronized parade." },
+        ],
+        intuition: "Universal Truth is not found in examining a single isolated point, but in the emergent properties of the whole system — the mathematical proof of the Everlasting We.",
+        links: [
+          { label: "Investopedia: Central Limit Theorem", url: "https://www.investopedia.com/terms/c/central_limit_theorem.asp" },
+          { label: "Interactive CLT Simulation", url: "https://seeing-theory.brown.edu/probability-distributions/index.html" },
+          { label: "Seeing Theory: CLT", url: "https://seeing-theory.brown.edu/" },
+        ],
+        songs: [
+          { title: "Arrival of the Birds", artist: "The Cinematic Orchestra", url: "https://www.youtube.com/watch?v=MqoANESQ4cQ" },
+          { title: "Don't Dream It's Over", artist: "Crowded House", url: "https://www.youtube.com/watch?v=J9gKyRmic20" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+        ],
+        advanced: "The CLT states that the distribution of sample means approximates a normal distribution as sample size grows, regardless of the population's actual distribution shape (given finite variance). This is why the Gaussian appears from height measurements to error analysis. It is a profound indicator of Unity in Diversity — proving that while individual events may appear chaotic, the aggregate functions with predictable, almost deterministic harmony.",
+      },
+
+      // ── 5 ── CONDITIONAL PROBABILITY ─────────────────────────
+      {
+        id: "conditional-probability",
+        num: 5,
+        icon: "🔗",
+        title: "Conditional Probability",
+        subtitle: "How Things Are Linked",
+        simple: "Conditional probability is about how things are linked together in a chain. It asks: \"If this thing happened, how much does it change the chance of that next thing happening?\" The chance of you wearing a coat is small, but if it is snowing, that chance becomes very high. Nothing in the world happens in a vacuum. Everything is connected to what came before it. By looking at these links, we can understand the hidden strings that pull on our lives every day.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A call and response in music — the second sound only makes sense because of the first." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of smoke leading you to look for a fire." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The way a drink tastes different after you've just eaten something very spicy." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pulling on a thread and feeling the rest of the fabric tighten up." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Branching paths where each choice limits or expands the next options." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "How your body automatically tenses up when you see a step is higher than you thought." },
+        ],
+        intuition: "Our current state is always a given condition for our future possibilities — the math of Karma, cause and effect.",
+        links: [
+          { label: "Yale University: Conditional Probability", url: "https://www.stat.yale.edu/Courses/1997-98/101/condprob.htm" },
+          { label: "Intuition for Conditional Probability", url: "https://www.betterexplained.com/articles/understanding-bayes-theorem-with-ratios/" },
+          { label: "Math is Fun: Conditional Probability", url: "https://www.mathsisfun.com/data/probability-events-conditional.html" },
+        ],
+        songs: [
+          { title: "Chain of Fools", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=crmOFNiMTlE" },
+          { title: "If I Ain't Got You", artist: "Alicia Keys", url: "https://www.youtube.com/watch?v=Ju8Hr50Ckwk" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+        ],
+        advanced: "Defined as P(A|B) = P(A∩B)/P(B), conditional probability studies how information reduces uncertainty. It is the basis for Markov Chains and much of modern machine learning, exploring the interconnectedness of variables within a system. Philosophically, this is the math of Cause and Effect — our current state is always a \"given\" condition for future possibilities, emphasizing the present moment as the foundation for what follows.",
+      },
+
+      // ── 6 ── INDEPENDENT VS. DEPENDENT EVENTS ────────────────
+      {
+        id: "independent-dependent",
+        num: 6,
+        icon: "🧩",
+        title: "Independent vs. Dependent Events",
+        subtitle: "Best Friends or Strangers",
+        simple: "This concept helps us see if two things are \"best friends\" or just \"strangers.\" If you flip a coin and then roll a die, the coin doesn't care what the die did — they are independent. But if you take a red marble out of a bag, there are fewer red marbles left for the next person — that is a dependent event. Understanding this helps us know when to treat a new moment as a fresh start and when the past is still affecting the present.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Two people singing different songs at once (independent) vs. two people singing a duet (dependent)." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a flower in a garden (independent of the car driving by) vs. cookies baking (dependent on the oven being on)." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Drinking water between bites to make each taste independent of the last." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Bumping into a wall (independent) vs. holding someone's hand (dependent)." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Venn diagrams showing circles that don't touch vs. circles that overlap." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Walking by yourself vs. walking in a three-legged race." },
+        ],
+        intuition: "The balance between our independent self-will and our dependent communal existence. Individual points of consciousness, yet fundamentally part of the Great Whole.",
+        links: [
+          { label: "Khan Academy: Independent Events", url: "https://www.khanacademy.org/math/ap-statistics/probability-ap/stats-conditional-probability/v/independent-events" },
+          { label: "MathGoodies: Independent Events", url: "https://www.mathgoodies.com/lessons/vol6/independent_events" },
+          { label: "Varsity Tutors: Dependent Events", url: "https://www.varsitytutors.com/hotmath/hotmath_help/topics/dependent-events" },
+        ],
+        songs: [
+          { title: "Independent Women Part 1", artist: "Destiny's Child", url: "https://www.youtube.com/watch?v=0lPQZni7I18" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+        ],
+        advanced: "Independence means P(A∩B) = P(A)P(B) — event A does not change event B's probability. Dependency suggests an underlying mechanism or shared sample space linking outcomes. Distinguishing between the two is vital for avoiding statistical bias and correctly modeling complex systems. This mirrors the human journey: the balance between individual agency and communal existence.",
+      },
+
+      // ── 7 ── EXPECTED VALUE ──────────────────────────────────
+      {
+        id: "expected-value",
+        num: 7,
+        icon: "🎯",
+        title: "Expected Value",
+        subtitle: "The Spirit of the Game",
+        simple: "Expected value is like the \"spirit\" of a game. It doesn't tell you exactly what will happen this time, but it tells you what will happen on average if you play forever. If a game has an expected value of five dollars, you might win ten or zero today, but the \"truth\" of the game is five dollars. It helps us look past the tiny wins and losses of today to see the big picture. Trust that as long as you're doing the right things, the average of your life will turn out okay.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The tonic or home note of a scale that the music always wants to return to." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The base note of a perfume that lingers long after the top notes are gone." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The aftertaste that defines the quality of a meal." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of a steady, rhythmic heartbeat." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A weighted average shown on a balance beam." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Your posture — the default way your body wants to stand when you aren't thinking about it." },
+        ],
+        intuition: "While the immediate outcome of a virtuous act might be invisible, its long-term Expected Value contributes to the positive total of the universe.",
+        links: [
+          { label: "Brilliant.org: Expected Value", url: "https://brilliant.org/wiki/expected-value/" },
+          { label: "Farnam Street: Expected Value in Life", url: "https://fs.blog/expected-value/" },
+          { label: "Wikipedia: Expected Value", url: "https://en.wikipedia.org/wiki/Expected_value" },
+        ],
+        songs: [
+          { title: "The Long and Winding Road", artist: "The Beatles", url: "https://www.youtube.com/watch?v=fR4HjTH_fTM" },
+          { title: "Waiting on the World to Change", artist: "John Mayer", url: "https://www.youtube.com/watch?v=oBIxScJ5rlY" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+        ],
+        advanced: "E[X] is the summation of all possible outcomes weighted by their probabilities — the center of mass of a probability distribution. In decision theory, it maximizes utility under uncertainty. Expected Value is the Dharma or Intrinsic Worth of an action. The immediate outcome of a virtuous act may be invisible, but its long-term expected value contributes to the positive total of the universe.",
+      },
+
+      // ── 8 ── THE GAMBLER'S FALLACY ───────────────────────────
+      {
+        id: "gamblers-fallacy",
+        num: 8,
+        icon: "🚫",
+        title: "The Gambler's Fallacy",
+        subtitle: "The Coin Has No Memory",
+        simple: "This is a trick our brains play on us. If a coin lands on Heads five times, our brains scream, \"The next one must be tails!\" But the coin doesn't have a memory. The Gambler's Fallacy is a lie that tells us the universe \"owes\" us a certain result. Learning this helps us stay grounded in reality. Every new moment is a clean slate, and we shouldn't carry the \"debts\" of the past into the possibilities of the future.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A random noise generator where every click is totally new and unrelated to the last one." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Stepping outside into fresh air after being in a stuffy room — the \"reset\" smell." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A palate cleanser like ginger between pieces of sushi." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Splashing cold water on your face to wake up to the present." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A roulette wheel — a reminder that the wheel doesn't remember the last number." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Shaking out your arms and legs to let go of tension from a few minutes ago." },
+        ],
+        intuition: "An invitation to Be Here Now. Each moment is a singular, unconditioned event — Beginner's Mind.",
+        links: [
+          { label: "Psychology Today: Gambler's Fallacy", url: "https://www.psychologytoday.com/us/basics/gamblers-fallacy" },
+          { label: "The Monte Carlo Fallacy", url: "https://en.wikipedia.org/wiki/Gambler%27s_fallacy" },
+          { label: "Decision Lab: Gambler's Fallacy", url: "https://thedecisionlab.com/biases/gamblers-fallacy" },
+        ],
+        songs: [
+          { title: "Luck Be a Lady", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=Ib3cfGPmneQ" },
+          { title: "Against All Odds", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=uVjEIpoB-SE" },
+          { title: "Start Me Up", artist: "Rolling Stones", url: "https://www.youtube.com/watch?v=SGyOaCXr8Lw" },
+        ],
+        advanced: "The Gambler's Fallacy is the cognitive bias where an individual erroneously believes a random event is less or more likely based on previous outcomes. It is a failure to understand Independent Trials. This challenges the human tendency to project patterns onto randomness and encourages Shoshin (Beginner's Mind) — where each moment is experienced as a singular, unconditioned event free from the weight of history.",
+      },
+
+      // ── 9 ── COMBINATORICS ───────────────────────────────────
+      {
+        id: "combinatorics",
+        num: 9,
+        icon: "📦",
+        title: "Combinatorics",
+        subtitle: "The Magic of Arrangement",
+        simple: "Combinatorics is the study of how many different ways things can be put together. It's like having a box of LEGOs and trying to figure out every single possible thing you could build. Even with just a few simple pieces, the number of ways they can connect is almost infinite. It reveals the \"Magic of Maybe\" — that from a small set of stars, we get billions of galaxies. We have so many more choices and combinations in our lives than we think we do.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "All the different songs that can be made from just 12 notes on a scale." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A spice rack where mixing just three spices can create hundreds of different aromas." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"secret sauce\" made by combining common ingredients in a new way." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of a combination lock clicking into place." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A geometric representation of combinations and patterns — a kaleidoscope." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your fingers move to different positions to play different chords on a guitar." },
+        ],
+        intuition: "We are all made of the same atoms, just combined in unique, miraculous ways. Infinite Diversity in Infinite Combinations.",
+        links: [
+          { label: "Introduction to Combinatorics", url: "https://en.wikipedia.org/wiki/Combinatorics" },
+          { label: "BetterExplained: Permutations & Combinations", url: "https://betterexplained.com/articles/easy-permutations-and-combinations/" },
+          { label: "Britannica: Combinatorics", url: "https://www.britannica.com/science/combinatorics" },
+        ],
+        songs: [
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=EkPy18xW1j8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Kaleidoscope", artist: "Coldplay", url: "https://www.youtube.com/watch?v=K0KMaRm_g8M" },
+        ],
+        advanced: "Combinatorics involves permutations (order matters) and combinations (order doesn't), using factorials and binomial coefficients to map the State Space of a system. Fundamental to cryptography, computer science, and statistical mechanics. It mirrors Infinite Diversity in Infinite Combinations — the One (source) manifests as the Many through the mathematical beauty of arrangement.",
+      },
+
+      // ── 10 ── ENTROPY ────────────────────────────────────────
+      {
+        id: "entropy-probability",
+        num: 10,
+        icon: "🌌",
+        title: "Entropy (Information Theory)",
+        subtitle: "The Breath of the Universe",
+        simple: "Entropy is the measure of how much \"unknown\" or \"disorder\" is in a system. High entropy means there are many different things that could happen and we aren't sure which one will. Low entropy means things are very organized and predictable. While we often think of messy as bad, entropy is what allows for surprises and new ideas. It is the \"breath\" of the universe — the space between the numbers where anything is possible. Uncertainty isn't something to be afraid of; it is the soil where growth and mystery live.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The difference between a single steady beep (low entropy) and the static of a radio (high entropy)." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a garden where everything is blooming at once — high information." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A complex stew with hidden flavors you can't quite identify." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your hand through sand and feeling the randomness of the grains." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching particles shift from a neat corner to filling the whole room." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of letting go and relaxing your muscles completely." },
+        ],
+        intuition: "For the Everlasting We to experience novelty and free will, there must be fundamental uncertainty — the Math of Maybe — at the heart of existence.",
+        links: [
+          { label: "A Simple Explanation of Entropy", url: "https://en.wikipedia.org/wiki/Entropy_(information_theory)" },
+          { label: "Khan Academy: Information Entropy", url: "https://www.khanacademy.org/computing/computer-science/informationtheory" },
+          { label: "Britannica: Entropy", url: "https://www.britannica.com/science/entropy-physics" },
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Order from Chaos", artist: "Max Cooper", url: "https://www.youtube.com/watch?v=_7wKjTf_RlI" },
+        ],
+        advanced: "In Information Theory (Shannon Entropy), H(X) quantifies the average level of information, surprise, or uncertainty inherent in a variable's possible outcomes. In thermodynamics, entropy represents the unavailability of energy to do work and progression toward equilibrium. Entropy is the mathematical expression of the Primordial Chaos from which all Logos (information) emerges — for free will to exist, uncertainty must be woven into the fabric of reality.",
+      },
+
+    ],
   },
 };
 
