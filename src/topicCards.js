@@ -7952,7 +7952,7 @@ export const TOPIC_CARDS = {
     // ═══════════════════════════════════════════════════════════════
 
     justice: [
-      { id: "reciprocity-justice", num: 1, icon: "⚖️", title: "Reciprocity (The Golden Rule)", subtitle: "The Mirror for How You Treat People",
+      { id: "reciprocity-justice", num: 1, icon: "🪞", title: "Reciprocity (The Golden Rule)", subtitle: "The Mirror for How You Treat People",
         simple: "Fairness is like a mirror that shows you how to treat your friends. If you want someone to share their toys with you, you should share your toys with them first. It is the simplest way to make sure everyone is happy and feels loved. When we follow this rule, we create a circle of kindness that never ends. What we do to others eventually comes back to us.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The harmonious echo of a choir singing in unison." },
@@ -7975,7 +7975,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Reciprocity is the foundational recognition core of ethical systems. Operates on symmetry: the moral status of self is recognized as identical to the other, creating stable equilibrium. Connects to Newton's Third Law and Game Theory's Tit-for-Tat strategy. Reflects the Universal We by dissolving the boundary between subject and object." },
 
-      { id: "impartiality", num: 2, icon: "⚖️", title: "Impartiality", subtitle: "The Blindfold That Sees Only Facts",
+      { id: "impartiality", num: 2, icon: "🫣", title: "Impartiality", subtitle: "The Blindfold That Sees Only Facts",
         simple: "Imagine playing a game where the referee does not care who wins or loses. Impartiality means being blind to who people are so that you only look at the facts. It is like a judge who wears a blindfold so they cannot see if someone is wearing fancy clothes or rags. This makes sure the rules stay the same for everyone, no matter what. It is the only way to make sure a win is a real win.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, unbiased tick of a metronome." },
@@ -7998,7 +7998,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Impartiality requires stripping away idiosyncratic variables to reach a shared-ignorance floor. Removing personal bias achieves higher fidelity of truth reproducible across all observers. Aligns with the scientific method's requirement for blind testing. Ensures the reliability of justice systems by preventing favoritism from skewing results." },
 
-      { id: "equity-vs-equality", num: 3, icon: "⚖️", title: "Equity vs. Equality", subtitle: "Same Box or Right Box?",
+      { id: "equity-vs-equality", num: 3, icon: "📦", title: "Equity vs. Equality", subtitle: "Same Box or Right Box?",
         simple: "Equality means everyone gets the same size box to stand on to see over a fence. But if one person is short and another is tall, the short person still cannot see! Equity means giving the short person two boxes so they can see just as well. It is about making sure everyone gets to the same finish line, even if they start in different places. This is how we make sure no one is left behind.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A band where quiet instruments are amplified so you can hear them all." },
@@ -8021,7 +8021,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Equality is a linear function; Equity is a multi-variant optimization problem. Equity accounts for initial state entropy, adjusting inputs to ensure convergent outcomes regardless of starting status. In biology, reflected in homeostasis: organs receive different blood flow based on demand. Fairness is not a fixed ratio but dynamic adjustment for systemic health." },
 
-      { id: "restorative-justice", num: 4, icon: "⚖️", title: "Restorative Justice", subtitle: "Glue the Vase Back Together with Gold",
+      { id: "restorative-justice", num: 4, icon: "🏺", title: "Restorative Justice", subtitle: "Glue the Vase Back Together with Gold",
         simple: "When a vase breaks, you do not just get in trouble; you help glue it back together. Restorative justice is about fixing what was broken and making things right between people. It is not just about saying you are grounded; it is about saying how can we make this better? This helps the person who was hurt feel better and the person who did it learn a lesson. It turns a sad story into a story about healing.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The click of two puzzle pieces fitting together." },
@@ -8044,7 +8044,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Restorative justice focuses on the social connection graph. Instead of isolating the offender, it reintegrates the individual into community through active accountability. Mirrors error correction in computing or cellular repair mechanisms. The social fabric is damaged by conflict and requires deliberate energetic input to restore coherence." },
 
-      { id: "veil-of-ignorance", num: 5, icon: "⚖️", title: "The Veil of Ignorance", subtitle: "Make the Rules Before You Know Who You Are",
+      { id: "veil-of-ignorance", num: 5, icon: "🌫️", title: "The Veil of Ignorance", subtitle: "Make the Rules Before You Know Who You Are",
         simple: "Imagine you are making rules for a new world, but you do not know who you will be. You might be a king, or you might be a person with no home. Because you do not know, you will make the rules fair for everyone just in case! This helps us think about what is truly fair for every single person. It stops us from being selfish and makes us think about the We.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "White noise that masks all specific voices." },
@@ -8067,7 +8067,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Rawls' Veil of Ignorance forces shared ignorance: participants are incentivized to maximize outcomes for the least advantaged. In computer science, parallels zero-knowledge proofs where truth is established without revealing identities. Creates a framework resistant to personal greed, ensuring systemic fairness." },
 
-      { id: "distributive-justice", num: 6, icon: "⚖️", title: "Distributive Justice", subtitle: "How to Cut the Pizza",
+      { id: "distributive-justice", num: 6, icon: "🍕", title: "Distributive Justice", subtitle: "How to Cut the Pizza",
         simple: "Think of a big pizza that needs to be shared with the whole class. Distributive justice is the plan for how we cut the slices. Should the hungriest person get more? Should the person who helped cook get the first piece? It is about finding the best way to share the world's treasures. When we do it right, everyone's tummy is full and no one feels cheated.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic thud of a heart pumping blood to every limb." },
@@ -8090,7 +8090,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Distributive justice maps resources via optimization: calculating divergence between resource availability and population need to ensure convergence. Relates to Pareto Efficiency and resource allocation. Aims to minimize redundancy where some have excess while others have none, optimizing systemic reliability." },
 
-      { id: "due-process", num: 7, icon: "⚖️", title: "Due Process", subtitle: "Listen Before You Judge",
+      { id: "due-process", num: 7, icon: "🔨", title: "Due Process", subtitle: "Listen Before You Judge",
         simple: "Due process is like the rules of the game for being in trouble. It says that before anyone takes your toys away, they have to listen to your side of the story. You get a fair shake and a chance to explain what happened. It stops people in charge from making mean or fast decisions. It protects you by making sure the truth is found before anything else happens.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The clear, final sound of a judge's gavel." },
@@ -8113,7 +8113,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Due process prevents accidental outcomes by providing a structured functional that must execute before moving from accused to judged, ensuring high fidelity to truth. In logic, parallels a step-through proof where every assertion is validated. Preserves the informativeness gate: system output based on verified data, not noise." },
 
-      { id: "meritocracy", num: 8, icon: "⚖️", title: "Meritocracy", subtitle: "The Race Where Effort Wins",
+      { id: "meritocracy", num: 8, icon: "🏅", title: "Meritocracy", subtitle: "The Race Where Effort Wins",
         simple: "Meritocracy is like a race where the fastest person wins the gold medal. It means that if you work hard and practice, you can get the best rewards. It is a way of saying your effort matters and your skills are important. In a fair world, it should not matter who your parents are; only how hard you try. This encourages everyone to be their very best self.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The cheering crowd when a runner crosses the finish line." },
@@ -8136,7 +8136,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Meritocracy posits that system outcomes are maximized when resources are directed toward nodes with highest fidelity to system goals. Critics note initial states are rarely equal, meaning pure meritocracy requires constant regularization to ensure fair competition. Connects to evolutionary biology's survival of the fittest and its limitations." },
 
-      { id: "social-contract-j", num: 9, icon: "⚖️", title: "The Social Contract", subtitle: "The Invisible Promise We All Made",
+      { id: "social-contract-j", num: 9, icon: "🤝", title: "The Social Contract", subtitle: "The Invisible Promise We All Made",
         simple: "The social contract is an invisible promise we all make to each other. It is like saying I will not take your lunch if you do not take mine. We follow rules and are nice so that everyone can live in peace. We give up a little bit of being wild so we can be safe. It is the We deciding that we are better together than we are alone.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The low hum of a busy, peaceful city." },
@@ -8159,7 +8159,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The social contract reduces social entropy through collective agreement. Individuals form connected components more resilient than the sum of parts. Basis of political science from Hobbes to Rousseau. Mirrors symbiosis in ecology: different species providing mutual benefits to ensure survival of the larger ecosystem." },
 
-      { id: "retributive-justice", num: 10, icon: "⚖️", title: "Retributive Justice", subtitle: "The Equation That Must Balance",
+      { id: "retributive-justice", num: 10, icon: "🔁", title: "Retributive Justice", subtitle: "The Equation That Must Balance",
         simple: "If someone takes your pencil on purpose, retributive justice says they have to give it back or lose one of theirs. It is the idea that for every bad thing, there must be a matching consequence to make it even. It is like a math problem where both sides of the equals sign have to be the same. While it can be tough, it is meant to show that rules have power and must be followed.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The sharp crack of a gavel." },
