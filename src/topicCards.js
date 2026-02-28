@@ -7242,6 +7242,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Russell: The universe is just there, and that is all. Rejection of PSR. Explanations must end somewhere to avoid infinite regress; these terminal points are Brute Facts. Common in naturalism and physicalism. Science explains how, but the why of existence may be a pseudo-question. Burden of meaning falls on the observer, making existence a blank canvas." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > TIME & CHANGE (timechange)
+    // ═══════════════════════════════════════════════════════════════
+
+    timechange: [
+      { id: "entropy-disorder", num: 1, icon: "⏳", title: "Entropy: The Law of Disorder", subtitle: "The Box That Never Un-Shakes",
+        simple: "Imagine you have a neatly organized box of LEGOs. If you shake the box, the pieces get messy and mixed up, but they never spontaneously jump back into neat piles. This messiness is called entropy, and it is the reason why time only goes forward. Things naturally move from organized to jumbled. A broken egg cannot un-break itself. Change is the only thing that stays the same.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackling of a campfire turning wood into ash." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A fading flower returning to the earth." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fresh strawberry slowly turning into sweet, fermented jam." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth stone being worn down by river water." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sandcastle being washed away by the tide." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your body grow taller and stronger as you age: entropy you live inside." }
+        ],
+        intuition: "Shake the box. It never goes back. The egg never un-breaks. Time has a direction because mess is easier than order. That is the deepest law.",
+        links: [
+          { label: "Britannica: Entropy", url: "https://www.britannica.com/science/entropy-physics" },
+          { label: "Khan Academy: Thermodynamics", url: "https://www.khanacademy.org/science/physics/thermodynamics" },
+          { label: "NASA: Second Law", url: "https://www.nasa.gov/" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" }
+        ],
+        advanced: "Entropy is the quantitative measure of disorder in a system. The Second Law of Thermodynamics: total entropy of an isolated system can never decrease, only remain constant or increase. Provides the physical basis for the Arrow of Time. S = k ln W relates microscopic configurations to macroscopic states. The universe trends toward maximum thermodynamic equilibrium (Heat Death)." },
+
+      { id: "special-relativity-tc", num: 2, icon: "🚀", title: "Special Relativity: Time Is Flexible", subtitle: "The Faster You Go, the Slower Time Flows",
+        simple: "If you could ride a rocket ship that went super fast, time would actually slow down for you! While you were gone for a week, your friends on Earth might have finished a whole school year. This happens because space and time are part of the same fabric. The faster you move through space, the slower you move through time. It sounds like magic, but it is how the universe really works. Your clock and your friend's clock will not always agree.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A siren changing pitch as it zooms past: the Doppler effect." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ozone smell of a fast-moving electric train." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic tang of adrenaline when you move fast." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Wind pushing against your hand out a car window." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Blurred lights of traffic moving quickly at night." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stomach-drop feeling of sudden acceleration: your body knows speed bends something." }
+        ],
+        intuition: "Fast is only fast compared to something standing still. Time is not a wall. It is a river. And speed changes how fast the river flows.",
+        links: [
+          { label: "Einstein Online", url: "https://www.einstein-online.info/" },
+          { label: "Space.com: Relativity", url: "https://www.space.com/17661-theory-general-relativity.html" },
+          { label: "Nobel Prize: Einstein", url: "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/" }
+        ],
+        songs: [
+          { title: "Speed of Sound", artist: "Coldplay", url: "https://www.youtube.com/watch?v=0qsORMDGMKY" },
+          { title: "Fly Me to the Moon", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=ZEcqHA7dbwM" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" }
+        ],
+        advanced: "Einstein's 1905 Special Relativity: laws of physics are invariant in all inertial frames; speed of light (c) is constant for all observers. Time dilation: a moving clock runs slower. Lorentz factor γ = 1/√(1 − v²/c²). Unification of space and time into four-dimensional Minkowski spacetime proves there is no absolute now across the universe." },
+
+      { id: "present-moment", num: 3, icon: "📍", title: "The Present Moment", subtitle: "The Only Real Time",
+        simple: "Even though we think about yesterday and tomorrow, the only time you can ever actually be in is right now. Think of time like a movie film; you are the light shining through just one frame at a time. The past is a finished book, and the future has not been written yet. Being present means paying attention to what you are doing this very second. It is the only place where you can make a choice or feel a hug. Right now is a gift, which is why we call it the present.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your own breathing right this second." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The immediate scent of the air in the room you are in." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering flavor of the last thing you ate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The pressure of your feet against the floor." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The exact colors of objects directly in front of you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling exactly where your hands are without looking: you are here, now, always." }
+        ],
+        intuition: "You cannot live in yesterday. You cannot live in tomorrow. You can only live in this breath. This is the only door that is ever open.",
+        links: [
+          { label: "Greater Good: Mindfulness", url: "https://greatergood.berkeley.edu/topic/mindfulness" },
+          { label: "Psychology Today: The Power of Now", url: "https://www.psychologytoday.com/" },
+          { label: "Stanford: Temporal Consciousness", url: "https://plato.stanford.edu/entries/consciousness-temporal/" }
+        ],
+        songs: [
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Right Now", artist: "Van Halen", url: "https://www.youtube.com/watch?v=rMV-fenGP1g" },
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" }
+        ],
+        advanced: "Presentism holds that neither future nor past exists; only the present is real. Contrasts with Eternalism. The specious present is the experienced duration considered to be now. Neuroscientifically, now is a brain construction integrating sensory data with ~80ms delay. Our conscious present is a post-hoc reconstruction serving as the interface for agency." },
+
+      { id: "causality-tc", num: 4, icon: "⛓️", title: "Causality: The Chain of Events", subtitle: "Push the Domino, Watch Them Fall",
+        simple: "Causality is just a fancy word for cause and effect. If you push a domino, the next one falls, then the next: a big chain reaction. Something has to happen before it can cause something else later. You cannot have a puddle before it rains. You cannot have a toothache before you eat too much candy! Our actions today create the world we live in tomorrow. Everything is connected through invisible threads of why and because.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clack of two billiard balls hitting each other." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke that tells you a fire was lit nearby." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The spice on your tongue after biting a pepper." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration in your hand after knocking on a door." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A ball flying through the air after someone kicks it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscles tensing before you jump: your body knows cause comes before effect." }
+        ],
+        intuition: "Every puddle had a rain. Every fire had a spark. Follow the chain backward and you find the reason. Follow it forward and you find the future.",
+        links: [
+          { label: "Stanford: Causation", url: "https://plato.stanford.edu/entries/causation-metaphysics/" },
+          { label: "Physics World: Causality", url: "https://physicsworld.com/" },
+          { label: "Khan Academy: Logic", url: "https://www.khanacademy.org/" }
+        ],
+        songs: [
+          { title: "Chain of Fools", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=mOmdg3epcMc" },
+          { title: "Karma Police", artist: "Radiohead", url: "https://www.youtube.com/watch?v=1uYWYWPc9HU" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" }
+        ],
+        advanced: "Causality: an effect cannot occur before its cause in all inertial frames. In quantum mechanics and general relativity, involves light cones and the interval between events. Information cannot travel faster than c, as doing so would allow effect before cause (temporal paradoxes). A foundational constraint maintaining the logical consistency of spacetime evolution." },
+
+      { id: "biological-rhythms", num: 5, icon: "🦉", title: "Biological Rhythms: Your Inner Clock", subtitle: "The Clock Inside Your Brain",
+        simple: "Did you know you have a clock inside your brain? It is not made of gears, but of tiny cells that tell you when to wake up and when to sleep. This is your circadian rhythm. It follows the sun, helping your body know that daytime is for playing and nighttime is for dreaming. Even plants and animals have these clocks! It shows that living things are perfectly timed to the spinning of the Earth. When you feel sleepy at night, that is just your inner clock ticking along.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The quiet whoosh of your blood pumping in a silent room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh morning dew when you wake up." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Breakfast tasting better when you first wake up." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The cozy warmth of your blanket at bedtime." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The changing colors of the sky from sunrise to sunset." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling heavy and relaxed when you are tired: the clock pulling you toward rest." }
+        ],
+        intuition: "Your body knows what time it is without looking at a clock. The earth spins, and you spin with it. You are synchronized to the planet.",
+        links: [
+          { label: "Sleep Foundation: Circadian Rhythm", url: "https://www.sleepfoundation.org/circadian-rhythm" },
+          { label: "NIH: Biological Rhythms", url: "https://www.nigms.nih.gov/education/fact-sheets/Pages/circadian-rhythms.aspx" },
+          { label: "National Geographic: Animal Clocks", url: "https://www.nationalgeographic.com/" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Mr. Sandman", artist: "The Chordettes", url: "https://www.youtube.com/watch?v=CX45pYvxDiA" },
+          { title: "Daylight", artist: "Maroon 5", url: "https://www.youtube.com/watch?v=Xamf-ol4qlk" }
+        ],
+        advanced: "Biological rhythms are endogenously generated physiological cycles. The circadian rhythm is regulated by the suprachiasmatic nucleus (SCN) in the hypothalamus, synchronizing peripheral clocks via melatonin and cortisol. Zeitgebers (time-givers) like light entrain these oscillators. Disruption links to metabolic disorders, mood changes, and cognitive decline." },
+
+      { id: "psychological-time", num: 6, icon: "🎈", title: "Psychological Time: The Mind's Stopwatch", subtitle: "Why Fun Goes Fast and Boring Goes Slow",
+        simple: "Have you noticed that an hour of school feels like a whole day, but an hour of playing video games feels like five minutes? Your brain has its own way of feeling time. When you are bored, your brain pays attention to every single second, making time feel slow. When you are having fun, you stop watching the clock, and time seems to fly. Time is not just a number on a wall; it is a feeling inside your head that changes based on what you are doing!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The slow tick-tock of a clock when you are waiting for something." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Popcorn making a movie feel like it is starting." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The long-lasting sweetness of a lollipop." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tapping your foot when you are bored." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching the second hand crawl in a waiting room." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling fidgety when time drags: your body trying to speed up the clock." }
+        ],
+        intuition: "An hour of pain is a year. An hour of joy is a minute. Time is not a ruler. It is a feeling. And you are the one bending it.",
+        links: [
+          { label: "Scientific American: Time Perception", url: "https://www.scientificamerican.com/" },
+          { label: "VeryWell Mind: Psychological Time", url: "https://www.verywellmind.com/" },
+          { label: "MIT: The Brain's Clock", url: "https://news.mit.edu/" }
+        ],
+        songs: [
+          { title: "Time After Time", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=VdQY7BusJNU" },
+          { title: "Minutes to Memories", artist: "John Mellencamp", url: "https://www.youtube.com/watch?v=PVxgkE55x2U" },
+          { title: "Waiting on the World to Change", artist: "John Mayer", url: "https://www.youtube.com/watch?v=oBIxScJ5rlY" }
+        ],
+        advanced: "Psychological time is subjective duration diverging from clock time (chronos). Emotional state, age, and dopamine levels influence time estimation. High-arousal states cause time expansion via increased information processing density. The Oddball Effect: novel stimuli appear longer than repeated ones. The brain's clock is tied to new information being encoded, explaining why time accelerates with age." },
+
+      { id: "gravitational-time-dilation", num: 7, icon: "🪐", title: "Gravitational Time Dilation", subtitle: "Mass Bends Time",
+        simple: "Imagine space is like a big, soft trampoline. If you put a heavy bowling ball on it, the trampoline curves down. This curve does not just change space; it also changes time! Clocks actually tick slower when they are close to something heavy, like the Earth or a Black Hole. If you lived on a giant planet, you would age a tiny bit slower than someone on a small moon. Gravity is like a magnet that pulls on time itself!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep, low thrum you might imagine a heavy planet making." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean, cold high-altitude mountain air: where time runs faster." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The heavy, dense taste of rich chocolate cake." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Being pulled down by a heavy backpack." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stars twinkling: their light bent by gravity." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The constant pull of Earth's gravity on your feet: mass holding you in its time." }
+        ],
+        intuition: "Heavy things slow time down. You feel it every day without knowing. Gravity is not just pulling your body. It is pulling your clock.",
+        links: [
+          { label: "NASA: Gravity and Time", url: "https://www.nasa.gov/" },
+          { label: "Einstein Online: General Relativity", url: "https://www.einstein-online.info/" },
+          { label: "Phys.org: Time Dilation", url: "https://phys.org/" }
+        ],
+        songs: [
+          { title: "Black Hole Sun", artist: "Soundgarden", url: "https://www.youtube.com/watch?v=3mbBbFH9fAg" },
+          { title: "Gravity", artist: "John Mayer", url: "https://www.youtube.com/watch?v=7VBex8zbDRs" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" }
+        ],
+        advanced: "General Relativity: gravity is curvature of spacetime caused by mass and energy. Schwarzschild metric describes time slowing in a gravitational potential. GPS satellites run ~45 microseconds faster per day than Earth clocks. Without relativistic corrections, GPS location data would drift by kilometers daily. A measurable, everyday proof of Einstein's theory." },
+
+      { id: "block-universe", num: 8, icon: "🧊", title: "The Block Universe: The Map of Time", subtitle: "Past, Present, Future All at Once",
+        simple: "Some scientists think time is like a giant loaf of bread that has already been sliced. The past, present, and future are all there at the same time: we just see one slice at a time as we move through it. The future is already there, waiting for us to arrive, just like a city exists before you drive into it. Every moment of your life is a permanent part of the universe's big map.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A record needle staying in one groove of a long song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old photo album where the past feels present." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe that stays the same every time you make it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the edges of a solid block of ice." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long comic strip where you can see all the panels at once." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving through a room that is already set up: arriving at what was always there." }
+        ],
+        intuition: "The loaf is already baked. You are just eating one slice at a time. Every moment you have ever lived is still there, permanent, part of the bread.",
+        links: [
+          { label: "Stanford: Being and Becoming", url: "https://plato.stanford.edu/entries/spacetime-bebecome/" },
+          { label: "Space.com: Is Time Real?", url: "https://www.space.com/" },
+          { label: "ABC News: Block Universe", url: "https://www.abc.net.au/" }
+        ],
+        songs: [
+          { title: "Written in the Stars", artist: "Tinie Tempah", url: "https://www.youtube.com/watch?v=YgFyi74DVjc" },
+          { title: "Map of the Problematique", artist: "Muse", url: "https://www.youtube.com/watch?v=T1qzYsESDhc" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" }
+        ],
+        advanced: "The Block Universe (Eternalism) stems from four-dimensionalist spacetime. Time is a dimension like spatial dimensions. Since relativity shows simultaneity is relative, there is no universal now, suggesting all points in time are equally real. Challenges the notion of becoming. Reconciles with General Relativity equations but creates tension with free will and the open future." },
+
+      { id: "impermanence", num: 9, icon: "🌊", title: "Impermanence: Everything Changes", subtitle: "The River You Can Never Step In Twice",
+        simple: "Impermanence means nothing stays the same forever. Think of a river; the water is always moving, so you can never step into the exact same river twice. People grow, seasons change, and even mountains crumble into sand. While this might sound sad, it is what makes life exciting! Because things change, new flowers can grow, and you can learn new things every day. Change is the heartbeat of the world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A waterfall constantly hitting the pool below." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain on dry pavement: petrichor, the scent of change." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Ice melting into water in your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Wind blowing past you: you cannot hold it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset turning into night." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your hair or nails growing over time: change so slow you forget it is happening." }
+        ],
+        intuition: "The river is never the same river. You are never the same you. And that is not loss. That is life breathing.",
+        links: [
+          { label: "Lion's Roar: Impermanence", url: "https://www.lionsroar.com/" },
+          { label: "Philosophy Now: Heraclitus", url: "https://philosophynow.org/" },
+          { label: "Psychology Today: Embracing Change", url: "https://www.psychologytoday.com/" }
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=K_PQ4fRQ5Kc" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Impermanence (Anicca): all conditioned existence is in constant flux. Heraclitus: Panta Rhei (everything flows). Modern physics views objects not as static things but processes or energy patterns. From systems theory, impermanence is necessary for evolution and adaptation. Stability is often dynamic equilibrium: change so fast or subtle it appears still." },
+
+      { id: "arrow-of-time", num: 10, icon: "🏹", title: "The Arrow of Time", subtitle: "The One-Way Street",
+        simple: "Imagine a movie of someone jumping into a pool. Play it forward: they splash in. Play it backward: they fly out and land on the diving board! In real life, we only see the forward version. This one-way direction is the Arrow of Time. Even though some math says time could go both ways, the universe has a strict rule that we only move toward the future. It is a one-way street we are all walking down together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A glass breaking and never un-breaking." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Toast: you cannot turn it back into bread." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A mixed smoothie: you cannot un-mix the fruit." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heat leaving a warm cup of cocoa." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Smoke rising from a blown-out candle." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of moving forward as you walk: your body on the one-way street." }
+        ],
+        intuition: "You cannot un-burn the toast. You cannot un-break the glass. The arrow flies forward. And that is not a curse. It is how the story gets told.",
+        links: [
+          { label: "Wired: Arrow of Time", url: "https://www.wired.com/" },
+          { label: "Phys.org: Cosmic Arrow", url: "https://phys.org/" },
+          { label: "Scientific American: Time's Arrow", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Stop This Train", artist: "John Mayer", url: "https://www.youtube.com/watch?v=sHhhTtqWcOM" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "The Way It Is", artist: "Bruce Hornsby", url: "https://www.youtube.com/watch?v=GlRQjzltaMQ" }
+        ],
+        advanced: "The Arrow of Time: time has a preferred direction not inherent in fundamental laws (mostly T-symmetric). The Thermodynamic Arrow is based on entropy increase. Other arrows: Cosmological (universe expansion), Radiative (waves spread outward), Causal. The Past Hypothesis: the universe began in an exceptionally low-entropy state, setting the arrow in motion at the Big Bang." },
+    ],
 
 
   },
