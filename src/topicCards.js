@@ -5123,6 +5123,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "From string theory and quantum gravity: a volume of space can be described by information encoded on a lower-dimensional boundary. The information of the totality is present at every point. Separation is a perspective illusion caused by our scale of observation." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MATHEMATICS (promise) > RATIO & PROPORTION (ratio)
+    // ═══════════════════════════════════════════════════════════════
+
+    ratio: [
+      { id: "constant-proportionality", num: 1, icon: "∝", title: "The Constant of Proportionality", subtitle: "The Glue That Holds Two Things Together",
+        simple: "Imagine a magic recipe where for every 2 scoops of cocoa, you always need 3 splashes of milk. No matter if you are making a tiny cup or a giant bucket, that rule never changes. This rule number is the glue that keeps everything tasting the same. If you know this number, you can predict the future of your recipe perfectly!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A metronome clicking at a steady beat: the ratio of time to sound is fixed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The consistent scent of a candle that smells the same whether small or large." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Perfect lemonade where the sourness and sweetness are in total balance." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing a swing: the harder you push, the higher it goes in a set way." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map where one inch always equals ten miles." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your legs move faster in exact sync with how fast you swing your arms while running." }
+        ],
+        intuition: "Within the chaos of changing variables, there is a core logic that never changes. The constant is the heartbeat of the relationship.",
+        links: [
+          { label: "Khan Academy: Constant of Proportionality", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-ratio-proportion" },
+          { label: "MathIsFun: Direct Proportion", url: "https://www.mathsisfun.com/algebra/directly-proportional.html" },
+          { label: "Wolfram: Proportional", url: "https://mathworld.wolfram.com/Proportional.html" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" }
+        ],
+        advanced: "The constant of proportionality (k) defines y=kx: a linear map where the origin is preserved and the rate of change is globally invariant. This mirrors physical constants like gravity and light speed that dictate the ratio of how matter and energy interact across the cosmos." },
+
+      { id: "equivalent-ratios", num: 2, icon: "=", title: "Equivalent Ratios", subtitle: "Different Outfits, Same Person",
+        simple: "Equivalent ratios are like different outfits for the same person. Whether you say 2 out of 4 or 1 out of 2, you are talking about exactly half. It is like two different sized pizzas cut so every bite has the same amount of cheese. The numbers look different, but the heart of the fraction is the same. Truth can look different depending on size, but it still stays true.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Playing a middle C and a high C on piano: different sizes but the same note." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "One drop of perfume in a small room vs. ten drops in a ballroom." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Chocolate milk in a glass vs. a gallon: tastes the same if the ratio is right." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a small piece of velvet vs. a whole velvet curtain." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing a photo of a mountain and then seeing the real mountain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your brain knowing your hand is half-open whether your hand is small (as a kid) or large (as an adult)." }
+        ],
+        intuition: "Size is a relative construct, but Relationship is an absolute truth. The heart of the fraction never changes.",
+        links: [
+          { label: "Brilliant: Ratios", url: "https://brilliant.org/wiki/ratios/" },
+          { label: "NCTM: Developing Ratio Sense", url: "https://www.nctm.org/" },
+          { label: "CK-12: Equivalent Ratios", url: "https://www.ck12.org/arithmetic/equivalent-ratios/" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Equivalent ratios are elements of the same equivalence class: a:b equals c:d iff ad=bc. This demonstrates Scale Invariance, vital in fractal geometry and quantum mechanics where properties remain unchanged regardless of observation scale. The microcosm mirrors the macrocosm." },
+
+      { id: "cross-multiplication", num: 3, icon: "⊠", title: "Cross-Multiplication", subtitle: "The Truth Detector",
+        simple: "Cross-multiplication is a truth detector for math. If you have two ratios and want to know if they match, multiply them in an X shape. If the two answers are the same, they are soulmates: perfectly in proportion. It is a quick way to find a missing puzzle piece. If you look at a problem from two angles and the results meet in the middle, you have found the answer.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two singers hitting a harmony where the vibrations lock together perfectly." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Two different flowers that together create a perfectly balanced bouquet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt and caramel: different flavors that balance each other out." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Interlocking your fingers together tightly; they cross to create a strong bond." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two sides of a scale perfectly level with each other." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The balance in your ears that keeps you upright when you tilt your head." }
+        ],
+        intuition: "What is true for the numerator has a corresponding truth in the denominator. As above, so below. When cross-products match, harmony is proven.",
+        links: [
+          { label: "Math Planet: Proportions", url: "https://www.mathplanet.com/education/pre-algebra/ratios-and-percent/proportions-and-cross-multiplication" },
+          { label: "Purplemath: Proportions", url: "https://www.purplemath.com/modules/ratio2.htm" },
+          { label: "Study.com: Cross Multiplication", url: "https://study.com/academy/lesson/cross-multiplication.html" }
+        ],
+        songs: [
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Cross-multiplication derives from the Property of Equality: multiplying both sides by denominators clears fractions to reveal underlying integers. It reduces complex relational data to a binary state: True (equal) or False (unequal). The Principle of Correspondence made algebraic." },
+
+      { id: "unit-rates", num: 4, icon: "1", title: "Unit Rates", subtitle: "The Power of One",
+        simple: "A unit rate is the power of one. It tells you how much of something you get for just one single piece of something else, like miles per one gallon of gas. It is the simplest way to compare two different things. When you find the unit rate, you find the heartbeat of the relationship. It shows you truth behind big numbers by making them small and easy to see.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The single thump of a drum that sets the pace for the whole song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of one single rose used to understand the smell of a whole garden." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "One single grain of salt to test how salty the soup is." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling one single drop of rain to know how wet the storm is." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at one brick to understand what the whole wall is made of." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the weight of one single coin in your hand to guess the weight of a bag of them." }
+        ],
+        intuition: "Reduce everything to its single unit and the infinite potential of the relationship is unlocked. One is the seed of all.",
+        links: [
+          { label: "MathIsFun: Unit Rate", url: "https://www.mathsisfun.com/definitions/unit-rate.html" },
+          { label: "IXL: Unit Rates", url: "https://www.ixl.com/math/grade-6/unit-rates" },
+          { label: "Britannica: Rate of Change", url: "https://www.britannica.com/science/rate-of-change" }
+        ],
+        songs: [
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "10,000 Hours", artist: "Dan + Shay & Justin Bieber", url: "https://www.youtube.com/watch?v=F9eDOsBmHOs" },
+          { title: "9 to 5", artist: "Dolly Parton", url: "https://www.youtube.com/watch?v=UbxUSsFXYo4" }
+        ],
+        advanced: "The unit rate equals y/x when x=1: the normalized value or derivative at a point in a constant linear function. By reducing to base unit, we eliminate noise of scale. Once identified, any quantity can be derived through simple multiplication. The atomic theory of logic." },
+
+      { id: "scaling-similarity", num: 5, icon: "∼", title: "Scaling and Similarity", subtitle: "Same Shape, Different Size",
+        simple: "Scaling is like using a shrink ray or grow ray on a toy. If you scale a toy car up to be a real car, every part has to grow by the exact same amount or the wheels will not fit! Similar things are the same shape but different sizes. The inner pattern is more important than how big or small something is. Like a family where the baby looks exactly like the grandpa: the design is what connects them.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that sounds exactly like your voice but quieter." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A tiny sample of soap that smells exactly like the giant bar." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A tiny crumb of a cookie that tells you exactly how the whole batch tastes." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling a model of the Eiffel Tower that has the same bumps as the real one." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing your reflection in a tiny mirror vs. a big mirror." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving your hand in a small circle and then a big circle; your brain knows it is the same shape." }
+        ],
+        intuition: "Form is independent of magnitude. The whole is contained within the part. The design is what connects everything.",
+        links: [
+          { label: "MathOpenRef: Similar Polygons", url: "https://www.mathopenref.com/similar.html" },
+          { label: "NASA: Scale Models", url: "https://www.nasa.gov/stem/" },
+          { label: "Geometry: Similarity Laws", url: "https://en.wikipedia.org/wiki/Similarity_(geometry)" }
+        ],
+        songs: [
+          { title: "It's a Small World", artist: "Disney", url: "https://www.youtube.com/watch?v=BGhY5c5VoDY" },
+          { title: "Big in Japan", artist: "Alphaville", url: "https://www.youtube.com/watch?v=tl6u2NASUzU" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" }
+        ],
+        advanced: "Geometric similarity: isometry plus dilation. Two figures are similar if corresponding angles are congruent and sides are in proportion. Foundation of trigonometry and modeling. It resonates with the Holographic Principle: the ratio of any two internal parts is constant regardless of global scale." },
+
+      { id: "inverse-proportion", num: 6, icon: "↕", title: "Inverse Proportion", subtitle: "The See-Saw Relationship",
+        simple: "Inverse proportion is a see-saw relationship. When one side goes up, the other must go down. If more friends show up to share a pizza, the size of your slice goes down! It is how the world stays balanced. It teaches us about trade-offs: you cannot have more of everything at the same time. To get more speed, you might need more energy.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "As a siren moves further away, the volume gets lower." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "As you move away from a bakery, the smell gets weaker." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Adding more water to juice makes the flavor weaker." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing on a sponge: more pressure means less space." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "As a car drives away, it gets smaller in your eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot: as your body leans left, your arms move right." }
+        ],
+        intuition: "Growth in one dimension often requires contraction in another. The sweet spot is where the product of effort and resources is most stable.",
+        links: [
+          { label: "MathIsFun: Inverse Proportion", url: "https://www.mathsisfun.com/algebra/inversely-proportional.html" },
+          { label: "BBC Bitesize: Inverse Proportion", url: "https://www.bbc.co.uk/bitesize/guides/zyjfyrd/revision/1" },
+          { label: "ScienceDirect: Inverse Square Law", url: "https://www.sciencedirect.com/" }
+        ],
+        songs: [
+          { title: "The Less I Know The Better", artist: "Tame Impala", url: "https://www.youtube.com/watch?v=sBzrzS1Ag_g" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=vWwgrjjIMXA" }
+        ],
+        advanced: "Inverse proportion: xy=k, creating a rectangular hyperbola. The mathematical expression of equilibrium in dynamic systems. Seen in Boyle's Law (P inversely proportional to V) and the Inverse Square Law of light and gravity. The wisdom of limits and resource allocation." },
+
+      { id: "golden-ratio-proportion", num: 7, icon: "ϕ", title: "The Golden Ratio", subtitle: "Nature's Favorite Number",
+        simple: "The Golden Ratio is nature's favorite number, about 1.618. It is a special proportion people find beautiful. You find it in seashell spirals, flower petals, and famous buildings. It is a secret signature left by the universe showing how to grow perfectly. When things follow this ratio, they feel right and peaceful to our brains. It is the link between math and art.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Musical compositions that time their climax at the 61.8% mark." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A perfume with top note and base note in perfect 1.6:1 balance." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A dish where the ratio of main ingredient to garnish feels visually delicious." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The spiral of a pinecone or seashell held in your palm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The Rule of Thirds in a beautiful photograph." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The ratio of the length of your forearm to your hand." }
+        ],
+        intuition: "Beauty is not subjective; it is the recognition of mathematical efficiency. When we see phi, we see the universe's most efficient growth algorithm.",
+        links: [
+          { label: "National Geographic: The Golden Ratio", url: "https://www.nationalgeographic.com/science/article/golden-ratio" },
+          { label: "Fibonacci in Nature", url: "https://www.mathsisfun.com/numbers/fibonacci-sequence.html" },
+          { label: "Wolfram: Golden Ratio", url: "https://mathworld.wolfram.com/GoldenRatio.html" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Symphony No. 5", artist: "Beethoven", url: "https://www.youtube.com/watch?v=fOk8Tm815lE" },
+          { title: "Golden", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=P3cffdsEXXw" }
+        ],
+        advanced: "Phi = (1+sqrt5)/2, the unique positive solution to x^2-x-1=0. Connected to the Fibonacci sequence where successive term ratios converge to phi. In phyllotaxis, it enables optimal packing: maximum seeds in minimum space. Beauty as mathematical efficiency." },
+
+      { id: "direct-variation", num: 8, icon: "↗", title: "Direct Variation", subtitle: "The Simple Growth Rule",
+        simple: "Direct variation is the simple growth rule. Twice as much work gets you exactly twice as much reward. It is a straight line starting from zero. Buy zero apples, pay zero. Buy ten, pay a set amount. It is the most fair relationship in math because it never changes the rules. Some things in life are very predictable and follow a clear, straight path.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Turning the volume knob: the more you turn, the louder it gets in a smooth line." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The more cookies in the oven, the stronger the smell in the kitchen." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The more sugar you put in tea, the sweeter it gets." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking: the more steps you take, the further you have moved." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a shadow grow longer as the sun goes down." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your muscles work harder the more weight you pick up." }
+        ],
+        intuition: "Effort is directly rewarded, consequences perfectly scaled to actions. The unit rate of change stays constant forever. Mathematical justice.",
+        links: [
+          { label: "Algebra Coach: Direct Variation", url: "https://www.algebracoach.com/" },
+          { label: "Lumen Learning: Direct Variation", url: "https://courses.lumenlearning.com/" },
+          { label: "Virtual Nerd: Direct Variation", url: "https://www.virtualnerd.com/" }
+        ],
+        songs: [
+          { title: "Work", artist: "Rihanna", url: "https://www.youtube.com/watch?v=HL1UzIK-flA" },
+          { title: "Higher Ground", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=4wZ3ZG_Wams" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" }
+        ],
+        advanced: "Direct variation: y=kx where the y-intercept is zero. A pure scalar relationship and the simplest cause-and-effect model. In thermodynamics, P is directly proportional to T at constant volume. The mathematical foundation of linear logic." },
+
+      { id: "part-to-whole", num: 9, icon: "◐", title: "Part-to-Whole Relationships", subtitle: "The Puzzle Piece and the Picture",
+        simple: "A part-to-whole relationship is like looking at a puzzle piece to understand the whole picture. It tells you how much share one thing has of the total. If a class has 10 girls and 20 students total, the ratio is 10 to 20. This helps us understand percentages and probability. Everything we see is usually just one part of a bigger story, and we need to know the whole to understand what we are looking at.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hearing one instrument in a whole orchestra." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Identifying the smell of cinnamon in a whole apple pie." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Tasting the hint of lime in a spicy taco." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling one soft feather on a large, scaly bird." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing one bright star in a giant galaxy." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling one toe move while the rest of your foot stays still." }
+        ],
+        intuition: "No value exists in a vacuum. Every part is defined by its relationship to the total. Understanding your piece means understanding the whole.",
+        links: [
+          { label: "Math.com: Fractions", url: "https://www.math.com/school/subject1/lessons/S1U4L1GL.html" },
+          { label: "Statistics How To: Relative Frequency", url: "https://www.statisticshowto.com/probability-and-statistics/relative-frequency/" },
+          { label: "NRich: Part-Whole Thinking", url: "https://nrich.maths.org/" }
+        ],
+        songs: [
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=M9BNoNFKCBI" },
+          { title: "Piece of My Heart", artist: "Janis Joplin", url: "https://www.youtube.com/watch?v=iJb7cBfrxbo" },
+          { title: "Eleanor Rigby", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HuS5NuXRb5Y" }
+        ],
+        advanced: "In set theory: the relationship between subset and universal set. Expressed as a fraction where the denominator is the sample space. Basis of relative frequency and statistical density. It forces the shift from individualism to collectivism: every part is defined by the total." },
+
+      { id: "dimensional-analysis", num: 10, icon: "[D]", title: "Dimensional Analysis", subtitle: "The Universal Translator",
+        simple: "Dimensional analysis is a translation tool. It is how we change one type of measurement into another without losing the truth. If you know how many minutes are in an hour, you can figure out how many seconds are in a day! It is a bridge that lets you walk from inches to miles safely. Even when we change the words or units, the amount of stuff stays exactly the same.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song played on guitar vs. piano: the units change but the tune stays the same." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A smell that reminds you of a place from long ago: time changed but the scent stayed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sugar vs. honey: different units of sweetness to get the same result." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Using your thumb to measure something vs. using a ruler." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a movie in slow motion: the time is different but the story is the same." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Throwing a heavy ball vs. a light ball: your brain translates the force needed." }
+        ],
+        intuition: "Truth is invariant under a change of coordinates. Whether we measure life in years, heartbeats, or breaths, the dimension of existence remains constant.",
+        links: [
+          { label: "ChemLibreTexts: Dimensional Analysis", url: "https://chem.libretexts.org/Bookshelves/General_Chemistry/Map:_General_Chemistry_(Petrucci_et_al.)/01:_Matter_-_Its_Properties_and_Measurement/1.6:_Dimensional_Analysis" },
+          { label: "Britannica: Units of Measurement", url: "https://www.britannica.com/science/unit-of-measurement" },
+          { label: "NASA: Unit Conversion", url: "https://www.nasa.gov/stem/" }
+        ],
+        songs: [
+          { title: "525,600 Minutes", artist: "Rent Soundtrack", url: "https://www.youtube.com/watch?v=hj7LRuusFqo" },
+          { title: "I'm Gonna Be (500 Miles)", artist: "The Proclaimers", url: "https://www.youtube.com/watch?v=tbNlMtqrYS0" },
+          { title: "A Thousand Miles", artist: "Vanessa Carlton", url: "https://www.youtube.com/watch?v=Cwkej79U3ek" }
+        ],
+        advanced: "Dimensional analysis uses conversion factors (ratios equal to 1) to transform units. In advanced physics, it validates equations: if dimensions on both sides do not match, the equation is impossible. Truth is invariant under coordinate change. The logic of equivalence and universal communication." },
+    ],
 
   },
 };
