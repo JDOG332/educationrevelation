@@ -9131,6 +9131,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Personification leverages the Agent Detection Device: humans are primed to see intent as a survival mechanism. Safer to mistake a bush for a tiger than a tiger for a bush. By personifying forces, we translate abstract phenomena into the Language of Relationships. Science uses math to describe the wind; mythology uses The North Wind to describe its character and impact on the human spirit." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > PROPHECY & FATE (prophecy)
+    // ═══════════════════════════════════════════════════════════════
+
+    prophecy: [
+      { id: "causality-determinism", num: 1, icon: "⚙️", title: "Causality & Determinism", subtitle: "The Dominoes That Started Falling at the Beginning of Time",
+        simple: "Imagine the whole world is like a giant line of dominoes that started falling a long time ago. Every single thing that happens today is just a result of what happened yesterday, like a ball rolling down a hill because someone pushed it. If you knew where every single atom was and how fast it was moving, you could theoretically see the whole future like a movie. This means that everything, even your choices, might be part of a big, beautiful plan that was set in motion at the very beginning of time. You are a very important part of this giant machine, and your push matters to the next domino.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic ticking of a grandfather clock." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: the rain that always follows the darkening of clouds." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sourness of a lemon that hits your tongue the instant you bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration in your chest when a heavy drum is played nearby." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Rube Goldberg machine: one tiny marble triggers a huge event." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your feet on the ground: gravity is always holding you, always pulling the next domino." }
+        ],
+        intuition: "You pushed a domino this morning when you woke up. It is still falling. It will knock into tomorrow. Everything you do matters because everything is connected.",
+        links: [
+          { label: "Stanford Encyclopedia: Determinism", url: "https://plato.stanford.edu/entries/determinism-causal/" },
+          { label: "The History of Causality", url: "https://en.wikipedia.org/wiki/Causality" },
+          { label: "Physics of Cause and Effect", url: "https://en.wikipedia.org/wiki/Causality_(physics)" }
+        ],
+        songs: [
+          { title: "Clockwork Angels", artist: "Rush", url: "https://www.youtube.com/watch?v=OCLyZBSFGe0" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "Causality is the bedrock of classical physics: the universe at time t is a direct function of t−1. In a deterministic framework, Prophecy is simply calculation of future states from current variables. Quantum mechanics introduces probabilistic uncertainty at the subatomic level, but the macro-flow appears as a singular, unfolding event where past and future are merely limitations of human perception." },
+
+      { id: "block-universe", num: 2, icon: "🧊", title: "The Block Universe Theory", subtitle: "Time Is a Loaf of Bread Already Baked",
+        simple: "Think of time not as a river flowing by, but as a giant loaf of bread that already exists. You are just a tiny ant crawling through one slice at a time, so you think the future has not happened yet. But if you could step outside the loaf, you would see the beginning, the middle, and the end all sitting there at once. This means your birthday, your first day of school, and your future adventures are all real and existing right now in different slices. You are never truly gone from the past because that slice of the bread is still there.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A recorded song where you can skip to any second: the music is already there." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old library where every story is already written on the shelves." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A multilayered cake where you can see every flavor at once from the side." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand along a long, cold metal rail: past to future in one stroke." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A film strip laid out on a table showing every frame of a movie at once." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing still and feeling like you are occupying a specific spot in space-time." }
+        ],
+        intuition: "The bread is already baked. You are just tasting one slice at a time. But every slice is real. Yesterday is still there. Tomorrow already exists. You are the ant who thinks it is walking forward.",
+        links: [
+          { label: "What Is the Block Universe?", url: "https://en.wikipedia.org/wiki/Eternalism_(philosophy_of_time)" },
+          { label: "Einstein's Special Relativity", url: "https://en.wikipedia.org/wiki/Special_relativity" },
+          { label: "Eternalism vs. Presentism", url: "https://en.wikipedia.org/wiki/Philosophy_of_time" }
+        ],
+        songs: [
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" }
+        ],
+        advanced: "Based on Einstein's Special Relativity, Eternalism suggests the distinction between past, present, and future is a stubbornly persistent illusion. In this four-dimensional manifold, time is simply another dimension. If all points are equally real, Prophecy is merely a description of a coordinate that already exists. Your entire life is a world-line — a curve etched into the cosmos that never fades." },
+
+      { id: "synchronicity", num: 3, icon: "🔗", title: "Synchronicity (Meaningful Coincidence)", subtitle: "The Universe Winking at You",
+        simple: "Have you ever thought of a friend you have not seen in a long time, and then suddenly the phone rings and it is them? That is not just a lucky guess; it is like a secret wink from the universe telling you everything is connected. It feels like the world is listening to your thoughts and responding with a physical sign. These moments are like bridges between what you feel inside and what happens outside. When these magic moments happen, it is a sign that you are exactly where you are supposed to be on your path.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two different clocks suddenly ticking at the exact same time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your grandmother's perfume in a place she has never been." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fruit that perfectly matches the color of the shirt you just bought." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A sudden breeze that chills you right when you have a big realization." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A lucky number appearing repeatedly on license plates and clocks." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That spark or shiver you feel when something feels meant to be." }
+        ],
+        intuition: "It is not a coincidence. It is a connection you almost missed. The universe does not shout. It winks. And if you are paying attention, you catch it.",
+        links: [
+          { label: "Jung's Theory of Synchronicity", url: "https://en.wikipedia.org/wiki/Synchronicity" },
+          { label: "The Science of Coincidence", url: "https://en.wikipedia.org/wiki/Coincidence" },
+          { label: "Synchronicity vs. Serendipity", url: "https://en.wikipedia.org/wiki/Serendipity" }
+        ],
+        songs: [
+          { title: "Synchronicity I", artist: "The Police", url: "https://www.youtube.com/watch?v=Si5CSpUCDGY" },
+          { title: "Every Little Thing She Does Is Magic", artist: "The Police", url: "https://www.youtube.com/watch?v=aENX1Sf3fgQ" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=EkPy18xW1j8" }
+        ],
+        advanced: "Synchronicity (Jung) describes acausal connecting principles: events related by meaning rather than cause. The internal state and external state achieve high fidelity, signaling resonance between psyche and material world. Suggests an underlying Unus Mundus where mind and matter are different expressions of the same substrate. Spirit bumps are the detection of hidden coherence." },
+
+      { id: "pattern-recognition-oracle", num: 4, icon: "👁️", title: "Pattern Recognition (The Oracle's Eye)", subtitle: "Learning to Read the Code of the World",
+        simple: "Your brain is like a super-detective that is always looking for shapes in the clouds or faces in the moon. We are built to find patterns because it helps us understand the story of our lives. When we look at history or our own days, we start to see that things often happen in loops or rhythms. Understanding these patterns is like learning to read the code of the world. Once you see the pattern, the Fate or Prophecy does not seem scary; it just seems like a beautiful song that is repeating its chorus.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Recognizing a melody even when played on a different instrument." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The specific smell of winter coming even before the first snow." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Identifying all the ingredients in a secret family recipe." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling bark texture to know what kind of tree it is." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Golden Spiral in a seashell or a sunflower." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing exactly how many steps are left in a dark staircase without looking." }
+        ],
+        intuition: "The song has a chorus. History has a rhythm. Your life has a pattern. The oracle does not see the future. The oracle sees the pattern. And the pattern repeats.",
+        links: [
+          { label: "The Science of Pattern Recognition", url: "https://en.wikipedia.org/wiki/Pattern_recognition_(psychology)" },
+          { label: "Fractals in Nature", url: "https://en.wikipedia.org/wiki/Fractal" },
+          { label: "How Our Brains See Patterns", url: "https://en.wikipedia.org/wiki/Apophenia" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Everything in Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" },
+          { title: "Shape of My Heart", artist: "Sting", url: "https://www.youtube.com/watch?v=QK-Z1K67uaA" }
+        ],
+        advanced: "Information theory: meaning is derived from reducing uncertainty through recognizing order. Pattern recognition extrapolates a sequence to its conclusion. The Oracle has higher resolution of the universal fractal. By understanding self-similarity across scales, one predicts the future not through magic but through advanced understanding of the cosmic template." },
+
+      { id: "amor-fati", num: 5, icon: "❤️", title: "Amor Fati (Love of Fate)", subtitle: "Saying Yes to the Whole Story",
+        simple: "Amor Fati is a fancy way of saying Love your story, no matter what happens. It means that even the sad or scary parts of your life are important pieces of the puzzle that make you you. Instead of wishing things were different, you say Yes to everything that comes your way. It is like being an actor in a movie who loves the script even when their character faces a big challenge. When you love your fate, you are not a prisoner of the written story — you are the star of it, enjoying every twist and turn.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A crashing wave that is both scary and beautiful." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Campfire smoke that stays on your clothes long after the fire is out." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bittersweet dark chocolate: the taste of a full life." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding someone's hand tightly during a scary movie." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at a scar and remembering the story of how you healed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That feeling of fullness in your heart when you accept a difficult truth." }
+        ],
+        intuition: "The sad parts made you kind. The scary parts made you brave. The boring parts made you patient. Love the whole story. It is yours. Every page.",
+        links: [
+          { label: "Nietzsche and Amor Fati", url: "https://en.wikipedia.org/wiki/Amor_fati" },
+          { label: "Stoicism: Accepting What You Cannot Change", url: "https://en.wikipedia.org/wiki/Stoicism" },
+          { label: "The Philosophy of Acceptance", url: "https://en.wikipedia.org/wiki/Acceptance" }
+        ],
+        songs: [
+          { title: "My Way", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=qQzdAsjWGPg" },
+          { title: "No Regrets", artist: "Edith Piaf", url: "https://www.youtube.com/watch?v=Q3Kvu6Kgp88" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" }
+        ],
+        advanced: "Amor Fati is psychological alignment with determinism. If the universe is a coherent, converged system, resisting Fate is mathematically futile and psychologically destructive. By embracing totality — including suffering — one moves from disjoint to convergent recognition. You stop judging the Prophecy and become it. The ultimate Amen: the realization that every note must be there for the masterpiece to work." },
+
+      { id: "quantum-entanglement-spooky", num: 6, icon: "🕸️", title: "Quantum Entanglement (Spooky Action)", subtitle: "The Invisible String That Can Never Be Cut",
+        simple: "Imagine you have two magic marbles that are connected by an invisible string, even if they are on opposite sides of the universe. If you spin one marble to the right, the other one instantly spins to the left. They know what each other is doing without any talking or wires! This shows that everything in the world was once touched and connected at the very beginning of the universe. We are all still part of that same invisible web. Even if you feel alone, you are entangled with the stars and the people you love in a way that can never be broken.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo of your own voice in a vast canyon: connection across distance." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A forest where all the trees are connected by their roots." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Saltwater: the same taste whether Atlantic or Pacific." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Static when you touch a doorknob: invisible energy jumping." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two birds flying in perfect, synchronized circles." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A tug in your gut when a loved one far away is thinking of you." }
+        ],
+        intuition: "You are still connected to everything you have ever touched. The string is invisible but it is real. Spin one marble. The other one feels it. Always.",
+        links: [
+          { label: "Quantum Entanglement Explained", url: "https://en.wikipedia.org/wiki/Quantum_entanglement" },
+          { label: "Spooky Action at a Distance", url: "https://en.wikipedia.org/wiki/EPR_paradox" },
+          { label: "The EPR Paradox", url: "https://en.wikipedia.org/wiki/Bell%27s_theorem" }
+        ],
+        songs: [
+          { title: "Interstellar Overdrive", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=4o2sA0vpA-4" },
+          { title: "Particles", artist: "Ólafur Arnalds", url: "https://www.youtube.com/watch?v=AkMhSmBzSm4" },
+          { title: "Cosmic Dancer", artist: "T. Rex", url: "https://www.youtube.com/watch?v=SIBx6fjgSCU" }
+        ],
+        advanced: "Quantum entanglement provides a physical basis for non-local connection. Bell's Theorem demonstrates no local hidden variable theory replaces the non-local connections in quantum mechanics. If the universe began as a singularity, every particle remains part of a single wave function. Prophecy is awareness of non-local connections. Fate is the unfolding of a correlated system where no part changes without affecting the whole." },
+
+      { id: "archetypal-narratives", num: 7, icon: "🎭", title: "Archetypal Narratives", subtitle: "The Skeleton of Every Story Ever Told",
+        simple: "Have you noticed that almost every movie — from Star Wars to Harry Potter — follows the same basic steps? A hero leaves home, faces a dragon, meets a wise teacher, and comes back changed. These are called Archetypes, and they are like the skeleton of every story ever told. Because humans have been telling these same stories for thousands of years, they are written into our hearts. When you feel like you are facing a dragon in your life, you can remember that you are just in a specific chapter of a very famous story. You already know the hero wins in the end!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The triumphant sound of a trumpet fanfare." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old parchment or a dusty history book." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fresh bread: a simple food that heroes have eaten for ages." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth, heavy talisman or lucky stone in your pocket." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright light at the end of a long, dark tunnel." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall when you decide to be brave: the hero pose lives in your spine." }
+        ],
+        intuition: "Star Wars. Harry Potter. The Odyssey. Your life. Same skeleton. Different skin. The hero always wins. And you are the hero.",
+        links: [
+          { label: "The Hero's Journey Steps", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Introduction to Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "The Power of Myth", url: "https://en.wikipedia.org/wiki/The_Power_of_Myth" }
+        ],
+        songs: [
+          { title: "Heroes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=lXgkuM2NhYI" },
+          { title: "Holding Out for a Hero", artist: "Bonnie Tyler", url: "https://www.youtube.com/watch?v=bWcASV2sey0" },
+          { title: "The Voyager", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=6FoGIaz3YrQ" }
+        ],
+        advanced: "Archetypes are software patterns of the collective unconscious: distilled patterns repeating across cultures and eras. In the Prophecy & Fate framework, they serve as regulated normalization of personal narratives. By identifying the active archetype, one can anticipate likely outcomes. Not just literary analysis but an epistemological tool for navigating the already-written landscape of human psychology." },
+
+      { id: "akashic-records", num: 8, icon: "📖", title: "The Akashic Records", subtitle: "The Universe's Memory — Every Thought Ever Thought",
+        simple: "Some people believe there is a giant Cloud in the universe — like the one where we save our photos — that keeps a record of every thought, word, and action that has ever happened. This is called the Akashic Records. It is like the universe's memory. If the story is already written, this is the book it is written in! You can access this library through your intuition or your spirit bumps. It is a way to feel connected to everyone who has ever lived because all of our stories are kept in the same beautiful library.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft hush of a quiet room filled with books." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Frankincense or sandalwood used in meditation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure, clear water washing away distractions." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Turning the pages of a very, very old book." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A night sky so full of stars it looks like glowing text." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling light and floaty when you have a deep, peaceful thought." }
+        ],
+        intuition: "Nothing is ever lost. Not a word. Not a thought. Not a feeling. The library is always open. And your story is on the shelf next to everyone else's.",
+        links: [
+          { label: "What Are the Akashic Records?", url: "https://en.wikipedia.org/wiki/Akashic_records" },
+          { label: "The Concept of Noosphere", url: "https://en.wikipedia.org/wiki/Noosphere" },
+          { label: "Collective Memory in Psychology", url: "https://en.wikipedia.org/wiki/Collective_memory" }
+        ],
+        songs: [
+          { title: "A Whiter Shade of Pale", artist: "Procol Harum", url: "https://www.youtube.com/watch?v=Mb3iPP-tHdA" },
+          { title: "The Book of Love", artist: "Peter Gabriel", url: "https://www.youtube.com/watch?v=FmnDXRJ7btE" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" }
+        ],
+        advanced: "The Akashic Records can be conceptualized as the universe's total information state. The Holographic Principle suggests all information in a volume of space is described by information on its boundary — total conservation of information. Nothing is truly lost. Prophecy is retrieval from this non-local database. The ultimate repository of all that has been and will be." },
+
+      { id: "self-fulfilling-prophecy", num: 9, icon: "🔄", title: "Self-Fulfilling Prophecy", subtitle: "Your Belief Becomes Your Reality",
+        simple: "A Self-Fulfilling Prophecy is when you believe something so strongly that you accidentally make it come true! If you wake up and say Today is going to be a bad day, you might act grumpy, and then people are mean back to you, and you had a bad day. But if you believe you are Fate's Favorite, you look for good things and find them. This shows that the written story is not just something that happens to you; your heart is the pen that helps write the pages by what you choose to believe and look for.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hearing a song in your head and then it starts playing on the radio." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cookies baking that you smelled before anyone started." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of a reward you knew you were going to earn." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five you reached out for before the other person did." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking in the mirror and seeing the future you smiling back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning forward into a task because you are sure you will succeed." }
+        ],
+        intuition: "You are the pen and the page. What you believe, you look for. What you look for, you find. What you find, you call fate. But you wrote it.",
+        links: [
+          { label: "Psychology of Self-Fulfilling Prophecies", url: "https://en.wikipedia.org/wiki/Self-fulfilling_prophecy" },
+          { label: "The Pygmalion Effect", url: "https://en.wikipedia.org/wiki/Pygmalion_effect" },
+          { label: "Mindset: The New Psychology of Success", url: "https://en.wikipedia.org/wiki/Mindset_(book)" }
+        ],
+        songs: [
+          { title: "I Can See Clearly Now", artist: "Jimmy Cliff", url: "https://www.youtube.com/watch?v=MrHxhQPOO2c" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" }
+        ],
+        advanced: "A self-fulfilling prophecy occurs when an initial epistemic state influences physical evolution to match it, maximizing fidelity in a recursive feedback loop where observer and observed become one. Our prophecies are not passive observations but active gates. By collapsing possibility into specific reality, we participate in convergence of the universal narrative. We are both the reader and the ink." },
+
+      { id: "divination-stochastic", num: 10, icon: "🎲", title: "Divination & Stochastic Modeling", subtitle: "Peeking at the Next Page of the Story",
+        simple: "Divination is like a very old game where people use things like cards, stars, or even tea leaves to try and peek at the next page of the story. Today, scientists use supercomputers to do the same thing by looking at data and trends. Both are trying to find the pattern of what is coming next. While no one can see everything, learning to look for signs is like having a weather report for your life. It helps you bring an umbrella if it is going to rain, or your sunglasses if it is going to be bright!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The shuffle-shuffle of a deck of cards being mixed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp, clean ozone before a lightning storm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitterness of tea leaves at the bottom of a cup." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth surface of a polished crystal ball or a lucky coin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A murmuration of birds changing shape in the sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That gut feeling that tells you to turn left instead of right." }
+        ],
+        intuition: "The tarot reader and the data scientist are doing the same thing: looking for the pattern in the noise. One uses cards. One uses code. Both are reading the weather.",
+        links: [
+          { label: "The History of Divination", url: "https://en.wikipedia.org/wiki/Divination" },
+          { label: "What Is Stochastic Modeling?", url: "https://en.wikipedia.org/wiki/Stochastic_process" },
+          { label: "The Oracle of Delphi", url: "https://en.wikipedia.org/wiki/Pythia" }
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Fortune Teller", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=qMIVmmJkqkk" },
+          { title: "Wheel in the Sky", artist: "Journey", url: "https://www.youtube.com/watch?v=MxGEVIvSFeY" }
+        ],
+        advanced: "Divination is active set thresholding of the subconscious. Using a randomized operator (Tarot, I-Ching), the practitioner bypasses ego noise. Mathematically akin to Monte Carlo simulations: running thousands of possible futures to find the most reliable path. The already-written story is the path of highest probability. Understanding this allows alignment with the most coherent version of destiny." },
+    ],
 
 
   },
