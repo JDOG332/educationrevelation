@@ -7712,6 +7712,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Etymology reveals cognitive archaeology of early human thought. The PIE root gno- (to know) appears in knowledge, gnostic, and ignore (not knowing). Language is an evolving organism. Dead metaphors are words used literally now that began as vivid comparisons. Tracing roots shows how ancestors categorized the world: diachronic perspective enriching synchronic use." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > MIND & BODY (mindbody)
+    // ═══════════════════════════════════════════════════════════════
+
+    mindbody: [
+      { id: "neuroplasticity-mb", num: 1, icon: "🌿", title: "Neuroplasticity", subtitle: "The Garden That Never Stops Growing",
+        simple: "Your brain is like a living garden that never stops growing and changing. Every time you learn a new song or practice a sport, your brain builds new roads made of tiny wires called neurons. If you stop using a road, the brain recycles it to build something else. This means you are never stuck being just one way; you can literally change your mind by changing what you do. Your you is always growing and never truly finished.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A metronome speeding up: your brain begins to predict the next click." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A fresh orange while remembering a happy memory: the brain links the two." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A food you used to hate: notice if your mind is open to a new road for that flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a leaf with eyes closed: focus on the signal traveling to your head." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a plant growing toward the light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot: feel your brain making micro-adjustments to keep you upright. That is plasticity in real time." }
+        ],
+        intuition: "You are not stuck. You were never stuck. Every new thing you do builds a new road in your head. The garden grows as long as you keep planting.",
+        links: [
+          { label: "Wikipedia: Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Sentis: What Is Neuroplasticity?", url: "https://www.youtube.com/watch?v=ELpfYCZa87g" },
+          { label: "Norman Doidge: The Brain That Changes Itself", url: "https://en.wikipedia.org/wiki/The_Brain_That_Changes_Itself" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Learn to Fly", artist: "Foo Fighters", url: "https://www.youtube.com/watch?v=1VQ_3sBZEm0" }
+        ],
+        advanced: "Neuroplasticity (cortical remapping): synaptic connections reorganize via long-term potentiation (LTP), where synchronized neuron firing strengthens bonds, encoding information into gray matter. The mind (thought) alters the body (neural architecture), challenging biological determinism. Supports an integrated, holistic view of self-evolution." },
+
+      { id: "enteric-nervous-system", num: 2, icon: "🌀", title: "The Enteric Nervous System", subtitle: "The Brain in Your Belly",
+        simple: "Did you know you have a brain in your tummy? Inside your gut, there are millions of tiny nerves that talk to the brain in your head all day long. This is why you feel butterflies when you are nervous or get a gut feeling about a choice. Your body and thoughts are so connected that your stomach can actually tell your head how to feel. Taking care of your body is a way of taking care of your soul because they share the same feelings.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic gurgle of digestion in a quiet room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint tea: it instantly makes stomach and mind feel calmer." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate: feel the good vibes hit your system." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hand on your belly, deep breath: feel the movement." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map of the human nervous system: the dense web around the stomach." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The heavy or light feeling in your core when you think of something scary or happy: the second brain speaking." }
+        ],
+        intuition: "Your gut is not guessing. It has its own brain. When it speaks, listen. The belly knows things the head has not figured out yet.",
+        links: [
+          { label: "NCBI: Gut-Brain Axis", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4367209/" },
+          { label: "Scientific American: The Second Brain", url: "https://www.scientificamerican.com/" },
+          { label: "Harvard Health: Gut and Mental Health", url: "https://www.health.harvard.edu/" }
+        ],
+        songs: [
+          { title: "Intuition", artist: "Jewel", url: "https://www.youtube.com/watch?v=8Gv0H-vPoDc" },
+          { title: "Hungry Like the Wolf", artist: "Duran Duran", url: "https://www.youtube.com/watch?v=oJL-lCzEXgI" },
+          { title: "Gut Feeling", artist: "DEVO", url: "https://www.youtube.com/watch?v=Pwxnv3VLToo" }
+        ],
+        advanced: "The ENS: a mesh of neurons governing the GI tract, capable of autonomous signaling with 30+ neurotransmitters including 95% of the body's serotonin. Bidirectional Vagus nerve communication creates feedback loops where physical states (gut biome, inflammation) dictate psychological states (anxiety, depression). Undermines the Cartesian view of a localized mind-pilot." },
+
+      { id: "homeostasis-mb", num: 3, icon: "⚖️", title: "Homeostasis", subtitle: "The Body's Silent Song of Balance",
+        simple: "Your body is a master at keeping things just right, like a smart house that keeps the temperature perfect. Even when you are not thinking about it, your body checks your blood, your heat, and your energy. It works hard to make sure you stay balanced so you can focus on playing and learning. This balance is a silent song your body sings to keep you alive. When you feel balanced, your mind feels peaceful too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your steady heartbeat after sitting still for five minutes." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh, clean air: it feels neutral and calming." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain water when you are very thirsty: feel the instant balance return." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own skin: feel the warmth your body maintains perfectly." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle flame staying steady in a room with no wind." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body automatically adjusting its weight when you lean to one side: balance you never asked for but always receive." }
+        ],
+        intuition: "Your body is singing a song you never hear. It keeps the temperature right, the blood clean, the heart steady. You are alive because something inside you is always paying attention.",
+        links: [
+          { label: "Britannica: Homeostasis", url: "https://www.britannica.com/science/homeostasis" },
+          { label: "YouTube: Homeostasis", url: "https://www.youtube.com/watch?v=DFyt7FJn-UM" },
+          { label: "Khan Academy: Regulatory Systems", url: "https://www.khanacademy.org/" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" }
+        ],
+        advanced: "Homeostasis: steady internal conditions maintained via negative feedback loops involving sensors, control centers (hypothalamus), and effectors counteracting deviations from set points. From systems theory, represents the body's programmed intentionality. Provides the stable platform for emergence of higher-order consciousness. Connects to Taoism's Wu Wei (natural balance)." },
+
+      { id: "proprioception-mb", num: 4, icon: "📍", title: "Proprioception", subtitle: "The Hidden Sense That Knows Where You Are",
+        simple: "Proprioception is your hidden sense that tells you where your body parts are even with your eyes closed. If you touch your nose with eyes shut, that is proprioception working! It is like a magical map inside your brain that always knows where your hands and feet are. This sense connects your inner self to your physical shape. It helps you feel like you are actually inside your body.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Clap your hands behind your head: you know exactly where they are." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smell your own skin: it grounds you in your physical space." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Move your tongue around your mouth without a mirror." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tap your fingers together in a rhythm with your eyes closed." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Look at your hand, close your eyes, try to see it still there in space." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and try to touch your pinky fingers together in front of you: the invisible map at work." }
+        ],
+        intuition: "You know where your hand is right now without looking. Something inside you keeps a map of your whole body, updated every second. That map is you.",
+        links: [
+          { label: "Healthline: Proprioception", url: "https://www.healthline.com/health/body/proprioception" },
+          { label: "Understanding Proprioception", url: "https://www.youtube.com/watch?v=S9vt9b5RbqY" },
+          { label: "BBC: The Man Who Lost His Body", url: "https://www.bbc.co.uk/" }
+        ],
+        songs: [
+          { title: "Hand in My Pocket", artist: "Alanis Morissette", url: "https://www.youtube.com/watch?v=CUjIY_XxF1g" },
+          { title: "Move Your Feet", artist: "Junior Senior", url: "https://www.youtube.com/watch?v=SPlQpGeTbIE" },
+          { title: "Can't Stop the Feeling!", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=ru0K8uYEZWw" }
+        ],
+        advanced: "Proprioception is mediated by mechanosensory neurons in muscles, tendons, and joints communicating with the somatosensory cortex. Foundational to the ego-center: subjective experience of being a localized entity. Without it, the boundary between self and environment blurs, causing dissociative states. The physical anchor of the I am experience. Connects to Merleau-Ponty's phenomenology." },
+
+      { id: "default-mode-network", num: 5, icon: "☁️", title: "The Default Mode Network", subtitle: "The Storyteller Inside Your Head",
+        simple: "When you are sitting quietly and doing nothing, your brain is actually very busy thinking about you. This part of the brain is like a storyteller that talks about your past and your future. It is where your daydreams live. Sometimes it tells good stories, and sometimes it worries, but it is the place where your sense of I is the strongest. Learning to watch these thoughts is like watching clouds pass by in the sky.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise or static: notice how your mind starts making up stories." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old crayon: the DMN instantly pulls up a memory of you from the past." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something familiar from childhood: notice the story your mind tells about it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sit perfectly still, feel your weight: watch where your mind wanders to." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stare at a blank wall and wait for the internal movie to start playing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The sensation of drifting when almost asleep: the storyteller loosening its grip." }
+        ],
+        intuition: "When you are doing nothing, something inside you is telling your story. Learn to watch the storyteller. You are not the story. You are the one listening.",
+        links: [
+          { label: "Psychology Today: Default Mode Network", url: "https://www.psychologytoday.com/" },
+          { label: "The Brain's Default Mode", url: "https://www.youtube.com/watch?v=2T_8sJA5ers" },
+          { label: "Scientific American: The Mind's Eye", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Dream On", artist: "Aerosmith", url: "https://www.youtube.com/watch?v=89dGC8de0CA" },
+          { title: "Daydream Believer", artist: "The Monkees", url: "https://www.youtube.com/watch?v=xvqeSJlgaNk" },
+          { title: "Where Is My Mind?", artist: "Pixies", url: "https://www.youtube.com/watch?v=49FB9hhoO6c" }
+        ],
+        advanced: "The DMN: a large-scale brain network (posterior cingulate cortex, medial prefrontal cortex) active when not focused externally. Neurological basis for self-referential thought, social cognition, and mental time travel. High DMN activity links to rumination; meditation and flow states quiet it, producing selflessness or oneness. The brain constructs the illusion of a persistent, separate identity." },
+
+      { id: "dualism-monism", num: 6, icon: "🌓", title: "Dualism vs. Monism", subtitle: "Ghost in the Machine or Song of the Guitar?",
+        simple: "People have wondered for a long time: are the mind and body two different things, or just one thing? Some think the mind is like a ghost in a machine (Dualism). Others think the mind is just what the brain does, like how a song is what a guitar does (Monism). When you feel happy, is that just a chemical, or is it something more? Thinking about this helps you decide how you want to see the world and yourself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song: is the music the physical vibrations or the feeling you get?" },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A rose: is the scent in the flower or in your mind?" },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A lemon: the physical pucker versus the mental thought sour!" },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pinch your arm: the pinch happens in the body, but the ouch happens in the mind." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A mirror: do you see a body or do you see yourself?" },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Try to feel your mind: you can only find it by feeling your body. Where does one end and the other begin?" }
+        ],
+        intuition: "Is the song the guitar or the music? Is the mind the brain or the feeling? Maybe the question itself is the answer. They were never separate.",
+        links: [
+          { label: "Stanford: Dualism", url: "https://plato.stanford.edu/entries/dualism/" },
+          { label: "Mind-Body Problem", url: "https://www.youtube.com/watch?v=0aIaAJO7JT4" },
+          { label: "Simply Psychology: Monism vs Dualism", url: "https://www.simplypsychology.org/" }
+        ],
+        songs: [
+          { title: "Body and Soul", artist: "Tony Bennett & Amy Winehouse", url: "https://www.youtube.com/watch?v=rMkmLCHAiag" },
+          { title: "Spirit in the Sky", artist: "Norman Greenbaum", url: "https://www.youtube.com/watch?v=AZQxH_8raCI" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" }
+        ],
+        advanced: "The Mind-Body problem: consciousness (mental) versus brain (physical). Cartesian Dualism: mind and matter are distinct substances. Physicalism (Monism): everything is physical; consciousness is emergent. If Monism is true, mapping every neuron would theoretically solve the person. If Dualism has merit, qualia may always escape physical description. Central to neuroscience and AI." },
+
+      { id: "epigenetics-mb", num: 7, icon: "🧬", title: "Epigenetics", subtitle: "Your Life Writes Notes on Your DNA",
+        simple: "You were born with a book of instructions called DNA, but your life choices can change which pages are actually read. If you eat healthy and exercise, your body highlights the good pages. If you are very stressed, it might bookmark the pages for worry. Your body is a conversation between your past and your present. You have the power to help your body read its best possible story.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft, calming voice: imagine it switching on happy signals in your cells." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh-cut grass: your ancestors smelled the same thing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fresh vegetable: imagine the vitamins talking to your DNA." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hugging someone you love: stress-melting signals changing your chemistry." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A photo of your grandparents: notice what you share and what is different." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscles after a workout: that burn is your body changing its own instructions." }
+        ],
+        intuition: "Your DNA is not destiny. It is a book. And you are the one holding the highlighter. What you eat, feel, and do writes notes in the margins.",
+        links: [
+          { label: "CDC: What Is Epigenetics?", url: "https://www.cdc.gov/genomics/disease/epigenetics.htm" },
+          { label: "Epigenetics Explained", url: "https://www.youtube.com/watch?v=kp1bZEUgqVI" },
+          { label: "Bruce Lipton: Biology of Belief", url: "https://en.wikipedia.org/wiki/Bruce_Lipton" }
+        ],
+        songs: [
+          { title: "Born This Way", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=wV1FrqwZyKw" },
+          { title: "Family Affair", artist: "Mary J. Blige", url: "https://www.youtube.com/watch?v=znlFu_lemsU" },
+          { title: "DNA", artist: "Kendrick Lamar", url: "https://www.youtube.com/watch?v=NLZRGV_5gCI" }
+        ],
+        advanced: "Epigenetics: external DNA modifications (methylation, histone acetylation) turning genes on/off without changing the sequence. Influenced by diet, stress, and toxins; some inherited across generations. Psychological experiences (trauma, joy) leave physical markers on the genome. Nurture physically becomes nature. Bridges social sciences and hard biology." },
+
+      { id: "placebo-effect", num: 8, icon: "✨", title: "The Placebo Effect", subtitle: "Your Mind Heals Your Body by Believing",
+        simple: "The Placebo Effect is like a superpower where your mind heals your body just by believing it will. If a doctor gives someone a fake sugar pill but the person thinks it is real medicine, their body often gets better anyway! This proves that your thoughts are not just invisible: they are strong enough to change your physical blood and bones. What you believe about yourself actually changes what your body can do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Calm music: feel your heart rate slow down just by listening." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender: if you believe it calms you, your body follows the belief." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A magic smoothie (even if it is just fruit): notice if you feel more energetic." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A lucky stone: feel the confidence it gives your body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An image of a superhero: notice if you stand a little taller." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Imagine you are very strong: feel your muscles tense in response to the thought alone." }
+        ],
+        intuition: "The sugar pill works because you believed it would. Belief is not just a thought. It is a chemical. It is a force. Your mind is the first medicine.",
+        links: [
+          { label: "Harvard: Placebo Effect", url: "https://www.health.harvard.edu/mental-health/the-power-of-the-placebo-effect" },
+          { label: "The Placebo Effect Explained", url: "https://www.youtube.com/watch?v=z03FQGlGgo0" },
+          { label: "Smithsonian: Placebo Effect", url: "https://www.smithsonianmag.com/" }
+        ],
+        songs: [
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" },
+          { title: "Magic", artist: "B.o.B ft. Rivers Cuomo", url: "https://www.youtube.com/watch?v=Cq-NShfefks" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" }
+        ],
+        advanced: "The placebo effect: neurobiological phenomenon where expectation triggers release of endogenous opioids and dopamine. A measurable physiological response mediated by prefrontal cortex and reward system. Belief is a biological variable. In clinical trials, the placebo is the baseline drugs must beat. The body's internal pharmacy is potent and ever-present." },
+
+      { id: "neural-correlates", num: 9, icon: "⚡", title: "Neural Correlates of Consciousness", subtitle: "Which Light Bulbs Make You You?",
+        simple: "Scientists are trying to find exactly which light bulbs in the brain turn on when you have a thought. When you see the color red, a specific part of your brain flashes. These flashes are called Neural Correlates. It is like trying to find the exact wires in a computer that make the screen show a picture. While we can see the wires flashing, the mystery is how that flash turns into the feeling of being alive and being you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Snap your fingers and try to feel the exact spot in your head where you hear it." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sniff a lemon and trace the path of the smell into your brain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Taste salt: notice the spark of recognition in your mind." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tap your head: feel the physical touch and the mental I am here at the same time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stare at a bright light, close your eyes, watch the afterimage fade in your brain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Move your arm and imagine the electricity traveling from brain to muscles: the spark of being." }
+        ],
+        intuition: "We can see which bulbs light up. But we still cannot explain why the light feels like something. The flash is not the mystery. The feeling is.",
+        links: [
+          { label: "Scholarpedia: Neural Correlates", url: "http://www.scholarpedia.org/article/Neural_correlates_of_consciousness" },
+          { label: "The Quest for Consciousness", url: "https://www.youtube.com/watch?v=mNR3i23Rleo" },
+          { label: "Scientific American: The Hidden Mind", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Electric Feel", artist: "MGMT", url: "https://www.youtube.com/watch?v=MmZexg8sxyk" },
+          { title: "Brain Stew", artist: "Green Day", url: "https://www.youtube.com/watch?v=UNq9gmY_Oz4" },
+          { title: "Thinking Out Loud", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=lp-EO5I60KA" }
+        ],
+        advanced: "NCC: the minimal neuronal events sufficient for a specific conscious percept. Researchers use fMRI and EEG to identify hot zones (posterior cortical hot zone) correlated with subjective awareness. This is the Easy Problem of consciousness. Even with a perfect NCC map, the explanatory gap remains: why does neural firing feel like the smell of a rose?" },
+
+      { id: "hard-problem-consciousness", num: 10, icon: "❓", title: "The Hard Problem of Consciousness", subtitle: "The Mystery Inside the Mystery",
+        simple: "Even if we knew every single tiny cell in the brain, we still would not know why we feel things. We can explain how the eye sees light, but we cannot explain why the light looks like something to you. This is the Hard Problem. It is the secret ingredient that makes you more than just a robot. It is the wonder of being alive! This mystery shows that there is something special about you that science is still trying to understand.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your favorite song: where does the beauty of this song live?" },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower: how does a chemical turn into a memory?" },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A strawberry: how do you know what sweet feels like?" },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm cup: the difference between heat and the feeling of warmth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The stars: who is the one looking?" },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your body and ask: am I the body, or am I the one feeling the body?" }
+        ],
+        intuition: "You can map every wire. You can trace every signal. But you still cannot explain why it feels like something to be you. That is the deepest door. And it is still open.",
+        links: [
+          { label: "David Chalmers: Hard Problem", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" },
+          { label: "The Hard Problem Explained", url: "https://www.youtube.com/watch?v=C5DfnIjZPGQ" },
+          { label: "Closer to Truth: What Is Consciousness?", url: "https://www.closertotruth.com/" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Who Are You", artist: "The Who", url: "https://www.youtube.com/watch?v=PdLIerfXuZ4" }
+        ],
+        advanced: "David Chalmers' Hard Problem: why do physical processes give rise to subjective experience (qualia) at all? Distinguishes functional Easy Problems (processing sensory data) from the mystery of inner experience. Challenges pure materialism. Consciousness might be a fundamental property of the universe like space or time, not just a byproduct of complexity. The ultimate frontier where physics meets philosophy." },
+    ],
 
 
   },
