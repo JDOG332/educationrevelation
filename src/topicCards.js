@@ -2790,6 +2790,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 🔭 ASTRONOMY & COSMOS (cosmos)
+    // "What's out there beyond the sky"
+    // ═══════════════════════════════════════════════════════════════
+
+    cosmos: [
+
+      // ── 1 ── THE EXPANSION OF THE UNIVERSE ───────────────────
+      {
+        id: "universe-expansion",
+        num: 1,
+        icon: "🎈",
+        title: "The Expansion of the Universe",
+        subtitle: "The Balloon That Never Stops",
+        simple: "Imagine the universe is a giant balloon that someone is blowing air into. Galaxies are like tiny dots drawn on that balloon. As the balloon grows, the dots don't move across the rubber; the rubber itself is stretching, pulling every dot away from every other dot.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a siren pass you by. The pitch drops as it moves away. This \"stretching\" of sound is exactly how light stretches as galaxies fly apart." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of rain on hot pavement (Petrichor). It spreads through the air just like energy spreads through growing space." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Pop Rocks candy. Feel the tiny explosions expanding and pushing outward in your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pull a thick rubber band slowly. Feel the tension as the distance between two points grows without you moving your fingers." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a loaf of raisin bread rising in the oven. The raisins move apart because the dough between them is expanding." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and slowly move your hands away from your chest. Feel the \"space\" between your palms getting larger." },
+        ],
+        intuition: "You are not a static point; you are part of a grand unfolding. You are the breath inside the balloon, expanding with everything else.",
+        links: [
+          { label: "NASA: Dark Energy & Expansion", url: "https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy" },
+          { label: "ESA: Hubble's Law", url: "https://www.esa.int/Science_Exploration/Space_Science/What_is_the_expansion_of_the_Universe" },
+          { label: "Britannica: Hubble's Law", url: "https://www.britannica.com/science/Hubbles-law" },
+        ],
+        songs: [
+          { title: "Don't Stop Me Now", artist: "Queen", url: "https://www.youtube.com/watch?v=HgzGwKwLmgM" },
+          { title: "Spaceman", artist: "The Killers", url: "https://www.youtube.com/watch?v=Hc16Y9fi_pa" },
+          { title: "Sky Full of Stars", artist: "Coldplay", url: "https://www.youtube.com/watch?v=VPRjCeUtgv4" },
+        ],
+        advanced: "The metric expansion of space is a fundamental consequence of General Relativity, characterized by the Hubble-Lemaître Law where recession velocity is proportional to distance. Confirmed by Redshift, where light waves from distant sources stretch into longer, redder wavelengths. This connects the physical Void to infinite potential — the \"We\" is not a fixed container but a continuous process of becoming.",
+      },
+
+      // ── 2 ── STELLAR EVOLUTION & NUCLEOSYNTHESIS ─────────────
+      {
+        id: "stellar-nucleosynthesis",
+        num: 2,
+        icon: "🍳",
+        title: "Stellar Evolution & Nucleosynthesis",
+        subtitle: "The Cosmic Kitchen",
+        simple: "Stars are like cosmic kitchens. They cook tiny pieces of gas (Hydrogen) into bigger pieces (Carbon, Oxygen, Gold). When a star finishes cooking and explodes, it throws all that \"food\" into space. Every bit of you — your bones, your breath, your jewelry — was once cooked inside a star.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The crackle of a campfire. It is the sound of stored \"sunlight\" being released." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The metallic scent of a copper penny. That metal was forged in a dying star." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The salt in your food. Stars made the sodium and chlorine atoms that give you flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Hold a piece of iron or a heavy rock. Feel the weight of atoms created in a supernova." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at your own hand. You are looking at organized stardust." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel the warmth of your own blood. The iron in your veins makes it red, and that iron came from the heart of a giant star." },
+        ],
+        intuition: "You are a living library of the stars. Every sense you have is powered by the debris of ancient suns.",
+        links: [
+          { label: "National Geographic: Life Cycle of a Star", url: "https://www.nationalgeographic.com/science/article/stars" },
+          { label: "NASA: We Are Stardust", url: "https://www.nasa.gov/image-article/we-are-stardust/" },
+          { label: "Scientific American: Origin of Elements", url: "https://www.scientificamerican.com/article/where-did-the-elements-come-from/" },
+        ],
+        songs: [
+          { title: "We Are All Made Of Stars", artist: "Moby", url: "https://www.youtube.com/watch?v=x1rFAayDEn8" },
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=q6H_XF7at_Y" },
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=sI66hcu9fIs" },
+        ],
+        advanced: "Nucleosynthesis describes nuclear reactions creating new atomic nuclei. High-mass stars fuse elements up to Iron; heavier elements (Gold, Uranium) are synthesized during r-process events like Supernovae or Neutron star collisions. This bridges Biology and Astrophysics, confirming the ancestry of the human race is literally recorded in the periodic table.",
+      },
+
+      // ── 3 ── THE BIG BANG THEORY ─────────────────────────────
+      {
+        id: "big-bang",
+        num: 3,
+        icon: "🌱",
+        title: "The Big Bang Theory",
+        subtitle: "The Seed of Everything",
+        simple: "A long time ago, the whole universe was squeezed into a tiny, hot seed. Suddenly, that seed started to grow very, very fast. It wasn't an explosion in space; it was the start of space itself. Everything we see today grew from that one tiny moment.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Static on an old radio or TV between stations. A tiny part of that \"hiss\" is actually the echo of the Big Bang." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a freshly struck match. It reminds us of the intense heat and the sudden beginning of fire." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Plain water. The Hydrogen in that water was created in the very first minutes of the universe." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Touch a warm radiator. The universe began with heat that has been cooling down for billions of years." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a deep-sky photo. You are looking back in time toward the beginning." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Sit very still. Realize that you are moving through time, which began at that single point." },
+        ],
+        intuition: "You are the current \"now\" of a story that started 13.8 billion years ago. You are the tip of a very long branch.",
+        links: [
+          { label: "NASA: What is the Big Bang?", url: "https://spaceplace.nasa.gov/big-bang/en/" },
+          { label: "CERN: The Early Universe", url: "https://home.cern/science/physics/early-universe" },
+          { label: "Space.com: Big Bang Evidence", url: "https://www.space.com/25126-big-bang-theory.html" },
+        ],
+        songs: [
+          { title: "Big Bang Theory Theme", artist: "Barenaked Ladies", url: "https://www.youtube.com/watch?v=E_WviT6H0fo" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "On Top of the World", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=w5tWYmIqpUo" },
+        ],
+        advanced: "The Lambda-CDM model posits the universe began from extremely high density and temperature. Empirically validated by the Cosmic Microwave Background (CMB) radiation and the primordial abundance of light elements (H, He, Li). This aligns with philosophical \"First Cause\" arguments, suggesting a singular, unified origin for all disparate phenomena.",
+      },
+
+      // ── 4 ── GRAVITATIONAL INTERACTION & GENERAL RELATIVITY ──
+      {
+        id: "gravity-relativity",
+        num: 4,
+        icon: "🕸️",
+        title: "Gravity & General Relativity",
+        subtitle: "The Trampoline of Space-Time",
+        simple: "Imagine putting a bowling ball on a trampoline. It makes a dip. If you roll a marble nearby, it will curve into that dip. Planets and stars do the same thing to \"Space-Time.\" Gravity isn't a magnet; it's just things rolling down the curves made by heavy objects.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A heavy bass note that vibrates your chest. You feel the \"weight\" of the sound pulling on you." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The heavy, thick scent of pine sap. It feels \"weighted\" and sticky, like gravity holding things together." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Honey. It is thick and slow, moving only when the curve is steep enough." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Lean against a wall. Feel the Earth's mass curving space, pulling you against the surface." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch water swirl down a drain. It is following the curve of the bowl, just like a planet orbits a star." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Jump up and feel the \"tug\" bringing you back down. That is you following a curve in the fabric of the world." },
+        ],
+        intuition: "You are always \"falling\" toward the heart of the world, held safely by the invisible curves of the universe.",
+        links: [
+          { label: "NASA: What is Gravity?", url: "https://spaceplace.nasa.gov/what-is-gravity/en/" },
+          { label: "Einstein Online: General Relativity", url: "https://www.einstein-online.info/en/category/elementary/general-relativity-elementary/" },
+          { label: "LIGO: Gravitational Waves", url: "https://www.ligo.caltech.edu/page/what-are-gw" },
+        ],
+        songs: [
+          { title: "Gravity", artist: "John Mayer", url: "https://www.youtube.com/watch?v=7vb9R0wJ28M" },
+          { title: "Gravity", artist: "Sara Bareilles", url: "https://www.youtube.com/watch?v=rEXhAMtbaec" },
+          { title: "Higher Ground", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=4wZ3ZG_Wams" },
+        ],
+        advanced: "General Relativity replaces the Newtonian force with geometry of a four-dimensional manifold. Mass-energy tells space-time how to curve; space-time tells mass-energy how to move — expressed in the Einstein Field Equations. This transforms our understanding of \"influence\": presence alone alters the environment for everyone else.",
+      },
+
+      // ── 5 ── EXOPLANETARY SYSTEMS ────────────────────────────
+      {
+        id: "exoplanets",
+        num: 5,
+        icon: "🏡",
+        title: "Exoplanetary Systems",
+        subtitle: "Billions of Other Homes",
+        simple: "For a long time, we thought our sun was the only one with planets. Now we know almost every star in the sky is a \"parent\" to its own family of worlds. There are billions of other earths, deserts, and ice worlds out there. We live in a universe full of homes.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A distant choir. You might only hear one voice clearly, but you know there are hundreds of others singing the same song." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a distant forest on the wind. You can't see the trees, but you know they are there." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A variety pack of fruit. Different flavors, but all are \"fruit\" — just like different planets are all \"worlds.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Run your hand over different textures — sand, grass, wood. These are the \"skins\" of different types of planets." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a city at night from a distance. Every light is a different house where someone lives." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stand in a crowd. Feel the \"presence\" of many other bodies around you, even if you aren't touching them." },
+        ],
+        intuition: "You are not alone in the dark. The sky is crowded with neighborhoods you haven't visited yet.",
+        links: [
+          { label: "NASA Exoplanet Archive", url: "https://exoplanetarchive.ipac.caltech.edu/" },
+          { label: "The Planetary Society: Exoplanets", url: "https://www.planetary.org/space-images/exoplanets" },
+          { label: "Hubble: Finding Exoplanets", url: "https://hubblesite.org/science/exoplanets" },
+        ],
+        songs: [
+          { title: "Walking On The Moon", artist: "The Police", url: "https://www.youtube.com/watch?v=zPwMdZOl_wM" },
+          { title: "Orinoco Flow", artist: "Enya", url: "https://www.youtube.com/watch?v=LTrk4n9WAFM" },
+          { title: "Man On The Moon", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=1hKSYgOGtos" },
+        ],
+        advanced: "Over 5,000 confirmed exoplanets discovered via Transit Method and Radial Velocity measurements have shifted the Copernican Principle from \"Earth is not the center\" to \"The Solar System is a standard model.\" This reinforces the concept of Plenitude — if something can happen here, it is likely happening everywhere.",
+      },
+
+      // ── 6 ── THE EXISTENCE OF BLACK HOLES ────────────────────
+      {
+        id: "black-holes",
+        num: 6,
+        icon: "🕳️",
+        title: "The Existence of Black Holes",
+        subtitle: "The Cosmic Trapdoor",
+        simple: "A black hole is a place where so much stuff is packed into a tiny space that its \"tug\" is the strongest in the universe. It's like a cosmic trapdoor. If you get too close, even light — the fastest thing ever — can't get out.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A deep, silent pause in a song that makes you hold your breath." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a deep basement or cave — cool, heavy, and mysterious." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Extremely dark chocolate. Intense, concentrated, and takes over your whole mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "A very strong magnet pulling on a metal toy in your hand. Feel the invisible \"must-go\" force." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a shadow on a bright sunny day. The shadow is only there because something is blocking the light." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Spin around until you feel dizzy and \"pulled\" toward the floor." },
+        ],
+        intuition: "There are mysteries so deep they swallow the light, yet they hold the centers of galaxies together.",
+        links: [
+          { label: "Event Horizon Telescope", url: "https://eventhorizontelescope.org/" },
+          { label: "NASA: Black Holes", url: "https://science.nasa.gov/universe/black-holes/" },
+          { label: "National Geographic: Black Holes Explained", url: "https://www.nationalgeographic.com/science/article/black-holes" },
+        ],
+        songs: [
+          { title: "Black Hole Sun", artist: "Soundgarden", url: "https://www.youtube.com/watch?v=3mbBbFH9fAg" },
+          { title: "Supermassive Black Hole", artist: "Muse", url: "https://www.youtube.com/watch?v=Xsp3_a-PMTw" },
+          { title: "Paint It, Black", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=O4irXQhgMqg" },
+        ],
+        advanced: "Black holes are solutions to Einstein's field equations where space-time curvature becomes infinite (a singularity), defined by an Event Horizon beyond which escape velocity exceeds the speed of light. They represent the \"Limit of Knowledge\" — where our current math breaks down, inviting humble recognition of the Unknowable.",
+      },
+
+      // ── 7 ── DARK MATTER ─────────────────────────────────────
+      {
+        id: "dark-matter",
+        num: 7,
+        icon: "👻",
+        title: "Dark Matter",
+        subtitle: "The Invisible Glue",
+        simple: "Imagine watching a merry-go-round spin really fast. Usually, the kids would fly off, but they stay on because they are holding invisible ropes. Dark matter is like those invisible ropes. We can't see it, smell it, or touch it, but it's the \"glue\" that keeps galaxies from flying apart.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The wind whistling through trees. You can't see the air, but you hear what it does to the leaves." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Fresh air. You can't see it, but you know it's filling your lungs." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"fizz\" in sparkling water. You can't see the bubbles easily, but you feel their effect on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Moving your hand through water. You feel the resistance even if the water is perfectly clear." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a spiderweb in the dark. You only see it when a tiny bit of dew or light catches it, but it was there the whole time." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Walk through a dark room. You \"feel\" the presence of furniture before you bump into it." },
+        ],
+        intuition: "Most of the universe is hidden from our eyes, but it is still holding us in its arms.",
+        links: [
+          { label: "CERN: Dark Matter", url: "https://home.cern/science/physics/dark-matter" },
+          { label: "NASA: Dark Matter & Dark Energy", url: "https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy" },
+          { label: "Hubble: Dark Matter Map", url: "https://hubblesite.org/contents/articles/dark-matter" },
+        ],
+        songs: [
+          { title: "In The End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+        ],
+        advanced: "Dark Matter is hypothesized matter that does not interact with the electromagnetic spectrum but exerts gravitational influence. Evidence includes galactic rotation curves and gravitational lensing. It constitutes roughly 27% of the universe's mass-energy content. It teaches us that Reality is not synonymous with Visibility — the \"We\" includes the unseen.",
+      },
+
+      // ── 8 ── THE COSMIC WEB ──────────────────────────────────
+      {
+        id: "cosmic-web",
+        num: 8,
+        icon: "🕸️",
+        title: "The Cosmic Web",
+        subtitle: "The Universe's Neural Network",
+        simple: "The universe isn't just a messy pile of stars. It looks like a giant, glowing spiderweb or the connections inside your brain. Galaxies live along the \"silks\" of this web, and where the silks cross, big cities of galaxies form. Everything is connected by invisible threads.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A harmony where many different voices blend into one big beautiful chord." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a garden where many different flowers create one \"scent.\"" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Soup with many ingredients. You taste the carrot and the broth, but they are all part of one meal." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Touching a knitted sweater. Feel how every thread is looped into every other thread." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a map of city lights from a plane. See how the roads connect the bright spots." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Hold hands in a circle. Feel the connection traveling from person to person." },
+        ],
+        intuition: "You are a single point on a web that stretches across forever. If you move, the whole web feels it.",
+        links: [
+          { label: "Scientific American: The Cosmic Web", url: "https://www.scientificamerican.com/article/the-cosmic-web-is-the-largest-structure-in-the-universe/" },
+          { label: "Max Planck Institute: Large Scale Structure", url: "https://www.mpa-garching.mpg.de/447231/Cosmic_Web" },
+          { label: "SDSS: Mapping the Universe", url: "https://www.sdss.org/science/large-scale-structure/" },
+        ],
+        songs: [
+          { title: "What A Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=CWzrABouyeE" },
+          { title: "Come Together", artist: "The Beatles", url: "https://www.youtube.com/watch?v=45cYwms990A" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+        ],
+        advanced: "The Large-Scale Structure of the universe is shaped by gravitational collapse of primordial density fluctuations. Cold Dark Matter acts as the scaffolding for this \"web,\" while baryonic matter flows toward the nodes. This mirrors the \"As Above, So Below\" philosophy — the structure of the cosmos reflects the neural pathways of the mind.",
+      },
+
+      // ── 9 ── DARK ENERGY ─────────────────────────────────────
+      {
+        id: "dark-energy",
+        num: 9,
+        icon: "🌬️",
+        title: "Dark Energy",
+        subtitle: "The Mystery Wind",
+        simple: "Dark energy is like a mystery wind that is pushing everything apart faster and faster. While gravity tries to pull things together, dark energy is the \"anti-gravity\" that wants the universe to grow forever. It is the most powerful thing in the cosmos, but we don't know what it is yet!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"whoosh\" of a fast car passing by that keeps going until it disappears." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of the ocean breeze. It feels like it comes from everywhere and nowhere." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Peppermint. It feels like it's \"expanding\" or cooling your whole mouth at once." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pushing two magnets together the \"wrong\" way so they shove each other apart." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a cloud dissipate and grow thinner until it fills the whole sky." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Imagine you are floating in a pool and slowly drifting away from your friends without swimming." },
+        ],
+        intuition: "There is a gentle but unstoppable force ensuring that the story of the universe keeps getting bigger.",
+        links: [
+          { label: "NASA: Dark Energy Explained", url: "https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy" },
+          { label: "National Geographic: Dark Energy", url: "https://www.nationalgeographic.com/science/article/dark-energy" },
+          { label: "Space.com: What is Dark Energy?", url: "https://www.space.com/20929-dark-energy.html" },
+        ],
+        songs: [
+          { title: "Spirits In The Material World", artist: "The Police", url: "https://www.youtube.com/watch?v=BHOevX4DlGk" },
+          { title: "Cosmic Love", artist: "Florence + The Machine", url: "https://www.youtube.com/watch?v=2EIeUlvHAiM" },
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=NUnXxh5U25Y" },
+        ],
+        advanced: "Dark Energy is the best-fit explanation for the observed accelerated expansion of the universe (Type Ia Supernovae observations). Often modeled as the Cosmological Constant or vacuum energy density that remains constant as space expands. It represents \"The Infinite Breath\" — the underlying pressure that prevents the universe from collapsing in on itself.",
+      },
+
+      // ── 10 ── THE MULTIVERSE HYPOTHESIS ──────────────────────
+      {
+        id: "multiverse",
+        num: 10,
+        icon: "📚",
+        title: "The Multiverse Hypothesis",
+        subtitle: "One Page in an Infinite Book",
+        simple: "Imagine our universe is just one page in a giant book. There might be millions of other pages, each with its own story, its own stars, and maybe even another \"you\" who ate a different breakfast today. We can't see the other pages, but the \"Book\" might be huge!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A busy playground. You hear your own game, but you also hear dozens of other games happening at the same time." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A spice rack. Many different smells in separate jars, all in one kitchen." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A box of assorted donuts. Each one is a different \"world\" of flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "A handful of marbles. Each one is a separate round world in your palm." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking into two mirrors facing each other. You see \"you\" going on forever into different rooms." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling like you could have turned left instead of right. The \"what if\" feeling." },
+        ],
+        intuition: "You are a unique version of a story that might be being told in a thousand different ways.",
+        links: [
+          { label: "Scientific American: Does the Multiverse Exist?", url: "https://www.scientificamerican.com/article/multiverse-the-case-for-parallel-universes/" },
+          { label: "Space.com: Parallel Universes", url: "https://www.space.com/32728-parallel-universes.html" },
+          { label: "Britannica: Multiverse", url: "https://www.britannica.com/science/multiverse" },
+        ],
+        songs: [
+          { title: "Across The Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60KAxW_Y" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Alive and Kicking", artist: "Simple Minds", url: "https://www.youtube.com/watch?v=ljIQo1OHkTI" },
+        ],
+        advanced: "The Multiverse is a theoretical framework arising from Eternal Inflation or the Many-Worlds Interpretation of quantum mechanics. It suggests our observable universe is a \"bubble\" within a potentially infinite landscape of varied physical constants. This is the ultimate Open System — existence is not a closed loop but an infinite tapestry of becoming.",
+      },
+
+    ],
   },
 };
 
