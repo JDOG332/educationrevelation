@@ -6305,8 +6305,246 @@ export const TOPIC_CARDS = {
 
 
   },
-};
+}    ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > MEANING & PURPOSE (meaning)
+    // ═══════════════════════════════════════════════════════════════
 
+    meaning: [
+      { id: "self-actualization", num: 1, icon: "🌳", title: "Self-Actualization", subtitle: "The Seed with a Map Inside",
+        simple: "Imagine you are a tiny seed with a giant map inside that shows how to become a beautiful tree. Being alive is about following that map and growing as tall and strong as you can. You use your special talents to do things that make you feel proud and happy. When you try your best at something you love, you are blooming. You do not have to be like anyone else; you just have to be the best version of you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bird singing its unique song at dawn." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain on dry earth (petrichor): the smell of becoming." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fruit you picked yourself from a garden." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your muscles working hard during a climb: effort you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A timelapse of a flower opening: becoming made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall with arms reached toward the sky: your body practicing its full height." }
+        ],
+        intuition: "You already have the map. The seed does not study how to be a tree. It just grows. Stop planning. Start blooming.",
+        links: [
+          { label: "Simply Psychology: Maslow's Hierarchy", url: "https://www.simplypsychology.org/maslow.html" },
+          { label: "School of Life: Self-Actualization", url: "https://www.theschooloflife.com/" },
+          { label: "VeryWell Mind: Self-Actualized People", url: "https://www.verywellmind.com/characteristics-of-self-actualized-people-2795963" }
+        ],
+        songs: [
+          { title: "The Climb", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=NG2zyeVRcbs" },
+          { title: "Hall of Fame", artist: "The Script", url: "https://www.youtube.com/watch?v=mk48xRzuNvA" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" }
+        ],
+        advanced: "Self-actualization is the highest level of psychological development: personal potential fully realized. A shift from deficiency-motivated to growth-motivated behaviors focusing on truth, beauty, and autonomy. Connects to the teleological view of biology and epistemological becoming as constant discovery." },
+
+      { id: "ikigai", num: 2, icon: "🕸️", title: "Ikigai", subtitle: "The Sweet Spot",
+        simple: "Ikigai is finding the sweet spot where four circles overlap: what you love, what you are great at, what the world needs, and what can earn you a living. When you find something in the middle of all those, you have a reason to jump out of bed every morning. It makes your life feel like a puzzle where all pieces finally fit. It is not about being famous but about feeling useful and happy at the same time.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic hum of a busy but happy workshop." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Brewing coffee or tea at the start of a productive day." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A balanced meal that provides energy and comfort." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tools or instruments that fit perfectly in your hands." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear, organized workspace ready for a new project." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of flow where your body moves without having to think." }
+        ],
+        intuition: "Purpose is not one giant thing. It is the overlap of many small things. Find where love, skill, need, and livelihood meet. Stand there.",
+        links: [
+          { label: "Sloww: What is Ikigai?", url: "https://www.sloww.co/ikigai/" },
+          { label: "Forbes: Philosophy of Ikigai", url: "https://www.forbes.com/" },
+          { label: "Positive Psychology: Finding Ikigai", url: "https://positivepsychology.com/" }
+        ],
+        songs: [
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Lovely Day", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=bEeaS6fuUoA" },
+          { title: "Don't Stop Me Now", artist: "Queen", url: "https://www.youtube.com/watch?v=HgzGwKwLmgM" }
+        ],
+        advanced: "Ikigai is a comprehensive framework for lifestyle balance from Okinawa, Japan. Synthesizes passion, mission, vocation, and profession into a singular driving force for longevity and mental health. Unlike Western purpose, it emphasizes small daily joys and mastery, bridging individual desire and social responsibility." },
+
+      { id: "logotherapy", num: 3, icon: "⚓", title: "Logotherapy", subtitle: "The Anchor in the Dark",
+        simple: "Sometimes life is hard or sad, but Logotherapy says we can always find a why to keep going. It is like being a superhero who finds a secret reason to be brave even when things look dark. You find meaning by creating something, by loving someone, or by how you choose to act when you are having a tough time. Even if you cannot change a bad situation, you can change how you think about it. Your why is like an anchor that holds you steady.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single bell tolling clearly in a quiet valley." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Pine or cedar: the scent of endurance and strength." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Deep, dark chocolate: both bitter and sweet at the same time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a smooth worry stone or a loved one's hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle burning in a very dark room." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Taking a deep, slow breath and feeling your chest expand: you are still here." }
+        ],
+        intuition: "He who has a why can bear almost any how. The anchor does not stop the storm. It stops you from drifting.",
+        links: [
+          { label: "Viktor Frankl Institute", url: "https://www.viktorfrankl.org/" },
+          { label: "Psychology Today: Logotherapy", url: "https://www.psychologytoday.com/us/therapy-types/logotherapy" },
+          { label: "The Atlantic: Meaning vs Happiness", url: "https://www.theatlantic.com/" }
+        ],
+        songs: [
+          { title: "Rise Up", artist: "Andra Day", url: "https://www.youtube.com/watch?v=FBuIBaDSOa4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Developed by Viktor Frankl, Logotherapy is founded on the will to meaning. Life has meaning under all circumstances, even the most miserable. Focuses on the future and meanings to be fulfilled. Connects to Stoicism through emphasis on internal control over one's attitude toward external fate." },
+
+      { id: "eudaimonia", num: 4, icon: "⚖️", title: "Eudaimonia", subtitle: "The Deep Glow",
+        simple: "Being happy is not just about eating candy or playing games; it is about being a good person. Eudaimonia is a special kind of happiness that comes from doing the right thing and using your brain. It is like being a player on a team who plays fairly and helps everyone win. When you are kind, honest, and brave, you feel a deep glow inside that lasts a long time. You are not just having fun; you are doing something important.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The harmony of a choir singing together in tune." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean linen or soap: the scent of clarity." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure, cool water from a mountain spring." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The firm, honest grip of a handshake." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear blue sky after a storm has passed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing perfectly on one foot, feeling centered: virtue as physical stillness." }
+        ],
+        intuition: "Pleasure fades. Purpose glows. The happiness that comes from being good outlasts the happiness that comes from feeling good.",
+        links: [
+          { label: "Britannica: Eudaimonia", url: "https://www.britannica.com/topic/eudaemonism" },
+          { label: "Positive Psychology: Eudaimonic Happiness", url: "https://positivepsychology.com/" },
+          { label: "Stanford: Virtue Ethics", url: "https://plato.stanford.edu/entries/ethics-virtue/" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Humble and Kind", artist: "Tim McGraw", url: "https://www.youtube.com/watch?v=awzNHuGqoMc" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Eudaimonia is the Aristotelian highest human good, achieved through arete (excellence/virtue). Distinguishes hedonia (pleasure-seeking) from eudaimonia (meaning-seeking). Foundational to virtue ethics: a blueprint for life based on rational activity and moral integrity." },
+
+      { id: "existentialism-meaning", num: 5, icon: "🎨", title: "Existentialism", subtitle: "The Blank Canvas",
+        simple: "Imagine you were given a giant blank piece of paper and a box of every color crayon in the world. Existentialism says you get to paint whatever you want, and that is your life's meaning. There is no picture already there for you to follow, which might seem scary, but it is actually very exciting! You are the artist and you decide what is important. You are not a robot following a program; you are a free person making choices. Your life is your own masterpiece.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence before a song begins: full of possibility." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book or fresh stationery: the smell of a blank page." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a completely new food you have never heard of before." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Clay in your hands waiting to be shaped." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A vast, open horizon or a starry night sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Choosing to move your body in a dance you just made up: freedom as motion." }
+        ],
+        intuition: "The canvas is blank. That is not a tragedy. That is the greatest gift. You are the painter and the painting.",
+        links: [
+          { label: "Philosophy Basics: Existentialism", url: "https://www.philosophybasics.com/branch_existentialism.html" },
+          { label: "Crash Course: Existentialism", url: "https://www.youtube.com/watch?v=YaDvRdLMkHs" },
+          { label: "Existentialist Society", url: "https://existentialistsociety.org/" }
+        ],
+        songs: [
+          { title: "My Way", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=qQzdAsjWGPg" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" }
+        ],
+        advanced: "Existentialism emphasizes individual existence, freedom, and choice. No inherent human nature or divine plan; individuals define essence through actions. Tackles anxiety, boredom, and the absurd: the realization of a meaningless universe as the starting point for authentic freedom." },
+
+      { id: "altruism-service", num: 6, icon: "🤲", title: "Altruism & Service", subtitle: "The Chain That Gets Stronger",
+        simple: "Have you ever noticed that when you give a gift to a friend, you feel just as happy as they do? Altruism is the idea that the point of being alive is to help other people. It is like being a helper in a big family where everyone looks out for each other. When you share or help someone who is sad, your heart grows bigger. We are all connected like links in a chain, and when you strengthen someone else, the whole chain gets stronger.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Someone saying thank you with a sincere voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A communal kitchen cooking for many people." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a meal where everyone gets enough." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of a hug or a supportive pat on the back." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A community coming together to build or fix something." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Carrying something for someone else: purpose has weight you can feel." }
+        ],
+        intuition: "The chain does not get stronger when one link hoards strength. It gets stronger when every link holds the next one up.",
+        links: [
+          { label: "Greater Good: Altruism", url: "https://greatergood.berkeley.edu/topic/altruism" },
+          { label: "Effective Altruism", url: "https://www.effectivealtruism.org/" },
+          { label: "Psychology Today: Helping Others", url: "https://www.psychologytoday.com/us/basics/altruism" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "Hands", artist: "Jewel", url: "https://www.youtube.com/watch?v=AfsS3pIDBfw" }
+        ],
+        advanced: "Altruism is selfless concern for others' wellbeing. Reciprocal altruism in evolutionary biology explains how helping benefits group survival. Acts of service trigger oxytocin and dopamine (helper's high), suggesting biology is hard-wired for prosocial behavior: service as both biological and spiritual fulfillment." },
+
+      { id: "biological-continuity", num: 7, icon: "🧬", title: "Biological Continuity", subtitle: "The Baton That Never Drops",
+        simple: "Every living thing is part of a very long race that started a long, long time ago. Your job in this race is to stay healthy and pass the baton, which is your DNA, to the next runners. This baton has all the secrets of life written on it! When people have children or take care of nature, they make sure the story of life keeps going. It is like being part of a never-ending movie. Even though we do not stay forever, the life we carry does.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady heartbeat of a baby or a pet." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A newborn baby or fresh green leaves: the scent of new life." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Seeds or nuts: the starts of new life you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the pulse in your own wrist." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A seed sprouting or a kitten playing: life rehearsing itself." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the rhythm of your own breathing: the relay race running inside you right now." }
+        ],
+        intuition: "You are not a single life. You are a relay runner in a race that started before memory. The baton never drops.",
+        links: [
+          { label: "National Geographic: What is DNA?", url: "https://www.nationalgeographic.com/science/article/dna" },
+          { label: "Evolutionary Psychology", url: "https://en.wikipedia.org/wiki/Evolutionary_psychology" },
+          { label: "Nature: Introduction to Genetics", url: "https://www.nature.com/scitable/topic/genetics-702/" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "7 Years", artist: "Lukas Graham", url: "https://www.youtube.com/watch?v=LHCob76kigA" }
+        ],
+        advanced: "From a biological standpoint, life's purpose is genetic replication: the Selfish Gene theory. But continuity extends beyond reproduction to biosphere maintenance. Connects us to every ancestor and future descendant, creating physical eternal existence through the stream of life." },
+
+      { id: "optimistic-nihilism", num: 8, icon: "🎈", title: "Optimistic Nihilism", subtitle: "The Playground with No Rules",
+        simple: "Some people think it is sad if life does not have a giant pre-written meaning, but Optimistic Nihilism says that is actually great news! It is like being at a giant playground where there are no rules about which slide you have to use. Since nothing matters in a scary way, you are free to just have a good time and be kind. You are here for a short visit, so you might as well enjoy the party!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Joyful, uncontrolled laughter." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Popcorn at a fair or circus: fun you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something purely for fun, like a colorful lollipop." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Bubbles popping on your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A photo of a distant galaxy: beautiful and indifferent." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Jumping on a trampoline and feeling weightless: freedom from cosmic weight." }
+        ],
+        intuition: "If nothing is written, everything is permitted. Not as a threat. As an invitation. The universe gave you a blank ticket. Use it.",
+        links: [
+          { label: "Kurzgesagt: Optimistic Nihilism", url: "https://www.youtube.com/watch?v=MBRqu0YOH14" },
+          { label: "The Conversation: Joy of Nihilism", url: "https://theconversation.com/" },
+          { label: "Big Think: Why Nihilism Is Good", url: "https://bigthink.com/" }
+        ],
+        songs: [
+          { title: "Don't Worry, Be Happy", artist: "Bobby McFerrin", url: "https://www.youtube.com/watch?v=d-diB65scQU" },
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" }
+        ],
+        advanced: "Nihilism framed not as despair but as ultimate freedom. If the universe is indifferent, mistakes carry no permanent cosmic weight. Allows radical focus on present moment and subjective experience. Encourages scientific appreciation for the sheer improbability of existence: the mundane as miraculous." },
+
+      { id: "social-connectivity", num: 9, icon: "🕸️", title: "Social Connectivity", subtitle: "The Web of Lights",
+        simple: "Imagine everyone in the world has a little light inside them, and there are invisible glowing strings connecting all the lights. Being alive is about making those strings stronger and brighter. We are meant to be together, like bees in a hive or wolves in a pack. When you talk to a friend, help a neighbor, or love your family, you are plugging into a giant power grid of love. You are not meant to be a lonely island; you are part of a big, beautiful continent.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Many people talking and laughing at a dinner party." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of your own home or a familiar person." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe passed down through generations." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long, warm hug from someone you trust." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A photo of a large family or a group of best friends." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving in sync with others, like in a dance or marching: connection as rhythm." }
+        ],
+        intuition: "You are not a lonely island. You are a node in a web of light. Every connection you make brightens the whole grid.",
+        links: [
+          { label: "Harvard Study of Adult Development", url: "https://www.adultdevelopmentstudy.org/" },
+          { label: "Psychology Today: Power of Connection", url: "https://www.psychologytoday.com/us/basics/relationships" },
+          { label: "TED: What Makes a Good Life?", url: "https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness" }
+        ],
+        songs: [
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdVBLojIE" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" }
+        ],
+        advanced: "Humans are obligatorily gregarious: brains wired for social interaction, with isolation processed as physical pain. Social connectivity is the strongest predictor of long-term health and happiness. Intersects Sociology and Evolutionary Psychology: purpose is inextricably tied to others." },
+
+      { id: "legacy-impact", num: 10, icon: "🌊", title: "Legacy and Impact", subtitle: "Ripples in the Pond",
+        simple: "Think about throwing a stone into a still pond. The stone disappears, but the circles of water keep moving further and further out. Your life is like that stone! The things you do, the things you make, and the way you treat people are the ripples. Long after you are gone, those ripples will still be moving. You can leave behind a beautiful song, a helpful invention, or just a memory of being very kind. The point is to leave the world a little better than you found it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that continues after you stop making noise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lingering woodsmoke or incense after a fire is out." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fruit from a tree that someone planted years ago." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Carving your name or a heart into a piece of wood." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A very old building or bridge built by people long ago." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Planting a small tree and imagining it tall in fifty years: your body in the future tense." }
+        ],
+        intuition: "The stone sinks. The ripples do not. What you throw into the world keeps moving long after your hand is gone.",
+        links: [
+          { label: "Psychology Today: Leaving a Legacy", url: "https://www.psychologytoday.com/us/basics/legacy" },
+          { label: "The Legacy Center", url: "https://thelegacycenter.net/" },
+          { label: "Stanford: Erikson's Generativity", url: "https://plato.stanford.edu/entries/identity-personal/" }
+        ],
+        songs: [
+          { title: "I Was Here", artist: "Beyoncé", url: "https://www.youtube.com/watch?v=i41qWJ6QjPI" },
+          { title: "Live Like You Were Dying", artist: "Tim McGraw", url: "https://www.youtube.com/watch?v=_9TShlMkQnc" },
+          { title: "Remember Me", artist: "Coco (Pixar)", url: "https://www.youtube.com/watch?v=Sa5OVWPRNUE" }
+        ],
+        advanced: "Legacy relates to generativity: the desire to guide the next generation and create things that outlast the self. A form of symbolic immortality. Whether through offspring, creative works, or systemic change, legacy lets an individual participate in the future and contribute to the Everlasting We." },
+    ],
+
+
+  },
+};
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
    ═══════════════════════════════════════════════════════════════ */
