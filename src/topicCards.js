@@ -3416,6 +3416,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔢 MATHEMATICS (promise) → 🔄 PATTERNS & SEQUENCES (patterns)
+    // "When numbers repeat in a way that means something"
+    // ═══════════════════════════════════════════════════════════════
+
+    patterns: [
+
+      // ── 1 ── THE FIBONACCI SEQUENCE & NATURE'S GROWTH ────────
+      {
+        id: "fibonacci-sequence",
+        num: 1,
+        icon: "🌀",
+        title: "The Fibonacci Sequence & Nature's Growth",
+        subtitle: "Nature's Secret Code",
+        simple: "Imagine you are looking at a sunflower or a seashell. Nature has a secret code where it adds the last two numbers together to get the next one, like 1, 1, 2, 3, 5, 8. This special pattern helps plants grow in a way that uses space perfectly so every leaf gets sunlight. When you see a pinecone or a snail shell, you are seeing this secret code in real life. It reminds us that we are all part of a beautiful, organized plan.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a heartbeat; it's a rhythmic sequence that keeps the whole body in sync." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smell a rose; the petals grow in a spiral sequence that releases scent in layers." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eat a pineapple; the \"eyes\" on the skin follow a Fibonacci diagonal sequence." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Run your fingers over a pinecone to feel the scales spiraling in two directions." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a photo of a galaxy; the stars spiral out just like a tiny seashell." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and spin slowly; feel how your body maintains its center within a circular sequence." },
+        ],
+        intuition: "Nature doesn't guess — it counts. And its favorite counting pattern is hidden in everything you love to look at.",
+        links: [
+          { label: "The Mathematical Beauty of Nature", url: "https://www.mathsisfun.com/numbers/fibonacci-sequence.html" },
+          { label: "Fibonacci Numbers in Biology", url: "https://en.wikipedia.org/wiki/Fibonacci_number" },
+          { label: "The Science of Spirals", url: "https://www.britannica.com/science/spiral" },
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Clair de Lune", artist: "Claude Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY" },
+        ],
+        advanced: "The Fibonacci sequence (F_n = F_{n-1} + F_{n-2}) is the foundational numerical representation of biological optimization. In phyllotaxis, leaf and seed arrangements follow Fibonacci numbers to maximize resource exposure while minimizing interference. This sequence is the discrete counterpart to the continuous Golden Spiral, representing an asymptotic approach to the Golden Ratio. It bridges abstract mathematics and organic reality, suggesting a convergent evolution of form where efficiency dictates aesthetics.",
+      },
+
+      // ── 2 ── FRACTAL GEOMETRY & SELF-SIMILARITY ──────────────
+      {
+        id: "fractal-geometry",
+        num: 2,
+        icon: "❄️",
+        title: "Fractal Geometry & Self-Similarity",
+        subtitle: "Zoom In and See It Again",
+        simple: "Fractals are shapes that look exactly the same no matter how much you zoom in or zoom out. If you look at a big tree, the branches look like mini-trees, and the twigs look like even tinier trees. Clouds, lightning, and even the blood vessels in your body are all built like fractals. It shows us that even the smallest part of something contains the pattern of the whole thing.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a thunderstorm; the crackle of lightning follows a fractal sound pattern." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The complex scent of a forest, where every leaf contributes to a repeating \"green\" aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eat a head of Romanesco broccoli; every tiny bud looks like the whole vegetable." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel a fern leaf; each small leaflet is a miniature version of the entire branch." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a map of a coastline; the jagged edges look similar whether you are an inch or a mile away." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel the \"branching\" of your lungs as you take a deep breath, expanding in a fractal network." },
+        ],
+        intuition: "The universe builds big complicated things using simple, repeating rules. You are one of those rules.",
+        links: [
+          { label: "Introduction to the Mandelbrot Set", url: "https://mathworld.wolfram.com/MandelbrotSet.html" },
+          { label: "Fractals in the Human Body", url: "https://en.wikipedia.org/wiki/Fractal#Natural_phenomena_with_fractal_features" },
+          { label: "The Geometry of Chaos", url: "https://fractalfoundation.org/resources/what-are-fractals/" },
+        ],
+        songs: [
+          { title: "Cello Suite No. 1", artist: "J.S. Bach", url: "https://www.youtube.com/watch?v=1prweT95Mo0" },
+          { title: "Interstellar Main Theme", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=UDVtMYqUAyw" },
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" },
+        ],
+        advanced: "Fractal geometry, popularized by Benoit Mandelbrot, departs from Euclidean shapes to describe the \"roughness\" of the natural world. A fractal is defined by its Hausdorff dimension, often non-integer, indicating shapes that occupy space in ways traditional geometry cannot account for. Fractals represent iterative algorithms where simple feedback loops create infinite complexity — vital for understanding order from chaos. Fractal analysis of stock markets, heart rate variability, and coastlines reveals persistent patterns across different scales.",
+      },
+
+      // ── 3 ── THE GOLDEN RATIO ────────────────────────────────
+      {
+        id: "golden-ratio-pattern",
+        num: 3,
+        icon: "Φ",
+        title: "The Golden Ratio",
+        subtitle: "The Universal Beauty Rule",
+        simple: "The Golden Ratio is a special number — roughly 1.618 — that people find very beautiful to look at. Artists and builders have used it for thousands of years to make buildings and paintings that feel \"just right.\" You can find it in the shape of your face, the Parthenon in Greece, and even in famous paintings. It is like a universal \"beauty rule\" that connects how we see the world to the math that builds the world.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a perfect fifth in music; the ratio of the frequencies creates a harmonious, \"golden\" sound." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The balanced scent of a perfectly bloomed Lily, where the fragrance follows the petal's proportions." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The balance of sweet and sour in a perfect apple, grown to its ideal geometric size." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Measure the sections of your finger; the ratio of the bones often approaches 1.618." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a credit card or a wide-screen TV; they are often shaped near the Golden Rectangle." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stand in a \"star\" pose; feel the balance of your limbs relative to your torso's center." },
+        ],
+        intuition: "When something looks \"perfect\" to you, there's a good chance 1.618 is hiding inside it.",
+        links: [
+          { label: "The Golden Ratio in Art and Architecture", url: "https://www.britannica.com/science/golden-ratio" },
+          { label: "Mathematical Properties of Phi", url: "https://mathworld.wolfram.com/GoldenRatio.html" },
+          { label: "Phi in the Human Genome", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "The Blue Danube", artist: "Johann Strauss II", url: "https://www.youtube.com/watch?v=_CTYymbbEL4" },
+        ],
+        advanced: "The Golden Ratio (φ = (1+√5)/2) is unique because φ² = φ + 1, making it the most \"irrational\" of all numbers in continued fractions. This property makes it essential for minimizing interference in dynamic systems — seed arrangement in sunflowers prevents gaps or clumping. Historically the \"Divine Proportion,\" φ bridges the finite and infinite. In modern physics and quasi-crystals, φ appears as a structural necessity, suggesting our aesthetic preference is actually a biological recognition of mathematical purity.",
+      },
+
+      // ── 4 ── ARITHMETIC VS. GEOMETRIC PROGRESSION ────────────
+      {
+        id: "arithmetic-geometric",
+        num: 4,
+        icon: "📈",
+        title: "Arithmetic vs. Geometric Progression",
+        subtitle: "Walking vs. Riding a Rocket",
+        simple: "Imagine you are saving money in a piggy bank. If you add two dollars every single day, that is a steady, straight-line pattern called arithmetic growth. But if your money doubled every day instead, that is geometric growth, and it turns into a giant mountain very fast! Understanding the difference helps us see why some things change slowly and other things explode with energy. It is the difference between taking a walk and riding a rocket ship.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a drummer speed up — each beat coming twice as fast as the last." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "How the scent of a single candle fills a room slowly versus a whole box of matches." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Taste a single grain of sugar versus a whole spoonful; the sweetness \"levels up\" fast." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel the steady tap of a finger versus a vibrating phone that gets stronger and stronger." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a staircase (arithmetic) versus the way a family tree branches out (geometric)." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Walk at a steady pace, then suddenly double your speed with every step until you are sprinting." },
+        ],
+        intuition: "Some changes walk. Some changes run. Knowing which one you're watching changes everything.",
+        links: [
+          { label: "The Math of Growth", url: "https://en.wikipedia.org/wiki/Geometric_progression" },
+          { label: "Linear vs. Exponential Explained", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:exponential-growth-and-decay" },
+          { label: "Compound Interest and Sequences", url: "https://www.investopedia.com/terms/c/compoundinterest.asp" },
+        ],
+        songs: [
+          { title: "Money", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=-0kc7meo7i0" },
+          { title: "Symphony No. 5", artist: "Beethoven", url: "https://www.youtube.com/watch?v=fOk8Tm815lE" },
+          { title: "Started From The Bottom", artist: "Drake", url: "https://www.youtube.com/watch?v=RubBzkZzpUA" },
+        ],
+        advanced: "Arithmetic progression (a_n = a_1 + (n-1)d) represents constant rate of change — stable, predictable systems like planetary orbits. Geometric progression (a_n = a_1 × r^(n-1)) represents feedback loops where current state determines the next step's magnitude. In economics and biology, this distinction is critical for understanding \"tipping points.\" Geometric growth eventually outpaces any linear resource (Malthus), connecting mathematical limits to the physical boundaries of our world.",
+      },
+
+      // ── 5 ── PERIODIC CYCLES & HARMONIC OSCILLATIONS ─────────
+      {
+        id: "periodic-cycles",
+        num: 5,
+        icon: "🌊",
+        title: "Periodic Cycles & Harmonic Oscillations",
+        subtitle: "The Dance That Never Stops",
+        simple: "Think about a swing on a playground going back and forth, or the way the sun comes up every single morning. These are called cycles, which are patterns that return to the start over and over again. Your breathing, your heartbeat, and even the seasons are all part of this big, repeating dance. Life isn't just a straight line; it is a circle that keeps us safe and balanced.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a hum; it is a tiny vibration moving back and forth very fast." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smell the air after rain in the spring; it is part of the yearly scent cycle." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Sip a cold drink on a hot day; notice how your body craves certain tastes in different seasons." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Put your hand on a speaker; feel the \"push and pull\" of the rhythmic cycles." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch the moon change shape over a month; it is a giant clock in the sky." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and rock back and forth; feel how your body naturally finds a center." },
+        ],
+        intuition: "When things go away, they often find a way to come back around. That's not coincidence — that's a cycle.",
+        links: [
+          { label: "Simple Harmonic Motion", url: "https://www.britannica.com/science/simple-harmonic-motion" },
+          { label: "The Science of Seasons", url: "https://www.nationalgeographic.org/encyclopedia/season/" },
+          { label: "Circadian Rhythms in Biology", url: "https://www.nigms.nih.gov/education/fact-sheets/Pages/circadian-rhythms.aspx" },
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Good Vibrations", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=Eab_beh07HU" },
+          { title: "Time", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=RxabLA7ASqM" },
+        ],
+        advanced: "Harmonic oscillation is the backbone of wave mechanics, described by f(t) = A sin(ωt + φ). Found in everything from guitar strings to subatomic particles, it represents systems where a restoring force is proportional to displacement — perpetual exchange between potential and kinetic energy. Fourier analysis breaks complex signals into simple sine waves; circadian rhythms govern biology. The universe prefers resonance over randomness — every peak is balanced by a trough.",
+      },
+
+      // ── 6 ── SYMMETRY ────────────────────────────────────────
+      {
+        id: "symmetry-pattern",
+        num: 6,
+        icon: "🦋",
+        title: "Symmetry",
+        subtitle: "Nature's Mirror",
+        simple: "Symmetry is like a mirror that nature uses to make things look balanced and beautiful. If you fold a drawing of a heart or a butterfly wing in half, both sides match perfectly. Most animals, including humans, are symmetrical because it helps us move through the world without tipping over. Symmetry makes things feel \"fair\" and \"even\" to our brains. It is nature's way of showing us that there is a balance between the left side and the right side of everything.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Clap your hands; the sound is a \"mirror\" of two things meeting perfectly." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smell two identical flowers at once; the symmetry of the scent feels \"full.\"" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Bite into an orange slice; the segments are symmetrical \"rooms\" of juice." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Use both hands to feel your face; notice how your left side matches your right." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look in a mirror; you are seeing a perfect \"reflective\" sequence of yourself." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stand on one leg; feel your brain trying to balance your weight symmetrically." },
+        ],
+        intuition: "When something looks balanced, your brain is recognizing deep structural health. Beauty is order made visible.",
+        links: [
+          { label: "Noether's Theorem Explained", url: "https://www.quantamagazine.org/the-most-profound-mathematician-youve-never-heard-of-20171129/" },
+          { label: "Bilateral Symmetry in Animals", url: "https://en.wikipedia.org/wiki/Bilateral_symmetry" },
+          { label: "Symmetry in Physics", url: "https://plato.stanford.edu/entries/symmetry-physics/" },
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Mirror", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" },
+          { title: "Reflections", artist: "Mulan Soundtrack", url: "https://www.youtube.com/watch?v=lGGX1nv3vS8" },
+        ],
+        advanced: "In physics, symmetry refers to invariance under transformation. Noether's Theorem states that every differentiable symmetry of the action of a physical system has a corresponding conservation law — time symmetry yields conservation of energy. The very laws of the universe are built on structural sameness. Group theory classifies these symmetries to understand the fundamental building blocks of matter, proving that beauty is often a sign of deep structural integrity.",
+      },
+
+      // ── 7 ── PROBABILITY DISTRIBUTIONS & THE BELL CURVE ──────
+      {
+        id: "bell-curve",
+        num: 7,
+        icon: "🔔",
+        title: "Probability Distributions & The Bell Curve",
+        subtitle: "The Math of Normal",
+        simple: "If you measured everyone in your class, most kids would be about the same height, with only a few very short or very tall kids. This \"hump\" in the middle is called a Bell Curve. It shows us that while everyone is special, nature likes to keep most things in a \"middle ground\" area. It is the math of \"what is normal\" versus \"what is rare,\" and it helps us understand the world even when it seems messy.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to the \"white noise\" of a crowd; the volume follows a predictable distribution." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a bakery; most of the scent is \"bread,\" with \"spices\" being the rare edges." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Taste a bag of jellybeans; most are sweet (the middle), but a few are sour (the edges)." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel a handful of sand; most grains feel the same, but a few are sharp or extra soft." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a field of grass; most blades are the same green, forming a visual \"average.\"" },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Try to walk in a perfectly straight line; your small wobbles usually stay near the center." },
+        ],
+        intuition: "Outliers are mathematically necessary for the existence of an average. The rare makes the normal possible.",
+        links: [
+          { label: "Understanding the Normal Distribution", url: "https://www.mathsisfun.com/data/standard-normal-distribution.html" },
+          { label: "The Central Limit Theorem", url: "https://www.britannica.com/topic/central-limit-theorem" },
+          { label: "Statistics in Everyday Life", url: "https://www.scientificamerican.com/article/what-is-the-bell-curve-and-how-is-it-used/" },
+        ],
+        songs: [
+          { title: "Against All Odds", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=wuvtoyVi7vY" },
+          { title: "Ordinary People", artist: "John Legend", url: "https://www.youtube.com/watch?v=PIh0V866sqo" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" },
+        ],
+        advanced: "The Normal Distribution (Gaussian) is defined by f(x) = (1/σ√(2π)) × e^(-(x-μ)²/2σ²). The Central Limit Theorem proves that the sum of many independent random variables tends toward a Bell Curve, regardless of the original distribution — explaining why order emerges from apparent randomness. By understanding variance (σ) and the mean (μ), we quantify uncertainty. A cosmic tug-of-war where individual chaos resolves into collective, predictable pattern.",
+      },
+
+      // ── 8 ── TESSELLATIONS & SPATIAL REPETITION ──────────────
+      {
+        id: "tessellations",
+        num: 8,
+        icon: "🧱",
+        title: "Tessellations & Spatial Repetition",
+        subtitle: "The Perfect Puzzle With No Gaps",
+        simple: "Tessellations are like a puzzle where every piece fits perfectly with no gaps and no overlapping. Think of the tiles on a bathroom floor or the hexagons in a beehive. Bees use hexagons because it is the strongest and smartest way to store honey using the least amount of wax. When everything fits together perfectly, it creates a strong, beautiful wall that can hold a lot of weight or a lot of life.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a \"round\" song where different people start the same melody at different times." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smell a honeycomb; the waxy scent is as organized as the cells themselves." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eat a waffle; the square \"wells\" are a delicious edible tessellation." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Run your hand over a tiled wall or a brick path to feel the repeating seams." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a snake's skin or a fish's scales; they overlap in a perfect, gapless pattern." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Imagine fitting yourself into a crowded elevator; your body looks for the empty \"tile\" to stand in." },
+        ],
+        intuition: "The universe loves to be efficient and tight. When everything fits, nothing is wasted.",
+        links: [
+          { label: "The Geometry of Tessellations", url: "https://en.wikipedia.org/wiki/Tessellation" },
+          { label: "M.C. Escher's Mathematical Art", url: "https://mcescher.com/gallery/symmetry/" },
+          { label: "Crystallography and Tiling", url: "https://en.wikipedia.org/wiki/Crystallographic_group" },
+        ],
+        songs: [
+          { title: "Another Brick in the Wall", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=HrxX9TBj2zY" },
+          { title: "Lego House", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=c4BLVznuWnU" },
+          { title: "Shape of You", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=JGwWNGJdvx8" },
+        ],
+        advanced: "Tessellation covers a plane using geometric shapes with no overlaps or gaps. Only three regular polygons tessellate in 2D: triangle, square, and hexagon. The Honeycomb Conjecture proves the hexagonal grid divides a surface into equal-area regions with the least total perimeter. Aperiodic tilings (Penrose tiles) show that non-repeating patterns can still fill space perfectly — \"oneness\" achieved through both repetition and infinite variety.",
+      },
+
+      // ── 9 ── PRIME NUMBER DISTRIBUTION ───────────────────────
+      {
+        id: "prime-distribution",
+        num: 9,
+        icon: "🔢",
+        title: "Prime Number Distribution",
+        subtitle: "The Ghost Pattern in the Number Line",
+        simple: "Prime numbers are the \"special\" numbers that can't be broken down into smaller pieces, like 2, 3, 5, 7, and 11. They are the \"atoms\" or building blocks of all other numbers. Even though they seem to pop up randomly, mathematicians have found they follow a secret, ghostly pattern. Prime numbers are the \"secret codes\" used to keep your parents' credit cards safe on the internet. Even in things that look messy, there is a deep, hidden order.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a polyrhythm where two different beats only meet once every long while." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smell an exotic spice like saffron; it's a \"prime\" scent that stands alone." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Taste a raw lemon; it is a pure, singular flavor that isn't a mix of others." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feel a rough, uncut diamond; it is a \"prime\" piece of nature before it's shaped." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a list of numbers and circle the primes; notice how they get rarer as numbers get bigger." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Try to stand perfectly still and solo; feel your \"indivisible\" self as a single unit." },
+        ],
+        intuition: "The atoms of all numbers hide in plain sight, getting rarer but never disappearing. Order disguised as chaos.",
+        links: [
+          { label: "The Riemann Hypothesis", url: "https://www.claymath.org/millennium-problems/riemann-hypothesis" },
+          { label: "Prime Numbers in Nature (Cicadas)", url: "https://www.newyorker.com/tech/annals-of-technology/the-cicadas-love-of-prime-numbers" },
+          { label: "How RSA Encryption Works", url: "https://www.khanacademy.org/computing/computer-science/cryptography/modern-cryptography/v/rsa-encryption-step-4" },
+        ],
+        songs: [
+          { title: "Numbers", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=vVLoT_6X2pM" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "7", artist: "Prince", url: "https://www.youtube.com/watch?v=S3866P6Y-D4" },
+        ],
+        advanced: "The Prime Number Theorem states that primes less than x approximate x/ln(x). The Riemann Hypothesis connects their distribution to the zeros of the Riemann zeta function — linking discrete arithmetic to complex analysis. Cicadas emerge in prime-numbered years (13 or 17) to avoid syncing with predator life cycles — \"prime-ness\" as survival strategy. The difficulty of factoring large primes secures all global digital communication.",
+      },
+
+      // ── 10 ── THE LAW OF LARGE NUMBERS & EMERGENT ORDER ─────
+      {
+        id: "law-large-numbers",
+        num: 10,
+        icon: "🐜",
+        title: "The Law of Large Numbers & Emergent Order",
+        subtitle: "One Bird Is Random. A Flock Is Genius.",
+        simple: "If you flip a coin once, it's a mystery. But if you flip it a thousand times, you will get almost exactly 500 heads and 500 tails. This is the Law of Large Numbers — when you have a LOT of something, a secret order appears out of the mess. It's how a thousand birds fly together in a beautiful cloud without crashing. Even if one thing is unpredictable, a big group of things becomes very smart and steady.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to the \"roar\" of a stadium; thousands of individual voices become one single wave of sound." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a garden; hundreds of different flowers blend into one \"summer\" scent." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Taste a pinch of salt; it is just \"salty,\" but it brings out the \"order\" of all the other ingredients." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Walk through a thick forest; feel how many individual leaves create a single, cool \"canopy\" of shade." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a flock of starlings (a murmuration); it looks like a giant, swimming liquid made of tiny dots." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feel yourself as one person in a moving crowd; your body \"flows\" with the group's sequence." },
+        ],
+        intuition: "Truth is not found in the isolated incident, but in the convergence of many — where the noise cancels out and the signal remains.",
+        links: [
+          { label: "What is Emergence?", url: "https://www.quantamagazine.org/the-strange-second-life-of-the-law-of-large-numbers-20190114/" },
+          { label: "The Law of Large Numbers Explained", url: "https://www.britannica.com/science/law-of-large-numbers" },
+          { label: "The Science of Swarms", url: "https://en.wikipedia.org/wiki/Swarm_intelligence" },
+        ],
+        songs: [
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+        ],
+        advanced: "The Law of Large Numbers states that the average of many trials converges to the expected value, leading to Emergence — where complex systems exhibit properties individual parts do not possess. In statistical mechanics, we cannot predict a single gas molecule but perfectly predict pressure and temperature of the whole. The universe self-organizes through sheer volume. Truth is found in convergence, where noise cancels and signal remains.",
+      },
+
+    ],
   },
 };
 
