@@ -6067,6 +6067,242 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Neuroscientifically, intuition is thin-slicing: the unconscious mind finding patterns from narrow windows of experience. A highly developed form of rapid cognitive processing. While prone to bias, in experts it is often more accurate than slow deliberate analysis. A vital tool for hypothesis generation in art and science." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > ETHICS & RIGHT/WRONG (ethics)
+    // ═══════════════════════════════════════════════════════════════
+
+    ethics: [
+      { id: "golden-rule", num: 1, icon: "⚖️", title: "The Golden Rule (Reciprocity)", subtitle: "The Mirror for Your Heart",
+        simple: "Imagine you are playing a game with a friend. If you want them to be nice and share, you have to be nice and share first. This is the Golden Rule, and it is like a mirror for your heart. When you do something, ask yourself if you would like it if someone did that same thing to you. By being kind, you teach the world how to be kind back to you. It is the simplest way to make sure the world stays a happy place for everyone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A harmony in a choir: one voice supports the other to make a beautiful song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of a clean, shared park that everyone helped keep tidy." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a fresh-baked cookie where both people get the same delicious bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm, fair handshake that starts a new friendship." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing someone pick up something a stranger dropped and hand it back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "When you act with kindness, you feel a warmth in your chest that tells you everything is in its right place." }
+        ],
+        intuition: "The mirror does not lie. What you send out comes back. Treat the world how you want the world to treat you.",
+        links: [
+          { label: "Wikipedia: Golden Rule", url: "https://en.wikipedia.org/wiki/Golden_Rule" },
+          { label: "Ethics.org", url: "https://www.ethics.org/" },
+          { label: "Britannica: Golden Rule", url: "https://www.britannica.com/topic/Golden-Rule" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Treat People With Kindness", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=zNAc6V--z6g" }
+        ],
+        advanced: "Reciprocity is the bilateral epistemic gate where self and other recognize a shared state. The foundation of normative ethics, bridging individual egoism and collective harmony. Connects to Game Theory (Tit-for-Tat strategy) and Biological Altruism: the Eternal We as a survival mechanism encoded in social fabric." },
+
+      { id: "human-rights", num: 2, icon: "🌐", title: "Universal Human Rights", subtitle: "The Shield Every Person Is Born With",
+        simple: "Every single person in the world is born with a special shield of rights that no one should ever break. You have the right to be safe, to speak, and to be treated fairly just because you are human. It does not matter where you live or what you look like; the rules are the same for everyone. When we protect these rights, we are saying that every life is valuable. It is like a big promise the world makes to every new baby that joins us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Many different people cheering together at a stadium: one roar from many voices." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The fresh air of a place where everyone is free to walk and play." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure, clean water available for every person to drink." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A soft blanket that keeps every child warm at night." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The many colors of the flags of all the countries flying together." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and unafraid in an open space: your body knows freedom." }
+        ],
+        intuition: "Every stranger you see has a story just as deep as yours. The shield is invisible but unbreakable when we all hold it together.",
+        links: [
+          { label: "UN Universal Declaration", url: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
+          { label: "Amnesty International", url: "https://www.amnesty.org/" },
+          { label: "Human Rights Watch", url: "https://www.hrw.org/" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=yv5xonFSC4c" },
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=MMFj8uDubsE" }
+        ],
+        advanced: "Universal Human Rights posit objective moral truths transcending cultural boundaries, creating fidelity between individual and state. Ensures the informativeness gate of justice remains open for the most vulnerable. Connects to Natural Law and Cosmopolitanism: shared biology and consciousness necessitate a shared moral floor." },
+
+      { id: "empathy-compassion", num: 3, icon: "❤️", title: "Empathy and Compassion", subtitle: "The Invisible String",
+        simple: "Empathy is like a superpower that lets you feel what someone else is feeling in your own heart. If a friend is sad because they fell down, you feel a little of that sadness too, which makes you want to help. Compassion is the action you take: giving a hug or helping them up. It is the invisible string that ties all people together so we are never truly alone. When we use our empathy, we understand the other half of the story.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft, comforting shhh of a parent calming a crying baby." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Warm soup being brought to someone who is sick." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of a gift someone gave you just to make you smile." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle pat on the back when you are feeling nervous." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing the tears in someone's eyes and knowing exactly why they are there." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spirit bumps on your arms when you connect deeply with a stranger's joy or pain." }
+        ],
+        intuition: "Your heart has ears. It hears what mouths cannot say. The boundary between I and Thou dissolves when empathy speaks.",
+        links: [
+          { label: "Greater Good Science Center", url: "https://greatergood.berkeley.edu/" },
+          { label: "Stanford: Empathy", url: "https://plato.stanford.edu/entries/empathy/" },
+          { label: "Psychology Today: Empathy", url: "https://www.psychologytoday.com/us/basics/empathy" }
+        ],
+        songs: [
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Empathy is the biological regularization preventing human interactions from becoming purely transactional. The shared-ignorance floor rises as emotional intelligence develops. Relates to Mirror Neurons in neuroscience and Bhakti (devotion) in Eastern philosophy, where the boundary between I and Thou dissolves." },
+
+      { id: "integrity-honesty", num: 4, icon: "💎", title: "Integrity and Honesty", subtitle: "The Diamond That Never Cracks",
+        simple: "Integrity means being the same good person on the inside that you show to the world on the outside. It is like being a diamond: no matter which way you turn it, it is still strong and clear. Honesty is telling the truth even when it is hard or when no one is watching. When you are honest, people know they can trust you, which is like building a strong bridge between you and them. Being true to yourself is the best way to be true to everyone else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clear, ringing tone of a bell made of pure metal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The crisp, clean scent of laundry washed thoroughly." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The simple, honest flavor of fruit straight from the tree." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A solid rock that does not crumble when you step on it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into a mirror and feeling proud of the person looking back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling grounded and heavy in your feet, not shaky or light: inner peace when words match thoughts." }
+        ],
+        intuition: "The diamond does not pretend to be glass. When your inside matches your outside, nothing can crack you.",
+        links: [
+          { label: "Ethics Sage", url: "https://www.ethicssage.com/" },
+          { label: "Character Counts", url: "https://charactercounts.org/" },
+          { label: "Philosophy Basics: Ethics", url: "https://www.philosophybasics.com/branch_ethics.html" }
+        ],
+        songs: [
+          { title: "Honesty", artist: "Billy Joel", url: "https://www.youtube.com/watch?v=SuFScoO4tb0" },
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" }
+        ],
+        advanced: "Integrity is the Uhlmann Fidelity between private values and public actions. It minimizes internal disorder (von Neumann entropy) of the self. A person of integrity has high Detection Quality: actions reliable and reproducible across all contexts. Connects to Existentialist Authenticity and Satya (Truth) in Vedic traditions." },
+
+      { id: "justice-fairness", num: 5, icon: "⚖️", title: "Justice and Fairness", subtitle: "The Level Scale",
+        simple: "Fairness is making sure everyone gets what they need and the rules are the same for everybody. Think about a race: it would not be fair if some kids got to start halfway to the finish line. Justice is making things right when they go wrong, like making sure a bully says sorry and fixes what they broke. It is like a giant scale we try to keep perfectly level. When things are fair, everyone feels safe to try their best.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The click of two puzzle pieces fitting together perfectly." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain that falls on every garden in the neighborhood equally." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pizza cut into exactly equal slices so no one feels left out." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Two things that weigh exactly the same in each hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A line of people waiting their turn without anyone cutting in front." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking on a flat, level floor where you will not trip: that is what fairness feels like in the body." }
+        ],
+        intuition: "When a wrong is made right, something clicks inside you. That click is your soul recognizing balance.",
+        links: [
+          { label: "Justice with Michael Sandel", url: "https://www.justiceharvard.org/" },
+          { label: "Stanford: Justice", url: "https://plato.stanford.edu/entries/justice/" },
+          { label: "Legal Information Institute", url: "https://www.law.cornell.edu/" }
+        ],
+        songs: [
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "Blowin' in the Wind", artist: "Peter, Paul and Mary", url: "https://www.youtube.com/watch?v=Ld6fAO4idaI" },
+          { title: "What's Going On", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=H-kA3UtBj4M" }
+        ],
+        advanced: "Justice functions as the Global Reliability Modulator for social systems. Uses softmax weights ensuring various societal needs balance without any group collapsing informational integrity. Ties into Rawls' Veil of Ignorance and Ma'at (Ancient Egyptian concept of cosmic balance and truth)." },
+
+      { id: "consequentialism", num: 6, icon: "📈", title: "Consequentialism (The Greater Good)", subtitle: "Ripples in the Pond",
+        simple: "Sometimes to do the right thing we have to look at what will happen because of our choices. If you have one toy but five friends want to play, the right thing might be finding a game everyone can play together. This is thinking about the Greater Good: making the most people happy and the fewest people sad. Your choices are like pebbles thrown into a pond; the ripples touch everyone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of a city where everyone follows the lights to stay safe." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A big Thanksgiving dinner where everyone is fed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A community garden vegetable that many people helped grow." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Many hands joining together to lift something heavy." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long-term plan finally working out to help a whole school." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the pull of the future, like leaning forward into a breeze: purpose in your bones." }
+        ],
+        intuition: "Every pebble sends ripples. You cannot throw a stone without moving the whole pond. Choose your throws wisely.",
+        links: [
+          { label: "Utilitarianism.net", url: "https://www.utilitarianism.net/" },
+          { label: "Ethics Unwrapped", url: "https://ethicsunwrapped.utexas.edu/" },
+          { label: "Britannica: Consequentialism", url: "https://www.britannica.com/topic/consequentialism" }
+        ],
+        songs: [
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=9AjkUyX0rVw" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" }
+        ],
+        advanced: "Utilitarianism acts as an optimization algorithm for social utility. Seeks to maximize the informativeness gate by ensuring the highest truth score for the outcome. Treats moral decisions as a mixture distribution reducing divergence between individual and collective wellbeing. Connects to Utility Theory in economics and Effective Altruism." },
+
+      { id: "duty-deontology", num: 7, icon: "🎖️", title: "Duty and Responsibility (Deontology)", subtitle: "The Law Written on the Heart",
+        simple: "Duty is doing what is right simply because it is the rule, even if it does not make you happy right away. Imagine you promised to clean your room before going outside. Even if friends are calling you to play, your duty is to finish your promise first. Responsibility is taking care of the things and people that depend on you. When we all do our part, the whole world runs smoothly like a giant, well-oiled machine.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady tick-tock of a clock that never stops." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library where people are quiet out of respect for others." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The honest taste of bread that took hard work to bake." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The weight of a badge that reminds you of your responsibility." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stop sign: and stopping even when no other cars are around." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stiffness of resolve in your spine when you decide to do something hard." }
+        ],
+        intuition: "Some things are right not because of what happens next, but because of what they are. The law is written on the heart before the paper.",
+        links: [
+          { label: "Stanford: Deontology", url: "https://plato.stanford.edu/entries/ethics-deontological/" },
+          { label: "Kant's Moral Philosophy", url: "https://plato.stanford.edu/entries/kant-moral/" },
+          { label: "Philosophy News", url: "https://www.philosophynews.com/" }
+        ],
+        songs: [
+          { title: "I Walk the Line", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=KHF9itPLUo4" },
+          { title: "Hero", artist: "Mariah Carey", url: "https://www.youtube.com/watch?v=0IA3ZvCkRkQ" },
+          { title: "The Long and Winding Road", artist: "The Beatles", url: "https://www.youtube.com/watch?v=fR4HjTH_fTM" }
+        ],
+        advanced: "Deontological ethics focuses on the action itself rather than the result. Certain actions carry an inherent density matrix of rightness. Following categorical imperatives ensures behavior is reproducible and full-rank, avoiding singularities of moral compromise. Relates to Stoicism and Dharma in Indian philosophy." },
+
+      { id: "virtue-ethics", num: 8, icon: "🌱", title: "Virtue Ethics", subtitle: "The Garden Inside Your Soul",
+        simple: "Virtue is like a garden you grow inside your soul. Instead of just following a list of dos and don'ts, you try to become a good gardener. You practice being brave, kind, and patient every day. Eventually these things become part of who you are. It is like learning piano: at first it is hard, but after a while the music just flows. A virtuous person does not have to think about being good because they are good.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A flute playing a melody perfectly because the player practiced for years." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A blooming flower that grew from a tiny seed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The complex, rich flavor of fruit allowed to ripen slowly." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Muscle memory: doing something helpful without thinking." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old tree that is strong and deep-rooted." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A feeling of flow where doing the right thing feels as natural as breathing." }
+        ],
+        intuition: "You do not become good by following rules. You become good by practicing goodness until it grows roots. The garden tends itself.",
+        links: [
+          { label: "Britannica: Virtue Ethics", url: "https://www.britannica.com/topic/virtue-ethics" },
+          { label: "Markkula Center for Ethics", url: "https://www.scu.edu/ethics/" },
+          { label: "The School of Life", url: "https://www.theschooloflife.com/" }
+        ],
+        songs: [
+          { title: "Humble and Kind", artist: "Tim McGraw", url: "https://www.youtube.com/watch?v=awzNHuGqoMc" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" }
+        ],
+        advanced: "Virtue Ethics shifts focus from interaction to the self. Emphasizes character development through habituation (Phronesis): refining mixture distributions over time. The goal is Eudaimonia (human flourishing). Connects to Aristotelian Philosophy and Confucianism: the Everlasting We is built by cultivating the Superior Individual." },
+
+      { id: "social-contract", num: 9, icon: "🤝", title: "Social Contract Theory", subtitle: "The Invisible Deal",
+        simple: "Imagine you and your friends are starting a secret club. You all sit down and decide on the rules: no hitting, no yelling, everyone gets a turn. By joining the club you sign an invisible paper saying you will follow those rules so everyone can have fun. This is what we do as grown-ups in towns and countries. We agree to follow the laws so we can live together in peace. It is a deal we make with each other.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hush of a classroom when the teacher starts to speak." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book or a signed contract: the smell of agreement." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A meal in a restaurant where you trust the chef to cook safely." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five after a group project is finished successfully." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stoplight turning green and knowing the other cars will stop." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the space around you that others respect by not bumping into you: that is the contract working." }
+        ],
+        intuition: "Civilization is a handshake between strangers who agreed to trust each other before they ever met.",
+        links: [
+          { label: "IEP: Social Contract", url: "https://iep.utm.edu/soc-cont/" },
+          { label: "Social Contract Research", url: "https://en.wikipedia.org/wiki/Social_contract" },
+          { label: "Khan Academy: Social Contract", url: "https://www.khanacademy.org/" }
+        ],
+        songs: [
+          { title: "Fortunate Son", artist: "Creedence Clearwater Revival", url: "https://www.youtube.com/watch?v=ec0XKhAHR5I" },
+          { title: "Get Up, Stand Up", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=X2W3aG8uizA" },
+          { title: "The House I Live In", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=6UkO7Bxz9WA" }
+        ],
+        advanced: "The Social Contract is the Redundancy Graph of civilization. It calculates individual liberty versus collective governance, modulating societal conflict to prevent the mixture distribution of diverse interests from collapsing into anarchy. Relates to Hobbes, Locke, Rousseau, and the evolutionary biology of primate cooperation." },
+
+      { id: "relativism-objectivism", num: 10, icon: "☯️", title: "Moral Relativism vs. Objectivism", subtitle: "Is Right and Wrong Like Math or Like Favorite Colors?",
+        simple: "Some people think Right and Wrong are like math: 2+2 is always 4 no matter where you are. That is Objectivism. Other people think Right and Wrong are more like favorite colors: they might change depending on where you live. That is Relativism. It is one of the biggest questions in the world! Is it always wrong to tell a lie, or is it okay if it saves a friend's feelings? Learning both sides helps us understand why people in different parts of the world do things differently.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An orchestra tuning their instruments: many different notes becoming one." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Different spices in a kitchen that make one delicious curry." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and sour working together to make a better flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the difference between a smooth stone and a rough one." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A painting with many different colors that all look good together." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning back and forth as you think about a hard choice: your body weighing the question." }
+        ],
+        intuition: "Some truths are carved in stone. Others are written in sand. Wisdom is knowing which is which.",
+        links: [
+          { label: "Philosophy Now: Relativism", url: "https://philosophynow.org/" },
+          { label: "Ethics Guide: Relativism", url: "https://www.bbc.co.uk/ethics/introduction/relativism.shtml" },
+          { label: "The Atlantic: Moral Objectivism", url: "https://www.theatlantic.com/" }
+        ],
+        songs: [
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Blowin' in the Wind", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=lVhFbBZqMKM" },
+          { title: "Sympathy for the Devil", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=GgnClrx8N2k" }
+        ],
+        advanced: "This tension represents the temperature of ethical systems. High temperature (Relativism) allows entropy and cultural variation. Low temperature (Objectivism) seeks a frozen state of universal truth. Convergent Recognition often lies where universal values coexist with cultural nuances. Connects to Cultural Anthropology and Post-Structuralism." },
+    ],
+
 
   },
 };
