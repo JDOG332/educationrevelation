@@ -3725,6 +3725,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔢 MATHEMATICS (promise) → 📐 GEOMETRY & SHAPE (shape)
+    // "How space is built — circles, lines, angles"
+    // ═══════════════════════════════════════════════════════════════
+
+    shape: [
+
+      // ── 1 ── EUCLIDEAN AXIOMS ────────────────────────────────
+      {
+        id: "euclidean-axioms",
+        num: 1,
+        icon: "⊥",
+        title: "Euclidean Axioms",
+        subtitle: "The Lego Instructions for the World",
+        simple: "Imagine you are playing with blocks and there are rules that never change, like how a flat floor stays flat. Long ago, a man named Euclid wrote down five simple rules that explain how points, lines, and shapes work together. They tell us that you can draw a straight line between any two points and that a circle can be made from any center. Because of these rules, we can build houses that don't fall down and maps that lead us home.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to a single, steady \"C\" note on a piano; it is the \"straight line\" of sound." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of fresh sawdust; the smell of the raw material used to build perfect angles." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A square of plain, unflavored gelatin; pure structure without distraction." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your finger along the sharp, straight edge of a cold metal ruler." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at the horizon line where the flat sea meets the flat sky." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Standing perfectly still and upright, feeling gravity pull you straight down in a 90-degree angle to the floor." },
+        ],
+        intuition: "You are a point in space, and every movement you make creates an invisible line, connecting you to the corners of the room in a perfect, silent web of math.",
+        links: [
+          { label: "Wolfram MathWorld: Euclid's Postulates", url: "https://mathworld.wolfram.com/EuclidsPostulates.html" },
+          { label: "Britannica: Euclidean Geometry", url: "https://www.britannica.com/science/Euclidean-geometry" },
+          { label: "Rice University: The Elements", url: "https://math.rice.edu/~lanius/Geom/his.html" },
+        ],
+        songs: [
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "The Model", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=OQIYEPe6DWY" },
+          { title: "Diamonds On The Soles Of Her Shoes", artist: "Paul Simon", url: "https://www.youtube.com/watch?v=uf4YyXVoWeA" },
+        ],
+        advanced: "Euclidean Geometry is the parabolic approximation of physical space at human scales, defined by the parallel postulate — through a point not on a given line, exactly one line can be drawn parallel. This system assumes a flat manifold where triangle interior angles sum to exactly 180°. It is the study of invariant properties under the Euclidean group of isometries (rotations, translations, reflections). While General Relativity shows space-time is curved, Euclidean axioms remain the essential limiting case for engineering and classical mechanics.",
+      },
+
+      // ── 2 ── SYMMETRY AND INVARIANCE ─────────────────────────
+      {
+        id: "symmetry-invariance",
+        num: 2,
+        icon: "🪞",
+        title: "Symmetry & Invariance",
+        subtitle: "The Mirror That Never Lies",
+        simple: "Symmetry is when one side of something is a \"twin\" to the other side, like your two hands or the wings of a butterfly. Nature loves symmetry because it is efficient and beautiful. In geometry, invariance means that even if you move a shape around, its \"truth\" doesn't change — a circle is still a circle whether it's on the moon or in your pocket. It is the universe's way of staying organized.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A palindrome melody that sounds the same played forward or backward." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a perfectly balanced perfume where no single ingredient overpowers the rest." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A peppermint patty; the cool mint and dark chocolate balanced in every bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a smooth, round marble in your palm; it feels the same no matter how you turn it." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking into a mirror and seeing your reflection match your movements." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Balancing on one leg with your arms out, feeling the \"center\" of your body hold you steady." },
+        ],
+        intuition: "Close your eyes and feel the left and right sides of your face; they are mirror images, holding your mind in a balanced cradle of flesh and bone.",
+        links: [
+          { label: "Stanford Encyclopedia: Symmetry", url: "https://plato.stanford.edu/entries/symmetry-physics/" },
+          { label: "Science Education: Nature's Symmetry", url: "https://en.wikipedia.org/wiki/Symmetry_in_biology" },
+          { label: "Math Is Fun: Reflection Symmetry", url: "https://www.mathsisfun.com/geometry/symmetry-reflection.html" },
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Crab Canon", artist: "J.S. Bach", url: "https://www.youtube.com/watch?v=xUHQ2ybTejU" },
+        ],
+        advanced: "In modern geometry and physics, symmetry is defined by Noether's Theorem — every differentiable symmetry of the action of a physical system corresponds to a conservation law. Rotational symmetry yields conservation of angular momentum. Invariance refers to properties preserved under a transformation group — the heart of Klein's Erlangen Program, which classified geometries based on underlying transformation groups. To understand a shape is to understand what transformations it can survive.",
+      },
+
+      // ── 3 ── THE PYTHAGOREAN THEOREM ─────────────────────────
+      {
+        id: "pythagorean-theorem",
+        num: 3,
+        icon: "◣",
+        title: "The Pythagorean Theorem",
+        subtitle: "The Magic Spell for Every Right Triangle",
+        simple: "This is a magic math spell that lets you find the length of a \"slide\" if you know how tall and how long the ladder is. If you have a triangle with one perfectly square corner, the two short sides squared and added together always equal the long side squared (a² + b² = c²). This works for every right triangle in the universe! Builders use this to make sure walls are straight, and GPS uses it to figure out where you are on a map.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A \"perfect fifth\" interval in music; it is the most stable and \"square\" harmonic relationship." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The sharp, \"pointed\" scent of pine needles." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The sour \"kick\" of a lemon slice — sharp and distinct like a 90-degree angle." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pushing two blocks together to form a perfect, flush corner." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a shadow stretch across the ground, forming a triangle with the object and the sun." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stretching your legs apart in a \"V\" shape and feeling the tension in the \"long side\" of the triangle." },
+        ],
+        intuition: "Imagine three squares made of light floating in front of you; as the triangle in the middle changes, the squares grow and shrink to keep the balance perfect.",
+        links: [
+          { label: "NASA: Pythagorean Theorem", url: "https://spaceplace.nasa.gov/pythagorean-theorem/en/" },
+          { label: "Cut The Knot: 122 Proofs", url: "https://www.cut-the-knot.org/pythagoras/" },
+          { label: "Khan Academy: Pythagorean Theorem", url: "https://www.khanacademy.org/math/geometry-home/geometry-pythagorean-theorem" },
+        ],
+        songs: [
+          { title: "Blue Monday", artist: "New Order", url: "https://www.youtube.com/watch?v=FYH8DsU2WCk" },
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" },
+          { title: "We Will Rock You", artist: "Queen", url: "https://www.youtube.com/watch?v=-tJYN-eG1zk" },
+        ],
+        advanced: "The Pythagorean Theorem is the foundation of the Euclidean Metric — how we calculate the norm or distance in a Hilbert space, essential for both classical mechanics and quantum state vectors. Generalized to n dimensions, it becomes the distance formula. In differential geometry, the theorem is locally true for any smooth manifold. In General Relativity, the metric tensor g_μν acts as a generalized Pythagoras, calculating intervals in curved space-time.",
+      },
+
+      // ── 4 ── NON-EUCLIDEAN GEOMETRY ──────────────────────────
+      {
+        id: "non-euclidean",
+        num: 4,
+        icon: "🌐",
+        title: "Non-Euclidean Geometry",
+        subtitle: "When Parallel Lines Crash",
+        simple: "For a long time, people thought the world was flat like a piece of paper, but it's actually curved like a ball. In \"curved\" geometry, the rules change: parallel lines can actually crash into each other, and triangles can have more than 180 degrees! Imagine drawing a triangle on an orange; the lines curve out, making the triangle \"fat.\" This kind of math is what Einstein used to show that gravity is just the \"dip\" in space caused by heavy things like planets.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The Doppler Effect of a car passing by; the sound curves and changes as the space between you changes." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of an orange peel; round, spherical, and \"curved.\"" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The way a round grape bursts in your mouth, releasing juice in all directions." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your hand over a globe or a basketball, feeling the constant curve." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking through a fish-eye lens that bends the straight lines of a room." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of being \"pulled\" to the side when a car turns a sharp corner." },
+        ],
+        intuition: "Imagine walking straight forward on a giant ball; eventually, without ever turning, you would end up right back where you started.",
+        links: [
+          { label: "The Physics of the Universe: Non-Euclidean", url: "https://www.physicsoftheuniverse.com/topics_bigbang_geometry.html" },
+          { label: "Scientific American: Strange Geometries", url: "https://www.scientificamerican.com/article/strange-geometry/" },
+          { label: "Escher Math: Hyperbolic Geometry", url: "https://en.wikipedia.org/wiki/Hyperbolic_geometry" },
+        ],
+        songs: [
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Echoes", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=53N99Ek8MqI" },
+          { title: "Pyramid Song", artist: "Radiohead", url: "https://www.youtube.com/watch?v=3M_Gg1xAHE4" },
+        ],
+        advanced: "Non-Euclidean geometry emerged when Gauss, Lobachevsky, and Riemann replaced Euclid's fifth postulate. In Hyperbolic space (constant negative curvature), triangle angles sum to less than 180°; in Elliptic space (positive curvature), greater than 180°. Riemann's work on manifolds provided the mathematical machinery for Einstein's General Relativity — proving space is not a passive flat void but a dynamic, flexible fabric that reacts to energy and mass, curving the very path of light.",
+      },
+
+      // ── 5 ── PI (π) AND CIRCULAR MOTION ──────────────────────
+      {
+        id: "pi-circular-motion",
+        num: 5,
+        icon: "π",
+        title: "Pi (π) & Circular Motion",
+        subtitle: "The Forever Number",
+        simple: "Pi is a \"forever number\" (3.14159...) that appears every time you have a circle. If you take the string that goes around a circle and lay it across the middle, it will always fit exactly three times and a little bit more. It doesn't matter if the circle is a tiny atom or a giant star; Pi is the secret ratio. Because circles are everywhere — in wheels, clocks, and the way planets move — Pi is the heartbeat of everything that spins.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The steady, rhythmic ticking of a round clock." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a freshly baked pie; round, warm, and inviting." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A round lollipop that lasts for a long time as you swirl it." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Tracing the smooth rim of a drinking glass with your finger." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a wheel spin so fast it looks like a solid blur." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Spinning in a circle until you feel the centrifugal force pulling your arms outward." },
+        ],
+        intuition: "Imagine a string tied to your belly button and a pole; as you walk around the pole, you feel the constant, never-ending curve of the perfect path.",
+        links: [
+          { label: "Exploratorium: Pi Day", url: "https://www.exploratorium.edu/pi" },
+          { label: "NASA: Why Pi Matters", url: "https://www.jpl.nasa.gov/edu/learn/tag/search/Pi" },
+          { label: "Numberphile: Pi Videos", url: "https://www.numberphile.com/videos/pi" },
+        ],
+        songs: [
+          { title: "Pi", artist: "Kate Bush", url: "https://www.youtube.com/watch?v=Mfnwgo3Edhs" },
+          { title: "You Spin Me Round", artist: "Dead or Alive", url: "https://www.youtube.com/watch?v=PGNiXGX2nLU" },
+          { title: "Turn! Turn! Turn!", artist: "The Byrds", url: "https://www.youtube.com/watch?v=W4ga_M5Zdn4" },
+        ],
+        advanced: "Pi is a transcendental, irrational number — its decimal expansion never repeats or ends. It defines the relationship between circumference and diameter (π = C/d). Beyond basic circles, Pi appears in the Gaussian distribution, the period of a pendulum, and the buckling of columns. In physics, Pi is fundamental to the Heisenberg Uncertainty Principle and the Einstein Field Equations. Its ubiquity suggests our universe has underlying spherical symmetry at its most fundamental levels.",
+      },
+
+      // ── 6 ── TOPOLOGY ────────────────────────────────────────
+      {
+        id: "topology",
+        num: 6,
+        icon: "🍩",
+        title: "Topology",
+        subtitle: "Stretchy Geometry — Donuts and Coffee Mugs",
+        simple: "Topology is \"stretchy\" geometry. Topologists don't care how big a shape is or how many corners it has; they only care about how many holes it has! If you have a piece of playdough shaped like a donut, you can squeeze and stretch it into a coffee mug without tearing it. Because both have one hole, a topologist says they are the same shape. It's like the \"DNA\" of a shape that stays the same no matter what.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A glissando on a trombone where the note slides smoothly from low to high without breaking." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of hot rubber or stretching plastic." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A piece of saltwater taffy being pulled and twisted." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Stretching a thick rubber band between your hands." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a lava lamp where the blobs stretch and merge but never \"break\" the surface." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Reaching through a hula-hoop; your body is the line passing through the \"topology\" of the circle." },
+        ],
+        intuition: "Imagine your skin is a single, continuous sheet that covers your whole body; no matter how you move, the connectivity of your skin stays the same.",
+        links: [
+          { label: "Quanta Magazine: Topology Guide", url: "https://www.quantamagazine.org/tag/topology/" },
+          { label: "Nature: The Rise of Topology", url: "https://www.nature.com/subjects/topology" },
+          { label: "Math Is Fun: Topology", url: "https://www.mathsisfun.com/definitions/topology.html" },
+        ],
+        songs: [
+          { title: "Strawberry Fields Forever", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HtUH9z_Oey8" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Porcelain", artist: "Moby", url: "https://www.youtube.com/watch?v=13EifDb4GYs" },
+        ],
+        advanced: "Topology studies properties preserved under continuous deformations (stretching, crumpling, bending) but not tearing or gluing. Two spaces are homeomorphic if one can be continuously mapped to the other. The Euler Characteristic (χ = V − E + F) is a topological invariant for surfaces. In modern physics, Topological Insulators conduct electricity on their surface but insulate in their bulk. In String Theory, the way extra dimensions are curled up (Calabi-Yau manifolds) determines the fundamental constants of our universe.",
+      },
+
+      // ── 7 ── FRACTALS (GEOMETRY) ─────────────────────────────
+      {
+        id: "fractals-geometry",
+        num: 7,
+        icon: "❄️",
+        title: "Fractals",
+        subtitle: "The Geometry of Infinite Growth",
+        simple: "A fractal is a pattern that never ends. If you zoom in on a fractal, you see the same shape over and over again, just smaller. You can see this in a head of broccoli, where each tiny branch looks like a little tree. Nature uses fractals because they are a clever way to fit a lot of \"surface\" into a small space. Your lungs use fractals to get more air, and trees use them to catch more sunlight.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "An echo that gets quieter and smaller but keeps the same shape as the original sound." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The complex, layered scent of a forest floor where everything smells like \"green\" at different levels." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A head of Romanesco broccoli; the crunchy \"math\" you can actually eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the rough, repeating ridges on a pinecone or a seashell." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a fern leaf where each tiny leaf is a mini version of the whole branch." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your pulse; a small rhythmic throb that is part of a larger rhythmic heart, part of a larger rhythmic life." },
+        ],
+        intuition: "Imagine you are standing in a hall of mirrors, and you see a small version of yourself inside a small version of yourself, going on forever into the distance.",
+        links: [
+          { label: "Fractal Foundation: What are Fractals?", url: "https://fractalfoundation.org/resources/what-are-fractals/" },
+          { label: "TED: Benoit Mandelbrot on Fractals", url: "https://www.ted.com/talks/benoit_mandelbrot_fractals_and_the_art_of_roughness" },
+          { label: "Wired: The Fractal Nature of the Universe", url: "https://www.wired.com/story/the-math-of-fractals/" },
+        ],
+        songs: [
+          { title: "Metamorphosis One", artist: "Philip Glass", url: "https://www.youtube.com/watch?v=M73x3O7dW4A" },
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Orinoco Flow", artist: "Enya", url: "https://www.youtube.com/watch?v=LTrk4n9WAFM" },
+        ],
+        advanced: "Fractal geometry, pioneered by Benoit Mandelbrot, describes \"rough\" shapes Euclidean geometry cannot — clouds, mountains, lightning. The defining characteristic is the Hausdorff dimension, often non-integer (a coastline might be 1.26D). In Chaos Theory, simple nonlinear equations lead to infinitely complex results. In medicine, fractal analysis detects cancerous growths that lose the healthy fractal branching of normal blood vessels — the mathematical bridge between order and chaos.",
+      },
+
+      // ── 8 ── THE GOLDEN RATIO (ϕ) ───────────────────────────
+      {
+        id: "golden-ratio-geometry",
+        num: 8,
+        icon: "🐚",
+        title: "The Golden Ratio (ϕ)",
+        subtitle: "Nature's Favorite Number",
+        simple: "The Golden Ratio (about 1.618) is nature's \"favorite\" number for making things look beautiful and balanced. If you look at the seeds in a sunflower or the spiral of a seashell, they follow this specific mathematical plan. It happens when you grow by adding your past to your present (1, 1, 2, 3, 5, 8...). It helps plants pack as many seeds as possible into a circle without wasting any space.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A perfect musical resolution that feels like \"coming home\" to a peaceful chord." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a rose; the petals unfold in a perfect golden spiral." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The balanced flavor of honey; sweet in a way that feels \"natural\" and complete." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Tracing the smooth, widening curve of a large Nautilus shell." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at the Parthenon in Greece or the Mona Lisa, which use this ratio." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the natural \"swing\" of your arm; the lengths of your finger bones follow this ratio." },
+        ],
+        intuition: "Hold your hand up and look at your fingers; the ratio of each bone to the next is a tiny whisper of the same math that builds galaxies.",
+        links: [
+          { label: "National Geographic: The Golden Ratio", url: "https://www.nationalgeographic.com/science/article/golden-ratio" },
+          { label: "Canva: Design and the Golden Ratio", url: "https://www.canva.com/learn/what-is-the-golden-ratio/" },
+          { label: "Math Is Fun: Fibonacci Sequence", url: "https://www.mathsisfun.com/numbers/fibonacci-sequence.html" },
+        ],
+        songs: [
+          { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+        ],
+        advanced: "The Golden Ratio (ϕ) is the positive solution to x² − x − 1 = 0, yielding (1+√5)/2. It is the most \"irrational\" of all irrational numbers — hardest to approximate with fractions. This allows for aperiodic tiling and optimal packing in phyllotaxis, ensuring no leaf shades another excessively. Researchers have found evidence of ϕ in the fine structure of the universe and quantum resonances of cobalt niobate atoms — a fundamental tuning constant for efficient structural growth.",
+      },
+
+      // ── 9 ── DIMENSIONALITY ──────────────────────────────────
+      {
+        id: "dimensionality",
+        num: 9,
+        icon: "🧊",
+        title: "Dimensionality",
+        subtitle: "More Directions Than You Can See",
+        simple: "We live in a 3D world: left-right, up-down, and forward-back. But math tells us there could be many more \"directions\" that we just can't see! Imagine a tiny ant crawling on a garden hose; to us, the hose is a long line, but to the ant, it's a big round tube. Scientists think the whole universe might have extra dimensions curled up so small that we don't notice them. Thinking about extra dimensions helps us understand how gravity and light might be connected in ways we haven't discovered yet.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A binaural 3D audio recording that sounds like it is moving through your head." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A smell that triggers a memory; a scent that travels through the dimension of time." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A complex dish where the flavor \"changes\" as you chew; a multi-dimensional taste experience." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Reaching into a dark bag; you have to feel the \"depth\" and \"volume\" to know what's inside." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a 3D movie with glasses; seeing the screen \"pop\" into the room." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Closing your eyes and knowing exactly where your hand is in the \"void\" of the room." },
+        ],
+        intuition: "Imagine you are a 2D shadow on the wall; suddenly, someone lifts you off the wall into the room — everything you knew just got a whole new side.",
+        links: [
+          { label: "Scientific American: Higher Dimensions", url: "https://www.scientificamerican.com/article/higher-dimensions/" },
+          { label: "PBS Space Time: Extra Dimensions", url: "https://www.youtube.com/c/pbsspacetime" },
+          { label: "Introduction to the 4th Dimension", url: "https://en.wikipedia.org/wiki/Four-dimensional_space" },
+        ],
+        songs: [
+          { title: "Aquarius", artist: "The 5th Dimension", url: "https://www.youtube.com/watch?v=kjxSCAalsBE" },
+          { title: "Welcome to the Machine", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=lt-udg9zQSE" },
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" },
+        ],
+        advanced: "A dimension is the minimum number of coordinates needed to specify a point within a space. While we perceive (x, y, z), String Theory suggests 10 or 11 dimensions compactified at the Planck scale. These spaces involve Calabi-Yau manifolds — complex shapes dictating how subatomic particles vibrate. In Phase Space, a single point can represent an entire complex system using hundreds of dimensions. Mastering dimensionality lets us project high-dimensional truths into 3D models we can grasp.",
+      },
+
+      // ── 10 ── TESSELLATION (TILING) ──────────────────────────
+      {
+        id: "tessellation-tiling",
+        num: 10,
+        icon: "🐝",
+        title: "Tessellation (Tiling)",
+        subtitle: "The Art of Fitting In",
+        simple: "Tessellation is the art of \"fitting in.\" It's when you use one shape over and over again to cover a floor or a wall perfectly, with no gaps and no overlaps. Think of a bathroom floor with square tiles or a honeycomb where bees use hexagons. Nature uses hexagons because they are the \"strongest\" way to pack things together using the least amount of wax. When things tessellate, the universe is being efficient — it doesn't like to waste space.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A canon in music (like Row, Row, Row Your Boat) where the same melody fits into itself perfectly." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a beehive — sweet wax and organized, \"tiled\" honey." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A bar of chocolate divided into perfect, repeating squares." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Running your hand over a brick wall; feeling the repeating seams." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a soccer ball with its repeating pentagons and hexagons." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Marching in a group; your footsteps fitting perfectly into the rhythm of the people around you." },
+        ],
+        intuition: "Imagine you are a tile on a floor; you feel the push of your neighbors on every side, holding you perfectly in place in a giant, endless grid.",
+        links: [
+          { label: "M.C. Escher Official Website", url: "https://mcescher.com/gallery/symmetry/" },
+          { label: "Science Friday: The Math of Honeycombs", url: "https://www.sciencefriday.com/topics/honeybees/" },
+          { label: "Tessellation Artist", url: "https://en.wikipedia.org/wiki/Tessellation" },
+        ],
+        songs: [
+          { title: "Seven Nation Army", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=0J2QdDbelmY" },
+          { title: "Gooey", artist: "Glass Animals", url: "https://www.youtube.com/watch?v=IIA1XQnAv5s" },
+          { title: "Riptide", artist: "Vance Joy", url: "https://www.youtube.com/watch?v=uJ_1HMAGb4k" },
+        ],
+        advanced: "Tessellation is formally \"tiling a manifold.\" In 2D Euclidean space, only three regular polygons tessellate alone: equilateral triangle, square, and regular hexagon (interior angles must sum to a factor of 360°). Hexagonal tiling provides the highest area-to-perimeter ratio (the Isoperimetric Task). In chemistry, tessellation explains crystal structures and Quasicrystals — patterns filling all space but never perfectly repeating, which won the 2011 Nobel Prize. Voronoi Diagrams use tessellation to partition space by proximity, used from robot navigation to forest growth modeling.",
+      },
+
+    ],
   },
 };
 
