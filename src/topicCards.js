@@ -5358,6 +5358,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Dimensional analysis uses conversion factors (ratios equal to 1) to transform units. In advanced physics, it validates equations: if dimensions on both sides do not match, the equation is impossible. Truth is invariant under coordinate change. The logic of equivalence and universal communication." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MATHEMATICS (promise) > SYMMETRY & BALANCE (symmetry)
+    // ═══════════════════════════════════════════════════════════════
+
+    symmetry: [
+      { id: "noethers-theorem", num: 1, icon: "⚖️", title: "Noether's Theorem", subtitle: "The Soul of Physics",
+        simple: "Symmetry is not just about looking pretty; it is the reason the universe stays consistent. This rule says that because the laws of physics do not change if you move to a new spot or wait an hour, things like energy cannot be created or destroyed. It is like a cosmic fairness rule that keeps the stars burning and the planets moving. Everything stays in its right place because the universe loves to keep its books balanced.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A perfectly tuned C Major chord: the vibrations match up in a mathematical hug." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of a pine forest: the needles grow in symmetric patterns you can almost smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pinch of salt in chocolate: salty and sweet balance each other perfectly." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your two palms together: feel the heat and pressure match on both sides." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A snowflake under a microscope: six identical arms radiating from a center." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing on one leg while closing your eyes to feel your inner gyroscope work." }
+        ],
+        intuition: "Every symmetry in nature guarantees something is conserved. The universe keeps its books balanced because the rules never change.",
+        links: [
+          { label: "Britannica: Noether's Theorem", url: "https://www.britannica.com/science/Noethers-theorem" },
+          { label: "Scientific American: Symmetry in Physics", url: "https://www.scientificamerican.com/" },
+          { label: "Stanford: Symmetry", url: "https://plato.stanford.edu/entries/symmetry-breaking/" }
+        ],
+        songs: [
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Noether's Theorem links differentiable symmetries of the action to conservation laws. Time homogeneity yields energy conservation; spatial isotropy yields angular momentum conservation. The bridge between geometry and the tangible persistence of reality. Connects to Gauge Theory and the Principle of Least Action." },
+
+      { id: "bilateral-symmetry", num: 2, icon: "🦋", title: "Bilateral Symmetry", subtitle: "The Mirror Self",
+        simple: "Most living things, including you, have a left side that looks almost exactly like the right side. This happens because it is the easiest way for nature to build a body that can move straight and fast. Think of a butterfly: if one wing were different, it could not fly in a straight line. Being balanced helps animals find food and escape danger. It is nature saying that two halves make a whole.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Stereo headphones playing the same volume in both ears." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smelling a rose with both nostrils to get the full 3D scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Eating a sandwich where the ingredients are spread evenly to the edges." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your fingers down the center of a leaf to feel the identical veins." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A butterfly with perfectly matched wings spread open." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in a straight line by putting one foot directly in front of the other." }
+        ],
+        intuition: "Two halves make a whole. Nature only needs to describe one half; the other is a mirror. Efficiency through reflection.",
+        links: [
+          { label: "Biology Online: Bilateral Symmetry", url: "https://www.biologyonline.com/dictionary/bilateral-symmetry" },
+          { label: "National Geographic: Animal Body Plans", url: "https://education.nationalgeographic.org/" },
+          { label: "Nature: Evolution of Symmetry", url: "https://www.nature.com/" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Reflection", artist: "Lea Salonga (Mulan)", url: "https://www.youtube.com/watch?v=1AfNOKQdY-U" },
+          { title: "Mirrors", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" }
+        ],
+        advanced: "Bilateral (sagittal plane) symmetry is a hallmark of Bilateria. It facilitated cephalization: concentration of nervous tissue and sensory organs at the anterior end, enabling directed movement and complex predation. The genetic blueprint only needs to describe one half. Connects to chirality in organic chemistry." },
+
+      { id: "golden-ratio-symmetry", num: 3, icon: "🌀", title: "The Golden Ratio", subtitle: "Nature's Architecture",
+        simple: "The Golden Ratio is a special number (1.618) that shows up in seashells, sunflowers, and even your own face. People find things with this ratio very beautiful because they look balanced without being perfectly identical. It is a secret code nature uses to grow things in the most efficient way possible. When you see a spiral in a galaxy or a hurricane, you are seeing this math in action. The perfect balance between growing bigger and staying the same shape.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A musical Perfect Fifth interval that feels stable and resolved." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The spiral pattern of petals on a lily." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The layered, repeating flavors in an onion." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing the spiral of a snail shell with your thumb." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A nautilus shell sliced in half revealing the perfect spiral chambers." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the curve of your own ear, which often follows this ratio." }
+        ],
+        intuition: "Beauty is mathematical efficiency made visible. The Golden Ratio is nature's optimal growth algorithm.",
+        links: [
+          { label: "National Geographic: Golden Ratio", url: "https://www.nationalgeographic.com/science/article/golden-ratio" },
+          { label: "Math Is Fun: Fibonacci & Nature", url: "https://www.mathsisfun.com/numbers/fibonacci-sequence.html" },
+          { label: "The Spruce: Golden Ratio in Design", url: "https://www.thespruce.com/" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Golden", artist: "Harry Styles", url: "https://www.youtube.com/watch?v=P3cffdsEXXw" }
+        ],
+        advanced: "Phi is the limit of successive Fibonacci ratios. In phyllotaxis, it enables densest packing of seeds/leaves, minimizing overlap and maximizing sunlight exposure. An irrational number providing optimal non-periodic tiling. Connects to Sacred Geometry and Quasicrystals." },
+
+      { id: "homeostasis", num: 4, icon: "🌡️", title: "Homeostasis", subtitle: "The Inner Balance",
+        simple: "Your body is like a smart thermostat always trying to stay just right. If you get too hot, you sweat; too cold, you shiver. This balance is how you stay alive. It is not a frozen balance but a moving one, like a person on a tightrope. Every second, your heart and lungs work together to make sure nothing gets out of whack.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic thump-thump of your heartbeat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The clean smell of fresh air after you have been in a stuffy room." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Drinking plain water when very thirsty: it tastes perfect." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of your breath moving in and out of your chest." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching your skin turn red when hot and pale when cold." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your body adjust its weight when you step from pavement to sand." }
+        ],
+        intuition: "Balance is not stillness. It is constant tiny corrections. Life is a tightrope walker who never stops moving.",
+        links: [
+          { label: "Khan Academy: Homeostasis", url: "https://www.khanacademy.org/science/biology/principles-of-physiology/body-structure-and-homeostasis/a/homeostasis" },
+          { label: "Scientific American: Body Balance", url: "https://www.scientificamerican.com/" },
+          { label: "Medical News Today: Homeostasis", url: "https://www.medicalnewstoday.com/articles/homeostasis" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Breathe", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=mrojrDCI02k" },
+          { title: "The Middle", artist: "Jimmy Eat World", url: "https://www.youtube.com/watch?v=oKsxPW6i3pM" }
+        ],
+        advanced: "Homeostasis uses negative feedback loops: a sensor detects deviation from set point and triggers an effector to counteract the change. Maintains internal milieu within narrow physiological limits (pH, temperature, osmolarity). The biological manifestation of Cybernetics. Connects to Control Theory and Allostasis." },
+
+      { id: "crystallography", num: 5, icon: "💎", title: "Crystallography", subtitle: "The Ordered Balance",
+        simple: "Inside a diamond or a grain of salt, tiny atoms are lined up in perfect rows, like soldiers on parade. This is the most balanced way for matter to exist. Because atoms are so neatly organized, crystals are very strong and often very clear. When you look at a crystal, you are seeing a frozen version of perfect math. Underneath the messy world, there is a lot of hidden order.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ting of a crystal glass being tapped." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, ozone smell of a salt lamp." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crunch of a sugar crystal on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a smooth, cold piece of quartz." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Light refracting through a prism into a rainbow." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the hardness and lack of give in a stone." }
+        ],
+        intuition: "Underneath the messy world is hidden order. Crystals are frozen math. Atoms choose the most balanced arrangement possible.",
+        links: [
+          { label: "IUCr: Crystallography", url: "https://www.iucr.org/" },
+          { label: "Live Science: What are Crystals?", url: "https://www.livescience.com/crystals.html" },
+          { label: "Smithsonian: Science of Gems", url: "https://www.si.edu/spotlight/hope-diamond" }
+        ],
+        songs: [
+          { title: "Diamonds", artist: "Rihanna", url: "https://www.youtube.com/watch?v=lWA2pjMjpBs" },
+          { title: "Shine On You Crazy Diamond", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=cWGE9Gi0bB0" },
+          { title: "Crystal", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=jABWCBnDpCM" }
+        ],
+        advanced: "Crystallography uses X-ray diffraction to determine atomic arrangement. A crystal's symmetry is defined by its Space Group: translational and rotational symmetries in the lattice. Order results from free energy minimization during solidification. Connects to Group Theory and Solid State Physics." },
+
+      { id: "fractal-symmetry", num: 6, icon: "🥦", title: "Fractal Geometry", subtitle: "The Repeating Balance",
+        simple: "Fractals are patterns that repeat no matter how much you zoom in. A giant tree looks like a branch, and a branch looks like a tiny twig. This is nature balancing the big and the small. It allows your lungs or a river system to cover a huge area using a very simple rule. The same balance that works for a whole mountain also works for a tiny pebble.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A Shepard Tone: a sound that seems to rise in pitch forever." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of a Romanesco broccoli, which looks like a fractal." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The way cauliflower breaks into smaller mini-trees." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the repetitive bumps on a piece of coral." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fern leaf where each frond mirrors the whole plant." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the branching of your own veins under your skin." }
+        ],
+        intuition: "The same rule that works for the mountain works for the pebble. Nature balances big and small with one simple recipe.",
+        links: [
+          { label: "Fractal Foundation", url: "https://fractalfoundation.org/resources/what-are-fractals/" },
+          { label: "Wired: Hidden Geometry of Nature", url: "https://www.wired.com/" },
+          { label: "MIT: The Mandelbrot Set", url: "https://math.mit.edu/" }
+        ],
+        songs: [
+          { title: "Every Little Thing She Does Is Magic", artist: "The Police", url: "https://www.youtube.com/watch?v=aENX1Sf3fgQ" },
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Intergalactic", artist: "Beastie Boys", url: "https://www.youtube.com/watch?v=qORYO0atB6g" }
+        ],
+        advanced: "Fractals possess non-integer Hausdorff Dimension. Generated by iterative functions where output becomes input (z=z^2+c). This recursive balance is central to Chaos Theory. Connects to Self-Organized Criticality and Algorithm Design." },
+
+      { id: "nash-equilibrium", num: 7, icon: "🤝", title: "Equilibrium", subtitle: "The Social Balance",
+        simple: "Sometimes balance is not about shapes but about how people get along. Equilibrium is when everyone in a group finds a way to act so that no one wants to change what they are doing. It is like a busy sidewalk where everyone walks at the right speed so nobody bumps into each other. Even when things seem messy or crowded, a natural balance usually shows up to keep things moving. We all find a way to fit in.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of a busy coffee shop where everyone talks at just the right volume." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The blended smell of a potluck dinner where many foods mix into one scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A perfectly balanced soup: not too salty, not too spicy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The give and take of a firm handshake." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flock of birds moving in perfect formation without a leader." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing in a moving elevator and finding your balance." }
+        ],
+        intuition: "Even in chaos, a natural balance emerges. Everyone adjusts until nobody needs to change. Order from freedom.",
+        links: [
+          { label: "Investopedia: Nash Equilibrium", url: "https://www.investopedia.com/terms/n/nash-equilibrium.asp" },
+          { label: "Stanford: Game Theory", url: "https://plato.stanford.edu/entries/game-theory/" },
+          { label: "Economics Help: Market Equilibrium", url: "https://www.economicshelp.org/" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Balance", artist: "Future Islands", url: "https://www.youtube.com/watch?v=8bSEHMBxmTw" }
+        ],
+        advanced: "A Nash Equilibrium is a strategy profile where no player benefits by unilateral change. A state of stasis in a dynamic system of agents. Vital for evolutionary biology (Evolutionary Stable Strategies) and market economics. Connects to Pareto Efficiency and Dynamic Systems Theory." },
+
+      { id: "newtons-third-law", num: 8, icon: "🚀", title: "Newton's Third Law", subtitle: "The Action Balance",
+        simple: "This law says you cannot touch something without it touching you back just as hard. Push on a wall and the wall pushes back on you. This is how rockets fly: they push fire out the bottom and the fire pushes the rocket up into the sky. It is a perfect, 100% fair balance of force. In the world of motion, you are always connected to everything you touch.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of your own voice bouncing off a canyon wall." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of burnt rubber when a car pushes off the road quickly." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bite of a spicy pepper that makes your mouth react instantly." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing against a heavy door and feeling it resist you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A rocket lifting off, fire pushing down as the body flies up." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the kickback in your arm when you throw a heavy ball." }
+        ],
+        intuition: "Every action has an equal and opposite reaction. You are always connected to everything you touch. Push and be pushed.",
+        links: [
+          { label: "NASA: Newton's Third Law", url: "https://www.nasa.gov/stem/" },
+          { label: "Physics Classroom: Action & Reaction", url: "https://www.physicsclassroom.com/class/newtlaws/Lesson-4/Newton-s-Third-Law" },
+          { label: "Khan Academy: Forces & Motion", url: "https://www.khanacademy.org/science/physics/forces-newtons-laws" }
+        ],
+        songs: [
+          { title: "Rocket Man", artist: "Elton John", url: "https://www.youtube.com/watch?v=DtVBCG6ThDk" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Waiting on the World to Change", artist: "John Mayer", url: "https://www.youtube.com/watch?v=oBIxScJ5rlY" }
+        ],
+        advanced: "Newton's Third Law is a consequence of Conservation of Momentum. In a closed system, total momentum remains constant: any change in one object's momentum is balanced by an equal and opposite change in another. Defines the symmetry of interactions in classical mechanics. Connects to Reciprocity Theorem." },
+
+      { id: "yin-yang", num: 9, icon: "☯️", title: "Yin and Yang", subtitle: "The Dual Balance",
+        simple: "This old idea says you cannot have up without down, or light without dark. They are not enemies; they are partners that need each other to exist. Think of a battery with a plus and minus side: you need both to make the lightbulb turn on. Balance is not about picking one side; it is making sure both sides have their turn. Even the dark parts of life help make the good parts meaningful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between notes in a song that makes the music beautiful." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of rain on dry dirt: petrichor." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and sour chicken." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of a cool breeze on a hot summer day." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The black and white Yin-Yang symbol with a dot of each color in the other." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The heaviness in your muscles after a long day of light activity." }
+        ],
+        intuition: "You cannot have light without dark. They are partners, not enemies. Both sides are needed to turn on the light.",
+        links: [
+          { label: "World History: Yin and Yang", url: "https://www.worldhistory.org/Yin_and_Yang/" },
+          { label: "National Geographic: Taoism", url: "https://www.nationalgeographic.com/" },
+          { label: "Philosophy Now: Yin-Yang Logic", url: "https://philosophynow.org/" }
+        ],
+        songs: [
+          { title: "Ebony and Ivory", artist: "Paul McCartney & Stevie Wonder", url: "https://www.youtube.com/watch?v=TZtiJN6yiik" },
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" }
+        ],
+        advanced: "Dialectical Monism: the universe is a single whole expressing itself through dualities. Parallels Complementarity in quantum mechanics (wave-particle duality), where seemingly contradictory properties are both necessary to describe full reality. Connects to Hegelian Dialectics and Quantum Superposition." },
+
+      { id: "zero-sum-dynamics", num: 10, icon: "⚖️", title: "Zero-Sum Dynamics", subtitle: "The Fixed Balance",
+        simple: "A zero-sum game is like a pizza with a fixed number of slices. If your friend takes a bigger slice, yours has to be smaller. The total stays the same, but how it is shared changes. While this can feel unfair, it is a very strict kind of balance in math and money. It reminds us that resources are often limited, and for the whole system to stay balanced, every plus somewhere must have a minus somewhere else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A see-saw siren: up-down, up-down." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of a match being struck: energy moving from stick to flame." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bitter medicine you take to feel better: a trade-off." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing all the water to one side of a bathtub." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly balanced scale with equal weights on both sides." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Shifting all your weight to your left foot, leaving the right foot empty." }
+        ],
+        intuition: "Every plus requires a minus. The total never changes, only how it is shared. The universe keeps score.",
+        links: [
+          { label: "Corporate Finance: Zero-Sum Game", url: "https://corporatefinanceinstitute.com/resources/economics/zero-sum-game/" },
+          { label: "Britannica: Zero-Sum Theory", url: "https://www.britannica.com/topic/zero-sum-game" },
+          { label: "Scientific American: Is Life Zero-Sum?", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Money", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=cpbbuaIA3Ds" },
+          { title: "The Winner Takes It All", artist: "ABBA", url: "https://www.youtube.com/watch?v=92cwKCU8Z5c" },
+          { title: "Karma Police", artist: "Radiohead", url: "https://www.youtube.com/watch?v=1uYWYWPc9HU" }
+        ],
+        advanced: "A zero-sum game: each participant's gain/loss is exactly balanced by others. Total gains minus total losses sum to zero. Common in constant-sum games and classical thermodynamics (energy transfer). Connects to Thermodynamics and Resource Competition in ecology." },
+    ],
 
   },
 };
