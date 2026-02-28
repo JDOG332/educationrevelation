@@ -5593,6 +5593,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "A zero-sum game: each participant's gain/loss is exactly balanced by others. Total gains minus total losses sum to zero. Common in constant-sum games and classical thermodynamics (energy transfer). Connects to Thermodynamics and Resource Competition in ecology." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MATHEMATICS (promise) > LOGIC & PROOF (proof)
+    // ═══════════════════════════════════════════════════════════════
+
+    proof: [
+      { id: "law-noncontradiction", num: 1, icon: "=", title: "The Law of Non-Contradiction", subtitle: "The Most Basic Yes or No",
+        simple: "Logic is like a rule that says a light cannot be both on and off at the exact same moment. If something is a circle, it cannot also be a square, because the rules of being a circle do not allow corners. This helps us find truth because it weeds out ideas that fight with themselves. When two things cancel each other out, they cannot both be true at once. Following this rule keeps our minds clear and helps us see the world as it really is.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, unchanging hum of a tuning fork." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, clear scent of peppermint that wakes up the nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The unmistakable sourness of a fresh lemon: it is not sweet." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The solid resistance of a brick wall; your hand cannot pass through it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly straight line drawn on a white page." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your feet planted firmly on the floor, knowing you are not floating." }
+        ],
+        intuition: "A thing cannot be and not be at the same time. This is the bedrock on which all truth is built. The first yes or no in the universe.",
+        links: [
+          { label: "Stanford: Contradiction", url: "https://plato.stanford.edu/entries/contradiction/" },
+          { label: "Britannica: Non-Contradiction", url: "https://www.britannica.com/topic/law-of-noncontradiction" },
+          { label: "Introduction to Logic: Aristotle", url: "https://iep.utm.edu/aristotl/" }
+        ],
+        songs: [
+          { title: "Hello, Goodbye", artist: "The Beatles", url: "https://www.youtube.com/watch?v=rblYSKz_VnI" },
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" },
+          { title: "Hot N Cold", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=kTHNpusq654" }
+        ],
+        advanced: "The Law of Non-Contradiction (¬(P∧¬P)) is the ontological bedrock of classical logic. Contradictory propositions cannot both be true in the same sense at the same time. This prevents the principle of explosion. Connects to the Pauli Exclusion Principle: two fermions cannot occupy the same quantum state simultaneously." },
+
+      { id: "deductive-reasoning", num: 2, icon: "↓", title: "Deductive Reasoning", subtitle: "The Guaranteed Map to Treasure",
+        simple: "Deductive reasoning is like following a map guaranteed to lead to treasure if the start point is right. If all dogs bark and Sparky is a dog, then Sparky barks! It shrinks a big truth into a small, specific fact. You do not have to guess because the answer is hidden inside what you already know. It feels like a key sliding perfectly into a lock and turning. This is how we build proofs that stay true forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A ding sound when a puzzle piece fits." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of rain (petrichor) that proves a storm just passed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of seawater: deducing the ocean is near." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the heat of a stove before you even touch the burner." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a shadow move and knowing exactly where the sun is." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and knowing exactly where your nose is because your brain mapped it." }
+        ],
+        intuition: "The answer is already hidden inside what you know. Deduction is top-down logic: from the general to the specific, without losing any certainty.",
+        links: [
+          { label: "Deductive vs Inductive Reasoning", url: "https://www.thoughtco.com/deductive-vs-inductive-reasoning-3026549" },
+          { label: "Khan Academy: Logical Arguments", url: "https://www.khanacademy.org/math/geometry/hs-geo-congruence" },
+          { label: "Philosophy Basics: Deduction", url: "https://www.philosophybasics.com/branch_deontology.html" }
+        ],
+        songs: [
+          { title: "Sherlock Theme", artist: "BBC", url: "https://www.youtube.com/watch?v=LgeRKh2-JGY" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" }
+        ],
+        advanced: "Deduction derives conclusions that follow necessarily from stated premises. If premises are true, the conclusion must be true (P⟹Q). This is top-down logic: the framework for Euclidean geometry and computer programming, where specific outputs are necessary results of initial code and logic gates." },
+
+      { id: "mathematical-induction", num: 3, icon: "∞", title: "Mathematical Induction", subtitle: "The Domino Proof",
+        simple: "Imagine millions of dominoes standing in a line. Mathematical induction proves that if you knock down the first one, and every domino knocks down the next, then every single domino will eventually fall. You do not have to watch them all! It is a way of proving things about infinity using just two simple steps. It shows that patterns in the universe are reliable and will keep going forever. This gives us a sense of always and forever in our math.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic ticking of a clock that never stops." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of fresh pine needles in a giant forest of the same trees." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The repetitive sweetness of a long string of candy beads." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand along a fence and feeling every post." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into two mirrors facing each other: the infinity effect." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of walking: one step always leads to the next." }
+        ],
+        intuition: "Knock down the first. Prove each knocks the next. Therefore all fall. Two steps prove infinity.",
+        links: [
+          { label: "Wolfram: Mathematical Induction", url: "https://mathworld.wolfram.com/MathematicalInduction.html" },
+          { label: "The Beauty of Induction", url: "https://en.wikipedia.org/wiki/Mathematical_induction" },
+          { label: "Art of Problem Solving: Induction", url: "https://artofproblemsolving.com/wiki/index.php/Induction" }
+        ],
+        songs: [
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "I Walk the Line", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=KHF9itPLUo4" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Mathematical induction proves P(n) for all natural numbers via Base Case (P(1) is true) and Inductive Step (P(k) true implies P(k+1) true). Foundational in number theory and set theory. Connects to recursion, self-similarity in fractals, and DNA replication: one rule generates infinite structure." },
+
+      { id: "axiomatic-systems", num: 4, icon: "Δ", title: "Axiomatic Systems", subtitle: "The Foundation Stones",
+        simple: "An axiomatic system is like a giant skyscraper built on very thick, solid concrete. That base is made of axioms: things so obviously true we do not even need to prove them, like a straight line can connect any two points. Everything else in the building stays up because the base is strong. If we agree on the base, we can build a whole world of truth on top. To understand big things, we must first agree on the simplest things.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The very first C note on a piano." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of clean, fresh dirt: the earth we stand on." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain, cool water: the base of all drinks." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Grabbing a heavy, solid rock that will not break." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The horizon line where the sky meets the earth." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of balance when you stand perfectly still." }
+        ],
+        intuition: "Agree on the simplest truths first, and a whole world of knowledge can be built on top. The base determines the building.",
+        links: [
+          { label: "Encyclopedia: Axiomatic System", url: "https://www.encyclopedia.com/science-and-technology/mathematics/mathematics/axiomatic-method" },
+          { label: "The Story of Mathematics: Euclid", url: "https://www.storyofmathematics.com/greek_euclid.html" },
+          { label: "Axioms of Probability", url: "https://en.wikipedia.org/wiki/Probability_axioms" }
+        ],
+        songs: [
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "Lean On Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Seven Nation Army", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=0J2QdDbelmY" }
+        ],
+        advanced: "An axiomatic system derives theorems from a set of axioms using logical rules. Prominent examples: Euclidean Geometry and Zermelo-Fraenkel set theory. Evaluated on consistency, independence, and completeness. Relates to First Principles Thinking: breaking complex problems into basic truths and reassembling." },
+
+      { id: "syllogisms", num: 5, icon: "∴", title: "Syllogisms", subtitle: "The Three-Step Dance",
+        simple: "A syllogism is a three-step dance for your brain. Step one: a big fact (All birds have feathers). Step two: a small fact (A penguin is a bird). Step three: the Ta-da moment (Therefore, a penguin has feathers). It connects dots to see a picture that was already there. You are acting like a detective who finds the answer by looking at how clues fit together. It makes complicated thoughts feel very simple and organized.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A snap sound like fingers clicking together." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of baking bread: knowing there is an oven nearby." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Tasting sugar and knowing the tea will be sweet." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the texture of a leaf and knowing it is a maple tree." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing three dots in a row and your brain seeing a line." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your arm move and knowing your hand is following." }
+        ],
+        intuition: "Big fact plus small fact equals new truth. The conclusion was always there, hiding in the premises. Three steps to certainty.",
+        links: [
+          { label: "Philosophy Terms: Syllogism", url: "https://philosophyterms.com/syllogism/" },
+          { label: "New World Encyclopedia: Syllogism", url: "https://www.newworldencyclopedia.org/entry/Syllogism" },
+          { label: "Literary Devices: Syllogism", url: "https://literarydevices.net/syllogism/" }
+        ],
+        songs: [
+          { title: "ABC", artist: "The Jackson 5", url: "https://www.youtube.com/watch?v=ho7796-au8U" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" }
+        ],
+        advanced: "A syllogism consists of major premise, minor premise, and conclusion (P→Q, Q→R, ∴ P→R). Developed by Aristotle as the classic model for formal logic. The conclusion is inescapable if premises hold. Used in legal reasoning and categorical logic to classify and determine truth." },
+
+      { id: "boolean-algebra", num: 6, icon: "{0,1}", title: "Boolean Algebra", subtitle: "The Language of True and False",
+        simple: "Boolean Algebra is the language of True and False. Think of it like a light switch: only up or down. Computers use AND (both must be on), OR (either can be on), and NOT (the opposite). There are no maybes or sort-ofs. By using these simple gates, we build incredibly smart machines like phones and robots. Even the most complex things are made of simple choices.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The click-clack of a mechanical keyboard." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ozone smell of a computer or electric spark." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A hot pepper vs. a cold ice cube: the ultimate opposite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing a button: it is either pushed or it is not." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Black text on a bright white screen." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing if your eyes are open or closed." }
+        ],
+        intuition: "The most complex things are built from simple yes-or-no choices. AND, OR, NOT: three gates to build a universe.",
+        links: [
+          { label: "TechTarget: Boolean Algebra", url: "https://www.techtarget.com/whatis/definition/Boolean" },
+          { label: "GeeksforGeeks: Boolean Algebra", url: "https://www.geeksforgeeks.org/introduction-to-boolean-algebra/" },
+          { label: "Boolean Logic in Programming", url: "https://en.wikipedia.org/wiki/Boolean_algebra" }
+        ],
+        songs: [
+          { title: "Technologic", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=D8K90hX4PrE" },
+          { title: "The Model", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=GEnx9xS79Lc" },
+          { title: "Paranoid Android", artist: "Radiohead", url: "https://www.youtube.com/watch?v=fHiGbolFFGw" }
+        ],
+        advanced: "Boolean Algebra operates on truth values (1 and 0) using intersection, union, and complementation. The mathematical foundation of digital circuits and computer science. Connects to Binary Opposition in structuralism: human thought organized around fundamental dualities." },
+
+      { id: "propositional-logic", num: 7, icon: "→", title: "Propositional Logic", subtitle: "The Skeleton of an Argument",
+        simple: "Propositional logic is like building a sentence using math symbols. Instead of words, we use letters like P and Q connected with if-then. For example: If it is Saturday (P), then I sleep late (Q). This helps us look at the structure of what people say to see if it makes sense, regardless of what they are talking about. It is like looking at the skeleton of an argument to see if it is strong enough to hold the weight of truth.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady thump-thump of a heartbeat: if alive, then heart beats." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of smoke: if there is smoke, then there is fire." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Tasting salt: if salty, then there is sodium." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling wetness: if wet, then there is liquid." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing a green light: if green, then go." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling a tilt: if tilting, then gravity is pulling." }
+        ],
+        intuition: "Strip away the words. Look at the skeleton. If the structure holds, the truth holds. Form over content.",
+        links: [
+          { label: "Brilliant: Propositional Logic", url: "https://brilliant.org/wiki/propositional-logic/" },
+          { label: "Logic Matters: Formal Logic", url: "https://www.logicmatters.net/" },
+          { label: "Philosophy Pages: Propositional Logic", url: "https://www.philosophypages.com/lg/e06.htm" }
+        ],
+        songs: [
+          { title: "Mr. Brightside", artist: "The Killers", url: "https://www.youtube.com/watch?v=gGdGFtwCNBE" },
+          { title: "No Woman, No Cry", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=x59kS2AOrGM" },
+          { title: "Ironic", artist: "Alanis Morissette", url: "https://www.youtube.com/watch?v=Jne9t8sHpUc" }
+        ],
+        advanced: "Propositional (sentential) logic evaluates truth-functionality of complex statements using logical connectives. Truth tables determine validity. The gateway to Symbolic Logic: stripping natural language ambiguity to reveal raw logical mechanics underneath." },
+
+      { id: "godels-incompleteness", num: 8, icon: "?", title: "Gödel's Incompleteness Theorems", subtitle: "The Limit of Proof",
+        simple: "Gödel proved that even in math, there are secrets we can never prove even if they are true! It is like having a giant box of LEGOs but knowing there is one shape you can never build, even with all the pieces. It tells us that logic has a limit and the universe is always a little bigger than our brains. This does not mean truth does not exist; it just means our proof-maker is not big enough to catch every truth in its net.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that never quite fades away." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of the ocean: huge and impossible to fully know." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The taste of a mystery-flavored candy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Trying to catch a shadow in your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An Escher staircase that goes up forever." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That falling feeling right before you fall asleep." }
+        ],
+        intuition: "The universe is always a little bigger than our brains. Some truths are real but unprovable. The net has holes, but the ocean is still there.",
+        links: [
+          { label: "Quanta: Gödel's Incompleteness", url: "https://www.quantamagazine.org/tag/godels-incompleteness-theorems/" },
+          { label: "Stanford: Gödel's Theorems", url: "https://plato.stanford.edu/entries/goedel-incompleteness/" },
+          { label: "Scientific American: Limits of Logic", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" }
+        ],
+        advanced: "Gödel's theorems: in any consistent axiomatic system powerful enough for arithmetic, there exist true statements unprovable within the system, and the system cannot prove its own consistency. Destroyed Hilbert's Program. Suggests human intuition may access truths formal logic cannot reach." },
+
+      { id: "reductio-absurdum", num: 9, icon: "⊥", title: "Reductio ad Absurdum", subtitle: "Reduce It to the Ridiculous",
+        simple: "Reductio ad Absurdum means Reduce it to the Ridiculous. To prove something true, pretend the opposite is true for a second. Then show that if the opposite were true, something crazy and impossible would happen! For example, to prove it is daytime, pretend it is night. But if it were night, the sky would be dark, and since the sky is bright, it must be day. It is winning an argument by showing how silly the other side is.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud, funny slide whistle sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of something fishy: when you know a story does not fit." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Orange juice right after brushing teeth: something is off." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Trying to push two magnets together when they repel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A find-the-mistake picture where a cat has five legs." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Trying to walk through a doorway that is painted on a wall." }
+        ],
+        intuition: "Assume the opposite. Watch it explode. Therefore your original claim stands. Prove truth by disproving its shadow.",
+        links: [
+          { label: "Logic Museum: Reductio", url: "https://www.logicmuseum.com/wiki/Reductio_ad_absurdum" },
+          { label: "Philosophy: Reductio", url: "https://iep.utm.edu/reductio/" },
+          { label: "Math is Fun: Proof by Contradiction", url: "https://www.mathsisfun.com/algebra/proof-by-contradiction.html" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Who Are You", artist: "The Who", url: "https://www.youtube.com/watch?v=PNbBDrceCy8" },
+          { title: "In The End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" }
+        ],
+        advanced: "Proof by Contradiction: if P implies falsehood, then not-P must be true. One of the most powerful mathematical tools, famously proving sqrt(2) is irrational. Relates to the Socratic Method: questions leading to contradiction reveal the falsity of the initial position." },
+
+      { id: "inductive-logic", num: 10, icon: "≈", title: "Inductive Logic", subtitle: "The Pattern Finder",
+        simple: "Inductive logic is like being a weather reporter. You see clouds, you see wind, and you say it will probably rain. You are not 100% sure like in math, but very very close! It is about finding patterns. If every apple you have ever eaten is sweet, you believe the next one will be too. It is how we learn from experience. While deduction says must be, induction says most likely, which is how we live our daily lives.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound of a crowd cheering: you assume they are happy." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of popcorn: you assume a movie is playing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Tasting a spicy pepper and assuming the rest of the dish is spicy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling a soft blanket and assuming it will be cozy to sleep in." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing the sun go down and knowing it will come up tomorrow." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing how much force to pick up a milk carton because you have done it before." }
+        ],
+        intuition: "Deduction says must be. Induction says most likely. One is the lock, the other is experience knocking on the door.",
+        links: [
+          { label: "Introduction to Logic: Induction", url: "https://iep.utm.edu/ded-ind/" },
+          { label: "Scientific Method and Induction", url: "https://en.wikipedia.org/wiki/Inductive_reasoning" },
+          { label: "Hume's Problem of Induction", url: "https://plato.stanford.edu/entries/induction-problem/" }
+        ],
+        songs: [
+          { title: "Ocean Eyes", artist: "Billie Eilish", url: "https://www.youtube.com/watch?v=viimfQi_pUw" },
+          { title: "I Still Haven't Found What I'm Looking For", artist: "U2", url: "https://www.youtube.com/watch?v=e3-5YC_oHjE" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" }
+        ],
+        advanced: "Induction: premises supply strong evidence for probabilistic conclusions. The basis of the scientific method: hypotheses from repeated observations. Hume's Problem of Induction asks how we justify belief in nature's uniformity when experience covers only the past, not the future." },
+    ],
 
   },
 };
