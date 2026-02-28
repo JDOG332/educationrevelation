@@ -8661,6 +8661,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The Refusal highlights the hero's humanity and inherent friction of change. A narrative device heightening stakes: the hero is not flawless but a person with fears and attachments. Represents Homeostasis — the tendency of a system to resist change. The hero must find motivation stronger than fear to break this state and begin the journey." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > THE FLOOD & THE RESET (flood)
+    // ═══════════════════════════════════════════════════════════════
+
+    flood: [
+      { id: "global-flood-myths", num: 1, icon: "🌊", title: "Global Flood Myths", subtitle: "Every Culture Remembers the Water",
+        simple: "Almost every group of people around the world tells a story about a giant flood that covered the earth a long time ago. These stories usually say the world became too messy or mean, so a big reset happened to make things new again. It shows us that humans everywhere share a deep memory of big changes. You can feel this truth when you hear the low, vibrating roar of a waterfall. If you smell rain hitting dry dirt, it reminds you of the earth being washed. Imagine the taste of cool, crisp mountain water that feels like life itself. Think of floating in a pool where the water holds you up completely. Seeing a rainbow after a dark storm shows you that the light always comes back after the wash.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low, vibrating roar of a waterfall: the earth remembering." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: rain hitting dry dirt, the earth being washed clean." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool, crisp mountain water that feels like life itself." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Floating in water where the current holds you up completely." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A rainbow after a dark storm: the light always comes back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and feel your body drifting: everything moves in cycles." }
+        ],
+        intuition: "Every culture on earth tells the same story: the water came, the water cleaned, the water left. They cannot all be wrong.",
+        links: [
+          { label: "Wikipedia: Flood Myth", url: "https://en.wikipedia.org/wiki/Flood_myth" },
+          { label: "National Geographic: Why Flood Tales Are Everywhere", url: "https://www.nationalgeographic.com/" },
+          { label: "British Museum: The Flood Tablet", url: "https://www.britishmuseum.org/" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" }
+        ],
+        advanced: "Comparative mythology reveals striking universality in deluge narratives, from Mesopotamian Utnapishtim to Hindu Manu. These function as socio-cultural mechanisms explaining transition from chaotic proto-world to established order. Whether myths of observation (fossil shells on mountains) or myths of experience (post-glacial sea-level rise), they anchor human identity in a cycle of destruction and renewal." },
+
+      { id: "holocene-meltwater", num: 2, icon: "🧊", title: "Holocene Meltwater Pulses", subtitle: "When the Ice Melted and the Oceans Rose",
+        simple: "At the end of the last Ice Age, huge sheets of ice melted very fast and poured into the ocean. This made the sea levels rise quickly, which would have felt like a giant flood to anyone living near the coast. This is a scientific fact that matches many of the old stories we hear today. You can hear this truth in the cracking and popping sounds of ice cubes melting in a glass. The smell of a fresh, salty ocean breeze tells you how much water is actually out there. Taste a tiny bit of sea salt to remember the power of the great oceans. Feel the cold chill of an ice cube on your skin until it turns into a warm drop of water.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Cracking and popping of ice cubes melting: the glaciers letting go." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh, salty ocean breeze: how much water is actually out there." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sea salt on your tongue: the power of the great oceans." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold ice on your skin turning into a warm drop of water." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A massive glacier calving into the sea: raw planetary power." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your feet on the ground and realize where you stand might have once been under the sea." }
+        ],
+        intuition: "The ice held the water. The water held the story. When it let go, the whole coastline disappeared. And people remembered.",
+        links: [
+          { label: "Nature: Meltwater Pulse 1A", url: "https://en.wikipedia.org/wiki/Meltwater_pulse_1A" },
+          { label: "NOAA: Sea Level Rise History", url: "https://www.noaa.gov/" },
+          { label: "NASA: Ice Sheets and Sea Level", url: "https://climate.nasa.gov/" }
+        ],
+        songs: [
+          { title: "Cool Water", artist: "Marty Robbins", url: "https://www.youtube.com/watch?v=kz6FSOzEG3Q" },
+          { title: "Ice Ice Baby", artist: "Vanilla Ice", url: "https://www.youtube.com/watch?v=rog8ou-ZepE" },
+          { title: "The Ocean", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=MQne16VMetg" }
+        ],
+        advanced: "Meltwater Pulse 1A (MWP-1A) represents rapid post-glacial sea-level rise approximately 14,700 years ago. Sea levels rose 16 to 25 meters in just centuries, permanently altering coastlines and displacing early populations. Provides physicalist grounding for flood legends. The abruptness — likely caused by collapsing ice dams — aligns with the sudden nature described in oral traditions." },
+
+      { id: "epic-of-gilgamesh", num: 3, icon: "📜", title: "The Epic of Gilgamesh", subtitle: "The Oldest Story Ever Written Down",
+        simple: "This is the oldest story ever written down, and it has a big section all about a massive flood. A man named Utnapishtim was told by a god to build a big boat to save his family and all the animals. This story is thousands of years older than many other famous books, showing how long humans have been thinking about resets. Hear the scratchy sound of a pen on paper to connect with the people who first wrote this down. Smell an old book or some dry clay to feel the age of these ancient words. Taste a piece of unleavened bread or a simple grain to eat what the ancients ate. Touch a rough stone and imagine carving symbols into it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The scratchy sound of a stylus on clay: someone writing the first story." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books and dry clay: the age of these ancient words." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Unleavened bread or simple grain: eating what the ancients ate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough stone or clay: imagine carving symbols into it with your hands." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Cuneiform writing: little wedges that are a code for a real voice." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your heart beat and know that people felt that same pulse 5,000 years ago." }
+        ],
+        intuition: "Five thousand years ago, someone pressed a reed into wet clay and wrote: build the boat. We are still reading their warning.",
+        links: [
+          { label: "Ancient History: Gilgamesh", url: "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh" },
+          { label: "Poetry Foundation: Epic of Gilgamesh", url: "https://www.poetryfoundation.org/" },
+          { label: "Cuneiform Digital Library", url: "https://cdli.mpiwg-berlin.mpg.de/" }
+        ],
+        songs: [
+          { title: "Ancient Voices", artist: "Survivor Theme", url: "https://www.youtube.com/watch?v=FJd1VPgPbMI" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Immigrant Song", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=y8OtzJtp-EM" }
+        ],
+        advanced: "The Eleventh Tablet of Gilgamesh contains the most complete Mesopotamian flood narrative. Predates the Biblical account and shares structural similarities: building an ark, preserving the seed of all living creatures, sending birds to find dry land. The Reset is motivated by the gods' desire to curb human noise — a theological shift where cataclysm is divine re-ordering of chaotic civilization." },
+
+      { id: "cyclical-vs-linear-time", num: 4, icon: "🔄", title: "Cyclical Time vs. Linear Time", subtitle: "The Circle and the Arrow",
+        simple: "Some people think time is like a straight line with a beginning and an end, but others think it is like a big circle. The idea of a Reset means that after a big ending, there is always a brand new beginning. This helps people feel better because it means nothing is ever truly lost forever; it just changes shape. Listen to the steady tick-tock of a clock or the rhythm of your own breathing. Smell a blooming flower in the spring and remember that it was just a seed in the cold winter. Taste a seasonal fruit like a summer peach to know that nature brings things back when it is time. Feel the roundness of a ball in your hand and notice how there is no end to the shape.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Tick-tock of a clock or the rhythm of your own breathing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A blooming flower: it was just a seed in the cold winter." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A summer peach: nature brings things back when it is time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The roundness of a ball: no beginning, no end." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sun going down and the moon coming up: the sun will always return." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spin in a slow circle and realize you always come back to face the same way." }
+        ],
+        intuition: "The arrow says: it ends. The circle says: it turns. The spiral says: it ends and turns and rises. That is the truth.",
+        links: [
+          { label: "Stanford Encyclopedia: Prophecy and Time", url: "https://plato.stanford.edu/" },
+          { label: "Britannica: Cyclical Time", url: "https://www.britannica.com/topic/time" },
+          { label: "History of Ideas: The Idea of Progress", url: "https://en.wikipedia.org/wiki/Idea_of_progress" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Turn! Turn! Turn!", artist: "The Byrds", url: "https://www.youtube.com/watch?v=W4ga_M5Zdn4" },
+          { title: "The End", artist: "The Doors", url: "https://www.youtube.com/watch?v=BXqPNlng6uI" }
+        ],
+        advanced: "Eternal Recurrence or Kalpa (Indian philosophy) suggests the universe undergoes infinite cycles of creation and destruction. The Flood is the punctuation mark between cycles, clearing accumulated entropy or moral decay. Merging cyclical and linear views yields a Spiral understanding — history repeats themes but moves toward a different state. The Reset is not a return to zero but a recalibration." },
+
+      { id: "catastrophism-uniformitarianism", num: 5, icon: "⚡", title: "Catastrophism vs. Uniformitarianism", subtitle: "Slow Drip or Sudden Crack?",
+        simple: "Scientists used to argue about whether the Earth changed slowly over a long time or quickly because of big disasters. Catastrophism is the idea that giant events — like a massive flood — shaped the mountains and valleys we see today. Even though we know many things happen slowly, we now know that big, fast disasters are a real part of Earth's history too. Hear the sudden crack of thunder during a storm to understand a fast change. Smell the air after a lightning strike, which smells sharp and new. Taste some spicy pepper that surprises your tongue to feel what a fast change is like. Touch a jagged rock broken by force and then a smooth stone rubbed by water for years.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sudden crack of thunder: fast change announced." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Air after a lightning strike: sharp and new." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spicy pepper that surprises your tongue: what fast change tastes like." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A jagged rock broken by force, then a smooth stone rubbed by water for years." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A volcano or a flood: how fast the world can change." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Jump and feel the thud as you land: the impact of sudden energy." }
+        ],
+        intuition: "Most days, the river carves the rock one grain at a time. But some days, the dam breaks. Both are true. Both shape the world.",
+        links: [
+          { label: "UCMP Berkeley: Catastrophism", url: "https://en.wikipedia.org/wiki/Catastrophism" },
+          { label: "Geological Society: Uniformitarianism", url: "https://en.wikipedia.org/wiki/Uniformitarianism" },
+          { label: "Nature: Impact Events", url: "https://en.wikipedia.org/wiki/Impact_event" }
+        ],
+        songs: [
+          { title: "It's the End of the World as We Know It", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=Z0GFRcFm-aY" },
+          { title: "Thunderstruck", artist: "AC/DC", url: "https://www.youtube.com/watch?v=v2AC41dglnM" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" }
+        ],
+        advanced: "Cuvier championed catastrophism: geological strata result from sudden violent events. Lyell replaced it with uniformitarianism: the present is the key to the past. Modern Neo-catastrophism acknowledges that while slow processes are constant, rare violent events (impacts, super-volcanoes, mega-floods) drive major shifts. The Reset is a recognized scientific mechanism for evolution." },
+
+      { id: "younger-dryas-impact", num: 6, icon: "☄️", title: "The Younger Dryas Impact Hypothesis", subtitle: "The Comet That May Have Reset Everything",
+        simple: "Some scientists think a comet hit the Earth or exploded in the sky about 12,800 years ago. This would have caused huge fires, followed by a sudden Big Freeze and giant floods when the ice melted. This might be the real event that started all the stories about a world-wide Reset. Listen to a recording of a sonic boom to imagine the comet's power. Smell smoke from a campfire to remember the global fires that may have happened. Taste a piece of charred toast to connect with a world burnt and then washed. Touch a piece of smooth glass, which is like the melt glass found at impact sites. Watch the night sky and look for shooting stars, which are tiny versions of big comets.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sonic boom: the comet announcing itself." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke from a campfire: the global fires that may have happened." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Charred toast: a world burnt and then washed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Smooth glass: like the melt glass found at impact sites." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Shooting stars in the night sky: tiny versions of the big one." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stand perfectly still and feel the wind: now imagine it at hundreds of miles per hour." }
+        ],
+        intuition: "12,800 years ago, something fell from the sky. The mammoths vanished. The ice returned. The water rose. And every culture on earth said: we remember.",
+        links: [
+          { label: "Scientific American: Comet Impact 13,000 Years Ago?", url: "https://en.wikipedia.org/wiki/Younger_Dryas_impact_hypothesis" },
+          { label: "PNAS: Extraterrestrial Impact Evidence", url: "https://www.pnas.org/" },
+          { label: "Comet Research Group", url: "https://cometresearchgroup.org/" }
+        ],
+        songs: [
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "Fire and Rain", artist: "James Taylor", url: "https://www.youtube.com/watch?v=JOIo4lEpsPY" },
+          { title: "Champagne Supernova", artist: "Oasis", url: "https://www.youtube.com/watch?v=tI-5uv4wryI" }
+        ],
+        advanced: "The Younger Dryas Impact Hypothesis proposes comet fragments struck multiple continents approximately 12,800 years ago. Linked to megafauna extinction and a sudden 1,200-year return to glacial conditions. Evidence: nanodiamonds, iridium, melt-glass in sediment layers worldwide. Suggests civilization may have been reset from a more advanced state to hunter-gatherer due to celestial intervention." },
+
+      { id: "cultural-memory-oral", num: 7, icon: "🗣️", title: "Cultural Memory & Oral Tradition", subtitle: "The Stories That Survived 10,000 Years",
+        simple: "Before people had books or the internet, they told stories to remember the past. These stories were like mental movies passed from grandparents to children for thousands of years. The Flood story survived because it was the most important lesson: the world can change, but we can survive. Listen to the sound of an old person telling a story with a raspy, wise voice. Smell the scent of old cedar wood or a dusty attic where memories are kept. Taste a recipe that has been in your family for a long time to eat your history. Hold an old photo or a hand-me-down toy to feel the connection to people before you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An old person telling a story with a raspy, wise voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old cedar wood or a dusty attic where memories are kept." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe passed down for generations: eating your history." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An old photo or hand-me-down toy: connection to people before you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering candle flame: imagine sitting around a campfire long ago." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Goosebumps on your arms when you hear a story that feels true even though it is old." }
+        ],
+        intuition: "No one wrote it down for 10,000 years. They just told their children. And their children told their children. And the story is still here. That is how important it was.",
+        links: [
+          { label: "UNESCO: Oral Traditions", url: "https://en.wikipedia.org/wiki/Oral_tradition" },
+          { label: "Ancient Aboriginal Stories", url: "https://theconversation.com/" },
+          { label: "Journal of Memory and Language", url: "https://en.wikipedia.org/wiki/Cultural_memory" }
+        ],
+        songs: [
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "The Living Years", artist: "Mike + The Mechanics", url: "https://www.youtube.com/watch?v=5hr64MxYpgk" },
+          { title: "Remember Me", artist: "Coco Soundtrack", url: "https://www.youtube.com/watch?v=Sa5JFq0RCvE" }
+        ],
+        advanced: "Oral tradition is often dismissed as telephone-game inaccuracy, but Aboriginal Australian stories accurately describe geographical changes from 10,000 years ago. Cultural memory acts as long-term storage for survival data. The Flood narrative is a mnemotope — a story anchored to place or event that preserves group identity, ensuring future generations understand the fragility of civilization." },
+
+      { id: "black-sea-deluge", num: 8, icon: "🗺️", title: "The Black Sea Deluge Hypothesis", subtitle: "When the Mediterranean Broke Through",
+        simple: "Some researchers believe that a long time ago, the Black Sea was just a small freshwater lake. Then, the Mediterranean Sea broke through a narrow strip of land and flooded the lake with salt water very quickly. This would have been a terrifying event for everyone living there and might be the real Noah's flood. Hear the sound of a small stream suddenly turning into a roaring river. Smell the difference between fresh lake water and salty sea water. Taste a drop of salt water to feel how it takes over the fresh water. Touch the sand on a beach and think about how it used to be a dry forest floor.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A small stream suddenly turning into a roaring river." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The difference between fresh lake water and salty sea water." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt water taking over fresh water: the invasion you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sand on a beach that used to be a dry forest floor." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map animation of water filling up a low valley: unstoppable." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Lean forward as if looking over a high cliff at rushing water below." }
+        ],
+        intuition: "One day there was a lake. The next day there was an ocean. 60,000 square miles of home — gone. And the survivors walked into Europe telling the story.",
+        links: [
+          { label: "National Geographic: Black Sea Expedition", url: "https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis" },
+          { label: "Ryan-Pitman Research", url: "https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis" },
+          { label: "Marine Geology: Black Sea Flooding", url: "https://en.wikipedia.org/wiki/Black_Sea" }
+        ],
+        songs: [
+          { title: "Beyond the Sea", artist: "Bobby Darin", url: "https://www.youtube.com/watch?v=m8OlDPqYBLw" },
+          { title: "Smoke on the Water", artist: "Deep Purple", url: "https://www.youtube.com/watch?v=zUwEIt9ez7M" },
+          { title: "Walking on the Moon", artist: "The Police", url: "https://www.youtube.com/watch?v=mbv-LcdLY-Y" }
+        ],
+        advanced: "Ryan and Pitman proposed that around 5600 BC, rising Mediterranean levels breached the Bosporus. The resulting deluge: 200 times the force of Niagara Falls, permanently flooding over 60,000 square miles. Forced massive migration of farmers into Europe and Asia, spreading the Great Flood story. A primary candidate for a historical event that Reset the Neolithic Near East." },
+
+      { id: "archetypal-rebirth", num: 9, icon: "🐣", title: "Archetypal Rebirth", subtitle: "The Mind's Need to Start Over",
+        simple: "A Reset is not just about water and mud; it is about how our minds work. We all feel sometimes like we want to start over and be a better person. The story of a flood is a way to show that even if things get really bad, we can wash away the old stuff and start fresh. Hear the sound of a baby's first cry, which is the ultimate new beginning sound. Smell the scent of a new book to feel that fresh start feeling. Taste a sour lemon that cleans your palate so you can taste something else better. Feel the sensation of a warm shower washing away dirt after a long day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A baby's first cry: the ultimate new beginning sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book: the scent of a fresh start." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sour lemon that cleans your palate: reset your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm shower washing away dirt: the daily flood." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A butterfly leaving its cocoon: the reset version of a caterpillar." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretch your arms out wide and feel how big the world is when you start a new day." }
+        ],
+        intuition: "Every morning you wake up, you are the flood and the ark at the same time. You wash away yesterday. You carry today forward. You are your own reset.",
+        links: [
+          { label: "Simply Psychology: Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "The Jung Page: The Flood Symbol", url: "https://en.wikipedia.org/wiki/Analytical_psychology" },
+          { label: "Psychology Today: The Power of Rebirth", url: "https://www.psychologytoday.com/" }
+        ],
+        songs: [
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" }
+        ],
+        advanced: "In Jungian psychology, the flood is an archetype of the collective unconscious: the ego overwhelmed by unconscious waters, dissolving the old self so a more integrated self can emerge. This Psychological Reset is necessary for growth. By flooding old habits or beliefs, we create fertile soil for new wisdom. Every night is a small flood. Every morning is a new shore." },
+
+      { id: "antediluvian-world", num: 10, icon: "🏰", title: "The Antediluvian World", subtitle: "What Was Here Before the Water Came?",
+        simple: "Antediluvian is just a fancy word for before the flood. Many legends say that before the big reset, there were giant cities, long-lived kings, and amazing technology that we have forgotten. The Reset wiped it all away, leaving us to find the pieces and wonder what life was really like back then. Hear the echo of your own voice in a big, empty room and imagine it is an echo from the past. Smell the scent of damp earth in a cave, where ancient secrets might be hidden. Taste an heirloom tomato or an ancient grain like quinoa to connect with old plants. Touch a very old tree and realize it might have witnessed history we have forgotten.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of your voice in a big empty room: an echo from the past." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp earth in a cave where ancient secrets might be hidden." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An ancient grain like quinoa: eating what the lost world grew." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A very old tree that might have witnessed history we forgot." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A lost city like Atlantis: imagining what was erased." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stand on your tiptoes and reach as high as you can: imagining a giant world." }
+        ],
+        intuition: "What if we are not the first try? What if the flood was not the beginning of the story — but the middle? What if we are the ones who forgot?",
+        links: [
+          { label: "National Geographic: Lost Cities", url: "https://en.wikipedia.org/wiki/Lost_city" },
+          { label: "Smithsonian: Searching for Atlantis", url: "https://en.wikipedia.org/wiki/Atlantis" },
+          { label: "Archaeology Magazine: Ancient Mysteries", url: "https://en.wikipedia.org/wiki/Out-of-place_artifact" }
+        ],
+        songs: [
+          { title: "Atlantis", artist: "Donovan", url: "https://www.youtube.com/watch?v=aGKPFKS0ikw" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" }
+        ],
+        advanced: "The concept of a Golden Age or high-civilization before cataclysm (Plato's Atlantis) suggests human progress is not a straight line but peaks and valleys. The Antediluvian idea challenges us to consider lost knowledge: the Reset so thorough it left only Ooparts (Out of Place Artifacts) and myths as clues to a forgotten chapter of the human story." },
+    ],
 
 
   },
