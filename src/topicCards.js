@@ -936,6 +936,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → ⚛️ PHYSICS & FORCES (physics)
+    // "What holds everything together and makes things move"
+    // ═══════════════════════════════════════════════════════════════
+
+    physics: [
+
+      // ── 1 ── CONSERVATION OF ENERGY ──────────────────────────
+      {
+        id: "conservation-energy",
+        num: 1,
+        icon: "♾️",
+        title: "The Conservation of Energy",
+        subtitle: "Recycled Stardust",
+        simple: "Energy is the \"stuff\" that makes everything happen. You can't make it from nothing, and it never truly goes away. It just changes its \"costume.\" When you eat a snack, that food-energy turns into \"run-around\" energy. When you stop running, it turns into \"warm-skin\" energy. We are all made of recycled stardust that has been changing costumes for billions of years.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to an echo. Your voice isn't disappearing; it's bouncing and turning into tiny vibrations in the wall." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a fading flower. The life energy of the bloom is turning into gases that travel to your nose." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Eating a sun-ripened orange. You are literally tasting captured sunlight transformed into sugar." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Rub your hands together fast. Feel the \"movement\" energy turn into \"heat\" energy." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a candle burn. The wax isn't vanishing; it's turning into light and heat you can see and feel." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Jump as high as you can. Feel your upward power pause at the top before gravity pulls it back down." },
+        ],
+        intuition: "Close your eyes and feel your heartbeat. The pulse you feel is the same energy that once powered ancient forests, now flowing through you. You are a temporary home for eternal power.",
+        links: [
+          { label: "First Law of Thermodynamics — NASA", url: "https://www.grc.nasa.gov/www/k-12/airplane/thermo1.html" },
+          { label: "Energy Transformation — National Geographic", url: "https://www.nationalgeographic.org/encyclopedia/energy-transformation/" },
+          { label: "Conservation of Energy — Britannica", url: "https://www.britannica.com/science/conservation-of-energy" },
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Symphony", artist: "Clean Bandit ft. Zara Larsson", url: "https://www.youtube.com/watch?v=aatr_2MstrI" },
+          { title: "Energy", artist: "Drake", url: "https://www.youtube.com/watch?v=7LnBvuzjprE" },
+        ],
+        advanced: "The First Law of Thermodynamics posits that the total energy of an isolated system remains constant. In a cosmological sense, E = mc² creates a profound ontological bridge: if energy is never lost, then the essence of all things is merely in a state of perpetual flux (vibration). This aligns with the \"Eternal Now\" — where every action is a redistribution of a singular, infinite resource.",
+      },
+
+      // ── 2 ── GENERAL RELATIVITY ──────────────────────────────
+      {
+        id: "general-relativity",
+        num: 2,
+        icon: "🕸️",
+        title: "General Relativity",
+        subtitle: "The Cosmic Trampoline",
+        simple: "Imagine the universe is a giant trampoline. If you put a heavy bowling ball in the middle, the fabric curves down. If you toss a marble nearby, it rolls toward the heavy ball. That curve is gravity. Space isn't empty; it's a stretchy blanket that tells everything how to move.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"thud\" of a ball hitting the floor. That sound is the result of space-time telling the ball where to go." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of rain. Gravity pulls the water down from the clouds so you can scent the wet earth." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Heavy syrup pouring onto a pancake. Watch how gravity makes it thick and slow." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Lean against a tree. Feel the pressure of your weight against the bark; that's you sitting in a curve of space." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at the Moon. It stays there because it's \"surfing\" the curve the Earth makes in space." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and lean left, then right. Feel your inner ear \"sense\" the downward pull of the planet's curve." },
+        ],
+        intuition: "Imagine you are made of the same fabric as the sky. Feel the heavy \"weight\" of love or a big thought bending the space around you, drawing people in.",
+        links: [
+          { label: "Einstein's Theory — Space.com", url: "https://www.space.com/17661-theory-general-relativity.html" },
+          { label: "Gravity and Spacetime — ESA", url: "https://www.esa.int/Science_Exploration/Space_Science/Gravity_and_spacetime" },
+          { label: "The Fabric of the Cosmos — PBS/Nova", url: "https://www.pbs.org/wgbh/nova/series/fabric-of-the-cosmos/" },
+        ],
+        songs: [
+          { title: "Gravity", artist: "John Mayer", url: "https://www.youtube.com/watch?v=7VBex8zbDRs" },
+          { title: "Drops of Jupiter", artist: "Train", url: "https://www.youtube.com/watch?v=7Xf-Lesrkuc" },
+          { title: "Fly Me To The Moon", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=mQR0bXO_yI8" },
+        ],
+        advanced: "General Relativity replaces the Newtonian \"force\" with Riemannian geometry. Mass-energy density dictates the curvature of the space-time manifold. This suggests that \"relationship\" is the fundamental structure of reality. Nothing exists in a vacuum; the presence of \"The Other\" literally reshapes the path of the self.",
+      },
+
+      // ── 3 ── THE STRONG NUCLEAR FORCE ────────────────────────
+      {
+        id: "strong-force",
+        num: 3,
+        icon: "🫂",
+        title: "The Strong Nuclear Force",
+        subtitle: "The Unbreakable Hug",
+        simple: "Inside atoms, there are tiny pieces that hate each other and want to fly apart. The Strong Force is like a super-strong hug that keeps them together. It is the strongest glue in the world. Without it, you, your house, and the whole planet would go *poof* and vanish into tiny dust.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A drumbeat. The vibrations are only possible because the atoms in the drum skin are glued tightly together." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Fresh baked bread. The molecules stay together in those shapes because of the nuclear \"hug\" inside." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The crunch of an apple. You are feeling the strength of the bonds holding matter together." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Press your palms together hard. Feel the \"solidness.\" That solid feeling is thanks to the glue holding your atoms." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a mountain. It stands tall because the tiniest parts of it refuse to let go of each other." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Clench your fist. Feel the unity of your hand. It is a billion-billion \"hugs\" working at once." },
+        ],
+        intuition: "At your very core, you are held together by a force that is stronger than any \"push\" trying to break you. You are built on a foundation of unbreakable connection.",
+        links: [
+          { label: "The Strong Force — DOE Science", url: "https://www.energy.gov/science/doe-explains/doe-explains-strong-nuclear-force" },
+          { label: "Gluons and the Strong Force — CERN", url: "https://home.cern/science/physics/strong-force-gluons-and-antimatter" },
+          { label: "Nuclear Physics — Khan Academy", url: "https://www.khanacademy.org/science/physics/quantum-physics" },
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Stay Together", artist: "Al Green", url: "https://www.youtube.com/watch?v=COiIC3A0ROM" },
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" },
+        ],
+        advanced: "Quantum Chromodynamics (QCD) describes the interaction between quarks mediated by gluons. The Strong Force exhibits \"confinement\" — the bond grows stronger as you try to pull the particles apart. This is a physical mirror to \"Indivisible Unity\" — the harder the trial, the more intense the binding energy of the core.",
+      },
+
+      // ── 4 ── ELECTROMAGNETISM ────────────────────────────────
+      {
+        id: "electromagnetism",
+        num: 4,
+        icon: "⚡",
+        title: "Electromagnetism",
+        subtitle: "The Force of Touch and Light",
+        simple: "This is the force of \"Touch and Light.\" It makes magnets stick to the fridge and keeps your hand from falling through a table. It's also how light travels to your eyes. It is the conversation between bits of electricity.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The static \"crackle\" of a sweater. That is the sound of electricity jumping." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The sharp scent of a thunderstorm (ozone). That's the air being changed by electric bolts." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The zing of a lemon — a \"spark\" on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pet a cat and feel the \"pull\" of static. Or feel a table; its electrons are pushing your electrons back!" },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a rainbow. It is pure electromagnetic energy split into colors." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Move your arm. Your brain sends electrical signals through your nerves to make it happen." },
+        ],
+        intuition: "Everything you see and touch is a \"handshake\" of light and energy. You never actually \"touch\" anything; you just feel the energetic hello of the world.",
+        links: [
+          { label: "The Electromagnetic Spectrum — NASA", url: "https://science.nasa.gov/ems/01_intro" },
+          { label: "What is Electromagnetism? — Live Science", url: "https://www.livescience.com/37529-electromagnetism.html" },
+          { label: "Faraday's Law — Britannica", url: "https://www.britannica.com/science/Faradays-law-of-induction" },
+        ],
+        songs: [
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Electric Feel", artist: "MGMT", url: "https://www.youtube.com/watch?v=MmZexg8sxyk" },
+          { title: "Thunder", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=fKopy74weus" },
+        ],
+        advanced: "Unified by Maxwell's equations, electromagnetism governs the behavior of photons and the interactions between charged particles. All chemistry — and therefore all biology — is essentially an electromagnetic dance of electron shells. It represents the \"Interface\" between the self and external reality.",
+      },
+
+      // ── 5 ── THE WEAK NUCLEAR FORCE ──────────────────────────
+      {
+        id: "weak-force",
+        num: 5,
+        icon: "🦋",
+        title: "The Weak Nuclear Force",
+        subtitle: "The Changer",
+        simple: "The Weak Force is the \"Changer.\" It lets one tiny particle turn into a different one. Without it, the Sun wouldn't shine because it couldn't turn fuel into light. It's the force of transformation.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The steady hum of the world. The Sun's power (started by this force) makes the wind that whistles in your ears." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a forest floor. Decay is part of the cycle of change, mirroring how particles change." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The warmth of a hot soup. That heat originally came from the Sun's nuclear furnace." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The warmth of sunlight on your face. You are feeling the result of the Weak Force allowing the Sun to burn." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at a shining star. You are seeing the Weak Force at work from trillions of miles away." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Think about your body growing. You are constantly changing, just like the subatomic particles." },
+        ],
+        intuition: "Change isn't scary; it's how the universe glows. To shine, you must be willing to let one part of you turn into something new.",
+        links: [
+          { label: "The Weak Force — Britannica", url: "https://www.britannica.com/science/weak-force" },
+          { label: "How the Sun Shines — Nobel Prize", url: "https://www.nobelprize.org/prizes/themes/how-the-sun-shines/" },
+          { label: "The Weak Interaction — HyperPhysics", url: "http://hyperphysics.phy-astr.gsu.edu/hbase/Forces/weak.html" },
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=xMq9GfTsh80" },
+          { title: "Here Comes The Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Waiting on the World to Change", artist: "John Mayer", url: "https://www.youtube.com/watch?v=oBIxScJ5rlY" },
+        ],
+        advanced: "The Weak Interaction is unique because it violates CP-symmetry and allows for \"flavor\" changes in quarks. Mediated by W and Z bosons, it represents the \"Alchemy of Essence\" — the fundamental necessity for decay and transmutation to sustain the macro-equilibrium of the universe.",
+      },
+
+      // ── 6 ── ENTROPY (2ND LAW) ───────────────────────────────
+      {
+        id: "entropy-physics",
+        num: 6,
+        icon: "⏳",
+        title: "The Second Law of Thermodynamics",
+        subtitle: "The Arrow of Time",
+        simple: "If you build a sandcastle, the wind and waves will eventually melt it back into flat sand. Things tend to get messy and spread out over time. This is why time only goes forward. It's the universe's way of saying \"make the most of right now.\"",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A glass breaking. You can hear the order turning into chaos." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A match being struck. The organized wood turns into messy smoke and scent." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "An ice cube melting in your mouth. Orderly ice turning into \"random\" water." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a smooth stone that used to be a jagged rock. Time and friction spread the energy out." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching smoke rise from a chimney and disappear into the air." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling tired at the end of the day. Your \"battery\" has spread its energy out into the world." },
+        ],
+        intuition: "Every moment is special because it can never be repeated. The \"messiness\" of life is just the universe moving toward a giant, warm rest.",
+        links: [
+          { label: "What is Entropy? — Live Science", url: "https://www.livescience.com/50941-second-law-thermodynamics.html" },
+          { label: "Entropy — Khan Academy", url: "https://www.khanacademy.org/science/biology/energy-and-enzymes/the-laws-of-thermodynamics/a/the-second-law-of-thermodynamics" },
+          { label: "Arrow of Time — Sean Carroll", url: "https://www.preposterousuniverse.com/blog/2010/02/22/the-arrow-of-time/" },
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Stop This Train", artist: "John Mayer", url: "https://www.youtube.com/watch?v=mS2o4q7v9RA" },
+          { title: "The End", artist: "The Doors", url: "https://www.youtube.com/watch?v=JSUIQgEVDM4" },
+        ],
+        advanced: "Entropy (S = k ln W) measures the number of microstates consistent with a macrostate. The increase of entropy defines the \"Statistical Arrow of Time.\" It connects physics to information theory, suggesting that the universe is \"forgetting\" its initial specific configuration as it moves toward maximum probability.",
+      },
+
+      // ── 7 ── QUANTUM FIELD THEORY ────────────────────────────
+      {
+        id: "qft",
+        num: 7,
+        icon: "🌊",
+        title: "Quantum Field Theory",
+        subtitle: "The Cosmic Ocean",
+        simple: "Think of the whole universe as a giant ocean. Particles like electrons aren't tiny rocks; they are just the \"splashes\" or \"waves\" in that ocean. Everything is connected because the water (the field) is everywhere at once.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Hum a low note. Feel the air (the field) vibrate everywhere in the room, not just in your throat." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of lavender in a field. The smell isn't in one spot; it's a \"cloud\" that fills the space." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Salt in water. You can't see the salt \"balls,\" but the \"salty field\" is everywhere in the glass." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Move your hand through water. Feel the resistance — you are moving through a field." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Look at the \"heat waves\" on a road. You are seeing the air (field) dancing." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Imagine your body is just a \"lump of waves\" moving through a bigger ocean of energy." },
+        ],
+        intuition: "You are never lonely. You are a wave that the whole ocean is making. You are part of the \"Everlasting We\" that fills every inch of space.",
+        links: [
+          { label: "Quantum Field Theory — Stanford Encyclopedia", url: "https://plato.stanford.edu/entries/quantum-field-theory/" },
+          { label: "What is a Quantum Field? — Quanta Magazine", url: "https://www.quantamagazine.org/what-is-a-quantum-field-20201022/" },
+          { label: "The Standard Model — CERN", url: "https://home.cern/science/physics/standard-model" },
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Waves", artist: "Kanye West", url: "https://www.youtube.com/watch?v=4SNo7V_E99U" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=L5p9pKO7p8w" },
+        ],
+        advanced: "QFT synthesizes Classical Field Theory, Quantum Mechanics, and Special Relativity. It treats particles as localized excitations (quanta) of underlying fields. This shifts the paradigm from \"Atomism\" to \"Holism,\" where the vacuum is not empty but a state of minimum energy, teeming with virtual fluctuations.",
+      },
+
+      // ── 8 ── NEWTON'S LAWS OF MOTION ─────────────────────────
+      {
+        id: "newtons-laws",
+        num: 8,
+        icon: "⚖️",
+        title: "Newton's Laws of Motion",
+        subtitle: "The Fairness Rule",
+        simple: "If you push something, it pushes back. If something is moving, it wants to keep moving. If it's sitting still, it wants to stay still. This is the \"Fairness Rule\" of the world. Every action has a buddy action.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Clap your hands. The sound is the result of two forces meeting and reacting." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smelling a breeze. The air is moving because something pushed it, and it won't stop until something else gets in the way." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"snap\" of a carrot. It resists your bite until you apply enough force." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Push against a wall. Feel the wall \"pushing\" your hands back with the exact same strength." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a ball roll across grass and slowly stop. You are seeing friction \"pushing\" back." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Put on a seatbelt. When the car stops, feel your body wanting to keep going. That's inertia!" },
+        ],
+        intuition: "Your choices and actions matter. Every \"push\" you give the world creates a \"pull\" somewhere else. You are in a constant, balanced dance with everything around you.",
+        links: [
+          { label: "Newton's Laws — NASA", url: "https://www.grc.nasa.gov/www/k-12/airplane/newton.html" },
+          { label: "Inertia and Force — Physics Classroom", url: "https://www.physicsclassroom.com/class/newtlaws" },
+          { label: "Classical Mechanics — Britannica", url: "https://www.britannica.com/science/classical-mechanics" },
+        ],
+        songs: [
+          { title: "Life in the Fast Lane", artist: "Eagles", url: "https://www.youtube.com/watch?v=4tcXblWojdM" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Newton's Law", artist: "5 Seconds of Summer", url: "https://www.youtube.com/watch?v=vV99jS_A6O0" },
+        ],
+        advanced: "Newtonian mechanics (F = dp/dt) provides the deterministic framework for the macroscopic world. While superseded at extreme scales, these laws represent the \"Symmetry of Interaction\" — causality as a fundamental thread in our daily reality, the \"Local Truth\" that allows for predictable existence.",
+      },
+
+      // ── 9 ── THE HIGGS FIELD ─────────────────────────────────
+      {
+        id: "higgs-field",
+        num: 9,
+        icon: "🍯",
+        title: "The Higgs Field",
+        subtitle: "Invisible Molasses",
+        simple: "Imagine the universe is filled with invisible molasses or thick syrup. Some tiny pieces of the world move through it easily, but others get \"stuck\" and become heavy. This invisible syrup gives things weight so they can stick together and form \"stuff\" like us.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Dragging a stick through water. Hear the \"resistance\" — that's like particles getting mass." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Smelling a thick, heavy perfume. It feels \"weighty\" in the air compared to a light breeze." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Thick honey vs. water. Feel the \"heaviness\" on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Walking through a swimming pool. Feel the \"drag\" on your legs. The Higgs Field does that to all your atoms." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch a leaf fall slowly. It feels the \"heaviness\" of the air, just as we feel the \"heaviness\" of mass." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Try to shake your arm really fast. Feel the \"effort\" it takes to move your weight." },
+        ],
+        intuition: "You have \"weight\" and \"presence\" because the universe is holding onto you. You are not a ghost; you are a solid part of the story.",
+        links: [
+          { label: "The Higgs Boson — CERN", url: "https://home.cern/science/physics/higgs-boson" },
+          { label: "What is the Higgs Field? — The Guardian", url: "https://www.theguardian.com/science/2012/jul/04/what-is-higgs-boson-god-particle" },
+          { label: "Mass and the Higgs — Fermilab", url: "https://www.fnal.gov/pub/science/particle-physics-101/higgs-boson.html" },
+        ],
+        songs: [
+          { title: "Heavy", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=5dmQ3QWpy1Q" },
+          { title: "Teardrop", artist: "Massive Attack", url: "https://www.youtube.com/watch?v=u7K72X4eo_s" },
+          { title: "God's Plan", artist: "Drake", url: "https://www.youtube.com/watch?v=TvR6d08L3nc" },
+        ],
+        advanced: "The Higgs Mechanism explains electroweak symmetry breaking. By interacting with the Higgs Field, massless gauge bosons and fermions acquire mass via Yukawa coupling. This is the \"Origin of Substance\" — the transition from pure energy to localized \"being.\"",
+      },
+
+      // ── 10 ── DARK MATTER & DARK ENERGY ──────────────────────
+      {
+        id: "dark-matter-energy",
+        num: 10,
+        icon: "🌚",
+        title: "Dark Matter & Dark Energy",
+        subtitle: "The Secret Side",
+        simple: "The universe has a \"secret side.\" Most of what makes the universe work is invisible. Dark Matter is like invisible hands holding galaxies together, and Dark Energy is like an invisible wind blowing the universe apart. We know they are there because we see what they do, even if we can't see them.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Hearing the wind howl but not seeing the air. You hear the effect, but the cause is invisible." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A scent that reminds you of a dream. You can't touch the memory, but the feeling is real." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"hidden\" ingredients in a complex soup. You can't see the pinch of salt, but you'd know if it was gone." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The \"pull\" of a magnet through a piece of paper. You can't see the force, but you feel the tug." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at a dark room and knowing your furniture is still there." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Close your eyes and \"feel\" where your hand is. You don't need to see it to know it exists." },
+        ],
+        intuition: "Just because you can't explain or see something doesn't mean it isn't real. Most of the universe is a beautiful mystery waiting to be felt.",
+        links: [
+          { label: "Dark Matter/Dark Energy — NASA Science", url: "https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy" },
+          { label: "The Mystery of Dark Matter — Perimeter Institute", url: "https://perimeterinstitute.ca/dark-matter" },
+          { label: "Dark Energy — ESA/Hubble", url: "https://esahubble.org/wordbank/dark-energy/" },
+        ],
+        songs: [
+          { title: "Dark Side of the Moon", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=HW-lXjC_0O8" },
+          { title: "Invisible", artist: "Hunter Hayes", url: "https://www.youtube.com/watch?v=LiPUP70vE_s" },
+          { title: "Starlight", artist: "Muse", url: "https://www.youtube.com/watch?v=Pgum6OT_VH8" },
+        ],
+        advanced: "Dark Matter (~27%) provides the gravitational scaffolding for cosmic structure, while Dark Energy (~68%) acts as a cosmological constant driving accelerated expansion. Together, they represent the \"Unmanifest Majority\" — the realization that our empirical \"Light-World\" is merely a thin crust on a vast, unobserved ocean of reality.",
+      },
+
+    ],
   },
 };
 
