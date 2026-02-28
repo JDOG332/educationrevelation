@@ -8426,6 +8426,242 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Cyclical Destruction/Rebirth (Kalpa in Hinduism, the Phoenix) mirrors Conformal Cyclic Cosmology in physics. Time is not linear but a series of expansions and contractions. Death is merely a phase of transformation within the conservation of energy. The wheel turns. It has always turned." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > THE HERO'S JOURNEY (hero)
+    // ═══════════════════════════════════════════════════════════════
+
+    hero: [
+      { id: "call-to-adventure", num: 1, icon: "🎺", title: "The Call to Adventure", subtitle: "The Knock on the Door You Cannot Ignore",
+        simple: "Imagine you are playing in your room and someone suddenly knocks on your door with a secret invitation to a magical land. This is the moment you realize your life is about to change, even if you are a little bit scared. You can feel a flutter in your tummy like butterflies. You hear a loud, clear note on a trumpet that tells you it is time to wake up and move. You might smell the fresh, crisp air of a forest you have never visited before. If you taste it, it is like a cold, sweet grape that wakes up your mouth. When you touch the handle of your door, it feels warm and tingly. You see a bright light shining through the keyhole.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud, clear trumpet note that says: it is time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The fresh, crisp air of a forest you have never visited." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold, sweet grape that wakes up your whole mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warm, tingly handle of a door you are about to open." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright light shining through the keyhole." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your whole body leaning forward, ready to run into a new day." }
+        ],
+        intuition: "The knock comes for everyone. You can pretend you did not hear it. But your body already leaned toward the door.",
+        links: [
+          { label: "Wikipedia: The Hero with a Thousand Faces", url: "https://en.wikipedia.org/wiki/The_Hero_with_a_Thousand_Faces" },
+          { label: "Joseph Campbell Foundation", url: "https://www.jcf.org/" },
+          { label: "MasterClass: The Call to Adventure", url: "https://www.masterclass.com/" }
+        ],
+        songs: [
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+          { title: "Go the Distance", artist: "Roger Bart (Hercules)", url: "https://www.youtube.com/watch?v=zgnHF2CwrPs" },
+          { title: "Roar", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=CevxZvSJLk8" }
+        ],
+        advanced: "The Call to Adventure represents the disruption of the Ordinary World, serving as a catalyst for individuation. An ontological rupture where the protagonist is beckoned by a herald — person, event, or internal realization — to leave the known for the unknown. Bridges conscious ego and unconscious potential. Accepting the call begins self-actualization." },
+
+      { id: "return-with-elixir", num: 2, icon: "🍯", title: "The Return with the Elixir", subtitle: "Coming Home Changed, Carrying the Gift",
+        simple: "You have finally come back home after a long trip, and you are not the same person you were when you left. You are carrying a special gift, like a jar of magic honey, that can help everyone in your neighborhood feel better. You hear the soft, happy cheers of your friends welcoming you back. You smell the familiar scent of home-baked cookies, but they smell even better now because you missed them. You taste the sweetness of the elixir on your tongue, and it feels like a warm hug inside. You feel your feet planted firmly on the ground, knowing exactly where you belong.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft, happy cheers of friends welcoming you back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Home-baked cookies that smell even better because you missed them." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of the elixir: a warm hug inside your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your feet planted firmly on the ground: you know where you belong." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The smiles on everyone's faces as you share your story." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A deep peace in your chest: you did something hard and you came back whole." }
+        ],
+        intuition: "You left empty. You came back full. But the gift is not for you. It is for everyone you left behind. That is why you had to go.",
+        links: [
+          { label: "The Monomyth: Hero's Return", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Christopher Vogler's Story Structure", url: "https://en.wikipedia.org/wiki/Christopher_Vogler" },
+          { label: "The Elixir of Life Myth", url: "https://en.wikipedia.org/wiki/Elixir_of_life" }
+        ],
+        songs: [
+          { title: "Home", artist: "Phillip Phillips", url: "https://www.youtube.com/watch?v=HoRkntoS3TQ" },
+          { title: "Coming Home", artist: "Skylar Grey", url: "https://www.youtube.com/watch?v=k-ImCpNqbJw" },
+          { title: "The Best", artist: "Tina Turner", url: "https://www.youtube.com/watch?v=GC5E8ie2pdM" }
+        ],
+        advanced: "The Elixir symbolizes integration of lessons into the community's fabric. Final stage of the monomyth where the hero achieves dual perspective, existing in both mundane and spiritual realms. The elixir may be wealth, but more often it is wisdom, peace, or a new law. The hero's struggle was not for personal gain but for restoration of the world." },
+
+      { id: "supreme-ordeal", num: 3, icon: "⚔️", title: "The Supreme Ordeal", subtitle: "The Dragon You Must Face Alone",
+        simple: "This is the scariest part of the whole story where you have to face the big dragon or the hardest test of all. It feels like your heart is beating like a drum against your ribs. You hear the loud, deep growl of the challenge right in front of you. The air smells like smoke and old metal, making you feel very serious. You might taste the salt of a tear or sweat on your lip, showing how hard you are working. You feel the cold, hard ground beneath you and the heavy weight of your choice to stay and fight. You see the obstacle clearly, but you also see the strength inside yourself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The loud, deep growl of the challenge right in front of you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke and old metal: the scent of the fight." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt of a tear or sweat on your lip: proof you are working." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold, hard ground beneath you and the heavy weight of your choice to stay." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The obstacle clearly — but also the strength inside yourself." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A strange stillness in your body, like a mountain that cannot be moved." }
+        ],
+        intuition: "The dragon is not out there. It is the part of you that says you cannot. You face it. You stay. That is the ordeal. That is the making.",
+        links: [
+          { label: "Psychology of the Shadow — Jung", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Facing the Dragon Myth", url: "https://en.wikipedia.org/wiki/Dragon" },
+          { label: "The Dark Night of the Soul", url: "https://en.wikipedia.org/wiki/Dark_Night_of_the_Soul" }
+        ],
+        songs: [
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" }
+        ],
+        advanced: "The Supreme Ordeal is the narrative climax: symbolic death and rebirth. In this belly of the whale moment, the hero confronts their greatest fear, often requiring sacrifice of the old self. Successful navigation confirms worthiness. The point of no return where character is forged through pressure, transitioning seeker to master." },
+
+      { id: "transformation-hero", num: 4, icon: "🦋", title: "The Transformation", subtitle: "The Caterpillar Becomes the Butterfly",
+        simple: "You are changing from a crawling caterpillar into a beautiful butterfly with bright wings. It is like a light bulb suddenly turning on inside your head, making everything look different. You hear the sound of a soft bell ringing, signaling that a new you has arrived. You smell the fresh scent of rain after a storm, which feels like a new beginning. You taste a burst of citrus, sharp and bright, that makes you feel energized. You feel your skin tingle as if you are shedding an old coat that was too small. You see the world in more colors than you ever noticed before.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft bell ringing: a new you has arrived." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain after a storm: the scent of a new beginning." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A burst of citrus, sharp and bright, that makes you feel alive." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Skin tingling as you shed an old coat that was too small." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The world in more colors than you ever noticed before." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Light and airy, like you could float: the old fears are gone." }
+        ],
+        intuition: "The caterpillar did not die. It just stopped being a caterpillar. You are not losing yourself. You are becoming yourself.",
+        links: [
+          { label: "Spiritual Transformation", url: "https://en.wikipedia.org/wiki/Spiritual_transformation" },
+          { label: "Metamorphosis in Mythology", url: "https://en.wikipedia.org/wiki/Metamorphosis" },
+          { label: "Neuroplasticity and Change", url: "https://en.wikipedia.org/wiki/Neuroplasticity" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" }
+        ],
+        advanced: "Transformation is the internal corollary to the external journey. The true journey is expansion of consciousness, often described as metanoia — a fundamental shift in mind and life. Aligns with the Aha moment in learning and the Amen moment in faith. Knowledge becomes wisdom; identity aligns with universal truths." },
+
+      { id: "crossing-threshold", num: 5, icon: "🚪", title: "Crossing the Threshold", subtitle: "The Jump into the Deep End",
+        simple: "You are standing at a big gate, and once you step through, you cannot just turn back easily. It is like jumping into the deep end of a swimming pool for the first time. You hear the wind whistling through the doorway, calling you to come inside. You smell the strange, spicy scent of a new land you have never been to. You taste something new and exotic, like a fruit you cannot name. You feel the rough texture of the stone gate under your hands as you push it open. You see a horizon that goes on forever, full of mystery.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Wind whistling through the doorway, calling you inside." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The strange, spicy scent of a new land." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something exotic, like a fruit you cannot name." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough stone under your hands as you push the gate open." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A horizon that goes on forever, full of mystery." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A shiver down your spine: your body saying this is real." }
+        ],
+        intuition: "The gate only swings one way. Once you step through, you are in the story. There is no going back to who you were before.",
+        links: [
+          { label: "Liminality: The Space Between", url: "https://en.wikipedia.org/wiki/Liminality" },
+          { label: "The First Threshold in Storytelling", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Threshold Guardians", url: "https://en.wikipedia.org/wiki/Threshold_guardian" }
+        ],
+        songs: [
+          { title: "Life Is a Highway", artist: "Tom Cochrane", url: "https://www.youtube.com/watch?v=U3sMjm9Eloo" },
+          { title: "Learning to Fly", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=nVhNCTH8pDs" },
+          { title: "Wide Open Spaces", artist: "The Chicks", url: "https://www.youtube.com/watch?v=E2BYTuaAoHo" }
+        ],
+        advanced: "Crossing the Threshold marks transition from profane to sacred, conscious to unconscious. The hero leaves societal safety and enters the Special World where ordinary rules no longer apply. Often involves Threshold Guardians who test resolve. Passing signifies commitment to the quest and readiness for trials ahead." },
+
+      { id: "the-mentor", num: 6, icon: "🦉", title: "The Mentor", subtitle: "The Wise One Who Believes in You",
+        simple: "Think of a very kind teacher or a grandparent who tells you exactly what you need to hear when you are lost. They give you a map or a special tool to help you stay safe on your walk. You hear their voice, which is calm and deep like a slow river. You smell the old, comforting scent of books and peppermint tea. You taste a warm, soothing soup that makes you feel strong and cared for. You feel the gentle, firm hand of the mentor on your shoulder, giving you courage. You see the sparkle of wisdom in their eyes that tells you they believe in you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A calm, deep voice like a slow river: they have seen this before." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books and peppermint tea: the scent of wisdom." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm, soothing soup that makes you feel strong and cared for." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle, firm hand on your shoulder giving you courage." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sparkle of wisdom in their eyes: they believe in you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing taller because someone showed you how." }
+        ],
+        intuition: "The mentor does not carry you. They hand you the map and say: you already know the way. I am just reminding you.",
+        links: [
+          { label: "The Role of the Mentor in Mythology", url: "https://en.wikipedia.org/wiki/Mentor_(Odyssey)" },
+          { label: "Archetypes in Literature", url: "https://en.wikipedia.org/wiki/Archetype" },
+          { label: "The Wisdom of the Aged", url: "https://en.wikipedia.org/wiki/Elder" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "You've Got a Friend", artist: "James Taylor", url: "https://www.youtube.com/watch?v=xEkIou3WFnM" }
+        ],
+        advanced: "The Mentor archetype is the External Conscience: personification of the hero's potential. Provides Supernatural Aid — knowledge, weapons, or talismans — necessary for survival in the Special World. Mentors represent collective wisdom of ancestors. They guide until the hero is ready to become a mentor, completing the cycle of transmission." },
+
+      { id: "ordinary-world", num: 7, icon: "🏡", title: "The Ordinary World", subtitle: "Where You Start Before Everything Changes",
+        simple: "This is where you start, in your own house where everything is familiar and maybe a little bit boring. You know exactly where your socks are and what is for dinner every Tuesday. You hear the hum of the refrigerator and the birds outside your window. You smell the soap in the bathroom and the grass in the yard. You taste your favorite cereal, crunchy and sweet, just like always. You feel the soft fabric of your own bed and the floorboards you know by heart. You see the same trees and the same street every single day. You feel very still and maybe a little bit itchy, like you are waiting for something exciting to finally happen.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of the refrigerator and birds outside: the soundtrack of normal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Soap in the bathroom and grass in the yard." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Your favorite cereal, crunchy and sweet, just like always." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft fabric of your own bed and floorboards you know by heart." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The same trees and the same street every single day." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Very still and a little itchy: waiting for something to finally happen." }
+        ],
+        intuition: "You have to know what normal feels like before you can feel what extraordinary is. The boring is the baseline. Without it, the adventure means nothing.",
+        links: [
+          { label: "The Hero's Ordinary World", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "The Psychology of Comfort Zones", url: "https://en.wikipedia.org/wiki/Comfort_zone" },
+          { label: "Everyday Life Archetypes", url: "https://en.wikipedia.org/wiki/Archetype" }
+        ],
+        songs: [
+          { title: "Our House", artist: "Madness", url: "https://www.youtube.com/watch?v=KwIe_sjKeAY" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Small Town", artist: "John Mellencamp", url: "https://www.youtube.com/watch?v=0CVLVaBECuY" }
+        ],
+        advanced: "The Ordinary World establishes the narrative baseline, highlighting the hero's dissatisfaction or lack. Provides the Ground Truth from which all growth is measured. Without it, transformation lacks impact. Represents the Ego State — the comfortable but limited identity inhabited before crisis forces expansion." },
+
+      { id: "road-of-trials", num: 8, icon: "🛤️", title: "The Road of Trials", subtitle: "The Path That Gets Harder with Every Step",
+        simple: "You are walking on a long path where you have to solve puzzles and jump over puddles to keep going. It is like a video game level that gets a little bit harder with every step. You hear the clatter of rocks under your shoes and the sounds of new friends helping you. You smell the earthy scent of mud and the sweat of hard work. You taste a sour lemon that makes your eyes water but keeps you awake and ready. You feel the muscles in your legs getting stronger and tighter as you climb. You see many different signs and challenges along the way.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Rocks clattering under your shoes and friends calling out." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Earthy mud and the sweat of hard work." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sour lemon that makes your eyes water but keeps you awake." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Muscles in your legs getting stronger and tighter as you climb." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Many different signs and challenges along the way." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heart pumping fast: you realize you can do more than you thought." }
+        ],
+        intuition: "The road does not get easier. You get stronger. Every puzzle you solve is a muscle you did not have yesterday.",
+        links: [
+          { label: "The Trials of Hercules", url: "https://en.wikipedia.org/wiki/Labours_of_Hercules" },
+          { label: "Growth Mindset Research", url: "https://en.wikipedia.org/wiki/Mindset#Fixed_and_growth_mindset" },
+          { label: "Road of Trials — Joseph Campbell", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" }
+        ],
+        songs: [
+          { title: "The Climb", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=NG2zyeVRcbs" },
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=gYkACVDFmeg" },
+          { title: "Stronger (What Doesn't Kill You)", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" }
+        ],
+        advanced: "The Road of Trials consists of tests, allies, and enemies designed to deconstruct the hero's ego. Challenges strip away reliance on old habits and force development of new skills and resilience. Characterized by Iterative Learning: each failure and success provides data calibrating the approach to the Supreme Ordeal. The training ground for the soul." },
+
+      { id: "meeting-shadow", num: 9, icon: "👤", title: "Meeting the Shadow", subtitle: "The Mirror That Shows What You Hide",
+        simple: "Sometimes you feel a little bit grumpy or mean, and that is the part of you that you do not always like to show. Meeting the Shadow is like looking in a mirror and seeing the parts of you that are scared or angry, and learning to be kind to them. You hear a low whisper that sounds like your own voice but says things you are afraid of. You smell the heavy, thick air of a basement that has not been opened in a long time. You taste something bitter, like dark chocolate without the sugar. You feel a heavy weight on your chest, like a big stone. You see a dark shape that looks just like you but in the dark.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A low whisper that sounds like your own voice saying things you fear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Heavy, thick air of a basement unopened for a long time." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something bitter, like dark chocolate without the sugar." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy weight on your chest, like a stone you must carry." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A dark shape that looks just like you, but standing in the dark." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A deep shiver, then a warm glow as you decide to be brave." }
+        ],
+        intuition: "The shadow is not your enemy. It is the part of you that got locked in the basement. Open the door. Let it speak. That is how you become whole.",
+        links: [
+          { label: "Carl Jung: The Shadow", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "The Shadow Archetype in Movies", url: "https://en.wikipedia.org/wiki/Archetype" },
+          { label: "Integrating the Shadow", url: "https://en.wikipedia.org/wiki/Individuation" }
+        ],
+        songs: [
+          { title: "Behind Blue Eyes", artist: "The Who", url: "https://www.youtube.com/watch?v=BfuWXRZe9yA" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" },
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" }
+        ],
+        advanced: "The Shadow contains the Repressed Truths of the hero: all traits deemed unacceptable to ego or society. To become Whole, one must confront and integrate these darker aspects rather than destroying them. The ultimate act of honesty. By acknowledging the capacity for darkness, the hero gains power to choose light intentionally, earning true moral authority." },
+
+      { id: "refusal-of-call", num: 10, icon: "🛑", title: "Refusal of the Call", subtitle: "Hiding Under the Blankets",
+        simple: "You hear someone calling you to go on a big adventure, but you hide under your blankets and pretend you did not hear it. You are worried that you are not strong enough or that you will miss your snacks and your bed. You hear the ticking of the clock, reminding you that time is passing while you stay still. You smell the dusty smell of a room where no one has moved for a long time. You taste dry crackers that make you thirsty for something more. You feel the soft, heavy weight of your blankets keeping you stuck. You see the shadow of the door, wishing you were on the other side.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ticking of a clock: time passing while you stay still." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dust in a room where no one has moved for a long time." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dry crackers that make you thirsty for something more." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heavy blankets keeping you stuck in one place." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The shadow of the door, wishing you were on the other side." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A tight knot in your stomach: you know you are supposed to go but you are not ready yet." }
+        ],
+        intuition: "The blanket is warm. The adventure is cold. But the knot in your stomach knows the truth. You were not built for the blanket. You were built for the door.",
+        links: [
+          { label: "Fear of Success/Failure", url: "https://en.wikipedia.org/wiki/Fear_of_success" },
+          { label: "Refusal of the Call Examples", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Overcoming Resistance", url: "https://en.wikipedia.org/wiki/Resistance_(creativity)" }
+        ],
+        songs: [
+          { title: "Should I Stay or Should I Go", artist: "The Clash", url: "https://www.youtube.com/watch?v=BN1WwnEDWAM" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" }
+        ],
+        advanced: "The Refusal highlights the hero's humanity and inherent friction of change. A narrative device heightening stakes: the hero is not flawless but a person with fears and attachments. Represents Homeostasis — the tendency of a system to resist change. The hero must find motivation stronger than fear to break this state and begin the journey." },
+    ],
+
 
   },
 };
