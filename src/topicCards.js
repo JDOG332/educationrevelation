@@ -9601,6 +9601,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Martyrdom is the Phase Transition of a concept. When an individual sacrifices physical existence for an idea, the idea is validated with maximum Informativeness. Death of the physical carrier ensures immortality of informational content. The martyr's life becomes perfectly aligned with the Universal Ideal. No accidental benefit to dying for a cause — only the coincidence of the person and the truth." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > TRICKSTERS & CHAOS (trickster)
+    // ═══════════════════════════════════════════════════════════════
+
+    trickster: [
+      { id: "disruptor-as-teacher", num: 1, icon: "🦊", title: "The Disruptor as Teacher", subtitle: "The One Who Trips You Before You Hit the Wall",
+        simple: "Sometimes things have to break so we can see how they work. A trickster is not being mean; they are showing us where we are stuck in our ways. Imagine a person who trips you just as you were about to walk into a wall you did not see. They use surprises and jokes to make us pay attention to the truth. By breaking a small rule, they help us understand the big, important rules of life. They are the glitch in the system that actually makes the system better.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sudden pop of a balloon in a quiet room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp ozone scent of a lightning strike." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon that makes your face scrunch and your eyes water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The static shock from a doorknob that wakes up your nerves." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright neon sign flickering in an old, dark forest." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That feeling of falling right as you drift off to sleep: the trickster shaking you awake." }
+        ],
+        intuition: "The glitch is not the enemy. The glitch is the teacher. It breaks the thing so you can finally see how the thing works. Thank the fox.",
+        links: [
+          { label: "The Trickster Archetype", url: "https://en.wikipedia.org/wiki/Trickster" },
+          { label: "Why Society Needs Tricksters", url: "https://en.wikipedia.org/wiki/Culture_hero" },
+          { label: "Mythic Tricksters: World History", url: "https://en.wikipedia.org/wiki/Trickster" }
+        ],
+        songs: [
+          { title: "The Joker", artist: "Steve Miller Band", url: "https://www.youtube.com/watch?v=dV3AziKTBUo" },
+          { title: "Bad Guy", artist: "Billie Eilish", url: "https://www.youtube.com/watch?v=DyDfgMOUjCI" },
+          { title: "Sympathy for the Devil", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=GgnClrx8N2k" }
+        ],
+        advanced: "The Disruptor functions as a liminal catalyst, occupying space between known and unknown, forcing re-evaluation through cognitive dissonance. Connects to Complexity Theory and Cybernetics: noise and perturbations are essential for systems to reorganize into higher states of complexity. Without disruption, systems succumb to entropy and lose their adaptive edge." },
+
+      { id: "sacred-disorder", num: 2, icon: "🌀", title: "Sacred Disorder", subtitle: "The Mess That Has a Secret Plan",
+        simple: "Everything in the universe looks messy, but that mess has a special plan. Think of a pile of autumn leaves; they are not in a straight line, but they are exactly where they need to be. When we try to make everything perfect and tidy, we stop new things from growing. Chaos is just a word for a pattern that we are not smart enough to see yet. Allowing things to be a little bit wild lets the magic of the universe happen.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A rushing waterfall where every splash is different." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp earth and rotting wood after a heavy rain: decay feeding life." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A complex stew where you cannot pick out just one ingredient." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking barefoot on uneven, mossy rocks." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A star-filled sky that looks like spilled glitter." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spinning in circles until you lose your sense of up: the sacred dizzy." }
+        ],
+        intuition: "Chaos is just a pattern you have not learned to read yet. The leaves know where to fall. The stars know where to sit. Your mess is not a mess. It is a language.",
+        links: [
+          { label: "Chaos Theory Explained", url: "https://en.wikipedia.org/wiki/Chaos_theory" },
+          { label: "Philosophy of Chaos", url: "https://en.wikipedia.org/wiki/Chaos_(cosmogony)" },
+          { label: "Sacred Clowns and Chaos", url: "https://en.wikipedia.org/wiki/Heyoka" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Smells Like Teen Spirit", artist: "Nirvana", url: "https://www.youtube.com/watch?v=hTWKbfoikeg" },
+          { title: "Welcome to the Jungle", artist: "Guns N' Roses", url: "https://www.youtube.com/watch?v=o1tj2zJ2Wvg" }
+        ],
+        advanced: "Sacred Disorder posits non-linearity as the fundamental cosmic state. In theological and mythological contexts, chaos is not absence of order but prima materia — raw, unformed potential from which all existence is birthed. Aligns with Fractal Geometry: apparent randomness at one scale reveals intricate self-similar patterns at another. Truth is found in organic emergence, not rigid imposition." },
+
+      { id: "boundary-crosser", num: 3, icon: "🚪", title: "The Boundary Crosser", subtitle: "Walking Through the Walls We Drew in Chalk",
+        simple: "A boundary crosser is like a person who can walk through walls or live in two worlds at once. They show us that the lines we draw — like us versus them or good versus bad — are often just imaginary. By stepping over the line, they prove that the world is much bigger than the small boxes we try to put it in. They teach us how to be brave and explore the middle parts where things are a mix of everything. This helps us feel connected to everyone and everything, no matter how different they seem.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo bouncing between two canyons: belonging to both." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ocean meeting the desert sand: two worlds in one breath." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salted caramel: the perfect mix of sweet and salty." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Half-submerged in warm water: in and out at the same time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset where the sky is both day-blue and night-purple." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing on a moving escalator while walking forward: two motions, one body." }
+        ],
+        intuition: "The line between us and them was drawn in chalk. The rain is coming. The boundary crosser does not erase the line. They just walk through it. And the line dissolves.",
+        links: [
+          { label: "Liminality and Literature", url: "https://en.wikipedia.org/wiki/Liminality" },
+          { label: "Hermes: The Messenger God", url: "https://en.wikipedia.org/wiki/Hermes" },
+          { label: "Crossing Boundaries in Sociology", url: "https://en.wikipedia.org/wiki/Social_boundary" }
+        ],
+        songs: [
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Go Your Own Way", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=6ul-cZyuYw4" },
+          { title: "Break on Through", artist: "The Doors", url: "https://www.youtube.com/watch?v=cJQwnAhXnBk" }
+        ],
+        advanced: "The Boundary Crosser personifies Liminality. In anthropology, they facilitate transitions between social states — often psychopomps guiding between life and death, or mediating between divine and mundane. Essential to Post-Structuralist thought where the binary is deconstructed to reveal fluid identity. All boundaries are linguistic constructs, not ontological absolutes." },
+
+      { id: "shadow-integration", num: 4, icon: "🌑", title: "Shadow Integration", subtitle: "Turning On the Light and Finding It Was Just a Pile of Clothes",
+        simple: "Everyone has a hidden side that they do not always want people to see, like being a little bit grumpy or silly. The trickster brings these hidden parts out into the light using jokes and play. When we stop hiding our shadows, we feel more whole and less tired from pretending to be perfect. It is like turning on a light in a dark room and realizing the monster was just a pile of clothes. Accepting all of yourself — the messy parts and the neat parts — is the way to be truly happy.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep, low bass note that vibrates in your chest." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Earthy, musky scent of a deep forest: the smell of what is hidden." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate: both bitter and sweet in one bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the texture of your own skin in total darkness." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your reflection in a moving, rippling pond: you but distorted." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching muscles until they feel full and heavy: releasing what was held tight." }
+        ],
+        intuition: "The monster under the bed is just you in a costume. Turn on the light. Look. It was always you. And you were never as scary as you thought.",
+        links: [
+          { label: "Carl Jung and the Shadow", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Integrating the Shadow Self", url: "https://en.wikipedia.org/wiki/Individuation" },
+          { label: "Shadow Work Guide", url: "https://en.wikipedia.org/wiki/Analytical_psychology" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Paint It, Black", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=O4irXQhgMqg" },
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" }
+        ],
+        advanced: "Shadow Integration is a core tenet of Analytical Psychology. Individuation requires the ego to acknowledge repressed aspects of the psyche. The trickster mirrors the collective and individual shadow to prevent psychic inflation or hypocrisy. In Sociology, Deviance defines and redefines moral boundaries. The trickster allows society to process repressed desires in a ritualized, safe manner." },
+
+      { id: "entropy-as-creation", num: 5, icon: "🔥", title: "Entropy as Creation", subtitle: "The Forest Fire That Makes Room for the Sun",
+        simple: "When an old sandcastle gets washed away by the ocean, it leaves a smooth, clean beach for a new one to be built. Chaos and breaking down are actually how the universe makes room for new ideas and better things. If nothing ever changed or broke, the world would get very crowded and boring. Think of it like a forest fire that clears out old bushes so big trees can get more sunlight. Destruction is just the first step of making something brand new.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle and pop of a warm campfire." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass or sawed wood: the scent of something opening." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spicy chili that burns and then feels warm." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Crumbling dry clay in your hands: old form releasing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A kaleidoscope shifting into a new pattern." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weightless feeling at the top of a swing set: between up and down, everything is possible." }
+        ],
+        intuition: "The fire is not the enemy of the forest. The fire is the forest's way of starting over. Every ending is a blank page. Every ash is a seed.",
+        links: [
+          { label: "Second Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics" },
+          { label: "Shiva: Destroyer and Creator", url: "https://en.wikipedia.org/wiki/Shiva" },
+          { label: "Creative Destruction in Economics", url: "https://en.wikipedia.org/wiki/Creative_destruction" }
+        ],
+        songs: [
+          { title: "Another One Bites the Dust", artist: "Queen", url: "https://www.youtube.com/watch?v=rY0WxgSXdEE" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" },
+          { title: "Firework", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=QGJuMBdaqIw" }
+        ],
+        advanced: "Entropy in Information Theory represents degree of uncertainty or surprise. High entropy equals high information potential. The Trickster increases system information through dissolution of redundant structures. Parallels Creative Destruction in economics where innovation requires dismantling the old. Cyclical rather than linear: death and life are mutually dependent phases of a single process." },
+
+      { id: "cultural-mirroring", num: 6, icon: "🪞", title: "Cultural Mirroring", subtitle: "The Funny Mirror That Shows You the Truth",
+        simple: "The trickster is like a funny mirror at a carnival that shows us how silly our rules can be. When we see a character in a story making fun of a grumpy king, it helps us realize that we should not take ourselves too seriously. They reflect the truth of a group back to them, even if it is a bit embarrassing. This helps people laugh at their mistakes so they can fix them without being angry. Being able to see yourself clearly is the best way to grow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A crowd laughing all at once: truth landing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library full of old books: every mirror ever polished." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A perfectly ripe fruit: truth at its sweetest." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing two magnets together that want to repel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into a mirror and winking at yourself." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Mimicking someone else's movements: feeling their shape in your bones." }
+        ],
+        intuition: "The mirror does not lie. The mirror does not judge. The mirror just shows. And if you can laugh at what you see, you are already growing.",
+        links: [
+          { label: "The Social Function of Satire", url: "https://en.wikipedia.org/wiki/Satire" },
+          { label: "Tricksters in Literature", url: "https://en.wikipedia.org/wiki/Trickster" },
+          { label: "Mirroring and Social Learning", url: "https://en.wikipedia.org/wiki/Mirror_neuron" }
+        ],
+        songs: [
+          { title: "Man in the Box", artist: "Alice in Chains", url: "https://www.youtube.com/watch?v=TAqZb52sgpU" },
+          { title: "Like a Rolling Stone", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=IwOfCgkyEj0" },
+          { title: "Losing My Religion", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=xwtdhWltSIg" }
+        ],
+        advanced: "Cultural Mirroring is Mimesis and social critique. The Trickster acts as Social Satirist, using irony and parody to expose cultural contradictions. Embodies the anti-hero as safe outlet for institutional critique. In Phenomenology, the trickster is the Other that allows the Self to perceive its own boundaries and flaws — an essential feedback loop for ethical health of civilization." },
+
+      { id: "divine-play-lila", num: 7, icon: "🎲", title: "Divine Play (Lila)", subtitle: "Life Is a Game and You Are Already Playing",
+        simple: "God or the Universe likes to play games, and we are all part of the fun! Think of life like a giant game of tag or hide-and-seek; it is not about winning, it is about the joy of moving and being alive. When we treat life like a serious job all the time, we forget to be happy. The trickster reminds us to lighten up and find the fun in every day, even when things are a little messy. Play is the way the world learns and creates new things.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A slide-whistle going up and down: pure silly." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Bubblegum or cotton candy: childhood in a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Popping candy that tingles on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Splashing your hands in a cool puddle." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Brightly colored confetti falling through the air." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Jumping on a trampoline and feeling floaty: the body remembering joy." }
+        ],
+        intuition: "The universe is not punishing you. The universe is playing with you. Tag. You are it. Now run. And laugh while you run.",
+        links: [
+          { label: "The Concept of Lila in Hinduism", url: "https://en.wikipedia.org/wiki/Lila_(Hinduism)" },
+          { label: "The Importance of Play", url: "https://en.wikipedia.org/wiki/Play_(activity)" },
+          { label: "Homo Ludens: Man the Player", url: "https://en.wikipedia.org/wiki/Homo_Ludens" }
+        ],
+        songs: [
+          { title: "Don't Stop Me Now", artist: "Queen", url: "https://www.youtube.com/watch?v=HgzGwKwLmgM" },
+          { title: "Girls Just Want to Have Fun", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=PIb6AZdTr-A" },
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" }
+        ],
+        advanced: "Lila (Sanskrit) describes the cosmos as divine playground. Shifts existential focus from Telos (goal-oriented purpose) to Aisthesis (sensory experience and play). Reality is an aesthetic phenomenon, not a problem to solve. In Evolutionary Biology, play drives neuroplasticity and learning. Divine Play is the cosmic version: continuous experimentation of form and function driving diversity of life and consciousness." },
+
+      { id: "fools-wisdom", num: 8, icon: "🃏", title: "The Fool's Wisdom", subtitle: "The Silliest One in the Room Knows the Most",
+        simple: "Sometimes the person who seems the silliest is actually the smartest one in the room. A fool can say things that nobody else is brave enough to say because they use a joke to hide the truth. They teach us that being right is not as important as being honest and kind. When we stop trying to look cool or smart, we can finally learn the biggest secrets of the universe. It is okay to not know everything; that is where the fun of learning starts!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single bell ringing in a quiet forest." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: rain on dry pavement, the smell of a fresh start." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain, cool water when you are very thirsty: simple perfection." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle breeze on your face on a hot day." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single flower growing out of a crack in a sidewalk." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot with your eyes closed: trust without proof." }
+        ],
+        intuition: "The one who says I do not know is the only one telling the truth. The fool wears the cap and bells. But the fool sees the king naked. And the fool is the only one brave enough to say it.",
+        links: [
+          { label: "The Archetype of the Fool", url: "https://en.wikipedia.org/wiki/The_Fool_(tarot_card)" },
+          { label: "Shakespeare's Fools and Wisdom", url: "https://en.wikipedia.org/wiki/Shakespearean_fool" },
+          { label: "The Wisdom of Not Knowing", url: "https://en.wikipedia.org/wiki/Socratic_method" }
+        ],
+        songs: [
+          { title: "The Fool on the Hill", artist: "The Beatles", url: "https://www.youtube.com/watch?v=DGQVX8iGbgk" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" }
+        ],
+        advanced: "The Wise Fool is a paradox subverting Epistemology. Rejecting formal logic and social status grants access to Unconscious Wisdom. Related to Socratic Ignorance: true knowledge begins with admitting one's lack. In Literature, the Fool speaks Truth to Power with plausible deniability — the Unfiltered Psyche perceiving reality without distortion of ego or social conditioning." },
+
+      { id: "subversion-of-hierarchy", num: 9, icon: "⚖️", title: "Subversion of Hierarchy", subtitle: "Turning the World Upside Down So Everyone Can See",
+        simple: "The trickster loves to turn the world upside down — making the low people feel high and the high people feel low. They show us that titles like Boss or King are just roles we play, and everyone is equal underneath. By playing pranks on powerful people, they remind everyone to stay humble and remember where they came from. It is like a big cosmic reset button that makes sure nobody gets too big for their boots. This keeps the world fair and full of surprises.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A tuba playing a funny, low melody." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A circus: popcorn, hay, and excitement." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter coffee followed by a very sweet cookie: reversal in flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Swapping your shoes onto the wrong feet for a minute." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A drawing of a fish flying and a bird swimming." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking backward through a doorway you usually walk through forward: same door, new world." }
+        ],
+        intuition: "The trickster does not want the throne. The trickster wants you to see the throne is made of cardboard. Once you see that, nobody can sit on it the same way again.",
+        links: [
+          { label: "The Carnival and the Grotesque", url: "https://en.wikipedia.org/wiki/Carnivalesque" },
+          { label: "Social Hierarchy in Primates", url: "https://en.wikipedia.org/wiki/Dominance_hierarchy" },
+          { label: "The History of the Court Jester", url: "https://en.wikipedia.org/wiki/Jester" }
+        ],
+        songs: [
+          { title: "Revolution", artist: "The Beatles", url: "https://www.youtube.com/watch?v=BGLGzRXY5Bw" },
+          { title: "Royals", artist: "Lorde", url: "https://www.youtube.com/watch?v=nlcIKh6sBtc" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" }
+        ],
+        advanced: "Rooted in the Carnivalesque (Bakhtin): temporary suspension of social hierarchy for Primal Equality. A vital safety valve for social tension. In Political Science, subversion reclaims agency for the disempowered. The trickster champions Heterarchy — shifting, lateral connections — over rigid Hierarchy. The throne itself is the construct." },
+
+      { id: "catalyst-of-evolution", num: 10, icon: "🌱", title: "The Catalyst of Evolution", subtitle: "The Weird Idea That Changes the Whole World",
+        simple: "Evolution is just a fancy word for getting better over time, and chaos is the fuel that makes it happen. If everything stayed the same, animals and plants would never change to survive better. The trickster is the random mutation or the weird idea that ends up changing the whole world. By trying things that seem wrong or crazy, they find the new paths that lead to the future. They are the spark that keeps the fire of life burning bright and moving forward.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A fast-growing vine creaking if you listen very closely." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A garden right after a thunderstorm: the new is arriving." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A new fruit you have never tried before." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a caterpillar becoming a butterfly." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a seed turning into a flower." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Growing pains in your legs when you are young: evolution happening inside you right now." }
+        ],
+        intuition: "The mutation was not a mistake. The mutation was the future trying a new door. Every weird idea that survived became normal. Every normal thing was once the weird one.",
+        links: [
+          { label: "How Mutation Drives Evolution", url: "https://en.wikipedia.org/wiki/Mutation" },
+          { label: "The Role of Randomness in Biology", url: "https://en.wikipedia.org/wiki/Genetic_drift" },
+          { label: "Adaptive Radiation", url: "https://en.wikipedia.org/wiki/Adaptive_radiation" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=4BgF7Y3q-as" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Start Me Up", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=SGyOaCXr8Lw" }
+        ],
+        advanced: "The Catalyst represents Novelty in Evolutionary Dynamics. Populations stuck on local fitness peaks cannot reach global peaks without variance. The trickster introduces enough chaos to bump the system off the local peak. In Genetic Algorithms, stochasticity prevents models from stalling. The trickster is the biological and cultural embodiment: the essential error that leads to the next stage of development." },
+    ],
 
 
   },
