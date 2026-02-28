@@ -6302,10 +6302,6 @@ export const TOPIC_CARDS = {
         ],
         advanced: "This tension represents the temperature of ethical systems. High temperature (Relativism) allows entropy and cultural variation. Low temperature (Objectivism) seeks a frozen state of universal truth. Convergent Recognition often lies where universal values coexist with cultural nuances. Connects to Cultural Anthropology and Post-Structuralism." },
     ],
-
-
-  },
-}    ],
     // ═══════════════════════════════════════════════════════════════
     // PHILOSOPHY (layers) > MEANING & PURPOSE (meaning)
     // ═══════════════════════════════════════════════════════════════
