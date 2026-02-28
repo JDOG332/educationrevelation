@@ -5828,15 +5828,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Induction: premises supply strong evidence for probabilistic conclusions. The basis of the scientific method: hypotheses from repeated observations. Hume's Problem of Induction asks how we justify belief in nature's uniformity when experience covers only the past, not the future." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // PHILOSOPHY (layers) > TRUTH & KNOWLEDGE (truth)
+    // ═══════════════════════════════════════════════════════════════
+
+    truth: [
+      { id: "objective-vs-subjective", num: 1, icon: "👁️", title: "Objective Reality vs. Subjective Perception", subtitle: "The Film Strip and the Screen",
+        simple: "Reality is the world as it actually exists, while perception is how your brain interprets it. Think of it like a movie: objective reality is the actual film strip, but your perception is the screen you are watching. Sometimes our brains play tricks, like seeing a puddle on a hot road that is not really there. When all your senses work together, your gut tells you that you are part of a big, solid world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady hum of a fan: you hear a hum, but it is actually just air moving fast." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A fresh orange: your nose tells your brain fruit before you even see it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sourness of a lemon: your mouth reacts automatically before your mind decides." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A cold stone: feel the heat leave your hand into the rock." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset: the sun is not moving down, the Earth is spinning." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your feet on the floor right now to know exactly where you are in space." }
+        ],
+        intuition: "You never touch raw reality. You touch your brain's best guess. The map is not the territory, but it is the only map you have.",
+        links: [
+          { label: "Nature: Neural Basis of Perception", url: "https://www.nature.com/subjects/perception" },
+          { label: "Stanford: Epistemology", url: "https://plato.stanford.edu/entries/epistemology/" },
+          { label: "Scientific American: Reality Is a Hallucination", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "Clubbed to Death", artist: "Rob Dougan", url: "https://www.youtube.com/watch?v=pFS4zYWxzNA" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" }
+        ],
+        advanced: "The distinction between noumena (things as they are) and phenomena (things as we experience them). Our cognitive architecture filters raw data through sensory modalities and mental categories. We never encounter raw reality, only a processed model. The scientific method seeks to minimize subjective bias through peer review and reproducible experimentation." },
+
+      { id: "scientific-method", num: 2, icon: "🧪", title: "The Scientific Method", subtitle: "The Question Machine",
+        simple: "This is a special way of asking questions to find out if something is true. You start with a guess, then test it to see if you were right. If you want to know if a plant needs milk or water, you give milk to one and water to another and watch what happens. This helps you trust that things happen for a reason, not just by magic.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The pop of a science experiment working." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of rain: you know a storm is coming." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The difference between salt and sugar: proof that looks can be deceiving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a speaker: you can feel sound." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A seed growing over many days: patience reveals truth." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and stand on one leg: feel how your body finds balance." }
+        ],
+        intuition: "Guess. Test. Watch. Adjust. Repeat. Truth is not handed down, it is dug up one experiment at a time.",
+        links: [
+          { label: "Khan Academy: Scientific Method", url: "https://www.khanacademy.org/science/biology/intro-to-biology/science-of-biology/a/the-science-of-biology" },
+          { label: "NASA: Scientific Method", url: "https://www.nasa.gov/" },
+          { label: "Britannica: Scientific Method", url: "https://www.britannica.com/science/scientific-method" }
+        ],
+        songs: [
+          { title: "She Blinded Me With Science", artist: "Thomas Dolby", url: "https://www.youtube.com/watch?v=V83JR2IoI8k" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Weird Science", artist: "Oingo Boingo", url: "https://www.youtube.com/watch?v=Jm-upHSP9KU" }
+        ],
+        advanced: "An iterative process of hypothesis, deduction, and empirical testing. Relies on falsifiability: for a statement to be scientific, it must be possible to prove it wrong. Connects to Bayesian inference, where confidence in a truth is updated as new evidence arrives, approaching but never claiming absolute certainty." },
+
+      { id: "logical-fallacies", num: 3, icon: "🧩", title: "Logical Fallacies", subtitle: "Brain Traps",
+        simple: "Logical fallacies are brain traps: mistakes in thinking that make us believe things that are not true. Imagine someone says all birds fly, penguins are birds, therefore penguins fly. That is a trap because the first part is not always true! Learning these traps helps your mind stay sharp and honest.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A trick in someone's voice when they try to fool you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old, dusty books: just because something is written down does not make it fact." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fake fruit flavor: close, but not the real thing." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The slickness of a marble: feel how easily thoughts can slide away." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The hidden person in an optical illusion." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your heart race when confused, then breathe to find the truth." }
+        ],
+        intuition: "Your brain takes shortcuts to save energy. Sometimes those shortcuts lead off a cliff. Name the trap and it loses its power.",
+        links: [
+          { label: "YourLogicalFallacyIs.com", url: "https://yourlogicalfallacyis.com/" },
+          { label: "Purdue OWL: Logical Fallacies", url: "https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html" },
+          { label: "Harvard: Thinking Fast and Slow", url: "https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555" }
+        ],
+        songs: [
+          { title: "Won't Get Fooled Again", artist: "The Who", url: "https://www.youtube.com/watch?v=SHhrZgojY1Q" },
+          { title: "Sweet Dreams", artist: "Eurythmics", url: "https://www.youtube.com/watch?v=qeMFqkcPYcg" },
+          { title: "Fool on the Hill", artist: "The Beatles", url: "https://www.youtube.com/watch?v=DGEX_7IqbKk" }
+        ],
+        advanced: "Cognitive biases and informal fallacies like Ad Hominem or Post Hoc Ergo Propter Hoc undermine rational discourse. These are heuristic shortcuts the brain takes to conserve energy, leading to systemic errors in judgment. In formal logic, maintaining validity and soundness ensures conclusions necessarily follow from premises." },
+
+      { id: "occams-razor", num: 4, icon: "🪒", title: "Occam's Razor", subtitle: "The Simplest Answer Wins",
+        simple: "Occam's Razor says that usually the simplest answer is the right one. If you hear hoofbeats outside your window in Kentucky, think horses, not zebras. You do not need a giant complicated story to explain why your socks went missing: the dryer probably just ate them! When you stop overthinking, the truth often just sits there waiting for you to notice it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The simple beat of a single drum." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A single rose instead of a perfume factory." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain bread: the true flavor with nothing hiding it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth surface of still water." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A straight line: the shortest distance between two points." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel your center of gravity: balance is simplicity in the body." }
+        ],
+        intuition: "Do not multiply causes beyond necessity. The truth does not hide behind complexity. It hides behind simplicity.",
+        links: [
+          { label: "UC: Occam's Razor", url: "https://math.ucr.edu/home/baez/physics/General/occam.html" },
+          { label: "Britannica: Occam's Razor", url: "https://www.britannica.com/topic/Occams-razor" },
+          { label: "Philosophy Now: The Razor's Edge", url: "https://philosophynow.org/" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" }
+        ],
+        advanced: "In statistical modeling and physics, this is parsimony. When multiple models explain a phenomenon equally well, the one with fewest assumptions is preferred because it is least likely to overfit. Vital in quantum mechanics and the search for a Theory of Everything: the most elegant mathematical description wins." },
+
+      { id: "mathematical-constants", num: 5, icon: "π", title: "Mathematical Constants", subtitle: "The Universe's Secret Language",
+        simple: "Math is the secret language of the universe that never changes no matter where you are. A circle is always a circle and 2+2 is always 4 whether you are on Earth or Mars. It is a truth we can all agree on because it never lies. Math is the skeleton of everything we see, holding the world together in a way we can calculate.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythm of a song: that is math you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The symmetry of a pinecone: it follows mathematical patterns." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect balance of a recipe: ratios you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A snowflake: feel its geometric shape melting on your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The spiral patterns in a sunflower's seeds." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel the weight difference between a heavy ball and a light one: gravity measured by your muscles." }
+        ],
+        intuition: "Math is not invented. It is discovered. The universe wrote its laws in numbers and dared us to read them.",
+        links: [
+          { label: "Wolfram: Mathematical Constants", url: "https://mathworld.wolfram.com/Constant.html" },
+          { label: "MIT: Why Math Works", url: "https://www.mit.edu/" },
+          { label: "Project Mathematics!", url: "https://www.projectmathematics.com/" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Numbers", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=4YPiCeLwh5o" },
+          { title: "Murder by Numbers", artist: "The Police", url: "https://www.youtube.com/watch?v=GDNiYIPNgEo" }
+        ],
+        advanced: "Mathematical Realism suggests mathematical truths are discovered, not invented. Constants like e, π, and φ appear across disparate fields from finance to phyllotaxis, implying deep structural order. Connects to Universalism: certain truths remain invariant regardless of the observer's frame of reference." },
+
+      { id: "historical-records", num: 6, icon: "📜", title: "Historical Records & Archaeology", subtitle: "Detective Work for the Whole World",
+        simple: "We know what happened in the past because people left clues like old letters, ruins, and pottery. It is like being a detective for the whole world. If three different people wrote down that a king was kind, he probably was! Knowing where we came from helps us see the truth of where we are now.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo in an old building: sound bouncing off centuries." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of old paper or rain on dry dirt: petrichor of the past." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fig: a fruit grown for thousands of years, unchanged." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A very old brick: feel the work of someone from long ago." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old photograph: frozen light from a moment that is gone." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel the history in your own bones as you walk where others walked." }
+        ],
+        intuition: "Truth in history is triangulation: where multiple independent sources point to the same spot, dig there.",
+        links: [
+          { label: "The British Museum: Research", url: "https://www.britishmuseum.org/research" },
+          { label: "Smithsonian: History and Culture", url: "https://www.si.edu/explore" },
+          { label: "Archaeology Magazine", url: "https://www.archaeology.org/" }
+        ],
+        songs: [
+          { title: "Rivers of Babylon", artist: "Boney M.", url: "https://www.youtube.com/watch?v=ta42xU2UXLA" },
+          { title: "Alexander the Great", artist: "Iron Maiden", url: "https://www.youtube.com/watch?v=1oTEQf1d9hw" },
+          { title: "Fight the Power", artist: "Public Enemy", url: "https://www.youtube.com/watch?v=8PaoLy7PHwk" }
+        ],
+        advanced: "Historiography studies how history is written. It requires triangulation: comparing multiple independent sources to find the intersection of truth. While no record is perfectly objective, the convergence of archaeological evidence and written testimony provides a high-confidence model of past events." },
+
+      { id: "quantum-uncertainty", num: 7, icon: "⚛️", title: "Quantum Uncertainty", subtitle: "The Fuzziness at the Bottom",
+        simple: "At the very tiny level of atoms, things are a bit fuzzy and can be in two places at once until someone looks at them. This teaches us that the world is more mysterious than it looks on the outside. Even if we cannot see it, there is a lot of maybe happening everywhere. This reminds us that there is always more to learn and that real might be bigger than we think.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise: all the possibilities playing at once." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The air after lightning (ozone): invisible energy made real." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zing of static on your tongue: electrons you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A static shock: the quantum world reaching out to tap you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Static on an old TV: randomness made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tingle on your skin when you are excited: your body sensing what your mind has not named yet." }
+        ],
+        intuition: "At the bottom of everything, the universe keeps a little bit of mystery for itself. Certainty has a floor. Below it: probability.",
+        links: [
+          { label: "Scientific American: Quantum Physics", url: "https://www.scientificamerican.com/quantum-physics/" },
+          { label: "Caltech: Quantum Entanglement", url: "https://scienceexchange.caltech.edu/topics/quantum-science-explained/entanglement" },
+          { label: "CERN: The Standard Model", url: "https://home.cern/science/physics/standard-model" }
+        ],
+        songs: [
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" },
+          { title: "Electric Feel", artist: "MGMT", url: "https://www.youtube.com/watch?v=MmZexg8sxyk" },
+          { title: "Good Vibrations", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=Eab_beh07HU" }
+        ],
+        advanced: "Heisenberg's Uncertainty Principle: we cannot know both position and momentum with perfect precision. The universe is fundamentally probabilistic, not deterministic. Challenges classical truth as a fixed singular state. The observer effect means the act of measurement influences the reality being observed." },
+
+      { id: "consensus-reality", num: 8, icon: "🤝", title: "Consensus Reality", subtitle: "The Truth We Build Together",
+        simple: "Consensus reality is what we all agree is true so we can live together, like which side of the road to drive on or what money is worth. It might not be nature's truth, but it is our truth. If everyone agrees a stop sign means stop, then it becomes a real rule for everyone. This shows us that we create part of our world together through shared stories and rules.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A crowd cheering together: one voice made of many." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Popcorn at a movie theater everyone is sharing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A meal that everyone says is good: taste confirmed by agreement." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A handshake: two people agreeing with their bodies." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A group of people walking in the same direction: shared intention made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feel the vibe of a happy room: your body reading the collective signal." }
+        ],
+        intuition: "Some truths exist because the universe says so. Others exist because we all decided together. Know which is which.",
+        links: [
+          { label: "Psychology Today: Social Reality", url: "https://www.psychologytoday.com/" },
+          { label: "Philosophy Now: Social Constructionism", url: "https://philosophynow.org/" },
+          { label: "The Atlantic: Consensus", url: "https://www.theatlantic.com/" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Everybody Wants to Rule the World", artist: "Tears for Fears", url: "https://www.youtube.com/watch?v=aGCdLKXNF3w" }
+        ],
+        advanced: "The Thomas Theorem: if men define situations as real, they are real in their consequences. Physical laws are independent of us, but social truths like laws, value, and identity exist because of collective intentionality. Understanding this prevents confusing cultural constructs with physical constants." },
+
+      { id: "empirical-evidence", num: 9, icon: "🔬", title: "Empirical Evidence", subtitle: "Seeing Is Believing",
+        simple: "Empirical evidence is seeing is believing. It is using your eyes and hands to prove something is there. If you say there is a cat in the box and I open it and see a cat, that is empirical evidence. It is the most basic way to find the truth. This anchors you to the physical world and keeps your feet on the ground.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bird chirping: you know it is there." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Wood smoke: you know there is a fire." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A strawberry: you know it is ripe." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A fuzzy blanket: the evidence is in your fingertips." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The stars at night: ancient light proving the universe is vast." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Wind on your face: the air is moving even though it is invisible." }
+        ],
+        intuition: "Open the box. Look inside. The truth does not need permission to exist. It just needs a witness.",
+        links: [
+          { label: "Live Science: Empirical Evidence", url: "https://www.livescience.com/" },
+          { label: "Philosophy of Science: Evidence", url: "https://plato.stanford.edu/entries/evidence/" },
+          { label: "NIH: Evidence-Based Practice", url: "https://www.ncbi.nlm.nih.gov/" }
+        ],
+        songs: [
+          { title: "Superstition", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=0CFuCYNx-1g" },
+          { title: "I Can't Go for That", artist: "Hall & Oates", url: "https://www.youtube.com/watch?v=ccenFp_3kq8" },
+          { title: "Everyday Is a Winding Road", artist: "Sheryl Crow", url: "https://www.youtube.com/watch?v=W5P-sHJMUW0" }
+        ],
+        advanced: "Empiricism: all knowledge is based on sensory experience. Contrasted with Rationalism, which argues some knowledge comes through pure reason. Modern science integrates both: reason builds models (rationalism) and data from the world tests them (empiricism)." },
+
+      { id: "intuition-sixth-sense", num: 10, icon: "✨", title: "Intuition & The Sixth Sense", subtitle: "The Bridge Between Knowing and Feeling",
+        simple: "Sometimes you just know something is true in your gut even if you cannot explain why yet. This is your brain putting together thousands of tiny clues you did not even notice. It is like a superpower that helps you stay safe or make good friends. Your intuition is the bridge between what you know and what you feel.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence that tells you something is wrong." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The feeling of a storm before it hits: your nose knows first." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitterness of a lie: something does not taste right." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The spark of a new idea: electricity in your fingertips." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The glow of someone you trust: light you see without your eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The pull in your chest when you are headed the right way." }
+        ],
+        intuition: "Your gut is your oldest brain. It was reading the room a million years before your words showed up. Trust the pull.",
+        links: [
+          { label: "Psychology Today: Intuition", url: "https://www.psychologytoday.com/us/basics/intuition" },
+          { label: "HBR: Trust Your Gut?", url: "https://hbr.org/" },
+          { label: "Scientific American: Science of Intuition", url: "https://www.scientificamerican.com/" }
+        ],
+        songs: [
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+          { title: "Running Up That Hill", artist: "Kate Bush", url: "https://www.youtube.com/watch?v=wp43OdtAAkM" }
+        ],
+        advanced: "Neuroscientifically, intuition is thin-slicing: the unconscious mind finding patterns from narrow windows of experience. A highly developed form of rapid cognitive processing. While prone to bias, in experts it is often more accurate than slow deliberate analysis. A vital tool for hypothesis generation in art and science." },
+    ],
 
   },
 };
-
-// ═══ UTILITY ═══
-export function getTopicCards(doorKey, subId) {
-  return TOPIC_CARDS[doorKey]?.[subId] || null;
-}
-
-export function hasTopicCards(doorKey, subId) {
-  return !!(TOPIC_CARDS[doorKey]?.[subId]?.length);
-}
