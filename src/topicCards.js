@@ -10541,6 +10541,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Entropy measures disorder in a system. In closed systems, entropy always increases. But in dissipative structures (like life), entropy drives complexity. Systems must break down (descent/disorder) to reorganize at higher complexity (ascent/order). Decay is not system failure but a prerequisite for evolution. Accepting the descent into entropy aligns with fundamental cosmic mechanics." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // MYTHOLOGY (gravity) > THE GARDEN & PARADISE LOST (garden)
+    // ═══════════════════════════════════════════════════════════════
+
+    garden: [
+      { id: "archetype-of-the-fall", num: 1, icon: "🍂", title: "The Archetype of the Fall", subtitle: "You Took the Toy Apart to See How It Works — Now It Stays in Pieces",
+        simple: "Imagine you had a beautiful, shiny toy that never broke, but then you decided to take it apart to see how it works, and now it stays in pieces. That is what The Fall feels like for everyone in the world. It is the story of how things used to be perfect and easy, but then something happened to make life harder and more complicated. Even though we live in the broken world now, we still remember how good the unbroken world felt. It is like a memory of a home we have never actually visited but really miss. By understanding this, we can be kinder to ourselves when we feel like things are not quite right.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of a single bell ringing in a quiet, empty valley." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor on a dying summer day: the scent of something ending." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bitter herb that leaves a sweet aftertaste once swallowed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth stone that has a hidden, sharp crack." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset where the colors are most beautiful right before it gets dark." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That dropping feeling in your stomach when you miss a step on the stairs: the body remembering the fall." }
+        ],
+        intuition: "You are heavy and grounded now, but your mind still knows how to fly in your dreams. That is the memory of before the fall. You did not lose it. You just forgot where you put it.",
+        links: [
+          { label: "The Concept of the Fall", url: "https://en.wikipedia.org/wiki/Fall_of_man" },
+          { label: "Archetypes and the Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Milton's Paradise Lost", url: "https://en.wikipedia.org/wiki/Paradise_Lost" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" }
+        ],
+        advanced: "The Fall represents the ontic transition from unified consciousness to fragmented, ego-driven existence. In Miltonic terms, disobedience introduces entropy into the human system, creating a divide between subject and absolute. This drives the teleological impulse in human history — our persistent effort to fix the world is a direct response to this perceived original fracture. Mirrors individual development from infancy (garden of provided needs) to adulthood (wilderness of moral complexity)." },
+
+      { id: "original-innocence", num: 2, icon: "⚪", title: "Original Innocence", subtitle: "A Brand New Notebook With No Scribbles Yet",
+        simple: "Innocence is like a brand new notebook with no scribbles or mistakes in it yet. In the beginning, people did not know how to be mean or feel ashamed because they only knew love and kindness. It is like when a baby laughs just because they see a leaf moving in the wind. This Original Innocence means that at our very core, deep inside, we are still made of that same goodness. We spend a lot of our lives trying to find that quiet, happy place again. It reminds us that we do not have to earn being good; we started out that way.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A baby's soft breathing while they are fast asleep." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The clean, powdery scent of a fresh blanket." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool, clear water from a mountain spring." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft, velvet flower petal against your cheek." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The very first light of dawn when everything looks blue and soft." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Completely weightless while floating on your back: the body remembering before it learned to be heavy." }
+        ],
+        intuition: "The air you are breathing has been shared by every living thing since the start of time. You are still breathing the same innocence. It never left. You just stopped noticing.",
+        links: [
+          { label: "Innocence as Philosophy", url: "https://en.wikipedia.org/wiki/Innocence" },
+          { label: "Childhood Innocence in Literature", url: "https://en.wikipedia.org/wiki/Childhood" },
+          { label: "The Garden of Eden Narrative", url: "https://en.wikipedia.org/wiki/Garden_of_Eden" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Pure Imagination", artist: "Gene Wilder", url: "https://www.youtube.com/watch?v=SVi3-PrQ0pY" }
+        ],
+        advanced: "Original Innocence is pre-reflective consciousness where distinction between self and environment is non-existent. The Edenic state: no judgment, no temporal anxiety, existence in an eternal Now. Theologically: the Imago Dei, the spark of perfection preceding scars of experience. Epistemologically: Tabula Rasa not as emptiness but pure receptivity to Truth. Profound insights arrive when we strip learned cynicism and return to beginner's mind." },
+
+      { id: "knowledge-vs-obedience", num: 3, icon: "⚖️", title: "Knowledge vs. Obedience", subtitle: "You Touched the Hot Stove Because You Wanted to Know What Hot Felt Like",
+        simple: "Imagine your parents told you not to touch a hot stove because they wanted to keep you safe, but you touched it anyway because you wanted to know what hot felt like. That is the struggle between Knowledge and Obedience. Knowledge gives us power and lets us understand the world, but sometimes it comes with a lot of pain. Obedience is like staying inside a safe fence where nothing can hurt you. When we choose to learn things the hard way, we grow up, but we also lose the simple safety of being told what to do. It is the moment we start making our own rules.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crack of a book spine opening for the first time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp, acidic scent of a lemon being sliced: knowledge stings." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something spicy that hurts a little but makes you want more." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The static shock from touching a metal doorknob." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright flash of lightning that reveals the whole landscape for one second." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tension in your muscles just before you jump off a high diving board: the body choosing knowledge over safety." }
+        ],
+        intuition: "Think of a secret you know. Feel how that knowledge makes you bigger but also a little more alone. That is the price of the fruit. And you would eat it again.",
+        links: [
+          { label: "The Tree of Knowledge", url: "https://en.wikipedia.org/wiki/Tree_of_the_knowledge_of_good_and_evil" },
+          { label: "Ethics of Curiosity", url: "https://en.wikipedia.org/wiki/Curiosity" },
+          { label: "The Prometheus Myth", url: "https://en.wikipedia.org/wiki/Prometheus" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" }
+        ],
+        advanced: "The dialectic between Knowledge and Obedience is the central pivot of human agency. The Forbidden Fruit: transition from heteronomy (ruled by another) to autonomy (self-ruled). Obedience offers security of divine Paternal order; knowledge introduces the Luciferian impulse of self-definition through rebellion. Mirrored in the Enlightenment: Sapere Aude (dare to know) yields technological mastery but existential exile from the natural world." },
+
+      { id: "the-exile", num: 4, icon: "🚪", title: "The Exile", subtitle: "At the Party Where You Do Not Know Anyone — Wanting to Go Home",
+        simple: "Exile is like being at a party where you do not know anyone, and you just want to go home, but you realize you do not have the keys. After paradise was lost, people felt like they were kicked out of their true home. This is why we sometimes feel lonely even when we are with friends, or why we look at the stars and feel a little bit sad. We are all travelers trying to find our way back to a place where we feel totally safe and loved. Knowing we are all in this exile together helps us be better neighbors on the journey.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The distant whistle of a train in the middle of the night." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old luggage or a dusty road: the scent of leaving." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain bread that makes you wish for a feast." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold wind blowing against your back as you walk away." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long, empty road that disappears into the fog." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning forward while walking against a strong wind: the body pushing toward home." }
+        ],
+        intuition: "Put your hand on your heart. Feel the pull toward something you cannot quite name but you know you miss. That pull is the address of the garden. Your heart still has the map.",
+        links: [
+          { label: "The Philosophy of Exile", url: "https://en.wikipedia.org/wiki/Exile" },
+          { label: "Biblical Themes of Wandering", url: "https://en.wikipedia.org/wiki/Wandering_Jew" },
+          { label: "Nostalgia and the Human Condition", url: "https://en.wikipedia.org/wiki/Nostalgia" }
+        ],
+        songs: [
+          { title: "Wish You Were Here", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=IXdNnw99-Ic" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Take Me Home, Country Roads", artist: "John Denver", url: "https://www.youtube.com/watch?v=1vrEljMfXYo" }
+        ],
+        advanced: "Exile is Unheimlichkeit — phenomenological un-homeliness. The disruption of the I-Thou relationship between humanity and the Absolute. The world becomes profane space; the sacred is relegated to memory or future hope. This spiritual homelessness drives art, philosophy, and religion. By framing existence as exile, we acknowledge shared identity — not as masters of earth but displaced residents seeking return to ontological wholeness." },
+
+      { id: "free-will-consequence", num: 5, icon: "🛣️", title: "Free Will and Consequence", subtitle: "Every Choice Is a Ripple in a Pond",
+        simple: "Free Will is the superpower that lets you choose left or right, yes or no. Without it, we would just be robots doing exactly what we were told. But the catch is that every choice we make has a consequence, like a ripple in a pond. In the story of the Garden, people chose to try something new, and that choice changed everything forever. Even though it led to hard times, it also meant that people could finally choose to love and be brave on their own. Our choices are what make us us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The thud of a heavy door closing behind you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of matches right after they are struck: ignition." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour apple that makes your mouth pucker." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heat from a candle flame felt from an inch away: close but not burned." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fork in the road where both paths look equally long." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balance while walking across a narrow log: every step is a choice." }
+        ],
+        intuition: "Hold two colors in your mind and choose one. Notice how the other disappears as soon as you decide. That is free will. That is the cost. That is the gift. Every choice kills one world and creates another.",
+        links: [
+          { label: "Free Will and Determinism", url: "https://en.wikipedia.org/wiki/Free_will" },
+          { label: "The Miltonic Defense of Free Will", url: "https://en.wikipedia.org/wiki/Paradise_Lost" },
+          { label: "Consequentialism in Ethics", url: "https://en.wikipedia.org/wiki/Consequentialism" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "The Way It Is", artist: "Bruce Hornsby", url: "https://www.youtube.com/watch?v=GlRQjzltaMQ" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" }
+        ],
+        advanced: "Free Will is the Felix Culpa (Happy Fall). Without capacity to choose evil, choosing Good would be meaningless. Milton: God made man 'Sufficient to have stood, though free to fall.' Consequence binds the Everlasting We to cause and effect. Life becomes a moral laboratory: every action a vote for the kind of world we wish to inhabit. The Lost Paradise serves as benchmark for what we re-create through collective choices." },
+
+      { id: "garden-as-sanctuary", num: 6, icon: "🌳", title: "The Garden as Sanctuary", subtitle: "The Pillow Fort Where Nothing Can Hurt You",
+        simple: "A sanctuary is a place where you feel totally safe, like a fort made of pillows or a warm hug. The Garden was the ultimate sanctuary because nothing could hurt you there and you had everything you needed. It represents the peace we all look for when the world gets too loud or scary. When we plant a small garden or clean our rooms, we are trying to make a little piece of that sanctuary for ourselves. It reminds us that we deserve to have a place where we can just be without worrying.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The gentle glug-glug of a small brook." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass and blooming jasmine." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A strawberry perfectly ripe and warm from the sun." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking barefoot on soft, cool moss." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Every shade of green you can imagine all at once." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sinking into a soft, comfortable chair: the body arriving home." }
+        ],
+        intuition: "A golden light surrounds you like a bubble. Nothing bad can get through. That is the garden. It is not a place. It is a feeling. And you can build it anywhere you stand.",
+        links: [
+          { label: "The Garden as Sacred Space", url: "https://en.wikipedia.org/wiki/Sacred_garden" },
+          { label: "Psychology of Safe Spaces", url: "https://en.wikipedia.org/wiki/Safe_space" },
+          { label: "Ecopsychology", url: "https://en.wikipedia.org/wiki/Ecopsychology" }
+        ],
+        songs: [
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwo'ole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wBO-A" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" }
+        ],
+        advanced: "The Garden is the Temenos — sacred precinct where mundane laws are suspended. The Hortus Conclusus symbolizes purity of the soul and the protected state. The loss of the physical garden necessitates interiorization of sanctuary. As Milton wrote: 'The mind is its own place, and in itself can make a heaven of hell, a hell of heaven.' The goal: cultivate an internal Eden through spiritual discipline." },
+
+      { id: "serpent-adversary", num: 7, icon: "🐍", title: "The Serpent / Adversary", subtitle: "The Little Voice That Says 'Are You Sure?'",
+        simple: "The Serpent is like that little voice in your head that says, are you sure, when you know what the right thing to do is. It represents temptation and the feeling that maybe there is something better if we just break a few rules. The Adversary is not just a monster; it is a symbol for the parts of life that pull us away from being our best selves. By noticing the Serpent, we can learn to be more careful about who we listen to and how we make our choices. It teaches us that not everything that looks shiny is actually good for us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The quiet hiss of air escaping a tire." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke from a fire you cannot see yet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Candy so sweet it makes your teeth ache." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A silk ribbon sliding through your fingers: smooth but slipping away." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A reflection in a mirror that looks slightly different than you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning too far back in a chair and almost falling: the edge between safe and gone." }
+        ],
+        intuition: "Think of a time you were tempted to do something wrong. Feel that tug in your chest — both exciting and scary. That tug is the serpent. It is not evil. It is a test. And you are the answer.",
+        links: [
+          { label: "Snake Symbolism in Mythology", url: "https://en.wikipedia.org/wiki/Serpent_(symbolism)" },
+          { label: "Satan in Paradise Lost", url: "https://en.wikipedia.org/wiki/Satan_in_Paradise_Lost" },
+          { label: "The Psychology of Temptation", url: "https://en.wikipedia.org/wiki/Temptation" }
+        ],
+        songs: [
+          { title: "Sympathy for the Devil", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=GgnClrx8N2k" },
+          { title: "Thriller", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=sOnqjkJTMaA" },
+          { title: "Paint It, Black", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=O4irXQhgMqg" }
+        ],
+        advanced: "The Serpent/Satan serves as Catalyst of Differentiation. Milton's Satan: 'Better to reign in Hell than serve in Heaven' — the ultimate individualist, extreme ego-fragmentation breaking the Everlasting We. Introduces Dualism: the split between subject and object. Psychologically: the Shadow (repressed desires). Yet also Lucifer, the light-bringer in a dark sense, forcing humanity out of stagnant perfection into dynamic, painful evolution and self-discovery." },
+
+      { id: "restoration-redemption", num: 8, icon: "🌱", title: "Restoration and Redemption", subtitle: "Fixing a Broken Heart With Gold Thread",
+        simple: "Restoration is like fixing a broken toy until it is even better than before, or a forest growing back after a fire. It is the Great Hope that we can find our way back to being happy and whole again. Redemption means that even if we make a big mistake, we can work to make things right. It tells us that Lost does not mean Gone Forever. Every time you say I am sorry or help someone, you are helping to build a new paradise right where you are.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The first bird singing after a long, cold winter." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh bread baking in the oven." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool water after a long run: the taste of getting back." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm, warm handshake or a long hug." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A green sprout pushing through a crack in the sidewalk." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscles relaxing after you finish a hard job: the body's version of redemption." }
+        ],
+        intuition: "A broken heart being put back together with gold thread. Feel how it becomes stronger at the places where it was broken. The cracks are not scars. The cracks are upgrades.",
+        links: [
+          { label: "Redemption in World Religions", url: "https://en.wikipedia.org/wiki/Redemption_(theology)" },
+          { label: "The Return to the Center Myth", url: "https://en.wikipedia.org/wiki/Axis_mundi" },
+          { label: "The Science of Hope and Resilience", url: "https://en.wikipedia.org/wiki/Hope" }
+        ],
+        songs: [
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=kOFu6b3w6c0" },
+          { title: "Amazing Grace", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=S2V95jU7its" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Restoration is Apokatastasis — reconstitution of all things to their perfected state. The teleological conclusion of the Everlasting We. Redemption is Alchemy: lead of human suffering transmuted into gold of wisdom and compassion. The Lost state was a necessary growth stage. Navigating the fallen world develops virtues (courage, mercy) that were unnecessary and impossible in the static perfection of the Garden." },
+
+      { id: "weight-of-mortality", num: 9, icon: "⏳", title: "The Weight of Mortality", subtitle: "A Limited-Edition Sticker — Valuable Because It Is Not Infinite",
+        simple: "Mortality is the timer on life. Before paradise was lost, everything lasted forever. Now, things have an end — flowers wilt, pets grow old, and even we get older. This can feel sad, like the end of a movie you really liked. But the Weight of Mortality also makes life very special. Because we do not have forever, every I love you and every beautiful sunset matters a lot more. It is like a limited-edition sticker; it is valuable because there is not an infinite amount of it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The slow tick-tock of a grandfather clock." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dried leaves in the fall: the scent of time passing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A piece of fruit almost but not quite going bad: sweetness on the edge." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The wrinkles on an older person's hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering candle almost out of wax." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Being very tired and knowing you need to sleep: the body's daily practice of letting go." }
+        ],
+        intuition: "Hold your breath for a few seconds. Feel the preciousness of the air when you finally breathe in. That is mortality. It makes every breath a gift. Without the timer, the gift would be invisible.",
+        links: [
+          { label: "Philosophy of Death and Dying", url: "https://en.wikipedia.org/wiki/Death" },
+          { label: "How Mortality Gives Life Meaning", url: "https://en.wikipedia.org/wiki/Meaning_of_life" },
+          { label: "The Epic of Gilgamesh", url: "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh" }
+        ],
+        songs: [
+          { title: "Live Like You Were Dying", artist: "Tim McGraw", url: "https://www.youtube.com/watch?v=_9TShlMkQnc" },
+          { title: "Knockin' on Heaven's Door", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=rm9coqlk8fY" },
+          { title: "The Show Must Go On", artist: "Queen", url: "https://www.youtube.com/watch?v=t99KH0TR-J4" }
+        ],
+        advanced: "Mortality introduces Linear Time into previously Cyclical or Eternal existence. Death is the last enemy but also the horizon that defines human effort. The Weight of Mortality creates Uhlmann Fidelity of experience — we are more true to our nature because we are finite. Our mortality forces us beyond mere existence into meaning-making. We build legacies and create art specifically because we know our physical forms will not endure." },
+
+      { id: "dualism-good-evil", num: 10, icon: "☯️", title: "Dualism (Good and Evil)", subtitle: "You Cannot See Stars Unless the Sky Is Dark",
+        simple: "Dualism is like having a North Pole and a South Pole. Once paradise was lost, the world split into opposites: light and dark, happy and sad, good and evil. Before that, everything was just one. Now, we have to choose between things. Having evil in the world is scary, but it is the only way we can truly know what good is. It is like how you cannot see the stars unless the sky is dark. This helps us understand that even when things are bad, it is a sign that good still exists somewhere else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud crash followed by total silence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The contrast between a dumpster and a flower shop on the same street." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salted caramel: salty and sweet at the same time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A window cold on the outside but warm on the inside: two truths in one pane." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A black-and-white photo where everything is very clear." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The difference between your strong hand and your weak hand: duality living in your own body." }
+        ],
+        intuition: "A shadow on the ground only exists because there is a bright light somewhere nearby. Evil is the shadow. Good is the light. And you are the thing standing between them, casting the shape.",
+        links: [
+          { label: "Understanding Dualism", url: "https://en.wikipedia.org/wiki/Dualism" },
+          { label: "The Origin of Good and Evil", url: "https://en.wikipedia.org/wiki/Good_and_evil" },
+          { label: "Manichaeism and the Struggle of Light", url: "https://en.wikipedia.org/wiki/Manichaeism" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" }
+        ],
+        advanced: "Dualism is the Metaphysical Schism following the Fall: transition from Non-Duality (the Garden) to a Binary System. Knowledge gained through contrast: Pleasure understood through Pain, Grace through Sin. This is the Informativeness Gate of reality — information cannot be processed without difference between two states. The ultimate goal: Unio Mystica, re-integration of opposites into higher unity. The Third Way that leads back to the One." },
+    ],
 
 
   },
