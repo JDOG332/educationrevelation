@@ -627,8 +627,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
-  },
-};
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 💊 MEDICINE & HEALING (medicine)
+    // "How we fix the body when it breaks"
+    // ═══════════════════════════════════════════════════════════════
+
+    medicine: [
+
+      // ── 1 ── HOMEOSTASIS ─────────────────────────────────────
+      {
+        id: "homeostasis-med",
+        num: 1,
+        icon: "⚖️",
+        title: "Homeostasis",
+        subtitle: "The Smart Thermostat",
+        simple: "Homeostasis is like a smart thermostat inside you. When you get too hot, it turns on the \"AC\" (sweat); when you get too cold, it turns on the \"heater\" (shivering). It keeps everything \"just right\" so you can stay alive and happy.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to your steady heartbeat while resting." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Sniff fresh peppermint to feel your airways instantly \"reset.\"" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Sip cool water when you're thirsty and feel your body say \"thank you.\"" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Place your hand on your chest and feel the warmth of your own skin." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watch your chest rise and fall in a perfect, steady rhythm." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Balance on one foot and feel your tiny muscles twitching to keep you upright." },
+        ],
+        intuition: "Close your eyes and feel the \"inner quiet\" that stays still even when the world is noisy.",
+        links: [
+          { label: "What is Homeostasis?", url: "https://www.scientificamerican.com/article/what-is-homeostasis/" },
+          { label: "Khan Academy: Homeostasis", url: "https://www.khanacademy.org/science/biology/principles-of-physiology/body-structure-and-homeostasis/a/homeostasis" },
+          { label: "Biology Online: Homeostatic Mechanisms", url: "https://www.biologyonline.com/dictionary/homeostasis" },
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=I_izvAbhExY" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "The Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+        ],
+        advanced: "Homeostasis is the dynamic equilibrium maintained by physiological feedback loops. It represents the biological imperative of self-preservation via Negative Feedback Systems. This connects to Cybernetics (the study of control systems) and Taoism, where the \"Middle Way\" is the peak of existence.",
+      },
+
+      // ── 2 ── GERM THEORY ─────────────────────────────────────
+      {
+        id: "germ-theory",
+        num: 2,
+        icon: "🔬",
+        title: "Germ Theory",
+        subtitle: "The Invisible Enemy",
+        simple: "Tiny, invisible \"teeny-weeny\" bugs called germs can make us sick. Once we learned they were there, we learned to wash our hands and use medicine to chase them away.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"pop\" of a soap bubble bursting." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The sharp, clean scent of rubbing alcohol or lemon soap." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The bitterness of a medicine that helps you get better." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of warm, soapy water sliding over your hands." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at your hands through a magnifying glass." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"tingle\" in your nose right before a sneeze." },
+        ],
+        intuition: "That \"gut feeling\" to step back when someone nearby coughs.",
+        links: [
+          { label: "CDC: How Germs Spread", url: "https://www.cdc.gov/germs/index.html" },
+          { label: "History: Louis Pasteur and Germ Theory", url: "https://www.history.com/topics/inventions/germ-theory" },
+          { label: "Microbiology Society: What are Microbes?", url: "https://microbiologysociety.org/why-microbiology-matters/what-is-microbiology/microbes-and-the-human-body.html" },
+        ],
+        songs: [
+          { title: "Bad Blood", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=QcIy9NiNbmo" },
+          { title: "Work It Out", artist: "Beyoncé", url: "https://www.youtube.com/watch?v=vVj4u_3A_98" },
+          { title: "U Can't Touch This", artist: "MC Hammer", url: "https://www.youtube.com/watch?v=otCpCn0l4Wo" },
+        ],
+        advanced: "Germ Theory shifted medicine from miasmatic theory (bad air) to microbial etiology. It demonstrates the unseen interconnectedness of the ecosystem. Epistemologically, it bridges the gap between visible effects and invisible causes, mirroring the concept of \"hidden forces\" in Quantum Field Theory.",
+      },
+
+      // ── 3 ── THE PLACEBO EFFECT ──────────────────────────────
+      {
+        id: "placebo",
+        num: 3,
+        icon: "✨",
+        title: "The Placebo Effect",
+        subtitle: "The Magic of Believing",
+        simple: "This is the \"Magic of Believing.\" Sometimes, if you really believe a band-aid or a \"magic\" drink will make you feel better, your brain actually tells your body to start healing itself!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A soothing voice saying, \"You're going to be okay.\"" },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Lavender oil used for \"calming magic.\"" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A sugar cube or a \"magic\" spoonful of honey." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "A gentle hug that makes the pain \"go away.\"" },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a doctor's white coat or a colorful \"healing\" sticker." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stretching your arms wide and feeling \"big\" and strong." },
+        ],
+        intuition: "The sudden \"ah-ha!\" feeling when you stop worrying and the pain fades.",
+        links: [
+          { label: "Harvard: The Power of the Placebo Effect", url: "https://www.health.harvard.edu/mental-health/the-power-of-the-placebo-effect" },
+          { label: "NIH: Placebo Effect", url: "https://www.nccih.nih.gov/health/placebo-effect" },
+          { label: "Psychology Today: Why Placebos Work", url: "https://www.psychologytoday.com/us/basics/placebo-effect" },
+        ],
+        songs: [
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" },
+          { title: "Magic", artist: "B.o.B ft. Rivers Cuomo", url: "https://www.youtube.com/watch?v=Cq-NShfefks" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+        ],
+        advanced: "The Placebo Effect is a psychoneuroimmunological phenomenon. It proves that subjective expectation can trigger objective biochemical cascades. It connects to Neuroplasticity and the Observer Effect in physics — where the act of expectation alters the state of the system.",
+      },
+
+      // ── 4 ── REGENERATIVE MEDICINE ───────────────────────────
+      {
+        id: "regenerative",
+        num: 4,
+        icon: "🌱",
+        title: "Regenerative Medicine",
+        subtitle: "The Body Rebuilds",
+        simple: "Your body is like a LEGO set that can fix itself. If a piece breaks, your body uses special \"builder cells\" (stem cells) to grow new parts and fix what's broken.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The sound of a seed cracking open in a time-lapse video." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "Freshly cut grass — the smell of plants \"healing\" themselves." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "High-protein foods like eggs that give your \"builders\" energy." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling a scab get hard and then fall off to reveal new skin." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a lizard regrow its tail or a plant grow a new leaf." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your muscles \"burn\" and then grow stronger after play." },
+        ],
+        intuition: "Knowing your body is getting stronger every single day.",
+        links: [
+          { label: "Mayo Clinic: Regenerative Medicine", url: "https://www.mayoclinic.org/tests-procedures/bone-marrow-transplant/in-depth/stem-cells/art-20048117" },
+          { label: "Nature: Advances in Regenerative Medicine", url: "https://www.nature.com/subjects/regenerative-medicine" },
+          { label: "What are Stem Cells?", url: "https://www.celltherapyspecialists.com/what-are-stem-cells/" },
+        ],
+        songs: [
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" },
+          { title: "Rise Up", artist: "Andra Day", url: "https://www.youtube.com/watch?v=lwgr_IMeEgA" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+        ],
+        advanced: "This field utilizes Stem Cell Biology and Tissue Engineering. It represents the biological manifestation of Recursion and Fractal Growth. It aligns with the Phoenix Archetype — the ability to emerge anew from the remnants of the old.",
+      },
+
+      // ── 5 ── PHARMACOLOGY ────────────────────────────────────
+      {
+        id: "pharmacology",
+        num: 5,
+        icon: "🧪",
+        title: "Pharmacology",
+        subtitle: "Keys and Locks",
+        simple: "Pharmacology is like finding the \"secret keys\" in nature. Scientists find special chemicals that fit into your body's \"locks\" to stop pain or fight off \"bad guys.\"",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"click\" of a child-proof cap." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The earthy scent of herbal tea." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The sour zing of a Vitamin C chewable." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The smooth texture of a pill or a cooling cream." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "The bright colors of different medicines." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"heavy\" feeling of sleepiness after a nighttime medicine." },
+        ],
+        intuition: "Sensing when a headache is starting to \"unlock\" and melt away.",
+        links: [
+          { label: "NIGMS: Pharmacology Basics", url: "https://www.nigms.nih.gov/education/fact-sheets/Pages/pharmacology.aspx" },
+          { label: "Britannica: History of Pharmacology", url: "https://www.britannica.com/science/pharmacology" },
+          { label: "Drugs.com: How Drugs Work", url: "https://www.drugs.com/condition/pharmacology.html" },
+        ],
+        songs: [
+          { title: "The Cure", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=mD3v8f7u54A" },
+          { title: "Poison", artist: "Bell Biv DeVoe", url: "https://www.youtube.com/watch?v=sb2np1Y9pSg" },
+          { title: "Doctor! Doctor!", artist: "Thompson Twins", url: "https://www.youtube.com/watch?v=H9694K-5uI0" },
+        ],
+        advanced: "Pharmacology explores Ligand-Receptor interactions and Pharmacokinetics. It is the study of how exogenous matter influences endogenous systems. It connects to Alchemy and Molecular Biology, viewing the body as a complex chemical computer responding to external code.",
+      },
+
+      // ── 6 ── GENOMIC MEDICINE ────────────────────────────────
+      {
+        id: "genomic-med",
+        num: 6,
+        icon: "🧬",
+        title: "Genomic Medicine",
+        subtitle: "Your Secret Manual",
+        simple: "You have a \"Secret Instruction Manual\" inside you called DNA. Genomic medicine is when doctors read your specific manual to give you medicine that is made just for you!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The rhythmic \"thump-thump\" of your unique heart rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of your family home — smells like \"your\" people." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Noticing if you think cilantro tastes like soap or yummy — that's your DNA!" },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the unique ridges of your own fingerprints." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking in the mirror and seeing your mom's eyes or your dad's nose." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Noticing your specific way of walking or \"stride.\"" },
+        ],
+        intuition: "Feeling a deep \"knowing\" of who you are and where you came from.",
+        links: [
+          { label: "Genome.gov: What is Genomic Medicine?", url: "https://www.genome.gov/health/Genomic-Medicine" },
+          { label: "NIH: Genetics Home Reference", url: "https://medlineplus.gov/genetics/" },
+          { label: "The All of Us Research Program", url: "https://allofus.nih.gov/" },
+        ],
+        songs: [
+          { title: "Family Affair", artist: "Mary J. Blige", url: "https://www.youtube.com/watch?v=znlFu_lemsU" },
+          { title: "Born This Way", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=wV1FrqwZyKw" },
+          { title: "DNA.", artist: "Kendrick Lamar", url: "https://www.youtube.com/watch?v=NLZRYQMLDW4" },
+        ],
+        advanced: "This focuses on Bioinformatics and Precision Medicine. It is the shift from \"one-size-fits-all\" to Individualized Healthcare. It reflects the Holographic Principle — where the blueprint of the whole is contained within every single part (cell).",
+      },
+
+      // ── 7 ── THE GUT-BRAIN AXIS ─────────────────────────────
+      {
+        id: "gut-brain",
+        num: 7,
+        icon: "🧠",
+        title: "The Gut-Brain Axis",
+        subtitle: "The Body's Text Messages",
+        simple: "Your tummy and your brain are constantly \"texting\" each other. When your tummy is happy, your brain feels happy! When you get \"butterflies\" in your stomach, that's your brain talking to your belly.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"grumble\" of your tummy when it's hungry." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The mouth-watering smell of fresh-baked cookies." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The \"happy feeling\" of eating your favorite meal." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of a \"full\" and satisfied belly." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "The bright colors of a fresh fruit salad." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"hollow\" sensation in your gut when you're nervous." },
+        ],
+        intuition: "Trusting your \"gut instinct\" when something feels right or wrong.",
+        links: [
+          { label: "Healthline: Gut-Brain Connection", url: "https://www.healthline.com/nutrition/gut-brain-connection" },
+          { label: "Johns Hopkins: The Brain-Gut Connection", url: "https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection" },
+          { label: "NCBI: The Microbiota-Gut-Brain Axis", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4367209/" },
+        ],
+        songs: [
+          { title: "Hungry Like the Wolf", artist: "Duran Duran", url: "https://www.youtube.com/watch?v=oOg5evPPBE0" },
+          { title: "Butterflies", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=oX_m_oO8m9Y" },
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" },
+        ],
+        advanced: "This involves the Vagus Nerve and the Enteric Nervous System. It proves that the \"self\" is actually a Holobiont (a host plus its microbes). It connects to Ecopsychology, suggesting our mental health is intrinsically linked to our internal biological environment.",
+      },
+
+      // ── 8 ── EPIGENETICS ─────────────────────────────────────
+      {
+        id: "epigenetics",
+        num: 8,
+        icon: "🎛️",
+        title: "Epigenetics",
+        subtitle: "The Piano Player",
+        simple: "Think of your DNA like a piano. Epigenetics is the \"pianist\" who decides which notes (genes) to play. Eating good food and exercising \"plays\" the happy, healthy songs!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The difference between a loud shout and a soft whisper." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The fresh air in a forest compared to a dusty room." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The crispness of an apple versus the \"blah\" of junk food." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of sunshine on your skin — it turns on \"Vitamin D\" genes!" },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a plant grow taller in the light than in the dark." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling \"light\" and \"springy\" after a day of playing outside." },
+        ],
+        intuition: "Feeling that you have the power to \"change your tune\" at any time.",
+        links: [
+          { label: "CDC: What is Epigenetics?", url: "https://www.cdc.gov/genomics/about/epigenetics.htm" },
+          { label: "Nature: Epigenetics Basics", url: "https://www.nature.com/scitable/topicpage/epigenetic-influences-and-disease-895/" },
+          { label: "What is Epigenetics?", url: "https://www.whatisepigenetics.com/fundamentals/" },
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=xPZ6eaL3S2E" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+        ],
+        advanced: "Epigenetics studies DNA methylation and histone modification. It bridges the Nature vs. Nurture divide, showing that environment dictates gene expression. It connects to Lamarckian evolution concepts and the idea of Transgenerational Trauma/Wisdom.",
+      },
+
+      // ── 9 ── NEUROPLASTICITY ─────────────────────────────────
+      {
+        id: "neuroplasticity",
+        num: 9,
+        icon: "🕸️",
+        title: "Neuroplasticity",
+        subtitle: "The Brain is Play-Doh",
+        simple: "Your brain is like \"Play-Doh.\" Every time you learn something new, your brain grows a new \"bridge.\" You can literally shape your brain by practicing and being brave!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"clink\" of a lightbulb moment in your head." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a new book or a new classroom." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Trying a food you used to hate and realizing you like it now." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The feeling of your fingers learning to tie a shoelace or play an instrument." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a \"path\" get wider the more people walk on it." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The \"shaky\" feeling of learning to ride a bike becoming \"smooth.\"" },
+        ],
+        intuition: "The feeling of \"I can do this!\" after you've practiced a lot.",
+        links: [
+          { label: "Healthline: What is Neuroplasticity?", url: "https://www.healthline.com/health/neuroplasticity" },
+          { label: "Verywell Mind: How Experience Changes the Brain", url: "https://www.verywellmind.com/what-is-brain-plasticity-2794886" },
+          { label: "Positive Psychology: Neuroplasticity Exercises", url: "https://positivepsychology.com/neuroplasticity/" },
+        ],
+        songs: [
+          { title: "Learn to Fly", artist: "Foo Fighters", url: "https://www.youtube.com/watch?v=1VQ_3sBZEm0" },
+          { title: "Brave", artist: "Sara Bareilles", url: "https://www.youtube.com/watch?v=QUQsqshq2Gs" },
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+        ],
+        advanced: "Neuroplasticity involves Synaptic Pruning and Long-Term Potentiation (LTP). It demonstrates the Malleability of Consciousness. This connects to Phenomenology — where our experiences literally construct the architecture of our perceived reality.",
+      },
+
+      // ── 10 ── HOLISTIC INTEGRATION ───────────────────────────
+      {
+        id: "holistic",
+        num: 10,
+        icon: "⭕",
+        title: "Holistic Integration",
+        subtitle: "The Whole You",
+        simple: "Holistic Integration means \"Everything Matters.\" To be healthy, we don't just fix a toe; we make sure the heart is happy, the mind is calm, and the spirit is bright. It's the \"Whole You!\"",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "An orchestra where every instrument plays together in harmony." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "A garden with flowers, soil, and rain all mixed together." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A big bowl of soup where all the ingredients make one great flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "A full-body stretch that reaches from your toes to your hair." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A rainbow where all colors come from one light." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your whole body \"humming\" with life." },
+        ],
+        intuition: "Feeling \"Whole\" and \"Complete\" exactly as you are.",
+        links: [
+          { label: "WebMD: What is Holistic Medicine?", url: "https://www.webmd.com/balance/guide/what-is-holistic-medicine" },
+          { label: "Academy of Integrative Health & Medicine", url: "https://aihm.org/" },
+          { label: "Philosophy of Holistic Health", url: "https://www.takingcharge.csh.umn.edu/what-is-holistic-health" },
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=rBrd_3VMC3c" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" },
+        ],
+        advanced: "Holistic Integration is a Systems Theory approach to health. It moves from Reductionism to Holism. It aligns with Gaia Theory and Integrated Information Theory (IIT), suggesting that the \"Whole\" is greater than the sum of its biological and psychological parts.",
+      },
+
+    ],
 
 // ═══ UTILITY ═══
 export function getTopicCards(doorKey, subId) {
