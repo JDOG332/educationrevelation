@@ -318,6 +318,315 @@ export const TOPIC_CARDS = {
       },
 
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // 🔬 SCIENCE (rock) → 🧬 BIOLOGY & LIFE (biology)
+    // "The study of living systems and how they work"
+    // ═══════════════════════════════════════════════════════════════
+
+    biology: [
+
+      // ── 1 ── HOMEOSTASIS ─────────────────────────────────────
+      {
+        id: "homeostasis-bio",
+        num: 1,
+        icon: "⚖️",
+        title: "Homeostasis",
+        subtitle: "The Dynamic Balance",
+        simple: "Everything inside you — like your heat and water — needs to stay \"just right,\" even if it's freezing or boiling outside. It is your body's way of staying steady so you don't break.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "Listen to the steady thump-thump of a resting heart." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of clean, fresh rain that cools the earth." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A sip of cool water when you are very thirsty." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Placing your hand on your chest to feel the warmth of your skin." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a tightrope walker stay perfectly centered." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Standing on one foot and feeling your tiny muscles twitch to keep you upright." },
+        ],
+        intuition: "When you feel that \"click\" of balance, you are feeling your life-force working to keep you safe in a changing world.",
+        links: [
+          { label: "What is Homeostasis?", url: "https://www.scientificamerican.com" },
+          { label: "Khan Academy: Homeostasis", url: "https://www.khanacademy.org" },
+          { label: "Biology Online: Homeostasis", url: "https://www.biologyonline.com" },
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=I_izvAbhExY" },
+          { title: "The Middle", artist: "Jimmy Eat World", url: "https://www.youtube.com/watch?v=oKsxPW6i3pM" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+        ],
+        advanced: "Homeostasis represents a non-equilibrium steady state where metabolic energy is expended to maintain low entropy. It is the physiological manifestation of Cybernetics — a self-regulating feedback loop (negative feedback) that counters environmental stochasticity. This principle connects biology to thermodynamics and systems engineering.",
+      },
+
+      // ── 2 ── CELL THEORY ─────────────────────────────────────
+      {
+        id: "cell-theory",
+        num: 2,
+        icon: "🧱",
+        title: "Cell Theory",
+        subtitle: "The Fundamental Unit",
+        simple: "Everything alive is built from tiny \"LEGO\" bricks called cells. You are a giant city made of trillions of these living bricks, and every brick came from an older one.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The collective \"hum\" of a busy beehive." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The earthy scent of yeast waking up in bread dough." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The burst of a juicy orange — each tiny teardrop shape is a juice sac cell." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the texture of a leaf; those are cell walls you are touching." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking at an onion skin under a magnifying glass." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the \"fullness\" of your muscles; they are bundles of long cells." },
+        ],
+        intuition: "You are a masterpiece made of tiny lives. When you touch your skin, you are touching a community.",
+        links: [
+          { label: "National Geographic: Cell Theory", url: "https://www.nationalgeographic.org" },
+          { label: "Nature Education: What is a Cell?", url: "https://www.nature.com/scitable" },
+          { label: "NASA: Life's Working Definition", url: "https://www.nasa.gov" },
+        ],
+        songs: [
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=uyGY2NfYpeE" },
+          { title: "Brick House", artist: "The Commodores", url: "https://www.youtube.com/watch?v=rrBx6mAWYPU" },
+          { title: "Better Together", artist: "Jack Johnson", url: "https://www.youtube.com/watch?v=u57d4_b_YgI" },
+        ],
+        advanced: "Cell Theory establishes the biological \"atomism.\" It posits that the cell is the most reduced unit of life capable of independent replication. This connects to the \"Universal Common Ancestor\" theory, suggesting a physical, unbroken lineage of membranes and cytoplasm spanning billions of years.",
+      },
+
+      // ── 3 ── METABOLISM ──────────────────────────────────────
+      {
+        id: "metabolism",
+        num: 3,
+        icon: "⚡",
+        title: "Metabolism",
+        subtitle: "Energy Transformation",
+        simple: "Life is like a campfire that never goes out. You take in food or light and turn it into \"power\" so you can run, think, and grow.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"crackle\" of a fire or the \"whoosh\" of your breath." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The aroma of food cooking — energy getting ready for you." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The instant \"zing\" of sweetness from a piece of fruit." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The heat coming off your body after you run a race." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A plant turning its leaves toward the sun." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of \"heavy limbs\" when you are out of fuel and tired." },
+        ],
+        intuition: "You are a flowing river of energy. You don't just have energy; you are the energy moving through the world.",
+        links: [
+          { label: "Britannica: Metabolism", url: "https://www.britannica.com" },
+          { label: "Learn.Genetics: Cell Energy", url: "https://learn.genetics.utah.edu" },
+          { label: "Harvard Health: Metabolism Myths", url: "https://www.health.harvard.edu" },
+        ],
+        songs: [
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Power", artist: "Kanye West", url: "https://www.youtube.com/watch?v=L53gjP-TtGE" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+        ],
+        advanced: "Metabolism is the coupling of exergonic and endergonic reactions via ATP. It is the bio-energetic engine that allows organisms to resist the Second Law of Thermodynamics. By channeling electron flow, life creates pockets of order in an increasingly disordered universe.",
+      },
+
+      // ── 4 ── DNA ─────────────────────────────────────────────
+      {
+        id: "dna",
+        num: 4,
+        icon: "🧬",
+        title: "DNA",
+        subtitle: "The Universal Information Code",
+        simple: "Every living thing uses the exact same secret alphabet to write its instruction book. Whether you are a tree, a dog, or a human, you use the same 4 letters: A, T, C, G.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The rhythmic \"click-clack\" of a computer keyboard." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The unique scent of a family member — coded by DNA." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "A bitter vegetable — your DNA tells your tongue how to taste it." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Tracing the unique swirls of your fingerprint." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Looking into a mirror and seeing your parents' eyes in yours." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Knowing how tall you are compared to the world." },
+        ],
+        intuition: "You are a living library. You carry the \"words\" of every ancestor who ever lived before you.",
+        links: [
+          { label: "Genome.gov: Deoxyribonucleic Acid", url: "https://www.genome.gov" },
+          { label: "DNA Learning Center", url: "https://dnalc.cshl.edu" },
+          { label: "The Smithsonian: DNA History", url: "https://humanorigins.si.edu" },
+        ],
+        songs: [
+          { title: "DNA", artist: "Kendrick Lamar", url: "https://www.youtube.com/watch?v=VG3WkiL0d_U" },
+          { title: "Family Affair", artist: "Mary J. Blige", url: "https://www.youtube.com/watch?v=znlFu_lemsU" },
+          { title: "Heirloom", artist: "Björk", url: "https://www.youtube.com/watch?v=684Ea_88nB4" },
+        ],
+        advanced: "The DNA molecule serves as the semi-conservative storage medium for biological information. Its universality suggests a singular origin of the genetic code (The Frozen Accident hypothesis). It bridges biology with Information Theory, where \"fitness\" is the successful transmission of high-fidelity data.",
+      },
+
+      // ── 5 ── EVOLUTION ───────────────────────────────────────
+      {
+        id: "evolution",
+        num: 5,
+        icon: "🌳",
+        title: "Evolution by Natural Selection",
+        subtitle: "Keep What Works",
+        simple: "Nature is like a giant game of \"keep what works.\" Animals and plants that fit their home best have more babies, so the world slowly changes to be full of \"winners.\"",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The different songs of birds in different neighborhoods." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a skunk — a \"winning\" way to stay safe!" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The spice of a pepper — it evolved that heat to stop bugs from eating it." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "The softness of a polar bear's fur versus the scales of a lizard." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A bug that looks exactly like a leaf — camouflage." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling how perfectly your thumb works to grab things." },
+        ],
+        intuition: "You are the result of billions of years of \"Yes.\" You are here because your ancestors were the ones who survived.",
+        links: [
+          { label: "Berkeley: Evolution 101", url: "https://evolution.berkeley.edu" },
+          { label: "Natural History Museum: What is Evolution?", url: "https://www.nhm.ac.uk" },
+          { label: "HHMI BioInteractive: Natural Selection", url: "https://www.biointeractive.org" },
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=xMQ0Ryy01yE" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "The Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+        ],
+        advanced: "Evolution is an algorithmic process of variation, selection, and retention. It is the mechanism by which biological systems \"learn\" from their environment across deep time. It connects biology to Game Theory and population genetics, explaining the vast complexity of the biosphere.",
+      },
+
+      // ── 6 ── THE CENTRAL DOGMA ───────────────────────────────
+      {
+        id: "central-dogma",
+        num: 6,
+        icon: "🏗️",
+        title: "The Central Dogma",
+        subtitle: "DNA to Protein",
+        simple: "DNA is the blueprint, RNA is the messenger, and Proteins are the workers who build the house. The \"Dogma\" is just the rule for how a thought becomes a thing.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"clink\" of tools in a workshop." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a new car or new toy — things being \"made.\"" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "The texture of egg whites — pure protein." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Pulling on your hair (protein) or feeling your nails." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Watching a 3D printer create an object from a file." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "The feeling of your muscles contracting to lift a heavy box." },
+        ],
+        intuition: "Your body is a factory that never sleeps, constantly turning invisible instructions into your physical self.",
+        links: [
+          { label: "Scitable: Central Dogma", url: "https://www.nature.com/scitable/definition/central-dogma" },
+          { label: "YourGenome: What is the Central Dogma?", url: "https://www.yourgenome.org" },
+          { label: "Molecular Biology of the Cell (NCBI)", url: "https://www.ncbi.nlm.nih.gov/books" },
+        ],
+        songs: [
+          { title: "Work It", artist: "Missy Elliott", url: "https://www.youtube.com/watch?v=cjIvu7e6Wq8" },
+          { title: "Harder, Better, Faster, Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+          { title: "9 to 5", artist: "Dolly Parton", url: "https://www.youtube.com/watch?v=UbxUSsFXYo4" },
+        ],
+        advanced: "The Central Dogma describes the directional flow of sequential information. Transcription and Translation are the linguistic transitions of biology — moving from a nucleic acid \"alphabet\" to an amino acid \"language.\" This provides the operational framework for all phenotypic expression.",
+      },
+
+      // ── 7 ── ECOLOGICAL INTERDEPENDENCE ──────────────────────
+      {
+        id: "interdependence",
+        num: 7,
+        icon: "🕸️",
+        title: "Ecological Interdependence",
+        subtitle: "The Web of Life",
+        simple: "No one lives alone. Plants need the sun, bees need the flowers, and we need the plants. We are all stuck together in a giant, beautiful web.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"crunch\" of dry leaves that will soon turn into soil for new trees." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a forest floor — everything breaking down to feed everything else." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Honey — made by bees, from flowers, for you." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Digging your toes into the dirt." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a bird eat a worm or a butterfly on a bloom." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling the weight of the air you breathe — made by trees." },
+        ],
+        intuition: "You are not a person in the world; you are a part of the world. Every breath you take is a gift from a plant.",
+        links: [
+          { label: "National Geographic: Ecology", url: "https://www.nationalgeographic.org/encyclopedia/ecology" },
+          { label: "World Wildlife Fund: Biodiversity", url: "https://www.worldwildlife.org" },
+          { label: "Ecological Society of America", url: "https://www.esa.org" },
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=CWzrABouyeE" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "He's Got the Whole World in His Hands", artist: "Nina Simone", url: "https://www.youtube.com/watch?v=3S1NTCpsZ68" },
+        ],
+        advanced: "Ecology treats biological entities as nodes in a complex network of nutrient cycling and energy flux. Symbiogenesis and Trophic Cascades demonstrate that \"individuality\" is a biological fiction; organisms are open systems defined by their biotic and abiotic interactions.",
+      },
+
+      // ── 8 ── SURFACE AREA TO VOLUME ──────────────────────────
+      {
+        id: "sa-volume",
+        num: 8,
+        icon: "🎈",
+        title: "Surface Area to Volume Ratio",
+        subtitle: "The Scaling Law",
+        simple: "There is a reason why ants are small and elephants have big ears. If you get too big without changing your shape, your \"inside\" grows way faster than your \"outside,\" and you can't breathe or stay cool!",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The \"hiss\" of a balloon losing air." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The scent of a sliced orange — more surface area means more smell!" },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Crushed ice vs. a big ice cube — crushed melts and flavors faster." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Feeling the many folds of a kitchen sponge." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Noticing the tiny veins in a leaf spread out like a fan." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Stretching your arms out wide to feel how much space you take up." },
+        ],
+        intuition: "Nature is the smartest designer. Your lungs are folded millions of times so you can soak up the world.",
+        links: [
+          { label: "BioNinja: Surface Area to Volume Ratio", url: "https://ib.bioninja.com.au" },
+          { label: "Khan Academy: Cell Size", url: "https://www.khanacademy.org/science/biology" },
+          { label: "Why Cells are Small", url: "https://www.scientificamerican.com" },
+        ],
+        songs: [
+          { title: "Big Me", artist: "Foo Fighters", url: "https://www.youtube.com/watch?v=pLdK7p8T_5I" },
+          { title: "Little Boxes", artist: "Malvina Reynolds", url: "https://www.youtube.com/watch?v=2_2lGkEU4Xs" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+        ],
+        advanced: "This is the \"Scaling Law\" of biology (Allometry). As a cell increases in size (r), its volume increases by r³ while surface area only by r². This geometric constraint necessitates multicellularity, specialized circulatory systems, and fractal-like branching in organs to maintain efficient diffusion.",
+      },
+
+      // ── 9 ── INHERITANCE & VARIATION ─────────────────────────
+      {
+        id: "inheritance",
+        num: 9,
+        icon: "🎲",
+        title: "Inheritance and Genetic Variation",
+        subtitle: "The Remix",
+        simple: "You look like your parents, but you are also a \"remix.\" Nature shuffles the cards so every person is a little bit different, which keeps life exciting and safe.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "The different voices of two siblings." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The \"clean\" smell of a new baby." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Why some people love cilantro and some think it tastes like soap." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Comparing the \"stretchiness\" of your skin to a friend's." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "Seeing a field of wildflowers where no two are the exact same color." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your unique \"reach\" — how far your specific arms can go." },
+        ],
+        intuition: "You are a unique version of a very old story. You carry the past, but you are a brand-new \"Now.\"",
+        links: [
+          { label: "Learn.Genetics: Inheritance", url: "https://learn.genetics.utah.edu/content/heredity" },
+          { label: "Mendel Museum", url: "https://www.mendelmuseum.muni.cz/en" },
+          { label: "MedlinePlus: Genetics", url: "https://medlineplus.gov/genetics" },
+        ],
+        songs: [
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Zicw_dWwh0M" },
+          { title: "Isn't She Lovely", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=oE5N4WvM_R0" },
+          { title: "Beautiful", artist: "Christina Aguilera", url: "https://www.youtube.com/watch?v=eAfyFTzZDMM" },
+        ],
+        advanced: "Mendelian inheritance and Meiotic recombination ensure that while the gene pool remains stable, the zygotic combinations are near-infinite. This \"Horizontal\" variation provides the substrate for \"Vertical\" evolution, ensuring population resilience against environmental flux.",
+      },
+
+      // ── 10 ── REPRODUCTION & CONTINUITY ──────────────────────
+      {
+        id: "reproduction",
+        num: 10,
+        icon: "🕯️",
+        title: "Reproduction and Continuity",
+        subtitle: "Passing the Light",
+        simple: "Life's main job is to keep the \"light\" going. Even though people and animals grow old, they pass their spark to the next generation so the fire of life never goes out.",
+        senses: [
+          { key: "hear",  icon: "👂", sense: "SOUND",  text: "A baby crying or a chick chirping in a nest." },
+          { key: "smell", icon: "👃", sense: "SMELL",  text: "The smell of a garden in the spring." },
+          { key: "taste", icon: "👅", sense: "TASTE",  text: "Seeds or nuts — they are literally \"baby\" plants waiting to grow." },
+          { key: "touch", icon: "✋", sense: "TOUCH",  text: "Holding a small seed in your palm." },
+          { key: "see",   icon: "👁️", sense: "SIGHT",  text: "A video of a flower blooming in fast-motion." },
+          { key: "body",  icon: "🫀", sense: "BODY",   text: "Feeling your own pulse — the \"drumbeat\" that you will one day pass on." },
+        ],
+        intuition: "You are a link in a chain that is billions of years long. You are life's way of continuing forever.",
+        links: [
+          { label: "National Geographic: Reproduction", url: "https://www.nationalgeographic.org" },
+          { label: "Planned Parenthood: How Pregnancy Works", url: "https://www.plannedparenthood.org" },
+          { label: "Biology Dictionary: Continuity of Life", url: "https://biologydictionary.net" },
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtPE" },
+          { title: "Forever Young", artist: "Alphaville", url: "https://www.youtube.com/watch?v=t1TcDHrkQYg" },
+          { title: "Cat's in the Cradle", artist: "Harry Chapin", url: "https://www.youtube.com/watch?v=etug_S8Z988" },
+        ],
+        advanced: "Biological continuity is the process of Autopoiesis — systems that are capable of reproducing and maintaining themselves. Reproduction is the ultimate teleological drive in biology; it is the mechanism by which organic information achieves a form of temporal immortality despite individual senescence.",
+      },
+
+    ],
   },
 };
 
