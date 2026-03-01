@@ -20986,6 +20986,243 @@ export const TOPIC_CARDS = {
         advanced: "The Global Brain (Teilhard de Chardin's noosphere): the internet as emergent planetary nervous system. The technology arrived before the wisdom. But the pattern scales — cells to organisms to colonies to civilizations to one species seeing itself as one thing." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > ENLIGHTENMENT & AWAKENING (enlightenment)
+    // ═══════════════════════════════════════════════════════════════
+
+    enlightenment: [
+      { id: "neuroplasticity-awakening", num: 1, icon: "🧠", title: "Neuroplasticity: The Changing Brain", subtitle: "Your Brain Is a Superhero That Never Stops Growing and Changing for the Better",
+        simple: "Imagine your brain is like a big park with lots of dirt paths. When you learn something new or have a big Aha moment, it is like building a brand new paved sidewalk where there used to be just weeds. This means your brain is actually changing its shape to help you think better. It is like your head is getting a software update so you can see the world more clearly. Once the new path is there, it is much easier to walk on it every day. Your brain is a superhero that never stops growing and changing for the better.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythmic beat of a metronome: the sound of a brain learning to keep time with a new reality." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly sharpened pencils or a new book: the scent of a system preparing to receive new wiring." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate melting slowly on your tongue: the taste of reward that comes from sustained attention." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth polished pebble rubbed between thumb and finger: the touch of repetition wearing a new groove into the stone of habit." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a plant growing: growth that was always happening but only becomes visible when you change the speed of your seeing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot with eyes closed: the body proving that the brain can learn anything if given enough repetition and enough stillness." }
+        ],
+        intuition: "Your brain is a superhero that never stops growing and changing for the better. Awakening is not a metaphor. Awakening is a measurable biological event. When a meditator sits for ten thousand hours, the prefrontal cortex thickens. The amygdala shrinks. The default mode network loosens its grip. New neural highways are built where dirt paths used to be. This is not poetry. This is MRI data. The monks that scientists study do not have the same brains they were born with. They have different brains. Physically different. Structurally different. Functionally different. Not because they were chosen. Because they practiced. Enlightenment is not a lightning bolt from the sky. Enlightenment is a software update installed one sitting at a time. Long-term potentiation strengthens the synapses that fire together. Synaptic pruning removes the ones that do not. The brain is not recording your awakening. The brain IS your awakening. Every insight you have ever had left a physical trace in your skull. Every moment of clarity carved a path. And every path you walk again becomes a highway. The dirt path becomes the sidewalk. The sidewalk becomes the boulevard. The boulevard becomes the way you see the world without even trying. Awakening is neuroplasticity with a sacred name.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Long-term Potentiation", url: "https://en.wikipedia.org/wiki/Long-term_potentiation" },
+          { label: "Default Mode Network", url: "https://en.wikipedia.org/wiki/Default_mode_network" }
+        ],
+        songs: [
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" }
+        ],
+        advanced: "Neuroplasticity: synaptic pruning and LTP form the physiological basis for awakening as the brain transitions from DMN dominance to integrated states. Enlightenment is neuroplasticity with a sacred name." },
+
+      { id: "flow-state-presence", num: 2, icon: "🌊", title: "The Flow State: Pure Presence", subtitle: "Your Mind Stops Worrying About the Me and Just Focuses on the Doing",
+        simple: "Have you ever been so busy playing a game or drawing a picture that you forgot what time it was? That is called Flow, and it is like being a superhero where everything you do feels easy and perfect. Your mind stops worrying about the me and just focuses on the doing. It feels like you are a part of the water in a river, just moving along perfectly. When you are in Flow, you are truly awake because you are not thinking about yesterday or tomorrow. You are just right here, right now, doing your very best.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of wind through the trees: the sound of something moving without resistance." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on hot pavement: the scent of renewal arriving without effort." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool crisp water when you are very thirsty: the taste of a need being met in the exact right moment." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cool clay being molded in your hands: the touch of creation happening through you instead of by you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bird gliding without flapping its wings: the sight of effortless motion — proof that the highest skill looks like no skill at all." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Weightlessness while swinging on a swing set: the body at the top of the arc where gravity pauses and everything floats." }
+        ],
+        intuition: "Your mind stops worrying about the me and just focuses on the doing. Flow is not just a performance hack. Flow is a window into what consciousness looks like when the ego steps aside. The prefrontal cortex — the part of the brain that generates I — temporarily goes offline. And in its absence, something extraordinary happens: you become better at everything. Faster. More creative. More precise. More alive. The neurochemistry of flow includes dopamine, norepinephrine, endorphins, anandamide, and serotonin — the five most pleasurable chemicals the brain can produce, released simultaneously. This is why flow feels so good. And this is why the mystics chased it. Because flow is not just fun. Flow is the closest most people get to enlightenment without calling it enlightenment. The Taoists called it wu wei. The Zen masters called it mushin. The athletes call it the zone. Every name points at the same door: the moment the self gets out of the way and pure action remains. You did not disappear. The unnecessary parts of you disappeared. And what was left was the you that was always awake. The you that does not need a name.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Wu Wei", url: "https://en.wikipedia.org/wiki/Wu_wei" },
+          { label: "Mushin", url: "https://en.wikipedia.org/wiki/Mushin_(mental_state)" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "One More Time", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=FGBhQbmPwH8" }
+        ],
+        advanced: "Flow: transient hypofrontality with a neurochemical cocktail of dopamine, norepinephrine, endorphins, anandamide, and serotonin. Flow is the closest most people get to enlightenment without calling it enlightenment. Wu wei, mushin, the zone — every name points at the same door." },
+
+      { id: "ego-dissolution-awakening", num: 3, icon: "⚪", title: "Ego Dissolution: The Great Oneness", subtitle: "A Single Drop of Water Falls into the Ocean and Becomes the Whole Ocean",
+        simple: "Imagine you are a single drop of water, and then you fall into a giant blue ocean. Suddenly, you are not just a tiny drop anymore; you are the whole big ocean! Ego dissolution is when you stop feeling like you are separate from everyone else and start feeling like you are a part of everything. It is like realizing that every person, animal, and star is part of the same big family. This helps people feel very kind and happy because they see themselves in others. It is the ultimate secret that we are all actually one big team.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep vibrating Om or singing bowl: the sound that erases the boundary between the listener and the listened-to." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Pine forest after light snow: the scent of a world so clean the self has nothing to defend against." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single grape eaten so slowly you forget who is eating: the taste of attention dissolving the barrier between taster and tasted." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of sun on your skin on a cold day: the touch of something bigger than you wrapping itself around you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A night sky full of stars: the sight that has triggered the small self experience in every human who ever looked up." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating on your back in water with ears submerged: the body returning to the position it held before it was born." }
+        ],
+        intuition: "A single drop of water falls into the ocean and becomes the whole ocean. The Default Mode Network is the brain's autobiography machine. It constantly generates the story of you. I am this. I did that. I want this. I fear that. When the DMN goes quiet — through meditation, awe, or peak experience — the story stops. And when the story stops, the drop realizes it was always the ocean. Awe research proves this. Put a human in front of a vast landscape, a total eclipse, a cathedral ceiling, the birth of a child — and the DMN decreases its activity. The self shrinks. Empathy increases. Generosity increases. Anxiety decreases. The person does not become less. The person becomes more by becoming smaller. This is the paradox of ego dissolution: you gain the universe by losing yourself. Every mystical tradition in history described this. The Sufis called it fana — annihilation of the self in God. The Buddhists called it anatta — no-self. The Christians called it kenosis — self-emptying. The neuroscientists call it DMN deactivation. Four vocabularies. One experience. The drop does not die when it joins the ocean. The drop discovers it was never separate. The edges were always imaginary. And the ocean was always home.",
+        links: [
+          { label: "Ego Death", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Awe Research", url: "https://en.wikipedia.org/wiki/Awe" },
+          { label: "Fana (Sufism)", url: "https://en.wikipedia.org/wiki/Fan%C4%81%27_(Sufism)" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" }
+        ],
+        advanced: "Ego dissolution: DMN deactivation reduces the autobiographical self. Fana (Sufism), anatta (Buddhism), kenosis (Christianity), DMN deactivation (neuroscience) — four vocabularies, one experience. The drop does not die. The drop discovers it was never separate." },
+
+      { id: "dark-night-soul", num: 4, icon: "🌑", title: "The Dark Night of the Soul", subtitle: "The Breakdown That Comes Before the Breakthrough",
+        simple: "Sometimes before things get really good, they feel really bad. The Dark Night of the Soul is when everything you thought you knew falls apart, and you feel lost in the dark. But here is the secret: the darkness is not the enemy. The darkness is the cocoon. A caterpillar has to completely dissolve inside the cocoon before it can become a butterfly. You cannot skip the dissolving. The old you has to come apart so the new you has room to grow. The dark night is not the end of the story. It is the middle of the story. And the middle is where all the magic happens.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Total silence in a dark room: the sound of everything you relied on being temporarily removed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Wet earth after a storm: the scent of destruction that was actually preparation for new growth." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter coffee without sugar: the taste of something unpleasant that wakes you up precisely because it is unpleasant." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold water on your face: the shock that forces presence when the mind would rather be anywhere else." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The first sliver of light at dawn after a long night: the sight that proves darkness is always temporary if you wait long enough." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The ache of muscles after the hardest workout of your life: the body proving that breakdown and building are the same process." }
+        ],
+        intuition: "The breakdown that comes before the breakthrough. Saint John of the Cross named it in the sixteenth century. But every tradition knew it. The Buddhist calls it the dukkha nanas — the stages of suffering that arise during deep practice. The shaman calls it the dismemberment. The alchemist calls it the nigredo — the blackening. The hero's journey calls it the descent into the underworld. In every case, the pattern is the same: the old self must die for the new self to be born. And the dying feels like dying. It is not comfortable. It is not pleasant. It is not the part of the spiritual journey that gets put on Instagram. But it is the most important part. Because the dark night strips away everything that was not you. Your false beliefs. Your borrowed identities. Your comfortable lies. And what remains — after the fire has burned everything that could burn — is the thing that cannot burn. That thing is you. The real you. The one that was hiding behind all the things you thought you were. The dark night is not punishment. The dark night is surgery. It hurts because it is removing something that was never supposed to be there. And when it is done, you are lighter. Not because something was added. Because something was finally taken away.",
+        links: [
+          { label: "Dark Night of the Soul", url: "https://en.wikipedia.org/wiki/Dark_Night_of_the_Soul" },
+          { label: "Saint John of the Cross", url: "https://en.wikipedia.org/wiki/John_of_the_Cross" },
+          { label: "Nigredo", url: "https://en.wikipedia.org/wiki/Nigredo" }
+        ],
+        songs: [
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" },
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" },
+          { title: "Creep", artist: "Radiohead", url: "https://www.youtube.com/watch?v=XFkzRNyygfk" }
+        ],
+        advanced: "The Dark Night: John of the Cross, Buddhist dukkha nanas, alchemical nigredo, shamanic dismemberment — all map the same pattern. The old self must die for the new self to be born. The dark night is not punishment. The dark night is surgery." },
+
+      { id: "satori-kensho", num: 5, icon: "⚡", title: "Satori & Kenshō (Sudden Awakening)", subtitle: "Lightning That Shows You the Whole Landscape in a Single Flash",
+        simple: "Satori is like a bolt of lightning that lights up a dark sky for just one second. In that one second, you see everything clearly — the mountains, the rivers, the path ahead. Then the lightning is gone, but you never forget what you saw. This is sudden awakening. It does not come from studying or thinking hard. It comes from a crack in the armor of your thinking mind. It is the universe tapping you on the shoulder and whispering: remember who you are.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden clap of thunder from a clear sky: the sound of understanding arriving without warning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Ozone after a lightning strike: the scent of the air being rearranged by a force that cares nothing for plans." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bite of wasabi that clears every sinus instantly: the taste of a system shocked into total presence." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The snap of a rubber band on your wrist: the touch that yanks you out of thought and into this moment." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Lightning illuminating a landscape you did not know was there: the sight of everything revealed in a flash that cannot be unseen." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The full-body shiver that comes with a realization so deep your skeleton vibrates: the body recognizing truth before the mind can name it." }
+        ],
+        intuition: "Lightning that shows you the whole landscape in a single flash. Zen draws a distinction between gradual awakening and sudden awakening. Gradual is the long practice. The ten thousand hours. The sitting. The patience. Sudden is the moment the fruit falls from the tree. You cannot force the fruit to fall. But without the tree growing, there would be no fruit. Satori is the fruit. All the sitting is the tree. Kenshō means seeing into one's true nature. It is often triggered by something absurdly ordinary. A stone hitting bamboo. A flower falling. A teacup shattering. The trigger is never the cause. The trigger is the last grain of sand on a pile that was being built for years. The master asks the student: what is the sound of one hand clapping? The question has no logical answer. And that is the point. The question is a crowbar inserted into the gap between thought and reality. When thought breaks, reality floods in. Satori cannot be described because it precedes language. It cannot be achieved because it precedes effort. It can only be noticed. Like noticing that you have been breathing your whole life without deciding to. You did not start breathing. You noticed you were already breathing. Satori is noticing that you were already awake.",
+        links: [
+          { label: "Satori", url: "https://en.wikipedia.org/wiki/Satori" },
+          { label: "Kenshō", url: "https://en.wikipedia.org/wiki/Kensh%C5%8D" },
+          { label: "Koan", url: "https://en.wikipedia.org/wiki/K%C5%8Dan" }
+        ],
+        songs: [
+          { title: "Thunderstruck", artist: "AC/DC", url: "https://www.youtube.com/watch?v=v2AC41dglnM" },
+          { title: "Epiphany", artist: "Staind", url: "https://www.youtube.com/watch?v=ZJpWOHnFsxY" },
+          { title: "Revelation", artist: "Troye Sivan", url: "https://www.youtube.com/watch?v=Qi0DJlAq0sI" }
+        ],
+        advanced: "Satori/Kenshō: sudden insight in Zen, distinct from gradual cultivation. A koan crowbars the gap between thought and reality. Satori cannot be achieved because it precedes effort. You did not start breathing. You noticed you were already breathing. Satori is noticing you were already awake." },
+
+      { id: "kundalini-rising", num: 6, icon: "🐍", title: "Kundalini: The Sleeping Serpent", subtitle: "A Coiled Energy at the Base of Your Spine Waiting to Wake Up and Rise",
+        simple: "Imagine there is a sleeping dragon curled up at the bottom of your spine. When it wakes up, it uncoils and rises through your body like a warm river of light, opening doors at each level as it goes. Each door is a different power — safety, creativity, strength, love, voice, vision, and finally a crown of light at the very top. This is kundalini. It is the oldest map of human awakening, drawn in energy instead of words. When the serpent reaches the top, you see the world as it really is: one thing, made of light, pretending to be many.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A low hum rising in pitch like a siren climbing: the sound of energy ascending through a system designed to carry it." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sandalwood or burning incense: the scent that has been used for thousands of years to mark the beginning of inner practice." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm honey sliding down the throat: the taste of something sweet moving through the center of you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A tingling sensation running up your spine: the touch of energy moving through channels you did not know you had." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flame rising from the base of a candle to the tip: the vision of ascent concentrated into a single vertical line of light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heat building at the base of the spine and rising through the core: the body experiencing an internal sunrise." }
+        ],
+        intuition: "A coiled energy at the base of your spine waiting to wake up and rise. The yogic tradition maps seven chakras along the spine, from root to crown. Kundalini is the energy that moves through them. Whether you interpret this literally or metaphorically, the map is remarkably consistent with what neuroscience knows about the autonomic nervous system and the vagus nerve pathway. The lowest centers govern survival and reproduction. The middle centers govern power and love. The highest centers govern perception and transcendence. This is not mystical decoration. This is a developmental sequence. Maslow's hierarchy of needs maps almost perfectly onto the chakra system — physiological needs at the base, self-actualization at the crown. Two different cultures. Two different centuries. Same map. Kundalini awakening is described as overwhelming — heat, trembling, visions, emotional flooding — because it is the nervous system operating at a bandwidth it was not accustomed to. Like plugging a lamp into a power station. The system works. But it needs to adjust. The serpent is not dangerous. The serpent is you. The part of you that was sleeping at the bottom, waiting for you to be ready to carry the voltage.",
+        links: [
+          { label: "Kundalini", url: "https://en.wikipedia.org/wiki/Kundalini" },
+          { label: "Chakra", url: "https://en.wikipedia.org/wiki/Chakra" },
+          { label: "Maslow's Hierarchy", url: "https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs" }
+        ],
+        songs: [
+          { title: "Kashmir", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=tzVJPgCn-Z8" },
+          { title: "Seven Nation Army", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=0J2QdDbelmY" },
+          { title: "Shiva", artist: "The Bombay Royale", url: "https://www.youtube.com/watch?v=z2mxmOJdGBw" }
+        ],
+        advanced: "Kundalini: the yogic map of ascending energy through seven chakras mirrors Maslow's hierarchy and the vagus nerve pathway. Two cultures, two centuries, same map. The serpent is not dangerous. The serpent is you, waiting for you to be ready to carry the voltage." },
+
+      { id: "mindfulness-awakened-attention", num: 7, icon: "🔔", title: "Mindfulness: Awakened Attention", subtitle: "The Superpower of Noticing That You Are Noticing",
+        simple: "Most people walk through life like sleepwalkers. They eat without tasting. They look without seeing. They hear without listening. Mindfulness is the alarm clock that wakes you up while you are still alive. It is not about sitting on a pillow. It is about noticing. Noticing the blue of the sky. Noticing the weight of your feet. Noticing that you are angry before the anger takes over. Noticing that you are noticing. That second noticing — the noticing of the noticing — is the beginning of awakening.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bell struck once and allowed to fade completely: the sound of a single moment given full permission to exist." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of whatever is in the room right now — noticed for the first time today: the nose proving that reality was always richer than your attention allowed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The first sip of morning coffee tasted as if you have never tasted coffee before: the tongue meeting an old friend as a stranger." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of your own clothing against your arm — noticed for the first time in hours: the skin demonstrating how much you miss when you are not paying attention." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The exact color of the light in this room right now: the eyes seeing what was always visible but never witnessed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of gravity holding you in this chair at this exact moment: the body anchoring awareness in the only moment that exists." }
+        ],
+        intuition: "The superpower of noticing that you are noticing. Awareness is not the same as thinking. Thinking is content. Awareness is the screen the content plays on. You can think without being aware that you are thinking — that is called being lost in thought. Or you can be aware that you are thinking — that is called mindfulness. The difference is everything. Lost in thought, the anger IS you. Mindful of thought, the anger is something you are experiencing. Same anger. Different relationship. And the relationship changes everything. This is why every awakening tradition begins here. Not with enlightenment. Not with oneness. With attention. Can you notice what is happening right now? Can you notice that you are the one noticing? That double-awareness — the awareness of awareness — is what the Buddhists call sati, what the Hindus call sakshi, what the Christians call the inner witness. It is the oldest technology of awakening on the planet. And it requires no equipment, no teacher, no special conditions. Just this moment. And the willingness to actually show up for it.",
+        links: [
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" },
+          { label: "Sati (Buddhism)", url: "https://en.wikipedia.org/wiki/Sati_(Buddhism)" },
+          { label: "Meta-awareness", url: "https://en.wikipedia.org/wiki/Self-awareness" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Alive", artist: "Pearl Jam", url: "https://www.youtube.com/watch?v=qM0zINtulhM" }
+        ],
+        advanced: "Mindfulness: awareness of awareness. Sati (Buddhism), sakshi (Hinduism), the inner witness (Christianity) — the oldest technology of awakening, requiring no equipment. Lost in thought: anger IS you. Mindful of thought: anger is something you are experiencing. Same anger. Different relationship." },
+
+      { id: "beginner-mind", num: 8, icon: "🌱", title: "Beginner's Mind (Shoshin)", subtitle: "In the Beginner's Mind There Are Many Possibilities — In the Expert's Mind There Are Few",
+        simple: "When a baby sees a butterfly for the first time, it is the most amazing thing in the world. But by the time you are ten, you have seen a thousand butterflies and you do not even look anymore. Beginner's mind is choosing to see the butterfly like it is the first time — every time. It is the opposite of thinking you already know. It is the willingness to be surprised by things you have seen a hundred times. The expert thinks they know everything. The beginner knows they know nothing. And the beginner sees more.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A child laughing at something adults walk past: the sound of a nervous system that has not yet decided what is boring." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Grass after it is cut — smelled as if for the very first time: the nose refusing to file the familiar under already known." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A strawberry eaten with the attention of someone who has never seen one: the tongue meeting the fruit before the label arrives." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand along a brick wall as if touching texture for the first time: the fingers rediscovering what habit had erased." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at the moon as if you have never seen it before: the eyes releasing their assumptions and seeing the raw thing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Taking a step and feeling the miracle of balance that you have been performing unconsciously since age two: the body remembering that walking is extraordinary." }
+        ],
+        intuition: "In the beginner's mind there are many possibilities — in the expert's mind there are few. Shunryu Suzuki said this in 1970 and it became the most quoted sentence in Zen. Because it captures the central tragedy of knowledge: the more you know, the less you see. Not because knowledge is bad. Because knowledge builds filters. And filters block light. The expert looks at the tree and sees genus, species, age, board-feet of lumber. The child looks at the tree and sees a miracle standing in dirt. Who is seeing more clearly? The child cannot explain the tree. But the child is experiencing the tree. And experiencing is closer to truth than explaining. Awakening is not the accumulation of more knowledge. Awakening is the willingness to set knowledge down. Not permanently. Temporarily. Long enough to see the thing instead of the label. Long enough to hear the sound instead of the name. Long enough to taste the food instead of the menu. Every expert was once a beginner. The awakened person is the expert who chose to become a beginner again. Not because they forgot what they knew. Because they discovered that what they knew was blocking what they could feel.",
+        links: [
+          { label: "Shoshin", url: "https://en.wikipedia.org/wiki/Shoshin" },
+          { label: "Shunryu Suzuki", url: "https://en.wikipedia.org/wiki/Shunryu_Suzuki" },
+          { label: "Zen Mind Beginner's Mind", url: "https://en.wikipedia.org/wiki/Zen_Mind,_Beginner%27s_Mind" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Pure Imagination", artist: "Gene Wilder", url: "https://www.youtube.com/watch?v=SVi3-PrQ0pY" },
+          { title: "Brand New Day", artist: "Sting", url: "https://www.youtube.com/watch?v=h0CrFhpA-3E" }
+        ],
+        advanced: "Shoshin (beginner's mind): knowledge builds filters and filters block light. The expert cannot explain AND experience simultaneously. Awakening is the expert choosing to become a beginner again — not forgetting what they knew but discovering it was blocking what they could feel." },
+
+      { id: "compassion-awakening", num: 9, icon: "💗", title: "Compassion: The Proof of Awakening", subtitle: "If Your Enlightenment Does Not Include Everyone It Is Not Enlightenment",
+        simple: "Some people think enlightenment means sitting alone on a mountain feeling peaceful. But every awakened person in history came back down the mountain. Why? Because real awakening does not make you feel separate and special. Real awakening makes you feel connected and responsible. When you truly see that the other person IS you — not like you, IS you — hurting them becomes impossible. Compassion is not something the awakened person practices. Compassion is what the awakened person becomes. It is the proof that the seeing is real.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A baby crying and feeling the pull in your own chest: the sound of another's pain activating your own nervous system." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Someone's cooking that reminds you of home: the scent of care crossing the boundary between your life and theirs." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing food — the taste of something given becoming sweeter than something kept: the tongue proving that generosity has a flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding someone's hand during a hard moment: the skin communicating what words cannot." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Tears in a stranger's eyes that make your own eyes water: the vision of suffering that your mirror neurons refuse to ignore." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The physical ache in your chest when you witness injustice: the body proving that compassion is not an idea — it is a sensation." }
+        ],
+        intuition: "If your enlightenment does not include everyone it is not enlightenment. The Dalai Lama meditates four hours every morning. And then he works twelve hours helping people. The Buddha sat under the Bodhi tree and achieved nirvana. And then he stood up and spent forty-five years teaching. Jesus went into the desert for forty days. And then he came back and healed the sick. Every single awakened person in recorded history followed the same pattern: go inward, then come outward. Because the insight is always the same: there is no inward without outward. There is no self without other. There is no enlightenment that is only for you. Neuroscience confirms this. Compassion meditation produces the highest gamma coherence ever recorded in human brains. The brain is most unified — most awake — when it is generating love for all beings. Not focus. Not insight. Not bliss. Love. The brain reaches its peak performance state not when it is thinking about itself but when it is caring about others. Compassion is not a side effect of awakening. Compassion is the measurement of awakening. If the seeing does not produce kindness, the seeing is not complete.",
+        links: [
+          { label: "Karuna", url: "https://en.wikipedia.org/wiki/Karu%E1%B9%87%C4%81" },
+          { label: "Compassion Meditation", url: "https://en.wikipedia.org/wiki/Compassion#Meditation" },
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "People Get Ready", artist: "The Impressions", url: "https://www.youtube.com/watch?v=NdCEiCiiTEA" }
+        ],
+        advanced: "Compassion: the measurement of awakening. Compassion meditation produces the highest gamma coherence ever recorded. The brain reaches peak performance when caring about others, not thinking about itself. If the seeing does not produce kindness, the seeing is not complete." },
+
+      { id: "eternal-now", num: 10, icon: "♾️", title: "The Eternal Now", subtitle: "You Have Never Lived a Single Second That Was Not Right Now",
+        simple: "Here is the strangest truth about time: there is only now. You have never experienced yesterday because when it was happening, it was now. You will never experience tomorrow because when it arrives, it will be now. The past is a memory happening now. The future is an imagination happening now. Now is not a moment in time. Now is the only thing that exists. Enlightenment is not something you achieve in the future. Enlightenment is what is available in this moment if you stop looking for it somewhere else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound happening right now — whatever it is — heard as the only sound that has ever existed: the ears tuning to the eternal frequency." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The air in this room right now: the scent of the present moment unfiltered by memory or expectation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The taste already in your mouth before you put anything in it: the flavor of existence before addition." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Whatever your hands are touching right now: the present arriving through your fingertips with no delay." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The light in this room at this exact second: photons that left a source and arrived here now and will never exist in exactly this configuration again." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The breath you are taking at this exact moment: the body's proof that now is not a concept — now is the only address where life is delivered." }
+        ],
+        intuition: "You have never lived a single second that was not right now. Augustine said: What then is time? If no one asks me, I know. If I wish to explain it to one who asks, I do not know. Time is the deepest mystery dressed in the most familiar clothes. We say the past happened. But you cannot touch the past. You can only remember it — and the remembering happens now. We say the future will come. But you cannot touch the future. You can only imagine it — and the imagining happens now. Now is not a point on a timeline. Now is the screen on which the timeline is projected. Eckhart Tolle called it the power of now. The Zen masters call it the eternal present. The physicists call it the block universe — where all moments exist simultaneously and the sensation of time passing is a feature of consciousness, not of reality. Awakening is not an event that will happen to you someday. Awakening is the recognition that this moment — this exact one — contains everything that has ever been and everything that will ever be. You are not waiting for enlightenment. You are standing in it. You have always been standing in it. The only thing that ever obscured it was the belief that it was somewhere else.",
+        links: [
+          { label: "Eternal Now", url: "https://en.wikipedia.org/wiki/Eternal_now" },
+          { label: "Block Universe", url: "https://en.wikipedia.org/wiki/Eternalism_(philosophy_of_time)" },
+          { label: "Eckhart Tolle", url: "https://en.wikipedia.org/wiki/Eckhart_Tolle" }
+        ],
+        songs: [
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Forever Young", artist: "Alphaville", url: "https://www.youtube.com/watch?v=t1TcDHrkQYg" }
+        ],
+        advanced: "The Eternal Now: Augustine, Tolle, the block universe. Now is not a point on a timeline — now is the screen on which the timeline is projected. Awakening is not an event that will happen to you someday. You are standing in it. You have always been standing in it." },
+    ],
+
+
 
 
   },
