@@ -9601,6 +9601,243 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Martyrdom is the Phase Transition of a concept. When an individual sacrifices physical existence for an idea, the idea is validated with maximum Informativeness. Death of the physical carrier ensures immortality of informational content. The martyr's life becomes perfectly aligned with the Universal Ideal. No accidental benefit to dying for a cause — only the coincidence of the person and the truth." },
     ],
+
+    // ═══════════════════════════════════════════════════════════════
+    // LOVE (filter) > FRIENDSHIP & CHOSEN BOND (friendship)
+    // ═══════════════════════════════════════════════════════════════
+
+    friendship: [
+      { id: "reciprocal-altruism-invisible-safety-net", num: 1, icon: "🤝", title: "Reciprocal Altruism (The Invisible Safety Net)", subtitle: "You Decide to Treat Each Other Like Brothers and Sisters — an Invisible Net Made of Kindness",
+        simple: "Friends are like a team where everyone helps each other without being told to. Even though you are not born into the same house, you decide to treat each other like brothers and sisters. When you share your toys or your time, your brain feels happy because it knows someone will be there for you too. It is like building a big invisible safety net made of kindness. This makes the whole world feel smaller and much safer to play in.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two people walking in total sync: the sound of matched rhythm without coordination — two nervous systems that have spent enough time together to converge on the same cadence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A friend's house — their laundry soap and food: the scent of another family's microbiome — unfamiliar chemistry that your olfactory system has reclassified from foreign to home." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a single piece of fruit where flavor is better because you both have it: the taste of divided resource — the same molecule hitting two tongues, quantity halved, experience doubled." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm high-five that stings just a little: the touch of calibrated impact — pain that registers as connection, the brief sting confirming that both hands showed up with equal force." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Someone's eyes lighting up the moment you walk in: the sight of involuntary recognition — pupils dilating, facial muscles lifting, the visual proof that your presence altered their neurochemistry." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A friend leaning against your shoulder during a movie: the body accepting another body's weight — your musculature adjusting to carry both, structural support as friendship made physical." }
+        ],
+        intuition: "You decide to treat each other like brothers and sisters — an invisible net made of kindness. Chosen family is an evolutionary anomaly that reveals something deeper about human nature. Biological kinship explains why you would sacrifice for someone who shares your genes — Hamilton's rule: rB > C, where the benefit to the relative multiplied by genetic relatedness exceeds the cost to you. But chosen family has zero genetic overlap. Hamilton's rule predicts you should not sacrifice for friends. And yet humans consistently do. Because reciprocal altruism extends the calculation beyond genetics. Trivers showed that in any environment with repeated interactions, organisms that cooperate with non-kin outperform organisms that cooperate only with kin. The safety net built from chosen bonds captures resources, information, and support that blood alone cannot reach. Your family gives you a starting network. Your friends give you the network that your starting network cannot access. And the mechanism is trust — not blood, not contract, not obligation. Trust built through iterated exchange. I show up for you. You show up for me. Neither of us keeps score because the pattern has been proven so many times that accounting becomes redundant. The invisible net is not invisible because it is imaginary. It is invisible because trust does not need to be seen. It only needs to be tested. And every test passed makes it stronger.",
+        links: [
+          { label: "Reciprocal Altruism", url: "https://en.wikipedia.org/wiki/Reciprocal_altruism" },
+          { label: "Hamilton's Rule", url: "https://en.wikipedia.org/wiki/Kin_selection#Hamilton's_rule" },
+          { label: "Social Capital", url: "https://en.wikipedia.org/wiki/Social_capital" }
+        ],
+        songs: [
+          { title: "Lean On Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "You're My Best Friend", artist: "Queen", url: "https://www.youtube.com/watch?v=HaZpZQG2z10" },
+          { title: "You've Got a Friend in Me", artist: "Randy Newman", url: "https://www.youtube.com/watch?v=Zy4uiiy0qgA" }
+        ],
+        advanced: "Hamilton's rule predicts no sacrifice for non-kin — yet humans consistently do. Trivers: organisms cooperating with non-kin outperform kin-only cooperators. Friends access networks blood cannot reach. Trust built through iterated exchange — the net is invisible because trust does not need to be seen, only tested." },
+
+      { id: "shared-reality-same-glasses", num: 2, icon: "👁️", title: "Shared Reality (Same Pair of Glasses)", subtitle: "Your Brains Look Through the Same Glasses — You Are Two Parts of the Same Person",
+        simple: "Have you ever looked at a sunset or a funny dog with a friend and you both started laughing at the exact same time? That is because your brains are looking at the world through the same pair of glasses. You do not even have to use words to explain how you feel because your friend already knows. It feels like you are two parts of the same person. This makes you feel like you truly belong on this planet.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A private joke requiring only one word to trigger laughter: the sound of compressed communication — an entire narrative encoded in a single syllable, decompressed simultaneously by two brains." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Campfire from a night of late conversation: the scent of shared temporal investment — smoke molecules bonded to the memory of hours spent being honest in the dark." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pizza ordered without asking about toppings: the taste of internalized preference — another person's palate stored in your procedural memory as reliably as your own." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A secret handshake only you two know: the touch of private choreography — motor sequences that exist in exactly two bodies and nowhere else on earth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Eye contact across a room knowing what the other thinks: the sight of telepathy that is not telepathy — shared mental models so aligned that facial microexpressions carry complete messages." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing back-to-back feeling totally protected: the body covering its blind spot with a trusted organism — 360-degree awareness achieved through partnership." }
+        ],
+        intuition: "Your brains look through the same glasses — you are two parts of the same person. E. Tory Higgins demonstrated that shared reality is not merely agreement. Agreement is two people reaching the same conclusion independently. Shared reality is two people constructing a conclusion together that neither could reach alone. The intersubjective space — the cognitive territory between two minds — becomes a third entity. It has its own vocabulary, its own references, its own logic. When you develop an inside joke with a friend, you create a semantic unit that has no meaning outside the dyad. It is a word in a language spoken by two. And the accumulation of these units — private vocabulary, shared metaphors, mutual references — constructs a micro-culture. A complete symbolic system. The research on friendship and phenomenology converges on intersubjectivity: the experience of consciousness that exists between subjects rather than within them. You know your friend's reaction before it happens because you have internalized their interpretive framework. They are not reading your mind. They are running a simulation of your mind that is accurate enough to predict your output. And you are doing the same for them. Two simulators, each modeling the other, each updating in real time. The result feels like telepathy. It is not. It is computational alignment achieved through thousands of hours of shared data input. And it is one of the most profound experiences available to a human nervous system.",
+        links: [
+          { label: "Shared Reality Theory", url: "https://en.wikipedia.org/wiki/Shared_reality_theory" },
+          { label: "Intersubjectivity", url: "https://en.wikipedia.org/wiki/Intersubjectivity" },
+          { label: "Theory of Mind", url: "https://en.wikipedia.org/wiki/Theory_of_mind" }
+        ],
+        songs: [
+          { title: "I'll Be There For You", artist: "The Rembrandts", url: "https://www.youtube.com/watch?v=q-9kPks0IfE" },
+          { title: "You've Got a Friend", artist: "James Taylor", url: "https://www.youtube.com/watch?v=xEkIou3WFnM" },
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" }
+        ],
+        advanced: "Higgins: shared reality is not agreement — it is co-construction neither mind could reach alone. Inside jokes are semantic units in a language spoken by two. Two simulators each modeling the other, updating in real time. The result feels like telepathy — it is computational alignment through thousands of hours of shared input." },
+
+      { id: "propinquity-effect-magic-of-close-by", num: 3, icon: "📍", title: "Propinquity Effect (Magic of Close By)", subtitle: "The People You See Most Often Are the Ones You Are Most Likely to Love — Friendship Grows Best with Time and Place",
+        simple: "This is the magic of being close by. It says that the people you see most often are the ones you are most likely to love. If you live on the same street or sit at the same table in school, you start to share a story together. Just by being there every day, you become part of each other's lives like the trees in a forest. Friendship grows best when you give it lots of time and a place to stay.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A friend's shoes walking down the hallway: the sound of approaching familiarity — footfall patterns your auditory cortex has heard enough times to identify without looking." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain on the pavement where you always meet: the scent of location fused with relationship — geography becoming emotional, the sidewalk smelling like friendship because of what happened there." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Tap water at a friend's house tasting different from yours: the taste of someone else's infrastructure — their pipes, their minerals, their water table, the mundane chemistry of proximity." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A familiar couch with hundreds of shared hours: the touch of a surface shaped by repeated occupation — cushions that hold the impression of your combined weight." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A messy comfortable room after a whole day together: the sight of entropy as evidence of living — disorder that proves two people spent enough time in a space to disarrange it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Distance closing as you walk side by side: the body gravitating — two trajectories converging without conscious steering, proximity as the default state." }
+        ],
+        intuition: "The people you see most often are the ones you are most likely to love — friendship grows best with time and place. Leon Festinger studied MIT dormitories in 1950 and found that the single strongest predictor of friendship formation was physical proximity. Not personality compatibility. Not shared interests. Not demographic similarity. Distance. Students were most likely to become friends with the person in the next room. More likely than the person two rooms away. Dramatically more likely than someone on a different floor. The mechanism is the mere-exposure effect, identified by Robert Zajonc: repeated exposure to a neutral stimulus produces increasing positive affect. The more you see someone, the more your brain likes them. Not because familiarity breeds contempt — familiarity breeds comfort. The amygdala's threat response diminishes with each safe encounter. The processing cost of the stimulus decreases. The brain likes things that are easy to process. And proximity makes processing easy. This has profound implications for how friendship actually works versus how we believe it works. We believe we choose our friends based on deep compatibility. The data shows we choose our friends based on who was nearby when we had available social bandwidth. And then the relationship, once initiated by proximity, generates the shared reality that makes it feel inevitable. The friendship was not destined. The friendship was geographic. And then it became everything.",
+        links: [
+          { label: "Propinquity", url: "https://en.wikipedia.org/wiki/Propinquity" },
+          { label: "Mere-Exposure Effect", url: "https://en.wikipedia.org/wiki/Mere-exposure_effect" },
+          { label: "Leon Festinger", url: "https://en.wikipedia.org/wiki/Leon_Festinger" }
+        ],
+        songs: [
+          { title: "We're Going to Be Friends", artist: "The White Stripes", url: "https://www.youtube.com/watch?v=PKfD8d3XJok" },
+          { title: "Old Friends", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=pOIO3yblC4Q" },
+          { title: "Chelsea Morning", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=aEGHxsUDGco" }
+        ],
+        advanced: "Festinger 1950: strongest predictor of friendship was physical proximity — not personality or interests. Zajonc: mere-exposure effect — repeated safe encounters reduce amygdala threat response. We believe we choose friends on compatibility. Data shows we choose whoever was nearby when bandwidth was available. The friendship was geographic — then became everything." },
+
+      { id: "vulnerability-loops-truth-game", num: 4, icon: "🔓", title: "Vulnerability Loops (The Truth Game)", subtitle: "The Fastest Way to Turn a Stranger into Family — a Circle of Safety That Gets Stronger Every Time",
+        simple: "A vulnerability loop is like a game of truth where everyone wins. First, one person says something that is a little bit scary or embarrassing. Then, the other person listens and says me too or I am here for you. Because you were brave enough to be real, the other person feels safe to be real too. This creates a circle of safety that gets stronger every time you share a secret. It is the fastest way to turn a stranger into a family member.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A quiet shaky voice telling the truth about being sad: the sound of the parasympathetic and sympathetic systems competing in the same throat — fear and trust fighting over the larynx." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Herbal tea during a deep conversation at night: the scent of the container built for honesty — warm liquid, low light, late hour, the sensory conditions that lower psychological defenses." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of tears you are not afraid to show: the taste of emotion externalized — lacrimal fluid containing cortisol and leucine enkephalin, stress hormones leaving the body." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long hug where both people let their shoulders drop: the touch of mutual disarmament — trapezius muscles releasing tension simultaneously, two bodies agreeing to stop bracing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A face that says I am not judging you: the sight of unconditional positive regard — facial muscles arranged in the configuration that communicates acceptance without conditions." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your heartbeat slowing after sharing a secret: the body confirming that disclosure was survived — heart rate decreasing because the anticipated threat of rejection did not materialize." }
+        ],
+        intuition: "The fastest way to turn a stranger into family — a circle of safety that gets stronger every time. Daniel Coyle studied the highest-performing teams in the world — Navy SEALs, Pixar, the San Antonio Spurs — and found that their success did not come from talent or strategy. It came from vulnerability loops. Person A sends a signal of vulnerability. Person B detects the signal. Person B responds with their own vulnerability. Person A detects the response. A norm is established: it is safe to be imperfect here. The loop takes seconds. Its effects last years. The mechanism is biological. When someone displays vulnerability — admits a mistake, asks for help, shows emotion — the observer's brain does not register weakness. It registers safety. The amygdala recalculates. If this person can be imperfect here and survive, then I can be imperfect here too. The defenses lower. The prefrontal cortex comes online. Creativity, honesty, and cooperation become possible. Every team, every friendship, every family that functions at a high level has vulnerability loops running constantly. Not as an occasional event. As an operating norm. The loop is the infrastructure. Without it, everyone is performing. With it, everyone is present. And the difference between a group of people performing and a group of people present is the difference between colleagues and family.",
+        links: [
+          { label: "Daniel Coyle", url: "https://en.wikipedia.org/wiki/Daniel_Coyle" },
+          { label: "Psychological Safety", url: "https://en.wikipedia.org/wiki/Psychological_safety" },
+          { label: "Self-Disclosure", url: "https://en.wikipedia.org/wiki/Self-disclosure" }
+        ],
+        songs: [
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" },
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" }
+        ],
+        advanced: "Coyle: highest-performing teams run on vulnerability loops, not talent. Vulnerability signal → detection → reciprocal vulnerability → norm established in seconds, lasting years. The brain registers vulnerability not as weakness but safety. The difference between colleagues and family: performing vs present." },
+
+      { id: "relational-resonance-tuning-forks", num: 5, icon: "🌊", title: "Relational Resonance (Human Tuning Forks)", subtitle: "Your Bodies Are Tuning Forks — Chosen Family Are People Whose Hearts Beat at Your Rhythm",
+        simple: "Have you ever noticed that when your best friend is really excited, you start to feel jumpy and happy too? Or if they are sad, you feel a little heavy? This is because our bodies are like tuning forks. If you hit one, the one next to it starts to vibrate at the same speed. Chosen family members are people whose hearts beat at the same rhythm as yours. You help each other stay balanced without even trying.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two people laughing so hard they cannot make noise: the sound of joy exceeding the vocal system's capacity — laughter collapsing into silence because the diaphragm cannot produce enough air." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh air of a park where you clear your heads together: the scent of shared decompression — the same molecules of grass and ozone entering two respiratory systems seeking the same calm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Comfort food like warm soup making you both sleepy and safe: the taste of co-regulation — warm calories triggering the parasympathetic response in two bodies simultaneously." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sitting shoulder-to-shoulder on a bench: the touch of parallel alignment — two bodies facing the same direction, sharing a surface, the physical architecture of companionship." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your smile reflected perfectly on your friend's face: the sight of mirror neuron activation — your expression replicated on another face, visual proof that your internal state has been received." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving through a kitchen together without bumping: the body incorporating another's position into its spatial model — two motor systems choreographing around each other without verbal coordination." }
+        ],
+        intuition: "Your bodies are tuning forks — chosen family are people whose hearts beat at your rhythm. Thomas Lewis, Fari Amini, and Richard Lannon described limbic resonance in A General Theory of Love: mammals regulate each other's physiology. Not metaphorically. Literally. When two people spend time in close proximity, their heart rates synchronize. Their cortisol levels entrain. Their respiratory patterns align. Their brainwaves — measured by EEG — show increased coherence. You are not just feeling what your friend feels. Your body is physically adjusting its parameters to match theirs. The mechanism operates below conscious awareness. You do not decide to synchronize. Your limbic system does it automatically because it evolved in a context where physiological entrainment with trusted others was essential for survival. A group that breathes together, sleeps together, and stresses together responds to threats as a unit rather than as a collection of individuals. The resonance is the coordination protocol. And chosen family — people you select based on resonance rather than genetics — may represent the purest form of this phenomenon. You are not obligated to resonate with them. You resonate because your nervous systems are compatible. The frequency matches. The tuning forks vibrate together not because they were built in the same factory. Because they were tuned to the same note.",
+        links: [
+          { label: "Limbic Resonance", url: "https://en.wikipedia.org/wiki/Limbic_resonance" },
+          { label: "A General Theory of Love", url: "https://en.wikipedia.org/wiki/A_General_Theory_of_Love" },
+          { label: "Neural Synchrony", url: "https://en.wikipedia.org/wiki/Neural_oscillation#Synchrony" }
+        ],
+        songs: [
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "Ain't No Mountain High Enough", artist: "Marvin Gaye & Tammi Terrell", url: "https://www.youtube.com/watch?v=IC5PL0XImjw" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Lewis, Amini & Lannon: limbic resonance — mammals literally regulate each other's physiology. Heart rates synchronize, cortisol entrains, brainwaves cohere. Chosen family: resonance without obligation. Tuning forks vibrate together not because built in the same factory — because tuned to the same note." },
+
+      { id: "social-homeostasis-heart-thermostat", num: 6, icon: "⚖️", title: "Social Homeostasis (The Heart's Thermostat)", subtitle: "Loneliness Is Like Hunger — Your Body Telling You to Find Your People — They Are Where You Recharge",
+        simple: "Your body likes to stay at a certain temperature and have enough water. Your heart also likes to have a certain amount of friendship. If you feel lonely, it is like being hungry — your body is telling you to go find your people. Chosen family members are the ones who make you feel just right. When you are with them, your stress goes away and your body feels like it can finally rest. They are your favorite place to recharge your batteries.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of a coffee shop where you feel invisible but together: the sound of ambient social density — enough human noise to satisfy the social brain without demanding interaction." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old book you both read and discussed: the scent of shared intellectual experience — paper and binding adhesive carrying the memory of a conversation that changed how you think." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A homemade meal tasting like Sunday afternoon: the taste of temporal safety — the flavor associated with the day when no one has to be anywhere and everyone can rest." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A weighted blanket — what friendship feels like for the soul: the touch of distributed pressure — deep touch activating the parasympathetic system, the physical analog of social regulation." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A friend's name appearing on your phone: the sight of incoming connection — pixels arranged into letters that trigger an anticipatory dopamine release because the brain knows what follows." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Taking up space and being allowed to be big and loud: the body expanding into permission — musculature releasing the chronic contraction of social monitoring because the environment has been declared safe." }
+        ],
+        intuition: "Loneliness is like hunger — your body telling you to find your people — they are where you recharge. John Cacioppo spent decades studying loneliness at the University of Chicago and demonstrated that it is not a psychological inconvenience. It is a biological emergency. Loneliness increases inflammation markers, cortisol production, blood pressure, and cardiovascular mortality. It degrades immune function, accelerates cognitive decline, and disrupts sleep architecture. The magnitude of its health effects rivals smoking and obesity. The mechanism: the brain has a social set point — a minimum threshold of connection required for the nervous system to function normally. When actual social input falls below this threshold, the dorsal raphe nucleus activates the loneliness signal. This signal does not produce sadness. It produces hypervigilance. The lonely brain scans the environment for social threats rather than social opportunities. It misreads neutral faces as hostile. It withdraws from the very contact it needs. Loneliness is not the absence of people. It is the absence of regulation. Chosen family restores the set point. Not by being present constantly, but by being reliably present. The thermostat does not need the heater running all the time. It needs to know the heater works. The knowledge that your people exist and will respond when needed is itself regulatory. The phone number you never call but always could — that is homeostasis.",
+        links: [
+          { label: "John Cacioppo", url: "https://en.wikipedia.org/wiki/John_Cacioppo" },
+          { label: "Loneliness", url: "https://en.wikipedia.org/wiki/Loneliness" },
+          { label: "Homeostasis", url: "https://en.wikipedia.org/wiki/Homeostasis" }
+        ],
+        songs: [
+          { title: "Help!", artist: "The Beatles", url: "https://www.youtube.com/watch?v=2Q_ZzBGPdqE" },
+          { title: "With or Without You", artist: "U2", url: "https://www.youtube.com/watch?v=XmSdTa9kaiQ" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Cacioppo: loneliness is a biological emergency — health effects rival smoking. Lonely brain misreads neutral faces as hostile, withdraws from needed contact. Chosen family restores the set point through reliable availability. The phone number you never call but always could — that is homeostasis." },
+
+      { id: "cognitive-interdependence-shared-hard-drive", num: 7, icon: "🧠", title: "Cognitive Interdependence (Shared Hard Drive)", subtitle: "Two Brains Like Two Computers Sharing One Drive — Extra Brainpower to Get Through Life",
+        simple: "When you have a very close friend, you do not have to remember everything yourself. Maybe you remember the birthdays, and they remember the directions to the park. Your two brains connect like two computers sharing one hard drive. You start to think together, solving problems faster than you ever could alone. This is why a chosen family feels like having extra brainpower to help you through life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Finishing each other's sentences: the sound of predictive models converging — two brains computing the same probability distribution and arriving at the same output word." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library where you study together: the scent of parallel processing — paper and binding in the environment where two minds work on different problems in productive silence." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Ordering the usual and knowing what that means for both: the taste of encoded preference — another person's order stored in your memory as reliably as your own." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Helping carry a heavy box feeling the weight shift: the touch of distributed load — two musculoskeletal systems negotiating balance in real time through the shared object." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A look that says I know what you are thinking: the sight of successful prediction — facial recognition algorithms running on a dataset of thousands of previous expressions from this specific face." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing where your friend stands in a dark room by their breathing: proprioception extending beyond your body — auditory data building a spatial model of someone whose position your nervous system tracks." }
+        ],
+        intuition: "Two brains like two computers sharing one drive — extra brainpower to get through life. Daniel Wegner's Transactive Memory Systems research showed that close relationships develop distributed knowledge architectures. Each person becomes the specialist for certain domains. She remembers the social calendar. He remembers the technical details. She tracks the emotional temperature of the group. He tracks the logistics. Neither holds the complete picture. Together they hold more than either could alone. And they do not just store different information. They store information about where information is stored. She knows he knows the directions. He knows she knows the birthdays. The meta-knowledge — knowing who knows what — is the operating system of the shared hard drive. This is not codependency. This is cognitive architecture. The same principle that makes distributed computing more powerful than single-processor computing. Two CPUs sharing a bus can solve problems that would crash a single CPU. The limitation of the individual brain is not intelligence. It is bandwidth. Working memory holds approximately four items. Long-term memory is vast but retrieval is slow and unreliable. A trusted friend doubles your effective bandwidth. Their working memory becomes an extension of yours. Their long-term storage becomes a searchable archive. The friendship is literally making you smarter. Not metaphorically. Computationally.",
+        links: [
+          { label: "Transactive Memory", url: "https://en.wikipedia.org/wiki/Transactive_memory" },
+          { label: "Daniel Wegner", url: "https://en.wikipedia.org/wiki/Daniel_Wegner" },
+          { label: "Distributed Cognition", url: "https://en.wikipedia.org/wiki/Distributed_cognition" }
+        ],
+        songs: [
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" },
+          { title: "Happy Together", artist: "The Turtles", url: "https://www.youtube.com/watch?v=mRCe5L1imxg" },
+          { title: "I'll Be There", artist: "Jackson 5", url: "https://www.youtube.com/watch?v=XlcFTbgoeBk" }
+        ],
+        advanced: "Wegner: transactive memory — close bonds develop distributed knowledge. Meta-knowledge (knowing who knows what) is the operating system. Working memory holds ~4 items — a trusted friend doubles effective bandwidth. The friendship is literally making you smarter. Not metaphorically. Computationally." },
+
+      { id: "third-space-garden-of-friendship", num: 8, icon: "☕", title: "The Third Space (Garden of Friendship)", subtitle: "Parks Libraries Clubhouses — Everyone Equal Everyone Welcome — Where Chosen Families Grow",
+        simple: "A third space is a place that is not your house and not your school or job. It is a place like a park, a church, a library, or a clubhouse. These are the gardens where chosen families are grown. In these places, everyone is equal and everyone is welcome. When we spend time in these special spots, we find people who love the same things we do, and that is how the best friendships begin.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Clinking cups and the low roar of conversation: the sound of social density at comfortable volume — enough human noise to signal community without overwhelming individual exchange." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly mowed grass in a public park: the scent of maintained commons — someone tended this space so that strangers could share it, the smell of civic investment." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A shared bowl of snacks at a community center: the taste of communal resources — food provided without individual accounting, sustenance as social infrastructure." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough wood of a picnic table or cool metal of a bench: the touch of public furniture — surfaces smoothed by the contact of thousands of people, the texture of shared use." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bulletin board full of flyers for local clubs: the sight of organized invitation — paper rectangles representing groups that want members, proof that belonging is available." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Belonging to a neighborhood by walking its main street: the body claiming territory through repeated traversal — your nervous system reclassifying a public space as personal through accumulated footsteps." }
+        ],
+        intuition: "Parks libraries clubhouses — everyone equal everyone welcome — where chosen families grow. Ray Oldenburg coined the term third place in 1989 to describe the social environments that are neither home nor work. He identified their essential characteristics: neutral ground where no one plays host. A leveling effect where status markers from work and home are suspended. Conversation as the primary activity. Accessibility — the door is always open. Regulars who give the place its character. A low profile — nothing fancy, nothing exclusive. A playful mood. A home away from home. Oldenburg argued that the decline of third places — the replacement of corner bars with drive-throughs, of front porches with back decks, of town squares with parking lots — is responsible for the epidemic of social isolation in modern life. When there is no third place, friendship requires scheduling. And scheduled friendship is different from ambient friendship. The bar where you might see someone is fundamentally different from the dinner you have to plan three weeks in advance. One produces serendipity. The other produces obligation. Robert Putnam documented the collapse in Bowling Alone: since 1950, every measurable form of civic engagement and social capital has declined. The third places were the incubators. When the incubators closed, the bonds stopped forming. The garden needs soil. The soil is the third space.",
+        links: [
+          { label: "Third Place", url: "https://en.wikipedia.org/wiki/Third_place" },
+          { label: "Ray Oldenburg", url: "https://en.wikipedia.org/wiki/Ray_Oldenburg" },
+          { label: "Bowling Alone", url: "https://en.wikipedia.org/wiki/Bowling_Alone" }
+        ],
+        songs: [
+          { title: "Where Everybody Knows Your Name", artist: "Gary Portnoy", url: "https://www.youtube.com/watch?v=h-mi0r0LpXo" },
+          { title: "Sittin' On The Dock of the Bay", artist: "Otis Redding", url: "https://www.youtube.com/watch?v=rTVjnBo96Ug" },
+          { title: "YMCA", artist: "Village People", url: "https://www.youtube.com/watch?v=CS9OO0S5w2k" }
+        ],
+        advanced: "Oldenburg 1989: third places — neutral ground, leveling effect, conversation primary. Their decline replaced ambient friendship with scheduled friendship. Putnam: since 1950 every measurable form of social capital has declined. The third places were the incubators. The garden needs soil. The soil is the third space." },
+
+      { id: "limbic-revision-rewriting-the-heart", num: 9, icon: "❤️‍🩹", title: "Limbic Revision (Rewriting the Heart)", subtitle: "A Friend Can Rewrite Old Sad Parts with New Happy Stories — It Is Never Too Late to Have a Wonderful Family",
+        simple: "Sometimes, the families we are born into can be difficult or make us feel sad. Limbic revision is the magic healing that happens when a chosen friend treats you with the love you always deserved. It actually changes the way your brain works. By being kind and steady, a friend can rewrite the old sad parts of your heart with new happy stories. It proves that it is never too late to have a wonderful family.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A friend saying it is okay to be yourself in a calm voice: the sound of unconditional acceptance — vocal frequency communicating that the listener's defenses can stand down." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean fresh sheets representing new beginnings: the scent of the blank page — fabric that holds no history, the olfactory fresh start." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something sweet like honey that makes you feel cared for: the taste of comfort without conditions — sweetness offered because you exist, not because you earned it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle hand on your shoulder when overwhelmed: the touch of someone choosing to stay close during your worst moment — pressure that communicates I am not leaving." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking in a mirror and liking what you see because your friends like you: the sight of reflected worth — your self-image updated by the data of consistent positive regard from people you respect." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling grounded and solid rather than floating or anxious: the body settling into security — the vestibular system registering stability because the social environment has become predictable." }
+        ],
+        intuition: "A friend can rewrite old sad parts with new happy stories — it is never too late to have a wonderful family. Lewis, Amini, and Lannon described limbic revision in A General Theory of Love as the process by which sustained emotional contact with a stable, attuned other reorganizes the brain's emotional circuitry. The limbic system — the emotional brain — was wired by early experience. If early experience was chaotic, neglectful, or abusive, the limbic system encodes: people are dangerous, love is unreliable, I am not worthy. These encodings are not beliefs. They are neural architecture. They cannot be argued away. They can only be rewritten. And the rewriting requires the same medium that created the original encoding: sustained emotional contact with another person. Not insight. Not understanding. Not therapy homework. Another human being, consistently present, consistently safe, consistently attuned. Over time — months, years — the new data accumulates. The limbic system, which is plastic throughout life, begins to update its model. People might be safe. Love might be reliable. I might be worthy. This is earned secure attachment. It was not given at birth. It was earned later through the corrective experience of being loved by someone who chose to love you. The neuroscience is unambiguous: the brain changes in response to consistent relational input at any age. It is never too late. The hardware is always accepting new programming. You just need a programmer who shows up every day.",
+        links: [
+          { label: "Limbic Revision", url: "https://en.wikipedia.org/wiki/A_General_Theory_of_Love" },
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Earned Secure Attachment", url: "https://en.wikipedia.org/wiki/Attachment_in_adults#Earned_security" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Beautiful", artist: "Christina Aguilera", url: "https://www.youtube.com/watch?v=eAfyFTzZDMM" }
+        ],
+        advanced: "Lewis, Amini & Lannon: limbic revision — sustained contact with a stable other reorganizes emotional circuitry. Early encodings are neural architecture, not beliefs — cannot be argued away, only rewritten through consistent presence. Earned secure attachment at any age. The hardware always accepts new programming. You need a programmer who shows up." },
+
+      { id: "mimetic-desire-friend-mirrors", num: 10, icon: "🪞", title: "Mimetic Desire (Friend Mirrors)", subtitle: "Friends Are Mirrors — You Share Dreams and Goals Because the People You Love Shape What You Want",
+        simple: "Friends are like mirrors. If your friend loves a certain book or a certain sport, you might start to love it too. We often choose to like things because the people we love like them. This is a powerful way we stay connected — by sharing the same dreams and goals. Just remember that it is okay to be a little bit different too. Being part of a chosen family means you can be a mirror for each other but you still have your own unique light.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Knowing all the lyrics to your friend's favorite song: the sound of adopted preference — frequency patterns memorized not because you chose them but because someone you love played them on repeat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A hobby you started together — paint or garden soil: the scent of shared endeavor — materials you would never have handled alone, now familiar because friendship led you there." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A weird food your friend loves that is actually delicious: the taste of borrowed courage — the palate expanding because trust in a person overrode suspicion of a flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A sweater or hat your friend recommended: the touch of adopted aesthetic — fabric on your skin that was selected by another's taste, your body wearing their judgment." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Friends who all dress or talk in a similar way: the sight of convergent expression — individual style gravitating toward group norm, identity shaped by proximity." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning in when someone talks about something they love: the body orienting toward passion — your torso tilting toward the source of enthusiasm, desire propagating through posture." }
+        ],
+        intuition: "Friends are mirrors — you share dreams and goals because the people you love shape what you want. René Girard spent his career on a single insight: human desire is not autonomous. We do not want things because we independently evaluated them and concluded they were desirable. We want things because someone we admire wants them. The model — the person we look up to — mediates our desire. The friend who loves jazz does not just share information about jazz. They make jazz desirable. Their enthusiasm, their knowledge, their identity as a jazz lover — these become attributes you want to share. And so you start listening. Not because you evaluated jazz objectively. Because your friend made it glow. This is mimetic desire. And it is the engine of cultural transmission within chosen families. The group's values propagate not through argument but through admiration. You adopt what your people value because adopting it brings you closer to them. The danger — Girard was clear about this — is mimetic rivalry. When two people in the same group desire the same scarce resource, the mechanism that created connection creates competition. The antidote is awareness. Knowing that your desires are influenced by your mirrors allows you to choose which reflections to internalize and which to observe without absorbing. The mirror shows you possibilities. You decide which ones to become.",
+        links: [
+          { label: "Mimetic Theory", url: "https://en.wikipedia.org/wiki/Mimetic_theory" },
+          { label: "René Girard", url: "https://en.wikipedia.org/wiki/Ren%C3%A9_Girard" },
+          { label: "Social Learning Theory", url: "https://en.wikipedia.org/wiki/Social_learning_theory" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Mirror", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" }
+        ],
+        advanced: "Girard: human desire is not autonomous — we want what admired others want. The friend who loves jazz does not share information, they make jazz desirable. Mimetic desire is the engine of cultural transmission. Danger: mimetic rivalry when two desire the same scarce resource. Antidote: awareness — the mirror shows possibilities, you decide which to become." },
+    ],
+
     // ═══════════════════════════════════════════════════════════════
     // MYTHOLOGY (gravity) > TRICKSTERS & CHAOS (trickster)
     // ═══════════════════════════════════════════════════════════════
