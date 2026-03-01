@@ -20514,6 +20514,243 @@ export const TOPIC_CARDS = {
         advanced: "Zazen (shikantaza): objectless open monitoring where the practitioner remains alert to all phenomena without grasping. Leads to realization of emptiness — being empty of a separate self. The thing you are looking for is the thing that is looking. The clear water was never gone. It was just waiting for you to stop stirring." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > DREAMS & THE UNSEEN (dreams)
+    // ═══════════════════════════════════════════════════════════════
+
+    dreams: [
+      { id: "collective-unconscious", num: 1, icon: "🌐", title: "The Collective Unconscious", subtitle: "A Giant Invisible Library That Every Person in the World Can Visit When They Fall Asleep",
+        simple: "Imagine a giant invisible library that every person in the world can visit when they fall asleep. Even though you are alone in your bed, your mind connects to a big web of stories and feelings that everyone else shares too. This is why people far away from each other often dream about the same things, like flying or being a hero. It is like a secret playground where we all speak the same language of pictures. By visiting this place, you learn that you are never truly alone because we are all connected deep down. It helps us understand each other better because we see that our hearts all have the same hopes and fears.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythm of waves crashing on a beach: the sound of the shared pulse beneath all human dreaming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry earth: the scent every human recognizes before they know its name." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spoonful of honey that tastes the same as it did thousands of years ago: the flavor that time cannot change." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms together to feel the heat of your own life: the warmth that connects you to every other warm body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at a star and knowing someone else is looking at it too: the sight that proves shared consciousness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water and losing track of where your body ends: the body dissolving into the field it was always part of." }
+        ],
+        intuition: "A giant invisible library that every person in the world can visit when they fall asleep. Jung did not invent the collective unconscious. He named what every culture already knew. The Aboriginal Australians call it the Dreamtime. The Hindus call it Brahman. The Sufis call it the Imaginal World. The Greeks called it the realm of Forms. Every civilization on earth independently concluded that beneath the personal mind there is a shared mind. And they all described the same furniture in the room. The Hero. The Shadow. The Wise Elder. The Great Mother. The Trickster. The Flood. These are not coincidences. These are blueprints. Hardwired into the species. Not learned. Inherited. You did not choose to dream about falling. You did not choose to dream about flying. You did not choose to dream about being chased. These dreams were dreaming themselves through humans long before you arrived. And they will dream themselves through humans long after you leave. You are not visiting the library. You are a page in it.",
+        links: [
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Carl Jung", url: "https://en.wikipedia.org/wiki/Carl_Jung" },
+          { label: "Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" }
+        ],
+        advanced: "The Collective Unconscious (Jung): the deepest psychic layers are inherited, not personal. Archetypes provide the blueprint for human experience across all cultures. You are not visiting the library. You are a page in it." },
+
+      { id: "neuroplasticity-rem", num: 2, icon: "🧠", title: "Neuroplasticity & REM", subtitle: "Your Brain Is a Busy Construction Crew Fixing Old Roads and Building New Ones While You Sleep",
+        simple: "While you sleep, your brain is like a busy construction crew fixing old roads and building new ones. It takes everything you learned during the day and tucks it away in the right folders so you do not forget it. This brain-building happens most when you are having your wildest dreams. It is like your mind is practicing for real life while your body stays safe and still. This keeps your brain fast, smart, and ready for new adventures when you wake up. It is the magic way your body heals your thoughts and makes you stronger every single night.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft hum of a computer processing data: the sound of a brain filing the day into permanent storage." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly sharpened pencils or a new book: the scent of a system preparing for tomorrow's lessons." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sharp zing of a fresh orange: the taste of a brain waking up rewired and ready." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Braiding three strands of hair into one strong unit: the fingers doing what the neurons are doing — weaving." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a flower blooming: growth that happens in the dark becoming visible in the light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Growing pains in your legs at night: the body reminding you that building hurts and building is good." }
+        ],
+        intuition: "Your brain is a busy construction crew fixing old roads and building new ones while you sleep. You think learning happens at the desk. Learning happens in the bed. The desk is the download. The bed is the installation. During REM sleep, your brain replays the day's experiences at accelerated speed, strengthening the synapses that matter and pruning the ones that do not. This is not maintenance. This is construction. The violinist who practices for six hours improves. But the improvement does not lock in until sleep. The student who studies all night and does not sleep performs worse than the student who studies half as long and sleeps. Because the studying is the rough draft. The sleep is the final draft. Your wildest dreams — the ones that make no sense — are your brain testing connections, running simulations, stress-testing the wiring. The nonsense is not nonsense. The nonsense is your brain trying every combination to find the one that works. You are not resting. You are being rebuilt. Every single night. The construction crew does not need your permission. It only needs you to lie down and get out of the way.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "REM Sleep", url: "https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep" },
+          { label: "Memory Consolidation", url: "https://en.wikipedia.org/wiki/Memory_consolidation" }
+        ],
+        songs: [
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" }
+        ],
+        advanced: "REM neuroplasticity: Long-Term Potentiation consolidates procedural and emotional memory during desynchronized sleep. The desk is the download. The bed is the installation. The construction crew does not need your permission. It only needs you to lie down." },
+
+      { id: "lucid-dreaming", num: 3, icon: "👁️", title: "Lucid Dreaming", subtitle: "Waking Up Inside Your Dream and Realizing You Are the Director",
+        simple: "Imagine being inside a movie and suddenly realizing that you are the director! Lucid dreaming is when you wake up inside your dream and realize, hey, I am dreaming right now! Once you know this, you can fly over mountains, talk to animals, or walk through walls. It is like having a superpower that only works when your eyes are closed. It teaches you that your mind is a giant world where anything is possible if you just believe it. This helps you feel more powerful and less afraid even when you are wide awake.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clear ringing bell that cuts through silence: the sound of awareness suddenly switching on inside the dream." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean cold mountain air: the scent of a mind that just realized it is free." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Peppermint that makes your whole mouth feel awake: the taste of consciousness arriving where it was not expected." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold water splashed on your face: the shock of waking up without leaving the dream." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own reflection in a moving bubble: the eyes seeing themselves see — the observer becoming visible inside the vision." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your stomach dropping on a swing set: the body feeling the impossible become possible." }
+        ],
+        intuition: "Waking up inside your dream and realizing you are the director. Every night you enter a world that is entirely generated by your mind. The landscapes. The characters. The physics. All of it — manufactured by you. And you believe it completely. You run from the monster because you believe the monster is real. You fall from the cliff because you believe the cliff is real. Then one night, mid-dream, something clicks. Wait. This is a dream. I made this. And in that moment, everything changes. The monster has no power. The cliff has no danger. You have no limits. Because you realized you are the author of the entire world you are standing in. Now here is the question the mystics ask: what if waking life works the same way? What if the fears that chase you in the daytime are as constructed as the monsters in your dreams? What if lucidity is not just a sleep skill but a life skill — the ability to see that you are participating in the construction of your reality at every moment? Lucid dreaming does not just give you control of the dream. It gives you the question that changes everything: how much of what I call real did I build without knowing I was building it?",
+        links: [
+          { label: "Lucid Dreaming", url: "https://en.wikipedia.org/wiki/Lucid_dream" },
+          { label: "Metacognition", url: "https://en.wikipedia.org/wiki/Metacognition" },
+          { label: "Dorsolateral Prefrontal Cortex", url: "https://en.wikipedia.org/wiki/Dorsolateral_prefrontal_cortex" }
+        ],
+        songs: [
+          { title: "Dream On", artist: "Aerosmith", url: "https://www.youtube.com/watch?v=89dGC8de0CA" },
+          { title: "Sweet Dreams", artist: "Eurythmics", url: "https://www.youtube.com/watch?v=qeMFqkcPYcg" },
+          { title: "Walking on a Dream", artist: "Empire of the Sun", url: "https://www.youtube.com/watch?v=eimgRedLkkU" }
+        ],
+        advanced: "Lucid dreaming: reactivation of the dorsolateral prefrontal cortex during REM enables metacognition within the dream state. How much of what I call real did I build without knowing I was building it?" },
+
+      { id: "hypnagogia", num: 4, icon: "🌫️", title: "Hypnagogia (The Doorway)", subtitle: "The In-Between Time When Your Brain Is Half Awake and Half Dreaming",
+        simple: "Have you ever felt like you were falling right as you started to sleep, or seen strange shapes behind your eyelids? That in-between time is called hypnagogia, and it is the doorway to your imagination. It is like the static on a TV before the show starts, full of colors and quiet whispers. This is when your brain is most creative because it is half-awake and half-dreaming. Many famous inventors got their best ideas by sitting in this quiet, magical doorway. If you pay attention to it, you can catch spirit bumps of ideas before they disappear.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise of a fan or a distant train: the sound of the threshold between two worlds humming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A candle just blown out: the scent of something that was here a moment ago and left a trace." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering taste of toothpaste: a flavor from the waking world fading into the dreaming one." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heavy blankets pressing down: the weight of the waking body surrendering to the doorway." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Floaters and sparks behind closed eyes: the visual system generating content from nothing — proving it was always the artist." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling yourself grow very big or very small: the body losing its fixed dimensions at the threshold." }
+        ],
+        intuition: "The in-between time when your brain is half awake and half dreaming. Edison used to sit in a chair holding steel balls. Dalí held a key over a plate. The technique was the same: fall asleep just enough to enter hypnagogia, and the moment you slip too far, the object drops, the clang wakes you, and you capture what you saw at the threshold. They were fishing at the edge of consciousness. Because the edge is where the best ideas live. Hypnagogia is theta wave territory — four to eight hertz — the frequency where the ego relaxes its grip but awareness has not yet surrendered. In this narrow band, the mind makes connections it would never make while fully awake. Because the waking mind is a filter. It says that does not make sense and rejects the idea before it can form. The hypnagogic mind has no filter. It lets everything through. And some of what comes through is garbage. And some of what comes through is genius. The doorway does not discriminate. It just opens. And the people who learn to stand in the doorway without falling through it become the inventors, the artists, the mystics. Not because they are smarter. Because they learned to listen at the edge where the rules dissolve.",
+        links: [
+          { label: "Hypnagogia", url: "https://en.wikipedia.org/wiki/Hypnagogia" },
+          { label: "Theta Waves", url: "https://en.wikipedia.org/wiki/Theta_wave" },
+          { label: "Thomas Edison Sleep Technique", url: "https://en.wikipedia.org/wiki/Thomas_Edison" }
+        ],
+        songs: [
+          { title: "Enter Sandman", artist: "Metallica", url: "https://www.youtube.com/watch?v=CD-E-LDc384" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" }
+        ],
+        advanced: "Hypnagogia: theta waves (4-8 Hz) where linear logic dissolves into associative non-linear cognition. The doorway does not discriminate. It just opens. The people who learn to stand in it without falling through become the inventors, the artists, the mystics." },
+
+      { id: "archetypal-symbolism", num: 5, icon: "🃏", title: "Archetypal Symbolism", subtitle: "A Secret Code That Your Heart Already Knows How to Read",
+        simple: "Dreams speak in a language made of pictures instead of words. Think of a Wise Old Man, a Scary Monster, or a Magic Sword; these are Archetypes that everyone understands. Your brain uses these symbols to tell you important secrets about your life without using letters. It is like a secret code that your heart already knows how to read. When you see these symbols, you are connecting to stories that have been told for thousands of years. They help you find your way when you feel lost by showing you which character you are playing today.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep ancient drum beat: the rhythm that was old before language was young." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old paper and dusty library books: the scent of stories that outlived the people who first told them." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bread and salt: the taste of hospitality that means the same thing in every civilization on earth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth round stone from a river: the shape water carved over centuries — the archetype of patience." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering campfire in the dark: the image that taught every human who ever lived that light exists inside darkness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall like a king or cowering like a mouse: the body performing archetypes it was never taught." }
+        ],
+        intuition: "A secret code that your heart already knows how to read. You were never taught what a dragon means. But you know. You were never taught what a wise old man in a cave means. But you know. You were never taught what crossing a dark river means. But you know. These symbols are older than any alphabet. They predate writing by tens of thousands of years. They appear on cave walls in France and in Aboriginal dreamtime stories in Australia and in the myths of people who never had contact with each other. The same symbols. The same meanings. Over and over and over. Jung called them archetypes. Campbell called them the monomyth. But the shamans did not need a name. They just knew that the dream speaks in pictures because pictures are older than words and truer than arguments. When you dream of a flood, your psyche is not being random. It is using the oldest language it has to tell you something is being reset. When you dream of flight, it is telling you something has been released. The symbols are not decorations. The symbols are the message. And your heart — your pre-verbal, pre-rational heart — has been reading them fluently since before you could speak.",
+        links: [
+          { label: "Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Monomyth", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Joseph Campbell", url: "https://en.wikipedia.org/wiki/Joseph_Campbell" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Thriller", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=sOnqjkJTMaA" }
+        ],
+        advanced: "Archetypes: primordial structural elements of the psyche. The same symbols appear across cultures with no contact — cave walls in France, Aboriginal dreamtime, Mesoamerican myths. The symbols are not decorations. The symbols are the message." },
+
+      { id: "emotional-regulation-dreams", num: 6, icon: "⚖️", title: "Emotional Regulation (Dream Washing Machine)", subtitle: "Your Dreams Are Like a Washing Machine for Your Feelings",
+        simple: "Have you ever felt better after sleeping on it? That is because your dreams are like a washing machine for your feelings. They take the sad or scary things that happened during the day and wash them until they do not hurt as much. By dreaming about what bothers us, our brain practices how to be brave and calm. It turns a big deal into a small deal while we rest. This is why sleep is the best medicine for a grumpy mood or a hurt heart.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A long deep exhale or a sigh of relief: the sound of the nervous system releasing what it carried all day." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender or warm milk: the scent that tells the body the processing can begin." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool clear water: the taste of a system being flushed clean." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm hug from someone you love: the pressure that tells the nervous system the danger has passed." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset turning into night: the visual of the day surrendering its grip so the healing can start." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscles going limp and relaxed: the body releasing its armor because the dreams will do the fighting now." }
+        ],
+        intuition: "Your dreams are like a washing machine for your feelings. Sleep to forget, sleep to remember — that is the hypothesis. And it works like this: during REM sleep, the brain replays emotional memories but strips the emotional charge. It keeps the information and discards the voltage. You remember what happened. But it does not sting the same way. This is why the breakup that devastated you on Monday feels survivable by Thursday. Not because time heals. Because sleep heals. Time just provides the nights. The brain is not avoiding the pain. The brain is processing the pain in the safest possible environment — one where the body is paralyzed, the world is imagined, and the consequences are zero. Your nightmare about the argument is not punishment. It is practice. Your brain is running the simulation again and again until the emotional weight drops below the threshold of disturbance. This is why sleep deprivation causes emotional instability. It is not that tired people are weak. It is that their washing machine was never allowed to finish the cycle. The feelings stayed dirty. And dirty feelings make the whole house smell.",
+        links: [
+          { label: "Sleep and Emotion", url: "https://en.wikipedia.org/wiki/Sleep_and_memory" },
+          { label: "REM and Emotional Processing", url: "https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep#Functions" },
+          { label: "Sleep Deprivation", url: "https://en.wikipedia.org/wiki/Sleep_deprivation" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" }
+        ],
+        advanced: "Sleep to Forget, Sleep to Remember: REM replays emotional memories while stripping the affective charge, keeping the data and discarding the voltage. Sleep deprivation does not make people weak. It means their washing machine never finished the cycle." },
+
+      { id: "subconscious-intuition", num: 7, icon: "⚡", title: "Subconscious Intuition", subtitle: "A Quiet Helper Always Working in the Background Like a Compass Pointing to True North",
+        simple: "Your brain is like a super-fast computer that notices things you do not even see. This subconscious part of you is always working in the background, like a quiet helper. Sometimes it gives you a gut feeling that something is right or wrong without you knowing why. This is your sixth sense or intuition, and it is very smart! It uses all the secrets of the unseen world to keep you safe and guide you. Trusting this feeling is like having a compass that always points to your true North.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden snap of a finger: the sound of the subconscious breaking through the surface with a signal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke before you see fire: the nose detecting danger before the conscious mind has a name for it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bitter taste that tells you not to eat something: the tongue executing a survival judgment older than language." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hair standing up on your arms: the skin receiving a broadcast from the subconscious emergency channel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Noticing a small detail in a picture that others miss: the eyes catching what the conscious mind was not looking for." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing exactly where your hand is in the dark: the body navigating without sight because a deeper system is guiding." }
+        ],
+        intuition: "A quiet helper always working in the background like a compass pointing to true North. Your conscious mind processes about forty bits per second. Your subconscious processes about eleven million. That means ninety-nine point nine nine six percent of your processing is happening below awareness. And that processing is not random. It is pattern recognition running on the largest dataset you have — every experience you have ever had, including the ones you forgot. Gut feeling is not mystical. Gut feeling is your subconscious recognizing a pattern faster than your conscious mind can articulate it. The veteran detective who says something feels off about this guy is not psychic. His subconscious has processed ten thousand faces and detected a micro-expression that took four milliseconds. His conscious mind has no idea. His gut does. The mystics were right about intuition. The scientists are right about intuition. They are describing the same system in different languages. One calls it the inner voice. The other calls it rapid subcortical pattern matching. The compass is real. It was real before we had a name for it. And it points to true North whether you believe in it or not.",
+        links: [
+          { label: "Unconscious Mind", url: "https://en.wikipedia.org/wiki/Unconscious_mind" },
+          { label: "Intuition", url: "https://en.wikipedia.org/wiki/Intuition" },
+          { label: "Pattern Recognition", url: "https://en.wikipedia.org/wiki/Pattern_recognition_(psychology)" }
+        ],
+        songs: [
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+          { title: "Listen to Your Heart", artist: "Roxette", url: "https://www.youtube.com/watch?v=yCC_b5WHLX0" },
+          { title: "Inner City Blues", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=57Ykv1D0qEE" }
+        ],
+        advanced: "Intuition: rapid subcortical pattern recognition processing ~11 million bits/sec below conscious threshold vs ~40 bits/sec conscious. The mystics and the scientists describe the same system in different languages. The compass is real whether you believe in it or not." },
+
+      { id: "astral-projection", num: 8, icon: "🌌", title: "Astral Projection Narratives", subtitle: "We Are More Than Just Bones and Skin — We Are Made of Light and Wonder",
+        simple: "For a very long time, people in every part of the world have told stories about their spirits leaving their bodies to travel the stars. While scientists are still studying this, these stories show how much we want to explore the unseen world. It feels like your mind is a bird that can fly out of its cage at night. Even if it is just a very vivid dream, it teaches us that we are more than just bones and skin. We are made of light and wonder, and our home is much bigger than just one room. These stories help us feel free and curious about the universe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low vibrating Om of a singing bowl: the sound that seems to come from inside and outside simultaneously." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or burning sage: the scent used across cultures to mark the boundary between ordinary and sacred space." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something light and airy like cotton candy: the taste of a body that feels like it weighs nothing." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A cool breeze while lying perfectly still: the skin sensing movement that the body is not making." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The V shape of birds flying south: the vision of something following a path it was never taught." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling like you are floating inches above your bed: the body experiencing weightlessness while gravity still holds." }
+        ],
+        intuition: "We are more than just bones and skin — we are made of light and wonder. Every continent has these stories. The Egyptians called it the Ka leaving the body. The Tibetans mapped it in the Bardo Thodol. The shamans of Siberia and the Amazon rode it into the spirit world. Hindu yogis described it as the subtle body separating from the gross body. Western mystics reported it during near-death experiences. Either every culture on earth independently hallucinated the same thing. Or they are all pointing at something real that science has not yet found the instrument to measure. The honest answer is: we do not know. But the phenomenon itself — the experience of consciousness operating independently of the physical body — is one of the most reported experiences in human history. Dismissing it as delusion dismisses the testimony of millions of people across thousands of years. Accepting it as literal requires evidence we do not have. The mature position is wonder. Something is happening. We do not yet know what. And the not knowing is not a failure. The not knowing is the invitation.",
+        links: [
+          { label: "Astral Projection", url: "https://en.wikipedia.org/wiki/Astral_projection" },
+          { label: "Out-of-Body Experience", url: "https://en.wikipedia.org/wiki/Out-of-body_experience" },
+          { label: "Temporoparietal Junction", url: "https://en.wikipedia.org/wiki/Temporoparietal_junction" }
+        ],
+        songs: [
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Fly Me to the Moon", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=ZEcqHA7dbwM" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" }
+        ],
+        advanced: "Astral projection narratives: cross-cultural reports of consciousness operating independently of the body, possibly linked to the temporoparietal junction. The mature position is wonder. Something is happening. We do not yet know what. The not knowing is the invitation." },
+
+      { id: "precognitive-dreaming", num: 9, icon: "⏳", title: "Precognitive Dreaming", subtitle: "Your Mind Is a Time Traveler Giving You a Little Sneak Peek",
+        simple: "Have you ever dreamed of something and then had it happen in real life? This is called a precognitive dream, and it is like your mind is a time traveler. It is as if the unseen world knows what is coming next and gives you a little sneak peek. While it might just be a lucky guess, it makes us wonder if time is more like a circle than a straight line. It reminds us to pay attention to our dreams because they might be letters from the future. This feeling of déjà vu connects us to the mystery of how the world works.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that arrives before the original sound: the ears experiencing time folding backward." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cookies before they come out of the oven: the nose detecting the future through chemistry." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The memory of a flavor you have not tasted in years — arriving uninvited: the tongue remembering what has not happened yet." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A shiver down your spine: the body reacting to a signal from a timeline it should not have access to." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A pattern in the clouds that looks like a friend: the eyes recognizing something before the event confirms it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing where a door is in a house you have never visited: the body navigating a map it should not possess." }
+        ],
+        intuition: "Your mind is a time traveler giving you a little sneak peek. The skeptic says coincidence. The mystic says prophecy. The physicist says maybe time is not what we think it is. All three might be right. Here is what we know: the brain is a prediction machine. It does not just record the present. It models the future. Constantly. Every second. Based on every pattern it has ever absorbed. And most of those predictions happen below consciousness. So when you dream of something that later happens, the most likely explanation is that your subconscious recognized a pattern your conscious mind missed and projected it forward. That is not magic. That is computation. But it feels like magic. And the feeling matters. Because the feeling is the doorway to the deeper question: what is time? If the brain can model the future before it arrives, then the future is not a blank wall. It is a probability field. And the dreaming mind can sometimes read the field. Whether you call that precognition or pattern recognition or quantum entanglement or God whispering — the experience is the same. You knew before you knew. And that knowing came from somewhere your waking mind cannot reach.",
+        links: [
+          { label: "Precognition", url: "https://en.wikipedia.org/wiki/Precognition" },
+          { label: "Déjà Vu", url: "https://en.wikipedia.org/wiki/D%C3%A9j%C3%A0_vu" },
+          { label: "Predictive Processing", url: "https://en.wikipedia.org/wiki/Predictive_coding" }
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=K_PQ4fRQ5Kc" },
+          { title: "Time After Time", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=VdQY7BusJNU" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" }
+        ],
+        advanced: "Precognitive dreaming: the brain as a prediction machine modeling futures via subcortical pattern recognition. Whether you call it precognition or pattern recognition or God whispering — you knew before you knew. And that knowing came from somewhere your waking mind cannot reach." },
+
+      { id: "dream-incubation", num: 10, icon: "🌱", title: "Dream Incubation", subtitle: "Plant an Idea Before You Sleep and Your Unseen Mind Will Work on It All Night",
+        simple: "You can actually plant an idea in your head before you go to sleep, just like planting a seed in a garden. If you think about a problem you want to solve right before you drift off, your unseen mind will work on it all night long. You might wake up with the perfect answer! This is called dream incubation, and it turns your sleep into a secret workshop. It shows that you and your subconscious are a great team that can solve anything together. By asking your dreams for help, you open up a new way to talk to yourself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady tick-tock of a clock: the sound of a question being carried into the workshop of sleep." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh mint or rosemary: the scent of a mind being primed to receive." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A small piece of dark chocolate: the taste of a reward placed at the entrance to the dream." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tying a string around your finger to remember something: the body encoding an intention into a physical knot." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single bright candle in a dark room: the vision of a question illuminating the darkness and waiting for the answer to arrive." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Visualizing yourself successfully completing a hard task: the body rehearsing a future it has not lived yet." }
+        ],
+        intuition: "Plant an idea before you sleep and your unseen mind will work on it all night. The ancient Greeks built temples called Asclepions where the sick would sleep and ask the gods for healing dreams. The dreamer would arrive with a question. The priests would prepare the chamber. And the dream would deliver the answer. We call that superstition now. But the mechanism is real. When you hold a question in your mind as you fall asleep, you are setting the agenda for your subconscious. You are telling eleven million bits per second: work on this. And they do. Kekulé dreamed the structure of benzene — the ouroboros snake biting its tail. Mendeleev dreamed the periodic table. McCartney dreamed the melody of Yesterday. Elias Howe dreamed the design of the sewing machine needle. These are not fairy tales. These are documented cases of the dreaming mind solving problems the waking mind could not. Dream incubation is not asking the gods for help. It is asking yourself for help. The part of yourself that works all night. The part that does not need language or logic. The part that speaks in images and feelings and impossible connections. The seed does not need sunlight to germinate. It needs darkness. And your question does not need waking thought to solve itself. It needs sleep. Plant the seed. Turn off the light. And trust the gardener who works in the dark.",
+        links: [
+          { label: "Dream Incubation", url: "https://en.wikipedia.org/wiki/Dream_incubation" },
+          { label: "Asclepion", url: "https://en.wikipedia.org/wiki/Asclepeion" },
+          { label: "Problem Solving in Sleep", url: "https://en.wikipedia.org/wiki/Sleep_and_creativity" }
+        ],
+        songs: [
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "I Can See Clearly Now", artist: "Johnny Nash", url: "https://www.youtube.com/watch?v=FscIgtDJFXg" },
+          { title: "Reach", artist: "Gloria Estefan", url: "https://www.youtube.com/watch?v=mM305hEjms4" }
+        ],
+        advanced: "Dream incubation: intentional direction of subconscious processing via pre-sleep intention setting. Kekulé, Mendeleev, McCartney — documented cases of the dreaming mind solving what the waking mind could not. The seed does not need sunlight to germinate. It needs darkness." },
+    ],
+
+
   },
 
 };
