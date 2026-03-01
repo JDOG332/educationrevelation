@@ -15271,6 +15271,243 @@ export const TOPIC_CARDS = {
         advanced: "White space (negative space) acts as a structural modulator dictating the reader's sampling rate. Prevents informational aliasing by providing cognitive breaks for data integration. The silence in a text is functionally equivalent to the shared-ignorance floor in information theory: what is unsaid defines the boundaries of what is said. The poem is not the words. The poem is the shape the words make when they surround the silence." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > SCULPTURE & FORM (sculpture)
+    // ═══════════════════════════════════════════════════════════════
+
+    sculpture: [
+      { id: "subtractive-additive", num: 1, icon: "⛏️", title: "Subtractive & Additive Process", subtitle: "Whether You Add or Subtract You Are Making Something Real",
+        simple: "Imagine you are playing with a big block of ice or a giant pile of mud. When you work with stone, you are a taker who chips away the pieces that do not belong until the hidden statue is set free. When you work with clay, you are a giver who adds small bits together to make something big from nothing. Both ways help us see that everything in the world is either being built up or simplified down. It is like how we grow taller by adding cells, but we learn by trimming away bad ideas. Whether you add or subtract, you are making something real that you can walk all around.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The tink-tink of a metal chisel hitting hard stone: the sound of revelation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dusty earthy dry clay in a warm room: the scent of raw potential." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The gritty mineral tang of limestone dust: tasting the bones of the earth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold sharp stone versus soft squishy mud: two opposite paths to the same destination." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A face slowly emerging from a square block of rock: the statue was always inside." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of the hammer in your hand as it swings: your body becoming the chisel's engine." }
+        ],
+        intuition: "Whether you add or subtract you are making something real. Michelangelo said he saw the angel in the marble and carved until he set it free. The clay sculptor says the opposite: there is nothing here and I will build until there is. One reveals. One assembles. Both arrive at the same place: truth with a shape you can touch. Every lesson you learn is subtraction — removing what is wrong. Every friendship you make is addition — building what is right. The universe does both. So do you.",
+        links: [
+          { label: "Subtractive Sculpture", url: "https://en.wikipedia.org/wiki/Subtractive_manufacturing" },
+          { label: "Additive Sculpture", url: "https://en.wikipedia.org/wiki/Modelling_(art)" },
+          { label: "Stone Carving", url: "https://en.wikipedia.org/wiki/Stone_carving" }
+        ],
+        songs: [
+          { title: "Shape of You", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=JGwWNGJdvx8" },
+          { title: "Stone Cold", artist: "Demi Lovato", url: "https://www.youtube.com/watch?v=GbPMetnMC60" },
+          { title: "Clay", artist: "Grace VanderWaal", url: "https://www.youtube.com/watch?v=o2jJ5MeWNfE" }
+        ],
+        advanced: "Subtractive: the artist as revelator, removing material to uncover the latent form within a monolithic volume. Requires spatial foresight — errors in removal are irreversible. Additive (modeling): iterative synthesis allowing fluid conversation between creator and medium. This duality mirrors entropy and evolution: structure refined from the whole or assembled from the parts. Two opposite verbs. One shared noun: form." },
+
+      { id: "structural-integrity-sculpture", num: 2, icon: "🏛️", title: "Structural Integrity", subtitle: "When a Sculpture Is Built Right It Feels Strong Like a Mountain That Will Not Move",
+        simple: "Everything that stands up has a secret battle with gravity. If a sculpture is too heavy on top or its ankles are too thin, it will snap and fall down just like a tower of blocks. To make a form last forever, you have to understand how weight travels through the material down to the ground. It is the same way your bones hold you up so you do not turn into a puddle on the floor. When a sculpture is built right, it feels strong and safe, like a big mountain that will not move.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The solid thud of a heavy base hitting the floor: gravity confirmed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of steel supports being welded: strength has a smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The dry chalky taste of plaster of Paris: the flavor of foundations." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your hand against a wall that does not budge: immovable truth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tall thin statue balancing perfectly on one toe: defiance made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing on one leg and feeling your muscles tighten to stay up: your body solving the same equation." }
+        ],
+        intuition: "When a sculpture is built right it feels strong like a mountain that will not move. Your subconscious knows physics before your brain does. You walk past a leaning tower and your stomach tightens. You stand beneath a cathedral dome and your shoulders relax. The body reads structural integrity faster than the mind. The sculpture does not need to explain itself. If it stands, it is true. If it falls, it lied.",
+        links: [
+          { label: "Statics (Mechanics)", url: "https://en.wikipedia.org/wiki/Statics" },
+          { label: "Center of Mass", url: "https://en.wikipedia.org/wiki/Center_of_mass" },
+          { label: "Tensile Strength", url: "https://en.wikipedia.org/wiki/Ultimate_tensile_strength" }
+        ],
+        songs: [
+          { title: "Titanium", artist: "David Guetta ft. Sia", url: "https://www.youtube.com/watch?v=JRfuAukYTKg" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Structural integrity: the physical manifestation of statics. Center of mass must align strategically with the base of support. Sculptors calculate tensile strength to ensure protruding elements resist shear stress. When a form possesses structural integrity it conveys permanence and inevitability — the viewer intuitively recognizes stability, allowing the subconscious to engage with meaning rather than worrying about collapse. Truth that stands needs no explanation." },
+
+      { id: "the-armature", num: 3, icon: "🦴", title: "The Armature", subtitle: "Even If You Cannot See the Wires They Are the Most Important Part",
+        simple: "Most big sculptures have a secret skeleton hidden inside them called an armature. It is usually made of wire or wood, and it keeps the soft clay or wax from sliding off into a mess. Think of it like your own skeleton inside your skin; without it, you would be like a jellyfish on land! The armature gives the sculpture a shape to hold onto while the artist adds the details on the outside. Even if you cannot see the wires, they are the most important part because they hold the whole body together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The boing of thick wire being bent into a curve: the sound of invisible structure." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp oily scent of pliers and metal wire: infrastructure has a fragrance." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic tang of copper wire: tasting the skeleton." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your fingers over a bumpy wire frame: feeling what nobody will ever see." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The bones of a statue before the skin is put on: the truth before the beauty." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Clenching your fist and feeling the hard knuckles underneath: the armature you were born with." }
+        ],
+        intuition: "Even if you cannot see the wires they are the most important part. Every person you admire has an invisible armature. Values. Principles. Habits. You cannot see them but they hold everything together. Remove the armature and the clay collapses. Remove the character and the person collapses. The most important things are always the things you cannot see. The skeleton is never on display. But the skeleton is the reason the body can dance.",
+        links: [
+          { label: "Armature (Sculpture)", url: "https://en.wikipedia.org/wiki/Armature_(sculpture)" },
+          { label: "Endoskeleton", url: "https://en.wikipedia.org/wiki/Endoskeleton" },
+          { label: "Anatomy for Artists", url: "https://en.wikipedia.org/wiki/Anatomy_for_artists" }
+        ],
+        songs: [
+          { title: "Bones", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=dSCq7jTL7tQ" },
+          { title: "Skeletons", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=YfZDrlSI3u8" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "The armature: the ontological framework for additive sculpture. Provides friction and support to counteract the fluid nature of plastic media. Establishes proportions and gesture at the primary level, ensuring the final work is grounded in cohesive internal logic. Mimics biological endoskeletal systems: internal rigidity enabling external flexibility. The skeleton is the first decision. Every decision after that is cosmetic." },
+
+      { id: "negative-space-sculpture", num: 4, icon: "⭕", title: "Negative Space", subtitle: "The Air Around a Statue Is Just as Important as the Statue Itself",
+        simple: "Did you know that the air around a statue is just as important as the statue itself? This is called negative space, and it is the nothingness that makes the something look good. If you make a circle with your fingers, the air in the middle is the negative space. Sculptors use these holes or empty spots to tell your eyes where to look and to make the statue feel light or interesting. It teaches us that the quiet moments in life are just as important as the busy ones.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "How a room sounds different when empty versus full: silence has volume." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh air blowing through a window: the scent of space itself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The nothing taste of clean water: absence you can swallow." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Wind blowing through the gap between your arm and your side: touching emptiness." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Blue sky through the branches of a tree: the emptiness that gives the tree its shape." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the distance between your two hands: measuring the invisible." }
+        ],
+        intuition: "The air around a statue is just as important as the statue itself. Henry Moore carved holes through his sculptures. People asked why. The answer: the hole is not missing. The hole is speaking. The donut is defined by what is not there. The window is useful because of its emptiness. The room is useful because of its emptiness. Sometimes what you choose not to say is the loudest thing in the conversation. Negative space is not nothing. Negative space is everything the positive space is not — and that is what gives it meaning.",
+        links: [
+          { label: "Negative Space", url: "https://en.wikipedia.org/wiki/Negative_space" },
+          { label: "Henry Moore", url: "https://en.wikipedia.org/wiki/Henry_Moore" },
+          { label: "Figure–Ground", url: "https://en.wikipedia.org/wiki/Figure%E2%80%93ground_(perception)" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Empty Spaces", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=MnMmMhvR8RE" }
+        ],
+        advanced: "Negative space: the conceptual anti-matter of sculpture. The volume of air displaced or enclosed by the work, functioning as a silent partner in the composition. Manipulating voids controls visual weight and breathability. The hole is not a lack of material but a deliberate presence — inviting the environment to pass through the work. No entity exists in isolation from the space it occupies. The void is not empty. The void is full of everything the form chose not to be." },
+
+      { id: "material-memory", num: 5, icon: "🌀", title: "Material Memory", subtitle: "Everything in the World Has a History Hidden Inside It",
+        simple: "Some things, like metal and wood, have a memory of how they used to be. When you bend a wire, it might try to spring back, or if you heat it up, it might change its mind. Sculptors have to learn the feel of their materials so they do not fight against them. It is like how you remember how to ride a bike even if you have not done it in a long time. Everything in the world has a history hidden inside it, and working with your hands helps you talk to that history.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ping of metal as it cools down and settles: the material sighing into its new shape." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smoky scent of wood being sanded fast: friction waking up the grain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic bloody taste of iron: the flavor of the earth's core." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heat left in a stone after the sun has been on it: the rock remembering warmth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Rings in a tree trunk telling how old it is: a biography written in wood." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your muscles knowing a movement before you do it: the body's material memory." }
+        ],
+        intuition: "Everything in the world has a history hidden inside it. Bend a paperclip back and forth. It gets hot. It gets weak. It remembers every bend. The metal is not stupid. The metal is keeping score. The sculptor who ignores material memory will be punished by the material. The sculptor who respects it will be rewarded. This is not a metaphor. This is physics. And physics does not care about your intentions. Only your attention.",
+        links: [
+          { label: "Shape-Memory Alloy", url: "https://en.wikipedia.org/wiki/Shape-memory_alloy" },
+          { label: "Annealing", url: "https://en.wikipedia.org/wiki/Annealing_(materials_science)" },
+          { label: "Wood Grain", url: "https://en.wikipedia.org/wiki/Wood_grain" }
+        ],
+        songs: [
+          { title: "Remember Me", artist: "Coco Soundtrack", url: "https://www.youtube.com/watch?v=VRcMkGCJbXs" },
+          { title: "Unforgettable", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=vDN5rG3wLa4" },
+          { title: "Memory", artist: "Cats Musical", url: "https://www.youtube.com/watch?v=4-L6rEm0rnY" }
+        ],
+        advanced: "Material memory: the physical and chemical tendency of a medium to return to a previous state or retain a specific transformation. In metallurgy, this involves crystalline structure; in woodworking, hygroscopic fiber nature. A bridge between physical and psychological: just as materials remember stresses of the forge, the human form remembers experiences through cellular and neural pathways. The material is not a blank canvas. The material is an autobiography." },
+
+      { id: "proportion-scale", num: 6, icon: "📏", title: "Proportion & Scale", subtitle: "It Helps Us Understand Where We Fit in the Big Wide World",
+        simple: "Proportion is about how big one part is compared to another part, like how your head fits on your shoulders. Scale is about how big the whole thing is compared to you. A giant statue of a kitten makes the kitten look like a monster, and a tiny statue of a mountain makes the mountain look like a toy. When a sculptor gets the proportion right, the statue looks real, even if it is made of green clay. It helps us understand where we fit in the big wide world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of your voice in a giant room versus a small closet: scale you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The concentrated scent of a tiny flower: small things with enormous presence." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A tiny drop of super sour lemon juice: proportion between size and power." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Trying to wrap your arms around a giant tree: your body measuring the world." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A statue so tall you cannot see the top: scale rewriting your sense of self." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling very small next to a skyscraper: your proprioception recalibrating." }
+        ],
+        intuition: "It helps us understand where we fit in the big wide world. Stand in front of the Lincoln Memorial. You feel small. That is not an accident. The sculptor made Lincoln nineteen feet tall so that democracy would feel bigger than any one person. Now hold a tiny figurine in your palm. You feel powerful. Scale is not about size. Scale is about relationship. The sculptor decides whether you look up or look down — and that decision changes who you think you are.",
+        links: [
+          { label: "Proportion (Architecture)", url: "https://en.wikipedia.org/wiki/Proportion_(architecture)" },
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+          { label: "Monumental Sculpture", url: "https://en.wikipedia.org/wiki/Monumental_sculpture" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Giant", artist: "Calvin Harris & Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=wOdGnMoagbQ" },
+          { title: "Small World", artist: "Disney", url: "https://www.youtube.com/watch?v=FrlaG1j6CbQ" }
+        ],
+        advanced: "Proportion: the mathematical ratio between constituent parts of a form. Historically utilizing the Golden Ratio (1.618) to create works resonating with biological patterns in nature. Scale is relational, defining the work's impact on its environment and the viewer's body. Manipulating scale engages proprioception directly — heroic scale inspires awe, miniature scale invites intimacy. The sculptor does not change the size of the object. The sculptor changes the size of the viewer." },
+
+      { id: "surface-texture-sculpture", num: 7, icon: "✋", title: "Surface Texture", subtitle: "There Is More to People and Things Than Just What We See at First",
+        simple: "Surface texture is the skin of the sculpture. Is it smooth and shiny like a mirror, or bumpy and rough like a lizard? When light hits a smooth surface, it slides right off, but when it hits a rough surface, it creates lots of tiny shadows. Sculptors use their tools to make things look like soft fur, hard metal, or wet skin, even if the whole thing is just made of gray rock. It reminds us that there is more to people and things than just what we see at first; the feel matters too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The scratchy sound of sandpaper on wood: the sound of transformation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sweet beeswax used to polish stone: the scent of care." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A smooth lollipop versus a crunchy cracker: texture on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Closing your eyes and feeling silk then sandpaper: two truths in your fingertips." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Shadows dancing on crinkled aluminum foil: light reading the surface aloud." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The grip of your shoes on a rough floor: texture keeping you from falling." }
+        ],
+        intuition: "There is more to people and things than just what we see at first. A polished marble face says perfection. A rough chisel-marked face says struggle. The sculptor did not change the shape. The sculptor changed the skin. And the skin changed the story. Smooth says: I am finished. Rough says: I am still becoming. Michelangelo left some figures deliberately unfinished — prisoners emerging from raw stone. The texture was the message. The surface is never just a surface. The surface is the last word.",
+        links: [
+          { label: "Texture (Visual Arts)", url: "https://en.wikipedia.org/wiki/Texture_(visual_arts)" },
+          { label: "Non-Finito", url: "https://en.wikipedia.org/wiki/Non-finito" },
+          { label: "Patination", url: "https://en.wikipedia.org/wiki/Patina" }
+        ],
+        songs: [
+          { title: "Smooth Operator", artist: "Sade", url: "https://www.youtube.com/watch?v=4TYv2PhG89A" },
+          { title: "Rough Boy", artist: "ZZ Top", url: "https://www.youtube.com/watch?v=bIuUMXONbFY" },
+          { title: "Shine", artist: "Collective Soul", url: "https://www.youtube.com/watch?v=_m0bI82Rz_k" }
+        ],
+        advanced: "Texture: the tactile quality of a surface providing the final communication layer between work and observer. Created through sanding, chiseling, polishing, or chemical patination. These micro-forms determine how the piece absorbs or reflects light, defining visual volume. A polished surface suggests transcendence; a rough non-finito surface suggests struggle or becoming. Texture is where the hand of the artist leaves its final, most intimate signature." },
+
+      { id: "kinetic-balance", num: 8, icon: "⚖️", title: "Kinetic Balance", subtitle: "Even Big Heavy Things Can Be Graceful If They Find Their Center",
+        simple: "Some sculptures move, and some just look like they are about to move. This is called balance. A sculptor has to find the magic middle spot of their statue so it does not tip over. If you balance a spoon on your finger, you have found its center. Sculptors do this with tons of metal! When a statue is balanced perfectly, it looks like it is floating or dancing, even if it is very heavy. It shows us that even big heavy things can be graceful if they find their center.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The quiet whoosh of a sculpture spinning in the wind: balance in motion." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The cold crisp smell of a museum gallery: the air holding its breath." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The balanced taste of a perfect peanut butter and jelly sandwich: equilibrium on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Balancing a pencil on the tip of your finger: the magic point where everything holds." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A see-saw staying perfectly flat in the middle: visual proof that opposites can agree." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and standing on one foot: your body searching for its own center of gravity." }
+        ],
+        intuition: "Even big heavy things can be graceful if they find their center. Alexander Calder hung massive sheets of metal from thin wires and they danced in the breeze. Tons of steel behaving like butterflies. The secret was not making them lighter. The secret was finding the point where all the forces agreed. That is balance. Not the absence of weight. The perfect distribution of it. Find your center and you can move through anything without falling.",
+        links: [
+          { label: "Alexander Calder", url: "https://en.wikipedia.org/wiki/Alexander_Calder" },
+          { label: "Kinetic Art", url: "https://en.wikipedia.org/wiki/Kinetic_art" },
+          { label: "Center of Gravity", url: "https://en.wikipedia.org/wiki/Center_of_mass" }
+        ],
+        songs: [
+          { title: "Spinning Wheel", artist: "Blood Sweat & Tears", url: "https://www.youtube.com/watch?v=kDoWhMt2_gs" },
+          { title: "Balance", artist: "Future Islands", url: "https://www.youtube.com/watch?v=Ld9Z3LrMCEQ" },
+          { title: "Float On", artist: "Modest Mouse", url: "https://www.youtube.com/watch?v=CTAud5O7Qqk" }
+        ],
+        advanced: "Kinetic balance: weight distribution reaching equilibrium. Static sculpture uses visual balance; kinetic sculpture uses mechanical balance with precisely calculated centers of gravity around pivot points or suspension systems. A physical metaphor for homeostasis. Imbalance creates visual tension or anxiety; balance — even precarious balance — conveys mastery over physical laws. Find the center and the weight becomes weightless." },
+
+      { id: "casting-molds", num: 9, icon: "🐚", title: "Casting & Molds", subtitle: "Change Is How We Become Strong",
+        simple: "Casting is like making a giant fancy popsicle. First, the artist makes a shape out of soft wax or clay. Then, they build a hard shell called the mold around it. They melt the wax out and pour hot liquid metal into the empty space. When it cools down, they break the shell, and you have a metal version of the soft statue. It is a way to turn something that could break easily into something that can last for thousands of years. It teaches us that change is how we become strong.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The loud hiss of hot metal being poured into a mold: transformation screaming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Burning wax and hot sand: the scent of metamorphosis." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The dry dusty taste of foundry sand: the flavor of the chrysalis." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold hard bronze that used to be soft wax: touching what survival feels like." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Glowing orange liquid metal flowing like water: seeing one state of matter become another." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling heat from a furnace far away: the transformation radiating outward." }
+        ],
+        intuition: "Change is how we become strong. The wax was soft. The wax was destroyed. The bronze that replaced it will last three thousand years. The mold remembers what the wax forgot. The fire did not ruin the sculpture. The fire translated it. Every hard thing you go through is a casting. The soft version of you is melted away. The durable version of you is poured in. You are not being destroyed. You are being translated into something that can survive the weather.",
+        links: [
+          { label: "Lost-Wax Casting", url: "https://en.wikipedia.org/wiki/Lost-wax_casting" },
+          { label: "Bronze Sculpture", url: "https://en.wikipedia.org/wiki/Bronze_sculpture" },
+          { label: "Foundry", url: "https://en.wikipedia.org/wiki/Foundry" }
+        ],
+        songs: [
+          { title: "Gold", artist: "Spandau Ballet", url: "https://www.youtube.com/watch?v=ntG50eXbBtc" },
+          { title: "Solid", artist: "Ashford & Simpson", url: "https://www.youtube.com/watch?v=l2nOBTe3VYk" },
+          { title: "Fire", artist: "The Pointer Sisters", url: "https://www.youtube.com/watch?v=dHJHAGDv7Lk" }
+        ],
+        advanced: "Casting: transition from plastic ephemeral state to rigid permanent one. Lost wax (cire perdue) involves complex inversions — positive to negative to positive. Requires deep understanding of thermal expansion and fluid dynamics of molten alloys. Philosophically about preservation of form: the mold as memory, the idea surviving the destruction of its original vessel. The soul of the form outlives the body of the form. Every casting is a resurrection." },
+
+      { id: "patina-oxidation", num: 10, icon: "🏺", title: "Patina & Oxidation", subtitle: "Getting Older Is Just a Different Kind of Being Beautiful",
+        simple: "When metal or stone sits outside for a long time, the air and rain start to change its color. This old look is called a patina. A copper statue might turn bright green, like the Statue of Liberty! Artists sometimes use special chemicals to make a new statue look old on purpose. It is like the wrinkles on a grandparent's face — they show that the person has lived a long time and has many stories to tell. It reminds us that getting older is just a different kind of being beautiful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft shhh of rain hitting a metal roof: time speaking in water." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The wet penny smell of oxidized copper: the scent of centuries." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitter sour taste of rusted iron: time on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The slightly rough powdery feel of a green copper statue: touching time itself." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Beautiful blue-green color on an old bronze bell: aging as art." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the weight of time on a very old object: the body sensing history." }
+        ],
+        intuition: "Getting older is just a different kind of being beautiful. The Statue of Liberty was not always green. She was copper-bright. Then the air and the rain and the salt wrote their story on her skin. And she became more beautiful. Not less. The patina is not damage. The patina is a diary. Every wrinkle on a face, every scratch on a table, every stain on a wall is a sentence in a story that only time can write. The new thing is pretty. The old thing is true.",
+        links: [
+          { label: "Patina", url: "https://en.wikipedia.org/wiki/Patina" },
+          { label: "Oxidation", url: "https://en.wikipedia.org/wiki/Oxidation" },
+          { label: "Statue of Liberty", url: "https://en.wikipedia.org/wiki/Statue_of_Liberty" }
+        ],
+        songs: [
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" },
+          { title: "Old and Wise", artist: "The Alan Parsons Project", url: "https://www.youtube.com/watch?v=TIjpTNjdiCo" },
+          { title: "Rusty Cage", artist: "Soundgarden", url: "https://www.youtube.com/watch?v=pBZs_Py-1_0" }
+        ],
+        advanced: "Patina: a chemical film on the surface resulting from oxidation or other chemical reactions over time. Often a deliberate artistic choice that protects underlying metal and adds depth. The external finish connecting the work to the fourth dimension: time. Indicates the work has entered a relationship with its environment — a living entity that evolves and matures. Reconciles the human desire for permanence with the natural reality of constant change. The new thing is pretty. The old thing is true." },
+    ],
+
+
 
 
 
