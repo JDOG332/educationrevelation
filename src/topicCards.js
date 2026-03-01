@@ -13140,6 +13140,251 @@ export const TOPIC_CARDS = {
   },
 
 
+
+
+  // ═══════════════════════════════════════════════════════════════
+  // DOOR 6: ART (gallery)
+  // ═══════════════════════════════════════════════════════════════
+  gallery: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // ART (gallery) > MUSIC & SOUND (music)
+    // ═══════════════════════════════════════════════════════════════
+
+    music: [
+      { id: "vibration-frequency", num: 1, icon: "〰️", title: "Vibration & Frequency", subtitle: "Music Is Just a Way to Make All the Wiggles Match Up",
+        simple: "Sound starts as a tiny wiggle in the air that you cannot see but your ears can catch. Imagine a jump rope moving up and down very fast; that is like a sound wave. When the wiggle is fast, the sound is high like a bird, and when it is slow, it is deep like a lion. This wiggle travels through the air and touches your body, making you part of the music. Because everything is made of atoms that wiggle, music is just a way to make all those wiggles match up.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hum a low note and feel your chest shake: you are the instrument." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sniff a fresh orange; the sharp scent matches a bright sound." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Popping candy that fizzles on your tongue: frequency you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on a speaker playing heavy bass: vibration entering your bones." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ripples moving across a pond after dropping a stone: sound made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and spin slowly to feel the air move past your ears: your body is an antenna." }
+        ],
+        intuition: "Everything is made of atoms that wiggle. Music is just a way to make all those wiggles match up. You are not listening to the music. You are vibrating with it. The song does not enter your ears. It reminds your atoms what they already know.",
+        links: [
+          { label: "Sound", url: "https://en.wikipedia.org/wiki/Sound" },
+          { label: "Frequency", url: "https://en.wikipedia.org/wiki/Frequency" },
+          { label: "Wave-Particle Duality", url: "https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Hey Jude", artist: "The Beatles", url: "https://www.youtube.com/watch?v=A_MjCqQoLLA" },
+          { title: "Billie Jean", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" }
+        ],
+        advanced: "Frequency (f) is the fundamental measurement of periodic oscillations per unit time, expressed in Hertz. Connects to quantum mechanics (wave-particle duality) and string theory: the most basic building blocks of existence are vibrating filaments of energy. Understanding frequency bridges material science and the ephemeral nature of consciousness. The universe is not made of stuff. It is made of music." },
+
+      { id: "harmonic-resonance", num: 2, icon: "💎", title: "Harmonic Resonance", subtitle: "An Invisible Hug That Travels Through the Air",
+        simple: "Resonance is when two things start to wiggle together even if they are not touching. If you have two piano strings that are the same and you hit one, the other one will start to sing all by itself! This is how we connect with other people; when we hear a song we love, our hearts start to resonate with the rhythm. It shows us that we are never truly alone because we can always find a match in the world. It is like an invisible hug that travels through the air.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Sing into a guitar and listen to the strings hum back: they recognize you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor that triggers a deep memory: resonance between scent and soul." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt making a chocolate bar taste bigger: flavors resonating with each other." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a purring cat on your lap: love at a frequency." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two pendulums eventually swinging in the same direction: physics choosing togetherness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Jumping on a trampoline with a friend and catching their rhythm: bodies choosing sync." }
+        ],
+        intuition: "We are never truly alone because we can always find a match in the world. The string you did not touch started singing. It was not forced. It recognized the frequency and chose to join. That is not physics. That is love described by math.",
+        links: [
+          { label: "Resonance", url: "https://en.wikipedia.org/wiki/Resonance" },
+          { label: "Sympathetic Resonance", url: "https://en.wikipedia.org/wiki/Sympathetic_resonance" },
+          { label: "Emergence", url: "https://en.wikipedia.org/wiki/Emergence" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Harmonic resonance occurs when a system is driven at its natural frequency by an external periodic force, aligning eigenvalues for maximum amplitude and energy transfer. Mirrors emergence theory: individual components synchronize to create collective behavior greater than the sum of parts. The physical manifestation of empathy. Connection is not a choice. Connection is a frequency match." },
+
+      { id: "physics-of-intervals", num: 3, icon: "⚖️", title: "The Physics of Intervals", subtitle: "A Secret Code for Our Feelings Hidden in Simple Math",
+        simple: "An interval is the space between two different notes, and some spaces feel happier than others. When two notes have a simple math relationship, like 2 to 1, they sound perfect together, which we call an octave. Our brains love these simple patterns because they feel safe and balanced. When the math is messy, the sound feels itchy or nervous. These patterns are the building blocks of every song ever written, acting like a secret code for our feelings.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Play a C and a G on a piano to hear a perfect fifth: math you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Mixing vanilla and cinnamon for a balanced scent: intervals you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect mix of sweet and sour in a lemonade: ratio on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding hands with someone: the interval between your pulses." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly symmetrical butterfly: visual harmony." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing on one leg and finding the middle of your balance: your body solving an interval." }
+        ],
+        intuition: "Our brains love simple patterns because they feel safe. The same math that makes a perfect fifth also makes a galaxy spiral. The same ratio in a chord is in your DNA. The secret code for your feelings is the same code that built the universe.",
+        links: [
+          { label: "Interval (Music)", url: "https://en.wikipedia.org/wiki/Interval_(music)" },
+          { label: "Consonance and Dissonance", url: "https://en.wikipedia.org/wiki/Consonance_and_dissonance" },
+          { label: "Music of the Spheres", url: "https://en.wikipedia.org/wiki/Musica_universalis" }
+        ],
+        songs: [
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwoʻole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Hallelujah", artist: "Leonard Cohen", url: "https://www.youtube.com/watch?v=ttEMYvpoR-k" }
+        ],
+        advanced: "Musical intervals defined by frequency ratios (f₂/f₁). Consonance associated with small-integer ratios (3:2 for a perfect fifth) producing stationary interference patterns on the basilar membrane. Connects to sacred geometry and the music of the spheres: the same mathematical ratios governing musical beauty also govern planetary orbits and DNA structure. Beauty is not subjective. Beauty is ratio." },
+
+      { id: "rhythm-entrainment", num: 4, icon: "🥁", title: "Rhythm & Entrainment", subtitle: "When We All Clap to the Same Beat We Are Acting as One Giant Living Thing",
+        simple: "Rhythm is the heartbeat of a song, and entrainment is when your body decides to follow that beat. Have you ever noticed your foot tapping to music without you even thinking about it? That is your brain locking into the world's clock. Everything has a rhythm — the tides, the seasons, and even the way you walk. When we all clap to the same beat, we are acting as one giant living thing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A ticking clock that you stop noticing: your brain entrained." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The rhythmic scent of a pine forest as you walk through it: step, breathe, step." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Chewing crunchy food in time with a fast song: rhythm you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling your own pulse in your fingertip: the original drum." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A metronome or windshield wiper: time made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Marching in a straight line with a drum beat: your body surrendering to the rhythm." }
+        ],
+        intuition: "When we all clap to the same beat, we are acting as one giant living thing. Your foot did not ask permission to tap. It heard the beat and joined. That is not a decision. That is a homecoming. Rhythm is the oldest language. It predates words by a million years.",
+        links: [
+          { label: "Entrainment (Physics)", url: "https://en.wikipedia.org/wiki/Entrainment_(physics)" },
+          { label: "Neural Entrainment", url: "https://en.wikipedia.org/wiki/Neural_entrainment" },
+          { label: "Rhythm", url: "https://en.wikipedia.org/wiki/Rhythm" }
+        ],
+        songs: [
+          { title: "We Will Rock You", artist: "Queen", url: "https://www.youtube.com/watch?v=-tJYN-eG1zk" },
+          { title: "Thriller", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=sOnqjkJTMaA" },
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" }
+        ],
+        advanced: "Entrainment: two interacting oscillating systems with different periods assume a common period. In neurobiology, neural entrainment aligns brain waves with external stimulus phase. Bridge to collective consciousness: synchronized rhythmic activity reduces individual self and promotes tribal bonding and prosocial behavior. The drum circle is not entertainment. The drum circle is a technology for unity." },
+
+      { id: "timbre-waveform", num: 5, icon: "🎨", title: "Timbre & Waveform", subtitle: "The Flavor of Vibration That Makes Every Person Special",
+        simple: "Timbre is the color of sound that helps you tell your mom's voice apart from your dad's. Even if they sing the exact same note, they sound different because of the shape of their breath. Some sounds are smooth like a circle, while others are jagged like a saw. It is the texture of the music — is it fuzzy, or shiny, or heavy? Timbre is the flavor of the vibration that makes every person and every instrument special.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Comparing a whistle to a growl: same air, different soul." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp smell of mint versus the round smell of baking bread: timbre you can sniff." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sharp zing of a lemon versus the smooth creaminess of milk." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over velvet versus sandpaper: texture is timbre for fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The difference between a neon light and a candle flame: same light, different character." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The difference between a heavy step and a light skip: your body has timbre too." }
+        ],
+        intuition: "Timbre is the flavor of vibration that makes every person special. Two people can say the same word and mean completely different things. The note is the same. The soul is different. You are not your frequency. You are your timbre. That is what makes you irreplaceable.",
+        links: [
+          { label: "Timbre", url: "https://en.wikipedia.org/wiki/Timbre" },
+          { label: "Fourier Analysis", url: "https://en.wikipedia.org/wiki/Fourier_analysis" },
+          { label: "Haecceity", url: "https://en.wikipedia.org/wiki/Haecceity" }
+        ],
+        songs: [
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Hello", artist: "Adele", url: "https://www.youtube.com/watch?v=YQHsXMglC9A" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" }
+        ],
+        advanced: "Timbre determined by harmonic content (overtones) and dynamic envelope (attack, decay, sustain, release). Fourier analysis decomposes complex waveforms into sums of simple sine waves. Represents haecceity — the thisness of a thing: the unique qualities defining an entity's identity within the interconnected whole. Your voice is a fingerprint made of air." },
+
+      { id: "acoustic-space", num: 6, icon: "🏛️", title: "Acoustic Space", subtitle: "We Are Always Shaped by Our Surroundings and They Are Shaped by Us",
+        simple: "Sound needs a home to live in, and that home changes how it feels. In a big church, sound bounces around and stays for a long time, making it feel holy and large. In a small room with lots of pillows, the sound stops quickly, making it feel private and close. We are always hearing the shape of the room we are in. It reminds us that we are always shaped by our surroundings, and our surroundings are shaped by us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Clapping your hands in a bathroom versus outside: the room is an instrument." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The boxed-in smell of an attic versus the open smell of a meadow." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Eating in a loud restaurant versus a quiet park: space changes flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cool stone walls in a cave versus warmth of a carpeted room." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The vastness of the Grand Canyon while hearing your echo: space made audible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling small in a giant stadium versus big in a tiny tent: the room reshapes your body." }
+        ],
+        intuition: "We are always shaped by our surroundings and our surroundings are shaped by us. The cathedral did not make the hymn holy. The hymn made the cathedral necessary. You do not just enter a room. You become part of its acoustics. Choose your rooms carefully.",
+        links: [
+          { label: "Acoustics", url: "https://en.wikipedia.org/wiki/Acoustics" },
+          { label: "Reverberation", url: "https://en.wikipedia.org/wiki/Reverberation" },
+          { label: "Phenomenology", url: "https://en.wikipedia.org/wiki/Phenomenology_(philosophy)" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Orinoco Flow", artist: "Enya", url: "https://www.youtube.com/watch?v=LTrk4X9ACtw" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" }
+        ],
+        advanced: "Architectural acoustics involves control of reverberation time (RT₆₀) and sound propagation. Spaciousness linked to inter-aural cross-correlation (IACC), which brains use to map spatial position. Connects to phenomenology: the study of structures of consciousness from first-person perspective. Sound defines the boundaries of our perceived reality. The room is not where you hear. The room is part of what you hear." },
+
+      { id: "psychoacoustics", num: 7, icon: "🧠", title: "Psychoacoustics", subtitle: "Music Is a Dream Your Brain Is Having While You Are Awake",
+        simple: "This is the magic trick your brain plays with sound. Sometimes your brain hears a note that is not even there because it is filling in the blanks! Your ears gather the data, but your brain decides if that data is scary, beautiful, or annoying. It shows us that reality is something we build inside our heads. Music is not just in the air; it is a dream your brain is having while you are awake.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hearing your name in a crowded room when no one said it: your brain inventing signal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A smell that makes you feel safe even in a new place: your brain adding music to scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "How blue candy tastes like blue even though blue is not a flavor: synesthesia on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The phantom feeling of your phone vibrating in your pocket: your body hallucinating touch." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Optical illusions that make flat pictures look 3D: your brain composing reality." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling like you are still moving after getting off a boat: your body remembering a rhythm that stopped." }
+        ],
+        intuition: "Reality is something we build inside our heads. Your brain hears notes that are not there. It fills in the gaps. It completes the melody. You are not a passive receiver. You are a co-composer. The world sends the signal. You write the song.",
+        links: [
+          { label: "Psychoacoustics", url: "https://en.wikipedia.org/wiki/Psychoacoustics" },
+          { label: "Missing Fundamental", url: "https://en.wikipedia.org/wiki/Missing_fundamental" },
+          { label: "Constructivism", url: "https://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)" }
+        ],
+        songs: [
+          { title: "Good Vibrations", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=Eab_beh07HU" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" }
+        ],
+        advanced: "Psychoacoustics: scientific study of sound perception covering auditory masking, frequency selectivity, and the missing fundamental effect. Highlights non-linear relationship between physical stimuli and psychological response. Supports constructivism: people construct their own understanding through experience and reflection. You do not hear the world. You interpret the world. The interpretation is the music." },
+
+      { id: "melodic-contour", num: 8, icon: "📈", title: "Melodic Contour", subtitle: "The Path the Music Takes as It Walks Through Time",
+        simple: "Melodic contour is the shape of a tune — whether it goes up, down, or stays flat. It is like the mountains and valleys of a song. We use this in talking too; when you ask a question, your voice goes up at the end? That is a contour! It helps us understand the feeling of a message even if we do not know the words. It is the path the music takes as it walks through time.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Sliding your voice from very low to very high: drawing a mountain with your throat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A scent that starts strong and then slowly fades away: olfactory contour." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A candy that starts sour but turns sweet in the middle: contour on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing a wavy line on your palm with your finger: contour you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Following the outline of a mountain range with your eyes: melody made landscape." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tilting your head up and down slowly while humming: your body becoming the contour." }
+        ],
+        intuition: "It is the path the music takes as it walks through time. Every story has a shape. Every life has a contour. The question is not what notes you hit. The question is what shape they make when you connect them. Your life is a melody. Step back far enough and you will see the mountain.",
+        links: [
+          { label: "Melody", url: "https://en.wikipedia.org/wiki/Melody" },
+          { label: "Prosody", url: "https://en.wikipedia.org/wiki/Prosody_(linguistics)" },
+          { label: "Narrative Arc", url: "https://en.wikipedia.org/wiki/Story_arc" }
+        ],
+        songs: [
+          { title: "I Will Always Love You", artist: "Whitney Houston", url: "https://www.youtube.com/watch?v=3JWTaaS7LdU" },
+          { title: "Over the Rainbow", artist: "Judy Garland", url: "https://www.youtube.com/watch?v=PSZxmZmBfnU" },
+          { title: "Smells Like Teen Spirit", artist: "Nirvana", url: "https://www.youtube.com/watch?v=hTWKbfoikeg" }
+        ],
+        advanced: "Melodic contour is a primary cue for emotion in both music and prosody (speech intonation). Large pitch leaps associated with high arousal; stepwise motion suggests tranquility or stasis. Mirrors the narrative arc in literature: brains are hardwired to find meaning in the trajectory of change over time. The melody is a story. The contour is its moral." },
+
+      { id: "dissonance-resolution", num: 9, icon: "⚡", title: "Dissonance & Resolution", subtitle: "We Have Hard Times So That Good Times Feel Even Better",
+        simple: "Dissonance is the crunchy or tense sound in music that feels like it needs to move. Resolution is when that tension goes away and sounds rested. Think of it like holding your breath and then finally letting it out. Music needs both to be interesting! Life is the same way; we have hard times so that the good times feel even better. It is the pull and push of the universe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Pressing two piano keys right next to each other: tension you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The harsh smell of vinegar followed by the soft smell of lavender: resolution." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Very bitter dark chocolate followed by a sip of sweet milk: dissonance resolving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Clenching your fist tight and then relaxing it completely: your hand playing a chord." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A storm cloud passing until the sun comes out: visual resolution." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Holding a heavy bag and then setting it down: your body resolving to rest." }
+        ],
+        intuition: "We have hard times so that the good times feel even better. The tension is not the enemy. The tension is the story. Without dissonance, the resolution has no weight. Without the held breath, the exhale is just air. The struggle is the setup. The peace is the punchline.",
+        links: [
+          { label: "Consonance and Dissonance", url: "https://en.wikipedia.org/wiki/Consonance_and_dissonance" },
+          { label: "Tension and Release", url: "https://en.wikipedia.org/wiki/Tension_(music)" },
+          { label: "Dialectics", url: "https://en.wikipedia.org/wiki/Dialectic" }
+        ],
+        songs: [
+          { title: "(I Can't Get No) Satisfaction", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=nrIPxlFzDi0" },
+          { title: "Creep", artist: "Radiohead", url: "https://www.youtube.com/watch?v=XFkzRNyygfk" },
+          { title: "Sweet Child O' Mine", artist: "Guns N' Roses", url: "https://www.youtube.com/watch?v=1w7OgIMMRc4" }
+        ],
+        advanced: "Musical tension created through non-chord tones producing acoustic beats or roughness. Resolution occurs when tones move to stable harmonic positions within the key. A sonic representation of dialectics: thesis, contradictory antithesis, combined into coherent synthesis. Arriving at truth requires first passing through tension. The resolution was always there. It was waiting for the dissonance to make it meaningful." },
+
+      { id: "cultural-tuning-systems", num: 10, icon: "🌏", title: "Cultural Tuning Systems", subtitle: "There Is No Right Way to Make Music — Just Many Beautiful Ways",
+        simple: "Depending on where you grew up, music might sound different to you! People in different parts of the world tune their instruments in different ways, like choosing different colors for a painting. There is no right way to make music, just many beautiful ways. This shows us that while we are all part of the same family, we each have our own unique way of telling our story. It is like different dialects of the same heart-language.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A traditional song from a country you have never visited: beauty in a foreign key." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The unique spices of a kitchen in a different culture: tuning you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a fruit that does not grow where you live: a new note on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The different textures of silk versus wool versus cotton: tuning you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Different patterns in traditional clothing: visual scales from around the world." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Learning a dance move from a different part of the world: your body retuning." }
+        ],
+        intuition: "There is no right way to make music, just many beautiful ways. Truth is a diamond with many facets, each reflecting light differently. The Western scale has 12 notes. The Arabic scale has 24. Neither is wrong. Both are windows. The heart-language is the same. The accent is what makes it beautiful.",
+        links: [
+          { label: "Musical Tuning", url: "https://en.wikipedia.org/wiki/Musical_tuning" },
+          { label: "Microtonality", url: "https://en.wikipedia.org/wiki/Microtonal_music" },
+          { label: "Pluralism", url: "https://en.wikipedia.org/wiki/Pluralism_(philosophy)" }
+        ],
+        songs: [
+          { title: "Monterey Pop Performance", artist: "Ravi Shankar", url: "https://www.youtube.com/watch?v=lk60ObnbIOk" },
+          { title: "Homeless", artist: "Ladysmith Black Mambazo", url: "https://www.youtube.com/watch?v=DUsnKmEFvPE" },
+          { title: "Chan Chan", artist: "Buena Vista Social Club", url: "https://www.youtube.com/watch?v=o5cELP06Mik" }
+        ],
+        advanced: "Tuning systems (temperaments) like equal temperament or just intonation are mathematical compromises organizing pitch. Some prioritize pure ratios, others prioritize key flexibility. Illustrates pluralism: two or more states, groups, or principles can coexist. Truth is a diamond with many facets. The scale is not the truth. The scale is the lens. Change the lens, see a new facet of the same gem." },
+    ],
+
+  },
+
 };
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
