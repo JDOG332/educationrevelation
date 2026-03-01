@@ -18609,6 +18609,243 @@ export const TOPIC_CARDS = {
     ],
 
     // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > LANGUAGE & THOUGHT (languagethought)
+    // ═══════════════════════════════════════════════════════════════
+
+    languagethought: [
+      { id: "concept-acquisition", num: 1, icon: "🌱", title: "Concept Acquisition (The Pre-Word Mind)", subtitle: "Words Are Just the Stickers We Put on Things We Already Noticed",
+        simple: "Imagine you are a tiny baby who does not know any words yet. You can still feel the warmth of the sun and know that a fuzzy dog is different from a cold ice cube. Your brain is like a library that is already building shelves even before the books arrive. You can think in shapes, feelings, and pictures because your mind is smart enough to recognize the world on its own. Words are just the stickers we put on things we already noticed. This means you are a thinker from the very start!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythm of a heartbeat: the first thought you ever heard and it had no words." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry earth: a concept the nose understood millions of years before the mouth could name it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The first drop of honey on the tongue: the body knowing sweet before the dictionary existed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft velvet against your cheek: the skin thinking in textures not syllables." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset changing colors without naming them: beauty that does not need a caption." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and knowing exactly where your hands are: the body thinking without asking language for permission." }
+        ],
+        intuition: "Words are just the stickers we put on things we already noticed. A baby knows the difference between warm and cold before it knows the words warm and cold. A dog knows the difference between friend and threat before it knows any words at all. Thought does not begin with language. Thought begins with contact. The skin thinks. The nose thinks. The tongue thinks. Language arrives later like a translator at a meeting that has already started. The translator is useful. But the meeting was happening without them. You were a philosopher before you were a speaker. You were a knower before you were a namer. The sticker is not the thing. The thing was always there.",
+        links: [
+          { label: "Concept Formation", url: "https://en.wikipedia.org/wiki/Concept" },
+          { label: "Piaget's Stages", url: "https://en.wikipedia.org/wiki/Piaget%27s_theory_of_cognitive_development" },
+          { label: "Prelinguistic Thought", url: "https://en.wikipedia.org/wiki/Language_of_thought_hypothesis" }
+        ],
+        songs: [
+          { title: "Lullaby", artist: "Johannes Brahms", url: "https://www.youtube.com/watch?v=t894eGoymio" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Sweet Child O' Mine", artist: "Guns N' Roses", url: "https://www.youtube.com/watch?v=1w7OgIMMRc4" }
+        ],
+        advanced: "Mentalese: a non-verbal representational system enabling logical operations before linguistic output. The architecture of thought is partially innate. Language streamlines thought but does not birth it. The sticker is not the thing. The thing was always there." },
+
+      { id: "linguistic-relativity", num: 2, icon: "👓", title: "Linguistic Relativity (The Colored Lens)", subtitle: "It Does Not Change the World but It Changes How Much Detail You See",
+        simple: "Think of language like a pair of colorful sunglasses. If you wear blue glasses the world looks a little blue; if you wear red ones it looks red. Some languages have many words for blue so those people might notice tiny changes in the sky that we miss. Having more words is like having a bigger box of crayons to draw your thoughts with. It does not change the world, but it changes how much detail you see in it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A foreign language and its unique music: the ear hearing a different operating system." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Identifying cinnamon versus just warm spice: the label sharpening the nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Distinguishing umami once you learn the word: the tongue gaining a fifth gear." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The difference between tepid and lukewarm water: vocabulary making the fingers more sensitive." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Sorting a box of 64 crayons by shade: the more names you have the more colors you can see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the subtle shift in balance standing on one leg: the body distinguishing what the mind has words for." }
+        ],
+        intuition: "It does not change the world but it changes how much detail you see. The Russians have two words for blue — goluboy and siniy — light blue and dark blue. And when tested they can distinguish shades of blue faster than English speakers. Not because their eyes are different. Because their language drew a line in the spectrum and their brain started respecting it. Every word you learn is a new lens. Every language you study is a new pair of eyes. You are not adding decoration. You are adding resolution. The world does not change. Your ability to see it does.",
+        links: [
+          { label: "Sapir-Whorf Hypothesis", url: "https://en.wikipedia.org/wiki/Linguistic_relativity" },
+          { label: "Lera Boroditsky", url: "https://en.wikipedia.org/wiki/Lera_Boroditsky" },
+          { label: "Color Term Research", url: "https://en.wikipedia.org/wiki/Linguistic_relativity_and_the_color_naming_debate" }
+        ],
+        songs: [
+          { title: "Colors of the Wind", artist: "Judy Kuhn", url: "https://www.youtube.com/watch?v=TkV-of_eN2w" },
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+          { title: "Wrapped Around Your Finger", artist: "The Police", url: "https://www.youtube.com/watch?v=svWINSRhQU0" }
+        ],
+        advanced: "Neo-Whorfian linguistics: language influences thinking-for-speaking, optimizing cognitive processes like spatial navigation and color discrimination based on available linguistic markers. Every word you learn is a new lens. You are not adding decoration. You are adding resolution." },
+
+      { id: "qualia", num: 3, icon: "🕯️", title: "Qualia (The Secret Feeling)", subtitle: "Words Are the Wrapping Paper but the Qualia Is the Actual Gift Inside",
+        simple: "Have you ever tried to explain exactly what the color yellow feels like? You can say it is bright, but you cannot give someone the feeling of yellow inside their own head. That special private feeling you have inside is something no word can ever fully grab. It is your own secret treasure that belongs only to you. Words are like the wrapping paper, but the Qualia is the actual gift inside.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ring in your ears in a silent room: a sound only you can hear that proves you are the only one inside your head." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The specific scent of your own home: a smell no one else experiences the same way." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zing of a lemon that makes your eyes squint: a private reaction no description can replicate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The shiver you get when someone whispers: the body responding to something language cannot bottle." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The tiny floaters you see against a bright sky: a private cinema playing inside your eyes alone." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The floaty feeling just before you fall asleep: the self hovering between describable and indescribable." }
+        ],
+        intuition: "Words are the wrapping paper but the Qualia is the actual gift inside. You have never tasted my red. I have never heard your silence. We use the same word — red, silence — but the experience inside your skull is a locked room that no other human being has ever entered. We are all standing outside each other's doors holding up signs that say the same thing. But the rooms are different. This is the loneliest and most beautiful fact about being human. Loneliest because no one will ever fully know what it is like to be you. Most beautiful because what it is like to be you is a one-time event in the history of the universe that will never be repeated.",
+        links: [
+          { label: "Qualia", url: "https://en.wikipedia.org/wiki/Qualia" },
+          { label: "Mary's Room", url: "https://en.wikipedia.org/wiki/Knowledge_argument" },
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" }
+        ],
+        songs: [
+          { title: "Pure Imagination", artist: "Gene Wilder", url: "https://www.youtube.com/watch?v=SVi3-PrQ0pY" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Vincent", artist: "Don McLean", url: "https://www.youtube.com/watch?v=oxHnRfhDmrk" }
+        ],
+        advanced: "Qualia: the explanatory gap in physicalism. No amount of linguistic or neurological data conveys the subjective what-it-is-likeness of experience. What it is like to be you is a one-time event in the history of the universe that will never be repeated." },
+
+      { id: "mentalese-hypothesis", num: 4, icon: "🧬", title: "The Mentalese Hypothesis (The Inner Code)", subtitle: "You Are Thinking in Brain-ish All the Time Even When You Are Not Talking",
+        simple: "Your brain has its own super-fast secret code that is way faster than talking. When you want to catch a ball, you do not say move hand left in your head; you just do it! This secret brain-code is what humans used long before we invented English or Spanish. It is like the electricity that runs through a toy before the toy starts moving. You are thinking in brain-ish all the time, even when you are not talking.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The click in your head when you solve a puzzle: the code compiling before the mouth reports the result." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Reliving a memory just by smelling a crayon: the nose bypassing language and going straight to the file." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Knowing what a strawberry tastes like without seeing one: the tongue running a simulation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Knowing how a hairbrush feels before you pick it up: the hand predicting from code not from words." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Picturing a flying elephant in your mind: the brain rendering an image no camera has ever taken." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Running up stairs without looking at your feet: the body executing a program the mouth never wrote." }
+        ],
+        intuition: "You are thinking in brain-ish all the time even when you are not talking. When you catch a ball you do not say calculate trajectory, extend arm, close fingers. You just catch it. The code ran. The body executed. The mouth was not involved. Language is the press conference after the game. But the game was played in a language no microphone can record. You think faster than you speak. You know faster than you explain. You decide faster than you justify. The inner code is the real operating system. Language is the user interface. And the user interface is always a simplified version of what is happening underneath.",
+        links: [
+          { label: "Language of Thought", url: "https://en.wikipedia.org/wiki/Language_of_thought_hypothesis" },
+          { label: "Jerry Fodor", url: "https://en.wikipedia.org/wiki/Jerry_Fodor" },
+          { label: "Mental Imagery", url: "https://en.wikipedia.org/wiki/Mental_image" }
+        ],
+        songs: [
+          { title: "Thinking Out Loud", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=lp-EO5I60KA" },
+          { title: "Instant Karma!", artist: "John Lennon", url: "https://www.youtube.com/watch?v=xLy2SaSQAtA" },
+          { title: "Virtual Insanity", artist: "Jamiroquai", url: "https://www.youtube.com/watch?v=4JkIs37a2JE" }
+        ],
+        advanced: "Fodor's Language of Thought: a system of representations that is language-like in structure but independent of natural languages. Language is the press conference after the game. The game was played in a language no microphone can record." },
+
+      { id: "ineffability", num: 5, icon: "🌌", title: "Ineffability (The Wow Moment)", subtitle: "Sometimes the Best Way to Talk About Big Feelings Is to Stay Quiet and Feel Them",
+        simple: "Have you ever seen something so beautiful or felt so much love that you just stood there with your mouth open? That is called being ineffable. It means the feeling is too big to fit into a tiny word. It is like trying to put the whole ocean into a little teacup. Sometimes the best way to talk about these big feelings is just to stay quiet and feel them.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The absolute silence of a snowy night: the sound of something too sacred for noise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A newborn baby's head: a scent that makes words feel embarrassingly small." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "That perfect meal that makes you close your eyes: the tongue silencing the mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A hug that makes you feel one hundred percent safe: the body receiving a message no sentence could carry." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The vastness of the Milky Way: the eyes seeing something the vocabulary cannot hold." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of weightlessness on a swing: the body touching a truth the mind cannot spell." }
+        ],
+        intuition: "Sometimes the best way to talk about big feelings is to stay quiet and feel them. The greatest experiences of your life will not fit into words. The birth of your child. The death of your parent. The moment you realized you were in love. The moment you realized you were not. You will try to describe them. And every description will feel like a photocopy of a painting. Close. But not it. This is not a failure of language. This is a success of experience. The experience was bigger than the tool. And that is how you know the experience was real. If it fit neatly into a sentence, it was probably not that big. The things that change your life leave you speechless. And speechless is the correct response.",
+        links: [
+          { label: "Ineffability", url: "https://en.wikipedia.org/wiki/Ineffability" },
+          { label: "Negative Theology", url: "https://en.wikipedia.org/wiki/Apophatic_theology" },
+          { label: "Awe", url: "https://en.wikipedia.org/wiki/Awe" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Amazing Grace", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=dHKM-4KCGOE" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Ineffability marks the boundary of the Kantian noumenal — the thing-in-itself. The ineffable is considered the highest form of truth because it has not been limited by the reductionist nature of human labels. If it fit neatly into a sentence, it was probably not that big." },
+
+      { id: "lexical-gaps", num: 6, icon: "🧩", title: "Lexical Gaps (The Missing Pieces)", subtitle: "Everyone in the World Feels the Same Things Even if We Name Them Differently",
+        simple: "Sometimes one language has a word for a feeling that another language does not have. In German there is a word Waldeinsamkeit for the feeling of being alone in the woods. If you do not know that word, you still feel that way, you just do not have the name tag for it yet. Finding these words in other languages is like finding missing puzzle pieces for your heart. It proves that everyone in the world feels the same things, even if we name them differently.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song in a language you do not speak that makes you cry: proof the signal goes deeper than grammar." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A memory smell you cannot describe to anyone else: a lexical gap in your own nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spice from another country that feels new: a flavor that arrived before its name did." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a handmade toy: a feeling that mass production cannot replicate or name." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A color in a painting you have never seen in nature: a visual lexical gap the artist filled." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stomach drop on a roller coaster: a universal feeling that every language struggles to name." }
+        ],
+        intuition: "Everyone in the world feels the same things even if we name them differently. The Japanese have mono no aware — the bittersweet awareness that everything is temporary. The Portuguese have saudade — the ache for something you love that is gone. The Danish have hygge — the warm coziness of being safe together. You have felt all three. You just did not have the sticker. The feeling was there. The label was not. This means the human heart is universal. The dictionary is local. When you learn an untranslatable word, you are not learning a new feeling. You are finally giving a name to an old friend who has been standing in the room the whole time.",
+        links: [
+          { label: "Lexical Gap", url: "https://en.wikipedia.org/wiki/Accidental_gap" },
+          { label: "Untranslatable Words", url: "https://en.wikipedia.org/wiki/Untranslatability" },
+          { label: "Dictionary of Obscure Sorrows", url: "https://www.dictionaryofobscuresorrows.com/" }
+        ],
+        songs: [
+          { title: "Samba Pa Ti", artist: "Santana", url: "https://www.youtube.com/watch?v=timZoOs9ozo" },
+          { title: "99 Luftballons", artist: "Nena", url: "https://www.youtube.com/watch?v=La4Dcd1aUcE" },
+          { title: "Baba Yetu", artist: "Christopher Tin", url: "https://www.youtube.com/watch?v=IJiHDmyhE1A" }
+        ],
+        advanced: "Lexical gaps demonstrate that conceptual space is universal but linguistic mapping is cultural. The human heart is universal. The dictionary is local. You are finally giving a name to an old friend who has been standing in the room the whole time." },
+
+      { id: "object-permanence", num: 7, icon: "🙈", title: "Object Permanence (Knowing Without Naming)", subtitle: "Your Thoughts Are Real Even When You Are Totally Silent",
+        simple: "When you play peek-a-boo with a baby, they think you disappear when you hide your face! But as you get older, you learn that things stay there even when you cannot see them. You know your favorite toy is in the toy box even if you are not saying the word bear. Your brain keeps a map of the world in your head all the time. This shows that your thoughts are real even when you are totally silent.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bird chirping behind a closed window: sound proving existence without sight." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Knowing there are cookies in the oven from the hallway: the nose confirming what the eyes cannot." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Remembering how an apple tastes before you bite it: the tongue running a simulation from memory." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching into a dark bag and finding your keys: the fingers knowing what the eyes cannot see." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Visualizing your bedroom while you are at school: the brain holding a world the body left behind." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing where your feet are under the covers: the body tracking itself in total darkness." }
+        ],
+        intuition: "Your thoughts are real even when you are totally silent. A baby plays peek-a-boo and genuinely believes you vanish. Then one day — and no one teaches them this — they know you are still there. Behind the hands. Behind the curtain. Still existing. This is not a small milestone. This is the birth of faith. The ability to believe in something you cannot currently see. Object permanence is not just developmental psychology. Object permanence is the first proof that the mind can hold something the senses cannot verify. And that skill — believing in what you cannot see — is the foundation of every relationship, every hope, and every prayer you will ever have.",
+        links: [
+          { label: "Object Permanence", url: "https://en.wikipedia.org/wiki/Object_permanence" },
+          { label: "Piaget", url: "https://en.wikipedia.org/wiki/Jean_Piaget" },
+          { label: "Schema", url: "https://en.wikipedia.org/wiki/Schema_(psychology)" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+        ],
+        advanced: "Object permanence: mental representations (schemas) exist independently of linguistic labels. This milestone is the foundation of symbolic thought and — at its deepest level — the birth of faith. The ability to believe in something you cannot currently see." },
+
+      { id: "neuroplasticity-lang", num: 8, icon: "🧠", title: "Neuroplasticity of Language (The Growing Mind)", subtitle: "You Are a Thought-Builder Always Adding New Rooms to Your Mind-House",
+        simple: "Your brain is like a magical forest where the paths get stronger the more you walk on them. When you learn a new word or a new way to think, you are building a brand-new bridge in your head! Even if you do not have a word for something today, your brain is ready to grow one tomorrow. You are never stuck with just the thoughts you have now. You are a thought-builder who is always adding new rooms to your mind-house.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Learning an instrument and hearing the notes better: the ear growing new rooms." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Learning to recognize different flowers: the nose getting a vocabulary upgrade." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a new food and liking it more the second time: the taste buds building a bridge." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Learning to type without looking: the fingers memorizing a language the eyes forgot." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A hidden image puzzle that suddenly pops out: the brain rewiring itself to see what was always there." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Learning to ride a bike and feeling the balance: the body adding a permanent room to the house." }
+        ],
+        intuition: "You are a thought-builder always adding new rooms to your mind-house. Every word you learn physically changes the structure of your brain. Not metaphorically. Physically. Synapses strengthen. Dendrites branch. Gray matter thickens. When you learn the word saudade, a new room appears in your mind that did not exist yesterday. And tomorrow, feelings that had nowhere to go will move into that room and finally have an address. You are not learning words. You are building architecture. And every new room makes every old room more useful because now they have a neighbor to talk to. The mind is not a container that fills up. The mind is a city that builds out.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Language Acquisition", url: "https://en.wikipedia.org/wiki/Language_acquisition" },
+          { label: "Synaptic Plasticity", url: "https://en.wikipedia.org/wiki/Synaptic_plasticity" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" }
+        ],
+        advanced: "Neuroplasticity and language: linguistic acquisition literally reconfigures synaptic density. You are not learning words. You are building architecture. The mind is not a container that fills up. The mind is a city that builds out." },
+
+      { id: "symbolic-interactionism", num: 9, icon: "🤝", title: "Symbolic Interactionism (The Shared Dream)", subtitle: "We Use Little Sounds to Send Our Thoughts Through the Air into Someone Else's Brain",
+        simple: "We use words like friend or love so we can share our inner worlds with each other. It is like we are all playing a giant game of connect the dots. When I say a word, a picture pops up in your head, and now we are looking at the same thing! This is the magic of being human — we use little sounds to send our thoughts through the air into someone else's brain. It makes us feel less alone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A crowd of people laughing at the same joke: the sound of a shared dream happening in real time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A holiday dinner everyone is excited for: the scent of a meaning the group agreed on together." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a pizza and everyone agreeing it is good: consensus arriving through the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five that means great job: the skin transmitting a symbol." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stop sign and everyone knowing what to do: a shared hallucination that keeps us alive." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Dancing in a group and moving in the same rhythm: the body joining a collective dream through motion." }
+        ],
+        intuition: "We use little sounds to send our thoughts through the air into someone else's brain. Right now I am making shapes on a screen. And those shapes are becoming pictures in your head. And those pictures are creating feelings in your body. Shapes to pictures to feelings. Across distance. Across time. A dead person can write a sentence and make a living person cry a thousand years later. That is telekinesis. That is time travel. That is what language actually is. Not communication. Transmission. The transfer of one consciousness into another. We are not just talking. We are haunting each other. Beautifully. Permanently. With little sounds and little shapes that carry the entire weight of being alive.",
+        links: [
+          { label: "Symbolic Interactionism", url: "https://en.wikipedia.org/wiki/Symbolic_interactionism" },
+          { label: "George Herbert Mead", url: "https://en.wikipedia.org/wiki/George_Herbert_Mead" },
+          { label: "Social Constructionism", url: "https://en.wikipedia.org/wiki/Social_constructionism" }
+        ],
+        songs: [
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Symbolic interactionism: meaning is created through social interaction, not inherent in objects. Language is the primary medium for constructing shared reality. We are not just talking. We are haunting each other. Beautifully. Permanently." },
+
+      { id: "linguistic-determinism", num: 10, icon: "🧱", title: "Linguistic Determinism (The Boundary Wall)", subtitle: "Words Are Great Tools but They Are Not the Boss of Your Brain",
+        simple: "Some people used to think that if you did not have a word for something, you could never think about it. Imagine if you did not have the word tomorrow — would you still know it was coming? Most scientists now think this idea is a bit too strict. Even if you do not have a word for a specific feeling, your heart still feels it. Words are great tools, but they are not the boss of your brain!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Trying to hum a tune you cannot quite remember: the melody exists even though the label is missing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A smell that feels blue but you do not know why: the nose thinking in colors the mouth cannot explain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A flavor you do not have a name for yet: the tongue holding a truth the dictionary dropped." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pins and needles when your foot falls asleep: a feeling that exists far outside the borders of any word." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A shape in the clouds that looks like something new: the eyes seeing what no vocabulary predicted." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling dizzy and trying to explain how it differs from spinning: the body knowing a difference the mouth cannot express." }
+        ],
+        intuition: "Words are great tools but they are not the boss of your brain. Strong linguistic determinism says if you do not have the word you cannot have the thought. But every artist who has stood in front of a canvas and painted something they could not describe has disproved this. Every musician who has played a note that made a room cry without a single lyric has disproved this. Every baby who reached for a face before knowing the word love has disproved this. Language is a tool. A magnificent tool. But the hand was here before the hammer. And the hand will still be here if the hammer breaks. You are bigger than your vocabulary. You have always been bigger than your vocabulary.",
+        links: [
+          { label: "Linguistic Determinism", url: "https://en.wikipedia.org/wiki/Linguistic_determinism" },
+          { label: "Language Instinct", url: "https://en.wikipedia.org/wiki/The_Language_Instinct" },
+          { label: "Philosophy of Language", url: "https://en.wikipedia.org/wiki/Philosophy_of_language" }
+        ],
+        songs: [
+          { title: "Breakaway", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=c-3vPxKdj6o" },
+          { title: "Wide Awake", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=k0BWlvnBmIE" },
+          { title: "Another Brick in the Wall", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=YR5ApYxkU-U" }
+        ],
+        advanced: "Strong Linguistic Determinism debunked in favor of Linguistic Relativity. Language creates cognitive ruts — pathways of least resistance — but does not prevent thought. The hand was here before the hammer. You are bigger than your vocabulary. You have always been bigger than your vocabulary." },
+    ],
+
+
+    // ═══════════════════════════════════════════════════════════════
     // THE SELF (theself) > IDENTITY & THE SELF (identityself)
     // ═══════════════════════════════════════════════════════════════
 
