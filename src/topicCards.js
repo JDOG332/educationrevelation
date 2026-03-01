@@ -17175,6 +17175,243 @@ export const TOPIC_CARDS = {
         advanced: "Confirmation bias: a failure of normalization where new data is ignored in favor of past weights. A high-redundancy state where unique observations are low because we only see what we already know. Overcome by increasing the temperature of inquiry — inviting randomness and clashing perspectives. A known bias is half a bias. An unknown bias is a prison." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > SALVATION & REDEMPTION (salvation)
+    // ═══════════════════════════════════════════════════════════════
+
+    salvation: [
+      { id: "forgiveness", num: 1, icon: "🔓", title: "Forgiveness (The Open Padlock)", subtitle: "You Stop Letting the Mean Thing Boss You Around",
+        simple: "Imagine you are carrying a heavy backpack full of itchy prickly rocks everywhere you go. When you forgive, it is like finally setting that heavy bag down and walking away into the sunshine. It does not mean what happened was okay, but it means you are choosing to be happy instead of staying mad. You stop letting the mean thing boss you around or make your tummy hurt. By letting go, you give yourself a giant hug and decide to start a brand new clean page in your book.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The long fading ring of a silver bell: the sound of something finishing so something new can start." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain hitting dry pavement: the scent of the sky washing the ground clean." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool water after being very thirsty: relief that enters through the throat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Removing a tight pair of shoes: the body releasing a pressure it forgot it was carrying." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A white bird flying against a blue sky: freedom that looks exactly like letting go." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your shoulders dropping three inches as you exhale: the body putting down what the mind finally released." }
+        ],
+        intuition: "You stop letting the mean thing boss you around. Forgiveness is not a gift to the person who hurt you. Forgiveness is a gift to yourself. The grudge is a chain. You think you are punishing them by holding it. But look down. The chain is attached to your ankle. Not theirs. They left the room years ago. You are still standing there holding a chain connected to nothing. Forgiveness is not saying what happened was okay. Forgiveness is saying what happened is no longer allowed to live in my body rent-free. Drop the rocks. Your back will thank you.",
+        links: [
+          { label: "Forgiveness", url: "https://en.wikipedia.org/wiki/Forgiveness" },
+          { label: "Restorative Justice", url: "https://en.wikipedia.org/wiki/Restorative_justice" },
+          { label: "Psychology of Forgiveness", url: "https://en.wikipedia.org/wiki/Forgiveness#Psychology" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=kOFu6b3w6c0" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Forgiveness as psychological and ontological reset — decoupling the subject from the causal chain of past grievances. The only way to break the cycle of karma or eye-for-an-eye reciprocity that leads to systemic entropy. The grudge is a chain attached to your ankle. Not theirs. Drop the rocks." },
+
+      { id: "grace", num: 2, icon: "🕊️", title: "Grace (The Surprise Gift)", subtitle: "We Are Loved Just for Being Who We Are Not Just for What We Do",
+        simple: "Grace is like a surprise gift that arrives on a day when you thought you were in trouble. It is the moment a teacher gives you a gold star just because they love your effort, even if you got the answers wrong. You do not have to work for it or be perfect to get it; it just happens because someone is being very kind. It feels like a warm blanket being wrapped around you when you are shivering. Grace teaches us that we are loved just for being who we are, not just for what we do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft piano chord held with a pedal: a note that refuses to stop giving." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly laundered sheets: clean you did not have to earn." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure honey: sweetness that arrived without a bill." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle hand on your back: support that showed up before you asked." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Sunbeams breaking through dark clouds: light finding a crack in the storm." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in a calm pool: the body being held by something it cannot see." }
+        ],
+        intuition: "We are loved just for being who we are not just for what we do. The world runs on earning. You earn your grade. You earn your salary. You earn your reputation. Grace breaks the system. Grace says you do not have to earn this. Grace says this is free. The baby did not earn the mother's love. The flower did not earn the rain. The planet did not earn the sun. Grace is the universe operating on generosity instead of accounting. And every religion that ever existed built its highest floor on this one idea: you are loved before you are useful.",
+        links: [
+          { label: "Divine Grace", url: "https://en.wikipedia.org/wiki/Divine_grace" },
+          { label: "Grace in Christianity", url: "https://en.wikipedia.org/wiki/Grace_in_Christianity" },
+          { label: "Unmerited Favor", url: "https://en.wikipedia.org/wiki/Grace_(prayer)" }
+        ],
+        songs: [
+          { title: "Amazing Grace", artist: "Pentatonix", url: "https://www.youtube.com/watch?v=Obp-5IVfOL4" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" }
+        ],
+        advanced: "Grace as non-contingent value system. While society operates on meritocracy, grace introduces a transcendental element where value is inherent rather than earned — the foundation for radical empathy. You are loved before you are useful." },
+
+      { id: "atonement", num: 3, icon: "🩹", title: "Atonement (The Bandage)", subtitle: "The Glue Makes the Friendship Even Stronger Than Before",
+        simple: "Atonement is like fixing a toy that you accidentally broke. It is not just saying sorry, but actually gluing the pieces back together and making it strong again. When we atone, we are trying to make things at-one again, which means bringing people back together who were separated. It takes work and honesty to admit we made a mess, but the glue makes the friendship even stronger than before. It is how we show that we care more about the person than our own pride.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic thump of a steady heart: the sound of two rhythms trying to sync again." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cedar wood or incense: the scent of something being purified." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt — representing tears and sweat: the taste of effort and honesty." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Interlocking your fingers with someone else's: two broken things fitting back together." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two puzzle pieces finally clicking: the visible proof of repair." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up straight after leaning over: the body rising after the work of bowing." }
+        ],
+        intuition: "The glue makes the friendship even stronger than before. At-one-ment. Read it slowly. At. One. Ment. The word itself is the instruction manual. Atonement is not punishment. Atonement is repair. The Japanese art of kintsugi fills cracks in broken pottery with gold. The crack does not disappear. The crack becomes the most beautiful part. Atonement works the same way. The relationship that broke and was repaired with honesty is stronger at the break than it was before. The gold is the effort. The gold is the truth. The gold is the willingness to say I broke this and I will fix it.",
+        links: [
+          { label: "Atonement", url: "https://en.wikipedia.org/wiki/Atonement" },
+          { label: "Kintsugi", url: "https://en.wikipedia.org/wiki/Kintsugi" },
+          { label: "Restorative Justice", url: "https://en.wikipedia.org/wiki/Restorative_justice" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Sorry Seems to Be the Hardest Word", artist: "Elton John", url: "https://www.youtube.com/watch?v=c3nScN89Klo" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Atonement as restorative justice — beyond legalistic punishment to healing the breach in social or spiritual fabric. Requires both sacrifice and active participation. At-one-ment: the word is the instruction manual. Like kintsugi, the crack filled with gold becomes the most beautiful part." },
+
+      { id: "transformation-redemption", num: 4, icon: "🦋", title: "Transformation (The Butterfly)", subtitle: "You Do Not Have to Be the Person Who Made Mistakes Yesterday",
+        simple: "Transformation is the story of a caterpillar that goes to sleep in a dark shell and wakes up with wings. It is the feeling of realizing you do not have to be the person who made mistakes yesterday. You can learn new things, think new thoughts, and become a version of yourself that is kinder and wiser. It is like a seed turning into a giant oak tree — the seed is gone, but something much bigger and better has taken its place. You are still you, but you have blossomed into your best self.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A seed pod cracking open: the sound of becoming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly turned soil in spring: the scent of a new chapter." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An orange — sour rind protecting sweet fruit: transformation you can taste in layers." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of a new leaf: soft because it has not yet been weathered." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a flower blooming: change too slow to see but too real to deny." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The sensation of growing taller: the body expanding into who it is becoming." }
+        ],
+        intuition: "You do not have to be the person who made mistakes yesterday. The caterpillar does not improve. The caterpillar dissolves. Inside the cocoon there is no caterpillar. There is soup. And from the soup an entirely new creature assembles itself. This is not self-improvement. This is rebirth. Every sacred tradition promises transformation — not a better version of the old you, but a new you built from the raw material of the old one. You are not stuck. You are not your worst day. You are not your biggest failure. You are a cocoon. And what comes out of cocoons has wings.",
+        links: [
+          { label: "Metanoia", url: "https://en.wikipedia.org/wiki/Metanoia_(theology)" },
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Hero's Journey", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Metanoia: not merely behavioral change but a shift in the core axioms by which one perceives and interacts with reality. A shift in the noetic structure of the individual. You are not stuck. You are not your worst day. You are a cocoon. And what comes out of cocoons has wings." },
+
+      { id: "mercy", num: 5, icon: "⚖️", title: "Mercy (Kindness in Action)", subtitle: "The Person Is More Important Than the Rule They Broke",
+        simple: "Mercy is when someone has the right to be mad or punish you, but they choose to be kind instead. It is like being caught with your hand in the cookie jar, but instead of a time-out, your mom gives you a hug and asks why you were hungry. It is kindness in action for people who feel like they do not deserve it. When we show mercy, we are saying that the person is more important than the rule they broke. It stops a cycle of anger and starts a cycle of love.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep resonant cello note: the sound of strength choosing softness." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender oil: calm arriving through the nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm milk with sugar: comfort that does not judge." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft thick velvet: luxury given to someone who expected roughness." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle burning in a dark room: light that chose to show up where it was needed most." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tension leaving your jaw: the body unclenching because mercy arrived." }
+        ],
+        intuition: "The person is more important than the rule they broke. Justice says you deserve consequences. Mercy says you deserve another chance. Both are true. But mercy is braver. Because justice is easy. Justice is math. An eye for an eye. Mercy is harder. Mercy requires the strong person to absorb the cost instead of passing it on. Every cycle of violence in history was broken by someone who had the right to hit back and chose not to. That choice is mercy. And mercy is the only force strong enough to stop a chain reaction of pain.",
+        links: [
+          { label: "Mercy", url: "https://en.wikipedia.org/wiki/Mercy" },
+          { label: "Restorative Justice", url: "https://en.wikipedia.org/wiki/Restorative_justice" },
+          { label: "Compassion", url: "https://en.wikipedia.org/wiki/Compassion" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Mercy Mercy Me", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=U3m5dUkFDMw" },
+          { title: "Have Mercy", artist: "The Judds", url: "https://www.youtube.com/watch?v=I-rn6yKPxsE" }
+        ],
+        advanced: "Mercy as suspension of judgment: a corrective to legal rigidity, recognizing that strict adherence to rules can violate the higher principle of human dignity. Justice is math. Mercy is braver. Every cycle of violence in history was broken by someone who chose not to hit back." },
+
+      { id: "liberation", num: 6, icon: "⛓️", title: "Liberation (The Broken Chain)", subtitle: "You Are Not a Prisoner to Your Past Anymore",
+        simple: "Being liberated is like being a bird that finally finds the door to its cage is open. For a long time, you might have felt stuck by a bad habit or a sad memory that felt like a heavy chain. Redemption unlocks that chain and lets you fly away into the big wide world. It means you are not a prisoner to your past anymore. You can breathe deep, run fast, and choose where you want to go next without anything holding you back.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Wind whistling through an open window: the sound of a cage that lost its door." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salty ocean air: the scent of a horizon with no walls." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sharp zesty lemon: the taste of something so alive it makes you wince." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Taking off a heavy winter coat: the body discovering how light it actually is." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A wide-open field with no fences: freedom you can see from edge to edge." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Butterflies in your stomach: the body feeling weightless because the chain is gone." }
+        ],
+        intuition: "You are not a prisoner to your past anymore. The door was always open. The cage was habit. The cage was shame. The cage was the story you told yourself about who you are. Liberation does not mean the cage never existed. Liberation means you stopped sitting in it. The bird does not analyze the cage. The bird flies. Every tradition that promises salvation is really promising this: you can leave the cage. The chains are real but the lock is not. And the sky was always there. Waiting.",
+        links: [
+          { label: "Liberation Theology", url: "https://en.wikipedia.org/wiki/Liberation_theology" },
+          { label: "Soteriology", url: "https://en.wikipedia.org/wiki/Soteriology" },
+          { label: "Moksha", url: "https://en.wikipedia.org/wiki/Moksha" }
+        ],
+        songs: [
+          { title: "I Want to Break Free", artist: "Queen", url: "https://www.youtube.com/watch?v=f4Mc-NYPHaQ" },
+          { title: "Freedom! '90", artist: "George Michael", url: "https://www.youtube.com/watch?v=diYAc7gB-0A" },
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=kOFu6b3w6c0" }
+        ],
+        advanced: "Soteriological liberation: deliverance from the self or ego keeping one bound to destructive patterns. Transition from closed system to open creative one. The chains are real but the lock is not. And the sky was always there. Waiting." },
+
+      { id: "hope-candle", num: 7, icon: "🕯️", title: "Hope (The Lit Candle)", subtitle: "The Bridge That Carries Us from a Sad Today to a Happy Tomorrow",
+        simple: "Hope is the little light that stays on even when everything else seems dark. It is like planting a tiny seed in the dirt during winter and knowing that a flower will come out when the sun returns. Even if things are hard right now, hope is the voice in your heart that says it is going to get better. It gives you the energy to keep trying and keep being kind. It is the bridge that carries us from a sad today to a happy tomorrow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The first bird chirping before the sun comes up: sound arriving before proof." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cinnamon and baking bread: the smell of something good that is not ready yet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sweet strawberry: proof that patience produces sweetness." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm ray of sun on your face: the future touching you before it arrives." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The first green sprout coming out of snow: life refusing to accept the cold's verdict." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning forward in anticipation: the body aiming itself at something it cannot yet see." }
+        ],
+        intuition: "The bridge that carries us from a sad today to a happy tomorrow. Hope is not optimism. Optimism says everything will be fine. Hope says I will keep walking even though I do not know if everything will be fine. Hope is braver than optimism. Optimism needs evidence. Hope does not. The sprout in the snow has no evidence that spring is coming. The sprout pushes through anyway. That is hope. Every sacred tradition that survived persecution survived because someone held a candle when the room had no light. The candle did not end the darkness. The candle proved the darkness was not everything.",
+        links: [
+          { label: "Hope", url: "https://en.wikipedia.org/wiki/Hope" },
+          { label: "Hope Theory", url: "https://en.wikipedia.org/wiki/Hope#Snyder's_hope_theory" },
+          { label: "Theological Virtue", url: "https://en.wikipedia.org/wiki/Theological_virtues" }
+        ],
+        songs: [
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwo'ole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" },
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" }
+        ],
+        advanced: "Hope as proleptic emotion: experiencing the future good in the present moment. A vital survival mechanism maintaining agency and cognitive function during trauma. Hope is braver than optimism. Optimism needs evidence. Hope does not. The candle did not end the darkness. The candle proved the darkness was not everything." },
+
+      { id: "repentance-uturn", num: 8, icon: "↩️", title: "Repentance (The U-Turn)", subtitle: "Once You Turn Around the Whole World Looks Different",
+        simple: "Repentance is like realizing you are walking the wrong way on a trail and deciding to turn around. It starts with a feeling in your heart that says I do not want to do that anymore. Instead of just feeling bad, you make a plan to walk toward the light and do good things. It is a very brave thing to do because you have to admit you were lost. But once you turn around, the whole world looks different and you are on the right path again.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Footsteps changing direction on gravel: the sound of a decision the whole earth can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Eucalyptus or peppermint: clarity entering through the sinuses." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter herbs followed by sweet fruit: the taste of consequence followed by grace." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Washing your hands with cool clean soap: renewal you can feel with your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A compass needle spinning to find north: direction after confusion." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Shifting weight from heels to toes: the body pivoting before the journey resumes." }
+        ],
+        intuition: "Once you turn around the whole world looks different. Repentance is not guilt. Guilt says I am bad. Repentance says I went the wrong way and I am turning around. Guilt paralyzes. Repentance mobilizes. The Hebrew word is teshuva — return. Not punishment. Return. As if you left home and now you are walking back. The path home was always there. You just stopped walking it. Repentance is not the end of a story. Repentance is the plot twist that makes the ending good. Every great redemption arc in every story ever told begins with one character deciding to turn around.",
+        links: [
+          { label: "Repentance", url: "https://en.wikipedia.org/wiki/Repentance" },
+          { label: "Teshuva", url: "https://en.wikipedia.org/wiki/Teshuva" },
+          { label: "Metanoia", url: "https://en.wikipedia.org/wiki/Metanoia_(theology)" }
+        ],
+        songs: [
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Back to Black", artist: "Amy Winehouse", url: "https://www.youtube.com/watch?v=TJAfLE39ZZ8" }
+        ],
+        advanced: "Teshuva (return) or metanoia (change of mind): cognitive realignment. Active rejection of a previous mode of being in favor of new alignment with truth. Guilt paralyzes. Repentance mobilizes. Repentance is not the end of a story. Repentance is the plot twist that makes the ending good." },
+
+      { id: "justice-justification", num: 9, icon: "🏛️", title: "Justice & Justification (The Pillar)", subtitle: "The Price Has Been Paid and You Are Free to Go Home",
+        simple: "Justice is making sure things are fair, but justification is understanding why we can be friends again even after a mistake. Think of a math problem where the two sides finally equal each other. When we are justified, it means our friendship account is back to being full instead of having a debt. It is like a judge saying the price has been paid and you are free to go home now. It makes us feel safe because we know we are right with the people we love.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A heavy wooden gavel hitting a desk: the sound of something being settled forever." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books and ink: the scent of a law older than the courthouse." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Strong dark chocolate: the taste of something serious that still rewards you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm honest handshake: agreement you can feel between two palms." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly level line on a wall: balance made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling balanced on both feet equally: the body standing in equilibrium." }
+        ],
+        intuition: "The price has been paid and you are free to go home. Justice without mercy is cruelty. Mercy without justice is chaos. Justification is the point where justice and mercy shake hands. The debt is acknowledged. The debt is paid. And the debtor walks free. Not because the debt did not matter. But because something mattered more than the debt. Every legal system on earth was built on this tension. Every religion resolves it the same way: someone absorbs the cost so someone else can go home. That is justification. The books are balanced. And the door is open.",
+        links: [
+          { label: "Justification", url: "https://en.wikipedia.org/wiki/Justification_(theology)" },
+          { label: "Justice", url: "https://en.wikipedia.org/wiki/Justice" },
+          { label: "Theories of Justice", url: "https://en.wikipedia.org/wiki/A_Theory_of_Justice" }
+        ],
+        songs: [
+          { title: "I Still Haven't Found What I'm Looking For", artist: "U2", url: "https://www.youtube.com/watch?v=e3-5YC_oHjE" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=vWwgrjjIMXA" }
+        ],
+        advanced: "Justification as the forensic aspect of redemption — moving the individual from guilt to right-standing within a communal or cosmic framework. Justice without mercy is cruelty. Mercy without justice is chaos. Justification is the point where justice and mercy shake hands. The books are balanced. And the door is open." },
+
+      { id: "heros-return", num: 10, icon: "🏠", title: "The Hero's Return (The Porch Light)", subtitle: "Home Is Not a Building — Home Is the Feeling of Belonging Exactly Where You Are",
+        simple: "The hero's return is when you come back home after being away or feeling like an outsider. Maybe you were hiding because you were embarrassed, but then you realize your family still loves you and has been waiting for you. It is like the ending of a movie where the main character finally hugs their friends again. You come back different — stronger, kinder, and ready to help others. Home is not just a building; it is the feeling of belonging exactly where you are.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a fireplace: the sound of a house that kept the fire burning while you were gone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Homemade cookies or soup: the smell of someone who never stopped expecting you." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Your favorite childhood meal: the taste of before, given back to you now." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long warm hug from someone who missed you: the body being welcomed back by another body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A porch light shining in the dark: a signal that someone left the light on for you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sinking into your favorite soft chair: the body exhaling into a shape it remembers." }
+        ],
+        intuition: "Home is not a building — home is the feeling of belonging exactly where you are. The prodigal son did not earn his way back. The prodigal son just walked home. And the father was already running toward him before he reached the gate. That is the story. Not that the son was good enough to return. But that the father never stopped watching the road. Every redemption story ends the same way: someone comes home. And someone was waiting. The porch light was on the whole time. The door was never locked. The only thing that kept you away was the belief that you were not welcome. You were always welcome.",
+        links: [
+          { label: "Hero's Journey", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Prodigal Son", url: "https://en.wikipedia.org/wiki/Parable_of_the_Prodigal_Son" },
+          { label: "Belonging", url: "https://en.wikipedia.org/wiki/Belongingness" }
+        ],
+        songs: [
+          { title: "Homeward Bound", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=7z9wd6YsAXo" },
+          { title: "Coming Home", artist: "Leon Bridges", url: "https://www.youtube.com/watch?v=MTrKkqE9p1o" },
+          { title: "Take Me Home Country Roads", artist: "John Denver", url: "https://www.youtube.com/watch?v=1vrEljMfXYo" }
+        ],
+        advanced: "Integration phase of the psyche: after descent into shadow and ascent through redemption, the individual reintegrates into the collective, bringing the boon of wisdom gained through suffering. The porch light was on the whole time. The door was never locked. The only thing that kept you away was the belief that you were not welcome." },
+    ],
+
+
 
 
 
