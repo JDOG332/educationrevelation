@@ -24318,6 +24318,243 @@ export const TOPIC_CARDS = {
         advanced: "Sagan: pale blue dot — everything on a mote of dust. Overview Effect: astronauts see Earth without borders. Atoms in your blood forged in supernovae. You are literally made of the universe. The feeling of separation is real. The separation itself is not." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // LOVE (filter) > VULNERABILITY & TRUST (trust)
+    // ═══════════════════════════════════════════════════════════════
+
+    trust: [
+      { id: "radical-authenticity-raw-diamond", num: 1, icon: "💎", title: "Radical Authenticity (The Raw Diamond)", subtitle: "Taking Off a Heavy Mask and Finally Breathing — Showing Your True Face So Others Feel Safe to Show Theirs",
+        simple: "When you are radically authentic, you stop pretending to be someone else just to make people like you. It is like taking off a heavy mask and finally breathing fresh air. Imagine if everyone wore a costume all day — you would never know who your real friends are. By showing your true face, you help others feel safe enough to show theirs too. It is the bravest thing you can do because it shows you are happy being exactly who you were born to be.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep honest sigh of relief: the sound of the respiratory system completing a cycle it had been holding — the diaphragm finally descending fully because the performance has ended." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain on dry earth — petrichor: the scent of relief after drought — geosmin released by soil bacteria when water arrives, the smell of the ground exhaling after holding its breath." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure cold spring water: the taste of nothing added — hydrogen and oxygen and trace minerals, flavor that comes from composition rather than preparation, authenticity in liquid form." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Bare feet walking on soft grass: the touch of unmediated contact — twenty-six bones and seven thousand nerve endings meeting the earth without barrier, the body as it was before shoes existed." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear mirror in bright sunlight: the sight of unfiltered reflection — every detail visible, every imperfection lit, nothing hidden by shadow or angle." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Shoulders dropping away from ears: the body releasing its chronic brace — the trapezius muscles surrendering the tension they accumulated while the mind was performing for an audience." }
+        ],
+        intuition: "Taking off a heavy mask and finally breathing — showing your true face so others feel safe to show theirs. The energy cost of inauthenticity is measurable. When you perform a version of yourself that does not match your internal state, the brain runs two parallel processes simultaneously: the authentic response and the performed response. The prefrontal cortex must continuously suppress the real while generating the fake. This dual processing consumes glucose, depletes willpower reserves, and generates cortisol. You are literally exhausting yourself by pretending. Authenticity eliminates the overhead. When internal state and external expression align, the brain runs a single process. The energy saved becomes available for creativity, connection, and presence. But the deeper mechanism is social. Authenticity is contagious. When you remove your mask, the people around you experience a reduction in threat. Their amygdalas recalibrate. The social environment shifts from performance to presence. And in that shift, genuine connection becomes possible. Not because you were brave enough to be vulnerable. Because your bravery gave them permission to be vulnerable too. The raw diamond does not need to be polished to be valuable. The cutting and polishing are for display. The carbon crystalline structure — the thing that makes a diamond a diamond — was there before anyone touched it. You were valuable before you learned to perform. The performance was the costume. The removal of the costume is the revelation.",
+        links: [
+          { label: "Authenticity (philosophy)", url: "https://en.wikipedia.org/wiki/Authenticity_(philosophy)" },
+          { label: "Self-Monitoring", url: "https://en.wikipedia.org/wiki/Self-monitoring" },
+          { label: "Brené Brown", url: "https://en.wikipedia.org/wiki/Bren%C3%A9_Brown" }
+        ],
+        songs: [
+          { title: "Born This Way", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=wV1FrqwZyKw" },
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+          { title: "Come As You Are", artist: "Nirvana", url: "https://www.youtube.com/watch?v=vabnZ9-ex7o" }
+        ],
+        advanced: "Inauthenticity runs two parallel processes — authentic response and performed response — consuming glucose and generating cortisol. Authenticity eliminates the overhead. And it is contagious: your mask removal reduces threat in others. The raw diamond was valuable before polishing. The performance was the costume." },
+
+      { id: "psychological-safety-shield-to-table", num: 2, icon: "🛡️", title: "Psychological Safety (Shield Turned Table)", subtitle: "If You Trip the People Around You Will Not Laugh — Your Brain Thinks Better When It Is Not Busy Hiding",
+        simple: "Psychological safety means you know that if you trip and fall, the people around you will not laugh or be mean. It is like playing a game where everyone wants everyone else to do their best, even if they make mistakes. In a classroom or a family, this makes it okay to say I do not know or I am scared. When you feel safe, your brain can think of better ideas because it is not busy hiding. It turns a group of people into a real loving team.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft lullaby hum: the sound of predictable comfort — a melody repeated enough times that the auditory cortex no longer needs to analyze it, frequency patterns that signal all clear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Warm chocolate chip cookies baking: the scent of domestic investment — butter and sugar and vanilla undergoing Maillard reaction, the smell of someone spending time to create comfort." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm oatmeal with honey: the taste of sustained nourishment — complex carbohydrates releasing energy slowly, sweetness that does not spike and crash but holds steady." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A weighted blanket on a cold night: the touch of distributed pressure — deep touch activating the parasympathetic system, the body interpreting even weight as embrace." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A campfire burning steadily in the dark: the sight of controlled danger — fire that warms without burning, light that illuminates without blinding, power contained for the benefit of the group." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling held by the chair you are sitting in: the body trusting a structure — weight fully transferred to an external support, musculature releasing because the architecture has been tested." }
+        ],
+        intuition: "If you trip the people around you will not laugh — your brain thinks better when it is not busy hiding. Amy Edmondson at Harvard studied hospital teams and found that the best-performing units reported more errors, not fewer. The paradox dissolved when she realized: they were not making more errors. They were reporting more errors. Because they felt safe enough to admit mistakes without fear of punishment. The teams that appeared error-free were actually error-hidden. Google confirmed this at scale. Project Aristotle analyzed one hundred eighty teams to identify what made the best ones work. Intelligence did not predict performance. Experience did not predict performance. Personality composition did not predict performance. One factor predicted performance: psychological safety. The belief that you will not be punished for making a mistake. The mechanism is neurological. When the brain detects social threat — the possibility of humiliation, rejection, or punishment — the amygdala activates. Resources shift from the prefrontal cortex to the limbic system. Creativity decreases. Risk-taking decreases. The cognitive bandwidth consumed by self-monitoring becomes unavailable for actual thinking. A psychologically safe environment returns those resources. The shield becomes a table — a defensive posture transforms into a collaborative surface. The energy previously spent watching your back becomes available for building something together.",
+        links: [
+          { label: "Psychological Safety", url: "https://en.wikipedia.org/wiki/Psychological_safety" },
+          { label: "Amy Edmondson", url: "https://en.wikipedia.org/wiki/Amy_Edmondson" },
+          { label: "Project Aristotle", url: "https://en.wikipedia.org/wiki/Project_Aristotle" }
+        ],
+        songs: [
+          { title: "Lean On Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdVBLojnE" }
+        ],
+        advanced: "Edmondson: best hospital teams reported MORE errors — because they felt safe to admit them. Google Project Aristotle: one factor predicted team performance — psychological safety. Social threat shifts resources from prefrontal to limbic. The shield becomes a table — defense becomes collaboration." },
+
+      { id: "mutual-reciprocity-balanced-seesaw", num: 3, icon: "🤝", title: "Mutual Reciprocity (The Balanced Seesaw)", subtitle: "A Seesaw Staying Level Because Both People Put in the Same Heart — No One Feels Too Exposed or Alone",
+        simple: "Reciprocity is the I show you mine you show me yours of feelings. If one person tells a secret and the other person just stares, the trust breaks. It works like a seesaw that stays perfectly level because both people are putting in the same amount of heart. When you share a little bit of your no-armor self and the other person does too, you build a bridge together. It ensures that no one person feels too exposed or alone in the relationship.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two singers harmonizing perfectly: the sound of matched investment — two vocal systems producing different frequencies that combine into a chord neither could create alone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Two people's different perfumes mixing: the scent of combined identity — two distinct chemical signatures occupying the same air, neither overpowering the other." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt and caramel together: the taste of complementary risk — two flavors that should clash but instead amplify each other, the palate discovering that opposites create depth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five where both palms meet with equal force: the touch of calibrated reciprocity — impact distributed equally, neither hand absorbing more shock than the other." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Light reflecting back as an echo: the sight of returned signal — energy sent out that comes back at the same wavelength, visual confirmation that the transmission was received." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning against someone who is also leaning against you: the body in mutual support — two masses sharing a center of gravity, neither one standing alone, both falling if either withdraws." }
+        ],
+        intuition: "A seesaw staying level because both people put in the same heart — no one feels too exposed or alone. Robert Axelrod ran the most famous computer tournament in the history of game theory. He invited experts to submit strategies for the iterated prisoner's dilemma — the mathematical model of cooperation and defection. Hundreds of sophisticated algorithms competed. The winner was the simplest: Tit-for-Tat. Cooperate first. Then mirror whatever the other player did last. If they cooperated, cooperate. If they defected, defect. Then forgive and cooperate again. The strategy won not because it was clever. It won because it was reciprocal. It matched the other player's investment exactly. And in the mathematics of repeated interaction, matching investment produces the highest total payoff for both players over time. Emotional reciprocity follows the same logic. Disclosure must be matched. If you share something vulnerable and the other person does not reciprocate, the seesaw tips. You are exposed and they are protected. The asymmetry generates anxiety in the one who disclosed and guilt or power in the one who did not. Trust requires the seesaw to stay level. Not identical — people share different things at different speeds. But equivalent. The emotional weight on each side must balance. When it does, the bridge builds itself. When it does not, the bridge collapses — not from malice, but from physics. An unbalanced seesaw does not work regardless of how much either person wants it to.",
+        links: [
+          { label: "Reciprocity (social psychology)", url: "https://en.wikipedia.org/wiki/Reciprocity_(social_psychology)" },
+          { label: "Tit for Tat", url: "https://en.wikipedia.org/wiki/Tit_for_tat" },
+          { label: "Social Exchange Theory", url: "https://en.wikipedia.org/wiki/Social_exchange_theory" }
+        ],
+        songs: [
+          { title: "Give a Little Bit", artist: "Supertramp", url: "https://www.youtube.com/watch?v=GlRaiKF_2Ew" },
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "Kind & Generous", artist: "Natalie Merchant", url: "https://www.youtube.com/watch?v=uAwyIad93-c" }
+        ],
+        advanced: "Axelrod: Tit-for-Tat won the prisoner's dilemma tournament — simplest strategy, won because reciprocal. Disclosure must be matched or the seesaw tips. Trust requires equivalent emotional weight on each side. An unbalanced seesaw does not work regardless of desire — physics, not malice." },
+
+      { id: "emotional-granularity-64-crayons", num: 4, icon: "🎨", title: "Emotional Granularity (The 64-Crayon Box)", subtitle: "Naming Feelings with Specific Words Instead of Just Bad or Good — 64 Crayons Instead of 8",
+        simple: "Emotional granularity is the ability to name your feelings with fancy specific words instead of just saying bad or good. Instead of being mad, you might be frustrated or disappointed. This is important because it helps people understand exactly how to help you. It is like having a giant box of 64 crayons instead of just the 8-pack. When you describe your no-armor self clearly, people can see the real you without any blurry edges.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A piano playing a complex chord with many notes: the sound of simultaneous differentiation — twelve semitones available, five or six selected, each distinguishable within the harmony." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A spice rack where you smell cinnamon cumin and pepper separately: the scent of parsed complexity — volatile compounds your olfactory receptors can isolate even when mixed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A stew where you taste carrots onion and broth individually: the taste of resolving power — the palate trained to identify components within a blend rather than registering only the mixture." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the difference between silk velvet and wool: the touch of trained discrimination — mechanoreceptors registering thread count, nap direction, and fiber composition as distinct signals." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A high-definition photo showing every leaf on a tree: the sight of sufficient resolution — enough pixels to distinguish individual elements that would blur together at lower fidelity." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Wiggling just your pinky toe without moving the others: the body achieving fine motor isolation — a neural command precise enough to activate one muscle group while inhibiting its neighbors." }
+        ],
+        intuition: "Naming feelings with specific words instead of just bad or good — 64 crayons instead of 8. Lisa Feldman Barrett spent decades proving that emotions are not universal programs but constructed experiences. The brain does not have an anger circuit and a sadness circuit. It has a prediction engine that constructs emotional experiences from three ingredients: interoceptive data (what the body is doing), contextual information (what is happening around you), and conceptual knowledge (what labels you have available). The labels matter. If your vocabulary contains only happy and sad, every experience gets sorted into two bins. If your vocabulary contains elated, content, serene, melancholic, wistful, frustrated, indignant, and resentful, the same experiences get sorted into dozens of bins. And the sorting determines the response. Frustrated calls for a different action than indignant. Wistful calls for a different response than melancholic. The child with eight crayons draws the same picture as the child with sixty-four. But the picture with sixty-four crayons has gradients, shadows, subtleties. It looks more like reality. Emotional granularity is the resolution of your inner life. And vulnerability — the act of showing someone your inner life — is only as precise as your ability to describe it. If you say I feel bad, the other person cannot help you. If you say I feel dismissed and a little afraid that what I care about does not matter to you, the other person knows exactly where to go. The crayons are the bridge. More crayons, better bridge.",
+        links: [
+          { label: "Emotional Granularity", url: "https://en.wikipedia.org/wiki/Emotion_differentiation" },
+          { label: "Lisa Feldman Barrett", url: "https://en.wikipedia.org/wiki/Lisa_Feldman_Barrett" },
+          { label: "Constructed Emotion", url: "https://en.wikipedia.org/wiki/Theory_of_constructed_emotion" }
+        ],
+        songs: [
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Liability", artist: "Lorde", url: "https://www.youtube.com/watch?v=BtvJaNeELic" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" }
+        ],
+        advanced: "Barrett: emotions are constructed, not universal programs — built from interoception, context, and available labels. Labels determine sorting, sorting determines response. Frustrated ≠ indignant. Vulnerability is only as precise as your ability to describe it. More crayons, better bridge." },
+
+      { id: "boundaries-garden-fence", num: 5, icon: "⭕", title: "Boundaries (The Garden Fence)", subtitle: "Invisible Fences Not to Keep People Out but to Show Where the Gate Is — No Means Your Yes Is Real",
+        simple: "Boundaries are the invisible fences that keep your heart safe. They are not meant to keep people out — they are meant to show people where the gate is. Having boundaries means saying no when you feel uncomfortable so that when you say yes you really mean it. It is like having a beautiful garden with a small fence so the flowers do not get stepped on. When you have good boundaries, you can take your armor off because you know you are in control of who gets close.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clear ringing bell marking the end of class: the sound of defined transition — a frequency that announces a boundary in time, this period is over and the next begins." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp clean eucalyptus: the scent of clarity — cineole molecules stimulating the trigeminal nerve, producing the sensation of sharpness that the brain interprets as definition." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A lemon — sharp and distinct from everything else: the taste of unmistakable identity — citric acid at a concentration that cannot be confused with any other flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A sturdy wall that does not budge: the touch of structural integrity — a surface that absorbs your force without deforming, proof that the boundary exists and will hold." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright white line painted on a road: the sight of consensual demarcation — a boundary that everyone agrees to respect, visible from distance, unambiguous in meaning." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching arms out and knowing exactly how much space you take up: the body mapping its own perimeter — proprioceptive awareness defining where you end and the rest of the world begins." }
+        ],
+        intuition: "Invisible fences not to keep people out but to show where the gate is — no means your yes is real. A cell without a membrane is not a cell. It is a puddle. The membrane is what makes the cell a cell — a defined entity that can interact with its environment without dissolving into it. The membrane is semi-permeable. It lets in what the cell needs and keeps out what would destroy it. Without the membrane, the cell's contents would dissipate into the surrounding fluid. With a membrane that lets nothing through, the cell starves. The healthy cell has a membrane that selects. This is the biology of boundaries. And the psychology is identical. A person without boundaries is not open — they are diffuse. They cannot say yes meaningfully because they have never said no. Their acceptance carries no information because it is automatic. A person with rigid boundaries is not protected — they are isolated. Nothing gets in. Including the nutrients they need. The person with healthy boundaries is semi-permeable. They assess what approaches. They admit what nourishes. They reject what harms. And the gate — the place where admission happens — is voluntary. It opens from the inside. This is why boundaries are not the opposite of vulnerability. They are the prerequisite for vulnerability. You can only take off your armor in a space you control. You can only show your true face to someone you chose to let in. The fence does not prevent intimacy. The fence makes intimacy possible. Because intimacy without consent is invasion. And the boundary is the mechanism of consent.",
+        links: [
+          { label: "Personal Boundaries", url: "https://en.wikipedia.org/wiki/Personal_boundaries" },
+          { label: "Cell Membrane", url: "https://en.wikipedia.org/wiki/Cell_membrane" },
+          { label: "Differentiation (psychology)", url: "https://en.wikipedia.org/wiki/Differentiation_(psychology)" }
+        ],
+        songs: [
+          { title: "Respect", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=6FOUqQt3Kg0" },
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=gYkACVDFmeg" },
+          { title: "No Scrubs", artist: "TLC", url: "https://www.youtube.com/watch?v=FrLequ6dUdM" }
+        ],
+        advanced: "A cell without a membrane is a puddle. Without boundaries, acceptance carries no information — it is automatic. Boundaries are not the opposite of vulnerability but its prerequisite. You can only take off armor in a space you control. Intimacy without consent is invasion. The fence makes intimacy possible." },
+
+      { id: "empathy-vs-sympathy-climbing-into-the-hole", num: 6, icon: "🕳️", title: "Empathy vs. Sympathy (Climbing Into the Hole)", subtitle: "Sympathy Looks Down and Says Sorry — Empathy Climbs In and Says You Are Not Alone",
+        simple: "Sympathy is looking down at someone in a hole and saying oh I am so sorry you are down there. Empathy is climbing down into the hole, sitting next to them, and saying I know what it is like down here and you are not alone. To have empathy you have to remember a time you felt the same way, which means you have to feel your own no-armor feelings. It does not try to fix the person — it just stays with them until they are ready to climb out.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that perfectly repeats your voice: the sound of faithful reproduction — your signal returned without distortion, proof that the receiving surface preserved your frequency." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your best friend's house: the scent of a nervous system you trust — the specific combination of detergent, cooking, and body chemistry that your olfactory system has classified as safe." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm soup when you have a cold: the taste of being tended to when you are weakest — liquid comfort offered not because you asked but because someone noticed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long hug lasting until both people let go at the same time: the touch of synchronized release — two bodies holding until both nervous systems signal completion independently." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Someone's eyes welling up when you tell them something sad: the sight of involuntary resonance — lacrimal glands activating in response to another person's pain, the body proving it received the signal." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A twinge in your stomach when you see someone else get hurt: the body simulating damage it did not receive — visceral pain produced by mirror neurons, empathy as a physical event." }
+        ],
+        intuition: "Sympathy looks down and says sorry — empathy climbs in and says you are not alone. The distinction is not emotional. It is spatial. Sympathy maintains the vertical: I am up here, you are down there, I acknowledge your position. Empathy eliminates the vertical: I am coming to where you are. The neurological basis is mirror neurons — Rizzolatti's discovery that the same cells fire whether you experience something or watch someone else experience it. But empathy goes beyond mirroring. Mirroring is automatic. Empathy is volitional. You choose to stay in the resonance rather than retreating to the safety of sympathy. Sympathy is cognitively cheap. You register the other person's state and offer a verbal acknowledgment. It costs almost nothing neurologically. Empathy is expensive. You register the other person's state and then allow your own system to simulate it. Your cortisol rises. Your heart rate shifts. Your mood changes. You pay a metabolic price for being present with someone else's pain. And that price — the willingness to be physiologically affected by another person's experience — is what makes empathy the most powerful social bond available. Because the person in the hole does not need advice. They do not need solutions. They need proof that their experience matters enough for someone to feel it with them. Sympathy says your pain is real. Empathy says your pain is mine. The first is a statement. The second is a commitment.",
+        links: [
+          { label: "Empathy", url: "https://en.wikipedia.org/wiki/Empathy" },
+          { label: "Sympathy", url: "https://en.wikipedia.org/wiki/Sympathy" },
+          { label: "Mirror Neuron", url: "https://en.wikipedia.org/wiki/Mirror_neuron" }
+        ],
+        songs: [
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" },
+          { title: "You've Got a Friend in Me", artist: "Randy Newman", url: "https://www.youtube.com/watch?v=Zy4uiiy0qgA" }
+        ],
+        advanced: "The distinction is spatial: sympathy maintains the vertical, empathy eliminates it. Mirroring is automatic — empathy is volitional. Sympathy is cognitively cheap. Empathy is metabolically expensive — you pay a physiological price. That price is what makes it the most powerful bond. Your pain is real vs your pain is mine." },
+
+      { id: "predictability-the-sunrise", num: 7, icon: "🌅", title: "Predictability (The Sunrise)", subtitle: "Doing What You Say Over and Over — Like the Sun Coming Up — the Boring Part That Builds the Foundation",
+        simple: "Predictability means doing what you say you are going to do, over and over again. If you say you will be there at five, you are there at five. It is like the sun coming up every morning — you do not even have to think about it because it always happens. When someone is predictable, your heart can relax because it knows what to expect. This is the boring part of trust, but it is the most important because it builds the foundation for everything else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady tick-tock of a clock: the sound of quantized reliability — each interval identical to the last, the auditory proof that the mechanism has not failed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly laundered clothes: the scent of maintained routine — the same detergent producing the same result because someone performed the same process at the same interval." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Your favorite snack tasting exactly the same every time: the taste of quality control — manufacturing consistency that your gustatory system can rely on without recalculation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own bed at night: the touch of the surface that has conformed to your shape — mattress and pillow molded by repeated use into the exact geometry of your body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A straight line that never curves: the sight of mathematical certainty — a trajectory that can be extrapolated infinitely because it has never deviated." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking upstairs in the dark knowing exactly where the next step is: the body trusting its own model — motor memory so reliable that visual confirmation becomes unnecessary." }
+        ],
+        intuition: "Doing what you say over and over — like the sun coming up — the boring part that builds the foundation. The Bayesian brain runs on prediction. Every sensory input is compared against a model of what should happen next. When the prediction matches reality, the brain generates a small reward signal. When the prediction fails, the brain generates a prediction error — an alarm that consumes resources to investigate the discrepancy. A predictable person minimizes prediction errors. Their behavior matches the model the brain has built of them. The cognitive cost of maintaining the relationship drops because the brain can run on autopilot. Trust accumulates not through grand gestures but through the boring accumulation of fulfilled micro-predictions. They said they would call. They called. They said they would be there. They were there. They said they cared. Their actions matched. Each fulfilled prediction is a data point. And after enough data points, the brain transitions from tracking to trusting. The threshold is not a single dramatic event. It is a statistical accumulation. This is why betrayal is so devastating. A single violation can undo thousands of fulfilled predictions — not because the violation is proportional, but because it introduces uncertainty into a model that had achieved stability. The brain must now re-evaluate every prediction it had been running on autopilot. The cognitive cost is enormous. Rebuilding predictability after betrayal takes not just apology but time. Because the brain does not trust words. It trusts patterns. And patterns require repetition.",
+        links: [
+          { label: "Bayesian Brain", url: "https://en.wikipedia.org/wiki/Bayesian_approaches_to_brain_function" },
+          { label: "Prediction Error", url: "https://en.wikipedia.org/wiki/Predictive_coding" },
+          { label: "Trust (social science)", url: "https://en.wikipedia.org/wiki/Trust_(social_science)" }
+        ],
+        songs: [
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "Time After Time", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=VdQY7BusJNU" },
+          { title: "Faithfully", artist: "Journey", url: "https://www.youtube.com/watch?v=OMD8hBsA-RI" }
+        ],
+        advanced: "Bayesian brain: predictable person minimizes prediction errors. Trust accumulates through boring micro-predictions fulfilled — they said, they did. Betrayal devastates because one violation reintroduces uncertainty into a stabilized model. The brain does not trust words. It trusts patterns. Patterns require repetition." },
+
+      { id: "bravery-of-uncertainty-falling-die", num: 8, icon: "🎲", title: "The Bravery of Uncertainty (The Falling Die)", subtitle: "Saying I Love You Without Knowing If They Will Say It Back — the Only Way to Get the Good Stuff",
+        simple: "This is the scary part of vulnerability. It is when you share something big, like I love you or I am sorry, without knowing if the other person will say it back. It is like jumping into a pool before you know if the water is cold. Even though it is scary, it is the only way to get to the good stuff in life. Without taking a chance, you stay stuck in your armor forever, and it gets very lonely in there.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence right after you ask a big question: the sound of suspended resolution — air molecules vibrating with nothing, the auditory void between stimulus and response." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book you have never read: the scent of unprocessed potential — paper and binding adhesive before any meaning has been extracted, the smell of a story that has not started." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A mystery flavor jellybean: the taste of surrendered control — the tongue receiving data it cannot predict, the palate engaging with the unknown on its own terms." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Butterflies in your stomach: the touch from inside — the vagus nerve transmitting anxiety as gastric sensation, the gut confirming that something consequential is happening." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Thick fog where you cannot see the road: the sight of insufficient data — the visual system operating below its resolution threshold, forward motion continuing without the usual information." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The dropping feeling in your chest on a roller coaster: the body experiencing negative G-force — the vestibular system registering that the ground has temporarily abandoned you." }
+        ],
+        intuition: "Saying I love you without knowing if they will say it back — the only way to get the good stuff. Alan Watts called it the wisdom of insecurity. The demand for certainty before action is the demand that eliminates all possible growth. Because growth only happens at the boundary between the known and the unknown. And vulnerability — real vulnerability — is the act of stepping across that boundary without a map. The neurological signature of this moment: the prefrontal cortex holds the intention. The amygdala screams danger. The anterior cingulate cortex mediates the conflict. And the outcome depends on which system wins. If the amygdala wins, you stay silent. You keep the armor on. You are safe. And you learn nothing. If the prefrontal cortex wins, you speak. You risk rejection. You are exposed. And the outcome — whether accepted or rejected — teaches you something that silence never could. The paradox: certainty feels safe but produces stagnation. Uncertainty feels dangerous but produces growth. Every meaningful relationship in your life began with someone taking a risk. Someone spoke first. Someone reached out. Someone said the thing that could not be unsaid. And the moment between speaking and hearing the response — that suspended second where the die is in the air and has not yet landed — is the bravest space a human being can occupy. Not because the outcome is guaranteed. Because it is not.",
+        links: [
+          { label: "Alan Watts", url: "https://en.wikipedia.org/wiki/Alan_Watts" },
+          { label: "Uncertainty", url: "https://en.wikipedia.org/wiki/Uncertainty" },
+          { label: "Anterior Cingulate Cortex", url: "https://en.wikipedia.org/wiki/Anterior_cingulate_cortex" }
+        ],
+        songs: [
+          { title: "The Climb", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=NG2zyeVRcbs" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Watts: the demand for certainty before action eliminates all growth. Growth happens at the boundary of known and unknown. Prefrontal holds intention, amygdala screams danger, anterior cingulate mediates. Certainty produces stagnation. Uncertainty produces growth. The die in the air is the bravest space." },
+
+      { id: "cognitive-trust-the-ruler", num: 9, icon: "📐", title: "Cognitive Trust (The Ruler)", subtitle: "Trust from Your Brain Not Just Your Heart — Facts and History Deciding Who Is Safe — Head Armor for Decisions",
+        simple: "Cognitive trust is trust that comes from your brain, not just your heart. You trust your doctor because they went to school for a long time. You trust a pilot because they have flown many planes. This is like armor for your decisions — it uses facts and history to decide who is safe. It is a very smart way to start a friendship, but eventually you have to let heart trust take over to really feel connected.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A key perfectly turning in a lock: the sound of mechanical match — tumbler pins aligning because the key's profile corresponds exactly to the lock's specifications." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library full of old books: the scent of accumulated verification — paper aging over decades, the smell of knowledge that has been tested by time and survived." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe followed exactly: the taste of reproducible results — ingredients measured, temperatures controlled, the palate confirming that the process produced the predicted output." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tightening a bolt with a wrench until it stops: the touch of calibrated limit — torque applied until the fastener reaches its specification, the hand knowing when enough is enough." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A math problem where two plus two equals four: the sight of logical certainty — symbols arranged in a relationship that cannot be disputed, visual proof that some things are simply true." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing balanced on both feet: the body in its default stability — weight distributed equally, vestibular system confirming that the center of gravity is directly above the base of support." }
+        ],
+        intuition: "Trust from your brain not just your heart — facts and history deciding who is safe. There are two systems of trust and they use different neural architecture. Cognitive trust lives in the prefrontal cortex. It is deliberate, analytical, and evidence-based. You evaluate someone's competence, their track record, their credentials. You check references. You read reviews. You calculate risk. This is the trust that lets you board an airplane piloted by a stranger. Affective trust lives in the limbic system. It is automatic, emotional, and experience-based. You feel safe with someone. Your body relaxes in their presence. Your nervous system downregulates. This is the trust that lets you fall asleep next to someone. Both are real. Both are necessary. But they serve different functions. Cognitive trust is the foundation. Without it, you are making decisions based on feelings alone — and feelings can be manipulated. Con artists exploit affective trust. They make you feel safe while they take your money. Cognitive trust provides the check: does this person's behavior match their claims? Do their actions align with their words? Is the pattern consistent? But cognitive trust alone is insufficient for intimacy. You can verify someone's credentials and still not feel safe with them. The doctor may be competent but cold. The pilot may be skilled but you still grip the armrest. Intimacy requires the transition from head trust to heart trust. And the bridge between them is time. Enough cognitive verification that the limbic system stops checking and starts resting. The ruler measures first. The heart opens after.",
+        links: [
+          { label: "Trust", url: "https://en.wikipedia.org/wiki/Trust_(social_science)" },
+          { label: "Cognitive Trust", url: "https://en.wikipedia.org/wiki/Trust_(social_science)#Cognitive_trust" },
+          { label: "Dual Process Theory", url: "https://en.wikipedia.org/wiki/Dual_process_theory" }
+        ],
+        songs: [
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "The Man", artist: "Aloe Blacc", url: "https://www.youtube.com/watch?v=HGy9i8vvCxk" },
+          { title: "Harder Better Faster Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" }
+        ],
+        advanced: "Two trust systems, different neural architecture. Cognitive: prefrontal, deliberate, evidence-based. Affective: limbic, automatic, experience-based. Con artists exploit affective trust — cognitive provides the check. But cognitive alone is insufficient for intimacy. The ruler measures first. The heart opens after." },
+
+      { id: "blind-faith-falling-backward", num: 10, icon: "☁️", title: "Blind Faith (Falling Backward)", subtitle: "Trusting Without Reason — Closing Your Eyes and Falling Backward — Beautiful but Needs Eyes Open to Grow",
+        simple: "Blind faith is trusting someone even when you have no reason to. It is like closing your eyes and falling backward, hoping someone catches you. While it can be very beautiful and romantic, it can also be a little dangerous because you do not have your eyes open. It is the opposite of using a map. Sometimes we have to use blind faith when we start something totally new, but as we grow we usually want to turn that faith into real solid trust.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise or static: the sound of undifferentiated signal — all frequencies present simultaneously, the auditory equivalent of having no information to distinguish pattern from noise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Unscented air: the smell of absence — the olfactory system receiving nothing to classify, the nose in a state of pure expectation without data." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain white bread: the taste of the baseline — simple starch without seasoning, flavor so neutral it becomes a canvas for whatever comes next." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching out in a pitch-black room: the touch seeking contact it cannot see — fingers extended into darkness, proprioception as the only guidance when vision has failed." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blank white screen: the sight of unlimited possibility and zero information — every pixel the same, nothing to focus on, the visual system in a state of pure potential." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water with ears submerged: the body surrendered to buoyancy — gravity neutralized, spatial orientation ambiguous, the vestibular system accepting uncertainty as a medium." }
+        ],
+        intuition: "Trusting without reason — closing your eyes and falling backward — beautiful but needs eyes open to grow. Søren Kierkegaard called it the leap of faith — the moment when reason has taken you as far as it can and you must jump into the unknown. The leap is necessary because some truths cannot be reached by logic alone. You cannot know in advance whether someone will catch you. You can only jump and find out. But here is the critical distinction: the leap of faith is meant to be a starting point, not a permanent address. Kierkegaard leapt toward God. But he spent the rest of his life thinking rigorously about what he found on the other side. Blind faith that stays blind — that refuses to open its eyes after the leap — is not trust. It is abdication. It is handing your agency to another person and refusing to evaluate whether they deserve it. The healthiest trust follows a developmental arc: it begins with blind faith (because all beginnings require faith), matures through cognitive verification (does this person's behavior match their promises), and culminates in earned trust (I have enough evidence to relax my vigilance). The falling-backward exercise works because someone caught you. If they dropped you, the faith would be broken. And the appropriate response to being dropped is not to fall backward again with your eyes closed. It is to open your eyes and choose more carefully next time. Faith opens the door. Evidence decides whether to walk through it. And the wisest trust is not blind. It is earned. Eyes open. Data collected. Pattern confirmed. And then — only then — the full weight released.",
+        links: [
+          { label: "Leap of Faith", url: "https://en.wikipedia.org/wiki/Leap_of_faith" },
+          { label: "Søren Kierkegaard", url: "https://en.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard" },
+          { label: "Epistemic Trust", url: "https://en.wikipedia.org/wiki/Epistemic_trust" }
+        ],
+        songs: [
+          { title: "I Still Haven't Found What I'm Looking For", artist: "U2", url: "https://www.youtube.com/watch?v=e3-5YC_oHjE" },
+          { title: "Faith", artist: "George Michael", url: "https://www.youtube.com/watch?v=lu3VTngm1F0" },
+          { title: "Leap of Faith", artist: "Bruce Springsteen", url: "https://www.youtube.com/watch?v=cprwRGBKMCM" }
+        ],
+        advanced: "Kierkegaard: leap of faith is a starting point, not a permanent address. Blind faith that stays blind is abdication, not trust. Healthiest arc: blind faith → cognitive verification → earned trust. Faith opens the door. Evidence decides whether to walk through. The wisest trust is not blind — it is earned." },
+    ],
+
+
   },
 
 
