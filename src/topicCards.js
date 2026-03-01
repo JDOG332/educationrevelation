@@ -17647,6 +17647,243 @@ export const TOPIC_CARDS = {
         advanced: "Sanctuary (asylum): legal and psychological necessity. Enclosure theory creates boundaries filtering external stimuli to protect the internal sacred fire. The first function of sacred space is not beauty. The first function is safety. Because you cannot hear God when you are running. The walls must say you are safe here before they can say anything else." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > CREATION (creation)
+    // ═══════════════════════════════════════════════════════════════
+
+    creation: [
+      { id: "singularity-source", num: 1, icon: "☉", title: "The Singularity (The Source)", subtitle: "You Were Once Touching Every Star in the Sky",
+        simple: "Imagine the whole wide world, all the stars, and even your toys were squeezed into a tiny tiny dot that was smaller than a grain of sand. This dot was super hot and held all the stuff that would ever be. Because everything was in that one spot, it means you were once touching every star in the sky! It shows us that even though we look separate now, we all started as the exact same thing. When you feel lonely, remember that you carry a piece of that original everything inside you. You are never truly alone because you are made of the same magic as the sun.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A singing bowl filling the whole room with one note: one vibration before there were two." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain — a scent recycled on Earth for billions of years: the oldest perfume still wearing its original bottle." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pinch of sea salt — minerals from the very beginning: the taste of the first day." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Thumb and pointer finger pressed together — two things becoming one: the singularity between your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame in a dark room: the first light before it had anywhere to go." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Eyes closed, feeling the center of your chest where your heart beats: the singularity you carry everywhere." }
+        ],
+        intuition: "You were once touching every star in the sky. Before the beginning there was no before. There was no room for a before. Everything that would ever exist was compressed into a point smaller than the period at the end of this sentence. You were there. The star you wished on last night was there. The person you love most was there. The oak tree in your yard was there. You were not near each other. You were each other. Separation is an illusion that began fourteen billion years ago and has been getting more convincing every day. But the atoms in your left hand were forged in a different star than the atoms in your right hand. You are a reunion that never stops happening.",
+        links: [
+          { label: "Big Bang", url: "https://en.wikipedia.org/wiki/Big_Bang" },
+          { label: "Gravitational Singularity", url: "https://en.wikipedia.org/wiki/Gravitational_singularity" },
+          { label: "Monism", url: "https://en.wikipedia.org/wiki/Monism" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Shine On You Crazy Diamond", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=cWGE9Gi0bB0" }
+        ],
+        advanced: "The singularity: initial condition where general relativity and quantum mechanics converge and break down. Infinite density, zero volume — the alpha from which spacetime emerged. Monism: all reality is ultimately one substance. Separation is an illusion fourteen billion years old and getting more convincing every day. You are a reunion that never stops happening." },
+
+      { id: "order-from-chaos", num: 2, icon: "☯", title: "Order from Chaos", subtitle: "Even When Things Feel Messy There Is Always a Way to Find a Pattern",
+        simple: "Think about a messy room where all your Legos are on the floor in a big pile. Creation is like picking up those pieces and building a beautiful castle. Before the world was here, things were wild and had no shape, but then a special force started to put things in order. This force makes sure the sun rises every morning and that trees grow up toward the sky instead of down. It teaches us that even when things feel messy or scary in our lives, there is always a way to find a pattern. We are the builders who help keep the world organized and beautiful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Static on a radio tuning until a clear song emerges: chaos finding its frequency." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower — organized scent rising from dirt: beauty extracted from mess." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A piece of fruit with perfect seed patterns inside: order you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a smooth crystal: chaos that organized itself into geometry." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flock of birds flying in a perfect V: no leader, no rehearsal, just pattern." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot — muscles working together to keep you still: your body solving chaos in real time." }
+        ],
+        intuition: "Even when things feel messy there is always a way to find a pattern. Nobody tells snowflakes to be hexagonal. Nobody tells galaxies to spiral. Nobody tells your heart to beat. Order does not need a manager. Order is what the universe does when you leave it alone long enough. Chaos is not the enemy of order. Chaos is the raw material of order. Every mess is a castle that has not been built yet. Every problem is a pattern that has not been recognized yet. You are not fighting chaos. You are organizing it. And you have been doing it since your first breath organized the air.",
+        links: [
+          { label: "Self-Organization", url: "https://en.wikipedia.org/wiki/Self-organization" },
+          { label: "Chaos Theory", url: "https://en.wikipedia.org/wiki/Chaos_theory" },
+          { label: "Logos", url: "https://en.wikipedia.org/wiki/Logos" }
+        ],
+        songs: [
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "Believer", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=7wtfhZwyrcc" }
+        ],
+        advanced: "Transition from prima materia to cosmos. Self-organization: dissipative structures creating order from environmental fluctuations — syntropy over entropy. The foundation of the scientific method: identifying signal within noise. As above so below: galactic order reflected in atomic order. Chaos is not the enemy of order. Chaos is the raw material." },
+
+      { id: "light-first-motion", num: 3, icon: "☀", title: "Light as First Motion", subtitle: "You Have a Little Bit of That Light Inside You",
+        simple: "If you were in a totally dark room, you could not see your friends or your toys. The very first thing that happened in the story of everything was a giant flash of light! This light was not just for seeing; it was the energy that started everything moving, like a cosmic go signal. Because of this first light, we have warmth and life today. You have a little bit of that light inside you, which is why you feel warm when you hug someone. Light is the way the universe shares its energy with us every single day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a campfire: light making sound as it eats." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A shirt dried in the sunshine: the scent of light stored in fabric." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sun-ripened strawberry: sweetness that light built one photon at a time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of the sun on your skin: the first force still touching you personally." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Red glow through closed eyelids facing a window: light so persistent it goes through you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Arms stretched wide, muscles warming up: the body becoming a receiver for the original broadcast." }
+        ],
+        intuition: "You have a little bit of that light inside you. Let there be light is not a religious sentence. It is a physics sentence. The first thing the universe did was turn on the lights. Before matter. Before gravity had anything to pull. Before atoms had partners. Light. The photon has no mass. It has no charge. It does not age. It experiences no time. And it is the fastest thing in existence. Every religion that ever existed made light the first chapter. Every creation story opens the same way. Because every creation story is telling the same truth from a different chair. Light is not a metaphor. Light is the literal first word.",
+        links: [
+          { label: "Photon Epoch", url: "https://en.wikipedia.org/wiki/Photon_epoch" },
+          { label: "Cosmic Microwave Background", url: "https://en.wikipedia.org/wiki/Cosmic_microwave_background" },
+          { label: "Fiat Lux", url: "https://en.wikipedia.org/wiki/Fiat_lux" }
+        ],
+        songs: [
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" }
+        ],
+        advanced: "Light as fundamental gauge boson of the electromagnetic force. The photon epoch: light trapped in dense plasma until recombination made the universe transparent. First light is still detectable as cosmic microwave background. Light is the medium of relationship in the physical world — the bridge between wave (immaterial) and particle (material). Light is not a metaphor. Light is the literal first word." },
+
+      { id: "duality-separation", num: 4, icon: "⚝", title: "Duality & Separation", subtitle: "Even Though We Are Different We Are Two Sides of the Same Coin",
+        simple: "Have you ever played with a magnet? It has two sides, a north and a south, and you need both for it to work. Creation happened by taking the one big thing and splitting it into pairs, like up and down, hot and cold. We need these opposites so we can understand the world. We would not know what happy was if we never felt sad. This separation lets us have friends to talk to instead of just being all alone. It teaches us that even though we are different from others, we are two sides of the same coin.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A high note followed by a very low note: the universe demonstrating range." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Vanilla then lemon — sweet then sharp: opposites entering through the same nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salty then sweet: the tongue proving that contrast creates meaning." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "One hand on something cold, the other on something warm: your body bridging two worlds at once." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A shadow on the ground — the sun creating the dark: opposites making each other visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Squeezing your left hand then your right: the body discovering it contains both sides." }
+        ],
+        intuition: "Even though we are different we are two sides of the same coin. The universe could not stay one. One cannot experience itself. A mirror needs distance to reflect. So the one became two. And two became everything. This is not a tragedy. This is the invention of relationship. Before the split there was no love because love requires a lover and a beloved. Before the split there was no music because music requires silence and sound. Before the split there was no you because you require a not-you to recognize yourself. Duality is not the problem. Duality is the gift. The coin needs both sides or it cannot spin.",
+        links: [
+          { label: "Symmetry Breaking", url: "https://en.wikipedia.org/wiki/Symmetry_breaking" },
+          { label: "Dualism", url: "https://en.wikipedia.org/wiki/Dualism_(philosophy_of_mind)" },
+          { label: "Wave-Particle Duality", url: "https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality" }
+        ],
+        songs: [
+          { title: "Ebony and Ivory", artist: "McCartney & Wonder", url: "https://www.youtube.com/watch?v=TZtiJN6yiik" },
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Duality as functional basis of manifestation. Symmetry breaking: a unified force splitting into distinct forces. Without separation the universe remains featureless and homogenous. The creation of the observer and the observed. Conflict (opposition) is a prerequisite for existence and catalyst for return to unity. Duality is not the problem. Duality is the gift." },
+
+      { id: "vibrational-word", num: 5, icon: "ॐ", title: "Vibrational Word / Sound", subtitle: "Your Voice Has the Power to Change How Things Feel Around You",
+        simple: "Did you know that everything in the world is actually humming? Even though things look still, like a table or a rock, they are made of tiny parts that are wiggling very fast. Many stories say the world was spoken into being. It is like the universe is one giant song, and you are a special note in that song! When you speak kind words, you are making the world's song even more beautiful. Your voice has the power to change how things feel around you because everything is listening to the rhythm of life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Humming a low note and feeling your chest vibrate: becoming the instrument." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint — a sharp scent that feels like a fast vibration: frequency you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pop rocks on your tongue: tiny explosions of vibration you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on a speaker feeling the thump: sound entering through the skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ripples moving across a pond: sound made visible in water." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing still, feeling the tiny vibrations of your own heart: the word that keeps speaking you into existence." }
+        ],
+        intuition: "Your voice has the power to change how things feel around you. In the beginning was the word. Not in the beginning was the thing. The word. The vibration. The sound. String theory says every particle is a vibrating string. The frequency determines what it becomes. Change the frequency, change the particle. Change the word, change the world. A kind word vibrates differently than a cruel word. You can feel it. The room changes. The body changes. The future changes. You are not just speaking. You are composing. Every word you say is a note in the song the universe is still singing.",
+        links: [
+          { label: "String Theory", url: "https://en.wikipedia.org/wiki/String_theory" },
+          { label: "Cymatics", url: "https://en.wikipedia.org/wiki/Cymatics" },
+          { label: "Logos", url: "https://en.wikipedia.org/wiki/Logos" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Good Vibrations", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=Eab_beh07HU" }
+        ],
+        advanced: "String theory: fundamental particles are vibrating loops of string whose frequency determines properties. The universe is a harmonic construction. The logos: structure and meaning inherent in the vibration of thought and speech. Creation is not a static event but a persistent vibration — ongoing harmonic resonance. Every word you say is a note in the song the universe is still singing." },
+
+      { id: "cycles-of-time", num: 6, icon: "♾", title: "Cycles of Time", subtitle: "Ending Something Is Just the Start of Something New",
+        simple: "Think about how a tiny seed turns into a tree, drops more seeds, and then those seeds grow into new trees. The universe loves to do things in circles! The sun goes down but always comes back up. Winter turns into spring every single year. This tells us that ending something is just the start of something new. You do not have to be afraid of things changing because the world is always spinning forward into a new beginning. You are part of a giant never-ending dance that has been going on forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clock tick-tock or a rhythmic drumbeat: time keeping its own time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A decaying leaf in fall that will feed flowers in spring: death and birth sharing a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An orange with seeds inside that want to grow again: the future hiding in the present." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing a circle on your palm over and over: infinity under your fingertip." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flower blooming in time-lapse: proof that endings and beginnings are the same frame." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A deep breath in and out — noticing the air you exhale is what trees inhale: your body proving the cycle with every breath." }
+        ],
+        intuition: "Ending something is just the start of something new. The water in your glass was once a cloud. Before that it was an ocean. Before that it was a river. Before that it was rain. Before that it was a cloud. The water does not end. The water changes costumes. You do not end. You change costumes. The universe has been running the same play with the same atoms for fourteen billion years. The cast keeps changing but the atoms are the original cast. You are wearing atoms that were once inside a dinosaur. You are wearing atoms that were once inside a star. Nothing is lost. Everything is recycled. The circle never breaks.",
+        links: [
+          { label: "Cyclic Model", url: "https://en.wikipedia.org/wiki/Cyclic_model" },
+          { label: "Samsara", url: "https://en.wikipedia.org/wiki/Sa%E1%B9%83s%C4%81ra" },
+          { label: "Eternal Return", url: "https://en.wikipedia.org/wiki/Eternal_return" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Turn! Turn! Turn!", artist: "The Byrds", url: "https://www.youtube.com/watch?v=W4ga_M5Zdn4" },
+          { title: "Cat's in the Cradle", artist: "Harry Chapin", url: "https://www.youtube.com/watch?v=KUwjNBjqR-c" }
+        ],
+        advanced: "Conformal cyclic cosmology (Penrose): infinite iterations of expansion. Challenges the linear arrow of time. The eternal return shifts focus from terminal endpoint to continuous transformation. Matter is never lost, only rearranged in different costumes across time. Nothing is lost. Everything is recycled. The circle never breaks." },
+
+      { id: "sacred-geometry-creation", num: 7, icon: "❄", title: "Sacred Geometry (The Blueprint)", subtitle: "You Have These Patterns in Your Own Body Too",
+        simple: "If you look closely at a snowflake or a sunflower, you will see they have perfect shapes and patterns. It is like the universe used a ruler and a compass to draw everything! These patterns are called sacred geometry because they are the secret codes that help things grow strong and beautiful. You have these patterns in your own body too — in your fingerprints and even in the way your DNA is shaped! Seeing these shapes everywhere proves that the world is not just a big accident; it was made with a beautiful plan.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A perfect chord on a piano — three notes fitting together: harmony as math." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A pinecone — scales arranged in a perfect spiral: the golden ratio you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A starfruit sliced crosswise revealing the hidden star: geometry you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing the spiral of a seashell: the universe's favorite number under your finger." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own reflection — two eyes perfectly placed: symmetry looking at symmetry." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Hands together in prayer shape — feeling the perfect match: your body proving it is built on the same blueprint." }
+        ],
+        intuition: "You have these patterns in your own body too. The spiral in the galaxy is the spiral in the hurricane is the spiral in the sunflower is the spiral in your ear is the spiral in your DNA. One pattern. Five scales. This is not coincidence. Coincidence does not repeat at five scales. This is a signature. The golden ratio shows up in the Parthenon and in the proportions of your face. The Fibonacci sequence shows up in rabbit populations and in the branching of your lungs. You are not looking at sacred geometry. You are made of sacred geometry. The blueprint is not out there. The blueprint is you.",
+        links: [
+          { label: "Sacred Geometry", url: "https://en.wikipedia.org/wiki/Sacred_geometry" },
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+          { label: "Fibonacci Sequence", url: "https://en.wikipedia.org/wiki/Fibonacci_sequence" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Every Little Thing She Does Is Magic", artist: "The Police", url: "https://www.youtube.com/watch?v=aENX1Sf3fgQ" },
+          { title: "Chariots of Fire", artist: "Vangelis", url: "https://www.youtube.com/watch?v=CSav51fVlKU" }
+        ],
+        advanced: "Sacred geometry: the golden ratio (φ ≈ 1.618) as fundamental building block of reality. Mirrored in quasicrystals and the E8 Lie group. A universal blueprint suggesting underlying mathematical intelligence. The universe optimizes for efficiency and beauty simultaneously. The blueprint is not out there. The blueprint is you." },
+
+      { id: "consciousness-first", num: 8, icon: "👁", title: "Consciousness First", subtitle: "You Are Not Just a Person Living in the World — You Are the World Thinking About Itself",
+        simple: "Have you ever had a great idea for a drawing before you even picked up your crayons? Some people believe the whole universe started as a great thought in a giant mind. Instead of just rocks and gas making the world, it was consciousness — the ability to think and feel — that came first. This means that your thoughts are very powerful. When you imagine a better world or a kind act, you are using the same creative power that started the universe. You are not just a person living in the world; you are the world thinking about itself!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song playing in your head without using your ears: proof that sound does not need air." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Imagining fresh cookies until your mouth waters: the mind creating physical reality from nothing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Thinking about a sour lemon until your jaw tingles: consciousness bossing the body around." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Imagining soft kitten fur until you feel it: the mind touching what the hand cannot reach." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Eyes closed, visualizing a bright purple elephant: consciousness creating something that does not exist and seeing it anyway." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Imagining you are floating in water while sitting in a chair: the body obeying a reality the mind invented." }
+        ],
+        intuition: "You are not just a person living in the world — you are the world thinking about itself. The eye cannot see itself. So the eye invented the mirror. The universe cannot experience itself. So the universe invented you. You are not an accident in the cosmos. You are the cosmos looking in a mirror. When you think a thought, the universe is thinking. When you feel joy, the universe is feeling joy. When you ask why am I here, the universe is asking why am I here. Consciousness did not evolve from matter. Consciousness is what matter does when it wants to know itself.",
+        links: [
+          { label: "Participatory Universe", url: "https://en.wikipedia.org/wiki/Participatory_realism" },
+          { label: "Panpsychism", url: "https://en.wikipedia.org/wiki/Panpsychism" },
+          { label: "Observer Effect", url: "https://en.wikipedia.org/wiki/Observer_effect_(physics)" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Nights in White Satin", artist: "The Moody Blues", url: "https://www.youtube.com/watch?v=cs4RG9u8IVU" },
+          { title: "Everything I Wanted", artist: "Billie Eilish", url: "https://www.youtube.com/watch?v=EgBJmlPo8Xw" }
+        ],
+        advanced: "Wheeler's participatory universe and integrated information theory: consciousness as fundamental property of the universe, not a byproduct. The observer's role in collapsing the wavefunction suggests mind and matter are deeply intertwined. Idealism: the physical world as manifestation of deeper mental reality. Consciousness is what matter does when it wants to know itself." },
+
+      { id: "cosmic-egg", num: 9, icon: "🥚", title: "The Cosmic Egg", subtitle: "Big Things Often Start Small and Hidden",
+        simple: "An egg is a wonderful thing because it looks like a simple rock on the outside, but it has a whole new life growing on the inside. Many cultures say the universe started as a cosmic egg. All the energy and stars were tucked inside a shell, kept warm and safe until it was time to hatch. This tells us that big things often start small and hidden. Even when you feel small, you might be carrying a giant universe of ideas and love inside you, just waiting for the right time to crack the shell and come out!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The quiet hum of a refrigerator or distant engine: potential energy making its background noise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A fresh egg or a bowl of flour — things that can become something else: the scent of not yet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A hard-boiled egg — packed with energy: the taste of potential in a shell." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth oval stone — its fullness in your hand: holding a universe that decided to be small." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A nebula — a cloud where stars are born: the cosmic egg still hatching." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Curling into a tiny ball then slowly stretching out: your body rehearsing the moment the egg cracked open." }
+        ],
+        intuition: "Big things often start small and hidden. The oak tree is in the acorn. The symphony is in the silence before the first note. The universe was in the egg. You were in a single cell. Every great thing that ever happened started as something so small you could miss it. This is the lesson: do not judge by current size. The seed does not look like the forest. The egg does not look like the eagle. The idea in your head right now does not look like the thing it will become. But it will become. Because everything that hatches was once something that waited. And everything that waited was something that believed the shell was temporary.",
+        links: [
+          { label: "World Egg", url: "https://en.wikipedia.org/wiki/World_egg" },
+          { label: "Hiranyagarbha", url: "https://en.wikipedia.org/wiki/Hiranyagarbha" },
+          { label: "Cosmic Inflation", url: "https://en.wikipedia.org/wiki/Inflation_(cosmology)" }
+        ],
+        songs: [
+          { title: "I Am the Walrus", artist: "The Beatles", url: "https://www.youtube.com/watch?v=t1Jm5epJr10" },
+          { title: "Cosmic Love", artist: "Florence + The Machine", url: "https://www.youtube.com/watch?v=2EIeUlvHAiM" },
+          { title: "Firework", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=QGJuMBdaqIw" }
+        ],
+        advanced: "The cosmic egg: archetype representing the singularity in pre-manifest state. Hiranyagarbha (universal germ) in Vedic philosophy. The inflationary universe describes rapid expansion from compact high-energy state. Emphasizes potentiality over actuality. The universe contains all components for its own evolution within itself. The shell was always temporary." },
+
+      { id: "anthropogenesis", num: 10, icon: "✋", title: "Anthropogenesis (The Making of Us)", subtitle: "You Are the Grand Finale of a Fourteen-Billion-Year Story",
+        simple: "The story of creation always ends with us — humans! We are special because we are the eyes and ears of the universe. When you look at a star, it is like the universe is looking at itself through your eyes. Many stories say we were made from the dust of the earth or the breath of the wind. This means we belong here! You are not a stranger on earth; you are a part of the family of all living things. Your job is to be the storyteller who notices how amazing everything is.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound of your own voice saying your name: the universe calling itself something specific." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your own skin — a unique scent that belongs only to you: fourteen billion years of chemistry arriving at your specific formula." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A glass of plain water — feeling how it gives you life: the simplest transaction between the cosmos and the body." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the texture of your hair or clothes: the universe touching itself through your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking deeply into your own eyes in a mirror: the universe staring back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Wiggling your toes and fingers at the same time: the body proving it is in charge of matter that was once in charge of nothing." }
+        ],
+        intuition: "You are the grand finale of a fourteen-billion-year story. Hydrogen does not know it is hydrogen. Stars do not know they are beautiful. Oceans do not know they are deep. But you do. You know. That is the miracle. Out of fourteen billion years of rocks and gas and fire and ice, the universe finally built something that could turn around and say wow. You are the wow. You are the universe's first and only chance to experience itself. Every time you notice a sunset, the sunset is being noticed for the first time by the only thing in the cosmos that can appreciate it. You are not in the universe. You are the universe. With eyes. With ears. With a heart that breaks and heals and breaks and heals. You are the point of the whole story.",
+        links: [
+          { label: "Anthropic Principle", url: "https://en.wikipedia.org/wiki/Anthropic_principle" },
+          { label: "Human Evolution", url: "https://en.wikipedia.org/wiki/Human_evolution" },
+          { label: "Fine-Tuned Universe", url: "https://en.wikipedia.org/wiki/Fine-tuned_universe" }
+        ],
+        songs: [
+          { title: "Human", artist: "The Killers", url: "https://www.youtube.com/watch?v=RIZdjT1472Y" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "The anthropic principle: physical constants are exactly what they need to be for observers to exist. Consciousness as a milestone in the universe's development toward self-awareness. We are the sensory organs of the infinite, tasked with observation and meaning-making. You are not in the universe. You are the universe. With eyes. You are the point of the whole story." },
+    ],
+
+
 
 
 
