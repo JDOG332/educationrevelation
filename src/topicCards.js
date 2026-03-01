@@ -17894,6 +17894,250 @@ export const TOPIC_CARDS = {
 
   },
 
+
+  // ═══════════════════════════════════════════════════════════════════
+  // DOOR 9: THE SELF (theself) — "The Mirror Door"
+  // ═══════════════════════════════════════════════════════════════════
+  theself: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > EMOTION & FEELING (emotion)
+    // ═══════════════════════════════════════════════════════════════
+
+    emotion: [
+      { id: "interoception", num: 1, icon: "❤️", title: "Interoception (The Inner Eye)", subtitle: "Your Body Sends Little Signals Like a Text Message to Your Brain",
+        simple: "Your body has a secret inner eye that watches everything happening inside you. It listens to your heart beating fast when you are scared and feels the butterflies in your tummy when you are excited. Before you even know you are happy or sad, your body sends these little signals like a text message to your brain. If you learn to listen to these messages, you can understand how you feel much faster. It is like having a superpower that lets you talk to your own organs!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady thump-thump of your own heartbeat in a quiet room: the oldest conversation you have ever been in." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain that makes your chest feel open: the outside air unlocking something inside." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool crisp water when you did not realize you were thirsty: the body knowing before the mind." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on your chest feeling the rise and fall of breath: touching the evidence that you are alive." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle flame flickering in sync with your breathing: the outside world matching your inside rhythm." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your feet pressing into the floor: gravity reminding you that you have a body." }
+        ],
+        intuition: "Your body sends little signals like a text message to your brain. Your body knew you were scared before your mind did. Your stomach clenched before you thought the word fear. Your heart raced before you thought the word danger. The body is not waiting for the brain to tell it how to feel. The body is telling the brain how to feel. This is the secret nobody teaches in school. Emotions do not start in your head. Emotions start in your gut, your chest, your throat, your shoulders. The body is the first responder. The mind is the translator. Learn to read the body and you will never be surprised by your own feelings again.",
+        links: [
+          { label: "Interoception", url: "https://en.wikipedia.org/wiki/Interoception" },
+          { label: "Insular Cortex", url: "https://en.wikipedia.org/wiki/Insular_cortex" },
+          { label: "Allostasis", url: "https://en.wikipedia.org/wiki/Allostasis" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "In My Blood", artist: "Shawn Mendes", url: "https://www.youtube.com/watch?v=36tggrpRoTI" },
+          { title: "Breathe Me", artist: "Sia", url: "https://www.youtube.com/watch?v=SFGvmrJ5rjM" }
+        ],
+        advanced: "Interoception: afferent signaling of physiological state via the lamina I spinothalamic pathway and vagus nerve, terminating in the posterior insula. The bedrock for allostatic regulation — the brain anticipating body needs before they arise. Emotions do not start in your head. Emotions start in your gut, your chest, your throat. The body is the first responder. The mind is the translator." },
+
+      { id: "somatic-marker", num: 2, icon: "⚓", title: "The Somatic Marker", subtitle: "Your Brain Uses Body Feelings as Bookmarks to Help You Choose",
+        simple: "Have you ever had a gut feeling about a choice? This happens because your brain remembers how your body felt the last time you did something similar. If you did something bad before, your stomach might feel tight now to warn you don't do it! Your brain uses these body feelings as bookmarks to help you make decisions quickly. Instead of thinking for a long time, you just feel the right answer in your muscles and skin. It is your body's way of helping you choose the best path.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden loud gong that makes you jump: the body deciding before the mind can argue." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A school cafeteria that makes you feel nervous-excited: smell retrieving a body memory." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon that makes your whole body squeeze: the taste buds pulling the emergency brake." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tingle in your fingers when you are about to win: the body celebrating before the scoreboard." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A red stop sign creating a tiny uh-oh in your belly: color triggering a body response faster than thought." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That sinking feeling on a roller coaster: the body voting with gravity." }
+        ],
+        intuition: "Your brain uses body feelings as bookmarks to help you choose. The gut feeling is not a metaphor. It is a literal biological event. Your viscera are remembering. Your intestines are filing reports. Your skin is keeping score. Every decision you have ever made left a body receipt. And the next time a similar decision appears, the body pulls the receipt before the mind even opens the folder. This is why you know something is wrong before you can explain why. This is why you trust some people on sight and distrust others. The body is reading the room. The body read the room before you walked in.",
+        links: [
+          { label: "Somatic Marker Hypothesis", url: "https://en.wikipedia.org/wiki/Somatic_marker_hypothesis" },
+          { label: "Antonio Damasio", url: "https://en.wikipedia.org/wiki/Antonio_Damasio" },
+          { label: "Gut Feeling", url: "https://en.wikipedia.org/wiki/Gut_feeling" }
+        ],
+        songs: [
+          { title: "Hungry Heart", artist: "Bruce Springsteen", url: "https://www.youtube.com/watch?v=lQFoGFkbXsg" },
+          { title: "Intuition", artist: "Jewel", url: "https://www.youtube.com/watch?v=8Ilh1FwS3GE" },
+          { title: "I Feel It Coming", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=qFLhGq0060w" }
+        ],
+        advanced: "Damasio's somatic marker hypothesis: emotional processes guide behavior and decision-making. Markers processed in the ventromedial prefrontal cortex and amygdala simplify choice by marking options as dangerous or beneficial. The gut feeling is not a metaphor. Your viscera are remembering. The body read the room before you walked in." },
+
+      { id: "autonomic-nervous", num: 3, icon: "⚡", title: "The Autonomic Nervous System", subtitle: "Deep Breaths Are the Brake That Helps You Switch Gears",
+        simple: "Your body has two main gears like a car. One gear is for go which helps you run fast and play hard by making your heart pump. The other gear is for slow down which helps you rest, digest your food, and sleep. These gears work automatically without you even asking them to. Sometimes the go gear gets stuck if we are worried, and we have to help our body switch back to the slow down gear. Deep breaths are like the brake that helps you switch gears.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft low hum of a purring cat: a mammal broadcasting its parasympathetic state to your nervous system." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender flowers that make your shoulders drop: a scent that speaks directly to the brake pedal." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm honey tea — a hug for your throat: sweetness telling the body the danger is over." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy weighted blanket pressing down: pressure convincing the nervous system it is held." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The blue ocean or a clear blue sky: the color of the slow-down gear made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscles going floppy like a ragdoll: the body surrendering to safety." }
+        ],
+        intuition: "Deep breaths are the brake that helps you switch gears. You cannot think your way out of a panic attack. You cannot logic your way out of a racing heart. Because the alarm system is older than language. The fight-or-flight response is three hundred million years old. Language is one hundred thousand years old. You are trying to negotiate with a system that does not speak your language. But it speaks breath. A long slow exhale is the oldest password in the mammalian operating system. It tells the ancient brain: the lion is gone. We can rest. You do not calm down by thinking calm thoughts. You calm down by breathing calm breaths.",
+        links: [
+          { label: "Autonomic Nervous System", url: "https://en.wikipedia.org/wiki/Autonomic_nervous_system" },
+          { label: "Polyvagal Theory", url: "https://en.wikipedia.org/wiki/Polyvagal_theory" },
+          { label: "Heart Rate Variability", url: "https://en.wikipedia.org/wiki/Heart_rate_variability" }
+        ],
+        songs: [
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Weightless", artist: "Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejslrU" },
+          { title: "Shake It Off", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=nfWlot6h_JM" }
+        ],
+        advanced: "ANS divided into sympathetic (fight-or-flight: cortisol, adrenaline) and parasympathetic (rest-and-digest: vagus nerve). Heart rate variability measures the balance. Chronic sympathetic activation without recovery creates allostatic load. A long slow exhale is the oldest password in the mammalian operating system. You calm down by breathing calm breaths." },
+
+      { id: "affective-realism", num: 4, icon: "🎨", title: "Affective Realism", subtitle: "Your Feelings Are Like Sunglasses That Change the Color of Everything You See",
+        simple: "Did you know that if you are very tired, a hill actually looks steeper to your eyes? This is called affective realism. Your brain does not just see the world as it is; it sees the world through how your body feels. If you are cranky or hungry, a friend's joke might seem mean instead of funny. Your feelings are like a pair of colorful sunglasses that change the color of everything you look at. When you know this, you can stop and say maybe the hill is not that big, maybe I am just tired!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clock ticking — annoying when stressed, peaceful when calm: the same sound wearing two costumes." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your own house — a smell you only notice when you have been away: proof that perception is relative." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Food tasting bland when you are sad: the tongue reporting the mood, not the meal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A scratchy sweater feeling painful when you are overwhelmed: the skin amplifying what the heart is carrying." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long hallway feeling impossible when you are sick: the eyes measuring with the body's ruler." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling heavy like lead after a bad day: gravity increasing because the mood said so." }
+        ],
+        intuition: "Your feelings are like sunglasses that change the color of everything you see. You are not seeing the world. You are seeing your body's opinion of the world. The brain is not a camera. The brain is a painter. It takes the raw data from your eyes and ears and then paints it with whatever color your body is currently feeling. Tired paints everything steep. Hungry paints everything hostile. Lonely paints everything cold. This is why two people can stand in the same room and see two different rooms. They are not disagreeing about reality. They are wearing different sunglasses. Take off the glasses. Check your body. Then look again.",
+        links: [
+          { label: "Affective Realism", url: "https://en.wikipedia.org/wiki/Constructed_emotion" },
+          { label: "Predictive Coding", url: "https://en.wikipedia.org/wiki/Predictive_coding" },
+          { label: "Lisa Feldman Barrett", url: "https://en.wikipedia.org/wiki/Lisa_Feldman_Barrett" }
+        ],
+        songs: [
+          { title: "I Can See Clearly Now", artist: "Jimmy Cliff", url: "https://www.youtube.com/watch?v=xzGV1yziaJc" },
+          { title: "Mad World", artist: "Gary Jules", url: "https://www.youtube.com/watch?v=4N3N1MlvVc4" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Affective realism: internal bodily state directly influences sensory perception. The brain is predictive, using interoceptive data to construct external reality. The primary interoceptive cortex and primary visual cortex are deeply interconnected — mood is not a reaction to what you see but a filter determining what you see. Take off the glasses. Check your body. Then look again." },
+
+      { id: "neuroception", num: 5, icon: "🕵️", title: "Neuroception (The Safety Detective)", subtitle: "Your Brain Has a Safety Detective That Never Sleeps",
+        simple: "Your brain has a safety detective that never sleeps. It is always looking at people's faces and listening to their voices to see if they are friends or foes. It does this so fast that you do not even have to think about it! If someone has a hard face, your detective sends a signal to your body to tighten your muscles. If someone has a soft voice, your detective tells your body it is okay to relax and play. This helps us stay safe and find people who are kind to us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The difference between a sharp yell and a soft lullaby: your nervous system reading the voice before the words." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The safe smell of a clean blanket: a scent that turns off the alarm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Something sweet that tells your body this is safe energy: sugar as a cease-fire signal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle high-five that says we are friends: safety transmitted through the palm in half a second." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Noticing if someone's eyes are crinkly-happy or wide-scary: the face as a billboard the body reads instantly." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling shielded or open in a room full of people: the body casting its vote before the mind counts the ballots." }
+        ],
+        intuition: "Your brain has a safety detective that never sleeps. You walked into a room and knew something was wrong before anyone spoke. You met someone and trusted them before they said a word. You heard a tone of voice and your stomach tightened before your ears finished listening. This is neuroception. It is faster than thought. It is older than language. It is the part of you that survived the jungle by reading the room in milliseconds. The problem is that neuroception can be miscalibrated. If you grew up in chaos, your detective sees threat everywhere — even in safe rooms. The work is not to silence the detective. The work is to retrain the detective.",
+        links: [
+          { label: "Neuroception", url: "https://en.wikipedia.org/wiki/Neuroception" },
+          { label: "Stephen Porges", url: "https://en.wikipedia.org/wiki/Stephen_Porges" },
+          { label: "Psychological Safety", url: "https://en.wikipedia.org/wiki/Psychological_safety" }
+        ],
+        songs: [
+          { title: "Somebody's Watching Me", artist: "Rockwell", url: "https://www.youtube.com/watch?v=7YvAYIJSSZY" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" }
+        ],
+        advanced: "Porges' neuroception: neural circuits distinguishing safe, dangerous, or life-threatening situations. Unlike perception (conscious), neuroception is reflexive and bottom-up. The temporal lobe and fusiform gyrus detect facial expressions and vocal prosody. Safety detection inhibits limbic defense circuits, enabling social engagement. The work is not to silence the detective. The work is to retrain the detective." },
+
+      { id: "emotional-granularity", num: 6, icon: "📖", title: "Emotional Granularity", subtitle: "Instead of Two Colors You Get a Box of 100 Crayons",
+        simple: "Imagine if you only had two colors to paint a picture: red and blue. That would be boring and hard to see details! Emotional granularity is like having a box of 100 crayons. Instead of just saying I feel bad, you can say I feel lonely, or I feel tired, or I feel left out. When you use a specific word, it is like giving your brain a map. If your brain knows exactly what is wrong, it knows exactly how to fix the body.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hearing a song and knowing if it is bittersweet or joyful: the ear doing emotional math." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A specific flower that reminds you of nostalgia: scent filing a precise emotional report." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The difference between spicy-excitement and bitter-disappointment: the tongue distinguishing between feelings that look similar." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the grain of wood — learning to feel small differences: the fingers teaching the heart to be precise." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset in peach, gold, and violet — not just orange: the eyes refusing to round down." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing if your body is jittery or shaky — there is a difference: the body offering two words where one used to live." }
+        ],
+        intuition: "Instead of two colors you get a box of 100 crayons. A doctor who says you are sick is less helpful than a doctor who says you have strep throat. Specificity is the difference between a problem and a solution. The same is true for feelings. I feel bad is a problem with no address. I feel excluded is a problem with an address. And problems with addresses can be solved. The word is the medicine. When you name the feeling precisely, the brain activates the precise circuit to regulate it. Vague labels produce vague responses. Precise labels produce precise healing. Build your vocabulary. It is building your pharmacy.",
+        links: [
+          { label: "Emotional Granularity", url: "https://en.wikipedia.org/wiki/Emotional_granularity" },
+          { label: "Alexithymia", url: "https://en.wikipedia.org/wiki/Alexithymia" },
+          { label: "Emotional Intelligence", url: "https://en.wikipedia.org/wiki/Emotional_intelligence" }
+        ],
+        songs: [
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" },
+          { title: "Jealous", artist: "Labrinth", url: "https://www.youtube.com/watch?v=50VWOBi0VFs" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" }
+        ],
+        advanced: "Barrett's emotional granularity: the ability to characterize specificity of emotional states. High granularity reduces maladaptive coping by enabling precise solutions. The conceptual act theory: the brain uses language as a tool to categorize interoceptive data. Vague labels produce vague responses. Precise labels produce precise healing. Build your vocabulary — it is building your pharmacy." },
+
+      { id: "vagus-nerve", num: 7, icon: "🔌", title: "The Vagus Nerve (The Message Cord)", subtitle: "The Most Important Wire in Your Body for Feeling Calm",
+        simple: "The vagus nerve is like a long invisible string that goes from your brain all the way down to your heart and your tummy. It is the message cord that tells your heart to beat slower and your tummy to relax. When you take a very slow breath out, you are actually tickling this nerve! It tells your brain hey everything is okay we can relax now. It is the most important wire in your body for helping you feel calm and connected to other people.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Making a voo or humming sound that vibrates in your chest: manually activating the nerve with your own voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint that makes you take a big deep breath: the nose pulling the vagus nerve's trigger." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold grape savored slowly: the throat sending a calm report up the wire." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle massage on the sides of your neck: touching the nerve through the skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The rhythmic waves of the ocean: visual rhythm syncing the nervous system." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The vibration of your own voice in your throat: the body hearing itself from the inside." }
+        ],
+        intuition: "The most important wire in your body for feeling calm. The vagus nerve is the longest nerve in your body. It wanders from your brain to your gut, touching your heart, your lungs, your throat on the way down. Eighty percent of its fibers go up — from body to brain. Only twenty percent go down. This means the body is talking to the brain four times more than the brain is talking to the body. This is why meditation works. This is why singing works. This is why humming works. This is why a long exhale works. You are not calming your mind. You are sending a calm signal up the wire. And the brain believes whatever the wire says.",
+        links: [
+          { label: "Vagus Nerve", url: "https://en.wikipedia.org/wiki/Vagus_nerve" },
+          { label: "Vagal Tone", url: "https://en.wikipedia.org/wiki/Vagal_tone" },
+          { label: "Vagus Nerve Stimulation", url: "https://en.wikipedia.org/wiki/Vagus_nerve_stimulation" }
+        ],
+        songs: [
+          { title: "Breathe", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=mrojrDCI02k" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Pocketful of Sunshine", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=gte3BoXKwP0" }
+        ],
+        advanced: "Cranial nerve X: primary component of the parasympathetic nervous system. Bidirectional: 80% afferent (body to brain), 20% efferent (brain to body). Calming the mind is easier through the body (bottom-up) than through thought (top-down). Stimulating vagal tone improves heart health, reduces inflammation, and regulates glucose. The brain believes whatever the wire says." },
+
+      { id: "proprioception-self", num: 8, icon: "🕺", title: "Proprioception (Body GPS)", subtitle: "It Is How You Can Scratch Your Nose Without Looking in a Mirror",
+        simple: "Proprioception is your body's GPS. Even if you close your eyes, you know exactly where your hands are and if your legs are crossed. It is how you can scratch your nose without looking in a mirror! This sense helps you feel solid and real. When we get scared, we sometimes lose this sense and feel floaty. Doing things like jumping or hugging someone tight helps your GPS reset so you feel like you are back in your own skin again.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The stomp-stomp of your feet on a wooden floor: the sound of the body proving it is here." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dirt or earth that makes you want to stand tall: the ground reminding you where you belong." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Chewing something crunchy like a carrot: the jaw telling the brain I am real." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing as hard as you can against a wall: the wall pushing back is the proof you exist." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Balancing on one foot while looking at a single spot: the eyes and the body negotiating in real time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stretch in your arms when you reach for the sky: the body mapping itself with movement." }
+        ],
+        intuition: "It is how you can scratch your nose without looking in a mirror. You do not have five senses. You have at least nine. And proprioception is the one nobody mentions even though you use it more than sight. Right now, without looking, you know where your left hand is. You know if your legs are crossed. You know if you are leaning. How? Proprioceptors — tiny sensors in every muscle, tendon, and joint — are reporting your exact position to the brain sixty times per second. When this system goes offline — from trauma, from fear, from dissociation — you feel like a ghost. The fix is not thinking about your body. The fix is using your body. Push. Pull. Stomp. Squeeze. The sensors reboot. The ghost becomes solid.",
+        links: [
+          { label: "Proprioception", url: "https://en.wikipedia.org/wiki/Proprioception" },
+          { label: "Body Schema", url: "https://en.wikipedia.org/wiki/Body_schema" },
+          { label: "Dissociation", url: "https://en.wikipedia.org/wiki/Dissociation_(psychology)" }
+        ],
+        songs: [
+          { title: "Can't Stop the Feeling!", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=ru0K8uYEZWw" },
+          { title: "Uptown Funk", artist: "Mark Ronson ft. Bruno Mars", url: "https://www.youtube.com/watch?v=OPf0YbXqDm0" },
+          { title: "Shake It Off", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=nfWlot6h_JM" }
+        ],
+        advanced: "Proprioception: self-movement and body position mediated by mechanosensory neurons in muscles, tendons, and joints. Provides the brain a body schema — a map of the body in space. Vital for self-agency. Disruptions lead to dissociation. The fix is not thinking about your body. The fix is using your body. Push. Pull. Stomp. The sensors reboot. The ghost becomes solid." },
+
+      { id: "homeostasis-self", num: 9, icon: "⚖️", title: "Homeostasis (The Smart Thermostat)", subtitle: "Your Body Is Always Trying to Find the Perfect Middle",
+        simple: "Homeostasis is like a smart thermostat for your whole body. If you get too hot, it makes you sweat to cool down. If you get too cold, it makes you shiver to warm up. But it does not just do this for heat — it does it for feelings too! If you get too excited, your body tries to bring you back to calm. Your body is always trying to find the perfect middle. It works very hard every second to make sure you stay balanced and healthy.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence after a loud noise: the ears recalibrating to the middle." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The fresh smell of an open window clearing a room: the nose finding neutral." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect taste of a meal when you are exactly hungry enough: the tongue reporting balance." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A lukewarm bath — neither hot nor cold: the skin surrounded by its own temperature." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly symmetrical pattern or a clean room: visual balance calming the visual brain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still and feeling your center: the body finding the point where all forces cancel out." }
+        ],
+        intuition: "Your body is always trying to find the perfect middle. Your body is performing ten thousand corrections per second right now. Blood sugar too high — release insulin. Temperature rising — open the capillaries. Oxygen too low — breathe deeper. You do not ask for any of this. It happens. The body is a self-correcting machine that has been running without a reboot for your entire life. Emotions work the same way. Too much joy and the body pulls you back. Too much grief and the body pushes you forward. The middle is not boring. The middle is where you are most alive. Because from the middle you can move in any direction.",
+        links: [
+          { label: "Homeostasis", url: "https://en.wikipedia.org/wiki/Homeostasis" },
+          { label: "Allostatic Load", url: "https://en.wikipedia.org/wiki/Allostatic_load" },
+          { label: "Circadian Rhythm", url: "https://en.wikipedia.org/wiki/Circadian_rhythm" }
+        ],
+        songs: [
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Unstoppable", artist: "Sia", url: "https://www.youtube.com/watch?v=cxjvTXo9WWM" }
+        ],
+        advanced: "Homeostasis: steady internal conditions maintained by living systems. Allostasis achieves stability through change. When the body fails to return to set point, allostatic load accumulates as chronic stress. Emotions are alarms for homeostatic drift. The middle is not boring. The middle is where you are most alive. From the middle you can move in any direction." },
+
+      { id: "limbic-resonance", num: 10, icon: "💞", title: "Limbic Resonance", subtitle: "Our Hearts Are All Talking to Each Other Without Using Any Words",
+        simple: "Have you ever noticed that if your best friend is really sad, you start to feel a little bit sad too? Or if someone starts laughing really hard, you cannot help but laugh? This is called limbic resonance. Our brains are actually leaky! We send out invisible signals that other people's bodies pick up. It helps us feel what other people feel so we can take care of each other. It is like our hearts are all talking to each other without using any words at all.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A huge crowd cheering together: individual voices becoming one sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A baby's scent that makes everyone feel gentle: chemistry bypassing the intellect." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family-style meal where everyone eats the same thing: synchrony through the stomach." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A group hug where everyone's hearts are close: resonance through proximity." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing someone yawn and then yawning yourself: proof that the nervous system is contagious." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in step with a friend without trying: two bodies agreeing on a rhythm neither one chose." }
+        ],
+        intuition: "Our hearts are all talking to each other without using any words. Put two metronomes on the same table. They will sync. Not because they decided to. Because the table is vibrating and the vibrations pull them into rhythm. You are a metronome. Every person in the room is a metronome. And the room is the table. This is why a calm person calms a room. This is why an anxious person makes a room anxious. This is why laughter is contagious and yawns are contagious and grief is contagious. You are not separate. You are leaking. Everyone is leaking. And what leaks out of you becomes the weather in the room. Choose your signal carefully. Because the room is always listening.",
+        links: [
+          { label: "Limbic Resonance", url: "https://en.wikipedia.org/wiki/Limbic_resonance" },
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Empathy", url: "https://en.wikipedia.org/wiki/Empathy" }
+        ],
+        songs: [
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=9AjkUyX0rVw" }
+        ],
+        advanced: "Limbic resonance: deep emotional states shared via the hypothalamus, amygdala, and hippocampus. Hyperscanning shows brain waves and heart rates literally sync during rapport. An evolutionarily ancient system from mammalian mother-offspring bonding. Choose your signal carefully. Because the room is always listening." },
+    ],
+
+  },
+
 };
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
