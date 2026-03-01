@@ -23347,6 +23347,243 @@ export const TOPIC_CARDS = {
         advanced: "Kintsugi: golden joinery — the break illuminated not hidden. Tedeschi & Calhoun: 89% of trauma survivors reported positive change. Growth does not negate loss. The repair transforms the break into part of the story. The cracks are where the light gets in. The research confirms what the artists always understood." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // LOVE (filter) > ROMANTIC LOVE & THE PAIR (romantic)
+    // ═══════════════════════════════════════════════════════════════
+
+    romantic: [
+      { id: "biochemical-attachment-cuddle-code", num: 1, icon: "🧬", title: "Bio-Chemical Attachment (The Cuddle Code)", subtitle: "A Secret Code Written in Your Blood That Says This Person Is My Home",
+        simple: "Inside your body, there are tiny messengers called hormones that act like a special kind of glue. When you hug someone you love, your brain releases cuddle chemicals like oxytocin that make you feel safe and happy. This is not just a feeling; it is your body's way of making sure you stay close to people who care for you. Over time, these chemicals help two people feel like they belong together. It is like a secret code written in your blood that says this person is my home.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady thumping of a partner's heartbeat: the sound of another organism's persistence — your auditory system calibrating to the rhythm of the body your neurochemistry has designated as primary." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The faint comforting scent of a loved one's skin: the scent of identified partner — olfactory recognition bypassing conscious analysis, the nose knowing home before the mind names it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A warm shared meal that feels like gratitude to the body: the taste of co-feeding — two metabolisms being fueled from the same source, the biological basis of communion." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long firm hug lasting at least twenty seconds: the touch that crosses the oxytocin threshold — brief contact is social greeting, sustained contact is neurochemical bonding." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A partner's pupils dilating when they look at you: the sight of involuntary attraction — the iris opening wider to let in more light from the stimulus the brain has classified as rewarding." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of fitting perfectly when leaning against someone: the body discovering complementary geometry — two nervous systems finding the configuration that minimizes tension and maximizes contact." }
+        ],
+        intuition: "A secret code written in your blood that says this person is my home. The neurochemistry of pair bonding is a three-stage cascade. Stage one: lust — testosterone and estrogen driving indiscriminate sexual motivation. Stage two: attraction — dopamine, norepinephrine, and serotonin creating focused attention on a specific individual. Stage three: attachment — oxytocin and vasopressin cementing the bond into a durable structure. Helen Fisher mapped this with fMRI at Rutgers. People in early romantic love showed activation in the ventral tegmental area — the dopamine factory — when viewing photos of their beloved. The same region that activates for cocaine. The same reward circuitry. The same addictive potential. But attachment is different from attraction. Attachment recruits different chemistry: oxytocin released during physical contact, vasopressin released during mate-guarding behaviors, endorphins released during sustained proximity. These chemicals do not produce excitement. They produce calm. They produce the feeling of home. The transition from attraction to attachment is the transition from wanting to having. From craving to resting. From fireworks to hearth. Prairie voles — one of the few mammalian species that form lifelong pair bonds — have high densities of oxytocin and vasopressin receptors in their reward centers. Block those receptors and the pair bond dissolves. The code is chemical. The home is molecular. And the body writes the address in hormones.",
+        links: [
+          { label: "Pair Bonding", url: "https://en.wikipedia.org/wiki/Pair_bond" },
+          { label: "Helen Fisher", url: "https://en.wikipedia.org/wiki/Helen_Fisher_(anthropologist)" },
+          { label: "Vasopressin", url: "https://en.wikipedia.org/wiki/Vasopressin" }
+        ],
+        songs: [
+          { title: "Can't Help Falling In Love", artist: "Elvis Presley", url: "https://www.youtube.com/watch?v=vGJTaP6anOU" },
+          { title: "Your Song", artist: "Elton John", url: "https://www.youtube.com/watch?v=GlPlfCy1urI" },
+          { title: "Just the Way You Are", artist: "Bruno Mars", url: "https://www.youtube.com/watch?v=LjhCEhWiKXk" }
+        ],
+        advanced: "Fisher: fMRI shows early love activates ventral tegmental area — same dopamine circuitry as cocaine. Three-stage cascade: lust (testosterone/estrogen), attraction (dopamine/norepinephrine), attachment (oxytocin/vasopressin). Attachment produces calm, not excitement. The code is chemical. The home is molecular." },
+
+      { id: "mutual-selectivity-choosing-each-other", num: 2, icon: "🎯", title: "Mutual Selectivity (Choosing Each Other)", subtitle: "Two People Look at Everyone in the World and Decide They Like Each Other Best — the Beginning of a Daily Promise",
+        simple: "Mutual selectivity is when two people look at everyone in the world and decide that they like each other best. It is like being on a huge playground but only wanting to play on the seesaw with one specific friend. Because both people choose each other at the same time, it creates a special club where only two people are allowed. This choice makes both people feel very important and special. It is the beginning of a promise to keep choosing each other every single day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your name spoken in a tone reserved only for you: the sound of vocal specificity — prosody that the speaker uses for no one else, frequency and warmth calibrated to a single recipient." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The specific perfume or soap of your person: the scent of olfactory exclusivity — one chemical signature that your brain has flagged above all others." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A secret favorite snack only you two enjoy: the taste of shared preference — flavor as private language, a gustatory inside joke." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A secret handshake or specific way of holding hands: the touch of custom protocol — a physical grammar invented by two people and spoken by no one else." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Making eye contact across a crowded room and smiling: the sight of mutual recognition in noise — two signal receivers finding each other's frequency in a room full of static." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in sync matching each other's stride: the body demonstrating unconscious alignment — gait synchronization as the proprioceptive expression of chosen partnership." }
+        ],
+        intuition: "Two people look at everyone in the world and decide they like each other best — the beginning of a daily promise. Selectivity is not passive. It is the most consequential act of executive function a human performs. The prefrontal cortex evaluates hundreds of variables — kindness, intelligence, humor, physical attraction, shared values, complementary neuroticism, resource potential, attachment compatibility — and arrives at a decision that will shape the trajectory of an entire life. But the decision is not made once. This is where romantic mythology collides with psychological reality. The choice to commit is not a single event. It is a daily practice. Rusbult's Investment Model demonstrates that commitment is maintained by three forces: satisfaction with the relationship, quality of alternatives, and size of investment. As investment grows — shared property, shared children, shared memories, shared identity — the cost of leaving increases. But the healthiest relationships are not held together by sunk costs. They are held together by ongoing positive comparison. You stay not because leaving is expensive but because staying is rewarding. The existentialists understood this: Kierkegaard argued that the act of choosing — not the content of the choice — is what creates meaning. By selecting one person, you are not limiting yourself. You are defining yourself. The closing of every other door is what makes the chosen door significant. Without selectivity, nothing matters. With it, one person becomes the most important person. And that importance is renewed every morning you choose to stay.",
+        links: [
+          { label: "Mate Choice", url: "https://en.wikipedia.org/wiki/Mate_choice" },
+          { label: "Investment Model", url: "https://en.wikipedia.org/wiki/Investment_model" },
+          { label: "Commitment", url: "https://en.wikipedia.org/wiki/Interpersonal_commitment" }
+        ],
+        songs: [
+          { title: "I Will Always Love You", artist: "Whitney Houston", url: "https://www.youtube.com/watch?v=3JWTaaS7LdU" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" },
+          { title: "At Last", artist: "Etta James", url: "https://www.youtube.com/watch?v=S-cbOl96RFM" }
+        ],
+        advanced: "Rusbult: commitment maintained by satisfaction, quality of alternatives, and investment size. Healthiest relationships held by ongoing positive comparison, not sunk costs. Kierkegaard: the act of choosing creates meaning. By selecting one person you define yourself. Without selectivity nothing matters." },
+
+      { id: "emotional-regulation-calm-harbor", num: 3, icon: "🌊", title: "Emotional Regulation (The Calm Harbor)", subtitle: "Your Partner Acts Like a Calm Harbor — a Teammate Who Helps Carry the Heavy Backpack",
+        simple: "Sometimes we feel like a stormy ocean with big scary waves of sadness or anger. Emotional regulation in a pair means that your partner acts like a calm harbor or a big anchor. When one person is upset, the other person helps them breathe and feel okay again. By talking and being kind, you help each other's hearts beat at a normal speed. It is like having a teammate who helps you carry a heavy backpack so you do not get too tired.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A calm low-frequency voice saying shhh: the sound of the parasympathetic system being transmitted — one nervous system manually activating another's calming circuitry through vocal frequency." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean laundry or a home that feels safe: the scent of the regulated environment — the olfactory confirmation that chaos has been contained within these walls." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool water offered during a stressful moment: the taste of someone noticing your body before you did — hydration as care, the glass of water as the smallest and most profound act of love." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle hand on the upper back: the touch of co-regulation — pressure on the thoracic spine that activates the vagal brake and tells the sympathetic system to stand down." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A partner's face softening when they see you: the sight of the threat response deactivating in another person — their facial muscles relaxing because your presence signals safety." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your breathing slowing to match your partner's: the body entraining to another's respiratory rhythm — two diaphragms synchronizing, two nervous systems becoming one regulatory unit." }
+        ],
+        intuition: "Your partner acts like a calm harbor — a teammate who helps carry the heavy backpack. Stephen Porges' Polyvagal Theory explains why. The vagus nerve — the longest cranial nerve in the body — has two branches. The dorsal vagal branch controls shutdown: freeze, collapse, dissociation. The ventral vagal branch controls social engagement: eye contact, vocal prosody, facial expression, listening. When you are in ventral vagal mode — feeling safe and connected — you can think clearly, communicate effectively, and regulate your emotions. When you drop into sympathetic activation — fight or flight — or dorsal vagal shutdown — freeze — you lose access to those capacities. Your partner's calm voice, steady gaze, warm touch, and regulated breathing activate your ventral vagal circuit. They are not just being nice. They are physiologically pulling you back into the zone where your brain can function. This is co-regulation. And it is not optional luxury. It is biological necessity. The human nervous system was designed to be regulated by other nervous systems. The idea that you should be able to regulate yourself entirely on your own is a cultural myth that contradicts everything neuroscience knows about how humans actually work. You are not weak for needing your partner to help you calm down. You are mammalian.",
+        links: [
+          { label: "Polyvagal Theory", url: "https://en.wikipedia.org/wiki/Polyvagal_theory" },
+          { label: "Co-regulation", url: "https://en.wikipedia.org/wiki/Co-regulation" },
+          { label: "Stephen Porges", url: "https://en.wikipedia.org/wiki/Stephen_Porges" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+        ],
+        advanced: "Porges: Polyvagal Theory — ventral vagal (social engagement), sympathetic (fight/flight), dorsal vagal (freeze). Partner's calm voice and steady gaze activate your ventral vagal circuit — physiologically pulling you back into functional zone. Self-regulation as sole strategy is a cultural myth. You are not weak for needing co-regulation. You are mammalian." },
+
+      { id: "pillow-effect-secure-base", num: 4, icon: "🏰", title: "The Pillow Effect (Secure Base)", subtitle: "A Home for Your Heart You Can Always Come Back To — Safety Makes You Stronger and Helps You Grow",
+        simple: "Having a secure base means you have a home for your heart that you can always come back to. Think of it like a base in a game of tag where you are always safe. Because you know your partner will be there for you, you feel much braver to go out and try new things. You can explore the world, take risks, and learn, because you know you have a soft place to land. This safety makes you stronger and helps you grow into the best version of yourself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A key turning in the lock when a partner comes home: the sound of return — the mechanical confirmation that the secure base is being reoccupied, that the cycle of departure and return continues." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A specific dinner meaning it is time to rest: the scent of the day ending safely — the olfactory signal that survival was achieved again and the body can stand down." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The familiar unchanging taste of a shared tea or cocoa: the taste of constancy — the same flavor in the same cup, the gustatory proof that some things do not change." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heavy blankets or a firm grounding bear hug: the touch of distributed weight — deep pressure activating the parasympathetic system, the body interpreting heaviness as safety." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A light left on in the window when it is dark: the sight of someone expecting you — photons arranged by a person who assumed you would come home and prepared the environment for your arrival." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Deep muscle relaxation when you sit together: the body releasing chronic tension — musculature surrendering the vigilance it maintained all day because the secure base has been reached." }
+        ],
+        intuition: "A home for your heart you can always come back to — safety makes you stronger and helps you grow. Brooke Feeney's research at Carnegie Mellon demonstrated that the secure base effect operates in adult romantic relationships exactly as Bowlby described it in infant-caregiver dyads. Partners who perceived their significant other as responsive and available showed greater willingness to pursue personal goals, accept challenges, and explore new opportunities. The mechanism: when the attachment system is satisfied — when you know the base is solid — cognitive resources are freed. You stop allocating mental energy to monitoring the relationship, scanning for abandonment signals, or managing attachment anxiety. That freed energy becomes available for growth, creativity, and risk-taking. This is why secure relationships produce more successful individuals. Not because secure people are inherently more talented. Because they have more cognitive bandwidth. Their brains are not running attachment-monitoring software in the background consuming thirty percent of their processing power. They are all-in on the task at hand because the home question has been answered. Maslow placed belonging and love in the middle of his hierarchy for a reason: without them, self-actualization is physiologically impossible. The pyramid does not skip levels. You cannot build the penthouse without the foundation. And the foundation of adult flourishing is the same as the foundation of infant development: a secure base.",
+        links: [
+          { label: "Secure Base", url: "https://en.wikipedia.org/wiki/Attachment_theory#Secure_base" },
+          { label: "Maslow's Hierarchy", url: "https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs" },
+          { label: "Self-Expansion", url: "https://en.wikipedia.org/wiki/Self-expansion_model" }
+        ],
+        songs: [
+          { title: "Home", artist: "Edward Sharpe & The Magnetic Zeros", url: "https://www.youtube.com/watch?v=DHEOF_rcND8" },
+          { title: "Keep on Loving You", artist: "REO Speedwagon", url: "https://www.youtube.com/watch?v=wJzNZ1c5C9c" },
+          { title: "Take Me Home Country Roads", artist: "John Denver", url: "https://www.youtube.com/watch?v=1vrEljMfXYo" }
+        ],
+        advanced: "Feeney: secure base effect operates in adult romance exactly as Bowlby described in infants. Secure partners free cognitive resources — stop running attachment-monitoring software consuming processing power. Secure relationships produce more successful individuals not through talent but through bandwidth. Maslow: you cannot build the penthouse without the foundation." },
+
+      { id: "shared-reality-secret-world", num: 5, icon: "📚", title: "Shared Reality (The Secret World)", subtitle: "Inside Jokes and Special Names Only You Know — Writing a Book Together Where You Are the Only Two Characters",
+        simple: "When two people are together for a long time, they start to build their own secret world. They have inside jokes that no one else understands and special names for things that only they know. This shared reality is like writing a book together where you are the only two characters. It makes you feel like you are part of something bigger than just yourself. This secret world keeps the relationship strong because it belongs only to the two of you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A specific whistle or call to find each other in a crowd: the sound of private frequency — a signal that means nothing to everyone else and everything to you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A vacation spot you visited together years ago: the scent of shared geography — olfactory data that maps to a location only meaningful because you were both there." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe you invented together on a rainy afternoon: the taste of collaborative creation — flavor as joint intellectual property, a dish that exists because two minds improvised together." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A specific sequence of taps on the hand to say I love you: the touch of private encryption — a message encoded in pressure and timing that only one person in the world can decode." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A photo album of moments only you two remember: the sight of shared memory externalized — images that trigger neural cascades in two brains simultaneously and in no one else's." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing where your partner is in a dark room by feeling: proprioceptive extension — the body's spatial model incorporating another body so thoroughly that you track them without seeing them." }
+        ],
+        intuition: "Inside jokes and special names only you know — writing a book together where you are the only two characters. E. Tory Higgins' Shared Reality Theory describes how relationships create intersubjective spaces — cognitive territories that exist between two minds and in neither alone. When you develop an inside joke, you are creating a unit of meaning that has no referent outside the dyad. It is a word that exists in a language spoken by only two people. Over time, these units accumulate. Private vocabulary. Shared metaphors. Mutual references to experiences no one else witnessed. The effect is the construction of a micro-culture — a complete symbolic system that makes the relationship feel like its own country with its own language, its own history, its own mythology. Gottman found that couples who maintained detailed cognitive maps of each other's inner worlds — who knew each other's dreams, fears, preferences, and daily stresses — had dramatically higher relationship satisfaction and dramatically lower divorce rates. The Love Map is not romance. It is information. It is the accumulated knowledge of another person's interior, maintained and updated through ongoing attention. And the secret world built from that knowledge is the most powerful predictor of relationship longevity ever measured. Not passion. Not compatibility. Shared reality. The book you wrote together that no one else can read.",
+        links: [
+          { label: "Shared Reality Theory", url: "https://en.wikipedia.org/wiki/Shared_reality_theory" },
+          { label: "Gottman Method", url: "https://en.wikipedia.org/wiki/Gottman_method" },
+          { label: "Symbolic Interactionism", url: "https://en.wikipedia.org/wiki/Symbolic_interactionism" }
+        ],
+        songs: [
+          { title: "Our House", artist: "Crosby Stills Nash & Young", url: "https://www.youtube.com/watch?v=TKBbhrosBpc" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Wonderful Tonight", artist: "Eric Clapton", url: "https://www.youtube.com/watch?v=xl7Hd2r0LOs" }
+        ],
+        advanced: "Higgins: Shared Reality Theory — intersubjective spaces exist between two minds and in neither alone. Inside jokes are meaning units in a language spoken by only two people. Gottman: couples with detailed cognitive maps of each other's inner worlds had dramatically lower divorce rates. Shared reality — not passion — is the most powerful predictor of longevity." },
+
+      { id: "cognitive-interdependence-two-brains-one", num: 6, icon: "🧠", title: "Cognitive Interdependence (Two Brains One Computer)", subtitle: "Your I Grows into a We — Two Sets of Eyes and Two Hearts Working on Everything Together",
+        simple: "Cognitive interdependence is a fancy way of saying that two brains start to work like one big computer. You start to think about what your partner would like before you even ask them. When you plan your future, you automatically see them standing there with you. It is not that you lose yourself, but that your I grows into a We. This makes solving problems much easier because you have two sets of eyes and two hearts working on everything together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Finishing each other's sentences at the same time: the sound of predictive models converging — two brains running such similar simulations that they produce the same output simultaneously." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Coffee and knowing exactly how your partner takes it: the scent of internalized preference — another person's taste encoded in your procedural memory so deeply it requires no conscious recall." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Ordering a meal knowing your partner will want a bite: the taste of anticipated sharing — the prefrontal cortex including another person's pleasure in its utility calculation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching for a hand at the exact moment they reach for yours: the touch of synchronized intention — two motor systems executing the same program at the same millisecond." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing a We in the mirror instead of just a Me: the sight of expanded identity — the visual field now including another person as a permanent feature of the self-concept." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Phantom presence of your partner when they are not in the room: the body maintaining a proprioceptive model of someone who is physically absent — the nervous system refusing to update their location to gone." }
+        ],
+        intuition: "Your I grows into a We — two sets of eyes and two hearts working on everything together. Arthur Aron's Self-Expansion Model proposes that humans are fundamentally motivated to grow — to expand their resources, perspectives, and identities. Romantic love is the most powerful vehicle for this expansion because when you fall in love, the other person's resources, perspectives, and identity become part of your own. Their knowledge becomes your knowledge. Their skills become your skills. Their network becomes your network. Brain imaging confirms it: when people in established relationships are asked to evaluate traits belonging to their partner, the medial prefrontal cortex — the brain's self-referencing center — activates the same way it does for their own traits. The neural boundary between self and partner becomes porous. Daniel Wegner's Transactive Memory extends this further. Long-term couples develop a distributed memory system where each partner is responsible for different domains of knowledge. She remembers the social calendar. He remembers the tax deadlines. She knows the neighbors' names. He knows the car maintenance schedule. Neither holds the complete picture. Together they hold more than either could alone. This is not codependency. This is cognitive architecture. Two processors sharing a common bus. The We is not the loss of I. The We is the I with expanded bandwidth.",
+        links: [
+          { label: "Self-Expansion Model", url: "https://en.wikipedia.org/wiki/Self-expansion_model" },
+          { label: "Transactive Memory", url: "https://en.wikipedia.org/wiki/Transactive_memory" },
+          { label: "Arthur Aron", url: "https://en.wikipedia.org/wiki/Arthur_Aron" }
+        ],
+        songs: [
+          { title: "I Got You Babe", artist: "Sonny & Cher", url: "https://www.youtube.com/watch?v=80QHRTQ3Kmw" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "You're My Best Friend", artist: "Queen", url: "https://www.youtube.com/watch?v=HaZpZQG2z10" }
+        ],
+        advanced: "Aron: Self-Expansion Model — partner's resources and identity become part of your own. Brain imaging: medial prefrontal cortex activates identically for self-traits and partner-traits. Wegner: Transactive Memory — couples develop distributed knowledge systems. The We is not loss of I. It is I with expanded bandwidth." },
+
+      { id: "reciprocal-vulnerability-armor-off", num: 7, icon: "🔓", title: "Reciprocal Vulnerability (Armor Off)", subtitle: "Taking Off Your Armor and Showing Your Soft Spots — the Bravest Thing a Person Can Do",
+        simple: "Vulnerability is like taking off your armor and showing someone your soft spots. It means telling your partner about things that make you feel sad or scared, even if it feels a little bit yucky at first. When both people do this, it builds a bridge of trust that is very strong. Because you both know each other's secrets, you feel truly seen and known. It is the bravest thing a person can do because it requires a lot of courage to be yourself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A shaky voice telling a difficult truth: the sound of courage — vocal tremor produced by the sympathetic system fighting the parasympathetic system, fear and trust competing in the same throat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain which often brings out deep conversations: the scent of atmospheric honesty — barometric pressure dropping, the world softening, conditions becoming conducive to disclosure." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salty tears wiped away by a partner: the taste of emotion externalized — lacrimal fluid containing stress hormones being physically removed by someone who chose to stay close enough to touch your face." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding hands tightly during a hard conversation: the touch of anchoring — grip pressure increasing as emotional intensity rises, the body seeking physical stability when psychological stability wavers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into someone's eyes without looking away even when nervous: the sight of sustained mutual gaze — the courage to let another person's visual cortex process your unedited face." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your chest opening up when you finally say what is on your mind: the body releasing the muscular contraction that was holding the secret in — the ribcage expanding because the diaphragm is no longer bracing against disclosure." }
+        ],
+        intuition: "Taking off your armor and showing your soft spots — the bravest thing a person can do. Brené Brown spent twenty years studying vulnerability and arrived at a paradox: vulnerability is the birthplace of love, belonging, joy, courage, empathy, and creativity. And yet it is the one thing most people spend their lives avoiding. The mechanism: self-disclosure operates on a reciprocal escalation model. Person A reveals something slightly risky. Person B meets it with validation rather than judgment. Person A, emboldened, reveals something deeper. Person B reciprocates with their own disclosure. The spiral deepens. Each cycle strengthens the trust bond. Each cycle increases the stakes. And each cycle, survived, produces a relationship that is stronger than the one before it. Aron's 36 Questions experiment demonstrated this in laboratory conditions: strangers who engaged in progressively escalating self-disclosure reported feeling closer to each other after forty-five minutes than they felt to people they had known for years. Some of them married. The escalation is the mechanism. Not the content. Not what you reveal. The act of revealing. The willingness to be seen without armor. Intimacy is not a state. It is a verb. It is the ongoing practice of letting someone see the parts of yourself that you normally protect. And the courage required never diminishes. Each new depth requires new bravery. The armor wants to come back on. Love is the reason you keep taking it off.",
+        links: [
+          { label: "Brené Brown", url: "https://en.wikipedia.org/wiki/Bren%C3%A9_Brown" },
+          { label: "Self-Disclosure", url: "https://en.wikipedia.org/wiki/Self-disclosure" },
+          { label: "36 Questions", url: "https://en.wikipedia.org/wiki/36_questions_for_increasing_closeness" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Un-break My Heart", artist: "Toni Braxton", url: "https://www.youtube.com/watch?v=p2Rch6WvPJE" }
+        ],
+        advanced: "Brown: vulnerability is the birthplace of love, belonging, joy — and the one thing most people spend their lives avoiding. Aron: 36 Questions — strangers doing escalating self-disclosure felt closer after 45 minutes than to lifelong acquaintances. Intimacy is not a state. It is a verb. Love is the reason you keep taking the armor off." },
+
+      { id: "conflict-resolution-repair-bandaid", num: 8, icon: "🩹", title: "Conflict Resolution (The Repair)", subtitle: "When You Fix a Problem Together the Relationship Becomes Stronger Than Before the Fight",
+        simple: "Every team has disagreements, and every pair will have fights sometimes. The truth is not about never fighting; it is about how you fix it afterward. Repair is like putting a colorful band-aid on a scrape. It means saying I am sorry and really meaning it, or listening even when you are frustrated. When you fix a problem together, the relationship actually becomes stronger than it was before the fight happened.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The words I understand why you are upset: the sound of empathy overriding ego — the vocal declaration that the other person's experience is valid even if you disagree with their conclusion." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh air after a long walk to clear your head: the scent of space — the olfactory environment that exists outside the conflict zone, the reminder that the world is larger than the argument." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A peace-offering snack or favorite drink: the taste of olive branch — calories offered as symbolic repair, the body accepting nourishment from the person it was fighting." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle touch on the arm saying I am still here: the touch of continuity — physical contact that communicates the bond survived the conflict." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A partner's face changing from angry to soft: the sight of the threat response deactivating — facial muscles releasing tension, the visual proof that the storm is passing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stomach tightness letting go when the fight ends: the body releasing the visceral clench of interpersonal threat — the gut confirming that the attachment bond is intact." }
+        ],
+        intuition: "When you fix a problem together the relationship becomes stronger than before the fight. John Gottman observed over three thousand couples in his Love Lab at the University of Washington and identified the single most powerful predictor of relationship success: the repair attempt. Not the absence of conflict. The presence of repair. Conflict is inevitable. Two distinct nervous systems, two distinct histories, two distinct sets of needs — conflict is the mathematical certainty of intimacy. Gottman identified the Four Horsemen — criticism, contempt, defensiveness, and stonewalling — as the behaviors that predict divorce with ninety-three percent accuracy. But even couples who displayed the Horsemen survived if they could repair. A repair attempt is any statement or gesture that prevents negativity from escalating. It can be humor. It can be a touch. It can be the sentence I am sorry, I got defensive. It can be something as small as a facial expression that says I know this is getting out of hand. The repair does not have to be eloquent. It has to be genuine. And it has to be received. Because the repair attempt only works if the partner recognizes it and responds. Gottman found that in happy couples, eighty-six percent of repair attempts were accepted. In unhappy couples, only twenty percent. The difference between lasting love and divorce is not the presence of conflict. It is the permeability of the defense to the repair.",
+        links: [
+          { label: "Gottman Method", url: "https://en.wikipedia.org/wiki/Gottman_method" },
+          { label: "Four Horsemen", url: "https://en.wikipedia.org/wiki/John_Gottman#Four_Horsemen" },
+          { label: "Conflict Resolution", url: "https://en.wikipedia.org/wiki/Conflict_resolution" }
+        ],
+        songs: [
+          { title: "We Can Work It Out", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Qyclqo_AV2M" },
+          { title: "Sorry", artist: "Justin Bieber", url: "https://www.youtube.com/watch?v=fRh_vgS2dFE" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" }
+        ],
+        advanced: "Gottman: repair attempt is the single most powerful predictor of success. Four Horsemen predict divorce at 93% accuracy — but couples who could repair survived. Happy couples: 86% of repair attempts accepted. Unhappy: 20%. The difference is not the presence of conflict — it is the permeability of the defense to the repair." },
+
+      { id: "limerence-vs-love-firework-to-hearth", num: 9, icon: "🔥", title: "Limerence vs. Love (Firework to Hearth)", subtitle: "Limerence Is a Giant Firework — Love Is a Campfire That Burns Slowly and Keeps You Warm All Night",
+        simple: "Limerence is the butterfly feeling you get when you first meet someone you really like. It feels like a giant firework going off in your chest. But real love is more like a campfire that burns slowly and keeps you warm all night. Limerence is exciting but it can go away quickly. Love is the choice to stay and keep the fire going even when the fireworks are finished. Both are great, but the long-lasting warmth is what builds a home.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The difference between a loud pop and a steady hum: the sound of detonation versus combustion — one releases all energy at once, the other distributes it across time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp smoke versus sweet baking pie: the scent of flash versus slow cook — one burns hot and fast, the other transforms ingredients through patience." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sour candy zing versus warm soup richness: the taste of instant intensity versus accumulated depth — one shocks the palate, the other nourishes the whole body." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Static electricity zap versus warmth of a sunbeam: the touch of discharge versus sustained radiation — one is a spike, the other is a continuous field." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Lightning flash versus steady moonlight: the sight of a moment versus a duration — one illuminates everything for a millisecond, the other illuminates enough for a lifetime of navigation." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Roller coaster floatiness versus standing on solid ground: the body experiencing the difference between arousal and security — both real, only one sustainable." }
+        ],
+        intuition: "Limerence is a giant firework — love is a campfire that burns slowly and keeps you warm all night. Dorothy Tennov coined the term limerence in 1979 to distinguish the involuntary state of intense romantic infatuation from the volitional state of committed love. The neurochemistry is different. Limerence is dopamine-dominant: intrusive thoughts, obsessive focus, mood dependence on reciprocation, idealization of the beloved, fear of rejection. It activates the caudate nucleus and the ventral tegmental area — the same circuits as addiction. It feels like a drug because it is a drug. Your own brain is manufacturing it. And like all drug states, it has a half-life. Typically eighteen months to three years. The dopamine surge cannot be sustained. The receptors downregulate. The intensity fades. And here is where relationships either transition or terminate. The couples who survive the fade are the ones who have built something underneath the fireworks: shared reality, secure attachment, cognitive interdependence, reciprocal vulnerability. The campfire. Companionate love is mediated by oxytocin and endorphins rather than dopamine. It does not produce euphoria. It produces warmth, safety, and the quiet contentment of being known. Sternberg's Triangular Theory places it precisely: consummate love requires intimacy plus passion plus commitment. Limerence provides passion. Only time and choice provide the other two. The firework is not love. The firework is the invitation. Love is what you build after the sky goes dark.",
+        links: [
+          { label: "Limerence", url: "https://en.wikipedia.org/wiki/Limerence" },
+          { label: "Dorothy Tennov", url: "https://en.wikipedia.org/wiki/Dorothy_Tennov" },
+          { label: "Triangular Theory of Love", url: "https://en.wikipedia.org/wiki/Triangular_theory_of_love" }
+        ],
+        songs: [
+          { title: "Love Me Tender", artist: "Elvis Presley", url: "https://www.youtube.com/watch?v=N8yS5sFMjqE" },
+          { title: "Thinking Out Loud", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=lp-EO5I60KA" },
+          { title: "I'm Yours", artist: "Jason Mraz", url: "https://www.youtube.com/watch?v=EkHTsc9PU2A" }
+        ],
+        advanced: "Tennov 1979: limerence — dopamine-dominant, 18-month to 3-year half-life. Same circuits as addiction. Companionate love: oxytocin/endorphin-mediated — warmth not euphoria. Sternberg: consummate love = intimacy + passion + commitment. The firework is not love. The firework is the invitation. Love is what you build after the sky goes dark." },
+
+      { id: "altruistic-motivation-circle-of-giving", num: 10, icon: "☀️", title: "Altruistic Motivation (Circle of Giving)", subtitle: "You Stop Keeping Score Because You Know Your Partner Has Your Back — Kindness Makes the World Better",
+        simple: "Altruism in a pair means you truly want your partner to be happy, even if it does not help you right away. It is like giving them the biggest slice of pizza just because you know they are hungry. When both people do this, it creates a circle of giving. You stop keeping score because you know your partner has your back, and you have theirs. This kind of kindness makes the world feel like a much better place.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A partner's genuine laugh when they are happy: the sound of joy you caused — auditory confirmation that your investment in their wellbeing produced measurable return in their nervous system." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A surprise breakfast made just for you: the scent of preemptive care — someone waking before you to convert raw ingredients into love, the kitchen as laboratory of altruism." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A just-because treat: the taste of unrequested generosity — sweetness arriving without being earned, the gustatory proof that the giver was thinking of you when you were not present." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A foot rub or back rub after a long day: the touch of service — hands spending energy to reduce another body's tension, metabolic investment with no immediate personal return." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching your partner succeed at something they worked hard for: the sight of vicarious achievement — mirror neurons firing for someone else's triumph, the visual experience of pride in another person's growth." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Lightness in your heart when you help someone else: the body producing the helper's high — endorphins released through altruistic action, the cardiovascular system rewarding generosity." }
+        ],
+        intuition: "You stop keeping score because you know your partner has your back — kindness makes the world better. Clark and Mills distinguished between exchange relationships and communal relationships. In exchange relationships, benefits are given with the expectation of comparable return. You track debits and credits. The ledger matters. In communal relationships, benefits are given in response to the partner's needs regardless of past or expected reciprocation. The ledger is abandoned. You do not give to get. You give because giving is what the relationship is. This is the Transformation of Motivation that Rusbult described: the shift from maximizing individual outcome to maximizing joint outcome. It is not self-sacrifice. Self-sacrifice implies loss. In communal relationships, the partner's happiness is experienced as personal happiness. Mirror neurons, empathic resonance, identity fusion — the neurological infrastructure makes another person's joy genuinely rewarding to your own brain. Giving is not losing. Giving is receiving through a different channel. The evolutionary logic is straightforward: pairs who operated communally out-survived pairs who operated transactionally. When resources are shared without accounting, response time to threats decreases, cognitive load drops, and both partners can specialize in their strengths rather than protecting their interests. The circle of giving is not idealism. It is the most efficient operating system for two organisms who have decided their survival is mutual.",
+        links: [
+          { label: "Communal Relationship", url: "https://en.wikipedia.org/wiki/Communal_relationship" },
+          { label: "Transformation of Motivation", url: "https://en.wikipedia.org/wiki/Investment_model#Transformation_of_motivation" },
+          { label: "Altruism", url: "https://en.wikipedia.org/wiki/Altruism" }
+        ],
+        songs: [
+          { title: "Make You Feel My Love", artist: "Adele", url: "https://www.youtube.com/watch?v=0put0_a--Ns" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=EkPy18xW1j8" },
+          { title: "You Are the Sunshine of My Life", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=3wZ_b_uUAdQ" }
+        ],
+        advanced: "Clark & Mills: communal vs exchange relationships — communal abandons the ledger. Rusbult: Transformation of Motivation — shift from individual to joint outcome maximization. Giving is receiving through a different channel. The circle of giving is not idealism — it is the most efficient operating system for mutual survival." },
+    ],
+
+
 
 
 
