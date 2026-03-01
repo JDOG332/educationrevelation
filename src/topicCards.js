@@ -13383,6 +13383,243 @@ export const TOPIC_CARDS = {
         advanced: "Tuning systems (temperaments) like equal temperament or just intonation are mathematical compromises organizing pitch. Some prioritize pure ratios, others prioritize key flexibility. Illustrates pluralism: two or more states, groups, or principles can coexist. Truth is a diamond with many facets. The scale is not the truth. The scale is the lens. Change the lens, see a new facet of the same gem." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (gallery) > PAINTING & DRAWING (painting)
+    // ═══════════════════════════════════════════════════════════════
+
+    painting: [
+      { id: "visual-perception-encoding", num: 1, icon: "👁️", title: "Visual Perception & Encoding", subtitle: "A Way to Let Someone Else Look Inside Your Thoughts",
+        simple: "Your brain is like a super-fast camera that takes pictures of the world, but it does not just save them; it turns them into a secret code. When you want to draw, your brain has to find that code and tell your hand how to turn it back into a picture. It is like taking a Lego castle in your mind and figuring out which flat pieces you need to show someone else what it looked like. This helps us share our dreams and ideas without using any words at all. It is a way to let someone else look inside your thoughts.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic scritch-scratch of a pencil on paper: thought becoming line." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The earthy, dusty scent of a fresh box of graphite pencils." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic tang of holding a clean brush tip in your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The slight friction of a toothy paper under your fingertips." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The way a single line suddenly looks like a horizon: magic from nothing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your arm floating as you make a long, steady stroke: your body becoming the brush." }
+        ],
+        intuition: "Drawing is a way to let someone else look inside your thoughts. The line on the paper was a thought in your head three seconds ago. Art is telepathy. The pencil is just the wire between two minds.",
+        links: [
+          { label: "Visual Perception", url: "https://en.wikipedia.org/wiki/Visual_perception" },
+          { label: "Psychology of Art", url: "https://en.wikipedia.org/wiki/Psychology_of_art" },
+          { label: "Neuroscience of Creativity", url: "https://en.wikipedia.org/wiki/Neuroscience_of_creativity" }
+        ],
+        songs: [
+          { title: "Vincent (Starry Starry Night)", artist: "Don McLean", url: "https://www.youtube.com/watch?v=oxHnRfhDmrk" },
+          { title: "Paint It Black", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=O4irXQhgMqg" },
+          { title: "Photograph", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=nSDgHBxUbVQ" }
+        ],
+        advanced: "Visual encoding transforms sensory input into stored mental representations. The ventral and dorsal streams coordinate: translating what an object is and where it sits in space into a format executable by the motor cortex. Art is the reverse engineering of perception: taking the code back out of the brain and laying it flat for another brain to decode." },
+
+      { id: "motor-control-proprioception", num: 2, icon: "✍️", title: "Motor Control & Proprioception", subtitle: "Training Your Muscles to Follow Your Thoughts Like a Dancer Follows Music",
+        simple: "To draw, your brain and your hand have to be best friends and talk to each other perfectly. Your brain knows where your hand is even if you close your eyes, which is called proprioception. When you put what is in your head onto paper, you are training your muscles to follow your thoughts like a dancer follows music. It takes a lot of practice to make the hand do exactly what the mind sees. Once they learn to work together, the pen feels like it is a part of your own body.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The thump of a charcoal stick breaking under too much pressure: learning the limits." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, clean scent of a gum eraser: starting over smells fresh." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of sweat on your lip as you concentrate hard." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The cool smoothness of a wooden paintbrush handle: your tool becoming your finger." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The tip of the pen meeting its own shadow on the page." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your wrist pivoting to create a perfect circle: the body solving geometry in real time." }
+        ],
+        intuition: "Once they learn to work together, the pen feels like part of your own body. The hand does not draw. The mind draws. The hand is just the courier. Practice is not repetition. Practice is the hand learning to trust the mind.",
+        links: [
+          { label: "Proprioception", url: "https://en.wikipedia.org/wiki/Proprioception" },
+          { label: "Fine Motor Skill", url: "https://en.wikipedia.org/wiki/Fine_motor_skill" },
+          { label: "Motor Cortex", url: "https://en.wikipedia.org/wiki/Motor_cortex" }
+        ],
+        songs: [
+          { title: "Hands", artist: "Jewel", url: "https://www.youtube.com/watch?v=AfsS3pIDBfw" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Unwell", artist: "Matchbox Twenty", url: "https://www.youtube.com/watch?v=WziA88-n02k" }
+        ],
+        advanced: "Fine motor control in drawing is a complex feedback loop involving the cerebellum and primary motor cortex. Proprioceptive feedback regulates haptic pressure, determining line weight and quality — a critical component in fidelity of transfer from mental image to physical surface. The artist's hand is a calibrated instrument. Calibration takes ten thousand hours." },
+
+      { id: "symbolic-representation", num: 3, icon: "⭕", title: "Symbolic Representation", subtitle: "A Secret Code That All Humans Understand No Matter What Language They Speak",
+        simple: "A drawing is not the real thing; it is a stand-in for the real thing. When you draw a smiley face, it is just two dots and a line, but everyone knows it means a happy person! Your brain is a master at using symbols to tell big stories with small marks. This is how we share what is in our head very quickly. It is like a secret code that all humans can understand, no matter what language they speak.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft shush of a brush blending colors: symbols dissolving into meaning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sweet, waxy smell of a brand new crayon: potential in a wrapper." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The dry, chalky feeling of pastel dust: raw material on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The bumpy texture of a thick oil painting: symbols you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing a face in a cloud or a piece of toast: your brain finding symbols everywhere." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The confidence in your hand as you sign your name: the most personal symbol you own." }
+        ],
+        intuition: "A secret code that all humans understand. Two dots and a curved line is a face in every country on Earth. We did not learn this. We were born knowing it. The symbol is older than language. Drawing is the mother tongue.",
+        links: [
+          { label: "Semiotics", url: "https://en.wikipedia.org/wiki/Semiotics" },
+          { label: "Iconography", url: "https://en.wikipedia.org/wiki/Iconography" },
+          { label: "Cave Art", url: "https://en.wikipedia.org/wiki/Cave_painting" }
+        ],
+        songs: [
+          { title: "Signs", artist: "Five Man Electrical Band", url: "https://www.youtube.com/watch?v=oeT5otk2R1g" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Symbols", artist: "Of Monsters and Men", url: "https://www.youtube.com/watch?v=6Y2xOhMSUQ8" }
+        ],
+        advanced: "Semiotics in art studies how signs and symbols create meaning. By reducing complex forms into essential geometries, the artist utilizes iconicity to trigger recognition, bridging subjective thought and collective understanding. A smiley face is not art. A smiley face is proof that all brains run the same software." },
+
+      { id: "color-theory-light", num: 4, icon: "🌈", title: "Color Theory & Light Physics", subtitle: "Being a Magician Who Uses Eye-Tricks to Make Paper Look Like a Sunny Day",
+        simple: "Colors are actually just light bouncing off things and hitting our eyes in different ways. When you paint, you are playing with light to make people feel happy, sad, or excited. Red might feel hot like fire, while blue feels cool like a swimming pool. By mixing colors together, you can create every single thing you see in your mind. It is like being a magician who uses eye-tricks to make a flat piece of paper look like a sunny day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clink of a glass jar as you rinse your brush: colors dissolving." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The heavy, rich scent of linseed oil used in oil paints." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The coolness of peppermint tea you drink while painting." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The slippery feeling of wet watercolor paint on your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The bright pop when you put a yellow dot next to a purple one: complementary magic." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the drag of thick paint versus the glide of watery paint: viscosity in your wrist." }
+        ],
+        intuition: "Colors are just light bouncing off things. Red is not in the apple. Red is what the apple rejects. The color you see is the color the object did not want. Beauty is what gets reflected, not what gets absorbed. Think about that.",
+        links: [
+          { label: "Color Theory", url: "https://en.wikipedia.org/wiki/Color_theory" },
+          { label: "Visible Spectrum", url: "https://en.wikipedia.org/wiki/Visible_spectrum" },
+          { label: "Goethe's Theory of Colours", url: "https://en.wikipedia.org/wiki/Theory_of_Colours" }
+        ],
+        songs: [
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" },
+          { title: "Yellow", artist: "Coldplay", url: "https://www.youtube.com/watch?v=yKNxeF4KMsY" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" }
+        ],
+        advanced: "Color theory explores interaction of pigments (subtractive) and light (additive). Artists manipulate chroma, value, and hue to simulate atmospheric perspective and emotional resonance, exploiting how the eye perceives contrast. The painter does not add color. The painter controls which wavelengths of light the surface sends back to your brain." },
+
+      { id: "spatial-geometry-perspective", num: 5, icon: "🛤️", title: "Spatial Geometry & Perspective", subtitle: "Folding a Big Wide World Into a Small Flat Envelope",
+        simple: "Perspective is a special trick that makes things look far away or really close on a flat page. If you draw two lines that get closer and closer together, it looks like a road going forever into the distance! This is how you move the 3D world inside your head onto a 2D surface. It is like folding a big, wide world into a small, flat envelope so you can mail it to someone else's eyes. Without this trick, everything would look flat like a pancake.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The snap of a chalk line being pulled: geometry made audible." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The faint smell of wood from a T-square or ruler." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crispness of a cold apple during a drawing break: clarity." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a smooth, sanded wooden canvas frame." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A drawing jumping out at you when the shadows are added: depth from nothing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your elbow angle changing as you draw a line to the vanishing point: your body solving the math." }
+        ],
+        intuition: "Folding a big wide world into a small flat envelope so you can mail it to someone else's eyes. The vanishing point is where parallel lines pretend to meet. They never actually do. But your brain believes it. Art is the science of convincing brains to see what is not there.",
+        links: [
+          { label: "Perspective", url: "https://en.wikipedia.org/wiki/Perspective_(graphical)" },
+          { label: "Vanishing Point", url: "https://en.wikipedia.org/wiki/Vanishing_point" },
+          { label: "Brunelleschi", url: "https://en.wikipedia.org/wiki/Filippo_Brunelleschi" }
+        ],
+        songs: [
+          { title: "The Long and Winding Road", artist: "The Beatles", url: "https://www.youtube.com/watch?v=fR4HjTH_fTM" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Wide Open Spaces", artist: "The Chicks", url: "https://www.youtube.com/watch?v=MeSEfcMgMj8" }
+        ],
+        advanced: "Linear perspective is a mathematical system creating the illusion of space on a flat surface. A vanishing point and horizon line mimic how light rays converge in the human eye, creating a window into simulated 3D reality. Brunelleschi cracked the code in 1415. Before him, paintings were flat. After him, paintings were portals." },
+
+      { id: "neuroplasticity-artists", num: 6, icon: "🧠", title: "Neuroplasticity in Artists", subtitle: "Every Time You Draw Your Brain Actually Grows and Changes",
+        simple: "Every time you draw or paint, your brain actually grows and changes to get better at it! It is like a muscle that gets stronger the more you use it. Your art muscle helps you notice tiny details, like how many colors are really in a green leaf — it is actually yellow, blue, and brown too! As you keep putting your ideas onto paper, your brain builds new highways for your thoughts to travel on. This makes it easier and easier to show people the amazing things you are thinking.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence of deep flow when you forget time exists: the brain rebuilding." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The comforting, old-paper smell of a well-used sketchbook." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The refreshing taste of water after hours of focusing: emergence." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The callus on your finger where the pencil always rests: your body recording your practice." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Suddenly seeing shapes in the shadows of a room: your brain upgrading in real time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Muscle memory drawing a perfect curve without thinking: your hand knows things your mind forgot." }
+        ],
+        intuition: "Your brain builds new highways for your thoughts. You are not just making art. Art is making you. Every stroke rewires the brain that made the stroke. The artist is not using the brush. The brush is sculpting the artist.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Flow (Psychology)", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Visual Cortex", url: "https://en.wikipedia.org/wiki/Visual_cortex" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Higher Love", artist: "Steve Winwood", url: "https://www.youtube.com/watch?v=k9olaIio3l8" }
+        ],
+        advanced: "Neuroplasticity: the brain reorganizes by forming new neural connections. In artists, increased gray matter density appears in areas for visual imagery and fine motor coordination, allowing more seamless transduction of mental concepts into physical gestures. The callus on your drawing finger is proof that the brain changed its hardware to match the software you were running." },
+
+      { id: "medium-constraint", num: 7, icon: "⚒️", title: "Medium Constraint", subtitle: "Sometimes the Tools Give You New Ideas You Did Not Have Before",
+        simple: "The tools you choose change how your head-thought looks when it hits the paper. If you use a big, messy brush, your idea will look soft and blurry; if you use a sharp pen, it will look clear and pointy. It is like trying to tell a story: you can whisper it, shout it, or write it down clearly. Part of being an artist is choosing the right voice for your idea. Sometimes the tools even give you new ideas you did not have before!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rattle of spray paint cans being shaken: chaos about to become order." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, vinegar-like smell of acrylic paints." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zing of a lemon slice in your water while you work: sharp like a fine pen." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The sticky, tacky feeling of wet oil paint: the medium resisting your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Light shining through a thin layer of watercolor: the medium has its own ideas." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Adjusting grip strength for a heavy brush versus a light pencil: your body calibrating to the tool." }
+        ],
+        intuition: "Sometimes the tools give you new ideas you did not have before. The medium is not a servant. The medium is a collaborator. The watercolor bleeds where it wants. The charcoal smudges where it chooses. Art is a negotiation between the vision and the material. The best art happens when both get a vote.",
+        links: [
+          { label: "Art Medium", url: "https://en.wikipedia.org/wiki/Art_medium" },
+          { label: "Material Culture", url: "https://en.wikipedia.org/wiki/Material_culture" },
+          { label: "Emergence", url: "https://en.wikipedia.org/wiki/Emergence" }
+        ],
+        songs: [
+          { title: "Material Girl", artist: "Madonna", url: "https://www.youtube.com/watch?v=6p-lDYPR2P8" },
+          { title: "Harder Better Faster Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=q3LAkXNJP_o" }
+        ],
+        advanced: "Medium constraint: physical properties of artistic material dictate possible outcomes. Material agency forces negotiation between internal vision and external reality, often producing emergent properties neither artist nor tool could create alone. The happy accident is not an accident. It is the material voting." },
+
+      { id: "compositional-balance", num: 8, icon: "⚖️", title: "Compositional Balance", subtitle: "Leading a Person's Eye Around the Page Like a Tour Guide",
+        simple: "Composition is the map of your drawing. It is where you put the big things and the little things so they look just right to someone's eyes. Our brains love it when things feel balanced, like a seesaw that is not tipping over. By placing things in certain spots, you can lead a person's eye around the page like a tour guide. This helps people understand the most important part of the idea you pulled out of your head.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ticking of a clock you stop noticing: balance becomes invisible when perfect." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The fresh, clean smell of a new canvas: a blank map waiting." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The balance of sweet and sour in a snack: composition on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The steadying feeling of a mahl stick: your body finding center." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "That feeling of relief when you finally put a dot in the perfect spot." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Centering your whole body in front of the canvas to find the middle: you are the first composition." }
+        ],
+        intuition: "You can lead a person's eye around the page like a tour guide. The viewer thinks they are looking freely. They are not. The composition is walking them through a story. Good art is invisible control. Great art is invisible love directing the gaze to what matters most.",
+        links: [
+          { label: "Composition (Art)", url: "https://en.wikipedia.org/wiki/Composition_(visual_arts)" },
+          { label: "Gestalt Psychology", url: "https://en.wikipedia.org/wiki/Gestalt_psychology" },
+          { label: "Rule of Thirds", url: "https://en.wikipedia.org/wiki/Rule_of_thirds" }
+        ],
+        songs: [
+          { title: "Everything in Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" },
+          { title: "Perfect", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g" },
+          { title: "Balance", artist: "Future Islands", url: "https://www.youtube.com/watch?v=Cjwoit91SsA" }
+        ],
+        advanced: "Compositional balance utilizes visual weight to create stability or tension. Relies on Gestalt principles — proximity, similarity, closure — explaining how the brain automatically organizes individual elements into a coherent whole. The golden ratio, the rule of thirds, the leading line: all invisible rails the eye rides without knowing." },
+
+      { id: "emotional-transduction", num: 9, icon: "❤️", title: "Emotional Transduction", subtitle: "A Way to Talk About Things Too Big for Words",
+        simple: "Sometimes, what is inside your head is not a picture of a cat or a tree — it is a feeling like happy or lonely. Drawing and painting are like a bridge that lets those feelings cross over into the real world. You can use jagged, dark lines to show you are upset, or soft, bright colors to show you are calm. It is a way to talk about things that are too big for words. When someone looks at your art and feels the same thing, you have successfully shared your heart.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sigh you let out when a difficult painting is finished: release." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The heavy, warm scent of beeswax: emotion solidified." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm cocoa on a rainy drawing day: comfort you can drink." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of your own hand as you smudge a drawing to soften it: you are part of the art." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing your own mood reflected back at you from the paper: the mirror worked." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The heaviness in your shoulders when drawing something sad: your body carrying the emotion into the art." }
+        ],
+        intuition: "When someone looks at your art and feels the same thing, you have successfully shared your heart. The jagged line is not a line. It is a scream that does not need a mouth. Art is not decoration. Art is emotional surgery without anesthesia. The viewer feels what the artist felt. That is the oldest form of time travel.",
+        links: [
+          { label: "Expressionism", url: "https://en.wikipedia.org/wiki/Expressionism" },
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Art Therapy", url: "https://en.wikipedia.org/wiki/Art_therapy" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Emotional transduction converts internal affective states into visual stimuli. Affective coding uses specific formal elements (sharp vs. curved lines) to trigger predictable emotional responses through mirror neuron activation. The viewer does not interpret the emotion. The viewer catches it. Art is contagious." },
+
+      { id: "historical-iconography", num: 10, icon: "🏺", title: "Historical Iconography", subtitle: "Joining a Huge Ancient Team of Artists Who Have Been Sharing Thoughts Since the Cavemen",
+        simple: "Humans have been drawing on walls and surfaces for thousands of years! We have all agreed on certain pictures that mean the same thing to everyone, like a red heart for love or a dove for peace. When you draw, you are joining a huge, ancient team of artists who have been sharing their thoughts since the cavemen. You are using a visual language that has been refined over a very, very long time. This helps your inner world connect to the outer world of everyone who lived before you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echoing silence of a large art museum: thousands of voices frozen in frames." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dusty, sweet smell of an old history book: time you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe passed down for generations: art you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Touching a stone wall and imagining someone painting it 30,000 years ago." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Recognizing a symbol from a movie in a very old painting: the thread never broke." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The ghost of other artists as you use the same tools they did: your hand in their hand across centuries." }
+        ],
+        intuition: "You are joining a team of artists who have been sharing thoughts since the cavemen. The hand that painted the cave wall in Lascaux 17,000 years ago was doing the same thing you do with a crayon: saying I was here. I saw this. I felt this. Remember me. The medium changes. The message never does.",
+        links: [
+          { label: "Iconography", url: "https://en.wikipedia.org/wiki/Iconography" },
+          { label: "History of Painting", url: "https://en.wikipedia.org/wiki/History_of_painting" },
+          { label: "Cave Painting", url: "https://en.wikipedia.org/wiki/Cave_painting" }
+        ],
+        songs: [
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" },
+          { title: "History", artist: "One Direction", url: "https://www.youtube.com/watch?v=yjmp8CoZBIo" },
+          { title: "Ancient Dreams in a Modern Land", artist: "MARINA", url: "https://www.youtube.com/watch?v=rnSEY0gkwx4" }
+        ],
+        advanced: "Iconography: study of identification, description, and interpretation of image content. Allows artists to tap into collective archetypes (Jung), using established visual metaphors to communicate complex truths transcending individual experience. The dove meant peace before any country had a flag. The symbols are older than the civilizations that claimed them." },
+    ],
+
+
   },
 
 };
