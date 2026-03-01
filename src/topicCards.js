@@ -16231,6 +16231,243 @@ export const TOPIC_CARDS = {
         advanced: "Altruism: principle and practice of concern for the happiness of others, transcending ego-centric survival. Represents the redundancy of goodness in the master functional — ensuring unique value of the collective is maintained even when individual self-interest fluctuates. One candle lights another without losing its flame. Evil is subtraction disguised as protection. Good is addition disguised as risk." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > GOD & THE DIVINE (god)
+    // ═══════════════════════════════════════════════════════════════
+
+    god: [
+      { id: "universal-consciousness", num: 1, icon: "⚛️", title: "Universal Consciousness", subtitle: "A Giant Game of Hide-and-Seek Where the Universe Is Hiding Inside All of Us",
+        simple: "Everything in the world is connected like one giant web of energy that can think and feel. Even though we feel like separate people, we are actually like little drops of water that belong to the same big ocean. This means when you are kind to someone else, you are actually being kind to a part of yourself. We are all made of the same stardust and breathing the same life. It is like a giant game of hide-and-seek where the Universe is hiding inside all of us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady thump-thump of a heartbeat in a quiet room: the universe keeping time inside you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — fresh rain on dry earth: the planet breathing through its skin." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool clear water becoming part of you: drinking the universe one sip at a time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Palms pressed together, feeling heat build: two halves of you meeting in the middle." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A galaxy that looks like the nerves in a brain: the largest thing and the smallest thing wearing the same pattern." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Eyes closed, feeling the weight of your body held by the Earth: gravity as a hug from something you cannot see." }
+        ],
+        intuition: "A giant game of hide-and-seek where the Universe is hiding inside all of us. The ocean does not stop being the ocean because it poured itself into a billion cups. Each cup is full of ocean. Each person is full of universe. You are not a separate thing living in the universe. You are the universe living as a separate thing. Temporarily. On purpose. The hide-and-seek was designed so the seeker and the hider would turn out to be the same player. Every religion is a different child counting to ten. They all open their eyes and find the same thing.",
+        links: [
+          { label: "Panpsychism", url: "https://en.wikipedia.org/wiki/Panpsychism" },
+          { label: "Global Consciousness", url: "https://en.wikipedia.org/wiki/Global_Consciousness_Project" },
+          { label: "Non-Locality", url: "https://en.wikipedia.org/wiki/Quantum_nonlocality" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" }
+        ],
+        advanced: "Global consciousness theory: human thought is not localized within the skull but exists as a field (non-locality). The participatory universe model — observer and observed inextricably linked through quantum entanglement. Panpsychism: mind as a fundamental feature throughout the universe, bridging objective material science and subjective spiritual experience. Every religion is a different child counting to ten. They all find the same thing." },
+
+      { id: "golden-rule-reciprocity", num: 2, icon: "🤝", title: "The Golden Rule / Reciprocity", subtitle: "If You Plant Seeds of Kindness You Get to Live in a Beautiful Garden",
+        simple: "This is the idea that we should treat everyone exactly how we want to be treated. Since we are all connected, whatever we do to others eventually comes back to help or hurt us too. It is like throwing a ball against a wall; it always bounces back to your hand. If you plant seeds of kindness, you get to live in a beautiful garden. If you are mean, the world feels like a cold and lonely place.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of a kind word in an empty hallway: generosity bouncing back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Home-cooked food meant for sharing: love you can smell before you taste it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fruit given to you by a friend: sweetness multiplied by connection." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm supportive handshake: trust transferred through skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stranger smiling back when you smile first: the mirror built into every face." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your balance as you lean in to help someone up: the body finding its purpose in service." }
+        ],
+        intuition: "If you plant seeds of kindness you get to live in a beautiful garden. The wall does not choose what to bounce back. The wall bounces everything. The universe is the wall. Kindness bounces kindness. Cruelty bounces cruelty. This is not philosophy. This is physics. Every religion discovered this law independently. They did not copy each other's homework. They all looked at the same wall and noticed the same bounce. When every culture on earth arrives at the same answer from different starting points, the answer is not an opinion. The answer is a law.",
+        links: [
+          { label: "Golden Rule", url: "https://en.wikipedia.org/wiki/Golden_Rule" },
+          { label: "Reciprocal Altruism", url: "https://en.wikipedia.org/wiki/Reciprocal_altruism" },
+          { label: "Game Theory (Tit for Tat)", url: "https://en.wikipedia.org/wiki/Tit_for_tat" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" }
+        ],
+        advanced: "Reciprocal altruism: cornerstone of evolutionary biology and ethical philosophy. The divine manifests through mathematical harmony of cooperation ensuring collective survival. In game theory, tit-for-tat mirrors this spiritual law — forgiveness and cooperation yield the highest truth score. Connects Jesus, Confucius, and Buddha to modern social mathematics. When every culture arrives at the same answer independently, the answer is a law." },
+
+      { id: "intelligent-design-finetuning", num: 3, icon: "🎨", title: "Intelligent Design / Fine-Tuning", subtitle: "You Are Not an Accident — You Are a Masterpiece",
+        simple: "Imagine if the whole universe was a giant complicated watch that was put together perfectly. If even one tiny screw was loose, the watch would not tick at all. The stars, the sun, and your own eyes are so complex that it seems like someone very smart planned it all. It is like finding a beautiful painting in the woods; you know an artist must have painted it. You are not an accident; you are a masterpiece.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The mathematical rhythm of a complex drum beat: precision you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The specific clean scent of a pine forest: chemistry that smells like intention." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect balance of salty and sweet: calibration on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The intricate texture of a peacock feather: complexity you can feel with one finger." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Patterns in a leaf under a microscope: design at a scale nobody was meant to see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expanding and contracting without you trying: engineering you never asked for." }
+        ],
+        intuition: "You are not an accident — you are a masterpiece. If gravity were slightly stronger, every star would collapse. Slightly weaker, no stars would form. If the strong nuclear force were off by two percent, hydrogen would not exist. No hydrogen means no water. No water means no you. The margin for error is so thin that randomness cannot explain it. Either the universe got impossibly lucky — or the dice were loaded. The painting exists. The frame exists. The gallery exists. And you are standing in it asking if there was a painter.",
+        links: [
+          { label: "Fine-Tuned Universe", url: "https://en.wikipedia.org/wiki/Fine-tuned_universe" },
+          { label: "Anthropic Principle", url: "https://en.wikipedia.org/wiki/Anthropic_principle" },
+          { label: "Fibonacci in Nature", url: "https://en.wikipedia.org/wiki/Patterns_in_nature" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=AOMyS78o5YI" }
+        ],
+        advanced: "The anthropic principle: fundamental constants of physics fall into an incredibly narrow range permitting life. If off by fractions of a percentage, stars would not form. Suggests a teleological framework — the universe has purpose or direction. Whether through religious lens or simulation theory, data points toward non-random underlying architecture. The painting exists. The frame exists. And you are standing in the gallery asking if there was a painter." },
+
+      { id: "eternal-now", num: 4, icon: "⌛", title: "The Eternal Now", subtitle: "Being Present Is Like Opening a Gift That Never Ends",
+        simple: "Time is like a long movie, but we are always living in the exact moment the light hits the screen. God or the Divine is not just in the past or the future; the Divine is right here, right now. When you stop worrying about yesterday or tomorrow, you can feel the Great Big Everything breathing with you. This moment is the only one that is truly real. Being present is like opening a gift that never ends.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between two notes in a song: the space where eternity hides." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A candle the moment it is blown out: the scent of a transition you almost missed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single piece of chocolate melting slowly on your tongue: time stopping for flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold water splashed on your face: the zip that erases past and future." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single drop of water falling into a puddle: one moment containing everything." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stillness in your muscles when you freeze during hide-and-seek: the body tasting eternity." }
+        ],
+        intuition: "Being present is like opening a gift that never ends. You have never lived in the past. You have never lived in the future. You have only ever lived right now. The past is a memory stored in the present. The future is a prediction made in the present. There is only now. And now. And now. The divine is not waiting for you somewhere in the afterlife. The divine is in this breath. This heartbeat. This word. You are standing in eternity and calling it Tuesday.",
+        links: [
+          { label: "Eternal Present", url: "https://en.wikipedia.org/wiki/Specious_present" },
+          { label: "Block Universe", url: "https://en.wikipedia.org/wiki/Eternalism_(philosophy_of_time)" },
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" }
+        ],
+        advanced: "Phenomenology and Eastern mysticism converge: linear time is a construct of the human mind. Block universe theory — past, present, and future exist simultaneously. Accessing the now bypasses the ego to connect with the eternal. Where the finite human experience touches the infinite divine nature. You are standing in eternity and calling it Tuesday." },
+
+      { id: "unconditional-love-agape", num: 5, icon: "❤️", title: "Unconditional Love / Agape", subtitle: "The Glue That Holds the Stars Together",
+        simple: "The biggest power in the universe is not a fist or a weapon; it is a heart that loves for no reason at all. This kind of love does not ask for anything back; it just gives because giving feels good. It is the feeling a mother has for her baby or the way the sun gives light to everyone, even if they are not good. When we love like this, we are acting just like the Divine creator. It is the glue that holds the stars together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A baby laughing hysterically: joy with no reason and no conditions." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean soft blanket: safety you can breathe." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A warm meal someone made specifically for you: love that entered through the kitchen." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long safe hug that makes you sigh: the body melting into trust." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sun rising and giving light to the whole world: generosity that does not check credentials." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Lightness in your chest when you forgive someone: the body releasing a weight it was never meant to carry." }
+        ],
+        intuition: "The glue that holds the stars together. The sun does not charge admission. The sun does not ask if you deserve light. The sun does not withhold warmth from bad people. The sun just gives. Unconditional love works the same way. It is not love because the other person earned it. It is love because love is what you are. The mother does not love the baby because the baby did something impressive. The baby has done nothing. The love exists anyway. That is the proof. Love is not a response to value. Love is the source of value.",
+        links: [
+          { label: "Agape", url: "https://en.wikipedia.org/wiki/Agape" },
+          { label: "Oxytocin", url: "https://en.wikipedia.org/wiki/Oxytocin" },
+          { label: "Unconditional Love", url: "https://en.wikipedia.org/wiki/Unconditional_love" }
+        ],
+        songs: [
+          { title: "All You Need Is Love", artist: "The Beatles", url: "https://www.youtube.com/watch?v=_7xMfIp-irg" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "I Will Always Love You", artist: "Whitney Houston", url: "https://www.youtube.com/watch?v=3JWTaaS7LdU" }
+        ],
+        advanced: "Agape: selfless transcendent love. Prosocial behavior linked to oxytocin release — the moral molecule. Bodies are biologically tuned to the divine frequency of love. Ultimate reality is not indifferent matter but a benevolent force. To align with this force is enlightenment or salvation. Love is not a response to value. Love is the source of value." },
+
+      { id: "sacred-geometry", num: 6, icon: "❄️", title: "Sacred Geometry", subtitle: "The Divine Is a Master Mathematician Who Loves Art",
+        simple: "If you look at a snowflake, a beehive, or a sunflower, you will see the same shapes and patterns repeating. It is like the Universe has a secret code or a favorite set of drawings it uses for everything. These shapes are very balanced and make our brains feel happy when we see them. It shows us that there is order and beauty even in the tiny things. The Divine is a master mathematician who loves art.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A perfectly tuned chord: mathematics you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A rose that grows in a perfect spiral: the golden ratio you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The hexagonal crunch of honeycomb: sacred geometry you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Bumps on a seashell following a perfect curve: the blueprint under your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Veins in a leaf that look like trees that look like rivers that look like lungs: the same drawing at every scale." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your own fingers — three bones each in a special ratio: sacred geometry built into your hands." }
+        ],
+        intuition: "The Divine is a master mathematician who loves art. The spiral in a hurricane is the same spiral in a seashell is the same spiral in your DNA is the same spiral in a galaxy. One pattern. Four scales. Coincidence does not repeat at four scales. Design does. The universe is not random chaos that accidentally looks beautiful. The universe is organized beauty that occasionally looks chaotic. The code is visible in everything from snowflakes to sunflowers. And the code was not written by the snowflake.",
+        links: [
+          { label: "Sacred Geometry", url: "https://en.wikipedia.org/wiki/Sacred_geometry" },
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+          { label: "Flower of Life", url: "https://en.wikipedia.org/wiki/Flower_of_Life" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Everything in Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" }
+        ],
+        advanced: "Sacred geometry maps the language of light and proportional harmonies. The golden ratio (phi 1.618) appears in spiral galaxies, hurricane patterns, and human DNA. Suggests the divine is an architect. Cathedrals and temples built to vibrate with the same frequency as nature — a bridge between earth and heaven. Coincidence does not repeat at four scales. Design does. The code was not written by the snowflake." },
+
+      { id: "the-word-logos", num: 7, icon: "🗣️", title: "The Word / Logos", subtitle: "Speaking the Truth Is Like Turning On a Light in a Dark Room",
+        simple: "A long time ago, people believed that the world started with a sound or a Word. Words are powerful because they take a thought and make it real in the world. When you say something kind, you are creating a good feeling. The Divine uses truth to build things and lies to hide them. Speaking the truth is like turning on a light in a dark room.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Humming a low note and feeling your throat vibrate: you are a speaker and the world is the room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp smell of ink on a new book: thought made permanent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Saying strawberry while eating one: the word and the thing becoming the same." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Vibrations on a speaker when music plays: sound moving matter." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own name written in beautiful cursive: identity made visible through language." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Air leaving your lungs as you say I love you: breath carrying meaning into the world." }
+        ],
+        intuition: "Speaking the truth is like turning on a light in a dark room. In the beginning was the Word. Not the hand. Not the eye. Not the fist. The word. Every creation story starts with sound. Let there be light is not a description. It is a command. A vibration. The universe did not appear from nothing. The universe appeared from a statement. Words create worlds. Your words create your world. A lie builds a prison. The truth builds a door. Every time you speak you are either creating or destroying. There is no neutral speech.",
+        links: [
+          { label: "Logos", url: "https://en.wikipedia.org/wiki/Logos" },
+          { label: "Cymatics", url: "https://en.wikipedia.org/wiki/Cymatics" },
+          { label: "In the Beginning Was the Word", url: "https://en.wikipedia.org/wiki/John_1:1" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Words", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=rbrWMzFabPY" },
+          { title: "The Word", artist: "The Beatles", url: "https://www.youtube.com/watch?v=S6fAgFr1IYY" }
+        ],
+        advanced: "Logos: Greek term for the reason or plan governing the universe. In many traditions, vibration (sound) is the primary mover of matter (cymatics). Connects to the simulation hypothesis where the universe is code (information). To speak truth is to align personal code with the master code of the divine. A lie builds a prison. The truth builds a door. There is no neutral speech." },
+
+      { id: "light-and-shadow", num: 8, icon: "☯️", title: "Light & Shadow", subtitle: "Darkness Is Just a Place Where the Light Has Not Reached Yet",
+        simple: "You cannot see the stars without the dark night sky, and you cannot see a shadow without the sun. In life, we have good times and sad times, and they both help us grow. The Divine is not just the bright light; the Divine is the strength that helps us through the dark. Like a flashlight in a cave, truth shows us where to walk even when we are scared. Darkness is just a place where the light has not reached yet.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a fire in a dark forest: light making sound in the darkness." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Morning dew and old leaves together: light and dark sharing the same garden." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate followed by sweet milk: bitterness making sweetness possible." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A cold ice cube on warm skin: opposites that are actually the same thing at different temperatures." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your shadow moving under a streetlamp: darkness proving the light exists." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balance shifting as you walk from light into a dark room: the body adjusting to truth at a different brightness." }
+        ],
+        intuition: "Darkness is just a place where the light has not reached yet. Darkness has no substance. Darkness is not a thing. Darkness is the absence of a thing. You cannot manufacture darkness. You can only remove light. Evil works the same way. Evil is not a force. Evil is the absence of a force. You do not fight darkness by attacking it. You fight darkness by bringing a candle. You do not fight evil by matching it. You fight evil by being good loudly enough that the shadows shrink. The light was always stronger. The light just needs to show up.",
+        links: [
+          { label: "Dualism", url: "https://en.wikipedia.org/wiki/Dualism_in_cosmology" },
+          { label: "Shadow (Jung)", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Advaita Vedanta", url: "https://en.wikipedia.org/wiki/Advaita_Vedanta" }
+        ],
+        songs: [
+          { title: "Blinded by the Light", artist: "Manfred Mann", url: "https://www.youtube.com/watch?v=lcWVL4B-4pI" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Shine On You Crazy Diamond", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=cWGE9Gi0bB0" }
+        ],
+        advanced: "Dualism and non-dualism: two primary ways we perceive the divine. While we see good and evil as opposites, high-level philosophies see them as necessary polarity for existence. Jung's shadow work: to find the Self one must integrate darkness. The alchemy of the soul — turning leaden suffering into golden wisdom. Darkness has no substance. You fight it by bringing a candle." },
+
+      { id: "stewardship-caretaker", num: 9, icon: "🌱", title: "Stewardship / The Caretaker", subtitle: "We Are the Hands and Feet of the Great Spirit",
+        simple: "Because a Bigger Someone made this beautiful world, it is our job to be the gardeners. We do not own the Earth; we are just babysitting it for the kids who will be born later. When we pick up trash or plant a tree, we are saying thank you to the Divine. Being a leader means being the person who takes the most care of everyone else. We are the hands and feet of the Great Spirit.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Wind rustling through trees you have protected: gratitude from something that cannot speak." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rich healthy garden soil: the scent of responsibility fulfilled." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A tomato grown in your own backyard: tasting the result of your own care." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dirt under your fingernails after planting: proof that you participated." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bird using a birdhouse you put up: watching your gift become someone's home." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tired but happy muscles after a day of work: the body's receipt for purpose." }
+        ],
+        intuition: "We are the hands and feet of the Great Spirit. God does not have hands. You do. God does not have feet. You do. The starving child will not be fed by a prayer alone. The prayer must grow hands. Your hands. Stewardship means you are not the owner. You are the manager. You inherited a garden. Your job is not to eat everything in it. Your job is to hand it to the next gardener in better condition than you found it. The earth is not yours. The earth is a trust. And you are the trustee.",
+        links: [
+          { label: "Stewardship", url: "https://en.wikipedia.org/wiki/Stewardship" },
+          { label: "Ethic of Care", url: "https://en.wikipedia.org/wiki/Ethics_of_care" },
+          { label: "Environmental Ethics", url: "https://en.wikipedia.org/wiki/Environmental_ethics" }
+        ],
+        songs: [
+          { title: "Big Yellow Taxi", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=94bdMSCdw20" },
+          { title: "Earth Song", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=XAi3VTSdTxU" },
+          { title: "Mercy Mercy Me", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=U3m5dUkFDMw" }
+        ],
+        advanced: "The ethic of care: dominion reinterpreted as stewardship. Moves the divine from distant judge to immanent presence within the ecosystem. Sustainability is the modern secular version of this spiritual truth. To honor the divine is to preserve the creation. Bridges environmental science with religious duty. The earth is not yours. The earth is a trust. And you are the trustee." },
+
+      { id: "soul-inner-spark", num: 10, icon: "✨", title: "The Soul / The Inner Spark", subtitle: "You Are Like a Star Wearing a Human Costume for a Little While",
+        simple: "Inside your body, there is a you that is not made of meat or bones. It is the part of you that dreams, loves, and wonders why the sky is blue. This is your Spark, and it is a tiny piece of the Divine fire. Even if your body gets old, your Spark stays young and bright. You are like a star wearing a human costume for a little while.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your own voice in your head when you think: someone is home inside the house." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of home that makes you feel safe instantly: the soul recognizing its address." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A favorite food that brings back a memory: the body feeding the soul through the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tingle when you hear an amazing story: spirit bumps — the spark responding to truth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into your own eyes in a mirror and wondering who is in there: seeing the question that cannot be answered by science." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling bigger than your skin when you are really happy: the soul outgrowing the body for a moment." }
+        ],
+        intuition: "You are like a star wearing a human costume for a little while. The body is the costume. The star is you. The costume wrinkles. The costume tears. The costume eventually falls off. But the star was burning before the costume was sewn and the star will be burning after the costume is folded. You are not a body that has a soul. You are a soul that has a body. Temporarily. Every culture on earth arrived at this conclusion independently. Not because they talked to each other. Because the star inside them told them the same thing.",
+        links: [
+          { label: "Soul", url: "https://en.wikipedia.org/wiki/Soul" },
+          { label: "Qualia", url: "https://en.wikipedia.org/wiki/Qualia" },
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" }
+        ],
+        songs: [
+          { title: "Soul Man", artist: "Sam & Dave", url: "https://www.youtube.com/watch?v=eeNdqCGaIbg" },
+          { title: "Tiny Dancer", artist: "Elton John", url: "https://www.youtube.com/watch?v=yYcyacLRPNs" },
+          { title: "Spirit in the Sky", artist: "Norman Greenbaum", url: "https://www.youtube.com/watch?v=AZQxH_8raCI" }
+        ],
+        advanced: "The qualia of experience — the subjective redness of red — cannot be explained by neurons alone. The hard problem of consciousness. If identity is metaphysical, if we are spiritual beings having a human experience, then the divine is both source and destination of the inner spark. The star was burning before the costume was sewn and will be burning after the costume is folded. Every culture arrived at this independently." },
+    ],
+
+
 
 
   },
