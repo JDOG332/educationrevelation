@@ -22402,6 +22402,243 @@ export const TOPIC_CARDS = {
         advanced: "Vitalism: every civilization independently named the life force — qi, prana, pneuma, mana. Chemistry explains the mechanism of life perfectly. Chemistry explains the experience of life not at all. The hard problem of consciousness remains unsolved. The fire is real. We just do not have a thermometer for it yet." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > VISIONS & ALTERED STATES (visions)
+    // ═══════════════════════════════════════════════════════════════
+
+    visions: [
+      { id: "neuroplasticity-growing-garden", num: 1, icon: "🌱", title: "Neuroplasticity: The Growing Garden", subtitle: "Your Brain Can Grow New Paths Whenever You Learn or See Something Amazing",
+        simple: "Your brain is like a beautiful garden that can grow new paths whenever you learn or see something amazing. When you have a big Aha moment, it is like planting a super-fast-growing seed that changes how the whole garden looks. This means you are not stuck being just one way; you can always grow into someone kinder or smarter. Altered states are like a heavy rain that helps those new seeds sprout all at once. It reminds us that we are always changing and always connected to the Earth that helps us grow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A rushing waterfall clearing away old debris: the sound of the brain flushing stale pathways and carving new channels through stone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — fresh rain on dry soil: the scent of dormant seeds being activated — the earth remembering how to grow." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp juicy apple that wakes up your mouth: the taste of something so fresh it forces every receptor to pay attention." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hands in cool damp garden soil: the touch of the medium where growth happens — dark, messy, and absolutely necessary." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a flower blooming: the sight of weeks compressed into seconds — proof that invisible daily change becomes visible miracle." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your body get taller as you take a deep breath: the body demonstrating expansion — the physical analog of a mind opening new pathways." }
+        ],
+        intuition: "Your brain can grow new paths whenever you learn or see something amazing. During altered states — meditation, flow, dreaming, peak experience — the brain exhibits increased global functional connectivity. Regions that normally operate in silos begin cross-talking. The visual cortex exchanges signals with the auditory cortex. The emotional centers communicate directly with the analytical centers. The rigid highways of habit dissolve temporarily into an open field where any neuron can reach any other neuron. This is why altered states produce insight. Not because they add information. Because they remove the walls between rooms that already contain information. The default architecture of your brain is efficient but narrow. It optimizes for speed by routing signals through established pathways. This is useful for survival. It is terrible for transformation. Transformation requires the old paths to soften and new paths to form. Neuroplasticity is the brain's capacity to do exactly this. And altered states are the conditions under which plasticity peaks. The garden metaphor is precise: rain does not create seeds. Rain activates seeds that were already in the soil. The altered state does not create insight. The altered state activates connections that were already possible but dormant. You are not building a new brain. You are giving the existing brain permission to reorganize. And a brain that reorganizes is a brain that grows.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Global Connectivity", url: "https://en.wikipedia.org/wiki/Functional_connectivity" },
+          { label: "Default Mode Network", url: "https://en.wikipedia.org/wiki/Default_mode_network" }
+        ],
+        songs: [
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wDTO0" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" }
+        ],
+        advanced: "Neuroplasticity in altered states: global functional connectivity increases — regions that normally operate in silos begin cross-talking. The altered state does not create insight. It activates connections that were already possible but dormant. Rain does not create seeds. Rain activates them." },
+
+      { id: "default-mode-network-quiet-ego", num: 2, icon: "🤫", title: "The Default Mode Network (The Quiet Ego)", subtitle: "When the Narrator Takes a Nap You Stop Being a Drop and Realize You Are the Ocean",
+        simple: "Imagine there is a loud narrator in your head who always talks about me me me. Sometimes, like when you are staring at a sunset or dancing, that narrator finally takes a nap. When he sleeps, you stop feeling like a separate person and start feeling like you are part of the whole world. It is like being a drop of water that realizes it is actually the whole ocean. This quiet time for your brain helps you feel peaceful and loved.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep low hum of a singing bowl: the sound of a frequency that quiets the narrator — vibration replacing narration." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender: the scent that activates the parasympathetic nervous system — the chemical off-switch for the ego's chatter." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate melting slowly: the taste of something that demands presence — the narrator cannot rush what the tongue savors." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm heavy blanket: the touch of weight distributed evenly — the body grounded so the mind can float." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle flame in a dark room: the sight of one point of focus so simple the narrator has nothing to narrate." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your feet pressing into the floor: the body arriving fully in the present — the place where the ego cannot survive because it lives in past and future." }
+        ],
+        intuition: "When the narrator takes a nap you stop being a drop and realize you are the ocean. The default mode network is a constellation of brain regions — medial prefrontal cortex, posterior cingulate cortex, angular gyrus — that activate when you are not doing anything specific. When you are daydreaming. Ruminating. Worrying about tomorrow. Regretting yesterday. Comparing yourself to others. Constructing the story of who you are. This is the narrator. And the narrator never stops. Except when it does. Deep meditation reduces DMN activity. Peak experiences reduce it. Flow states reduce it. And when the narrator goes quiet, something remarkable happens: the boundaries of the self dissolve. You stop being you-looking-at-the-world and become the-world-looking-at-itself. The mystics called this ego dissolution. The Buddhists called it anatta — no-self. The Sufis called it fana — annihilation of the ego in the divine. Every contemplative tradition in history identified the same state and gave it the same description: the disappearance of the boundary between observer and observed. Neuroscience now confirms that this experience has a neural correlate. When the DMN goes quiet, the sense of separate self goes with it. You are not imagining the oneness. You are experiencing the absence of the machinery that generates separateness. The drop did not become the ocean. The drop stopped generating the illusion that it was ever separate from the ocean.",
+        links: [
+          { label: "Default Mode Network", url: "https://en.wikipedia.org/wiki/Default_mode_network" },
+          { label: "Ego Dissolution", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Anatta", url: "https://en.wikipedia.org/wiki/Anatt%C4%81" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" }
+        ],
+        advanced: "Default Mode Network: the narrator that constructs the separate self. When DMN activity decreases, ego boundaries dissolve. Every contemplative tradition described the same state. The drop did not become the ocean. The drop stopped generating the illusion it was ever separate." },
+
+      { id: "endogenous-chemistry-inner-pharmacy", num: 3, icon: "🧪", title: "Endogenous Chemistry (The Inner Pharmacy)", subtitle: "Your Body Is a Tiny Science Lab That Makes Its Own Happy Juice",
+        simple: "Did you know your body is like a tiny science lab that makes its own happy juice? When you hug someone you love or run really fast, your brain releases special chemicals that make the world look brighter. These chemicals are like magical keys that open different doors in your mind. They help you feel brave, sleepy, or full of wonder. Your body knows exactly what you need to feel connected to everything around you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden joyful laugh from a friend: the sound of endorphins releasing — the brain's own opioid system triggered by social connection." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly baked cookies: the scent that triggers dopamine before you even taste anything — the anticipation circuit, reward before reward." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spoonful of sweet honey: the taste of glucose hitting reward receptors — the oldest chemical handshake between environment and brain." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A soft fuzzy hug from a pet: the touch that releases oxytocin — the bonding molecule, the chemistry of trust." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The bright colors of a rainbow: the sight of the full visible spectrum — visual beauty triggering the same reward pathways as food and love." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Butterflies in your stomach when excited: the body reporting that adrenaline and dopamine are flooding the system — the inner pharmacy dispensing its most potent cocktail." }
+        ],
+        intuition: "Your body is a tiny science lab that makes its own happy juice. Your brain produces endorphins — endogenous morphine. Your body produces anandamide — endogenous cannabis, named after the Sanskrit word for bliss. Your pineal gland produces DMT — one of the most powerful psychoactive compounds known to science, manufactured inside your own skull. You are not a sober machine that occasionally encounters altered chemistry. You are a chemical kaleidoscope that occasionally stabilizes into what you call normal. Normal consciousness is not the absence of drugs. Normal consciousness is a specific drug cocktail: a precise ratio of serotonin, dopamine, norepinephrine, GABA, glutamate, and dozens of neuropeptides, maintained within narrow parameters by homeostatic feedback loops. Alter any one of these and the world changes. Not the external world. Your internal model of it. A runner's high is endorphins reshaping perception. A mother's bond is oxytocin rewiring priorities. A near-death experience may be a DMT surge rewriting the narrative of self. The inner pharmacy is always open. The question is not whether you are under the influence. You are always under the influence. The question is which influence, and whether you are choosing it consciously or letting it choose you.",
+        links: [
+          { label: "Endorphins", url: "https://en.wikipedia.org/wiki/Endorphins" },
+          { label: "Anandamide", url: "https://en.wikipedia.org/wiki/Anandamide" },
+          { label: "Endogenous DMT", url: "https://en.wikipedia.org/wiki/N,N-Dimethyltryptamine#Endogenous_DMT" }
+        ],
+        songs: [
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" },
+          { title: "Good Vibrations", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=Eab_beh07HU" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" }
+        ],
+        advanced: "Inner Pharmacy: endorphins (endogenous morphine), anandamide (endogenous cannabis, Sanskrit for bliss), DMT (manufactured in the pineal gland). Normal consciousness is not sobriety — it is a specific drug cocktail. You are always under the influence. The question is which one." },
+
+      { id: "hypnagogia-borderland", num: 4, icon: "🌓", title: "Hypnagogia: The Borderland", subtitle: "The Bridge Between the Awake World and the Dream World Where Your Imagination Is Extra Strong",
+        simple: "Have you ever been almost asleep and seen funny shapes or heard your name called? That is called the Borderland. It is the bridge between the wide-awake world and the dream world. In this middle place, your imagination is extra strong, and you can solve problems like a superhero. It is a very special time to listen to your heart because the busy world is finally quiet.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythmic ticking of a clock: the sound of time marking the transition — the metronome of the borderland between waking and dreaming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean pillowcase: the scent of the surface where consciousness surrenders — the last smell before the analytical mind releases its grip." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering taste of mint toothpaste: the taste of the last waking ritual — the final sensory input before the borderland opens." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The coolness of the other side of the pillow: the touch of a temperature change that signals transition — the body crossing a threshold." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Staticky colors when you close your eyes tightly: the sight of the visual cortex generating its own content — proof that seeing does not require the eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of falling just as you drift off: the body experiencing a hypnic jerk — the nervous system's last attempt to confirm whether you are awake or dreaming." }
+        ],
+        intuition: "The bridge between the awake world and the dream world where your imagination is extra strong. Hypnagogia is the transitional state between wakefulness and sleep. Theta waves dominate — the same frequency range found in deep meditation. The prefrontal cortex, which enforces logic and linear time, begins to relax its control. And in that relaxation, something extraordinary happens: the mind becomes a free-association engine. Edison used to nap in a chair holding steel balls. As he fell asleep, his muscles would relax, the balls would drop, the clang would wake him, and he would write down whatever idea had appeared in the borderland. Dalí used the same technique with a key and a plate. Kekulé discovered the structure of benzene in a hypnagogic vision of a snake eating its own tail. The borderland is not noise. The borderland is signal. It is the narrow window where the conscious mind has released its filter but the unconscious has not yet taken full control. In that window, cross-domain associations form freely. A musical pattern connects to a mathematical structure. A childhood memory illuminates an adult problem. An image from a dream answers a question the waking mind could not solve. The borderland challenges the binary of real and imaginary. In hypnagogia, the distinction dissolves. And in that dissolution, the mind produces some of its most profound work.",
+        links: [
+          { label: "Hypnagogia", url: "https://en.wikipedia.org/wiki/Hypnagogia" },
+          { label: "Theta Waves", url: "https://en.wikipedia.org/wiki/Theta_wave" },
+          { label: "Associative Thinking", url: "https://en.wikipedia.org/wiki/Free_association_(psychology)" }
+        ],
+        songs: [
+          { title: "Enter Sandman", artist: "Metallica", url: "https://www.youtube.com/watch?v=CD-E-LDc384" },
+          { title: "Sweet Dreams", artist: "Eurythmics", url: "https://www.youtube.com/watch?v=qeMFqkcPYcg" },
+          { title: "Dream On", artist: "Aerosmith", url: "https://www.youtube.com/watch?v=89dGC8de0CA" }
+        ],
+        advanced: "Hypnagogia: theta-wave borderland between waking and sleep. Edison, Dalí, Kekulé all harvested insights from this state. The prefrontal filter relaxes but unconscious control has not yet taken over. In that window, cross-domain associations form freely and the real/imaginary binary dissolves." },
+
+      { id: "entrainment-great-sync", num: 5, icon: "🥁", title: "Entrainment: The Great Sync", subtitle: "When We Sync Up We Stop Being Just Me and Become One Big Heartbeat",
+        simple: "If you sit next to a giant grandfather clock, eventually your heart might start beating to the same rhythm. This is called Syncing Up. When we listen to a drum beat or watch a flickering light, our brains start to match that speed. It is like joining a big parade where everyone is walking in step. When we sync up, we feel like we are part of one big heartbeat.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A heartbeat thumping through a speaker: the sound of a rhythm so fundamental that your nervous system locks onto it involuntarily." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smoky scent of a campfire: the scent of the oldest human gathering technology — fire as the original entrainment device." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fizzy drink bubbling on your tongue: the taste of rhythmic micro-events — each bubble a tiny percussion on the palate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling bass vibration in your chest: the touch of sound waves physically moving your ribcage — entrainment you can feel in your bones." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Waves crashing on shore over and over: the sight of nature's metronome — a visual rhythm the brain entrains to without effort." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Swaying back and forth in a rocking chair: the body surrendering to a rhythm — vestibular entrainment calming the nervous system through motion." }
+        ],
+        intuition: "When we sync up we stop being just me and become one big heartbeat. Christiaan Huygens discovered it in 1665. Two pendulum clocks mounted on the same wall will synchronize their swings within hours. They influence each other through vibrations transmitted through the shared structure. This is entrainment — the tendency of oscillating systems to lock onto the frequency of a stronger or more consistent oscillator. Your brain is an oscillator. It generates electromagnetic waves at specific frequencies: delta during deep sleep, theta during meditation, alpha during relaxation, beta during focus, gamma during insight. Expose the brain to an external rhythm — a drumbeat at four hertz, a flickering light at ten hertz, a binaural beat at forty hertz — and the brain's oscillations shift to match. This is the frequency following response. Shamanic drumming traditions independently discovered this thousands of years before neuroscience named it. A drum beating at four to four-and-a-half beats per second drives the brain into theta — the frequency of trance, vision, and deep meditation. The shaman was the first neuroscientist. The drum was the first brainwave entrainment device. And the ceremony was the first clinical setting. We are not isolated frequencies. We are tuning forks. And we tune to whatever frequency surrounds us.",
+        links: [
+          { label: "Entrainment", url: "https://en.wikipedia.org/wiki/Entrainment_(physics)" },
+          { label: "Brainwave Entrainment", url: "https://en.wikipedia.org/wiki/Brainwave_entrainment" },
+          { label: "Frequency Following Response", url: "https://en.wikipedia.org/wiki/Frequency_following_response" }
+        ],
+        songs: [
+          { title: "We Will Rock You", artist: "Queen", url: "https://www.youtube.com/watch?v=-tJYN-eG1zk" },
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Thunderstruck", artist: "AC/DC", url: "https://www.youtube.com/watch?v=v2AC41dglnM" }
+        ],
+        advanced: "Entrainment: Huygens 1665 — pendulum clocks on the same wall synchronize. Brain oscillates at specific frequencies. Shamanic drumming at 4-4.5 Hz drives theta trance. The shaman was the first neuroscientist. The drum was the first brainwave entrainment device." },
+
+      { id: "flow-state-zone", num: 6, icon: "🌊", title: "The Flow State (The Zone)", subtitle: "You Are Not Worried About Being Good — You Are Just Doing — a Surfer Riding a Wave of Light",
+        simple: "Have you ever been drawing or playing a game and suddenly realized two hours passed in what felt like a minute? That is the Flow. It is when you are so good at what you are doing, and it is just the right amount of hard, that you forget everything else. You are not worried about being good — you are just doing. It is like being a surfer perfectly riding a giant wave of light.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of wind as you run fast: the sound of air parting around a body in motion — the auditory signature of speed without thought." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Grass on a field: the scent of the arena where flow happens — the physical space where skill meets challenge." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cold water after playing hard: the taste of replenishment — the body's reward for total expenditure." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A pencil moving smooth on paper: the touch of zero friction between intention and execution — the tool becoming an extension of the hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Everything looking sharp and clear like a movie: the sight of heightened perception — the visual system running at maximum resolution because the prefrontal filter is off." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling light on your feet, like floating: the body reporting that the neurochemical cocktail of flow has arrived — norepinephrine, dopamine, endorphins, and anandamide all at once." }
+        ],
+        intuition: "You are not worried about being good — you are just doing — a surfer riding a wave of light. Csikszentmihalyi identified the conditions: clear goals, immediate feedback, and a challenge-to-skill ratio that sits in the narrow band between boredom and anxiety. Too easy and the mind wanders. Too hard and the mind panics. Right at the edge — where you are stretched but not overwhelmed — the prefrontal cortex does something counterintuitive. It shuts down. Transient hypofrontality. The inner critic goes silent. The time-keeper stops counting. The self-monitor stops monitoring. And in their absence, the deeper processing systems run unimpeded. Reaction time drops. Creativity spikes. Pattern recognition accelerates. The neurochemical payload is staggering: norepinephrine for focus, dopamine for pattern recognition, endorphins for pain suppression, anandamide for lateral thinking. All four simultaneously. McKinsey found that executives in flow are five hundred percent more productive. Five hundred percent. Not five. Five hundred. Flow is not a luxury state. Flow is the state the brain was designed to operate in. And it is an altered state. Not exotic. Not rare. Available to anyone who finds the edge between too easy and too hard and stays there. The altered state is not somewhere else. The altered state is right here, at the boundary of your competence, where the self dissolves and the work becomes the worker.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Transient Hypofrontality", url: "https://en.wikipedia.org/wiki/Transient_hypofrontality" },
+          { label: "Csikszentmihalyi", url: "https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Sultans of Swing", artist: "Dire Straits", url: "https://www.youtube.com/watch?v=0fAQhSRLQnM" },
+          { title: "Riders on the Storm", artist: "The Doors", url: "https://www.youtube.com/watch?v=iv8GW1GaoIc" }
+        ],
+        advanced: "Flow: transient hypofrontality at the edge between boredom and anxiety. Neurochemical payload: norepinephrine + dopamine + endorphins + anandamide simultaneously. McKinsey: 500% productivity increase. The altered state is right here, at the boundary of your competence." },
+
+      { id: "sensory-modulation-volume-knob", num: 7, icon: "🎚️", title: "Sensory Modulation (The Volume Knob)", subtitle: "Our Senses Are Filters Not Windows — Turn the Dial and Find a New Station",
+        simple: "Sometimes, to see things differently, we have to turn the volume of the world way down or way up. If you sit in a very dark quiet room, your brain starts to make its own movies to keep you company. If you go to a place with lots of bright lights and loud music, your brain stops thinking and just starts feeling. It is like a radio — sometimes you have to turn the dial to find a new station.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Total silence inside a big library: the sound of the absence of input — the condition under which the brain begins to generate its own signal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The nothing smell of fresh snow: the scent of a world muted by white — sensory deprivation you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A tiny drop of lemon juice — very sour: the taste of a single overwhelming signal — one input dominating the entire sensory field." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Floating in warm water where you cannot feel your weight: the touch of nothing — gravity cancelled, boundary dissolved, the body losing its edges." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A solid wall of one color — the Ganzfeld: the sight of uniform input so featureless the visual cortex begins to hallucinate — bored into creation." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling like your body is much bigger or smaller than it is: proprioception distorting when sensory input changes — proof that your body image is computed, not given." }
+        ],
+        intuition: "Our senses are filters not windows — turn the dial and find a new station. You do not see reality. You see your brain's model of reality. And that model is built from sensory data that has been filtered, compressed, interpreted, and reconstructed before it reaches consciousness. You see approximately 0.0035 percent of the electromagnetic spectrum. You hear approximately 0.003 percent of the acoustic spectrum. Your nose detects a fraction of the molecules in any given space. What you call the world is a tiny, heavily edited highlight reel. Sensory deprivation reveals this. In a flotation tank — no light, no sound, no gravity, no temperature differential — the brain does not go blank. The brain goes creative. Deprived of external data, it begins generating internal data. Visual hallucinations. Auditory experiences. Shifts in body perception. Not because something is wrong. Because the brain is always modeling. And when the external data stream stops, the internal data stream becomes the show. Sensory overload reveals the same truth from the other direction. Overwhelm the filters and they crash. The result is the same: the edited version of reality breaks down and something rawer bleeds through. Gate control theory explains the mechanism. Your senses are not passive receivers. They are active gates. And those gates can be opened, closed, or overloaded. What you call reality is just the current gate setting. Change the setting and reality changes with it.",
+        links: [
+          { label: "Sensory Deprivation", url: "https://en.wikipedia.org/wiki/Sensory_deprivation" },
+          { label: "Ganzfeld Effect", url: "https://en.wikipedia.org/wiki/Ganzfeld_effect" },
+          { label: "Gate Control Theory", url: "https://en.wikipedia.org/wiki/Gate_control_theory" }
+        ],
+        songs: [
+          { title: "Echoes", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=53N99Nh0DEo" },
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" }
+        ],
+        advanced: "Sensory Modulation: you see 0.0035% of the EM spectrum, hear 0.003% of the acoustic spectrum. What you call reality is a heavily edited highlight reel. Deprive the senses and the brain generates its own show. Overload them and the filters crash. Reality is the current gate setting." },
+
+      { id: "set-and-setting-inner-compass", num: 8, icon: "🧭", title: "Set and Setting (The Inner Compass)", subtitle: "How You Feel Inside Changes How the Whole World Looks on the Outside",
+        simple: "Having a vision is like going on a big hike. Your Set is your backpack — what you are thinking and how you feel before you start. Your Setting is the trail — who you are with and if the sun is out. If you go into a dream feeling happy and safe, you will see happy things! It teaches us that how we feel inside changes how the whole world looks on the outside.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your favorite song playing softly: the sound of a familiar frequency that tells the nervous system this is safe territory." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A candle that reminds you of home: the scent of safety — olfactory memory bypassing the cortex and going straight to the amygdala." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm tea that makes your belly feel good: the taste of ritual comfort — the body's signal that the environment is nurturing." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth worry stone in your hand: the touch of a portable anchor — tactile grounding you can carry into any setting." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A picture of people who love you: the sight of attachment figures — visual evidence that you are not alone in this experience." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A big deep I-am-safe sigh: the body releasing held tension — the vagus nerve confirming that the setting matches the set." }
+        ],
+        intuition: "How you feel inside changes how the whole world looks on the outside. Two people can have the same experience and one calls it transcendent while the other calls it terrifying. The difference is not the experience. The difference is the container. Set is the internal container: your expectations, your mood, your intention, your unresolved fears, your readiness. Setting is the external container: the physical space, the people present, the lighting, the temperature, the level of safety. Together they function as a lens. The same light passing through different lenses produces different images. This is not just true for altered states. This is true for all of experience. You do not see the world as it is. You see the world as you are. A stressed person walks into a party and sees threats. A relaxed person walks into the same party and sees friends. Same room. Different lens. Social constructivism says experience is co-created by the observer and the context. This means you have agency. You cannot always control what happens. But you can always prepare the container. Set your intention. Choose your setting. And the same raw experience that could have been chaos becomes ceremony.",
+        links: [
+          { label: "Set and Setting", url: "https://en.wikipedia.org/wiki/Set_and_setting" },
+          { label: "Social Constructivism", url: "https://en.wikipedia.org/wiki/Social_constructivism" },
+          { label: "Context-Dependent Memory", url: "https://en.wikipedia.org/wiki/Context-dependent_memory" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" }
+        ],
+        advanced: "Set and Setting: experience is co-created by observer and context. You do not see the world as it is — you see the world as you are. Same room, different lens. You cannot always control what happens. But you can always prepare the container. Chaos becomes ceremony." },
+
+      { id: "collective-effervescence-shared-spark", num: 9, icon: "🕯️", title: "Collective Effervescence (The Shared Spark)", subtitle: "When Everyone Cheers at Once We Stop Being Just Me and Become One Big Us",
+        simple: "Have you ever been at a birthday party or a big game where everyone starts cheering at once? Suddenly, you feel a spark, like everyone is connected by invisible golden threads. This is the Shared Spark. When we do things together — like singing or dancing — we stop being just me and become one big us. It is the most powerful magic humans have.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Thousands of people singing the same words at once: the sound of individual voices merging into one voice that no individual could produce alone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Popcorn at a fair: the scent of a shared social space — food as the chemical marker of community gathering." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A big family dinner where everyone shares: the taste of food prepared for the group — commensality, the oldest human bonding ritual." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five that makes your hand tingle: the touch of synchronized contact — two nervous systems firing together in a millisecond of shared intention." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sea of people all waving their hands: the sight of individual bodies moving as one organism — visual proof that the group has become a superorganism." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling like you are vibrating with the crowd: the body losing its boundary — your heart rate synchronizing with the hearts around you." }
+        ],
+        intuition: "When everyone cheers at once we stop being just me and become one big us. Durkheim coined the term in 1912 to describe what happens in religious ritual: individuals performing the same action at the same time enter a state of shared ecstasy that transcends individual identity. The self dissolves into the group. The group becomes sacred. And the individuals leave transformed. Neuroscience has since confirmed the mechanism. When people sing together, their heart rates synchronize. When they march in step, their pain thresholds increase. When they drum in rhythm, their brainwaves align. The biological effect is real: oxytocin floods, cortisol drops, endorphins surge, and the neurological boundary between self and other blurs. This is why every culture has rituals. Every religion has ceremonies. Every nation has anthems. Every team has chants. It is not arbitrary. It is neurochemical infrastructure for social cohesion. The individual ego is a useful fiction for navigating daily life. But in moments of collective effervescence, the fiction dissolves and you experience what you actually are: a node in a network, a wave in an ocean, a voice in a choir that is singing a song older than any individual who has ever sung it.",
+        links: [
+          { label: "Collective Effervescence", url: "https://en.wikipedia.org/wiki/Collective_effervescence" },
+          { label: "Durkheim", url: "https://en.wikipedia.org/wiki/%C3%89mile_Durkheim" },
+          { label: "Social Cohesion", url: "https://en.wikipedia.org/wiki/Social_cohesion" }
+        ],
+        songs: [
+          { title: "Hey Jude", artist: "The Beatles", url: "https://www.youtube.com/watch?v=A_MjCqQoLLA" },
+          { title: "Dancing Queen", artist: "ABBA", url: "https://www.youtube.com/watch?v=xFrGuyw1V8s" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" }
+        ],
+        advanced: "Collective Effervescence (Durkheim 1912): synchronized action produces shared ecstasy. Hearts synchronize during singing. Brainwaves align during drumming. Pain thresholds increase during marching. The individual ego is a useful fiction. In collective effervescence, the fiction dissolves." },
+
+      { id: "archetypal-symbolism-universal-language", num: 10, icon: "👁️", title: "Archetypal Symbolism (The Universal Language)", subtitle: "We All Have a Secret Picture Book Hidden Deep in Our Minds That We All Share",
+        simple: "Sometimes, people from all over the world — who have never met — see the same things in their dreams, like wise old men, dragons, or beautiful geometric patterns. It is like we all have a secret picture book hidden deep in our minds that we all share. When we have a vision, we are just opening that book to a page everyone else has read. It reminds us that even if we look different, we are all dreaming the same big story.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An ancient-sounding drum or flute: the sound of an instrument designed to speak to the part of the brain that existed before language." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or old paper: the scent of time — the olfactory marker of accumulated human wisdom stored in physical form." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A simple piece of bread: the taste of the staple of life — the food every civilization independently invented because the archetype of nourishment is universal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The rough bark of a very old tree: the touch of something that has been alive longer than any human civilization — a living archive." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A kaleidoscope pattern: the sight of geometric symmetry generated by mirrors — the same sacred geometry that appears across cultures and altered states." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling very old and very young at the same time: the body experiencing temporal dissolution — the archetype of the eternal self that exists outside of time." }
+        ],
+        intuition: "We all have a secret picture book hidden deep in our minds that we all share. In altered states — dreams, deep meditation, vision quests, near-death experiences — the brain does not produce random noise. It produces archetypes. The Great Mother. The Wise Old Man. The Trickster. The Hero. The Shadow. The Mandala. The Serpent. The Tree of Life. These images appear across every culture, every era, every continent. They were not copied. They were not transmitted. They emerged independently from the same source: the deep structure of the human psyche. Jung called this the collective unconscious. Joseph Campbell called it the monomyth. Both were describing the same observation: there is a symbolic language that all humans share, and it is older than any spoken language. In altered states, the brain renders abstract emotional and conceptual data into this symbolic vocabulary. Fear becomes a monster. Wisdom becomes a guide. Transformation becomes death and rebirth. Integration becomes a mandala. The visions are not hallucinations. The visions are translations. The deeper mind speaks in images the way the conscious mind speaks in words. And the images it chooses are not random. They are the same images every human mind has chosen for a hundred thousand years. You are not inventing the story. You are reading a page from a book that was written before you were born. And every human who has ever lived has read the same book. The universal language is not spoken. It is seen. And in the altered state, you see it clearly.",
+        links: [
+          { label: "Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Monomyth", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" }
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Archetypal Symbolism: altered states produce archetypes, not noise — Great Mother, Wise Old Man, Trickster, Hero, Mandala, Serpent, Tree of Life. Visions are not hallucinations. They are translations. The deeper mind speaks in images chosen for a hundred thousand years." },
+    ],
+
+
 
 
 
