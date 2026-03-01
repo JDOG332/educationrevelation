@@ -17898,7 +17898,7 @@ export const TOPIC_CARDS = {
   // ═══════════════════════════════════════════════════════════════════
   // DOOR 9: THE SELF (theself) — "The Mirror Door"
   // ═══════════════════════════════════════════════════════════════════
-  theself: {
+  ancient: {
 
     // ═══════════════════════════════════════════════════════════════
     // THE SELF (theself) > EMOTION & FEELING (emotion)
@@ -18376,7 +18376,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > MEMORY & TIME (memorytime)
     // ═══════════════════════════════════════════════════════════════
 
-    memorytime: [
+    memory: [
       { id: "neuroplasticity", num: 1, icon: "🌱", title: "Neuroplasticity", subtitle: "You Are Not Stuck Being Who You Were Yesterday",
         simple: "Think of your brain like a garden where the paths you walk most often become the easiest to follow. Every time you think a thought or learn something new, you are actually growing new branches in your head. If you tell yourself you are brave, your brain builds a brave road that gets stronger every day. This means you are not stuck being who you were yesterday; you can grow into someone totally new. You have the power to plant new seeds in your mind garden whenever you want.",
         senses: [
@@ -18612,7 +18612,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > LANGUAGE & THOUGHT (languagethought)
     // ═══════════════════════════════════════════════════════════════
 
-    languagethought: [
+    langthought: [
       { id: "concept-acquisition", num: 1, icon: "🌱", title: "Concept Acquisition (The Pre-Word Mind)", subtitle: "Words Are Just the Stickers We Put on Things We Already Noticed",
         simple: "Imagine you are a tiny baby who does not know any words yet. You can still feel the warmth of the sun and know that a fuzzy dog is different from a cold ice cube. Your brain is like a library that is already building shelves even before the books arrive. You can think in shapes, feelings, and pictures because your mind is smart enough to recognize the world on its own. Words are just the stickers we put on things we already noticed. This means you are a thinker from the very start!",
         senses: [
@@ -18848,7 +18848,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > DREAMS & SLEEP (dreamssleep)
     // ═══════════════════════════════════════════════════════════════
 
-    dreamssleep: [
+    dreamsleep: [
       { id: "sleep-cycles", num: 1, icon: "🌙", title: "Sleep Cycles (NREM & REM)", subtitle: "Your Brain Is Cleaning Its Room and Organizing Its Toys While You Rest",
         simple: "When you sleep, your body goes through different levels of rest, like steps on a ladder. First you are in a light sleep, then a very deep sleep where your body fixes itself, and finally dream sleep called REM. During REM, your brain is actually very busy, almost like it is awake, even though your muscles stay still so you do not act out your dreams. This cycle repeats about every 90 minutes. It is like your brain is cleaning its room and organizing its toys while you rest.",
         senses: [
@@ -19084,7 +19084,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > PERCEPTION & THE FILTER (perceptionfilter)
     // ═══════════════════════════════════════════════════════════════
 
-    perceptionfilter: [
+    perception: [
       { id: "objective-reality", num: 1, icon: "⚪", title: "Objective Reality", subtitle: "The Truth That Stays the Same No Matter Who Is Looking at It",
         simple: "Imagine you are wearing purple sunglasses. You might think the whole world is purple, but it is actually just your glasses! Objective reality is the world without any glasses on at all. It is the truth that stays the same no matter who is looking at it. Most of the time we forget we are wearing glasses because we have had them on since we were born. Learning about this helps you realize that other people see different colors because they are wearing different glasses.",
         senses: [
@@ -19320,7 +19320,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > FREE WILL & CHOICE (freewillchoice)
     // ═══════════════════════════════════════════════════════════════
 
-    freewillchoice: [
+    choice: [
       { id: "compatibilism", num: 1, icon: "🛤️", title: "Compatibilism (The Unified Path)", subtitle: "You Do Not Have to Choose Between Being the Driver or the Road — You Are Both",
         simple: "Imagine you are playing a video game where you can move anywhere you want, but you have to stay inside the world the game makers built. This is like your life; you have real choices, even if there are rules and a road you are following. You are the driver who chooses which way to turn, but the road is what makes the trip possible in the first place. This means you do not have to choose between being the driver or the road — you are actually both at the same time! When you decide to be kind or work hard, you are using your power to move along the path in your own special way.",
         senses: [
@@ -19556,7 +19556,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > ATTENTION & FOCUS (attentionfocus)
     // ═══════════════════════════════════════════════════════════════
 
-    attentionfocus: [
+    attention: [
       { id: "selective-attention", num: 1, icon: "🔦", title: "Selective Attention", subtitle: "You Have a Superpower That Lets You Choose What Is Real for You Right Now",
         simple: "Imagine you are in a dark room with a small flashlight. Even though the room is full of toys, you can only see the ones you point your light at. Your brain does the same thing every day with sounds, smells, and sights. It picks the most important thing and shuts off the rest so you do not get overwhelmed. This helps you listen to your friend in a noisy cafeteria. It is like having a superpower that lets you choose what is real for you right now.",
         senses: [
@@ -19796,7 +19796,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > THE OBSERVER & AWARENESS (observerawareness)
     // ═══════════════════════════════════════════════════════════════
 
-    observerawareness: [
+    observer: [
       { id: "the-witness", num: 1, icon: "👁️", title: "The Witness (Pure Consciousness)", subtitle: "You Are Not the Movie — You Are the One Watching the Movie",
         simple: "Imagine you are sitting in a movie theater. Your thoughts and feelings are the movie playing on the big screen, but you are the person sitting in the chair watching it. Even if the movie is scary or sad, the person in the chair is actually safe and quiet. You are not the movie; you are the one watching the movie. This helps you feel calm because you know that thoughts come and go like pictures on a screen. When you realize this, you can choose which movies to pay attention to.",
         senses: [
@@ -20034,7 +20034,7 @@ export const TOPIC_CARDS = {
     // THE SELF (theself) > IDENTITY & THE SELF (identityself)
     // ═══════════════════════════════════════════════════════════════
 
-    identityself: [
+    identity: [
       { id: "true-self", num: 1, icon: "🪞", title: "The True Self", subtitle: "There Is Only One You in the Whole Universe",
         simple: "Think of your heart as a special compass that always points to what is right for you. When you are all alone, you do not have to pretend to be a superhero or a perfect student; you can just be exactly who you are. This part of you is like a secret garden that grows even when no one is looking at it. By being kind to yourself when you are alone, you learn how to be a better friend to everyone else. You are special because there is only one you in the whole universe.",
         senses: [
