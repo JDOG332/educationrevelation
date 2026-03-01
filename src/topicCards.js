@@ -19316,6 +19316,243 @@ export const TOPIC_CARDS = {
         advanced: "Durkheim's collective consciousness: shared beliefs, ideas, and moral attitudes as unifying social force. You are not just living inside the collective consciousness. You are editing it. With every word. Every choice. Every glance." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > FREE WILL & CHOICE (freewillchoice)
+    // ═══════════════════════════════════════════════════════════════
+
+    freewillchoice: [
+      { id: "compatibilism", num: 1, icon: "🛤️", title: "Compatibilism (The Unified Path)", subtitle: "You Do Not Have to Choose Between Being the Driver or the Road — You Are Both",
+        simple: "Imagine you are playing a video game where you can move anywhere you want, but you have to stay inside the world the game makers built. This is like your life; you have real choices, even if there are rules and a road you are following. You are the driver who chooses which way to turn, but the road is what makes the trip possible in the first place. This means you do not have to choose between being the driver or the road — you are actually both at the same time! When you decide to be kind or work hard, you are using your power to move along the path in your own special way.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A piano and violin playing different notes that create one beautiful song: two forces becoming one." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain on hot asphalt: the meeting of the sky and the ground — neither asked permission." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and salty popcorn: two opposites that belong together and taste better combined." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a steering wheel and feeling the vibration of the road through your hands: the driver feeling the road and the road feeling the driver." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A train moving through a beautiful forest: guided by tracks but choosing its speed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of balance while riding a bike: you move but gravity holds you — freedom inside a framework." }
+        ],
+        intuition: "You do not have to choose between being the driver or the road — you are both. This is the answer most adults arrive at after years of arguing about the question. You are free. And you are shaped. Both. At the same time. Your choices are real. And your choices were influenced by everything that came before them. Also real. You chose your lunch. But your culture shaped your palate. You chose your career. But your childhood shaped your interests. You are the author of the sentence. But you did not invent the language. And that is not a weakness. That is the design. A river is free to flow wherever it wants. Within the banks. Remove the banks and you do not get a freer river. You get a flood. Freedom needs structure. Structure needs freedom. The driver needs the road. The road needs the driver. They were never enemies. They were always partners.",
+        links: [
+          { label: "Compatibilism", url: "https://en.wikipedia.org/wiki/Compatibilism" },
+          { label: "Soft Determinism", url: "https://en.wikipedia.org/wiki/Soft_determinism" },
+          { label: "Free Will", url: "https://en.wikipedia.org/wiki/Free_will" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "The Climb", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=NG2zyeVRcbs" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" }
+        ],
+        advanced: "Compatibilism redefines freedom not as the absence of cause but as the absence of external coercion. Actions stemming from internal desires are free even if those desires were shaped by history. The driver needs the road. The road needs the driver. They were never enemies." },
+
+      { id: "causal-determinism", num: 2, icon: "⛓️", title: "Causal Determinism (The Fixed Track)", subtitle: "Everything That Happens Today Happened Because of Something That Happened Yesterday",
+        simple: "Think of a long row of falling dominoes. Once the first one is pushed, every other domino has to fall in a specific way. Some people think the whole universe is like those dominoes, where everything that happens today happened because of something that happened yesterday. In this view the road is already built, and it goes exactly where it is supposed to go. Even though it feels like you are steering, the road is what decides where you end up. It reminds us that we are all part of a very big connected story that started a long time ago.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A grandfather clock ticking steadily: the sound of a cause producing an effect producing a cause." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library full of old books already written: the scent of a story that was finished before you opened it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe that tastes exactly the same every time: same inputs same outputs." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Following a guide rail with your hand in the dark: the track deciding the direction before you feel it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A massive gear turning a smaller gear inside a clock: every motion caused by the motion before it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The steady rhythm of your own heartbeat: a chain reaction that started before you were born and will not ask permission to continue." }
+        ],
+        intuition: "Everything that happens today happened because of something that happened yesterday. The Big Bang happened. Then atoms formed. Then stars. Then planets. Then amino acids. Then cells. Then you. Every link in that chain was caused by the link before it. And you are a link. Not the first link. Not the last link. But a link. Your thoughts are electrochemical reactions. Your reactions were shaped by your DNA. Your DNA was shaped by four billion years of survival. So when you choose chocolate over vanilla — was that you? Or was that a preference installed by a chain of events that started thirteen point eight billion years before you were born? Determinism does not say you are a puppet. Determinism says you are a domino that feels like a finger. And that feeling — that beautiful, stubborn feeling of choosing — might be the most elegant domino of all.",
+        links: [
+          { label: "Determinism", url: "https://en.wikipedia.org/wiki/Determinism" },
+          { label: "Laplace's Demon", url: "https://en.wikipedia.org/wiki/Laplace%27s_demon" },
+          { label: "Causal Chain", url: "https://en.wikipedia.org/wiki/Causality" }
+        ],
+        songs: [
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" }
+        ],
+        advanced: "Causal determinism: the state of the world at any time plus the laws of nature entails the state at all later times. Determinism does not say you are a puppet. Determinism says you are a domino that feels like a finger." },
+
+      { id: "libertarian-free-will", num: 3, icon: "🕊️", title: "Libertarian Free Will (The Open Field)", subtitle: "You Are the Artist Drawing the Map as You Move",
+        simple: "Imagine you are standing in the middle of a big grassy field with no fences or roads at all. You can walk North, South, East, or West just because you want to! This idea says that you are the ultimate driver, and you can create your own path wherever you go. You are not just following a map that someone else drew; you are the artist drawing the map as you move. It means your choices are totally fresh and new, and nothing in the past can force you to turn left if you want to turn right. You have the power to surprise the world!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A jazz musician improvising a solo that has never been played before: creation happening in real time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Wildflowers in a breeze that could blow in any direction: no two inhales identical." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a brand new food you have never heard of: the tongue meeting the genuinely unknown." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Bare feet on untracked sand: the body making the first mark." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bird suddenly changing its flight path: the visual of a will that answers to nothing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The spark of energy right before you jump: the body loading a choice that did not exist one second ago." }
+        ],
+        intuition: "You are the artist drawing the map as you move. This is the romantic position. The poetic one. The one that feels true at three in the morning when you decide to change your life. You are not a domino. You are not a train on a track. You are a prime mover. A first cause. An origin point. When you choose to forgive someone who hurt you — that forgiveness was not written in the stars. It was written by you. In that moment. From nothing. This view says that you are capable of genuine novelty. That the universe can be surprised. That your next sentence is not a product of your past but a gift from your present. It is the most empowering idea in philosophy. And the hardest to prove. But the inability to prove something has never stopped it from being true.",
+        links: [
+          { label: "Libertarian Free Will", url: "https://en.wikipedia.org/wiki/Libertarianism_(metaphysics)" },
+          { label: "Agent Causation", url: "https://en.wikipedia.org/wiki/Agent_causation" },
+          { label: "Existentialism", url: "https://en.wikipedia.org/wiki/Existentialism" }
+        ],
+        songs: [
+          { title: "My Way", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=qQzdAsjWGPg" },
+          { title: "Free Will", artist: "Rush", url: "https://www.youtube.com/watch?v=OnxkfLe4G74" },
+          { title: "Break Free", artist: "Ariana Grande", url: "https://www.youtube.com/watch?v=L8eRzOYhLuw" }
+        ],
+        advanced: "Libertarian free will: agents possess causal power not dictated by prior events — prime movers unmoved. Connects to Sartre's 'existence precedes essence.' The most empowering idea in philosophy. And the hardest to prove." },
+
+      { id: "neuroplasticity-choice", num: 4, icon: "🧠", title: "Neuroplasticity (The Road Builder)", subtitle: "You Are the Driver Who Can Pick Up a Shovel and Build a Better Road",
+        simple: "Your brain is like a magical forest where the paths get wider and easier to walk on the more you use them. When you practice a sport or learn to be kind, you are actually building a better road inside your head! If you do not like a certain habit, you can stop using that path and start walking a new way until a new road appears. This means that even if you feel stuck on a bad road right now, you are the driver who can pick up a shovel and build a better one. You are constantly changing and growing your own path every single day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A pencil scratching as you learn to write: the sound of a new road being carved." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new box of crayons or a fresh notebook: the scent of a blank road waiting to be built." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The changing taste of vegetables as you learn to like them: proof that the road can be rebuilt." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Calluses on your fingers from learning an instrument: the body showing you the new road it paved." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a plant growing toward the light: a road being built one invisible decision at a time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your hand getting steadier as you practice drawing: the body proving that repetition is construction." }
+        ],
+        intuition: "You are the driver who can pick up a shovel and build a better road. This is where the philosophy meets the biology. Your brain is not a statue. It is clay. Every thought you think lays a wire. Every wire you use gets thicker. Every wire you ignore gets thinner. You are not choosing on a fixed board. You are choosing on a board that changes shape based on your previous choices. This means your past influences your present. But your present builds your future. The anxious person is not broken. They practiced anxiety until the road was a highway. The calm person is not lucky. They practiced calm until the road was a highway. Same brain. Different construction project. You cannot choose your starting map. But you can choose which roads to widen and which to let the grass reclaim. And that — that is free will with a shovel.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Long-term Potentiation", url: "https://en.wikipedia.org/wiki/Long-term_potentiation" },
+          { label: "Epigenetics", url: "https://en.wikipedia.org/wiki/Epigenetics" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Neuroplasticity provides a biological basis for the driver modifying the road. Long-term potentiation strengthens synapses based on use. You cannot choose your starting map. But you can choose which roads to widen. That is free will with a shovel." },
+
+      { id: "alternative-possibilities", num: 5, icon: "🔱", title: "Principle of Alternative Possibilities", subtitle: "For a Choice to Be Real You Actually Have to Be Able to Pick Either One",
+        simple: "Have you ever come to a Y in the road where you had to choose between going to the park or going for ice cream? This idea says that for a choice to be real, you actually have to be able to pick either one. If someone forced you to go to the park, it would not really be your choice, would it? To be a true driver, there must be more than one road you can take. This reminds us that every time we make a decision, we are standing at a fork where the future could go two different ways depending on what we say or do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A coin flipping in the air — heads or tails: the sound of a future that has not been decided yet." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Two different cookies baking at the same time: the nose standing at the fork." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Choosing between chocolate and vanilla: the tongue standing at the simplest fork in the world." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching out your left hand versus your right: the body proving it has two roads available." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A signpost pointing in two different directions: the visual of a future that splits." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tension in your muscles when you are of two minds about where to run: the body holding both futures at once." }
+        ],
+        intuition: "For a choice to be real you actually have to be able to pick either one. This sounds obvious. It is not. Because if the universe is deterministic — if the dominos were always going to fall this way — then the other road was never actually available. It just looked available. Like a movie set with doors painted on the wall. You felt like you chose. But there was only ever one door that opened. Frankfurt said it does not matter. He said you can be responsible for your choice even if you could not have chosen differently — as long as the choice came from your desires. But the question haunts. Because if the fork was fake, then what is a choice? And if the fork is real, then what is the universe made of that allows two futures to exist at the same time? The fork in the road is not just a question about you. It is a question about reality itself.",
+        links: [
+          { label: "Principle of Alternative Possibilities", url: "https://en.wikipedia.org/wiki/Principle_of_alternative_possibilities" },
+          { label: "Frankfurt Cases", url: "https://en.wikipedia.org/wiki/Frankfurt_cases" },
+          { label: "Decision Theory", url: "https://en.wikipedia.org/wiki/Decision_theory" }
+        ],
+        songs: [
+          { title: "Should I Stay or Should I Go", artist: "The Clash", url: "https://www.youtube.com/watch?v=BN1WwnEDWAM" },
+          { title: "Crossroads", artist: "Cream", url: "https://www.youtube.com/watch?v=PE9HvSdcaL4" },
+          { title: "Either Way", artist: "Chris Stapleton", url: "https://www.youtube.com/watch?v=mC7qkCEsKbo" }
+        ],
+        advanced: "PAP: moral responsibility requires that the agent could have done otherwise. Frankfurt challenged this with scenarios where responsibility holds even without alternatives. The fork in the road is not just a question about you. It is a question about reality itself." },
+
+      { id: "quantum-indeterminacy-will", num: 6, icon: "⚛️", title: "Quantum Indeterminacy (The Misty Road)", subtitle: "The Universe Is Not a Solid Rock — It Is a Bit Fuzzy and Full of Surprises",
+        simple: "Imagine a road covered in thick magical mist. You cannot see exactly where the road goes until you step on it! Scientists have found that the very tiniest pieces of the world, smaller than atoms, act a little bit like this mist — they do not have a fixed spot until someone looks at them. This means the universe is not like a solid unchangeable rock; it is a bit fuzzy and full of surprises. If the smallest parts of us are full of surprises, then maybe the road we are driving on is not as fixed as it looks. There is always a little bit of room for something brand new to happen.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Static noise on a radio between stations: the sound of a universe that has not made up its mind." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Ozone in the air just before lightning strikes: the scent of potential that has not collapsed into reality yet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pop Rocks candy tingling and exploding randomly on your tongue: the taste of indeterminacy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Trying to catch a bubble without popping it: the hands meeting something that exists between states." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Magic Eye poster where the image changes as you focus: the eyes collapsing probability into form." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The dizzy feeling of spinning and not knowing which way is up: the body experiencing uncertainty at the cellular level." }
+        ],
+        intuition: "The universe is not a solid rock — it is fuzzy and full of surprises. At the very bottom of reality, underneath the atoms and the quarks and the fields — there is probability. Not certainty. Probability. The electron does not have a position until it is measured. It has a cloud of possible positions. And when you measure it, the cloud collapses into one point. But it could have collapsed anywhere in the cloud. This means the universe is not a clock. It is a dice game. And if the foundation is probabilistic, then the house built on top of it — your brain, your choices, your life — has a crack in the floor where something genuinely new can seep in. Quantum mechanics does not prove free will. But it proves the universe has room for it. And room is all free will ever needed.",
+        links: [
+          { label: "Quantum Indeterminacy", url: "https://en.wikipedia.org/wiki/Quantum_indeterminacy" },
+          { label: "Heisenberg Uncertainty Principle", url: "https://en.wikipedia.org/wiki/Uncertainty_principle" },
+          { label: "Copenhagen Interpretation", url: "https://en.wikipedia.org/wiki/Copenhagen_interpretation" }
+        ],
+        songs: [
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Particle Man", artist: "They Might Be Giants", url: "https://www.youtube.com/watch?v=LsAiCs66l40" },
+          { title: "Entropy", artist: "Awolnation", url: "https://www.youtube.com/watch?v=xzA3k0WLJog" }
+        ],
+        advanced: "Quantum indeterminacy: events at the subatomic level are governed by probability wavefunctions, not prior causes. Robert Kane proposes this provides the causal gap necessary for free will. The universe does not prove free will. But it proves the universe has room for it." },
+
+      { id: "agency-responsibility", num: 7, icon: "⚖️", title: "Agency & Responsibility (The Driver's License)", subtitle: "Having a Driver's License in Life Means You Own Your Actions",
+        simple: "Being the driver is a big job because it means you are the one in charge of where the car goes. If you choose to drive toward an ice cream shop and share with your friends, you get the credit for being kind! But if you choose to drive over a flower bed, you have to be the one to say I am sorry and help fix it. Having a driver's license in life means you own your actions. It is not the road's fault if you turn the wheel the wrong way; it is up to you to be a good driver and take care of the people around you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A judge's gavel hitting the wood: the sound of ownership meeting consequence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean freshly washed car: the scent of a driver who takes care of what they were given." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitterness of a mistake or the sweetness of a job well done: the tongue tasting the result of a choice." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm honest handshake: the hand sealing a promise the body intends to keep." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stop sign that tells you to think before you move: the visual of a choice point." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up straight and feeling heavy with a serious decision: the body carrying the weight of agency." }
+        ],
+        intuition: "Having a driver's license in life means you own your actions. You did not choose your parents. You did not choose your country. You did not choose your brain chemistry. But you are still the one holding the wheel. And that is enough. Because responsibility is not about deserving blame. Responsibility is about having the power to respond. Response-ability. The ability to respond. You cannot control the weather. But you can choose how you drive in it. You cannot control the road. But you can choose your speed. You cannot control other drivers. But you can choose your lane. The question was never whether the road is fair. The road is not fair. The question is whether you will drive with integrity anyway. And that question — that one — is entirely yours.",
+        links: [
+          { label: "Moral Responsibility", url: "https://en.wikipedia.org/wiki/Moral_responsibility" },
+          { label: "Agency", url: "https://en.wikipedia.org/wiki/Agency_(philosophy)" },
+          { label: "Mens Rea", url: "https://en.wikipedia.org/wiki/Mens_rea" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" },
+          { title: "Respect", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=6FOUqQt3Kg0" }
+        ],
+        advanced: "Agency grounds moral responsibility: being the source of one's actions warrants reactive attitudes like gratitude or resentment. Responsibility is not about deserving blame. It is response-ability — the ability to respond. And that is entirely yours." },
+
+      { id: "fatalism", num: 8, icon: "🎡", title: "Fatalism (The Passenger Seat)", subtitle: "Some People Find This Relaxing Because It Means Everything Is Already Taken Care Of",
+        simple: "Have you ever been on a roller coaster? Once the ride starts, you are just a passenger; the tracks go where they go, and you are just along for the ride. Fatalism is the idea that life is like that roller coaster. No matter how much you turn an imaginary steering wheel, the road has already decided your start and your finish. Some people find this relaxing because it means they do not have to worry — everything is already taken care of. But it also means you have to trust the ride and enjoy the view, even when it gets bumpy.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clicking sound of a roller coaster going up a hill: the sound of a destination that was decided before the ride began." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salty ocean air you cannot control: the scent of something bigger than your preferences." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A mystery flavor candy where you do not get to choose: the tongue receiving instead of selecting." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Letting go of a balloon and watching it float away: the hands releasing the illusion of control." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map of a river that only flows one way: the eyes seeing a path that does not negotiate." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning back into a chair and letting it hold all your weight: the body practicing surrender." }
+        ],
+        intuition: "Some people find this relaxing because it means everything is already taken care of. There is a version of giving up that is actually wisdom. The Stoics called it amor fati — love of fate. Not because the ride is always fun. But because fighting the ride does not change the track. It only ruins the view. The fatalist does not sit in traffic and rage. The fatalist sits in traffic and listens to music. Because the traffic was going to happen whether you raged or not. The rage was optional. The traffic was not. This is not laziness. This is the deepest kind of efficiency. Spending energy only on what you can change. And releasing everything else. The prayer says it best: grant me the serenity to accept the things I cannot change, the courage to change the things I can, and the wisdom to know the difference. The fatalist mastered the first line. The agent mastered the second. The wise person holds both.",
+        links: [
+          { label: "Fatalism", url: "https://en.wikipedia.org/wiki/Fatalism" },
+          { label: "Amor Fati", url: "https://en.wikipedia.org/wiki/Amor_fati" },
+          { label: "Stoicism", url: "https://en.wikipedia.org/wiki/Stoicism" }
+        ],
+        songs: [
+          { title: "Que Sera Sera", artist: "Doris Day", url: "https://www.youtube.com/watch?v=SdhAfMor9BM" },
+          { title: "The Winner Takes It All", artist: "ABBA", url: "https://www.youtube.com/watch?v=iyIOl-s7JTU" },
+          { title: "Live and Let Die", artist: "Wings", url: "https://www.youtube.com/watch?v=e7aGAIWe3uE" }
+        ],
+        advanced: "Fatalism: all events are predetermined and inevitable regardless of causal steps taken to prevent them. Differs from determinism in its focus on inevitability of destination. The fatalist mastered acceptance. The agent mastered courage. The wise person holds both." },
+
+      { id: "locus-of-control", num: 9, icon: "🎮", title: "Locus of Control (The Steering Grip)", subtitle: "Believing You Are the Driver Actually Helps You Become a Better One",
+        simple: "Imagine two kids playing a game. One kid thinks they won because they practiced hard and played well. The other kid thinks they won just because they got lucky. This locus of control is like how tightly you hold the steering wheel. If you believe you are the driver, you will try harder to steer around the puddles. If you think you are just part of the road, you might just let the car go wherever it wants. Believing you are the driver actually helps you become a better one!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your own voice saying I can do this: the sound of an internal locus activating." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of sweat after you worked hard at something: the smell of effort that believes it matters." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A meal you cooked all by yourself: the taste of something your hands made real." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A trophy or a good job sticker: the hands holding evidence that effort connected to outcome." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A checklist where you cross off things you finished: the eyes seeing agency turned visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your muscles working as you push a heavy door open: the body proving that force applied equals result obtained." }
+        ],
+        intuition: "Believing you are the driver actually helps you become a better one. This is the part where philosophy stops mattering and psychology takes over. Because it does not matter whether free will is real. What matters is whether you believe it is real. People who believe they are the driver — internal locus — try harder, recover faster, and achieve more. People who believe they are the passenger — external locus — give up sooner, blame more, and achieve less. Same brain. Same world. Different belief. Different outcome. The belief in free will is itself a free act that produces real consequences. Whether or not the universe is deterministic, your belief that you have agency is the most powerful tool in your toolbox. Use it. Not because it is proven. Because it works.",
+        links: [
+          { label: "Locus of Control", url: "https://en.wikipedia.org/wiki/Locus_of_control" },
+          { label: "Self-Efficacy", url: "https://en.wikipedia.org/wiki/Self-efficacy" },
+          { label: "Learned Helplessness", url: "https://en.wikipedia.org/wiki/Learned_helplessness" }
+        ],
+        songs: [
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Roar", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=CevxZvSJLk8" },
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=gYkACVDFmeg" }
+        ],
+        advanced: "Rotter's locus of control: internal locus correlates with higher motivation and lower stress. The belief in free will produces real consequences regardless of its metaphysical status. Use it. Not because it is proven. Because it works." },
+
+      { id: "illusion-conscious-will", num: 10, icon: "🎥", title: "The Illusion of Conscious Will (The Autopilot)", subtitle: "Your Brain Is Doing a Lot of Work You Do Not Even See",
+        simple: "Have you ever walked all the way to your kitchen and then realized you do not even remember deciding to walk there? Your body just did it! Some scientists think our brains are like a movie that is playing, and we are just watching it happen. We feel like we are the driver, but maybe the car is on autopilot and our brain just tells us a story about how we chose to turn left. It is like watching a movie and thinking you are the character on the screen. It reminds us to be humble because our brains are doing a lot of work we do not even see!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of a computer working in the background: the sound of processes running beneath your awareness." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The room smell of your own house that you do not notice anymore: the nose proving your brain edits without asking." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Swallowing your saliva without thinking about it: the tongue operating on a script you never wrote." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your clothes against your skin which you usually forget: the body filtering out information you did not request." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching your eyes blink automatically in a mirror: the body performing an action the mind did not authorize." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking up stairs without looking at your feet: the body navigating a world the conscious mind checked out of." }
+        ],
+        intuition: "Your brain is doing a lot of work you do not even see. Libet wired people to machines and asked them to flick their wrists whenever they felt like it. He found that the brain began preparing the movement three hundred milliseconds before the person consciously decided to move. The brain moved first. The feeling of deciding came second. The decision was a story the brain told after it had already acted. You are not the director of the movie. You are the narrator. And the narrator comes in after the scene was filmed. This does not mean you are powerless. It means you are more than your conscious mind. It means the you that makes decisions is bigger than the you that is aware of making decisions. The autopilot is not your enemy. The autopilot is you. The deeper you. The faster you. The you that catches a falling glass before you think to catch it. The question is not whether you are in control. The question is which you is doing the controlling.",
+        links: [
+          { label: "Illusionism", url: "https://en.wikipedia.org/wiki/Illusionism_(philosophy)" },
+          { label: "Libet Experiment", url: "https://en.wikipedia.org/wiki/Benjamin_Libet" },
+          { label: "Daniel Wegner", url: "https://en.wikipedia.org/wiki/Daniel_Wegner" }
+        ],
+        songs: [
+          { title: "Once in a Lifetime", artist: "Talking Heads", url: "https://www.youtube.com/watch?v=5IsSpAOD6K8" },
+          { title: "Where Is My Mind?", artist: "Pixies", url: "https://www.youtube.com/watch?v=49FB9hhoO6c" },
+          { title: "Virtual Insanity", artist: "Jamiroquai", url: "https://www.youtube.com/watch?v=4JkIs37a2JE" }
+        ],
+        advanced: "Wegner's illusionism + Libet experiments: brain activity precedes conscious 'decision' by ~300ms. The experience of will is a post-hoc narrative. The question is not whether you are in control. The question is which you is doing the controlling." },
+    ],
+
+
 
 
     // ═══════════════════════════════════════════════════════════════
