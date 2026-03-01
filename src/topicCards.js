@@ -12196,6 +12196,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The multiplier effect is the global reliability modulator scaled to infinity — transition from disjoint recognition of a single unit to the redundancy graph of a species. Life ensures its operational functional through massive parallel processing and reproduction. Connects to systems theory and exponential growth models. One seed. One forest. One act of kindness. One changed world." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > EARTH & SOIL (earth)
+    // ═══════════════════════════════════════════════════════════════
+
+    earth: [
+      { id: "nutrient-cycle-decomposition", num: 1, icon: "♻️", title: "The Nutrient Cycle", subtitle: "A Giant Recycling Machine That Never Stops",
+        simple: "Imagine that the ground is a giant recycling machine that never stops. When plants or animals die, tiny bugs and invisible germs eat them and turn them back into food for the dirt. This food helps new flowers and big trees grow strong and tall. Without this, the world would run out of the building blocks it needs to make new life. It is like a never-ending circle where nothing is ever truly wasted. This process keeps the whole planet healthy and fed forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft crunch of dry leaves breaking down into the forest floor." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rich, musky scent of a compost pile turning into fresh earth." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crisp sweetness of a carrot that pulled its sugar from recycled minerals." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cool, crumbly texture of dark humus between your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fallen log slowly disappearing as mushrooms grow on top of it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The give and bounce of a forest floor thick with decaying matter: walking on recycled life." }
+        ],
+        intuition: "Nothing is ever truly wasted. Every part of you was once part of the stars and the soil. Death is not an ending. Death is a delivery service. The fallen tree is not gone. It is being repackaged.",
+        links: [
+          { label: "Decomposition", url: "https://en.wikipedia.org/wiki/Decomposition" },
+          { label: "Nutrient Cycle", url: "https://en.wikipedia.org/wiki/Nutrient_cycle" },
+          { label: "Nitrogen Cycle", url: "https://en.wikipedia.org/wiki/Nitrogen_cycle" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "The Garden", artist: "Rush", url: "https://www.youtube.com/watch?v=1wYoU1WRADA" }
+        ],
+        advanced: "Biogeochemical cycling moves chemical substances through biotic and abiotic compartments. Driven by mineralization and immobilization — organic matter converted to inorganic forms (ammonium, phosphate) for plant uptake. Governed by C:N ratio determining decay speed and nutrient availability. Decomposition is the dark half of production: while photosynthesis builds, the soil community dismantles, releasing kinetic energy stored in chemical bonds." },
+
+      { id: "soil-food-web", num: 2, icon: "🕸️", title: "The Soil Food Web", subtitle: "A Secret City of Millions Under Your Feet Where Everyone Has a Big Job",
+        simple: "Deep in the dirt, there is a secret city full of millions of tiny creatures living together. Big bugs eat smaller bugs, and tiny bacteria get eaten by microscopic worms. All of these animals are working together to keep the soil moving and breathing. This web of eating and living makes sure the soil stays loose and full of energy. If one part of the web goes away, the plants above ground start to feel sick. It shows us that even the smallest creature has a very big job to do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic underground digging sounds of an earthworm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The earthy smell after rain: soil bacteria called actinomycetes breathing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Mineral-rich tang of spring water filtered through deep soil layers." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tickle of a millipede crawling across your palm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A colony of ants carrying bits of leaves into their tunnels." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The solid stability of ground held together by millions of tiny roots and burrows: standing on a city." }
+        ],
+        intuition: "Even the smallest creature has a very big job. The earthworm does not know it is saving the world. But it is. Greatness does not require awareness. It requires showing up.",
+        links: [
+          { label: "Soil Food Web", url: "https://en.wikipedia.org/wiki/Soil_food_web" },
+          { label: "Soil Biology", url: "https://en.wikipedia.org/wiki/Soil_biology" },
+          { label: "Rhizosphere", url: "https://en.wikipedia.org/wiki/Rhizosphere" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Chain of Fools", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=MpAkOIJpsi8" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" }
+        ],
+        advanced: "The soil food web includes bacteria, fungi, protozoa, nematodes, arthropods, and earthworms performing critical ecosystem services: nitrogen fixation, soil aggregation, pest suppression. The rhizosphere is the most biologically active zone where plants exude sugars to farm specific beneficial microbes. Trophic structure is reticulated, not linear — regulated by top-down predation and bottom-up resource availability." },
+
+      { id: "photosynthesis-carbon-sequestration", num: 3, icon: "☀️", title: "Photosynthesis & Carbon Sequestration", subtitle: "Plants Are Magical Straws That Turn Air Into Wood",
+        simple: "Plants are like magical straws that breathe in the air and turn it into solid wood and leaves. They take a gas called carbon and hide it deep in the ground through their roots. This helps keep the air clean and cool for everyone else to breathe. Soil is actually one of the biggest piggy banks for carbon in the whole world. By keeping the soil healthy, we help the Earth stay at the right temperature. It is a beautiful gift that plants give to the ground and the sky.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rustling of leaves as they catch sunlight and breathe." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh, sharp scent of oxygen-rich air in a dense forest." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sun-ripened berry: literally stored sunlight you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Warmth of a leaf that has been sitting in the sun all day." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The vibrant green of chlorophyll working in a meadow." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and upright, mimicking the trees reaching for the sun: your body photosynthesizing posture." }
+        ],
+        intuition: "Plants give a beautiful gift to the ground and the sky. They eat light and exhale the air you breathe. Every breath you take was a plant's gift. Every bite you eat was sunlight in disguise.",
+        links: [
+          { label: "Photosynthesis", url: "https://en.wikipedia.org/wiki/Photosynthesis" },
+          { label: "Carbon Sequestration", url: "https://en.wikipedia.org/wiki/Carbon_sequestration" },
+          { label: "Carbon Cycle", url: "https://en.wikipedia.org/wiki/Carbon_cycle" }
+        ],
+        songs: [
+          { title: "Here Comes The Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Higher Ground", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=4wZ3ZG_Wams" },
+          { title: "Black Hole Sun", artist: "Soundgarden", url: "https://www.youtube.com/watch?v=3mbBbFH9fAg" }
+        ],
+        advanced: "Photosynthesis converts solar irradiance into chemical energy: glucose from CO₂ and H₂O. Fixed carbon transported to roots and released as exudates facilitates carbon sequestration — atmospheric carbon stored as stable humus. Soil contains more carbon than the atmosphere and all terrestrial vegetation combined. Stability depends on soil structure; tillage oxidizes and releases it. The ground is the planet's savings account." },
+
+      { id: "mycorrhizal-fungi-soil", num: 4, icon: "🍄", title: "Mycorrhizal Fungi Networks", subtitle: "A Giant Friendship Where Everyone Helps Everyone Survive",
+        simple: "Underneath the trees, there are tiny, white threads that act like a giant internet for the forest. These threads are called fungi, and they connect the roots of different trees together. They help the trees talk to each other and share water or sugar if one tree is hungry. In return, the trees give the fungi food they made from the sun. It is a giant friendship where everyone helps everyone else survive. This Wood Wide Web shows that nature is better at sharing than we often think.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The muffled silence of a forest floor blanketed by fungal mats." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The distinct, earthy aroma of a mushroom popping through soil." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The savory umami flavor of edible fungi." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The velvety softness of a mushroom cap." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Intricate, web-like patterns of white mycelium under a piece of bark." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A sense of connection to people far away, just like the trees: your body knowing the web." }
+        ],
+        intuition: "Nature is better at sharing than we often think. The mushroom you see is the tip of the iceberg. Below it, a million threads are moving food to whoever needs it most. The forest is one body pretending to be many.",
+        links: [
+          { label: "Mycorrhiza", url: "https://en.wikipedia.org/wiki/Mycorrhiza" },
+          { label: "Wood Wide Web", url: "https://en.wikipedia.org/wiki/Mycorrhizal_network" },
+          { label: "Ectomycorrhiza", url: "https://en.wikipedia.org/wiki/Ectomycorrhiza" }
+        ],
+        songs: [
+          { title: "With a Little Help from My Friends", artist: "Joe Cocker", url: "https://www.youtube.com/watch?v=nCrlyX6XbTU" },
+          { title: "Connected", artist: "Stereo MC's", url: "https://www.youtube.com/watch?v=a-KAGMFScHU" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Mycorrhizae are symbiotic associations between fungi and plant roots. Fungi extend root surface area significantly for uptake of immobile nutrients like phosphorus in exchange for carbohydrates. Two main types: ectomycorrhizae (surrounding roots) and endomycorrhizae (penetrating cell walls). Mother trees recognize kin and prioritize nutrient transfer through mycelial bridges. Fundamental to forest resilience and ecosystem succession." },
+
+      { id: "mineral-weathering", num: 5, icon: "💎", title: "Mineral Weathering", subtitle: "The Ground You Walk On Is Actually Made of Ancient Mountains",
+        simple: "Soil starts out as big, hard rocks, but over a long time, the wind and rain break them into tiny pieces. Even tiny plant roots can grow into cracks and push rocks apart! This is called weathering, and it is how the Earth makes new vitamins for the soil. It takes hundreds of years just to make a tiny bit of new dirt. This reminds us that the ground we walk on is actually made of ancient mountains. It is a slow and steady way the Earth changes itself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady drip-drip of water hitting stone over many years." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The stony scent of wet gravel or a riverbed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Slight mineral zip in natural spring water: dissolved mountains." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The gritty feeling of sand or tiny pebbles: mountains in miniature." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Different colors in a canyon wall or a striped rock: time made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The heavy, unmoving weight of a large boulder: feeling the patience of geology." }
+        ],
+        intuition: "Even the hardest things can change if given enough time. The mountain did not surrender. The rain just never quit. Patience does not mean weakness. Patience means certainty.",
+        links: [
+          { label: "Weathering", url: "https://en.wikipedia.org/wiki/Weathering" },
+          { label: "Soil Formation", url: "https://en.wikipedia.org/wiki/Pedogenesis" },
+          { label: "Rock Cycle", url: "https://en.wikipedia.org/wiki/Rock_cycle" }
+        ],
+        songs: [
+          { title: "Like a Rock", artist: "Bob Seger", url: "https://www.youtube.com/watch?v=keIvA2wSPOE" },
+          { title: "Rock and Roll", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=4bv_ALKkTjQ" },
+          { title: "I Feel the Earth Move", artist: "Carole King", url: "https://www.youtube.com/watch?v=6913KnbMpHM" }
+        ],
+        advanced: "Mineral weathering is physical disintegration and chemical decomposition of rocks into soil particles (sand, silt, clay). Chemical weathering via hydrolysis, oxidation, and carbonation releases essential cations (Ca²⁺, Mg²⁺, K⁺). Primary driver of long-term carbon cycle: silicate rock weathering consumes atmospheric CO₂ as a planetary thermostat over geological timescales. Rate influenced by climate, parent material, and biological activity." },
+
+      { id: "soil-stratification", num: 6, icon: "🥪", title: "Soil Stratification", subtitle: "The Ground Is a Layer Cake That Tells the Story of Time",
+        simple: "If you dug a very deep hole, you would see that the soil looks like a layer cake. The top part is dark and full of leaves, while the middle part has more clay and minerals. The very bottom is mostly big rocks that have not broken down yet. Scientists call these layers horizons, and they tell the story of what happened to the land a long time ago. Each layer has a different job to help the plants grow. Knowing your layers helps you know if the land is healthy or tired.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The changing thump of a shovel as it hits different layers of earth." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The shift from sweet topsoil to metallic smell of deep clay." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Difference between leafy surface water and salty deep-well water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Moving from soft, fluffy dirt to hard, sticky clay: the story changes." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Beautiful stripes of brown, red, and grey in a freshly dug pit." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The change in pressure on your feet from soft grass to hard-packed earth: layers you can feel." }
+        ],
+        intuition: "Everything has layers of history hidden beneath the surface. The soil knows its own story. So do you. The deeper you dig, the older the truth. And the oldest truth is always rock.",
+        links: [
+          { label: "Soil Horizons", url: "https://en.wikipedia.org/wiki/Soil_horizon" },
+          { label: "Soil Profile", url: "https://en.wikipedia.org/wiki/Soil_profile" },
+          { label: "Pedogenesis", url: "https://en.wikipedia.org/wiki/Pedogenesis" }
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Digging in the Dirt", artist: "Peter Gabriel", url: "https://www.youtube.com/watch?v=X0C3HSp9Ghc" },
+          { title: "Heart of Gold", artist: "Neil Young", url: "https://www.youtube.com/watch?v=Eh44QPT1mPE" }
+        ],
+        advanced: "Soil profile: O horizon (organic litter), A horizon (topsoil rich in organic matter), B horizon (subsoil accumulating leached minerals), C horizon (partially weathered parent material). Pedogenesis governed by five factors: climate, organisms, relief, parent material, and time (CLORPT). Stratification reflects maturity and fertility, providing a record of environmental conditions and historical land use." },
+
+      { id: "water-filtration-retention", num: 7, icon: "💧", title: "Water Filtration & Retention", subtitle: "Nature's Giant Sponge That Cleans the Water We Drink",
+        simple: "Soil acts like a giant, natural sponge that cleans the water we drink. When rain falls, the soil catches it and holds onto it so plants can drink later. As the water moves through the tiny spaces between dirt particles, the soil scrubs away the bad stuff. By the time the water reaches deep underground, it is clean and safe. Without healthy soil, rain would just wash away and cause floods instead of helping things grow. It is nature's way of making sure everyone has a clean drink.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft hiss of water being sucked into dry ground." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor: the scent that rises when rain first hits the dust." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool, neutral purity of filtered groundwater." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The squish of mud holding onto a lot of water." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A puddle slowly disappearing as the ground drinks it up." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heaviness in your boots when the ground is saturated: the earth full." }
+        ],
+        intuition: "Holding on to something can be just as important as letting go. The soil does not hoard water. It holds it until someone needs it. That is not greed. That is love with a schedule.",
+        links: [
+          { label: "Groundwater", url: "https://en.wikipedia.org/wiki/Groundwater" },
+          { label: "Soil Moisture", url: "https://en.wikipedia.org/wiki/Soil_moisture" },
+          { label: "Water Retention", url: "https://en.wikipedia.org/wiki/Water_retention_curve" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Rainy Night in Georgia", artist: "Brook Benton", url: "https://www.youtube.com/watch?v=tF7LNE3pPxE" }
+        ],
+        advanced: "Soil water dynamics determined by porosity and permeability. Soil filters through physical straining, chemical adsorption, and biological degradation. Water holding capacity (WHC) influenced by texture — clay retains but drains poorly, sand drains but retains poorly. Field capacity is the Goldilocks zone: maximum water against gravity with enough pore space for oxygen. Cornerstone of watershed management and civil engineering." },
+
+      { id: "microbial-biodiversity", num: 8, icon: "🧪", title: "Microbial Biodiversity", subtitle: "One Teaspoon of Soil Has More Living Things Than People on Earth",
+        simple: "In just one teaspoon of healthy soil, there are more living things than there are people on the whole Earth! These microbes are too small to see, but they are the tiny engines that run the world. Some of them make medicine for us, like the stuff that cures a cough. Others help plants grow big and fight off bad germs. The more different kinds of microbes there are, the stronger the soil becomes. It is like a big team where everyone has a special skill.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Microscopic bubbles and pops in a very healthy, wet swamp." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "That specific healthy smell of a garden: microbes working." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Complex flavors in fermented foods: soil microbes made this possible." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Slightly sticky soil with a lot of microbial glue in it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Tiny springtails jumping in the dirt under a magnifying glass." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sensing teeming life when you stand in a wild meadow: billions beneath your feet." }
+        ],
+        intuition: "The smallest, invisible things often have the biggest power. You are standing on an empire of organisms that outnumber humanity. They do not know your name. But they are keeping you alive. Respect the invisible.",
+        links: [
+          { label: "Soil Microbiome", url: "https://en.wikipedia.org/wiki/Soil_microbiome" },
+          { label: "Bacteria", url: "https://en.wikipedia.org/wiki/Bacteria" },
+          { label: "Antibiotics from Soil", url: "https://en.wikipedia.org/wiki/Streptomycin" }
+        ],
+        songs: [
+          { title: "Tiny Dancer", artist: "Elton John", url: "https://www.youtube.com/watch?v=yYcyacLRPNs" },
+          { title: "Small World", artist: "Disney", url: "https://www.youtube.com/watch?v=nMFOA24sKCE" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" }
+        ],
+        advanced: "Soil biodiversity ranges from microscopic bacteria and archaea to multicellular eukaryotes. Drive metabolic pathways like nitrogen fixation (Rhizobium) and nitrification. Produce secondary metabolites serving as basis for most modern antibiotics (e.g., Streptomycin). Diverse microbiomes provide functional redundancy — if one species fails, another fills its niche. Biological glues (glomalin) create soil aggregates essential for structure and erosion prevention." },
+
+      { id: "erosion-soil-formation", num: 9, icon: "⏳", title: "Erosion & Soil Formation Rates", subtitle: "It Takes 500 Years to Make One Inch of Topsoil",
+        simple: "Soil is a non-renewable resource, which means once it washes away, we cannot get it back quickly. It can take 500 years for nature to make just one inch of new topsoil! When we leave the ground bare or cut down too many trees, the wind and rain can steal that soil in a single afternoon. This is why farmers grow cover crops to keep the dirt tucked in like a blanket. We have to protect the soil we have, because it takes a very, very long time to grow more.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rushing sound of muddy water running off a bare field." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dusty, dry smell of a windstorm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Grit of dust in the air during a dry season." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dry, cracked earth: the planet asking for help." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Deep scars or gullies in a hillside after a big storm." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The instability of loose sand compared to firm, rooted sod: your body knowing what is held and what is lost." }
+        ],
+        intuition: "Protect what takes forever to build. An afternoon of carelessness can erase 500 years of patience. The soil is a savings account that took centuries to fill. Do not withdraw what you cannot repay.",
+        links: [
+          { label: "Soil Erosion", url: "https://en.wikipedia.org/wiki/Erosion" },
+          { label: "Desertification", url: "https://en.wikipedia.org/wiki/Desertification" },
+          { label: "Dust Bowl", url: "https://en.wikipedia.org/wiki/Dust_Bowl" }
+        ],
+        songs: [
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=vWwgrjjIMXA" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" },
+          { title: "Wild Horses", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=SQTHB4jM-KQ" }
+        ],
+        advanced: "Soil is lost 10 to 40 times faster than replenished globally. The Universal Soil Loss Equation (USLE) models loss based on rainfall erosivity, soil erodibility, slope length, and land management. Excessive erosion removes the A horizon containing most nutrients and biological activity, effectively sterilizing the land and leading to desertification. 500 years per inch of topsoil. One storm per afternoon of loss." },
+
+      { id: "regenerative-agriculture", num: 10, icon: "🌱", title: "Regenerative Agriculture", subtitle: "Growing Food That Actually Makes the Earth Healthier",
+        simple: "Regenerative farming is a way of growing food that actually makes the Earth healthier instead of just using it up. Farmers use tricks like never plowing the dirt, planting many different kinds of seeds together, and letting animals graze in a natural way. This keeps the secret city of microbes happy and keeps the carbon in the ground. When we farm this way, the food tastes better and the land stays beautiful for our grandchildren. It is about being a good friend to the planet while it feeds us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The diverse choir of birds and insects in a chemical-free field." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sweet, complex scent of a blooming multi-crop pasture." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The intense, real flavor of an heirloom tomato grown in living soil." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Springy, soft feeling of a no-till field under your feet." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A field always green, even in winter, because of cover crops." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A sense of balance and rightness in a thriving ecosystem: your body knowing what health feels like." }
+        ],
+        intuition: "We can heal the world by working with nature instead of against it. The old way takes from the soil. The new way gives back. The question is not how to feed the world. The question is how to feed the world without eating the world.",
+        links: [
+          { label: "Regenerative Agriculture", url: "https://en.wikipedia.org/wiki/Regenerative_agriculture" },
+          { label: "No-Till Farming", url: "https://en.wikipedia.org/wiki/No-till_farming" },
+          { label: "Cover Crops", url: "https://en.wikipedia.org/wiki/Cover_crop" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Harvest Moon", artist: "Neil Young", url: "https://www.youtube.com/watch?v=n2MtEsrcTTs" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Regenerative agriculture leverages photosynthesis to close the carbon cycle and build soil health, crop resilience, and nutrient density. Key principles: minimize disturbance (no-till), maximize crop diversity, keep soil covered, integrate livestock. Unlike sustainable agriculture (maintaining status quo), regenerative actively improves and rebuilds. Increases soil organic matter, improves water infiltration, reduces synthetic input dependency. Healing the planet one field at a time." },
+    ],
 
   },
 
