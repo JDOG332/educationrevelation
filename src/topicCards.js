@@ -16467,6 +16467,243 @@ export const TOPIC_CARDS = {
         advanced: "The qualia of experience — the subjective redness of red — cannot be explained by neurons alone. The hard problem of consciousness. If identity is metaphysical, if we are spiritual beings having a human experience, then the divine is both source and destination of the inner spark. The star was burning before the costume was sewn and will be burning after the costume is folded. Every culture arrived at this independently." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > SACRED TEXTS (sacred)
+    // ═══════════════════════════════════════════════════════════════
+
+    sacred: [
+      { id: "divine-inspiration", num: 1, icon: "🌬️", title: "Divine Inspiration (The Breath of God)", subtitle: "When You Read Them You Are Feeling the Breath of the Creator",
+        simple: "Imagine that God's ideas are like a warm breeze that blows into a writer's heart. The writer picks up a pen and records those feelings using their own words, but the spark comes from somewhere much bigger. It is like when your teacher gives you a great idea for a story, but you are the one who writes it down in your notebook. These books feel special because they carry a message that is meant to last forever. When you read them, you are not just reading old ink; you are feeling the breath of the Creator.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft flute or a deep steady hum: the sound of something arriving from far away." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — fresh rain on dry earth: the scent of something divine touching something ordinary." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spoonful of pure raw honey: sweetness that did not come from you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle warm wind on your cheeks: touch from something you cannot see." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame dancing in a dark room: light that arrived without being lit by human hands." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expanding as you take a deep calm breath: the body receiving what the soul already knows." }
+        ],
+        intuition: "When you read them you are feeling the breath of the Creator. The writer held the pen. But the writer did not invent the idea. The idea arrived. Every poet knows this feeling. Every songwriter knows this feeling. The best work does not feel written. The best work feels received. Sacred texts are the most received documents in human history. The human hand moved. But something else aimed the hand. The breath came first. The words came second. The ink is human. The wind is not.",
+        links: [
+          { label: "Biblical Inspiration", url: "https://en.wikipedia.org/wiki/Biblical_inspiration" },
+          { label: "Wahy (Islamic Revelation)", url: "https://en.wikipedia.org/wiki/Wahy" },
+          { label: "Theopneustos", url: "https://en.wikipedia.org/wiki/Theopneustos" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Spirit in the Sky", artist: "Norman Greenbaum", url: "https://www.youtube.com/watch?v=AZQxH_8raCI" }
+        ],
+        advanced: "Theopneustos: the finite human intellect as secondary cause to the primary divine mover. Non-linear transmission of absolute truth into relative language, requiring a bridge between metaphysical and material. Connects to the Logos in Greek philosophy and Aum in Vedic traditions as the primordial vibration of creation. The ink is human. The wind is not." },
+
+      { id: "universal-wisdom-golden-thread", num: 2, icon: "⚖️", title: "Universal Wisdom (The Golden Thread)", subtitle: "A Golden Thread That Sews All of Humanity Together into One Big Quilt",
+        simple: "Almost every sacred book tells us one big secret: treat others the way you want to be treated. Whether the book is from a desert, a mountain, or a big city, they all agree on kindness. It is like a golden thread that sews all of humanity together into one big quilt. If you are mean to someone, you are actually hurting the quilt that covers you too. By being kind, you keep the world warm and safe for everyone. This rule makes sense because we all feel the same happiness and the same ouch inside.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Children laughing together on a playground: joy that does not require translation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Homemade bread baking in an oven: kindness you can smell from any country." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp sweet apple shared with a friend: food that tastes better when divided." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm supportive handshake or a hug: the golden rule made physical." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bridge connecting two different sides of a river: the shape of kindness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of balance while standing perfectly still on both feet: equilibrium as ethics." }
+        ],
+        intuition: "A golden thread that sews all of humanity together into one big quilt. The Torah says it. The Bible says it. The Quran says it. The Vedas say it. The Analects say it. The Dhammapada says it. They did not have email. They did not have translators. They were separated by deserts and oceans and centuries. And they all wrote down the same rule. When every book from every culture arrives at the same sentence independently, the sentence is not an opinion. The sentence is a law. The thread is golden because it cannot rust.",
+        links: [
+          { label: "Perennial Philosophy", url: "https://en.wikipedia.org/wiki/Perennial_philosophy" },
+          { label: "Golden Rule", url: "https://en.wikipedia.org/wiki/Golden_Rule" },
+          { label: "Categorical Imperative", url: "https://en.wikipedia.org/wiki/Categorical_imperative" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" }
+        ],
+        advanced: "The perennial philosophy: beneath diverse dogmas lies a single universal truth. The ethical core stabilizing social structures through reciprocal altruism, validated by sociology and evolutionary biology. Links to game theory (tit-for-tat) and the categorical imperative. When every book from every culture arrives at the same sentence independently, the sentence is a law." },
+
+      { id: "preservation-lineage", num: 3, icon: "⛓️", title: "Preservation & Lineage (The Unbroken Chain)", subtitle: "A Time Machine That Lets You Talk to Your Ancestors",
+        simple: "These books have survived for thousands of years because people protected them like a hidden treasure. Long ago, scribes would copy every single letter by hand, making sure not to make even one mistake. They passed these stories down from grandfathers to grandsons like a long unbroken chain. When you hold a sacred text today, you are touching the same thoughts that people had a very long time ago. It is like a time machine that lets you talk to your ancestors. It shows us that even though the world changes, the most important things stay the same.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady tick-tock of a grandfather clock: time keeping its promise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dusty sweet scent of an old library book: the smell of survival." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An heirloom recipe passed down for generations: ancestors still feeding the living." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running fingers over a smooth ancient stone: touching time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Rings inside a giant redwood tree: every year recorded, nothing lost." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body in a chair that has been in your family for years: sitting in inheritance." }
+        ],
+        intuition: "A time machine that lets you talk to your ancestors. A scribe in Jerusalem in 200 BC copied a scroll letter by letter. His grandson copied the copy. His grandson copied that. For two thousand years the chain did not break. Not once. No spell check. No printing press. No backup drive. Just human hands refusing to let a message die. The message must have been worth it. You do not hand-copy a grocery list for two thousand years. You hand-copy a treasure. The chain is the proof. The chain is the message.",
+        links: [
+          { label: "Dead Sea Scrolls", url: "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls" },
+          { label: "Oral Tradition", url: "https://en.wikipedia.org/wiki/Oral_tradition" },
+          { label: "Masoretic Text", url: "https://en.wikipedia.org/wiki/Masoretic_Text" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "Forever Young", artist: "Alphaville", url: "https://www.youtube.com/watch?v=t1TcDHrkQYg" }
+        ],
+        advanced: "Transmission fidelity: the Masoretic Hebrew and Hafiz tradition of the Quran. Transition from oral tradition to codex ensuring inerrancy through rigorous communal validation. Connects to information theory and memetics — ideas survive based on utility and cultural resonance. You do not hand-copy a grocery list for two thousand years. You hand-copy a treasure." },
+
+      { id: "symbolic-language", num: 4, icon: "🔑", title: "Symbolic Language (The Hidden Key)", subtitle: "Once You Learn to See the Symbols the Whole World Starts to Look Like a Message",
+        simple: "Sacred books often use picture words or symbols to explain things that are too big for regular words. They might talk about a light to mean understanding, or a lion to mean bravery. It is like a secret code that your heart understands better than your brain. When you look at a painting, you do not just see paint; you see a story. These books are like that, using stories about shepherds or stars to teach us about our own lives. Once you learn to see the symbols, the whole world starts to look like a message.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bell ringing in the distance: sound carrying more meaning than the metal knows." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Frankincense or myrrh: ancient scents that meant something before words existed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt — representing preservation: flavor as philosophy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough hand-woven fabric: texture made by intention." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A rainbow appearing after a storm: the universe using light to write a promise." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The click when a puzzle piece fits: the body recognizing a pattern before the mind names it." }
+        ],
+        intuition: "Once you learn to see the symbols the whole world starts to look like a message. The lion in the story is not a lion. The lion is courage wearing a mane. The water in the story is not water. The water is purification wearing a current. Sacred texts are not written in words. Sacred texts are written in symbols that happen to use words. The difference matters. A word tells you what something is. A symbol tells you what something means. And what something means is always bigger than what something is.",
+        links: [
+          { label: "Hermeneutics", url: "https://en.wikipedia.org/wiki/Hermeneutics" },
+          { label: "Archetypes (Jung)", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Semiotics", url: "https://en.wikipedia.org/wiki/Semiotics" }
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Lucy in the Sky with Diamonds", artist: "The Beatles", url: "https://www.youtube.com/watch?v=naoknj1auNE" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" }
+        ],
+        advanced: "Hermeneutics and archetypal psychology: sacred texts function as maps of meaning, using metaphors to bypass the ego and access the collective unconscious. Connects to semiotics and multi-layered narrative structure. A word tells you what something is. A symbol tells you what something means. And meaning is always bigger than identity." },
+
+      { id: "moral-compass-north-star", num: 5, icon: "🧭", title: "Moral Compass (The North Star)", subtitle: "A Map So You Do Not Fall into a Hole",
+        simple: "Life can be confusing, like being lost in a dark forest without a map. Sacred texts act like a North Star that always points toward what is right and good. They help you decide what to do when you are scared or when you have a hard choice to make. By following these lessons, you find a path that leads to peace instead of trouble. It is not about following rules to be bossed around; it is about following a map so you do not fall into a hole. It gives you a gut feeling of safety.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady comforting beat of a drum: rhythm you can navigate by." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint or eucalyptus: clarity you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Clear cold spring water: truth with no additives." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding a compass: direction you can hold in your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A lighthouse beam cutting through fog: guidance that does not wait for you to ask." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your center of gravity while standing tall: the body knowing which way is up." }
+        ],
+        intuition: "A map so you do not fall into a hole. The rules are not the point. The destination is the point. The rules are the path to the destination. A child who refuses to follow the trail because they do not like being told what to do ends up lost in the woods. The trail is not a leash. The trail is a gift from everyone who got lost before you. Sacred texts are trails worn smooth by billions of feet over thousands of years. The path works. The proof is that you are standing on it.",
+        links: [
+          { label: "Deontological Ethics", url: "https://en.wikipedia.org/wiki/Deontological_ethics" },
+          { label: "Natural Law", url: "https://en.wikipedia.org/wiki/Natural_law" },
+          { label: "Moral Compass", url: "https://en.wikipedia.org/wiki/Moral_compass" }
+        ],
+        songs: [
+          { title: "The Long and Winding Road", artist: "The Beatles", url: "https://www.youtube.com/watch?v=fR4HjTH_fTM" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "I Still Haven't Found What I'm Looking For", artist: "U2", url: "https://www.youtube.com/watch?v=e3-5YC_oHjE" }
+        ],
+        advanced: "Deontological ethics: certain actions are inherently right or wrong regardless of consequences. Sacred texts provide axiomatic foundations upon which entire legal and social systems are constructed. Connects to natural law theory and the development of international human rights. The trail is not a leash. The trail is a gift from everyone who got lost before you." },
+
+      { id: "community-belonging-gathering", num: 6, icon: "🤝", title: "Community & Belonging (The Gathering Place)", subtitle: "You Are Part of a Massive Group of Friends Reaching Back into History",
+        simple: "These books are like a family album for millions of people. When people read the same text, they realize they belong to the same team, even if they live far away. It gives everyone the same songs to sing and the same stories to tell around the dinner table. You are not just one person; you are part of a massive group of friends reaching back into history. This connection makes us feel strong and loved. It reminds us that we are all brothers and sisters in one big human family.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A choir singing in unison: many becoming one through a shared page." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The mixed aromas of a potluck dinner: everyone bringing something to the same table." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A communal bowl of soup: nourishment that only works when shared." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Joining hands in a circle: the text made into a chain of skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stadium full of lights: every light a person, every person a reader of the same story." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning against someone you trust: the body finding support in shared belief." }
+        ],
+        intuition: "You are part of a massive group of friends reaching back into history. When a Jewish child reads the Torah in 2026, they are reading the same words a Jewish child read in 426 BC. When a Muslim prays the Quran in Cincinnati, a Muslim in Jakarta is praying the same syllables. The text is the meeting point. The text is the address where strangers become family. You are not alone in your beliefs. You are standing in a line that stretches back thousands of years. And the person behind you is holding the same book.",
+        links: [
+          { label: "Social Cohesion", url: "https://en.wikipedia.org/wiki/Social_cohesion" },
+          { label: "Collective Effervescence", url: "https://en.wikipedia.org/wiki/Collective_effervescence" },
+          { label: "Sociology of Religion", url: "https://en.wikipedia.org/wiki/Sociology_of_religion" }
+        ],
+        songs: [
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=9AjkUyX0rVw" },
+          { title: "Hey Jude", artist: "The Beatles", url: "https://www.youtube.com/watch?v=A_MjCqQoLLA" }
+        ],
+        advanced: "Sociological function of religion (Durkheim): sacred texts create social cohesion through shared rituals and narratives, transforming individuals into a functional moral community. Connects to evolutionary psychology regarding in-group cooperation and the common knowledge problem. The text is the address where strangers become family." },
+
+      { id: "ritual-practice-heartbeat", num: 7, icon: "🕯️", title: "Ritual & Practice (The Heartbeat)", subtitle: "A Workout for Your Soul",
+        simple: "Sacred texts do not just want to be read; they want to be lived. They give us rhythms, like praying at certain times, eating special foods, or taking a day of rest. These habits are like practicing an instrument; the more you do them, the better your life sounds. It turns a regular day into something holy and special. Doing these small things every day keeps your heart focused on what really matters. It is like a workout for your soul.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A rhythmic chant or the ringing of a gong: the text becoming a beat you can follow." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Burning incense or sage: the scent of ordinary air becoming sacred." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter herbs or sweet wine: symbolic flavors the text prescribed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Kneeling on a soft rug or holding prayer beads: the body obeying the page." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A beautifully set table with candles: the text becoming a meal you can see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Bowing or rhythmic swaying: the body memorizing what the mind keeps forgetting." }
+        ],
+        intuition: "A workout for your soul. You do not get strong by thinking about lifting weights. You get strong by lifting weights. You do not get kind by reading about kindness. You get kind by practicing kindness. Sacred texts are not meant to be admired on a shelf. Sacred texts are meant to be worn like shoes — used, scuffed, lived in. The ritual is the repetition. The repetition is the practice. The practice is the change. Read it. Then do it. Then do it again. The soul is a muscle. The text is the gym.",
+        links: [
+          { label: "Liturgy", url: "https://en.wikipedia.org/wiki/Liturgy" },
+          { label: "Neurotheology", url: "https://en.wikipedia.org/wiki/Neurotheology" },
+          { label: "Flow State", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" }
+        ],
+        songs: [
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Rhythm of the Saints", artist: "Paul Simon", url: "https://www.youtube.com/watch?v=keMBFW25wBE" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" }
+        ],
+        advanced: "Liturgical theology and neurotheology: repetitive ritualistic behavior guided by text induces flow states and synchronizes brain activity among participants, reinforcing the sacred/profane distinction. Connects to behavioral psychology (habit loops) and biology of belief. The soul is a muscle. The text is the gym." },
+
+      { id: "suffering-hope-anchor", num: 8, icon: "⚓", title: "Suffering & Hope (The Anchor)", subtitle: "Hope Is the Anchor That Keeps You from Floating Away in a Storm",
+        simple: "Sometimes life is very hard and sad, and these books do not pretend it is not. They tell stories of people who were lonely, sick, or lost, but who found a way to keep going. They remind us that after the darkest night, the sun always comes back up. Reading these stories is like finding a hand to hold when you are in the dark. It gives you the grit to stay strong because you know the story is not over yet. Hope is the anchor that keeps you from floating away in a storm.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A cello playing a deep soulful melody: sadness made beautiful by being expressed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Warm cedar wood or pine: the scent of something that endured the winter." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A warm cup of herbal tea: comfort entering through the throat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy weighted blanket: pressure as a form of holding." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tiny green sprout growing through a crack in the sidewalk: hope using damage as a door." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feet digging into the ground to stay steady: the body refusing to be blown away." }
+        ],
+        intuition: "Hope is the anchor that keeps you from floating away in a storm. Job lost everything. Everything. And the book did not delete his story. The book kept it. Because the point was not that suffering happens. The point was that you can survive it. Sacred texts do not promise a life without storms. Sacred texts promise that the anchor holds. The night is real. The pain is real. But the sunrise is also real. And the sunrise has a perfect record. It has never once failed to show up.",
+        links: [
+          { label: "Theodicy", url: "https://en.wikipedia.org/wiki/Theodicy" },
+          { label: "Book of Job", url: "https://en.wikipedia.org/wiki/Book_of_Job" },
+          { label: "Post-Traumatic Growth", url: "https://en.wikipedia.org/wiki/Post-traumatic_growth" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwo'ole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" }
+        ],
+        advanced: "Theodicy: the vindication of divine goodness in the face of evil. Sacred texts provide existential resilience — a framework where suffering is not meaningless but transformative (the refiner's fire). Connects to post-traumatic growth in psychology and Stoic philosophy. The sunrise has a perfect record. It has never once failed to show up." },
+
+      { id: "cosmic-order-grand-design", num: 9, icon: "🌌", title: "Cosmic Order (The Grand Design)", subtitle: "You Are Not a Mistake — You Are a Necessary Piece of the World's Puzzle",
+        simple: "Sacred texts say the stars and the seasons are not just accidents; they are part of a giant plan. Everything has a place, from the tiny ant to the giant galaxy. This means that you have a place and a purpose too! You are not a mistake; you are a necessary piece of the world's puzzle. Understanding this order helps you feel calm because it means the world is not just a mess. It is like looking at a beautiful clock and knowing someone made it work perfectly.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The Om vibration or ocean waves: the sound of order pretending to be random." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Crisp clean air of high mountains: the scent of altitude and perspective." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure golden honey: sweetness organized by ten thousand bees following the same blueprint." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The perfect symmetry of a seashell: order you can hold in your palm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sky full of stars: chaos that turns out to be a map." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in water, perfectly supported: the body trusting a design it did not create." }
+        ],
+        intuition: "You are not a mistake — you are a necessary piece of the world's puzzle. The ant has a job. The bee has a job. The river has a job. The moon has a job. You have a job. The fact that you do not know what it is yet does not mean it does not exist. The puzzle piece does not know what picture it belongs to. But it fits somewhere. Perfectly. Sacred texts say the same thing the stars say: there is a plan. You are in it. And the plan needed you specifically. Not a version of you. You.",
+        links: [
+          { label: "Teleology", url: "https://en.wikipedia.org/wiki/Teleology" },
+          { label: "Dharma", url: "https://en.wikipedia.org/wiki/Dharma" },
+          { label: "Fine-Tuned Universe", url: "https://en.wikipedia.org/wiki/Fine-tuned_universe" }
+        ],
+        songs: [
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Walking on the Moon", artist: "The Police", url: "https://www.youtube.com/watch?v=mbv-LcdGY1Q" },
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" }
+        ],
+        advanced: "Teleology: explanation of phenomena by the purpose they serve. Sacred texts describe the Tao, Rta, or Dharma — cosmic harmony that humans must align with for fulfillment. Connects to theoretical physics (fine-tuning) and ecology (systems thinking). The plan needed you specifically. Not a version of you. You." },
+
+      { id: "transformation-butterfly-effect", num: 10, icon: "🦋", title: "Transformation (The Butterfly Effect)", subtitle: "When You Change the Whole World Around You Starts to Change Too",
+        simple: "The goal of reading these books is to change from the inside out. It is like a caterpillar turning into a butterfly. You start out thinking only about yourself, but you end up caring about everyone. These books give you spirit bumps — that tingly feeling when you realize you can be a better person than you were yesterday. It is not about being perfect; it is about growing every single day. When you change, the whole world around you starts to change too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden clear aha or a bird chirping at dawn: the sound of becoming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Orange blossoms or blooming jasmine: the scent of something that was not here yesterday." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sour-to-sweet transition: transformation on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Shedding an old itchy sweater for a soft new one: growth you can feel on your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a flower blooming: change that was always happening but too slow to see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Growing taller or stretching your muscles: the body expanding into who it is becoming." }
+        ],
+        intuition: "When you change the whole world around you starts to change too. The text does not want to be memorized. The text wants to be metabolized. You do not read a sacred text the way you read a menu. You read a sacred text the way you eat a meal — it becomes part of you. It enters your blood. It changes your cells. It rewires your responses. The caterpillar does not study butterflies. The caterpillar becomes a butterfly. That is the difference between reading and transformation. The book is not the destination. The book is the cocoon.",
+        links: [
+          { label: "Metanoia", url: "https://en.wikipedia.org/wiki/Metanoia_(theology)" },
+          { label: "Theosis", url: "https://en.wikipedia.org/wiki/Theosis_(Eastern_Christian_theology)" },
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "I Can See Clearly Now", artist: "Jimmy Cliff", url: "https://www.youtube.com/watch?v=MrHxhQPOO2c" },
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" }
+        ],
+        advanced: "Ontological metamorphosis: beyond behavior modification into a fundamental shift in being. Sanctification, enlightenment, or theosis. Connects to neuroplasticity — the brain's ability to rewire itself — and alchemy as metaphor for psychological growth. The book is not the destination. The book is the cocoon." },
+    ],
+
+
 
 
 
