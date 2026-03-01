@@ -22403,6 +22403,243 @@ export const TOPIC_CARDS = {
         advanced: "Archetypal Symbolism: altered states produce archetypes, not noise — Great Mother, Wise Old Man, Trickster, Hero, Mandala, Serpent, Tree of Life. Visions are not hallucinations. They are translations. The deeper mind speaks in images chosen for a hundred thousand years." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // LOVE (filter) > FAMILY & BLOOD (family)
+    // ═══════════════════════════════════════════════════════════════
+
+    family: [
+      { id: "genetic-heritage-biological-blueprint", num: 1, icon: "🧬", title: "Genetic Heritage: The Biological Blueprint", subtitle: "A Living Library of Your Ancestors Written in Code Before You Were Born",
+        simple: "Imagine you are a Lego set, and the instructions came from your mom and dad. These instructions are hidden deep inside every part of your body and tell your hair how to grow and your heart how to beat. You did not get to pick the instructions, but they make you you. It is like having a secret recipe that has been in your family for hundreds of years. You are a special mix of everyone who came before you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythmic thumping of a heartbeat: the sound of the code executing — three billion base pairs translating into one pulse after another, the rhythm your ancestors gave you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of a clean newborn baby: the smell of fresh code — a brand new compilation of ancient instructions meeting air for the first time." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The iron taste of blood from a scraped knee: the taste of hemoglobin — iron atoms forged in dying stars, now circulating through your inherited blueprint." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your thumb against a window and seeing your unique fingerprint: the touch of identity — the one pattern in the universe that belongs only to you, written by your genes." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking in a mirror and seeing your grandfather's nose on your face: the sight of time travel — phenotypic expression making the dead visible in the living." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and feeling the weight of your limbs, knowing your bones were built from your parents' energy: the body as archive — every cell a library card cataloging thousands of ancestors." }
+        ],
+        intuition: "A living library of your ancestors written in code before you were born. Your DNA is a data storage system. Three billion base pairs encoding roughly 750 megabytes of information — compressed into a molecule so small it fits inside every one of your thirty-seven trillion cells. If you uncoiled all the DNA in your body and laid it end to end, it would stretch from the Sun to Pluto and back. Six times. This is not a metaphor for inheritance. This is inheritance. Every protein your body builds, every enzyme it deploys, every structural component it assembles — all of it follows instructions written before you existed. Instructions edited by natural selection across three and a half billion years of unbroken replication. You did not choose your eye color. You did not choose your blood type. You did not choose your predisposition toward height or metabolism or the specific shape of your earlobes. These were decided by alleles — variant copies of genes shuffled and dealt across generations like cards from a deck that has been in play since life began. But here is where it gets interesting: epigenetics. Your genes are the alphabet. But which genes get expressed — which letters get capitalized, which sentences get read aloud — that is influenced by environment, by stress, by nutrition, by love. The code is fixed. The reading of the code is not. You are not your DNA. You are what your DNA does when it meets your life.",
+        links: [
+          { label: "Human Genome", url: "https://en.wikipedia.org/wiki/Human_genome" },
+          { label: "Epigenetics", url: "https://en.wikipedia.org/wiki/Epigenetics" },
+          { label: "Mendelian Inheritance", url: "https://en.wikipedia.org/wiki/Mendelian_inheritance" }
+        ],
+        songs: [
+          { title: "He Lives in You", artist: "Lebo M", url: "https://www.youtube.com/watch?v=wT4U0kz6JCU" },
+          { title: "The Living Years", artist: "Mike + The Mechanics", url: "https://www.youtube.com/watch?v=uGDA0Hecw1k" },
+          { title: "Family Affair", artist: "Sly & The Family Stone", url: "https://www.youtube.com/watch?v=eAMaLm5Oepk" }
+        ],
+        advanced: "Biological lineage: 3 billion base pairs, 750 megabytes, in every one of 37 trillion cells. Mendelian genetics determines the code. Epigenetics determines the reading. The alphabet is fixed. Which sentences get read aloud is influenced by environment, stress, nutrition, and love. You are not your DNA — you are what your DNA does when it meets your life." },
+
+      { id: "ancestral-trauma-resilience", num: 2, icon: "🌳", title: "Ancestral Trauma & Resilience", subtitle: "The Bravery or Sadness of Your Grandparents Can Be Felt by You Today — Memory Held in the Body",
+        simple: "Sometimes, if a long time ago your great-grandparents were very brave, that bravery stays in your family backpack. Other times, if they were very sad, you might feel a little bit of that sadness too without knowing why. It is like carrying an invisible bag of tools and stories that your family gave you. You can use the good tools to help you grow strong. Even if the bag feels heavy, it is what connects you to your history.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low echoing vibration of a large drum: the sound of something old resonating through something new — ancestral frequency still vibrating in present tissue." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books or a dusty attic full of memories: the scent of stored time — information that has been waiting in the dark for someone to open the box." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bitter herb that turns into a sweet aftertaste: the taste of resilience — suffering metabolized into strength by the passage of generations." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over the rough bark of an ancient oak: the touch of something that survived — a living record of every storm it endured." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old faded photograph of people you never met who look like you: the sight of genetic echo — faces you never knew wearing features you see every morning." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A sudden gut instinct to be careful or brave in a new place: the body remembering what the mind never learned — epigenetic memory expressing as intuition." }
+        ],
+        intuition: "The bravery or sadness of your grandparents can be felt by you today — memory held in the body not just the brain. Transgenerational epigenetic inheritance. The term sounds clinical. The reality is staggering. In 2013 researchers at Emory University trained mice to fear the scent of cherry blossoms by pairing it with an electric shock. The mice learned to fear the smell. Their children — who had never been shocked — also feared the smell. Their grandchildren feared it too. The fear was not taught. It was not modeled. It was not communicated. It was inherited. The mechanism is epigenetic methylation — chemical tags placed on DNA that determine which genes are expressed. Stress modifies these tags. And modified tags can be passed through the germline to the next generation. The Holocaust survivors' grandchildren show altered cortisol profiles. The descendants of famine survivors show changed metabolic patterns. The children of soldiers with PTSD show stress-response signatures their parents acquired in combat. You are not starting from zero. You are starting from wherever your ancestors' bodies left off. This is not destiny. Epigenetic marks can be changed by environment, by therapy, by love, by practice. But it means the invisible backpack is real. And the first step in unpacking it is knowing it exists.",
+        links: [
+          { label: "Transgenerational Epigenetics", url: "https://en.wikipedia.org/wiki/Transgenerational_epigenetic_inheritance" },
+          { label: "Historical Trauma", url: "https://en.wikipedia.org/wiki/Historical_trauma" },
+          { label: "Epigenetic Methylation", url: "https://en.wikipedia.org/wiki/DNA_methylation" }
+        ],
+        songs: [
+          { title: "Ancestors", artist: "Enigma", url: "https://www.youtube.com/watch?v=9jTkm7dYDTY" },
+          { title: "Piece by Piece", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=SXWdKa5GXeI" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Transgenerational epigenetic inheritance: Emory 2013 — mice trained to fear cherry blossom scent passed that fear to children and grandchildren who were never shocked. Mechanism: epigenetic methylation modifying germline gene expression. The invisible backpack is real. And epigenetic marks can be changed by environment, therapy, and love." },
+
+      { id: "family-system-first-society", num: 3, icon: "🕸️", title: "The Family System (The First Society)", subtitle: "If One Person Wiggles the Whole Web Shakes — Your First Team Your First World",
+        simple: "Think of your family like a giant spiderweb. If one person wiggles, the whole web shakes. Your family is the very first place you learn how to share, how to talk, and how to love. You did not pick your teammates, but you have to learn to play the game together. Even when you disagree, you are still tied to the same web. This web helps catch you when you fall.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The chaotic but happy noise of a busy dinner table: the sound of a system in motion — overlapping voices, interrupted stories, laughter colliding with argument, all of it the family operating as one organism." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The specific smell of your home that you only notice when you have been away: the scent of baseline — the olfactory signature of the system you were calibrated inside." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe that no one else makes quite the same way: the taste of proprietary code — information transmitted through measuring cups and wooden spoons, not textbooks." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A hug from someone who has known you since you were a baby: the touch of someone whose nervous system learned yours before you had language — pre-verbal calibration." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Shoes lined up by the front door — different sizes same family: the sight of the system rendered in leather and rubber — each pair a different size, all pointing the same direction." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing exactly where everyone is in the house by the sound of their footsteps: the body mapping the system spatially — proprioceptive awareness extended beyond your own skin." }
+        ],
+        intuition: "If one person wiggles the whole web shakes — your first team your first world. Murray Bowen looked at families and saw what physicists see when they look at particle systems: nothing operates in isolation. Every member of a family is a node in a network. Change the behavior of one node and the entire network reconfigures. A child acts out not because the child is broken but because the child is expressing a tension the system cannot articulate. A parent overworks not because of ambition but because the system assigned them the role of provider and they cannot imagine an alternative. A sibling withdraws not from lack of interest but because the system only had room for one loud voice and they chose the other strategy. Bowen called these interlocking patterns triangulation, differentiation, emotional cutoff, multigenerational transmission. The names are clinical. The experience is visceral. You have felt it every time a holiday dinner got tense for reasons no one could name. The tension was not between two people. The tension was in the system. And the system is the first society you ever joined. It taught you what love looks like, what conflict means, what roles are available, what emotions are permitted, and what happens when someone breaks the rules. Every relationship you have for the rest of your life is an improvisation on the theme your family system composed.",
+        links: [
+          { label: "Family Systems Theory", url: "https://en.wikipedia.org/wiki/Family_systems_theory" },
+          { label: "Murray Bowen", url: "https://en.wikipedia.org/wiki/Murray_Bowen" },
+          { label: "Cybernetics", url: "https://en.wikipedia.org/wiki/Cybernetics" }
+        ],
+        songs: [
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=eBpYgpF1bqQ" },
+          { title: "Teach Your Children", artist: "Crosby Stills Nash & Young", url: "https://www.youtube.com/watch?v=EkaKwXddT_I" },
+          { title: "Family Tree", artist: "Caylee Hammack", url: "https://www.youtube.com/watch?v=_bJFqMJ5VsU" }
+        ],
+        advanced: "Bowen Family Systems Theory: no individual operates in isolation — every member is a node in a network. Triangulation, differentiation, emotional cutoff, multigenerational transmission. Every relationship you have for the rest of your life is an improvisation on the theme your family system composed." },
+
+      { id: "collective-unconscious-shared-mind", num: 4, icon: "🌊", title: "Collective Unconscious (The Shared Mind)", subtitle: "A Giant Cloud of Ideas Inside Our Brains — Your Family Has Its Own Corner Filled with Shared Secrets",
+        simple: "Have you ever had a dream that felt like a movie everyone has seen? Or felt like you knew a story before you even finished reading it? That is because we all share a giant cloud of ideas, like the internet but inside our brains. Your family has its own little corner of this cloud filled with shared secrets and ways of thinking. It is like being part of a big invisible club.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound of the ocean inside a seashell: the sound of your own blood echoing inside a calcium carbonate spiral — you hearing yourself and mistaking it for the sea, which is exactly how the collective unconscious works." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on hot pavement — which everyone recognizes: the scent of a universal memory — geosmin released by soil bacteria, triggering the same ancient recognition circuit in every human nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fresh bread, a flavor that feels like home to almost everyone on Earth: the taste of fermented grain — the first technology humans shared across every continent, baked into the collective palate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding hands in a circle: the touch of the circuit completing — individual nervous systems linked into a single conductive loop." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The glow of a campfire at night: the sight humans have sat around for four hundred thousand years — the original screen, the original gathering point, the original shared dream." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of deja vu: the body insisting it has been here before — pattern recognition firing on data you cannot consciously source." }
+        ],
+        intuition: "A giant cloud of ideas inside our brains — your family has its own corner filled with shared secrets. Jung proposed that beneath your personal unconscious — your own private memories and repressions — lies a deeper layer that belongs to no one individual. The collective unconscious. It contains archetypes: the Mother, the Father, the Hero, the Shadow, the Trickster, the Wise Old Man. These are not learned. They are inherited. Not through stories told at bedtime but through the structure of the brain itself. Every culture independently produces flood myths. Every culture independently produces hero journeys. Every culture independently produces creation stories that begin in darkness and move toward light. The patterns are too consistent to be coincidence and too widespread to be cultural transmission. Something in the architecture of the human mind generates these forms the way a crystal lattice generates its shape — not by being taught but by being structured. Your family sits at the intersection of two currents: the universal archetypes shared by all humanity, and the specific mythologies unique to your bloodline. The stories your grandmother told. The roles your family assigned. The unspoken rules that everyone followed without being able to name them. Your family's corner of the collective unconscious is the water you grew up swimming in. You did not notice it because fish do not notice water. But it shaped everything.",
+        links: [
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Evolutionary Psychology", url: "https://en.wikipedia.org/wiki/Evolutionary_psychology" }
+        ],
+        songs: [
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=K_PQ4fRQ5Kc" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Jung: beneath personal unconscious lies collective unconscious containing archetypes — Mother, Father, Hero, Shadow, Trickster. Every culture independently produces flood myths, hero journeys, creation stories from darkness to light. Your family's corner of the collective unconscious is the water you grew up swimming in." },
+
+      { id: "attachment-theory-primary-bond", num: 5, icon: "⚓", title: "Attachment Theory (The Primary Bond)", subtitle: "The Way You Were Held as a Baby Creates a Blueprint for How You Will Trust People for Life",
+        simple: "When you were a tiny baby, your family was like an anchor that kept your boat from drifting away. Because they looked after you and kept you safe, you learned that it is okay to trust people. This trust muscle stays with you as you grow up and make friends. If your anchor was strong, you feel brave enough to explore the whole ocean. Your family gave you your very first map of how love works.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft humming lullaby: the sound of regulated co-regulation — a caregiver's voice training an infant's nervous system to associate human presence with safety." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A soft blanket: the scent of the transitional object — the first thing a child uses to self-soothe when the primary attachment figure is absent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm milk: the taste of the first bond — nursing as simultaneous nutrition, warmth, proximity, and oxytocin exchange." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle stroke on the forehead when trying to sleep: the touch that says the world is safe enough to lose consciousness — the most vulnerable gift one nervous system gives another." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into someone's eyes and seeing them smile back: the sight of attunement — mirror neurons firing, confirming that you are seen, that you exist, that you matter." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Being picked up and held securely against someone's chest: the body remembering safety before the brain had words to describe it — pre-verbal encoding of trust." }
+        ],
+        intuition: "The way you were held as a baby creates a blueprint for how you will trust people for life. John Bowlby watched children separated from their mothers during World War Two and saw something that changed psychology forever. The children did not just miss their mothers emotionally. They deteriorated physically. They stopped growing. They stopped eating. Some of them died. Not from disease. Not from injury. From the absence of attachment. Mary Ainsworth formalized this into the Strange Situation experiment. Put a toddler in a room with their mother. A stranger enters. The mother leaves. Watch what happens. Secure children cry when the mother leaves but settle quickly when she returns. Anxious children become inconsolable. Avoidant children pretend not to care. These patterns — secure, anxious, avoidant — do not stay in the nursery. They follow you into every relationship you ever have. The way you attach to romantic partners, to friends, to colleagues, to your own children — all of it is an echo of the first bond. The anchor was not just emotional comfort. The anchor was neurological infrastructure. Oxytocin pathways. HPA axis calibration. Vagal tone. The hardware of trust is built in the first two years of life by the quality of the primary attachment. And it can be rebuilt. Earned secure attachment is real. The blueprint can be redrawn. But you have to know it exists first.",
+        links: [
+          { label: "Attachment Theory", url: "https://en.wikipedia.org/wiki/Attachment_theory" },
+          { label: "Strange Situation", url: "https://en.wikipedia.org/wiki/Strange_situation" },
+          { label: "John Bowlby", url: "https://en.wikipedia.org/wiki/John_Bowlby" }
+        ],
+        songs: [
+          { title: "Stay Gold", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=yN8MG-r8_OY" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdTY2Y_po" },
+          { title: "Isn't She Lovely", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=IVvkjuEAwgU" }
+        ],
+        advanced: "Bowlby: children separated from mothers in WWII deteriorated physically — some died from absence of attachment, not disease. Ainsworth's Strange Situation: secure, anxious, avoidant patterns follow you into every relationship. The hardware of trust — oxytocin, HPA axis, vagal tone — is built in the first two years. And it can be rebuilt." },
+
+      { id: "cultural-inheritance-invisible-language", num: 6, icon: "🏮", title: "Cultural Inheritance (The Invisible Language)", subtitle: "Family Is Not Just Blood — It Is the Language the Holidays and the Way You See Right and Wrong",
+        simple: "Your family has its own special secret code — not just the language you speak, but the ways you celebrate and the stories you tell. Maybe you open presents on Christmas Eve, or maybe you eat a special food on your birthday. These traditions are like a warm coat that your family wraps around you to keep your culture alive. You did not choose these traditions, but they help you know where you come from. It is the flavor of your life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Traditional music or a language spoken by elders: the sound of cultural code being transmitted — phonemes and melodies carrying information that predates the written word." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Spices cooking in the kitchen for a holiday: the scent of calendar — olfactory markers that tell the body which ritual is approaching before the mind checks the date." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A dish made only for very special occasions: the taste of sacred time — flavor reserved for moments the culture has deemed important enough to mark." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Wearing traditional clothes made of a specific fabric: the touch of identity on the skin — silk, wool, cotton, linen, each carrying the tactile signature of a people." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A family flag or religious symbol in your home: the sight of compressed meaning — an entire worldview encoded in a single visual glyph." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Bowing, kneeling, or dancing in a way traditional to your people: the body performing cultural memory — postures and movements that encode values the conscious mind may never articulate." }
+        ],
+        intuition: "Family is not just blood — it is the language the holidays and the way you see right and wrong. Richard Dawkins coined the word meme in 1976. Not the internet kind. The original kind. A meme is a unit of cultural information that replicates itself from mind to mind the way a gene replicates from body to body. Your family is a meme machine. It transmitted to you: a language, an accent within that language, a religion or the absence of one, a political orientation, a set of table manners, a definition of success, a tolerance for risk, a relationship to authority, a sense of humor, a way of grieving, a way of celebrating, a way of fighting, and a way of making up. None of this is genetic. All of it is inherited. Pierre Bourdieu called it habitus — the deeply ingrained habits, skills, and dispositions that we possess due to our life experiences. Your habitus is not chosen. It is absorbed. You did not decide to hold your fork that way. You did not decide that certain words are funny and others are offensive. You did not decide what counts as a proper meal. Your family decided. And their family decided before them. Cultural inheritance is evolution without DNA. It is faster than genetic evolution, more flexible, and in many ways more powerful. Because while your genes determine what your body can do, your culture determines what your body will do. The invisible language writes the visible life.",
+        links: [
+          { label: "Meme (Dawkins)", url: "https://en.wikipedia.org/wiki/Meme" },
+          { label: "Habitus (Bourdieu)", url: "https://en.wikipedia.org/wiki/Habitus_(sociology)" },
+          { label: "Cultural Transmission", url: "https://en.wikipedia.org/wiki/Cultural_transmission" }
+        ],
+        songs: [
+          { title: "Colors of the Wind", artist: "Judy Kuhn", url: "https://www.youtube.com/watch?v=TkV-of_eN2w" },
+          { title: "Diamonds on the Soles of Her Shoes", artist: "Paul Simon", url: "https://www.youtube.com/watch?v=uf4YyXVoWeA" },
+          { title: "Waka Waka", artist: "Shakira", url: "https://www.youtube.com/watch?v=pRpeEdMmmQ0" }
+        ],
+        advanced: "Dawkins 1976: meme — a unit of cultural information replicating mind to mind like genes replicate body to body. Bourdieu: habitus — deeply ingrained dispositions absorbed not chosen. Cultural inheritance is evolution without DNA. Faster, more flexible, more powerful. The invisible language writes the visible life." },
+
+      { id: "sibling-dynamic-peer-mirror", num: 7, icon: "👯", title: "The Sibling Dynamic (The Peer Mirror)", subtitle: "Your First Roommates and Your First Rivals — Two Branches from the Exact Same Trunk",
+        simple: "If you have brothers or sisters, they are like your very first roommates and your very first rivals. You learn how to fight and how to make up with them before you ever go to school. They are the only people in the world who truly know what it was like to grow up in your house. They are like a mirror that shows you who you are, even when you are being annoying. You are tied together by a shared history of toys and secrets.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Whispering late at night from the next bed: the sound of the first conspiracy — two members of the same system sharing information the system did not authorize." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A sibling's shampoo or laundry: the scent of someone genetically similar but experientially different — close enough to recognize, distinct enough to differentiate." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Splitting the last cookie exactly in half: the taste of negotiated fairness — resource division at its most primal and its most precise." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A pinky swear or a wrestle on the carpet: the touch of the two modes — alliance and competition — that define every sibling relationship in every species." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Someone who has your same eyes or your same laugh: the sight of yourself refracted — your genes expressed through a different personality, proving that the same ingredients can make different meals." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling where your sibling is in a room without looking: proprioception extended to another body — spatial awareness of someone whose rhythms you learned before you learned to read." }
+        ],
+        intuition: "Your first roommates and your first rivals — two branches from the exact same trunk. Frank Sulloway spent decades studying birth order and found that firstborns tend toward conscientiousness and traditional achievement. Later-borns tend toward openness and rebellion. Not because of genetics — siblings share roughly fifty percent of their DNA. Because of niche differentiation. The family is an ecosystem with limited resources: parental attention, physical space, emotional bandwidth. The first child occupies the niche of responsible achiever. The second child, finding that niche already taken, differentiates. They become the funny one, the rebel, the artist, the athlete — whatever the first child is not. This is not random. This is game theory playing out in the living room. Siblings must cooperate enough to maintain the family system and compete enough to secure individual resources. The balance between these two forces produces the most intense, most enduring, and most formative peer relationship most humans will ever have. Your sibling knows things about you that your spouse never will. They were there for the unedited version. They saw you before you learned to perform. They are the control group in the experiment of your life — same parents, same house, same era, different outcome. The mirror that shows you who you are by showing you who you are not.",
+        links: [
+          { label: "Birth Order", url: "https://en.wikipedia.org/wiki/Birth_order" },
+          { label: "Sibling Rivalry", url: "https://en.wikipedia.org/wiki/Sibling_rivalry" },
+          { label: "Game Theory", url: "https://en.wikipedia.org/wiki/Game_theory" }
+        ],
+        songs: [
+          { title: "He Ain't Heavy He's My Brother", artist: "The Hollies", url: "https://www.youtube.com/watch?v=Jl5vi9ir49g" },
+          { title: "Sister Golden Hair", artist: "America", url: "https://www.youtube.com/watch?v=XIycEe59Auc" },
+          { title: "Brother", artist: "NEEDTOBREATHE", url: "https://www.youtube.com/watch?v=61Wm_qlVD4Q" }
+        ],
+        advanced: "Sulloway: birth order produces niche differentiation — firstborns occupy responsible achiever niche, later-borns differentiate into rebel, artist, comedian. Game theory in the living room: cooperate enough to maintain the system, compete enough to secure resources. The sibling is the control group in the experiment of your life." },
+
+      { id: "obligation-vs-choice-contract", num: 8, icon: "⛓️", title: "Obligation vs. Choice (The Contract)", subtitle: "A Promise You Were Born Into — Loyalty Not Because You Feel Like It But Because It Is Your Blood",
+        simple: "Have you ever had to go to a family party when you really wanted to stay home and play? That is because family comes with invisible chores. You help them because they are your blood, not just because you feel like it. It is like being part of a team where you can not quit, even if you lose a game. This teaches you how to be loyal and how to stick by people even when things are tough. It is a promise you were born into.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The thud of a heavy door closing, signifying being home: the sound of the boundary between the world and the family — the door that separates choice from obligation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A rainy day when everyone is stuck inside together: the scent of forced proximity — the weather making the contract visible by eliminating the option to leave." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A plain meal eaten because it was made with love: the taste of obligation metabolized — not delicious, not chosen, but nourishing because someone's hands prepared it for you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The weight of a heavy winter coat passed down to you: the touch of inherited responsibility — warmth that comes with the weight of someone else's history on your shoulders." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long list of names in a family Bible: the sight of the contract in writing — every name a signature on an agreement none of them chose but all of them honored." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning on someone when you are tired: the body surrendering its independence — gravity pulling you toward the person whose obligation it is to hold you up." }
+        ],
+        intuition: "A promise you were born into — loyalty not because you feel like it but because it is your blood. Social contract theory usually applies to governments. But the family is the first government. You did not sign the contract. You did not consent to the terms. You were born into a system of reciprocal obligations that predates your consciousness. Confucius codified this as filial piety — the duty of children to respect, obey, and care for their parents. It was not a suggestion. It was the foundation of social order. Five thousand years of Chinese civilization rested on the premise that the family contract is sacred and non-negotiable. The West arrived at a different answer. Enlightenment individualism said the self is sovereign. You owe nothing you did not choose to owe. The modern concept of chosen family extends this further — blood is not a binding contract, it is a starting condition. The tension between these two positions is one of the deepest in human experience. Because both are true. The obligation is real — you did not choose your parents but they fed you, sheltered you, and kept you alive when you could not keep yourself alive. The debt exists. And the choice is real — you are not property, you are not inventory, and no bloodline gives another person the right to harm you. The contract and the exit clause are both written in the same blood.",
+        links: [
+          { label: "Filial Piety", url: "https://en.wikipedia.org/wiki/Filial_piety" },
+          { label: "Social Contract", url: "https://en.wikipedia.org/wiki/Social_contract" },
+          { label: "Chosen Family", url: "https://en.wikipedia.org/wiki/Family_of_choice" }
+        ],
+        songs: [
+          { title: "Father and Son", artist: "Cat Stevens", url: "https://www.youtube.com/watch?v=P6zaCV4niKk" },
+          { title: "Family Portrait", artist: "Pink", url: "https://www.youtube.com/watch?v=hBMBJFNKsMc" },
+          { title: "Cat's in the Cradle", artist: "Harry Chapin", url: "https://www.youtube.com/watch?v=KUwjNBjqR-c" }
+        ],
+        advanced: "The family is the first government. Confucius: filial piety — the non-negotiable contract. Enlightenment individualism: the self is sovereign. Both are true. The obligation is real — they kept you alive. The choice is real — no bloodline gives another person the right to harm you. The contract and the exit clause are written in the same blood." },
+
+      { id: "lineage-legacy-future-seed", num: 9, icon: "🌱", title: "Lineage & Legacy (The Future Seed)", subtitle: "You Are Not the End of a Line — You Are a Bridge — What You Do Today Affects the Unborn",
+        simple: "Think of yourself as a gardener. Your ancestors gave you the seeds, but you are the one who decides how to plant them. One day, you might have kids or nieces and nephews, and they will look at you to see how to live. You are a time traveler because you carry the past in your body and the future in your dreams. Every kind thing you do is a gift for the family that comes after you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ticking of an old grandfather clock: the sound of time passing through a mechanism built by someone who is no longer alive — legacy rendered in gears and pendulums." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly turned soil in a garden: the scent of preparation — the smell of ground being made ready for something that does not exist yet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fruit from a tree planted many years ago: the taste of someone else's patience — sweetness you did not earn, grown from labor you did not witness." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Passing a cherished toy or piece of jewelry to a younger child: the touch of the relay — the baton changing hands, the chain adding a link." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a sunset knowing your great-great-grandchildren will see the same sun: the sight of continuity — the one thing that connects every generation that has ever lived or ever will." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your feet firmly planted on the ground supporting the weight of the future: the body as bridge — standing between what was and what will be, bearing the load of both." }
+        ],
+        intuition: "You are not the end of a line — you are a bridge — what you do today affects the unborn. Erik Erikson called it generativity — the concern for establishing and guiding the next generation. He placed it in the seventh stage of psychosocial development, the stage where adults either contribute to the future or stagnate in self-absorption. Generativity is not just having children. It is planting trees whose shade you will never sit in. It is writing books for readers who do not exist yet. It is building institutions that will outlast you. It is the opposite of entropy — the deliberate creation of order that persists beyond the creator. The Haudenosaunee — the Iroquois Confederacy — encoded this as the Seventh Generation Principle: every decision should be made with consideration for how it will affect the people living seven generations from now. Seven generations is roughly two hundred years. Imagine making every choice — what to eat, what to build, what to burn, what to preserve — with the faces of people two centuries in the future looking over your shoulder. That is lineage consciousness. You are a single bead on a necklace that stretches in both directions further than you can see. The beads behind you are your ancestors. The beads ahead of you are your descendants. And the thread that holds them all together is the choices you make right now.",
+        links: [
+          { label: "Generativity (Erikson)", url: "https://en.wikipedia.org/wiki/Generativity" },
+          { label: "Seventh Generation Principle", url: "https://en.wikipedia.org/wiki/Seven_generation_sustainability" },
+          { label: "Teleology", url: "https://en.wikipedia.org/wiki/Teleology" }
+        ],
+        songs: [
+          { title: "Forever Young", artist: "Alphaville", url: "https://www.youtube.com/watch?v=t1TcDHrkQYg" },
+          { title: "Humble and Kind", artist: "Tim McGraw", url: "https://www.youtube.com/watch?v=awzNHuGqoMc" },
+          { title: "Unforgettable", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=vDN5rG3wLa4" }
+        ],
+        advanced: "Erikson: generativity — establishing and guiding the next generation. Haudenosaunee Seventh Generation Principle: every decision made considering its impact 200 years into the future. You are a single bead on a necklace stretching in both directions. The thread is the choices you make right now." },
+
+      { id: "shadow-side-breaking-point", num: 10, icon: "✂️", title: "The Shadow Side (The Breaking Point)", subtitle: "Not All Blood Bonds Are Healthy — The Greatest Truth Is Learning When to Set Boundaries to Save Yourself",
+        simple: "Sometimes, even if people are family, they might not know how to be kind. It is like having a pair of shoes that are too small — they might have been yours, but they hurt your feet now. It is okay to say no or to stay away from things that hurt your heart. Being blood does not mean someone is allowed to be mean to you. Your most important job is to grow into a happy healthy person, even if you have to do it differently than your family.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence after a loud argument: the sound of the system crashing — the moment when the feedback loop breaks and the web stops vibrating." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain cleaning the air after a storm: the scent of aftermath — ozone and petrichor replacing the charged ions of conflict." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cold clear water that washes everything away: the taste of reset — the palate cleansed, the slate wiped, the system rebooted." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own arms wrapped around yourself in a hug: the touch of self-sufficiency — the discovery that the anchor you needed was inside your own body all along." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A locked door that keeps you safe: the sight of a boundary made physical — wood and metal standing between you and what the contract said you owed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking away and feeling lighter with every step: the body reporting that the system you left was costing more energy than it was providing — the physics of emotional debt." }
+        ],
+        intuition: "Not all blood bonds are healthy — the greatest truth is learning when to set boundaries to save yourself. Jung called it individuation — the process by which a person becomes a psychological individual, distinct from the collective psychology of the family. It is the most necessary and most painful growth a human can undergo. Because the family system does not want you to individuate. The system wants homeostasis. The system wants you to stay in your role — the helper, the scapegoat, the golden child, the invisible one — because your role keeps the system stable. When you change, the system destabilizes. And the system will use guilt, obligation, love, and fear to pull you back into position. This is not malice. This is cybernetics. A thermostat does not hate you for opening the window. It simply activates the heater to restore the set point. Your family system does the same thing. The existentialists — Sartre, Kierkegaard, Heidegger — argued that facticity is the set of conditions you are born into. You did not choose your family, your body, your era, your nation. These are facts. But they are not destiny. Existence precedes essence. You are not defined by what you were born into. You are defined by what you do with it. The scissors are not a betrayal of the web. The scissors are what the web produces when one thread needs to grow in a direction the web cannot follow. Sometimes the most loving thing you can do for your family is become the person they did not plan for you to be.",
+        links: [
+          { label: "Individuation", url: "https://en.wikipedia.org/wiki/Individuation" },
+          { label: "Existentialism", url: "https://en.wikipedia.org/wiki/Existentialism" },
+          { label: "Boundaries (Psychology)", url: "https://en.wikipedia.org/wiki/Personal_boundaries" }
+        ],
+        songs: [
+          { title: "Because of You", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Ra-Om7UMSJc" },
+          { title: "Praying", artist: "Kesha", url: "https://www.youtube.com/watch?v=v-Dur3uXXCQ" },
+          { title: "Cleaning Out My Closet", artist: "Eminem", url: "https://www.youtube.com/watch?v=RQ9_TKayu9s" }
+        ],
+        advanced: "Jung: individuation — becoming distinct from family's collective psychology. The system wants homeostasis and will use guilt, love, and fear to restore the set point. Existentialism: facticity is what you were born into, not what defines you. The scissors are what the web produces when one thread needs to grow where the web cannot follow." },
+    ],
+
+
 
 
 
