@@ -15759,6 +15759,243 @@ export const TOPIC_CARDS = {
         advanced: "Transformation: the Psi value of the spiritual functional — the final product of recognition and reliability. Evidence that convergence was successful. Neuroplasticity driven by spiritual practice — the density matrix of the brain physically rewired. The move from knowing about to becoming. The ultimate cross-validation: if the log-likelihood of peace increases over time, the system is converging on truth. The amen is not the end. The amen is the new beginning." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > DEATH & AFTERLIFE (death)
+    // ═══════════════════════════════════════════════════════════════
+
+    death: [
+      { id: "biological-cessation", num: 1, icon: "🛑", title: "Biological Cessation", subtitle: "Even Though the Body Stops the Pieces That Made the Body Are Still There",
+        simple: "When a person's body stops working, it is like a battery running out of power. The heart stops pumping blood, and the lungs stop breathing in air. Because the brain is not getting any more fuel, it eventually turns off and goes to sleep forever. Everything that was busy inside — like your digestion and your muscles — takes a long rest. It is a very natural part of being a living thing, just like how a flower wilts at the end of summer. Even though the body stops, the pieces that made the body are still there.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Absolute silence in a deep forest: the sound of stillness, not emptiness." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain hitting dry earth: life arriving where dryness was." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The neutral cool taste of plain water: simplicity at the boundary." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth cold river stone: something that endured long after the river moved on." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset where the light slowly fades into stars: one light ending so a thousand can begin." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling completely weightless, like floating in a pool: the body rehearsing its release." }
+        ],
+        intuition: "Even though the body stops the pieces that made the body are still there. The battery dies but the atoms do not. Not one of them. The iron in your blood was forged in a star that exploded before the earth existed. The calcium in your bones was floating in space before your great-great-grandmother was born. The body is a temporary arrangement of permanent things. The arrangement ends. The things do not. You were never just a body. You were a gathering.",
+        links: [
+          { label: "Death", url: "https://en.wikipedia.org/wiki/Death" },
+          { label: "Brain Death", url: "https://en.wikipedia.org/wiki/Brain_death" },
+          { label: "Apoptosis", url: "https://en.wikipedia.org/wiki/Apoptosis" }
+        ],
+        songs: [
+          { title: "The End", artist: "The Beatles", url: "https://www.youtube.com/watch?v=12R4FzIhdoA" },
+          { title: "Knockin' on Heaven's Door", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=rm9coqlk8fY" },
+          { title: "Leave Out All the Rest", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=yZIummTz9mM" }
+        ],
+        advanced: "Biological death: permanent cessation of all vital functions — cardiopulmonary failure leading to brain death. At the cellular level, apoptosis and necrosis begin as oxygen deprivation prevents ATP production. Marks the boundary between self as biological entity and self as memory held by others. The definitive transition from entropy-fighting organization to thermodynamic equilibrium with the environment. The arrangement ends. The atoms do not." },
+
+      { id: "conservation-energy-death", num: 2, icon: "⚡", title: "Conservation of Energy", subtitle: "You Are Made of Star-Stuff and That Stuff Stays in the Universe Forever",
+        simple: "There is a special rule in the universe that says energy can never truly disappear; it can only change into something else. The energy that makes you move, think, and feel warm is the same kind of energy found in stars and lightning. When your body stops, that energy does not just vanish into nothing. It leaves the body and goes back into the world around you, like steam rising from a cup of cocoa. You are made of star-stuff, and that stuff stays in the universe forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low hum of a distant power transformer: energy never stops — it just changes address." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Ozone in the air before a thunderstorm: the scent of energy changing form." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The tingle of a sour lemon: chemical energy talking to your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Static shock from a doorknob: energy reminding you it is everywhere." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The flickering glow of a candle flame: energy visibly transforming from wax to light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tingling pins and needles in your arm: energy rerouting through your nerves." }
+        ],
+        intuition: "You are made of star-stuff and that stuff stays in the universe forever. The first law of thermodynamics is not a suggestion. It is a law. Energy cannot be created or destroyed. Period. The warmth in your body will become warmth in the soil. The electricity in your brain will become electricity in the air. Nothing is lost. Nothing was ever lost. The universe does not know how to waste. It only knows how to transform.",
+        links: [
+          { label: "Conservation of Energy", url: "https://en.wikipedia.org/wiki/Conservation_of_energy" },
+          { label: "First Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/First_law_of_thermodynamics" },
+          { label: "Biocentrism", url: "https://en.wikipedia.org/wiki/Biocentric_universe" }
+        ],
+        songs: [
+          { title: "Stardust", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=DjU6ZjbPm_0" },
+          { title: "Radioactive", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=ktvTqknDobU" },
+          { title: "Energy", artist: "Drake", url: "https://www.youtube.com/watch?v=jl1zSYwwmCA" }
+        ],
+        advanced: "First Law of Thermodynamics: energy in an isolated system is constant. Biological death involves cessation of electrochemical signals but the thermal and chemical energy is redistributed into the ecosystem. Aligns with biocentrism — if consciousness is information and information is linked to entropy, the essence persists in the total informational state of the cosmos. Nothing is lost. The universe does not know how to waste." },
+
+      { id: "panoramic-life-review", num: 3, icon: "🎞️", title: "The Panoramic Life Review", subtitle: "Your Brain Giving You One Last Look at Your Favorite Story — Which Is You",
+        simple: "In the very last moments of life, many people say they see their whole life play out like a fast movie. You get to see all the times you were happy, all the people you loved, and even the times you were brave. It is like your brain is giving you one last look at your favorite story — which is you! This happens because the brain is trying to make sense of everything it has ever learned. It is a peaceful way for the mind to say goodbye to all its memories.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A projector clicking through slides: the sound of memories being screened." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old family photo album: the scent of preserved time." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Your favorite childhood birthday cake: the flavor of who you were." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm familiar hug: the body remembering what the mind is replaying." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright shimmering kaleidoscope of colors: every memory lit at once." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Falling backward into a soft bed: the body surrendering while the mind reviews." }
+        ],
+        intuition: "Your brain giving you one last look at your favorite story — which is you. The brain does not just shut off. The brain performs one final symphony. Gamma waves spike. Every memory center fires simultaneously. Your first kiss and your last breakfast play on the same screen. Not random. Not chaos. A review. A synthesis. A summary of everything you were. The brain does not want to leave without saying goodbye to itself. And that goodbye is the most complete version of you that has ever existed.",
+        links: [
+          { label: "Life Review", url: "https://en.wikipedia.org/wiki/Life_review" },
+          { label: "Near-Death Experience", url: "https://en.wikipedia.org/wiki/Near-death_experience" },
+          { label: "Gamma Wave", url: "https://en.wikipedia.org/wiki/Gamma_wave" }
+        ],
+        songs: [
+          { title: "Photograph", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=nSDgHBxUbVQ" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Good Riddance (Time of Your Life)", artist: "Green Day", url: "https://www.youtube.com/watch?v=CnQ8N1KacJc" }
+        ],
+        advanced: "The life review: associated with a surge of gamma wave activity during the transition to death. The brain enters a hyper-lucid state where memory centers and executive centers coordinate a final synthesis of identity. A completion phase — the brain handles ultimate cessation of sensory input by turning inward to its own archives. The goodbye is the most complete version of you that has ever existed." },
+
+      { id: "consciousness-continuity", num: 4, icon: "📻", title: "Consciousness Continuity", subtitle: "If the Radio Breaks the Music Does Not Stop Existing",
+        simple: "Some people believe that the brain is like a radio, and your soul or mind is like the music playing through it. If the radio breaks, the music does not stop existing; it is still out there in the air, you just cannot hear it through that specific radio anymore. This idea means that who you are might keep going even after your body stops working. It suggests that our thoughts and feelings are part of a bigger world that we cannot always see. It is a way of thinking that gives many people hope and peace.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Faint static between radio stations: the signal is still there — the receiver changed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh clean air after a big storm: clarity after disruption." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering sweetness of honey: flavor that outlasts the spoon." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The gentle vibration of a phone: a signal you can feel but not see." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Snow on an old TV screen: not nothing — everything at once." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling expanded or larger than your body: consciousness testing its own edges." }
+        ],
+        intuition: "If the radio breaks the music does not stop existing. This is the question that will not die: are you the radio or are you the music? If you are the radio then when the hardware breaks the signal ends. But if you are the music then the hardware was just one way of playing you. The song exists whether the speaker works or not. Nobody has proven which one you are. But every culture on earth independently concluded the same thing: you are the music. The radio was borrowed.",
+        links: [
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" },
+          { label: "Non-Local Consciousness", url: "https://en.wikipedia.org/wiki/Quantum_mind" },
+          { label: "Philosophy of Mind", url: "https://en.wikipedia.org/wiki/Philosophy_of_mind" }
+        ],
+        songs: [
+          { title: "Spirit in the Sky", artist: "Norman Greenbaum", url: "https://www.youtube.com/watch?v=AZQxH_8raCI" },
+          { title: "Astronomy Domine", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=pJh9OLlXenM" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" }
+        ],
+        advanced: "Addresses the hard problem of consciousness: how physical processes give rise to subjective experience. Continuity theories suggest consciousness may be fundamental or non-local — not strictly confined to biological tissue. NDEs occurring during zero brain activity (flatline EEG) are cited as evidence. Whether the self is a localized expression of a universal field remains one of the deepest open questions. Are you the radio or the music? Every culture chose music." },
+
+      { id: "decomposition-rebirth", num: 5, icon: "🌱", title: "Decomposition & Rebirth", subtitle: "Life Is Like a Big Circle That Never Ends",
+        simple: "When a body returns to the earth, it becomes a wonderful gift for the planet. The tiny pieces of the body turn into food for the soil, which helps trees grow tall and flowers bloom bright. This means that a part of every person who has ever lived is still here in the grass, the trees, and the apples we eat. Life is like a big circle that never ends; things go away so that new things can start. You are a part of the earth, and the earth will always take care of your pieces.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Rustling leaves in a forest: the sound of the cycle continuing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Deep rich potting soil: the scent of transformation in progress." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp juicy apple: eating the gift the dead gave the living." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft green moss under your fingers: touching the bridge between death and life." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A field of wildflowers swaying in the wind: beauty funded by decay." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your feet rooted to the ground: the body already practicing its return." }
+        ],
+        intuition: "Life is like a big circle that never ends. The apple you ate today contains atoms that were once inside a dinosaur. And a pharaoh. And a tree that fell a million years ago. Nothing leaves. Everything recycles. The body is a loan from the earth. The earth always collects. But the earth does not destroy what it collects. It replants it. The flower is made of the dead. The dead are made into flowers. The circle has no seam.",
+        links: [
+          { label: "Decomposition", url: "https://en.wikipedia.org/wiki/Decomposition" },
+          { label: "Nutrient Cycle", url: "https://en.wikipedia.org/wiki/Nutrient_cycle" },
+          { label: "Conservation of Mass", url: "https://en.wikipedia.org/wiki/Conservation_of_mass" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" }
+        ],
+        advanced: "The human body is a temporary vessel for atoms. Post-mortem, autolysis and putrefaction break complex organic molecules into simpler inorganic substances — phosphorus, nitrogen, potassium — reintegrated into the biosphere. Material immortality: matter is neither created nor destroyed. The physical components remain active participants in the ecosystem. The body is a loan. The earth always collects. The earth always replants." },
+
+      { id: "nde-patterns", num: 6, icon: "✨", title: "Near-Death Experience Patterns", subtitle: "The Journey Out of Life Might Be a Very Calm and Beautiful Experience",
+        simple: "Many people who almost died but were brought back by doctors tell very similar stories. They often talk about feeling total peace, seeing a bright and loving light, or meeting friends and family who passed away before them. It does not matter what language they speak or where they live; the stories are often the same. This tells us that the journey out of life might be a very calm and beautiful experience. It makes the idea of the end feel much less scary and much more like going home.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single clear ringing bell: the sound of arrival, not departure." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A lily or a rose: the fragrance that every culture associates with transition." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool silk on the tongue: purity beyond flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm breeze on your face: touch from something you cannot see." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A light so bright it does not hurt to look at: luminance without pain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating upward: the body releasing its argument with gravity." }
+        ],
+        intuition: "The journey out of life might be a very calm and beautiful experience. A farmer in Iowa and a monk in Tibet and a fisherman in Japan all describe the same thing: peace, light, reunion, love. They do not share a language. They do not share a religion. They do not share a continent. But they share the experience. Either the dying brain has a universal exit protocol — or the exit is real. Either way, the door is not dark. The door is light.",
+        links: [
+          { label: "Near-Death Experience", url: "https://en.wikipedia.org/wiki/Near-death_experience" },
+          { label: "Greyson Scale", url: "https://en.wikipedia.org/wiki/Greyson_scale" },
+          { label: "Out-of-Body Experience", url: "https://en.wikipedia.org/wiki/Out-of-body_experience" }
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "The Great Gig in the Sky", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=T13se_yA51A" }
+        ],
+        advanced: "NDEs: cross-cultural features including OBEs, transcendental travel, and encounters with beings of light. Quantified through the Greyson Scale. Some attribute these to cerebral hypoxia or NMDA receptor malfunction; others note veridical reports — patients accurately describing events during clinical death. Consistency across disparate cultures suggests either a universal biological mechanism or a common landscape of the transitional state. The door is not dark. The door is light." },
+
+      { id: "ancestral-legacy", num: 7, icon: "🌳", title: "Ancestral Legacy", subtitle: "Even When a Person Is Gone the Way They Loved Others Stays in the World Forever",
+        simple: "You are a living piece of all the people who came before you. Your eyes might look like your grandma's, or you might laugh just like your dad. When people pass away, they leave bits of themselves in their children and their friends. They also leave behind the stories they told and the kind things they did. This is called a legacy. Even when a person is gone, the way they loved others stays in the world and changes it for the better, forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An old wooden rocking chair: the sound of someone who is not here anymore, still moving." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A specific perfume or cologne a loved one wore: memory stored in molecules." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe passed down through years: the dead still feeding the living." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An old handmade quilt: warmth sewn by hands that are gone." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old black-and-white family photograph: proof that the dead were once as alive as you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and feeling the strength of your own bones: your ancestors holding you up from inside." }
+        ],
+        intuition: "Even when a person is gone the way they loved others stays in the world forever. Your grandmother's laugh lives in your mother's throat. Your grandfather's stubbornness lives in your jawline. The recipe is not on paper. The recipe is in the hands that stir the pot from memory. Legacy is not a monument. Legacy is a ripple. The stone sinks but the wave keeps traveling. You are someone's wave. And you are still traveling.",
+        links: [
+          { label: "Legacy", url: "https://en.wikipedia.org/wiki/Legacy" },
+          { label: "Epigenetics", url: "https://en.wikipedia.org/wiki/Epigenetics" },
+          { label: "Generativity", url: "https://en.wikipedia.org/wiki/Generativity" }
+        ],
+        songs: [
+          { title: "Remember Me", artist: "Coco Soundtrack", url: "https://www.youtube.com/watch?v=VRcMkGCJbXs" },
+          { title: "Supermarket Flowers", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=NHLo-sNB0zw" },
+          { title: "Holes in the Floor of Heaven", artist: "Steve Wariner", url: "https://www.youtube.com/watch?v=WZp4LQS7MN0" }
+        ],
+        advanced: "Legacy is twofold: biological (genetic) and memetic (cultural). Genetically, we are the current expression of an unbroken DNA line stretching billions of years. Culturally, shaped by memes — values, skills, languages. Generativity: concern for guiding the next generation. Functional immortality — as long as influence shapes behavior of the living, the individual remains an active force in the world's causal chain. The stone sinks. The wave keeps traveling." },
+
+      { id: "quantum-consciousness", num: 8, icon: "⚛️", title: "Quantum Consciousness", subtitle: "Instead of a Body That Has a Spirit You Might Be a Spirit Using a Body for a Little While",
+        simple: "Tiny tiny bits of the universe called quantum particles behave in very strange ways — they can be in two places at once! Some scientists think our brains use these tiny particles to create our thoughts. If our self is made of quantum information, it might not be able to be destroyed. It could just float back out into the universe like a secret code. This means that instead of being a body that has a spirit, you might be a spirit that is using a body for a little while.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The singing of a crystal bowl: vibration that seems to come from everywhere at once." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library full of very old books: the scent of accumulated knowing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic taste of a battery: raw energy on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The invisible push of two magnets: force without contact." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Dust motes dancing in a beam of sunlight: particles performing for whoever watches." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The spinning feeling when you close your eyes: the body sensing its own quantum uncertainty." }
+        ],
+        intuition: "Instead of a body that has a spirit you might be a spirit using a body for a little while. Flip the sentence and everything changes. You do not have a soul. You are a soul. You have a body. Temporarily. The quantum information that makes you you cannot be destroyed — that is not mysticism, that is the no-hiding theorem. The information persists. The pattern survives the hardware. You are not a thing. You are a pattern. And patterns do not die. They relocate.",
+        links: [
+          { label: "Orch-OR Theory", url: "https://en.wikipedia.org/wiki/Orchestrated_objective_reduction" },
+          { label: "Quantum Mind", url: "https://en.wikipedia.org/wiki/Quantum_mind" },
+          { label: "No-Hiding Theorem", url: "https://en.wikipedia.org/wiki/No-hiding_theorem" }
+        ],
+        songs: [
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Interstellar Theme", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=UDVtMYqUAyw" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" }
+        ],
+        advanced: "Orch-OR theory: consciousness originates from quantum vibratory computations in microtubules within brain neurons. These quantum states could exist independently of biological structure. If information in the quantum realm is truly indestructible (black hole information paradox), the specific information pattern constituting individual consciousness may persist as part of the fundamental fabric of spacetime. Patterns do not die. They relocate." },
+
+      { id: "bardo-intermediate", num: 9, icon: "🌫️", title: "The Bardo / Intermediate State", subtitle: "There Is Always a Peaceful Space in the Middle to Help You Adjust",
+        simple: "Many old stories from around the world talk about a middle place you go to right after you die. It is like a waiting room or a bridge between this life and whatever comes next. It is a time to be quiet, to think about what you learned, and to get ready for a new adventure. This idea helps people understand that big changes do not happen all at once; there is always a peaceful space in the middle to help you adjust. It is like the moment between being awake and falling fast asleep.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The muffled sound of the world underwater: everything present but softened." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or a snuffed-out candle: the scent of transition." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The fading flavor of mint: something that was here but is gently leaving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking through a very thick fog: touching the space between states." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The soft gray light just before the sun comes up: neither night nor day." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Swaying gently in a hammock: the body between effort and rest." }
+        ],
+        intuition: "There is always a peaceful space in the middle to help you adjust. The caterpillar does not become a butterfly instantly. There is the cocoon. The seed does not become a tree instantly. There is the dark soil. Between every ending and every beginning there is a hallway. The bardo is the hallway. You are not lost in it. You are being processed by it. The pause between the inhale and the exhale is not empty. The pause is where the direction changes.",
+        links: [
+          { label: "Bardo", url: "https://en.wikipedia.org/wiki/Bardo" },
+          { label: "Liminality", url: "https://en.wikipedia.org/wiki/Liminality" },
+          { label: "Purgatory", url: "https://en.wikipedia.org/wiki/Purgatory" }
+        ],
+        songs: [
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" },
+          { title: "Where Is My Mind?", artist: "Pixies", url: "https://www.youtube.com/watch?v=49FB9hhoO6c" },
+          { title: "Wait", artist: "M83", url: "https://www.youtube.com/watch?v=lAwYodrBr2Q" }
+        ],
+        advanced: "The bardo (Tibetan Buddhism): a state of existence between death and rebirth. A period of radical transition where habitual ego structures dissolve. Mirrors Victor Turner's liminality — being betwixt and between. Requires moving from linear time toward fluid state-based understanding where death is not a point but a process of unfolding. The pause between inhale and exhale is not empty. The pause is where the direction changes." },
+
+      { id: "reincarnation-cycles", num: 10, icon: "🔄", title: "Reincarnation Cycles", subtitle: "Goodbye Is Not Forever — It Is Just a See You Later in a Different Way",
+        simple: "Some people believe that the you inside — the part that thinks and loves — never really stays gone. Instead, it comes back in a new body, like a student going to a new grade in school. This is called reincarnation. The idea is that we keep coming back to learn more lessons about how to be kind and wise. Every life is a new chance to try again and get even better. It means that goodbye is not forever; it is just a see you later in a different way.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A repeating musical round like Row Your Boat: the same song starting over from a different voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A newborn baby or fresh laundry: the scent of a clean beginning." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sunflower seed: the entire future hidden in something small enough to hold." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "New soft grass in the spring: the earth trying again." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A butterfly coming out of its cocoon: the same life wearing a new body." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching after a very long nap: the body waking up into a new day." }
+        ],
+        intuition: "Goodbye is not forever — it is just a see you later in a different way. The water evaporates. The water becomes a cloud. The cloud becomes rain. The rain becomes the river. The river becomes the ocean. The ocean evaporates. Same water. Different address. If water can do it, why not you? Every culture that watched the seasons noticed the same thing: what dies comes back. The leaf falls. The leaf returns. Not the same leaf. But the same tree. Not the same you. But the same something.",
+        links: [
+          { label: "Reincarnation", url: "https://en.wikipedia.org/wiki/Reincarnation" },
+          { label: "Ian Stevenson", url: "https://en.wikipedia.org/wiki/Ian_Stevenson" },
+          { label: "Karma", url: "https://en.wikipedia.org/wiki/Karma" }
+        ],
+        songs: [
+          { title: "Highwayman", artist: "The Highwaymen", url: "https://www.youtube.com/watch?v=aFkcAH-m9W0" },
+          { title: "Coming Back to Life", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=sEN8bJDXkPY" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "Reincarnation (metempsychosis): central tenet in many Eastern religions, studied empirically by Ian Stevenson through children claiming verified past-life memories. Challenges the Western one-and-done view of identity, proposing an evolving soul model accumulating karma across biological iterations. Whether literal or metaphorical framework for life's will to persist, it remains one of the most resilient afterlife theories. Not the same leaf. But the same tree." },
+    ],
+
+
   },
 
 };
