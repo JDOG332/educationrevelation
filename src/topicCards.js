@@ -11726,6 +11726,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Negative feedback loops counteract changes to maintain a set point; positive feedback loops accelerate changes. Fundamental mechanisms of homeostasis and ecosystem stability. The Eternal We is maintained through intricate regulatory systems ensuring the cycle of death and rebirth remains within sustainable parameters. Balance is not a state. Balance is a verb." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > TREES & ROOTS (trees)
+    // ═══════════════════════════════════════════════════════════════
+
+    trees: [
+      { id: "mycorrhizal-networks", num: 1, icon: "🕸️", title: "Mycorrhizal Networks", subtitle: "A Giant Hidden Internet Made of Tiny White Threads Under Your Feet",
+        simple: "Think of the forest floor like a giant, hidden internet made of tiny white threads. These threads are called fungi, and they plug into the roots of trees like a charger plugs into a phone. Because of this, no tree is ever truly alone or hungry by itself. They use these threads to send food and messages to one another across the whole forest. When you walk on the grass, you are actually walking on a huge, living map where everyone is talking. It is a secret world that keeps the forest healthy and strong.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low, rhythmic thrum of a forest during a rainstorm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor after rain: the smell of the earth breathing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A mushroom: the fruit of the hidden network you are learning about." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Bare hands pressed into cool, moist soil: touching the living internet." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Veins in a leaf: they look just like the maps of the roots underground." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and imagine your feet have long roots reaching deep into the center of the earth." }
+        ],
+        intuition: "No tree is ever truly alone. Neither are you. There is a world beneath your feet where everyone is connected and everyone is talking. The loneliest-looking tree in the field has a million conversations happening under the soil.",
+        links: [
+          { label: "Mycorrhizal Networks", url: "https://en.wikipedia.org/wiki/Mycorrhizal_network" },
+          { label: "The Wood Wide Web", url: "https://en.wikipedia.org/wiki/Mycorrhiza" },
+          { label: "Trees Talk", url: "https://en.wikipedia.org/wiki/Plant_communication" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+        ],
+        advanced: "Mycorrhizal networks represent a sophisticated biological interface where Fungi and Plantae merge. Not merely physical connection but a complex metabolic market where carbon, nitrogen, and phosphorus are exchanged based on supply and demand. Functions as a decentralized neural system facilitating transfer of semiochemicals for systemic response to environmental stressors. Connects to cybernetics — communication and control in living systems." },
+
+      { id: "nutrient-exchange", num: 2, icon: "🔄", title: "Nutrient Exchange", subtitle: "Big Trees Send Sugar to Little Trees So Nobody Goes Hungry",
+        simple: "Trees are like a big family that shares their snacks so nobody goes hungry. Trees in the sun make sugar, and they send it down to the roots to give to trees living in the shade. The mushrooms in the middle act like the mailman, taking the sugar and bringing back water and minerals. This means the big trees help the little trees grow even when they cannot see the sun. It is a beautiful way of making sure that everyone has exactly what they need to survive. When we share, we are just acting like the trees do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rustle of leaves sharing the wind." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sweet scent of sap on a warm afternoon." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A drop of maple syrup: concentrated tree energy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough, protective bark that holds the energy inside." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tall tree casting shadow while little ones below stay green." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body supported by the chair or floor: just as trees support each other." }
+        ],
+        intuition: "When we share, we are just acting like the trees do. The big ones feed the small ones. The strong ones carry the weak ones. This is not charity. This is how forests survive. This is how everything survives.",
+        links: [
+          { label: "Plant Nutrition", url: "https://en.wikipedia.org/wiki/Plant_nutrition" },
+          { label: "Carbon Cycling", url: "https://en.wikipedia.org/wiki/Carbon_cycle" },
+          { label: "Nutrient Trading", url: "https://en.wikipedia.org/wiki/Mycorrhiza#Nutrient_exchange" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdVBLo19Y" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Nutrient exchange in the rhizosphere is governed by reciprocal transfer mechanisms. Trees allocate up to 30% of photosynthetically derived carbon to fungal partners, which provide expansive surface area for uptake of limiting minerals. Creates a Common Pool Resource (CPR) that increases resilience. The biological unit of survival is the network, not the individual tree. Connects to economics — mutual aid and resource distribution." },
+
+      { id: "chemical-signaling-trees", num: 3, icon: "🧪", title: "Chemical Signaling", subtitle: "Trees Talk Without Making a Sound — A Silent Alarm for the Whole Forest",
+        simple: "Did you know trees can talk without making a sound? When a bug starts eating a tree's leaves, that tree sends a help message through its roots to all its friends. This message tells the other trees to start making a special juice that tastes bad to bugs so the bugs will not eat them too. It is like a silent alarm system that protects the whole neighborhood. The forest works together to stay safe because they know they are all connected. Even though they are quiet, they are always listening to each other.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crack of a branch: a physical warning signal." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp scent of pine or crushed mint: these are chemical signals." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitterness of a dandelion leaf: a plant's defense signal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The prick of a thorn: a tactile keep-away message." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Leaves curling up to protect themselves from heat." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The shiver you feel when you get a sudden warning or intuition: your body's chemical alarm." }
+        ],
+        intuition: "Even though they are quiet, they are always listening. Silence is not emptiness. Silence is a full conversation you have not learned to hear yet. The forest is screaming in a language of molecules.",
+        links: [
+          { label: "Plant Communication", url: "https://en.wikipedia.org/wiki/Plant_communication" },
+          { label: "Volatile Organic Compounds", url: "https://en.wikipedia.org/wiki/Volatile_organic_compound" },
+          { label: "Plant Defense", url: "https://en.wikipedia.org/wiki/Plant_defense_against_herbivory" }
+        ],
+        songs: [
+          { title: "Heard It Through the Grapevine", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=hajBdDM2qdg" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Message in a Bottle", artist: "The Police", url: "https://www.youtube.com/watch?v=MbXWrmQW-OE" }
+        ],
+        advanced: "Chemical signaling involves transmission of info-chemicals through aerial and subterranean pathways. Herbivore attack triggers release of jasmonates and salicylates, producing induced systemic resistance in neighboring plants. The underground network acts as high-speed conduit bypassing slower atmospheric diffusion. Creates a forest-wide immune system where one node's recognition triggers convergent preparedness. Connects to information theory." },
+
+      { id: "mother-trees", num: 4, icon: "👑", title: "Mother Trees", subtitle: "The Oldest Among Us Have the Most Love to Give",
+        simple: "In every forest, there are Mother Trees which are the oldest and wisest of them all. They are like the grandmas and grandpas of the woods who have the most connections to everyone else. They use their huge root systems to send extra food and water to the tiny baby trees growing in their shadow. Because the Mother Tree is so big, she can see the sun and share that energy with the little ones who cannot reach it yet. She keeps the whole family together and makes sure the future is bright. This shows that the oldest among us have the most love to give.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep, low creak of an old tree trunk in the wind." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Heavy, rich scent of old growth and decaying wood that feeds new life." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of fruit from an old orchard." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Putting your arms around a massive, wide tree trunk." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A giant tree towering over a circle of small saplings: the family portrait." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stability in your core when you stand tall and straight: channeling the mother tree." }
+        ],
+        intuition: "The oldest among us have the most love to give. The mother tree does not hoard sunlight. She converts it and sends it down. Greatness is not what you keep. Greatness is what you pass on.",
+        links: [
+          { label: "Suzanne Simard's Research", url: "https://en.wikipedia.org/wiki/Suzanne_Simard" },
+          { label: "Forest Ecology", url: "https://en.wikipedia.org/wiki/Forest_ecology" },
+          { label: "Old Growth Forests", url: "https://en.wikipedia.org/wiki/Old-growth_forest" }
+        ],
+        songs: [
+          { title: "Mother", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=xe3NUKCnZp4" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "The Living Years", artist: "Mike + The Mechanics", url: "https://www.youtube.com/watch?v=5hr64MxYpgk" }
+        ],
+        advanced: "Mother Trees (Hub Trees) are the most highly connected nodes in the mycorrhizal network with highest betweenness centrality — primary conduits for resource flow and information exchange. They manage source-sink dynamics, moving resources from canopy abundance to understory need. Their removal can collapse entire network connectivity. Demonstrates vital importance of structural hierarchy within cooperative systems. Connects to graph theory." },
+
+      { id: "kin-recognition-trees", num: 5, icon: "👨‍👩‍👧‍👦", title: "Kin Recognition", subtitle: "Trees Can Actually Recognize Their Own Children",
+        simple: "Trees can actually recognize their own children! Scientists found that Mother Trees send more food to their own baby trees than to stranger trees. They even make more room for their kids' roots to grow so they do not have to fight for space. It is just like how your parents look out for you at the park. Even though they look like they are just standing there, they are busy being a family underground. This reminds us that we always belong to someone and someone is always looking out for us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft whisper of leaves from trees of the same species." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The unique scent of a specific flower that matches its family." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Different varieties of apples from the same family tree." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of holding a family member's hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking in the mirror and seeing features you share with your parents." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of home when surrounded by people who know you: recognition at the root level." }
+        ],
+        intuition: "You always belong to someone and someone is always looking out for you. The tree does not need to see its child. It knows by chemistry. Love is not a feeling. Love is a frequency. And family vibrates at the same one.",
+        links: [
+          { label: "Kin Recognition in Plants", url: "https://en.wikipedia.org/wiki/Kin_recognition" },
+          { label: "Biological Altruism", url: "https://en.wikipedia.org/wiki/Altruism_(biology)" },
+          { label: "Inclusive Fitness", url: "https://en.wikipedia.org/wiki/Inclusive_fitness" }
+        ],
+        songs: [
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=eBpYgpF1bqQ" },
+          { title: "Family Affair", artist: "Mary J. Blige", url: "https://www.youtube.com/watch?v=znlFu_lemsU" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" }
+        ],
+        advanced: "Kin recognition involves detection of specific root exudates — chemical signatures identifying genetic similarity. Mother Trees modulate competitive behavior, reducing root elongation to avoid crowding offspring. Biological altruism suggests the Self is defined not by bark or skin but by shared genetic information across the network. Provides naturalistic basis for understanding cooperation through inclusive fitness and Hamilton's Rule." },
+
+      { id: "quorum-sensing", num: 6, icon: "💡", title: "Quorum Sensing", subtitle: "A Group Chat Where Everyone Agrees Before Acting",
+        simple: "Have you ever noticed how a whole group of birds turns at the same time? Fungi do something similar underground called Quorum Sensing. They wait until there are enough of them in one spot before they start a big project, like growing a mushroom. It is like a group chat where they all agree on what to do next. This way, they do not waste energy doing things alone. They know that they are much more powerful when they act as one big team.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The synchronized chirp of crickets at night: nature's quorum." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Overwhelming scent of a field of clover all blooming at once." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The consistent flavor of a loaf of bread made from many grains of wheat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Many hands clapping together in a stadium: one sound from many." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fairy ring of mushrooms appearing overnight in a perfect circle." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of being part of a wave at a sports game: your body becoming the group." }
+        ],
+        intuition: "They are much more powerful when they act as one. The mushroom does not appear until the underground agrees. No single thread decides. The network decides. Consensus is how forests think.",
+        links: [
+          { label: "Quorum Sensing", url: "https://en.wikipedia.org/wiki/Quorum_sensing" },
+          { label: "Bacterial Communication", url: "https://en.wikipedia.org/wiki/Quorum_sensing#In_bacteria" },
+          { label: "Emergent Behavior", url: "https://en.wikipedia.org/wiki/Emergence" }
+        ],
+        songs: [
+          { title: "All Together Now", artist: "The Beatles", url: "https://www.youtube.com/watch?v=73lj5qJbrMs" },
+          { title: "Power to the People", artist: "John Lennon", url: "https://www.youtube.com/watch?v=RsvOkMG8hIY" },
+          { title: "United We Stand", artist: "Brotherhood of Man", url: "https://www.youtube.com/watch?v=jeBq9OB4dhk" }
+        ],
+        advanced: "Quorum sensing is a stimulus-response system correlated to population density. Involves release and detection of signaling molecules (autoinducers). Once threshold concentration is reached, the entire population undergoes coordinated change in gene expression. Demonstrates emergent intelligence — simple organisms displaying complex decision-making. The network is the thinker; individual hyphae are merely hardware. Connects to complexity theory." },
+
+      { id: "symbiotic-mutualism", num: 7, icon: "🤝", title: "Symbiotic Mutualism", subtitle: "I Will Help You If You Help Me — That Is How the Whole World Stays Green",
+        simple: "Mutualism is a fancy word for I will help you if you help me. The tree gives the fungus sugar because it is good at catching sunlight, and the fungus gives the tree minerals because it is good at digging deep. Neither one could survive as well without the other. They are like two best friends who share their lunch every single day. This teaches us that being different is a good thing because we can help each other in ways we could not help ourselves. Together, they make the whole world green.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The harmony of two different voices singing together." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A garden where flowers and bees are working together." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect mix of peanut butter and jelly: two things better together." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five between two friends." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A butterfly landing on a flower to drink nectar." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The balance you feel when someone helps you stand: your body knowing partnership." }
+        ],
+        intuition: "Being different is a good thing because we can help each other in ways we could not help ourselves. The tree cannot dig. The fungus cannot photosynthesize. Alone, half. Together, everything.",
+        links: [
+          { label: "Mutualism", url: "https://en.wikipedia.org/wiki/Mutualism_(biology)" },
+          { label: "Symbiosis", url: "https://en.wikipedia.org/wiki/Symbiosis" },
+          { label: "Cooperation in Nature", url: "https://en.wikipedia.org/wiki/Co-operation_(evolution)" }
+        ],
+        songs: [
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "Happy Together", artist: "The Turtles", url: "https://www.youtube.com/watch?v=mRCe5L1imxg" },
+          { title: "Better Together", artist: "Jack Johnson", url: "https://www.youtube.com/watch?v=seZMOTGCDag" }
+        ],
+        advanced: "Symbiotic mutualism is a non-zero-sum game increasing fitness of both participants. Maintained through biological tit-for-tat: resources withheld if partner does not reciprocate. This biological contract is foundation of forest stability. Highlights convergent recognition of shared goals — distinct evolutionary lineages finding common path through integration rather than competition. Connects to game theory." },
+
+      { id: "bio-electrical-communication", num: 8, icon: "⚡", title: "Bio-Electrical Communication", subtitle: "The Forest Is One Big, Slow Brain That Is Always Thinking",
+        simple: "Just like there is electricity in your brain that helps you think, there is a tiny bit of electricity moving through the roots of trees. When a tree gets hurt or thirsty, it sends a little zap of info to its neighbors. These electrical pulses move very slowly, but they carry important news. It is like the forest is one big, slow brain that is always thinking about how to stay alive. Even though trees do not have faces, they have a feeling of what is happening all around them.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of static electricity on a sweater." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp, metallic smell of air just before lightning strikes." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The tingle of a sour candy on your tongue: electricity you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tiny spark when you touch a doorknob after walking on carpet." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The blinking of a firefly: a visual zap." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That sudden jolt when you realize you forgot something: your body's action potential." }
+        ],
+        intuition: "Even though trees do not have faces, they have a feeling of what is happening all around them. Intelligence is not a brain. Intelligence is a network that processes information. The forest thinks. Slowly, patiently, and across miles.",
+        links: [
+          { label: "Plant Electrophysiology", url: "https://en.wikipedia.org/wiki/Plant_physiology" },
+          { label: "Action Potentials in Plants", url: "https://en.wikipedia.org/wiki/Action_potential" },
+          { label: "Plant Neurobiology", url: "https://en.wikipedia.org/wiki/Plant_perception_(physiology)" }
+        ],
+        songs: [
+          { title: "Electric Avenue", artist: "Eddy Grant", url: "https://www.youtube.com/watch?v=IuwxZSIS__4" },
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Electricity", artist: "Orchestral Manoeuvres", url: "https://www.youtube.com/watch?v=Y43XLVqjytQ" }
+        ],
+        advanced: "Bio-electrical signaling involves action potentials (APs) and variation potentials (VPs) traveling through phloem and fungal network at roughly 1 cm per minute. Significantly slower than animal neural transmission but enables systemic coordination. Regulates stomata opening/closing and defense gene activation. Proves intelligence is a property of any networked system capable of processing information. Connects to neurobiology and plant neurobiology." },
+
+      { id: "allelopathy", num: 9, icon: "⚠️", title: "Allelopathy", subtitle: "Even in a Connected World, Everyone Still Needs Their Own Space",
+        simple: "Not everything underground is friendly. Sometimes, a tree wants all the space for itself, so it sends out mean chemicals to stop other plants from growing nearby. It is like a tree drawing a line in the sand and saying this is my spot! This is called Allelopathy. It reminds us that even in a big connected world, everyone still needs their own space to be themselves. It is a way for the forest to stay balanced so one kind of plant does not take over everything.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hiss of a cat telling others to stay back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The strong, spicy smell of a walnut tree: famous for this." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitter taste of a lemon that says do not eat me." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The sting of a stinging nettle plant." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A circle of bare dirt around a single, large tree where nothing else grows." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your personal bubble when someone stands too close: your body's allelopathy." }
+        ],
+        intuition: "Even in a big connected world, everyone still needs their own space. Boundaries are not walls. Boundaries are the reason the forest has variety. Without the no, the yes means nothing.",
+        links: [
+          { label: "Allelopathy", url: "https://en.wikipedia.org/wiki/Allelopathy" },
+          { label: "Chemical Ecology", url: "https://en.wikipedia.org/wiki/Chemical_ecology" },
+          { label: "Black Walnut Toxicity", url: "https://en.wikipedia.org/wiki/Juglone" }
+        ],
+        songs: [
+          { title: "Bad Blood", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=QcIy9NiNbmo" },
+          { title: "U Can't Touch This", artist: "MC Hammer", url: "https://www.youtube.com/watch?v=otCpCn0l4Wo" },
+          { title: "Toxic", artist: "Britney Spears", url: "https://www.youtube.com/watch?v=LOZuxwVk7TU" }
+        ],
+        advanced: "Allelopathy is interference competition through biochemicals influencing growth, survival, and reproduction of other organisms. The shadow side of connectivity — the network used as weapon. Secondary metabolites inhibit enzyme function or block nutrient uptake. Serves as regulatory mechanism maintaining biodiversity by preventing monopolization, ensuring dynamic equilibrium. Connects to geopolitics — territory, resources, and defensive strategies." },
+
+      { id: "wood-wide-web", num: 10, icon: "🌐", title: "The Wood Wide Web", subtitle: "When We Connect, We Become Something Much Bigger Than We Could Ever Be Alone",
+        simple: "When you look at a forest, you might see many separate trees, but underground, they are all one big thing called the Wood Wide Web. This web connects every single plant into a giant team that works together to keep the earth breathing. It is like the whole forest is a giant, living puzzle and every tree is a piece that fits perfectly. Because of this web, the forest can survive fires, droughts, and storms. It teaches us that when we connect with each other, we become something much bigger and more beautiful than we could ever be alone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of the whole forest moving in the wind together." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh, clean air that a whole forest makes together." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fresh water from a forest stream: the web's gift." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The forest floor: soft, bouncy, and full of life." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A forest from a mountain: one big ocean of green." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of belonging to the whole world: from the tips of your toes to the stars." }
+        ],
+        intuition: "When we connect with each other, we become something much bigger and more beautiful than we could ever be alone. The forest is not a collection of trees. The forest is one organism pretending to be many. So is humanity.",
+        links: [
+          { label: "Wood Wide Web", url: "https://en.wikipedia.org/wiki/Mycorrhizal_network" },
+          { label: "The Hidden Life of Trees", url: "https://en.wikipedia.org/wiki/The_Hidden_Life_of_Trees" },
+          { label: "Gaia Hypothesis", url: "https://en.wikipedia.org/wiki/Gaia_hypothesis" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" }
+        ],
+        advanced: "The Wood Wide Web describes the forest as a superorganism. The individual tree is not the primary unit of life — the entire ecosystem functions as a single, self-regulating entity. Aligns with the Gaia Hypothesis: life creates conditions for its own survival. By integrating disparate parts into unified whole, the network maximizes operational entropy, creating a resilient, intelligent, everlasting system of convergent recognition. Connects to systems thinking — interrelationships over things, patterns over snapshots." },
+    ],
 
   },
 
