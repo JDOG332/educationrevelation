@@ -11262,7 +11262,7 @@ export const TOPIC_CARDS = {
     // NATURE (pillars) > SEASONS & CYCLES (cycles)
     // ═══════════════════════════════════════════════════════════════
 
-    cycles: [
+    seasons: [
       { id: "conservation-of-energy-cycles", num: 1, icon: "♾️", title: "Conservation of Energy", subtitle: "The Lego Bricks Never Disappear — They Just Build Something New",
         simple: "Imagine you have a box of Lego bricks. Even if you break a Lego castle down, the bricks do not disappear; they just wait to be built into a spaceship. Everything in the whole universe is like those bricks. When a plant or animal finishes its life, its bricks of energy go back into the world to help something else grow. This means that life is always moving and changing shapes, but it never truly goes away. You are made of the same stuff that used to be stars!",
         senses: [
@@ -11967,7 +11967,7 @@ export const TOPIC_CARDS = {
     // NATURE (pillars) > EARTH & SOIL (earth)
     // ═══════════════════════════════════════════════════════════════
 
-    earth: [
+    soil: [
       { id: "nutrient-cycle-decomposition", num: 1, icon: "♻️", title: "The Nutrient Cycle", subtitle: "A Giant Recycling Machine That Never Stops",
         simple: "Imagine that the ground is a giant recycling machine that never stops. When plants or animals die, tiny bugs and invisible germs eat them and turn them back into food for the dirt. This food helps new flowers and big trees grow strong and tall. Without this, the world would run out of the building blocks it needs to make new life. It is like a never-ending circle where nothing is ever truly wasted. This process keeps the whole planet healthy and fed forever.",
         senses: [
@@ -15530,7 +15530,7 @@ export const TOPIC_CARDS = {
     // RELIGION (sameness) > DEATH & AFTERLIFE (death)
     // ═══════════════════════════════════════════════════════════════
 
-    death: [
+    afterlife: [
       { id: "biological-cessation", num: 1, icon: "🛑", title: "Biological Cessation", subtitle: "Even Though the Body Stops the Pieces That Made the Body Are Still There",
         simple: "When a person's body stops working, it is like a battery running out of power. The heart stops pumping blood, and the lungs stop breathing in air. Because the brain is not getting any more fuel, it eventually turns off and goes to sleep forever. Everything that was busy inside — like your digestion and your muscles — takes a long rest. It is a very natural part of being a living thing, just like how a flower wilts at the end of summer. Even though the body stops, the pieces that made the body are still there.",
         senses: [
@@ -16002,7 +16002,7 @@ export const TOPIC_CARDS = {
     // RELIGION (sameness) > GOD & THE DIVINE (god)
     // ═══════════════════════════════════════════════════════════════
 
-    god: [
+    divine: [
       { id: "universal-consciousness", num: 1, icon: "⚛️", title: "Universal Consciousness", subtitle: "A Giant Game of Hide-and-Seek Where the Universe Is Hiding Inside All of Us",
         simple: "Everything in the world is connected like one giant web of energy that can think and feel. Even though we feel like separate people, we are actually like little drops of water that belong to the same big ocean. This means when you are kind to someone else, you are actually being kind to a part of yourself. We are all made of the same stardust and breathing the same life. It is like a giant game of hide-and-seek where the Universe is hiding inside all of us.",
         senses: [
@@ -16238,7 +16238,7 @@ export const TOPIC_CARDS = {
     // RELIGION (sameness) > SACRED TEXTS (sacred)
     // ═══════════════════════════════════════════════════════════════
 
-    sacred: [
+    texts: [
       { id: "divine-inspiration", num: 1, icon: "🌬️", title: "Divine Inspiration (The Breath of God)", subtitle: "When You Read Them You Are Feeling the Breath of the Creator",
         simple: "Imagine that God's ideas are like a warm breeze that blows into a writer's heart. The writer picks up a pen and records those feelings using their own words, but the spark comes from somewhere much bigger. It is like when your teacher gives you a great idea for a story, but you are the one who writes it down in your notebook. These books feel special because they carry a message that is meant to last forever. When you read them, you are not just reading old ink; you are feeling the breath of the Creator.",
         senses: [
@@ -20757,7 +20757,7 @@ export const TOPIC_CARDS = {
     // MYSTICISM (plain) > ENLIGHTENMENT & AWAKENING (enlightenment)
     // ═══════════════════════════════════════════════════════════════
 
-    enlightenment: [
+    awakening: [
       { id: "neuroplasticity-awakening", num: 1, icon: "🧠", title: "Neuroplasticity: The Changing Brain", subtitle: "Your Brain Is a Superhero That Never Stops Growing and Changing for the Better",
         simple: "Imagine your brain is like a big park with lots of dirt paths. When you learn something new or have a big Aha moment, it is like building a brand new paved sidewalk where there used to be just weeds. This means your brain is actually changing its shape to help you think better. It is like your head is getting a software update so you can see the world more clearly. Once the new path is there, it is much easier to walk on it every day. Your brain is a superhero that never stops growing and changing for the better.",
         senses: [
@@ -20993,7 +20993,7 @@ export const TOPIC_CARDS = {
     // MYSTICISM (plain) > SYMBOLS & SACRED GEOMETRY (sacredgeometry)
     // ═══════════════════════════════════════════════════════════════
 
-    sacredgeometry: [
+    geometry: [
       { id: "golden-ratio-sacred", num: 1, icon: "🌀", title: "The Golden Ratio (ϕ)", subtitle: "A Magic Number That Makes Everything It Touches Look Perfectly Balanced and Beautiful",
         simple: "Imagine you have a magic number that makes everything it touches look perfectly balanced and beautiful. This number is found in the way your sunflower seeds grow and how your own face is shaped. It shows us that everything in the world is following the same recipe for growth. Because everything uses this recipe, it means we are all part of the same big family of nature. You can see it in a tiny seashell or a giant spinning galaxy in space.",
         senses: [
@@ -21465,7 +21465,7 @@ export const TOPIC_CARDS = {
     // MYSTICISM (plain) > THE PATH & THE PRACTICE (pathpractice)
     // ═══════════════════════════════════════════════════════════════
 
-    pathpractice: [
+    path: [
       { id: "consistent-incrementalism", num: 1, icon: "🌱", title: "Consistent Incrementalism", subtitle: "Even If You Only Move One Inch — You Are Closer Than You Were Yesterday",
         simple: "Imagine you want to grow a giant oak tree in your backyard. You cannot just wish for it to be big today; you have to give it a little bit of water every single morning without skipping. Walking toward the light is just like that tree growing taller bit by bit. When you do something good every day, like being kind or practicing a skill, it adds up until you become a hero. Even if you only move one inch, you are closer than you were yesterday. Your brain actually gets stronger and builds new muscle every time you choose the right path.",
         senses: [
@@ -21701,7 +21701,7 @@ export const TOPIC_CARDS = {
     // MYSTICISM (plain) > INNER SIGHT & INTUITION (innersight)
     // ═══════════════════════════════════════════════════════════════
 
-    innersight: [
+    intuition: [
       { id: "quantum-entanglement-connection", num: 1, icon: "⚛️", title: "Quantum Entanglement & Connection", subtitle: "Two Pieces of Light on Different Sides of the Galaxy — If One Spins the Other Spins at the Same Time",
         simple: "Everything in the universe is connected by invisible strings that never break. Even if two tiny pieces of light are on different sides of the galaxy, if one spins, the other spins at the same time. This means we are never truly alone and are part of a giant web. You can feel this when you think of a friend and they suddenly call you. It is like a secret walkie-talkie that everyone has inside them. This helps us know things without using our eyes or ears.",
         senses: [
@@ -21937,7 +21937,7 @@ export const TOPIC_CARDS = {
     // MYSTICISM (plain) > ENERGY & LIFE FORCE (energylife)
     // ═══════════════════════════════════════════════════════════════
 
-    energylife: [
+    lifeforce: [
       { id: "metabolism-engine-life", num: 1, icon: "⚙️", title: "Metabolism: The Engine of Life", subtitle: "A Tiny Super-Smart Factory That Never Sleeps — Turning Food and Air into Sparkles of Power",
         simple: "Imagine your body is like a tiny super-smart factory that never sleeps. This factory takes the food you eat and the air you breathe and turns them into sparkles of power that let you run, think, and even dream. Without this constant work, the factory would stop and the lights would go out. Every single living thing, from a blade of grass to a giant whale, has its own version of this engine. It is the most basic way we stay connected to the physical world. It is the way your body says hello to the world by using what it finds to keep its own fire burning.",
         senses: [
