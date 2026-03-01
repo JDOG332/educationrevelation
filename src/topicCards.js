@@ -12901,6 +12901,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Subduction zones recycle oceanic lithosphere into Earth's mantle — primary driver of plate tectonics and the deep carbon cycle regulating atmospheric CO₂ over geological timescales. Without this recycling, Earth would likely have a runaway greenhouse effect like Venus. The ocean floor is not just a container. It is a dynamic, moving part of Earth's internal machinery sustaining life-supporting conditions." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > FIRE & TRANSFORMATION (fire)
+    // ═══════════════════════════════════════════════════════════════
+
+    fire: [
+      { id: "entropy-irreversibility", num: 1, icon: "🌌", title: "Entropy & Irreversibility", subtitle: "Every Moment Is Special Because We Can Never Go Backward",
+        simple: "Fire is a great teacher of how the universe likes to spread energy out. Imagine you have a Lego castle; fire is like taking all those bricks and scattering them across the floor so you cannot build the exact same castle again. Even though the castle is gone, all the bricks are still in the room, just in a different mess. This shows us that things are always changing and moving toward a state of rest. By watching a candle burn, we see time moving in one direction. Every moment is special because we can never go backward to exactly how things were before.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a fireplace: time you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of ozone after a storm: the air rearranged." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitterness of over-steeped tea: time went too far and you cannot undo it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of a sun-baked rock: stored energy slowly releasing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A melting ice cube: order becoming disorder before your eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of slowing down as you exhale deeply: your body releasing entropy." }
+        ],
+        intuition: "Every moment is special because we can never go backward. The candle cannot unburn. The word cannot be unspoken. The Lego bricks are still there but the castle is gone. This is not sad. This is what makes now priceless.",
+        links: [
+          { label: "Entropy", url: "https://en.wikipedia.org/wiki/Entropy" },
+          { label: "Second Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics" },
+          { label: "Arrow of Time", url: "https://en.wikipedia.org/wiki/Arrow_of_time" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" }
+        ],
+        advanced: "Entropy is the statistical measure of disorder in a closed system. Fire breaks high-energy chemical bonds releasing thermal energy and increasing total entropy. The ultimate reveal: transition from complex ordered states to simpler disordered ones. Connects to information theory where entropy represents uncertainty or surprise in a message. Just as fire reveals the basic elements of wood, information entropy reveals the minimum bits required to represent a truth." },
+
+      { id: "conservation-mass-energy", num: 2, icon: "⚖️", title: "Conservation of Mass & Energy", subtitle: "Nothing in Our World Is Ever Truly Lost — It Just Takes a New Shape",
+        simple: "When a piece of wood burns away, it might look like it disappeared into nothing, but it actually just changed into things we cannot see easily. The wood turns into smoke, gas, and a little bit of gray ash, but if you caught it all in a giant balloon, it would weigh the same as the wood did! This teaches us that nothing in our world is ever truly lost; it just takes a new shape. You are part of this too, because the atoms in your body have been around for billions of years. The stuff we are made of lasts forever.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A steady, unchanging hum or drone: energy that never stops." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — fresh rain on dry dirt: matter changing form." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt dissolving in water: it disappears but never goes away." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your hands together and feeling the resistance: energy meeting energy." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Water boiling into steam: matter you can watch transform." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body against the chair: atoms that have been here for billions of years." }
+        ],
+        intuition: "Nothing is ever truly lost. It just takes a new shape. The wood did not vanish. It became air. The person did not disappear. They became memory. Transformation is not destruction. Transformation is a costume change.",
+        links: [
+          { label: "Conservation of Mass", url: "https://en.wikipedia.org/wiki/Conservation_of_mass" },
+          { label: "First Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/First_law_of_thermodynamics" },
+          { label: "Lavoisier", url: "https://en.wikipedia.org/wiki/Antoine_Lavoisier" }
+        ],
+        songs: [
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Everything Changes", artist: "Take That", url: "https://www.youtube.com/watch?v=vBfFDTPPlaM" },
+          { title: "Energy", artist: "Drake", url: "https://www.youtube.com/watch?v=7LnBvuzjpr4" }
+        ],
+        advanced: "The First Law of Thermodynamics: energy can neither be created nor destroyed, only transformed. Fire converts potential chemical energy into radiant and thermal energy. This principle anchors the Eternal We by suggesting a physical basis for immortality: the persistence of matter. Bridges Newtonian physics and the deep ecology of interbeing. You are not temporary. Your atoms are eternal." },
+
+      { id: "chemical-oxidation", num: 3, icon: "⚛️", title: "Chemical Oxidation", subtitle: "Sometimes a Big Energetic Reaction Is Needed to Move Forward",
+        simple: "Fire is what happens when oxygen gets really excited and grabs onto fuel, like wood or wax. This grabbing happens so fast that it creates light and heat that we can see and feel. It is a chemical dance where molecules break apart and find new partners to hold onto. Without this fast dance, we would not have engines for cars or heat for our homes. It shows us that sometimes a big, energetic reaction is needed to move from one state to another.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of a gas burner lighting: ignition." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp scent of a struck match: chemistry announcing itself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The spicy kick of a chili pepper: heat you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tingling of pins and needles as blood returns to a limb: chemical energy flowing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The blue base of a candle flame: the hottest part is invisible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heat in your muscles after a fast sprint: your body combusting fuel." }
+        ],
+        intuition: "Sometimes a big energetic reaction is needed to move from one state to another. The match does not catch fire gently. It explodes into purpose. Some changes require violence. Not all violence is destruction. Some is awakening.",
+        links: [
+          { label: "Combustion", url: "https://en.wikipedia.org/wiki/Combustion" },
+          { label: "Redox Reaction", url: "https://en.wikipedia.org/wiki/Redox" },
+          { label: "Oxidation", url: "https://en.wikipedia.org/wiki/Oxidation" }
+        ],
+        songs: [
+          { title: "Girl on Fire", artist: "Alicia Keys", url: "https://www.youtube.com/watch?v=J91ti_MpdHA" },
+          { title: "Burning Down the House", artist: "Talking Heads", url: "https://www.youtube.com/watch?v=_3eC35LoF4U" },
+          { title: "Light My Fire", artist: "The Doors", url: "https://www.youtube.com/watch?v=mbj1RFaoyKk" }
+        ],
+        advanced: "Combustion is an exothermic redox reaction between fuel and oxidant. The revelation: liberation of photons as electrons drop to lower energy states in newly formed products (CO₂ and H₂O). Connects to the concept of prana or qi — the vital spark sustaining life through biological combustion (ATP production). Fire is not just chemistry. Fire is the universe revealing what was hiding in the wood." },
+
+      { id: "fire-ecology", num: 4, icon: "🌱", title: "Fire Ecology", subtitle: "Even When Something Looks Scary It Might Be Making Room for Something Beautiful",
+        simple: "Sometimes a forest needs a fire so that new, tiny plants can get enough sunlight to grow. Big old trees might block the sun, and fire clears a path for a fresh start for the whole forest family. Some pinecones are even glued shut and need the heat of a fire to melt the glue so their seeds can fall out. This tells us that even when something looks scary or bad, it might be making room for something beautiful and new. It is like cleaning out your toy box so you can find the treasures at the bottom.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Birdsong returning to quiet woods: life after the fire." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Wet pine needles: the forest breathing again." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp, tart apple: fruit that only grew because the canopy opened." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft texture of new moss on burnt ground." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright green sprout pushing through black charcoal: hope made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of stretching after a long nap: your body doing succession." }
+        ],
+        intuition: "Even when something looks scary, it might be making room for something beautiful. The pinecone needed the fire to open. The seed needed the ash to grow. Your worst year might be the soil for your best one. Some doors only open with heat.",
+        links: [
+          { label: "Fire Ecology", url: "https://en.wikipedia.org/wiki/Fire_ecology" },
+          { label: "Serotiny", url: "https://en.wikipedia.org/wiki/Serotiny" },
+          { label: "Ecological Succession", url: "https://en.wikipedia.org/wiki/Ecological_succession" }
+        ],
+        songs: [
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=kOFu6b3w6c0" },
+          { title: "New Soul", artist: "Yael Naim", url: "https://www.youtube.com/watch?v=hhE7QMXRE1g" },
+          { title: "Firework", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=QGJuMBdaqIw" }
+        ],
+        advanced: "Pyrodiversity promotes biodiversity. Fire acts as a biological reset button cycling nutrients back into soil and removing invasive species lacking fire-adaptation. Links to creative destruction philosophy: dismantling of old structures is a prerequisite for systemic evolution and resilience. The forest that burns is not dying. It is upgrading." },
+
+      { id: "metabolism-biological-fire", num: 5, icon: "🫀", title: "Metabolism", subtitle: "Your Breath Is a Bridge Between the World Outside and the Energy Inside You",
+        simple: "Inside your body, you have a tiny fire burning all the time that keeps you warm and gives you energy to play. You do not see flames, but your body is using oxygen to burn the food you eat just like a campfire burns logs. This is why you breathe in oxygen and breathe out warm air. It connects you to every other living thing because we are all burning together to stay alive. Your breath is a bridge between the world outside and the energy inside you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady thumping of your own heartbeat: the fire's drum." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of baking bread: fuel being transformed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of a grape: glucose energy on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of your own skin: proof you are burning." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing your breath on a cold morning: your inner fire meeting the outer cold." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expanding and contracting: the bellows feeding your biological fire." }
+        ],
+        intuition: "Your breath is a bridge between the world outside and the energy inside you. You are a walking campfire. Oxygen in, heat out. Food in, movement out. You are not a body that sometimes has energy. You are energy that sometimes has a body.",
+        links: [
+          { label: "Metabolism", url: "https://en.wikipedia.org/wiki/Metabolism" },
+          { label: "Cellular Respiration", url: "https://en.wikipedia.org/wiki/Cellular_respiration" },
+          { label: "ATP", url: "https://en.wikipedia.org/wiki/Adenosine_triphosphate" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Pump It", artist: "Black Eyed Peas", url: "https://www.youtube.com/watch?v=ZaI2IlHwmgQ" },
+          { title: "The Power", artist: "Snap!", url: "https://www.youtube.com/watch?v=nm6DO_7px1I" }
+        ],
+        advanced: "Cellular respiration is essentially slow-controlled combustion. Glucose reacts with oxygen to produce ATP, the energy currency of life. Bridges inanimate and animate: life is a specific, self-sustaining pattern of energy transformation — a standing flame. You are not solid. You are a process. A fire that feeds itself." },
+
+      { id: "refiners-fire", num: 6, icon: "🔨", title: "The Refiner's Fire", subtitle: "We Come Out of the Heat Stronger Than We Went In",
+        simple: "To make a beautiful gold ring or a strong iron sword, you have to put the metal into a very hot fire. The heat melts away the dirt and junk so that only the pure, shiny metal is left behind. This process is hard and hot, but it is the only way to make the metal its strongest and best self. It teaches us that when we face hard times, we might be in our own refiner's fire, getting rid of the things we do not need so our true selves can shine. We come out of the heat stronger than we went in.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic clanging of a hammer on an anvil: forging through pressure." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of a hardware store: raw material waiting." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The mineral taste of iron-rich water: strength on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth, cold surface of a polished coin: the result of fire." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Molten metal glowing orange-white: truth at maximum temperature." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your muscles tightening as you lift something heavy: pressure making you stronger." }
+        ],
+        intuition: "We come out of the heat stronger than we went in. The gold was always gold. The fire did not add anything. The fire removed everything that was pretending to be gold. Your hardest season is not breaking you. It is revealing you.",
+        links: [
+          { label: "Smelting", url: "https://en.wikipedia.org/wiki/Smelting" },
+          { label: "Metallurgy", url: "https://en.wikipedia.org/wiki/Metallurgy" },
+          { label: "Refining", url: "https://en.wikipedia.org/wiki/Refining_(metallurgy)" }
+        ],
+        songs: [
+          { title: "Titanium", artist: "David Guetta ft. Sia", url: "https://www.youtube.com/watch?v=JRfuAukYTKg" },
+          { title: "Iron Man", artist: "Black Sabbath", url: "https://www.youtube.com/watch?v=8aQRq9hhDKA" },
+          { title: "Stronger", artist: "Kanye West", url: "https://www.youtube.com/watch?v=PsO6ZnUZI0g" }
+        ],
+        advanced: "Thermal purification relies on different melting points and densities of pure elements versus impurities. Precise heat reorganizes crystalline structure while unwanted elements are oxidized and separated. A potent metaphor for eschatology — the fire serves as judgment separating the essential from the superfluous. The dross had to burn for the gold to be known." },
+
+      { id: "psychological-alchemy", num: 7, icon: "🕯️", title: "Psychological Alchemy", subtitle: "Turning Lead Into Gold by Being Brave Enough to Look",
+        simple: "Sometimes we have feelings or thoughts that make us feel messy inside, like anger or sadness. Psychological alchemy is like using a little candle to look into the dark corners of our mind to see what is there. Instead of hiding the mess, we let the light of our attention burn away the parts that are not true, like being mean to ourselves. When we face our shadows, the fire of our honesty reveals a version of us that is much more peaceful. It is like turning lead into gold by just being brave enough to look at it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hush of a quiet room: the sound of looking inward." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Calming lavender or sandalwood: the scent of safe introspection." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate: bitter then sweet, like the truth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hugging yourself or a soft pillow: holding what hurts." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own reflection in a mirror: the bravest thing to face." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Noticing where you hold tension in your jaw or shoulders: your body storing unburned fuel." }
+        ],
+        intuition: "Turning lead into gold by just being brave enough to look at it. The mess inside you is not a problem. It is raw material. The anger is lead. The attention is fire. The peace is gold. You already have everything you need. You just have not melted it yet.",
+        links: [
+          { label: "Shadow (Psychology)", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Alchemy", url: "https://en.wikipedia.org/wiki/Alchemy" },
+          { label: "Carl Jung", url: "https://en.wikipedia.org/wiki/Carl_Jung" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Elastic Heart", artist: "Sia", url: "https://www.youtube.com/watch?v=KWZGAExj-es" },
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" }
+        ],
+        advanced: "The alchemical stage of calcinatio involves symbolic burning of the ego's attachments. Subjecting the psyche to the fire of self-observation refines prima materia of raw emotion into conscious awareness. Connects Jungian psychology to ancient Hermetic traditions viewing human experience as a series of transmutations. The philosopher's stone was never a rock. It was attention." },
+
+      { id: "creative-destruction", num: 8, icon: "🏗️", title: "Creative Destruction", subtitle: "Being Destroyed Can Actually Be a Gift of Progress",
+        simple: "In the world of business and ideas, old things often have to die so that better new things can be born. Think about how we do not use VHS tapes anymore because we have streaming movies. The fire of new ideas destroyed the old video stores, but it revealed a faster, easier way for everyone to watch their favorite shows. This keeps our world moving forward and helps us find better ways to help each other. It shows that being destroyed can actually be a gift of progress for everyone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The buzz of a busy city or construction: building on top of what was torn down." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh ink or new electronics: the smell of the next version." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fusion dish mixing two different cultures: destruction creating new flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The click of a button or a touchscreen: the new replacing the old." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old building being replaced by a park: loss becoming gift." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balance while riding a bike: you must keep moving or you fall. Progress is mandatory." }
+        ],
+        intuition: "Being destroyed can actually be a gift of progress. The video store did not fail. It graduated. The old way did not lose. It made room. Nothing that was truly needed is ever permanently removed. It is upgraded.",
+        links: [
+          { label: "Creative Destruction", url: "https://en.wikipedia.org/wiki/Creative_destruction" },
+          { label: "Schumpeter", url: "https://en.wikipedia.org/wiki/Joseph_Schumpeter" },
+          { label: "Disruptive Innovation", url: "https://en.wikipedia.org/wiki/Disruptive_innovation" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" },
+          { title: "Revolution", artist: "The Beatles", url: "https://www.youtube.com/watch?v=BGLGzRXY5Bw" }
+        ],
+        advanced: "Schumpeter's theory: the gale of creative destruction is the essential fact about capitalism. Describes industrial mutation revolutionizing economic structure from within. Maps to the Shiva archetype in Eastern philosophy — the deity who destroys the world so it may be created anew. The fire is not the enemy of the forest. The fire is the forest's upgrade protocol." },
+
+      { id: "phoenix-archetype", num: 9, icon: "🦅", title: "The Phoenix Archetype", subtitle: "No Matter How Hard Things Get We Have the Power to Start Over",
+        simple: "The Phoenix is a magical bird that lives for a long time and then bursts into flames, only to be born again from its own ashes. This story has been told by people all over the world for thousands of years. It represents the eternal spirit because it shows that we can never be truly destroyed by the fires of life. When you fall down and get back up, you are being like the Phoenix. It gives us hope that no matter how hard things get, we have the power to start over and be even more colorful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A rising musical scale or a choir: ascension you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or burning sage: ritual transformation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spicy cinnamon: the fire spice that warms without burning." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sun on your face after a long winter: rebirth you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunrise: the Phoenix performing every single morning." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up tall and taking a deep hero breath: your body becoming the Phoenix." }
+        ],
+        intuition: "No matter how hard things get, we have the power to start over. The Phoenix does not avoid the fire. The Phoenix uses the fire. The ashes are not the end of the story. The ashes are page one of the next volume. You have burned before. You are still here.",
+        links: [
+          { label: "Phoenix (Mythology)", url: "https://en.wikipedia.org/wiki/Phoenix_(mythology)" },
+          { label: "Bennu", url: "https://en.wikipedia.org/wiki/Bennu" },
+          { label: "Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" }
+        ],
+        songs: [
+          { title: "Phoenix", artist: "Fall Out Boy", url: "https://www.youtube.com/watch?v=5hDZbroaQDc" },
+          { title: "Rise Up", artist: "Andra Day", url: "https://www.youtube.com/watch?v=FBuIBaDSOa4" },
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=gYkACVDFmeg" }
+        ],
+        advanced: "The Phoenix is a cross-cultural symbol (Bennu in Egypt, Fenghuang in China) representing the cyclical nature of time and indomitability of the soul. Suggests transformation is a core property of existence. Serves as psychological anchor helping individuals navigate trauma by framing it as a necessary burn before spiritual rebirth. The myth is not fantasy. The myth is a user manual." },
+
+      { id: "spontaneous-combustion-myth", num: 10, icon: "❓", title: "Spontaneous Combustion", subtitle: "Things That Look Like Magic Usually Have a Logical Answer",
+        simple: "A long time ago, some people thought that a person could just catch on fire for no reason at all! Scientists have looked into this and found out it is not really true; there is always a little spark or a candle nearby that starts the fire. This teaches us that even things that look like magic usually have a logical reason we can find if we look closely. It reminds us to be like detectives and look for the truth instead of just believing scary stories. Finding the real answer helps the fire of fear go away.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft click of a light switch: the truth turning on." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The absence of smell — clean air: what remains when myth burns away." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain, clear water: the taste of truth with nothing added." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle breeze: invisible but real and explainable." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking through a magnifying glass: seeing what was always there." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your feet firmly planted on the ground: skepticism is stability." }
+        ],
+        intuition: "Things that look like magic usually have a logical answer if you look closely. Fear is a fire that feeds on ignorance. Knowledge is the water. The detective does not need to believe the ghost story. The detective needs to find the candle. Look closer. The answer is always simpler than the fear.",
+        links: [
+          { label: "Spontaneous Combustion", url: "https://en.wikipedia.org/wiki/Spontaneous_human_combustion" },
+          { label: "Scientific Skepticism", url: "https://en.wikipedia.org/wiki/Scientific_skepticism" },
+          { label: "Wick Effect", url: "https://en.wikipedia.org/wiki/Wick_effect" }
+        ],
+        songs: [
+          { title: "Superstition", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=0CFuCYNx-1g" },
+          { title: "I Can See Clearly Now", artist: "Johnny Nash", url: "https://www.youtube.com/watch?v=FscIgtDJFXg" },
+          { title: "Don't Believe the Hype", artist: "Public Enemy", url: "https://www.youtube.com/watch?v=9vQaVIoEjOM" }
+        ],
+        advanced: "Most cases of alleged spontaneous combustion are explained by the wick effect: clothing acts as wick and body fat acts as fuel. The revelation: the triumph of forensic science over folk myth. Emphasizes the epistemic gate — filtering out noise and accidental coincidences to find the true causal relationship between events. The fire was never spontaneous. The investigation was never finished." },
+    ],
 
   },
 
