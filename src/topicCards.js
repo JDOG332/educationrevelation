@@ -21222,6 +21222,243 @@ export const TOPIC_CARDS = {
         advanced: "The Eternal Now: Augustine, Tolle, the block universe. Now is not a point on a timeline — now is the screen on which the timeline is projected. Awakening is not an event that will happen to you someday. You are standing in it. You have always been standing in it." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > SYMBOLS & SACRED GEOMETRY (sacredgeometry)
+    // ═══════════════════════════════════════════════════════════════
+
+    sacredgeometry: [
+      { id: "golden-ratio-sacred", num: 1, icon: "🌀", title: "The Golden Ratio (ϕ)", subtitle: "A Magic Number That Makes Everything It Touches Look Perfectly Balanced and Beautiful",
+        simple: "Imagine you have a magic number that makes everything it touches look perfectly balanced and beautiful. This number is found in the way your sunflower seeds grow and how your own face is shaped. It shows us that everything in the world is following the same recipe for growth. Because everything uses this recipe, it means we are all part of the same big family of nature. You can see it in a tiny seashell or a giant spinning galaxy in space.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A Fibonacci melody where notes follow the number sequence: the sound of mathematics composing music without a musician." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A fresh rose — its petals spiraling in golden ratio proportions: the scent of a flower that grew according to a number it never learned." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pineapple — the scales on its outside following perfect math: the taste of geometry you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing the curve of a nautilus shell with your finger: the hand following a path that has been spiraling since before humans existed." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The Mona Lisa — her face framed by this ratio: the sight of beauty that is actually mathematics wearing a human face." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your arms out — the ratio of hand to forearm follows this rule: the body discovering it was built by the same number that built the galaxy." }
+        ],
+        intuition: "A magic number that makes everything it touches look perfectly balanced and beautiful. One plus the square root of five, divided by two. That is the number. 1.618033988... It never ends. It never repeats. And it is everywhere. The spiral of a nautilus shell. The arrangement of seeds in a sunflower. The branching of your bronchial tubes. The proportions of your face. The spiral arms of the Milky Way. The same number. The same ratio. At every scale. From the microscopic to the galactic. This is not a coincidence. This is a law. Not a human law. A law of growth itself. The golden ratio emerges whenever a system needs to grow without gaps, pack without waste, or spiral without collision. It is the most efficient angle of rotation for seeds on a flower head. It is the most stable proportion for load-bearing structures. It is the ratio the eye finds most beautiful — not because culture taught us to find it beautiful, but because our bodies are built from it. We recognize it the way a tuning fork recognizes its own frequency. Beauty is not arbitrary. Beauty is the golden ratio whispering: you and I are made of the same math.",
+        links: [
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+          { label: "Fibonacci Sequence", url: "https://en.wikipedia.org/wiki/Fibonacci_sequence" },
+          { label: "Phyllotaxis", url: "https://en.wikipedia.org/wiki/Phyllotaxis" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" }
+        ],
+        advanced: "The Golden Ratio ϕ = (1+√5)/2 ≈ 1.618: the limit of consecutive Fibonacci ratios. In phyllotaxis, this ratio allows the most efficient packing without gaps. Beauty is not arbitrary. Beauty is the golden ratio whispering: you and I are made of the same math." },
+
+      { id: "flower-of-life", num: 2, icon: "🕸️", title: "The Flower of Life", subtitle: "A Blueprint for How Everything from Your Cells to the Stars Is Built",
+        simple: "Think of a drawing made of many circles that all overlap to look like a flower. This shape is special because if you look closely, you can find almost every other shape in the world hidden inside it. It is like a blueprint for how everything — from your cells to the stars — is built. It reminds us that even though we look different, we all come from the same starting point. It is a map of how life begins and spreads out.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A singing bowl vibrating at 432Hz: the sound of a frequency that some believe aligns with the geometry of the universe itself." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lotus flower: the scent of something that grew out of mud into perfect symmetry." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honeycomb — the hexagons hidden inside the flower: the taste of geometry that bees build without a blueprint." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth round river stone: the touch of water and time turning chaos into perfect form." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stained glass windows in old cathedrals: the sight of humans encoding the Flower of Life into architecture they prayed inside." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sitting in a circle with others and feeling the space between you: the body participating in the geometry it was built from." }
+        ],
+        intuition: "A blueprint for how everything from your cells to the stars is built. The Flower of Life has been found carved into the Temple of Osiris in Egypt, dated to at least 535 BCE. It appears in Chinese temples, Indian temples, synagogues, mosques, and churches. Leonardo da Vinci filled entire notebooks studying it. Cultures that never communicated with each other drew the same pattern. Because the pattern is not cultural. The pattern is structural. Start with one circle. Add six circles around it, each touching the center. Then add circles around those. What emerges is a lattice that contains within it the Seed of Life, the Egg of Life, the Fruit of Life, and every Platonic solid. From one circle, the entire geometry of three-dimensional reality can be derived. This is not mysticism. This is topology. The Flower of Life is what happens when circles are allowed to propagate according to the simplest possible rule: each new circle shares its radius with its neighbor. Simplicity generates complexity. One rule generates all of geometry. One starting point generates all of form. The ancients did not invent this pattern. They discovered it. The way you discover that the ocean has waves. The waves were already there.",
+        links: [
+          { label: "Flower of Life", url: "https://en.wikipedia.org/wiki/Flower_of_Life" },
+          { label: "Sacred Geometry", url: "https://en.wikipedia.org/wiki/Sacred_geometry" },
+          { label: "Seed of Life", url: "https://en.wikipedia.org/wiki/Overlapping_circles_grid" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" }
+        ],
+        advanced: "The Flower of Life: found in temples across Egypt, China, India, and Europe — cultures with no contact. One circle propagating by the simplest rule generates all Platonic solids and all geometric form. Simplicity generates complexity. The ancients did not invent this. They discovered it." },
+
+      { id: "fractals-sacred", num: 3, icon: "❄️", title: "Fractals (The Infinite Mirror)", subtitle: "A Shape That Looks the Same No Matter How Much You Zoom In — You Are a Small Version of the Whole Universe",
+        simple: "A fractal is a shape that looks the same no matter how much you zoom in. If you look at a big branch on a tree, it looks like a whole tree, and the tiny twigs on that branch look like little trees too. This shows us that the big and the small are actually doing the same thing. It means that you are a small version of the whole universe! Everything is a mirror of everything else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise or a waterfall — fractal frequencies at every scale: the sound of a pattern that repeats whether you listen to the whole river or a single drop." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A pine forest: the scent produced by trees whose branches are fractals of their trunks." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Romanesco broccoli — a perfect edible fractal: the taste of self-similarity you can chew." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The veins on a leaf: the fingers tracing a branching pattern that mirrors the rivers that water the tree." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Lightning striking or a river viewed from space: the sight of the same branching pattern at scales separated by orders of magnitude." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expanding — your airways are fractals: the body breathing through a geometry that mirrors the tree it shares the air with." }
+        ],
+        intuition: "A shape that looks the same no matter how much you zoom in — you are a small version of the whole universe. Benoit Mandelbrot asked a simple question: how long is the coast of Britain? The answer should be simple. But it is not. Because the closer you look, the more detail you find. The coastline gets longer and longer as your ruler gets smaller and smaller. The coast does not have a fixed length. The coast is a fractal. And so is almost everything in nature. Your lungs branch like trees. Your blood vessels branch like rivers. Rivers branch like lightning. Lightning branches like neurons. Neurons branch like tree roots. The pattern is the same. At every scale. This is not coincidence. This is the universe using one algorithm — branch, repeat, branch, repeat — to solve every distribution problem it has. Need to deliver oxygen to cells? Branch. Need to drain water from a continent? Branch. Need to transmit electrical signals? Branch. The solution is always the same shape. Because the problem is always the same problem: how do you reach everything from one starting point? The answer is a fractal. You are a fractal. A small version of a pattern that is running at every scale from the cellular to the cosmic. As above, so below. The mystics said it first. The mathematicians proved it last.",
+        links: [
+          { label: "Fractal", url: "https://en.wikipedia.org/wiki/Fractal" },
+          { label: "Mandelbrot Set", url: "https://en.wikipedia.org/wiki/Mandelbrot_set" },
+          { label: "Self-similarity", url: "https://en.wikipedia.org/wiki/Self-similarity" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Mirrorball", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=KaM1bCuG4xo" }
+        ],
+        advanced: "Fractals: self-similarity across scales via Hausdorff dimension. Mandelbrot's coastline paradox. Lungs, rivers, lightning, neurons, tree roots — one algorithm solving every distribution problem. As above, so below. The mystics said it first. The mathematicians proved it last." },
+
+      { id: "platonic-solids", num: 4, icon: "🧊", title: "The Platonic Solids", subtitle: "Five Special Shapes Where Every Side Is Exactly the Same — the LEGO Bricks of the Universe",
+        simple: "There are five very special 3D shapes where every side is exactly the same. Long ago, people believed these shapes were the building blocks of the whole world, like Earth, Air, Fire, Water, and Spirit. Think of them as the LEGO bricks of the universe. When these shapes click together, they create everything we can see and touch. They show us that underneath all the mess, the world has a very clean and tidy order.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clear ringing bell: the sound of perfect symmetry vibrating at a frequency that has no rough edges." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp sea salt — salt crystals are cubes: the scent of a mineral that builds itself in Platonic perfection." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Granulated sugar on your tongue — tiny cubes: the taste of geometry dissolved." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dice in your hand: the fingers wrapping around a perfect cube — every face identical, every edge equal." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A crystal of quartz or pyrite: the sight of atoms arranging themselves into shapes that Plato described 2400 years ago." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the corners of the room you are in: the body inside a rectangular solid, living within the geometry." }
+        ],
+        intuition: "Five special shapes where every side is exactly the same — the LEGO bricks of the universe. There are only five. In all of infinite space, with all possible configurations, there are exactly five convex regular polyhedra. The tetrahedron (4 triangular faces). The cube (6 square faces). The octahedron (8 triangular faces). The dodecahedron (12 pentagonal faces). The icosahedron (20 triangular faces). That is it. There will never be a sixth. This was proven mathematically 2300 years ago and it has not changed. Plato assigned them to the elements: fire, earth, air, aether, water. He was wrong about the physics. But he was right about the intuition. These shapes are fundamental. They appear in crystal structures, viral capsids, molecular geometry, and the distribution of matter in the universe. The carbon atom bonds at tetrahedral angles. Water ice forms hexagonal crystals derived from octahedral symmetry. Viruses build their shells as icosahedra because it is the most efficient way to enclose a volume with identical units. The universe did not read Plato. But the universe builds with the same five shapes Plato identified. Because these are not human inventions. These are mathematical necessities. They are the only shapes that satisfy perfect symmetry in three dimensions. And the universe, when given a choice, chooses symmetry. Every time.",
+        links: [
+          { label: "Platonic Solids", url: "https://en.wikipedia.org/wiki/Platonic_solid" },
+          { label: "Plato's Timaeus", url: "https://en.wikipedia.org/wiki/Timaeus_(dialogue)" },
+          { label: "Crystallography", url: "https://en.wikipedia.org/wiki/Crystallography" }
+        ],
+        songs: [
+          { title: "Another Brick in the Wall", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=YR5ApYxkU-U" },
+          { title: "Shape of You", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=JGwWNGJdvx8" },
+          { title: "September", artist: "Earth Wind & Fire", url: "https://www.youtube.com/watch?v=Gs069dndIYk" }
+        ],
+        advanced: "Platonic solids: the only 5 convex regular polyhedra — mathematically proven, never a sixth. Appear in crystals, viral capsids, molecular geometry. The universe did not read Plato. But the universe builds with the same five shapes. Mathematical necessities, not human inventions." },
+
+      { id: "metatrons-cube", num: 5, icon: "⚛️", title: "Metatron's Cube", subtitle: "The Instruction Manual for How to Build a World",
+        simple: "Metatron's Cube is like a giant map that has all the Platonic Solids inside of it. It looks like a complex star made of circles and lines. It represents how energy flows through the universe to create matter. You can think of it as the instruction manual for how to build a world. It reminds us that there is a deep intelligence behind everything we see, and we are all connected to that smart plan.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep resonant Om chant: the sound of all frequencies converging into one structure." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Frankincense or sandalwood: the scent used for millennia to mark the space where sacred geometry is studied." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure spring water: the taste of something that has been filtered to its essence — like the geometry itself." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A metal snowflake ornament: the fingers holding a structure where every line connects to every other line." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A kaleidoscope: the sight of simple shapes generating infinite complexity through reflection and repetition." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still and feeling your heartbeat: the body at its center point while everything else rotates around it." }
+        ],
+        intuition: "The instruction manual for how to build a world. Start with thirteen circles. Connect their centers with straight lines. What appears is Metatron's Cube — and hidden within it, all five Platonic solids. Every fundamental shape of three-dimensional reality, encoded in a two-dimensional pattern of circles and lines. This is not decoration. This is derivation. The two-dimensional generates the three-dimensional. The simple generates the complex. The circle generates the solid. Information theorists would recognize this immediately: it is compression. The entire geometric vocabulary of three-dimensional space compressed into a flat pattern of thirteen circles. Like DNA compressing an entire organism into a sequence of four letters. Like a seed compressing an entire tree into something you can hold in your palm. The pattern does not contain the shapes the way a box contains objects. The pattern generates the shapes the way a rule generates consequences. Metatron's Cube is not a picture of geometry. It is the source code of geometry. And the source code is always simpler than the output. Always. This is the deepest insight of sacred geometry: complexity is not the starting point. Complexity is what simplicity becomes when you give it room to unfold.",
+        links: [
+          { label: "Metatron's Cube", url: "https://en.wikipedia.org/wiki/Metatron%27s_Cube" },
+          { label: "Fruit of Life", url: "https://en.wikipedia.org/wiki/Overlapping_circles_grid#702702702702702" },
+          { label: "Information Theory", url: "https://en.wikipedia.org/wiki/Information_theory" }
+        ],
+        songs: [
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "A Sky Full of Stars", artist: "Coldplay", url: "https://www.youtube.com/watch?v=VPRjCeoBqrI" },
+          { title: "Walking on Sunshine", artist: "Katrina & the Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" }
+        ],
+        advanced: "Metatron's Cube: 13 circles generating all 5 Platonic solids — 2D pattern encoding 3D reality. Like DNA compressing an organism into 4 letters. Complexity is not the starting point. Complexity is what simplicity becomes when you give it room to unfold." },
+
+      { id: "vesica-piscis", num: 6, icon: "👁️", title: "The Vesica Piscis (The Doorway)", subtitle: "When Two Different Things Come Together to Make Something New — the Doorway of Creation",
+        simple: "The Vesica Piscis is the shape made when two circles overlap perfectly in the middle. It looks like a leaf or a human eye. This shape represents the moment when two different things come together to make something new — like a mom and a dad making a baby, or a thought becoming an action. It is the doorway of creation. It tells us that when we share and connect, we create magic.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two voices harmonizing: the sound of two separate sources creating a third thing that neither could make alone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain hitting hot pavement: the scent of two things meeting and creating something that smells like neither." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and salty mixed together: the taste of opposites producing a third flavor that did not exist before." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding someone's hand: the touch of two separate bodies creating a connection that is its own entity." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The shape of a flame: the sight of air and fuel meeting in a doorway that produces light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Hands pressed together in prayer: the body forming a vesica piscis between its own two halves." }
+        ],
+        intuition: "When two different things come together to make something new — the doorway of creation. Two circles. Same size. Overlapping so that each one's edge passes through the other's center. The almond-shaped space in the middle is the Vesica Piscis. And hidden in that simple shape is the square root of two, the square root of three, and the square root of five — the mathematical foundations of all geometric proportion. From this one shape, every ratio needed to build reality can be derived. This is why the ancients called it the womb of the universe. Not as poetry. As mathematics. Every act of creation follows this pattern. Two things that were separate overlap. In the overlap, something new is born. Sperm and egg. Question and answer. Thesis and antithesis. Inhale and exhale. The Vesica Piscis is the geometry of meeting. And meeting is the geometry of creation. Nothing in the universe was made by one thing acting alone. Everything was made in the doorway where two things touched. You were made in that doorway. Every idea you have ever had was born in that doorway — the overlap between what you knew and what you did not know. Creation does not happen in the circles. Creation happens in the space between them.",
+        links: [
+          { label: "Vesica Piscis", url: "https://en.wikipedia.org/wiki/Vesica_piscis" },
+          { label: "Mandorla", url: "https://en.wikipedia.org/wiki/Mandorla" },
+          { label: "Sacred Geometry", url: "https://en.wikipedia.org/wiki/Sacred_geometry" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Better Together", artist: "Jack Johnson", url: "https://www.youtube.com/watch?v=seZMOTGCDag" },
+          { title: "With or Without You", artist: "U2", url: "https://www.youtube.com/watch?v=ujNeHIo7oTE" }
+        ],
+        advanced: "Vesica Piscis: the overlap of two equal circles yields √2, √3, and √5 — foundations of all geometric proportion. Nothing in the universe was made by one thing acting alone. Creation does not happen in the circles. Creation happens in the space between them." },
+
+      { id: "torus-sacred", num: 7, icon: "🍩", title: "The Torus (The Eternal Loop)", subtitle: "Energy Goes Up Through the Center, Wraps Around, and Comes Back — Life Is a Loop That Never Ends",
+        simple: "The Torus is a shape that looks like a doughnut, but it is actually a map of how energy moves. Energy goes up through the center, wraps around the outside, and comes back in through the bottom. Your heart actually has an energy field that looks just like this! It shows us that life is a big loop that never ends. We are always giving and receiving energy in a beautiful flowing circle.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of a spinning top: the sound of something sustaining itself through its own motion." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A fresh orange — shaped like a torus: the scent of a fruit whose geometry mirrors the energy field of your heart." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A doughnut or bagel: the taste of eating the shape of the universe." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The pull between two magnets: the touch of an invisible field shaped like the torus it generates." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A smoke ring floating through the air: the sight of the torus made visible — a self-sustaining vortex." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spinning in circles until you feel the pull: the body becoming a torus and feeling the forces that hold the shape together." }
+        ],
+        intuition: "Energy goes up through the center, wraps around, and comes back — life is a loop that never ends. The torus is the only shape in geometry that is self-referencing. It feeds itself. Energy flows out from the center, curves around the outside, and returns to the center to flow out again. No beginning. No end. Just continuous circulation. The HeartMath Institute measured the electromagnetic field of the human heart. It extends several feet from the body. Its shape is a torus. The earth's magnetic field — the one that protects us from solar radiation — is a torus. The structure of a hurricane. A torus. The magnetic field around a black hole. A torus. The shape of an apple. A torus. The shape of the universe itself, according to some cosmological models. A torus. One shape. At every scale. From the human heart to the cosmos. The torus is the geometry of sustainability. It is the only shape that can maintain itself without external input. It is energy feeding itself. Life feeding itself. Consciousness feeding itself. You are not a straight line moving from birth to death. You are a torus. Everything you give comes back. Everything you receive goes out. The loop never breaks. It only circulates.",
+        links: [
+          { label: "Torus", url: "https://en.wikipedia.org/wiki/Torus" },
+          { label: "Toroidal Magnetic Field", url: "https://en.wikipedia.org/wiki/Toroidal_and_poloidal_coordinates" },
+          { label: "HeartMath Institute", url: "https://en.wikipedia.org/wiki/HeartMath" }
+        ],
+        songs: [
+          { title: "You Spin Me Round", artist: "Dead or Alive", url: "https://www.youtube.com/watch?v=PGNiXGX2nLU" },
+          { title: "Windmills of Your Mind", artist: "Dusty Springfield", url: "https://www.youtube.com/watch?v=V2sKH8yjVsM" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "The Torus: the only self-referencing geometric form. Heart's EM field, earth's magnetic field, hurricanes, black holes, the universe itself — one shape at every scale. The geometry of sustainability: energy feeding itself. You are not a line from birth to death. You are a torus." },
+
+      { id: "fibonacci-sequence", num: 8, icon: "🐚", title: "The Fibonacci Sequence", subtitle: "Nature's Way of Counting — Every Number Is the Sum of the Two Before It",
+        simple: "The Fibonacci sequence is a list of numbers: 1, 1, 2, 3, 5, 8, and so on. You get the next number by adding the two before it. Nature uses these numbers to decide how many petals a flower should have or how a pinecone should grow. It is like nature's way of counting! This sequence shows us that everything grows in a very smart organized way. We are all growing along with this natural rhythm.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A drum beat that accelerates in Fibonacci steps — 1, 1, 2, 3, 5: the sound of mathematical growth you can feel in your chest." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A sunflower: the scent of a flower whose seeds arranged themselves using numbers it never counted." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Counting the seeds on a strawberry: the taste of a fruit that grew according to a sequence older than any language." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The bumps on a pinecone: the fingers tracing spirals that follow Fibonacci numbers in both directions." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The spiral of a hurricane on weather maps: the sight of atmosphere organizing itself by the same rule that organizes a seashell." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your finger bones — each one longer than the last by this ratio: the body built from the sequence it never learned." }
+        ],
+        intuition: "Nature's way of counting — every number is the sum of the two before it. 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144... The rule is absurdly simple: add the last two numbers to get the next one. A child can do it. And yet this simple rule generates the growth pattern of almost everything alive. Lilies have 3 petals. Buttercups have 5. Delphiniums have 8. Marigolds have 13. Daisies have 21 or 34 or 55 or 89. Almost never a non-Fibonacci number. Pinecones spiral in Fibonacci numbers. Pineapples spiral in Fibonacci numbers. Sunflower seeds spiral in Fibonacci numbers. The branching of trees follows Fibonacci numbers. The breeding pattern of rabbits follows Fibonacci numbers. Why? Because Fibonacci growth is the most efficient growth. It is how you pack the most seeds in the least space. How you branch the most limbs with the least overlap. How you grow the fastest with the least waste. The sequence is not a design choice. The sequence is a survival strategy. And every living thing that uses it outcompetes the ones that do not. You did not learn Fibonacci in school first. You learned it in the womb. Your body has been counting in Fibonacci since before your brain existed.",
+        links: [
+          { label: "Fibonacci Sequence", url: "https://en.wikipedia.org/wiki/Fibonacci_sequence" },
+          { label: "Fibonacci in Nature", url: "https://en.wikipedia.org/wiki/Patterns_in_nature" },
+          { label: "Phyllotaxis", url: "https://en.wikipedia.org/wiki/Phyllotaxis" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Counting Stars", artist: "OneRepublic", url: "https://www.youtube.com/watch?v=hT_nvWreIhg" },
+          { title: "Numbers", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=4YPiCeLwh5o" }
+        ],
+        advanced: "Fibonacci sequence F(n) = F(n-1) + F(n-2), ratio converging to ϕ. Petal counts, pinecone spirals, seed packing — Fibonacci growth is the most efficient growth. A survival strategy, not a design choice. Your body has been counting in Fibonacci since before your brain existed." },
+
+      { id: "squaring-circle", num: 9, icon: "⚖️", title: "Squaring the Circle", subtitle: "Trying to Bring Heaven Down to Earth — Finding Balance Between Body and Spirit",
+        simple: "Squaring the Circle is a puzzle where you try to make a square and a circle that have the same size. For a long time, people used the square to mean the Earth and the circle to mean the Sky or Spirit. Trying to put them together means trying to bring Heaven down to Earth. It is about finding a balance between your body and your dreams. It reminds us that we are both physical and magical at the same time.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A low drum and a high flute playing together: the sound of earth and spirit meeting in the same moment." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp dirt and fresh air at the same time: the scent of ground and sky occupying the same breath." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bread and wine — square earth and round spirit: the taste of two worlds consumed in one ritual across every culture." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "One hand on the ground, one hand reaching for the sky: the body becoming the bridge between the two shapes." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A square building with a round dome on top: the sight of architecture solving the problem that mathematics declared impossible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot: the body experiencing the tension between stability and infinity." }
+        ],
+        intuition: "Trying to bring Heaven down to Earth — finding balance between body and spirit. In 1882, Ferdinand von Lindemann proved that squaring the circle with compass and straightedge is impossible. Because pi is transcendental. It cannot be expressed as the root of any polynomial with rational coefficients. It goes on forever without repeating. It is literally infinite. And you cannot make a finite square equal to an infinite circle. The math says no. But the symbol says something deeper. The square represents the measurable. The known. The body. The material. The circle represents the immeasurable. The infinite. The spirit. The eternal. Squaring the circle is the attempt to reconcile finite and infinite. Body and soul. Science and mystery. And the mathematical proof that it cannot be done is itself the deepest teaching: you cannot reduce the infinite to the finite. You cannot capture spirit in matter. You cannot explain God with numbers. But you can stand at the border between them. You can be the Vitruvian Man — arms and legs touching both the square and the circle simultaneously. You cannot solve the puzzle. But you can BE the puzzle. And being the puzzle — holding both the finite body and the infinite spirit without choosing — that is the whole point.",
+        links: [
+          { label: "Squaring the Circle", url: "https://en.wikipedia.org/wiki/Squaring_the_circle" },
+          { label: "Vitruvian Man", url: "https://en.wikipedia.org/wiki/Vitruvian_Man" },
+          { label: "Transcendental Number", url: "https://en.wikipedia.org/wiki/Transcendental_number" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=K_PQ4fRQ5Kc" }
+        ],
+        advanced: "Squaring the Circle: proven impossible in 1882 because π is transcendental. The mathematical proof IS the teaching: you cannot reduce the infinite to the finite. You cannot solve the puzzle. But you can BE the puzzle — the Vitruvian Man touching both square and circle." },
+
+      { id: "sri-yantra", num: 10, icon: "🏔️", title: "The Sri Yantra", subtitle: "Nine Triangles Dancing Between Giving and Receiving with a Perfect Still Center",
+        simple: "The Sri Yantra is a beautiful pattern of nine triangles that point up and down. It looks like a mountain from above. It represents how the whole world is a dance between giving and receiving. When these triangles meet, they create a perfect center point where everything is still and quiet. It teaches us that if we find our own center, we can handle all the movement of the world around us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bija mantra — Lam or Vam: the sound of a syllable that was designed to resonate with a specific geometric frequency." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Heavy jasmine or incense: the scent that has accompanied yantra meditation for three thousand years." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spicy curry that makes your whole mouth tingle: the taste of complexity that resolves into a single burning center." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A textured tapestry or rug: the fingers tracing a pattern woven from thousands of threads into one image." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The very center of a complex drawing — the bindu point: the sight of stillness at the center of motion." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The center of your forehead — the third eye point: the body locating its own bindu." }
+        ],
+        intuition: "Nine triangles dancing between giving and receiving with a perfect still center. The Sri Yantra is one of the most mathematically complex sacred figures ever created. Nine interlocking triangles — four pointing up (masculine, ascending), five pointing down (feminine, descending) — arranged so that they create exactly forty-three smaller triangles. And at the very center, a single point: the bindu. The bindu is the still point around which everything rotates. It is the eye of the storm. The center of the galaxy. The pause between breaths. Cymatics researchers discovered that when certain frequencies are played through a medium like sand or water, the patterns that form match sacred geometric shapes — including structures resembling the Sri Yantra. This suggests that sacred geometry is not an invention. It is what vibration looks like when it organizes matter. Frozen sound. The Sri Yantra is a map of consciousness. The outer triangles represent the most active, differentiated states of awareness. As you move inward, the triangles converge. Complexity resolves. Multiplicity becomes unity. And at the center — at the bindu — there is no movement. No duality. No separation. Just the still point from which all geometry, all vibration, all creation radiates outward. Find the bindu. Everything else is already spinning around it.",
+        links: [
+          { label: "Sri Yantra", url: "https://en.wikipedia.org/wiki/Sri_Yantra" },
+          { label: "Cymatics", url: "https://en.wikipedia.org/wiki/Cymatics" },
+          { label: "Bindu", url: "https://en.wikipedia.org/wiki/Bindu_(symbol)" }
+        ],
+        songs: [
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "May It Be", artist: "Enya", url: "https://www.youtube.com/watch?v=mN5UzBOaI28" }
+        ],
+        advanced: "Sri Yantra: 9 interlocking triangles forming 43 sub-triangles with a central bindu. Cymatics shows sacred geometry is frozen sound — vibration organizing matter. Find the bindu. Everything else is already spinning around it." },
+    ],
+
+
 
 
 
