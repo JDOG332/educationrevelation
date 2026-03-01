@@ -18372,6 +18372,243 @@ export const TOPIC_CARDS = {
         advanced: "Cosmological endpoints: heat death (maximum entropy), big crunch (gravitational recollapse), or cyclic cosmology (Penrose's conformal cycles). The universe does not know how to end. It only knows how to begin again. And so do you." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > MEMORY & TIME (memorytime)
+    // ═══════════════════════════════════════════════════════════════
+
+    memorytime: [
+      { id: "neuroplasticity", num: 1, icon: "🌱", title: "Neuroplasticity", subtitle: "You Are Not Stuck Being Who You Were Yesterday",
+        simple: "Think of your brain like a garden where the paths you walk most often become the easiest to follow. Every time you think a thought or learn something new, you are actually growing new branches in your head. If you tell yourself you are brave, your brain builds a brave road that gets stronger every day. This means you are not stuck being who you were yesterday; you can grow into someone totally new. You have the power to plant new seeds in your mind garden whenever you want.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A steady drumbeat your brain waves eventually sync up with: rhythm rewiring you in real time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — fresh rain on dry dirt: the scent of a brain starting over." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon that makes your mouth pucker, forcing your brain to focus only on the now." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Molding warm clay into a new shape: your hands doing what your neurons are doing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A timelapse of a flower blooming: growth too slow to see but too real to deny." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot and feeling your brain making tiny adjustments: rewiring in real time to keep you upright." }
+        ],
+        intuition: "You are not stuck being who you were yesterday. Every thought you think is a vote. Think it once — suggestion. Think it twice — pattern. Think it a thousand times — identity. But the road works both ways. The path you stop walking gets overgrown. The fear you stop feeding gets quieter. The story you stop telling loses its cast. Your brain is not concrete. Your brain is clay. And the sculptor is not your past. The sculptor is whatever you choose to repeat today. The garden does not care what was planted last year. The garden only cares what you water right now.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Long-term Potentiation", url: "https://en.wikipedia.org/wiki/Long-term_potentiation" },
+          { label: "Synaptic Pruning", url: "https://en.wikipedia.org/wiki/Synaptic_pruning" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Neuroplasticity: synaptic pruning and long-term potentiation as the mechanism by which narrative identity becomes hard-coded into neural architecture. The garden does not care what was planted last year. The garden only cares what you water right now." },
+
+      { id: "episodic-memory", num: 2, icon: "📽️", title: "Episodic Memory", subtitle: "You Are the Author of Your Past Just as Much as Your Future",
+        simple: "Your memories are not like files on a computer that stay the same forever. Instead, they are like a play that your brain performs every time you try to remember something. Each time the play happens, the actors might change their lines just a little bit based on how you feel right now. This means your history is actually a living story that changes as you grow up. You are the author of your past just as much as your future.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of an old vinyl record: sound that changes a little every time it plays." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old book from a library: the scent of a story that has been opened by a thousand different hands." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe that tastes like home: the past arriving on your tongue in the present." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Flipping through a physical photo album: your fingers touching the past through paper." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blurry reflection in a moving puddle: the past visible but never quite still." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Reaching out to grab something in the dark using only your memory of where it is: the body trusting a ghost." }
+        ],
+        intuition: "You are the author of your past just as much as your future. Every time you remember something, you rewrite it. The memory of your tenth birthday is not the birthday. It is the memory of the last time you remembered the birthday. And that memory was the memory of the time before that. You are playing telephone with yourself across time. This is not a flaw. This is a feature. Because it means the worst day of your life is not set in stone. It is set in clay. And every time you revisit it with older, wiser, kinder eyes — you reshape it. You cannot change what happened. But you can change what it means. And what it means is the only part that matters.",
+        links: [
+          { label: "Episodic Memory", url: "https://en.wikipedia.org/wiki/Episodic_memory" },
+          { label: "Memory Reconsolidation", url: "https://en.wikipedia.org/wiki/Memory_reconsolidation" },
+          { label: "Reconstructive Memory", url: "https://en.wikipedia.org/wiki/Reconstructive_memory" }
+        ],
+        songs: [
+          { title: "Photograph", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=nSDgHBxUbVQ" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Night Moves", artist: "Bob Seger", url: "https://www.youtube.com/watch?v=bgOA24hAe60" }
+        ],
+        advanced: "Episodic memory as reconstructive process: each retrieval is a re-encoding event. Memory reconsolidation allows therapeutic reframing — the emotional weight of past traumas can be altered at the moment of recall. You cannot change what happened. But you can change what it means." },
+
+      { id: "psychological-present", num: 3, icon: "⏳", title: "The Psychological Present", subtitle: "Your Spirit Only Lives in This Tiny Three-Second Now",
+        simple: "Now is much shorter than you think, but it is where all your power lives. Your brain takes all the sights and sounds around you and stitches them together into a tiny window of time. If you focus really hard on your breathing, you can feel that window opening and closing. Most people live in the yesterday or the tomorrow, but your spirit only lives in this tiny three-second now. When you stay in the now, you feel calm and connected to everything.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clock ticking where you notice the silence between the ticks: the space where the present actually lives." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint or eucalyptus clearing your nose instantly: presence arriving through the sinuses." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single ice cube melting on your tongue: the taste of a moment that cannot be paused." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling your own pulse in your wrist: the present tapping out its rhythm under your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a single drop of water fall into a bowl: the entire present contained in one splash." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the weight of your body pressing into your chair: gravity anchoring you to the only moment that exists." }
+        ],
+        intuition: "Your spirit only lives in this tiny three-second now. You have never experienced the past. You have only experienced the memory of the past — in the present. You have never experienced the future. You have only experienced the anticipation of the future — in the present. The present is not a sliver between two real things. The present is the only real thing. The past and the future are stories the present tells itself. And the present is three seconds wide. That is your entire kingdom. Three seconds. But inside those three seconds is every decision you will ever make, every breath you will ever take, and every person you will ever become. Three seconds is plenty. Three seconds is everything.",
+        links: [
+          { label: "Specious Present", url: "https://en.wikipedia.org/wiki/Specious_present" },
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" },
+          { label: "Time Perception", url: "https://en.wikipedia.org/wiki/Time_perception" }
+        ],
+        songs: [
+          { title: "Right Now", artist: "Van Halen", url: "https://www.youtube.com/watch?v=rMV-fenGP1g" },
+          { title: "Stay", artist: "Rihanna", url: "https://www.youtube.com/watch?v=JF8BRvqGCNs" },
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" }
+        ],
+        advanced: "The specious present: the duration of time experienced as 'now' (~2-3 seconds). This mirrors the 'Eternal Now' of mystical traditions — the present is not a sliver between two real things. The present is the only real thing. Three seconds is your entire kingdom. Three seconds is everything." },
+
+      { id: "identity-continuity", num: 4, icon: "🌊", title: "Identity Continuity", subtitle: "You Are a Bridge That Connects the Kid You Were to the Adult You Will Become",
+        simple: "Imagine a river; the water is always moving and changing, but we still call it the same river. You are like that river because your cells and your thoughts change every day, but you are still there. Even though you are not a baby anymore, that baby is still a part of your story. This connection across time is what makes you feel like a whole person. You are a bridge that connects the kid you were to the adult you will become.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Waves crashing on a shore: the same sound made by different water every single time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of your own skin: the one smell that followed you from the crib to right now." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Drinking plain water and feeling it become part of you: identity refreshing itself in real time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding your own hands together: the left hand meeting the right across the bridge of the body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old drawing you made where you can still see your style: the fingerprint of the self surviving time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your arms wide and feeling the space you take up: the body declaring itself present across the full span of now." }
+        ],
+        intuition: "You are a bridge that connects the kid you were to the adult you will become. Every cell in your body has been replaced since you were seven years old. Not a single atom that was in you then is in you now. You are a completely different physical object. And yet you remember being seven. You remember the house. The smell. The fear. The joy. If the material is gone but the memory remains, then you are not your material. You are your pattern. And patterns do not need permission from atoms to continue. The river is not the water. The river is the shape the water takes. You are not your body. You are the shape your life takes. And the shape continues.",
+        links: [
+          { label: "Personal Identity", url: "https://en.wikipedia.org/wiki/Personal_identity" },
+          { label: "Ship of Theseus", url: "https://en.wikipedia.org/wiki/Ship_of_Theseus" },
+          { label: "Narrative Identity", url: "https://en.wikipedia.org/wiki/Narrative_identity" }
+        ],
+        songs: [
+          { title: "The Man", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=AqAJLh9wuZ0" },
+          { title: "Who Are You", artist: "The Who", url: "https://www.youtube.com/watch?v=PdLIerfXuZ4" },
+          { title: "Mirror", artist: "Lil Wayne ft. Bruno Mars", url: "https://www.youtube.com/watch?v=OA4Oqm6yHag" }
+        ],
+        advanced: "The Ship of Theseus applied to the self: total cellular turnover preserves identity through pattern, not matter. Narrative identity provides the thread. You are not your body. You are the shape your life takes. And the shape continues." },
+
+      { id: "time-expansion", num: 5, icon: "🎈", title: "Subjective Time Expansion", subtitle: "New Memories Make Your Life Story Feel Like a Giant Wonderful Book",
+        simple: "Have you ever noticed how time flies when you are having fun but slows down when you are scared or doing something brand new? When your brain sees something it has not seen before, it takes a high-definition video of it. This makes the memory feel much longer when you look back at it later. If you want your life to feel longer and fuller, you should try new things and explore new places. New memories make your life story feel like a giant wonderful book instead of a short one.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden loud pop that startles you: time stretching around the surprise." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A spice you have never smelled before like saffron: novelty entering through the nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A Szechuan peppercorn that feels electric: your tongue experiencing time dilation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dipping your hand into ice-cold water: the shock stretching each second into a minute." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An optical illusion that seems to move: the eyes proving that perception is negotiable." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spinning in circles until you feel the world lean: the vestibular system disagreeing with the clock." }
+        ],
+        intuition: "New memories make your life story feel like a giant wonderful book. A year of routine feels like a week when you look back. A week of adventure feels like a year when you look back. This is not poetry. This is neuroscience. The brain records novelty in high resolution. It records repetition in fast forward. If you want to live a long life, do not count the days. Make the days count by making them different. The person who lives the same day for forty years has one memory. The person who lives a new day for one year has three hundred sixty-five. Same clock. Different books. The clock does not care. But your memory does.",
+        links: [
+          { label: "Oddball Effect", url: "https://en.wikipedia.org/wiki/Oddball_paradigm" },
+          { label: "Time Perception", url: "https://en.wikipedia.org/wiki/Time_perception" },
+          { label: "Chronos vs Kairos", url: "https://en.wikipedia.org/wiki/Kairos" }
+        ],
+        songs: [
+          { title: "Time in a Bottle", artist: "Jim Croce", url: "https://www.youtube.com/watch?v=dO1rMeYnOmM" },
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "Slow Burn", artist: "Kacey Musgraves", url: "https://www.youtube.com/watch?v=NC7cmWkBuz4" }
+        ],
+        advanced: "The Oddball Effect: the brain allocates disproportionate metabolic resources to encoding novel stimuli. Chronos (sequential time) vs kairos (qualitative time). Same clock. Different books. The clock does not care. But your memory does." },
+
+      { id: "cognitive-bias-memory", num: 6, icon: "🕶️", title: "Cognitive Bias in Memory", subtitle: "Everyone's Story Is a Little Bit Edited",
+        simple: "We all have brain glasses that change how we see our own past. We usually remember the things that make us look good and forget the things that do not fit our story. This is not lying; it is just how our brains keep us feeling happy and safe. If you think you are a kind person, your brain will highlight all the times you were nice in the past. Knowing this helps you be more forgiving of yourself and others because everyone's story is a little bit edited.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song you used to love but now find cringe: the same signal heard through a different filter." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A school hallway: the nose bringing back an edited version of a complicated time." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A food you hated as a kid but love now: proof that the taster changed not the taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An old piece of clothing that feels too small for who you are now: the body outgrowing its own archive." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old drawing you thought was perfect but now see flaws in: the same image, different eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Trying to sit in a chair that is way too small for you: the body proving it is not who it used to be." }
+        ],
+        intuition: "Everyone's story is a little bit edited. You are not remembering your life. You are producing it. You are the director, the editor, and the star of a movie that rewrites itself every night while you sleep. The hero is always you. The villain is always someone else. The plot always makes sense — in retrospect. This is not dishonesty. This is survival. The brain cannot hold every frame. So it keeps the frames that keep the story coherent. And coherence is what keeps you functional. But knowing you are the editor is power. Because an editor who knows they are editing can choose to be more honest. And honesty is the highest-resolution memory there is.",
+        links: [
+          { label: "Cognitive Bias", url: "https://en.wikipedia.org/wiki/Cognitive_bias" },
+          { label: "Self-Serving Bias", url: "https://en.wikipedia.org/wiki/Self-serving_bias" },
+          { label: "Hindsight Bias", url: "https://en.wikipedia.org/wiki/Hindsight_bias" }
+        ],
+        songs: [
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "The Way We Were", artist: "Barbra Streisand", url: "https://www.youtube.com/watch?v=OGUlXQPUT7g" },
+          { title: "Bad Blood", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=QcIy9NiNbmo" }
+        ],
+        advanced: "Hindsight bias and self-consistency bias serve as editors of personal mythology, protecting ego-state coherence. An editor who knows they are editing can choose to be more honest. And honesty is the highest-resolution memory there is." },
+
+      { id: "reminiscence-bump", num: 7, icon: "🏔️", title: "The Reminiscence Bump", subtitle: "These Years Are the Anchor for Your Soul's Timeline",
+        simple: "When people grow old and look back, they remember their teenage years and early twenties better than almost anything else. This is because that is the time when you are figuring out your big story for the first time. It is like the first few chapters of a book — they set the stage for everything else that happens. Even when you are eighty, the music you listen to now will probably still be your favorite. These years are like the anchor for your soul's timeline.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The most popular song on the radio right now: the soundtrack that will follow you forever whether you want it to or not." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The outdoors in the summer: the scent of a season the brain decided to keep in high definition." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cheap snacks and hangout food: the flavor of a time when everything was being decided." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "High-fiving a friend: the tactile signature of belonging during the years it mattered most." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sun setting over your neighborhood: the image the brain chose as the cover of your autobiography." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Running as fast as you can: the body at the peak of its conversation with gravity." }
+        ],
+        intuition: "These years are the anchor for your soul's timeline. You will forget most of your thirties. You will misplace most of your forties. But you will remember the song that was playing when you first fell in love. You will remember the smell of the parking lot where you had your first conversation that mattered. You will remember the friend who saw you before you saw yourself. These years are not louder because they are better. They are louder because they are first. The first draft of the self gets the most ink. Everything after is revision. And the revision is measured against the original.",
+        links: [
+          { label: "Reminiscence Bump", url: "https://en.wikipedia.org/wiki/Reminiscence_bump" },
+          { label: "Autobiographical Memory", url: "https://en.wikipedia.org/wiki/Autobiographical_memory" },
+          { label: "Identity Formation", url: "https://en.wikipedia.org/wiki/Identity_formation" }
+        ],
+        songs: [
+          { title: "Glory Days", artist: "Bruce Springsteen", url: "https://www.youtube.com/watch?v=6vQpW9XRiyM" },
+          { title: "Summer of '69", artist: "Bryan Adams", url: "https://www.youtube.com/watch?v=9f06QZCVUHg" },
+          { title: "Good Riddance", artist: "Green Day", url: "https://www.youtube.com/watch?v=CnQ8N1KacJc" }
+        ],
+        advanced: "The reminiscence bump: autobiographical memories from ages 15-25 are encoded with higher narrative density due to identity formation. The first draft of the self gets the most ink. Everything after is revision." },
+
+      { id: "future-self-continuity", num: 8, icon: "🔭", title: "Future Self-Continuity", subtitle: "Loving Your Future Self Is a Secret Way to Be Happy",
+        simple: "Sometimes we treat our future self like a total stranger. That is why we leave the dishes for tomorrow or do not study for a test — we think Future Me can handle it. But the Future You is still you! If you can close your eyes and imagine yourself as an old person, you will start to be nicer to yourself right now. Loving your future self is a secret way to be happy because it makes your whole timeline feel like one big team.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A recording of your own voice: the sound of the self that already exists in the future." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A grandparent's house: the scent of a future version of home." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A healthy vegetable you know is good for Future You: the taste of a promise to yourself." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Putting on a warm coat you will be glad you have later: the present wrapping the future in protection." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking in a mirror and trying to see the wrinkles of wisdom you will have one day: the eyes rehearsing the future." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking slowly and carefully as if you were much older: the body practicing empathy across time." }
+        ],
+        intuition: "Loving your future self is a secret way to be happy. You would never hand a stranger your credit card and say spend whatever you want. But that is what you do every time you make a choice that your future self has to pay for. The trick is simple. Close your eyes. Picture yourself at seventy. Same eyes. More lines. Same laugh. Slower step. That person is you. That person will remember what you did today. That person will either thank you or forgive you. Make the choice that earns the thank you. Self-care is not selfish. Self-care is sending a care package to someone you love who has not arrived yet.",
+        links: [
+          { label: "Future Self-Continuity", url: "https://en.wikipedia.org/wiki/Temporal_discounting" },
+          { label: "Hal Hershfield", url: "https://www.halhershfield.com/" },
+          { label: "Delayed Gratification", url: "https://en.wikipedia.org/wiki/Delayed_gratification" }
+        ],
+        songs: [
+          { title: "Dear Younger Me", artist: "MercyMe", url: "https://www.youtube.com/watch?v=BnGGkluFAXc" },
+          { title: "100 Years", artist: "Five for Fighting", url: "https://www.youtube.com/watch?v=tR-qQcNT_fY" },
+          { title: "When I'm Sixty-Four", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HCTunqv1Xt4" }
+        ],
+        advanced: "Future self-continuity: the degree of psychological connection to one's future self predicts saving behavior, health choices, and ethical decision-making. Self-care is sending a care package to someone you love who has not arrived yet." },
+
+      { id: "chronostasis", num: 9, icon: "👁️", title: "Chronostasis", subtitle: "Even What You See Is Part of the Story Your Brain Is Telling",
+        simple: "Have you ever looked at a clock and for a split second the second hand seemed to stay still for too long? That is called the Stopped-Clock Illusion. Your brain is actually blind for a tiny moment when your eyes move, so it takes the first thing it sees at the new spot and stretches it backward in time to fill the gap. Your brain is a master at hiding its own mistakes to keep your world looking smooth. It shows that even what you see is part of the story your brain is telling.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The white noise of a fan your brain eventually stops hearing: the editor removing the background track." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Walking into a room and smelling cookies then not smelling them after a minute: the nose forgetting what the brain decided was old news." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The second bite of chocolate that is never as intense as the first: diminishing returns on sensation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Not feeling the clothes on your body until you think about them: the skin editing out the familiar." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking quickly from one object to another and trying to catch the blur: the brain hiding its own blackout." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and touching your nose: the body trusting a map drawn by a brain that edits reality." }
+        ],
+        intuition: "Even what you see is part of the story your brain is telling. Your eyes blink fifteen thousand times a day. You should see fifteen thousand blackouts. But you do not. Because your brain edits them out. It fills in the gaps with the last thing it saw. You are watching a movie with fifteen thousand missing frames and your brain is so good at editing that you never noticed. This is not a bug. This is a feature. But it means the smooth continuous reality you experience is a production. A very convincing production. And the producer is not the world. The producer is you. Every second of your life is a rough cut that your brain turned into a final edit before you even knew there was a rough cut.",
+        links: [
+          { label: "Chronostasis", url: "https://en.wikipedia.org/wiki/Chronostasis" },
+          { label: "Saccade", url: "https://en.wikipedia.org/wiki/Saccade" },
+          { label: "Change Blindness", url: "https://en.wikipedia.org/wiki/Change_blindness" }
+        ],
+        songs: [
+          { title: "Freeze-Frame", artist: "J. Geils Band", url: "https://www.youtube.com/watch?v=m_SzAt2MXRE" },
+          { title: "Stop This Train", artist: "John Mayer", url: "https://www.youtube.com/watch?v=sHwjUo03RYg" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" }
+        ],
+        advanced: "Chronostasis: temporal illusion where the first impression after a saccade appears extended. The brain prioritizes coherent visual continuity over raw data. Every second of your life is a rough cut your brain turned into a final edit before you even knew there was a rough cut." },
+
+      { id: "zeigarnik-effect", num: 10, icon: "🧩", title: "The Zeigarnik Effect", subtitle: "Your Brain Hates Leaving Things Unfinished",
+        simple: "Your brain hates leaving things unfinished. If you start a puzzle or a book but do not finish it, your brain will keep whispering about it to you until you are done. This is why it is hard to stop thinking about a problem at school or a fight with a friend. Your memory keeps those open files ready and waiting. To feel peaceful, you sometimes have to close the file by finishing the task or deciding to let it go.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song that cuts off right before the last note: the absence that screams louder than the music." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Food cooking that you have not eaten yet: the nose holding a promise the stomach has not cashed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering spice on your tongue after a meal: the finish line that keeps moving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An itch you cannot quite scratch: incompletion you can feel in your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A picture hanging slightly crooked on the wall: the eyes begging the hands to close the loop." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing on your tiptoes waiting for the signal to drop: the body suspended between start and finish." }
+        ],
+        intuition: "Your brain hates leaving things unfinished. The conversation you never had. The apology you never gave. The question you never asked. They are all still running. Open tabs in the browser of your mind. Draining the battery. Slowing the processor. This is why you think about your ex at 2 AM but not your breakfast from Tuesday. Breakfast was complete. The relationship was not. The brain does not file completed tasks in long-term storage with urgency. It files the incomplete ones. This is why forgiveness works. Not because the other person deserves it. But because your brain needs the file closed. Forgiveness is not a gift to them. Forgiveness is clicking the X on a tab that has been open for years. And suddenly the computer runs faster.",
+        links: [
+          { label: "Zeigarnik Effect", url: "https://en.wikipedia.org/wiki/Zeigarnik_effect" },
+          { label: "Cognitive Load", url: "https://en.wikipedia.org/wiki/Cognitive_load" },
+          { label: "Closure", url: "https://en.wikipedia.org/wiki/Closure_(psychology)" }
+        ],
+        songs: [
+          { title: "Unfinished Sympathy", artist: "Massive Attack", url: "https://www.youtube.com/watch?v=ZWmrfgj0MZI" },
+          { title: "One Way or Another", artist: "Blondie", url: "https://www.youtube.com/watch?v=_zBwRDEFMRY" },
+          { title: "Waiting in Vain", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=sxWBLHpMCvE" }
+        ],
+        advanced: "The Zeigarnik Effect: uncompleted tasks maintain higher cognitive accessibility through persistent 'task tension.' Forgiveness is not a gift to them. Forgiveness is clicking the X on a tab that has been open for years. And suddenly the computer runs faster." },
+    ],
+
+
 
   },
 
