@@ -13855,6 +13855,243 @@ export const TOPIC_CARDS = {
         advanced: "An unreliable narrator's credibility is compromised by instability, bias, or deliberate deception, creating a gap between narrator discourse and implied author's reality. Explores subjectivity of truth: the reader becomes literary detective, analyzing for inconsistencies. A profound metaphor for limitations of human perception and memory. Objectivity is an ideal approached only through synthesis of multiple conflicting subjective reports. The crumbs on the face are always there. You just have to look." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > THEATER & PERFORMANCE (theater)
+    // ═══════════════════════════════════════════════════════════════
+
+    theater: [
+      { id: "catharsis", num: 1, icon: "🌊", title: "Catharsis", subtitle: "An Emotional Car Wash That Helps You Realize Everyone Feels the Same Things You Do",
+        simple: "Performance lets us feel big feelings in a safe way so they do not stay stuck inside us. When a character cries or laughs, your heart does it too, and it feels like a heavy weight is lifted off your chest. This emotional car wash helps you realize that everyone feels the same things you do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A long, fading violin note: the sound of something heavy finally leaving." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain on hot pavement: the world exhaling after holding its breath." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon followed by a sweet strawberry: pain dissolving into relief." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A cool breeze after being in a hot room: release you can feel on your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame in a dark room: the light that remains after the storm." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Take a huge breath and let it all out at once: your body performing its own catharsis." }
+        ],
+        intuition: "Everyone feels the same things you do. The actor cries so you do not have to carry it alone. The theater is not entertainment. The theater is a hospital for emotions that have no name. You walked in heavy. You walk out light. That is not a metaphor. That is medicine.",
+        links: [
+          { label: "Catharsis", url: "https://en.wikipedia.org/wiki/Catharsis" },
+          { label: "Aristotle's Poetics", url: "https://en.wikipedia.org/wiki/Poetics_(Aristotle)" },
+          { label: "Peak-End Rule", url: "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Catharsis: the purification and purgation of emotions — primarily pity and fear — through art. A psycho-social feedback loop where the audience achieves emotional equilibrium by witnessing high-stakes narrative resolution. Mirrors the peak-end rule: memory defined by the most intense point and its conclusion. Bridges individual trauma and collective healing. The audience does not watch the tragedy. The audience survives it together." },
+
+      { id: "suspension-of-disbelief", num: 2, icon: "🎭", title: "The Suspension of Disbelief", subtitle: "When We Believe Together We Create a New World That Exists Only in Our Minds",
+        simple: "This is a secret deal you make with yourself to pretend that what you are seeing is real, even though you know it is a stage. You decide to believe that a wooden stick is a magic wand or that a man is a king. When we believe together, we create a new world that exists only in our minds.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a record player and you imagine a whole orchestra: belief fills the gaps." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sniffing a plastic flower and imagining a garden: your brain completing the illusion." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Drinking plain water and pretending it is a royal potion: imagination has a flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a rough wall and imagining a castle: your fingers believing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at a drawing and imagining the characters moving: sight surrendering to faith." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking on your tiptoes and feeling like you are floating: your body choosing the illusion." }
+        ],
+        intuition: "When we believe together, we create a new world that exists only in our minds. A hundred strangers sit in the dark and agree that this man is Hamlet. Nobody signed a contract. Nobody shook hands. But for two hours, Denmark is real. That is not a trick. That is the most powerful thing humans do: agree on something invisible.",
+        links: [
+          { label: "Suspension of Disbelief", url: "https://en.wikipedia.org/wiki/Suspension_of_disbelief" },
+          { label: "Samuel Taylor Coleridge", url: "https://en.wikipedia.org/wiki/Samuel_Taylor_Coleridge" },
+          { label: "Immersive Theatre", url: "https://en.wikipedia.org/wiki/Immersive_theater" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Pure Imagination", artist: "Gene Wilder", url: "https://www.youtube.com/watch?v=SVi3-PrQ0pY" }
+        ],
+        advanced: "Coined by Coleridge: the poetic faith requiring temporary suppression of the critical faculty for aesthetic experience. Vital in virtual reality and gaming, where presence depends on willingness to ignore the medium. Explores the boundary between objective reality and consensual hallucination. Every civilization that ever existed was built on suspension of disbelief. Money, nations, laws: all require it." },
+
+      { id: "the-ensemble", num: 3, icon: "🕸️", title: "The Ensemble", subtitle: "We Are Stronger and More Beautiful When We Are Connected",
+        simple: "An ensemble is a group of people working so closely together that they move and think like one giant person. No one is more important than anyone else, and they all rely on each other to keep the story alive. This shows us that we are stronger and more beautiful when we are connected.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Several people singing in harmony: many voices becoming one sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A kitchen where many ingredients are cooking together: separate becoming whole." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bread where flour, water, and salt become something new: ensemble on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding hands in a circle and feeling the pulse of the group." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flock of birds flying in a perfect V-shape: no leader, all leaders." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning back against a friend and feeling them hold you up: trust as a physical force." }
+        ],
+        intuition: "We are stronger and more beautiful when we are connected. The flock has no conductor. The bread has no star ingredient. The ensemble is not a group of soloists being polite. It is one organism with many hearts. When the heart rates sync, the I dissolves and the We is born.",
+        links: [
+          { label: "Ensemble", url: "https://en.wikipedia.org/wiki/Ensemble_cast" },
+          { label: "Stanislavski's System", url: "https://en.wikipedia.org/wiki/Stanislavski%27s_system" },
+          { label: "Systems Theory", url: "https://en.wikipedia.org/wiki/Systems_theory" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "With a Little Help from My Friends", artist: "The Beatles", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" }
+        ],
+        advanced: "The ensemble: the shift from I to We. In performance theory, a collective organism where the inter-subjective field between performers creates presence greater than the sum of parts. Connects to systems theory and sociology: high-functioning teams synchronize physiological states (heart rates) through shared goals and rhythmic action. The ensemble is not a technique. The ensemble is a technology for unity." },
+
+      { id: "embodied-cognition", num: 4, icon: "🧘", title: "Embodied Cognition", subtitle: "When You Move Your Body With Purpose You Change Your Spirit",
+        simple: "Your body knows things that your brain has not figured out yet, and actors use their muscles to show how a character thinks. If you stand tall like a superhero, you actually start to feel brave inside. When you move your body with purpose, you change your spirit.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythm of your own footsteps on the floor: your body keeping time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint waking up your whole body: scent changing your posture." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spicy pepper making your tongue dance: the body responding before the brain." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms together as hard as you can: creating emotion through pressure." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your reflection striking a powerful pose: seeing what your body already knows." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and feeling exactly where your elbows are in space: the body mapping itself." }
+        ],
+        intuition: "When you move your body with purpose, you change your spirit. The actor does not feel sad and then slump. The actor slumps and then feels sad. The body is not waiting for instructions. The body is giving them. Stand like a hero. Your brain will catch up.",
+        links: [
+          { label: "Embodied Cognition", url: "https://en.wikipedia.org/wiki/Embodied_cognition" },
+          { label: "Laban Movement Analysis", url: "https://en.wikipedia.org/wiki/Laban_movement_analysis" },
+          { label: "Physical Theatre", url: "https://en.wikipedia.org/wiki/Physical_theatre" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Shake It Off", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=nfWlot6h_JM" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" }
+        ],
+        advanced: "Embodied cognition: the motor system influences thinking. Actors work from the outside in, using physical gestures to trigger authentic psychological states and emotional memory. Bridges theater with phenomenological philosophy and cognitive science: the mind is not just in the head but distributed throughout the entire biological system. Your posture is not a result of your mood. Your posture is your mood." },
+
+      { id: "dramaturgy", num: 5, icon: "🏗️", title: "Dramaturgy", subtitle: "Knowing the Why Helps Us Understand the World Around Us",
+        simple: "Every story has a secret skeleton or a set of rules that keeps it from falling apart. Dramaturgy is the study of why things happen in a story and how all the pieces fit together. Knowing the why helps us understand the world around us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song with a steady beat that never misses: structure you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A recipe where every spice belongs: the architecture of flavor." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sandwich with layers that taste good together: dramaturgy on bread." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A puzzle piece clicking into place: the feeling of things fitting." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map that shows you exactly where to go: the skeleton made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in a straight line, one foot in front of the other: your body following the structure." }
+        ],
+        intuition: "Knowing the why helps us understand the world. The skeleton is invisible but it holds everything up. Remove one bone and the body collapses. The dramaturg does not write the story. The dramaturg makes sure the story does not lie to itself. Every life has a dramaturgy. Most people never read their own script.",
+        links: [
+          { label: "Dramaturgy", url: "https://en.wikipedia.org/wiki/Dramaturgy" },
+          { label: "Semiotics", url: "https://en.wikipedia.org/wiki/Semiotics" },
+          { label: "Structuralism", url: "https://en.wikipedia.org/wiki/Structuralism" }
+        ],
+        songs: [
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Everything in Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "Dramaturgy: the architectural framework of narrative. Internal logic, historical context, and structural motifs governing a performance's meaning-making process. Connects to semiotics and structuralism: revealing how humans use patterns to derive significance from the chaos of existence. The dramaturg is the architect of meaning. The audience walks through the building without seeing the blueprints." },
+
+      { id: "scenography", num: 6, icon: "🌆", title: "Scenography", subtitle: "The World You Are in Changes How You Feel Inside",
+        simple: "The space where a story happens is just as important as the words the actors say. Scenography is the art of using lights, colors, and objects to create a mood without saying a single word. The world you are in changes how you feel inside.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of your voice in a big hallway: the space speaking back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old book that makes you feel like you are in a library: scent as set design." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The blue taste of a cold popsicle: color becoming flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft velvet cloth versus a rough rock: texture setting the scene." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sun going down and the colors changing: the world performing scenography every evening." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing in a very small closet and feeling the space press in on you: the room reshaping your body." }
+        ],
+        intuition: "The world you are in changes how you feel inside. The lighting designer does not illuminate the stage. The lighting designer tells you how to feel. A red wash is anger. A blue wash is grief. You never noticed. You were too busy feeling it. The set is the first actor. It speaks before anyone opens their mouth.",
+        links: [
+          { label: "Scenography", url: "https://en.wikipedia.org/wiki/Scenography" },
+          { label: "Environmental Psychology", url: "https://en.wikipedia.org/wiki/Environmental_psychology" },
+          { label: "Stage Lighting", url: "https://en.wikipedia.org/wiki/Stage_lighting" }
+        ],
+        songs: [
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" }
+        ],
+        advanced: "Scenography: holistic manipulation of performance space. Not just set design but the creation of atmosphere dictating physical and emotional possibilities. Links to environmental psychology and architecture: physical surroundings influence behavior and non-verbal information transmission. The set does not support the story. The set is the story's first sentence." },
+
+      { id: "fourth-wall", num: 7, icon: "🧱", title: "The Fourth Wall", subtitle: "Boundaries Help Us See Clearly but Crossing Them Makes Us Feel Alive",
+        simple: "Imagine there is an invisible window between the actors and the people watching; the actors stay in their world, and you stay in yours. When an actor breaks the wall by looking at you, it is a big surprise that makes you feel part of the story. Boundaries help us see clearly, but crossing them makes us feel alive.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A whisper that is meant just for you: the wall cracking open." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A cookie that someone else is eating: separated by an invisible wall." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The taste of a food you see in a movie: your tongue reaching through the screen." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on a cold window looking at the world outside: the wall you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking through your fingers like they are a fence: boundaries framing perception." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Staying very still while someone else moves around you: your body being the wall." }
+        ],
+        intuition: "Boundaries help us see clearly, but crossing them makes us feel alive. The wall is there so you can forget it is there. And when Ferris Bueller looks at the camera, your heart jumps because the fiction acknowledged you. For one second, you were not watching the story. You were inside it. That is what every human wants: to be seen.",
+        links: [
+          { label: "Fourth Wall", url: "https://en.wikipedia.org/wiki/Fourth_wall" },
+          { label: "Brechtian Theatre", url: "https://en.wikipedia.org/wiki/Epic_theatre" },
+          { label: "Parasocial Interaction", url: "https://en.wikipedia.org/wiki/Parasocial_interaction" }
+        ],
+        songs: [
+          { title: "Mr. Brightside", artist: "The Killers", url: "https://www.youtube.com/watch?v=gGdGFtwCNBE" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" },
+          { title: "Hello", artist: "Adele", url: "https://www.youtube.com/watch?v=YQHsXMglC9A" }
+        ],
+        advanced: "The fourth wall: a convention of realism maintaining the illusion of a self-contained world. Breaking it (Brecht's alienation effect) forces transition from passive observer to critical participant. Connects to social psychology and parasocial relationships: the boundary between media persona and viewer becoming blurred. The wall is the contract. Breaking it is the most intimate thing art can do." },
+
+      { id: "improvisation", num: 8, icon: "⚡", title: "Improvisation", subtitle: "Life Is a Big Play Without a Script and We Are All Making It Up Together",
+        simple: "Improvisation is making things up as you go by always saying yes to whatever happens. It is like a game of catch where you never know where the ball is going, but you are always ready to grab it. Life is a big play without a script, and we are all making it up together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A jazz musician playing a solo: notes that did not exist until this exact second." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of a surprise birthday cake: improvisation has a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a new food you have never seen before: your tongue improvising a reaction." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Closing your eyes and feeling an object to guess what it is: touch without a script." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching clouds change shape in the wind: nature improvising in real time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one leg while waving your arms: your body making it up as it goes." }
+        ],
+        intuition: "Life is a big play without a script, and we are all making it up together. Yes, And. The two most powerful words in any language. Yes means I accept what you gave me. And means I will build on it. That is not an improv rule. That is the instruction manual for being a good human.",
+        links: [
+          { label: "Improvisational Theatre", url: "https://en.wikipedia.org/wiki/Improvisational_theatre" },
+          { label: "Jazz Improvisation", url: "https://en.wikipedia.org/wiki/Jazz_improvisation" },
+          { label: "Applied Improvisation", url: "https://en.wikipedia.org/wiki/Applied_improvisation" }
+        ],
+        songs: [
+          { title: "So What", artist: "Miles Davis", url: "https://www.youtube.com/watch?v=zqNTltOGh5c" },
+          { title: "Free Fallin'", artist: "Tom Petty", url: "https://www.youtube.com/watch?v=1lWJXDG2i0A" },
+          { title: "Don't Stop Me Now", artist: "Queen", url: "https://www.youtube.com/watch?v=HgzGwKwLmgM" }
+        ],
+        advanced: "Improvisation: real-time creation requiring radical presence and the Yes, And principle, fostering divergent thinking and collaborative problem-solving. Increasingly applied in business and therapy (applied improvisation) to build resilience and adaptive capacity in complex, unpredictable systems. The jazz solo is not a performance. The jazz solo is a conversation with the universe in real time." },
+
+      { id: "vocal-resonance", num: 9, icon: "🔊", title: "Vocal Resonance", subtitle: "Your Voice Is a Bridge That Connects Your Inside World to Everyone Else",
+        simple: "Your voice is a vibration that starts in your chest and travels through the air to touch someone else's ears. When actors speak clearly, their voices carry their feelings like a physical wave. Your voice is a bridge that connects your inside world to everyone else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Humming low and feeling your chest buzz: your body becoming the speaker." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Breathing in deep and smelling fresh air: the fuel for the voice." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pop sound on your lips like a tiny bubble: phonetics you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on a speaker while music plays: feeling someone else's voice in your bones." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ripples across a pond after you throw a rock: your voice does this to air." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your throat move as you swallow: the instrument tuning itself." }
+        ],
+        intuition: "Your voice is a bridge that connects your inside world to everyone else. One person speaks in a room of a thousand and every eardrum vibrates at the same frequency. That is not communication. That is physics performing intimacy. Your voice is the only instrument that was born inside your body.",
+        links: [
+          { label: "Human Voice", url: "https://en.wikipedia.org/wiki/Human_voice" },
+          { label: "Vocal Resonance", url: "https://en.wikipedia.org/wiki/Vocal_resonation" },
+          { label: "Sympathetic Resonance", url: "https://en.wikipedia.org/wiki/Sympathetic_resonance" }
+        ],
+        songs: [
+          { title: "Respect", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=6FOUqQt3Kg0" },
+          { title: "The Sound of Silence", artist: "Disturbed", url: "https://www.youtube.com/watch?v=u9Dg-g7t2l4" },
+          { title: "Rolling in the Deep", artist: "Adele", url: "https://www.youtube.com/watch?v=rYEDA3JcQqw" }
+        ],
+        advanced: "Vocal resonance: amplification of phonation through the body's natural chambers (pharynx, mouth, nose). The physical manifestation of intent and authority. Connects to acoustics and physics: sympathetic resonance allows one individual's biological frequency to influence the physical state of an entire room. Your voice does not carry words. Your voice carries you." },
+
+      { id: "ritual-roots", num: 10, icon: "🔥", title: "Ritual Roots", subtitle: "We Are All Part of a Very Old Story That Never Ends",
+        simple: "Long ago, theater started around campfires where people danced and told stories to explain the sun, the moon, and the stars. Performance is a sacred way to remember who we are and where we came from. We are all part of a very old story that never ends.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady beat of a drum: the oldest sound humans ever made on purpose." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Woodsmoke from a fire: the scent of the first theater." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A piece of fruit that grew from the earth: eating what the ancestors ate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Walking barefoot on grass or dirt: touching the stage that was here before stages." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A parade or a big celebration in the street: ritual alive and walking." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stomping your feet hard on the ground and feeling the earth push back: the oldest dialogue." }
+        ],
+        intuition: "We are all part of a very old story that never ends. The first performance was not on a stage. It was around a fire. Someone stood up and pretended to be the animal they hunted. And every person watching felt braver. That fire is still burning. Every stage, every screen, every bedtime story is that same campfire. You are sitting around it right now.",
+        links: [
+          { label: "Theatre (Origins)", url: "https://en.wikipedia.org/wiki/Theatre#Origins" },
+          { label: "Ritual", url: "https://en.wikipedia.org/wiki/Ritual" },
+          { label: "Liminal Space", url: "https://en.wikipedia.org/wiki/Liminality" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "We Will Rock You", artist: "Queen", url: "https://www.youtube.com/watch?v=-tJYN-eG1zk" },
+          { title: "Africa", artist: "Toto", url: "https://www.youtube.com/watch?v=FTQbiNvZqaY" }
+        ],
+        advanced: "Theater's origins are intertwined with religious and communal ritual. A liminal space — a threshold where mundane and extraordinary meet to reinforce social bonds and cultural identity. Connects to anthropology and evolutionary biology: performance is a fundamental survival mechanism transmitting complex cultural information across generations. The campfire became the stage. The stage became the screen. The story never changed." },
+    ],
+
+
 
 
   },
