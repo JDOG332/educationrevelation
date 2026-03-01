@@ -18608,6 +18608,243 @@ export const TOPIC_CARDS = {
         advanced: "The Zeigarnik Effect: uncompleted tasks maintain higher cognitive accessibility through persistent 'task tension.' Forgiveness is not a gift to them. Forgiveness is clicking the X on a tab that has been open for years. And suddenly the computer runs faster." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > IDENTITY & THE SELF (identityself)
+    // ═══════════════════════════════════════════════════════════════
+
+    identityself: [
+      { id: "true-self", num: 1, icon: "🪞", title: "The True Self", subtitle: "There Is Only One You in the Whole Universe",
+        simple: "Think of your heart as a special compass that always points to what is right for you. When you are all alone, you do not have to pretend to be a superhero or a perfect student; you can just be exactly who you are. This part of you is like a secret garden that grows even when no one is looking at it. By being kind to yourself when you are alone, you learn how to be a better friend to everyone else. You are special because there is only one you in the whole universe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythmic beat of your own heart in a silent room: the sound of the self before anyone else showed up." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of your own home or your favorite childhood blanket: the smell of the place where you do not perform." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool clear water that refreshes you from the inside out: the taste of nothing pretending to be something else." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms together and feeling the warmth you create: the self meeting the self with nothing in between." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching your chest rise and fall as you breathe: the visible proof that something inside you is running without permission." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the weight of your body sitting firmly in a chair: gravity confirming you are real before anyone else does." }
+        ],
+        intuition: "There is only one you in the whole universe. Not one like you. One of you. The odds of your exact genetic combination existing are one in four hundred trillion. You are not rare. You are impossible. And yet here you are. Sitting in a chair. Reading these words. Breathing without being asked to. The true self is not the self you show people. The true self is the self that exists when no one is asking you to exist. It is the part that hums in the shower. That stares out the window for no reason. That knows what it wants before the brain gets involved. The compass does not lie. But it only works when you stop letting other people hold it.",
+        links: [
+          { label: "Self-Actualization", url: "https://en.wikipedia.org/wiki/Self-actualization" },
+          { label: "Authenticity", url: "https://en.wikipedia.org/wiki/Authenticity_(philosophy)" },
+          { label: "Carl Rogers", url: "https://en.wikipedia.org/wiki/Carl_Rogers" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" }
+        ],
+        advanced: "Rogers' organismic valuing process: the internal compass that guides growth toward fulfillment when uncorrupted by conditions of worth. The compass does not lie. But it only works when you stop letting other people hold it." },
+
+      { id: "shadow-work", num: 2, icon: "🌑", title: "Shadow Work", subtitle: "When You Understand Your Shadow You Become a Whole Person",
+        simple: "Everyone has a shadow that follows them around, and your mind has a shadow too. The inner shadow is where we keep the feelings we are scared of, like being grumpy or jealous. When we are alone, sometimes these feelings come out to say hello. Instead of running away, we can be brave and listen to what they have to say. When you understand your shadow, you become a whole person instead of just a piece of one.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A low humming Om or a deep bass note: the frequency of the parts you buried vibrating back to the surface." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp earthy forest floor after rain: the scent of things decomposing into something useful." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Very dark bitter chocolate: the flavor the mouth rejects at first but learns to crave." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth heavy stone in your hand: the weight of something you have been carrying without looking at." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The moon visible during the day: the dark thing showing up where it is not expected." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your muscles until you feel a good ache: the body reminding you that growth lives next door to discomfort." }
+        ],
+        intuition: "When you understand your shadow you become a whole person instead of just a piece of one. The things you hate most in other people are the things you have not forgiven in yourself. The jealousy you judge in a friend is the jealousy you buried in yourself at age nine. The anger you cannot stand in your father is the anger you will not admit lives in your chest. The shadow is not the enemy. The shadow is the filing cabinet where you put everything the world told you was unacceptable. But unacceptable is not the same as untrue. Open the cabinet. Read the files. The monster under the bed is almost always a child who was told to hide.",
+        links: [
+          { label: "Shadow (Psychology)", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Individuation", url: "https://en.wikipedia.org/wiki/Individuation" },
+          { label: "Carl Jung", url: "https://en.wikipedia.org/wiki/Carl_Jung" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" },
+          { title: "Behind Blue Eyes", artist: "The Who", url: "https://www.youtube.com/watch?v=BfuWXRZe9yA" }
+        ],
+        advanced: "Jungian shadow integration: the repressed traits the conscious ego finds unacceptable must be acknowledged to achieve individuation. The monster under the bed is almost always a child who was told to hide." },
+
+      { id: "phenomenal-consciousness", num: 3, icon: "✨", title: "Phenomenal Consciousness", subtitle: "The Magic Part of You That Lets You Experience the Whole World",
+        simple: "Have you ever wondered what it is like to be a bird, or even just what it feels like to be you right now? That special feeling of being alive and noticing things is your consciousness. It is like a movie playing inside your head that only you can see. Even when you are quiet and nobody is watching, this movie is always going. It is the magic part of you that lets you experience the whole world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ringing of absolute silence: the sound of consciousness listening to itself." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean air after a lightning storm: the scent of the atmosphere resetting itself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering sweetness of a piece of fruit: the taste of being alive without trying." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Wind blowing across your skin: the universe touching you and you feeling it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame in a dark room: the smallest possible light proving that seeing is not about quantity." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and knowing exactly where your nose is: the body proving it has a map that does not need light." }
+        ],
+        intuition: "The magic part of you that lets you experience the whole world. A rock does not know it is a rock. A tree does not know it is growing. The ocean does not know it is deep. But you know you are alive. You know you are reading. You know you are breathing. This knowing is the rarest thing in the known universe. Out of all the matter that exists — the stars, the planets, the dust, the dark — only an impossibly thin sliver of it knows that it exists. You are that sliver. Consciousness is not a thing you have. Consciousness is the thing that has you. It is the screen on which everything plays. And the screen was there before the movie started.",
+        links: [
+          { label: "Phenomenal Consciousness", url: "https://en.wikipedia.org/wiki/Phenomenal_consciousness" },
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" },
+          { label: "Qualia", url: "https://en.wikipedia.org/wiki/Qualia" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" }
+        ],
+        advanced: "Phenomenal consciousness: the qualitative qualia of subjective experience that escapes physicalist reduction. Consciousness is not a thing you have. Consciousness is the thing that has you. The screen was there before the movie started." },
+
+      { id: "moral-integrity", num: 4, icon: "🛡️", title: "Moral Integrity", subtitle: "Doing the Right Thing Even If Nobody Is Ever Going to Find Out",
+        simple: "Integrity means doing the right thing even if nobody is ever going to find out. Imagine you found a dollar on the ground and no one saw you — what you do with it shows who you really are. When you are alone, your choices are like building blocks for your heart. If you choose to be honest and kind when it is just you, you build a very strong house inside. This makes you feel proud and happy without needing a gold star from a teacher.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clear ringing bell: the sound of something that has no reason to lie." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass: the scent of something that grew in the open with nothing to hide." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure cool mint: the taste of a clean conscience." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm honest handshake: the body sealing a deal it intends to keep." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A straight line drawn on paper: the simplest visible proof that alignment exists." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up straight with your shoulders back: the posture of someone who does not need an audience to stand tall." }
+        ],
+        intuition: "Doing the right thing even if nobody is ever going to find out. Character is what you do in the dark. Reputation is what you do in the light. The world rewards reputation. But the body keeps score of character. You can fool every person in the room. You cannot fool the mirror at 3 AM. Integrity is not about being perfect. Integrity is about being consistent. The person you are when someone is watching should not be a stranger to the person you are when no one is watching. If the two versions shake hands and recognize each other — you have integrity. If the two versions shake hands and one flinches — you have work to do. The work is not punishment. The work is the point.",
+        links: [
+          { label: "Integrity", url: "https://en.wikipedia.org/wiki/Integrity" },
+          { label: "Virtue Ethics", url: "https://en.wikipedia.org/wiki/Virtue_ethics" },
+          { label: "Kohlberg's Moral Development", url: "https://en.wikipedia.org/wiki/Lawrence_Kohlberg%27s_stages_of_moral_development" }
+        ],
+        songs: [
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=MMFj8uDubsE" },
+          { title: "Respect", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=6FOUqQt3Kg0" },
+          { title: "I Walk the Line", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=KHF9itPLUo4" }
+        ],
+        advanced: "Virtue ethics: the focus on character rather than action. Integrity is the alignment of internal moral compass with external behavior regardless of social surveillance. Character is what you do in the dark. Reputation is what you do in the light." },
+
+      { id: "ego-vs-essence", num: 5, icon: "🎭", title: "Ego vs. Essence", subtitle: "Your Essence Is a Quiet Light That Never Goes Out Even When the World Is Loud",
+        simple: "Sometimes we wear masks to fit in, like acting extra tough or extra silly so people like us. This mask is called the Ego, and it cares a lot about what others think. But underneath the mask is your Essence, which is the real you that does not need to show off. When you are alone, you can take the mask off and just breathe. Your Essence is like a quiet light that never goes out, even when the world is loud.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Soft ambient forest noises: the sound of a world that is not performing for anyone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender or chamomile tea: the scent of something that has already decided to be calm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain nourishing rice or bread: the taste of sustenance that does not need decoration." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Bare feet on soft grass: the body touching the earth without anything manufactured in between." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Clouds drifting by with nowhere to be: the visible proof that existence does not require effort." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your lungs expand and contract: the essence doing its job without asking for applause." }
+        ],
+        intuition: "Your Essence is a quiet light that never goes out even when the world is loud. The ego is the costume. The essence is the actor. The ego is the resume. The essence is the person. The ego is the Instagram post. The essence is the person sitting on the toilet scrolling through Instagram. One is performed. One simply is. You do not need to kill the ego. The ego is useful. It gets you through job interviews and first dates and parent-teacher conferences. But you need to know when you are wearing the costume and when the costume is wearing you. The test is simple: if you cannot be alone in a quiet room for ten minutes without reaching for your phone, the costume is wearing you.",
+        links: [
+          { label: "Ego (Spirituality)", url: "https://en.wikipedia.org/wiki/Ego_(spirituality)" },
+          { label: "Eckhart Tolle", url: "https://en.wikipedia.org/wiki/Eckhart_Tolle" },
+          { label: "Self-Transcendence", url: "https://en.wikipedia.org/wiki/Self-transcendence" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" }
+        ],
+        advanced: "The ego-essence duality: the socialized protective self vs. unconditioned awareness. The ego seeks validation. The essence seeks connection. If you cannot be alone in a quiet room for ten minutes without reaching for your phone, the costume is wearing you." },
+
+      { id: "narrative-identity-self", num: 6, icon: "📖", title: "Narrative Identity", subtitle: "You Are the Person Writing Your Own Story",
+        simple: "Your life is like a big story, and you are the person writing it! Every day, you tell yourself a story about who you are and what you can do. When you are alone, you can think about the chapters of your life and decide what the hero — you — will do next. You can choose to tell a story where you are brave and kind. This story helps you understand where you came from and where you are going.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The scratching of a pencil on paper: the sound of the self being written in real time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books or a new notebook: the scent of stories waiting to be told and stories that already were." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe passed down through generations: the taste of a story that survived the storytellers." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Turning the pages of a thick book: the fingers participating in the passage of time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long road stretching toward the horizon: the plot visible but the ending hidden." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the balance of your body as you walk: the protagonist moving through the scene." }
+        ],
+        intuition: "You are the person writing your own story. You are not the events that happened to you. You are the story you tell about the events that happened to you. Two people can survive the same disaster. One writes a tragedy. The other writes a comeback story. Same facts. Different authors. The facts are not the story. The narrator is the story. And you are the narrator. You have been the narrator the whole time. The pen was never in anyone else's hand. They may have written on your pages. But the binding is yours. The spine is yours. And the next chapter — the blank one — belongs to no one but the person holding the pen right now. That person is you.",
+        links: [
+          { label: "Narrative Identity", url: "https://en.wikipedia.org/wiki/Narrative_identity" },
+          { label: "Dan McAdams", url: "https://en.wikipedia.org/wiki/Dan_P._McAdams" },
+          { label: "Life Story Model", url: "https://en.wikipedia.org/wiki/Life_story" }
+        ],
+        songs: [
+          { title: "Life on Mars?", artist: "David Bowie", url: "https://www.youtube.com/watch?v=AZKcl4-tcuo" },
+          { title: "The Times They Are A-Changin'", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=90WD_ats6eE" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "McAdams' narrative identity model: the internalized evolving story of the self that integrates past, present, and imagined future. The facts are not the story. The narrator is the story. And the next chapter belongs to no one but the person holding the pen." },
+
+      { id: "proprioceptive-awareness", num: 7, icon: "🤸", title: "Proprioceptive Awareness", subtitle: "You Are the Person Living Inside Your Skin",
+        simple: "Even with your eyes closed, you know exactly where your hands and feet are! This is a special sense your body has to keep track of itself. When you are alone and quiet, you can feel your body from the inside out. It is like your skin is a house, and you are the person living inside of it. This helps you feel safe and at home in your own skin no matter where you go.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of air in your ears when you yawn: the body speaking to itself when no one else is listening." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The salty scent of your own skin: the smell of the house you have lived in your entire life." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The neutral wet feeling of your mouth: the taste of the default state before anything else arrives." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of your own hair: the self touching the self and recognizing itself." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The patterns on your fingerprints: a signature the universe gave you before you had a name." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot and feeling your ankle wiggle to keep you up: the body solving a math problem in real time without telling you the answer." }
+        ],
+        intuition: "You are the person living inside your skin. You have a sixth sense and it is not seeing ghosts. It is knowing where your body is without looking. Close your eyes. Touch your nose. You did not miss. You did not miss because your body has a map of itself that does not need light to read. This map is older than language. Older than thought. It is the first relationship you ever had — the relationship between your mind and your body. Before you had a friend. Before you had a name. You had a body that knew where it was. And it is still there. Right now. Anchoring you. Holding you in place. Not because it has to. Because it wants to. Your body is not your vehicle. Your body is your oldest friend.",
+        links: [
+          { label: "Proprioception", url: "https://en.wikipedia.org/wiki/Proprioception" },
+          { label: "Embodied Cognition", url: "https://en.wikipedia.org/wiki/Embodied_cognition" },
+          { label: "Body Schema", url: "https://en.wikipedia.org/wiki/Body_schema" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Shake It Off", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=nfWlot6h_JM" },
+          { title: "Body and Soul", artist: "Billie Holiday", url: "https://www.youtube.com/watch?v=BboGCk87MOs" }
+        ],
+        advanced: "Proprioception as the 'sixth sense' of self-navigation — mechanosensory neurons in muscles, tendons, and joints providing the body schema. Your body is not your vehicle. Your body is your oldest friend." },
+
+      { id: "social-mirroring", num: 8, icon: "🪞", title: "Social Mirroring", subtitle: "You Do Not Need a Mirror to Tell You That You Are Important",
+        simple: "Sometimes we learn who we are by looking at how other people react to us. If someone smiles when we tell a joke, we think I am funny! This is like using other people as mirrors. While it is good to have friends, it is also important to remember who you are when there are no mirrors around. When you are alone, you do not need a mirror to tell you that you are important and loved.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo in a large hallway: your voice coming back to you changed by the space it traveled through." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The perfume or soap of someone you love: another person's identity entering through your nose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a meal with a large group: the taste of food that was meant to be communal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm hug from a friend: the body receiving its own reflection through another body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Seeing your reflection in someone else's eyes: the self visible only because someone else is looking." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The pull of a crowd moving together: the body joining a rhythm it did not start but cannot resist." }
+        ],
+        intuition: "You do not need a mirror to tell you that you are important. You learned to smile because someone smiled at you. You learned to speak because someone spoke to you. You learned you were lovable because someone loved you. The mirror came first. The self came second. This is beautiful and this is dangerous. Beautiful because it means we are built for connection. Dangerous because it means the wrong mirror can teach you the wrong shape. If the mirror said you were too much — that was a broken mirror. If the mirror said you were not enough — that was a dirty mirror. The mirror was never the truth. The mirror was always just another person doing their best. And their best was not always accurate. You do not need a reflection to exist. The sun does not need a mirror to shine.",
+        links: [
+          { label: "Looking-Glass Self", url: "https://en.wikipedia.org/wiki/Looking-glass_self" },
+          { label: "Social Identity Theory", url: "https://en.wikipedia.org/wiki/Social_identity_theory" },
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" }
+        ],
+        songs: [
+          { title: "Reflection", artist: "Lea Salonga", url: "https://www.youtube.com/watch?v=1igTw2e_dUU" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "Mirror", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" }
+        ],
+        advanced: "Cooley's Looking-Glass Self: identity shaped by perceived perception. The mirror came first. The self came second. The sun does not need a mirror to shine." },
+
+      { id: "anatta-nonself", num: 9, icon: "🌊", title: "Anatta (Non-Self)", subtitle: "You Are Not Stuck Being One Way — You Can Always Flow into Someone More Wonderful",
+        simple: "Think of yourself like a beautiful river. The water is always moving and changing, but it is still the same river. You are changing too! You are not the same person you were when you were a baby, and you will be different when you are a grown-up. This means you are not stuck being one way. You can always grow, learn, and flow into someone even more wonderful.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A rushing waterfall or a bubbling brook: the sound of something that has no fixed address but is always home." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry pavement: the scent of something arriving to change everything." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A piece of melting ice: solid becoming liquid on your tongue — identity changing state." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dipping your hand into a moving stream: the hand is still but the water is always new." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset changing colors: the sky proving that beauty and impermanence are the same thing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the way your body changes as you grow taller: the skeleton rewriting itself while the mind watches." }
+        ],
+        intuition: "You are not stuck being one way — you can always flow into someone more wonderful. The Buddhist word is anatta. No-self. Not that you do not exist. But that you are not fixed. You are not a photograph. You are a river. The person who hurt someone five years ago does not have to be the person sitting here today. The person who failed yesterday does not have to be the person who tries tomorrow. You are not your worst moment because moments are water and water moves. The river that flooded the town in March is the same river that irrigates the farm in July. Same river. Different verb. You are not a noun. You are a verb. And verbs do not stay still.",
+        links: [
+          { label: "Anatta", url: "https://en.wikipedia.org/wiki/Anatt%C4%81" },
+          { label: "Process Philosophy", url: "https://en.wikipedia.org/wiki/Process_philosophy" },
+          { label: "Impermanence", url: "https://en.wikipedia.org/wiki/Impermanence" }
+        ],
+        songs: [
+          { title: "Rivers of Babylon", artist: "Boney M.", url: "https://www.youtube.com/watch?v=ta42xU2YNLA" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "The River", artist: "Bruce Springsteen", url: "https://www.youtube.com/watch?v=lc6F47Z6PI4" }
+        ],
+        advanced: "Anatta: no permanent unchanging essence. The self is a process of shifting thoughts, feelings, and physical states. You are not a noun. You are a verb. And verbs do not stay still." },
+
+      { id: "the-persona", num: 10, icon: "🎭", title: "The Persona", subtitle: "It Is Okay to Use the Uniform as Long as You Remember Who Is Wearing It",
+        simple: "The Persona is like a special uniform you wear for different parts of your life. You might have a student uniform for school and a teammate uniform for sports. These are useful because they help us know how to act with others. But when you come home and take off the uniform, you are just you. It is okay to use your persona to help people, as long as you remember the real you underneath.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The applause of a crowd: the sound that rewards the costume more than the person." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new stage or a fresh costume: the scent of a role about to be played." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A professional fancy dinner: the taste of a social performance in edible form." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A stiff formal shirt or dress: the fabric that reminds you you are performing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A photo of yourself looking very professional: the image that looks like you but does not feel like you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking with a specific posture for an audience: the body changing its physics to match its role." }
+        ],
+        intuition: "It is okay to use the uniform as long as you remember who is wearing it. You are not fake for having a work voice. You are not a fraud for acting confident when you are scared. You are not a liar for smiling at someone you do not like. The persona is a tool. A very useful tool. The problem is not having a mask. The problem is forgetting you are wearing one. The person who forgets they are acting becomes the act. The person who remembers they are acting can take the mask off at the end of the day and breathe. The mask is not the crime. Forgetting it is a mask — that is the crime. Know your roles. Play them well. But when the curtain falls, come home to the one who was there before the costume existed.",
+        links: [
+          { label: "Persona (Psychology)", url: "https://en.wikipedia.org/wiki/Persona_(psychology)" },
+          { label: "Erving Goffman", url: "https://en.wikipedia.org/wiki/Erving_Goffman" },
+          { label: "Dramaturgical Analysis", url: "https://en.wikipedia.org/wiki/Dramaturgical_analysis" }
+        ],
+        songs: [
+          { title: "The Great Pretender", artist: "The Platters", url: "https://www.youtube.com/watch?v=dOlMByx1iKE" },
+          { title: "Poker Face", artist: "Lady Gaga", url: "https://www.youtube.com/watch?v=bESGLojNYSo" },
+          { title: "Smooth Criminal", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=h_D3VFfhvs4" }
+        ],
+        advanced: "Goffman's dramaturgical model: the persona as functional social mask. The mask is not the crime. Forgetting it is a mask — that is the crime. Come home to the one who was there before the costume existed." },
+    ],
+
+
 
 
   },
