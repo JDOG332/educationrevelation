@@ -10779,6 +10779,252 @@ export const TOPIC_CARDS = {
 
 
   },
+
+  // ═══════════════════════════════════════════════════════════════
+  // 🌿 NATURE (pillars) — "the oldest temple"
+  // ═══════════════════════════════════════════════════════════════
+
+  pillars: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > WATER & FLOW (water)
+    // ═══════════════════════════════════════════════════════════════
+
+    water: [
+      { id: "molecular-cohesion", num: 1, icon: "💧", title: "Molecular Cohesion", subtitle: "Tiny Magnets That Never Want to Be Alone",
+        simple: "Water is made of tiny pieces that act like magnets to stay close together. This stickiness lets bugs walk on ponds and helps water travel from tree roots to high leaves. Because water molecules like to hug, they create a strong surface that holds everything in place. It is the ultimate team-up because they never want to be alone. You can see this when rain forms round drops instead of flat pancakes.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic plink-plonk of a leaky faucet." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The crisp, sharp scent of petrichor after rain hits dry dust." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold glass of spring water that feels heavy and satisfying." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Putting your hand in a pool and feeling the push against your palm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching two beads of water on a window merge into one." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in a pool where your body loses the sense of weight: held by invisible hands." }
+        ],
+        intuition: "Feel the invisible threads connecting every part of you, just as water molecules never truly let go of one another. You are held together by the same force that holds the raindrop round.",
+        links: [
+          { label: "Water Science School", url: "https://en.wikipedia.org/wiki/Properties_of_water" },
+          { label: "The Chemistry of Water", url: "https://en.wikipedia.org/wiki/Water" },
+          { label: "Adhesion and Cohesion", url: "https://en.wikipedia.org/wiki/Cohesion_(chemistry)" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Water Under the Bridge", artist: "Adele", url: "https://www.youtube.com/watch?v=shG0ezBeeJc" }
+        ],
+        advanced: "The dipole moment of H₂O creates electrostatic attraction known as hydrogen bonding — not covalent but persistent, fleeting interactions accounting for water's high heat capacity and surface tension. These bonds constantly break and reform at picosecond scales, creating a flickering cluster effect: coherent structure while remaining perfectly fluid, bridging rigid order and total entropy." },
+
+      { id: "hydrologic-cycle", num: 2, icon: "☁️", title: "The Hydrologic Cycle", subtitle: "The Greatest Traveler — Never Stays in One Place",
+        simple: "Water is the greatest traveler because it never stays in one place for too long. It starts in the ocean, flies up into the sky as invisible gas, and then falls back down as rain or snow. Every drop of water you drink today is the same water that dinosaurs drank millions of years ago. It keeps moving in a giant circle, changing its look but never its heart. This cycle ensures that life always has what it needs to grow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The distant rumble of a thunderstorm approaching." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The damp, earthy smell of a basement or a cave." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic tang of melted snow on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Misty dampness on your skin when walking through a cloud." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "White steam rising from a hot cup of cocoa." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of rising when you take a deep breath, like vapor lifting off a lake." }
+        ],
+        intuition: "Nothing is ever truly lost. It simply changes form and returns when the timing is right. The water in your body has been rain, ocean, cloud, and river. You are drinking the same drink as every creature that ever lived.",
+        links: [
+          { label: "NASA: The Water Cycle", url: "https://en.wikipedia.org/wiki/Water_cycle" },
+          { label: "NOAA Water Cycle", url: "https://en.wikipedia.org/wiki/Hydrology" },
+          { label: "National Geographic: Water Cycle", url: "https://en.wikipedia.org/wiki/Precipitation" }
+        ],
+        songs: [
+          { title: "November Rain", artist: "Guns N' Roses", url: "https://www.youtube.com/watch?v=8SbUC-UaAxE" },
+          { title: "Set Fire to the Rain", artist: "Adele", url: "https://www.youtube.com/watch?v=Ri7-vnrJD3k" },
+          { title: "Rainy Night in Georgia", artist: "Brook Benton", url: "https://www.youtube.com/watch?v=bDRbWsqGZ_A" }
+        ],
+        advanced: "A closed-system biogeochemical cycle describing continuous movement of water on, above, and below Earth's surface. Involves transfer of latent heat — a primary driver of atmospheric circulation and climate. The mass of water remains constant over geological time, but partitioning between ice, fresh water, saline water, and vapor varies. A planetary-scale heat pump moving energy from equator toward the poles." },
+
+      { id: "hydrostatic-equilibrium", num: 3, icon: "⚖️", title: "Hydrostatic Equilibrium", subtitle: "Water's Way of Being Perfectly Still and Centered",
+        simple: "Water is very good at finding a balance so it does not move when it does not have to. If you put water in a bowl, it stays flat and calm because the weight of the water is pushing down exactly as hard as the bowl is pushing up. It does not like to be tilted or uneven; it always searches for the lowest, most peaceful spot. This is why lakes look like mirrors when there is no wind. It is water's way of being perfectly still and centered.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The total silence of a frozen lake in winter." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The blue scent of a wide-open sea." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The neutral, balanced taste of distilled water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Resting your hand on top of still water without breaking the skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The perfect horizontal line of the ocean's horizon." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still on one leg and finding your center: your body doing what water does." }
+        ],
+        intuition: "Balance is not a lack of movement. It is a perfect agreement between all the forces acting upon you. The lake is not doing nothing. The lake is doing everything at once and it all adds up to peace.",
+        links: [
+          { label: "Physics of Fluids", url: "https://en.wikipedia.org/wiki/Fluid_statics" },
+          { label: "Hydrostatics", url: "https://en.wikipedia.org/wiki/Hydrostatics" },
+          { label: "Fluid Mechanics", url: "https://en.wikipedia.org/wiki/Fluid_mechanics" }
+        ],
+        songs: [
+          { title: "Sitting on the Dock of the Bay", artist: "Otis Redding", url: "https://www.youtube.com/watch?v=rTVjnBo96Ug" },
+          { title: "Cool Water", artist: "Marty Robbins", url: "https://www.youtube.com/watch?v=hDkOdPMscTU" },
+          { title: "The River", artist: "Bruce Springsteen", url: "https://www.youtube.com/watch?v=lc6F47Z6PI4" }
+        ],
+        advanced: "In fluid mechanics, hydrostatic equilibrium occurs when a fluid is at rest and the pressure gradient force perfectly balances gravity: ∇P=ρg. Fundamental not only to oceans and atmospheres but stellar evolution — a star remains stable as long as outward thermal pressure from fusion balances inward gravitational pull, mirroring the stillness of a pond at the cosmic scale." },
+
+      { id: "laminar-turbulent-flow", num: 4, icon: "🌪️", title: "Laminar vs. Turbulent Flow", subtitle: "Sometimes a Silk Ribbon — Sometimes a Wild Animal",
+        simple: "Sometimes water moves in smooth, straight lines like a silk ribbon, and other times it swirls and splashes like a wild animal. The smooth part is called laminar, and the wild part is called turbulent. When water flows slowly, it stays organized and follows the leader. When it speeds up or hits a rock, it breaks into tiny circles and chaos. Life is often the same way — sometimes smooth and easy, other times messy and fast.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The difference between a dripping faucet (laminar) and a roaring waterfall (turbulent)." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ozonic, fresh smell near a splashing fountain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bubbly, sharp sensation of sparkling water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth stream of water turning into bumpy spray as you block it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Smoke rising in a straight line before suddenly swirling into clouds." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The difference between walking smoothly and shaking when you sprint: your body knows both flows." }
+        ],
+        intuition: "Learn to recognize when it is time to glide and when it is time to dance with the chaos. Both are water. Both are you. The river does not panic when it hits the rapids. It just changes shape.",
+        links: [
+          { label: "Reynolds Number Explained", url: "https://en.wikipedia.org/wiki/Reynolds_number" },
+          { label: "Fluid Dynamics", url: "https://en.wikipedia.org/wiki/Fluid_dynamics" },
+          { label: "Turbulence", url: "https://en.wikipedia.org/wiki/Turbulence" }
+        ],
+        songs: [
+          { title: "Wildfire", artist: "Michael Martin Murphey", url: "https://www.youtube.com/watch?v=cf1iAoZqe8w" },
+          { title: "Like a Rolling Stone", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=IwOfCgkyEj0" },
+          { title: "Smooth", artist: "Santana ft. Rob Thomas", url: "https://www.youtube.com/watch?v=6Whgn_iE5uc" }
+        ],
+        advanced: "Transition from laminar to turbulent flow is governed by the dimensionless Reynolds Number: Re=ρuL/μ. High Re means inertial forces dominate, producing chaotic eddies. Turbulence is one of the great unsolved problems in classical physics. While laminar flow is predictable and reversible, turbulence introduces multi-scale mixing essential for nutrient transport in biology and heat exchange in engineering." },
+
+      { id: "capillary-action", num: 5, icon: "🌱", title: "Capillary Action", subtitle: "Water Climbs Walls Because It Loves Them More Than Itself",
+        simple: "Water has a secret superpower where it can actually climb up narrow tubes all by itself. Even though gravity wants to pull it down, water likes to climb the walls of tiny pipes. This is how tall trees get water all the way to their top leaves without any pumps. It works because water loves the walls of the tube even more than it loves itself. It shows that even the smallest things can overcome the biggest forces.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The faint sip-sip sound of a sponge soaking up a spill." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of a wet paper towel." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sugar cube that has sucked up coffee: sweetness climbing." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your shirt hem getting wet and the water crawling up." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching ink spread through a piece of paper." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tension in your fingers when you grip something tightly: your body's version of adhesion." }
+        ],
+        intuition: "Small, consistent efforts can overcome the heavy weight of the world if you have the right connections. The tree is 100 feet tall. The water has no pump. It climbs anyway. That is love beating gravity.",
+        links: [
+          { label: "USGS: Capillary Action", url: "https://en.wikipedia.org/wiki/Capillary_action" },
+          { label: "How Plants Drink", url: "https://en.wikipedia.org/wiki/Transpiration" },
+          { label: "Surface Tension Dynamics", url: "https://en.wikipedia.org/wiki/Surface_tension" }
+        ],
+        songs: [
+          { title: "Ain't No Mountain High Enough", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=IC5PL0XImjw" },
+          { title: "Up Where We Belong", artist: "Joe Cocker", url: "https://www.youtube.com/watch?v=NbCmLPaxgp0" },
+          { title: "Highest in the Room", artist: "Travis Scott", url: "https://www.youtube.com/watch?v=tfSS1e3kzhI" }
+        ],
+        advanced: "Capillary action results from competition between cohesive forces (liquid-liquid) and adhesive forces (liquid-wall). If adhesion exceeds cohesion, the meniscus is concave and liquid is pulled upward. Height governed by Jurin's Law: h=2γcosθ/ρgr. Crucial in microfluidics and transpiration pull in vascular plants — surface energy converted into mechanical work." },
+
+      { id: "erosion-sedimentation", num: 6, icon: "⛰️", title: "Erosion and Sedimentation", subtitle: "Soft Water Cuts Hard Rock — Just by Never Giving Up",
+        simple: "Water is the world's strongest artist, even though it is soft. Over a long time, flowing water can cut through solid rock to make giant canyons. It carries little bits of sand and dirt from one place and drops them off in another. Water shows us that you do not have to be hard to be strong; you just have to be persistent. It reshapes the whole world just by never giving up.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The grinding sound of pebbles tumbling in a stream." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dusty, dry scent of a canyon floor." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The gritty, earthy taste of wild river water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smoothness of a river stone that used to be jagged." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A muddy river flowing into a clear blue ocean." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The wear and tear in your muscles after a long day: your body being carved by time." }
+        ],
+        intuition: "Persistence is a quiet power that can move mountains. The Grand Canyon is not a monument to force. It is a monument to patience. The water never stopped. The rock had no choice.",
+        links: [
+          { label: "Erosion", url: "https://en.wikipedia.org/wiki/Erosion" },
+          { label: "Weathering", url: "https://en.wikipedia.org/wiki/Weathering" },
+          { label: "The Grand Canyon Formation", url: "https://en.wikipedia.org/wiki/Grand_Canyon" }
+        ],
+        songs: [
+          { title: "Like a Rock", artist: "Bob Seger", url: "https://www.youtube.com/watch?v=keIvA2wSPOo" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" }
+        ],
+        advanced: "Erosion is a kinetic process where shear stress of flowing water exceeds the critical threshold of substrate. A primary driver of geomorphology through hydraulic action and abrasion. Sedimentation occurs when velocity decreases, reducing transport capacity. Sorting by particle size (Stokes' Law) creates deltas, alluvial fans, and sedimentary rock layers recording Earth's history." },
+
+      { id: "biological-solvent", num: 7, icon: "🧬", title: "Biological Solvent Properties", subtitle: "The Magic Soup That Holds All the Ingredients of Life",
+        simple: "Water is like a magic soup that holds all the ingredients of life together. Inside your body, water dissolves vitamins and minerals so your cells can eat them. It is the universal solvent because it can dissolve more things than any other liquid on Earth. Without water to carry things around, your body would be like a car with no gas. Water makes sure every part of you gets exactly what it needs to stay alive.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The glug-glug sound of drinking when you are very thirsty." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The clean smell of a place that has been washed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of a juicy orange: mostly water carrying flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The slippery feeling of soapy water." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sugar cube disappearing in a glass of water." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The fullness in your belly after a big drink: your body being refilled." }
+        ],
+        intuition: "You are a container for a miracle. Everything you need is already flowing through you. You are 60% water. That means you are 60% universal solvent. You are 60% the thing that dissolves every problem.",
+        links: [
+          { label: "Properties of Water", url: "https://en.wikipedia.org/wiki/Properties_of_water" },
+          { label: "The Importance of Hydration", url: "https://en.wikipedia.org/wiki/Drinking_water" },
+          { label: "Solvent Properties of Water", url: "https://en.wikipedia.org/wiki/Solvent" }
+        ],
+        songs: [
+          { title: "Healing", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=3zzoId3hxkU" },
+          { title: "Water", artist: "Tyla", url: "https://www.youtube.com/watch?v=YhEA1DzPJes" },
+          { title: "Saltwater", artist: "Julian Lennon", url: "https://www.youtube.com/watch?v=JfREvPfCBwg" }
+        ],
+        advanced: "Water's polarity forms hydration shells around ions and polar molecules, shielding charges and maintaining solution. Essential for biochemical reactions, facilitating transport of substrates and enzymes. The hydrophobic effect — non-polar molecules aggregating in water — is the primary driving force behind protein folding and cell membrane formation. Water is not passive background but active participant in structural organization of life." },
+
+      { id: "vortex-dynamics", num: 8, icon: "🌀", title: "Vortex Dynamics", subtitle: "Nature's Favorite Way of Moving Energy — the Spiral",
+        simple: "When water moves fast or goes down a drain, it loves to spin in a spiral called a vortex. This shape is very special because it helps water move more efficiently with less effort. You see this in tornadoes, whirlpools, and even the way blood flows through your heart. The spiral is nature's favorite way of moving energy from one place to another. It shows that sometimes the best way to get where you are going is to spin.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The slurp of a bathtub drain." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh air after a windy day." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The spun taste of a milkshake: blended by vortex." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Swirling your finger in water and feeling the pull." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The spiral shape inside a seashell." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling dizzy after spinning in circles: your body becoming the vortex." }
+        ],
+        intuition: "When things feel like they are spinning out of control, you might just be moving into a more powerful version of yourself. The tornado is not chaos. The tornado is focus. Energy finding its tightest path.",
+        links: [
+          { label: "Vortex Science", url: "https://en.wikipedia.org/wiki/Vortex" },
+          { label: "Viktor Schauberger's Water Theories", url: "https://en.wikipedia.org/wiki/Viktor_Schauberger" },
+          { label: "The Physics of Swirls", url: "https://en.wikipedia.org/wiki/Vortex_ring" }
+        ],
+        songs: [
+          { title: "You Spin Me Round", artist: "Dead or Alive", url: "https://www.youtube.com/watch?v=PGNiXGX2nLU" },
+          { title: "Windmills of Your Mind", artist: "Dusty Springfield", url: "https://www.youtube.com/watch?v=V0ZaVaJnCQo" },
+          { title: "Spinning Wheel", artist: "Blood, Sweat & Tears", url: "https://www.youtube.com/watch?v=kKB0cBEm6RI" }
+        ],
+        advanced: "A vortex is a region where flow revolves around an axis. In inviscid fluids, circulation Γ around any closed loop is conserved (Kelvin's Circulation Theorem), leading to stable structures like toroidal vortices. Essential for understanding lift in aerodynamics and propulsion efficiency in aquatic animals. Implosion geometry concentrates energy, acting as cooling mechanism and maintaining fluid vitality." },
+
+      { id: "fluid-adaptability", num: 9, icon: "🌊", title: "Fluid Intelligence / Adaptability", subtitle: "Be Water, My Friend — It Takes the Shape of Whatever Holds It",
+        simple: "Water is the smartest thing in the world because it does not fight against what holds it. If you put it in a cup, it becomes the cup. If you put it in a vase, it becomes the vase. It flows around rocks instead of trying to break them. This tells us that being flexible is better than being stiff. When you are like water, you can handle any situation by changing your shape to fit the moment.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft slosh of water in a bottle." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of a clean, empty glass: waiting to be filled." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Water that tastes different depending on what cup you use." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Putting your hand in water and feeling it flow around your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A puddle changing shape as more rain falls." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your body to fit into a small space: becoming water." }
+        ],
+        intuition: "Being strong does not mean being hard. It means being able to fit into whatever life gives you. The rock sits still. The water goes everywhere. In a million years, the water wins. Every time.",
+        links: [
+          { label: "Bruce Lee: Be Water, My Friend", url: "https://en.wikipedia.org/wiki/Bruce_Lee" },
+          { label: "Fluid Intelligence in Psychology", url: "https://en.wikipedia.org/wiki/Fluid_and_crystallized_intelligence" },
+          { label: "The Philosophy of Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" }
+        ],
+        songs: [
+          { title: "Go with the Flow", artist: "Queens of the Stone Age", url: "https://www.youtube.com/watch?v=DcHKOC64KnE" },
+          { title: "Shape of You", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=JGwWNGJdvx8" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" }
+        ],
+        advanced: "Fluids have zero shear modulus — cannot resist any shear force, allowing infinite reconfigurability. In complex systems theory: maximal entropy of form. Fluid intelligence (Gf) in psychology is the capacity to think logically and solve problems in novel situations, independent of acquired knowledge. The mental equivalent of water navigating unknown terrain." },
+
+      { id: "memory-of-water", num: 10, icon: "💾", title: "The Memory of Water", subtitle: "Your History Is Written in the Liquid That Makes You",
+        simple: "Some people believe that water can remember the things it has touched or the sounds it has heard. Even though it looks clear, it might be carrying tiny messages in the way its molecules are arranged. If you speak kindly to water, some say it makes beautiful ice crystals. This reminds us to be careful with our words and feelings because the water inside us might be listening and remembering everything we do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo in a large, empty water tank." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of an old, wet book." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The difference between fresh water and water that has sat out all night." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tingle of charged water on your tongue." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The intricate patterns of a single snowflake." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A memory in your body of a place you once swam: the water inside you remembering the water outside." }
+        ],
+        intuition: "Your history and your feelings are written into the very liquid that makes you up. You are 60% water. That water has been everywhere. It remembers everything. And right now, it is carrying your story.",
+        links: [
+          { label: "Masaru Emoto's Research", url: "https://en.wikipedia.org/wiki/Masaru_Emoto" },
+          { label: "Structured Water Science", url: "https://en.wikipedia.org/wiki/Water_memory" },
+          { label: "Exclusion Zone Water", url: "https://en.wikipedia.org/wiki/Exclusion_zone" }
+        ],
+        songs: [
+          { title: "Unforgettable", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=vDN5rG3wLa4" },
+          { title: "Memories", artist: "Maroon 5", url: "https://www.youtube.com/watch?v=SlPhMPnQ58k" },
+          { title: "Echoes", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=53N99Nim6WE" }
+        ],
+        advanced: "While controversial in mainstream chemistry, research into Exclusion Zone (EZ) water suggests water near surfaces organizes into a fourth phase (H₃O₂) that can store charge and information. Structural heterogeneity suggests liquid water is not monolithic but a complex network of hydrogen-bonded domains, potentially acting as substrate for information storage, bridging biology and quantum information theory." },
+    ],
+
+  },
+
+
 };
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
