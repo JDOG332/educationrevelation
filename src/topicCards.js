@@ -20750,6 +20750,243 @@ export const TOPIC_CARDS = {
         advanced: "Dream incubation: intentional direction of subconscious processing via pre-sleep intention setting. Kekulé, Mendeleev, McCartney — documented cases of the dreaming mind solving what the waking mind could not. The seed does not need sunlight to germinate. It needs darkness." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > ONENESS & UNITY (oneness)
+    // ═══════════════════════════════════════════════════════════════
+
+    oneness: [
+      { id: "interconnectedness", num: 1, icon: "🕸️", title: "Interconnectedness (The Web)", subtitle: "A Single Drop of Water That Realizes It Is Actually the Whole Ocean",
+        simple: "Imagine the whole world is one giant invisible blanket. When you pull a thread on one side, the whole blanket moves a little bit. Even though you feel like you are just you, you are actually a part of the air, the trees, and the stars. We all breathe the same oxygen that the trees make, and the trees need the breath we give back. It is like being a single drop of water that realizes it is actually the whole ocean. Everything we do touches someone else because we are all woven together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A forest where you cannot tell where one bird's song ends and the wind begins: the sound of a system with no borders." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain connecting sky to dry earth: the scent of two things proving they were never separate." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fresh honey — the combined work of thousands of bees and flowers: the taste of collaboration so deep no single contributor can be separated." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth stone shaped by years of river water: the touch of patience proving that everything is sculpted by everything else." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A murmuration of starlings moving as one single shape: the sight of a thousand individuals becoming one mind." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and feeling the weight of air against your skin: the body discovering it was never separate from the atmosphere." }
+        ],
+        intuition: "A single drop of water that realizes it is actually the whole ocean. You breathe out carbon dioxide. The tree breathes it in. The tree breathes out oxygen. You breathe it in. You are not near the tree. You are in a chemical conversation with the tree that has not paused since you were born. The atoms in your left hand were forged in a different star than the atoms in your right hand. You are a collaboration between dead stars that never met each other. The water in your body has been rain, river, ocean, cloud, ice, sweat, tear, and blood — in bodies that are not yours, in centuries you never saw. Nothing in you is only yours. Nothing in you has ever been only yours. The feeling of separateness is the most convincing illusion the brain produces. And it is an illusion. Bell's Theorem proved it in physics. Mycorrhizal networks proved it in biology. The carbon cycle proved it in chemistry. Every science, when pushed far enough, arrives at the same conclusion: there are no edges. There are only connections we have not yet traced. You are not a drop in the ocean. You are the ocean in a drop. And the ocean has never lost track of a single drop.",
+        links: [
+          { label: "Interconnectedness", url: "https://en.wikipedia.org/wiki/Interconnectedness" },
+          { label: "Bell's Theorem", url: "https://en.wikipedia.org/wiki/Bell%27s_theorem" },
+          { label: "Mycorrhizal Network", url: "https://en.wikipedia.org/wiki/Mycorrhizal_network" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "Interconnectedness: Bell's Theorem proves no part of the universe is truly isolated. Mycorrhizal networks, carbon cycles, and quantum entanglement all arrive at the same conclusion. There are no edges. There are only connections we have not yet traced." },
+
+      { id: "non-duality", num: 2, icon: "☯️", title: "Non-Duality (Advaita)", subtitle: "You Do Not Have to Join the World Because You Never Actually Left It",
+        simple: "Non-duality is a fancy way of saying not two. Think about your left hand and your right hand; they look different, but they both belong to your one body. The world is the same way, where you and the world are just two sides of the same coin. People often think they are like a person watching a movie, but non-duality says you are actually the movie itself. When you stop drawing lines between things, you see that everything is just one big happening. You do not have to join the world because you never actually left it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The Om chant — the vibration of everything at once: the sound of the universe before it was divided into parts." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Campfire smoke lingering on your clothes: the scent that blurs the line between you and the fire." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bowl of soup where all ingredients have blended into one flavor: the taste of separation dissolved." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Floating in water the exact temperature of your skin: the touch of the boundary between inside and outside disappearing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A mirror reflecting another mirror — showing an endless one: the sight of infinity created by two surfaces that cannot find where one ends." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your breath move in and out — where inside meets outside: the body demonstrating that the border was always imaginary." }
+        ],
+        intuition: "You do not have to join the world because you never actually left it. The wave does not need to find the ocean. The wave IS the ocean. It was always the ocean. It will always be the ocean. The only thing that makes the wave think it is separate is the shape. And the shape is temporary. Advaita Vedanta — the oldest non-dual philosophy — says it plainly: Tat tvam asi. Thou art that. You are not IN the universe. You ARE the universe. Experiencing itself. Locally. Temporarily. Through the lens of a body that convinced itself it was separate. Descartes split the world into subject and object — the seer and the seen. Non-duality says that split is useful but not true. The seer and the seen are one event. The eye and the light and the color and the seeing are one moment, not four things interacting. When you look at a sunset, there is no you plus sunset. There is sunsetTING. One verb. No nouns. The mystics did not arrive at this through philosophy. They arrived at it through direct experience. They sat still long enough that the wall between self and world became transparent. And then it disappeared. And what was left was not nothing. What was left was everything. Without a frame.",
+        links: [
+          { label: "Advaita Vedanta", url: "https://en.wikipedia.org/wiki/Advaita_Vedanta" },
+          { label: "Non-Duality", url: "https://en.wikipedia.org/wiki/Nondualism" },
+          { label: "Tat Tvam Asi", url: "https://en.wikipedia.org/wiki/Tat_Tvam_Asi" }
+        ],
+        songs: [
+          { title: "Within You Without You", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HsffxGyY4ck" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" }
+        ],
+        advanced: "Advaita: non-duality challenges the Cartesian subject-object split. Consciousness is primary reality; the distinction between knower and known is an overlay. Tat tvam asi — thou art that. The wave does not need to find the ocean. The wave IS the ocean." },
+
+      { id: "flow-state-unity", num: 3, icon: "🌊", title: "The Flow State (Unity in Action)", subtitle: "The Wall in Your Head That Says I Am Me Falls Down Because You Are So Focused",
+        simple: "Have you ever been so busy drawing or playing a game that you forgot what time it was? That is the Flow State, and it is a tiny peek at Oneness. In those moments, you do not think I am drawing, you just are the drawing. The wall in your head that says I am me falls down because you are so focused on what you are doing. It feels like the music or the sport is moving you, instead of you moving it. It is like being a leaf in a fast-moving stream.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythmic thrum of a heartbeat during exercise: the sound of the self merging with the action." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp scent of markers or grass during intense play: the smell of a world that became more vivid because you disappeared into it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cold refreshing water after being in the zone: the taste of returning to a body you forgot you had." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A ball hitting the sweet spot of a bat: the touch of perfect alignment between tool and body and intention." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Colors becoming brighter and more vivid when deeply focused: the eyes proving that dissolving the self sharpens reality." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body moving automatically without you telling it to: the muscles proving that the deepest skill does not need a self to execute." }
+        ],
+        intuition: "The wall in your head that says I am me falls down because you are so focused. Flow is the secular doorway to oneness. No incense. No mantra. No theology. Just a task that is hard enough to require everything you have and easy enough that you can actually do it. In that narrow band, the prefrontal cortex — the part of the brain that generates the sense of I — goes quiet. Not dead. Quiet. And when the I goes quiet, something extraordinary happens: performance increases. Not decreases. Increases. You are literally better at everything when the self gets out of the way. Athletes call it the zone. Musicians call it being locked in. Painters call it the canvas taking over. In every case, the report is the same: I disappeared and the work improved. This is the empirical proof that oneness is not just a spiritual concept. It is a performance state. The self is not the source of excellence. The self is the friction that prevents it. When the self dissolves into the action, what remains is pure capability. Flow proves that you are most powerful when you are least present as a separate thing.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Transient Hypofrontality", url: "https://en.wikipedia.org/wiki/Transient_hypofrontality" },
+          { label: "Mihaly Csikszentmihalyi", url: "https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Bolero", artist: "Ravel", url: "https://www.youtube.com/watch?v=r30D3SW4OVw" },
+          { title: "The Distance", artist: "Cake", url: "https://www.youtube.com/watch?v=__PU5CVSegg" }
+        ],
+        advanced: "Flow: transient hypofrontality — the prefrontal cortex generating the sense of 'I' goes quiet and performance increases. The self is not the source of excellence. The self is the friction that prevents it. You are most powerful when you are least present as a separate thing." },
+
+      { id: "ego-dissolution", num: 4, icon: "🧊", title: "Ego Dissolution", subtitle: "An Ice Cube Melting Back into the Big Warm Bucket of Water",
+        simple: "Your ego is like a little guard in your head that says, this is mine, that is yours, and I am important. Sometimes, that guard takes a nap, and the walls of his castle melt away. When the ego dissolves, you feel like you are the trees, the wind, and the person standing next to you all at once. It can happen during prayer, deep thinking, or just looking at a beautiful sunset. Without the guard, there is no me to protect, so there is only peace. It is like an ice cube melting back into the big warm bucket of water.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise or the ocean drowning out your thoughts: the sound of the ego's volume knob being turned to zero." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or old books: the scent of a different time entering this one, proving the walls are thin." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single grape eaten so slowly you notice every tiny flavor: the tongue proving that attention dissolves the barrier between taster and tasted." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A very long hug where you forget whose arms are whose: the body losing track of its own edges." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fractal pattern that seems to go on forever: the eyes following a structure that has no boundary and finding peace in the infinity." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of falling into the sky while looking up at night: the body releasing its grip on the ground and discovering it was held all along." }
+        ],
+        intuition: "An ice cube melting back into the big warm bucket of water. The ego is not evil. The ego is a tool. It is the tool that says I am here and you are there and this is mine and that is dangerous. Without it, you could not cross a street. But the ego was designed for survival, not for truth. And when it is the only voice in the room, it mistakes itself for the whole person. Ego dissolution is what happens when the tool is set down. Not destroyed. Set down. And what you find underneath is not emptiness. It is fullness. The Default Mode Network — the brain region that generates the sense of a continuous self — decreases its activity during deep meditation, psychedelic experiences, and moments of awe. And every person who has experienced this decrease reports the same thing: I felt connected to everything. I felt that I was everything. I was not afraid. The ego builds the wall. The wall creates the loneliness. The loneliness creates the suffering. When the wall melts, the suffering has nowhere to live. Not because the world changed. Because the ice remembered it was always water.",
+        links: [
+          { label: "Ego Death", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Default Mode Network", url: "https://en.wikipedia.org/wiki/Default_mode_network" },
+          { label: "Thomas Metzinger", url: "https://en.wikipedia.org/wiki/Thomas_Metzinger" }
+        ],
+        songs: [
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" },
+          { title: "Hoppípolla", artist: "Sigur Rós", url: "https://www.youtube.com/watch?v=mZTb8WxEW78" },
+          { title: "Strawberry Fields Forever", artist: "The Beatles", url: "https://www.youtube.com/watch?v=HtUH9z_Oey8" }
+        ],
+        advanced: "Ego dissolution: DMN connectivity reduction allows brain regions to communicate more freely, producing a unified conscious experience lacking a central self-perspective. The ego builds the wall. The wall creates the loneliness. When the wall melts, the suffering has nowhere to live." },
+
+      { id: "universal-consciousness", num: 5, icon: "💡", title: "Universal Consciousness", subtitle: "One Giant Light Shining Through Billions of Tiny Holes — We Are the Universe Looking at Itself",
+        simple: "Imagine there is only one giant light in the whole universe, but it is shining through a screen with billions of tiny holes. Each hole looks like a separate little light, but it is actually the same big light behind it. You are one of those holes, and so is your friend and your dog. We all share the same glow of being alive and aware. Even though we look different on the outside, the is-ness inside us is exactly the same. We are the universe's way of looking at itself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A large choir singing the same note in perfect harmony: the sound of many voices proving they share one breath." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A library — millions of people's thoughts stored in one room: the scent of individual minds contributing to one collective knowing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure clear water — the basic thing every living creature needs: the taste of the one requirement that unites all life." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on a tree feeling the life inside it: the skin detecting a pulse that is not yours but is not different from yours." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The Earthrise photo taken from the moon: the sight that changed every astronaut who saw it because it showed one world with no borders." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your own pulse and knowing every human has that same beat: the body proving that the rhythm is shared." }
+        ],
+        intuition: "One giant light shining through billions of tiny holes — we are the universe looking at itself. Cosmopsychism says consciousness is not something the brain produces. Consciousness is something the brain receives. Like a radio does not create the music. The radio tunes into the music. And every radio — every brain — tunes into the same broadcast. Different stations. Different clarity. Same signal. If this is true, then death is not the end of consciousness. Death is the radio breaking. The music continues. The signal was never inside the radio. Alan Watts said it: You are not a drop in the ocean. You are the entire ocean in a drop. Erwin Schrödinger — the physicist — said: Consciousness is a singular of which the plural is unknown. There is only one consciousness. We just experience it through billions of keyholes. Every mystic tradition arrived at this conclusion through inner exploration. Physics is arriving at it through outer exploration. And both are pointing at the same light. The one behind the screen. The one that was never divided. The one that is reading these words right now.",
+        links: [
+          { label: "Cosmopsychism", url: "https://en.wikipedia.org/wiki/Cosmopsychism" },
+          { label: "Panpsychism", url: "https://en.wikipedia.org/wiki/Panpsychism" },
+          { label: "Erwin Schrödinger", url: "https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger" }
+        ],
+        songs: [
+          { title: "God Is a DJ", artist: "Faithless", url: "https://www.youtube.com/watch?v=dBJapWmPJD4" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Cosmopsychism: consciousness as fundamental, not emergent. Brains do not produce consciousness; they filter it. Schrödinger: consciousness is a singular of which the plural is unknown. Every mystic and physicist pointing at the same light." },
+
+      { id: "quantum-entanglement-unity", num: 6, icon: "⚛️", title: "Quantum Entanglement (The Secret Wires)", subtitle: "The Universe Has Secret Wires Connecting Things That Look Far Apart",
+        simple: "Scientists found something super weird: two tiny particles can be best friends forever. If you tickle one, the other one laughs instantly, even if it is on the other side of the moon! They are connected in a way that does not care about distance. This shows us that the universe has secret wires connecting things that look like they are far apart. If tiny things are connected like this, it means the whole world started from one tiny point and never truly broke apart. We are all still touching, even if we cannot see how.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two tuning forks — strike one and the other starts to ring: the sound of resonance proving that distance is not separation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower and knowing the bee that visited it is now far away: the scent of a connection that outlasts proximity." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salt — in the ocean and in your own tears: the taste of a substance proving you carry the sea inside you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Static electricity sparking between two people: the invisible charge that jumps across the gap as if the gap is not real." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Dice showing the same number at the same time: the vision of correlation that has no visible cause." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing someone is staring at your back before you turn around: the body detecting a signal that has no known transmission path." }
+        ],
+        intuition: "The universe has secret wires connecting things that look far apart. Einstein called it spooky action at a distance. He did not like it. He thought it meant quantum mechanics was incomplete. But experiment after experiment proved him wrong. Two particles that have interacted remain correlated forever. Measure one and you instantly know the state of the other. No signal travels between them. No time passes. The correlation is just there. As if the two particles are not two particles. As if they are one particle wearing two costumes. Now scale that up. If the Big Bang is real, then every particle in the universe was once in contact with every other particle. All matter was one point. One singularity. One thing. And then it expanded. But did it truly separate? Or did it just spread out while remaining entangled? Physics cannot answer that yet. But the question alone is staggering. Because if the original oneness was never fully broken, then separation is not the fundamental state of reality. Connection is. And everything we call distance is just the universe pretending to be many things when it is still, underneath it all, one.",
+        links: [
+          { label: "Quantum Entanglement", url: "https://en.wikipedia.org/wiki/Quantum_entanglement" },
+          { label: "EPR Paradox", url: "https://en.wikipedia.org/wiki/EPR_paradox" },
+          { label: "Non-locality", url: "https://en.wikipedia.org/wiki/Quantum_nonlocality" }
+        ],
+        songs: [
+          { title: "Synchronicity I", artist: "The Police", url: "https://www.youtube.com/watch?v=Si5CSpUCDGY" },
+          { title: "Interstellar Main Theme", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=UDVtMYqUAyw" },
+          { title: "Cosmic Girl", artist: "Jamiroquai", url: "https://www.youtube.com/watch?v=D-NvQ6VJYtE" }
+        ],
+        advanced: "Quantum entanglement: non-locality demonstrates spatial separation does not imply physical independence. If the Big Bang singularity was one point, the original oneness may never have been fully broken. Separation is not the fundamental state. Connection is." },
+
+      { id: "collective-unconscious-unity", num: 7, icon: "🏺", title: "The Collective Unconscious (The Shared Basement)", subtitle: "Islands That Look Separate on Top but Are All Connected to the Same Ocean Floor",
+        simple: "Have you noticed that people all over the world tell the same kinds of stories about heroes and monsters? It is because we all share a basement in our minds that we do not even know is there. Even if we live far apart, our dreams speak the same language of symbols. We are like islands that look separate on top of the water, but if you swim down deep, we are all connected to the same ocean floor. Your mind is not just yours; it is a library that all humans have been writing in for thousands of years.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythm of a drum that makes everyone want to dance: the sound of a shared nervous system responding to a shared beat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old wood or stone that feels ancient to everyone: the scent of collective memory stored in material." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bread — a food almost every culture on earth has made: the taste of a shared human solution to the same hunger." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sand running through your fingers: the touch of time reminding every human of the same truth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The shape of a heart or a star — meaning the same thing across cultures: the sight of a symbol that was never taught yet is universally understood." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in a dark room and feeling a natural fear everyone shares: the body running software that was written by the collective, not the individual." }
+        ],
+        intuition: "Islands that look separate on top but are all connected to the same ocean floor. The hero's journey appears in Greek mythology, in Navajo stories, in Japanese folktales, in African oral traditions, in Polynesian navigation myths. Cultures that never had contact with each other. Languages that share no common root. And yet the same story. The same characters. The same arc. A hero receives a call. Refuses. Accepts. Descends into darkness. Faces death. Returns transformed. Over and over and over. Across every ocean. Across every century. Either this is the greatest coincidence in human history. Or there is a shared layer of mind that all humans draw from. Jung bet on the second option. And the evidence keeps growing. The archetypes are not stories we invented. They are patterns we discovered. Patterns that exist in the psyche the way gravity exists in physics — not because someone decided they should, but because they are structural features of the system. Your dreams are not random. Your dreams are the collective unconscious writing through you. Using symbols that are older than any civilization. In a language that predates every alphabet. You are an island. But you have roots you have never seen. And those roots connect you to every other island that ever rose above the water.",
+        links: [
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Hero's Journey", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Evolutionary Psychology", url: "https://en.wikipedia.org/wiki/Evolutionary_psychology" }
+        ],
+        songs: [
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=9AjkUyX0rVw" }
+        ],
+        advanced: "Jung's Collective Unconscious: archetypes are universal cognitive patterns, not cultural inventions. The hero's journey appears in every culture that never had contact. Structural features of the psyche, like gravity is a structural feature of physics." },
+
+      { id: "biocentrism", num: 8, icon: "👁️", title: "Biocentrism", subtitle: "The Universe Is Not a Room You Walked Into — It Is a Dream You Are All Dreaming Together",
+        simple: "Some people think the world is like a big empty room and we just walked into it. But biocentrism says the world is more like a dream that we are all dreaming together. Without someone to see the blue sky, is it really blue? This idea says that life and people are not just accidents in space, but that the universe needs us to exist so it can be real. You are not just a small person in a big universe; the whole universe is actually inside your mind.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your own voice echoing: the sound of the world responding to you, proving it is not indifferent to your presence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your favorite food — which only smells good because your brain says so: the nose proving that experience requires an experiencer." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sour lemon — the sourness is in you, not in the fruit: the tongue demonstrating that qualia live in the observer not the object." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The hardness of a table — which is actually your brain's reaction to atoms that are ninety-nine percent empty space: the fingers touching a solid that is not solid." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A rainbow that only appears if you stand in the right spot: the vision of a phenomenon that literally requires an observer to exist." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving your arm and realizing you are moving a piece of the universe: the body proving that the observer and the observed share the same substance." }
+        ],
+        intuition: "The universe is not a room you walked into — it is a dream you are all dreaming together. Robert Lanza asked the question that physics had been avoiding: does the universe exist without an observer? Quantum mechanics says no. The double-slit experiment proves that particles behave differently when observed. The wave function collapses only when measured. Reality, at the quantum level, requires a witness. Biocentrism takes this seriously. If observation is required for reality to manifest, then consciousness is not a product of the universe. The universe is a product of consciousness. This inverts everything. You are not a small creature in a vast dead cosmos. You are the reason the cosmos is not dead. The anthropic principle supports this: the physical constants of the universe are fine-tuned to a degree that makes life not just possible but seemingly necessary. Change one constant by one part in ten billion and no stars form, no chemistry happens, no life arises. Either this is a coincidence so vast it defies comprehension. Or the universe was aimed at producing observers. Not as an afterthought. As the point.",
+        links: [
+          { label: "Biocentrism", url: "https://en.wikipedia.org/wiki/Biocentric_universe" },
+          { label: "Observer Effect", url: "https://en.wikipedia.org/wiki/Observer_effect_(physics)" },
+          { label: "Anthropic Principle", url: "https://en.wikipedia.org/wiki/Anthropic_principle" }
+        ],
+        songs: [
+          { title: "All Is Full of Love", artist: "Björk", url: "https://www.youtube.com/watch?v=EjAoBKagWQA" },
+          { title: "What Is Love", artist: "Haddaway", url: "https://www.youtube.com/watch?v=HEXWRTEbj1I" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Biocentrism (Lanza): consciousness is not a product of the universe — the universe is a product of consciousness. The observer effect and anthropic fine-tuning suggest the cosmos was aimed at producing observers. Not as an afterthought. As the point." },
+
+      { id: "panpsychism", num: 9, icon: "✨", title: "Panpsychism (The Spark in Everything)", subtitle: "The Whole Universe Is Awake in Its Own Way",
+        simple: "Have you ever wondered if a rock or a tree feels something inside? Panpsychism is the idea that everything — from the tiniest atom to the biggest planet — has a little bit of awareness. It does not mean a rock thinks about what to have for dinner, but it might have a tiny simple sparkle of being alive. This means the whole universe is awake in its own way. If everything has a soul or a mind, then we are never truly alone, and we are part of a giant living family.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of electricity or the wind — as if the world is breathing: the sound of a universe that might be listening." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dirt — knowing it is full of trillions of tiny living things: the scent of awareness distributed at a scale you cannot see." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Saltwater — tasting the blood of the earth: the tongue detecting the chemistry that connects your body to the planet." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sun-warmed pavement — feeling the energy the ground soaked up: the skin reading a message the sun left hours ago." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A plant turning its leaves toward the sun as if it knows where it is: the sight of behavior that looks like intention in something without a brain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Gravity pulling on you like a giant hug: the body being held by a force that might be the universe's simplest form of care." }
+        ],
+        intuition: "The whole universe is awake in its own way. The hard problem of consciousness asks: how does matter become mind? How do atoms that have no experience somehow produce experience when arranged in a brain? Panpsychism answers: they do not. They already had it. Experience is not something that emerges at a certain level of complexity. Experience is a fundamental property of reality, like mass or charge. A rock does not think. But a rock might have the most rudimentary flicker of what-it-is-like-to-be. Not thought. Not feeling. Just a whisper of interiority. And that whisper, when combined into systems of increasing complexity — molecules, cells, organisms, brains — becomes the full symphony of human consciousness. Not from nothing. From something that was always there. Philip Goff calls this the simplest solution to the hardest problem. If consciousness is fundamental, then oneness is not a spiritual aspiration. Oneness is a physical fact. The universe is not dead matter that accidentally produced one thinking species on one planet. The universe is alive. All of it. At every scale. And what we call our consciousness is the universe experiencing itself at the human frequency.",
+        links: [
+          { label: "Panpsychism", url: "https://en.wikipedia.org/wiki/Panpsychism" },
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" },
+          { label: "Philip Goff", url: "https://en.wikipedia.org/wiki/Philip_Goff_(philosopher)" }
+        ],
+        songs: [
+          { title: "Colors of the Wind", artist: "Vanessa Williams", url: "https://www.youtube.com/watch?v=O7igm6BD8Ek" },
+          { title: "Nature Boy", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=Iq0XJCM1aGw" },
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=q3LAkMfinpY" }
+        ],
+        advanced: "Panpsychism: consciousness as fundamental property like mass or charge, avoiding the hard problem. Philip Goff: the simplest solution to the hardest problem. If consciousness is fundamental, oneness is not a spiritual aspiration. Oneness is a physical fact." },
+
+      { id: "global-brain", num: 10, icon: "🌐", title: "The Global Brain", subtitle: "Billions of People Connected Like Brain Cells in One Giant Mind Learning to Think Together",
+        simple: "Right now, billions of people are connected by phones and the internet, sharing ideas faster than ever before. We are becoming like one giant brain where each person is like a single brain cell. When we all know the same news or laugh at the same joke at the same time, we are thinking together. This is a new kind of oneness that humans are building ourselves. It helps us solve big problems because a billion heads are better than one. We are learning to speak as one Humanity instead of many little groups.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ping of a notification that millions of others are also hearing: the sound of a planetary nervous system firing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "New electronics — the scent of shared tools: the smell of a species building its own collective nervous system." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fusion food — flavors from opposite sides of the world mixed: the taste of cultural boundaries dissolving." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth glass of a screen — the window we all look through: the touch of the membrane between individual and collective." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A viral video that everyone on Earth is watching at once: the sight of a billion eyes pointed at the same thing at the same moment." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling connected to the world while sitting alone in your room: the body experiencing belonging without proximity." }
+        ],
+        intuition: "Billions of people connected like brain cells in one giant mind learning to think together. Teilhard de Chardin predicted this in 1922. He called it the noosphere — a layer of thought wrapping the planet the way the atmosphere wraps the rock. He said that as communication increased, human consciousness would converge into a single thinking layer. He was a priest and a paleontologist and he saw the internet sixty years before it existed. Now look. A teenager in Lagos and a teenager in Seoul laugh at the same meme within the same hour. A scientist in Mumbai publishes a paper and a researcher in Oslo reads it before the Mumbai scientist finishes lunch. An earthquake hits and the entire planet knows within minutes. We are not becoming a global brain. We are already a global brain. The question is not whether the network exists. The question is whether we will learn to think with it instead of just react through it. A brain with no coordination is a seizure. A brain with coordination is a thought. Right now the global brain is somewhere between a seizure and a thought. The technology arrived before the wisdom. But the wisdom is coming. Because it always does. Single cells became multicellular organisms. Individual organisms became colonies. Colonies became civilizations. And civilizations are becoming one species that can finally see itself as one thing. The pattern does not stop. The pattern scales.",
+        links: [
+          { label: "Global Brain", url: "https://en.wikipedia.org/wiki/Global_brain" },
+          { label: "Noosphere", url: "https://en.wikipedia.org/wiki/Noosphere" },
+          { label: "Teilhard de Chardin", url: "https://en.wikipedia.org/wiki/Pierre_Teilhard_de_Chardin" }
+        ],
+        songs: [
+          { title: "Virtual Insanity", artist: "Jamiroquai", url: "https://www.youtube.com/watch?v=4JkIs37a2JE" },
+          { title: "Connection", artist: "Elastica", url: "https://www.youtube.com/watch?v=ilKcXIFi-Rc" },
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" }
+        ],
+        advanced: "The Global Brain (Teilhard de Chardin's noosphere): the internet as emergent planetary nervous system. The technology arrived before the wisdom. But the pattern scales — cells to organisms to colonies to civilizations to one species seeing itself as one thing." },
+    ],
+
+
 
   },
 
