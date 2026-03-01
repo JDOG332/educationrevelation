@@ -17411,6 +17411,243 @@ export const TOPIC_CARDS = {
         advanced: "Integration phase of the psyche: after descent into shadow and ascent through redemption, the individual reintegrates into the collective, bringing the boon of wisdom gained through suffering. The porch light was on the whole time. The door was never locked. The only thing that kept you away was the belief that you were not welcome." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > SACRED SPACE (sacredspace)
+    // ═══════════════════════════════════════════════════════════════
+
+    sacredspace: [
+      { id: "intentionality-space", num: 1, icon: "🎯", title: "Intentionality", subtitle: "You Do Not Need a Giant Building — You Just Need to Mean It",
+        simple: "A sacred space starts with a special thought in your heart. It is like making a no distractions zone where you focus only on being kind and quiet. When we decide a place is special, our brains start to feel more peaceful as soon as we walk in. You do not need a giant building; you just need to mean it. This makes the space feel like a warm hug for your soul.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The shhh of a finger to the lips: the sound of a decision to listen instead of speak." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh clean air after a rainstorm: the scent of a world that just decided to start over." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single drop of cool clear water: the taste of something pure because nothing was added." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Palms pressed together softly: two hands agreeing to become one prayer." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame in a dark room: one decision to bring light changing everything." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still until you feel your own heartbeat: the body finding the sacred by refusing to move." }
+        ],
+        intuition: "You do not need a giant building — you just need to mean it. A cathedral without intention is a warehouse. A closet with intention is a temple. The walls do not make the space sacred. The decision makes the space sacred. A child who closes their eyes and whispers please in a bedroom corner has created a more sacred space than an empty cathedral with gold ceilings. The intention is the architect. The intention is the blueprint. The intention is the foundation. Everything else is decoration. Mean it. And the ground beneath your feet becomes holy.",
+        links: [
+          { label: "Kavannah", url: "https://en.wikipedia.org/wiki/Kavanah" },
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" },
+          { label: "Phenomenology of Religion", url: "https://en.wikipedia.org/wiki/Phenomenology_of_religion" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Intentionality (kavannah): the efficacy of ritual space is contingent upon the mental state of the observer. Phenomenologically transforms a secular place into sacred space by collapsing the distance between subject and object. A cathedral without intention is a warehouse. A closet with intention is a temple." },
+
+      { id: "axis-mundi", num: 2, icon: "🏛️", title: "Axis Mundi (The World Pillar)", subtitle: "The Middle Point Where We Feel Closest to the Big Everything",
+        simple: "Think of a giant invisible ladder that connects the ground to the stars. Many special buildings have tall points like spires or domes to help our eyes look up. When we look up, we feel small in a good way, like we are part of a huge beautiful universe. It reminds us that we are connected to the sky and the earth at the same time. This middle point is where we feel closest to the big everything.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep bell ringing from a high tower: sound falling from heaven to earth." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Pine trees reaching for the sun: the scent of something that grows toward light on purpose." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A tall cold glass of milk: nourishment that came from below to feed what is above." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching your arms as high as they can go: the body becoming the ladder." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A skyscraper disappearing into the clouds: human ambition touching the sky's floor." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Lifting your spine to stand tall: the body becoming its own axis mundi." }
+        ],
+        intuition: "The middle point where we feel closest to the big everything. Every culture built upward. The pyramid. The steeple. The minaret. The pagoda. The totem pole. Nobody taught them to do this. They all looked up and built toward what they felt. The axis mundi is not a building. The axis mundi is the human spine. You are the pillar between earth and sky. Your feet touch the ground. Your thoughts touch the infinite. The cathedral spire is a reminder of what your body already is — a vertical line connecting the dirt to the divine.",
+        links: [
+          { label: "Axis Mundi", url: "https://en.wikipedia.org/wiki/Axis_mundi" },
+          { label: "World Tree", url: "https://en.wikipedia.org/wiki/World_tree" },
+          { label: "Mircea Eliade", url: "https://en.wikipedia.org/wiki/Mircea_Eliade" }
+        ],
+        songs: [
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Higher Love", artist: "Steve Winwood", url: "https://www.youtube.com/watch?v=k9olaIio3l8" }
+        ],
+        advanced: "The axis mundi serves as the ontological center of the world — a point of orientation in profane space. A vertical link between celestial, terrestrial, and chthonic planes. Every culture built upward independently. The cathedral spire is a reminder of what your body already is — a vertical line connecting dirt to the divine." },
+
+      { id: "liminality-threshold", num: 3, icon: "🚪", title: "Liminality (The Threshold)", subtitle: "You Are Not in a Hurry Anymore — You Are Just There Ready to Listen",
+        simple: "Imagine a doorway that changes how you feel when you walk through it. Taking off your shoes or washing your hands before you enter is like a reset button for your brain. It tells your body the busy world is behind me and something special is ahead. This in-between space is where magic happens because you are not in a hurry anymore. You are just there, ready to listen and feel.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft click of a heavy door closing: the sound of the outside world being left behind." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books and wood polish: the scent of a room that has been waiting for you." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A small piece of plain bread: simplicity as preparation." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Stepping from hard tile onto a soft fuzzy rug: the floor telling your feet you have arrived." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A heavy curtain being pulled back: the reveal that requires a crossing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Slowing your walk to a crawl: the body shifting gears before the mind catches up." }
+        ],
+        intuition: "You are not in a hurry anymore — you are just there ready to listen. The doorway is not just architecture. The doorway is a verb. To cross a threshold is to become someone slightly different than you were one step ago. That is why every sacred space has a gate, a door, a veil, a curtain, a set of stairs. The crossing is the point. The Japanese remove their shoes. The Muslim washes their hands. The Catholic dips fingers in holy water. Different actions. Same function. The threshold says: who you were out there is not who you need to be in here. Leave the noise at the door.",
+        links: [
+          { label: "Liminality", url: "https://en.wikipedia.org/wiki/Liminality" },
+          { label: "Torii Gate", url: "https://en.wikipedia.org/wiki/Torii" },
+          { label: "Rites of Passage", url: "https://en.wikipedia.org/wiki/Rite_of_passage" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Liminality: the quality of ambiguity in the middle stage of ritual. By physically crossing a threshold, the individual enters a state of exception where social hierarchies dissolve and communitas can form. The crossing is the point. Leave the noise at the door." },
+
+      { id: "sacred-geometry-space", num: 4, icon: "🌀", title: "Sacred Geometry in Space", subtitle: "The Building Is Singing a Song That Matches the Way the Whole World Is Put Together",
+        simple: "Nature has a secret code made of shapes and numbers, and we use that code to build special places. Circles make us feel included, and squares make us feel safe and strong. When a building uses the same patterns found in seashells or sunflowers, our brains recognize it as right. It feels like the building is singing a song that matches the way the whole world is put together. This makes us feel like we belong in the big pattern of life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A choir singing different notes that blend perfectly: harmony as architecture." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A sliced orange — spicy and patterned: geometry you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honeycomb dripping with sweet honey: hexagons you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing the spiral of a snail's shell: the golden ratio under your fingertip." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stained glass windows with perfect flower shapes: light organized by geometry." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Spinning in a circle until you feel the center of your balance: the body finding the axis that geometry describes." }
+        ],
+        intuition: "The building is singing a song that matches the way the whole world is put together. The mosque in Isfahan uses the same spiral as your DNA. The rose window in Notre-Dame uses the same ratio as a nautilus shell. The temple at Angkor Wat is aligned with the same angles as the solstice. The architects did not copy nature. The architects obeyed the same rules nature obeys. When your body walks into a space built on sacred geometry, something in you relaxes. Not because you understand the math. Because your cells recognize the math. You are made of the same code the building is made of.",
+        links: [
+          { label: "Sacred Geometry", url: "https://en.wikipedia.org/wiki/Sacred_geometry" },
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+          { label: "Islamic Geometric Patterns", url: "https://en.wikipedia.org/wiki/Islamic_geometric_patterns" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=AOMyS78o5YI" }
+        ],
+        advanced: "Sacred geometry: certain mathematical proportions possess inherent spiritual resonance. The vesica piscis and golden mean replicate natural harmonic frequency, creating bio-harmonic environments reducing stress and encouraging contemplation. Your cells recognize the math. You are made of the same code the building is made of." },
+
+      { id: "acoustic-resonance", num: 5, icon: "🔔", title: "Acoustic Resonance", subtitle: "The Building Itself Is Breathing with You",
+        simple: "Have you ever whispered in a big hall and heard your voice come back to you like a ghost? Special places are built to make sound bounce or stay still in a way that feels holy. When music fills a big room, you do not just hear it with your ears; you feel it vibrating in your chest. This vibration connects everyone in the room together. It is like the building itself is breathing with you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The long hum after a gong is hit: sound that refuses to die because the room keeps feeding it." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dusty dry smell of an old theater: the scent of a room built to amplify." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pop rocks on your tongue: tiny explosions of vibration you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand on a speaker feeling the bass: vibration entering through the skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ripples moving across a pond: sound made visible in water." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Ears popping when the room is very quiet: the body adjusting to a new frequency." }
+        ],
+        intuition: "The building itself is breathing with you. The Hagia Sophia was designed so that a single voice fills the dome and comes back eight seconds later. The Hypogeum in Malta amplifies a male voice to shake the entire chamber. Stonehenge creates standing waves that pulse through the body. These were not accidents. These were instruments. The building is the instrument. The congregation is the musician. And the sound is the prayer. When a choir sings in a cathedral, the stone sings back. That feedback loop — voice to stone to voice — is the architecture of communion.",
+        links: [
+          { label: "Acoustic Archaeology", url: "https://en.wikipedia.org/wiki/Archaeoacoustics" },
+          { label: "Psychoacoustics", url: "https://en.wikipedia.org/wiki/Psychoacoustics" },
+          { label: "Cymatics", url: "https://en.wikipedia.org/wiki/Cymatics" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Echoes", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=53N99Nh0DEo" },
+          { title: "Amazing Grace", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=tJHMbfxYGhU" }
+        ],
+        advanced: "Psychoacoustics in sacred spaces: standing waves and long decay times create timelessness. These environments induce flow states by synchronizing brainwave patterns with low-frequency structural resonances. The building is the instrument. The congregation is the musician. The sound is the prayer. Voice to stone to voice: the architecture of communion." },
+
+      { id: "light-shadow-space", num: 6, icon: "🕯️", title: "Light & Shadow in Space", subtitle: "We Need the Light to See and the Dark to Rest",
+        simple: "Light is like the voice of the building. In special places, windows are often placed to catch the sun at just the right time, making beams of light dance on the floor. Seeing a bright light in a dark room reminds us that hope is always there, even when things feel scary. It teaches us that we need both the light to see and the dark to rest. The light makes the space feel alive and moving.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft sizzle of a candle: fire whispering to the air." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sun-warmed wood: the scent of light stored in a surface." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm toast with melting butter: the taste of something the sun helped create." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The sun's heat on your skin through a window: the divine touching you through glass." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Dust motes dancing in a sunbeam: ordinary particles revealed as beautiful by light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Eyes closed, sensing where the light comes from: the body navigating by warmth instead of sight." }
+        ],
+        intuition: "We need the light to see and the dark to rest. The Gothic architects did not build windows. The Gothic architects built theology in glass. Every rose window is a sermon. Every beam of colored light landing on a stone floor is a sentence in a story about heaven touching earth. The Pantheon's oculus drops a perfect circle of sunlight that moves across the floor like a clock hand — tracking the divine across the human. Light in sacred space is never decorative. Light in sacred space is instructional. It says: look here. Feel this. The darkness is not the absence of God. The darkness is the canvas that makes the light visible.",
+        links: [
+          { label: "Light in Architecture", url: "https://en.wikipedia.org/wiki/Daylighting" },
+          { label: "Rose Window", url: "https://en.wikipedia.org/wiki/Rose_window" },
+          { label: "Pantheon", url: "https://en.wikipedia.org/wiki/Pantheon,_Rome" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Blinded by the Light", artist: "Manfred Mann", url: "https://www.youtube.com/watch?v=lcWVL4B-4pI" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" }
+        ],
+        advanced: "Manipulation of lux (physical light) and lumen (perceived light) is central to sacred architecture from Stonehenge to Gothic cathedrals. A metaphor for theophanic intervention — the divine breaking through the material veil. The darkness is not the absence of God. The darkness is the canvas that makes the light visible." },
+
+      { id: "community-cohesion-space", num: 7, icon: "🤝", title: "Community Cohesion", subtitle: "The Building Helps Us Link Up Our Hearts — It Turns Me into We",
+        simple: "A sacred space is like a giant team clubhouse for everyone. When people sit together in a circle or in rows, they start to breathe at the same time and think about the same good things. This makes us feel like we are not alone and that we are part of one big family. The building helps us link up our hearts so we can be stronger and kinder together. It turns me into we.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hundreds of people clapping at the same time: individuals becoming a rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The mixed scent of many people's perfumes and soaps: a crowd you can smell before you see." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A potluck dinner with many different foods: community served on plates." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five or a warm handshake: connection completed in half a second." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sea of smiling faces looking at the same thing: attention as architecture." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Swaying in time with a crowd: the body surrendering its solo rhythm for the group's." }
+        ],
+        intuition: "The building helps us link up our hearts — it turns me into we. The circle has no head. The circle has no foot. Everyone in a circle is equal. That is why the first sacred spaces were circles. The amphitheater. The medicine wheel. The roundhouse. The kiva. Before anyone built a hierarchy, someone built a circle. The sacred space does not just hold people. The sacred space shapes how people relate to each other. Rows create followers. Circles create family. The architecture is the invisible hand arranging the hearts in the room.",
+        links: [
+          { label: "Collective Effervescence", url: "https://en.wikipedia.org/wiki/Collective_effervescence" },
+          { label: "Sociology of Religion", url: "https://en.wikipedia.org/wiki/Sociology_of_religion" },
+          { label: "Social Cohesion", url: "https://en.wikipedia.org/wiki/Social_cohesion" }
+        ],
+        songs: [
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "We Are the Champions", artist: "Queen", url: "https://www.youtube.com/watch?v=04854XqcfCY" }
+        ],
+        advanced: "Durkheim's collective effervescence: sacred spaces facilitate shared emotional experience transcending individual identity. Spatial arrangement dictates social energy flow, reinforcing communal bonds. Rows create followers. Circles create family. The architecture is the invisible hand arranging the hearts in the room." },
+
+      { id: "symbolic-orientation", num: 8, icon: "🧭", title: "Symbolic Orientation", subtitle: "When We Know Which Way Is Home We Feel Less Lost in the Big World",
+        simple: "Many special buildings are pointing at something important, like where the sun rises or a special city far away. It is like the building is a giant compass. This tells us that our lives have a direction and a purpose. When we know which way is home or up, we feel less lost in the big world. It helps us feel like we are perfectly placed right where we are.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Wind blowing from the north: direction you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salty air from the ocean to the east: a compass made of scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A compass-shaped cookie: direction you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Moss on the north side of a tree: nature's compass under your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The very first peak of the sun at dawn: the direction the whole earth agreed on." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing where your bedroom is even in the dark: the body carrying a map it never drew." }
+        ],
+        intuition: "When we know which way is home we feel less lost in the big world. Every mosque faces Mecca. Every synagogue faces Jerusalem. Every Christian church faces east. Every Buddhist temple faces the mountain. Billions of buildings on earth are pointing at something. Not randomly. Deliberately. Because to pray without direction is to shout into the void. But to pray toward something is to aim your signal. Orientation is not superstition. Orientation is focus. And focus is the difference between a flashlight and a laser. The building points so the heart knows where to aim.",
+        links: [
+          { label: "Qibla", url: "https://en.wikipedia.org/wiki/Qibla" },
+          { label: "Orientation of Churches", url: "https://en.wikipedia.org/wiki/Orientation_of_churches" },
+          { label: "Feng Shui", url: "https://en.wikipedia.org/wiki/Feng_shui" }
+        ],
+        songs: [
+          { title: "Africa", artist: "Toto", url: "https://www.youtube.com/watch?v=FTQbiNvZqaY" },
+          { title: "Go Your Own Way", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=6ul-cZyuYw4" },
+          { title: "Home", artist: "Edward Sharpe", url: "https://www.youtube.com/watch?v=DHEOF_rcND8" }
+        ],
+        advanced: "Orientation (literally facing the orient/east) aligns microcosmic human space with macrocosmic celestial order. Sacred geography ensures rituals sync with perceived cosmic rhythms. Focus is the difference between a flashlight and a laser. The building points so the heart knows where to aim." },
+
+      { id: "materiality-purity", num: 9, icon: "💎", title: "Materiality & Purity", subtitle: "Using Real Things Makes Us Feel Real Too",
+        simple: "Sacred spaces use things that last a long time, like heavy stones, shiny gold, or strong wood. These materials do not break easily, which reminds us that love and truth do not break easily either. When we touch a smooth cold stone wall, it feels real and steady. It helps us feel grounded so our thoughts do not fly away. Using real things makes us feel real too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clink of a metal ring on a stone table: permanence you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut cedar wood: the scent of a material that chose to be strong." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crunchy cold apple: something real with no artificial ingredients." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a rough brick wall: time and earth compressed into a surface." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sparkle of a diamond or clear glass: matter at its most honest." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The heavy weight of a smooth stone in your pocket: permanence you can carry." }
+        ],
+        intuition: "Using real things makes us feel real too. Stone does not pretend. Wood does not lie. Gold does not rust. The materials in a sacred space are not chosen for budget. They are chosen for truth. A stone wall says I was here before you and I will be here after you. A wooden beam says a tree gave its life for this roof. A gold leaf says this room is worth the most precious metal on earth. The materials are a sermon. The floor preaches. The ceiling testifies. When you touch the wall of a thousand-year-old cathedral, you are shaking hands with everyone who touched that wall before you.",
+        links: [
+          { label: "Materiality in Architecture", url: "https://en.wikipedia.org/wiki/Materiality_(architecture)" },
+          { label: "Symbolism of Gold", url: "https://en.wikipedia.org/wiki/Gold#Culture" },
+          { label: "Wabi-sabi", url: "https://en.wikipedia.org/wiki/Wabi-sabi" }
+        ],
+        songs: [
+          { title: "Like a Rolling Stone", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=IwOfCgkyEj0" },
+          { title: "Heart of Gold", artist: "Neil Young", url: "https://www.youtube.com/watch?v=Eh44QPT1mPE" },
+          { title: "Diamonds Are Forever", artist: "Shirley Bassey", url: "https://www.youtube.com/watch?v=lml-jEcaAHM" }
+        ],
+        advanced: "Honesty of materials in sacred architecture as epistemological anchor. Substances resisting decay communicate the eternal nature of the divine. A haptic experience of truth that bypasses intellect and speaks directly to the body's sense of permanence. When you touch a thousand-year-old wall, you are shaking hands with everyone who touched it before you." },
+
+      { id: "sanctuary-refuge", num: 10, icon: "🛡️", title: "Sanctuary (The Refuge)", subtitle: "The Place Where You Can Be Exactly Who You Are Without Any Fear",
+        simple: "Sometimes the world is loud and messy, and we just need a place to hide and be safe. A sacred space is like a fort that no bad feelings can get into. It is a time-out spot for your brain where you do not have to worry about chores or school. Inside this safety, you can finally hear your own quiet thoughts. It is the place where you can be exactly who you are without any fear.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound of your own breathing: the quietest room revealing the loudest truth." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender or a cozy blanket: safety you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A warm cup of cocoa: comfort that enters through the throat and stays in the chest." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A soft pillow against your cheek: gentleness as architecture." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A soft glowing lamp: light that does not interrogate — light that holds." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Letting go of every muscle when you sit down: the body trusting the space enough to stop guarding." }
+        ],
+        intuition: "The place where you can be exactly who you are without any fear. The word sanctuary comes from the Latin sanctuarium — a holy place where the hunted cannot be harmed. In medieval Europe, if you reached a church door, the law could not touch you. The building itself became a shield. Sacred space has always been refuge. Not just spiritual refuge. Physical refuge. The first function of a sacred space is not beauty. The first function is safety. Because you cannot hear God when you are running. You cannot hear truth when you are afraid. The walls must say you are safe here before they can say anything else.",
+        links: [
+          { label: "Sanctuary", url: "https://en.wikipedia.org/wiki/Sanctuary" },
+          { label: "Right of Asylum", url: "https://en.wikipedia.org/wiki/Right_of_asylum" },
+          { label: "Biophilic Design", url: "https://en.wikipedia.org/wiki/Biophilic_design" }
+        ],
+        songs: [
+          { title: "Shelter from the Storm", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=WTK4Kv0k-Dg" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" }
+        ],
+        advanced: "Sanctuary (asylum): legal and psychological necessity. Enclosure theory creates boundaries filtering external stimuli to protect the internal sacred fire. The first function of sacred space is not beauty. The first function is safety. Because you cannot hear God when you are running. The walls must say you are safe here before they can say anything else." },
+    ],
+
+
 
 
 
