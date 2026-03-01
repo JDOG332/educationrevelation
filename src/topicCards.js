@@ -18136,6 +18136,243 @@ export const TOPIC_CARDS = {
         advanced: "Limbic resonance: deep emotional states shared via the hypothalamus, amygdala, and hippocampus. Hyperscanning shows brain waves and heart rates literally sync during rapport. An evolutionarily ancient system from mammalian mother-offspring bonding. Choose your signal carefully. Because the room is always listening." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > DEATH & THE END (deathend)
+    // ═══════════════════════════════════════════════════════════════
+
+    deathend: [
+      { id: "legacy-impact", num: 1, icon: "🌊", title: "Legacy & Impact (The Ripple)", subtitle: "Because You Were Here the Pond Is Never Exactly the Same",
+        simple: "Think of your life like a single drop of water falling into a big quiet pond. Even though the drop disappears and becomes part of the pond, it makes circles of water that spread out and touch the edges. Your kindness, the things you build, and the love you give are like those circles that keep moving even when the drop is gone. Everything you do changes the world just a little bit forever. Because you were here, the pond is never exactly the same as it was before.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of a bell long after it has been struck: proof that vibration outlives the hand that rang it." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A cedar chest holding old family stories: the scent of time refusing to let go." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A recipe passed down through four generations: love you can eat that outlived the cook." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A hand-carved tool used by a grandfather: the grip still shaped by a hand that is gone." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own eyes in the face of a child: the proof that you were here walking around in someone else." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of responsibility to those who come after: the body carrying the future before the future arrives." }
+        ],
+        intuition: "Because you were here the pond is never exactly the same. You will die. But the sentence you said to a stranger in a grocery store that changed the way they saw themselves — that sentence is still alive. It is living inside them. And they will say something to someone else. And the ripple continues. You do not need a statue. You do not need a building with your name on it. You need one honest act that lands in the right heart at the right time. That is immortality. The drop disappears. The ripple does not.",
+        links: [
+          { label: "Legacy", url: "https://en.wikipedia.org/wiki/Legacy" },
+          { label: "Generativity", url: "https://en.wikipedia.org/wiki/Generativity" },
+          { label: "Ripple Effect", url: "https://en.wikipedia.org/wiki/Ripple_effect" }
+        ],
+        songs: [
+          { title: "My Way", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=qQzdAsjWGPg" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" }
+        ],
+        advanced: "Legacy as generativity: Erikson's stage of contributing beyond the self. The ripple effect demonstrates that causal chains from a single act propagate indefinitely through social networks. The drop disappears. The ripple does not." },
+
+      { id: "conservation-info", num: 2, icon: "💾", title: "Conservation of Information", subtitle: "Nothing Is Ever Truly Erased — It Is Just Rewritten into a Different Language",
+        simple: "Imagine if you wrote a secret on a piece of paper and then burned it into ashes. In our world, the paper is gone, but in the world of very tiny atoms, the information of that secret is still there in the smoke and the heat. Scientists think that nature is like a giant computer that never hits the delete button. Even if things change their shape or disappear from our sight, the code of what they were is still hidden in the universe. Nothing is ever truly erased; it is just rewritten into a different language.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise containing every frequency at once: all information playing simultaneously." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Ozone after a lightning strike: the scent of energy changing form but not disappearing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Water that has traveled through the earth for a million years: the taste of information in transit." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a speaker even at zero volume: proof that the signal exists before the sound." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A star that burned out long ago but whose light is still arriving: the past still delivering mail." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling part of the chair you are sitting in: the boundary between you and the world dissolving at the atomic level." }
+        ],
+        intuition: "Nothing is ever truly erased — it is just rewritten into a different language. Burn a book. The words are gone. But the heat, the light, the smoke, the ash — they contain every letter. Scrambled. Translated. But present. Physics says information cannot be destroyed. The universe keeps receipts. Every laugh. Every tear. Every kindness. Every thought you ever had is still encoded somewhere in the fabric of spacetime. You cannot un-ring a bell. You cannot un-live a life. The delete button does not exist. Only the translate button.",
+        links: [
+          { label: "Black Hole Information Paradox", url: "https://en.wikipedia.org/wiki/Black_hole_information_paradox" },
+          { label: "Conservation of Information", url: "https://en.wikipedia.org/wiki/Unitarity_(physics)" },
+          { label: "Holographic Principle", url: "https://en.wikipedia.org/wiki/Holographic_principle" }
+        ],
+        songs: [
+          { title: "Stardust", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=DjU6ZjbQapE" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Echoes", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=53N99Nh0DEo" }
+        ],
+        advanced: "Quantum unitarity: information is conserved in all physical processes. Susskind's resolution of the black hole information paradox and the holographic principle suggest that all information about a volume of space is encoded on its boundary. The delete button does not exist. Only the translate button." },
+
+      { id: "biological-entropy", num: 3, icon: "🍂", title: "Biological Entropy", subtitle: "Returning a Library Book So Someone Else Can Read It",
+        simple: "When a leaf falls off a tree in the autumn, it does not just vanish into nothingness. It turns into soft soil that helps new flowers grow in the springtime. Our bodies are made of borrowed energy and stardust that the Earth lets us use for a little while. When we are done with it, we give that energy back so the Earth can keep making new life. It is like returning a library book so someone else can read it and learn from it too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crunch of dry leaves under your boots: entropy you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The rich damp scent of a forest floor after rain: death smelling like the beginning of something." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sourness of a fallen apple returning to the earth: sweetness on its way to becoming soil." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cool crumbly garden dirt: the texture of a thousand finished lives becoming one new one." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a flower blooming then wilting: the whole story in thirty seconds." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body getting heavy when you fall asleep: a rehearsal for the return." }
+        ],
+        intuition: "Returning a library book so someone else can read it. You did not bring your atoms with you when you arrived. You borrowed them. From the air. From the water. From the soil. From the food that was once alive. Your body is a loan. A spectacular, temporary, irreplaceable loan. And when the loan comes due, every atom goes back into circulation. The carbon in your bones will become a tree. The iron in your blood will become a nail. The calcium in your teeth will become a seashell. You are not losing your body. You are returning it to the library. And the library never closes.",
+        links: [
+          { label: "Entropy", url: "https://en.wikipedia.org/wiki/Entropy" },
+          { label: "Decomposition", url: "https://en.wikipedia.org/wiki/Decomposition" },
+          { label: "Nutrient Cycle", url: "https://en.wikipedia.org/wiki/Nutrient_cycle" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" }
+        ],
+        advanced: "The second law of thermodynamics: entropy increases in closed systems. Biological decomposition is not destruction but redistribution — energy and matter cycling through increasingly complex arrangements. You are not losing your body. You are returning it to the library. And the library never closes." },
+
+      { id: "non-duality-death", num: 4, icon: "☯️", title: "Non-Duality", subtitle: "You Are the World Acting Like a Person for a Little While",
+        simple: "Think of a big wave in the middle of the ocean that thinks it is a separate thing from the water. The wave might be scared of ending when it hits the beach and disappears. But the truth is, the wave was always just the ocean moving in a special way for a moment. When the wave breaks, it does not die; it just goes back to being the big deep ocean. You are not just a person in the world; you are the world acting like a person for a little while.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The roar of the ocean where you cannot tell where one wave stops: sound without borders." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salt air everywhere at once: the scent of something that refuses to be separate." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A grain of salt dissolving in a giant pot of soup: identity becoming everything." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Stepping into a warm bath until you cannot feel the line between skin and water: the boundary disappearing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A mirror reflecting another mirror going on forever: self looking at self with no end." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of drifting just before you wake up: the body between form and formlessness." }
+        ],
+        intuition: "You are the world acting like a person for a little while. The wave does not die. The wave was never born. The wave was always the ocean pretending to have a shape. You are not a noun. You are a verb. You are the universe waving. The fear of death is the wave's fear of the ocean. But the wave IS the ocean. It was the ocean before it rose. It will be the ocean after it falls. The shape is temporary. The water is permanent. You are not the shape. You are the water. And water does not end. Water changes form. Ice. Steam. Rain. River. Cloud. Wave. You.",
+        links: [
+          { label: "Advaita Vedanta", url: "https://en.wikipedia.org/wiki/Advaita_Vedanta" },
+          { label: "Non-Duality", url: "https://en.wikipedia.org/wiki/Nondualism" },
+          { label: "Alan Watts", url: "https://en.wikipedia.org/wiki/Alan_Watts" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Advaita Vedanta: the individual self (atman) is identical with the universal self (brahman). The wave-ocean metaphor dissolves the subject-object distinction. You are not a noun. You are a verb. You are the universe waving. The shape is temporary. The water is permanent." },
+
+      { id: "eternalism-block", num: 5, icon: "🎞️", title: "Eternalism (The Block Universe)", subtitle: "Every Moment You Ever Lived Is a Permanent Part of the Universe",
+        simple: "Life is like a movie film that is already finished and sitting in a box. When we watch the movie, we see things happen one after another, and we think the beginning is gone and the end is coming. But on the film strip, the beginning, the middle, and the end are all there at the same time. Even when the movie projector finishes playing your part, the film strip still exists. Every moment you ever lived is a permanent part of the giant picture of the universe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A record needle placed on a song that already exists: the music was there before the needle arrived." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old photo album: the scent of moments that still exist somewhere." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering aftertaste of a meal finished minutes ago: the past still on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand along a long fence feeling all the posts: every moment accessible if you reach." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A long-exposure photograph of car lights at night: all the moments visible at once." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Deja vu — the feeling you have been here before: the body remembering a frame it already passed." }
+        ],
+        intuition: "Every moment you ever lived is a permanent part of the universe. Einstein said the distinction between past, present, and future is only a stubbornly persistent illusion. If he is right, then your fifth birthday still exists. Your first kiss still exists. The moment you laughed so hard you cried still exists. They are not gone. They are just not where the projector is pointing right now. The film strip holds every frame. Death is not the erasure of your frames. Death is the projector stopping. But the film remains. Every moment you ever lived is etched into the geometry of spacetime. And geometry does not forget.",
+        links: [
+          { label: "Eternalism", url: "https://en.wikipedia.org/wiki/Eternalism_(philosophy_of_time)" },
+          { label: "Block Universe", url: "https://en.wikipedia.org/wiki/Block_universe" },
+          { label: "Spacetime", url: "https://en.wikipedia.org/wiki/Spacetime" }
+        ],
+        songs: [
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Einstein's B-theory of time: past, present, and future are equally real. The block universe holds all events in a four-dimensional spacetime manifold. Death is not the erasure of your frames. Death is the projector stopping. But the film remains. Geometry does not forget." },
+
+      { id: "dmt-release", num: 6, icon: "🧪", title: "Neurochemical DMT Release", subtitle: "The Body's Way of Making Sure the Transition Feels Like a Gentle Hug",
+        simple: "Our brains are like amazing chemical factories that know exactly what to do during big moments. When the body starts to get ready for its final sleep, the brain might release a special key that opens a door to beautiful dreams. These dreams feel more real than real life and are filled with bright colors and a feeling of perfect peace. This is the body's way of making sure the transition feels like a gentle hug. It is a biological gift that helps us feel safe when we let go.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The high-pitched ringing of absolute silence: the frequency behind all frequencies." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Flowers that do not exist in the real world: the nose smelling something the brain invented." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sweetness at the back of the throat that feels like light: the body tasting the transition." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Electricity tingling through your whole body: every nerve saying goodbye and hello at the same time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Fractals repeating forever inside your eyelids: the brain showing you infinity while the eyes are closed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The sensation of floating or flying without wings: the body releasing its agreement with gravity." }
+        ],
+        intuition: "The body's way of making sure the transition feels like a gentle hug. The brain is not cruel. The brain that spent your whole life protecting you does not abandon you at the end. It floods the system with the most profound neurochemistry it has. The same chemistry that mystics have accessed through meditation for thousands of years. The brain has a goodbye protocol. And the goodbye protocol is not pain. The goodbye protocol is peace. The body was designed to arrive gently and to leave gently. The hard part is the middle. The transition was always the easy part.",
+        links: [
+          { label: "DMT", url: "https://en.wikipedia.org/wiki/N,N-Dimethyltryptamine" },
+          { label: "Pineal Gland", url: "https://en.wikipedia.org/wiki/Pineal_gland" },
+          { label: "Psychedelic Experience", url: "https://en.wikipedia.org/wiki/Psychedelic_experience" }
+        ],
+        songs: [
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" },
+          { title: "Lucy in the Sky with Diamonds", artist: "The Beatles", url: "https://www.youtube.com/watch?v=naoknj1ebqI" },
+          { title: "Pyramid Song", artist: "Radiohead", url: "https://www.youtube.com/watch?v=3M_Gg1xAHE4" }
+        ],
+        advanced: "Endogenous DMT hypothesis: the pineal gland may release dimethyltryptamine during extreme physiological states. The brain's goodbye protocol activates the same neurochemistry mystics access through meditation. The transition was always the easy part." },
+
+      { id: "near-death-exp", num: 7, icon: "🚪", title: "Near-Death Experiences", subtitle: "There Is a Map for This Journey That We All Share",
+        simple: "Many people who have almost died but came back tell the exact same story. They talk about walking through a dark tunnel toward a light that feels warmer and more loving than the sun. They often see people they loved who passed away before them, standing there to say hello. Even though these people speak different languages or live in different countries, the doorway they see looks the same. It suggests that there is a map for this journey that we all share.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft humming that feels like it comes from inside your head: the internal soundtrack of the crossing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of home — whatever that means specifically to you: the nose finding the one scent that says safe." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool clean air: the taste of a place that has never been polluted." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm breeze blowing through your hair: comfort arriving through the skin from nowhere." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright white light that does not hurt your eyes: illumination without aggression." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling like your body has no weight at all: the self discovering it does not need the container." }
+        ],
+        intuition: "There is a map for this journey that we all share. A fisherman in Japan. A grandmother in Nigeria. A child in Brazil. A soldier in Norway. They never met. They never read the same book. They never watched the same movie. But they all describe the same tunnel. The same light. The same feeling of being welcomed. Either millions of unrelated humans are having the same hallucination in the same order — or the hallucination is not a hallucination. Either the map is real or the mapmaker lives inside all of us. Both answers are extraordinary.",
+        links: [
+          { label: "Near-Death Experience", url: "https://en.wikipedia.org/wiki/Near-death_experience" },
+          { label: "AWARE Study", url: "https://en.wikipedia.org/wiki/AWARE_study" },
+          { label: "Raymond Moody", url: "https://en.wikipedia.org/wiki/Raymond_Moody" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Knockin' on Heaven's Door", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=rm9coqlk1cU" },
+          { title: "Spirit in the Sky", artist: "Norman Greenbaum", url: "https://www.youtube.com/watch?v=AZQxH_8raCI" }
+        ],
+        advanced: "Cross-cultural NDE research reveals consistent phenomenological patterns: tunnel, light, life review, boundary, return. The AWARE study (Parnia) investigates veridical perception during cardiac arrest. Either the map is real or the mapmaker lives inside all of us. Both answers are extraordinary." },
+
+      { id: "continuity-consciousness", num: 8, icon: "📻", title: "Continuity of Consciousness", subtitle: "If the Radio Breaks the Music Does Not Die — the Signal Is Still in the Air",
+        simple: "Imagine your brain is like a radio and your self is the music playing through the speakers. If the radio breaks, the music does not die; the signal is still in the air, but the radio just cannot catch it anymore. Some thinkers believe that our minds are part of a big signal that exists everywhere in the universe. Our bodies are just the tools that let that signal talk and play for a while. When the tool stops working, the music simply returns to the air.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Static between stations slowly turning into a clear melody: the signal finding a new receiver." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry pavement: the scent of something arriving from somewhere else." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic tang of a battery on your tongue: the taste of raw signal." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Static electricity making your hair stand up: the field reaching through your body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle flame flickering in a dark room: light that came from somewhere and will go somewhere." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of presence in a room even when you are alone: the signal without a visible source." }
+        ],
+        intuition: "If the radio breaks the music does not die — the signal is still in the air. The brain does not generate consciousness the way a factory generates products. The brain may receive consciousness the way a radio receives a broadcast. If you smash a radio, you have not killed the song. You have only destroyed one receiver. The question is not whether consciousness exists after death. The question is whether consciousness exists independently of the brain. If it does, then death is a change of channel. Not the end of the broadcast. And the broadcast never asked for permission to begin.",
+        links: [
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" },
+          { label: "Panpsychism", url: "https://en.wikipedia.org/wiki/Panpsychism" },
+          { label: "Orchestrated Objective Reduction", url: "https://en.wikipedia.org/wiki/Orchestrated_objective_reduction" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=AOMyS78o5YI" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" }
+        ],
+        advanced: "The filter theory of consciousness (Bergson, Huxley): the brain as receiver rather than generator. Orch-OR (Penrose-Hameroff) proposes quantum processes in microtubules as the basis of consciousness. Death is a change of channel. Not the end of the broadcast." },
+
+      { id: "cultural-eschatology", num: 9, icon: "🗺️", title: "Cultural Eschatology", subtitle: "Different Glasses Looking at the Same Mysterious Mountain",
+        simple: "Every group of people throughout history has drawn a different map of what happens at the end. Some see a golden city, others see a peaceful garden, and some see a great hall where heroes feast together. These stories are like different pairs of glasses used to look at the same mysterious mountain. Even though the glasses are different colors, they are all trying to help us understand the same big truth. We use these stories to turn our fear into hope.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Chants and bells from a distant temple: the sound of humanity rehearsing its hope." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Burning incense or sage: the scent of a bridge being built to the invisible." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honey and bread used in ancient rituals: the taste of a promise older than writing." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth surface of an ancient stone monument: time compressed into a touchable surface." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stained glass windows with sunlight streaming through: human art and divine light collaborating." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Bowing or kneeling in a quiet place: the body practicing the posture of surrender." }
+        ],
+        intuition: "Different glasses looking at the same mysterious mountain. Valhalla. Paradise. The Elysian Fields. The Pure Land. The Happy Hunting Ground. The Garden. The City of Gold. Different names. Different furniture. Same address. Every civilization that ever existed drew a map of what comes next. They could not all be right about the furniture. But they could all be right that the house exists. When every cartographer draws a continent in the same spot on the ocean, the continent is probably there. The details disagree. The direction agrees. And the direction is forward.",
+        links: [
+          { label: "Eschatology", url: "https://en.wikipedia.org/wiki/Eschatology" },
+          { label: "Afterlife", url: "https://en.wikipedia.org/wiki/Afterlife" },
+          { label: "Comparative Mythology", url: "https://en.wikipedia.org/wiki/Comparative_mythology" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Leonard Cohen", url: "https://www.youtube.com/watch?v=ttEMYvpoR-k" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "People Get Ready", artist: "The Impressions", url: "https://www.youtube.com/watch?v=NdCEFSTFV0s" }
+        ],
+        advanced: "Comparative eschatology: cross-cultural afterlife narratives converge on core structural elements — threshold crossing, judgment/review, reunion, and eternal dwelling. The details disagree. The direction agrees. When every cartographer draws a continent in the same spot, the continent is probably there." },
+
+      { id: "big-freeze-crunch", num: 10, icon: "🌌", title: "The Big Freeze vs. Big Crunch", subtitle: "Every Ending in Nature Is Usually Just the Setup for a Brand New Beginning",
+        simple: "The whole universe has a life cycle just like we do. One day, trillions of years from now, the stars will stop glowing and the universe will become very cold and quiet, like a long winter sleep. Or, it might pull itself back together into a tiny hot point to start a brand new big bang. This shows us that the end is just a part of how the universe breathes. Every ending in nature is usually just the setup for a brand new beginning.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep low thrum of a large engine: the vibration of something too big to see but too real to ignore." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The crisp sharp smell of sub-zero winter air: the scent of a universe cooling down." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An ice cube melting on your tongue: matter changing state in your mouth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Touching very cold metal: the feeling of energy leaving." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single white dot on a giant black canvas: the last star or the first one — they look the same." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of expanding until you fill the whole room: your body rehearsing what the universe is doing right now." }
+        ],
+        intuition: "Every ending in nature is usually just the setup for a brand new beginning. The universe will die. Even the universe. The stars will burn out. The black holes will evaporate. The last photon will stretch until it has no energy left. And then. Silence. Or. The universe pulls itself back together. Compresses. Heats. And bangs again. A new universe. New stars. New planets. New life. New you. Not the same you. But the same atoms. The same story. Told by a different narrator. The universe does not know how to end. It only knows how to begin again. And so do you.",
+        links: [
+          { label: "Heat Death", url: "https://en.wikipedia.org/wiki/Heat_death_of_the_universe" },
+          { label: "Big Crunch", url: "https://en.wikipedia.org/wiki/Big_Crunch" },
+          { label: "Cyclic Model", url: "https://en.wikipedia.org/wiki/Cyclic_model" }
+        ],
+        songs: [
+          { title: "The End", artist: "The Doors", url: "https://www.youtube.com/watch?v=BXqPNlng6uI" },
+          { title: "Champagne Supernova", artist: "Oasis", url: "https://www.youtube.com/watch?v=tI-5uv4wryI" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" }
+        ],
+        advanced: "Cosmological endpoints: heat death (maximum entropy), big crunch (gravitational recollapse), or cyclic cosmology (Penrose's conformal cycles). The universe does not know how to end. It only knows how to begin again. And so do you." },
+    ],
+
+
   },
 
 };
