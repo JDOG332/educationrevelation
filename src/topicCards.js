@@ -15518,6 +15518,249 @@ export const TOPIC_CARDS = {
 
   },
 
+  // ═══════════════════════════════════════════════════════════════
+  // DOOR 8: RELIGION (sameness)
+  // ═══════════════════════════════════════════════════════════════
+  sameness: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > PRAYER & WORSHIP (prayer)
+    // ═══════════════════════════════════════════════════════════════
+
+    prayer: [
+      { id: "intentionality-kavannah", num: 1, icon: "🎯", title: "Intentionality (Kavannah)", subtitle: "The Difference Between Reading a Grocery List and Writing a Love Letter",
+        simple: "Prayer is not just saying words; it is like aiming an arrow at a target. When you pray, you must focus your heart and mind on the connection you are making. It is the difference between reading a grocery list and writing a love letter. If your heart is not in it, the words are just sounds in the air. By being still and focusing, you make the moment special. This focus helps you feel the Eternal We that connects everyone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythm of your own heartbeat in a quiet room: the first prayer you ever heard." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh crisp morning air before anyone else is awake: the scent of presence." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single drop of cool clear water: simplicity that demands attention." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms together and feeling the heat build: intention made physical." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame dancing without any wind: focus you can watch." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body pressing into the floor while sitting still: gravity as prayer." }
+        ],
+        intuition: "The difference between reading a grocery list and writing a love letter. You can say the words without meaning them. Everyone has done it. The mouth moves but the heart stays parked. Kavannah is the opposite. Kavannah is when every syllable carries freight. The arrow without aim is just a stick. The prayer without intention is just noise. Aim first. Then speak. The target is not in the sky. The target is in the center of your chest.",
+        links: [
+          { label: "Kavanah", url: "https://en.wikipedia.org/wiki/Kavanah" },
+          { label: "Intentionality", url: "https://en.wikipedia.org/wiki/Intentionality" },
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" }
+        ],
+        advanced: "Kavannah: cognitive and emotional alignment transitioning from rote recitation to transformative spiritual state. The observer effect applied to the soul — focused attention collapses infinite possibilities into singular meaningful connection. Serves as the epistemic gate: without intentionality the informativeness of ritual is zero because the participant is not truly present. Aim first. The arrow without aim is just a stick." },
+
+      { id: "gratitude-eucharistein", num: 2, icon: "🙏", title: "Gratitude (Eucharistein)", subtitle: "Opening a Window in a Dark Room to Let the Sunlight In",
+        simple: "Gratitude is saying thank you for the gift of being alive right now. It is like opening a window in a dark room to let the sunlight in. When we focus on what we have instead of what we want, our hearts feel bigger. It is the most powerful way to talk to God because it acknowledges the beauty already around us. It turns a simple meal into a feast.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bird chirping outside your window: the world saying good morning without being asked." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Home-cooked food filling the house: abundance you can breathe." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of a ripe strawberry: a gift that required no effort from you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm hug from someone who loves you: gratitude with arms." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright orange and pink sunset: beauty that charges no admission." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The lightness in your chest when you smile: the body's receipt for gratitude." }
+        ],
+        intuition: "Opening a window in a dark room to let the sunlight in. The room was not dark because the sun disappeared. The room was dark because the window was shut. Gratitude opens the window. Nothing outside changes. Everything inside changes. The meal does not become better food. The meal becomes a feast because you noticed it. Gratitude is not about getting more. Gratitude is about seeing what was always there. The light was waiting. You just had to open the window.",
+        links: [
+          { label: "Gratitude", url: "https://en.wikipedia.org/wiki/Gratitude" },
+          { label: "Eucharist", url: "https://en.wikipedia.org/wiki/Eucharist" },
+          { label: "Positive Psychology", url: "https://en.wikipedia.org/wiki/Positive_psychology" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Thank U", artist: "Alanis Morissette", url: "https://www.youtube.com/watch?v=OOgpT5K3JMI" },
+          { title: "Graceland", artist: "Paul Simon", url: "https://www.youtube.com/watch?v=ak3RrawMsco" }
+        ],
+        advanced: "Gratitude functions as a global reliability modulator for consciousness. Recalibrates perception by shifting focus from scarcity (accidental noise) to abundance (coincident signal). The recognition of contingency — we do not exist by our own power alone. Creates high-fidelity connection to reality by reducing entropy of mental state. The fundamental frequency upon which most spiritual traditions are built. The window was never locked. It was just closed." },
+
+      { id: "silence-mouna", num: 3, icon: "🤫", title: "Silence (Mouna)", subtitle: "The Space Where Your Soul Can Finally Breathe",
+        simple: "Silence is the language God speaks most often. Sometimes, we need to stop talking so we can finally hear the answers. It is like a quiet lake that becomes a mirror when the wind stops blowing. In silence, you can feel the Everlasting We that is always there but usually hidden by noise. It is the space where your soul can finally breathe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of silence that rings in your ears in a still room: silence is not empty — silence is loud." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books or a library: the scent of accumulated quiet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A plain cracker: neutral, cleansing, making space for what comes next." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cool air on your skin: the touch of nothing, which is the touch of everything." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blank white wall until your eyes relax: vision resting so insight can arrive." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expanding and contracting without effort: the body praying on autopilot." }
+        ],
+        intuition: "The space where your soul can finally breathe. The lake cannot become a mirror while the wind is blowing. The mind cannot become a mirror while the mouth is talking. Silence is not the absence of something. Silence is the presence of everything that was being drowned out. Every tradition on earth figured this out independently: be still and know. Stop the noise. The signal was always there. You were just broadcasting over it.",
+        links: [
+          { label: "Silence (Spiritual)", url: "https://en.wikipedia.org/wiki/Sacred_silence" },
+          { label: "Mouna", url: "https://en.wikipedia.org/wiki/Mauna_(silence)" },
+          { label: "Contemplative Prayer", url: "https://en.wikipedia.org/wiki/Contemplative_prayer" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" },
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" }
+        ],
+        advanced: "Silence: the regularization of state for the human mind. Removes singularities of daily stress and distraction, allowing the underlying density matrix of consciousness to become clear. Not merely the absence of noise but a full-rank presence — maximal informativeness where the ego's internal monologue is suspended. The shared ignorance floor where the human and the divine meet. Language is insufficient. Silence is not. Stop broadcasting. Start receiving." },
+
+      { id: "community-sangha", num: 4, icon: "🤝", title: "Community (Sangha/Koinonia)", subtitle: "Many Small Candles Coming Together to Make One Big Bright Bonfire",
+        simple: "Prayer is stronger when we do it together. It is like many small candles coming together to make one big bright bonfire. When people worship in a group, they remind each other that they are not alone. We are all pieces of a giant puzzle that only makes sense when we are connected. This Eternal We is felt most clearly when voices join in song or prayer.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A room full of people breathing or humming in unison: one voice made of many." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The combined scent of many different people in one space: community has a fragrance." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing bread or soup with friends: breaking bread is breaking walls." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding hands in a circle: electricity that requires at least two." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A large crowd moving together in the same direction: unity you can watch." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The vibration of a crowd around you: collective effervescence in the bones." }
+        ],
+        intuition: "Many small candles coming together to make one big bright bonfire. One person praying alone is a candle. Beautiful but fragile. A thousand people praying together is a bonfire. The wind cannot blow it out. Every religion figured this out: the synagogue, the church, the mosque, the temple, the sangha. You cannot do this alone. The puzzle piece does not know what it is until it finds the other pieces. Neither do you.",
+        links: [
+          { label: "Sangha", url: "https://en.wikipedia.org/wiki/Sangha" },
+          { label: "Koinonia", url: "https://en.wikipedia.org/wiki/Koinonia" },
+          { label: "Collective Effervescence", url: "https://en.wikipedia.org/wiki/Collective_effervescence" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Stand By Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+        ],
+        advanced: "Community as the redundancy graph of spiritual experience. Multiple observers converging on shared truth increases global reliability. Collective cross-validation: individual subjective experience reinforced by the group's shared log-likelihood. Creates collective effervescence (Durkheim) — reducing Shannon entropy of the social system into a highly ordered resonant structure sustaining individual faith through doubt. The candle alone is fragile. The bonfire is not." },
+
+      { id: "sacrifice-sacrificium", num: 5, icon: "🕯️", title: "Sacrifice (Sacrificium)", subtitle: "A Candle That Gives Up Its Wax to Create Light for Others",
+        simple: "Sacrifice means giving up something you like for something you love even more. It is like a candle that gives up its wax to create light for others. In worship, we might give up our time, our money, or our selfish thoughts to show God what matters most. It proves that our love is real because it costs us something. This helps us let go of the I to find the We.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The shhh of a candle burning: the sound of something giving itself away." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Burning incense or wood: the scent of transformation through fire." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of a tear: sacrifice you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tired muscles after helping someone else: the body's receipt for generosity." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single light burning in a dark room: sacrifice making darkness visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The emptiness in your stomach when you fast: the body learning what the soul already knows." }
+        ],
+        intuition: "A candle that gives up its wax to create light for others. The candle does not lose. The candle transforms. The wax becomes light. The selfishness becomes service. The I becomes We. Talk is free. Sacrifice is not. That is why sacrifice is the only proof of love that nobody can fake. You can say you love someone for free. You cannot sacrifice for them for free. The cost is the proof. The proof is the point.",
+        links: [
+          { label: "Sacrifice", url: "https://en.wikipedia.org/wiki/Sacrifice" },
+          { label: "Costly Signaling", url: "https://en.wikipedia.org/wiki/Costly_signaling_theory_in_evolutionary_psychology" },
+          { label: "Altruism", url: "https://en.wikipedia.org/wiki/Altruism" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Humble and Kind", artist: "Tim McGraw", url: "https://www.youtube.com/watch?v=awzNHuGqoMc" }
+        ],
+        advanced: "Sacrifice: the informativeness gate in practice. A costly signal increasing fidelity of communication — the only way to ensure a message is not accidental noise. By sacrificing, the practitioner regularizes devotion, ensuring it is full-rank and not superficial. De-centers the ego by breaking the feedback loop of self-gratification, creating epistemic space for the We to emerge. The cost is the proof. The proof is the point." },
+
+      { id: "humility-anavah", num: 6, icon: "🌊", title: "Humility (Anavah)", subtitle: "A Drop of Water That Knows It Is Part of the Whole Ocean",
+        simple: "Humility is knowing that you are a small but important part of a very big world. It is like a drop of water that knows it is part of the whole ocean. When we are humble, we do not think we are better than anyone else. We realize that we need help and that we do not have all the answers. This openness allows the Eternal We to flow through us easily.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft rustle of leaves in the wind: something larger speaking through something smaller." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Damp earth after rain: the scent of the ground that holds everything up without asking for credit." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The plainness of bread: nourishment that does not need to impress." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your forehead touching the ground while bowing: the body teaching the ego its address." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sky full of stars: smallness that feels like freedom." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your body fold into a small ball: the posture of surrender." }
+        ],
+        intuition: "A drop of water that knows it is part of the whole ocean. The drop is not less because it is small. The drop is everything because it is connected. The arrogant man stands alone on a mountain and thinks he is tall. The humble man kneels by the ocean and knows he is infinite. Humility is not thinking less of yourself. Humility is thinking of yourself less. The ego builds walls. Humility builds doors.",
+        links: [
+          { label: "Humility", url: "https://en.wikipedia.org/wiki/Humility" },
+          { label: "Anavah", url: "https://en.wikipedia.org/wiki/Humility_in_Judaism" },
+          { label: "Kenosis", url: "https://en.wikipedia.org/wiki/Kenosis" }
+        ],
+        songs: [
+          { title: "Humble", artist: "Kendrick Lamar", url: "https://www.youtube.com/watch?v=tvTRZJ-4EyI" },
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Humility: the regularization of the ego's singularities. An inflated ego creates a low-rank state where only the self is visible, losing informativeness about the external world. Humility restores full-rank by acknowledging the validity of other density matrices. The delta_reg that prevents the system from crashing due to over-certainty. Allows acceptance of log-likelihoods contradicting current priors. The prerequisite for all genuine learning. The ego builds walls. Humility builds doors." },
+
+      { id: "rhythm-ritual-samskara", num: 7, icon: "🥁", title: "Rhythm & Ritual (Samskara)", subtitle: "Paths in the Woods That Get Easier to Walk the More You Use Them",
+        simple: "Doing the same thing at the same time every day creates a rhythm for your soul. It is like the tide coming in and out or your lungs breathing in and out. Rituals are like paths in the woods that get easier to walk the more you use them. They help us remember who we are and what we believe when we feel lost. Rhythm connects our bodies to the heartbeat of the universe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady tick-tock of a grandfather clock: time made into a rhythm you can trust." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The specific smell of a church, temple, or sacred space: holiness has a fragrance." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A traditional food you only eat on special days: ritual you can swallow." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Smooth prayer beads in your hand: counting what cannot be counted." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stained-glass window or a mandala: pattern as prayer." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing up and sitting down repeatedly: the body memorizing devotion." }
+        ],
+        intuition: "Paths in the woods that get easier to walk the more you use them. The first time you walk through a forest you get lost. The tenth time you follow a trail. The hundredth time the trail follows you. Ritual is the same. The first prayer feels awkward. The hundredth prayer feels like breathing. The thousandth prayer is breathing. The path does not change. You change. And then the path becomes you.",
+        links: [
+          { label: "Ritual", url: "https://en.wikipedia.org/wiki/Ritual" },
+          { label: "Samskara (Indian Philosophy)", url: "https://en.wikipedia.org/wiki/Samskara_(Indian_philosophy)" },
+          { label: "Liturgy", url: "https://en.wikipedia.org/wiki/Liturgy" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" },
+          { title: "Boléro", artist: "Maurice Ravel", url: "https://www.youtube.com/watch?v=r30D3SW4OVw" }
+        ],
+        advanced: "Rituals as strictly reproducible probability weights. Repetition reduces accidental noise and increases signal coincidence, creating a global reliability modulator anchoring consciousness in a stable state. Neurobiologically, rhythmic ritual synchronizes brain oscillators into entrainment, lowering Shannon entropy and increasing receptivity to complex patterns. The physical scaffolding upon which the epistemic bridge to the divine is built. The path does not change. You change." },
+
+      { id: "petition-asking", num: 8, icon: "🖐️", title: "Petition (Asking)", subtitle: "A Child Reaching Up to a Parent to Be Picked Up",
+        simple: "Asking for help is a way of showing that we trust God. It is like a child reaching up to a parent to be picked up. Even though God might already know what we need, asking helps us realize it too. It makes us focus on what is truly important in our lives. When we ask for others, it connects our hearts to their needs.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A whispered please: the smallest word carrying the largest weight." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain on dry pavement: the scent of hope arriving." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic taste of adrenaline: the flavor of vulnerability." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Reaching out your hand for something invisible: faith as a physical gesture." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A coin tossed into a fountain: making the invisible wish visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning forward with expectation: the body tilting toward the answer before it arrives." }
+        ],
+        intuition: "A child reaching up to a parent to be picked up. The child does not explain the physics of gravity. The child does not write a proposal. The child just reaches. The arms say everything the mouth cannot. Petition is not about changing God's mind. Petition is about changing your posture. When you ask, you admit you cannot do it alone. And that admission is the door. The arms go up. The walls come down.",
+        links: [
+          { label: "Petitionary Prayer", url: "https://en.wikipedia.org/wiki/Petitionary_prayer" },
+          { label: "Intercession", url: "https://en.wikipedia.org/wiki/Intercession" },
+          { label: "Supplication", url: "https://en.wikipedia.org/wiki/Supplication" }
+        ],
+        songs: [
+          { title: "I Still Haven't Found What I'm Looking For", artist: "U2", url: "https://www.youtube.com/watch?v=e3-5YC_oHjE" },
+          { title: "Prayer for the Dying", artist: "Seal", url: "https://www.youtube.com/watch?v=Mh4Z2MeVIRs" },
+          { title: "Knocking on Heaven's Door", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=rm9coqlk8fY" }
+        ],
+        advanced: "Petition: the informativeness gate for personal needs. Requires articulation of state and acknowledgment of limitations, forcing regularization of internal desires from vague feelings to specific density matrices. Not about changing the Divine mind but changing the petitioner's alignment to recognize coincidences and signals previously hidden by their own noise. The arms go up. The walls come down." },
+
+      { id: "wonder-awe-yirah", num: 9, icon: "😲", title: "Wonder & Awe (Yirah)", subtitle: "Something So Big or Beautiful That You Forget Yourself for a Moment",
+        simple: "Wonder is the feeling you get when you see something so big or beautiful that you forget yourself for a moment. It is like looking at the Grand Canyon or a tiny newborn baby's fingers. Worship is our response to this wow feeling. It reminds us that there is a mystery at the heart of everything. Awe makes our hearts grow big enough to feel the Everlasting We.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep low roar of a large waterfall: a sound bigger than your ability to describe it." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A pine forest or the salty ocean: the scent of something ancient and enormous." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The surprising burst of a sour lemon: the tongue encountering the unexpected." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Goosebumps on your arms: the skin responding to something the brain cannot process fast enough." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The Milky Way on a very dark night: seeing your own smallness and calling it beautiful." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The stomach-drop feeling of looking down from a high place: vertigo as worship." }
+        ],
+        intuition: "Something so big or beautiful that you forget yourself for a moment. That is the key phrase. You forget yourself. The ego dissolves. The boundary between you and the universe thins until it disappears. For one second you are not a person looking at the Grand Canyon. You are the Grand Canyon looking at itself. That is awe. That is worship. The wow is not about the thing you are seeing. The wow is about the you that temporarily vanished.",
+        links: [
+          { label: "Awe (Emotion)", url: "https://en.wikipedia.org/wiki/Awe" },
+          { label: "Yirah", url: "https://en.wikipedia.org/wiki/Yirah" },
+          { label: "Overview Effect", url: "https://en.wikipedia.org/wiki/Overview_effect" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" },
+          { title: "A Whiter Shade of Pale", artist: "Procol Harum", url: "https://www.youtube.com/watch?v=Mb3iPP-tHdA" }
+        ],
+        advanced: "Wonder and awe: high-fidelity states bypassing standard softmax weights of mundane perception. A quantum jump in informativeness where von Neumann entropy of the self-model is temporarily maximized, allowing total reconfiguration. The shared ignorance floor becomes a source of beauty rather than fear. I do not know becomes the gateway to the Everlasting We. The highest epistemic humility: vastness recognized as signal rather than noise. The you that vanished was the only thing in the way." },
+
+      { id: "transformation-metanoia", num: 10, icon: "🦋", title: "Transformation (Metanoia)", subtitle: "A Caterpillar Turning into a Butterfly Inside a Cocoon",
+        simple: "The goal of prayer and worship is to change us into better versions of ourselves. It is like a caterpillar turning into a butterfly inside a cocoon. We do not just talk to God to get things; we talk to God to become more like the Eternal We — more loving, more kind, and more peaceful. Every time we pray, we are practicing how to be the person we were meant to be. This change is the amen at the end of every prayer.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bell ringing clearly once: the sound of before becoming after." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A match being blown out: the scent of one thing ending so another can begin." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Lingering sweetness after eating something bitter: transformation on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own skin renewing itself: you are being rebuilt without your permission." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A seed pushing through dirt: watching death become life." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your posture straightening and chin lifting: the body announcing the change before the mind agrees." }
+        ],
+        intuition: "A caterpillar turning into a butterfly inside a cocoon. But here is what they do not tell you: inside the cocoon the caterpillar dissolves. Completely. It becomes soup. And from that soup the butterfly assembles itself. Transformation is not decoration. Transformation is destruction followed by reconstruction. You do not add wings to the caterpillar. You dissolve the caterpillar and build a butterfly from scratch. That is metanoia. That is real change. The amen is not the end. The amen is the new beginning.",
+        links: [
+          { label: "Metanoia (Theology)", url: "https://en.wikipedia.org/wiki/Metanoia_(theology)" },
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Spiritual Transformation", url: "https://en.wikipedia.org/wiki/Spiritual_transformation" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "Redemption Song", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=kOFu6b3w6c0" }
+        ],
+        advanced: "Transformation: the Psi value of the spiritual functional — the final product of recognition and reliability. Evidence that convergence was successful. Neuroplasticity driven by spiritual practice — the density matrix of the brain physically rewired. The move from knowing about to becoming. The ultimate cross-validation: if the log-likelihood of peace increases over time, the system is converging on truth. The amen is not the end. The amen is the new beginning." },
+    ],
+
+  },
+
 };
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
