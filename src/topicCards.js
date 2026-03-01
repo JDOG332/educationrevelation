@@ -11491,6 +11491,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Psychrometrics is the field of engineering studying thermodynamic properties of gas-vapor mixtures. Vapor pressure deficit (VPD) is key for plant transpiration. Relative humidity versus absolute humidity describes different aspects of moisture content. Connects to architecture and agriculture — influencing how we build homes and irrigate crops to prevent rot and promote growth." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > SEASONS & CYCLES (cycles)
+    // ═══════════════════════════════════════════════════════════════
+
+    cycles: [
+      { id: "conservation-of-energy-cycles", num: 1, icon: "♾️", title: "Conservation of Energy", subtitle: "The Lego Bricks Never Disappear — They Just Build Something New",
+        simple: "Imagine you have a box of Lego bricks. Even if you break a Lego castle down, the bricks do not disappear; they just wait to be built into a spaceship. Everything in the whole universe is like those bricks. When a plant or animal finishes its life, its bricks of energy go back into the world to help something else grow. This means that life is always moving and changing shapes, but it never truly goes away. You are made of the same stuff that used to be stars!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The humming vibration of a tuning fork that slowly fades but never quite stops." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry dirt, signaling a change in state." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A piece of fruit that grew using the energy of the sun and soil." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of your own skin: heat energy being used right now." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering candle flame dancing as it turns wax into light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your lungs expanding and contracting in a never-ending circle: energy cycling through you." }
+        ],
+        intuition: "You are made of the same stuff that used to be stars. Nothing is created. Nothing is destroyed. Everything just changes costumes. The energy reading this right now is billions of years old.",
+        links: [
+          { label: "Conservation of Energy", url: "https://en.wikipedia.org/wiki/Conservation_of_energy" },
+          { label: "Thermodynamics", url: "https://en.wikipedia.org/wiki/Thermodynamics" },
+          { label: "First Law", url: "https://en.wikipedia.org/wiki/First_law_of_thermodynamics" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Energy", artist: "Sampa the Great", url: "https://www.youtube.com/watch?v=HtL2xnmFMGg" }
+        ],
+        advanced: "The First Law of Thermodynamics: total energy of an isolated system remains constant. In biology, death is a phase transition where localized low-entropy state dissipates into the environment, fueling the wider biosphere's negentropic processes. Chemical potential energy transitions to kinetic energy and heat. Nothing ends. Everything transfers." },
+
+      { id: "circadian-seasonal-rhythms", num: 2, icon: "🌙", title: "Circadian & Seasonal Rhythms", subtitle: "The Earth Is a Giant Clock That Tells Everything When to Wake Up",
+        simple: "The Earth is like a giant clock that tells everything when to wake up and when to go to sleep. Trees know when to drop their leaves because the days get shorter, and your body knows when to rest when the sun goes down. These cycles are like a heartbeat for the planet that keeps everything in sync. Just like you feel better after a good night's sleep, the Earth needs its sleep during winter to get ready for spring. It is a beautiful dance between light and dark that never stops.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Crickets chirping at night versus birds singing in the morning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Crisp, cold winter air versus sweet spring flowers." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold, juicy watermelon in the summer: the taste of the right season." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The sun warming your face at noon." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Leaves changing from green to orange: the planet's calendar." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That sleepy feeling right when the sun sets: your body reading the clock." }
+        ],
+        intuition: "Everything has a season, and your body already knows the schedule. You did not set the alarm. The Earth set it for you 4 billion years ago. Trust the rhythm. It has never been wrong.",
+        links: [
+          { label: "Circadian Rhythms", url: "https://en.wikipedia.org/wiki/Circadian_rhythm" },
+          { label: "Seasons", url: "https://en.wikipedia.org/wiki/Season" },
+          { label: "Chronobiology", url: "https://en.wikipedia.org/wiki/Chronobiology" }
+        ],
+        songs: [
+          { title: "September", artist: "Earth, Wind & Fire", url: "https://www.youtube.com/watch?v=Gs069dndIYk" },
+          { title: "Turn! Turn! Turn!", artist: "The Byrds", url: "https://www.youtube.com/watch?v=W4ga_M5Zdn4" },
+          { title: "Here Comes The Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" }
+        ],
+        advanced: "Endogenous oscillators (circadian clocks) are entrained by external cues (zeitgebers) like light. Govern hormonal release, cell regeneration, and metabolic rates. Seasonal rhythms are macro-scale temporal organization ensuring reproduction and migration align with optimal environmental conditions. Life synchronized to celestial mechanics." },
+
+      { id: "carbon-cycle", num: 3, icon: "♻️", title: "The Carbon Cycle", subtitle: "The Same Carbon in a Dinosaur Might Be in Your Fingernail Right Now",
+        simple: "Carbon is the building block for every living thing, like the super-glue of life. When we breathe out, we give carbon to the trees, and when the trees grow, they give us oxygen to breathe in. Even when an old tree falls in the forest, it turns back into carbon soil to help tiny new seeds grow. This means the same carbon that was once in a dinosaur might be in your fingernail right now! It is the ultimate way that we are all physically connected to the past and the future.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rustling of dry leaves that will soon turn back into dirt." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rich, musky scent of fresh garden compost." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crunch of a fresh carrot pulled straight from the ground." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hands in dark, cool, moist potting soil: touching recycled life." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Smoke rising from a campfire: carbon returning to the sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body: mostly carbon that has been everything before you." }
+        ],
+        intuition: "You breathe out what trees breathe in. Trees breathe out what you breathe in. You are not separate from nature. You are in a conversation with it. Every breath is a sentence.",
+        links: [
+          { label: "Carbon Cycle", url: "https://en.wikipedia.org/wiki/Carbon_cycle" },
+          { label: "Biogeochemical Cycle", url: "https://en.wikipedia.org/wiki/Biogeochemical_cycle" },
+          { label: "Carbon Sequestration", url: "https://en.wikipedia.org/wiki/Carbon_sequestration" }
+        ],
+        songs: [
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=q3LAgo0z0mU" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "The Seed (2.0)", artist: "The Roots", url: "https://www.youtube.com/watch?v=ojC0mg2hJCc" }
+        ],
+        advanced: "Biogeochemical cycling moves carbon through biosphere, pedosphere, geosphere, hydrosphere, and atmosphere. Death is the literal chemical reality of sequestration and release. Demonstrates interconnectedness of all life-forms as temporary vessels for a global pool of atoms. The carbon in your body has been star, rock, ocean, tree, and animal before it became you." },
+
+      { id: "metamorphosis-cycles", num: 4, icon: "🦋", title: "Metamorphosis", subtitle: "You Have to Turn Into Liquid Before You Can Fly",
+        simple: "Metamorphosis is a magic trick that happens in nature where one creature completely changes into something else. Inside a cocoon, a caterpillar actually turns into a liquid before it becomes a butterfly. It has to let go of being a crawler to become a flyer. This shows us that sometimes things have to fall apart completely so that something even more beautiful can be born. It is a cycle of shedding the old to make room for the new.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence of a cocoon hanging in the garden: transformation sounds like nothing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of blooming milkweed flower." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweetness of honey made by bees that also transform." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The delicate, papery feel of a butterfly wing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright green caterpillar munching on a leaf: the before picture." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your arms out wide like opening new wings: your body rehearsing flight." }
+        ],
+        intuition: "Sometimes things have to fall apart completely so that something more beautiful can be born. The caterpillar does not improve. It dissolves. And from the dissolving, wings.",
+        links: [
+          { label: "Metamorphosis", url: "https://en.wikipedia.org/wiki/Metamorphosis" },
+          { label: "Holometabolism", url: "https://en.wikipedia.org/wiki/Holometabolism" },
+          { label: "Butterfly Life Cycle", url: "https://en.wikipedia.org/wiki/Butterfly" }
+        ],
+        songs: [
+          { title: "Butterfly", artist: "Mariah Carey", url: "https://www.youtube.com/watch?v=iCBL0mn3VsI" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Fly", artist: "Nicki Minaj ft. Rihanna", url: "https://www.youtube.com/watch?v=3n71KUiWn1I" }
+        ],
+        advanced: "Holometabolism: larval and adult stages do not compete for the same resources. Histolysis of larval tissues and subsequent development of imaginal discs into adult structures. A profound metaphor for systemic transformation — the genetic blueprint survives radical physical change. The identity persists through total destruction of form." },
+
+      { id: "neuroplasticity-cycles", num: 5, icon: "🧠", title: "Neuroplasticity", subtitle: "Your Brain Is a Forest That Grows New Paths Every Day",
+        simple: "Your brain is like a forest with millions of tiny paths. When you stop using a path like an old habit, the forest grows over it, and that path dies. But when you learn something new, you are building a brand new, strong path in its place! This means your brain is always changing and re-birthing itself based on what you do and think. You are never stuck being just one way because your brain is a master of starting over.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The click in your head when you finally understand a hard puzzle." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of a new book you are about to learn from." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a strange new food for the very first time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your fingers learning to play a musical instrument." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A complex optical illusion that suddenly makes sense." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The focused feeling in your forehead when concentrating: your brain physically building new roads." }
+        ],
+        intuition: "You are never stuck being just one way. Your brain is a master of starting over. Every thought you think is either building a path or letting one grow over. You are the gardener of your own forest.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Synaptic Pruning", url: "https://en.wikipedia.org/wiki/Synaptic_pruning" },
+          { label: "Brain Facts", url: "https://en.wikipedia.org/wiki/Neuroscience" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Learning to Fly", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=nVhNCTH8pDs" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Cortical remapping: the brain reorganizes by forming new neural connections throughout life. Synaptic pruning — death of redundant synapses — is essential for nervous system efficiency. Continuous cycle of synaptic creation and elimination allows the psyche to adapt. You are not your brain. You are the process of your brain rewriting itself." },
+
+      { id: "ecological-succession", num: 6, icon: "🌱", title: "Ecological Succession", subtitle: "The Forest's Plan to Come Back Stronger After Disaster",
+        simple: "Sometimes a forest fire happens, and it looks like everything is gone. But underneath the ash, the soil is actually very rich and ready for new life. First, tiny mosses grow, then flowers, then small bushes, and finally the big trees come back. This succession is the forest's way of healing itself after a big change. It reminds us that even after a disaster, nature has a plan to come back even stronger than before.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of fire followed by the absolute quiet of a new clearing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoky, earthy scent of a forest floor after fire." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Wild berries: the first to grow back in a clearing." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough texture of new bark on a young sapling." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Bright purple fireweed flowers blooming in a burnt field." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feet balancing on uneven, recovering ground: your body walking through a resurrection." }
+        ],
+        intuition: "Even after a disaster, nature has a plan. The ash is not the end. The ash is the invitation. The first moss does not ask permission. It just grows. So can you.",
+        links: [
+          { label: "Ecological Succession", url: "https://en.wikipedia.org/wiki/Ecological_succession" },
+          { label: "Pioneer Species", url: "https://en.wikipedia.org/wiki/Pioneer_species" },
+          { label: "Climax Community", url: "https://en.wikipedia.org/wiki/Climax_community" }
+        ],
+        songs: [
+          { title: "I Will Survive", artist: "Gloria Gaynor", url: "https://www.youtube.com/watch?v=ARt9HV9T0w8" },
+          { title: "New Soul", artist: "Yael Naim", url: "https://www.youtube.com/watch?v=hhE7QMXRE1g" },
+          { title: "Phoenix", artist: "Fall Out Boy", url: "https://www.youtube.com/watch?v=5hDZbroaQDc" }
+        ],
+        advanced: "Change in species structure of an ecological community over time: pioneer species to climax community. Ecosystem death is often prerequisite for high-diversity regeneration. Demonstrates that destruction and creation are not opposites but sequential phases of the same process. The forest does not recover. The forest upgrades." },
+
+      { id: "dormancy", num: 7, icon: "❄️", title: "Dormancy", subtitle: "Nature's Pause Button — Being Still Is Getting Ready for a Big Start",
+        simple: "Dormancy is like nature's Pause button. A seed might look like a tiny, dry pebble that is not doing anything, but inside it is waiting for the perfect moment to wake up. Bears do it during winter, and trees do it when they lose their leaves. It is a time to save energy and protect the spark of life until the world is ready for it to grow again. Being still and quiet is not the end; it is just getting ready for a big start.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The muffled silence of a heavy snowfall." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dried pine needles in the winter: the scent of patience." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A nut or seed packed with sleeping energy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The hard, protective shell of an acorn." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A brown garden that looks dead but is actually just resting." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The deep, heavy feeling of your body in a dreamless sleep: your version of dormancy." }
+        ],
+        intuition: "Being still and quiet is not the end. It is just getting ready for a big start. The seed is not doing nothing. The seed is doing the hardest thing in nature: waiting.",
+        links: [
+          { label: "Dormancy", url: "https://en.wikipedia.org/wiki/Dormancy" },
+          { label: "Seed Dormancy", url: "https://en.wikipedia.org/wiki/Seed_dormancy" },
+          { label: "Hibernation", url: "https://en.wikipedia.org/wiki/Hibernation" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Winter", artist: "Vivaldi", url: "https://www.youtube.com/watch?v=TZCfydWF48c" },
+          { title: "Wake Me Up When September Ends", artist: "Green Day", url: "https://www.youtube.com/watch?v=NU9JoFKlaZ0" }
+        ],
+        advanced: "Dormancy minimizes metabolic cost and increases survivability under stress. Growth, development, and physical activity temporarily stopped while genetic potential remains fully intact. The death that is not really death — external expression of life suspended while the blueprint waits. A biological manifestation of strategic patience at the molecular level." },
+
+      { id: "fractal-geometry", num: 8, icon: "❄️", title: "Fractal Geometry", subtitle: "A Leaf Is a Tiny Map of the Whole World's Design",
+        simple: "Nature has a favorite pattern called a fractal. You can see it in the way a big tree branch looks just like a tiny twig, or how a giant galaxy looks like the swirl in your kitchen sink. These patterns repeat over and over, from the smallest thing to the biggest thing. This shows us that the universe uses the same recipe for everything. When you look at a leaf, you are seeing a tiny map of the whole world's design.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song where the same melody repeats at different speeds: a canon." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The repeating scent of a pine forest: same pattern, different scale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bumpy, repeating patterns on a head of Romanesco broccoli." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the repeating ridges on a seashell." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two mirrors facing each other: the infinite look." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your heartbeat following a fractal rhythm: the same pattern at every zoom level." }
+        ],
+        intuition: "The universe uses the same recipe for everything. The branch looks like the tree. The river looks like the vein. The galaxy looks like the atom. You are not in the pattern. You are the pattern.",
+        links: [
+          { label: "Fractal Geometry", url: "https://en.wikipedia.org/wiki/Fractal" },
+          { label: "Self-Similarity", url: "https://en.wikipedia.org/wiki/Self-similarity" },
+          { label: "Mandelbrot Set", url: "https://en.wikipedia.org/wiki/Mandelbrot_set" }
+        ],
+        songs: [
+          { title: "Lateralus", artist: "Tool", url: "https://www.youtube.com/watch?v=Y7JG63IuaWs" },
+          { title: "Everything in its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Fractals are infinitely complex, self-similar patterns created by repeating a simple process in a feedback loop. Signatures of chaotic systems. Geometric recurrence proves that the fundamental structure of reality is based on recursive loops rather than linear endpoints. The same equation produces the coastline, the lung, the lightning bolt, and the galaxy." },
+
+      { id: "entropy-negentropy", num: 9, icon: "⚖️", title: "Entropy vs. Negentropy", subtitle: "Things Fall Apart So There Are Parts to Build New Things With",
+        simple: "Entropy is a big word for things getting messy or falling apart, like your room getting cluttered if you do not clean it. But life has a special power called negentropy that lets it take a mess and build something organized, like a bird building a nest. There is a constant tug-of-war between things breaking down and things building up. Without things breaking down, there would not be any parts to build new things with. This balance keeps the world fresh and moving.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A messy clatter of toys falling over followed by a beautiful song." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A decaying log covered in bright new moss: death feeding life." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sourness of a fermented pickle: controlled breaking down." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An old stone crumbling, turning into sand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sandcastle washed away by a wave to make a smooth beach." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Being tired (entropy) then feeling recharged (negentropy): your body cycling between disorder and order." }
+        ],
+        intuition: "Without things breaking down, there would be no parts to build new things with. The mess is not the enemy. The mess is the raw material. Order borrows from chaos. Chaos is the warehouse.",
+        links: [
+          { label: "Entropy", url: "https://en.wikipedia.org/wiki/Entropy" },
+          { label: "Negentropy", url: "https://en.wikipedia.org/wiki/Negentropy" },
+          { label: "Second Law of Thermodynamics", url: "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics" }
+        ],
+        songs: [
+          { title: "Another One Bites the Dust", artist: "Queen", url: "https://www.youtube.com/watch?v=rY0WxgSXdEE" },
+          { title: "Order from Chaos", artist: "Max Cooper", url: "https://www.youtube.com/watch?v=_7wKjTf_RlI" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Entropy: measure of disorder as dictated by the Second Law of Thermodynamics. Life imports negative entropy (negentropy) from environment to maintain internal order. Death represents the entropic release; cycles represent negentropic reorganization of the same matter. The universe trends toward disorder, but life swims upstream — temporarily, beautifully, defiantly." },
+
+      { id: "feedback-loops", num: 10, icon: "🔄", title: "Feedback Loops", subtitle: "The Thermostat That Keeps the Whole Planet in Balance",
+        simple: "A feedback loop is like the thermostat in your house. If it gets too cold, the heater turns on; if it gets too hot, it turns off. Nature uses these loops to keep everything in balance, like how many foxes and rabbits live in a forest. If there are too many foxes, they eat the rabbits, and then some foxes get hungry and go away, which lets more rabbits grow back. These loops make sure that the seasons and cycles of life stay on track and never go too far in one direction.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of your own voice in a big hallway: sound feeding back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of your own breath: a personal loop." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A salty snack that makes you want a sweet drink: your body's feedback." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tickling yourself — your brain actually blocks this loop." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your reflection in a pond that ripples and then clears." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot: your brain constantly adjusting, never arriving, always correcting." }
+        ],
+        intuition: "Everything is connected to everything else in a loop. The fox needs the rabbit. The rabbit needs the grass. The grass needs the rain. The rain needs the ocean. And the ocean needs time. Pull one thread and the whole web moves.",
+        links: [
+          { label: "Feedback Loops", url: "https://en.wikipedia.org/wiki/Feedback" },
+          { label: "Homeostasis", url: "https://en.wikipedia.org/wiki/Homeostasis" },
+          { label: "Systems Theory", url: "https://en.wikipedia.org/wiki/Systems_theory" }
+        ],
+        songs: [
+          { title: "The Reflex", artist: "Duran Duran", url: "https://www.youtube.com/watch?v=o2CIHnMBGzk" },
+          { title: "Mirror in the Bathroom", artist: "The Beat", url: "https://www.youtube.com/watch?v=1bYaMMFPmvY" },
+          { title: "Karma Police", artist: "Radiohead", url: "https://www.youtube.com/watch?v=1uYWYWPc9HU" }
+        ],
+        advanced: "Negative feedback loops counteract changes to maintain a set point; positive feedback loops accelerate changes. Fundamental mechanisms of homeostasis and ecosystem stability. The Eternal We is maintained through intricate regulatory systems ensuring the cycle of death and rebirth remains within sustainable parameters. Balance is not a state. Balance is a verb." },
+    ],
 
   },
 
