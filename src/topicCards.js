@@ -11256,6 +11256,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Batesian, Müllerian, and Peckhamian mimicry: one species borrows the signal of another for survival advantage. The mimic relies on the predator's ability to accurately recognize a dangerous signal even when it is a lie. Creates an Information Gate balancing truth and deception — mimicry only works while the model species' truth score remains high. Evolution of one species' appearance literally driven by the instinctual knowledge of an entirely different species." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > SKY & WEATHER (sky)
+    // ═══════════════════════════════════════════════════════════════
+
+    sky: [
+      { id: "solar-radiation", num: 1, icon: "☀️", title: "Solar Radiation", subtitle: "The Giant Battery That Powers Everything on Earth",
+        simple: "The sun is like a giant battery that powers everything on Earth. It sends heat and light through space to warm up the ground and the oceans. When the ground gets hot, it warms the air sitting on top of it. This heat makes the air start to move, which is how weather begins. Without the sun's energy, our planet would be a frozen, silent rock. It is the start of every breeze and every raindrop you feel.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of pavement cooling down after a hot summer day." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sun-baked pine needles or dry grass: the smell of stored energy." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A vine-ripened tomato that turned sunbeams into sugar." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Radiating warmth on your skin during a noon walk." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Shimmering heat waves rising off a dark road." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The urge to squint and tilt your head toward the light: your body orienting to its power source." }
+        ],
+        intuition: "You are a solar-powered being. Your energy is a loan from the star above. Every calorie you eat was sunlight first. You are walking, talking starlight.",
+        links: [
+          { label: "NASA: Sun's Role", url: "https://en.wikipedia.org/wiki/Solar_radiation" },
+          { label: "NOAA: Solar Energy", url: "https://en.wikipedia.org/wiki/Solar_energy" },
+          { label: "The Sun", url: "https://en.wikipedia.org/wiki/Sun" }
+        ],
+        songs: [
+          { title: "Here Comes The Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Walking On Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+          { title: "Pocketful of Sunshine", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=gte3BoXKwP0" }
+        ],
+        advanced: "Earth's energy budget is a complex equilibrium between incoming shortwave radiation and outgoing longwave radiation. Radiative forcing dictates the thermal structure of the troposphere. Connects to thermodynamics and photosynthesis — cosmic energy converted into biological and kinetic potential. Every weather system on Earth is ultimately powered by differential solar heating." },
+
+      { id: "water-cycle-weather", num: 2, icon: "💧", title: "The Water Cycle", subtitle: "You Might Be Drinking the Same Water a Dinosaur Once Did",
+        simple: "Water is a world traveler that never leaves the planet. It starts in the ocean, turns into invisible gas to climb into the sky, and then bunches up into clouds. When the clouds get too heavy, the water falls back down as rain or snow to thirsty plants. This cycle has been happening for billions of years, meaning you might be drinking the same water a dinosaur once did! It is the planet's way of recycling and cleaning itself so life can keep growing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic plink-plonk of rain hitting a tin roof." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — the earthy scent of dust meeting the first rain." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crisp, neutral coolness of a glass of pure spring water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Damp, heavy mist on your face in the morning." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A rainbow forming when sunlight hits retreating rain clouds." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heaviness in your limbs when humidity is very high: your body feeling the water cycle." }
+        ],
+        intuition: "Your body is mostly water. You are a flowing part of the Earth's great cycle. The rain is not falling on you. The rain is returning to you.",
+        links: [
+          { label: "USGS: Water Cycle", url: "https://en.wikipedia.org/wiki/Water_cycle" },
+          { label: "NOAA: Water Cycle", url: "https://en.wikipedia.org/wiki/Hydrology" },
+          { label: "UNESCO: Water", url: "https://en.wikipedia.org/wiki/Precipitation" }
+        ],
+        songs: [
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Rain On Me", artist: "Lady Gaga & Ariana Grande", url: "https://www.youtube.com/watch?v=AoAm4om0wTs" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Hydrology involves continuous movement of water through lithosphere, hydrosphere, and atmosphere. Evapotranspiration and condensation represent phase transitions governed by latent heat exchange. Hydrogen bonding dictates water's unique properties. Distribution of water dictates boundaries of biomes — the water cycle is the circulatory system of the planet." },
+
+      { id: "atmospheric-pressure", num: 3, icon: "⚖️", title: "Atmospheric Pressure", subtitle: "A Giant Invisible Ocean of Air We Live at the Bottom Of",
+        simple: "Imagine air as a giant, invisible ocean that we live at the bottom of. Even though we cannot see it, the air is constantly pushing on us from all sides. When the air is heavy and pushes hard, it keeps the sky clear and the weather calm. When the air is light and does not push as much, it lets clouds and storms bubble up into the sky. Weather forecasters watch these changes in push to tell if a storm is coming or if it will be a sunny day.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The pop in your ears when you drive up a high mountain." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, thin scent of high-altitude mountain air." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Slightly metallic taste of air just before a massive thunderstorm." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A weight lifting off your chest as a storm clears." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The deep, dark blue of a high-pressure, clear-sky day." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Subtle joint aches when pressure drops: your body is a barometer." }
+        ],
+        intuition: "You are always held in the embrace of the atmosphere. You are never truly empty. The air is hugging you right now with 14.7 pounds per square inch. That is not nothing. That is everything.",
+        links: [
+          { label: "Atmospheric Pressure", url: "https://en.wikipedia.org/wiki/Atmospheric_pressure" },
+          { label: "Barometer", url: "https://en.wikipedia.org/wiki/Barometer" },
+          { label: "Atmospheric Science", url: "https://en.wikipedia.org/wiki/Atmospheric_science" }
+        ],
+        songs: [
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Pressure", artist: "Billy Joel", url: "https://www.youtube.com/watch?v=Iyv905Q2omU" }
+        ],
+        advanced: "Barometric pressure is force per unit area exerted by the weight of the atmosphere. Horizontal pressure gradients are primary drivers of geostrophic winds. Nature abhors a vacuum and always seeks equilibrium. This connects to fluid dynamics and physics — the same principle governing weather systems governs blood flow and ocean currents." },
+
+      { id: "convection-wind", num: 4, icon: "🌬️", title: "Convection & Wind", subtitle: "The Planet Taking a Giant Breath",
+        simple: "Wind is just the air moving from one place to another because of heat. When the sun warms one spot more than another, that warm air gets light and floats up like a balloon. Cooler air from nearby rushes in to take its place, and that rush is the wind you feel on your face. It is like the planet is taking a giant breath, moving air around to keep things from getting too hot or too cold. Wind carries seeds, birds, and even the weather itself across the world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low, haunting whoosh of wind through a pine forest." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A neighbor's fireplace or a distant ocean carried to you on the breeze." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dry, salty air blown in from a coastal breeze." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hair blowing across your face on a gusty afternoon." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Trees swaying and leaves dancing in a rhythmic pattern." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning your body against a strong, steady gale: your weight against the planet's breath." }
+        ],
+        intuition: "Change is the only constant. The wind reminds you to remain flexible and move. You cannot see it but it moves everything. The strongest force on Earth is invisible.",
+        links: [
+          { label: "Convection", url: "https://en.wikipedia.org/wiki/Convection" },
+          { label: "Wind", url: "https://en.wikipedia.org/wiki/Wind" },
+          { label: "Atmospheric Circulation", url: "https://en.wikipedia.org/wiki/Atmospheric_circulation" }
+        ],
+        songs: [
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=vWwgrjjIMXA" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Wind of Change", artist: "Scorpions", url: "https://www.youtube.com/watch?v=n4RjJKxsamQ" }
+        ],
+        advanced: "Convection is heat transfer in fluids involving mass motion. Creates vertical instability driving global circulation cells (Hadley, Ferrel, Polar). The planet redistributes thermal energy through these convective systems. Connects to aviation and renewable energy — we harness the kinetic energy of the planet's respiration." },
+
+      { id: "greenhouse-effect", num: 5, icon: "🏠", title: "The Greenhouse Effect", subtitle: "Earth Wearing a Cozy Sweater Made of Invisible Gases",
+        simple: "The Greenhouse Effect is like the Earth wearing a cozy sweater made of invisible gases. When the sun warms the Earth, the ground tries to send some of that heat back into space. Gases like carbon dioxide and water vapor catch some of that heat and keep it near the surface. This is actually a good thing because it keeps us warm enough to live! However, if the sweater gets too thick, the planet starts to get a fever, which changes the weather everywhere.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence of a humid, heavy afternoon where no birds sing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The green smell of a warm, damp indoor greenhouse." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Soup that stays hot because of a lid: trapped warmth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Stepping out of air conditioning into a wall of heat." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The hazy, shimmering horizon on a very warm day." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Slight swelling in your fingers during heat: your body expanding with the planet." }
+        ],
+        intuition: "We are all living inside a delicate, shared home that requires balance. The sweater keeps us alive. But we are the ones knitting it thicker. The thermostat is in our hands.",
+        links: [
+          { label: "Greenhouse Effect", url: "https://en.wikipedia.org/wiki/Greenhouse_effect" },
+          { label: "NASA: Climate", url: "https://en.wikipedia.org/wiki/Climate_change" },
+          { label: "IPCC", url: "https://en.wikipedia.org/wiki/Intergovernmental_Panel_on_Climate_Change" }
+        ],
+        songs: [
+          { title: "Feels Like Summer", artist: "Childish Gambino", url: "https://www.youtube.com/watch?v=F1B9Fk_SgI0" },
+          { title: "Earth Song", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=XAi3VTSdTxU" },
+          { title: "Mercy Mercy Me", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=U3m0DLVwCQo" }
+        ],
+        advanced: "The Greenhouse Effect is the process by which atmospheric radiation warms a planet's surface above what it would be without atmosphere. A fundamental aspect of planetary science. Radiative forcing from CO₂, CH₄, and H₂O governs the thermal balance. Connects to biology and political science as the basis for understanding global climate shifts and their consequences." },
+
+      { id: "coriolis-effect", num: 6, icon: "🌀", title: "The Coriolis Effect", subtitle: "Even When You Stand Still, You Are Spiraling Through the Stars",
+        simple: "Because the Earth is spinning very fast, the air does not just move straight — it curves! Imagine trying to draw a straight line on a spinning ball; your line would end up looking like a swirl. This is why big storms like hurricanes always spin in a circle. It is the planet's way of juggling the air as it rotates through space. This effect helps move warm air from the middle of the world up to the cold ends.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic whirr of a spinning fan or top." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh, sharp smell of ozone near a spinning storm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The dizzying sensation of a fast-spinning carousel ride." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Being pulled to one side on a fast curve." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Satellite photos of swirling clouds: white spirals from space." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your inner ear adjusting to a sudden turn or spin: the body's gyroscope." }
+        ],
+        intuition: "Everything is in motion. Even when you stand still, you are spiraling through the stars at 1,000 miles per hour. Stillness is an illusion. You are always spinning.",
+        links: [
+          { label: "Coriolis Effect", url: "https://en.wikipedia.org/wiki/Coriolis_force" },
+          { label: "Ocean Motion", url: "https://en.wikipedia.org/wiki/Ocean_current" },
+          { label: "Physics of Spin", url: "https://en.wikipedia.org/wiki/Rotation" }
+        ],
+        songs: [
+          { title: "You Spin Me Round", artist: "Dead or Alive", url: "https://www.youtube.com/watch?v=PGNiXGX2nLU" },
+          { title: "Hurricane", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=bpZvg_FjL3Q" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "The Coriolis Effect is an inertial force acting on objects moving within a rotating reference frame. Crucial for calculating the Rossby Number in meteorology. Deflects winds rightward in the Northern Hemisphere, leftward in the Southern. Connects to oceanography and ballistics — rotation influences every long-distance path on Earth." },
+
+      { id: "fronts-air-masses", num: 7, icon: "⚔️", title: "Fronts and Air Masses", subtitle: "A Battle Line Where Two Types of Air Meet",
+        simple: "A weather front is a battle line where two different types of air meet. Imagine a bubble of freezing air from the North Pole bumping into a bubble of warm, wet air from the beach. They do not like to mix, so they push against each other. This pushing creates wind, clouds, and often a big splash of rain. When a cold front wins, the sky turns clear and crisp; when a warm front wins, it stays gray and drizzly for a while.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sudden, loud clap of thunder when two air masses collide." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp change from dusty air to wet air in seconds." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The biting cold of a snowflake on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A sudden shiver when cold breeze replaces warm one." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A wall of dark clouds moving toward you like a giant curtain." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The instinct to tuck your chin and shoulders when temperature drops: your body bracing for the front." }
+        ],
+        intuition: "Conflict often brings the rain that allows for new growth. The storm is not punishment. The storm is two truths meeting. And where they meet, everything changes.",
+        links: [
+          { label: "Weather Fronts", url: "https://en.wikipedia.org/wiki/Weather_front" },
+          { label: "Air Masses", url: "https://en.wikipedia.org/wiki/Air_mass" },
+          { label: "Cyclogenesis", url: "https://en.wikipedia.org/wiki/Cyclogenesis" }
+        ],
+        songs: [
+          { title: "Thunder", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=fKopy74weus" },
+          { title: "Stormy Weather", artist: "Etta James", url: "https://www.youtube.com/watch?v=TpGDGnGMn2A" },
+          { title: "The Thunder Rolls", artist: "Garth Brooks", url: "https://www.youtube.com/watch?v=tdsJI8Wc2b4" }
+        ],
+        advanced: "Air masses are large bodies with uniform temperature and moisture characteristics. Frontology studies the boundaries (discontinuities) between these masses, leading to cyclogenesis. Cold fronts produce sharp, intense weather; warm fronts produce prolonged, gentler precipitation. Connects to military strategy — weather fronts have decided outcomes of famous battles throughout history." },
+
+      { id: "cloud-formation", num: 8, icon: "☁️", title: "Cloud Formation", subtitle: "Even a Storm Starts With a Tiny, Invisible Speck",
+        simple: "Clouds are like the thoughts of the sky. They form when invisible water vapor gets cold and turns back into tiny liquid drops. But they need a home to sit on, so they cling to microscopic bits of dust, smoke, or salt floating in the air. When billions of these tiny drops gather together, we see a big, white, fluffy cloud. Depending on how high and cold they are, they can be thin like feathers or tall like mountains.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The muffled silence of a heavy, foggy morning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The clean, watery scent of a thick mist." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool, damp air inhaled deeply: the flavor of clouds." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft, velvet feeling of walking through a low cloud — fog." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Spotting shapes like dragons or castles in the white puffs above." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling hidden or cozy when clouds cover the sun: the sky putting a blanket on you." }
+        ],
+        intuition: "Even something as big as a storm starts with a tiny, invisible speck. Every great thing begins with something too small to see. The dust becomes the cloud. The cloud becomes the rain. The rain becomes the river.",
+        links: [
+          { label: "Cloud Formation", url: "https://en.wikipedia.org/wiki/Cloud" },
+          { label: "Cloud Types", url: "https://en.wikipedia.org/wiki/List_of_cloud_types" },
+          { label: "Condensation Nuclei", url: "https://en.wikipedia.org/wiki/Cloud_condensation_nuclei" }
+        ],
+        songs: [
+          { title: "Clouds", artist: "Zach Sobiech", url: "https://www.youtube.com/watch?v=sDC97j6lfyc" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Get Off My Cloud", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=cSgajCrPNqQ" }
+        ],
+        advanced: "Condensation occurs when air reaches its saturation point (100% relative humidity), facilitated by Cloud Condensation Nuclei (CCN) — the intersection of aerosols and moisture. Cloud microphysics governs precipitation efficiency. Connects to art and psychology — humans have used clouds as a canvas for imagination for millennia. The cloud is where invisible becomes visible." },
+
+      { id: "jet-stream", num: 9, icon: "✈️", title: "The Jet Stream", subtitle: "An Invisible Highway in the Sky Moving 200 MPH",
+        simple: "The Jet Stream is like a super-fast highway for air way up where airplanes fly. It is a narrow ribbon of very strong wind that zooms around the Earth from west to east. Pilots love to catch this wind because it pushes their planes much faster toward their destination. This ribbon of air also acts like a fence, keeping the cold air up north and the warm air down south. When the fence wiggles, it brings sudden cold snaps or heat waves to your town.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The high-pitched whistle of wind around an airplane window." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Thin, sterile scent of recycled cabin air at 30,000 feet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The dry taste of pretzels and juice at cruising altitude." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Vibration of turbulence when the plane hits the stream." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Long, thin contrails left by planes following the stream." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stomach-drop feeling during a sudden altitude change: your body meeting the invisible river." }
+        ],
+        intuition: "There are invisible currents guiding your path. Sometimes you just have to ride them. The jet stream does not ask permission. It just moves. And everything in its path moves with it.",
+        links: [
+          { label: "Jet Stream", url: "https://en.wikipedia.org/wiki/Jet_stream" },
+          { label: "Tropopause", url: "https://en.wikipedia.org/wiki/Tropopause" },
+          { label: "Rossby Waves", url: "https://en.wikipedia.org/wiki/Rossby_wave" }
+        ],
+        songs: [
+          { title: "Fly Like an Eagle", artist: "Steve Miller Band", url: "https://www.youtube.com/watch?v=c1f7eZ8cHpM" },
+          { title: "Leaving on a Jet Plane", artist: "John Denver", url: "https://www.youtube.com/watch?v=ixSMnROaRYA" },
+          { title: "Higher Love", artist: "Steve Winwood", url: "https://www.youtube.com/watch?v=k9olaIio3l8" }
+        ],
+        advanced: "The jet stream results from temperature gradient between poles and equator combined with Coriolis force. Characterized by high velocity (up to 200 mph) near the tropopause. Meanders as Rossby waves that drive mid-latitude weather patterns. Connects to global logistics and economics — jet stream speed affects fuel costs and shipping times worldwide." },
+
+      { id: "humidity-dew-point", num: 10, icon: "🧖", title: "Humidity & Dew Point", subtitle: "Ghost Water Hiding in the Air Around You",
+        simple: "Humidity is the amount of ghost water hiding in the air around you. On a humid day, the air feels thick and sticky, and your sweat does not dry off very well. The Dew Point is the magic temperature where the air says, I cannot hold any more water! When the air cools down to that temperature at night, the ghost water turns into real water drops on the grass — that is the dew you see in the morning. It is the planet's way of sweating and breathing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Loud, buzzing electricity sound of cicadas on a humid night." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Heavy, sweet scent of blooming flowers in damp air." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness on your skin when you sweat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tacky feeling of your skin against a wooden chair." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A glass of ice water crying as dew forms on the outside." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling heavy or slower when the air is thick with moisture: your body swimming through invisible water." }
+        ],
+        intuition: "Contentment is knowing exactly how much you can hold before you overflow. The air knows its limit. Do you know yours? The dew point is the moment of truth. The moment the invisible becomes real.",
+        links: [
+          { label: "Humidity", url: "https://en.wikipedia.org/wiki/Humidity" },
+          { label: "Dew Point", url: "https://en.wikipedia.org/wiki/Dew_point" },
+          { label: "Psychrometrics", url: "https://en.wikipedia.org/wiki/Psychrometrics" }
+        ],
+        songs: [
+          { title: "Hot Blooded", artist: "Foreigner", url: "https://www.youtube.com/watch?v=5c1m2BAg2Sc" },
+          { title: "Cruel Summer", artist: "Bananarama", url: "https://www.youtube.com/watch?v=l9ml3nyww80" },
+          { title: "Heat Wave", artist: "Martha Reeves & The Vandellas", url: "https://www.youtube.com/watch?v=XE2fnYpwrng" }
+        ],
+        advanced: "Psychrometrics is the field of engineering studying thermodynamic properties of gas-vapor mixtures. Vapor pressure deficit (VPD) is key for plant transpiration. Relative humidity versus absolute humidity describes different aspects of moisture content. Connects to architecture and agriculture — influencing how we build homes and irrigate crops to prevent rot and promote growth." },
+    ],
 
   },
 
