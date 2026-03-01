@@ -13619,6 +13619,243 @@ export const TOPIC_CARDS = {
         advanced: "Iconography: study of identification, description, and interpretation of image content. Allows artists to tap into collective archetypes (Jung), using established visual metaphors to communicate complex truths transcending individual experience. The dove meant peace before any country had a flag. The symbols are older than the civilizations that claimed them." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (gallery) > STORYTELLING & NARRATIVE (storytelling)
+    // ═══════════════════════════════════════════════════════════════
+
+    storytelling: [
+      { id: "heros-journey", num: 1, icon: "⭕", title: "The Hero's Journey", subtitle: "Being Brave Does Not Mean You Are Not Scared — It Means You Keep Going Anyway",
+        simple: "Every great story follows a special map where a hero leaves home, faces scary tests, and comes back stronger to help others. It is like when you feel nervous about the first day of school but find a new friend and feel brave by the end. This pattern is hidden in almost every movie and book you love because it shows how we all grow up. By following the hero, we learn that being brave does not mean you are not scared; it means you keep going anyway. When the hero wins, we feel like we can win too. It connects all of us because we are all the heroes of our own little lives.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rising swell of an orchestra when a character finally finds their courage." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The scent of old library books or a campfire where stories are told." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A warm piece of victory bread after a long, hard day: triumph you can chew." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The firm grip of a friend's hand pulling you up when you trip." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single light flickering in a dark room, showing the way out." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That heavy feeling in your chest that turns into lightness when you finish a hard task: the return." }
+        ],
+        intuition: "We are all the heroes of our own little lives. The pattern repeats because it is not a story. It is a blueprint. Leave home. Get lost. Find something. Bring it back. Every human who ever lived has walked this circle. You are walking it right now.",
+        links: [
+          { label: "Monomyth", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Joseph Campbell", url: "https://en.wikipedia.org/wiki/Joseph_Campbell" },
+          { label: "Individuation", url: "https://en.wikipedia.org/wiki/Individuation" }
+        ],
+        songs: [
+          { title: "Heroes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=lXgkuM2NhYI" },
+          { title: "The Climb", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=NG2zyeVRcbs" },
+          { title: "Holding Out for a Hero", artist: "Bonnie Tyler", url: "https://www.youtube.com/watch?v=bWcASV2sos0" }
+        ],
+        advanced: "The monomyth, popularized by Joseph Campbell, suggests a universal structural pattern in narrative transcending cultural boundaries. Functions as a psychological roadmap for individuation: the Call to Adventure represents the ego's first encounter with the unconscious. Storytelling is not entertainment. It is a biological necessity for transmitting survival strategies. The hero's journey is the software update your ancestors installed in your dreams." },
+
+      { id: "narrative-arc", num: 2, icon: "📈", title: "Narrative Arc", subtitle: "Life Has Ups and Downs and Nothing Stays Super Crazy Forever",
+        simple: "Stories are shaped like a big mountain that you have to climb and then slide down. First, you meet the characters, then things get more and more exciting until the climax, which is the very top of the mountain. After the most exciting part happens, things start to calm down until the story reaches a peaceful ending. This shape helps our brains stay interested because we want to see if the characters make it to the top. It teaches us that life has ups and downs, and nothing stays super crazy forever. Understanding this shape helps you tell better jokes and better stories to your friends.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A drumroll that gets faster and faster and then suddenly stops: the peak." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ozone smell in the air right before a big thunderstorm hits: rising action." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The spicy kick of a pepper that slowly fades into a cool aftertaste: climax and resolution." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The tension of a stretched rubber band just before it snaps." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A roller coaster slowly clicking up the highest hill: you know what comes next." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Holding your breath and then finally letting it out: your body is the arc." }
+        ],
+        intuition: "Life has ups and downs, and nothing stays super crazy forever. The mountain shape is not just in stories. It is in your day, your year, your whole life. Cortisol on the way up. Dopamine on the way down. Your body already knows the shape. Stories just remind you that the slide always follows the climb.",
+        links: [
+          { label: "Dramatic Structure", url: "https://en.wikipedia.org/wiki/Dramatic_structure" },
+          { label: "Freytag's Pyramid", url: "https://en.wikipedia.org/wiki/Freytag%27s_pyramid" },
+          { label: "Narratology", url: "https://en.wikipedia.org/wiki/Narratology" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Stairway to Heaven", artist: "Led Zeppelin", url: "https://www.youtube.com/watch?v=QkF3oxziUI4" },
+          { title: "A Day in the Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=usNsCeOV4GM" }
+        ],
+        advanced: "Aristotelian structure dictates beginning, middle, end. Modern narratology refines this into the dramatic arc: a shift in entropy from stasis through high-energy conflict to transformed stasis. Connects to the second law of thermodynamics and information theory: a story orders chaotic events into meaningful sequence. Cortisol during the rise. Dopamine during the resolution. The story is a drug delivery system shaped like a mountain." },
+
+      { id: "conflict-engine", num: 3, icon: "⚡", title: "Conflict", subtitle: "Struggle Is a Normal Part of Life and We Grow Through It",
+        simple: "Without a problem, there is no story! Conflict is when a character wants something but something else gets in the way, like wanting a cookie but the jar is too high. This tug-of-war makes us care about what happens next because we want to see how the problem gets fixed. Problems in stories teach us how to solve problems in real life, like how to be kind when someone is mean. It shows us that struggle is a normal part of life and that we can grow through it. If everything was easy all the time, we would never learn how to be strong or smart.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Two musical notes clashing together before they harmonize: conflict becoming resolution." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp scent of vinegar mixed with baking soda in a volcano: friction you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sourness of a lemon that makes your face scrunch up: discomfort with a purpose." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The friction of rubbing your hands together to create heat: conflict creates energy." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two colors that do not match painted right next to each other: visual tension." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Pushing against a heavy door that is stuck: your whole body engaged in the problem." }
+        ],
+        intuition: "If everything was easy all the time, we would never learn how to be strong or smart. The story needs the villain. The muscle needs the weight. The diamond needs the pressure. Conflict is not the enemy of the story. Conflict is the author of the character. Without the jar being too high, the kid never learns to climb.",
+        links: [
+          { label: "Conflict (Narrative)", url: "https://en.wikipedia.org/wiki/Conflict_(narrative)" },
+          { label: "Dialectics", url: "https://en.wikipedia.org/wiki/Dialectic" },
+          { label: "Social Contract", url: "https://en.wikipedia.org/wiki/Social_contract" }
+        ],
+        songs: [
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Beat It", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=oRdxUFDoQe0" },
+          { title: "Survivor", artist: "Destiny's Child", url: "https://www.youtube.com/watch?v=Wmc8bQoL-J0" }
+        ],
+        advanced: "Conflict is the dialectical process where opposing forces — protagonist and antagonist, internal desire and moral constraint — interact to produce synthesis. Categorized as Man vs. Self, Nature, Society, and Man. Acts as a flight simulator for the brain: experiencing consequences of choices without real-world risk, refining collective ethics. The story is a safe crash. The reader walks away smarter." },
+
+      { id: "character-archetypes", num: 4, icon: "🎭", title: "Character Archetypes", subtitle: "We All Have a Little Bit of the Hero, the Explorer, and the Friend Inside Us",
+        simple: "Have you noticed that in many stories there is always a wise teacher, a funny sidekick, or a grumpy villain? These are called archetypes, and they are like a set of costumes that different characters wear. We recognize them instantly because they represent different parts of every human being — the part of us that wants to learn, the part that wants to laugh, and even the part that gets scared. Seeing these characters helps us understand people in the real world better. We all have a little bit of the hero, the explorer, and the friend inside of us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep, slow bass for a giant or a high, tinkly bell for a fairy: sound as costume." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender for a healer or smoke for a warrior: archetypes have scents." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure honey for the innocent or bitter coffee for the sage." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The softness of a velvet cloak or the roughness of a wooden staff." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Bright primary colors for a hero and dark shadows for a mystery." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and puffed out like a ruler or crouching small like a seeker: your body knows the role." }
+        ],
+        intuition: "We all have a little bit of every archetype inside us. The villain is not out there. The villain is the version of you that gives up. The mentor is not a wizard. The mentor is the voice inside that says try again. Every character in the story is a mirror. You recognize them because they live in you.",
+        links: [
+          { label: "Jungian Archetypes", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Character (Arts)", url: "https://en.wikipedia.org/wiki/Character_(arts)" }
+        ],
+        songs: [
+          { title: "Bad Guy", artist: "Billie Eilish", url: "https://www.youtube.com/watch?v=DyDfgMOUjCI" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "The Joker", artist: "Steve Miller Band", url: "https://www.youtube.com/watch?v=F4afOMEJvLM" }
+        ],
+        advanced: "Archetypes are highly developed elements of the collective unconscious (Jung): inherited potentials actualized as images or behaviors. In narrative, they serve as shorthand for complex human traits, enabling immediate resonance and deep recognition. They bridge the personal and transpersonal, connecting specific character experiences to timeless recurring patterns across all civilizations. You do not learn the archetypes. You remember them." },
+
+      { id: "theme-soul", num: 5, icon: "🕯️", title: "Theme", subtitle: "The Truth That Stays With You Long After the Book Is Closed",
+        simple: "A story is like a gift box, and the theme is the secret prize hidden inside. While the story might be about a talking dog, the theme might be about friendship or being honest. It is the big why behind the whole story — the lesson the author wants you to carry in your heart. You cannot always see the theme with your eyes, but you can feel it with your mind. It is the truth that stays with you long after the book is closed. When we share themes, we realize that we all care about the same big things, like love, family, and being brave.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single melody that keeps coming back in different parts of a song: the theme returning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Home-cooked food that reminds you of being loved: the theme of belonging." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The saltiness of a tear that teaches you about sadness and growth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of a blanket that represents safety and comfort." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Sunlight hitting a spiderweb: everything is connected, and the theme is the thread." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The gut feeling when you know a story is telling you something very important." }
+        ],
+        intuition: "The truth that stays with you long after the book is closed. The plot is what happened. The theme is why it mattered. A thousand stories about a thousand different things can all carry the same theme: you are not alone. That theme has been hiding in every book ever written. It will hide in every book that ever will be.",
+        links: [
+          { label: "Theme (Literature)", url: "https://en.wikipedia.org/wiki/Theme_(narrative)" },
+          { label: "Universal Theme", url: "https://en.wikipedia.org/wiki/Universal_(metaphysics)" },
+          { label: "Empathy", url: "https://en.wikipedia.org/wiki/Empathy" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "All You Need Is Love", artist: "The Beatles", url: "https://www.youtube.com/watch?v=_7xMfIp-irg" }
+        ],
+        advanced: "Theme is the central controlling idea of a work: the abstract concept made concrete through person, action, and image. Unlike a moral (prescriptive 'should'), a theme is an observation of 'is.' Represents the universal within the particular: specific circumstances speaking to the general human condition. The theme is not the lesson. The theme is the question the author could not stop asking." },
+
+      { id: "point-of-view", num: 6, icon: "👁️", title: "Point of View", subtitle: "Looking at Things From a Different Spot Can Change What We Think Is True",
+        simple: "Imagine looking at a playground through a telescope, then through a keyhole, and then through a bird's eyes. Point of view is who is telling the story and what they can see. If a story is told by the I, you feel like you are inside their head. If it is told by a narrator, it is like a wise voice speaking from the clouds. Changing who tells the story changes everything we know about the world! It teaches us that everyone has their own side of the story and that looking at things from a different spot can change what we think is true.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Listening to a conversation through a wall versus being in the room: perspective changes everything." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The popcorn only you can smell because you are holding the bag: your private reality." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sweetness of candy you are describing to someone who cannot have any: your words become their taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the texture of a rock while your friend only sees the color: different data, different truth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking through tinted glasses that turn everything blue or red: the lens is the story." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling dizzy when a character in a book is spinning: your body adopted their point of view." }
+        ],
+        intuition: "Looking at things from a different spot can change what we think is true. The wolf has a different version of Little Red Riding Hood. The iceberg has a different version of the Titanic. There is no story without a teller. And the teller always leaves fingerprints on the truth.",
+        links: [
+          { label: "Narrative Mode", url: "https://en.wikipedia.org/wiki/Narrative_mode" },
+          { label: "Theory of Mind", url: "https://en.wikipedia.org/wiki/Theory_of_mind" },
+          { label: "Dramatic Irony", url: "https://en.wikipedia.org/wiki/Dramatic_irony" }
+        ],
+        songs: [
+          { title: "Somebody That I Used to Know", artist: "Gotye", url: "https://www.youtube.com/watch?v=8UVNT4wvIGY" },
+          { title: "Stan", artist: "Eminem", url: "https://www.youtube.com/watch?v=gOMhN-hfMtY" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" }
+        ],
+        advanced: "POV encompasses first-person, second-person, third-person limited, and omniscient perspectives. Primary tool for establishing narrative reliability and psychological distance. Highlights the situatedness of knowledge: constraining information creates dramatic irony and unreliable narration. Forces theory of mind — the ability to attribute mental states to others — a cornerstone of social intelligence. The narrator is never neutral. The narrator is always the first character." },
+
+      { id: "symbolism-language-soul", num: 7, icon: "🗝️", title: "Symbolism", subtitle: "There Is More to Things Than What We See on the Outside",
+        simple: "Symbolism is when a simple object stands for a big, giant idea. Like how a red rose stands for love or a white dove stands for peace. It is like a secret language where pictures tell us how characters feel without using words. If a character is carrying a heavy backpack, it might mean they are carrying a lot of worries in their heart. When you learn to spot symbols, the whole world starts to feel like a beautiful puzzle. It shows us that there is more to things than what we see on the outside, and that even small things can be very important.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bell tolling: time is up, something is changing. Sound as symbol." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Pine trees representing freedom and the great outdoors: scent as metaphor." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A bitter herb representing regret or memory: flavor as meaning." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A cold wind that makes you shiver, standing for loneliness." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A broken mirror representing a character confused about who they are." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of rising up when you see a bird fly: your body reading the symbol of hope." }
+        ],
+        intuition: "There is more to things than what we see on the outside. The rose is not a rose. The dove is not a dove. The backpack is not a backpack. Everything in a story is doing double duty. And once you learn to read symbols in stories, you start reading them in life. The world is a story that never stops telling itself.",
+        links: [
+          { label: "Symbolism", url: "https://en.wikipedia.org/wiki/Symbolism_(arts)" },
+          { label: "Semiotics", url: "https://en.wikipedia.org/wiki/Semiotics" },
+          { label: "Metaphor", url: "https://en.wikipedia.org/wiki/Metaphor" }
+        ],
+        songs: [
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" }
+        ],
+        advanced: "Symbolism uses concrete motifs to represent abstract concepts, creating multi-layered semiotic environments. Operates on the principle of correspondence: physical objects mirroring metaphysical truths. Symbols function as compacted information, evoking deep cultural associations without exposition. The brain uses metaphors to understand reality: the world not as matter but as a web of interconnected meanings. The symbol is a zip file. The reader is the extractor." },
+
+      { id: "setting-world-character", num: 8, icon: "🗺️", title: "Setting", subtitle: "Our Surroundings Change How We Feel and How We Act",
+        simple: "Setting is where and when the story happens, but it is more than just a place. Sometimes the setting acts like a friend or an enemy to the hero! A dark, spooky forest makes us feel scared for the character, while a sunny beach makes us feel happy and safe. The setting tells the story by showing us what kind of world the characters live in. It reminds us that our surroundings change how we feel and how we act. Even the weather can be part of the story, like a rainy day showing that a character is sad.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The constant whoosh of the ocean or the honk-honk of a busy city: the world has a soundtrack." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salty sea air or wet pavement after rain: the setting enters through your nose first." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Grit of sand in your mouth or coldness of a snowflake on your tongue: the world has a flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sticky humidity of a jungle or dry heat of a desert: the setting touches you back." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The way stars look when there are no city lights: the setting reveals what the city hides." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling small in a giant echoing cathedral: the space reshapes your body." }
+        ],
+        intuition: "Our surroundings change how we feel and how we act. The dark forest is not just where the story happens. The dark forest is what the story is about. The setting is the first word the author speaks and the last one the reader remembers. Choose your rooms carefully. They are writing your story whether you notice or not.",
+        links: [
+          { label: "Setting (Narrative)", url: "https://en.wikipedia.org/wiki/Setting_(narrative)" },
+          { label: "Chronotope", url: "https://en.wikipedia.org/wiki/Chronotope" },
+          { label: "Environmental Psychology", url: "https://en.wikipedia.org/wiki/Environmental_psychology" }
+        ],
+        songs: [
+          { title: "Hotel California", artist: "The Eagles", url: "https://www.youtube.com/watch?v=EqPtz5qN7HM" },
+          { title: "Empire State of Mind", artist: "Jay-Z ft. Alicia Keys", url: "https://www.youtube.com/watch?v=0UjsXo9l6I8" },
+          { title: "Africa", artist: "Toto", url: "https://www.youtube.com/watch?v=FTQbiNvZqaY" }
+        ],
+        advanced: "Chronotope (Bakhtin) describes how time-space configurations are represented in discourse. Setting is not static backdrop but dynamic environment constraining or enabling character agency. Mirrors environmental psychology: physical surroundings influence cognition and behavior. A well-crafted setting functions as atmosphere, dictating the emotional key. Identity is never isolated. It is always in-relation to the world it inhabits." },
+
+      { id: "pacing-heartbeat", num: 9, icon: "⏳", title: "Pacing", subtitle: "A Good Story Feels Like Breathing — Sometimes Fast, Sometimes Slow",
+        simple: "Pacing is the speed of the story. Sometimes a story moves super fast, like a chase scene where your heart beats quickly! Other times, it moves slowly, like a quiet afternoon where characters are just talking. The author uses pacing to make you feel different things. If a story is always fast, you get tired; if it is always slow, you get bored. A good story feels like breathing — sometimes fast breaths, sometimes slow ones. This teaches us that there is a right time for action and a right time for thinking.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clock ticking slowly versus the rapid thump-thump of a drum: pacing you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The slow scent of flowers blooming versus the quick smell of a match being struck." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Savoring chocolate slowly versus gulping down water: pacing on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A slow, soft pet of a cat versus a quick high-five: rhythm in your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A slow sunset versus a sudden flash of lightning: time made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Running as fast as you can versus floating in a pool: your body knows both tempos." }
+        ],
+        intuition: "A good story feels like breathing. The author is not controlling the plot. The author is controlling your heartbeat. Fast words make your pulse rise. Short sentences. Tension. Then the long, slow paragraph arrives like a warm bath, and your shoulders drop, and you exhale. That is not writing. That is cardiac engineering.",
+        links: [
+          { label: "Pacing (Narrative)", url: "https://en.wikipedia.org/wiki/Pace_(narrative)" },
+          { label: "Flow (Psychology)", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Narrative Time", url: "https://en.wikipedia.org/wiki/Narrative#Time" }
+        ],
+        songs: [
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" },
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Don't Stop Me Now", artist: "Queen", url: "https://www.youtube.com/watch?v=HgzGwKwLmgM" }
+        ],
+        advanced: "Pacing manipulates narrative time versus story time through ellipsis (skipping), scene (real-time), and summary (compression). Relates to neuroscience of flow states and attention spans. By varying information density and revelation rate, narrative creates cognitive rhythm inducing suspense, contemplation, or excitement: effectively tuning the reader's internal clock to the story's frequency. The page is a metronome. The reader is the instrument." },
+
+      { id: "unreliable-narrator", num: 10, icon: "🎭", title: "The Unreliable Narrator", subtitle: "Not Believing Everything We Hear Right Away Is Called Critical Thinking",
+        simple: "Sometimes, the person telling the story is lying or just does not know the whole truth! This is called an unreliable narrator. It is like when a little brother tells you he did not eat the cookie even though there are crumbs on his face. It makes us realize that we have to be smart and look for clues to find the real truth. This teaches us critical thinking, which means not believing everything we hear right away. It shows us that everyone sees the world through their own smudged glasses, and sometimes we need to clean them to see what is really happening.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A voice that sounds shaky or like it is hiding something: unreliable audio." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Perfume hiding the smell of something burnt: a cover story you can sniff." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sweet drink with a tiny bit of sour at the very end: the truth leaking through." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Something you think is a snake but is actually a garden hose: your assumptions deceived you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An optical illusion that looks like two different things: the story has two faces." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That spinny feeling when you realize you were wrong about something you were sure of." }
+        ],
+        intuition: "Everyone sees the world through their own smudged glasses. The narrator lied. But so do you. Every memory you have is an unreliable narration. Your brain edits, crops, and filters everything before you experience it. The unreliable narrator is not a literary trick. It is the human condition. Clean your glasses. Then clean them again.",
+        links: [
+          { label: "Unreliable Narrator", url: "https://en.wikipedia.org/wiki/Unreliable_narrator" },
+          { label: "Critical Thinking", url: "https://en.wikipedia.org/wiki/Critical_thinking" },
+          { label: "Cognitive Bias", url: "https://en.wikipedia.org/wiki/Cognitive_bias" }
+        ],
+        songs: [
+          { title: "You're So Vain", artist: "Carly Simon", url: "https://www.youtube.com/watch?v=j13oMeaU3SA" },
+          { title: "Mr. Brightside", artist: "The Killers", url: "https://www.youtube.com/watch?v=gGdGFtwCNBE" },
+          { title: "Smooth Criminal", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=h_D3VFfhvs4" }
+        ],
+        advanced: "An unreliable narrator's credibility is compromised by instability, bias, or deliberate deception, creating a gap between narrator discourse and implied author's reality. Explores subjectivity of truth: the reader becomes literary detective, analyzing for inconsistencies. A profound metaphor for limitations of human perception and memory. Objectivity is an ideal approached only through synthesis of multiple conflicting subjective reports. The crumbs on the face are always there. You just have to look." },
+    ],
+
+
 
   },
 
