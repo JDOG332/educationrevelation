@@ -18844,6 +18844,243 @@ export const TOPIC_CARDS = {
         advanced: "Strong Linguistic Determinism debunked in favor of Linguistic Relativity. Language creates cognitive ruts — pathways of least resistance — but does not prevent thought. The hand was here before the hammer. You are bigger than your vocabulary. You have always been bigger than your vocabulary." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > THE OBSERVER & AWARENESS (observerawareness)
+    // ═══════════════════════════════════════════════════════════════
+
+    observerawareness: [
+      { id: "the-witness", num: 1, icon: "👁️", title: "The Witness (Pure Consciousness)", subtitle: "You Are Not the Movie — You Are the One Watching the Movie",
+        simple: "Imagine you are sitting in a movie theater. Your thoughts and feelings are the movie playing on the big screen, but you are the person sitting in the chair watching it. Even if the movie is scary or sad, the person in the chair is actually safe and quiet. You are not the movie; you are the one watching the movie. This helps you feel calm because you know that thoughts come and go like pictures on a screen. When you realize this, you can choose which movies to pay attention to.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady hum of a fan that never changes: the background tone of the awareness that was there before the thoughts arrived." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry pavement: the scent of something that exists whether or not anyone names it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single drop of cool plain water: the taste of nothing — which is the taste of everything before flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your feet pressing firmly against the solid ground: the body reminding the witness that it has a seat." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single unmoving dot on a blank wall: the simplest proof that seeing and thinking are not the same thing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body in your chair right now: gravity holding the witness in place while the movie plays." }
+        ],
+        intuition: "You are not the movie — you are the one watching the movie. You have had a thousand thoughts today. Worried ones. Happy ones. Angry ones. Strange ones. But you noticed all of them. Which means you are not any of them. You are the thing that noticed. The screen does not care what movie plays on it. The screen is not damaged by horror films. The screen is not improved by comedies. The screen just holds whatever appears and lets it go when it ends. You are the screen. The thoughts are the movie. And the screen was there before the movie started. And the screen will be there after the credits roll. You have never been your thoughts. You have always been the space in which your thoughts appear.",
+        links: [
+          { label: "Witness Consciousness", url: "https://en.wikipedia.org/wiki/Sakshi_(witness)" },
+          { label: "Hard Problem of Consciousness", url: "https://en.wikipedia.org/wiki/Hard_problem_of_consciousness" },
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Inner City Blues", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=57Ykv1D0qEE" }
+        ],
+        advanced: "The Hard Problem of Consciousness: while the brain processes data, there is a fundamental qualia — subjective experience — that cannot be explained by biological material alone. You have never been your thoughts. You have always been the space in which your thoughts appear." },
+
+      { id: "the-ego", num: 2, icon: "👤", title: "The Ego (The Thinker)", subtitle: "You Are the Person Listening to the Radio Not the Radio Itself",
+        simple: "The Thinker is the part of your brain that uses words to tell stories about who you are. It likes to talk about what you did yesterday or what you are worried about for tomorrow. Sometimes it tells you that you are the best, and sometimes it says you are not good enough. It is like a busy radio station that never stops playing music and talking. But remember, you are the person listening to the radio, not the radio itself. You can turn the volume down whenever you want.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A busy playground with many voices shouting at once: the sound of the ego's open tabs." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A freshly peeled onion — sharp and biting: the scent of something that makes you react before you think." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon that makes your whole face scrunch: the ego's favorite trick — making you believe the reaction IS you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A scratchy wool sweater that makes you restless: discomfort the ego narrates into a crisis." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A mirror where you see your own reflection: the ego's favorite screen — the one that shows its own face." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Clenching your jaw and feeling the tension: the ego storing its stories in your muscles." }
+        ],
+        intuition: "You are the person listening to the radio not the radio itself. The ego is the narrator. It talks all day. It says you are great. Then it says you are terrible. Then it says you should have said something different at dinner three years ago. It never stops. But here is the secret: the narrator is not you. You are the one who hears the narrator. And anything you can hear is not you — it is a sound you are receiving. The ego is a useful employee. It keeps your calendar. It remembers your name. It organizes your story. But it is a terrible boss. When the employee runs the company, the company panics. When you remember you are the owner — the listener — the volume goes down. And in the quiet, you find the person who was there before the radio turned on.",
+        links: [
+          { label: "Ego", url: "https://en.wikipedia.org/wiki/Ego_(Freudian)" },
+          { label: "Default Mode Network", url: "https://en.wikipedia.org/wiki/Default_mode_network" },
+          { label: "Narrative Self", url: "https://en.wikipedia.org/wiki/Narrative_identity" }
+        ],
+        songs: [
+          { title: "Mirror", artist: "Lil Wayne ft. Bruno Mars", url: "https://www.youtube.com/watch?v=OA4Oqm6yHag" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" }
+        ],
+        advanced: "The Ego as Default Mode Network construct: a narrative of self-continuity that, when over-identified with, produces psychological suffering. The ego is a useful employee but a terrible boss. You are the owner — the listener." },
+
+      { id: "nonduality-observer", num: 3, icon: "♾️", title: "Non-Duality (The Oneness)", subtitle: "There Is No Real Line Where You End and the Rest of the World Begins",
+        simple: "Imagine a giant ocean with millions of waves on the surface. Each wave thinks it is special and separate from the other waves. But if you look deeper, every single wave is just the ocean moving around. You are like a wave, but you are also the whole ocean at the same time. There is no real line where you end and the rest of the world begins. Everything is connected in one big beautiful dance.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A large choir singing the same note together: separate voices becoming one sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A forest where dirt trees and moss all smell like one thing: the nose losing the border between objects." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A smoothie where all the fruits blend into one new flavor: separation dissolving on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dipping your hand into warm water until you cannot feel the temperature difference: the boundary between skin and world disappearing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Earth from space where there are no borders: the eyes seeing what the mind always knew." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your breath move in and out connecting your inside to the outside air: the body proving the border is a suggestion not a wall." }
+        ],
+        intuition: "There is no real line where you end and the rest of the world begins. Your skin is not a wall. Your skin is a membrane. It lets air in. It lets water out. It absorbs light. It releases heat. You are not contained. You are exchanging. Right now. Atoms that were in someone else's lunch last week are in your bloodstream today. Atoms in your breath right now will be in a tree tomorrow. The border between you and not-you is a story the ego tells to feel special. But the atoms do not know the story. The atoms move freely. The oxygen does not stop at the property line. You are not a thing in the world. You are a pattern the world is making. And the pattern has no edges.",
+        links: [
+          { label: "Non-Duality", url: "https://en.wikipedia.org/wiki/Nondualism" },
+          { label: "Advaita Vedanta", url: "https://en.wikipedia.org/wiki/Advaita_Vedanta" },
+          { label: "Quantum Entanglement", url: "https://en.wikipedia.org/wiki/Quantum_entanglement" }
+        ],
+        songs: [
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" }
+        ],
+        advanced: "Non-duality (Advaita): the subject-object split is an illusion. In physics this mirrors the unified field. You are not a thing in the world. You are a pattern the world is making. And the pattern has no edges." },
+
+      { id: "mindfulness-practice", num: 4, icon: "🧘", title: "Mindfulness (The Practice)", subtitle: "By Naming the Feeling You Put a Little Bit of Space Between You and the Emotion",
+        simple: "Mindfulness is like being a scientist who is studying their own brain. When you feel a big feeling like anger or sadness, you do not have to be angry. Instead, you say hmm I notice that I am feeling angry right now. By naming the feeling, you put a little bit of space between you and the emotion. This gives you the power to stay calm and make good choices. It is like watching a storm from inside a sturdy house.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A Tibetan singing bowl ringing and fading slowly: the sound of attention being placed and held." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dried lavender flowers: the scent of the nervous system receiving permission to stand down." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "One single raisin eaten very slowly noticing every bump: the tongue becoming a microscope." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Petting a dog or cat and feeling their heartbeat: the hand practicing presence through another being." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A candle flame flickering back and forth: the eyes tracking the present moment in real time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A body scan noticing your toes then knees then stomach: attention walking through the house of the body room by room." }
+        ],
+        intuition: "By naming the feeling you put a little bit of space between you and the emotion. There is a difference between being angry and noticing that you are angry. The first one is a fire. The second one is a firefighter. Same room. Very different roles. When you say I notice I am angry, the language creates a gap. A tiny gap. But in that gap lives your entire freedom. Because in that gap you can choose. Without the gap there is no choice. There is only reaction. Mindfulness is not about being calm. Mindfulness is about being aware. And awareness — even awareness of chaos — is always calm. The storm is not the house. And you are the house.",
+        links: [
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" },
+          { label: "MBSR", url: "https://en.wikipedia.org/wiki/Mindfulness-based_stress_reduction" },
+          { label: "Meta-Awareness", url: "https://en.wikipedia.org/wiki/Self-awareness" }
+        ],
+        songs: [
+          { title: "Weightless", artist: "Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejslrU" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" }
+        ],
+        advanced: "Mindfulness increases the signal-to-noise ratio in conscious processing. The gap between stimulus and response is where freedom lives. The storm is not the house. And you are the house." },
+
+      { id: "metacognition", num: 5, icon: "🧠", title: "Metacognition (Thinking About Thinking)", subtitle: "You Are Not Just Doing the Work — You Are Checking How You Are Doing the Work",
+        simple: "Metacognition is like having a super-brain that watches your regular brain work. It is when you realize I am having a hard time learning this because I am distracted. You are not just doing the work; you are checking to see how you are doing the work. It is like a coach standing on the sidelines of a game. The coach is not running on the field, but they see everything clearly.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clock ticking reminding you time is passing: the sound of the meta-mind keeping track of the mind." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh peppermint — sharp and waking: the scent of a brain that just noticed itself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate that changes flavor as it melts: the tongue noticing that the experience is changing while it is happening." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tapping your fingers in a rhythm to stay focused: the body managing the brain from the outside." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A maze drawn on paper solved with your eyes: the mind watching the mind navigate." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot and feeling your muscles adjust: the body's meta-awareness correcting in real time." }
+        ],
+        intuition: "You are not just doing the work — you are checking how you are doing the work. A fish does not know it is in water. But you know you are in thought. That knowing is metacognition. And it is the single most powerful tool your species has. Every other animal reacts. You react AND you watch yourself react AND you adjust the reaction while it is still happening. Three layers deep. In real time. This is why you can override instinct. This is why you can forgive when your body says fight. This is why you can love when your ego says protect. Because you have a coach. And the coach can see what the player cannot. The player is in the game. The coach is above the game. You are both.",
+        links: [
+          { label: "Metacognition", url: "https://en.wikipedia.org/wiki/Metacognition" },
+          { label: "Prefrontal Cortex", url: "https://en.wikipedia.org/wiki/Prefrontal_cortex" },
+          { label: "Executive Function", url: "https://en.wikipedia.org/wiki/Executive_functions" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Thinking Out Loud", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=lp-EO5I60KA" },
+          { title: "Where Is My Mind?", artist: "Pixies", url: "https://www.youtube.com/watch?v=49FB9hhoO6c" }
+        ],
+        advanced: "Metacognition: the prefrontal cortex monitoring outputs of other brain regions for error detection and strategy adjustment. A fish does not know it is in water. But you know you are in thought. The player is in the game. The coach is above the game. You are both." },
+
+      { id: "neuroplasticity-observer", num: 6, icon: "⚡", title: "Neuroplasticity (The Rewire)", subtitle: "You Are Not Stuck with the Brain You Have — You Can Grow a Happier One",
+        simple: "Your brain is like a piece of soft clay that can be reshaped. Every time you practice being the Observer, you are carving a new path in that clay. If you practice being calm, your brain actually gets better at being calm. You are the artist, and your thoughts are the tools you use to shape your mind. You are not stuck with the brain you have; you can grow a happier one!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A pencil scratching on paper as you learn: the sound of a synapse strengthening." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass: the scent of new growth happening whether or not you can see it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A new food you have never tried before: the tongue building a new pathway." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Learning an instrument and feeling the strings: the fingers teaching the brain what the brain could not teach the fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A time-lapse of a plant growing: the eyes watching what patience looks like at high speed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Learning a dance move — clumsy then smooth: the body recording the exact moment the wire connected." }
+        ],
+        intuition: "You are not stuck with the brain you have — you can grow a happier one. Every time you choose awareness over reaction, you are physically rewiring your brain. Not metaphorically. Physically. The prefrontal cortex gets thicker. The amygdala gets quieter. The neural pathway between panic and response gets a speed bump installed. You are not managing your brain. You are building your brain. Every meditation is a rep. Every moment of presence is a rep. Every time you notice a thought and do not chase it — that is a rep. And after enough reps, the muscle is there. You did not inherit your mind. You are constructing it. One choice at a time. And the blueprint is awareness.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Self-Directed Neuroplasticity", url: "https://en.wikipedia.org/wiki/Activity-dependent_plasticity" },
+          { label: "Long-term Potentiation", url: "https://en.wikipedia.org/wiki/Long-term_potentiation" }
+        ],
+        songs: [
+          { title: "Change", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=wJkSOqh56cM" },
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "Stronger", artist: "Kanye West", url: "https://www.youtube.com/watch?v=PsO6ZnUZI0g" }
+        ],
+        advanced: "Self-directed neuroplasticity: conscious redirection of attention strengthens prefrontal synaptic connections while weakening amygdala reactivity. You did not inherit your mind. You are constructing it. One choice at a time. The blueprint is awareness." },
+
+      { id: "subjectivity-sky", num: 7, icon: "☁️", title: "Subjectivity (The Sky and the Clouds)", subtitle: "No Matter How Many Clouds There Are They Cannot Hurt the Sky",
+        simple: "Think of your mind like the big blue sky. The sky is always there, and it is always huge and quiet. Your thoughts and feelings are like clouds that float by. Some clouds are white and fluffy, and some are dark and rainy. But no matter how many clouds there are, they cannot hurt the sky. You are the sky, not the clouds. The clouds just pass through you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Wind blowing through tall tree leaves: the sound of something passing through something that stays." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean fresh laundry hanging outside: the scent of the sky touching something and making it new." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A plain rice cake — light and barely there: the taste of the space between flavors." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle breeze against your skin: the sky reaching down to remind you it is still there." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking up at the actual sky for three minutes: the eyes seeing the metaphor become literal." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Floating in a pool and feeling weightless: the body releasing its claim on solidity." }
+        ],
+        intuition: "No matter how many clouds there are they cannot hurt the sky. You have survived every bad day you have ever had. Every panic. Every heartbreak. Every failure. Every humiliation. And here you are. Still here. Still reading this. The clouds came. Dark ones. The clouds left. And the sky — you — remained. This is not resilience. This is identity. You are not the thing that survived the storm. You are the thing the storm passed through. Storms do not damage the sky. They happen inside it. And when they are done, the sky is the same size it was before. Untouched. Unchanged. Still blue. Still infinite. Still you.",
+        links: [
+          { label: "Subjective Experience", url: "https://en.wikipedia.org/wiki/Subjectivity" },
+          { label: "Acceptance and Commitment Therapy", url: "https://en.wikipedia.org/wiki/Acceptance_and_commitment_therapy" },
+          { label: "Context of Consciousness", url: "https://en.wikipedia.org/wiki/Consciousness" }
+        ],
+        songs: [
+          { title: "Clouds", artist: "Zach Sobiech", url: "https://www.youtube.com/watch?v=sDC97j6lfyc" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Blue Sky", artist: "The Allman Brothers Band", url: "https://www.youtube.com/watch?v=DH8j2wOn4Dg" }
+        ],
+        advanced: "The distinction between Content of Consciousness and Context of Consciousness. Moving identity from content to context provides indestructible peace. You are not the thing that survived the storm. You are the thing the storm passed through." },
+
+      { id: "flow-state", num: 8, icon: "🌊", title: "The Flow State (The Zone)", subtitle: "One of the Happiest Feelings a Human Can Have",
+        simple: "Have you ever been so busy drawing or playing a game that you forgot what time it was? That is called Flow. It is when the Thinker stops talking because you are so focused on what you are doing. The Observer and the Thinker become one team. It feels like you are dancing through your work without even trying. It is one of the happiest feelings a human can have.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Fast rhythmic drumming that makes you want to move: the sound of the self disappearing into the action." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "New art supplies: the scent of possibility before the ego shows up to judge." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An orange slice that gives you a burst of energy: fuel that bypasses thought and goes straight to motion." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A basketball or controller in your hands: the tool becoming part of the hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Colors swirling in a kaleidoscope: vision without analysis." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Running until you feel like you are flying: the body erasing the narrator with motion." }
+        ],
+        intuition: "One of the happiest feelings a human can have. In flow, the narrator shuts up. The committee leaves the room. The editor puts down the red pen. And for a few minutes — sometimes hours — you are not thinking about doing the thing. You are just doing the thing. The guitar plays itself. The sentence writes itself. The ball finds the hoop without permission from the conscious mind. This is what monks spend decades meditating to achieve. And you stumbled into it playing a video game. Flow is proof that your best self lives on the other side of your thoughts. Not before them. Not through them. On the other side of them. Silence the thinker. Become the doing. And the doing will show you who you actually are.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Csikszentmihalyi", url: "https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi" },
+          { label: "Transient Hypofrontality", url: "https://en.wikipedia.org/wiki/Transient_hypofrontality" }
+        ],
+        songs: [
+          { title: "Levels", artist: "Avicii", url: "https://www.youtube.com/watch?v=_ovdm2yX4MA" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" }
+        ],
+        advanced: "Flow: transient hypofrontality — temporary deactivation of the self-reflective prefrontal cortex allowing high-speed processing without ego clutter. Your best self lives on the other side of your thoughts. Silence the thinker. Become the doing." },
+
+      { id: "interpsychic-connection", num: 9, icon: "🤝", title: "Interpsychic Connection (The We)", subtitle: "We Are All Different Lights Plugged into the Same Giant Battery",
+        simple: "Even though we have our own bodies, our Observers are all looking at the same world. When you feel sad for a friend, that is your awareness touching their awareness. It is like we are all different lights plugged into the same giant battery. We are never truly alone because the Observer inside me is just like the Observer inside you. We are all part of the same big family of life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A room full of people laughing at the same joke: the sound of consciousness syncing without permission." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A family dinner cooking in the kitchen: the scent of a shared signal being prepared." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a meal with people you love: the same food tasting better because the observers are together." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A long warm hug from someone who cares: two nervous systems negotiating a truce through the skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into someone's eyes and smiling: two witnesses recognizing each other without words." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Holding hands in a circle and feeling the connection: the body proving what the mind already suspected." }
+        ],
+        intuition: "We are all different lights plugged into the same giant battery. When you are in a room with someone you love, your heart rates sync. Your brain waves sync. Your breathing syncs. This is not poetry. This is measurable. Two bodies in proximity become one system. The border dissolves. And for a moment, the Observer in you and the Observer in them are looking out of the same window. This is why loneliness hurts like a physical wound — because it IS a physical wound. The system was designed to run in pairs. In groups. In families. The battery is shared. The light is individual. But the electricity is the same. And when the lights get close enough, they stop flickering. And glow steady.",
+        links: [
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Intersubjectivity", url: "https://en.wikipedia.org/wiki/Intersubjectivity" },
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAac" },
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=eBpYgpF1bqQ" },
+          { title: "Stand by Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+        ],
+        advanced: "Mirror neurons allow simulation of others' experiences. Hyperscanning shows brain wave and heart rate synchrony between people in rapport. The battery is shared. The light is individual. But the electricity is the same." },
+
+      { id: "temporal-awareness", num: 10, icon: "⌛", title: "Temporal Awareness (The Now)", subtitle: "The Now Is a Magic Place Where You Are Always Okay",
+        simple: "The Thinker loves to travel in time. It goes to the past to feel sad or to the future to feel worried. But the Observer can only stay in the Now. Right now is the only time that actually exists. If you keep your awareness on this very second, you will find that most of your problems disappear. The Now is a magic place where you are always okay.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single loud clap that happens suddenly: the past and future collapsing into one sharp now." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Candle smoke right after you blow it out: the scent of a moment that just became the past." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An ice cube melting in your mouth right now: the taste of impermanence on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold water splashed on your face: the present arriving through shock." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The second hand on a clock moving: the eyes watching the now become the past in real time." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A deep breath and feeling your lungs expand this second: the body proving that the present is the only tense it knows." }
+        ],
+        intuition: "The Now is a magic place where you are always okay. Name one problem you have right now. Not tomorrow. Not yesterday. Right now. In this second. Are you breathing? Yes. Are you alive? Yes. Are you reading? Yes. Then right now, in this exact second, you are okay. Every problem you have exists in a time that is not now. The bill is due next week. The argument happened yesterday. The diagnosis is about tomorrow. But right now — this second — you are here. And here has no problems. Here only has presence. The Now is not a moment in time. The Now is the exit from time. And the exit is always open.",
+        links: [
+          { label: "Presentism", url: "https://en.wikipedia.org/wiki/Presentism_(philosophy_of_time)" },
+          { label: "Eckhart Tolle", url: "https://en.wikipedia.org/wiki/Eckhart_Tolle" },
+          { label: "Present Moment Awareness", url: "https://en.wikipedia.org/wiki/Mindfulness" }
+        ],
+        songs: [
+          { title: "Right Now", artist: "Van Halen", url: "https://www.youtube.com/watch?v=rMV-fenGP1g" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" }
+        ],
+        advanced: "The present is the only arena of experience. The Now is not a moment in time. The Now is the exit from time. Mastering presence reduces anticipatory anxiety and retrospective rumination. And the exit is always open." },
+    ],
+
+
 
     // ═══════════════════════════════════════════════════════════════
     // THE SELF (theself) > IDENTITY & THE SELF (identityself)
