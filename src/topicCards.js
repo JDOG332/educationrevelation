@@ -14091,6 +14091,243 @@ export const TOPIC_CARDS = {
         advanced: "Theater's origins are intertwined with religious and communal ritual. A liminal space — a threshold where mundane and extraordinary meet to reinforce social bonds and cultural identity. Connects to anthropology and evolutionary biology: performance is a fundamental survival mechanism transmitting complex cultural information across generations. The campfire became the stage. The stage became the screen. The story never changed." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > SONG & VOICE (song)
+    // ═══════════════════════════════════════════════════════════════
+
+    song: [
+      { id: "vocal-fold-vibration", num: 1, icon: "〰️", title: "Vocal Fold Vibration", subtitle: "You Are a Living Musical Instrument That Never Needs to Be Plugged In",
+        simple: "The voice starts when air from your lungs moves through your throat and hits two tiny bands called vocal folds. These folds zip open and shut very fast, making the air wiggle and turn into sound. It is like blowing through a blade of grass to make a whistle! When they move fast, the sound is high; when they move slow, the sound is low. This is how your body creates the battery for every song you have ever sung. You are a living musical instrument that never needs to be plugged in.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hum a low note and feel the buzz in your chest: you are the speaker." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Warm peppermint tea soothing a tired throat: fuel for the instrument." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honey coating your vocal cords: sweetness you can hear." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your fingers on your neck feeling the skin shake: touching your own music." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ripples in a glass of water when you sing near it: voice made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tension in your stomach muscles as they push the air out: your whole body is the engine." }
+        ],
+        intuition: "You are a living musical instrument that never needs to be plugged in. Two tiny folds of tissue, smaller than a dime, create every lullaby, every war cry, every I love you ever spoken. The same throat that swallows food makes symphonies. You were born with a concert hall inside your neck.",
+        links: [
+          { label: "Vocal Folds", url: "https://en.wikipedia.org/wiki/Vocal_cords" },
+          { label: "Phonation", url: "https://en.wikipedia.org/wiki/Phonation" },
+          { label: "Bernoulli's Principle", url: "https://en.wikipedia.org/wiki/Bernoulli%27s_principle" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Rolling in the Deep", artist: "Adele", url: "https://www.youtube.com/watch?v=rYEDA3JcQqw" }
+        ],
+        advanced: "The larynx functions as a primary transducer, converting aerodynamic energy (breath) into acoustic energy (phonation) via the myoelastic-aerodynamic theory: subglottal pressure and the Bernoulli effect maintain oscillation. A fundamental biological convergence: structures used for breathing and swallowing repurposed for musical expression. The bridge between the autonomic nervous system and the creative intellect lives in your throat." },
+
+      { id: "vocal-resonance-song", num: 2, icon: "🐚", title: "Resonance", subtitle: "Your Cave Is Shaped Exactly Like You and No One Else Has One Quite Like It",
+        simple: "Once the sound is made in your throat, it travels up into your mouth and nose, which act like a big, hollow cave. These spaces bounce the sound around to make it louder and prettier, just like how a guitar's wooden body makes the strings sound better. You can change the shape of this cave by moving your tongue or opening your jaw. This is why everyone's voice sounds special and different. Your cave is shaped exactly like you, and no one else has one quite like it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "How your voice changes when you plug your nose: the cave reshaping the sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The crisp smell of a large empty stone cathedral: resonance has an aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic tang of cold air hitting the roof of your mouth: tasting the space." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The bridge of your nose vibrating when you make an M sound: resonance you can touch." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The shape of a bell or a hollow bowl: containers that amplify." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sensing the space in the back of your throat when you yawn: the cave opening." }
+        ],
+        intuition: "Your cave is shaped exactly like you. The opera singer does not overpower the orchestra with volume. She tunes her throat to match the room's physics. One body resonating with a building. Your uniqueness is not metaphorical. It is architectural. No one else has your cave. No one else can make your sound.",
+        links: [
+          { label: "Vocal Resonation", url: "https://en.wikipedia.org/wiki/Vocal_resonation" },
+          { label: "Formant", url: "https://en.wikipedia.org/wiki/Formant" },
+          { label: "Singer's Formant", url: "https://en.wikipedia.org/wiki/Singer%27s_formant" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Take Me to Church", artist: "Hozier", url: "https://www.youtube.com/watch?v=PVjiKRfKpPI" },
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwoʻole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" }
+        ],
+        advanced: "Vocal resonance: enhancement of phonation in timbre and intensity by air-filled cavities. The vocal tract acts as a filter emphasizing specific frequency bands (formants). By manipulating pharynx and oral cavity geometry, a singer aligns formants with harmonic overtones, creating the singer's formant — allowing a human voice to be heard over a full orchestra without amplification. One throat outsinging eighty instruments. That is not talent. That is physics." },
+
+      { id: "melody-song", num: 3, icon: "🌊", title: "Melody", subtitle: "Drawing a Picture in the Air That People Can Feel",
+        simple: "A melody is like a path of notes that goes up and down, taking your ears on a little hike. When you sing a melody, you are not just making noise; you are drawing a picture in the air that people can feel. Your brain loves melodies because they give it a pattern to follow, making it easy to remember words. Even if you do not know the language, a sad melody can make you feel like crying, and a happy one can make you want to jump. It is the thread that sews all the different parts of a song together into one piece of cloth.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Whistle a tune and hear how it floats above the room: melody is lighter than air." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The fresh scent of rain that follows a rising feeling." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zing of a sour candy that matches a high, sharp note." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your fingers along a bumpy surface that goes up and down: melody you can touch." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bird flying up and then gliding down in a smooth line: melody made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your head tilting up when you sing a higher note: your body following the melody's map." }
+        ],
+        intuition: "You are drawing a picture in the air that people can feel. The melody does not need translation. A mother in Tokyo and a mother in Lagos hum the same shape of lullaby. The notes go up and then come gently down. The baby sleeps. The melody is older than language. It is the first sentence humans ever spoke.",
+        links: [
+          { label: "Melody", url: "https://en.wikipedia.org/wiki/Melody" },
+          { label: "Musical Contour", url: "https://en.wikipedia.org/wiki/Contour_(music)" },
+          { label: "Music and Memory", url: "https://en.wikipedia.org/wiki/Music-related_memory" }
+        ],
+        songs: [
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "My Heart Will Go On", artist: "Celine Dion", url: "https://www.youtube.com/watch?v=3gK_2XdjOA0" }
+        ],
+        advanced: "Melody: a linear sequence of tones perceived as a single entity, governed by intervals and scales providing cultural and emotional framework. The brain processes melody in the right secondary auditory cortex, mapping contour and pitch intervals to emotional centers. Acts as a mnemonic device encoding information into long-term memory through coupling of rhythm and pitch. The melody is the story. The harmony is the world. The rhythm is the heartbeat. But the melody is what you remember when the song stops." },
+
+      { id: "lyricism", num: 4, icon: "✍️", title: "Lyricism", subtitle: "A Secret Message That Goes Straight Into Someone's Heart Without Stopping at Their Brain",
+        simple: "Lyrics are the words of a song that tell us exactly what the singer is thinking. When you put words into a song, they become more powerful than just talking because they ride on the wings of the music. It is like sending a secret message that goes straight into someone's heart without stopping at their brain first. Good lyrics use word pictures to help you see what the singer sees. They are the map that tells the melody where to go and why it should go there.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic click of a typewriter or a pen on paper: words being born." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The old-paper smell of a library book full of poems: words that outlived their authors." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bitterness of dark chocolate that feels deep like a sad lyric." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A handwritten letter in your hands: words that someone touched before you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Reading lyrics on a screen while the music plays: two channels, one message." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tight feeling in your chest when a word hits close to home: the lyric found the nerve." }
+        ],
+        intuition: "A secret message that goes straight into someone's heart without stopping at their brain first. You can read a poem and think about it. But when the same words ride a melody, they bypass your logic and land in your chest. That is why you cry at songs but not at sentences. Music is the carrier wave. Lyrics are the payload.",
+        links: [
+          { label: "Lyrics", url: "https://en.wikipedia.org/wiki/Lyrics" },
+          { label: "Prosody (Linguistics)", url: "https://en.wikipedia.org/wiki/Prosody_(linguistics)" },
+          { label: "Songwriting", url: "https://en.wikipedia.org/wiki/Songwriting" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Lyricism: the linguistic component of song where phonetics and semantics merge with musical prosody. Effectiveness depends on the marriage of word and note — natural language accentuation aligning with rhythmic stresses. From a semiotic perspective, lyrics function as signs pointing to shared human experiences, providing narrative anchor for abstract musical emotions. Dual-channel processing: intellectual and visceral simultaneously. The word without the note is a thought. The note without the word is a feeling. Together they are a memory that lasts forever." },
+
+      { id: "rhythm-song", num: 5, icon: "🥁", title: "Rhythm", subtitle: "Without Rhythm a Song Would Be a Bunch of Sounds Floating With No Home",
+        simple: "Rhythm is the clock of the song that tells you when to move. It is the steady beat that sounds like your own heart beating inside your chest. When you hear a good rhythm, your body wants to clap or dance because it feels like you are clicking into place with the music. It keeps all the singers and players moving at the same speed so nobody gets lost. Without rhythm, a song would just be a bunch of sounds floating around with no home to live in.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady tick-tock of a clock in a quiet room: time you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smoky smell of a campfire where people are drumming: rhythm has a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The repetitive crunch of eating an apple: rhythm on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tapping your foot on a hard wooden floor: your body becoming the drum." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A pendulum swinging back and forth perfectly: time made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your knees bouncing in time with a drum: your skeleton agreeing with the beat." }
+        ],
+        intuition: "Without rhythm, a song would be a bunch of sounds floating with no home. Your heart has been keeping rhythm since before you were born. It did not learn it. It was born doing it. The beat is not something we invented. The beat is something we recognized. We put drums around a fire because we already had one inside our chest.",
+        links: [
+          { label: "Rhythm", url: "https://en.wikipedia.org/wiki/Rhythm" },
+          { label: "Entrainment (Music)", url: "https://en.wikipedia.org/wiki/Entrainment_(biomusicology)" },
+          { label: "Pulse (Music)", url: "https://en.wikipedia.org/wiki/Pulse_(music)" }
+        ],
+        songs: [
+          { title: "Billie Jean", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" },
+          { title: "We Will Rock You", artist: "Queen", url: "https://www.youtube.com/watch?v=-tJYN-eG1zk" },
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" }
+        ],
+        advanced: "Rhythm: systematic arrangement of sounds by duration and periodic stress. Rooted in entrainment, where biological oscillators (heart rate, brain waves) synchronize with external periodic stimuli. Rhythmic structures provide the temporal framework for musical cognition: establishing pulse creates expectations, and fulfillment or subversion of those expectations drives tension and release. The heart was the first metronome. Music did not invent the beat. Music borrowed it from biology." },
+
+      { id: "harmony-song", num: 6, icon: "🤝", title: "Harmony", subtitle: "We Do Not All Have to Be the Same to Create Something Perfect",
+        simple: "Harmony happens when two or more people sing different notes at the same time and they sound beautiful together. It is like a team of superheroes where everyone has a different power, but they work together to save the day. One note might be high and one might be low, but when they hit your ear at the same time, they make a thick sound that feels like a warm hug. It teaches us that we do not all have to be the same to create something perfect. When we blend our different voices, the song becomes much bigger than just one person.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A choir singing a final, long chord: many voices becoming one feeling." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower bouquet where many different scents mix: harmony you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A smoothie where different fruits blend into one new flavor: harmony you can drink." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A sweater made of many different types of soft yarn: harmony you can wear." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A painting with many colors that all look good together: harmony you can see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning against a friend and sharing your weight: harmony is trust made physical." }
+        ],
+        intuition: "We do not all have to be the same to create something perfect. When voices lock, the air between them produces a phantom note that nobody is singing. A ghost born from agreement. Harmony is proof that difference is not the enemy of unity. Difference is the ingredient.",
+        links: [
+          { label: "Harmony", url: "https://en.wikipedia.org/wiki/Harmony" },
+          { label: "Harmonic Series", url: "https://en.wikipedia.org/wiki/Harmonic_series_(music)" },
+          { label: "Just Intonation", url: "https://en.wikipedia.org/wiki/Just_intonation" }
+        ],
+        songs: [
+          { title: "Africa", artist: "Toto", url: "https://www.youtube.com/watch?v=FTQbiNvZqaY" },
+          { title: "God Only Knows", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=EkPy18xW1j8" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Harmony: simultaneous use of different pitches creating chords and progressions, based on the physics of the harmonic series. Certain mathematical ratios (2:3 for a perfect fifth) are perceived as consonant. In vocal music, just intonation requires micro-adjustment to perfectly align, creating difference tones — phantom notes that are heard but not sung. Harmony is not an arrangement. Harmony is an emergent property. The ghost note proves that togetherness creates something that did not exist before." },
+
+      { id: "diction", num: 7, icon: "🗣️", title: "Diction", subtitle: "The Sparkle on the Words That Makes Them Easy to Catch",
+        simple: "Diction is the crispness of your words so that people can understand what you are singing. If you mumble, the message gets lost, but if you use your teeth, lips, and tongue to pop your consonants, the words fly like arrows. It is the difference between a blurry photo and a clear one. Even a beautiful voice needs diction to tell a story; otherwise, it is just pretty sounds. Think of it as the sparkle on the words that makes them easy to catch.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sharp T and K sounds in a tongue twister: precision you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, clean scent of a lemon: clarity has an aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The pop of a bubblegum bubble: diction on your lips." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your lips touching together when you say the letter B: the mechanics of meaning." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Subtitles on a movie screen: diction made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The tip of your tongue tapping the roof of your mouth: your body sculpting air into words." }
+        ],
+        intuition: "The sparkle on the words that makes them easy to catch. A beautiful voice with bad diction is a love letter in illegible handwriting. The feeling is there but the message is lost. Your teeth, lips, and tongue are not just for eating. They are precision instruments that carve meaning out of air. Every consonant is a tiny sculpture.",
+        links: [
+          { label: "Diction", url: "https://en.wikipedia.org/wiki/Diction" },
+          { label: "Enunciation", url: "https://en.wikipedia.org/wiki/Enunciation" },
+          { label: "International Phonetic Alphabet", url: "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" }
+        ],
+        songs: [
+          { title: "Rap God", artist: "Eminem", url: "https://www.youtube.com/watch?v=XbGs_qK2PQA" },
+          { title: "Satisfied", artist: "Hamilton Soundtrack", url: "https://www.youtube.com/watch?v=InupMAFT-FI" },
+          { title: "Penny Lane", artist: "The Beatles", url: "https://www.youtube.com/watch?v=S-rB0pHI9fU" }
+        ],
+        advanced: "Diction in singing: producing intelligible speech sounds while maintaining resonance. Challenging because singing requires elongated vowels distorting natural word shapes. Professional singers use IPA to standardize sounds across languages. Mastering diction balances vocalic (resonant) parts with noise elements (plosives, fricatives) to ensure narrative conveyance without breaking the musical line. The consonant is the knife. The vowel is the butter. Diction is knowing when to cut and when to spread." },
+
+      { id: "vibrato", num: 8, icon: "💓", title: "Vibrato", subtitle: "Finding the Perfect Wiggle Is Like Finding the Perfect Heartbeat for a Song",
+        simple: "Vibrato is the tiny, fast wiggle in a voice that makes it sound alive and emotional. If a note is a straight line, vibrato is like a soft wave on the ocean. It happens naturally when a singer is relaxed and healthy, showing that their voice is working perfectly. It adds warmth to the sound, making it feel like it is shimmering. Too much can sound shaky, and too little can sound stiff, so finding the perfect wiggle is like finding the perfect heartbeat for a song.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The wa-wa-wa sound of a finger wiggling on a violin string: controlled trembling." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The warm, wafting scent of baking cookies: vibrato has a warmth." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fizzy drink sparkling on your tongue: vibrato you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The gentle vibration of a purring cat: life expressed through trembling." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Heat waves shimmering off a hot road: vibrato made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The loose and relaxed feeling in your throat when you sigh: the body finding its natural oscillation." }
+        ],
+        intuition: "Finding the perfect wiggle is like finding the perfect heartbeat. A straight tone is dead. A wobbling tone is sick. But a tone with just the right shimmer is alive. Vibrato is not something you add to a note. Vibrato is what a note does when it is free. It is the sound of a voice that has stopped trying to control itself and started trusting itself.",
+        links: [
+          { label: "Vibrato", url: "https://en.wikipedia.org/wiki/Vibrato" },
+          { label: "Psychoacoustics", url: "https://en.wikipedia.org/wiki/Psychoacoustics" },
+          { label: "Vocal Pedagogy", url: "https://en.wikipedia.org/wiki/Vocal_pedagogy" }
+        ],
+        songs: [
+          { title: "I Will Always Love You", artist: "Whitney Houston", url: "https://www.youtube.com/watch?v=3JWTaaS7LdU" },
+          { title: "The Prayer", artist: "Andrea Bocelli & Celine Dion", url: "https://www.youtube.com/watch?v=kLpMBMpKIQg" },
+          { title: "Back to Black", artist: "Amy Winehouse", url: "https://www.youtube.com/watch?v=TJAfLE39ZZ8" }
+        ],
+        advanced: "Vibrato: regular pulsating change of pitch characterized by extent and rate. In the human voice, a result of neurological tremor of laryngeal muscles during phonation. Serves a psychoacoustic purpose: helps the ear identify pitch in complex environments and adds humanity to tone. A sign of vocal freedom: occurring when subglottal pressure and laryngeal resistance reach perfect equilibrium. Vibrato is not decoration. Vibrato is diagnosis. A healthy voice shimmers. A free voice sings." },
+
+      { id: "dynamics-song", num: 9, icon: "💡", title: "Dynamics", subtitle: "A Whisper Makes You Lean In and a Shout Makes You Feel Powerful",
+        simple: "Dynamics is the word musicians use for loud and soft. A song that stays the same volume all the time is boring, like a story that never has any exciting parts. Dynamics are the hills and valleys of a song. A whisper can make you lean in to listen closely, and a big shout can make you feel powerful. By changing how loud you sing, you can show if you are scared, angry, happy, or peaceful. It is the volume knob of your emotions.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud thunderclap followed by soft pitter-patter of rain: dynamics in nature." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The faint scent of a single flower versus the strong smell of a perfume shop: dynamic range in scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A tiny drop of hot sauce versus a whole spoonful: dynamics on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle brush of a feather versus a firm high-five: volume you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A dim candle in a dark room versus a bright flashlight: visual dynamics." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The difference between a tiny breath and a huge deep one: your lungs controlling the volume knob." }
+        ],
+        intuition: "A whisper makes you lean in and a shout makes you feel powerful. The whisper is not quieter than the shout. The whisper is more intimate. When a singer drops to a whisper, they are not losing power. They are pulling you closer. And when they explode into full voice, they are not pushing you away. They are lifting you up. Dynamics are not about volume. Dynamics are about distance between you and the listener.",
+        links: [
+          { label: "Dynamics (Music)", url: "https://en.wikipedia.org/wiki/Dynamics_(music)" },
+          { label: "Messa di Voce", url: "https://en.wikipedia.org/wiki/Messa_di_voce" },
+          { label: "Musical Phrasing", url: "https://en.wikipedia.org/wiki/Phrase_(music)" }
+        ],
+        songs: [
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" },
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "Creep", artist: "Radiohead", url: "https://www.youtube.com/watch?v=XFkzRNyygfk" }
+        ],
+        advanced: "Dynamics: relative loudness or softness controlled by breath management — regulating airflow and pressure against the vocal folds. Dynamic contrast is essential for phrasing, the musical equivalent of a sentence, allowing performers to highlight words or emotional shifts. The messa di voce — singing from very soft to very loud and back on a single note — is considered the ultimate test of vocal control. The whisper and the scream come from the same throat. The difference is not strength. The difference is intention." },
+
+      { id: "timbre-song", num: 10, icon: "🎨", title: "Timbre", subtitle: "Your Timbre Is Your Fingerprint in the Air That Belongs Only to You",
+        simple: "Timbre is the soul of your voice. It is what makes you sound like you and not like a robot or a trumpet. If two people sing the exact same note at the exact same volume, you can still tell them apart because of their timbre. Some voices sound bright like the sun, and some sound dark like chocolate. It is the color of the sound. Your timbre is your fingerprint in the air; it is the unique way your body vibrates that belongs only to you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The difference between a honk and a ring: same volume, different soul." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Pine tree versus orange: two natural things, completely different character." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Creamy yogurt versus crunchy crackers: texture is timbre for the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Silk versus sandpaper: same size, different identity." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Bright neon yellow versus deep navy blue: timbre you can see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The unique weight of your own voice inside your head: you are the only one who hears yourself this way." }
+        ],
+        intuition: "Your timbre is your fingerprint in the air. You can copy someone's melody. You can copy their rhythm. You can copy their words. But you cannot copy their timbre. That is the one thing that belongs only to you. It is shaped by your bones, your sinuses, your history, and your heart. When someone recognizes your voice on the phone in half a second, they are not recognizing your words. They are recognizing your soul.",
+        links: [
+          { label: "Timbre", url: "https://en.wikipedia.org/wiki/Timbre" },
+          { label: "Harmonic Series", url: "https://en.wikipedia.org/wiki/Harmonic_series_(music)" },
+          { label: "Auditory Scene Analysis", url: "https://en.wikipedia.org/wiki/Auditory_scene_analysis" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Tiny Dancer", artist: "Elton John", url: "https://www.youtube.com/watch?v=yYcyacLRPNs" },
+          { title: "Killing Me Softly", artist: "Fugees", url: "https://www.youtube.com/watch?v=oKOtzIo-uYw" }
+        ],
+        advanced: "Timbre: the quality of sound distinct from pitch and intensity, determined by the harmonic profile — the specific mix of overtones and partials accompanying the fundamental frequency. Enables auditory scene analysis, helping the brain categorize sounds in crowded environments. In the human voice, influenced by vocal fold density, vocal tract length, personality, and emotional state: a multidimensional identifier of identity. Your voice is not a sound. Your voice is a biography written in frequencies." },
+    ],
+
+
 
 
 
