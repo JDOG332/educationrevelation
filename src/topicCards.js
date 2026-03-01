@@ -18845,6 +18845,243 @@ export const TOPIC_CARDS = {
     ],
 
     // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > DREAMS & SLEEP (dreamssleep)
+    // ═══════════════════════════════════════════════════════════════
+
+    dreamssleep: [
+      { id: "sleep-cycles", num: 1, icon: "🌙", title: "Sleep Cycles (NREM & REM)", subtitle: "Your Brain Is Cleaning Its Room and Organizing Its Toys While You Rest",
+        simple: "When you sleep, your body goes through different levels of rest, like steps on a ladder. First you are in a light sleep, then a very deep sleep where your body fixes itself, and finally dream sleep called REM. During REM, your brain is actually very busy, almost like it is awake, even though your muscles stay still so you do not act out your dreams. This cycle repeats about every 90 minutes. It is like your brain is cleaning its room and organizing its toys while you rest.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythmic whoosh of a white noise machine: the soundtrack of descent." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dried lavender on a pillow: the scent that tells the brain the day is over." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm chamomile tea: the taste of permission to stop." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy weighted blanket pressing you into the mattress: gravity tucking you in." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The dim amber glow of a salt lamp: light that says goodnight without saying a word." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your muscles completely melting into the mattress: the body surrendering to the maintenance crew." }
+        ],
+        intuition: "Your brain is cleaning its room and organizing its toys while you rest. You spend a third of your life asleep. Not wasted. Invested. Every ninety minutes your brain runs a full cycle — light repair, deep repair, dream repair. It is a factory that never closes. The night shift is not less important than the day shift. The night shift is where the real work gets done. The emails of the day are sorted. The injuries are patched. The lessons are filed. You think you are doing nothing. You are doing everything. Sleep is not the absence of productivity. Sleep is productivity with the lights off.",
+        links: [
+          { label: "Sleep Cycle", url: "https://en.wikipedia.org/wiki/Sleep_cycle" },
+          { label: "REM Sleep", url: "https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep" },
+          { label: "NREM Sleep", url: "https://en.wikipedia.org/wiki/Non-rapid_eye_movement_sleep" }
+        ],
+        songs: [
+          { title: "Enter Sandman", artist: "Metallica", url: "https://www.youtube.com/watch?v=CD-E-LDc384" },
+          { title: "Dream On", artist: "Aerosmith", url: "https://www.youtube.com/watch?v=89dGC8de0CA" },
+          { title: "Mr. Sandman", artist: "The Chordettes", url: "https://www.youtube.com/watch?v=CX45pYvxDiA" }
+        ],
+        advanced: "Sleep architecture: NREM stages N1-N3 (delta waves at 0.5-4 Hz for physical recovery) and REM (high-frequency activity for emotional regulation). Sleep is not the absence of productivity. Sleep is productivity with the lights off." },
+
+      { id: "memory-consolidation", num: 2, icon: "🗄️", title: "Memory Consolidation", subtitle: "Sleep Makes You Smarter by Letting Your Brain Organize Its Thoughts",
+        simple: "Your brain is like a big library that gets messy during the day with new books and papers. While you sleep, a tiny part of your brain called the hippocampus helps move all the important stuff into big safe cabinets. This makes room for you to learn new things tomorrow and helps you remember what you learned today. If you do not sleep, those books might get lost forever. Sleep makes you smarter by letting your brain organize its thoughts.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft click of a library book being closed: the sound of a memory being filed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old paper or a new notebook: the scent of knowledge waiting to be organized." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate that helps you focus: the taste of a brain preparing to consolidate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Turning the smooth thin pages of a book: the fingers doing what the hippocampus does with memories." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A puzzle piece finally fitting into its spot: the visual of consolidation completing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sitting tall and confident after learning something new: the body feeling the weight of knowledge that has been locked in." }
+        ],
+        intuition: "Sleep makes you smarter by letting your brain organize its thoughts. You did not learn it today. You will learn it tonight. The lesson enters during the day. But it does not become yours until you sleep on it. The hippocampus holds the memory like a temp file. Sleep moves it to the hard drive. This is why cramming does not work. You can shove information into the temp folder all night. But without sleep, the transfer never happens. The file corrupts. The knowledge evaporates. Study then sleep. That is the formula. The studying is the download. The sleep is the save. And a download without a save is just wasted bandwidth.",
+        links: [
+          { label: "Memory Consolidation", url: "https://en.wikipedia.org/wiki/Memory_consolidation" },
+          { label: "Hippocampus", url: "https://en.wikipedia.org/wiki/Hippocampus" },
+          { label: "Synaptic Homeostasis", url: "https://en.wikipedia.org/wiki/Synaptic_homeostasis_hypothesis" }
+        ],
+        songs: [
+          { title: "Unforgettable", artist: "Nat King Cole", url: "https://www.youtube.com/watch?v=vDN5rG3wLa4" },
+          { title: "Memories", artist: "Maroon 5", url: "https://www.youtube.com/watch?v=SlPhMPnQ58k" },
+          { title: "Photograph", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=nSDgHBxUbVQ" }
+        ],
+        advanced: "Sharp-wave ripples in the hippocampus replay neural firing patterns during NREM, transferring labile memories to long-term cortical storage. The studying is the download. The sleep is the save. A download without a save is just wasted bandwidth." },
+
+      { id: "circadian-rhythms", num: 3, icon: "⏰", title: "Circadian Rhythms", subtitle: "A Song That Your Body Plays Every Single Day to Stay on Beat",
+        simple: "Inside your body there is a tiny clock that tells you when it is time to wake up and when it is time to go to sleep. This clock is controlled by the sun; when it gets dark your brain makes a special sleepy juice called melatonin. When the sun comes up your clock tells your body to get ready for the day. It is like a song that your body plays every single day to stay on beat. Staying in a routine helps your clock stay perfect.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A rooster crowing or a gentle morning alarm: the sound of the rhythm resetting." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh morning air or pine trees: the scent the body associates with the opening chord." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold crisp glass of water first thing in the morning: the taste of a new bar of the song." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Warm sunlight on your face: the skin reading the time without a clock." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunrise changing from purple to orange: the eyes setting the master clock." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A big morning stretch reaching for the ceiling: the body tuning its instrument for the day's performance." }
+        ],
+        intuition: "A song that your body plays every single day to stay on beat. You are not a machine that runs on a schedule. You are a rhythm. A twenty-four hour rhythm that has been playing since before you were born. The sun is the conductor. The melatonin is the tempo. The cortisol is the downbeat. And every cell in your body is an instrument in the orchestra. When you stay up too late staring at a screen, you are not just losing sleep. You are playing out of tune. And an orchestra out of tune does not just sound bad. It feels bad. Honor the rhythm. It was written into your DNA by four billion years of sunrises.",
+        links: [
+          { label: "Circadian Rhythm", url: "https://en.wikipedia.org/wiki/Circadian_rhythm" },
+          { label: "Suprachiasmatic Nucleus", url: "https://en.wikipedia.org/wiki/Suprachiasmatic_nucleus" },
+          { label: "Melatonin", url: "https://en.wikipedia.org/wiki/Melatonin" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Wake Me Up Before You Go-Go", artist: "Wham!", url: "https://www.youtube.com/watch?v=pIgZ7gMze7A" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" }
+        ],
+        advanced: "The SCN in the hypothalamus responds to retinal light signals, modulating melatonin from the pineal gland via clock genes PERIOD and CRYPTOCHROME. Honor the rhythm. It was written into your DNA by four billion years of sunrises." },
+
+      { id: "neural-plasticity-sleep", num: 4, icon: "🧠", title: "Neural Plasticity in Sleep", subtitle: "Sleep Is the Gardener Who Comes in at Night to Trim the Bushes",
+        simple: "Imagine your brain is a garden where the paths are made of tiny wires. When you learn or sleep, you are building new paths and making the old ones stronger. Sleep is like the gardener who comes in at night to trim the bushes and fix the walkways. It helps your brain stay flexible so you can keep learning and growing every day. Without this work the garden would become overgrown and messy.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft hum of a computer updating its software: the sound of overnight maintenance." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry earth: the scent of a system being refreshed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fresh fruit giving your brain energy: the taste of fuel for tomorrow's growth." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Kneading play-dough into new shapes: the hands doing what the sleeping brain is doing to synapses." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A plant growing toward the light over time: growth that only happens when you are not watching." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one leg and feeling the adjustments: the body demonstrating plasticity in real time." }
+        ],
+        intuition: "Sleep is the gardener who comes in at night to trim the bushes. During the day you grow a thousand new connections. Some are gold. Some are weeds. You cannot tell the difference while you are awake because you are too busy growing. Sleep is the editor. Sleep looks at every new connection and asks one question: did you use this today? If yes — strengthen it. If no — prune it. This is why practice works. Not because of the practice. Because of the sleep after the practice. The rehearsal builds the rough draft. The sleep builds the final version. The gardener does not plant. The gardener shapes what was planted. And the shaping only happens in the dark.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Synaptic Pruning", url: "https://en.wikipedia.org/wiki/Synaptic_pruning" },
+          { label: "BDNF", url: "https://en.wikipedia.org/wiki/Brain-derived_neurotrophic_factor" }
+        ],
+        songs: [
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Walking on a Dream", artist: "Empire of the Sun", url: "https://www.youtube.com/watch?v=eimgRedLkkU" }
+        ],
+        advanced: "Sleep facilitates synaptic pruning — elimination of weaker connections — preventing information noise. BDNF expression depends on sleep quality. The rehearsal builds the rough draft. The sleep builds the final version. The shaping only happens in the dark." },
+
+      { id: "glymphatic-clearance", num: 5, icon: "🚿", title: "Glymphatic Clearance", subtitle: "A Nightly Car Wash for Your Thoughts",
+        simple: "Your brain actually creates trash just by thinking and working all day. While you are deep asleep, your brain opens up little pipes and flushes everything out with a special fluid. It is like a nightly car wash for your thoughts! This cleaning helps prevent your brain from getting clogged up and keeps you feeling fresh in the morning. If you do not sleep enough, the trash stays behind and makes you feel foggy.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The gentle babbling of a clean stream: the sound of waste leaving the system." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Laundry straight from the dryer: the scent of a system that has been flushed clean." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cold refreshing slice of watermelon: the taste of hydration reaching the cells." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Splashing cool water on your face: the skin feeling what the brain feels during glymphatic flush." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Soap bubbles washing away dirt: the visual of cerebrospinal fluid clearing the channels." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The light feeling in your head after a good nap: the body registering the flush completed." }
+        ],
+        intuition: "A nightly car wash for your thoughts. Your brain produces metabolic waste every second you are alive. Amyloid-beta. Tau proteins. The molecular exhaust of a mind at work. During the day, this waste accumulates. There is no way to flush it while the system is running. Sleep is the shutdown that allows the cleaning crew to enter. The interstitial space expands by sixty percent. Cerebrospinal fluid rushes through. The waste is carried away. This is not optional maintenance. This is the difference between a brain that lasts eighty years and a brain that does not. Every hour of sleep you skip is an hour the cleaning crew did not get. And the mess compounds.",
+        links: [
+          { label: "Glymphatic System", url: "https://en.wikipedia.org/wiki/Glymphatic_system" },
+          { label: "Cerebrospinal Fluid", url: "https://en.wikipedia.org/wiki/Cerebrospinal_fluid" },
+          { label: "Amyloid Beta", url: "https://en.wikipedia.org/wiki/Amyloid_beta" }
+        ],
+        songs: [
+          { title: "Wash", artist: "Bon Iver", url: "https://www.youtube.com/watch?v=hl-wRnVwFl0" },
+          { title: "Rather Be", artist: "Clean Bandit", url: "https://www.youtube.com/watch?v=m-M1AtrxztU" },
+          { title: "Riverside", artist: "Agnes Obel", url: "https://www.youtube.com/watch?v=vjncyiuwwXQ" }
+        ],
+        advanced: "The glymphatic system uses perivascular channels formed by astroglial cells. Interstitial space increases ~60% during sleep, enabling rapid CSF exchange that clears amyloid-beta. Every hour of sleep you skip is an hour the cleaning crew did not get. And the mess compounds." },
+
+      { id: "activation-synthesis", num: 6, icon: "🎨", title: "Activation-Synthesis Theory", subtitle: "Dreams Are Your Brain Being a Creative Storyteller While You Rest",
+        simple: "Have you ever wondered why dreams are so weird, like a flying cat wearing a hat? This theory says that while you sleep, your brain is just sparking with random signals. Your thinking brain does not like things to be random, so it tries to tell a story to explain the sparks. It is like looking at clouds and trying to see shapes or animals. Dreams are just your brain being a creative storyteller while you rest.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Random notes on a piano that suddenly become a song: chaos organizing itself into meaning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A mix of cooking smells from a busy kitchen: ingredients that have not been combined into a recipe yet." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A mystery flavor candy that tastes like many things: the tongue trying to make sense of noise." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over many textures in a fabric store: the brain sampling everything at once." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A kaleidoscope turning and changing colors: beauty generated from randomness and a mirror." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of falling just as you drift off: the body catching a random signal and turning it into a story." }
+        ],
+        intuition: "Dreams are your brain being a creative storyteller while you rest. The pons fires. Random neurons activate. A memory of your mother. A color from Tuesday. The sound of a dog. The feeling of falling. None of these are related. But your brain cannot tolerate meaninglessness. So it stitches them together. And suddenly you are falling off a dog while your mother watches in a purple room. This is not insanity. This is the deepest creative act a human performs. Every single night you write, direct, star in, and watch a movie that has never existed before. And you do it without trying. You are a storyteller even when you are unconscious. Especially when you are unconscious.",
+        links: [
+          { label: "Activation-Synthesis", url: "https://en.wikipedia.org/wiki/Activation-synthesis_hypothesis" },
+          { label: "Dream", url: "https://en.wikipedia.org/wiki/Dream" },
+          { label: "J. Allan Hobson", url: "https://en.wikipedia.org/wiki/J._Allan_Hobson" }
+        ],
+        songs: [
+          { title: "Lucy in the Sky with Diamonds", artist: "The Beatles", url: "https://www.youtube.com/watch?v=naoknj1ebqI" },
+          { title: "Sweet Dreams", artist: "Eurythmics", url: "https://www.youtube.com/watch?v=qeMFqkcPYcg" },
+          { title: "Daydream Believer", artist: "The Monkees", url: "https://www.youtube.com/watch?v=xvqeSJlgaNk" }
+        ],
+        advanced: "Hobson-McCarley: dreams result from the forebrain interpreting random periodic firing from the pons. The brain's inherent drive for narrative construction converts noise into story. You are a storyteller even when you are unconscious. Especially when you are unconscious." },
+
+      { id: "lucid-dreaming", num: 7, icon: "🕹️", title: "Lucid Dreaming", subtitle: "Being the Director of Your Own Movie While You Are Also the Main Star",
+        simple: "Sometimes in the middle of a dream you might realize hey this is a dream! When that happens you can often take control and do anything you want, like flying or visiting the moon. It is like being the director of your own movie while you are also the main star. It takes practice to wake up inside your mind like that. It shows how powerful and creative your imagination really is.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo you can control by shouting: the sound obeying the dreamer." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Imagining the smell of a rose and then actually smelling it: the nose following the mind's command." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A giant chocolate cake with no calories: the tongue tasting what the mind permitted." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing your hand through a solid wall like water: the rules dissolving at the dreamer's request." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Colors brighter and more beautiful than real life: the eyes seeing at a resolution the waking world cannot match." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The light tingly feeling of floating off the ground: the body discovering that gravity was optional the whole time." }
+        ],
+        intuition: "Being the director of your own movie while you are also the main star. You are asleep. Your body is paralyzed. Your eyes are closed. And you are aware. You know you are dreaming. And because you know, you can choose. You can fly. You can breathe underwater. You can visit the dead. You can practice a skill. You can face a fear. The rules of physics do not apply because physics is a waking-world contract and you just stepped outside the contract. Lucid dreaming is proof that awareness is not dependent on the body. That the observer can exist in a world the observer created. This is the closest thing to being God that a human being can experience. And it happens in bed.",
+        links: [
+          { label: "Lucid Dream", url: "https://en.wikipedia.org/wiki/Lucid_dream" },
+          { label: "MILD Technique", url: "https://en.wikipedia.org/wiki/Mnemonic_induction_of_lucid_dreams" },
+          { label: "DLPFC", url: "https://en.wikipedia.org/wiki/Dorsolateral_prefrontal_cortex" }
+        ],
+        songs: [
+          { title: "Lucid Dreams", artist: "Juice WRLD", url: "https://www.youtube.com/watch?v=mzB1VGEGcSU" },
+          { title: "Time", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=RxabLA7UQ9k" },
+          { title: "Dream Weaver", artist: "Gary Wright", url: "https://www.youtube.com/watch?v=xZKuzwPOefs" }
+        ],
+        advanced: "Lucid dreaming: a hybrid consciousness state with REM physiology and waking-like cognition. Increased dorsolateral prefrontal cortex activity enables metacognition during sleep. The closest thing to being God that a human being can experience. And it happens in bed." },
+
+      { id: "homeostatic-sleep-drive", num: 8, icon: "⛽", title: "Homeostatic Sleep Drive", subtitle: "Your Body Is a Car with a Gas Tank for Sleep",
+        simple: "Think of your body like a car with a gas tank for sleep. Every hour you are awake, you use up your wake-up gas, and a chemical called adenosine builds up. The longer you stay awake, the more your body craves sleep to fill the tank back up. When you finally sleep, the tank refills and the chemical clears out. If you stay awake too long, your body might even try to take micro-naps because it is so empty.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The long slow hiss of air leaving a balloon: the sound of wakefulness running out." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A heavy cozy blanket: the scent of surrender approaching." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitter taste of coffee — which tricks the system but does not fill the tank." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heavy eyelids that want to close: the body voting with its muscles." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The world getting blurry when you are tired: the eyes announcing the tank is low." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The sinking feeling of finally laying down in bed: the body hearing the fuel pump click on." }
+        ],
+        intuition: "Your body is a car with a gas tank for sleep. Every hour you are awake, adenosine accumulates. It is the molecular version of sand in an hourglass. Coffee does not remove the sand. Coffee flips the hourglass upside down and hides it behind a curtain. The sand is still there. And when the coffee wears off, the curtain falls and the sand hits all at once. This is the crash. There is only one thing that clears adenosine. Sleep. Not caffeine. Not willpower. Not hustle culture. Sleep. The body does not negotiate with the chemistry. The chemistry always wins. The only question is whether you surrender on your terms or the chemistry surrenders you on its terms.",
+        links: [
+          { label: "Adenosine", url: "https://en.wikipedia.org/wiki/Adenosine" },
+          { label: "Sleep Debt", url: "https://en.wikipedia.org/wiki/Sleep_debt" },
+          { label: "Microsleep", url: "https://en.wikipedia.org/wiki/Microsleep" }
+        ],
+        songs: [
+          { title: "Tired", artist: "Adele", url: "https://www.youtube.com/watch?v=Kpl3_GiJqFo" },
+          { title: "The Lazy Song", artist: "Bruno Mars", url: "https://www.youtube.com/watch?v=fLexgOxsZu0" },
+          { title: "I'm Only Sleeping", artist: "The Beatles", url: "https://www.youtube.com/watch?v=BT5j9OQ7Sh0" }
+        ],
+        advanced: "Adenosine accumulates in the basal forebrain, inhibiting wake-promoting neurons. Caffeine acts as an adenosine receptor antagonist — blocking the signal without clearing the chemical. The chemistry always wins. The only question is whether you surrender on your terms." },
+
+      { id: "sleep-hygiene", num: 9, icon: "🛁", title: "Sleep Hygiene", subtitle: "Good Sleep Habits Are Like Brushing Your Teeth for Your Brain",
+        simple: "Sleep hygiene is just a fancy way of saying good sleep habits. Just like you brush your teeth to keep them healthy, you do certain things to keep your sleep healthy. This means keeping your room cool and dark, staying away from bright screens at night, and going to bed at the same time every day. When you have a good routine, your brain knows exactly when it is time to switch off. It makes falling asleep easy and waking up feel great.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The shhh of a quiet peaceful room: silence as an active ingredient." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly washed cotton sheets: the scent of a room that has been prepared for you." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The absence of sugar or caffeine in the evening: the taste of nothing as medicine." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A cool pillowcase against your cheek: the skin reading the temperature and approving." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A completely dark room with no blinking lights: the eyes confirming that the world has been switched off." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body relaxing into a familiar posture: the muscles recognizing the nightly cue." }
+        ],
+        intuition: "Good sleep habits are like brushing your teeth for your brain. You would not eat candy all day and then wonder why your teeth hurt. But you stare at a blue light screen until midnight and then wonder why you cannot sleep. The screen is the candy. The insomnia is the cavity. Sleep hygiene is not complicated. Cool room. Dark room. Same time every night. No screens in the last hour. That is it. Four rules. But those four rules are the difference between a brain that heals and a brain that accumulates damage. You do not need a sleep app. You need a routine. And the routine needs to be boring. Because boring is the lullaby the nervous system has been waiting for.",
+        links: [
+          { label: "Sleep Hygiene", url: "https://en.wikipedia.org/wiki/Sleep_hygiene" },
+          { label: "Blue Light", url: "https://en.wikipedia.org/wiki/Biological_effects_of_high-energy_visible_light" },
+          { label: "Insomnia", url: "https://en.wikipedia.org/wiki/Insomnia" }
+        ],
+        songs: [
+          { title: "Lullaby", artist: "Billy Joel", url: "https://www.youtube.com/watch?v=dcnd55tLCv8" },
+          { title: "Beautiful Boy", artist: "John Lennon", url: "https://www.youtube.com/watch?v=Lt3IOdDE5iA" },
+          { title: "Golden Slumbers", artist: "The Beatles", url: "https://www.youtube.com/watch?v=AjjQqd0oo3c" }
+        ],
+        advanced: "Sleep hygiene: thermal regulation (body drops ~2-3°F to initiate sleep), light hygiene (minimizing 450-480nm blue light), and stimulus control. You do not need a sleep app. You need a routine. Boring is the lullaby the nervous system has been waiting for." },
+
+      { id: "continuity-hypothesis", num: 10, icon: "🔄", title: "The Continuity Hypothesis", subtitle: "Your Dreams and Your Real Life Are Two Parts of the Same Story",
+        simple: "The continuity hypothesis says that your dreams and your real life are like two parts of the same story. If you spend all day thinking about a soccer game, you might dream about soccer that night. Your dreams use the ingredients from your day — the people you saw, the things you felt, and the problems you solved. It is a way for your brain to keep working on your life even when your eyes are closed. Your other life is really just a different version of your real one.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A familiar voice from your day appearing inside a dream: the waking world leaking into the sleeping one." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your favorite food appearing in a dream: the nose carrying a day-residue into the night." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The memory of a sweet treat you had for lunch: the tongue replaying the highlight reel." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A hug you received earlier in the day appearing in a dream: the skin remembering warmth it cannot currently feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own house but with dreamy changes: the familiar made strange by the sleeping editor." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Running in a dream the same way you do in life: the body rehearsing its patterns without a physical stage." }
+        ],
+        intuition: "Your dreams and your real life are two parts of the same story. You do not have two lives. You have one life with two shifts. The day shift processes the world through action. The night shift processes the world through symbol. The same fears. The same hopes. The same unresolved questions. They just wear different costumes at night. If you dream about falling, ask what you are afraid of losing. If you dream about flying, ask what you just freed yourself from. The dream is not random. The dream is the day speaking in a language the waking mind is too busy to hear. Listen to your dreams. They are the notes your subconscious left on the kitchen counter for you to find in the morning.",
+        links: [
+          { label: "Continuity Hypothesis", url: "https://en.wikipedia.org/wiki/Dream#Continuity_hypothesis" },
+          { label: "G. William Domhoff", url: "https://en.wikipedia.org/wiki/G._William_Domhoff" },
+          { label: "Dream Interpretation", url: "https://en.wikipedia.org/wiki/Dream_interpretation" }
+        ],
+        songs: [
+          { title: "Just a Dream", artist: "Nelly", url: "https://www.youtube.com/watch?v=N6O2ncUKvlg" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "Boulevard of Broken Dreams", artist: "Green Day", url: "https://www.youtube.com/watch?v=Soa3gO7tL-c" }
+        ],
+        advanced: "Domhoff's continuity hypothesis: dream content is continuous with waking conceptions and concerns. Content analysis of thousands of dreams shows high correlation between dream themes and waking priorities. The dream is the day speaking in a language the waking mind is too busy to hear." },
+    ],
+
+
+    // ═══════════════════════════════════════════════════════════════
     // THE SELF (theself) > THE OBSERVER & AWARENESS (observerawareness)
     // ═══════════════════════════════════════════════════════════════
 
