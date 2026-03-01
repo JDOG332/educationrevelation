@@ -15035,6 +15035,243 @@ export const TOPIC_CARDS = {
         advanced: "The extended mind thesis: tools and external objects are literally part of the cognitive process. When a tool becomes transparent through use, it is incorporated into the body schema. The ultimate expression of interconnection: we are fundamentally designed to merge with environment, tools, and creations. The hands are the bridge that turns the Other into Self. You have no final shape. You are still being built." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > POETRY & THE WRITTEN WORD (poetry)
+    // ═══════════════════════════════════════════════════════════════
+
+    poetry: [
+      { id: "metaphor-symbolism", num: 1, icon: "🗝️", title: "Metaphor & Symbolism", subtitle: "A Small Box That Holds a Whole Mountain Inside of It",
+        simple: "Poetry is like a secret code where one thing stands for something else. Imagine saying a lion when you really mean someone is very brave; it helps people feel the bravery instead of just hearing the word. By using symbols, writers can tuck huge giant feelings into tiny little words. It is like a magic trick where a small box holds a whole mountain inside of it. When you understand a metaphor, your brain clicks into a bigger truth about how everything in the world is connected.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of wind: imagine it is the earth breathing. Sound as metaphor." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old book: the scent of stories waiting to be woken up." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon: what bitter feelings taste like in your heart." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A rough stone: what hardship feels like under your fingers." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bridge: see it as a way to connect two lonely people." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your heart beating like a drum inside a ribcage house: the body is already a metaphor." }
+        ],
+        intuition: "A small box that holds a whole mountain inside of it. When you say someone has a heart of gold, nobody checks for metal. But everybody understands. The metaphor skipped the brain and landed in the chest. That is the magic. The lion is not a lion. The lion is courage wearing a mane. Every word you have ever spoken is a tiny suitcase. Metaphor is what happens when the suitcase holds more than it should.",
+        links: [
+          { label: "Metaphor", url: "https://en.wikipedia.org/wiki/Metaphor" },
+          { label: "Symbolism (Arts)", url: "https://en.wikipedia.org/wiki/Symbolism_(arts)" },
+          { label: "Conceptual Metaphor", url: "https://en.wikipedia.org/wiki/Conceptual_metaphor" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=MgV62T8AS6M" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" }
+        ],
+        advanced: "Metaphor: the primary cognitive mechanism for mapping abstract conceptual domains onto concrete embodied experiences. Bypasses literal linguistic constraints to access the collective unconscious. Creates a compressed state of information where fidelity is preserved through shared human archetypes. The metaphor is not decoration on top of language. The metaphor is the engine underneath it." },
+
+      { id: "rhythm-meter", num: 2, icon: "💓", title: "Rhythm & Meter", subtitle: "A Song Without Instruments Where the Syllables Are the Drumsticks",
+        simple: "Everything in the world has a beat, from the ocean waves to the way you walk down the street. In poems, we use meter to make words dance to a specific timing that feels natural to our bodies. When a poem has a good rhythm, it matches the pulse in your wrist and makes the words easier to remember. It is like a song without instruments where the syllables are the drumsticks. This steady beat helps our minds relax and listen to the truth of the story.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Clapping your hands to the beat of a nursery rhyme: the body already knows meter." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain hitting the pavement in a steady rhythmic pattern: nature writing poetry." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Chewing gum in time with your walking steps: rhythm on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tapping your fingers on a table to mimic galloping: the hand becoming a metronome." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A pendulum swinging back and forth until you feel calm: meter made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The rise and fall of your chest as you breathe in and out: your body already writing in iambic." }
+        ],
+        intuition: "A song without instruments where the syllables are the drumsticks. Iambic pentameter matches your heartbeat. That is not a coincidence. Shakespeare did not invent a rhythm. He borrowed yours. da-DUM da-DUM da-DUM da-DUM da-DUM. That is not a line of poetry. That is the sound of blood moving through your veins. The poem does not give you a rhythm. The poem reminds you of the rhythm you were born with.",
+        links: [
+          { label: "Meter (Poetry)", url: "https://en.wikipedia.org/wiki/Metre_(poetry)" },
+          { label: "Iambic Pentameter", url: "https://en.wikipedia.org/wiki/Iambic_pentameter" },
+          { label: "Prosody (Linguistics)", url: "https://en.wikipedia.org/wiki/Prosody_(linguistics)" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Superstition", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=0CFuCYNx-1g" },
+          { title: "Another One Bites the Dust", artist: "Queen", url: "https://www.youtube.com/watch?v=rY0WxgSXdEE" }
+        ],
+        advanced: "Rhythmic structures utilize temporal entrainment to synchronize the reader's physiological state with the text's cadence. Iambic pentameter mirrors natural speech fluctuations and cardiovascular rhythm. This synchronization enhances neural processing and creates receptive flow, allowing the message to penetrate deeper than unstructured prose. The rhythm is not in the poem. The rhythm is in the reader. The poem just wakes it up." },
+
+      { id: "etymology-language", num: 3, icon: "🌱", title: "The Etymology of Language", subtitle: "Every Word Has a Family History That Goes Back Thousands of Years",
+        simple: "Every word you say has a family history that goes back thousands of years. Knowing where a word comes from is like finding the secret roots of a giant tree hidden underground. Some words were born from the sounds of nature, while others were made by mixing old languages together. When we learn a word's root, we understand the original spark of why humans wanted to talk in the first place. It connects us to our ancestors who felt the same things we do.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The word mother sounding similar in every language: the root that never changed." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Wood smoke: the ancient word focus meant hearth. The fire was the first focus." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Honey: the word mellifluous means flowing like honey. Sweetness became a word for beauty." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A leaf: the word folio means page. The first pages were leaves." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A star: the word disaster meant against the stars. Catastrophe was written in the sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching your arms wide: feeling the word expand growing in your muscles." }
+        ],
+        intuition: "Every word has a family history that goes back thousands of years. The word focus meant fireplace. The word disaster meant bad star. The word person meant mask. Dig into any word and you find a fossil. Language is not invented. Language is excavated. Every time you speak, you are using tools that were sharpened by a million tongues before yours. You are never speaking alone. You are speaking with the dead.",
+        links: [
+          { label: "Etymology", url: "https://en.wikipedia.org/wiki/Etymology" },
+          { label: "Historical Linguistics", url: "https://en.wikipedia.org/wiki/Historical_linguistics" },
+          { label: "Proto-Indo-European Language", url: "https://en.wikipedia.org/wiki/Proto-Indo-European_language" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Words", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=yYf-E682n2Y" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" }
+        ],
+        advanced: "Etymology reveals the philological evolution of human consciousness, documenting how physical experiences were abstracted into linguistic tokens. Tracing proto-roots reveals convergence of meaning suggesting a shared epistemic origin. Historical continuity provides a stable foundation for truth: the core essence of a word often survives centuries of phonetic shifting. The word is a fossil. The poet is an archaeologist." },
+
+      { id: "emotional-catharsis-poetry", num: 4, icon: "🌊", title: "Emotional Catharsis", subtitle: "Writing Is Like Letting Air Out of a Balloon So You Do Not Pop",
+        simple: "Sometimes we have very big feelings like balloons that are about to pop inside us. Writing or reading poetry is like letting a little bit of air out of those balloons so we do not feel so tight. It is a safe way to cry, laugh, or be angry without hurting anyone. When we see our feelings written down on paper, we realize that other people feel the same way too. This makes us feel less alone and helps our hearts feel light and clean again.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A thunderstorm yelling for you: nature performing catharsis." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender drifting your angry feelings away: scent as release valve." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm cocoa making you feel cozy and safe inside: comfort you can swallow." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hugging a soft pillow: holding your sadness until it softens." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset: watching the day let go of itself." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Shaking your whole body to rattle the stress off your skin: physical catharsis." }
+        ],
+        intuition: "Writing is like letting air out of a balloon so you do not pop. The poem does not fix the feeling. The poem gives the feeling a shape. And once a feeling has a shape, it has a boundary. And once it has a boundary, it is no longer infinite. The terror shrinks to the size of a sentence. The grief fits inside a stanza. You were not writing. You were building a container for something that had no container. That is what poetry does. It gives the unnamed a name.",
+        links: [
+          { label: "Catharsis", url: "https://en.wikipedia.org/wiki/Catharsis" },
+          { label: "Expressive Writing", url: "https://en.wikipedia.org/wiki/Expressive_writing" },
+          { label: "Art Therapy", url: "https://en.wikipedia.org/wiki/Art_therapy" }
+        ],
+        songs: [
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xDQzE" },
+          { title: "Tears in Heaven", artist: "Eric Clapton", url: "https://www.youtube.com/watch?v=JX0u9EisO7A" }
+        ],
+        advanced: "Catharsis: releasing strong or repressed emotions through art. Achieved when the reader identifies with the tragic flaw or triumph of a subject, leading to vicarious experience that purges the psyche. This emotional resonance acts as a truth-filter, stripping away ego-driven defenses to reveal the underlying human condition. The poem does not describe the wound. The poem is the bandage." },
+
+      { id: "narrative-structure-poetry", num: 5, icon: "🧵", title: "Narrative Structure", subtitle: "The String That Keeps All the Beads Together So You Can Wear Them Like a Necklace",
+        simple: "A story is like a long piece of string that connects the beginning, the middle, and the end. If you just had a bunch of random beads, they would fall on the floor and get lost. The structure is the string that keeps all the beads together so you can wear them like a necklace. It helps us understand why things happen and how one choice leads to another. This helps us see that our own lives are not just accidents, but a story we are writing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clock ticking: first this, then that, then finally. Time as narrative." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dinner cooking: tracing the story from the grocery store to the stove." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sandwich: layers of bread, jelly, and peanut butter. Structure you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The spine of a book: the thing that holds the whole world together." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map with a path from where you are to where you want to go: narrative made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in a straight line, turning, then stopping: your body writing a story in space." }
+        ],
+        intuition: "The string that keeps all the beads together. Without structure, feelings are just noise. The poet is not someone who has more feelings than you. The poet is someone who found the string. Beginning, middle, end. Tension, release. Question, answer. The structure does not cage the truth. The structure is what makes the truth portable. You can carry a necklace. You cannot carry a pile of beads.",
+        links: [
+          { label: "Narrative Structure", url: "https://en.wikipedia.org/wiki/Narrative_structure" },
+          { label: "Hero's Journey", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" },
+          { label: "Narratology", url: "https://en.wikipedia.org/wiki/Narratology" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Hotel California", artist: "Eagles", url: "https://www.youtube.com/watch?v=09839DpTctU" },
+          { title: "Stan", artist: "Eminem", url: "https://www.youtube.com/watch?v=gOMhN-K6FdI" }
+        ],
+        advanced: "Narrative structure organizes chaotic data into coherent teleological progression. Arcs like the hero's journey mirror the universal human experience of struggle, transformation, and return. Structural integrity ensures truth is conveyed through a logic of causality rather than mere sequence. The structure is not the frame around the painting. The structure is the bones inside the body." },
+
+      { id: "syntactic-precision", num: 6, icon: "🎯", title: "Syntactic Precision", subtitle: "The One Perfect Word That Hits the Center of the Target",
+        simple: "Being precise with words is like being a master at a game of darts. Instead of throwing a handful of words and hoping one hits, a poet picks the one perfect word that hits the center of the target. If you say a dog is scary, that is okay, but if you say it is ferocious, we can really see it. Using the right words makes the pictures in our heads much clearer. It shows that we care enough to tell the exact truth about what we see.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single bell ringing: notice how clear it is compared to a crowd. Precision in sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A single rose: try to describe the smell without using the word good. That is precision." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single salt crystal: tiny and sharp. The power of the exact amount." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A needle gently against your skin: precision you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A magnifying glass on your thumbprint: seeing what was always there but needed focus." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on just one toe: the body performing syntactic precision." }
+        ],
+        intuition: "The one perfect word that hits the center of the target. The difference between the right word and the almost right word is the difference between lightning and a lightning bug. Mark Twain said that. He was right. Scary is a cloud. Ferocious is a thunderbolt. The lazy writer uses ten words. The poet uses one. And that one word does more work than the ten ever could. Precision is not about saying less. Precision is about meaning more.",
+        links: [
+          { label: "Syntax", url: "https://en.wikipedia.org/wiki/Syntax" },
+          { label: "Le Mot Juste", url: "https://en.wikipedia.org/wiki/Le_mot_juste" },
+          { label: "Linguistic Relativity", url: "https://en.wikipedia.org/wiki/Linguistic_relativity" }
+        ],
+        songs: [
+          { title: "Vincent", artist: "Don McLean", url: "https://www.youtube.com/watch?v=oxHnRfhDmrk" },
+          { title: "Suzanne", artist: "Leonard Cohen", url: "https://www.youtube.com/watch?v=svitEEpI07E" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Syntax: the architecture of thought. Precision involves deliberate word arrangement to maximize semantic density and minimize ambiguity. This squeezing of language increases the informativeness gate of communication, ensuring the receiver reconstructs intended meaning with high fidelity. The poet does not have a bigger vocabulary. The poet has a sharper knife." },
+
+      { id: "phonetic-aesthetics", num: 7, icon: "🔔", title: "Phonetic Aesthetics", subtitle: "The Words Are Singing a Secret Song Behind Their Meanings",
+        simple: "Some words sound pretty like a lullaby, and some words sound crunchy or scary like a monster stepping on dry leaves. Poets use the music of letters to make you feel things even before you know what the words mean. Words with L and M feel soft like a blanket, while words with K and T feel sharp like a stick. This helps the poem tell the story with its voice and its face at the same time. The words are singing a secret song behind their meanings.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Whisper lullaby then shout crack: the shape of the word is the feeling." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A lemon for a sharp word, a muffin for a round word: scent has phonetics too." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Popping candy: words that pop — plop, crackle, snap. Onomatopoeia on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Silk for smooth, sandpaper for gritty: texture and sound are the same thing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A jagged mountain and a round hill: finding words that look like them." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Humming a low note and feeling your chest vibrate: a bass word living in your bones." }
+        ],
+        intuition: "The words are singing a secret song behind their meanings. Say the word murmur. Your lips barely moved. Say the word crash. Your mouth exploded. The meaning was in the sound before it was in the dictionary. Poets know this. They choose words the way musicians choose notes — not just for what they mean but for how they feel in the mouth. Language has a body. And that body dances.",
+        links: [
+          { label: "Phonaesthetics", url: "https://en.wikipedia.org/wiki/Phonaesthetics" },
+          { label: "Sound Symbolism", url: "https://en.wikipedia.org/wiki/Sound_symbolism" },
+          { label: "Onomatopoeia", url: "https://en.wikipedia.org/wiki/Onomatopoeia" }
+        ],
+        songs: [
+          { title: "Pure Imagination", artist: "Gene Wilder", url: "https://www.youtube.com/watch?v=SVi3-PrQ0pY" },
+          { title: "Yellow", artist: "Coldplay", url: "https://www.youtube.com/watch?v=yKNxeF4KMsY" },
+          { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY" }
+        ],
+        advanced: "Phonetic aesthetics (euphony and cacophony) leverage the physical properties of sound to evoke emotional responses. Vowel sounds and soft consonants create harmony (euphony); harsh plosive consonants create tension (cacophony). This auditory layer adds a secondary communication channel reinforcing the primary semantic content. The word is not just an idea. The word is a vibration. And vibrations do not need translation." },
+
+      { id: "cultural-mythology-poetry", num: 8, icon: "🏛️", title: "Cultural Mythology", subtitle: "We Are Part of a Huge Family Asking the Same Questions Since the Beginning of Time",
+        simple: "Myths are the superhero stories that have lived for thousands of years. They help us understand big mysteries, like why the sun rises or why people get jealous. When a writer uses a myth, they are using a shortcut to a story everyone already knows. It is like wearing a costume that makes you feel brave or wise. By connecting to these old stories, we realize that we are part of a huge family of humans who have all been asking the same questions since the beginning of time.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A recording of ancient Greek or Latin: voices from the deep past still speaking." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or old stone: imagine an ancient temple. Myth has a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pomegranate: the fruit that trapped Persephone in the underworld. Myth you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An old coin: imagine the hands that held it long ago. Time compressed into metal." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Constellations: the pictures in the stars that ancestors drew with their imagination." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and still like a statue of a hero: your body becoming the myth." }
+        ],
+        intuition: "We are part of a huge family asking the same questions since the beginning of time. When a poet mentions Icarus, you already know the story. The wings. The wax. The sun. The fall. Two thousand years of meaning compressed into one name. That is mythology's gift to poetry: pre-loaded meaning. The poet does not have to build the bridge. The myth already built it. The poet just walks across.",
+        links: [
+          { label: "Mythology", url: "https://en.wikipedia.org/wiki/Mythology" },
+          { label: "Joseph Campbell", url: "https://en.wikipedia.org/wiki/Joseph_Campbell" },
+          { label: "Allusion", url: "https://en.wikipedia.org/wiki/Allusion" }
+        ],
+        songs: [
+          { title: "Achilles Come Down", artist: "Gang of Youths", url: "https://www.youtube.com/watch?v=HiL6re9_S3w" },
+          { title: "Rhiannon", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=itW3_6R1E60" },
+          { title: "Viva La Vida", artist: "Coldplay", url: "https://www.youtube.com/watch?v=dvgZkm1xWPE" }
+        ],
+        advanced: "Cultural mythology provides a global reliability modulator for shared truth. Referencing established myths utilizes a pre-validated symbolic language resonating across generations. Increases coincidence detection in communication as the reader's internal database of archetypes aligns with the author's intent. The myth is not a story. The myth is an operating system. The poet is just running the software." },
+
+      { id: "irony-paradox", num: 9, icon: "☯️", title: "Irony & Paradox", subtitle: "Finding a Secret Hidden in Plain Sight",
+        simple: "Irony is when something happens that is the total opposite of what you expected, like a no smoking sign catching on fire. Paradox is when two things that seem like they cannot both be true actually are, like being alone in a crowd. These tools help us see that the world is a funny, weird place where things are not always what they look like. It teaches us to look closer and not be fooled by the surface of things. It is like finding a secret hidden in plain sight.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sad song with a happy beat: two truths in one sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A stinky cheese that tastes delicious: the nose and tongue disagreeing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and salty popcorn: opposites married on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An ice cube held until it feels like it is burning: the paradox in your palm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A hidden picture puzzle where one thing is also another thing: vision contradicting itself." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Pushing a door open while someone else pulls it: paradox as a physical force." }
+        ],
+        intuition: "Finding a secret hidden in plain sight. The opposite of a great truth is also a great truth. Less is more. The child is the father of the man. You have to be cruel to be kind. The paradox does not break logic. The paradox reveals that logic has more rooms than you thought. Irony is the universe winking at you. Paradox is the universe showing you that the coin always had two sides. You were just only looking at one.",
+        links: [
+          { label: "Irony", url: "https://en.wikipedia.org/wiki/Irony" },
+          { label: "Paradox", url: "https://en.wikipedia.org/wiki/Paradox" },
+          { label: "Socratic Irony", url: "https://en.wikipedia.org/wiki/Socratic_method" }
+        ],
+        songs: [
+          { title: "Ironic", artist: "Alanis Morissette", url: "https://www.youtube.com/watch?v=Jne9t8sHpUc" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=aCnf46boC3I" },
+          { title: "Bittersweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Irony and paradox function as disjoint recognition triggers, forcing the mind to hold two contradictory states simultaneously. This increases cognitive entropy before collapsing into a higher-order realization. The intellectual tension is necessary for capturing the inherent complexity and non-linearity of truth. The paradox is not a bug in the system. The paradox is a feature." },
+
+      { id: "intentionality-silence", num: 10, icon: "☁️", title: "The Intentionality of Silence", subtitle: "Sometimes the Most Important Part of a Poem Is the Part That Is Not Written Down",
+        simple: "Sometimes the most important part of a poem is the part that is not written down. The white space on the page is like the quiet time between breaths. It gives your brain a chance to think about what you just read and let the meaning sink in. If a page was covered in words with no room, it would be like a room with too many toys where you cannot find anything. Silence helps the words that are there stand out and shine like stars in the dark night sky.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Stop talking and listen to the hum of silence in the room: silence is not empty. Silence is full." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh air after a strong perfume has faded: the scent of space." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain water after candy: cleansing the palate. The taste of nothing is the taste of everything." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth empty table: feeling the space where something could be." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The nothing between the branches of a tree: the emptiness that gives the tree its shape." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still and feeling the space all around your body: the silence you wear." }
+        ],
+        intuition: "Sometimes the most important part of a poem is the part that is not written down. The rest in music is not the absence of music. The rest is music. The white space on the page is not the absence of poetry. The white space is the poem breathing. What you choose not to say defines what you did say. The sculptor removes stone. The poet removes words. What remains is the truth that was hiding underneath the noise.",
+        links: [
+          { label: "White Space", url: "https://en.wikipedia.org/wiki/White_space_(visual_arts)" },
+          { label: "Concrete Poetry", url: "https://en.wikipedia.org/wiki/Concrete_poetry" },
+          { label: "4′33″ (John Cage)", url: "https://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3" }
+        ],
+        songs: [
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" },
+          { title: "4′33″", artist: "John Cage", url: "https://www.youtube.com/watch?v=JTEFKFiXSx4" },
+          { title: "The Great Gig in the Sky", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=T13se_yA51A" }
+        ],
+        advanced: "White space (negative space) acts as a structural modulator dictating the reader's sampling rate. Prevents informational aliasing by providing cognitive breaks for data integration. The silence in a text is functionally equivalent to the shared-ignorance floor in information theory: what is unsaid defines the boundaries of what is said. The poem is not the words. The poem is the shape the words make when they surround the silence." },
+    ],
+
+
 
 
 
