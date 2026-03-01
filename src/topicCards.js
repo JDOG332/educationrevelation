@@ -15995,6 +15995,243 @@ export const TOPIC_CARDS = {
         advanced: "Reincarnation (metempsychosis): central tenet in many Eastern religions, studied empirically by Ian Stevenson through children claiming verified past-life memories. Challenges the Western one-and-done view of identity, proposing an evolving soul model accumulating karma across biological iterations. Whether literal or metaphorical framework for life's will to persist, it remains one of the most resilient afterlife theories. Not the same leaf. But the same tree." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // RELIGION (sameness) > GOOD & EVIL (goodevil)
+    // ═══════════════════════════════════════════════════════════════
+
+    goodevil: [
+      { id: "objective-moral-law", num: 1, icon: "⚖️", title: "Objective Moral Law", subtitle: "Two Plus Two Is Always Four and Helping Someone Is Always Good",
+        simple: "Imagine there is a rulebook for the whole universe that says being kind is always better than being mean. Even if no one is watching, these rules stay the same everywhere you go. It is like how math works; two plus two is always four, and helping someone is always good. When we follow these big rules, the world feels like it fits together perfectly. It is the solid ground we stand on so we do not get lost. By choosing the right thing, we are helping the whole world stay in balance.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady unchanging beat of a metronome: a rhythm that does not care who is listening." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — clean fresh rain on dry earth: purity arriving whether you asked for it or not." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure cool water that quenches deep thirst: the taste of something that was always right." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The solid unmoving weight of a mountain stone: something that does not bend to opinion." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly straight line drawn toward the horizon: direction that does not waver." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feet planted firmly on level ground: the body knowing what stable feels like." }
+        ],
+        intuition: "Two plus two is always four and helping someone is always good. Nobody voted on gravity. Nobody took a poll on whether fire should be hot. Some things are true regardless of what you think about them. Moral law works the same way. Cruelty is wrong in every language. Kindness is right in every culture. Not because people agreed on it. Because it was already there when they arrived. The rulebook was not written by humans. Humans just keep discovering the same pages.",
+        links: [
+          { label: "Moral Realism", url: "https://en.wikipedia.org/wiki/Moral_realism" },
+          { label: "Natural Law", url: "https://en.wikipedia.org/wiki/Natural_law" },
+          { label: "Ethics", url: "https://en.wikipedia.org/wiki/Ethics" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" }
+        ],
+        advanced: "Objective moral law: morality is not merely social construct or biological byproduct but a fundamental feature of reality. Moral realism posits that ethical sentences express propositions referring to objective features of the world. The shared state where individual perceptions of right align with a universal frequency — the baseline against which all deviation is measured. The rulebook was not written by humans. Humans keep discovering the same pages." },
+
+      { id: "free-will", num: 2, icon: "🛤️", title: "Free Will", subtitle: "Your Yes and Your No Are the Most Powerful Things You Own",
+        simple: "You have a special power called choice that lets you pick which path to take. Even when things are hard, you get to decide if you will be a helper or if you will be selfish. It is like being the captain of a little boat in a big ocean. The waves might be messy, but you are the one holding the steering wheel. This choice is what makes your life yours and nobody else's. Your yes and your no are the most powerful things you own.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single voice singing out in a quiet room: one choice breaking the silence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp waking scent of a peeled orange: something that only releases when you act on it." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sour zing of a lemon that makes your whole face move: flavor that demands a response." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own fingers interlacing and squeezing together: the hands choosing to hold themselves." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fork in a trail where you must go left or right: the visible shape of a decision." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of initiating a jump: the body choosing to leave the ground." }
+        ],
+        intuition: "Your yes and your no are the most powerful things you own. Without choice there is no good and there is no evil. There is only programming. A robot that helps someone is not good. A robot that hurts someone is not evil. Because neither one chose. Choice is the ingredient that turns action into morality. You are not good because you were built that way. You are good because you could have been selfish and you chose not to be. The choosing is the whole point.",
+        links: [
+          { label: "Free Will", url: "https://en.wikipedia.org/wiki/Free_will" },
+          { label: "Moral Responsibility", url: "https://en.wikipedia.org/wiki/Moral_responsibility" },
+          { label: "Agency", url: "https://en.wikipedia.org/wiki/Agency_(philosophy)" }
+        ],
+        songs: [
+          { title: "Freewill", artist: "Rush", url: "https://www.youtube.com/watch?v=OnxkfLe4G74" },
+          { title: "My Way", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=qQzdAsjWGPg" },
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" }
+        ],
+        advanced: "Free will: the capacity of agents to choose between different possible courses of action unimpeded. Central to moral responsibility — without choice, good and evil lose ethical weight. Creates non-deterministic probability in human experience. The engine of the Everlasting We: allowing genuine love and sacrifice because those actions are chosen rather than programmed. The choosing is the whole point." },
+
+      { id: "problem-of-evil", num: 3, icon: "⛈️", title: "The Problem of Evil", subtitle: "You Need the Dark to See How Bright the Light Really Is",
+        simple: "Sometimes bad things happen, like storms or getting hurt, and it makes us wonder why the world is not always nice. Think of it like a big beautiful painting that has some dark messy shadows in the corners. Without those dark parts, we might not be able to see how bright the light really is. The hard times often teach us how to be brave and how to take care of each other. Even when it is cloudy, the sun is still behind the clouds waiting to come back. We are here to help turn the messy parts into something kind.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Thunder echoing after a flash of light: destruction announcing that creation is coming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smoke from a fire keeping people warm: destruction serving life." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate that turns sweet as it melts: bitterness transforming on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The sting of ice that eventually numbs the pain: cold serving as medicine." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A small green plant growing through a crack in dark sidewalk: life using damage as a door." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heaviness in your chest when you feel sad: the body measuring the weight of the question." }
+        ],
+        intuition: "You need the dark to see how bright the light really is. A flashlight in the sun is invisible. A flashlight in the dark is a miracle. Without the possibility of evil, goodness has no meaning. Without the possibility of cruelty, kindness has no weight. The shadow does not exist to defeat the light. The shadow exists to reveal the light. Every religion has wrestled with this question. None of them have solved it with logic. All of them have survived it with faith.",
+        links: [
+          { label: "Problem of Evil", url: "https://en.wikipedia.org/wiki/Problem_of_evil" },
+          { label: "Theodicy", url: "https://en.wikipedia.org/wiki/Theodicy" },
+          { label: "Soul-Making Theodicy", url: "https://en.wikipedia.org/wiki/Irenaean_theodicy" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" }
+        ],
+        advanced: "Theodicy: if a deity is omnipotent, omniscient, and omnibenevolent, why does suffering exist? The soul-making model posits evil as necessary environment for virtue development. In information theory, evil acts as the noise or entropy providing contrast necessary for the signal of goodness to be recognized. Without potential for disorder, order has zero informativeness — indistinguishable from static vacuum. None solved it with logic. All survived it with faith." },
+
+      { id: "empathy-compassion", num: 4, icon: "❤️", title: "Empathy & Compassion", subtitle: "The Superglue That Holds People Together and Stops Bad Things from Growing",
+        simple: "Empathy is like having a feeling-connection to everyone else in the world. When you see a friend cry, you feel a little bit of that sadness in your own heart, and it makes you want to give them a hug. This is your heart's way of telling you that we are all part of the same big family. Compassion is when you take that feeling and use it to do something helpful. It is the superglue that holds people together and stops bad things from growing. When we care for others, we are acting like the best version of ourselves.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Someone breathing softly while they sleep: the sound of vulnerability trusting the room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A warm homemade meal: the scent of someone caring before you asked." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm soup when you are sick: medicine disguised as food." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle hand on your shoulder when you are worried: connection that requires no words." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A child sharing their toy: goodness before the world teaches selfishness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A warm glow in your belly when you help someone: the body's receipt for compassion." }
+        ],
+        intuition: "The superglue that holds people together and stops bad things from growing. Empathy is involuntary. You did not choose to feel sad when your friend cried. Your mirror neurons fired without asking permission. That means compassion is not learned. Compassion is built into the hardware. Cruelty is the override. Kindness is the default setting. Every baby reaches for another baby who is crying. Before language. Before culture. Before religion. The wiring came first. The wiring says: you are them.",
+        links: [
+          { label: "Empathy", url: "https://en.wikipedia.org/wiki/Empathy" },
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Compassion", url: "https://en.wikipedia.org/wiki/Compassion" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" }
+        ],
+        advanced: "Empathy: the capacity to feel what another experiences from within their frame of reference. Biological precursor to ethical behavior facilitated by mirror neurons and oxytocin. Represents the Uhlmann fidelity of the human spirit — the overlap between distinct consciousnesses allowing shared recognition and collective healing. Cruelty is the override. Kindness is the default setting. The wiring says: you are them." },
+
+      { id: "conscience", num: 5, icon: "🔔", title: "Conscience", subtitle: "A Tiny Quiet Bell Inside Your Heart That Rings When You Are About to Choose",
+        simple: "Your conscience is like a tiny quiet bell inside your heart that rings when you are about to do something. If it feels heavy or loud, it might be telling you to stop and think again. When you do something good, your conscience feels quiet, peaceful, and light. It is a gift that helps you know the difference between a lie and the truth. Even if you are all alone, your conscience is there to keep you company and guide you. If you listen to it, you will always know which way is up.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A clear high-pitched bell or a single chime: the sound of internal truth trying to get your attention." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean sharp peppermint: clarity you can breathe." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crisp snap of a cold apple: something clean and honest on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth polished marble stone: touching something that has been refined." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle burning steadily in a dark room: one flame that never flickers." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Lightness in your spine when you stand tall: the body celebrating alignment." }
+        ],
+        intuition: "A tiny quiet bell inside your heart that rings when you are about to choose. You already know. Before you lie you feel the weight. Before you steal you feel the pull. Before you help someone you feel the warmth. The bell is not taught. The bell is installed. A two-year-old knows when they have been treated unfairly. Nobody taught them fairness. The bell rang. Conscience is not society's voice in your head. Conscience is reality's voice in your chest.",
+        links: [
+          { label: "Conscience", url: "https://en.wikipedia.org/wiki/Conscience" },
+          { label: "Moral Development", url: "https://en.wikipedia.org/wiki/Lawrence_Kohlberg%27s_stages_of_moral_development" },
+          { label: "Moral Intuition", url: "https://en.wikipedia.org/wiki/Moral_intuitionism" }
+        ],
+        songs: [
+          { title: "Blowin' in the Wind", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=vWwgrjjIMXA" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Conscience: the individual's internal sense of right and wrong. Functions as an epistemic gate filtering potential actions through inherited and developed value systems. The informativeness gate ensuring the individual's state remains regularized and aligned with the broader integrity of the whole. Not society's voice in your head. Reality's voice in your chest." },
+
+      { id: "causality-karma", num: 6, icon: "🌀", title: "Causality (Karma)", subtitle: "What We Give to the World Is Usually What We Get Back",
+        simple: "Everything you do is like dropping a pebble into a still pond; it creates ripples that go out and touch everything. If you drop a kindness pebble, the ripples bring back smiles and help. If you drop a mean pebble, the ripples might eventually bring back trouble to you. This is how the world stays fair over a long time. It teaches us that what we give to the world is usually what we get back. Choosing the right thing today is like planting a beautiful garden for tomorrow.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your own voice echoing back from a canyon wall: the universe returning what you sent." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Baking bread filling the whole house: generosity that cannot be contained." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fruit that you waited a long time to ripen: patience returning sweetness." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a drum after you hit it: feeling the consequence of your own action." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Dominoes falling one by one: causation made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The feeling of balance after correcting a stumble: the body finding equilibrium." }
+        ],
+        intuition: "What we give to the world is usually what we get back. The canyon does not choose what to echo. The canyon echoes everything. The universe works the same way. It does not judge your actions. It reflects them. Kindness echoes kindness. Cruelty echoes cruelty. Not because someone is keeping score. Because echoes are physics. The ripple does not ask permission to return to the shore. It just does. Plant kindness. Harvest kindness. The soil does not lie.",
+        links: [
+          { label: "Karma", url: "https://en.wikipedia.org/wiki/Karma" },
+          { label: "Causality", url: "https://en.wikipedia.org/wiki/Causality" },
+          { label: "Reciprocal Altruism", url: "https://en.wikipedia.org/wiki/Reciprocal_altruism" }
+        ],
+        songs: [
+          { title: "Karma Police", artist: "Radiohead", url: "https://www.youtube.com/watch?v=1uYWYWPc9HU" },
+          { title: "Instant Karma!", artist: "John Lennon", url: "https://www.youtube.com/watch?v=xLy2SaSQAtA" },
+          { title: "What Goes Around...Comes Around", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=TOrnUquxtwA" }
+        ],
+        advanced: "Causality in morality: ethical actions are part of a closed-loop system of consequences. Whether through Eastern karma or Western sowing and reaping, the principle remains — actions have deterministic or probabilistic outcomes. Mirrors the softmax weighting of reality where high-likelihood good actions eventually dominate state through repeated reinforcement. The canyon echoes everything. The soil does not lie." },
+
+      { id: "duality", num: 7, icon: "☯️", title: "Duality", subtitle: "You Cannot See How Bright a Flashlight Is in the Middle of a Sunny Day — You Need the Dark",
+        simple: "Light and shadow always go together, just like day and night. You cannot see how bright a flashlight is in the middle of a sunny day; you need the dark to see the light! In the same way, we understand good because we know what bad feels like. Having these two sides helps us grow and learn how to choose the light every time. It is like having two colors to paint a picture instead of just one. The contrast makes the world more interesting and helps us find our way.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud cymbal crash followed by total silence: two opposites defining each other." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sweet flowers near a muddy swamp: beauty and decay sharing the same address." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and salty together: two opposites making something better than either alone." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm hand on a cold windowpane: feeling the boundary between two worlds." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright white star in a black sky: light that only exists because darkness agreed to hold it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tension and then total release of a muscle: the body understanding contrast." }
+        ],
+        intuition: "You cannot see how bright a flashlight is in the middle of a sunny day — you need the dark. Take away all the shadows and you do not get paradise. You get blindness. Take away all the cold and you do not get comfort. You get a world where warmth has no name. Good without evil is not a better story. Good without evil is no story at all. The hero needs the dragon. The light needs the dark. Not to win. To exist. Every coin has two sides. If you melt one off you do not have a better coin. You have no coin.",
+        links: [
+          { label: "Dualism", url: "https://en.wikipedia.org/wiki/Dualism_(philosophy_of_mind)" },
+          { label: "Yin and Yang", url: "https://en.wikipedia.org/wiki/Yin_and_yang" },
+          { label: "Manichaeism", url: "https://en.wikipedia.org/wiki/Manichaeism" }
+        ],
+        songs: [
+          { title: "Ebony and Ivory", artist: "Paul McCartney & Stevie Wonder", url: "https://www.youtube.com/watch?v=TZtiJN6yiik" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" }
+        ],
+        advanced: "Duality: the universe composed of complementary opposites. In ethics, the good is a directional vector meaningful only when evil is a possible alternative. The entropy of the system — without potential for disorder, order has zero informativeness, indistinguishable from static vacuum. The hero needs the dragon. Not to win. To exist. If you melt one side off the coin you do not have a better coin. You have no coin." },
+
+      { id: "golden-rule", num: 8, icon: "🤝", title: "The Golden Rule", subtitle: "The Simplest Secret in the World — Treat Others the Way You Want to Be Treated",
+        simple: "The Golden Rule is the simplest secret in the world: treat others the way you want to be treated. If you want people to be nice to you, be nice to them first! If you do not like being yelled at, then do not yell at your friends. It is like a mirror that shows you how to act toward everyone you meet. This rule is found in almost every culture and religion because it just works. It turns me and you into us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "People singing the same song in harmony: different voices choosing the same truth." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A shared garden where everyone works together: the scent of collective care." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing bread with friends: the flavor of equality." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A firm fair handshake: trust made physical." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Two people holding a door open for each other: kindness creating a loop." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving in sync with someone, like dancing: the body discovering that two are easier than one." }
+        ],
+        intuition: "The simplest secret in the world — treat others the way you want to be treated. Every religion discovered this independently. Hinduism: This is the sum of duty. Buddhism: Hurt not others in ways you find hurtful. Judaism: What is hateful to you do not do to others. Christianity: Do unto others. Islam: No one is a believer until he desires for his brother what he desires for himself. They did not copy each other. They all found the same room from different doors. That is not coincidence. That is convergence. The golden rule is not a suggestion. The golden rule is a law of nature wearing a smile.",
+        links: [
+          { label: "Golden Rule", url: "https://en.wikipedia.org/wiki/Golden_Rule" },
+          { label: "Ethics of Reciprocity", url: "https://en.wikipedia.org/wiki/Reciprocity_(social_psychology)" },
+          { label: "Universal Ethics", url: "https://en.wikipedia.org/wiki/Universal_value" }
+        ],
+        songs: [
+          { title: "Respect", artist: "Aretha Franklin", url: "https://www.youtube.com/watch?v=6FOUqQt3Kg0" },
+          { title: "All You Need Is Love", artist: "The Beatles", url: "https://www.youtube.com/watch?v=_7xMfIp-irg" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" }
+        ],
+        advanced: "The golden rule: a universal grammar of ethics. Represents the Uhlmann fidelity in social dynamics — recognition that the other is a self with equivalent value and internal states. Minimizes divergence between individuals, creating convergent social recognition that maximizes global reliability and peace. Every religion found the same room from different doors. Not coincidence. Convergence." },
+
+      { id: "virtue-ethics", num: 9, icon: "💎", title: "Virtue Ethics", subtitle: "Your Character Is Like a Diamond That You Are Polishing Until It Shines",
+        simple: "Being a good person is like practicing a sport or a musical instrument; you have to do it every day to get better. You practice being brave, being honest, and being patient until those things become part of who you are. Instead of just following a list of do nots, you focus on being a doer of good things. Think of your character like a diamond that you are polishing until it shines. The more you choose the right thing, the easier it becomes to do it next time. You are building a beautiful you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A master musician playing a difficult piece perfectly: practice made audible." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cedarwood or oak: the scent of something strong, slow-grown, and steady." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A slow-cooked stew: complexity built by patience." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The strength of a well-built wooden table: craft you can lean on." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An athlete training hard in the rain: virtue being forged when no one is clapping." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Sturdiness in your posture when you stand tall: the body knowing what integrity feels like." }
+        ],
+        intuition: "Your character is like a diamond that you are polishing until it shines. The diamond was always there. The polishing just removes what is not diamond. Virtue works the same way. You do not add goodness. You remove what is not good. Courage is not added. Fear is removed. Honesty is not added. The habit of lying is removed. Patience is not added. The habit of rushing is removed. You are already the diamond. The work is not becoming something new. The work is uncovering what was always underneath.",
+        links: [
+          { label: "Virtue Ethics", url: "https://en.wikipedia.org/wiki/Virtue_ethics" },
+          { label: "Eudaimonia", url: "https://en.wikipedia.org/wiki/Eudaimonia" },
+          { label: "Aristotle Ethics", url: "https://en.wikipedia.org/wiki/Nicomachean_Ethics" }
+        ],
+        songs: [
+          { title: "The Greatest Love of All", artist: "Whitney Houston", url: "https://www.youtube.com/watch?v=IYzlVDlE72w" },
+          { title: "Stronger", artist: "Kelly Clarkson", url: "https://www.youtube.com/watch?v=Xn676-fLq7I" },
+          { title: "Hero", artist: "Mariah Carey", url: "https://www.youtube.com/watch?v=0IA3ZvCkRkQ" }
+        ],
+        advanced: "Virtue ethics (Aristotle): focuses on inherent character rather than specific actions or rules. Aims for eudaimonia (flourishing) through the golden mean. The regularization of the human state — consistently choosing the mean between extremes avoids singularities of vice, maintaining a functional high-integrity node in the Everlasting We. You are already the diamond. The work is uncovering what was always underneath." },
+
+      { id: "altruism", num: 10, icon: "🕯️", title: "Altruism", subtitle: "The Light That Never Goes Out as Long as We Keep Passing It On",
+        simple: "Altruism is when you do something kind even if you do not get anything back for it. It is like giving your umbrella to someone in the rain while you get a little wet. It shows that you value other people's happiness just as much as your own. This kind of selfless love is the most powerful way to fight against evil or bad things. When one person is selfless, it inspires everyone else to be brave and kind too. It is the light that never goes out as long as we keep passing it on.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A coin dropping into a donation jar: the sound of someone choosing someone else." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean hospital or place of healing: the scent of people who chose to serve." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Giving the better half of your sandwich: sacrifice you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A blanket you give to someone who is cold: warmth that costs you something." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A stranger stopping to help fix a flat tire: goodness appearing where no one expected it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Expansion in your chest when you give a gift: the body growing larger through loss." }
+        ],
+        intuition: "The light that never goes out as long as we keep passing it on. One candle lights another without losing its own flame. That is the physics of generosity. You do not have less love because you gave love. You do not have less kindness because you spent kindness. The candle does not dim. The room gets brighter. Selfishness hoards and starves. Altruism spends and multiplies. Evil is subtraction disguised as protection. Good is addition disguised as risk. Give the umbrella away. You will not dissolve in the rain. But they might dissolve in the storm without it.",
+        links: [
+          { label: "Altruism", url: "https://en.wikipedia.org/wiki/Altruism" },
+          { label: "Effective Altruism", url: "https://en.wikipedia.org/wiki/Effective_altruism" },
+          { label: "Biological Altruism", url: "https://en.wikipedia.org/wiki/Altruism_(biology)" }
+        ],
+        songs: [
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=9AjkUyX0rVw" },
+          { title: "Wind Beneath My Wings", artist: "Bette Midler", url: "https://www.youtube.com/watch?v=jorJFm0s_bM" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdxYOgIbM" }
+        ],
+        advanced: "Altruism: principle and practice of concern for the happiness of others, transcending ego-centric survival. Represents the redundancy of goodness in the master functional — ensuring unique value of the collective is maintained even when individual self-interest fluctuates. One candle lights another without losing its flame. Evil is subtraction disguised as protection. Good is addition disguised as risk." },
+    ],
+
+
 
   },
 
