@@ -14799,6 +14799,243 @@ export const TOPIC_CARDS = {
         advanced: "Ornamentation: architectural semiotics — the study of signs and symbols in built form. Modernism declared ornament is a crime; post-modernism argued buildings must communicate through double coding. Meaning derives from typology — classification of characteristics common to buildings. Whether classical pediment or high-tech exposed pipe, architecture uses visual vocabulary to convey power, community, or function. The ornament is not added to the building. The ornament is the building's language." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > CRAFT & THE HAND (craft)
+    // ═══════════════════════════════════════════════════════════════
+
+    craft: [
+      { id: "muscle-memory", num: 1, icon: "🔄", title: "Muscle Memory", subtitle: "Your Body Is Much Smarter Than You Realize",
+        simple: "Imagine your hands have their own little brain. When you practice something like tying your shoes or playing a piano song many times, your muscles remember how to do it without you even thinking. It is like a secret song your body knows by heart. This lets your mind dream and wonder while your hands do the hard work perfectly. It proves that your body is much smarter than you realize. You are a team made of your thoughts and your movements.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic thwack-thwack of a basketball dribbling perfectly: the sound of practice made permanent." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old wood in a workshop where things are made by hand: the scent of ten thousand repetitions." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe you can cook with your eyes closed: flavor stored in your fingers." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A familiar door handle in the dark: your hand remembering what your eyes forgot." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A dancer moving perfectly without looking at their feet: the body reading its own script." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing exactly where your fingers are on a keyboard without looking: the body mapping itself." }
+        ],
+        intuition: "Your body is much smarter than you realize. Your fingers know your phone password but your brain does not. Try to say the numbers out loud — you will have to mime typing to remember them. The knowledge is not in your head. It is in your hands. Every master craftsman has a library in their fingertips. Practice does not make perfect. Practice makes permanent. The body never forgets what the mind stops counting.",
+        links: [
+          { label: "Muscle Memory", url: "https://en.wikipedia.org/wiki/Muscle_memory" },
+          { label: "Motor Learning", url: "https://en.wikipedia.org/wiki/Motor_learning" },
+          { label: "Procedural Memory", url: "https://en.wikipedia.org/wiki/Procedural_memory" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Motor learning: consolidation of specific motor tasks into memory through repetition, creating long-term muscle memory performed without conscious effort. Decreases the need for attention and maximizes efficiency within motor and memory systems. The body as archive of history and practice — bridging conscious I and subconscious Us. Physical existence as a vessel for inherited and practiced wisdom. The hand remembers what the calendar erased." },
+
+      { id: "flow-state-craft", num: 2, icon: "🌊", title: "Flow State", subtitle: "When Your Heart and Your Hands Are Speaking the Same Language",
+        simple: "Flow is when you get so busy doing something you love that you forget what time it is. It feels like you are in the zone and everything is happening just right. Your hands move on their own, and you feel very happy and peaceful. It is like being a fish swimming in a river where the water carries you along. This is when your heart and your hands are speaking the same language.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady hum of a potter's wheel: the soundtrack of total absorption." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry earth during a deep walk: the scent of being fully present." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool water after a long time of working hard: refreshment earned by focus." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth surface of a finished carving: flow preserved in the material." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The blur of the world around you when you focus on one spot: everything else disappearing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling weightless while running or biking at high speed: the body forgetting itself." }
+        ],
+        intuition: "When your heart and your hands are speaking the same language. You looked up and three hours had passed. You did not notice. The ego fell away. Action followed action like notes in a jazz solo. That was not distraction. That was the opposite of distraction. That was the most focused you have ever been. Flow is what happens when the distance between you and the work drops to zero. You were not making the thing. You were the thing making itself.",
+        links: [
+          { label: "Flow (Psychology)", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Mihaly Csikszentmihalyi", url: "https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi" },
+          { label: "Optimal Experience", url: "https://en.wikipedia.org/wiki/Flow_(psychology)#Components" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Dreams", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=mrZRURcb1cM" },
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" }
+        ],
+        advanced: "Flow: complete absorption in activity with transformed sense of time. The ego falls away; every action follows inevitably from the previous one. In craft, flow is the moment head and hand merge — the forgotten knowledge replaced by direct connection to the creative force. The individual becomes a conduit. You were not using the tool. The tool was using you. And both of you were being used by something larger." },
+
+      { id: "haptic-perception", num: 3, icon: "✋", title: "Haptic Perception", subtitle: "Your Hands Are Ten Little Explorers Sent Out to Discover the World",
+        simple: "This is the way you see things using your skin and your muscles instead of your eyes. When you reach into a backpack to find a pencil, your hands see which one is the pencil just by feeling it. Your skin has millions of tiny sensors that talk to your brain. It tells you if something is hot, cold, fuzzy, or sharp. Your hands are like ten little explorers sent out to discover the world for you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crinkle of paper between your fingers: sound confirming what touch already knew." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The metallic scent of coins in your palm: materials introducing themselves." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The texture of a crunchy apple: haptics on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Braille dots on a page: an entire language built for the fingertip." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The texture of a thick oil painting: seeing what the artist's hands felt." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the thickness of a blanket over your body: the skin reading the room." }
+        ],
+        intuition: "Your hands are ten little explorers sent out to discover the world. A blind potter makes perfect bowls. The eyes were never required. The fingers have their own sight. Every surface is a story: smooth means polished, rough means raw, warm means alive, cold means waiting. Your skin has more nerve endings per square inch than almost any other organ. You do not just touch the world. You read it.",
+        links: [
+          { label: "Haptic Perception", url: "https://en.wikipedia.org/wiki/Haptic_perception" },
+          { label: "Somatosensory System", url: "https://en.wikipedia.org/wiki/Somatosensory_system" },
+          { label: "Active Touch", url: "https://en.wikipedia.org/wiki/Haptic_perception#Active_touch" }
+        ],
+        songs: [
+          { title: "Touch", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=0Gkhol2Q1og" },
+          { title: "I Feel It Coming", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=qFLhGq0060w" },
+          { title: "Smooth", artist: "Santana ft. Rob Thomas", url: "https://www.youtube.com/watch?v=6Whgn_iE5uc" }
+        ],
+        advanced: "Haptic perception: recognizing objects through active touch combining somatosensory perception of skin surface patterns with proprioception of hand position and conformation. Fundamental to craftsmanship — the artisan must feel material resistance and quality. This sensory epistemology suggests truth is not just seen but felt. The boundaries between observer and observed blur through the act of touching. The hand does not collect data. The hand thinks." },
+
+      { id: "tacit-knowledge", num: 4, icon: "🔑", title: "Tacit Knowledge", subtitle: "A Secret You Keep With Yourself That Makes You Special",
+        simple: "Have you ever known how to do something but could not explain it in words? Like riding a bike — you cannot just tell someone move your balance two inches, you just know it. That is called silent knowledge. It is stored in your hands and your heart, not just your dictionary. It is a secret you keep with yourself that makes you special. You learn it by doing, not just by reading.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The specific clack of a Lego piece snapping into place: rightness you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A kitchen where a master chef is guessing spices: knowledge that has no recipe." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A soup that tastes just right without a recipe: wisdom on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The exact pressure needed to crack an egg without making a mess: calibration that lives in the wrist." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The slight change in color of wood when it is perfectly sanded: seeing what only experience teaches." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on a log across a stream: knowledge your body has but your mouth cannot explain." }
+        ],
+        intuition: "A secret you keep with yourself that makes you special. The master potter cannot tell you how much pressure to use. She can only show you. And even then, your hands must learn it for themselves. The most important things in life cannot be written down. Love, balance, timing, touch — all tacit. All silent. All stored in the body. The book can give you information. Only your hands can give you knowledge.",
+        links: [
+          { label: "Tacit Knowledge", url: "https://en.wikipedia.org/wiki/Tacit_knowledge" },
+          { label: "Michael Polanyi", url: "https://en.wikipedia.org/wiki/Michael_Polanyi" },
+          { label: "Experiential Learning", url: "https://en.wikipedia.org/wiki/Experiential_learning" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Something", artist: "The Beatles", url: "https://www.youtube.com/watch?v=UelDrZ1aFeY" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Tacit knowledge: knowledge difficult to transfer by writing or verbalizing, acquired through experience and practice. The knack that separates novice from master. Highlights the limitations of formal language and the power of experiential truth. The most profound truths are lived and felt rather than debated. We know more than we can tell. The hand knows more than the hand can say." },
+
+      { id: "embodied-cognition-craft", num: 5, icon: "🧩", title: "Embodied Cognition", subtitle: "Your Hands Are Antennas That Pick Up Signals for Your Mind",
+        simple: "This idea says that we do not just think with our brains, but with our whole bodies. If you hold a warm cup of cocoa, you might feel more friendly toward someone. If you use your hands to gesture while you talk, you can remember words better. Your body helps your brain understand the world. Your hands are like antennas that pick up signals for your mind.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of your own footsteps telling you how big a room is: the body measuring space." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass making you feel outside and free: scent changing thought." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Spicy food making you think fast and feel alert: the tongue waking up the brain." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Leaning against a strong tree to feel steady and calm: borrowing stability from bark." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Using your fingers to count so you do not lose your place: the hand assisting the mind." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Heaviness when you are sad or lightness when happy: the body scoring the emotions." }
+        ],
+        intuition: "Your hands are antennas that pick up signals for your mind. Hold a heavy object and the problem feels serious. Hold a light object and the problem feels manageable. The body is not waiting for the brain's opinion. The body is forming its own. The craftsman does not think about the wood and then carve. The craftsman thinks through the carving. The hand is not a servant of the mind. The hand is a partner.",
+        links: [
+          { label: "Embodied Cognition", url: "https://en.wikipedia.org/wiki/Embodied_cognition" },
+          { label: "Grounded Cognition", url: "https://en.wikipedia.org/wiki/Grounded_cognition" },
+          { label: "Gesture and Thought", url: "https://en.wikipedia.org/wiki/Gesture#Relationship_with_speech" }
+        ],
+        songs: [
+          { title: "Shake It Off", artist: "Taylor Swift", url: "https://www.youtube.com/watch?v=nfWlot6h_JM" },
+          { title: "Body and Soul", artist: "Tony Bennett & Amy Winehouse", url: "https://www.youtube.com/watch?v=gRpTjr4L4T4" },
+          { title: "Heads Will Roll", artist: "Yeah Yeah Yeahs", url: "https://www.youtube.com/watch?v=auzfTPp4moA" }
+        ],
+        advanced: "Embodied cognition: features of cognition shaped by the entire body. Motor system, perceptual system, and environment all integrated into thinking. Shatters mind-body dualism. In craft, the artisan is not a mind directing a tool but a unified system where the hand's movement is a form of thought itself. Thinking is not what happens before making. Thinking is the making." },
+
+      { id: "neuroplasticity-craft", num: 6, icon: "🧠", title: "Neuroplasticity & Coordination", subtitle: "By Using Your Hands to Build Things You Are Building a Better Brain",
+        simple: "Your brain is like a piece of clay that can be reshaped. Every time you learn to do something hard with your hands — like knitting, drawing, or playing video games — your brain grows new wires. These wires make you faster and smarter. By using your hands to build things, you are actually building a better brain. You are the architect of your own mind!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The clicking of knitting needles in a steady pattern: the sound of new neural pathways." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book or fresh ink: the scent of possibility." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The complexity of a new food you have never tried: novelty on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Learning the texture of different fabrics: the fingers cataloging the world." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A drawing getting better every day you practice: progress made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Learning to balance on one foot: the whole body rewiring in real time." }
+        ],
+        intuition: "By using your hands to build things you are building a better brain. Every stitch, every stroke, every cut creates a new connection inside your skull. The brain does not grow from thinking about things. The brain grows from doing things. The hands are not just tools. The hands are the brain's favorite teachers. You are not just making a pot. You are making yourself.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Fine Motor Skills", url: "https://en.wikipedia.org/wiki/Fine_motor_skill" },
+          { label: "Cortical Remapping", url: "https://en.wikipedia.org/wiki/Cortical_remapping" }
+        ],
+        songs: [
+          { title: "Stronger", artist: "Kanye West", url: "https://www.youtube.com/watch?v=PsO6ZnUZI0g" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" },
+          { title: "Harder Better Faster Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" }
+        ],
+        advanced: "Neuroplasticity: the brain's ability to reorganize by forming new neural connections throughout life. Fine motor skills and hand-eye coordination are particularly effective at stimulating cortical remapping. Engaging the hand in craft participates in the ongoing creation of consciousness — a feedback loop where physical actions refine internal awareness. The hand sculpts the clay. The clay sculpts the brain. The brain sculpts the hand. The loop never closes." },
+
+      { id: "proprioceptive-feedback", num: 7, icon: "📍", title: "Proprioceptive Feedback", subtitle: "Your Brain Starts to Think the Tool Is Part of Your Own Body",
+        simple: "Close your eyes and touch your nose. How did you find it? You have a GPS inside your muscles and joints that tells you where your body parts are. This is called proprioception. It is like having an invisible map of yourself. When you use tools, your GPS gets even bigger, and your brain starts to think the tool is part of your own body.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The sound of your own chewing inside your head: the body's internal microphone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of your own skin: the most familiar scent you never notice." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Feeling the shape of your tongue in your mouth: tasting your own map." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your feet pressing against the floor: the ground confirming your coordinates." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking in the mirror and knowing that is me: sight meeting proprioception." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Reaching for a glass without looking and grabbing it perfectly: the invisible map in action." }
+        ],
+        intuition: "Your brain starts to think the tool is part of your own body. The carpenter does not feel the hammer in his hand. He feels the nail through the hammer. The boundary of self expanded. The tool disappeared. When you drive a car, you feel the road through the tires. Your body grew. Proprioception is proof that the self is not fixed. The self is as big as the tools it learns to use.",
+        links: [
+          { label: "Proprioception", url: "https://en.wikipedia.org/wiki/Proprioception" },
+          { label: "Body Schema", url: "https://en.wikipedia.org/wiki/Body_schema" },
+          { label: "Tool Use (Cognition)", url: "https://en.wikipedia.org/wiki/Tool_use_by_animals" }
+        ],
+        songs: [
+          { title: "Where Is My Mind?", artist: "Pixies", url: "https://www.youtube.com/watch?v=49FB9hhoO6c" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" },
+          { title: "Map of the Problematique", artist: "Muse", url: "https://www.youtube.com/watch?v=T1qzYsESDhc" }
+        ],
+        advanced: "Proprioception: sense of relative position of body parts and effort in movement, mediated by mechanosensory neurons in muscles, tendons, and joints. In craftsmanship, allows extension of self into the material — the tool becomes a transparent interface. The artisan experiences the world through the point of a chisel or tip of a brush. The self ends where? At the skin? At the fingertip? At the tip of the tool? The answer: wherever attention goes, the self follows." },
+
+      { id: "material-agency", num: 8, icon: "🪵", title: "Material Agency", subtitle: "Craft Is a Conversation Between You and the Earth",
+        simple: "Did you know that wood, clay, and metal have their own personalities? A woodcarver cannot just cut however they want; they have to listen to the wood's grain. If you fight the material, it will break. If you work with it, it helps you make something beautiful. Craft is a conversation between you and the earth. You are not the boss; you are a partner.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ring of a hammer hitting an anvil: the metal answering back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The earthy scent of wet clay: the material introducing itself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The mineral taste of water from a stone cup: drinking the earth's personality." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Rough grain of oak versus smooth grain of pine: every tree has a different handshake." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Light reflecting off polished marble: the stone showing you what it can become." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the push back of a spring: the material having an opinion." }
+        ],
+        intuition: "Craft is a conversation between you and the earth. The wood has a grain. Cut with it and the blade sings. Cut against it and the blade screams. The material is not passive. The material is your co-author. The potter does not impose a shape on the clay. The potter negotiates with the clay. Every crack, every knot, every imperfection is the material's voice. The master listens. The amateur argues.",
+        links: [
+          { label: "Material Agency", url: "https://en.wikipedia.org/wiki/Material_culture" },
+          { label: "Affordance", url: "https://en.wikipedia.org/wiki/Affordance" },
+          { label: "Craft", url: "https://en.wikipedia.org/wiki/Craft" }
+        ],
+        songs: [
+          { title: "Woodstock", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=q3LAkM1bOGM" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" },
+          { title: "Iron Man", artist: "Black Sabbath", url: "https://www.youtube.com/watch?v=8aQRq9hhekA" }
+        ],
+        advanced: "Material agency: physical objects have influence in the creative process, challenging the anthropocentric view that humans are sole creators. Material properties dictate form possibilities. This conversation with material is a sacred dialogue — humbling the ego, reminding us we are part of an interconnected web where every atom has a voice. The material is not what you make things out of. The material is who you make things with." },
+
+      { id: "synaptic-pruning", num: 9, icon: "✂️", title: "Synaptic Pruning", subtitle: "By Choosing What You Do With Your Hands You Choose Who You Become",
+        simple: "Your brain is like a garden. When you are little, you have too many branches called synapses. As you focus on one thing — like drawing or building — your brain prunes away the branches you do not use and makes the ones you do use much stronger. Focusing on a craft helps your brain become a masterpiece. By choosing what you do with your hands, you choose who you become.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The snip of garden shears: subtraction as creation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean organized room: the scent of what remains after the unnecessary leaves." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sharp clear taste of a lemon: pure, undiluted, essential." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of a sharp clean edge: precision born from removal." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A perfectly organized toolbox: everything in its place, nothing extra." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and focused: the body after the noise has been pruned away." }
+        ],
+        intuition: "By choosing what you do with your hands you choose who you become. The sculptor removes stone to reveal the statue. The brain removes synapses to reveal the skill. Creation is not always addition. Sometimes creation is subtraction. Every hour you spend practicing the guitar is an hour your brain spends pruning away everything that is not guitar. Mastery is not having more. Mastery is needing less.",
+        links: [
+          { label: "Synaptic Pruning", url: "https://en.wikipedia.org/wiki/Synaptic_pruning" },
+          { label: "Critical Period", url: "https://en.wikipedia.org/wiki/Critical_period" },
+          { label: "Myelination", url: "https://en.wikipedia.org/wiki/Myelination" }
+        ],
+        songs: [
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Simple Man", artist: "Lynyrd Skynyrd", url: "https://www.youtube.com/watch?v=sMmTkKz60W8" },
+          { title: "Sharp Dressed Man", artist: "ZZ Top", url: "https://www.youtube.com/watch?v=7wRHBLwpASw" }
+        ],
+        advanced: "Synaptic pruning: natural process eliminating extra synapses between childhood and adulthood, increasing efficiency of neuronal transmissions. Mirrors the artistic process of subtraction — by removing the unnecessary, the essential truth is revealed. Crafting is not just adding to the world; it is the disciplined removal of noise to find the signal. The masterpiece was always inside the marble. The sculptor just removed everything that was not the masterpiece." },
+
+      { id: "tool-body-extension", num: 10, icon: "🛠️", title: "The Tool as Body Extension", subtitle: "You Are a Person Who Can Grow New Limbs to Change the World",
+        simple: "Have you ever noticed that when you use a spoon, you do not feel the spoon in your hand — you feel the soup? Your brain is so cool that it downloads the tool and makes it part of your body. A blind person's cane becomes their eyes. A painter's brush becomes their fingers. This means you are not just a person; you are a person who can grow new limbs to change the world.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The scraping of a shovel in the dirt: the tool speaking for your hands." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The oil used to keep tools from rusting: caring for your extended body." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The difference between eating with a silver spoon versus a plastic one: the tool flavoring the experience." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a power tool in your arm: the material's texture felt through metal." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The world through a pair of binoculars: the tool extending your eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Knowing exactly where the end of your car is when parking: your body expanded to the bumper." }
+        ],
+        intuition: "You are a person who can grow new limbs to change the world. You do not feel the spoon. You feel the soup. The tool vanished. Your brain absorbed it. The blind person's cane is not a stick. It is a fingertip that reaches the ground. The surgeon's scalpel is not a blade. It is a nerve ending made of steel. Humans are the only animal that can extend their body at will. Every tool you master makes you larger. You have no final shape.",
+        links: [
+          { label: "Extended Mind Thesis", url: "https://en.wikipedia.org/wiki/Extended_mind_thesis" },
+          { label: "Tool Use (Cognition)", url: "https://en.wikipedia.org/wiki/Tool_use_by_animals" },
+          { label: "Body Schema", url: "https://en.wikipedia.org/wiki/Body_schema" }
+        ],
+        songs: [
+          { title: "If I Had a Hammer", artist: "Peter, Paul and Mary", url: "https://www.youtube.com/watch?v=jSVOMaWYQTE" },
+          { title: "Sledgehammer", artist: "Peter Gabriel", url: "https://www.youtube.com/watch?v=OJWJE0x7T4Q" },
+          { title: "We Built This City", artist: "Starship", url: "https://www.youtube.com/watch?v=K1b8AhIsSYQ" }
+        ],
+        advanced: "The extended mind thesis: tools and external objects are literally part of the cognitive process. When a tool becomes transparent through use, it is incorporated into the body schema. The ultimate expression of interconnection: we are fundamentally designed to merge with environment, tools, and creations. The hands are the bridge that turns the Other into Self. You have no final shape. You are still being built." },
+    ],
+
+
 
 
 
