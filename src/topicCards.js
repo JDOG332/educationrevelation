@@ -23111,6 +23111,243 @@ export const TOPIC_CARDS = {
         advanced: "Algorithmic filtering creates illusion of consensus. Confirmation bias makes the algorithm's job easy. Digital echo chambers produce pseudo-belonging — no oxytocin from a like button, no mirror neurons from an emoji. Friction is not the enemy of belonging — friction is the evidence of it. Real belonging requires the whole messy embodied self learning to stay." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // LOVE (filter) > GRIEF & LOSS (grief)
+    // ═══════════════════════════════════════════════════════════════
+
+    grief: [
+      { id: "infinite-loop-persistence-of-love", num: 1, icon: "♾️", title: "The Infinite Loop (Persistence of Love)", subtitle: "Love Cannot Be Destroyed Only Transformed — the Light Never Goes Out Because Love Is Stronger Than Being Apart",
+        simple: "When someone we love is gone, the love we feel for them stays inside us like a heavy beautiful treasure. Imagine having a giant hug ready to give, but the person is not there to take it, so you hold onto it yourself. It feels sad because that love is looking for a home. Over time, you learn to give that love to the world or keep it as a warm light in your heart. This light never goes out because love is stronger than being apart.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythm of your own heartbeat: the sound of persistence — the pump that does not stop when the person it loved disappears, proof that the system continues to circulate what it was built to circulate." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean old book or a favorite sweater: the scent of someone's residue — molecules they shed still trapped in fabric, still activating the same olfactory receptors, still triggering the same recognition circuits." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single drop of honey on the tongue: the taste of concentrated sweetness — a small dose of something that cannot be diluted by absence." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms together firmly: the touch of self-meeting-self — the pressure you would have given them redirected inward, the hug with no recipient becoming the hug you give yourself." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset that happens every day even when we do not watch: the sight of something beautiful that does not require an audience — the event continues whether or not the witness is present." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your feet on solid ground: the body confirming that you are still here — gravity holding you to the earth the same way it held them, the planet not distinguishing between the grieving and the grieved." }
+        ],
+        intuition: "Love cannot be destroyed only transformed — the light never goes out because love is stronger than being apart. The first law of thermodynamics: energy cannot be created or destroyed, only converted from one form to another. Grief is the emotional equivalent. The love you built for someone — the neural pathways, the oxytocin associations, the dopamine reward circuits, the cortisol co-regulation patterns — does not vanish when the person dies. The circuitry remains. The pathways still fire. The brain still generates the impulse to call them, to tell them the news, to save them a seat. The love is still being produced. It simply has nowhere to land. This is why grief feels like pressure. It is pressure. It is a system generating output for a receiver that no longer exists. The energy does not dissipate. It accumulates. And the work of grief — the real work, not the performance of sadness but the metabolic labor of reorganization — is learning to redirect that energy. Some of it becomes memory. Some becomes legacy. Some becomes the capacity to love others more deeply because you now know what it costs. None of it disappears. The first law does not permit disappearance. Love is conserved. The form changes. The quantity does not.",
+        links: [
+          { label: "Grief", url: "https://en.wikipedia.org/wiki/Grief" },
+          { label: "Conservation of Energy", url: "https://en.wikipedia.org/wiki/Conservation_of_energy" },
+          { label: "Bereavement", url: "https://en.wikipedia.org/wiki/Bereavement" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Tears in Heaven", artist: "Eric Clapton", url: "https://www.youtube.com/watch?v=JxPj3GAYYZ0" }
+        ],
+        advanced: "First law of thermodynamics applied to emotion: love cannot be destroyed. Neural pathways, oxytocin associations, dopamine circuits remain after loss. Grief feels like pressure because the system generates output for a receiver that no longer exists. Love is conserved. The form changes. The quantity does not." },
+
+      { id: "rewiring-grief-brain", num: 2, icon: "🧠", title: "The Rewiring (Grief Brain)", subtitle: "Your Brain Keeps Walking Down the Old Path and Hitting a Wall — Slowly It Draws New Lines on the Map",
+        simple: "Your brain is like a map that has a special path to the person you love. When they are gone, your brain keeps trying to walk down that old path, but it hits a wall. This is why you might forget for a second that they are not there. Slowly, your brain has to draw new paths on the map. It takes a long time and lots of rest to draw these new lines.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise or a fan humming: the sound of the brain's background processing — the constant low-level computation of a system rewriting its own architecture." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain on dry pavement — petrichor: the scent of something old being renewed — the same ground, different water, the olfactory metaphor for neural pathway reformation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Plain cool water: the taste of the baseline — nothing added, nothing taken away, the palate cleansing itself before it can register new flavors." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Brushing your own arm softly: the touch of self-soothing — the hand providing what the absent person's hand once provided, the body learning to be its own source." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A spiderweb being rebuilt: the sight of architecture reconstructed after destruction — the spider does not mourn the old web, it builds a new one using the same silk." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot feeling your brain work: the body demonstrating real-time recalibration — the cerebellum adjusting hundreds of times per second, proof that the system adapts even when it does not want to." }
+        ],
+        intuition: "Your brain keeps walking down the old path and hitting a wall — slowly it draws new lines on the map. Mary-Frances O'Connor at UCLA put grieving people in fMRI scanners and discovered something precise: the nucleus accumbens — the brain's reward center — activates when bereaved individuals view photographs of the deceased. The brain is not just remembering. The brain is craving. The same circuitry that drives addiction drives grief. The person you lost was a source of dopamine, oxytocin, endorphins, and cortisol regulation. Their presence was neurochemically rewarding. Their absence is neurochemically punishing. And the brain, which operates on predictive coding — constantly generating expectations about what will happen next based on past experience — keeps predicting that the person will be there. You reach for your phone to call them. You set a place at the table. You hear a door open and expect their voice. Each time the prediction fails, the brain must update its model. This updating is grief. It is not an emotion. It is a computational process. The brain is rewriting millions of predictions — every context in which the person appeared, every routine that included them, every future that assumed their presence. Each rewrite is metabolically expensive. This is why grief is exhausting. Not because sadness is tiring. Because neural remodeling is tiring. The brain is literally rebuilding itself around an absence. And that takes time that no amount of willpower can accelerate.",
+        links: [
+          { label: "Mary-Frances O'Connor", url: "https://en.wikipedia.org/wiki/Mary-Frances_O%27Connor" },
+          { label: "Predictive Coding", url: "https://en.wikipedia.org/wiki/Predictive_coding" },
+          { label: "Nucleus Accumbens", url: "https://en.wikipedia.org/wiki/Nucleus_accumbens" }
+        ],
+        songs: [
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "Keep Me in Your Heart", artist: "Warren Zevon", url: "https://www.youtube.com/watch?v=RMTKb-pgIGk" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=K_PQ4fRQ5Kc" }
+        ],
+        advanced: "O'Connor: nucleus accumbens activates when bereaved view photos of deceased — the brain craves, not just remembers. Same circuitry as addiction. Brain operates on predictive coding, keeps predicting the person will be there. Each failed prediction requires model update. Grief is a computational process. Neural remodeling is why grief exhausts." },
+
+      { id: "ocean-wave-nonlinearity", num: 3, icon: "🌊", title: "The Ocean Wave (Non-Linearity)", subtitle: "You Cannot Stop the Waves but You Can Learn to Swim — Eventually You Stand Up Even When the Water Gets Deep",
+        simple: "Grief is not like a staircase where you go up and never come back down. It is more like the waves at the beach. Some days the water is very quiet and small, and other days the waves are huge and knock you over. You cannot stop the waves, but you can learn how to swim in them. Eventually, you find you can stand up even when the water gets deep.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A distant ocean or a sea shell: the sound of turbulence at a distance — chaos that resolves into rhythm when you are far enough away to hear the pattern." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Saltwater or sea air: the scent of the element that covers seventy percent of the planet — the reminder that most of existence is fluid, not fixed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pinch of salt: the taste of tears and ocean in the same molecule — the body producing the sea from its own eyes." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sand running through your fingers: the touch of something that cannot be held — each grain slipping through, the tactile lesson that control is an illusion and release is a skill." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The tide coming in and going out: the sight of something that advances and retreats without choosing to — the rhythm is not decided, it is obeyed." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Swaying back and forth slowly: the body practicing oscillation — the vestibular system learning that movement between states is not instability, it is balance." }
+        ],
+        intuition: "You cannot stop the waves but you can learn to swim — eventually you stand up even when the water gets deep. Elisabeth Kübler-Ross never intended her five stages to be linear. She observed denial, anger, bargaining, depression, and acceptance in dying patients and described them as common experiences, not a sequential program. But the culture flattened her observation into a staircase: step one, step two, step three, done. Grief does not work that way. Grief is a nonlinear dynamical system. It has sensitive dependence on initial conditions — the same loss produces wildly different trajectories in different people. It has feedback loops — a song triggers a memory that triggers cortisol that triggers insomnia that triggers cognitive impairment that triggers guilt. It has bifurcation points — moments where the system could stabilize or could cascade. The wave metaphor is not poetic. It is mathematically accurate. Grief oscillates. The amplitude of the waves generally decreases over time, but individual waves can be larger than any that came before. A scent. A date. A dream. The trigger hits and the system spikes. Then it settles. Then it spikes again. The distance between spikes grows. The recovery time shortens. But the waves never fully stop. They become part of the rhythm. Jon Kabat-Zinn said it simply: you cannot stop the waves but you can learn to surf. The ocean does not care about your timeline. But the ocean also does not try to drown you. It just moves. And eventually, you move with it.",
+        links: [
+          { label: "Kübler-Ross Model", url: "https://en.wikipedia.org/wiki/K%C3%BCbler-Ross_model" },
+          { label: "Nonlinear System", url: "https://en.wikipedia.org/wiki/Nonlinear_system" },
+          { label: "Grief Counseling", url: "https://en.wikipedia.org/wiki/Grief_counseling" }
+        ],
+        songs: [
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "The Living Years", artist: "Mike + The Mechanics", url: "https://www.youtube.com/watch?v=uGDA0Hecw1k" },
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwoʻole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" }
+        ],
+        advanced: "Kübler-Ross never intended five stages to be linear. Grief is a nonlinear dynamical system with sensitive dependence on initial conditions and feedback loops. Wave amplitude generally decreases but individual waves can exceed all predecessors. The distance between spikes grows. Recovery shortens. The waves never fully stop — they become part of the rhythm." },
+
+      { id: "invisible-thread-continuing-bonds", num: 4, icon: "🧶", title: "The Invisible Thread (Continuing Bonds)", subtitle: "You Cannot See the Kite but You Can Still Feel the String — the Connection Evolves It Does Not End",
+        simple: "Just because we cannot see someone does not mean we are not connected to them anymore. Think of it like a kite that flew so high it went into the clouds. You cannot see the kite, but you can still feel the string tugging on your hand. You can still talk to them in your head or do things they liked to do. This keeps the string strong even if they are far away.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft bell ringing: the sound of something present but not visible — vibration reaching you from a source you cannot locate, proof that connection does not require line of sight." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A specific flower like rose or lavender: the scent of someone's garden still growing — the plants they tended continuing to bloom on their own schedule, indifferent to absence." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A family recipe passed down through generations: the taste of someone's hands in your mouth — their proportions, their timing, their preferences encoded in flavor and transmitted through practice." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Holding an old photograph or piece of jewelry: the touch of an object that was touched by hands that no longer exist — tactile connection across the boundary of death." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stars in the night sky: the sight of light that left its source years ago — photons from dead stars still arriving, still illuminating, still reaching you." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Reaching your arms out wide: the body opening to the full wingspan — the gesture of embrace directed at nothing visible, the physical expression of a bond that persists beyond presence." }
+        ],
+        intuition: "You cannot see the kite but you can still feel the string — the connection evolves it does not end. For decades, the dominant model of grief was Freud's: the goal was decathexis — withdrawing emotional energy from the deceased and reinvesting it in new relationships. Let go. Move on. Closure. Dennis Klass, Phyllis Silverman, and Steven Nickman overturned this in 1996 with Continuing Bonds. They studied bereaved parents, widows, and children across cultures and found that healthy grievers did not sever their connection to the deceased. They transformed it. The relationship did not end. It evolved from an external relationship with a living person to an internal relationship with a representation. The deceased became an advisor, a moral compass, a source of comfort, a conversation partner who existed in the mind rather than in the room. Cross-cultural research confirmed this was not pathology. It was the norm. In Japan, ancestors are consulted at household altars. In Mexico, the Day of the Dead celebrates ongoing relationship. In many African traditions, the ancestors are the most influential members of the community. Western psychology's insistence on closure was the outlier, not the universal. The bond continues. It changes form. The string remains taut. You do not need to see the kite to know it is still flying.",
+        links: [
+          { label: "Continuing Bonds", url: "https://en.wikipedia.org/wiki/Continuing_bonds" },
+          { label: "Dennis Klass", url: "https://en.wikipedia.org/wiki/Dennis_Klass" },
+          { label: "Ancestor Veneration", url: "https://en.wikipedia.org/wiki/Ancestor_veneration" }
+        ],
+        songs: [
+          { title: "Wind Beneath My Wings", artist: "Bette Midler", url: "https://www.youtube.com/watch?v=0SMbwPxXOOo" },
+          { title: "Supermarket Flowers", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=NJrFbSbyJdA" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" }
+        ],
+        advanced: "Klass, Silverman, Nickman 1996: Continuing Bonds overturned Freud's decathexis model. Healthy grievers transform the relationship from external to internal — the deceased becomes advisor, moral compass, comfort source. Cross-cultural: Japan, Mexico, Africa all maintain ongoing bonds. Western insistence on closure was the outlier." },
+
+      { id: "bodys-memory-biological-stress", num: 5, icon: "🕯️", title: "The Body's Memory (Biological Stress)", subtitle: "Your Body Gets Scared and Tired Like a Candle Flickering — Your Heart Is Working Extra Hard to Heal",
+        simple: "When we lose someone, our body gets very scared and tired, like a candle flickering in the wind. Your tummy might hurt, or you might find it hard to sleep because your body is trying to protect you. It is important to be very gentle with yourself, like you would be with a hurt kitten. Drinking water and taking naps helps your body feel safe again. Your heart is working extra hard to heal.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Deep slow breathing: the sound of the parasympathetic system being manually activated — the exhale as a conscious override of the sympathetic storm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Peppermint or eucalyptus waking the senses: the scent of stimulation — olfactory input cutting through the fog of cortisol saturation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm soup or tea: the taste of warmth entering a cold system — the gut receiving the signal that resources are arriving, that the famine response can stand down." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy blanket or a warm hug: the touch of distributed pressure — deep touch stimulating the vagus nerve, manually activating the calming system the deceased once activated through presence." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flickering candle flame: the sight of something fragile that persists — fire that could go out at any moment but does not, the visual metaphor for life continuing under stress." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Squeezing muscles then letting go: the body practicing the tension-release cycle — progressive muscle relaxation teaching the nervous system that it can contract and still return to baseline." }
+        ],
+        intuition: "Your body gets scared and tired like a candle flickering — your heart is working extra hard to heal. Broken heart syndrome is real. Takotsubo cardiomyopathy — named for the Japanese octopus trap because the left ventricle balloons into that shape under extreme emotional stress — can be triggered by bereavement. The heart muscle literally changes shape under the weight of grief. But the cardiac effects are just the visible tip. Bereavement induces a systemic inflammatory response. C-reactive protein rises. Interleukin-6 surges. Natural killer cell activity drops. The immune system suppresses. This is why the surviving spouse often dies within months of the deceased — not from sadness as a metaphor, but from immunosuppression as a physiological fact. The HPA axis — hypothalamic-pituitary-adrenal — goes into overdrive. Cortisol floods the system. Sleep architecture collapses. Appetite dysregulates in both directions. Digestion slows. Pain thresholds drop. The body enters a state of chronic emergency. It is not being dramatic. It is doing exactly what it was designed to do when a primary co-regulator is removed from the system. The infant who loses its mother shows the same physiological cascade. Because at the biological level, the loss of a primary attachment figure at any age triggers the same ancient alarm. The body does not know you are an adult. The body knows the regulator is gone. And it responds accordingly.",
+        links: [
+          { label: "Takotsubo Cardiomyopathy", url: "https://en.wikipedia.org/wiki/Takotsubo_cardiomyopathy" },
+          { label: "HPA Axis", url: "https://en.wikipedia.org/wiki/Hypothalamic%E2%80%93pituitary%E2%80%93adrenal_axis" },
+          { label: "Bereavement Effect", url: "https://en.wikipedia.org/wiki/Widowhood_effect" }
+        ],
+        songs: [
+          { title: "Everybody Hurts", artist: "R.E.M.", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" }
+        ],
+        advanced: "Takotsubo cardiomyopathy: heart literally changes shape under grief. Bereavement induces systemic inflammation — C-reactive protein rises, immune system suppresses. Widowhood effect: surviving spouse often dies within months. The body does not know you are an adult. It knows the regulator is gone." },
+
+      { id: "new-story-meaning-reconstruction", num: 6, icon: "📖", title: "The New Story (Meaning Reconstruction)", subtitle: "A Chapter Was Ripped Out and Now the Story Does Not Make Sense — You Are the Author of Your Own Healing",
+        simple: "Grief is like a book where a whole chapter was ripped out, and now the story does not make sense. You have to learn how to write new chapters that honor the ones that are gone. You start to find new things that matter, and you realize that your story is still beautiful. Finding a why for your pain helps you keep going. You are the author of your own healing.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The scratching of a pen on paper: the sound of narrative being constructed — thoughts becoming marks, chaos becoming sequence, meaning being written into existence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Freshly cut grass: the scent of something that grows back after being cut — the lawn that is shorter but alive, the olfactory proof that removal is not the same as death." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "An orange — something bright and citrusy: the taste of vitamin C and sunlight condensed — acidity that wakes the palate, the gustatory equivalent of a new perspective." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The texture of tree bark: the touch of growth rings — each ridge a year of survival, the tree wearing its history on its outside." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A green plant growing in a small pot: the sight of life persisting in a constrained space — something rooting and reaching in conditions that are not ideal but are enough." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking slowly and mindfully: the body practicing intentional movement — each step a decision, each decision proof that agency survives catastrophe." }
+        ],
+        intuition: "A chapter was ripped out and now the story does not make sense — you are the author of your own healing. Robert Neimeyer's meaning reconstruction approach begins with a precise observation: grief disrupts the narrative. Every human being maintains an ongoing story about who they are, where they came from, and where they are going. Loss shatters that narrative. The future you imagined — the one that included the deceased — no longer exists. The identity you built — the one that was defined in relationship to them — no longer holds. You are not just mourning a person. You are mourning a version of yourself that can no longer exist. Meaning reconstruction is the process of rewriting the narrative to integrate the loss rather than to erase it. It is not finding a silver lining. It is not everything happens for a reason. It is the harder, more honest work of asking: given that this has happened, who am I now? What matters now? What story can I tell that includes both the love and the loss without betraying either? Tedeschi and Calhoun documented that many people who engage in this process experience post-traumatic growth — not a return to baseline but a transformation. They report deeper relationships, increased compassion, new priorities, enhanced appreciation for life, and a richer existential understanding. They do not say they are grateful for the loss. They say they are different because of it. And the difference, on balance, includes strengths they did not possess before.",
+        links: [
+          { label: "Meaning Reconstruction", url: "https://en.wikipedia.org/wiki/Grief#Meaning_reconstruction" },
+          { label: "Post-Traumatic Growth", url: "https://en.wikipedia.org/wiki/Post-traumatic_growth" },
+          { label: "Robert Neimeyer", url: "https://en.wikipedia.org/wiki/Robert_Neimeyer" }
+        ],
+        songs: [
+          { title: "I Will Always Love You", artist: "Whitney Houston", url: "https://www.youtube.com/watch?v=3JWTaaS7LdU" },
+          { title: "Fire and Rain", artist: "James Taylor", url: "https://www.youtube.com/watch?v=JOIo4lEpsPY" },
+          { title: "Rise Up", artist: "Andra Day", url: "https://www.youtube.com/watch?v=FBuIBaDSOa4" }
+        ],
+        advanced: "Neimeyer: grief disrupts the narrative — you mourn not just a person but a version of yourself. Meaning reconstruction: who am I now given that this happened? Tedeschi & Calhoun: post-traumatic growth — not return to baseline but transformation. Deeper relationships, new priorities, enhanced appreciation. Different because of it, not grateful for it." },
+
+      { id: "safety-net-social-regulation", num: 7, icon: "🤝", title: "The Safety Net (Social Regulation)", subtitle: "When One Puzzle Piece Is Missing the Others Hold Tighter — You Do Not Have to Be Brave by Yourself",
+        simple: "Human beings are like pieces of a puzzle that fit together. When one piece is missing, the other pieces have to hold onto each other tighter. Being around friends or family who love you is like a safety net that catches you when you feel like falling. You do not have to be brave all by yourself. Sometimes, just sitting quietly with a friend is the best medicine.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A chorus of people singing together: the sound of vocal cords vibrating at the same frequency — the group producing one harmonic that reminds the grieving person they are still part of something." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Baking bread or a shared meal: the scent of someone spending time to nourish you — the olfactory proof that the world still contains people who will feed you when you forget to feed yourself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a piece of fruit with someone: the taste of divided resource — receiving half from someone who could have eaten the whole, the flavor of generosity." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A hand on the shoulder: the touch of I am here — pressure that does not demand anything, just communicates presence." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A circle of chairs in a room: the sight of space prepared for grief — chairs arranged to face each other because healing happens face to face not side by side with a screen." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning your back against a wall or tree: the body offloading structural support to the environment — the muscles surrendering the job of holding you upright because something solid is doing it instead." }
+        ],
+        intuition: "When one puzzle piece is missing the others hold tighter — you do not have to be brave by yourself. James Coan's Social Baseline Theory proposes that the human brain does not treat the individual as the unit of survival. The brain treats the social group as the unit of survival. When you have access to trusted others, the brain literally calculates threats as less threatening. Coan demonstrated this by scanning people's brains while they received electric shocks. Alone, the threat circuits lit up at full intensity. Holding a stranger's hand, the response decreased moderately. Holding a spouse's hand, the threat response decreased dramatically. The brain outsources threat assessment to the social network. When the network is present, the brain says we can handle this. When the network is absent, the brain says I must handle this alone and allocates accordingly — more cortisol, more vigilance, more metabolic resources devoted to defense. In grief, the primary co-regulator has been removed from the network. The brain has lost its most trusted partner in threat management. This is why the presence of others — even silent presence, even imperfect presence — matters so much. The grieving brain needs to borrow regulation from other nervous systems until it can rebuild its own capacity. Sitting with someone in grief is not a gesture. It is a neurobiological intervention.",
+        links: [
+          { label: "Social Baseline Theory", url: "https://en.wikipedia.org/wiki/Social_baseline_theory" },
+          { label: "James Coan", url: "https://en.wikipedia.org/wiki/James_Coan" },
+          { label: "Co-regulation", url: "https://en.wikipedia.org/wiki/Co-regulation" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdTY2Y_po" },
+          { title: "With a Little Help from My Friends", artist: "Joe Cocker", url: "https://www.youtube.com/watch?v=0C58ttB2-Qg" }
+        ],
+        advanced: "Coan: Social Baseline Theory — brain treats social group as unit of survival. Holding spouse's hand dramatically reduces brain's threat response to electric shocks. The brain outsources threat assessment to the network. Sitting with someone in grief is not a gesture — it is a neurobiological intervention." },
+
+      { id: "two-rooms-dual-process", num: 8, icon: "🚪", title: "The Two Rooms (Dual Process Model)", subtitle: "Your Heart Has Two Rooms — One for Crying One for Living — It Is Okay to Walk Back and Forth",
+        simple: "Imagine your heart has two rooms. In one room, you cry and think about what you lost. In the other room, you go to school, play with friends, and eat dinner. It is okay to walk back and forth between these rooms. You do not have to stay in the sad room all the time, and you do not have to stay in the busy room all the time. Both rooms are part of your house now.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A door opening and closing softly: the sound of transition — the hinge allowing movement between states without requiring either to be abandoned." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh laundry or clean soap: the scent of maintenance continuing — clothes being washed, surfaces being cleaned, the world being tended even in the midst of loss." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet chocolate mixed with salty nuts: the taste of two things that should not work together working perfectly — bitterness and sweetness cohabiting the same bite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Switching between a soft pillow and a hard table: the touch of contrast — the hand experiencing two surfaces and learning that both are real, both are valid, both are the world." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A window showing sky and ground: the sight of two realities visible simultaneously — the above and the below, the infinite and the finite, both framed in the same pane." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stepping from one foot to the other: the body practicing oscillation — weight shifting left then right, neither foot the wrong one, movement as the definition of balance." }
+        ],
+        intuition: "Your heart has two rooms — one for crying one for living — it is okay to walk back and forth. Margaret Stroebe and Henk Schut introduced the Dual Process Model in 1999 and it remains the most empirically supported model of bereavement coping. The insight was simple and revolutionary: healthy grief requires oscillation. Not resolution. Not progression. Oscillation. The two orientations: loss-oriented coping — confronting the grief, crying, yearning, reviewing memories — and restoration-oriented coping — attending to life changes, developing new roles, managing daily tasks, engaging with the world. The grieving person must move between both. Too much time in the loss orientation produces rumination, despair, and emotional engulfment. Too much time in the restoration orientation produces avoidance, numbness, and delayed grief reactions. The model predicts that rigid adherence to either pole is pathological. Flexibility between poles is adaptive. This is why the well-meaning advice to be strong — meaning stay in the restoration room — is as damaging as the equally well-meaning advice to let yourself feel everything — meaning stay in the loss room. Both rooms are necessary. Neither room is home. The hallway between them is where the work happens. The ability to walk back and forth — to cry at breakfast and laugh at lunch and cry again at dinner — is not instability. It is the signature of healthy grieving.",
+        links: [
+          { label: "Dual Process Model", url: "https://en.wikipedia.org/wiki/Dual_process_model_of_coping_with_bereavement" },
+          { label: "Margaret Stroebe", url: "https://en.wikipedia.org/wiki/Margaret_Stroebe" },
+          { label: "Bereavement Coping", url: "https://en.wikipedia.org/wiki/Grief#Coping" }
+        ],
+        songs: [
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Go Your Own Way", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=6ul-cZyuYw4" }
+        ],
+        advanced: "Stroebe & Schut 1999: Dual Process Model — healthy grief requires oscillation between loss-oriented and restoration-oriented coping. Too much of either produces pathology. Rigid adherence to either pole is damaging. The hallway between the rooms is where the work happens. Crying at breakfast and laughing at lunch is not instability — it is healthy grieving." },
+
+      { id: "fog-cognitive-dissonance", num: 9, icon: "🌫️", title: "The Fog (Cognitive Dissonance)", subtitle: "Your Brain Feels Like Thick Gray Fog — It Is Your Brain Being a Superhero Protecting You from Too Much at Once",
+        simple: "Sometimes when something sad happens, your brain feels like it is in a thick gray fog. You might feel sleepy or confused, or like you are in a dream. This is your brain's way of being a superhero and protecting you from too much sadness at once. The fog will eventually lift, but it is okay to just sit still while it is there. You do not have to see the whole road to take one small step.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Muffled sounds like being underwater: the sound of the brain's volume turned down — auditory processing intentionally dampened to reduce input during overload." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Pine needles or forest air: the scent of a quiet environment — the olfactory equivalent of the brain seeking low-stimulation spaces during cognitive saturation." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sour lemon slice: the taste that cuts through fog — acidity as a wake-up signal, the palate being jolted into the present tense." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Cold water splashed on your face: the touch of the diving reflex — cold on the trigeminal nerve activating the parasympathetic system, the body's manual reset button." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking through sheer fabric: the sight of the world still there but filtered — reality present but softened, the visual representation of what dissociation feels like." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stretching arms toward the ceiling: the body reaching for vertical space — the physical gesture of trying to emerge from compression, the stretch as counterforce to the collapse." }
+        ],
+        intuition: "Your brain feels like thick gray fog — it is your brain being a superhero protecting you from too much at once. Grief brain is not a metaphor. It is a documented pattern of cognitive impairment during acute bereavement. Executive function declines: planning, organizing, decision-making, working memory — all the prefrontal operations that require metabolic resources are degraded because those resources have been redirected to the emergency response. The mechanism is cognitive dissonance at the deepest level. The brain holds two incompatible models simultaneously: the predictive model that says the person is alive, and the perceptual model that says the person is dead. These models cannot coexist. The resolution requires one to overwrite the other. But the predictive model was built over years — sometimes decades — of reinforced expectation. It does not update easily. The perceptual model is correct but new. And new models require repetition to stabilize. During the gap — while the old model is being overwritten and the new model is being consolidated — the brain exists in a state of computational conflict. This manifests as confusion, dissociation, unreality, forgetting, losing words, losing keys, losing time. It is not weakness. It is architecture. The brain is running two operating systems simultaneously and neither has enough resources. The fog is the system's way of throttling input until the conflict resolves. It is not a failure of cognition. It is cognition protecting itself from a paradox it cannot yet resolve.",
+        links: [
+          { label: "Grief Brain", url: "https://en.wikipedia.org/wiki/Grief#Cognitive_symptoms" },
+          { label: "Cognitive Dissonance", url: "https://en.wikipedia.org/wiki/Cognitive_dissonance" },
+          { label: "Dissociation", url: "https://en.wikipedia.org/wiki/Dissociation_(psychology)" }
+        ],
+        songs: [
+          { title: "Comfortably Numb", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=_FrOQC-zEog" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" }
+        ],
+        advanced: "Grief brain: documented cognitive impairment — executive function declines as resources redirect to emergency. Brain holds two incompatible models: predictive (person alive) vs perceptual (person dead). Running two operating systems with insufficient resources. The fog is the system throttling input until the paradox resolves." },
+
+      { id: "golden-repair-kintsugi", num: 10, icon: "✨", title: "The Golden Repair (Kintsugi)", subtitle: "Grief Fills the Cracks with Gold — You Are Not Broken You Are Being Repaired into Something More Beautiful",
+        simple: "There is a special way to fix broken plates using gold glue, which makes them even more beautiful than they were before. Grief is like that gold glue. It fills the cracks in our hearts and shows that we have survived something hard. You are not broken; you are being repaired in a way that makes you stronger and more kind. Your scars are part of your beauty and your story.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A single clear note on a piano: the sound of one frequency — pure, unadorned, sufficient — the auditory equivalent of a scar that has become ornament." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Incense or warm wood fire: the scent of transformation — solid matter becoming fragrant smoke, substance changing state through heat, the olfactory signature of alchemy." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate with sea salt: the taste of bitterness transmuted by sweetness — cacao that suffered fermentation to become profound, salt that enhances rather than overpowers." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Smoothing out a wrinkled piece of paper: the touch of restoration — the surface never returns to original, the creases remain, but the page can hold new writing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Sunlight hitting a glass prism: the sight of white light broken into spectrum — the fracture revealing that what appeared simple contained every color, the break producing more beauty than the whole." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing tall and taking up space: the body claiming its full dimensions after collapse — the spine extending, the chest opening, the physical declaration that survival is not diminishment." }
+        ],
+        intuition: "Grief fills the cracks with gold — you are not broken you are being repaired into something more beautiful. Kintsugi — golden joinery — is the Japanese art of repairing broken pottery with lacquer mixed with powdered gold. The philosophy is wabi-sabi: the break is not something to hide. The break is something to illuminate. The history of the object includes its damage. And the repair, made visible, makes the object more valuable than it was before it broke. Tedeschi and Calhoun's research on post-traumatic growth documented exactly this. Eighty-nine percent of trauma survivors reported at least one domain of positive change. Not despite the trauma. Through it. The domains: greater appreciation for life, more meaningful relationships, increased personal strength, recognition of new possibilities, and spiritual or existential deepening. This is not toxic positivity. Tedeschi was clear: the growth does not negate the loss. The plate was broken. That is real. The repair does not undo the break. The repair transforms the break into part of the story. You are not the person you were before the loss. You cannot be. That person existed in a reality that included the deceased. The person you are now exists in a reality that includes both the love and the absence. And that person — the one with the gold seams — carries a complexity, a depth, a hard-won wisdom that the unbroken version never could. The cracks are where the light gets in. Leonard Cohen knew. The kintsugi masters knew. And now the research confirms what the artists always understood.",
+        links: [
+          { label: "Kintsugi", url: "https://en.wikipedia.org/wiki/Kintsugi" },
+          { label: "Post-Traumatic Growth", url: "https://en.wikipedia.org/wiki/Post-traumatic_growth" },
+          { label: "Wabi-sabi", url: "https://en.wikipedia.org/wiki/Wabi-sabi" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "True Colors", artist: "Cyndi Lauper", url: "https://www.youtube.com/watch?v=LPn0KFlbqX8" }
+        ],
+        advanced: "Kintsugi: golden joinery — the break illuminated not hidden. Tedeschi & Calhoun: 89% of trauma survivors reported positive change. Growth does not negate loss. The repair transforms the break into part of the story. The cracks are where the light gets in. The research confirms what the artists always understood." },
+    ],
+
+
 
 
 
