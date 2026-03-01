@@ -22639,6 +22639,243 @@ export const TOPIC_CARDS = {
         advanced: "Jung: individuation — becoming distinct from family's collective psychology. The system wants homeostasis and will use guilt, love, and fear to restore the set point. Existentialism: facticity is what you were born into, not what defines you. The scissors are what the web produces when one thread needs to grow where the web cannot follow." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // LOVE (filter) > MOTHER & CHILD (mother)
+    // ═══════════════════════════════════════════════════════════════
+
+    mother: [
+      { id: "bio-behavioral-synchrony", num: 1, icon: "♾️", title: "Bio-Behavioral Synchrony", subtitle: "Their Hearts Beat at the Same Speed and Their Brains Glow with the Same Energy — One System Not Two",
+        simple: "When a mommy and baby are together, their bodies start to act like they are one person. Their hearts beat at the same speed, and their brains even start to glow with the same happy energy. This is how the baby learns that they are not alone in a big scary world. It is like an invisible string that keeps them connected even if they are not talking. This magic happens so the baby feels safe enough to grow big and strong. It is the very first way we learn how to love someone else.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A steady metronome or heartbeat — your pulse matching the rhythm: the sound of two oscillating systems locking into phase, the biological basis of the word togetherness." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean soft blanket that reminds you of home: the scent of the regulated environment — the olfactory signature of safety that the infant brain associates with synchronized care." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm milk or cocoa that makes your stomach calm: the taste of the parasympathetic system activating — warmth in the gut signaling that the body can stand down from threat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palm against someone else's palm to feel their warmth: the touch of thermal synchrony — two nervous systems calibrating through the oldest communication channel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flower opening in slow motion: the sight of something unfolding on its own timeline because the conditions are right — bloom as the visible product of invisible synchrony." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Hugging yourself tightly and feeling where your body ends and the air begins: the body mapping its own boundary — the paradox that you must know where you end before you can sync with where another begins." }
+        ],
+        intuition: "Their hearts beat at the same speed and their brains glow with the same energy — one system not two. Ruth Feldman's research at the Interdisciplinary Center Herzliya documented it with precision: when mother and infant engage in face-to-face interaction, their heart rhythms synchronize within milliseconds. Their cortisol patterns align across hours. Their neural oscillations — measured by EEG — begin to mirror each other in real time. The mechanism is the oxytocinergic system. Oxytocin released during skin-to-skin contact, during nursing, during mutual gaze, acts as a biological coupling agent. It does not just make the mother feel bonded. It literally entrains the infant's autonomic nervous system to the mother's regulatory rhythms. The infant cannot regulate its own heart rate, its own cortisol, its own temperature. It borrows the mother's regulation. The mother's body becomes the infant's external nervous system. This is not metaphor. This is physiology. The infant is not a separate organism learning to connect. The infant is a connected organism learning to separate. Individuality comes later. Synchrony comes first. The dyad is the original unit. The self is the derivative. Every spiritual tradition that describes oneness as the ground state and separation as the illusion is describing what neuroscience now measures in the first hours of life.",
+        links: [
+          { label: "Bio-behavioral Synchrony", url: "https://en.wikipedia.org/wiki/Interpersonal_synchrony" },
+          { label: "Oxytocin", url: "https://en.wikipedia.org/wiki/Oxytocin" },
+          { label: "Ruth Feldman", url: "https://en.wikipedia.org/wiki/Ruth_Feldman" }
+        ],
+        songs: [
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Isn't She Lovely", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=IVvkjuEAwgU" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wDTO0" }
+        ],
+        advanced: "Feldman: mother-infant heart rhythms synchronize within milliseconds, cortisol aligns across hours, neural oscillations mirror in real time. Oxytocin acts as a biological coupling agent. The infant borrows the mother's regulation. The dyad is the original unit. The self is the derivative. Synchrony comes first." },
+
+      { id: "neuroplasticity-mothers-sculpt", num: 2, icon: "🌱", title: "Neuroplasticity: The Mother's Sculpt", subtitle: "Every Smile Every Hug Builds New Roads for Happy Thoughts — Love Is the Water That Makes the Garden Grow",
+        simple: "Your brain is like soft play-dough when you are a baby, and your parents help shape it. Every time a mommy smiles or hugs her baby, she is helping the baby's brain grow new roads for happy thoughts. These roads stay there for a long time and help the baby learn how to be kind and smart. If the brain is a garden, love is the water that makes everything grow tall. The more love a baby gets, the stronger their brain muscles become. This is why being held and talked to is just as important as eating.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The soft shhh sound used to calm a crying child: the sound of white noise that mimics intrauterine blood flow — the mother recreating the womb's acoustic environment outside the body." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh rain on dirt like a garden growing: the scent of petrichor — the same geosmin that signals fertile ground, the olfactory equivalent of conditions ripe for growth." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A juicy orange that wakes up your senses: the taste of vitamin C hitting receptors — a burst of neural activation, the gustatory analog of a synapse firing for the first time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Fingers over bumpy bark on a tree: the touch of texture driving somatosensory mapping — each ridge and groove requiring the brain to build a finer representation." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A complex puzzle and seeing how pieces fit: the sight of pattern resolution — the visual cortex organizing chaos into meaning, the same process a mother's face provides an infant." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot and feeling your brain adjust: the body demonstrating real-time plasticity — the cerebellum rewriting motor predictions hundreds of times per second." }
+        ],
+        intuition: "Every smile every hug builds new roads for happy thoughts — love is the water that makes the garden grow. The infant brain produces seven hundred new neural connections per second in the first years of life. Seven hundred per second. This is not automatic. This is experience-dependent. The connections that form depend on what the brain encounters. A face that smiles back. A voice that responds to a cry. Hands that hold when the world feels too big. Each of these inputs triggers synaptogenesis — the creation of new synaptic connections. And equally important: pruning. The connections that are not reinforced are eliminated. Use it or lose it is not a cliché in neuroscience. It is the mechanism. The brain overproduces connections and then sculpts them down based on environmental feedback. The mother is the primary sculptor. Her responses determine which neural pathways survive and which are pruned away. The prefrontal cortex — seat of emotional regulation, impulse control, empathy, planning — is the last region to mature and the most sensitive to early relational input. A child whose cries are consistently answered develops robust prefrontal architecture. A child whose cries go unanswered develops a prefrontal cortex optimized for threat detection instead. The garden metaphor is precise. But it is not just water. The mother is the gardener, the water, the soil composition, and the sunlight angle. She is the entire growing environment. And the brain that grows inside that environment carries the shape of her care forever.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Synaptogenesis", url: "https://en.wikipedia.org/wiki/Synaptogenesis" },
+          { label: "Synaptic Pruning", url: "https://en.wikipedia.org/wiki/Synaptic_pruning" }
+        ],
+        songs: [
+          { title: "Beautiful Boy", artist: "John Lennon", url: "https://www.youtube.com/watch?v=Lt3IOdDE5iA" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "The Living Years", artist: "Mike + The Mechanics", url: "https://www.youtube.com/watch?v=uGDA0Hecw1k" }
+        ],
+        advanced: "700 new neural connections per second in the first years — experience-dependent, not automatic. Brain overproduces then prunes based on environmental feedback. The mother is the primary sculptor. Prefrontal cortex is the last to mature, most sensitive to early relational input. The brain carries the shape of her care forever." },
+
+      { id: "secure-attachment-safe-base", num: 3, icon: "⚓", title: "Secure Attachment (The Safe Base)", subtitle: "Because You Know They Will Always Come When You Call You Are Brave Enough to Explore the Forest",
+        simple: "Imagine you are an explorer going into a dark forest, but you have a magic whistle that calls a superhero to help you. That superhero is your mommy or daddy. Because you know they will always come when you whistle, you are not afraid to explore the forest and see new things. This feeling of being safe is called a secure base. It makes you brave enough to try new things and meet new friends. You know that no matter what happens, you have a safe place to go back to.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A door locking safely at night: the sound of the perimeter secured — the auditory confirmation that the boundary between safe and unsafe is intact." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Warm bread baking in an oven: the scent of someone preparing nourishment before you asked for it — the olfactory proof that you are being thought about." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Homemade soup that warms your chest: the taste of care that took time — the slow cooking of attention, served warm." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A heavy smooth worry stone in your pocket: the touch of a portable anchor — a tactile object that stands in for the secure base when the base is not physically present." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A lighthouse blinking in the distance: the sight of orientation — the visual guarantee that no matter how far you sail, there is a fixed point guiding you home." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning your full weight back against a sturdy wall: the body testing the environment and finding it trustworthy — gravity accepted because the structure holds." }
+        ],
+        intuition: "Because you know they will always come when you call you are brave enough to explore the forest. Bowlby observed something paradoxical: the most independent children were not the ones whose parents pushed them toward independence. The most independent children were the ones whose parents were most reliably present. The secure base is not a leash. It is a launchpad. The child who knows the base is solid ventures further, stays longer, explores more boldly, and recovers from setbacks faster than the child who is uncertain whether the base will be there when they return. Ainsworth confirmed this in the Strange Situation: securely attached toddlers used their mothers as a base — checking back, making eye contact, returning for a quick touch — and then launched back into exploration. The insecurely attached toddlers either clung and could not explore, or explored but could not return. The secure base does not create dependency. It creates the neurological infrastructure for autonomy. The child internalizes the base. The mother's physical presence becomes an internal representation — a working model of safety that the child carries into every subsequent relationship. You do not outgrow the secure base. You internalize it. And if you never had one, you can build it. Earned secure attachment — the rebuilding of the base through therapeutic relationships, through friendships, through any consistent presence that says I am here and I am not leaving — is one of the most well-documented phenomena in developmental psychology.",
+        links: [
+          { label: "Secure Base", url: "https://en.wikipedia.org/wiki/Attachment_theory#Secure_base" },
+          { label: "Strange Situation", url: "https://en.wikipedia.org/wiki/Strange_situation" },
+          { label: "Earned Security", url: "https://en.wikipedia.org/wiki/Attachment_in_adults#Earned_security" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Stand by Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" }
+        ],
+        advanced: "Bowlby's paradox: the most independent children had the most reliably present parents. The secure base is not a leash — it is a launchpad. The child internalizes the base. Earned secure attachment — rebuilding through consistent presence — is one of the most well-documented phenomena in developmental psychology." },
+
+      { id: "epigenetics-loves-light-switch", num: 4, icon: "🧬", title: "Epigenetics: Love's Light Switch", subtitle: "Love Can Change How Your DNA Instructions Are Read — How You Are Treated Becomes Part of Who You Are",
+        simple: "Inside your body, you have a book of instructions called DNA that tells you how to grow. But did you know that love can actually change how those instructions are read? When a baby feels loved and safe, it is like a tiny light switch inside them flips to Happy and Healthy mode. If things are scary, the switch might flip to Scared and Guarded mode. Our parents' love helps make sure our bodies are set to the best mode possible. This means that how we are treated becomes a part of who we are deep down.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The resonant hum of a singing bowl: the sound of a frequency that moves through matter — vibration changing the state of the medium it passes through, the way love changes gene expression." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh lavender signaling safety to the brain: the scent that activates the parasympathetic system — olfactory input flipping the epigenetic switch toward calm." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pure cool water refreshing every cell: the taste of the baseline — the clean signal against which all other chemical signals are measured." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A weighted blanket that feels like a long hug: the touch of distributed pressure — deep touch activating the same methylation-friendly pathways as maternal holding." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Sunlight filtering through green leaves: the sight of photons being converted into life — light as the original epigenetic switch, turning genes on in chlorophyll the way love turns genes on in neurons." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Jumping up and down feeling gravity ground you: the body experiencing mechanical force that signals the skeletal system to strengthen — physical stress as positive epigenetic input." }
+        ],
+        intuition: "Love can change how your DNA instructions are read — how you are treated becomes part of who you are. Michael Meaney's rat pups changed everything. Mother rats who licked and groomed their pups more frequently produced offspring with permanently altered gene expression. The high-licking mothers' pups showed increased expression of glucocorticoid receptors in the hippocampus. Translation: their stress response systems were better calibrated. They were calmer. More exploratory. More resilient. Not because of different genes. Because of different epigenetic marks on the same genes. The mechanism: maternal licking triggered the release of serotonin in the pup's hippocampus, which activated a transcription factor that removed methyl groups from the glucocorticoid receptor gene promoter. Demethylation made the gene more readable. More receptors were produced. The stress thermostat was set lower. And here is what changed the field: the effect was permanent. And heritable. The pups who received more licking grew up to lick their own pups more, transmitting the epigenetic mark to the next generation without altering a single base pair of DNA. Love is not just an emotion. Love is a molecular event. It reaches inside the nucleus of the cell, changes the chemical tags on your chromosomes, and alters which genes your body reads. The light switch is real. And the hand that flips it is the hand that holds you.",
+        links: [
+          { label: "Epigenetics", url: "https://en.wikipedia.org/wiki/Epigenetics" },
+          { label: "Michael Meaney", url: "https://en.wikipedia.org/wiki/Michael_Meaney" },
+          { label: "Gene Expression", url: "https://en.wikipedia.org/wiki/Gene_expression" }
+        ],
+        songs: [
+          { title: "Heirloom", artist: "Björk", url: "https://www.youtube.com/watch?v=jE-Krlqi4fk" },
+          { title: "Ancestors", artist: "Enigma", url: "https://www.youtube.com/watch?v=9jTkm7dYDTY" },
+          { title: "Family Tree", artist: "Venice", url: "https://www.youtube.com/watch?v=o6l4D1iFXqs" }
+        ],
+        advanced: "Meaney: high-licking mother rats produced permanently altered gene expression in pups — demethylation of glucocorticoid receptor gene. The effect was permanent and heritable. Love is a molecular event. It reaches inside the nucleus, changes chemical tags on chromosomes. The light switch is real. The hand that flips it is the hand that holds you." },
+
+      { id: "nonverbal-communication-heart-talk", num: 5, icon: "👀", title: "Non-Verbal Communication (Heart Talk)", subtitle: "Before You Could Say I Love You — You Said It with Your Eyes — the First Language We Ever Learn",
+        simple: "Before you could ever say I love you, you said it with your eyes. When a baby looks at their mommy, they are having a whole conversation without using any words. They use smiles, wiggles, and even the way they cry to tell their story. Mommies use a special sing-song voice that babies love to hear. This heart-talk is the first language we ever learn. It teaches us how to understand what other people are feeling just by looking at them.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A soft lullaby with no words only oohs and aahs: the sound of prosody stripped of content — pure melody carrying pure emotion, the channel that predates language by millions of years." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The new baby smell — milk and powder: the scent that triggers protective neurochemistry in adults — olfactory communication so potent it bypasses the cortex entirely." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sweet strawberry that makes your face smile naturally: the taste that produces an involuntary facial expression — the body communicating before the mind decides to." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A gentle stroke on the forehead that says it is okay: the touch that activates C-tactile afferents — nerve fibers that exist solely to transmit the emotional meaning of gentle contact." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking into a mirror and smiling at yourself: the sight of your own face responding — the visual feedback loop that teaches you that expression produces recognition." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Mimicking someone's posture and feeling their mood change your own: the body demonstrating embodied cognition — posture as emotional input, not just emotional output." }
+        ],
+        intuition: "Before you could say I love you you said it with your eyes — the first language we ever learn. Allan Schore mapped it: the primary communication channel between mother and infant is not verbal. It is right-brain-to-right-brain. The right hemisphere processes facial affect, vocal prosody, touch pressure, and temporal patterns of interaction. The infant's right brain reads the mother's right brain directly — no translation, no interpretation, no conscious mediation. This is why motherese — the sing-song voice every culture independently develops for speaking to infants — works. It is not the words. Infants do not understand words. It is the prosodic contour: the rising and falling pitch, the elongated vowels, the exaggerated rhythm. These patterns activate the infant's right temporal cortex and amygdala simultaneously — emotional meaning arriving through sound before semantic meaning exists. The mother's face does the same thing visually. The infant's fusiform face area — a brain region specialized for face processing — is among the first cortical areas to come online. Before the baby can focus on objects, it can focus on faces. Before it can track movement, it can track expressions. The face is the first screen. The expression is the first message. And the message is transmitted at a bandwidth that language will never match. In spiritual traditions this is called direct transmission — knowledge passed through presence rather than doctrine. Neuroscience calls it affective attunement. Both are describing the same thing: truth that travels faster than words.",
+        links: [
+          { label: "Allan Schore", url: "https://en.wikipedia.org/wiki/Allan_Schore" },
+          { label: "Motherese", url: "https://en.wikipedia.org/wiki/Baby_talk" },
+          { label: "Right Brain Development", url: "https://en.wikipedia.org/wiki/Lateralization_of_brain_function" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Words", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=jm-NJo6c9KI" },
+          { title: "Eyes Without a Face", artist: "Billy Idol", url: "https://www.youtube.com/watch?v=9OFpfTd0EIs" }
+        ],
+        advanced: "Schore: primary mother-infant channel is right-brain-to-right-brain — facial affect, vocal prosody, touch pressure. Motherese works not through words but prosodic contour activating right temporal cortex and amygdala. The face is the first screen. The expression is the first message. Truth travels faster than words." },
+
+      { id: "mirror-neuron-system-copycat", num: 6, icon: "🪞", title: "The Mirror Neuron System (The Copycat)", subtitle: "When You See Mommy Smile Your Brain Acts Like You Are the One Smiling — We Are Not Truly Separate",
+        simple: "Your brain has a copycat button called mirror neurons. When you see your mommy smile, your brain acts like you are the one smiling. This helps babies learn how to do things just by watching. It also helps us feel what other people feel, which is called empathy. If you see someone stub their toe and you say ouch, that is your copycat neurons working. This is how we learn to be part of a family and a group.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo in a canyon: the sound of your own signal returning from the environment — the auditory mirror, proving that what you put out comes back." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smelling a flower and seeing someone else do the same: the scent triggering the same neural pathway in two separate brains — parallel processing through shared stimulus." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Eating a lemon and watching someone else's face pucker: the taste of empathy — your mirror system activating from observation alone, no lemon required." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling vibration in your chest when someone speaks: the touch of resonance — another person's vocal cords vibrating your thoracic cavity, their body literally moving yours." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A domino effect where one thing moving makes another move: the sight of causal chain — action propagating through a system, the visual metaphor for mirror neuron cascading." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Yawning because you saw someone else yawn: the body performing involuntary imitation — your motor system executing a program triggered by another person's motor system." }
+        ],
+        intuition: "When you see mommy smile your brain acts like you are the one smiling — we are not truly separate. Giacomo Rizzolatti discovered them by accident in 1992. His team at the University of Parma was recording from individual neurons in the premotor cortex of macaque monkeys. Neuron F5 fired when the monkey grasped a peanut. Standard motor neuron behavior. Then a researcher reached for a peanut in the monkey's view. Neuron F5 fired again. The monkey had not moved. The same neuron that controlled the monkey's own grasping action fired when the monkey observed someone else performing the same action. The boundary between self and other, at the neural level, was not a wall. It was a mirror. Mirror neurons do not just encode actions. They encode intentions. They fire differently when you watch someone grasp a cup to drink versus grasp a cup to clear the table. The system reads the goal behind the movement. This is the neural substrate of empathy. When you see someone in pain, your pain matrix activates. When you see someone experience joy, your reward circuitry activates. You are not imagining their experience. You are partially simulating it. Your nervous system is designed to run a low-resolution copy of other people's experiences inside your own body. The mother-infant dyad is where this system is calibrated. The infant mirrors the mother's expressions. The mother mirrors the infant's expressions. Each sees themselves in the other. And through this mutual mirroring, the infant learns that other minds exist, that other minds feel, and that their own actions affect those feelings. Empathy is not taught. Empathy is mirrored.",
+        links: [
+          { label: "Mirror Neurons", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Giacomo Rizzolatti", url: "https://en.wikipedia.org/wiki/Giacomo_Rizzolatti" },
+          { label: "Empathy", url: "https://en.wikipedia.org/wiki/Empathy" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Mirrors", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" },
+          { title: "Reflection", artist: "Lea Salonga", url: "https://www.youtube.com/watch?v=1ozzsURQTa0" }
+        ],
+        advanced: "Rizzolatti 1992: neuron F5 fired when monkey grasped peanut AND when monkey watched someone else grasp peanut. The boundary between self and other at the neural level is not a wall — it is a mirror. Your nervous system runs a low-resolution copy of other people's experiences. Empathy is not taught. Empathy is mirrored." },
+
+      { id: "object-permanence-constancy", num: 7, icon: "🕵️", title: "Object Permanence & Constancy", subtitle: "Just Because You Cannot See Something Does Not Mean It Is Gone — A Picture of Love in Your Heart All Day",
+        simple: "When you were very little, you thought that if you could not see your mommy, she was gone forever. That is why peek-a-boo is so much fun. Eventually, your brain learns a trick: just because you can not see something does not mean it is gone. This is called object permanence. Once you learn this, you can feel your mommy's love even when she is in the other room. It is like having a picture of her in your heart that stays there all day long.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bird singing from a tree you cannot see: the sound of existence without visibility — proof that the world continues to operate beyond your sensory range." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cookies from the kitchen while you are in the bedroom: the scent traveling through walls — invisible proof that the source persists even when the source is hidden." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The lingering taste of mint after the candy is gone: the taste of aftermath — the stimulus has ended but its effect persists in your body." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Shoes still on your feet when you are not thinking about them: the touch of background awareness — objects persisting in your experience without requiring conscious attention." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The moon in the sky knowing the sun is on the other side: the sight of absence as evidence — what you cannot see is exactly as real as what you can." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and still knowing where your nose is: proprioception as internal permanence — the body's proof that you do not need to see something to know it is there." }
+        ],
+        intuition: "Just because you cannot see something does not mean it is gone — a picture of love in your heart all day. Piaget identified object permanence as a cognitive milestone: the understanding that objects continue to exist when they are no longer visible. Before this milestone, out of sight is literally out of existence. The blanket covers the toy and the toy ceases to be. The mother leaves the room and the mother ceases to be. The terror is total because the loss is total. Then something shifts. Around eight months, the infant begins to search for hidden objects. The brain has built a representational model that persists beyond sensory input. The object exists in the mind even when it does not exist in the visual field. Object constancy is the emotional equivalent. It is the ability to maintain a stable internal image of the caregiver — including their love, their reliability, their goodness — even during times of frustration or absence. This is harder than it sounds. Because during conflict, the amygdala floods the system with threat signals that want to rewrite the model. He is angry therefore he does not love me. She left the room therefore she is never coming back. Object constancy is the prefrontal cortex holding the line against the amygdala's revisionism. It is faith with a neural address. And it is built, like everything else in attachment, through repeated experience. The mother leaves. The mother returns. The mother leaves. The mother returns. Each cycle strengthens the internal representation until the child no longer needs the physical presence to feel the love. The love becomes permanent. Not because it was always there. Because the brain learned to hold it.",
+        links: [
+          { label: "Object Permanence", url: "https://en.wikipedia.org/wiki/Object_permanence" },
+          { label: "Object Constancy", url: "https://en.wikipedia.org/wiki/Object_constancy" },
+          { label: "Piaget", url: "https://en.wikipedia.org/wiki/Jean_Piaget" }
+        ],
+        songs: [
+          { title: "I'll Be There", artist: "The Jackson 5", url: "https://www.youtube.com/watch?v=cvUAzpn3EHc" },
+          { title: "Always on My Mind", artist: "Willie Nelson", url: "https://www.youtube.com/watch?v=R7f189Z0v0Y" },
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" }
+        ],
+        advanced: "Piaget: object permanence — objects exist beyond visibility. Object constancy is the emotional equivalent: maintaining a stable internal image of the caregiver during frustration or absence. Faith with a neural address. Built through repeated cycles: mother leaves, mother returns. The brain learns to hold love permanently." },
+
+      { id: "internal-working-models-love-map", num: 8, icon: "🗺️", title: "Internal Working Models (The Love Map)", subtitle: "The Way Your Parents Treat You Creates a Map for How Everyone Should Treat You — and You Can Redraw It",
+        simple: "The way your parents treat you creates a map in your head for how friends and partners should treat you later. If your parents are kind, your map says people are good and I am special. If they are mean, the map might say be careful, people might hurt you. We use this map for the rest of our lives to find our way in relationships. The good news is that if our map is wrong, we can always draw new paths as we grow up.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bell that means correct: the sound of positive reinforcement — the auditory stamp that encodes this is how the world works into the developing brain." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A new book full of new stories: the scent of possibility — the olfactory promise that the map has blank pages waiting to be drawn." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A familiar family recipe that tastes like Sunday: the taste of predictability — flavor as a reliable data point the internal model uses to confirm the world is consistent." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Following a textured path on a floor with bare feet: the touch of navigation — the body using tactile input to orient in space the way the psyche uses relational input to orient in love." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A map with a You Are Here sticker: the sight of position — visual confirmation that you exist in a navigable space with knowable coordinates." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking through your house in the dark without bumping into anything: the body navigating from an internal model so accurate it does not need light — the same way attachment models navigate relationships without conscious thought." }
+        ],
+        intuition: "The way your parents treat you creates a map for how everyone should treat you — and you can redraw it. Bowlby called them internal working models. They are cognitive-affective schemas — blueprints built from thousands of interactions with primary caregivers that encode two fundamental beliefs: Am I worthy of love? and Are other people reliable? A secure model answers yes to both. An anxious model answers I am not sure about me but I desperately need you. An avoidant model answers I am fine but I cannot trust you. A disorganized model answers nothing makes sense. These models operate below conscious awareness. They are not thoughts. They are the architecture that generates thoughts. You do not decide to feel anxious when your partner does not text back. Your internal working model generates the anxiety automatically because it was built in an environment where non-response meant danger. The model is doing its job. The problem is that its job was designed for a context that no longer exists. You are not a baby anymore. But the model does not know that. The model was written before you had language and it runs in a layer of the brain that language cannot easily reach. This is why insight alone does not change attachment patterns. You can understand your model perfectly and still feel its effects. Change requires new experience. Repeated, consistent, new relational experience that slowly rewrites the model at the level where it operates. Therapy does this. Healthy relationships do this. Any context where someone shows up consistently and proves the old map wrong does this. The map can be redrawn. But it is redrawn through the body, not the mind.",
+        links: [
+          { label: "Internal Working Model", url: "https://en.wikipedia.org/wiki/Internal_working_model" },
+          { label: "Attachment Styles", url: "https://en.wikipedia.org/wiki/Attachment_in_adults" },
+          { label: "Schema Therapy", url: "https://en.wikipedia.org/wiki/Schema_therapy" }
+        ],
+        songs: [
+          { title: "Learn to Fly", artist: "Foo Fighters", url: "https://www.youtube.com/watch?v=7dwuzqF6huc" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=K_PQ4fRQ5Kc" }
+        ],
+        advanced: "Bowlby: internal working models — cognitive-affective schemas encoding Am I worthy of love and Are others reliable. They operate below conscious awareness, written before language in brain layers language cannot reach. Insight alone cannot change them. Change requires repeated consistent new relational experience. The map is redrawn through the body not the mind." },
+
+      { id: "good-enough-parent-repair", num: 9, icon: "🛠️", title: "The Good Enough Parent (The Repair)", subtitle: "You Do Not Have to Be Perfect — Repairs Are Glue That Makes the Bond Stronger Than Before",
+        simple: "No mommy or daddy is perfect, and that is actually okay. Sometimes they get tired or grumpy, and they might not understand what a baby needs right away. This is called a break. But when they say I am sorry or try again to make the baby feel better, that is called a repair. Repairs are like glue that makes the bond even stronger than it was before. It teaches kids that even when things go wrong, they can be fixed. You do not have to be perfect to be a great person.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Someone saying I am sorry in a gentle voice: the sound of repair — two words that carry more relational information than any lecture, any explanation, any defense." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain clearing the air after a storm: the scent of ozone and petrichor replacing charged ions — the atmosphere resetting after disruption." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and sour candy showing you can have both: the taste of paradox — bitterness and sweetness coexisting in the same object, the same relationship, the same moment." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the seam where two things have been sewn together: the touch of repair made visible — the junction that is now stronger than the original fabric." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A rainbow after a dark cloud: the sight of beauty that requires the storm — the spectrum only visible because water fragments the light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tripping and catching yourself before you fall: the body demonstrating recovery — the proof that losing balance is not the same as falling, and that the system can self-correct." }
+        ],
+        intuition: "You do not have to be perfect — repairs are glue that makes the bond stronger than before. Donald Winnicott coined the phrase good enough mother in 1953 and it remains one of the most liberating concepts in all of psychology. The perfect parent would be catastrophic. If every need were met instantly, the child would never develop frustration tolerance. Never learn to wait. Never discover that discomfort is survivable. Never build the internal resources that emerge only when external resources temporarily fail. The rupture-repair cycle is the engine of secure attachment. Not the absence of rupture. The presence of repair. Ed Tronick demonstrated this with the Still Face experiment. Mother and infant interact normally — smiling, cooing, synchronizing. Then the mother goes blank. Expressionless. Unresponsive. The infant escalates: reaching, crying, arching, turning away, self-soothing — running through every strategy in its repertoire to restore the connection. When the mother reanimates and responds, the infant recovers. And the recovery is not just a return to baseline. The recovery strengthens the system. The infant learns: disruption happens. Disruption ends. The bond survives. This is resilience being built in real time. The break is not the failure. The failure is the absence of repair. And the repair does not have to be perfect. It has to be present. Good enough is not settling. Good enough is the precise calibration that produces growth.",
+        links: [
+          { label: "Good Enough Parent", url: "https://en.wikipedia.org/wiki/Good_enough_parent" },
+          { label: "Donald Winnicott", url: "https://en.wikipedia.org/wiki/Donald_Winnicott" },
+          { label: "Still Face Experiment", url: "https://en.wikipedia.org/wiki/Still_face_experiment" }
+        ],
+        songs: [
+          { title: "Perfect", artist: "Pink", url: "https://www.youtube.com/watch?v=ocDlBO4-HBs" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Anthem", artist: "Leonard Cohen", url: "https://www.youtube.com/watch?v=mDTph7l0ID0" }
+        ],
+        advanced: "Winnicott 1953: good enough mother. The perfect parent would be catastrophic — never building frustration tolerance. Tronick's Still Face: rupture-repair cycle is the engine of secure attachment. The break is not the failure. The absence of repair is the failure. Good enough is the precise calibration that produces growth." },
+
+      { id: "intergenerational-transmission-chain", num: 10, icon: "🕯️", title: "Intergenerational Transmission (The Chain)", subtitle: "The Way Your Grandma Treated Your Mommy Is Often How Your Mommy Treats You — We Can Make the Chain Stronger",
+        simple: "We are all like a long chain of people holding hands. The way your grandma treated your mommy is often the way your mommy treats you. This is because we learn how to love by watching the people who loved us. Sometimes we pass down happy things, and sometimes we pass down sad things without even knowing it. When we learn about our family's story, we can choose to keep the good parts and try to fix the parts that hurt. We are the ones who can make the chain stronger for the people who come after us.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A grandfather clock ticking steadily: the sound of time passing through generations — the same mechanism marking seconds for your grandmother that now marks them for you." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "An old family perfume or a specific cooking spice: the scent of continuity — olfactory information surviving decades in the same bottle, the same recipe, the same kitchen." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Fruit from a tree planted before you were born: the taste of someone else's foresight — sweetness you did not earn, harvested from labor you never witnessed." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Touching an old photograph and feeling the texture of the paper: the touch of a surface that was touched by hands that no longer exist — tactile connection across time." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your own hands looking like your parent's hands: the sight of the chain made flesh — genetic continuity visible in the shape of your fingers." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking in the same rhythm as someone you love: the body synchronizing across generations — your gait calibrated to the gait of the person who first walked you around the room." }
+        ],
+        intuition: "The way your grandma treated your mommy is often how your mommy treats you — we can make the chain stronger. The Minnesota Longitudinal Study followed families for decades and found that the single strongest predictor of a child's attachment style was not income, not education, not neighborhood, not IQ. It was the mother's own attachment style. Secure mothers raised secure children. Anxious mothers raised anxious children. The pattern transmitted with startling fidelity. The mechanism is dual: biological and behavioral. Biologically, epigenetic marks laid down by one generation's stress or nurture are transmitted through the germline. Behaviorally, the internal working model the mother built as an infant becomes the operating system she uses to parent her own child. She does not choose to repeat the pattern. The pattern runs automatically, below conscious awareness, in the implicit memory systems that were encoded before she had language. But here is the redemption: the chain can be interrupted. The Adult Attachment Interview, developed by Mary Main, showed that what matters is not what happened to you. What matters is whether you have made sense of what happened to you. A mother who experienced insecure attachment but who has processed, narrated, and integrated that experience can earn secure attachment — and transmit security to her children. The chain does not have to repeat. Consciousness breaks the chain. Understanding what was passed to you gives you the choice of what to pass forward. You are not just a link. You are the link that can change the direction of the entire chain.",
+        links: [
+          { label: "Intergenerational Trauma", url: "https://en.wikipedia.org/wiki/Transgenerational_trauma" },
+          { label: "Adult Attachment Interview", url: "https://en.wikipedia.org/wiki/Adult_Attachment_Interview" },
+          { label: "Mary Main", url: "https://en.wikipedia.org/wiki/Mary_Main" }
+        ],
+        songs: [
+          { title: "Father and Son", artist: "Cat Stevens", url: "https://www.youtube.com/watch?v=P6zaCV4niKk" },
+          { title: "Cat's in the Cradle", artist: "Harry Chapin", url: "https://www.youtube.com/watch?v=KUwjNBjqR-c" },
+          { title: "Wind Beneath My Wings", artist: "Bette Midler", url: "https://www.youtube.com/watch?v=0SMbwPxXOOo" }
+        ],
+        advanced: "Minnesota Longitudinal Study: strongest predictor of child's attachment is mother's own attachment style. Mary Main's Adult Attachment Interview: what matters is not what happened to you but whether you have made sense of it. Earned secure attachment transmits to children. Consciousness breaks the chain. You are the link that can change the direction." },
+    ],
+
+
 
 
 
