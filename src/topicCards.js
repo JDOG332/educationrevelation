@@ -14563,6 +14563,243 @@ export const TOPIC_CARDS = {
         advanced: "Cartesian dualism largely debunked by modern neuroscience and embodied cognition. The enteric nervous system (gut brain) and the heart's independent nervous system prove thinking happens throughout the entire organism. Movement is a cognitive act; cognition is a physical act. In dance: unity of action — no thinker deciding to move, only movement. Aligns with non-dualistic philosophies (Advaita Vedanta, Taoism): separation of self and world is illusion. We are a singular, expressive process." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > ARCHITECTURE & BUILT SPACE (architecture)
+    // ═══════════════════════════════════════════════════════════════
+
+    architecture: [
+      { id: "shelter-protection", num: 1, icon: "🏛️", title: "Shelter & Protection", subtitle: "Architecture Creates a Special Inside World That Is Different From the Outside World",
+        simple: "Architecture starts with a simple need to stay dry and warm. Think of a building like a giant umbrella or a sturdy coat that stays in one place. It keeps the rain, wind, and sun away so you can sleep or play safely inside. When you feel safe inside your house during a thunderstorm, that is architecture doing its most important job. It creates a special inside world that is different from the outside world. This boundary makes us feel protected and at peace.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The muffled quiet hush of a room when you close a thick door against a noisy street: silence is architecture." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Dry wood or rain-dampened stone at the entrance: the building greeting you." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A cool glass of water kept out of the sun: shelter you can drink." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The solid cool feeling of a thick brick wall: protection you can press against." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sturdy roof over your head while looking out a window at a storm: the boundary made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your shoulders relaxing as you step through your front door: the body recognizing safety." }
+        ],
+        intuition: "Architecture creates a special inside world that is different from the outside world. The first architecture was not a building. It was a cave. A mother pulled her child inside and the rain stopped touching them. That moment — the creation of inside — is the oldest invention. Every house, every cathedral, every skyscraper is still doing what that cave did: drawing a line between chaos and peace.",
+        links: [
+          { label: "Shelter (Building)", url: "https://en.wikipedia.org/wiki/Shelter_(building)" },
+          { label: "Ontological Security", url: "https://en.wikipedia.org/wiki/Ontological_security" },
+          { label: "Vernacular Architecture", url: "https://en.wikipedia.org/wiki/Vernacular_architecture" }
+        ],
+        songs: [
+          { title: "Gimme Shelter", artist: "The Rolling Stones", url: "https://www.youtube.com/watch?v=RbmS3tQJ7Os" },
+          { title: "Our House", artist: "Crosby, Stills, Nash & Young", url: "https://www.youtube.com/watch?v=HMafHpOkGOg" },
+          { title: "Shelter from the Storm", artist: "Bob Dylan", url: "https://www.youtube.com/watch?v=WBMnh2vDgfE" }
+        ],
+        advanced: "Shelter transcends physical protection and enters ontological security — the architectural manifestation of the boundary between self and other. In phenomenology, the dwelling is the center of the world, a topography of intimate being. The building envelope mimics biological systems: complex thermodynamics and moisture barriers maintaining internal homeostasis. The wall is not a wall. The wall is a decision about what belongs inside and what stays out." },
+
+      { id: "structural-integrity", num: 2, icon: "🏗️", title: "Structural Integrity", subtitle: "A Building's Job Is to Stand Up Against Gravity and Say No",
+        simple: "Everything in the world is being pulled down by gravity, and a building's job is to stand up and say no. Architects use strong materials like steel and concrete to make sure the roof does not fall on our heads. Imagine a giant puzzle where every piece is pushing or pulling against the others to stay perfectly still. If the building is designed well, it feels strong and steady like a mountain. We trust the floor to hold us up without thinking about it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The deep solid thump of your feet hitting a floor that does not shake: structure you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The dusty metallic scent of a construction site with steel beams: strength has a smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The mineral taste of water from a stone fountain: the earth made drinkable." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your hand against a giant unmoving concrete column: immovable certainty." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Thick cables holding up a tall bridge: the skeleton made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The total lack of vibration in your feet as you jump on a solid floor: trust you feel in your bones." }
+        ],
+        intuition: "A building's job is to stand up against gravity and say no. You trust the floor so completely that you never think about it. That is the highest compliment architecture can receive: being invisible. The bridge does not brag about its cables. The column does not announce its load. Structure is silent service. Every building you have ever entered is quietly winning a war with gravity so you can walk around thinking about lunch.",
+        links: [
+          { label: "Structural Integrity", url: "https://en.wikipedia.org/wiki/Structural_integrity_and_failure" },
+          { label: "Statics", url: "https://en.wikipedia.org/wiki/Statics" },
+          { label: "Tensegrity", url: "https://en.wikipedia.org/wiki/Tensegrity" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Wrecking Ball", artist: "Miley Cyrus", url: "https://www.youtube.com/watch?v=My2FRPA3Gf8" }
+        ],
+        advanced: "Structural integrity: the physical dialogue between force and matter, governed by statics — mechanics of bodies at rest and forces in equilibrium. Every architectural marvel is a calculated victory over entropy. Tensegrity (tensional integrity): compression and tension members working in harmony. The truth of a structure is revealed in its skeleton, where the load path is visible and logical. The building is not fighting gravity. The building is negotiating with it." },
+
+      { id: "human-scale-proportion", num: 3, icon: "📏", title: "Human Scale & Proportion", subtitle: "Good Architecture Uses Special Math to Make Spaces Feel Just Right for Your Body",
+        simple: "Architects design buildings based on how big humans are. A door is just tall enough for you to walk through, and a chair is just high enough for your legs to bend comfortably. If a room is too big, you might feel like an ant in a giant's house; if it is too small, you might feel squished. Good architecture uses special math to make spaces feel just right for your body. When a room feels cozy and comfortable, it is because the architect used the right proportions.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Your voice sounding natural — not echoing too much or feeling muffled: the room is your size." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A wooden table right at your nose level: proportion you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A meal where the table and chair heights let you sit perfectly: comfort feeds appetite." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A handrail exactly where your hand expects it: the building anticipating your body." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A window perfectly framed for your eyes to look out: the world at your scale." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Fitting perfectly into a window seat: the architecture hugging you back." }
+        ],
+        intuition: "Good architecture uses special math to make spaces feel just right for your body. The golden ratio is not just in seashells and galaxies. It is in your doorframe. The door is your height because you are the unit of measurement. Architecture does not start with blueprints. Architecture starts with your body. Every room that ever felt right was a love letter written to your skeleton.",
+        links: [
+          { label: "Modulor", url: "https://en.wikipedia.org/wiki/Modulor" },
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" },
+          { label: "Anthropometrics", url: "https://en.wikipedia.org/wiki/Anthropometry" }
+        ],
+        songs: [
+          { title: "It's a Small World", artist: "Disney", url: "https://www.youtube.com/watch?v=cIm5MBPCFfk" },
+          { title: "Giant", artist: "Calvin Harris & Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=wMEq1mGpP5A" },
+          { title: "Human", artist: "The Killers", url: "https://www.youtube.com/watch?v=RIZdjT1472Y" }
+        ],
+        advanced: "Proportion: the commensurate relationship between parts of a whole. Architects use systems like the golden section (φ ≈ 1.618) to achieve aesthetic harmony mirroring biological growth patterns. Anthropometrics — measurement of the human body to determine spatial requirements — ensures the built environment extends human kinesis. The building is not measured in feet and inches. The building is measured in you." },
+
+      { id: "light-shadow", num: 4, icon: "☀️", title: "Light & Shadow", subtitle: "Light Is the Paint of Architecture and Shadow Is Its Mood",
+        simple: "Light is like the paint of architecture. It comes through windows and bounces off walls to show us the shapes and colors of a room. Without light, a building is just a dark box. Architects use shadow to make spaces feel cool and quiet, and light to make them feel happy and energetic. Watching sunlight move across your bedroom floor during the day shows you how the building is alive.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The warm sound of a sunlit room versus the cool echoey sound of a dark basement: light has a voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sun-warmed dust motes dancing in a beam of light: you can smell the sunshine." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sun-ripened fruit on a kitchen counter in the morning: light you can taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The warmth of a sun-patch on a wooden floor with your bare feet: light touching you back." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sharp beautiful line where a bright wall meets a dark shadow: architecture drawing with light." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body naturally turning toward a window for brightness: the heliotrope in your bones." }
+        ],
+        intuition: "Light is the paint of architecture and shadow is its mood. The architect does not design rooms. The architect designs the way light falls into rooms. A cathedral does not impress you with its stones. It impresses you with its light. The stained glass window is not decoration. It is a machine for turning sunlight into emotion. Architecture without light is a body without a soul.",
+        links: [
+          { label: "Daylighting", url: "https://en.wikipedia.org/wiki/Daylighting" },
+          { label: "Louis Kahn", url: "https://en.wikipedia.org/wiki/Louis_Kahn" },
+          { label: "Chiaroscuro", url: "https://en.wikipedia.org/wiki/Chiaroscuro" }
+        ],
+        songs: [
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Chasing Cars", artist: "Snow Patrol", url: "https://www.youtube.com/watch?v=GemKqzILV4w" }
+        ],
+        advanced: "Light: the primary revelatory agent of architectural form. Le Corbusier: architecture is the learned game, correct and magnificent, of forms assembled in the light. Not merely a utility but a volumetric element. Architects manipulate luminance and illuminance to define hierarchy and mood. Chiaroscuro — contrast between light and dark — creates depth and drama, guiding the inhabitant's emotional journey. The window is not an opening. The window is an editor of sunlight." },
+
+      { id: "circulation-flow", num: 5, icon: "👣", title: "Circulation & Flow", subtitle: "A Good Building Feels Like It Is Helping You Get Where You Need to Go",
+        simple: "Circulation is the path you take when you move through a building. Think of it like a river: the hallways and stairs are the channels that lead you from the front door to your room. A good building is easy to navigate so you do not get lost or feel stuck. If a building flows well, it feels like it is helping you get where you need to go. It connects all the different islands of rooms together into one big story.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic click-clack of footsteps echoing down a long hallway: movement has a soundtrack." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Changing smells as you walk from a pine-scented living room to a spicy kitchen: the nose navigating." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The anticipation of a snack as you walk toward the pantry: desire pulling you forward." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand along a smooth hallway wall as you walk: the building guiding your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright doorway at the end of a long dim corridor: the building beckoning you forward." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body leaning into a turn as you walk around a corner: the building choreographing your movement." }
+        ],
+        intuition: "A good building feels like it is helping you get where you need to go. You never notice good circulation. You only notice bad circulation. When a building flows, your feet know where to go before your eyes do. The hallway is not empty space between rooms. The hallway is the story between the chapters. Circulation is the building breathing — inhaling people in and exhaling them out.",
+        links: [
+          { label: "Circulation (Architecture)", url: "https://en.wikipedia.org/wiki/Circulation_(architecture)" },
+          { label: "Wayfinding", url: "https://en.wikipedia.org/wiki/Wayfinding" },
+          { label: "Desire Path", url: "https://en.wikipedia.org/wiki/Desire_path" }
+        ],
+        songs: [
+          { title: "The Way", artist: "Fastball", url: "https://www.youtube.com/watch?v=b0wfu3tOrtQ" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+          { title: "Road to Nowhere", artist: "Talking Heads", url: "https://www.youtube.com/watch?v=LQiOA7euaYA" }
+        ],
+        advanced: "Circulation: the choreography of architecture defining the temporal experience of space — how we perceive a building over time as we move through it. Primary and secondary circulation manage density and privacy. Wayfinding logic utilizes visual cues, nodes, and landmarks for subconscious environmental mapping. Effective circulation minimizes friction and optimizes desire lines. The building is not a container. The building is a journey." },
+
+      { id: "context-site", num: 6, icon: "🌍", title: "Context & Site", subtitle: "When a Building Fits Its Site It Feels Like It Grew Right Out of the Ground",
+        simple: "A building should look like it belongs in its neighborhood. A house in the snowy mountains should look different from a house in a hot desert. Architects look at the trees, the hills, and the other buildings nearby before they start drawing. This is called the site. When a building fits its site, it feels like it grew right out of the ground. It respects the nature and the history of the place where it sits.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The wind rustling the specific trees that surround a building: the site has a voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Local soil or nearby ocean air when you open a window: the land introducing itself." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A vegetable grown in the garden right outside the door: eating where you live." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A wall made of the same stone found in the nearby hills: the building is the landscape continued." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The building's colors matching the colors of the sunset outside: architecture dissolving into nature." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the slope of the land continue even once you are inside: the earth is still under your feet." }
+        ],
+        intuition: "When a building fits its site it feels like it grew right out of the ground. Fallingwater does not sit on the waterfall. Fallingwater is the waterfall. The best architecture does not arrive. It emerges. The genius loci — the spirit of the place — was there before the architect. The architect's job is not to invent. The architect's job is to listen to what the land already wants to be.",
+        links: [
+          { label: "Genius Loci", url: "https://en.wikipedia.org/wiki/Genius_loci" },
+          { label: "Frank Lloyd Wright", url: "https://en.wikipedia.org/wiki/Frank_Lloyd_Wright" },
+          { label: "Contextualism", url: "https://en.wikipedia.org/wiki/Contextualism_(architecture)" }
+        ],
+        songs: [
+          { title: "Home", artist: "Edward Sharpe & The Magnetic Zeros", url: "https://www.youtube.com/watch?v=DHEOF_rcND8" },
+          { title: "Take Me Home, Country Roads", artist: "John Denver", url: "https://www.youtube.com/watch?v=1vrEljMfXYo" },
+          { title: "Where the Streets Have No Name", artist: "U2", url: "https://www.youtube.com/watch?v=GzZWSrr5wFI" }
+        ],
+        advanced: "Genius loci — the spirit of place — is the foundational truth that no building exists in a vacuum. Contextualism requires deep analysis of topography, climate, and built fabric. Site analysis determines orientation, maximizing solar gain or natural ventilation. The structure becomes autochthonous — indigenous to its location. The building that ignores its site is a stranger. The building that honors its site is a native." },
+
+      { id: "materiality", num: 7, icon: "🧱", title: "Materiality", subtitle: "The Truth of a Material Is Letting It Be What It Is",
+        simple: "Materiality is about what things are made of and how they feel. Imagine the difference between a cold smooth glass wall and a warm rough wooden beam. Architects choose materials to make you feel a certain way. Soft carpets make a room feel quiet and cozy, while hard tiles make it feel clean and bright. The truth of a material is letting it be what it is — letting wood look like wood and brick look like brick.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The tink of a fingernail on glass versus the thud on wood: materials speak different languages." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp clean smell of new concrete or the sweet smell of cedar: honesty has an aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The faint metallic tang of a copper handrail: every material has a flavor." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your fingers over the bumps and grooves of a stone wall: reading the material's biography." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The beautiful patterns inside a piece of polished wood: the material showing its history." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The softness of a rug under your feet compared to a hard floor: your body reading the room through the ground." }
+        ],
+        intuition: "The truth of a material is letting it be what it is. Concrete does not pretend to be marble. Wood does not pretend to be steel. Honesty in materials is the same as honesty in people: the most beautiful thing is the thing that is not trying to be something else. When you touch a wall and feel its roughness, you are shaking hands with the earth it came from.",
+        links: [
+          { label: "Materiality (Architecture)", url: "https://en.wikipedia.org/wiki/Materiality_(architecture)" },
+          { label: "Bauhaus", url: "https://en.wikipedia.org/wiki/Bauhaus" },
+          { label: "Thermal Mass", url: "https://en.wikipedia.org/wiki/Thermal_mass" }
+        ],
+        songs: [
+          { title: "Material Girl", artist: "Madonna", url: "https://www.youtube.com/watch?v=6p-lDYPR2P8" },
+          { title: "Heart of Gold", artist: "Neil Young", url: "https://www.youtube.com/watch?v=Eh44QPT1mPE" },
+          { title: "Concrete Jungle", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=5E8CgUzOejQ" }
+        ],
+        advanced: "Materiality: the phenomenology of substance addressing haptic qualities — touch as much as sight. Each material possesses inherent honesty or integrity (Bauhaus). Material selection dictates thermal mass, acoustic absorption, and embodied carbon. Where the abstract concept of a building meets the brutal physical reality of the world. The material is not what the building is made of. The material is what the building says." },
+
+      { id: "tectonics", num: 8, icon: "🔩", title: "Tectonics", subtitle: "The Poetry of Construction — How Things Are Joined Together",
+        simple: "Tectonics is the art of joining things together. Think of Legos: the way they snap together is their tectonics. In a building, it is how the roof meets the walls, or how the windows fit into the frames. If these joints are beautiful and neat, the whole building looks well-made. It shows that the people who built it cared about the details. It is the poetry of construction.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The solid silent click of a perfectly fitted door latch: precision you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of glue or solder where two pieces of metal are joined: craft has a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The clean feeling of a space where everything fits perfectly: quality you can almost taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth seam where a wooden floor meets a stone fireplace: two materials shaking hands." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Tiny beautiful bolts holding a giant glass wall in place: the detail that holds the dream together." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A handrail that does not wiggle when you lean on it: trust is in the joints." }
+        ],
+        intuition: "The poetry of construction. God is in the details. The building is only as strong as its weakest joint. Where two materials meet, there is a conversation. Either they fight or they cooperate. The tectonic detail is the handshake between the parts. When the handshake is firm and honest, the whole building rings true. Craft is not about what you build. Craft is about how you connect.",
+        links: [
+          { label: "Tectonics (Architecture)", url: "https://en.wikipedia.org/wiki/Tectonics_(architecture)" },
+          { label: "Kenneth Frampton", url: "https://en.wikipedia.org/wiki/Kenneth_Frampton" },
+          { label: "Joinery", url: "https://en.wikipedia.org/wiki/Joinery" }
+        ],
+        songs: [
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Build Me Up Buttercup", artist: "The Foundations", url: "https://www.youtube.com/watch?v=hSofzQURQDk" },
+          { title: "Interstate Love Song", artist: "Stone Temple Pilots", url: "https://www.youtube.com/watch?v=yjJL9DGU7Gg" }
+        ],
+        advanced: "Tectonics: the fusion of techné (art/craft) and architectonic (structure). Moves beyond construction into the expressive potential of assembly. A tectonic detail explains visually how the building works. Explores tension between stereotomic (heavy, earth-bound stone) and tectonic (light, frame-based wood or steel). The visual language of structural logic and craftsmanship. Where two materials meet, there is either poetry or silence." },
+
+      { id: "public-private-space", num: 9, icon: "🚪", title: "Public vs. Private Space", subtitle: "Buildings Help Us Decide Who We Want to Be With",
+        simple: "Buildings help us decide who we want to be with. A living room is public for your family and friends to sit together, but your bedroom is private just for you. A park or a library is public for the whole city. Architects use walls, doors, and even plants to create boundaries. These boundaries tell us where we are allowed to go and where we should be quiet and alone.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The difference between a noisy echoing lobby and a quiet carpeted bedroom: architecture sorting sound." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The outdoor smell of a public courtyard versus the familiar smell of your own pillow: privacy has a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a big pizza in a public plaza versus a quiet snack in your room: eating changes with audience." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The hard cold bench of a bus stop versus the soft cushions of your own sofa: public and private feel different." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Many people walking past in a mall versus seeing only your own things in your room: the eye measuring privacy." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling exposed in a glass-walled lobby versus feeling tucked in a small nook: your body knows the difference." }
+        ],
+        intuition: "Buildings help us decide who we want to be with. The door is the most powerful piece of architecture ever invented. Open: welcome. Closed: not now. The threshold between public and private is the most crossed border on earth. You cross it every time you come home. Every time you close a door, you are drawing a line between the world and yourself. Architecture does not just give us shelter. Architecture gives us solitude.",
+        links: [
+          { label: "Proxemics", url: "https://en.wikipedia.org/wiki/Proxemics" },
+          { label: "Defensible Space Theory", url: "https://en.wikipedia.org/wiki/Defensible_space_theory" },
+          { label: "Public Space", url: "https://en.wikipedia.org/wiki/Public_space" }
+        ],
+        songs: [
+          { title: "In My Room", artist: "The Beach Boys", url: "https://www.youtube.com/watch?v=l71pbhqnvNM" },
+          { title: "People Are Strange", artist: "The Doors", url: "https://www.youtube.com/watch?v=GJY8jJkDoMY" },
+          { title: "Welcome to the Jungle", artist: "Guns N' Roses", url: "https://www.youtube.com/watch?v=o1tj2zJ2Wvg" }
+        ],
+        advanced: "Spatial sociology: proxemics — human use of space and effects of density on behavior and communication. Architects design thresholds to transition between public and private states. Defensible space theory: physical design can inhibit crime by creating ownership. Architecture is the tool used to negotiate the social contract within a physical environment. The wall is not a barrier. The wall is a negotiation." },
+
+      { id: "ornament-meaning", num: 10, icon: "🎨", title: "Ornament & Meaning", subtitle: "A Building's Decorations Are Its Personality and Its Story",
+        simple: "Sometimes architecture tells a story through decorations. Think of the gargoyles on an old cathedral or the shiny glass on a modern office building. These parts are not there to hold the roof up; they are there to tell you what the building is for. A library might have carvings of books, and a bank might have big stone columns to look strong. This is the building's personality.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The fancy sound of a fountain in a grand hotel lobby: ornament has a voice." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old paper and leather in a grand decorated library: ornament preserved in scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fancy dessert served in a beautiful decorated dining room: the room flavoring the food." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your fingers over a carved stone pattern on a wall: reading the building's story with your hands." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking up at a colorful stained-glass window that tells a story: architecture as picture book." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling important when you walk up a grand wide staircase: ornament changing how you carry yourself." }
+        ],
+        intuition: "A building's decorations are its personality and its story. The gargoyle is not decoration. The gargoyle is a sentence. The column is not support. The column is a statement. Every carving, every mosaic, every stained-glass window is the building trying to talk to you. Modernism said ornament is a crime. But humans kept decorating anyway. Because a building without a story is just a box. And nobody wants to live in a box.",
+        links: [
+          { label: "Ornament (Architecture)", url: "https://en.wikipedia.org/wiki/Ornament_(architecture)" },
+          { label: "Architectural Semiotics", url: "https://en.wikipedia.org/wiki/Architectural_semiotics" },
+          { label: "Ornament and Crime", url: "https://en.wikipedia.org/wiki/Ornament_and_Crime" }
+        ],
+        songs: [
+          { title: "Vogue", artist: "Madonna", url: "https://www.youtube.com/watch?v=GuJQSAiODqI" },
+          { title: "Fancy", artist: "Iggy Azalea", url: "https://www.youtube.com/watch?v=O-zpOMYRi0w" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" }
+        ],
+        advanced: "Ornamentation: architectural semiotics — the study of signs and symbols in built form. Modernism declared ornament is a crime; post-modernism argued buildings must communicate through double coding. Meaning derives from typology — classification of characteristics common to buildings. Whether classical pediment or high-tech exposed pipe, architecture uses visual vocabulary to convey power, community, or function. The ornament is not added to the building. The ornament is the building's language." },
+    ],
+
+
 
 
 
