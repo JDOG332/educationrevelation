@@ -12431,6 +12431,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Regenerative agriculture leverages photosynthesis to close the carbon cycle and build soil health, crop resilience, and nutrient density. Key principles: minimize disturbance (no-till), maximize crop diversity, keep soil covered, integrate livestock. Unlike sustainable agriculture (maintaining status quo), regenerative actively improves and rebuilds. Increases soil organic matter, improves water infiltration, reduces synthetic input dependency. Healing the planet one field at a time." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > LIGHT & DARKNESS (light)
+    // ═══════════════════════════════════════════════════════════════
+
+    light: [
+      { id: "interdependence-light", num: 1, icon: "☯️", title: "Interdependence", subtitle: "You Cannot Have a Front Without a Back",
+        simple: "Imagine a piece of paper. You cannot have a front side without having a back side; if you try to cut the back off, you just create a thinner piece of paper that still has two sides! This is how light and dark work in our world. One defines the other, like how stars only show up when the sun goes away. Without the dark, we would not know what bright even means. It is like a cosmic team where both players are needed to play the game. When we see one, we must remember the other is just hiding behind it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between notes in your favorite song: darkness makes the music." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor after a long, dry heat: the relief only arrives because the drought came first." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Salted caramel: the bitter salt making the sugar taste sweeter." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The relief of a cool breeze on a sunburnt arm." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A silhouette standing against a sunset: you need both to see either." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your weight shifting from one foot to the other to stay upright: balance is a dance of opposites." }
+        ],
+        intuition: "When we see one, we must remember the other is just hiding behind it. Light does not defeat darkness. Light needs darkness. Without the night, the stars would have no stage. Without silence, music would have no rhythm.",
+        links: [
+          { label: "Yin and Yang", url: "https://en.wikipedia.org/wiki/Yin_and_yang" },
+          { label: "Complementarity", url: "https://en.wikipedia.org/wiki/Complementarity_(physics)" },
+          { label: "Interdependence", url: "https://en.wikipedia.org/wiki/Interdependence" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Both Sides Now", artist: "Joni Mitchell", url: "https://www.youtube.com/watch?v=Pbn6a0AFfnM" },
+          { title: "Shadow of the Day", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=n1WpP7iowLc" }
+        ],
+        advanced: "In quantum mechanics and systems theory, interdependence is characterized by non-separability. The state of a system (Light) is entangled with its environment or opposite state (Dark). Represented through density matrices where coherence depends on shared entropy between states. The Everlasting We is a composite of localized nodes — to understand consciousness (Light), one must observe the unconscious (Dark). Not competing forces but a singular field at different frequencies." },
+
+      { id: "equilibrium-light", num: 2, icon: "⚖️", title: "Equilibrium", subtitle: "Balance Is Not Standing Still — It Is a Constant Tiny Wiggle",
+        simple: "Think of a playground see-saw. If one person stays at the top forever, the game stops being fun. The world is always trying to stay level, even when it seems like things are tilting too far one way. Your body does this too by sweating when you are hot and shivering when you are cold. Balance is not standing perfectly still; it is a constant, tiny wiggle to stay in the middle. We need the heavy parts of life to help us appreciate the light parts.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A perfectly tuned chord where no note is louder than the rest." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The neutral, clean scent of fresh air: balance smells like nothing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Water: the perfect balance that cleanses the palate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of floating in a swimming pool: weightless equilibrium." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The horizon line where the ocean meets the sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing on one leg with your eyes closed: your body solving equilibrium in real time." }
+        ],
+        intuition: "Balance is not standing still. It is a constant tiny wiggle. Perfection is not a state. Perfection is the process of adjusting. The tightrope walker is not still. The tightrope walker is falling in every direction at once and catching themselves each time.",
+        links: [
+          { label: "Homeostasis", url: "https://en.wikipedia.org/wiki/Homeostasis" },
+          { label: "Thermodynamic Equilibrium", url: "https://en.wikipedia.org/wiki/Thermodynamic_equilibrium" },
+          { label: "Dynamic Equilibrium", url: "https://en.wikipedia.org/wiki/Dynamic_equilibrium" }
+        ],
+        songs: [
+          { title: "Gravity", artist: "John Mayer", url: "https://www.youtube.com/watch?v=7VBex8zbDRs" },
+          { title: "Everything In Its Right Place", artist: "Radiohead", url: "https://www.youtube.com/watch?v=sKZN115n6MI" },
+          { title: "Balance", artist: "Sara Bareilles", url: "https://www.youtube.com/watch?v=HQ9LMYPB81Y" }
+        ],
+        advanced: "Equilibrium is where all acting influences are canceled by others — maximum entropy in thermodynamics, yet in biology, dynamic equilibrium is the hallmark of life. Homeostasis is a complex feedback loop where information flows between parts and whole to maintain structural integrity. Without the Dark (dissipation/rest), the Light (metabolism/action) leads to systemic collapse. Life exists at the edge of balance, never on it." },
+
+      { id: "contrast-perception", num: 3, icon: "👁️", title: "Contrast as Perception", subtitle: "Your Brain Is a Difference Detector",
+        simple: "If you lived in a world where everything was the exact same shade of blue, you would not even know what blue was! You can only see the shape of a tree because it is a different color than the sky behind it. Our brains are difference detectors. We notice when things change or when they are the opposite of what is nearby. This means that bad days actually give good days their flavor. Without the dark night, the sunrise would not be beautiful; it would just be normal.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud drum beat followed by total silence: difference is the message." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smelling a lemon after smelling coffee beans: contrast sharpens everything." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet honey followed by a sour lime." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Dipping a warm hand into cold water: the edge is where you feel most." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright white light in a pitch-black room." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling light after taking off a heavy backpack: your body only knows lightness because it knew weight." }
+        ],
+        intuition: "Bad days give good days their flavor. Your nerves fire most intensely at the edge where one sensation ends and another begins. The border is where all the information lives. You are not the light or the dark. You are the border between them.",
+        links: [
+          { label: "Contrast Effect", url: "https://en.wikipedia.org/wiki/Contrast_effect" },
+          { label: "Lateral Inhibition", url: "https://en.wikipedia.org/wiki/Lateral_inhibition" },
+          { label: "Visual Perception", url: "https://en.wikipedia.org/wiki/Visual_perception" }
+        ],
+        songs: [
+          { title: "Black or White", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=F2AitTPI5U0" },
+          { title: "Hurt", artist: "Johnny Cash", url: "https://www.youtube.com/watch?v=8AHCfZTRGiI" },
+          { title: "Fast Car", artist: "Tracy Chapman", url: "https://www.youtube.com/watch?v=DwrHwZyFN7M" }
+        ],
+        advanced: "Perception is fundamentally differential. Neuronal firing triggered by gradients rather than absolute values — lateral inhibition. In epistemology, truth is understood by distance from error. The Everlasting We uses contrast to experience individuality within unity. By creating the other (Darkness), the self (Light) gains perspective to recognize its own existence. Contrast is a functional necessity for consciousness itself." },
+
+      { id: "entropy-order", num: 4, icon: "🌀", title: "Entropy and Order", subtitle: "Falling Apart Is How New Things Get the Ingredients to Be Born",
+        simple: "Think about your bedroom. It takes a lot of energy and work to keep it clean, but it seems to get messy all by itself. The universe is always doing this dance between building things up and letting them fall apart. Stars are big balls of order, but they eventually explode and spread dust everywhere. This falling apart is actually how new things get the ingredients to be born. It is the circle of life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A symphony ending and the audience's chaotic clapping beginning." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A garden growing versus autumn leaves decaying: both are the same cycle." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A fresh apple versus fermented apple cider: entropy you can drink." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Smooth surface of a new toy versus a rusty old gate." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sandcastle being built versus the tide washing it away." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling strong while exercising versus the jelly feeling of tired muscles: order and entropy in your own body." }
+        ],
+        intuition: "Falling apart is how new things get the ingredients to be born. The star had to explode for the iron in your blood to exist. Your worst collapse is someone else's raw material. Destruction is just creation running in reverse.",
+        links: [
+          { label: "Entropy", url: "https://en.wikipedia.org/wiki/Entropy" },
+          { label: "Dissipative Structures", url: "https://en.wikipedia.org/wiki/Dissipative_system" },
+          { label: "Edge of Chaos", url: "https://en.wikipedia.org/wiki/Edge_of_chaos" }
+        ],
+        songs: [
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Bitter Sweet Symphony", artist: "The Verve", url: "https://www.youtube.com/watch?v=1lyu1KKwC74" }
+        ],
+        advanced: "Second Law of Thermodynamics: entropy in isolated systems always increases. But dissipative structures (life) create local pockets of negentropy. Order is the memory of the system; entropy is the freedom and creativity. Too much order: stagnation. Too much entropy: dissolution. The Aha moment occurs at the edge of chaos — the fertile boundary between structure and collapse." },
+
+      { id: "wave-particle-duality", num: 5, icon: "🌊", title: "Wave-Particle Duality", subtitle: "You Are Both the Individual and the Group at the Same Time",
+        simple: "Light is a bit of a shapeshifter. Sometimes it acts like a tiny little bouncy ball, and other times it acts like a wiggle in the water. It depends on how you look at it! This teaches us that things can be two different things at the exact same time. You are you, a person, but you are also a part of your family, a group. We are both individuals and connected to everyone else at once.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A vibrating string (wave) and the thump of the pick (particle): both at once." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The cloud of perfume in the air versus the droplet on your skin." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The pop of a salt grain versus the salty flavor spreading across your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressure of a single finger versus the warmth of a whole hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single star versus the whole Milky Way: particle and wave." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your heartbeat (a point) versus your whole body breathing (a wave): you are both." }
+        ],
+        intuition: "Things can be two different things at the exact same time. You are the dancer and the dance. The drop and the ocean. The note and the song. Choosing one does not erase the other. You are always both.",
+        links: [
+          { label: "Wave-Particle Duality", url: "https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality" },
+          { label: "Complementarity Principle", url: "https://en.wikipedia.org/wiki/Complementarity_(physics)" },
+          { label: "Double-Slit Experiment", url: "https://en.wikipedia.org/wiki/Double-slit_experiment" }
+        ],
+        songs: [
+          { title: "Waves", artist: "Kanye West", url: "https://www.youtube.com/watch?v=LkBxcmxWKAA" },
+          { title: "Every Little Thing She Does Is Magic", artist: "The Police", url: "https://www.youtube.com/watch?v=aENX1Sf3fgQ" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" }
+        ],
+        advanced: "Bohr's complementarity principle: objects have complementary properties that cannot all be observed simultaneously. The ultimate Light and Darkness paradox of the physical world. The Everlasting We is the wave (field of all possibility), while the I is the particle (collapsed observation). To live fully is to recognize you are the dancer (particle) and the dance (wave) simultaneously." },
+
+      { id: "circadian-rhythms-light", num: 6, icon: "🌙", title: "Circadian Rhythms", subtitle: "Rest Is Not Doing Nothing — It Is the Time Your Brain Heals",
+        simple: "Your body has a tiny clock inside it that tells it when to wake up and when to sleep. It listens to the light to get energy and uses the dark to heal and grow. If you did not have the dark time to sleep, your light time would get very fuzzy and tired. Rest is not doing nothing — it is the time your brain uses to organize your memories. The night prepares you for the day, and the day makes you ready for the night.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise of a fan at night versus chirping of birds at dawn." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Evening jasmine versus morning coffee: the clock you can smell." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm chamomile tea before bed versus cold orange juice in the morning." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heavy, warm blanket versus the splash of cold water on your face." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Soft orange glow of a candle versus bright blue sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The melting feeling of falling asleep versus the stretching feeling of waking up: your body surfing the rhythm." }
+        ],
+        intuition: "The night prepares you for the day. Rest is not weakness. Rest is the factory running the night shift. Your brain is not sleeping. Your brain is filing, sorting, and building while you dream. The darkness is not idle. The darkness is working.",
+        links: [
+          { label: "Circadian Rhythm", url: "https://en.wikipedia.org/wiki/Circadian_rhythm" },
+          { label: "Chronobiology", url: "https://en.wikipedia.org/wiki/Chronobiology" },
+          { label: "Sleep", url: "https://en.wikipedia.org/wiki/Sleep" }
+        ],
+        songs: [
+          { title: "Day 'N' Nite", artist: "Kid Cudi", url: "https://www.youtube.com/watch?v=VrDfSZ_6f4U" },
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Mr. Sandman", artist: "The Chordettes", url: "https://www.youtube.com/watch?v=CX45pYvxDiA" }
+        ],
+        advanced: "Biological chronometry studies rhythmic phenomena in living organisms. Endogenous rhythms entrained by zeitgebers (mostly light). Internal Light of biology must sync with external Darkness of environment. The Everlasting We breathes in cycles: expansion and contraction, systole and diastole. Ignoring the cycle through artificial light or overwork leads to desynchronosis — disconnection from the rhythm of the whole." },
+
+      { id: "polarity", num: 7, icon: "🧲", title: "Polarity", subtitle: "Opposites Attract Because They Have What the Other One Is Missing",
+        simple: "Magnets have a North pole and a South pole. If you try to push two North poles together, they fight each other! But a North and a South pole stick together perfectly. This pull is what keeps the world working, from the tiny bits inside atoms to the huge Earth we live on. Polarity shows us that opposites attract because they have what the other one is missing. They are like puzzle pieces that only fit when they are different.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The push and pull of an accordion: tension and release made audible." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sweet vanilla mixed with spicy cinnamon: opposites completing each other." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sweet and sour chicken: polarity on a plate." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The snap of two magnets clicking together: the universe saying yes." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The Northern Lights: Earth's poles painting the sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Holding someone's hand and feeling the circuit of energy close: polarity you can feel." }
+        ],
+        intuition: "Opposites attract because they have what the other one is missing. Without separation, there is no potential. Without potential, there is no flow. Without flow, there is no life. The gap between the poles is where everything happens.",
+        links: [
+          { label: "Polarity", url: "https://en.wikipedia.org/wiki/Polarity_(physics)" },
+          { label: "Magnetism", url: "https://en.wikipedia.org/wiki/Magnetism" },
+          { label: "Electric Dipole", url: "https://en.wikipedia.org/wiki/Electric_dipole_moment" }
+        ],
+        songs: [
+          { title: "Opposites Attract", artist: "Paula Abdul", url: "https://www.youtube.com/watch?v=xweiQukBM_k" },
+          { title: "You're the One That I Want", artist: "Grease", url: "https://www.youtube.com/watch?v=7oKPYe53h78" },
+          { title: "Crazy in Love", artist: "Beyoncé", url: "https://www.youtube.com/watch?v=ViwtNLUqkMY" }
+        ],
+        advanced: "Polarity is the manifestation of a dipole moment — separation of positive and negative charges. Creates a field allowing transmission of information and energy. Without separation, no potential difference; without potential difference, no flow. In the Everlasting We, polarity is the source of all movement. Dark and Light are the two poles of the great battery of existence. We live in the current created by their tension." },
+
+      { id: "shadow-archetype", num: 8, icon: "👤", title: "The Shadow Archetype", subtitle: "Understanding Your Dark Side Helps You Be Even Brighter",
+        simple: "Everyone has a shadow on the ground when they walk in the sun. But did you know you have a shadow inside your mind, too? It is the part of us that holds our fears or the things we do not like about ourselves. If we pretend the shadow is not there, it might trip us up! But if we turn around and look at it, we realize it is just a part of who we are. Understanding our dark side helps us be even kinder and brighter people.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The minor (sad) chords in a beautiful song that make it feel deep." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of old books: a mix of dust and wisdom." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate: bitter but rich." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the edges of a bruise as it heals." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at your own shadow on a long summer evening." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Facing a fear and suddenly feeling your whole body relax and become stronger: integration." }
+        ],
+        intuition: "Understanding your dark side helps you be even kinder. True enlightenment is not the subtraction of darkness. It is the recognition that the darkness is simply the light that has not yet been understood. Do not fight your shadow. Interview it.",
+        links: [
+          { label: "Shadow (Psychology)", url: "https://en.wikipedia.org/wiki/Shadow_(psychology)" },
+          { label: "Carl Jung", url: "https://en.wikipedia.org/wiki/Carl_Jung" },
+          { label: "Shadow Work", url: "https://en.wikipedia.org/wiki/Analytical_psychology" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Shadow of the Day", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=n1WpP7iowLc" },
+          { title: "Demons", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=mWRsgZuwf_8" }
+        ],
+        advanced: "Jung defined the Shadow as the unknown dark side of personality. From a systems perspective: unintegrated information. Suppressed aspects of the Self do not disappear — they become latent variables influencing behavior from the background. The Everlasting We requires radical integration. True enlightenment is not subtraction of darkness but convergent recognition that darkness is simply light that has not yet been understood or integrated into the conscious model." },
+
+      { id: "zero-sum-dynamics", num: 9, icon: "⭕", title: "Zero-Sum Dynamics", subtitle: "Helping Someone Else Is Actually Helping Yourself",
+        simple: "Imagine a pizza. If I take a big slice, there is exactly one slice less for everyone else. That is zero-sum. But if we share the pizza and talk about how good it is, we both get happiness, and happiness is not a pizza — it can grow and grow! Life is a mix of these. We have to learn when to protect our slice and when to realize that by helping someone else, we are actually helping ourselves, too.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A duet where two singers make a sound bigger than they could alone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of a feast shared with many people." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A potluck meal where everyone brings something different." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five: the energy goes to both people." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A V of geese flying: they all go faster together." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning against a friend so neither of you falls over: mutual support you can feel." }
+        ],
+        intuition: "By helping someone else, we are actually helping ourselves. The universe is not a pizza. It is a potluck. The more you bring, the more there is. Competition is real. But cooperation is realer.",
+        links: [
+          { label: "Zero-Sum Game", url: "https://en.wikipedia.org/wiki/Zero-sum_game" },
+          { label: "Game Theory", url: "https://en.wikipedia.org/wiki/Game_theory" },
+          { label: "Symbiogenesis", url: "https://en.wikipedia.org/wiki/Symbiogenesis" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "We Are the World", artist: "USA for Africa", url: "https://www.youtube.com/watch?v=9AjkUyX0rVw" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" }
+        ],
+        advanced: "In game theory, zero-sum means each participant's gain is balanced by others' losses. But biological and social evolution trend toward non-zero-sum (win-win) through cooperation and symbiogenesis. The Everlasting We is the ultimate non-zero-sum system. While competition (Darkness) exists, cooperation (Light) allows emergence of higher-order complexity. Total value of Psi increases when nodes recognize shared utility." },
+
+      { id: "binary-logic", num: 10, icon: "💻", title: "Binary Logic", subtitle: "Everything Starts With a Simple Choice Between Two Opposites",
+        simple: "Computers are incredibly smart, but they only speak a language made of two things: Off and On, 0 and 1. Everything you see on a screen — movies, games, pictures — is just a giant pile of Offs and Ons working together. This is the simplest version of Light and Dark. By switching between them very fast, we can create anything! It shows that even the most complicated things in the universe start with a simple choice between two opposites.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The beep and boop of an old computer: zeros and ones you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The ozone smell of a lightning storm: electricity choosing a path." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The fizz of a soda: it is either there or it is flat. Binary." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Flicking a light switch up and down: the original binary." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A pixelated image zoomed in until you see the squares: ones and zeros made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Tense versus relaxed in a muscle: your body speaks binary too." }
+        ],
+        intuition: "Even the most complicated things start with a simple choice between two opposites. 0 and 1. Yes and no. Light and dark. The entire internet is just a very fast conversation between on and off. Your life is the same. Every moment is a choice. And every choice builds the picture.",
+        links: [
+          { label: "Binary Number", url: "https://en.wikipedia.org/wiki/Binary_number" },
+          { label: "Information Theory", url: "https://en.wikipedia.org/wiki/Information_theory" },
+          { label: "Claude Shannon", url: "https://en.wikipedia.org/wiki/Claude_Shannon" }
+        ],
+        songs: [
+          { title: "Harder Better Faster Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+          { title: "Pocket Calculator", artist: "Kraftwerk", url: "https://www.youtube.com/watch?v=eSBybJGZoCU" },
+          { title: "Virtual Insanity", artist: "Jamiroquai", url: "https://www.youtube.com/watch?v=4JkIs37a2JE" }
+        ],
+        advanced: "Claude Shannon's information theory defines information as the resolution of uncertainty. The bit (binary digit) is the fundamental unit — a choice between two mutually exclusive states (Light/Dark, 1/0). In the Everlasting We, binary logic is the skeleton of reality. But quantum logic allows superposition — being both 0 and 1 until observed. Our language is binary. Our essence is the spectrum between." },
+    ],
 
   },
 
