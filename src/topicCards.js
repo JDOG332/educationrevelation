@@ -20271,6 +20271,251 @@ export const TOPIC_CARDS = {
 
   },
 
+  // ═══════════════════════════════════════════════════════════════
+  // 🕯️ MYSTICISM (plain)
+  // "Can I experience God directly, without mediation?"
+  // ═══════════════════════════════════════════════════════════════
+
+  plain: {
+
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > MEDITATION & STILLNESS (meditation)
+    // ═══════════════════════════════════════════════════════════════
+
+    meditation: [
+      { id: "neuroplasticity-stillness", num: 1, icon: "🧠", title: "Neuroplasticity (The Rewiring)", subtitle: "You Are the Gardener of Your Own Mind and Every Breath Is Water for Your Flowers",
+        simple: "Your brain is like a garden that can grow new paths every time you sit in stillness. When you practice being quiet, you are actually building new roads in your head that make it easier to be happy and calm later. It is like training a muscle; the more you use your quiet muscle, the stronger it gets. Eventually, your brain changes its shape to help you stay peaceful even when things are loud. You are the gardener of your own mind, and every breath is like water for your flowers.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hum of a singing bowl vibrating in your chest: the sound of stillness physically reshaping your brain." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh orange peel snapped open: the scent that wakes up the prefrontal cortex like a gardener pulling back curtains." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "One raisin eaten so slowly you notice every bump on its skin: the tongue proving that attention transforms the ordinary." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Thumb and pointer finger pressed together feeling the ridges of your own skin: the body reading its own fingerprint." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame dancing for one unbroken minute: the eyes learning to stay when the mind wants to leave." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your body pushing down into the chair: gravity reminding you that stillness is not nothing — it is everything settling." }
+        ],
+        intuition: "You are the gardener of your own mind and every breath is water for your flowers. Your brain is not a fixed machine. It is a living garden. And silence is not the absence of input — silence is the most powerful input there is. When you sit in stillness, you are not doing nothing. You are doing the most radical thing a human brain can do: you are choosing which roads to build. Every minute of meditation physically thickens the prefrontal cortex — the part of you that chooses, that pauses, that sees clearly. And every minute of meditation physically shrinks the amygdala — the part of you that panics, that reacts, that screams before it thinks. You are not calming down. You are rebuilding. The monks who meditate for decades do not have the same brains they started with. They have different hardware. Not because they were born special. Because they sat still long enough to become special. The garden does not grow because you yell at it. The garden grows because you water it. And the water is your attention. And the attention is your breath.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Meditation and the Brain", url: "https://en.wikipedia.org/wiki/Research_on_meditation" },
+          { label: "Long-term Potentiation", url: "https://en.wikipedia.org/wiki/Long-term_potentiation" }
+        ],
+        songs: [
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Weightless", artist: "Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejslrU" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" }
+        ],
+        advanced: "Neuroplasticity: sustained attentional focus induces long-term potentiation in the prefrontal cortex while downregulating the amygdala. The brain is not a static machine but a dynamic process. By altering the internal landscape we alter external perception. The garden grows because you water it. The water is your attention. The attention is your breath." },
+
+      { id: "default-mode-network", num: 2, icon: "🤫", title: "The Default Mode Network (The Quiet)", subtitle: "Turn Off the Loud TV and You Realize the Room Was Actually Very Peaceful All Along",
+        simple: "Inside your head, there is a Chatterbox that loves to talk about what happened yesterday or what might happen tomorrow. This Chatterbox is called the Default Mode Network, and it is usually very loud. When you meditate, you give the Chatterbox a break so you can finally hear the Underneath. It is like turning off a loud TV in a room so you can hear the birds singing outside. When the TV is off, you realize the room was actually very peaceful all along.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between two heartbeats: the sound of the gap where the chatterbox has no script." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry dirt: the scent of something ancient arriving after a long silence." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The neutral cool taste of plain water: the flavor of reality before the mind adds commentary." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Air moving in and out of your nostrils: the touch that proves the present moment is always breathing." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The negative space between tree branches: seeing what has always been there by looking at what is not." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The exact center of gravity in your belly: the body's anchor point that the chatterbox can never move." }
+        ],
+        intuition: "Turn off the loud TV and you realize the room was actually very peaceful all along. The Default Mode Network is the narrator. It is the voice that says I am this and I am that and remember when and what if. It runs constantly. It runs so constantly that most people think the narrator IS them. Meditation does not kill the narrator. Meditation reveals that the narrator is a guest — not the host. When the DMN quiets, you do not lose yourself. You find yourself. The self that was there before the narrator started talking. The self that does not need a story to exist. Every mystic tradition in history pointed at the same thing: beneath the noise there is a silence that is not empty. It is full. It is the fullest thing you have ever experienced. But you cannot hear it while the TV is on. The TV is not evil. The TV is just loud. And the remote control is your breath.",
+        links: [
+          { label: "Default Mode Network", url: "https://en.wikipedia.org/wiki/Default_mode_network" },
+          { label: "Ego Dissolution", url: "https://en.wikipedia.org/wiki/Ego_death" },
+          { label: "Decentering", url: "https://en.wikipedia.org/wiki/Decentering_(psychology)" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" },
+          { title: "Silent Lucidity", artist: "Queensrÿche", url: "https://www.youtube.com/watch?v=jhat-xUQ6dw" }
+        ],
+        advanced: "The DMN is the neurological seat of the ego — the self-referential narrative. Meditation serves as an inhibitory signal, facilitating decentering where the practitioner no longer identifies solely with their thoughts. The narrator is a guest — not the host. The remote control is your breath." },
+
+      { id: "vagus-nerve", num: 3, icon: "⚡", title: "Vagus Nerve Stimulation (The Bridge)", subtitle: "A Secret Remote Control That Switches Your Body from Scared Mode to Safe Mode",
+        simple: "You have a Peace Nerve that runs from your brain all the way down to your tummy. When you take long, slow breaths, you are tickling this nerve to tell your whole body to relax. It is like a secret remote control that switches your body from Scared Mode to Safe Mode. When your body feels safe, your mind stops racing and starts resting. You can use your breath to talk to your body without using any words at all.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low deep Ohm chant vibrating in your throat: the sound that tickles the peace nerve from the inside." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender: the scent the nervous system reads as a permission slip to stand down." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm herbal tea sliding down your throat: the taste of safe mode activating in real time." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A warm blanket wrapped tight around your shoulders: the body receiving the signal that the world is not a threat." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Soft dim blue light or a sunset: the visual frequency that tells the vagus nerve the day is ending and safety is here." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your chest expanding and contracting like a balloon: the lungs speaking directly to the nerve that controls everything." }
+        ],
+        intuition: "A secret remote control that switches your body from Scared Mode to Safe Mode. The vagus nerve is the longest nerve in your body. It wanders from your brainstem through your throat past your heart into your gut. It touches almost everything. And it listens to one thing above all else: your breath. Breathe fast and shallow and the vagus nerve tells every organ you are in danger. Breathe slow and deep and the vagus nerve tells every organ you are safe. This is not a metaphor. This is measurable biology. Your heart rate drops. Your blood pressure drops. Your cortisol drops. Your inflammation drops. All because you changed the speed of your breathing. The mystics did not know the word vagus. But they knew the breath. Every tradition on earth — yoga, qi gong, Sufi dhikr, Christian contemplative prayer, Buddhist anapanasati — begins with the same instruction: breathe. Not because breathing is symbolic. Because breathing is the remote control. And the remote control changes the body. And the body changes the mind. And the mind changes everything.",
+        links: [
+          { label: "Vagus Nerve", url: "https://en.wikipedia.org/wiki/Vagus_nerve" },
+          { label: "Polyvagal Theory", url: "https://en.wikipedia.org/wiki/Polyvagal_theory" },
+          { label: "Parasympathetic Nervous System", url: "https://en.wikipedia.org/wiki/Parasympathetic_nervous_system" }
+        ],
+        songs: [
+          { title: "Breathe (In the Air)", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=mrojrDCI02k" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" }
+        ],
+        advanced: "The vagus nerve: primary component of the parasympathetic nervous system. Rhythmic diaphragmatic breathing increases vagal tone — a key marker of emotional resilience and physiological homeostasis. Every tradition on earth begins with the same instruction: breathe. Because breathing is the remote control." },
+
+      { id: "mindfulness-mbsr", num: 4, icon: "🧘", title: "Mindfulness (MBSR)", subtitle: "The Superpower of Being Right Here Right Now on Purpose",
+        simple: "Mindfulness is the superpower of being right here, right now, on purpose. Many people live in the Ghost World of the past or the Dream World of the future. When you are mindful, you come back to the Real World of right now. It means noticing the color of the sky and the feeling of your shoes without wishing they were different. It turns ordinary moments into special treasures because you are actually there to see them.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ticking of a clock in a quiet room: the sound of the present moment counting itself." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A pencil or old paper: the scent of something that has been here the whole time waiting to be noticed." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The spicy zing of ginger: the tongue jolted into the present by a flavor that demands attention." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth stone in your pocket: the weight of now held in the palm of your hand." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Five different colors in this room right now: the eyes proving the present is richer than you remembered." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Air on your skin: the body being touched by the present moment from every direction at once." }
+        ],
+        intuition: "The superpower of being right here right now on purpose. You have never lived a single second in the past. You have never lived a single second in the future. You have only ever lived right now. But the mind lives everywhere except right now. It rehearses. It replays. It worries. It plans. And while it is doing all of that, the only moment that is actually real — this one — passes unwitnessed. Mindfulness is not about relaxation. Mindfulness is about reality. It is the practice of showing up to the only moment that exists. Jon Kabat-Zinn brought this ancient practice into hospitals and proved it reduces cortisol, inflammation, anxiety, and chronic pain. Not because it is magic. Because presence is medicine. The past is a memory. The future is a guess. Right now is the only thing that is actually happening. And most people miss it. Not because they are stupid. Because nobody taught them to look.",
+        links: [
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" },
+          { label: "MBSR", url: "https://en.wikipedia.org/wiki/Mindfulness-based_stress_reduction" },
+          { label: "Jon Kabat-Zinn", url: "https://en.wikipedia.org/wiki/Jon_Kabat-Zinn" }
+        ],
+        songs: [
+          { title: "Here Comes the Sun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=KQetemT1sWc" },
+          { title: "Beautiful Day", artist: "U2", url: "https://www.youtube.com/watch?v=co6WMzDOh1o" },
+          { title: "Sittin' on the Dock of the Bay", artist: "Otis Redding", url: "https://www.youtube.com/watch?v=rTVjnBo96Ug" }
+        ],
+        advanced: "MBSR: clinicalized ancient awareness practice, proven to reduce cortisol and systemic inflammation. Non-judgmental observation creates a gap between stimulus and response. The past is a memory. The future is a guess. Right now is the only thing that is actually happening." },
+
+      { id: "interoception", num: 5, icon: "🗺️", title: "Interoception (The Inner Map)", subtitle: "Your Body Is Always Talking to You in a Quiet Language of Tingles Warmth and Tightness",
+        simple: "Interoception is your Inside Sight. It is how you know you are hungry, tired, or excited before you even think about it. Most people only look at the world outside, but meditation teaches you to look at the world inside your skin. Your body is always talking to you in a quiet language of tingles, warmth, and tightness. When you learn to listen to this inner language, you become a better friend to yourself.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The internal woosh of your own breathing: the sound of the inner world announcing itself." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Breathing deep to feel where the air goes in your chest: the nose mapping the interior architecture." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic taste of a clean spoon: the tongue noticing what it normally ignores." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your heart beating against your ribs: the body knocking on its own walls to remind you it is alive." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Visualizing your internal organs as glowing lights: the eyes turned inward to illuminate what the outside world cannot show." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The space inside your closed mouth: the body demonstrating that you contain invisible rooms you have never visited." }
+        ],
+        intuition: "Your body is always talking to you in a quiet language of tingles warmth and tightness. You have five senses pointed outward. You have one sense pointed inward. And the inward one might be the most important one you have. Interoception is how your body reports to your brain. It is the system that says I am hungry before you think about food. It is the system that says something is wrong before you can name the feeling. Gut instinct is not a metaphor. Your gut has over five hundred million neurons. It sends more signals to the brain than the brain sends to it. The body knows before the mind does. Every time. Meditation trains interoception because meditation is the practice of listening inward. And the more you listen, the louder the body speaks. Not louder like screaming. Louder like tuning a radio until the static clears and the music comes through. The mystics called this the still small voice. Science calls it the insular cortex processing visceral afferent signals. Same thing. Different language. Your body has been trying to talk to you your whole life. Meditation is the moment you finally sit down and listen.",
+        links: [
+          { label: "Interoception", url: "https://en.wikipedia.org/wiki/Interoception" },
+          { label: "Insular Cortex", url: "https://en.wikipedia.org/wiki/Insular_cortex" },
+          { label: "Enteric Nervous System", url: "https://en.wikipedia.org/wiki/Enteric_nervous_system" }
+        ],
+        songs: [
+          { title: "In My Life", artist: "The Beatles", url: "https://www.youtube.com/watch?v=YBcdt6DsLQA" },
+          { title: "Unchained Melody", artist: "The Righteous Brothers", url: "https://www.youtube.com/watch?v=qiiyq2xrSI0" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" }
+        ],
+        advanced: "Interoception: sensory processing of internal bodily signals via the insular cortex. The gut contains 500M+ neurons sending more signals to the brain than received. The mystics called it the still small voice. Science calls it the insular cortex processing visceral afferent signals. Same thing. Different language." },
+
+      { id: "equanimity", num: 6, icon: "⚓", title: "Equanimity (The Anchor)", subtitle: "You Are a Mountain — the Storm Comes and Goes but the Mountain Stays",
+        simple: "Imagine you are a mountain. Sometimes the weather is sunny, and sometimes there is a big storm with wind and rain. The mountain does not try to stop the rain, and it does not try to hold onto the sun; it just stays as a strong mountain. Equanimity is being like that mountain. You can feel sad or happy, but you do not get blown away by those feelings. You stay steady and calm because you know the Underneath is always there.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A loud noise followed by total silence: the ears demonstrating that both extremes pass through the same awareness." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cedar wood or earth: the scent of something that has weathered every storm and is still standing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A drop of honey and a drop of lemon without making a face: the tongue holding opposites without choosing sides." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The coolness of the floor on bare feet: the ground reminding you that the mountain does not need to move." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Clouds passing by without wanting them to stay: the eyes practicing the art of not grasping." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still like a statue: the body becoming the mountain it has been imagining." }
+        ],
+        intuition: "You are a mountain — the storm comes and goes but the mountain stays. Equanimity is the most misunderstood word in all of meditation. People think it means not caring. It means caring without being destroyed. The mountain feels the rain. The mountain feels the sun. The mountain does not pretend the storm is not happening. The mountain simply does not believe the storm is permanent. This is not suppression. Suppression is building a dam. Equanimity is being the riverbed. The water passes through you. You are still here after it passes. The Buddhists call it upekkha. The Stoics call it apatheia. Both traditions arrived at the same place: the deepest peace is not the absence of disturbance. It is the presence of a self so rooted that disturbance cannot uproot it. You will feel pain. You will feel joy. Equanimity does not ask you to stop feeling. Equanimity asks you to stop believing that you ARE the feeling. You are the mountain. The weather is just visiting.",
+        links: [
+          { label: "Equanimity", url: "https://en.wikipedia.org/wiki/Equanimity" },
+          { label: "Upekkha", url: "https://en.wikipedia.org/wiki/Upekkha" },
+          { label: "Apatheia", url: "https://en.wikipedia.org/wiki/Apatheia" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Don't Worry Be Happy", artist: "Bobby McFerrin", url: "https://www.youtube.com/watch?v=d-diB65scQU" }
+        ],
+        advanced: "Equanimity: non-reactivity to vedana (feeling tone) without craving or aversion. Central to both Stoic apatheia and Buddhist upekkha. The deepest peace is not the absence of disturbance. It is the presence of a self so rooted that disturbance cannot uproot it. You are the mountain. The weather is just visiting." },
+
+      { id: "flow-state-merge", num: 7, icon: "🌊", title: "The Flow State (The Merge)", subtitle: "The Joy of Being Totally Lost in the Moment",
+        simple: "Have you ever been so busy playing a game or drawing a picture that you forgot what time it was? That is called Flow. It is a special kind of stillness where your brain and your body are working together perfectly. In Flow, the noise in your head disappears because you are one hundred percent focused on what you are doing. It feels like you are merging with the music or the art. It is the joy of being totally lost in the moment.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic sound of your own footsteps or a drum: the beat that erases the boundary between you and the action." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh markers or paint: the scent of a doorway into the merge." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The crispness of an apple: the taste of a moment so vivid that thinking stops." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A pen gliding across paper: the hand and the tool becoming one continuous motion." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The vibrant colors of a kaleidoscope: the eyes entering a pattern so beautiful the self forgets to narrate." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body moving automatically while dancing: the muscles proving that the deepest skill lives below thought." }
+        ],
+        intuition: "The joy of being totally lost in the moment. Flow is meditation in disguise. The monk sitting in silence and the painter lost in the canvas are doing the same thing — they are both dissolving the narrator. In flow, the prefrontal cortex goes quiet. Not dead. Quiet. The part of the brain that says am I doing this right and what will people think temporarily powers down. And what is left is pure action. Pure creation. Pure presence. The Taoists called it wu wei — effortless action. Not because there is no effort. Because the effort and the efforter become one thing. There is no longer a you doing the task. There is only the task doing itself through you. This is why flow feels so good. It is not because the task is pleasurable. It is because the self — the heavy, anxious, narrating self — is temporarily gone. And its absence feels like flying. Every mystic who ever lived was chasing the same thing the athlete chases in the zone. The dissolution of the one who watches into the thing being watched. Flow is proof that the boundary between you and the world is thinner than you think.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Transient Hypofrontality", url: "https://en.wikipedia.org/wiki/Transient_hypofrontality" },
+          { label: "Wu Wei", url: "https://en.wikipedia.org/wiki/Wu_wei" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Bolero", artist: "Ravel", url: "https://www.youtube.com/watch?v=r30D3SW4OVw" },
+          { title: "Sinnerman", artist: "Nina Simone", url: "https://www.youtube.com/watch?v=QH3Fx41Jpl4" }
+        ],
+        advanced: "Flow: transient hypofrontality — temporary deactivation of the prefrontal cortex enabling effortless action. Aligns with Taoist wu wei. Flow is proof that the boundary between you and the world is thinner than you think." },
+
+      { id: "vipassana", num: 8, icon: "👁️", title: "Vipassana (The Clear See)", subtitle: "Wiping the Fog Off Your Glasses So You Can See the World as It Really Is",
+        simple: "Vipassana means seeing things as they really are. Imagine you are wearing foggy glasses; meditation helps you wipe the fog away so you can see the world clearly. Instead of telling yourself stories about what things mean, you just look at them. If you feel a poke in your arm, you do not say I hate this poke, you just notice oh, there is a poke. This helps you stop being afraid of your own feelings.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Three different sounds identified without judging them: the ears practicing raw observation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The neutral smell of your own skin: the nose encountering reality without a story." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The subtle sweetness of plain white rice: the tongue detecting the truth hiding in simplicity." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The temperature of the air on your forehead: the skin measuring reality as data not drama." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Every tiny vein in a single leaf: the eyes proving that clear seeing reveals infinite complexity in the smallest thing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your toes without moving them: the body proving that awareness does not require action." }
+        ],
+        intuition: "Wiping the fog off your glasses so you can see the world as it really is. You do not see reality. You see your story about reality. And the story is so fast and so automatic that you forgot it was a story. Vipassana strips the story away. Not permanently. But long enough for you to see the difference. A pain in your knee is just a sensation. The story I hate this pain and it will never end and something is wrong with me — that is the fog. Vipassana teaches you to see the sensation before the story arrives. And in that gap — that tiny holy gap — you discover that the sensation alone is survivable. It is always the story that is unbearable. The three marks of existence — impermanence, suffering, non-self — are not beliefs. They are observations. Vipassana is the practice of observing them so clearly that they stop being philosophical concepts and become felt reality. You do not need to believe in impermanence. You need to watch a sensation arise and pass away ten thousand times. After ten thousand times, impermanence is not a belief. It is a fact you can feel in your body.",
+        links: [
+          { label: "Vipassana", url: "https://en.wikipedia.org/wiki/Vipassan%C4%81" },
+          { label: "Three Marks of Existence", url: "https://en.wikipedia.org/wiki/Three_marks_of_existence" },
+          { label: "Anicca", url: "https://en.wikipedia.org/wiki/Impermanence" }
+        ],
+        songs: [
+          { title: "What a Wonderful World", artist: "Louis Armstrong", url: "https://www.youtube.com/watch?v=A3yCcXgbKrE" },
+          { title: "Blackbird", artist: "The Beatles", url: "https://www.youtube.com/watch?v=Man4Xw8Xypo" },
+          { title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwoʻole", url: "https://www.youtube.com/watch?v=V1bFr2SWP1I" }
+        ],
+        advanced: "Vipassana: analytical meditation focused on the three marks of existence — anicca (impermanence), dukkha (suffering), anatta (non-self). Deconstructing the illusion of a permanent ego through direct observation. You do not need to believe in impermanence. You need to feel it ten thousand times." },
+
+      { id: "gamma-coherence", num: 9, icon: "⚡", title: "Gamma Brain Wave Coherence (The Aha!)", subtitle: "Your Brain Singing One Beautiful Song All Together Like a Choir",
+        simple: "Sometimes your brain waves move very fast and all together, like a big choir singing the same song. This is called Gamma Coherence. It happens when you feel a huge Aha moment or when you feel very loving toward everyone. Meditation helps your brain sing this beautiful fast song more often. It makes your mind feel sharp and bright, like a lightbulb that just got turned on. It is the feeling of everything finally making sense.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sudden high-pitched ding from a bell: the sound of all frequencies locking into one clear tone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Sharp bright peppermint: the scent of a mind snapping into focus." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A sudden burst of sour lemon: the tongue experiencing a jolt that mirrors the gamma spike." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A static electricity spark on your finger: the body producing its own tiny lightning bolt." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flash of bright white light visualized behind closed eyes: the vision of coherence made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A shiver of excitement up your spine: the body's response when every neural choir member hits the same note." }
+        ],
+        intuition: "Your brain singing one beautiful song all together like a choir. Your brain is not one thing. It is a hundred billion things trying to act like one thing. Most of the time, they are out of sync. Different regions firing at different speeds with different agendas. But in gamma coherence, they synchronize. All regions. All at once. Singing one song at twenty-five to one hundred cycles per second. This is the Aha moment. This is the feeling of everything clicking. This is what long-term meditators show on EEGs that shocks researchers — baseline gamma levels so high they were initially thought to be equipment malfunction. The monks were not relaxed. They were hyper-synchronized. Every part of their brain working together at a frequency that most people only touch for a millisecond during peak insight. And the meditation that produces the most gamma? Compassion meditation. Not focus. Not calm. Love. The brain reaches its highest coherence — its most unified state — when it is generating unconditional love. The physicists look for a unified field theory. The meditators found one. It runs at forty hertz. And it feels like everything finally making sense.",
+        links: [
+          { label: "Gamma Waves", url: "https://en.wikipedia.org/wiki/Gamma_wave" },
+          { label: "Neural Oscillation", url: "https://en.wikipedia.org/wiki/Neural_oscillation" },
+          { label: "Compassion Meditation", url: "https://en.wikipedia.org/wiki/Compassion#Meditation" }
+        ],
+        songs: [
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" },
+          { title: "Ode to Joy", artist: "Beethoven", url: "https://www.youtube.com/watch?v=Wod-MudLNPA" },
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" }
+        ],
+        advanced: "Gamma waves (25-100 Hz): binding of disparate neural populations into unified percepts. Long-term meditators show dramatically elevated baseline gamma during compassion meditation. The brain reaches its highest coherence when generating unconditional love. The unified field runs at forty hertz." },
+
+      { id: "zazen", num: 10, icon: "🪑", title: "Zazen (The Just Sitting)", subtitle: "Let the Muddy Water Sit Still and It Becomes Clear",
+        simple: "Zazen is the simplest and hardest meditation: it is just sitting. You are not trying to go anywhere or be anyone special; you are just being you. It is like being a bowl of muddy water that you set on a table. If you keep moving the bowl, the water stays muddy. But if you just let it sit, the mud sinks to the bottom and the water becomes clear. By just sitting, you let your own noise settle down so you can be clear.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady hum of a fan or the wind: the sound of a world that is already whole without your commentary." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean empty room: the scent of nothing — which turns out to be the scent of everything unmasked." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The taste of your own mouth: the flavor of being, before you added anything to it." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hands resting in your lap in a cosmic mudra: the body forming a circle that has no beginning and no end." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A blank wall with soft eyes: the vision of seeing without searching." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The straightness of your spine: the body becoming the architecture of attention itself." }
+        ],
+        intuition: "Let the muddy water sit still and it becomes clear. Zazen is the meditation that does not try. And not trying is the hardest thing a human being can do. Every other practice gives you a job. Focus on the breath. Repeat the mantra. Visualize the light. Zazen gives you nothing. Just sit. That is the entire instruction. And in that nothing, everything arises. Because when you stop reaching for clarity, clarity comes. When you stop searching for peace, peace arrives. When you stop trying to become something, you discover you already are everything. This is the core paradox of Zen. The thing you are looking for is the thing that is looking. The eye cannot see itself. But it does not need to. It was already seeing. Shunryu Suzuki said it: In the beginner's mind there are many possibilities, but in the expert's mind there are few. Zazen returns you to the beginner's mind. Not by giving you something new. By taking away everything you thought you needed. And what remains, after the mud settles, after the noise fades, after the trying stops — what remains is you. Not the you that has a name and a story. The you that was here before the name. The you that will be here after the story ends. The clear water was never gone. It was just waiting for you to stop stirring.",
+        links: [
+          { label: "Zazen", url: "https://en.wikipedia.org/wiki/Zazen" },
+          { label: "Shikantaza", url: "https://en.wikipedia.org/wiki/Shikantaza" },
+          { label: "Shunryu Suzuki", url: "https://en.wikipedia.org/wiki/Shunryu_Suzuki" }
+        ],
+        songs: [
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" },
+          { title: "The Sound of Silence", artist: "Disturbed", url: "https://www.youtube.com/watch?v=u9Dg-g7t2l4" },
+          { title: "What's Going On", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=H-kA3UtBj4M" }
+        ],
+        advanced: "Zazen (shikantaza): objectless open monitoring where the practitioner remains alert to all phenomena without grasping. Leads to realization of emptiness — being empty of a separate self. The thing you are looking for is the thing that is looking. The clear water was never gone. It was just waiting for you to stop stirring." },
+    ],
+
+  },
+
 };
 /* ═══════════════════════════════════════════════════════════════
    HELPER FUNCTIONS — used by SubcategoryGrid.jsx
