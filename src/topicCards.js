@@ -21930,6 +21930,243 @@ export const TOPIC_CARDS = {
         advanced: "The Paradox of Effort: wu wei — the archer pulls with everything and then lets go. The letting go is not the opposite of effort — it is the completion. The practice is the rowing. The light is the wind. The falling is your effort. The carrying is the grace." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // MYSTICISM (plain) > INNER SIGHT & INTUITION (innersight)
+    // ═══════════════════════════════════════════════════════════════
+
+    innersight: [
+      { id: "quantum-entanglement-connection", num: 1, icon: "⚛️", title: "Quantum Entanglement & Connection", subtitle: "Two Pieces of Light on Different Sides of the Galaxy — If One Spins the Other Spins at the Same Time",
+        simple: "Everything in the universe is connected by invisible strings that never break. Even if two tiny pieces of light are on different sides of the galaxy, if one spins, the other spins at the same time. This means we are never truly alone and are part of a giant web. You can feel this when you think of a friend and they suddenly call you. It is like a secret walkie-talkie that everyone has inside them. This helps us know things without using our eyes or ears.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady thump-thump of a heartbeat in a quiet room: the sound of your body proving it is connected to a rhythm older than your name." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry dirt: the scent of the sky connecting with the earth — two things that were apart becoming one." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A pinch of salt — realizing it came from a vast ancient ocean: the taste of connection across millions of years dissolved on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms together and feeling heat transfer between them: the touch of energy moving between two things that were never really separate." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flock of birds moving as one shape in the sky: the sight of many individuals responding to a signal no individual sent." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and knowing exactly where your hands are in space: the body proving it has an inner map that does not need light to navigate." }
+        ],
+        intuition: "Two pieces of light on different sides of the galaxy — if one spins the other spins at the same time. Einstein called it spooky action at a distance. He did not like it. He thought it was impossible. But Bell's theorem proved him wrong. Entangled particles remain correlated regardless of the distance between them. Measure one and the other responds instantly. Not at the speed of light. Instantly. Faster than any signal could travel. This means one of two things: either information travels faster than light, or the two particles were never actually separate. Most physicists now lean toward the second option. The particles are not communicating across space. The particles are the same system, and space is the illusion that makes them look like two things. If this is true at the quantum level, then separation itself is a feature of perception, not a feature of reality. The web is not made of strings connecting separate things. The web IS the thing. And the separate nodes are just the places where you happen to be looking. Intuition — that feeling of knowing something you should not know, of sensing a connection that has no visible wire — may be the conscious experience of entanglement. Not magic. Physics. The universe is one system. And sometimes, you feel it.",
+        links: [
+          { label: "Quantum Entanglement", url: "https://en.wikipedia.org/wiki/Quantum_entanglement" },
+          { label: "Bell's Theorem", url: "https://en.wikipedia.org/wiki/Bell%27s_theorem" },
+          { label: "Non-locality", url: "https://en.wikipedia.org/wiki/Quantum_nonlocality" }
+        ],
+        songs: [
+          { title: "Interstellar Theme", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=UDVtMYqUAyw" },
+          { title: "Across the Universe", artist: "The Beatles", url: "https://www.youtube.com/watch?v=90M60PzmxEE" },
+          { title: "Synchronicity I", artist: "The Police", url: "https://www.youtube.com/watch?v=Si5CSpUCDGY" }
+        ],
+        advanced: "Quantum entanglement: Bell's theorem disproved Einstein. Entangled particles are not two things communicating — they are one system, and space is the illusion. Intuition may be the conscious experience of entanglement. Not magic. Physics." },
+
+      { id: "epistemic-humility", num: 2, icon: "🏺", title: "Epistemic Humility", subtitle: "Knowing That You Do Not Know Everything Is Actually the Smartest Thing You Can Do",
+        simple: "Knowing that you do not know everything is actually the smartest thing you can do. It is like keeping a cup empty so it can always be filled with new cool ideas. If you think you know it all, your brain closes like a locked door. When we stay humble, our inner sight can show us things we would have missed. It is okay to say I do not know because it lets you learn. This keeps your mind fresh and ready for surprises.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between notes in a song: the sound of the space that gives the music its meaning — without the gap, there is no melody." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh crisp air in the early morning that smells like nothing: the scent of a world before your labels arrived — raw and unfiltered." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Clean cold water that clears your palate: the taste of the reset — the tongue returned to zero so it can receive the next flavor fully." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A smooth blank piece of paper: the touch of potential — nothing written yet, everything possible." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear blue sky with no clouds: the sight of openness — nothing blocking the view because nothing is claiming to be the view." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing perfectly still and feeling your weight balance: the body at equilibrium — not leaning toward any conclusion." }
+        ],
+        intuition: "Knowing that you do not know everything is actually the smartest thing you can do. Socrates said it twenty-four hundred years ago: I know that I know nothing. The Oracle at Delphi declared him the wisest man in Athens. Not because he knew the most. Because he was the only one who knew what he did not know. The Dunning-Kruger effect proved this with data: the less competent you are, the more confident you feel. And the more competent you become, the less certain you are. Expertise produces humility. Ignorance produces arrogance. This matters for intuition because intuition cannot enter a full cup. If you already know the answer, you cannot receive the answer. The signal arrives but there is no room to hear it. The Zen masters call it beginner's mind. The scientists call it the shared ignorance floor. Both point at the same truth: the prerequisite for insight is the admission that you do not yet have it. Every breakthrough in the history of science began with someone saying: I do not know. And then sitting with the not-knowing long enough for the knowing to arrive. Epistemic humility is not weakness. Epistemic humility is the antenna. And the antenna only works when it is empty.",
+        links: [
+          { label: "Epistemic Humility", url: "https://en.wikipedia.org/wiki/Epistemic_humility" },
+          { label: "Dunning-Kruger Effect", url: "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect" },
+          { label: "Socratic Paradox", url: "https://en.wikipedia.org/wiki/I_know_that_I_know_nothing" }
+        ],
+        songs: [
+          { title: "Humble", artist: "Kendrick Lamar", url: "https://www.youtube.com/watch?v=tvTRZJ-4EyI" },
+          { title: "Fragile", artist: "Sting", url: "https://www.youtube.com/watch?v=lB6a-iD6ZOY" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Epistemic Humility: Socratic paradox + Dunning-Kruger. Expertise produces humility. Ignorance produces arrogance. Intuition cannot enter a full cup. Epistemic humility is the antenna. And the antenna only works when it is empty." },
+
+      { id: "pattern-recognition-intuition", num: 3, icon: "🧩", title: "Pattern Recognition", subtitle: "Your Brain Is a Super-Fast Computer That Connects Dots You Did Not Even Know Were There",
+        simple: "Your brain is a super-fast computer that looks for shapes and repeats in the world. Sometimes you know what is going to happen before it does because your brain saw a pattern you did not even notice. It is like knowing the next word in a song you have heard a hundred times. This inner sight is just your brain connecting dots very quickly. It helps you stay safe and understand people's feelings. You are a natural detective of life.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic ticking of a clock: the sound of a pattern so reliable that your brain stops hearing it — proof that pattern recognition automates." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Cookies baking that remind you of a holiday: the scent triggering a memory you did not choose to recall — the nose connecting past to present." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The perfect mix of sweet and salty: the taste of a pattern your tongue recognizes as right without being able to explain why." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The Braille-like texture of bark: the fingers reading a pattern encoded in a surface — information stored in structure." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Finding animal shapes in clouds: the eyes seeing patterns where none were intended — proof that pattern recognition is always on." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking up stairs without looking at your feet: the body navigating a pattern it memorized so completely that consciousness is not required." }
+        ],
+        intuition: "Your brain is a super-fast computer that connects dots you did not even know were there. Malcolm Gladwell called it thin slicing: the ability of the unconscious mind to make accurate judgments from tiny amounts of data. An experienced firefighter feels something is wrong and orders everyone out seconds before the floor collapses. A chess grandmaster glances at a board and knows the game is lost. A mother looks at her child and knows something is off before any symptom appears. None of them can explain how they know. They just know. This is not magic. This is pattern recognition operating below the threshold of consciousness. Your brain has been collecting data since the moment you were born. Every face, every voice, every sequence of events, every cause and every effect — filed and cross-referenced in a database you cannot consciously access. When enough data points align with a stored pattern, the match fires. You feel it as a hunch. A gut feeling. A sense that something is about to happen. The analytical mind is slow, deliberate, and verbal. It explains. The pattern-recognition mind is fast, automatic, and silent. It knows. Intuition is not the absence of data. Intuition is the presence of so much data that the answer arrives before the question is finished.",
+        links: [
+          { label: "Pattern Recognition", url: "https://en.wikipedia.org/wiki/Pattern_recognition_(psychology)" },
+          { label: "Thin-slicing", url: "https://en.wikipedia.org/wiki/Thin-slicing" },
+          { label: "Gestalt Psychology", url: "https://en.wikipedia.org/wiki/Gestalt_psychology" }
+        ],
+        songs: [
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Clocks", artist: "Coldplay", url: "https://www.youtube.com/watch?v=d020hcWA_Wg" },
+          { title: "Patterns", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=nVGCbVGwRDY" }
+        ],
+        advanced: "Pattern Recognition: thin-slicing (Gladwell) — the unconscious makes accurate judgments from tiny data. Intuition is not the absence of data. Intuition is the presence of so much data that the answer arrives before the question is finished." },
+
+      { id: "signal-vs-noise", num: 4, icon: "📻", title: "Signal vs. Noise", subtitle: "Intuition Is Turning a Dial to Find the One Clear Song Playing Through the Static",
+        simple: "The world is very loud and full of distractions, like a TV with static. Intuition is like turning a dial to find the one clear song playing through the noise. It is the difference between a busy crowd and a friend's voice calling your name. To see with your inner eyes, you have to learn to ignore the static of fear or busyness. When the noise goes away, the truth becomes very clear and bright. It feels like finding a quiet room in a loud house.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "One bird singing in a noisy city: the sound of signal cutting through noise — one clear voice in a wall of interference." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A hint of peppermint in a crowded room: the nose isolating one molecule from millions — the biological signal filter at work." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Tasting the one secret spice in a soup: the tongue identifying a single ingredient in a complex mixture — precision in chaos." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A single drop of water falling on your arm: the skin detecting one event against a backdrop of constant sensation — signal from noise." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single candle flame in a dark room: the sight of one photon source in a field of darkness — the minimum unit of visible truth." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The subtle shift in your center of gravity: the body detecting a signal so faint that only the inner ear registers it." }
+        ],
+        intuition: "Intuition is turning a dial to find the one clear song playing through the static. Claude Shannon built the mathematics of information theory around one concept: the signal-to-noise ratio. The higher the ratio, the clearer the message. The lower the ratio, the more the message drowns in interference. Your intuition is a receiver. The signal is always broadcasting. The question is never whether the signal exists. The question is whether you can hear it through the noise. And the noise is everything that is not the signal: your anxiety, your assumptions, your need to be right, your fear of being wrong, the opinions of others, the scroll of your phone, the chatter of your mind. Meditation reduces noise. Silence reduces noise. Stillness reduces noise. Not because they add signal. Because they subtract interference. The signal was always there. The bird was always singing. You just could not hear it over the traffic. Bayesian inference — the mathematical framework for updating beliefs based on evidence — works the same way. The prior is your existing noise. Each new piece of evidence either strengthens the signal or confirms the noise. Intuition is the moment the signal crosses the threshold and you hear it clearly for the first time. Not because it got louder. Because you got quieter.",
+        links: [
+          { label: "Signal-to-Noise Ratio", url: "https://en.wikipedia.org/wiki/Signal-to-noise_ratio" },
+          { label: "Information Theory", url: "https://en.wikipedia.org/wiki/Information_theory" },
+          { label: "Bayesian Inference", url: "https://en.wikipedia.org/wiki/Bayesian_inference" }
+        ],
+        songs: [
+          { title: "The Sound of Silence", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4fWyzwo1xg0" },
+          { title: "Radioactive", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=ktvTqknDobU" },
+          { title: "Enjoy the Silence", artist: "Depeche Mode", url: "https://www.youtube.com/watch?v=aGSKrC7dGcY" }
+        ],
+        advanced: "Signal vs. Noise: Shannon's information theory. The signal was always there. You could not hear it over the traffic. Meditation does not add signal — it subtracts interference. Intuition is the moment the signal crosses the threshold. Not because it got louder. Because you got quieter." },
+
+      { id: "heart-brain-coherence", num: 5, icon: "⚖️", title: "Heart-Brain Coherence", subtitle: "Your Heart Sends More Messages to Your Brain Than Your Brain Sends to Your Heart",
+        simple: "Your heart and your brain are like two best friends who need to talk to each other. When they are in a good rhythm together, you feel calm and very smart. It is like when a band plays a song perfectly in time. Your heart actually sends more messages to your brain than your brain sends to your heart! When they match up, your intuition gets much stronger. It feels like a warm glow in your chest that helps you make good choices.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A deep resonant Om chant: the sound of a frequency designed to synchronize the heart and brain into a single rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Lavender or rose — scents that make you breathe deeper: the nose triggering the parasympathetic system, which slows the heart toward coherence." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Warm honey — smooth and comforting: the taste of something the body recognizes as safe, which allows coherence to establish." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand over your heart feeling it beat: the touch of attention meeting rhythm — the simplest path to heart-brain synchronization." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Steady rhythmic ocean waves: the sight of nature's heartbeat — a pattern the brain entrains to without being asked." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your chest expanding and contracting with breath: the body demonstrating the rhythm that connects heart and brain — every breath a handshake between them." }
+        ],
+        intuition: "Your heart sends more messages to your brain than your brain sends to your heart. This is not a metaphor. The heart contains approximately forty thousand neurons — its own nervous system, sometimes called the little brain. The vagus nerve carries information from heart to brain at a ratio of roughly nine to one. For every message the brain sends down, the heart sends nine messages up. And when those messages are rhythmically coherent — when the heart rate variability follows a smooth, sine-wave pattern — the brain's processing changes dramatically. The prefrontal cortex comes online more fully. Emotional reactivity decreases. Pattern recognition increases. Decision-making improves. The HeartMath Institute has measured this for decades. When the heart is in coherence, the electromagnetic field it generates — which extends several feet from the body — becomes organized and smooth. And this field does not stop at the skin. Other people's nervous systems can detect it. This is why you feel calm in the presence of a calm person. Their coherent field is entraining your field. The heart is not just a pump. The heart is a signal generator. And when the signal is coherent, the entire system — body, brain, and the people around you — receives clearer information. Intuition is not a brain function. Intuition is a heart-brain function. And the heart leads.",
+        links: [
+          { label: "Heart-Brain Coherence", url: "https://en.wikipedia.org/wiki/Neurocardiology" },
+          { label: "HeartMath Institute", url: "https://en.wikipedia.org/wiki/HeartMath" },
+          { label: "Vagus Nerve", url: "https://en.wikipedia.org/wiki/Vagus_nerve" }
+        ],
+        songs: [
+          { title: "Shape of My Heart", artist: "Sting", url: "https://www.youtube.com/watch?v=QK-Z1K67uaA" },
+          { title: "Listen to Your Heart", artist: "Roxette", url: "https://www.youtube.com/watch?v=yCC_b5WHLX0" },
+          { title: "Heart of Gold", artist: "Neil Young", url: "https://www.youtube.com/watch?v=Eh44QPT1mPE" }
+        ],
+        advanced: "Heart-Brain Coherence: the heart contains ~40,000 neurons. Vagus nerve carries signals heart-to-brain at 9:1 ratio. Heart's EM field extends feet from the body and entrains other nervous systems. Intuition is not a brain function. It is a heart-brain function. The heart leads." },
+
+      { id: "neuroplasticity-third-eye", num: 6, icon: "👁️‍🗨️", title: "Neuroplasticity & The Third Eye", subtitle: "Your Brain Is Play-Doh — the More You Practice Inner Sight the Stronger It Gets",
+        simple: "Your brain is like Play-Doh; it can change shape and get better at things you practice. There is a tiny part of your brain that people call the Third Eye. It helps you see things like dreams and big ideas even when your real eyes are closed. If you practice listening to your gut feelings, your brain actually builds new roads to make that easier. It is like building a muscle for your imagination. The more you use it, the stronger your inner sight becomes.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "High-frequency crystal singing bowls: the sound of a vibration designed to activate the brain regions associated with inner vision." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Frankincense or sandalwood: the scent used across cultures for millennia to prepare the brain for inward-focused states." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Dark chocolate — intense and rich: the taste of something that crosses the blood-brain barrier and enhances neurochemistry directly." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Gently tapping the space between your eyebrows: the touch at the location cultures worldwide independently identified as the seat of inner vision." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The colors you see when you rub your eyes — phosphenes: the sight of your visual cortex firing without external input — proof that seeing does not require eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Imagining yourself growing taller than the room: the body responding to an image the brain generated — proof that inner sight produces real physical effects." }
+        ],
+        intuition: "Your brain is Play-Doh — the more you practice inner sight the stronger it gets. The pineal gland sits at the geometric center of the brain. It produces melatonin, which regulates your sleep cycle. It is photosensitive despite being deep inside the skull. Ancient Egyptians depicted it as the Eye of Horus. Hindus place the tilak on the forehead above it. Descartes called it the seat of the soul. Every culture that independently studied the inner landscape converged on the same spot. Neuroplasticity means the brain reorganizes based on what you practice. London taxi drivers who memorize the city's layout develop measurably larger hippocampi. Meditators who practice visualization develop stronger visual cortex connectivity even with eyes closed. Musicians develop thicker auditory cortex. The brain builds infrastructure for whatever you repeatedly ask it to do. If you repeatedly ask it to process external input, it builds highways for external input. If you repeatedly ask it to process internal images, pattern recognition, and subtle signals — it builds highways for those instead. The Third Eye is not mysticism. The Third Eye is cortical remapping. You are not imagining a new capacity. You are exercising one that was always there. And like every other capacity, it strengthens with use and atrophies with neglect.",
+        links: [
+          { label: "Pineal Gland", url: "https://en.wikipedia.org/wiki/Pineal_gland" },
+          { label: "Phosphene", url: "https://en.wikipedia.org/wiki/Phosphene" },
+          { label: "Cortical Remapping", url: "https://en.wikipedia.org/wiki/Cortical_remapping" }
+        ],
+        songs: [
+          { title: "Third Eye", artist: "Tool", url: "https://www.youtube.com/watch?v=7zV78IgXzB0" },
+          { title: "Imagine", artist: "John Lennon", url: "https://www.youtube.com/watch?v=YkgkThdzX-8" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" }
+        ],
+        advanced: "Third Eye as cortical remapping: pineal gland — photosensitive, produces melatonin, depicted across cultures as the inner eye. Neuroplasticity builds infrastructure for whatever you practice. The Third Eye is not mysticism. It is cortical remapping that strengthens with use and atrophies with neglect." },
+
+      { id: "flow-state-intuition", num: 7, icon: "🌊", title: "The Flow State (Inner Sight Unleashed)", subtitle: "In Flow Your Intuition Takes Over and You Do Not Even Have to Think — You Just Do",
+        simple: "Have you ever been playing a game or drawing and suddenly you forgot what time it was? That is called Flow. It is when you and what you are doing become the exact same thing. In Flow, your intuition takes over and you do not even have to think — you just do. It feels like being carried by a gentle river. Your inner sight is brightest here because you are not worried or scared. You are just perfectly now.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise or a fan: the sound of even, undifferentiated frequency — the auditory equivalent of a mind with no interference." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh markers or paint: the scent of creation in progress — materials being transformed by flow." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Perfectly ripe fruit: the taste of something that arrived at its peak without being forced — nature's flow state." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Fingers moving fast on a keyboard or instrument: the touch of the body performing beyond what the conscious mind could direct." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A Magic Eye poster where a 3D image appears: the sight of hidden depth that only becomes visible when you stop trying to see it." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Weightlessness on a swing: the body at the apex — the moment between directions where effort pauses and pure motion remains." }
+        ],
+        intuition: "In Flow your intuition takes over and you do not even have to think — you just do. Transient hypofrontality. That is the neuroscience term for what happens in flow. The prefrontal cortex — the brain's inner critic, time-keeper, and self-monitor — temporarily goes offline. And in its absence, something remarkable happens: intuition runs the show. Without the prefrontal cortex second-guessing every move, the deeper pattern-recognition systems of the brain operate unimpeded. Reaction time drops. Creativity spikes. Lateral connections between disparate ideas form freely. This is why musicians in flow play things they did not plan. Why athletes in flow make moves they could not replicate by thinking. Why writers in flow produce sentences that surprise them. The conscious mind was the bottleneck. Remove it and the deeper intelligence — the one that learned from a lifetime of data — takes over. Flow is the empirical proof that intuition is not inferior to analysis. It is faster. More creative. More accurate in complex situations. And it only emerges when the analytical mind steps aside. The inner sight is brightest when the inner critic is quietest. You cannot think your way into flow. You can only practice until the door opens and the river carries you.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Transient Hypofrontality", url: "https://en.wikipedia.org/wiki/Transient_hypofrontality" },
+          { label: "Implicit Cognition", url: "https://en.wikipedia.org/wiki/Implicit_cognition" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Go With the Flow", artist: "Queens of the Stone Age", url: "https://www.youtube.com/watch?v=DcHKOC64KnE" },
+          { title: "Orinoco Flow", artist: "Enya", url: "https://www.youtube.com/watch?v=LTrk4X9ACtw" }
+        ],
+        advanced: "Flow as intuition unleashed: transient hypofrontality removes the prefrontal bottleneck. The deeper pattern-recognition systems operate unimpeded. Flow is empirical proof that intuition is not inferior to analysis — it is faster, more creative, and more accurate in complex situations." },
+
+      { id: "morphogenetic-fields", num: 8, icon: "🕸️", title: "Morphogenetic Fields", subtitle: "If One Person Learns Something New It Makes It a Little Easier for Everyone Else to Learn It",
+        simple: "Imagine there is an invisible map that tells plants how to grow and animals how to behave. This is like a shared memory that all living things can plug into. If one person learns something new, it makes it a little easier for everyone else to learn it too. Your intuition is like reading this invisible map. It explains why you sometimes know how to do something you were never taught. We are all sharing one big book of knowledge.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The collective buzz of a beehive: the sound of thousands of individuals operating from a shared intelligence that none of them possess alone." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A forest where all trees are connected: the scent of a mycelial network — separate trunks sharing nutrients through invisible underground roots." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A vegetable you grew from a seed: the taste of something that knew exactly how to become itself without being taught." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hugging a tree and feeling its stillness: the touch of something connected to a network you cannot see — roots reaching into a web beneath your feet." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The same spiral in a seashell and a galaxy: the sight of the same pattern at two scales separated by twelve orders of magnitude — proof of a shared blueprint." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling the vibe of a room when you walk in: the body reading a field that the conscious mind has no instrument to measure." }
+        ],
+        intuition: "If one person learns something new it makes it a little easier for everyone else to learn it. Rupert Sheldrake proposed that nature has memory. Not stored in DNA. Not stored in brains. Stored in fields — morphogenetic fields — that influence the form and behavior of organisms across space and time. The hypothesis is controversial. But the observations that prompted it are not. Blue tits in England learned to open milk bottles. Within years, blue tits across the country were doing it — including populations with no contact with the originals. Rats in one lab learn a new maze faster after rats in a different lab, on a different continent, have already mastered it. Crystals that have never been synthesized before are difficult to crystallize the first time. But once they crystallize in one lab, they crystallize more easily everywhere. As if the pattern, once established, becomes easier to repeat. Whether the mechanism is morphogenetic fields, cultural transmission, or something not yet named — the pattern is consistent: learning propagates. Knowledge cascades. The field updates. And intuition may be the mechanism by which an individual accesses the updated field — knowing something they were never taught because someone, somewhere, already learned it.",
+        links: [
+          { label: "Morphic Resonance", url: "https://en.wikipedia.org/wiki/Morphic_resonance" },
+          { label: "Rupert Sheldrake", url: "https://en.wikipedia.org/wiki/Rupert_Sheldrake" },
+          { label: "Hundredth Monkey Effect", url: "https://en.wikipedia.org/wiki/Hundredth_monkey_effect" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Fields of Gold", artist: "Sting", url: "https://www.youtube.com/watch?v=KLVq0IAzh1A" },
+          { title: "We Are Family", artist: "Sister Sledge", url: "https://www.youtube.com/watch?v=eBpYgpF1bqQ" }
+        ],
+        advanced: "Morphogenetic Fields (Sheldrake): nature has memory stored in non-local fields. Blue tits learning bottle-opening, crystals becoming easier to form, rats learning faster — learning propagates. Intuition may be access to the updated field." },
+
+      { id: "collective-unconscious-intuition", num: 9, icon: "☁️", title: "The Collective Unconscious", subtitle: "A Giant Library in the Sky That Everyone Can Visit When They Sleep",
+        simple: "Deep down, we all share the same dreams and stories. Even if people live far apart, they often think of the same heroes and monsters. It is like a giant library in the sky that everyone can visit when they sleep. Your inner sight can peek into this library to help you understand life. It is why some stories feel true even if they are make-believe. We are all different branches on the same giant tree of human history.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A lullaby that feels familiar even though you have never heard it: the sound of a melody encoded in the species, not the individual." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Woodsmoke — which humans have used for ages: the scent that activates something older than your personal memory — a species memory of fire and safety." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Bread — a food that almost every culture shares: the taste of a universal human invention — proof that separated minds arrive at the same solution." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An old smooth stone from a river: the touch of time — something shaped by forces that predate every human who has ever held a stone." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ancient cave paintings: the sight of humans thirty thousand years ago drawing the same symbols your children draw today." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A sense of home in a place you have never been: the body recognizing a pattern stored not in personal memory but in collective memory." }
+        ],
+        intuition: "A giant library in the sky that everyone can visit when they sleep. Jung spent his career cataloging the patterns. Every culture produces a Great Mother archetype. A Trickster. A Hero. A Wise Old Man. A Shadow. A journey into darkness and back into light. These patterns were not copied. They were not transmitted by trade routes or conquest. They emerged independently, on every continent, in every era. The Sumerian hero Gilgamesh descends to the underworld. The Greek hero Orpheus descends to the underworld. The Egyptian god Osiris descends to the underworld. The Hindu god Rama is exiled to the forest. The Norse god Odin hangs from a tree. The Christian messiah descends to hell. Same pattern. Same structure. Same meaning. Separated by thousands of miles and thousands of years. Jung concluded that these patterns were not learned. They were inherited. Encoded in the psyche the way instincts are encoded in the body. The collective unconscious is not a metaphor. It is the psychological basement of the species. And intuition — that flash of recognition when a story feels true even though it is fiction — is the sound of your individual mind accessing the archive of the species. You have been here before. Not you personally. But you, the human. And some part of you remembers.",
+        links: [
+          { label: "Collective Unconscious", url: "https://en.wikipedia.org/wiki/Collective_unconscious" },
+          { label: "Archetype", url: "https://en.wikipedia.org/wiki/Jungian_archetypes" },
+          { label: "Hero's Journey", url: "https://en.wikipedia.org/wiki/Hero%27s_journey" }
+        ],
+        songs: [
+          { title: "Heal the World", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=BWf-eARnf6U" },
+          { title: "Human", artist: "Rag'n'Bone Man", url: "https://www.youtube.com/watch?v=L3wKzyIN1yk" },
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" }
+        ],
+        advanced: "Collective Unconscious (Jung): inherited archetypes appearing independently across all cultures — Hero, Trickster, Great Mother, descent to the underworld. Not learned. Inherited. Intuition is your individual mind accessing the archive of the species." },
+
+      { id: "precognition-time", num: 10, icon: "⏳", title: "Precognition & Time", subtitle: "Your Brain Is Always Playing a Movie of What Might Happen So You Can Be Ready",
+        simple: "Time usually feels like a straight line, but sometimes it feels like a circle. Precognition is when your inner sight sees a little bit of the future before it happens. It is like being high up on a hill and seeing a car coming before the person on the road can see it. This is not magic; it is just your intuition being very fast at guessing what comes next. Your brain is always playing a movie of what might happen so you can be ready.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "An echo that seems to happen before the noise: the sound of time folding — the reflection arriving before the original." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Snow in the air before it starts falling: the nose detecting a future event before the eyes confirm it — the body's earliest warning system." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Craving a specific food right before you are offered it: the taste buds preparing for something the conscious mind did not yet know was coming." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Goosebumps for no clear reason: the skin responding to something the analytical mind has not yet registered — the body's fastest language." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Déjà vu — everything looks familiar: the sight of a moment you are certain you have already experienced — time stuttering." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stopping walking a second before someone bumps into you: the body acting on information that arrived from a source the conscious mind cannot name." }
+        ],
+        intuition: "Your brain is always playing a movie of what might happen so you can be ready. The block universe theory in physics proposes that past, present, and future all exist simultaneously. Time does not flow. Consciousness moves through time the way a spotlight moves across a stage — the whole stage is already there, and the spotlight only illuminates one section at a time. If this is true, then precognition is not prediction. Precognition is perception — the spotlight flickering forward for a fraction of a second. Retrocausality — the hypothesis that future events can influence present observations — has experimental support in quantum physics. The delayed-choice quantum eraser experiment suggests that a measurement made in the future can affect the behavior of a particle in the past. Time, at the quantum level, does not have the strict one-way arrow that classical physics assumes. Your brain is the most sophisticated prediction engine in the known universe. It runs constant simulations — what might happen next, what pattern is emerging, what trajectory this situation is following. Most of the time, this manifests as simple prediction: if I drop the ball, it will fall. But sometimes the simulation outputs something that feels impossible — a knowing that precedes evidence. Whether that knowing is unconscious pattern recognition, quantum retrocausality, or the spotlight flickering forward, the experience is the same: you knew before you knew. And that knowing saved you.",
+        links: [
+          { label: "Precognition", url: "https://en.wikipedia.org/wiki/Precognition" },
+          { label: "Block Universe", url: "https://en.wikipedia.org/wiki/Eternalism_(philosophy_of_time)" },
+          { label: "Retrocausality", url: "https://en.wikipedia.org/wiki/Retrocausality" }
+        ],
+        songs: [
+          { title: "Time", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=JwYX52BP2Sk" },
+          { title: "In the Year 2525", artist: "Zager & Evans", url: "https://www.youtube.com/watch?v=izQB2aOwiq0" },
+          { title: "Yesterday", artist: "The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" }
+        ],
+        advanced: "Precognition: block universe theory — past, present, future exist simultaneously. Retrocausality has quantum experimental support. The brain runs constant simulations. You knew before you knew. Whether pattern recognition or the spotlight flickering forward, the experience is the same." },
+    ],
+
+
 
 
 
