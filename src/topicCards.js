@@ -11021,6 +11021,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "While controversial in mainstream chemistry, research into Exclusion Zone (EZ) water suggests water near surfaces organizes into a fourth phase (H₃O₂) that can store charge and information. Structural heterogeneity suggests liquid water is not monolithic but a complex network of hydrogen-bonded domains, potentially acting as substrate for information storage, bridging biology and quantum information theory." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > ANIMALS & INSTINCT (animals)
+    // ═══════════════════════════════════════════════════════════════
+
+    animals: [
+      { id: "fixed-action-patterns", num: 1, icon: "🗝️", title: "Fixed Action Patterns", subtitle: "The Super-Reflex You Were Born With",
+        simple: "Imagine you have a tiny robot inside you that starts a program the moment it sees a specific color or shape. Once the program starts, you have to finish it, even if the thing you were looking at disappears! Animals do this to stay safe or find food without having to learn how first. It is like a super-reflex that never changes because it worked for their great-great-grandparents. This shows we are all born with pre-installed tools to help us live. You do not have to think about it; you just do it.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A heartbeat: a rhythm you did not have to learn." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — your body knows water is coming before your mind does." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Instant sweetness of honey: your tongue saying energy." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand jumping back from a hot stove before you even feel the burn." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A V-shape in the sky: you know it means birds heading home." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and still know exactly where your nose is: the body's pre-installed map." }
+        ],
+        intuition: "That gut feeling that tells you to move before you see the danger — that is not fear. That is a million years of ancestors whispering: we already solved this one for you.",
+        links: [
+          { label: "Ethology and FAPs", url: "https://en.wikipedia.org/wiki/Fixed_action_pattern" },
+          { label: "Konrad Lorenz Research", url: "https://en.wikipedia.org/wiki/Konrad_Lorenz" },
+          { label: "Animal Behavior", url: "https://en.wikipedia.org/wiki/Ethology" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "The Rhythm of Life", artist: "Cy Coleman", url: "https://www.youtube.com/watch?v=MtCxkW6u1GM" }
+        ],
+        advanced: "Fixed Action Patterns are all-or-nothing innate behavior sequences triggered by a sign stimulus (releaser). The organism carries the sequence to completion regardless of environmental changes. A highly efficient biological economy bypassing learning costs. FAPs bridge physiology and psychology — convergent recognition where environment and neural architecture are perfectly mirrored. Knowing is not always intellectual but structural." },
+
+      { id: "genetic-memory", num: 2, icon: "🧬", title: "Genetic Memory", subtitle: "The Library Inside You From the Moment You Were Born",
+        simple: "Have you ever wondered how a baby bird knows how to build a nest without ever being taught? It is because they have a library of instructions hidden inside their tiny bodies from the moment they are born. These instructions come from all the birds that lived before them, passed down like a secret treasure map. It means you are never truly alone because the wisdom of your family is literally a part of your skin and bones. You know things because your ancestors lived through them first. It is the ultimate copy-paste for survival.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "White noise of a rushing river that feels instantly calming." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A pine forest that feels like home even if you have never been there." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The bitter taste of some plants: your DNA saying do not eat this." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A soft blanket that feels like a mother's hug." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at the stars and feeling a strange sense of direction." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "A baby's hand automatically curling around your finger: the oldest handshake in the world." }
+        ],
+        intuition: "You know how to breathe deeply when scared without being told. That is not you. That is every ancestor who ever calmed themselves down, writing the instructions into your blood.",
+        links: [
+          { label: "Understanding Epigenetics", url: "https://en.wikipedia.org/wiki/Epigenetics" },
+          { label: "Monarch Butterfly Migration", url: "https://en.wikipedia.org/wiki/Monarch_butterfly_migration" },
+          { label: "Ancestral Trauma and Memory", url: "https://en.wikipedia.org/wiki/Transgenerational_trauma" }
+        ],
+        songs: [
+          { title: "Unchained Melody", artist: "The Righteous Brothers", url: "https://www.youtube.com/watch?v=qiiyq2xrSI0" },
+          { title: "He Lives in You", artist: "Lebo M", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Ancestors", artist: "Enigma", url: "https://www.youtube.com/watch?v=F7bKe_Zgua4" }
+        ],
+        advanced: "Genetic memory through epigenetics and behavioral genetics suggests complex behaviors and fears are encoded in the genome via DNA methylation and histone modification. Challenges the tabula rasa theory. The individual is a temporary vessel for a continuous stream of biological consciousness — the collective unconscious made molecular. Our most basic instincts are echoes of a thousand lifetimes refined into a single functional impulse." },
+
+      { id: "imprinting", num: 3, icon: "👣", title: "Imprinting", subtitle: "Connection Is Not a Choice — It Is Your First Instinct",
+        simple: "When some animals are first born, they have a learning window that is only open for a very short time. During this time, the first moving thing they see becomes their mom or their leader forever. This helps them stay safe and learn who they are supposed to be in the world. It shows that we are designed to connect with others right from the start. We are hard-wired to find someone to follow so we do not have to wander alone. Connection is not a choice; it is our first instinct.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The specific pitch of your mother's voice in a crowded room." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The unique baby smell that makes adults want to protect them." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The taste of milk: safety and fullness." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Skin-to-skin contact that lowers your heart rate." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Eye contact: the handshake of the soul." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling where your body ends and a loved one's begins while hugging: two becoming one." }
+        ],
+        intuition: "The feeling that you belong with a certain group of people — that is not preference. That is imprinting. Something ancient in you recognized something ancient in them. The window opened. The bond locked.",
+        links: [
+          { label: "Konrad Lorenz and Imprinting", url: "https://en.wikipedia.org/wiki/Imprinting_(psychology)" },
+          { label: "Critical Periods in Development", url: "https://en.wikipedia.org/wiki/Critical_period" },
+          { label: "Attachment Theory", url: "https://en.wikipedia.org/wiki/Attachment_theory" }
+        ],
+        songs: [
+          { title: "I'll Be There", artist: "The Jackson 5", url: "https://www.youtube.com/watch?v=XsGLOSAhKEo" },
+          { title: "Lean On Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "Follow You Follow Me", artist: "Genesis", url: "https://www.youtube.com/watch?v=xyVBB7fGdFM" }
+        ],
+        advanced: "Imprinting is phase-sensitive learning occurring at a particular life stage, characterized by rapidity and independence from behavioral consequences. Ensures social animals remain near caregivers, optimizing protection and socialized learning. Illustrates Uhlmann fidelity in a social context — the degree to which offspring internal state matches caregiver external presence. A biological anchor preventing systemic entropy in social structures." },
+
+      { id: "taxes-kineses", num: 4, icon: "☀️", title: "Taxes and Kineses", subtitle: "The World Is Always Pulling You Toward What You Need",
+        simple: "Even the smallest bugs have a GPS that tells them where to go based on light, heat, or chemicals. Some move directly toward the light like a moth, while others just move faster when uncomfortable until they find a happy spot. They do not have to think about it; their bodies just start moving for them. This shows that the world is always talking to us, pulling us toward what we need and pushing us away from what hurts. We are part of the world's energy, moving like waves in the ocean.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Turning your head toward a sudden loud noise without thinking." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The pull of a bakery that makes you walk toward the door." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Pulling your tongue away from something sour: automatic rejection." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Shivering when cold to create heat: your body moving itself." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Your eyes automatically following a moving object." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Swaying back and forth to find your center of gravity: your body solving physics." }
+        ],
+        intuition: "That magnetic pull toward a person or a place — that is not random. That is taxis. The universe set up a gradient and your body is following it home.",
+        links: [
+          { label: "Taxes and Kinesis", url: "https://en.wikipedia.org/wiki/Taxis" },
+          { label: "Phototaxis in Insects", url: "https://en.wikipedia.org/wiki/Phototaxis" },
+          { label: "Chemotaxis Explained", url: "https://en.wikipedia.org/wiki/Chemotaxis" }
+        ],
+        songs: [
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Follow the Sun", artist: "Xavier Rudd", url: "https://www.youtube.com/watch?v=sMJjF3V5bqk" },
+          { title: "Gravity", artist: "John Mayer", url: "https://www.youtube.com/watch?v=7VBex8zbDRs" }
+        ],
+        advanced: "Taxes involve directional movement toward or away from stimuli (phototaxis, chemotaxis, magnetotaxis). Kineses involve changes in movement rate or turning in response to stimulus intensity. Hard-wired feedback loops between sensory receptors and motor systems. The organism needs no complex internal model — it simply reacts to gradients of information. Convergent recognition of environmental variables where the organism functions as a living sensor for universal forces." },
+
+      { id: "biological-rhythms", num: 5, icon: "🌙", title: "Biological Rhythms", subtitle: "A Clock Inside You That Beats With the Planet",
+        simple: "Inside your body, there is a clock that never stops ticking, and it does not need batteries! This clock tells bears when to sleep for winter and tells birds when to fly south. Even you have one that makes you sleepy when the sun goes down and awake when it comes up. It connects your tiny life to the giant spinning of the Earth and the moon. We are not just living on the planet; we are living with the planet's heartbeat. Everything has a season, and your body already knows the schedule.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady crick-crick of crickets signaling nighttime." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The crisp smell of autumn that makes you want to nest and get cozy." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Craving heavy foods in winter and light fruits in summer." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Morning dew on your feet that wakes up your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The sky turning orange at sunset: your brain reading the clock." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling heavy at 9 PM and light at 9 AM: your body synced to the Earth's rotation." }
+        ],
+        intuition: "Knowing it is time for a change in your life before the change happens — that is your biological clock reading a season your mind has not noticed yet. Trust the clock. It has been right for 4 billion years.",
+        links: [
+          { label: "Circadian Rhythms", url: "https://en.wikipedia.org/wiki/Circadian_rhythm" },
+          { label: "The Science of Hibernation", url: "https://en.wikipedia.org/wiki/Hibernation" },
+          { label: "Lunar Cycles and Behavior", url: "https://en.wikipedia.org/wiki/Lunar_effect" }
+        ],
+        songs: [
+          { title: "Turn! Turn! Turn!", artist: "The Byrds", url: "https://www.youtube.com/watch?v=W4ga_M5Zdn4" },
+          { title: "Walking on Sunshine", artist: "Katrina and the Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+          { title: "Moondance", artist: "Van Morrison", url: "https://www.youtube.com/watch?v=6lFxGBB4UGU" }
+        ],
+        advanced: "Circadian, ultradian, and circannual rhythms are endogenous oscillations regulated by biological pacemakers like the suprachiasmatic nucleus (SCN). Self-sustaining cycles persisting without external cues. By synchronizing internal states with planetary cycles, organisms maximize metabolic efficiency and survival. Biological life is an extension of celestial mechanics — survival truth score tied directly to ability to mirror the frequency of the solar system." },
+
+      { id: "pheromone-communication", num: 6, icon: "🌬️", title: "Pheromone Communication", subtitle: "A Secret Internet That Travels Through the Wind",
+        simple: "Animals have a way of talking to each other using invisible smell-messages called pheromones. An ant can leave a trail of these smells to tell its friends where the food is, or a moth can find a mate from miles away just by smelling the air. It is like a secret internet that travels through the wind. This shows that we are connected to others in ways we cannot even see or hear. Even when it is quiet and dark, the world is full of conversations. You are always receiving messages from the life around you.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The silence that feels heavy when someone is upset: invisible signals." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean forest that makes you breathe deeper without knowing why." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The metallic taste when you are excited or scared: chemistry talking." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Hair raising on your arms when you sense someone nearby." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A group of birds all turning at once: invisible conversation." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling crowded even if no one is touching you: your body reading chemical signals." }
+        ],
+        intuition: "Knowing how a friend feels the moment they walk into the room — that is not magic. That is your body reading a conversation that was happening before they opened the door. You are always listening with your skin.",
+        links: [
+          { label: "How Pheromones Work", url: "https://en.wikipedia.org/wiki/Pheromone" },
+          { label: "Ant Communication", url: "https://en.wikipedia.org/wiki/Ant_communication" },
+          { label: "Chemical Signaling", url: "https://en.wikipedia.org/wiki/Chemosignaling" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Invisible Touch", artist: "Genesis", url: "https://www.youtube.com/watch?v=epCEAhfMRiI" },
+          { title: "Love Potion No. 9", artist: "The Searchers", url: "https://www.youtube.com/watch?v=7rXhXLsNJL8" }
+        ],
+        advanced: "Pheromones are ectohormones triggering social or physiological responses in same-species members. Chemical signaling bypasses cortical processing, moving from vomeronasal organ directly to the limbic system — disjoint recognition at maximum efficiency. Social cohesion maintained by a shared-ignorance floor where individuals need not understand the reason for behavior to participate. A biological blockchain: decentralized, immutable, reliable." },
+
+      { id: "proprioceptive-reflexes", num: 7, icon: "🧘", title: "Proprioceptive Reflexes", subtitle: "A Billion Tiny Brains in Your Muscles and Skin",
+        simple: "Your body is so smart that it knows where all your parts are even if you do not look at them. If you start to trip, your legs automatically jump out to catch you before your brain even knows you are falling. This is called body-knowing, and every animal has it to keep them balanced and moving smoothly. It is like having a billion tiny brains in your muscles and skin. You do not have to think about how to walk or run; your body just speaks the language of movement. You are a masterpiece of motion.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The thump of your feet hitting the ground in a steady rhythm." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Your own sweat after working hard: the smell of effort." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cold, refreshing water after a long run." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The ground pushing back against your feet with every step." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The horizon staying level even when you are jumping or spinning." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Close your eyes and touch your index fingers together perfectly: your body knows where it is without looking." }
+        ],
+        intuition: "The feeling of flow when you are playing a game or dancing — that is not talent. That is a billion tiny brains in your muscles all agreeing at once. You are an orchestra that plays itself.",
+        links: [
+          { label: "Proprioception: The Sixth Sense", url: "https://en.wikipedia.org/wiki/Proprioception" },
+          { label: "The Cat Righting Reflex", url: "https://en.wikipedia.org/wiki/Cat_righting_reflex" },
+          { label: "Muscle Spindles and Reflexes", url: "https://en.wikipedia.org/wiki/Muscle_spindle" }
+        ],
+        songs: [
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Footloose", artist: "Kenny Loggins", url: "https://www.youtube.com/watch?v=ltrMfT4Qz5Y" },
+          { title: "I Like to Move It", artist: "Reel 2 Real", url: "https://www.youtube.com/watch?v=Dyx4v1QFzhQ" }
+        ],
+        advanced: "Proprioception and monosynaptic reflexes (stretch reflex) use specialized receptors in muscles, tendons, and joints for constant positional information, processed at spinal and cerebellar levels for real-time adjustments too fast for conscious deliberation. The self is not a centralized ego in the prefrontal cortex but a distributed network of intelligence constantly solving physical existence through autonomous feedback loops. The body and physics must perfectly align." },
+
+      { id: "innate-releasing-mechanisms", num: 8, icon: "🔐", title: "Innate Releasing Mechanisms", subtitle: "The World Provides the Keys That Open Your Heart",
+        simple: "Inside an animal's brain, there is a special lock that can only be opened by one specific key from the outside world. For a mother bird, the key is the bright red mouth of her hungry baby; when she sees it, her brain unlocks and she immediately wants to feed it. They do not have to decide to be helpful; the sight of the baby makes them helpful. This shows that we are built to respond to each other's needs. The world provides the keys that open up our hearts and our actions. We are made to fit together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A baby's cry that makes you want to help or hold them." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh-baked bread that unlocks your hunger." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The zap of a lemon that makes your whole face squeeze up." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft puppy fur that makes your hand want to pet it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A big, bright smile that makes you want to smile back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning forward toward someone you like without realizing it: your body unlocking." }
+        ],
+        intuition: "Knowing exactly what a pet wants just by looking at their eyes — that is a lock finding its key. You did not learn that. You were built for it. The world made the key. Your heart was the lock.",
+        links: [
+          { label: "Innate Releasing Mechanism", url: "https://en.wikipedia.org/wiki/Innate_releasing_mechanism" },
+          { label: "Tinbergen's Four Questions", url: "https://en.wikipedia.org/wiki/Tinbergen%27s_four_questions" },
+          { label: "Supernormal Stimuli", url: "https://en.wikipedia.org/wiki/Supernormal_stimulus" }
+        ],
+        songs: [
+          { title: "You're My Best Friend", artist: "Queen", url: "https://www.youtube.com/watch?v=HaZpZQG2z10" },
+          { title: "Sweet Child O' Mine", artist: "Guns N' Roses", url: "https://www.youtube.com/watch?v=1w7OgIMMRc4" },
+          { title: "Locked Out of Heaven", artist: "Bruno Mars", url: "https://www.youtube.com/watch?v=e-fA-gBCkj0" }
+        ],
+        advanced: "The IRM is a hypothetical neural process filtering sign stimuli to trigger specific Fixed Action Patterns. Acts as an epistemic gate ensuring behavioral energy is expended only under correct environmental conditions. When gated correctly, fidelity between stimulus and response approaches 100%. Much of what we call meaning is biological keys finding evolutionary locks — a seamless interface between organism and the species' history." },
+
+      { id: "migration-navigation", num: 9, icon: "📍", title: "Migration Navigation", subtitle: "A Compass Inside Your Eyes That Reads the Earth",
+        simple: "Imagine you had a compass inside your eyes that showed you the Earth's magnetic fields. Some birds and turtles actually have this! They can travel across the entire ocean and find the exact same beach where they were born, even if they have never been back. They do not need a map or a phone; they just feel the pull of the Earth. It shows that we are never truly lost because we are always connected to the giant magnet that is our planet. The Earth is always guiding you home if you listen to your inner compass.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The whoosh of wind that seems to point in a certain direction." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Salty ocean smell that birds follow for miles." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Different flavor of water in different places: fish use this as a map." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Sun's warmth on one side of your face as you walk: a solar compass." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "The pattern of stars that has guided travelers forever." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling balanced only when heading the right way: your body as compass needle." }
+        ],
+        intuition: "That inner tug that tells you which way to turn at a crossroads — that is not random. That is your body reading the same magnetic field that guides the Arctic tern 44,000 miles home. You are wired to the planet.",
+        links: [
+          { label: "How Birds Navigate", url: "https://en.wikipedia.org/wiki/Bird_migration" },
+          { label: "Animal Magnetoreception", url: "https://en.wikipedia.org/wiki/Magnetoreception" },
+          { label: "The Mystery of Eel Migration", url: "https://en.wikipedia.org/wiki/European_eel" }
+        ],
+        songs: [
+          { title: "Homeward Bound", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4BQLE_RrTSU" },
+          { title: "Take Me Home, Country Roads", artist: "John Denver", url: "https://www.youtube.com/watch?v=1vrEljMfXYo" },
+          { title: "Go the Distance", artist: "Michael Bolton", url: "https://www.youtube.com/watch?v=zgnHF2CwrPs" }
+        ],
+        advanced: "Migration navigation uses solar and stellar compasses, olfaction, and magnetoreception (cryptochromes in retina or magnetite in beak). A multi-modal Reliability Modulator enabling precision navigation over thousands of miles. Organisms are not isolated entities but integrated components of geomagnetic and celestial systems. The journey of one is the journey of the entire lineage — the ultimate expression of convergent recognition." },
+
+      { id: "interspecies-mimicry", num: 10, icon: "🎭", title: "Interspecies Mimicry", subtitle: "All Living Things Are Mirrors of Each Other's Fears and Needs",
+        simple: "Sometimes, the best way to survive is to pretend to be someone else! Some harmless butterflies look exactly like poisonous ones so that birds will leave them alone. It is like wearing a costume that says do not eat me, I am dangerous! Even though they are not thinking about it, their bodies have learned to speak the language of other animals. This shows that all living things are watching and learning from each other, even without talking. We are all connected in a giant game of follow the leader to stay safe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A bird copying a car alarm or a cat: borrowed language." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A flower that smells like a bug to trick other bugs into visiting." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The fake sourness of some plants that are not actually bad for you." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A bug that looks like a sharp thorn so you will not touch it." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Patterns on a moth's wings that look like giant owl eyes." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing very still like a statue to disappear into the room: your body doing mimicry." }
+        ],
+        intuition: "The feeling that you should blend in with a crowd to feel safe — that is mimicry. That is a billion years of evolution saying: the best defense is to speak the other's language. We are all wearing each other's masks.",
+        links: [
+          { label: "Mimicry in Nature", url: "https://en.wikipedia.org/wiki/Mimicry" },
+          { label: "Batesian vs. Müllerian Mimicry", url: "https://en.wikipedia.org/wiki/Batesian_mimicry" },
+          { label: "Camouflage and Survival", url: "https://en.wikipedia.org/wiki/Camouflage" }
+        ],
+        songs: [
+          { title: "The Great Pretender", artist: "The Platters", url: "https://www.youtube.com/watch?v=PkEbFMscd9U" },
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Karma Chameleon", artist: "Culture Club", url: "https://www.youtube.com/watch?v=JmcA9LIIXWw" }
+        ],
+        advanced: "Batesian, Müllerian, and Peckhamian mimicry: one species borrows the signal of another for survival advantage. The mimic relies on the predator's ability to accurately recognize a dangerous signal even when it is a lie. Creates an Information Gate balancing truth and deception — mimicry only works while the model species' truth score remains high. Evolution of one species' appearance literally driven by the instinctual knowledge of an entirely different species." },
+    ],
 
   },
 
