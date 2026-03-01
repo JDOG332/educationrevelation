@@ -13143,12 +13143,12 @@ export const TOPIC_CARDS = {
 
 
   // ═══════════════════════════════════════════════════════════════
-  // DOOR 6: ART (gallery)
+  // DOOR 6: ART (depths)
   // ═══════════════════════════════════════════════════════════════
-  gallery: {
+  depths: {
 
     // ═══════════════════════════════════════════════════════════════
-    // ART (gallery) > MUSIC & SOUND (music)
+    // ART (depths) > MUSIC & SOUND (music)
     // ═══════════════════════════════════════════════════════════════
 
     music: [
@@ -13384,7 +13384,7 @@ export const TOPIC_CARDS = {
     ],
 
     // ═══════════════════════════════════════════════════════════════
-    // ART (gallery) > PAINTING & DRAWING (painting)
+    // ART (depths) > PAINTING & DRAWING (painting)
     // ═══════════════════════════════════════════════════════════════
 
     painting: [
@@ -13620,10 +13620,10 @@ export const TOPIC_CARDS = {
     ],
 
     // ═══════════════════════════════════════════════════════════════
-    // ART (gallery) > STORYTELLING & NARRATIVE (storytelling)
+    // ART (depths) > STORYTELLING & NARRATIVE (story)
     // ═══════════════════════════════════════════════════════════════
 
-    storytelling: [
+    story: [
       { id: "heros-journey", num: 1, icon: "⭕", title: "The Hero's Journey", subtitle: "Being Brave Does Not Mean You Are Not Scared — It Means You Keep Going Anyway",
         simple: "Every great story follows a special map where a hero leaves home, faces scary tests, and comes back stronger to help others. It is like when you feel nervous about the first day of school but find a new friend and feel brave by the end. This pattern is hidden in almost every movie and book you love because it shows how we all grow up. By following the hero, we learn that being brave does not mean you are not scared; it means you keep going anyway. When the hero wins, we feel like we can win too. It connects all of us because we are all the heroes of our own little lives.",
         senses: [
