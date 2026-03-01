@@ -12666,6 +12666,241 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Claude Shannon's information theory defines information as the resolution of uncertainty. The bit (binary digit) is the fundamental unit — a choice between two mutually exclusive states (Light/Dark, 1/0). In the Everlasting We, binary logic is the skeleton of reality. But quantum logic allows superposition — being both 0 and 1 until observed. Our language is binary. Our essence is the spectrum between." },
     ],
+    // ═══════════════════════════════════════════════════════════════
+    // NATURE (pillars) > OCEAN & DEPTH (ocean)
+    // ═══════════════════════════════════════════════════════════════
+
+    ocean: [
+      { id: "hydrologic-cycle-homeostasis", num: 1, icon: "🌊", title: "The Hydrologic Cycle", subtitle: "A Giant Air Conditioner for the Whole Planet",
+        simple: "Water moves in a giant circle from the ocean to the sky and back to the ground. This big cycle keeps the Earth from getting too hot or too cold, like a giant air conditioner for the planet. Because the ocean is so big, it holds most of the world's heat and water. Without this constant moving, plants would not grow and animals would not have water to drink. It connects every living thing because the water you drink today might have been in the ocean a thousand years ago.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The rhythmic shhhhh of waves on a beach: the cycle's pulse." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The salty, crisp air of a sea breeze." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A drop of clean rainwater: the cycle's purity on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand in a cold stream fed by mountain snow." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A massive thundercloud forming over the horizon: the ocean becoming sky." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The weight of your own body, which is mostly made of this same water: you are the ocean walking." }
+        ],
+        intuition: "The water you drink today might have been in the ocean a thousand years ago. You are not separate from the cycle. You are a stop on the route. The ocean did not make you. The ocean is wearing you for a while.",
+        links: [
+          { label: "Water Cycle", url: "https://en.wikipedia.org/wiki/Water_cycle" },
+          { label: "Thermohaline Circulation", url: "https://en.wikipedia.org/wiki/Thermohaline_circulation" },
+          { label: "Gaia Hypothesis", url: "https://en.wikipedia.org/wiki/Gaia_hypothesis" }
+        ],
+        songs: [
+          { title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", url: "https://www.youtube.com/watch?v=4G-YQA_bsOU" },
+          { title: "Purple Rain", artist: "Prince", url: "https://www.youtube.com/watch?v=TvnYmWpD_T8" },
+          { title: "Set Fire to the Rain", artist: "Adele", url: "https://www.youtube.com/watch?v=Ri7-vnrJD3k" }
+        ],
+        advanced: "The ocean acts as the planet's primary thermal and chemical buffer. Through thermohaline circulation (the Global Conveyor Belt), the ocean distributes heat from equator to poles. A high-fidelity feedback loop where salinity and temperature dictate density, driving global water movement. Reflects conservation of mass and Gaia theory: Earth functioning as a self-regulating complex system." },
+
+      { id: "marine-abiogenesis", num: 2, icon: "🧬", title: "Marine Abiogenesis", subtitle: "The Ocean Is the Mother of Every Living Thing on Earth",
+        simple: "A long time ago, life started in the dark, warm water at the bottom of the ocean. Scientists believe that tiny bubbles and chemicals near underwater volcanoes began to wake up and turn into the first living cells. This means the ocean is like a big mother to every single bug, bird, and human on Earth. We all have a little bit of the ancient ocean inside our blood and our bodies. The deep sea is a giant history book of where we came from.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low, deep rumble of underwater volcanic vents: the first heartbeat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sharp, eggy scent of sulfur: life's first food." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Metallic tang of mineral-rich spring water: ancient chemistry on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Warmth of a heated stone: the Earth's inner fire that lit the first spark." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A tiny drop of pond water through a magnifying glass: a universe in a drop." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The rhythmic beat of your heart: a motor that started billions of years ago in the deep." }
+        ],
+        intuition: "We all have a little bit of the ancient ocean inside our blood. Your body is salt water. Your tears are the sea. You did not come from the ocean. You are the ocean that learned to walk. Home is not behind you. Home is inside you.",
+        links: [
+          { label: "Abiogenesis", url: "https://en.wikipedia.org/wiki/Abiogenesis" },
+          { label: "Hydrothermal Vents", url: "https://en.wikipedia.org/wiki/Hydrothermal_vent" },
+          { label: "RNA World", url: "https://en.wikipedia.org/wiki/RNA_world" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "Genesis", artist: "Grimes", url: "https://www.youtube.com/watch?v=1FH-q0I1fJY" },
+          { title: "Dust in the Wind", artist: "Kansas", url: "https://www.youtube.com/watch?v=tH2w6Oxx0kQ" }
+        ],
+        advanced: "The hydrothermal vent hypothesis suggests life originated in alkaline vents providing proton gradients and catalytic iron-sulfur clusters to drive the first metabolic pathways. Transition from geochemistry to biochemistry: energy harvested from Earth's internal heat, not the sun. Connects to RNA world theory and thermodynamics — life not as accident but cosmic inevitability under specific energetic conditions." },
+
+      { id: "hydrostatic-pressure", num: 3, icon: "💎", title: "Hydrostatic Pressure", subtitle: "Being Flexible and Soft Can Be Stronger Than Being Hard and Stiff",
+        simple: "Deep in the ocean, the water is so heavy it would squash a normal metal can like a grape. To live there, animals have bodies that are mostly made of water or soft jelly so they do not get crushed. They do not have air pockets like we do in our lungs, because air would squeeze down to nothing. This shows how life is amazing at changing itself to fit into any home, no matter how tough it is. It teaches us that being flexible and soft can sometimes be stronger than being hard and stiff.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The muffled, quiet silence of being underwater: pressure dampens everything." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The damp, heavy smell of a deep basement or cave." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The thick, heavy feel of cold, mineral-heavy water." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A weighted blanket pressing down on your shoulders: the ocean hugging you." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A balloon shrinking as you squeeze it: pressure you can see." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Pressure in your ears when you dive to the bottom of a pool: the deep calling." }
+        ],
+        intuition: "Being flexible and soft can sometimes be stronger than being hard and stiff. The rigid thing breaks. The soft thing bends. The jellyfish survives at depths that would crush steel. Stop trying to be harder. Try being softer.",
+        links: [
+          { label: "Hydrostatic Pressure", url: "https://en.wikipedia.org/wiki/Hydrostatic_pressure" },
+          { label: "Deep-Sea Fish", url: "https://en.wikipedia.org/wiki/Deep-sea_fish" },
+          { label: "Mariana Trench", url: "https://en.wikipedia.org/wiki/Mariana_Trench" }
+        ],
+        songs: [
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Heavy", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=5dmQ3QWpy1Q" },
+          { title: "Diamonds", artist: "Rihanna", url: "https://www.youtube.com/watch?v=lWA2pjMjpBs" }
+        ],
+        advanced: "Hydrostatic pressure increases ~1 atmosphere per 10 meters. At the Mariana Trench: over 1,000 atmospheres. Deep-sea creatures evolved specialized piezolytes (like TMAO) preventing cell membranes and enzymes from collapsing. A masterclass in evolutionary convergence: physical laws dictating biological form. Connects to soft robotics where engineers mimic pressurized organisms for extreme-environment machines." },
+
+      { id: "benthic-nutrient-cycling", num: 4, icon: "♻️", title: "The Benthic Zone", subtitle: "In Nature Nothing Is Ever Truly Wasted or Gone Forever",
+        simple: "The bottom of the ocean is like the world's biggest recycling center. When things die at the top of the ocean, they slowly drift down like marine snow to feed the creatures waiting at the bottom. These bottom-dwellers turn that waste back into food and nutrients that eventually float back up to the top. This reminds us that in nature, nothing is ever truly wasted or gone forever. Everything has a purpose, even the things that seem like they are just trash or dead.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The very slow, rhythmic ticking of a clock: deep time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rich, earthy scent of wet soil or mud: the bottom smells like the beginning." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Savory umami taste of mushrooms or seaweed: recycled richness." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Soft, squishy clay or mud between your fingers: the deep is soft." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Dust motes dancing in a sunbeam: marine snow falling in slow motion." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your feet sinking slightly into soft sand: the bottom catching everything that falls." }
+        ],
+        intuition: "Everything has a purpose, even the things that seem dead. Marine snow is not garbage. It is a delivery. What falls is not lost. What falls is feeding something you cannot see yet. Your worst moment is someone's meal.",
+        links: [
+          { label: "Benthic Zone", url: "https://en.wikipedia.org/wiki/Benthic_zone" },
+          { label: "Biological Pump", url: "https://en.wikipedia.org/wiki/Biological_pump" },
+          { label: "Marine Snow", url: "https://en.wikipedia.org/wiki/Marine_snow" }
+        ],
+        songs: [
+          { title: "In the End", artist: "Linkin Park", url: "https://www.youtube.com/watch?v=eVTXPUF4Oz4" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Dust My Broom", artist: "Elmore James", url: "https://www.youtube.com/watch?v=dul4gY_qOqc" }
+        ],
+        advanced: "The benthic zone is crucial for the biological pump: carbon transported from surface to deep ocean. Decomposers break down organic matter, releasing nitrogen and phosphorus back into the water column. This upwelling fuels phytoplankton producing half the world's oxygen. Relates to circular economy and conservation of energy. The surface cannot exist without the recycling happening in the abyss." },
+
+      { id: "chemosynthesis-extremophiles", num: 5, icon: "🔥", title: "Chemosynthesis & Extremophiles", subtitle: "There Are Many Different Ways to Be Alive",
+        simple: "Most plants on land need the sun to make food, but deep in the ocean, it is pitch black. Instead of sunlight, some amazing creatures use chemicals coming out of the Earth's crust to make their energy. This is called chemosynthesis, and it is like cooking with rocks and heat instead of light. These extremophiles prove that life can find a way to thrive even in places where we thought it was impossible. It shows us that there are many different ways to be successful and alive.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The hiss of steam coming off a boiling kettle: Earth's kitchen." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smoky, burnt smell of a match being struck: chemistry at work." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The sharp bite of a spicy pepper: energy without the sun." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Heat radiating from a warm stove: the Earth's inner fire." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A bright glow-stick shining in a dark room: light without the sun." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The energy you get after eating a quick snack: your body converting chemistry to motion." }
+        ],
+        intuition: "Life can find a way to thrive even where we thought it was impossible. The sun is not the only way. The rules you were taught are not the only rules. Somewhere in the dark, something is thriving on what you threw away.",
+        links: [
+          { label: "Chemosynthesis", url: "https://en.wikipedia.org/wiki/Chemosynthesis" },
+          { label: "Extremophile", url: "https://en.wikipedia.org/wiki/Extremophile" },
+          { label: "Astrobiology", url: "https://en.wikipedia.org/wiki/Astrobiology" }
+        ],
+        songs: [
+          { title: "Starman", artist: "David Bowie", url: "https://www.youtube.com/watch?v=tRcPA7Fzebw" },
+          { title: "Radioactive", artist: "Imagine Dragons", url: "https://www.youtube.com/watch?v=ktvTqknDobU" },
+          { title: "Firework", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=QGJuMBdaqIw" }
+        ],
+        advanced: "Chemosynthesis: biological conversion of carbon molecules using oxidation of inorganic compounds (hydrogen sulfide, ferrous ions) as energy source. Supports entire ecosystems independent of solar energy around hydrothermal vents and cold seeps. Revolutionized astrobiology: life could exist on icy moons like Europa or Enceladus with sub-surface oceans heated by tidal forces. The sun is optional. Life is not." },
+
+      { id: "bioluminescence-info", num: 6, icon: "✨", title: "Bioluminescence", subtitle: "Even When Things Seem Dark There Is Always a Way to Shine",
+        simple: "In the deep, dark sea, many animals create their own light, like living fireflies. They use these lights to talk to each other, hide from big scary fish, or trick their dinner into coming closer. This glow-in-the-dark language is the main way they share information in a world without sun. It reminds us that even when things seem dark, there is always a way to shine and communicate. Being bright is not just about how you look; it is about how you connect with others.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ping of a notification on a phone: a signal in the dark." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean, ozonic scent after a lightning storm: energy made visible." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The tingle of popping candy on your tongue: surprise light." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The slight warmth of an LED light bulb: light you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Stars twinkling in a very dark night sky: the universe bioluminescing." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "That lightbulb feeling in your head when you suddenly understand something: your brain glowing." }
+        ],
+        intuition: "Being bright is not about how you look. It is about how you connect. The anglerfish does not glow to show off. It glows to find. Your light is not for display. Your light is for reaching someone in the dark.",
+        links: [
+          { label: "Bioluminescence", url: "https://en.wikipedia.org/wiki/Bioluminescence" },
+          { label: "Luciferin", url: "https://en.wikipedia.org/wiki/Luciferin" },
+          { label: "Optogenetics", url: "https://en.wikipedia.org/wiki/Optogenetics" }
+        ],
+        songs: [
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "Fireflies", artist: "Owl City", url: "https://www.youtube.com/watch?v=psuRGfAaju4" },
+          { title: "A Sky Full of Stars", artist: "Coldplay", url: "https://www.youtube.com/watch?v=VPRjCeoBqrI" }
+        ],
+        advanced: "Bioluminescence: chemiluminescence where luciferin reacts with oxygen, catalyzed by luciferase. Approximately 76% of deep-ocean animals are bioluminescent. Functions: counter-illumination camouflage, prey luring, mating signals. A signal-to-noise triumph: high-contrast data transmission in low-light environments. Being studied in optogenetics to control neurons with light-sensitive proteins." },
+
+      { id: "thermocline-stratification", num: 7, icon: "🥪", title: "Thermocline & Ocean Stratification", subtitle: "Many Different Worlds Hidden Inside One Big Thing",
+        simple: "The ocean is like a giant layered cake with different temperatures. The top layer is warm and sunny, but as you go down, there is a middle layer where the temperature drops very fast. Below that, it stays very cold and dark all the time. These layers do not like to mix, which creates different neighborhoods for different fish. It teaches us that even in one big thing, there are many different worlds hidden inside, depending on how deep you look.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A sound getting quieter as you walk into another room: layers of silence." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The sunny smell of grass versus the cool smell of a forest: layered worlds." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A drink that is hot on top and cold on the bottom: stratification you can sip." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Jumping into a lake and feeling the water get icy cold around your toes." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Oil floating on top of water in a jar: layers that refuse to mix." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving from a sunny spot to the shade: your body crossing a thermocline." }
+        ],
+        intuition: "There are many different worlds hidden inside one big thing depending on how deep you look. Every person is an ocean. Warm on the surface. Cold in the middle. Unknown at the bottom. Do not judge the ocean by its waves.",
+        links: [
+          { label: "Thermocline", url: "https://en.wikipedia.org/wiki/Thermocline" },
+          { label: "Ocean Stratification", url: "https://en.wikipedia.org/wiki/Ocean_stratification" },
+          { label: "El Niño", url: "https://en.wikipedia.org/wiki/El_Ni%C3%B1o" }
+        ],
+        songs: [
+          { title: "Hot N Cold", artist: "Katy Perry", url: "https://www.youtube.com/watch?v=kTHNpusq654" },
+          { title: "Ice Ice Baby", artist: "Vanilla Ice", url: "https://www.youtube.com/watch?v=rog8ou-ZepE" },
+          { title: "Heatwaves", artist: "Glass Animals", url: "https://www.youtube.com/watch?v=mRD0-GxKnBc" }
+        ],
+        advanced: "Ocean stratification governed by gradients in temperature (thermocline), salinity (halocline), and density (pycnocline). Layers act as barriers to vertical mixing of nutrients and dissolved gases. Global warming increases stratification leading to deoxygenation. Central to fluid dynamics, physical oceanography, weather prediction (El Niño), and submarine navigation using shadow zones from temperature shifts." },
+
+      { id: "oceanic-memory", num: 8, icon: "🎶", title: "Oceanic Memory", subtitle: "Everything You Do Leaves a Mark and the World Is Listening",
+        simple: "The ocean remembers things using sound and chemicals. Sound travels four times faster in water than in air, so whales can talk to each other from hundreds of miles away! Also, the water carries chemical clues that tell fish where to go or where they were born, like a liquid map. It shows us that everything we do leaves a mark, and the world around us is constantly listening and recording. Even when we think we are alone, we are part of a giant, moving memory.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Singing in the shower and hearing your voice bounce back: the ocean does this across continents." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A smell that suddenly makes you remember your grandmother's house: chemical memory." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The taste of salt, which has been in the ocean for millions of years." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a loud drum in your chest: sound you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Ripples in a pond long after the stone was thrown in: memory in motion." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and still knowing where your hands are: your body remembers without looking." }
+        ],
+        intuition: "Everything you do leaves a mark and the world is listening. The whale sings and the ocean carries it a thousand miles. Your actions are the same. Every word you speak enters a medium. It does not stop when you stop talking.",
+        links: [
+          { label: "SOFAR Channel", url: "https://en.wikipedia.org/wiki/SOFAR_channel" },
+          { label: "Whale Song", url: "https://en.wikipedia.org/wiki/Whale_vocalization" },
+          { label: "Chemical Oceanography", url: "https://en.wikipedia.org/wiki/Chemical_oceanography" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Echoes", artist: "Pink Floyd", url: "https://www.youtube.com/watch?v=53N99Nh0MAo" },
+          { title: "The Sound of Silence", artist: "Disturbed", url: "https://www.youtube.com/watch?v=u9Dg-g7t2l4" }
+        ],
+        advanced: "The SOFAR channel is a horizontal layer where sound speed is minimal, acting as a waveguide for low-frequency waves (whale songs) traveling thousands of kilometers with little energy loss. Chemically, the ocean records climate data in coral skeletons and deep-sea sediments (isotopes). Anthropogenic noise from ship engines disrupts vital long-distance communication: pollution of the ocean's memory." },
+
+      { id: "blue-desert-paradox", num: 9, icon: "🏜️", title: "The Blue Desert Paradox", subtitle: "Even If Something Looks Big and Full It Might Be Very Quiet Inside",
+        simple: "Even though the ocean looks full of life at the beach, huge parts of the open ocean are like a blue desert. There is not much food there, so animals have to travel huge distances just to find one snack. This teaches us that even if something looks big and full from the outside, it might be very quiet and empty on the inside. It also shows how precious life is, because every fish in that desert has to be a super-strong traveler to survive.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The long, lonely sound of wind blowing across an empty field." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Clean, fresh laundry with no other scents: the smell of nothing." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Drinking plain, clear water when you are really thirsty: scarcity makes it sacred." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your hand over a smooth, empty tabletop: vastness you can feel." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A clear blue sky with no clouds at all: beautiful emptiness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Walking across a large, empty gym floor: your body small against the space." }
+        ],
+        intuition: "Even if something looks big and full from the outside, it might be very quiet and empty on the inside. The ocean covers 70% of the Earth but most life is packed into a tiny fraction. Size is not abundance. Depth is not fullness. Ask what is actually there.",
+        links: [
+          { label: "Oligotrophic", url: "https://en.wikipedia.org/wiki/Oligotrophic" },
+          { label: "Subtropical Gyre", url: "https://en.wikipedia.org/wiki/Subtropical_gyre" },
+          { label: "Carrying Capacity", url: "https://en.wikipedia.org/wiki/Carrying_capacity" }
+        ],
+        songs: [
+          { title: "A Horse with No Name", artist: "America", url: "https://www.youtube.com/watch?v=zSAJ0l4OBHM" },
+          { title: "Desert Rose", artist: "Sting", url: "https://www.youtube.com/watch?v=C3lWwBslWqg" },
+          { title: "Space Oddity", artist: "David Bowie", url: "https://www.youtube.com/watch?v=iYYRH4apXDo" }
+        ],
+        advanced: "Large ocean areas are oligotrophic — very low in nutrients. Often within subtropical gyres where water is trapped and nutrients not replenished. The ocean covers 70% of Earth but most biomass concentrates in a tiny fraction (coastal areas, upwelling zones). Relates to spatial ecology and island biogeography. The ocean's productive capacity is finite and highly localized. Abundance is not distributed equally." },
+
+      { id: "tectonic-subduction-deep-carbon", num: 10, icon: "🏗️", title: "Tectonic Subduction", subtitle: "Nothing Is Permanent — Even the Solid Ground Is Being Remade",
+        simple: "The bottom of the ocean is actually moving, like a very slow escalator. The ocean floor slowly slides underneath the land, taking old rocks and carbon deep into the Earth. Later, these same things come back out through volcanoes as gas or new land. This is the Earth's way of breathing over millions of years. It tells us that nothing is permanent; even the solid ground under the sea is slowly being remade into something new.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low grumble of heavy machinery working far away: the planet's engine." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The smell of dust or stones after it rains: ancient rock releasing its story." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The gritty feeling of a tiny bit of sand in your mouth: the planet on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pushing two heavy books against each other until one slides under: subduction in your hands." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A small crack in the sidewalk: the Earth still moving beneath your feet." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The ground staying still while you move on a treadmill: everything is moving even when it looks still." }
+        ],
+        intuition: "Nothing is permanent. Even the solid ground under the sea is slowly being remade. The floor you stand on was once a mountain. Before that, lava. Before that, a star. Permanence is an illusion agreed upon by things that move too slowly to notice.",
+        links: [
+          { label: "Subduction", url: "https://en.wikipedia.org/wiki/Subduction" },
+          { label: "Plate Tectonics", url: "https://en.wikipedia.org/wiki/Plate_tectonics" },
+          { label: "Deep Carbon Cycle", url: "https://en.wikipedia.org/wiki/Deep_carbon_cycle" }
+        ],
+        songs: [
+          { title: "I Feel the Earth Move", artist: "Carole King", url: "https://www.youtube.com/watch?v=6913KnbMpHM" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" },
+          { title: "Pompeii", artist: "Bastille", url: "https://www.youtube.com/watch?v=F90Cw4l-8NY" }
+        ],
+        advanced: "Subduction zones recycle oceanic lithosphere into Earth's mantle — primary driver of plate tectonics and the deep carbon cycle regulating atmospheric CO₂ over geological timescales. Without this recycling, Earth would likely have a runaway greenhouse effect like Venus. The ocean floor is not just a container. It is a dynamic, moving part of Earth's internal machinery sustaining life-supporting conditions." },
+    ],
 
   },
 
