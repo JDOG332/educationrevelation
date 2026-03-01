@@ -14327,6 +14327,243 @@ export const TOPIC_CARDS = {
         advanced: "Timbre: the quality of sound distinct from pitch and intensity, determined by the harmonic profile — the specific mix of overtones and partials accompanying the fundamental frequency. Enables auditory scene analysis, helping the brain categorize sounds in crowded environments. In the human voice, influenced by vocal fold density, vocal tract length, personality, and emotional state: a multidimensional identifier of identity. Your voice is not a sound. Your voice is a biography written in frequencies." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // ART (depths) > DANCE & MOVEMENT (dance)
+    // ═══════════════════════════════════════════════════════════════
+
+    dance: [
+      { id: "proprioception-dance", num: 1, icon: "📍", title: "Proprioception: The Internal Map", subtitle: "You Cannot Paint a Picture if You Do Not Know Where the Brush Is",
+        simple: "Dance is like having a secret map inside your mind that tells you exactly where your toes and fingers are without even looking. It is how you can close your eyes and still touch your nose or jump and land on your feet. When you move, your muscles and joints send tiny status updates to your brain every second. This helps you stay balanced and feel safe in your own skin. It is the foundation of all movement because you cannot paint a picture if you do not know where the brush is.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The low hum of a Tibetan singing bowl vibrating in your chest: sound you feel, not hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh pine needles crushed under bare feet: the earth confirming your position." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A crisp cold grape that bursts with a distinct shape in your mouth: location on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Pressing your palms firmly against a cool flat stone wall: the world telling you where you end." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A single leaf falling in a perfect steady spiral: gravity drawing the map." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one leg while reaching for the sky with the opposite hand: your body mapping itself in real time." }
+        ],
+        intuition: "You cannot paint a picture if you do not know where the brush is. Close your eyes. Raise your hand. You know exactly where it is. Nobody taught you that. Your body has a GPS older than language. Every muscle is a sensor. Every joint is a compass. You are never lost inside your own skin. That is the first miracle of movement.",
+        links: [
+          { label: "Proprioception", url: "https://en.wikipedia.org/wiki/Proprioception" },
+          { label: "Muscle Spindle", url: "https://en.wikipedia.org/wiki/Muscle_spindle" },
+          { label: "Somatosensory System", url: "https://en.wikipedia.org/wiki/Somatosensory_system" }
+        ],
+        songs: [
+          { title: "Stayin' Alive", artist: "Bee Gees", url: "https://www.youtube.com/watch?v=fNFzfwLM72c" },
+          { title: "Can't Stop the Feeling!", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=ru0K8uYEZWw" },
+          { title: "Happy", artist: "Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" }
+        ],
+        advanced: "Proprioception: mediated by mechanoreceptors (muscle spindles, Golgi tendon organs) providing continuous afferent feedback to the somatosensory cortex. In dance, this feedback loop allows online adjustment of motor commands ensuring postural stability and precision. Challenges the idea that knowing is purely intellectual — suggests a corporeal intelligence where the body possesses its own logic and memory. The lived body as the primary site of encounter with the world." },
+
+      { id: "kinesthetic-empathy", num: 2, icon: "🕸️", title: "Kinesthetic Empathy", subtitle: "We Are Not Really Separate From Each Other After All",
+        simple: "When you watch someone else dance and your own muscles feel a little bit jumpy or excited, that is kinesthetic empathy. It is like an invisible thread connecting your heart to the person moving in front of you. Your brain is mirroring what they are doing, even if you are just sitting still in a chair. This is how we feel the story of a dance without any words being spoken. It teaches us that we are not really separate from each other after all.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Rhythmic clapping of a large crowd in total unison: many bodies becoming one beat." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The warm salty scent of a shared space after a long practice: effort you can inhale." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Sharing a piece of sweet orange with a friend: empathy on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A high-five where you feel the exact same pressure they do: mirrored contact." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A flock of birds turning in the sky at the exact same moment: empathy without words." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Leaning your weight against a partner and feeling them lean back: trust as physics." }
+        ],
+        intuition: "We are not really separate from each other after all. You watch a dancer leap and your calves tighten. Nobody told them to. Your mirror neurons fired without permission. Your body rehearsed the jump while you sat still. That is not imagination. That is biology proving that watching and doing share the same wiring. Separation is the illusion. Connection is the default.",
+        links: [
+          { label: "Mirror Neuron", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Kinesthetic Empathy", url: "https://en.wikipedia.org/wiki/Kinesthetic_empathy" },
+          { label: "Motor Cortex", url: "https://en.wikipedia.org/wiki/Motor_cortex" }
+        ],
+        songs: [
+          { title: "Lean on Me", artist: "Bill Withers", url: "https://www.youtube.com/watch?v=fOZ-MySzAQo" },
+          { title: "You've Got a Friend", artist: "Carole King", url: "https://www.youtube.com/watch?v=6ZHdTY2Y_po" },
+          { title: "Stand by Me", artist: "Ben E. King", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+        ],
+        advanced: "Kinesthetic empathy relies on the mirror neuron system (premotor cortex, inferior parietal lobule): neurons fire both when performing an action and observing someone else perform it. Creates shared neural space where the observer simulates effort, weight, and emotion. Bridges aesthetics and biology: art is not merely observed but co-experienced on a cellular level. A biological basis for the universal language of dance — bypassing linguistic barriers to communicate raw human intention." },
+
+      { id: "rhythm-entrainment-dance", num: 3, icon: "🥁", title: "Rhythm & Entrainment", subtitle: "When We Dance to a Beat We Are Joining an Ancient Conversation",
+        simple: "Rhythm is the heartbeat of the world, and entrainment is when your body decides to follow that beat. Think about how your foot starts tapping to a song before you even realize you like it. This happens because our brains love patterns and want to match the energy around us. Everything in the universe has a rhythm, from the ocean waves to the ticking of a clock. When we dance to a beat, we are joining in on a giant, ancient conversation that started long before we were born.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A steady deep bass drum that you feel in your stomach: the beat entering your body." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Crisp air right before a thunderstorm starts its rainy rhythm: nature's downbeat." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The rhythmic snap of eating a crunchy apple: tempo on your tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own pulse in your wrist while sitting quietly: the rhythm that was always there." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A pendulum swinging back and forth: time made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Marching in place and feeling your feet hit the floor on every one: your skeleton keeping time." }
+        ],
+        intuition: "When we dance to a beat we are joining an ancient conversation. Your foot tapped before your brain gave permission. The auditory cortex and the motor cortex are wired together. You do not decide to feel the beat. You are caught by it. Entrainment is not a choice. Entrainment is gravity for rhythm. Everything that vibrates eventually syncs up. Including us.",
+        links: [
+          { label: "Entrainment (Biomusicology)", url: "https://en.wikipedia.org/wiki/Entrainment_(biomusicology)" },
+          { label: "Rhythm", url: "https://en.wikipedia.org/wiki/Rhythm" },
+          { label: "Trance (Music)", url: "https://en.wikipedia.org/wiki/Trance_music" }
+        ],
+        songs: [
+          { title: "Billie Jean", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" },
+          { title: "Another One Bites the Dust", artist: "Queen", url: "https://www.youtube.com/watch?v=rY0WxgSXdEE" },
+          { title: "Superstition", artist: "Stevie Wonder", url: "https://www.youtube.com/watch?v=0CFuCYNx-1g" }
+        ],
+        advanced: "Entrainment: mode-locking where independent oscillating systems synchronize to a shared period. The auditory system links directly to the motor cortex, allowing beat anticipation and synchronous movement — a rare trait in the animal kingdom, fundamental to social bonding. Reduces neural noise, creates collective flow. In many cultures, rhythmic entrainment reaches altered states of consciousness where the individual ego dissolves into the collective rhythm. A physical manifestation of mathematical order." },
+
+      { id: "neuroplasticity-dance", num: 4, icon: "🧠", title: "Neuroplasticity", subtitle: "Every Time You Learn a New Dance Move Your Brain Is Actually Changing Its Shape",
+        simple: "Every time you learn a new dance move, your brain is actually changing its shape! Neuroplasticity is a big word that just means your brain is like play-dough — it can be molded and stretched. When you practice a movement over and over, you are building a highway in your brain so the signal can travel faster next time. This is why things feel hard at first but get easy later. Dancing is one of the best ways to keep your brain young and smart because it uses music, counting, and movement all at once.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Learning to whistle a new tune for the very first time: the sound of a new neural path." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A brand new box of crayons: the scent of possibility." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Trying a totally new food like a sour lemon: your brain tasting something it has no map for." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Velvet fabric versus rough sandpaper: your fingers learning a new texture." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A puzzle piece finally clicking into the right spot: pattern recognition made visible." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Writing your name with your other hand: the stumble of a brain building new roads." }
+        ],
+        intuition: "Every time you learn a new dance move your brain is actually changing its shape. The first time is impossible. The tenth time is hard. The hundredth time is automatic. That is not repetition. That is construction. Your brain built a highway where there used to be a dirt path. Dancing is not exercise. Dancing is architecture. You are literally building yourself a better brain, one step at a time.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "BDNF", url: "https://en.wikipedia.org/wiki/Brain-derived_neurotrophic_factor" },
+          { label: "Motor Learning", url: "https://en.wikipedia.org/wiki/Motor_learning" }
+        ],
+        songs: [
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Learning to Fly", artist: "Tom Petty", url: "https://www.youtube.com/watch?v=s5BJXwNeKsQ" },
+          { title: "Changes", artist: "David Bowie", url: "https://www.youtube.com/watch?v=pl3vxEudif8" }
+        ],
+        advanced: "Neuroplasticity in dancers: increased gray matter density in motor control and sensory integration areas. Enhanced white matter tracts (corpus callosum) facilitating interhemispheric communication. Movement acts as a neurotrophic factor stimulating BDNF release, supporting neuron survival and new growth. The human nervous system is not a fixed circuit but a dynamic self-organizing system. Dance is the literal physicalization of learning." },
+
+      { id: "biomechanical-efficiency", num: 5, icon: "⚖️", title: "Biomechanical Efficiency", subtitle: "The Art of Being Strong and Soft at the Exact Same Time",
+        simple: "Graceful movement is actually just really good physics! Biomechanical efficiency means moving in a way that uses the least amount of energy for the most amount of wow. Dancers learn how to find their center of gravity, which is like a secret anchor point inside their belly. By using circles and spirals instead of jerky lines, they can keep their momentum going like a spinning top. When you move efficiently, you feel light, like you are floating on air. It is the art of being strong and soft at the exact same time.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The smooth whoosh of a swing moving through the air: physics singing." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The clean ozonic smell of a spinning fan: efficiency has a freshness." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A spoonful of smooth honey that flows perfectly: grace on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your hand across perfectly smooth silk: zero friction." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A figure skater spinning faster by pulling their arms in: physics made beautiful." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Jumping as high as you can and landing silently on your toes: your body negotiating with gravity." }
+        ],
+        intuition: "The art of being strong and soft at the exact same time. The ballerina is not defying gravity. She is cooperating with it. The martial artist is not fighting physics. He is borrowing its power. Efficiency is not laziness. Efficiency is the universe's favorite shape. Every river, every orbit, every heartbeat takes the path of least resistance. Grace is just a body that stopped arguing with the laws of nature.",
+        links: [
+          { label: "Biomechanics", url: "https://en.wikipedia.org/wiki/Biomechanics" },
+          { label: "Center of Mass", url: "https://en.wikipedia.org/wiki/Center_of_mass" },
+          { label: "Principle of Least Action", url: "https://en.wikipedia.org/wiki/Principle_of_least_action" }
+        ],
+        songs: [
+          { title: "Smooth Operator", artist: "Sade", url: "https://www.youtube.com/watch?v=4TYv2PhG89A" },
+          { title: "Gravity", artist: "John Mayer", url: "https://www.youtube.com/watch?v=7VBex8zbDRs" },
+          { title: "Walking on Sunshine", artist: "Katrina & The Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" }
+        ],
+        advanced: "Biomechanical efficiency: optimization of torque, angular momentum, and ground reaction forces. Aligning skeletal structure with gravity minimizes strain and maximizes fascial recoil energy — moving from the bones. Aligns with the principle of least action: nature always chooses the path requiring least energy. When a dancer achieves this, effortless effort (Wu Wei) emerges: physical laws utilized as a partner, not fought as an obstacle." },
+
+      { id: "somatic-memory", num: 6, icon: "📖", title: "Somatic Memory", subtitle: "Your Body Is a Library Filled With Every Hug Every Fall and Every Dance",
+        simple: "Your body remembers things that your mind might forget. This is called somatic memory. It is why you can still ride a bike after years of not doing it, or why a certain song makes your heart feel heavy before you even remember why. Dancers store their choreography in their muscles so they do not have to think about it while they perform. Your body is like a library filled with every hug, every fall, and every dance you have ever done. By moving, we can sometimes unlock these old stories and let them breathe.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The crinkle of an old well-loved letter: memory you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A grandmother's perfume or a childhood home: scent unlocking the vault." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The exact flavor of a snack you have not had since you were five: time travel on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "A familiar old sweater against your skin: your body recognizing the fabric before your mind does." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "An old photograph hidden in the back of a drawer: the past looking back." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Noticing you always stand with your weight on the same hip: your body writing its autobiography in posture." }
+        ],
+        intuition: "Your body is a library filled with every hug, every fall, and every dance. You forgot the combination to your childhood locker. But your fingers remember. You forgot the words to that song. But your mouth remembers. The body does not forget. It files everything. Every scar is a chapter. Every habit is a bookmark. Movement is not just action. Movement is archaeology.",
+        links: [
+          { label: "Procedural Memory", url: "https://en.wikipedia.org/wiki/Procedural_memory" },
+          { label: "Somatic Experiencing", url: "https://en.wikipedia.org/wiki/Somatic_experiencing" },
+          { label: "Body Schema", url: "https://en.wikipedia.org/wiki/Body_schema" }
+        ],
+        songs: [
+          { title: "September", artist: "Earth, Wind & Fire", url: "https://www.youtube.com/watch?v=Gs069dndIYk" },
+          { title: "Photograph", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=nSDgHBxUbVQ" },
+          { title: "Landslide", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=WM7-PYtXtJM" }
+        ],
+        advanced: "Somatic memory: information stored in non-declarative memory systems (procedural and emotional). The hippocampus handles conscious facts; the cerebellum and basal ganglia store how-to movements. The body schema updates based on past trauma or triumph. Challenges Cartesian I think therefore I am — proposes I move therefore I remember. Somatic experiencing treats the body as a historical document of the soul's journey." },
+
+      { id: "improvisation-dance", num: 7, icon: "✨", title: "Improvisation: The Joy of Now", subtitle: "The Ultimate Feeling of Freedom Like a Bird Flying Through the Trees",
+        simple: "Improvisation is when you let your body decide what to do without planning it first. It is like being a painter who splashes paint on a canvas just to see what happens. When you improvise, you are living one hundred percent in the present moment. Your brain turns off the critic part and turns on the creator part. This helps you trust yourself and find new ways to move that you never would have thought of if you were following rules. It is the ultimate feeling of freedom.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A jazz musician making up a solo on the fly: notes that did not exist one second ago." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The unexpected scent of jasmine on a random breeze: surprise has an aroma." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Mixing two drinks together to create a brand new flavor: improvisation you can sip." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Running your fingers through tall grass without a path: touch without a script." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A fire flickering — no two flames are ever the same: nature improvising endlessly." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Closing your eyes and letting your arms drift wherever they want: the body deciding for itself." }
+        ],
+        intuition: "The ultimate feeling of freedom. During improvisation the self-monitoring part of the brain goes quiet and the self-expression part lights up. The critic leaves the room. The creator takes the stage. You stop planning and start discovering. That is not chaos. That is the highest form of intelligence: a conversation between your body and the present moment with no translator in between.",
+        links: [
+          { label: "Contact Improvisation", url: "https://en.wikipedia.org/wiki/Contact_improvisation" },
+          { label: "Flow (Psychology)", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Prefrontal Cortex", url: "https://en.wikipedia.org/wiki/Prefrontal_cortex" }
+        ],
+        songs: [
+          { title: "Fly Me to the Moon", artist: "Frank Sinatra", url: "https://www.youtube.com/watch?v=ZEcqHA7dbwM" },
+          { title: "Don't Stop Believin'", artist: "Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+          { title: "Feeling Good", artist: "Nina Simone", url: "https://www.youtube.com/watch?v=D5Y11hwjMNs" }
+        ],
+        advanced: "During improvisation: marked decrease in dorsolateral prefrontal cortex (self-monitoring) and increase in medial prefrontal cortex (self-expression), producing flow state where the gap between intention and action vanishes. Not just messing around but sophisticated real-time negotiation with space, gravity, and music. An epistemological practice of knowing through doing, where the discovery is the knowledge itself." },
+
+      { id: "sacred-geometry-dance", num: 8, icon: "🌀", title: "Sacred Geometry", subtitle: "When You Spin or Stretch You Make the Same Shapes Found in Space and Nature",
+        simple: "Did you know that when you spin or stretch, you are making the same shapes found in space and nature? Dancers use their bodies to create circles for infinity, squares for stability, and spirals for growth. These are not just pretty shapes; they are the blueprints of the universe. When you move in these patterns, you feel a sense of peace because you are acting out the same math that builds shells, sunflowers, and galaxies. It is a way of saying I am part of the design without using any words.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A perfect C major chord that feels round and complete: geometry you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A cut orange — a perfect sphere: geometry has a scent." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A salty pretzel twisted into a deliberate knot: sacred geometry you can eat." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Tracing the spiral of a seashell with your fingertip: the golden ratio under your skin." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A snowflake under a magnifying glass: the universe showing its blueprints." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Standing with arms wide to feel your own Vitruvian square: your body is the geometry." }
+        ],
+        intuition: "When you spin or stretch you make the same shapes found in space and nature. The spiral in your DNA is the spiral in the galaxy. The circle of your arms is the circle of the orbit. You are not copying nature. You are nature. When a dancer draws a spiral in the air, they are not performing art. They are performing physics. The body is the proof that the universe is beautiful on purpose.",
+        links: [
+          { label: "Sacred Geometry", url: "https://en.wikipedia.org/wiki/Sacred_geometry" },
+          { label: "Laban Movement Analysis", url: "https://en.wikipedia.org/wiki/Laban_movement_analysis" },
+          { label: "Golden Ratio", url: "https://en.wikipedia.org/wiki/Golden_ratio" }
+        ],
+        songs: [
+          { title: "Circle of Life", artist: "Elton John", url: "https://www.youtube.com/watch?v=GibiNy4d4gc" },
+          { title: "The Scientist", artist: "Coldplay", url: "https://www.youtube.com/watch?v=RB-RcX5DS5A" },
+          { title: "Around the World", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=LKYPYj2XX80" }
+        ],
+        advanced: "Sacred geometry in movement: archetypal forms (Platonic solids, golden ratio) organizing the body in space. Laban's choreutics maps how the body moves within an icosahedron (the kinesphere). These shapes represent the most efficient ways to distribute force and maintain structural integrity. Moving in these patterns harmonizes the individual microcosm with the universal macrocosm. The intersection of sacred art and structural engineering." },
+
+      { id: "mirror-neurons-dance", num: 9, icon: "🪞", title: "Mirror Neurons", subtitle: "When You Watch a Beautiful Dance Your Brain Is Practicing That Beauty Right Along",
+        simple: "Have you ever seen someone yawn and then you yawned too? That is your mirror neurons at work! These are special cells in your brain that fire when you watch someone do something, making you feel like you are doing it too. This is the secret sauce for how dancers learn complicated steps just by watching their teacher. It shows that we are built to learn from each other. When you watch a beautiful dance, your brain is actually practicing that beauty right along with the performer.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Hearing someone laugh and feeling a smile start on your face: sound mirroring." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smelling cookies and tasting them in your mind: senses crossing the mirror." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Seeing someone eat a sour lemon and feeling your own mouth pucker: empathy on the tongue." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Seeing someone get a warm hug and feeling a fuzzy feeling in your chest: reflected warmth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a dancer balance and feeling your own core tighten: your body rehearsing in secret." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Mimicking a friend's funny walk exactly: your mirror neurons copying without permission." }
+        ],
+        intuition: "When you watch a beautiful dance your brain is practicing that beauty right along with the performer. The distinction between watching and doing blurs at the neurological level. You are not a spectator. You are an invisible partner. Your motor cortex fires without your muscles moving. That means every performance has twice as many dancers as you can see. The audience is always dancing too.",
+        links: [
+          { label: "Mirror Neuron", url: "https://en.wikipedia.org/wiki/Mirror_neuron" },
+          { label: "Observational Learning", url: "https://en.wikipedia.org/wiki/Observational_learning" },
+          { label: "Motor Simulation", url: "https://en.wikipedia.org/wiki/Motor_simulation" }
+        ],
+        songs: [
+          { title: "Man in the Mirror", artist: "Michael Jackson", url: "https://www.youtube.com/watch?v=PivWY9wn5ps" },
+          { title: "Reflections", artist: "Diana Ross & The Supremes", url: "https://www.youtube.com/watch?v=JGulAZnnTKA" },
+          { title: "Mirror", artist: "Justin Timberlake", url: "https://www.youtube.com/watch?v=uuZE_IRwLNI" }
+        ],
+        advanced: "Mirror neurons (discovered 1990s) revolutionized social cognition understanding. In dance pedagogy: observational learning activates the motor cortex without overt movement — neural rehearsal making visualization powerful for performers. Deepens the subject-object relationship: watching dance blurs observer and observed at a neurological level. Movement as distributed cognition — knowledge and feeling shared across the social group through visual resonance." },
+
+      { id: "dualism-myth", num: 10, icon: "🧩", title: "The Dualism Myth", subtitle: "You Do Not Have a Body — You Are Your Body",
+        simple: "Some people think the mind is the boss and the body is just a car that drives it around. That is a big lie! The truth is that you are one whole, amazing thing. You do not have a body; you are your body. Your thoughts affect how you move, and how you move affects how you think. When you dance, you are not just moving your legs; you are moving your feelings, your ideas, and your spirit. When we realize that the mind and body are the same thing, we stop fighting ourselves and start living with much more joy and power.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "A song where the singer's voice and the music become one sound: unity you can hear." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Rain and earth happening at the same time: two things that were always one." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Perfect chocolate where you cannot tell where the sugar ends and the cocoa begins: fusion." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Your own two hands clapping — which one is doing the feeling? Both. Neither. One." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A sunset where the sky and the ocean are the exact same color: the line disappears." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Thinking of a jump and feeling your muscles already preparing: the body decided before the mind announced it." }
+        ],
+        intuition: "You do not have a body. You are your body. Try to find the line where your mind ends and your body begins. You will not find one because it does not exist. Your gut has more neurons than a cat's brain. Your heart has its own nervous system. Thinking happens in your toes. Feeling happens in your skull. The separation was never real. Dance is the proof. When a dancer is fully present, there is no thinker and no mover. There is only the dance.",
+        links: [
+          { label: "Mind-Body Dualism", url: "https://en.wikipedia.org/wiki/Mind%E2%80%93body_dualism" },
+          { label: "Embodied Cognition", url: "https://en.wikipedia.org/wiki/Embodied_cognition" },
+          { label: "Enteric Nervous System", url: "https://en.wikipedia.org/wiki/Enteric_nervous_system" }
+        ],
+        songs: [
+          { title: "One", artist: "U2", url: "https://www.youtube.com/watch?v=ftjEcrrf7r0" },
+          { title: "Inner City Blues", artist: "Marvin Gaye", url: "https://www.youtube.com/watch?v=57Ykv1D0qEE" },
+          { title: "Hallelujah", artist: "Jeff Buckley", url: "https://www.youtube.com/watch?v=y8AWFf7EAc4" }
+        ],
+        advanced: "Cartesian dualism largely debunked by modern neuroscience and embodied cognition. The enteric nervous system (gut brain) and the heart's independent nervous system prove thinking happens throughout the entire organism. Movement is a cognitive act; cognition is a physical act. In dance: unity of action — no thinker deciding to move, only movement. Aligns with non-dualistic philosophies (Advaita Vedanta, Taoism): separation of self and world is illusion. We are a singular, expressive process." },
+    ],
+
+
 
 
 
