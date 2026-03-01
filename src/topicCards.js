@@ -19552,6 +19552,243 @@ export const TOPIC_CARDS = {
         advanced: "Wegner's illusionism + Libet experiments: brain activity precedes conscious 'decision' by ~300ms. The experience of will is a post-hoc narrative. The question is not whether you are in control. The question is which you is doing the controlling." },
     ],
 
+    // ═══════════════════════════════════════════════════════════════
+    // THE SELF (theself) > ATTENTION & FOCUS (attentionfocus)
+    // ═══════════════════════════════════════════════════════════════
+
+    attentionfocus: [
+      { id: "selective-attention", num: 1, icon: "🔦", title: "Selective Attention", subtitle: "You Have a Superpower That Lets You Choose What Is Real for You Right Now",
+        simple: "Imagine you are in a dark room with a small flashlight. Even though the room is full of toys, you can only see the ones you point your light at. Your brain does the same thing every day with sounds, smells, and sights. It picks the most important thing and shuts off the rest so you do not get overwhelmed. This helps you listen to your friend in a noisy cafeteria. It is like having a superpower that lets you choose what is real for you right now.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Listening to a single instrument in a complex song: the ears choosing one thread from the whole tapestry." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Picking out the scent of one flower in a garden: the nose selecting a signal from a wall of noise." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Finding the hint of salt in a sweet chocolate bar: the tongue proving that attention changes what you taste." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the weight of your socks only when you think about it: the skin proving it was filtering until you asked." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Staring at a single letter until the others blur: the eyes demonstrating that focus creates and erases." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Noticing exactly where your elbows are without looking: the body proving it tracks what attention requests." }
+        ],
+        intuition: "You have a superpower that lets you choose what is real for you right now. Your brain receives eleven million bits of information per second. You are conscious of about forty. That means your attention is not just a preference. It is a creator. Whatever you aim the flashlight at becomes your reality. Whatever the flashlight misses does not exist for you. Two people in the same room. One notices the argument. One notices the laughter. Same room. Different flashlights. Different rooms. You cannot widen the beam to eleven million bits. That would destroy you. But you can choose where the forty bits land. And those forty bits are your entire life. Every moment of every day you are choosing what to make real. Not what is real. What is real for you. The flashlight is the most powerful tool you own. And most people have never looked at where they are pointing it.",
+        links: [
+          { label: "Selective Attention", url: "https://en.wikipedia.org/wiki/Selective_attention" },
+          { label: "Inattentional Blindness", url: "https://en.wikipedia.org/wiki/Inattentional_blindness" },
+          { label: "Cocktail Party Effect", url: "https://en.wikipedia.org/wiki/Cocktail_party_effect" }
+        ],
+        songs: [
+          { title: "Every Breath You Take", artist: "The Police", url: "https://www.youtube.com/watch?v=OMOGaugKpzs" },
+          { title: "Focus", artist: "H.E.R.", url: "https://www.youtube.com/watch?v=kRII4gSFYKs" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" }
+        ],
+        advanced: "Selective attention: governed by bottom-up (stimulus-driven) and top-down (goal-driven) mechanisms via prefrontal cortex and parietal lobe. The flashlight is the most powerful tool you own. Most people have never looked at where they are pointing it." },
+
+      { id: "neuroplasticity-attention", num: 2, icon: "🌳", title: "Neuroplasticity (Attention as Architect)", subtitle: "You Are the Boss of How Your Brain Grows Because You Choose Where the Water Goes",
+        simple: "Your brain is like a piece of soft clay or a garden that is always growing. Every time you practice focusing on something, you are building a brain road that makes it easier next time. If you practice being calm, your calm road gets wider and faster. If you practice being distracted, that road gets bigger instead. You are the boss of how your brain grows because you choose where the water of your attention goes.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Learning to recognize the chirp of a specific bird: the ears building a new identification road." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Petrichor — rain on dry earth: the scent of a system being renewed and rewired." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Noticing how a fruit tastes different as it ripens: the tongue detecting change that was always there." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the ridges of a coin without looking: the fingers reading braille they wrote themselves through practice." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a plant grow over many weeks: growth that happens too slowly to see but too powerfully to stop." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Balancing on one foot with your eyes closed: the body proving that what you practice is what you become." }
+        ],
+        intuition: "You are the boss of how your brain grows because you choose where the water goes. Neurons that fire together wire together. This is not a metaphor. This is biology. Every time you focus on something, the neural pathway for that thing gets physically thicker. Every time you ignore something, that pathway gets physically thinner. Your attention is not just choosing what you experience. Your attention is choosing what your brain becomes. The person who spends ten years focusing on gratitude has a physically different brain than the person who spends ten years focusing on resentment. Same starting hardware. Different software installation. Different hardware outcome. You are not just using your brain. You are building your brain. With every moment of attention, you are laying wire. The question is not whether you are building. You are always building. The question is whether you are building on purpose.",
+        links: [
+          { label: "Neuroplasticity", url: "https://en.wikipedia.org/wiki/Neuroplasticity" },
+          { label: "Hebbian Theory", url: "https://en.wikipedia.org/wiki/Hebbian_theory" },
+          { label: "Long-term Potentiation", url: "https://en.wikipedia.org/wiki/Long-term_potentiation" }
+        ],
+        songs: [
+          { title: "A Change Is Gonna Come", artist: "Sam Cooke", url: "https://www.youtube.com/watch?v=wEBlaMOmKV4" },
+          { title: "Unwritten", artist: "Natasha Bedingfield", url: "https://www.youtube.com/watch?v=b7k0a5hYnSI" },
+          { title: "Fix You", artist: "Coldplay", url: "https://www.youtube.com/watch?v=k4V3Mo61fJM" }
+        ],
+        advanced: "Neurons that fire together wire together: LTP strengthens synapses based on use patterns. Attention physically reshapes neural architecture. You are not just using your brain. You are building your brain. The question is whether you are building on purpose." },
+
+      { id: "flow-state", num: 3, icon: "🌊", title: "The Flow State", subtitle: "You and the Task Become One Single Thing Moving Together",
+        simple: "Have you ever been playing a game or drawing a picture and suddenly noticed that hours have passed in what felt like minutes? That is called Flow. It happens when you are doing something you love that is just the right amount of hard. Your brain stops worrying about other things and focuses one hundred percent on what you are doing. It is the happiest and most powerful your brain can be. You and the task become one single thing moving together.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The steady rhythm of a drum heartbeat: the sound of a system locked into its groove." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Old books or a clean workspace: the scent of a stage set for deep immersion." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Cool water after working hard: the taste of a body that forgot it was thirsty." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The smooth glide of a pen on paper: the hand and the tool becoming indistinguishable." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Tunnel vision where the edges of the room disappear: the eyes proving the world shrinks when flow expands." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your body moving automatically during sports: the muscles executing without asking the brain for instructions." }
+        ],
+        intuition: "You and the task become one single thing moving together. Flow is what happens when the self disappears. Not because you stopped existing. Because you stopped watching yourself exist. The inner critic goes quiet. The clock stops. The gap between you and the task closes to zero. You are not doing the thing. You are the thing doing itself through you. This is the state athletes call the zone. Musicians call it locked in. Monks call it samadhi. Taoists call it wu wei. Every culture found it. Every culture named it. Because it is the single most productive and joyful state a human brain can enter. And the recipe is always the same. A task that matches your skill level plus four percent. Not too easy. Not too hard. Just hard enough that the brain cannot afford to wander. Flow is not a reward for focus. Flow is what focus becomes when the self gets out of the way.",
+        links: [
+          { label: "Flow", url: "https://en.wikipedia.org/wiki/Flow_(psychology)" },
+          { label: "Csikszentmihalyi", url: "https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi" },
+          { label: "Wu Wei", url: "https://en.wikipedia.org/wiki/Wu_wei" }
+        ],
+        songs: [
+          { title: "Lose Yourself", artist: "Eminem", url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s" },
+          { title: "Bolero", artist: "Ravel", url: "https://www.youtube.com/watch?v=r30D3SW4OVw" },
+          { title: "The Chain", artist: "Fleetwood Mac", url: "https://www.youtube.com/watch?v=JDG2m5hN1vo" }
+        ],
+        advanced: "Flow: transient hypofrontality — temporary deactivation of the self-reflective prefrontal cortex. Aligns with Taoist wu wei (effortless action). Flow is not a reward for focus. Flow is what focus becomes when the self gets out of the way." },
+
+      { id: "cognitive-load", num: 4, icon: "🎒", title: "Cognitive Load", subtitle: "Your Brain Can Only Handle a Few New Ideas at Once — Take Things One Book at a Time",
+        simple: "Think of your brain like a backpack. You can carry some books easily, but if you try to put one hundred books in there, the straps might break or you will walk very slowly. Cognitive load is just a fancy way of saying your brain can only handle a few new ideas at once. If you try to learn too much too fast, or if there is too much noise, your backpack gets too heavy. To learn well, we have to take things one book at a time.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Static noise compared to a clear voice: the ears demonstrating signal-to-noise ratio." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "The overwhelming mix of a perfume shop: the nose experiencing overload firsthand." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A dish with too many spices where you cannot taste anything: the tongue proving that more is not always more." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "An itchy sweater while trying to do math: the body competing with the brain for limited bandwidth." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A messy room versus a clean desk: the eyes proving that environment is cognitive load." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Trying to pat your head and rub your tummy at the same time: the body demonstrating bandwidth limits." }
+        ],
+        intuition: "Your brain can only handle a few new ideas at once — take things one book at a time. Your working memory holds about four items. Not forty. Not four hundred. Four. Everything you have ever learned passed through a doorway that is four items wide. And every notification, every worry, every background noise is an item. If three of your four slots are occupied by anxiety about tomorrow, you have one slot left for the math problem in front of you. This is not a discipline issue. This is an architecture issue. Your brain is not weak. Your brain is narrow. By design. The solution is not to make the doorway wider. The solution is to stop trying to shove everything through at once. Clear the clutter. Close the tabs. Reduce the noise. Not because you are fragile. Because you are precise. And precision requires a clean channel.",
+        links: [
+          { label: "Cognitive Load Theory", url: "https://en.wikipedia.org/wiki/Cognitive_load" },
+          { label: "Working Memory", url: "https://en.wikipedia.org/wiki/Working_memory" },
+          { label: "Signal-to-Noise Ratio", url: "https://en.wikipedia.org/wiki/Signal-to-noise_ratio" }
+        ],
+        songs: [
+          { title: "Under Pressure", artist: "Queen & David Bowie", url: "https://www.youtube.com/watch?v=a01QQZyl-_I" },
+          { title: "Help!", artist: "The Beatles", url: "https://www.youtube.com/watch?v=2Q_ZzBGPdqE" },
+          { title: "Overwhelmed", artist: "Royal & the Serpent", url: "https://www.youtube.com/watch?v=bOjYk3sGMDE" }
+        ],
+        advanced: "Working memory holds ~4 items. Cognitive Load Theory: reduce extraneous load to free germane load for learning. Your brain is not weak. Your brain is narrow. By design. Precision requires a clean channel." },
+
+      { id: "mindfulness", num: 5, icon: "🧘", title: "Mindfulness", subtitle: "Being a Friendly Detective of Your Own Mind",
+        simple: "Mindfulness is being a friendly detective of your own mind. Instead of letting your thoughts run away like a wild puppy, you sit still and watch them. You notice the air going in and out of your nose and the way your chair feels. It helps you stay in the now instead of worrying about yesterday or tomorrow. When you are mindful, you realize that thoughts are just like clouds passing by in the sky.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The fading ring of a bell: the sound of attention being called home." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Smelling a piece of fruit before you eat it: the nose practicing presence before consumption." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Letting a piece of ice melt on your tongue: the taste of patience made physical." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling the wind on your skin: the body reading the present tense without translation." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at a tree and seeing all the different greens: the eyes gaining resolution through stillness." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Feeling your lungs expand and contract: the body's oldest rhythm becoming the anchor for the mind's newest practice." }
+        ],
+        intuition: "Being a friendly detective of your own mind. You have about sixty thousand thoughts per day. You are aware of almost none of them. They run in the background like programs you forgot you installed. And they are running your life. Mindfulness is the moment you stop and look at the code. Not to judge it. Not to fix it. Just to see it. And the seeing changes everything. Because a thought you are unaware of controls you. A thought you are aware of becomes a choice. Anxiety is just a thought you believed without checking. Anger is just a thought you obeyed without questioning. Mindfulness does not eliminate thoughts. Mindfulness puts space between the thought and the response. And in that space — that tiny sacred space — lives your freedom. The clouds are not the sky. The thoughts are not you. And the moment you see that, you become the sky.",
+        links: [
+          { label: "Mindfulness", url: "https://en.wikipedia.org/wiki/Mindfulness" },
+          { label: "Prosoche", url: "https://en.wikipedia.org/wiki/Prosoche" },
+          { label: "Meditation", url: "https://en.wikipedia.org/wiki/Meditation" }
+        ],
+        songs: [
+          { title: "Weightless", artist: "Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejslrU" },
+          { title: "Let It Be", artist: "The Beatles", url: "https://www.youtube.com/watch?v=QDYfEBY9NM4" },
+          { title: "Three Little Birds", artist: "Bob Marley", url: "https://www.youtube.com/watch?v=zaGUr6wzyT8" }
+        ],
+        advanced: "Mindfulness: present-moment awareness cultivated through meditation. Aligns with Stoic prosoche (continuous self-watchfulness). The clouds are not the sky. The thoughts are not you. The moment you see that, you become the sky." },
+
+      { id: "executive-function", num: 6, icon: "👨‍✈️", title: "Executive Function", subtitle: "The Air Traffic Controller in Your Brain",
+        simple: "Executive function is the air traffic controller in your brain. It helps you plan your homework, remember instructions, and keep you from saying something mean when you are angry. It is the part of you that decides to finish your chores before playing video games. Without this controller, your brain would be like an airport where all the planes try to land at the same time! You can practice making your controller stronger by playing games like Simon Says.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Following a complex beat in a song: the ears demonstrating cognitive flexibility in real time." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "A clean lemon scent that helps you focus: the nose receiving a signal the prefrontal cortex recognizes." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Waiting for a hot cookie to cool down before biting: the tongue practicing inhibitory control." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Keeping your hands still even when you have an itch: the body overriding impulse with intention." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Finding a specific item in a Hidden Pictures book: the eyes executing a search protocol the prefrontal cortex assigned." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Moving slowly through an obstacle course: the body proving that control is harder and more valuable than speed." }
+        ],
+        intuition: "The air traffic controller in your brain. You have impulses. Thousands of them per day. Eat the cake. Say the thing. Hit send. Skip the homework. Scroll for another hour. Executive function is the part of you that stands between the impulse and the action. It does not eliminate the impulse. It creates a pause. And in that pause you can ask: is this what I actually want? Or is this what my biology is requesting? The person with strong executive function is not someone without impulses. They are someone with a longer pause. The marshmallow experiment proved it. The children who waited did not want the marshmallow less. They had a stronger pause button. And that pause button predicted their success for the next forty years. The impulse is the animal. The pause is the human. And the human is trainable.",
+        links: [
+          { label: "Executive Functions", url: "https://en.wikipedia.org/wiki/Executive_functions" },
+          { label: "Inhibitory Control", url: "https://en.wikipedia.org/wiki/Inhibitory_control" },
+          { label: "Stanford Marshmallow Experiment", url: "https://en.wikipedia.org/wiki/Stanford_marshmallow_experiment" }
+        ],
+        songs: [
+          { title: "Harder Better Faster Stronger", artist: "Daft Punk", url: "https://www.youtube.com/watch?v=gAjR4_CbPpQ" },
+          { title: "Eye of the Tiger", artist: "Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+          { title: "Work", artist: "Rihanna", url: "https://www.youtube.com/watch?v=HL1UzIK-flA" }
+        ],
+        advanced: "Executive functions: working memory, cognitive flexibility, and inhibitory control — the biological substrate of agency. The impulse is the animal. The pause is the human. And the human is trainable." },
+
+      { id: "dopamine-feedback", num: 7, icon: "🎰", title: "Dopamine Feedback Loops", subtitle: "Learning How This Works Helps You Take Back Control of Your Own Happiness",
+        simple: "Dopamine is a chemical in your brain that feels like a Good Job sticker. Your brain gives it to you when you find something new or exciting, like a like on a photo or a new level in a game. But sometimes apps and games try to trick your brain into wanting more and more stickers so you never put your phone down. This makes your focus jump around like a grasshopper. Learning how this works helps you take back control of your own happiness.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "The ding of a notification: the sound of a chemical being released in your brain." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Popcorn at a movie theater: the nose triggering anticipation before the reward arrives." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The first bite of sugary candy: the tongue experiencing peak dopamine before the comedown." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The vibration of a phone in your pocket: the body responding to a signal designed by a billion-dollar company." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Bright flashing colors of a video game: the eyes feeding a reward pathway that did not evolve for screens." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "The twitchy feeling in your thumbs when you want to scroll: the body craving a chemical hit it does not need." }
+        ],
+        intuition: "Learning how this works helps you take back control of your own happiness. Dopamine does not reward pleasure. Dopamine rewards anticipation. The scroll is not fun. The scroll is the anticipation that the next post might be fun. And the anticipation is the hit. This is why you can scroll for an hour and feel worse afterward. You were not receiving pleasure. You were receiving promises of pleasure. A thousand tiny maybe-this-next-ones. And the machine knows this. The infinite scroll was not designed to make you happy. It was designed to make you unable to stop. You are not weak for being hooked. You are human. The loop was engineered by the smartest people alive to exploit the oldest circuit in your brain. Knowing the mechanism does not make you immune. But it makes you aware. And awareness is the first step toward choosing your own reward schedule instead of accepting the one someone else installed.",
+        links: [
+          { label: "Dopamine", url: "https://en.wikipedia.org/wiki/Dopamine" },
+          { label: "Reward System", url: "https://en.wikipedia.org/wiki/Reward_system" },
+          { label: "Attention Economy", url: "https://en.wikipedia.org/wiki/Attention_economy" }
+        ],
+        songs: [
+          { title: "Can't Feel My Face", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=KEI4qSrkPAs" },
+          { title: "Bad Habits", artist: "Ed Sheeran", url: "https://www.youtube.com/watch?v=orJSJGHjBLI" },
+          { title: "Satisfied", artist: "Hamilton Cast", url: "https://www.youtube.com/watch?v=InupuylMRiE" }
+        ],
+        advanced: "Mesolimbic dopamine pathway: anticipation triggers dopamine release, reinforcing the behavior that led to anticipation — not to reward. Awareness is the first step toward choosing your own reward schedule instead of accepting the one someone else installed." },
+
+      { id: "deep-work", num: 8, icon: "🏔️", title: "Deep Work", subtitle: "You Cannot Find Treasure If You Stay at the Top Splashing Around in the Waves",
+        simple: "Deep work is like diving to the bottom of the ocean to find a treasure. You cannot find treasure if you stay at the top splashing around in the waves. To do your best thinking, you have to go deep and stay there for a while without coming up for air or snacks! It is hard to start, but once you are down there, you can see things that nobody else sees. This is how the smartest people in the world solve the biggest problems.",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Complete silence or brown noise: the sound of a environment stripped down to zero distraction." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Fresh coffee or tea: the scent that signals the beginning of a deep dive." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "A single slow sip of juice: the taste of patience applied to the body." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "The feeling of a heavy blanket: the weight of focus made physical." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "A desk with nothing on it but your work: the visual of a mind with one tab open." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Your feet firmly planted on the floor: the body grounding itself for the descent." }
+        ],
+        intuition: "You cannot find treasure if you stay at the top splashing around in the waves. Shallow work is answering emails. Deep work is writing the thing that the emails are about. Shallow work is urgent. Deep work is important. And the urgent always wins unless you protect the important. Cal Newport's rule: the ability to perform deep work is becoming increasingly rare at exactly the same time it is becoming increasingly valuable. The person who can sit with a hard problem for four uninterrupted hours will outperform the person who works for twelve hours in thirty-minute fragments. Not by a little. By a lot. Depth beats duration. Every time. The problem is not that you cannot focus. The problem is that your environment was designed to prevent focus. Reclaiming depth in an age of distraction is not a productivity hack. It is an act of rebellion.",
+        links: [
+          { label: "Deep Work", url: "https://en.wikipedia.org/wiki/Cal_Newport" },
+          { label: "Eudaimonia", url: "https://en.wikipedia.org/wiki/Eudaimonia" },
+          { label: "Deliberate Practice", url: "https://en.wikipedia.org/wiki/Practice_(learning_method)#Deliberate_practice" }
+        ],
+        songs: [
+          { title: "Day One (Interstellar)", artist: "Hans Zimmer", url: "https://www.youtube.com/watch?v=IDsCtDRV2uA" },
+          { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY" },
+          { title: "Writing's on the Wall", artist: "Sam Smith", url: "https://www.youtube.com/watch?v=8jzDnsjYv9A" }
+        ],
+        advanced: "Deep work: distraction-free concentration pushing cognitive capabilities to their limit. Connects to Aristotelian eudaimonia through the exercise of highest human capacity. Reclaiming depth in an age of distraction is not a productivity hack. It is an act of rebellion." },
+
+      { id: "attentional-blink", num: 9, icon: "📸", title: "Attentional Blink", subtitle: "Your Brain Goes Blind for a Tiny Second After Seeing Something Important",
+        simple: "Did you know that when your brain sees something really cool, it goes blind for a tiny second? It is like a camera shutter closing. If two things happen very fast, your brain is so busy looking at the first thing that it misses the second one. This shows that our brains are not perfect machines; they need a tiny bit of time to reset after seeing something important. It is why we should not try to look at too many things at once!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Missing the second beep in a fast alarm: the ears demonstrating temporal limitation." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Noticing a strong smell then not smelling it anymore: the nose demonstrating adaptation as a form of blink." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "The second bite of food never tasting as strong as the first: the tongue proving that impact requires a reset." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Feeling a tap on your shoulder but missing the fly on your hand: the skin proving bandwidth is limited." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Watching a fast movie and missing a hidden detail: the eyes blinking while the brain processes the last frame." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Stumbling because you were looking at something beautiful: the body paying the price for the brain's fascination." }
+        ],
+        intuition: "Your brain goes blind for a tiny second after seeing something important. Between two hundred and five hundred milliseconds after you register something important, your brain goes offline. Not asleep. Offline. Processing. And during that window, the entire world could change and you would not see it. This is the attentional blink. And it proves something humbling. You do not experience continuous reality. You experience snapshots. Your brain takes a photo, processes it, takes another photo, processes it. And it stitches the photos together into a movie so smooth you never notice the cuts. You are watching a slideshow and calling it a film. Your life is not a stream. It is a series of blinks separated by moments of blindness. And most of what happens, happens in the blinks you miss.",
+        links: [
+          { label: "Attentional Blink", url: "https://en.wikipedia.org/wiki/Attentional_blink" },
+          { label: "Change Blindness", url: "https://en.wikipedia.org/wiki/Change_blindness" },
+          { label: "Temporal Attention", url: "https://en.wikipedia.org/wiki/Attention#Temporal_attention" }
+        ],
+        songs: [
+          { title: "Blinding Lights", artist: "The Weeknd", url: "https://www.youtube.com/watch?v=4NRXx6U8ABQ" },
+          { title: "In the Air Tonight", artist: "Phil Collins", url: "https://www.youtube.com/watch?v=YkADj0TPrJA" },
+          { title: "Wait", artist: "M83", url: "https://www.youtube.com/watch?v=lAwYodrBr2Q" }
+        ],
+        advanced: "Attentional blink: the second of two targets is missed when appearing 200-500ms after the first, revealing temporal limits of conscious perception. Your life is not a stream. It is a series of blinks separated by moments of blindness." },
+
+      { id: "context-switching", num: 10, icon: "🔀", title: "Context Switching", subtitle: "Every Time You Switch Your Brain Has to Load New Rules — and That Wastes Energy",
+        simple: "Imagine you are playing soccer, and then every thirty seconds someone makes you stop to do a math problem, and then go back to soccer. You would not be very good at either! Every time you switch what you are doing, your brain has to load new rules. This wastes energy and makes you tired. To be a brain pro, try to do all of your drawing at once, then all of your reading at once. Your brain will thank you for not making it jump back and forth!",
+        senses: [
+          { key: "hear", icon: "👂", sense: "SOUND", text: "Someone changing radio stations constantly: the ears suffering from a brain that cannot commit." },
+          { key: "smell", icon: "👃", sense: "SMELL", text: "Walking from a bakery into a garage: the nose whiplashing between two incompatible worlds." },
+          { key: "taste", icon: "👅", sense: "TASTE", text: "Orange juice right after brushing your teeth: the taste of two contexts colliding violently." },
+          { key: "touch", icon: "✋", sense: "TOUCH", text: "Moving from a hot bath to a cold floor: the skin paying the switching cost in full." },
+          { key: "see", icon: "👁️", sense: "SIGHT", text: "Looking at your phone while watching a movie: the eyes proving that two screens means zero screens." },
+          { key: "body", icon: "🫀", sense: "BODY", text: "Trying to walk normally while dizzy: the body demonstrating what it feels like when the system cannot stabilize on one context." }
+        ],
+        intuition: "Every time you switch your brain has to load new rules — and that wastes energy. Every context switch costs you twenty-three minutes. Not twenty-three seconds. Twenty-three minutes. That is the average time it takes for your brain to fully re-engage after an interruption. Check your phone once and you did not lose five seconds. You lost twenty-three minutes of depth. Do it six times in an hour and you never went deep at all. You spent the entire hour in the loading screen. The myth of multitasking is the most expensive lie in modern productivity. You cannot do two things at once. You can only switch between two things so fast that it feels like once. But it is not once. It is twice. Badly. The person who does one thing for four hours will always produce more than the person who does four things for one hour each. Not because they are smarter. Because they never left the room.",
+        links: [
+          { label: "Task Switching", url: "https://en.wikipedia.org/wiki/Task_switching_(psychology)" },
+          { label: "Attention Residue", url: "https://en.wikipedia.org/wiki/Attention_residue" },
+          { label: "Multitasking", url: "https://en.wikipedia.org/wiki/Human_multitasking" }
+        ],
+        songs: [
+          { title: "Bohemian Rhapsody", artist: "Queen", url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ" },
+          { title: "Paranoid Android", artist: "Radiohead", url: "https://www.youtube.com/watch?v=fHiGbolFFGw" },
+          { title: "Happiness Is a Warm Gun", artist: "The Beatles", url: "https://www.youtube.com/watch?v=vdvnOH060Qg" }
+        ],
+        advanced: "Context switching: ~23 minutes to re-engage after interruption due to attention residue. Multitasking is rapid switching performed poorly. The person who does one thing for four hours will always outperform four things for one hour. Because they never left the room." },
+    ],
+
+
 
 
 
