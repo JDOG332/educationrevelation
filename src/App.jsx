@@ -6,6 +6,7 @@ import { GOLDEN_FILTER } from "./goldenFilter.js";
 import { TEN_DOORS, classifyContent } from "./tenDoors.js";
 import SubcategoryGrid, { SubcategoryView } from "./SubcategoryGrid.jsx";
 import { SUBCATEGORIES, DOOR_META } from "./subcategories.js";
+import MirrorGate from "./MirrorGate.jsx";
 import "./global.css";
 import {
   PHI, PHI_INV, PHI2, PHI3,
@@ -29,7 +30,7 @@ import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
 
 export default function TheoryOfEverything() {
   const [currentPage, setCurrentPage] = useState("theory"); // "theory" | "multiverse" | "math"
-  const [depth, setDepth] = useState(0);
+  const [depth, setDepth] = useState(-1);
   // ═══ UI FOCUS STATE — single source of truth ═══
   const uiInitial = {
     activeLayer: null,
@@ -502,8 +503,19 @@ export default function TheoryOfEverything() {
         </>
       )}
 
+      {/* ===== MIRROR GATE — Layer -1, the first view ===== */}
+      {currentPage === "theory" && depth === -1 && (
+        <MirrorGate
+          onEnter={() => setDepth(0)}
+          onNavigateToDepth={(d) => {
+            setDepth(d);
+            window.scrollTo({ top: 0, behavior: "instant" });
+          }}
+        />
+      )}
+
       {/* ===== THEORY PAGE (original content) ===== */}
-      {currentPage === "theory" && (<>
+      {currentPage === "theory" && depth >= 0 && (<>
 
       {/* ===== GLOBAL EDGE NAVIGATION ===== */}
       {/* Narrow edge strips (48px) + visible chevron arrows. */}
