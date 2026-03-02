@@ -288,15 +288,17 @@ function computeTruthG(activations, tokens, layerR12s) {
  * 
  * Input: raw text from the human.
  * Output: {
- *   psi:          0–1    The truth score. Ψ = R₁₂ × G.
- *   psiPercent:   0–100  Human-readable percentage.
+ *   psi:          0–1    Raw Ψ value. The math.
+ *   groundTruth:  1–10   THE GROUND TRUTH SCORE. The number people fight over.
+ *   tier:         1–10   Integer depth tier.
+ *   depthName:    string DUST → TOPSOIL → CLAY → ROOTS → STONE → BEDROCK → CORE → MAGMA → CRYSTAL → SEED
+ *   depthLabel:   string Human-readable description of their depth.
  *   R12:          0–1    Recognition Core (how well they see what the theory sees).
  *   G:            0–1    Reliability Modulator (how coherent their knowledge is).
  *   C_eff:        0–1    Effective Convergence (do their layers relate?).
  *   D_hat:        0–1    Detection Quality (signal vs noise ratio).
  *   layerHits:    []     Which layers they activated, with R₁₂ per layer.
  *   userBloch:    [3]    Their Bloch vector (epistemic state).
- *   depthLabel:   string Human-readable depth description.
  * }
  */
 export function testTruth(userText) {
@@ -304,10 +306,10 @@ export function testTruth(userText) {
 
   if (tokens.length === 0) {
     return {
-      psi: 0, psiPercent: 0,
+      psi: 0, groundTruth: 1.0, tier: 1,
+      depthName: "DUST", depthLabel: "Silence.",
       R12: 0, G: 0, C_eff: 0, D_hat: 0,
       layerHits: [], userBloch: [0, 0, 0], tokens: [],
-      depthLabel: "silence",
     };
   }
 
@@ -335,26 +337,39 @@ export function testTruth(userText) {
   // Step 6: Ψ = R₁₂ × G
   const psi = R12_agg * G;
 
-  // Scale to 0–100 with PHI-based curve
-  // Raw psi is typically 0–0.5, scale nonlinearly for display
-  const psiPercent = Math.min(100, Math.round(
-    Math.pow(Math.min(1, psi / 0.35), PHI_INV) * 100
+  // ── GROUND TRUTH: 10-POINT DEPTH CHART ──
+  // Scale raw Ψ (typically 0–0.5) to 1.0–10.0
+  const rawScore = Math.pow(Math.min(1, psi / 0.35), PHI_INV);
+  const groundTruth = Math.max(1.0, Math.min(10.0,
+    1.0 + rawScore * 9.0
   ));
+  // Round to 1 decimal
+  const groundTruthDisplay = Math.round(groundTruth * 10) / 10;
+  // Integer tier for depth chart
+  const tier = Math.min(10, Math.max(1, Math.ceil(groundTruth)));
 
-  // Depth label
-  const depthLabel =
-    psiPercent < 5 ? "The surface hasn't been broken."
-    : psiPercent < 15 ? "You've touched the topsoil."
-    : psiPercent < 30 ? "Roots are showing."
-    : psiPercent < 45 ? "You're below the surface. Something is taking shape."
-    : psiPercent < 60 ? "The layers are connecting. The signal is getting cleaner."
-    : psiPercent < 75 ? "Deep. The mirror is starting to reflect."
-    : psiPercent < 90 ? "Convergence. The threads are weaving together."
-    : "Bedrock. The fidelity between your truth and this theory is resonating.";
+  // THE DEPTH CHART — 10 layers of earth
+  const DEPTH_CHART = [
+    { level: 1,  name: "DUST",    label: "You haven't broken the surface." },
+    { level: 2,  name: "TOPSOIL", label: "Scratching. Keep digging." },
+    { level: 3,  name: "CLAY",    label: "Resistance. You're pushing through something real." },
+    { level: 4,  name: "ROOTS",   label: "You've hit something alive down here." },
+    { level: 5,  name: "STONE",   label: "Foundation. You can't fake this depth." },
+    { level: 6,  name: "BEDROCK", label: "Solid ground. This is where most people stop." },
+    { level: 7,  name: "CORE",    label: "The layers are connecting across the theory." },
+    { level: 8,  name: "MAGMA",   label: "Molten. Everything is moving and fusing together." },
+    { level: 9,  name: "CRYSTAL", label: "Compressed clarity. Truth under pressure." },
+    { level: 10, name: "SEED",    label: "The deepest point IS the beginning. Full circle." },
+  ];
+
+  const depthTier = DEPTH_CHART[tier - 1];
 
   return {
     psi,
-    psiPercent,
+    groundTruth: groundTruthDisplay,
+    tier,
+    depthName: depthTier.name,
+    depthLabel: depthTier.label,
     R12: R12_agg,
     G,
     C_eff,
@@ -362,7 +377,6 @@ export function testTruth(userText) {
     layerHits: layerR12s,
     userBloch,
     tokens,
-    depthLabel,
   };
 }
 
