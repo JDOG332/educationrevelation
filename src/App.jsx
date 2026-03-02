@@ -157,10 +157,10 @@ export default function TheoryOfEverything() {
     w1.style.opacity = "0";
     w2.style.opacity = "0";
 
-    const SILENCE = 1.618;
-    const PHASE1  = 4.236;
-    const PHASE2  = 4.236;   // mirror — same duration as phase 1
-    const TOTAL   = SILENCE + PHASE1 + PHASE2; // 10.09s
+    const SILENCE = 1.0;
+    const PHASE1  = 2.618;   // PHI²
+    const PHASE2  = 2.618;   // mirror — same duration as phase 1
+    const TOTAL   = SILENCE + PHASE1 + PHASE2; // ~6.24s
 
     function tick(now) {
       if (!veilStartRef.current) veilStartRef.current = now;

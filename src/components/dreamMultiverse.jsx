@@ -305,11 +305,11 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
       if (depthRef.current === 1) {
         simulate("dance", 0);
 
-        const z1Start = 1.0, z1End = 8.0;
+        const z1Start = 0.618, z1End = 5.236;  // PHI_INV → PHI² + PHI_INV + 2
         const z1t = Math.max(0, Math.min(1, (zoomElapsed - z1Start) / (z1End - z1Start)));
         const z1eased = z1t * z1t * (3 - 2 * z1t);
 
-        const z2Start = 8.0, z2End = 13.0;
+        const z2Start = 5.236, z2End = 8.472;  // z1End → z1End + PHI²
         const z2t = Math.max(0, Math.min(1, (zoomElapsed - z2Start) / (z2End - z2Start)));
         const z2eased = z2t * z2t * (3 - 2 * z2t);
 
@@ -341,7 +341,7 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
 
 
         // Auto-transition to depth 2
-        if (zoomElapsed > 14 && !transitioned) {
+        if (zoomElapsed > 9.09 && !transitioned) {  // z2End + PHI_INV
           transitioned = true;
           goDeeperRef.current(true);
         }
@@ -349,8 +349,8 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
 
       // === DEPTH 2: White hole expands back to multiverse, then poem appears ===
       if (depthRef.current === 2) {
-        // Reverse the collapse: zoom from 0.04x back to 1x over 7 seconds
-        const EXPAND_DUR = 7;
+        // Reverse the collapse: zoom from 0.04x back to 1x over PHI² + 1.618 seconds
+        const EXPAND_DUR = 4.236;
         const expandT = Math.min(1, veilElapsed / EXPAND_DUR);
         const expandEased = expandT * expandT * (3 - 2 * expandT);
 
