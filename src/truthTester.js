@@ -1,124 +1,199 @@
 /**
- * TRUTH TESTER — The Real Engine
+ * TRUTH TESTER — Ground Truth & Dare Engine
  * 
  * Converts human language into Bloch vectors.
+ * Matches against the ENTIRE SITE CORPUS — every essay, every door, every layer.
  * Runs the ACTUAL Ψ = R₁₂ × G equation.
- * Returns a genuine Truth & Depth of Knowledge score.
+ * Returns a Ground Truth score on the 10-point Depth Chart.
  * 
- * THEORY MAP:
- *   User text    → tokenize → match to layers → Bloch vector (their epistemic state)
- *   Site content  → 9 layers → Bloch vectors (the theory's epistemic state)
- *   R₁₂          → Uhlmann Fidelity × Informativeness Gate (how aligned are they?)
- *   G             → Effective Convergence × Detection Quality (is the alignment coherent?)
- *   Ψ = R₁₂ × G  → TRUTH SCORE
+ * This is NOT keyword matching against 40 nodes.
+ * This is TF-IDF weighted matching against 1,700+ terms
+ * extracted from the full site content across 15 doors.
  * 
- * This is NOT keyword matching. This is quantum state comparison.
- * The same equation that runs the multiverse now scores the human.
+ * FLOW:
+ *   User text → tokenize → match against DOOR_VOCAB (TF-IDF weighted)
+ *   → door activations → layer activations (via DOOR_LAYERS mapping)
+ *   → Bloch vector → computeR12() → computeG() → Ψ = R₁₂ × G
+ *   → Ground Truth score (1.0–10.0) → Depth Chart tier
  */
 
 import { PHI, PHI_INV } from "./data.js";
 import { computeR12, initializeBlochVectors } from "./psi-engine.js";
-import { tokenize, MIRROR_NODES } from "./mirrorIndex.js";
+import { DOOR_VOCAB, GLOBAL_VOCAB, DOOR_LAYERS, DOOR_SIZES } from "./siteCorpus.js";
 
 // ═══════════════════════════════════════════════════════════
-// SITE TRUTH VECTORS — the theory's epistemic state
+// LAYER BLOCH VECTORS — the theory's epistemic state
 // ═══════════════════════════════════════════════════════════
 
-// These are the REAL Bloch vectors from the psi-engine.
-// Each layer of the theory occupies a specific direction in Hilbert space.
-const LAYER_BLOCHS = initializeBlochVectors(); // 9 vectors, one per layer
-
-// Layer-to-index mapping (layers are 1-indexed in data, 0-indexed in arrays)
-const layerToIndex = (depth) => Math.max(0, Math.min(8, depth - 1));
+const LAYER_BLOCHS = initializeBlochVectors(); // 9 vectors from psi-engine
 
 // ═══════════════════════════════════════════════════════════
-// KEYWORD → LAYER ACTIVATION
+// TOKENIZER
+// ═══════════════════════════════════════════════════════════
+
+const STOP_WORDS = new Set(
+  "the a an and or but in on at to for of is it its that this with from by as be are was were been have has had do does did will would could should may might can shall not no nor yet so if then than when where how what which who whom whose all any each every some most more many much few little own other another such both either neither here there again also too very just still already even now only ever never always sometimes often usually really quite rather almost well back our don doesn didn they them their you your".split(" ")
+);
+
+export function tokenize(text) {
+  const words = text.toLowerCase().match(/[a-z]{3,}/g) || [];
+  return words.filter(w => !STOP_WORDS.has(w) && w.length >= 3);
+}
+
+// ═══════════════════════════════════════════════════════════
+// DOOR ACTIVATION — match user tokens against entire site corpus
 // ═══════════════════════════════════════════════════════════
 
 /**
- * Score how strongly user tokens activate each layer.
- * Returns array of 9 activation strengths (0–1).
+ * Score how strongly user tokens activate each door.
+ * Uses TF-IDF weights from the real site content.
+ * Returns object: { doorName: activationScore }
  */
-function computeLayerActivations(tokens) {
-  const activations = new Float64Array(9); // one per layer
+function computeDoorActivations(tokens) {
+  const activations = {};
+  const doors = Object.keys(DOOR_VOCAB);
 
   if (tokens.length === 0) return activations;
 
-  // Score each node, accumulate activation per layer
-  for (const node of MIRROR_NODES) {
-    let matchStrength = 0;
+  for (const door of doors) {
+    const vocab = DOOR_VOCAB[door];
+    let totalWeight = 0;
     let matchCount = 0;
 
     for (const token of tokens) {
-      let best = 0;
-      for (const keyword of node.keywords) {
-        if (token === keyword) { best = 1; break; }
-        if (token.length >= 3 && keyword.length >= 3) {
-          if (keyword.includes(token) || token.includes(keyword)) {
-            best = Math.max(best, 0.7);
+      // Exact match
+      if (vocab[token] !== undefined) {
+        totalWeight += vocab[token];
+        matchCount++;
+        continue;
+      }
+
+      // Partial/stem matching (check if user token is substring or vice versa)
+      let bestPartial = 0;
+      for (const term of Object.keys(vocab)) {
+        if (token.length >= 4 && term.length >= 4) {
+          // Stem match (first 4+ chars)
+          if (token.slice(0, 4) === term.slice(0, 4)) {
+            bestPartial = Math.max(bestPartial, vocab[term] * 0.6);
+          }
+          // Substring match
+          else if (term.includes(token) || token.includes(term)) {
+            bestPartial = Math.max(bestPartial, vocab[term] * 0.4);
           }
         }
-        if (token.length >= 4 && keyword.length >= 4 && token.slice(0, 4) === keyword.slice(0, 4)) {
-          best = Math.max(best, 0.5);
-        }
       }
-      matchStrength += best;
-      if (best > 0) matchCount++;
+      if (bestPartial > 0) {
+        totalWeight += bestPartial;
+        matchCount++;
+      }
     }
 
     if (matchCount === 0) continue;
 
-    // Normalize by input length
-    const signal = (matchStrength / tokens.length) * (matchCount / Math.max(node.keywords.length, 1));
+    // Normalize: weight per token, scaled by match coverage
+    const coverage = matchCount / tokens.length;
+    const avgWeight = totalWeight / matchCount;
+    const doorSize = DOOR_SIZES[door] || 1;
 
-    // Weight by node importance
-    const weighted = signal * node.weight;
-
-    // Accumulate to the node's layer
-    const idx = layerToIndex(node.depth);
-    activations[idx] = Math.max(activations[idx], weighted);
+    // Activation = average weight × coverage × log(door richness)
+    // Richer doors (more content) get slight bonus for having more to match against
+    activations[door] = avgWeight * coverage * Math.log2(1 + doorSize / 10);
   }
 
   return activations;
 }
 
 // ═══════════════════════════════════════════════════════════
-// ACTIVATION → BLOCH VECTOR
+// GLOBAL MATCHING — catch terms not in any specific door
 // ═══════════════════════════════════════════════════════════
 
 /**
- * Convert layer activations into a composite Bloch vector.
- * 
- * The user's Bloch vector is a weighted sum of the activated layers'
- * Bloch vectors. The purity (|r⃗|) reflects how focused their knowledge is.
- * 
- * If they activate one layer strongly → their vector points firmly in that direction.
- * If they activate many layers weakly → their vector is diffuse (high entropy).
- * If they activate many layers strongly → their vector is composite but pure.
+ * How much of the user's input matches the site's overall vocabulary?
+ * Returns 0–1 signal strength.
  */
-function activationsToBloch(activations) {
+function computeGlobalSignal(tokens) {
+  if (tokens.length === 0) return 0;
+
+  let hits = 0;
+  let weightedHits = 0;
+
+  for (const token of tokens) {
+    if (GLOBAL_VOCAB[token] !== undefined) {
+      hits++;
+      weightedHits += Math.log2(1 + GLOBAL_VOCAB[token]);
+    } else {
+      // Partial match against global vocab
+      for (const term of Object.keys(GLOBAL_VOCAB)) {
+        if (token.length >= 4 && term.length >= 4) {
+          if (token.slice(0, 4) === term.slice(0, 4) || term.includes(token) || token.includes(term)) {
+            hits += 0.5;
+            weightedHits += Math.log2(1 + GLOBAL_VOCAB[term]) * 0.4;
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  return {
+    hitRate: hits / tokens.length,
+    avgWeight: hits > 0 ? weightedHits / hits : 0,
+  };
+}
+
+// ═══════════════════════════════════════════════════════════
+// DOOR → LAYER ACTIVATION
+// ═══════════════════════════════════════════════════════════
+
+/**
+ * Convert door activations to layer activations (0-indexed, 9 layers).
+ * Each door maps to 1-3 layers via DOOR_LAYERS.
+ */
+function doorsToLayers(doorActivations) {
+  const layerActivations = new Float64Array(9);
+
+  for (const [door, activation] of Object.entries(doorActivations)) {
+    const layers = DOOR_LAYERS[door];
+    if (!layers) continue;
+
+    for (const layerNum of layers) {
+      const idx = layerNum - 1; // convert 1-indexed to 0-indexed
+      if (idx >= 0 && idx < 9) {
+        // Each door contributes to its mapped layers
+        // Spread activation across layers, weighted by position (first = strongest)
+        const spread = 1.0 / layers.length;
+        layerActivations[idx] = Math.max(
+          layerActivations[idx],
+          activation * (1 - (layers.indexOf(layerNum) * 0.15))
+        );
+      }
+    }
+  }
+
+  return layerActivations;
+}
+
+// ═══════════════════════════════════════════════════════════
+// ACTIVATION → BLOCH VECTOR
+// ═══════════════════════════════════════════════════════════
+
+function activationsToBloch(layerActivations) {
   let rx = 0, ry = 0, rz = 0;
   let totalWeight = 0;
 
   for (let i = 0; i < 9; i++) {
-    if (activations[i] < 0.01) continue;
+    if (layerActivations[i] < 0.01) continue;
 
-    const w = activations[i];
-    const layerBloch = LAYER_BLOCHS[i];
-
-    rx += layerBloch[0] * w;
-    ry += layerBloch[1] * w;
-    rz += layerBloch[2] * w;
+    const w = layerActivations[i];
+    const lb = LAYER_BLOCHS[i];
+    rx += lb[0] * w;
+    ry += lb[1] * w;
+    rz += lb[2] * w;
     totalWeight += w;
   }
 
-  if (totalWeight < 0.01) {
-    // No meaningful activation → maximally mixed state (no knowledge)
-    return [0, 0, 0];
-  }
+  if (totalWeight < 0.01) return [0, 0, 0];
 
-  // Normalize to create unit direction, then scale by "purity"
-  // Purity = how concentrated their knowledge is
   rx /= totalWeight;
   ry /= totalWeight;
   rz /= totalWeight;
@@ -126,18 +201,15 @@ function activationsToBloch(activations) {
   const norm = Math.sqrt(rx * rx + ry * ry + rz * rz);
   if (norm < 1e-12) return [0, 0, 0];
 
-  // Purity based on: how many layers activated × how strongly
-  const activatedCount = activations.filter(a => a > 0.01).length;
+  // Purity based on activation pattern
+  const activatedCount = Array.from(layerActivations).filter(a => a > 0.01).length;
   const avgStrength = totalWeight / Math.max(activatedCount, 1);
 
-  // Single strong layer → high purity (focused beam)
-  // Many layers with moderate strength → moderate purity (broad light)
-  // Many layers with high strength → highest purity (coherent knowledge)
   const focusFactor = activatedCount === 1 ? 0.85
     : activatedCount <= 3 ? 0.7 + avgStrength * 0.2
     : 0.6 + avgStrength * 0.3;
 
-  const purity = Math.min(0.95, focusFactor * Math.min(1, avgStrength / PHI_INV));
+  const purity = Math.min(0.95, focusFactor * Math.min(1, avgStrength * 2));
 
   return [
     rx / norm * purity,
@@ -147,135 +219,57 @@ function activationsToBloch(activations) {
 }
 
 // ═══════════════════════════════════════════════════════════
-// R₁₂ — RECOGNITION CORE per layer
+// R₁₂ PER LAYER
 // ═══════════════════════════════════════════════════════════
 
-/**
- * Compute R₁₂ between user Bloch vector and each activated layer.
- * Returns array of { layerIndex, R12 } for layers with meaningful overlap.
- */
-function computeLayerR12s(userBloch, activations) {
+function computeLayerR12s(userBloch, layerActivations) {
   const results = [];
 
   for (let i = 0; i < 9; i++) {
-    if (activations[i] < 0.01) continue;
+    if (layerActivations[i] < 0.01) continue;
 
-    const layerBloch = LAYER_BLOCHS[i];
-    const R12 = computeR12(userBloch, layerBloch);
-
+    const R12 = computeR12(userBloch, LAYER_BLOCHS[i]);
     results.push({
       layerIndex: i,
       layerDepth: i + 1,
       R12,
-      activation: activations[i],
+      activation: layerActivations[i],
     });
   }
 
-  // Sort by R₁₂ descending
   results.sort((a, b) => b.R12 - a.R12);
   return results;
 }
 
 // ═══════════════════════════════════════════════════════════
-// G — RELIABILITY MODULATOR (adapted for text input)
+// G — RELIABILITY MODULATOR
 // ═══════════════════════════════════════════════════════════
 
-/**
- * Compute the Reliability Modulator for the user's truth.
- * 
- * G = C_eff × D̂
- * 
- * C_eff (Effective Convergence):
- *   How coherent is their knowledge? Do the layers they touched
- *   CONVERGE toward a unified truth, or scatter randomly?
- * 
- * D̂ (Detection Quality):
- *   What fraction of their input is "signal" vs "noise"?
- *   Real concepts they got right vs. filler words that matched nothing.
- */
-function computeTruthG(activations, tokens, layerR12s) {
-  const activatedLayers = activations.filter(a => a > 0.01).length;
-
-  if (activatedLayers === 0) return { G: 0, C_eff: 0, D_hat: 0 };
+function computeTruthG(doorActivations, tokens, layerR12s, globalSignal) {
+  const activeDoors = Object.keys(doorActivations).length;
+  if (activeDoors === 0) return { G: 0, C_eff: 0, D_hat: 0 };
 
   // ── C_eff: Convergence ──
-  // Do the activated layers relate to each other in the theory's structure?
-  // Mirror pairs + adjacent layers = convergent. Random scattered layers = divergent.
+  // Do the activated doors relate? The theory says all doors lead to the same room.
+  // More doors activated = higher convergence (they're finding the connections)
+  const doorValues = Object.values(doorActivations);
+  const avgDoorActivation = doorValues.reduce((s, v) => s + v, 0) / doorValues.length;
 
-  let convergenceScore = 0;
-  let pairCount = 0;
+  // Convergence bonus for hitting multiple doors (the whole point is they connect)
+  const breadthBonus = Math.min(1, activeDoors / 5); // maxes at 5+ doors
 
-  // Check structural relationships between activated layers
-  const activeIndices = [];
-  for (let i = 0; i < 9; i++) {
-    if (activations[i] > 0.01) activeIndices.push(i);
-  }
-
-  for (let a = 0; a < activeIndices.length; a++) {
-    for (let b = a + 1; b < activeIndices.length; b++) {
-      const i = activeIndices[a];
-      const j = activeIndices[b];
-      pairCount++;
-
-      // Mirror pairs: strongest convergence
-      const mirrorPairs = [[0, 8], [1, 7], [2, 6], [3, 5]];
-      const isMirror = mirrorPairs.some(([x, y]) => (x === i && y === j) || (x === j && y === i));
-      if (isMirror) {
-        convergenceScore += 1.0;
-        continue;
-      }
-
-      // Adjacent layers: good convergence
-      if (Math.abs(i - j) === 1) {
-        convergenceScore += 0.7;
-        continue;
-      }
-
-      // Moon (4) connects to everything
-      if (i === 4 || j === 4) {
-        convergenceScore += 0.5;
-        continue;
-      }
-
-      // Other relationships: moderate
-      convergenceScore += 0.3;
-    }
-  }
-
-  const C_base = pairCount > 0 ? convergenceScore / pairCount : 0.5;
-
-  // Scale by average R₁₂ quality — convergence is meaningless without recognition
+  // Scale by R₁₂ quality
   const avgR12 = layerR12s.length > 0
     ? layerR12s.reduce((sum, r) => sum + r.R12, 0) / layerR12s.length
     : 0;
 
-  const C_eff = C_base * (0.4 + 0.6 * avgR12);
+  const C_eff = (0.3 + 0.4 * breadthBonus + 0.3 * avgDoorActivation) * (0.4 + 0.6 * avgR12);
 
   // ── D̂: Detection Quality ──
-  // What fraction of the user's tokens actually hit something?
-  // High D̂ = they said meaningful things. Low D̂ = mostly noise.
-
-  let signalTokens = 0;
-  for (const token of tokens) {
-    let hit = false;
-    for (const node of MIRROR_NODES) {
-      for (const keyword of node.keywords) {
-        if (token === keyword || (token.length >= 3 && keyword.includes(token)) || (token.length >= 3 && token.includes(keyword))) {
-          hit = true;
-          break;
-        }
-      }
-      if (hit) break;
-    }
-    if (hit) signalTokens++;
-  }
-
-  const D_coincidence = signalTokens;
-  const D_accidental = Math.max(1, tokens.length - signalTokens);
-  const D_hat = D_coincidence / (D_coincidence + D_accidental);
+  // What fraction of user's words are in the site's vocabulary at all?
+  const D_hat = globalSignal.hitRate * (0.5 + 0.5 * Math.min(1, globalSignal.avgWeight / 3));
 
   const G = C_eff * D_hat;
-
   return { G, C_eff, D_hat };
 }
 
@@ -287,19 +281,7 @@ function computeTruthG(activations, tokens, layerR12s) {
  * THE TRUTH TEST
  * 
  * Input: raw text from the human.
- * Output: {
- *   psi:          0–1    Raw Ψ value. The math.
- *   groundTruth:  1–10   THE GROUND TRUTH SCORE. The number people fight over.
- *   tier:         1–10   Integer depth tier.
- *   depthName:    string DUST → TOPSOIL → CLAY → ROOTS → STONE → BEDROCK → CORE → MAGMA → CRYSTAL → SEED
- *   depthLabel:   string Human-readable description of their depth.
- *   R12:          0–1    Recognition Core (how well they see what the theory sees).
- *   G:            0–1    Reliability Modulator (how coherent their knowledge is).
- *   C_eff:        0–1    Effective Convergence (do their layers relate?).
- *   D_hat:        0–1    Detection Quality (signal vs noise ratio).
- *   layerHits:    []     Which layers they activated, with R₁₂ per layer.
- *   userBloch:    [3]    Their Bloch vector (epistemic state).
- * }
+ * Output: Ground Truth score (1.0–10.0) with full breakdown.
  */
 export function testTruth(userText) {
   const tokens = tokenize(userText);
@@ -310,19 +292,26 @@ export function testTruth(userText) {
       depthName: "DUST", depthLabel: "Silence.",
       R12: 0, G: 0, C_eff: 0, D_hat: 0,
       layerHits: [], userBloch: [0, 0, 0], tokens: [],
+      doorsActivated: [],
     };
   }
 
-  // Step 1: Compute layer activations from text
-  const activations = computeLayerActivations(tokens);
+  // Step 1: Match against entire site corpus (door-level)
+  const doorActivations = computeDoorActivations(tokens);
 
-  // Step 2: Convert activations to Bloch vector
-  const userBloch = activationsToBloch(activations);
+  // Step 2: Global signal check
+  const globalSignal = computeGlobalSignal(tokens);
 
-  // Step 3: Compute R₁₂ per activated layer
-  const layerR12s = computeLayerR12s(userBloch, activations);
+  // Step 3: Convert door activations → layer activations
+  const layerActivations = doorsToLayers(doorActivations);
 
-  // Step 4: Aggregate R₁₂ — weighted average by activation strength
+  // Step 4: Convert to Bloch vector
+  const userBloch = activationsToBloch(layerActivations);
+
+  // Step 5: Compute R₁₂ per activated layer
+  const layerR12s = computeLayerR12s(userBloch, layerActivations);
+
+  // Step 6: Aggregate R₁₂
   let R12_agg = 0;
   let weightSum = 0;
   for (const hit of layerR12s) {
@@ -331,24 +320,18 @@ export function testTruth(userText) {
   }
   R12_agg = weightSum > 0 ? R12_agg / weightSum : 0;
 
-  // Step 5: Compute G (Reliability Modulator)
-  const { G, C_eff, D_hat } = computeTruthG(activations, tokens, layerR12s);
+  // Step 7: Compute G (Reliability Modulator)
+  const { G, C_eff, D_hat } = computeTruthG(doorActivations, tokens, layerR12s, globalSignal);
 
-  // Step 6: Ψ = R₁₂ × G
+  // Step 8: Ψ = R₁₂ × G
   const psi = R12_agg * G;
 
   // ── GROUND TRUTH: 10-POINT DEPTH CHART ──
-  // Scale raw Ψ (typically 0–0.5) to 1.0–10.0
-  const rawScore = Math.pow(Math.min(1, psi / 0.35), PHI_INV);
-  const groundTruth = Math.max(1.0, Math.min(10.0,
-    1.0 + rawScore * 9.0
-  ));
-  // Round to 1 decimal
+  const rawScore = Math.pow(Math.min(1, psi / 0.25), PHI_INV);
+  const groundTruth = Math.max(1.0, Math.min(10.0, 1.0 + rawScore * 9.0));
   const groundTruthDisplay = Math.round(groundTruth * 10) / 10;
-  // Integer tier for depth chart
   const tier = Math.min(10, Math.max(1, Math.ceil(groundTruth)));
 
-  // THE DEPTH CHART — 10 layers of earth
   const DEPTH_CHART = [
     { level: 1,  name: "DUST",    label: "The surface hasn't been broken yet." },
     { level: 2,  name: "TOPSOIL", label: "Scratching the surface. There's more below." },
@@ -364,6 +347,11 @@ export function testTruth(userText) {
 
   const depthTier = DEPTH_CHART[tier - 1];
 
+  // Which doors did they activate? (for display)
+  const doorsActivated = Object.entries(doorActivations)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, score]) => ({ name, score }));
+
   return {
     psi,
     groundTruth: groundTruthDisplay,
@@ -377,11 +365,12 @@ export function testTruth(userText) {
     layerHits: layerR12s,
     userBloch,
     tokens,
+    doorsActivated,
   };
 }
 
 // ═══════════════════════════════════════════════════════════
-// LAYER NAMES FOR DISPLAY
+// EXPORTS FOR DISPLAY
 // ═══════════════════════════════════════════════════════════
 
 export const LAYER_LABELS = [
