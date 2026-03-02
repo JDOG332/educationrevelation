@@ -230,6 +230,7 @@ export const POEMS = [
   "every baby is born\nwith all that it needs",
   "just wisdom and love\nand the chance to breathe",
   "",
+  "its the rhythm of life",
 ];
 
 export const THE_ANSWER = {

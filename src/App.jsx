@@ -818,12 +818,6 @@ export default function TheoryOfEverything() {
                 zIndex: 2, pointerEvents: 'none',
               }} />
 
-              {/* The scrolling poem */}
-              <div ref={scrollRef} style={{
-                position: 'absolute', left: 0, width: '100%',
-                display: 'flex', flexDirection: 'column', alignItems: 'center',
-                padding: '0 5%',
-              }}>
               {/* The scrolling poem — 3 copies for seamless infinite scroll */}
               <div ref={scrollRef} style={{
                 position: 'absolute', left: 0, width: '100%',
