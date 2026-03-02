@@ -167,8 +167,10 @@ export default function TheoryOfEverything() {
       const elapsed = (now - veilStartRef.current) / 1000;
 
       if (elapsed >= TOTAL) {
-        // Done — hide the opening act and transition
-        container.style.display = "none";
+        // Done — crossfade the opening act to reveal the canvas underneath
+        container.style.transition = "opacity 0.618s cubic-bezier(0.23, 1, 0.32, 1)";
+        container.style.opacity = "0";
+        container.style.pointerEvents = "none";
         setDepth(1);
         return;
       }
@@ -641,7 +643,7 @@ export default function TheoryOfEverything() {
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
         background: "radial-gradient(ellipse at 50% 42%, rgba(3,3,6,0.85), #030306)",
         zIndex: 996, pointerEvents: "none",
-        opacity: fading ? 0.7 : 0,
+        opacity: fading ? 0.95 : 0,
         transition: "opacity 0.5s ease",
       }} />
 
@@ -667,7 +669,7 @@ export default function TheoryOfEverything() {
       />}
 
       {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
-      {depth === 0 && (
+      {depth <= 1 && (
         <div ref={openingRef} style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
           zIndex: 10000,
