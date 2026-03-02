@@ -305,7 +305,7 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
         simulate("dance", 0);
 
         // Phase 1: The Dance (explosion) — same animation that was depth 1
-        const DANCE_END = 9.09;  // z2End + PHI_INV
+        const DANCE_END = 8.472;  // z2End — no pause at the bottom
         const z1Start = 0.618, z1End = 5.236;
         const z2Start = 5.236, z2End = 8.472;
 
