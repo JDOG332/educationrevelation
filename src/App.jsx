@@ -762,20 +762,22 @@ export default function TheoryOfEverything() {
             const speed = oneCycleH / cycleDuration; // px per ms
 
             // Start at center — title crystallizes from the light
-            let y = viewH / 2;
+            // Offset by half the first child's height so the title is perfectly centered on the glow
+            const titleH = kids[0] ? kids[0].offsetHeight : 0;
+            let y = (viewH - titleH) / 2;
             let totalElapsed = 0;
             scroller.style.transform = `translateY(${y}px)`;
 
             const waitForVeil = () => {
               if (!veilParted) { frameRef.current = requestAnimationFrame(waitForVeil); return; }
-              // Crystallize: fade in the title from the center of the glow
-              scroller.style.transition = "opacity 1.618s ease";
+              // Crystallize: fade in the title slowly from the mist
+              scroller.style.transition = "opacity 2.618s ease";
               scroller.style.opacity = "1";
-              // Hold for PHI seconds, then start scrolling
+              // Hold for PHI² seconds while title materializes, then start scrolling
               setTimeout(() => {
                 lastTime.current = null;
                 frameRef.current = requestAnimationFrame(scroll);
-              }, 1618);
+              }, 2618);
             };
 
             function scroll(now) {
