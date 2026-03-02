@@ -736,22 +736,35 @@ export default function TheoryOfEverything() {
         const PoemWheel = () => {
           const wheelRef = useRef(null);
           const scrollRef = useRef(null);
-          const startRef = useRef(null);
+          const lastTime = useRef(null);
           const frameRef = useRef(null);
-          const [loopCount, setLoopCount] = useState(0);
+          const elapsedRef = useRef(0);
+          const [showMoveOn, setShowMoveOn] = useState(false);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
             const container = wheelRef.current;
             const scroller = scrollRef.current;
 
-            const totalH = scroller.scrollHeight;
-            const viewH = container.clientHeight;
-            const scrollDist = totalH + viewH;
-            const DURATION = Math.round(PHI * PHI * 23.6) * 1000; // ~62s — PHI² × 23.6, natural reading pace
-            const PAUSE_BETWEEN = Math.round(PHI * 618);
+            // We render 3 copies of the poem. Each copy starts with the golden bridge line.
+            // When scroll passes 1 full cycle, we silently jump back by 1 cycle height.
+            const children = scroller.children;
+            const totalChildren = children.length;
+            const oneCycleCount = POEMS.length; // lines in one cycle
+            
+            // Measure one cycle height after render
+            let oneCycleH = 0;
+            for (let c = 0; c < oneCycleCount && c < totalChildren; c++) {
+              oneCycleH += children[c].getBoundingClientRect().height;
+            }
 
-            scroller.style.transform = `translateY(${viewH + 100}px)`;
+            const viewH = container.clientHeight;
+            const DURATION_PER_CYCLE = Math.round(PHI * PHI * 23.6) * 1000; // ~62s per cycle
+            const pxPerMs = oneCycleH / DURATION_PER_CYCLE;
+
+            // Start: golden line enters from below
+            let scrollY = viewH + 100;
+            scroller.style.transform = `translateY(${scrollY}px)`;
 
             const checkReady = () => {
               if (!veilParted) {
@@ -759,33 +772,31 @@ export default function TheoryOfEverything() {
                 return;
               }
               setTimeout(() => {
-                startRef.current = null;
+                lastTime.current = null;
                 frameRef.current = requestAnimationFrame(tick);
               }, 618);
             };
 
             function tick(now) {
-              if (!startRef.current) startRef.current = now;
-              const elapsed = now - startRef.current;
-              const t = Math.min(1, elapsed / DURATION);
+              if (!lastTime.current) { lastTime.current = now; }
+              const dt = now - lastTime.current;
+              lastTime.current = now;
 
-              const eased = t < 0.02 ? t * t * (1/0.02) * 0.5
-                : t > 0.98 ? 1 - (1-t)*(1-t)*(1/0.02)*0.5
-                : t;
-
-              const y = viewH - eased * scrollDist;
-              scroller.style.transform = `translateY(${y}px)`;
-
-              if (t < 1) {
-                frameRef.current = requestAnimationFrame(tick);
-              } else {
-                scroller.style.transform = `translateY(${viewH + 100}px)`;
-                setLoopCount(c => c + 1);
-                setTimeout(() => {
-                  startRef.current = null;
-                  frameRef.current = requestAnimationFrame(tick);
-                }, PAUSE_BETWEEN);
+              elapsedRef.current += dt;
+              if (elapsedRef.current >= DURATION_PER_CYCLE && !showMoveOn) {
+                setShowMoveOn(true);
               }
+
+              scrollY -= pxPerMs * dt;
+
+              // When we've scrolled past one full cycle, jump back by one cycle height
+              // This is invisible because the content repeats identically
+              if (scrollY < -oneCycleH) {
+                scrollY += oneCycleH;
+              }
+
+              scroller.style.transform = `translateY(${scrollY}px)`;
+              frameRef.current = requestAnimationFrame(tick);
             }
 
             frameRef.current = requestAnimationFrame(checkReady);
@@ -822,11 +833,17 @@ export default function TheoryOfEverything() {
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
                 padding: '0 5%',
               }}>
-                {POEMS.map((line, i) => {
+              {/* The scrolling poem — 3 copies for seamless infinite scroll */}
+              <div ref={scrollRef} style={{
+                position: 'absolute', left: 0, width: '100%',
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+                padding: '0 5%',
+              }}>
+                {[...POEMS, ...POEMS, ...POEMS].map((line, i) => {
                   if (line === "") {
                     return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
                   }
-                  const isBookend = (i === 0 || i === POEMS.length - 1);
+                  const isBookend = (line === "its the rhythm of life");
                   const parts = line.split("\n");
                   return (
                     <div key={i} style={{
@@ -861,7 +878,7 @@ export default function TheoryOfEverything() {
               </div>
 
               {/* MOVE ON — appears after poem plays once */}
-              {loopCount >= 1 && (
+              {showMoveOn && (
                 <div
                   onClick={() => goDeeper()}
                   style={{
