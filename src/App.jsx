@@ -193,25 +193,9 @@ export default function TheoryOfEverything() {
       const lum = p2 > 0 ? 255 * (1 - p2) : 255 * p1;
       container.style.background = `rgb(${lum|0},${lum|0},${lum|0})`;
 
-      // Phase 1: white words growing on black — w1 is visible, w2 is hidden
-      // Phase 2: black words shrinking on white — w2 is visible, w1 is hidden
-      // Sharp switch at the peak. Same words. Color flips instantly.
-
-      if (p2 === 0) {
-        // PHASE 1: white words grow
-        const scale1 = p1 < 0.001 ? 0.15 : 0.15 + smoothstep(p1) * 5.5;
-        const alpha1 = Math.min(1, p1 * 5);
-        w1.style.opacity = alpha1 > 0.001 ? alpha1 : 0;
-        w1.style.transform = `scale(${scale1})`;
-        w2.style.opacity = 0;
-      } else {
-        // PHASE 2: black words shrink (mirror)
-        const scale2 = 0.15 + (1 - smootherstep(p2)) * 5.5;
-        const alpha2 = Math.min(1, (1 - p2) * 5);
-        w1.style.opacity = 0;
-        w2.style.opacity = alpha2 > 0.001 ? alpha2 : 0;
-        w2.style.transform = `scale(${scale2})`;
-      }
+      // No text — just the pure black→white→black breath
+      w1.style.opacity = 0;
+      w2.style.opacity = 0;
 
       veilFrameRef.current = requestAnimationFrame(tick);
     }
