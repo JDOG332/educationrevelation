@@ -786,15 +786,16 @@ export default function TheoryOfEverything() {
 
               scroller.style.transform = `translateY(${y}px)`;
 
-              // Show GO BACK early (after 10s) — it's navigation, not a gate
-              if (totalElapsed >= 10000 && goBackRef.current) {
-                goBackRef.current.style.opacity = "1";
-                goBackRef.current.style.pointerEvents = "auto";
-              }
-              // Show MOVE ON after one full cycle (no state update — just DOM)
-              if (totalElapsed >= cycleDuration && moveOnRef.current) {
-                moveOnRef.current.style.opacity = "1";
-                moveOnRef.current.style.pointerEvents = "auto";
+              // Show GO BACK and MOVE ON after one full cycle (no state update — just DOM)
+              if (totalElapsed >= cycleDuration) {
+                if (goBackRef.current) {
+                  goBackRef.current.style.opacity = "1";
+                  goBackRef.current.style.pointerEvents = "auto";
+                }
+                if (moveOnRef.current) {
+                  moveOnRef.current.style.opacity = "1";
+                  moveOnRef.current.style.pointerEvents = "auto";
+                }
               }
 
               frameRef.current = requestAnimationFrame(scroll);
