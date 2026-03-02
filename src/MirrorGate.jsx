@@ -471,18 +471,25 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
                   color: `${GOLD}0.25)`, textTransform: "uppercase", marginBottom: S2, textAlign: "center",
                 }}>What you touched</div>
                 {mirrorResult.matched.slice(0, 3).map((node, i) => (
-                  <div key={node.id} style={{
-                    padding: `${S1}px 0`, borderBottom: `1px solid ${GOLD}0.05)`,
-                    animation: `mirrorReveal 0.5s ease ${0.8 + i * 0.12}s both`,
-                  }}>
+                  <div key={node.id}
+                    onClick={() => handleNavigateToLayer(node.depth)}
+                    style={{
+                      padding: `${S1}px ${S2}px`, borderBottom: `1px solid ${GOLD}0.05)`,
+                      animation: `mirrorReveal 0.5s ease ${0.8 + i * 0.12}s both`,
+                      cursor: "pointer", borderRadius: 6,
+                      transition: "background 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = `${GOLD}0.03)`}
+                    onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
+                  >
                     <div style={{
                       fontFamily: FONT_BODY, fontSize: `clamp(13px, 2.6vw, 15px)`,
                       fontWeight: 300, color: `${BONE}0.5)`, lineHeight: PHI,
                     }}>{node.truth}</div>
                     <div style={{
                       fontFamily: FONT_DISPLAY, fontSize: 7, letterSpacing: 3,
-                      color: `${GOLD}0.25)`, marginTop: 5, textTransform: "uppercase",
-                    }}>{node.path}</div>
+                      color: `${GOLD}0.35)`, marginTop: 5, textTransform: "uppercase",
+                    }}>{node.path} &rarr;</div>
                   </div>
                 ))}
               </div>

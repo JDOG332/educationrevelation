@@ -508,6 +508,9 @@ export default function TheoryOfEverything() {
         <MirrorGate
           onEnter={() => setDepth(0)}
           onNavigateToDepth={() => {
+            setActiveConvergence(null);
+            setActiveSubcategory(null);
+            setActiveIdea(null);
             setDepth(4);
             window.scrollTo({ top: 0, behavior: "instant" });
           }}
