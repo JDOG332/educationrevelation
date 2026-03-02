@@ -748,8 +748,8 @@ export default function TheoryOfEverything() {
             const totalH = scroller.scrollHeight;
             const viewH = container.clientHeight;
             const scrollDist = totalH + viewH;
-            const DURATION = 110 * 1000; // ~110 seconds — bigger font, more breath
-            const PAUSE_BETWEEN = 1000;
+            const DURATION = Math.round(PHI * PHI * 23.6) * 1000; // ~62s — PHI² × 23.6, natural reading pace
+            const PAUSE_BETWEEN = Math.round(PHI * 618);
 
             scroller.style.transform = `translateY(${viewH + 100}px)`;
 
@@ -826,19 +826,31 @@ export default function TheoryOfEverything() {
                   if (line === "") {
                     return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
                   }
+                  const isBookend = (i === 0 || i === POEMS.length - 1);
                   const parts = line.split("\n");
                   return (
                     <div key={i} style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: `clamp(${poemFontMin}px, 5.5vw, ${poemFontMax}px)`,
-                      fontStyle: 'italic',
-                      fontWeight: 300,
-                      color: 'rgba(232,232,240,0.85)',
+                      fontFamily: isBookend ? "'Cinzel', serif" : "'Cormorant Garamond', serif",
+                      fontSize: isBookend
+                        ? `clamp(${Math.round(poemFontMin * PHI)}px, ${5.5 * PHI}vw, ${Math.round(poemFontMax * PHI)}px)`
+                        : `clamp(${poemFontMin}px, 5.5vw, ${poemFontMax}px)`,
+                      fontStyle: isBookend ? 'normal' : 'italic',
+                      fontWeight: isBookend ? 400 : 300,
+                      color: isBookend ? 'rgba(201,168,76,0.9)' : 'rgba(232,232,240,0.85)',
                       textAlign: 'center',
                       lineHeight: 1.5,
-                      letterSpacing: 0.8,
+                      letterSpacing: isBookend ? 4 : 0.8,
                       marginBottom: Math.round(8 * PHI),
                       maxWidth: '618px',
+                      ...(isBookend ? {
+                        background: 'linear-gradient(90deg, rgba(201,168,76,0.5) 0%, rgba(255,245,220,0.95) 25%, rgba(201,168,76,1) 50%, rgba(255,245,220,0.95) 75%, rgba(201,168,76,0.5) 100%)',
+                        backgroundSize: '200% 100%',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        animation: 'shimmerLine 5s ease-in-out infinite',
+                        filter: 'drop-shadow(0 0 20px rgba(201,168,76,0.15)) drop-shadow(0 0 40px rgba(201,168,76,0.06))',
+                      } : {}),
                     }}>
                       {parts.map((p, j) => (
                         <span key={j}>{j > 0 && <br/>}{p}</span>
