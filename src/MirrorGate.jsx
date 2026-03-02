@@ -360,9 +360,9 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
       {/* Content */}
       <div style={{
         position: "relative", zIndex: 2, width: "100%", maxWidth: 618,
-        padding: `${S4}px ${S3}px ${S5 * 2}px`,
+        padding: `0 ${S3}px`,
         display: "flex", flexDirection: "column", alignItems: "center", minHeight: "100vh",
-        justifyContent: "flex-start", paddingTop: `clamp(${S3}px, 12vh, ${S5}px)`,
+        justifyContent: "center",
       }}>
 
         {/* ── HEADER ── */}
