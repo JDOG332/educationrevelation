@@ -174,7 +174,6 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
     const zoomTarget = [0,1,2,3,5,6,7,8][Math.floor(Math.random()*8)];
 
     let mvTime = 0;
-    let depth2Start = null;
     let veilParted = false;
 
     function simulate(morphPhase, partProgress) {
@@ -289,89 +288,71 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
     }
 
     // ===== MAIN LOOP =====
-    let depthOneStart = null;
+    let animStart = null;
 
     function loop(now) {
-      if (depthRef.current >= 1 && depthOneStart === null) depthOneStart = now;
-      const zoomElapsed = depthOneStart ? (now - depthOneStart) / 1000 : 0;
-
-      if (depthRef.current >= 2 && depth2Start === null) depth2Start = now;
-      const veilElapsed = depth2Start ? (now - depth2Start) / 1000 : 0;
+      if (depthRef.current >= 2 && animStart === null) animStart = now;
+      const t = animStart ? (now - animStart) / 1000 : 0;
 
       ctx.clearRect(0, 0, W, H);
 
-      // === DEPTH 2: Dance → Expansion → Poems (universe explodes behind text) ===
+      // === DEPTH 2: One continuous animation — zoom in → collapse → expand ===
       if (depthRef.current === 2) {
         simulate("dance", 0);
 
-        // Phase 1: The Dance (explosion) — same animation that was depth 1
-        const DANCE_END = 8.472;  // z2End — no pause at the bottom
-        const z1Start = 0.618, z1End = 5.236;
-        const z2Start = 5.236, z2End = 8.472;
+        // Timeline: three seamless phases driven by one clock
+        // Phase A: 0.618→5.236 — zoom 5→1, pan to center
+        // Phase B: 5.236→8.472 — zoom 1→0.04, glow builds (collapse)
+        // Phase C: 8.472→12.708 — zoom 0.04→1, glow fades (expansion)
+        const A_START = 0.618, A_END = 5.236;
+        const B_END = 8.472;
+        const C_END = B_END + 4.236; // 12.708
 
-        if (zoomElapsed < DANCE_END) {
-          // Dance phase: zoom in, collapse, glow builds
-          const z1t = Math.max(0, Math.min(1, (zoomElapsed - z1Start) / (z1End - z1Start)));
-          const z1eased = z1t * z1t * (3 - 2 * z1t);
+        const target = (state._levels === 3 ? state.hypers : state.supers)[zoomTarget];
 
-          const z2t = Math.max(0, Math.min(1, (zoomElapsed - z2Start) / (z2End - z2Start)));
-          const z2eased = z2t * z2t * (3 - 2 * z2t);
+        // Compute progress for each phase (clamped 0→1)
+        const aT = Math.max(0, Math.min(1, (t - A_START) / (A_END - A_START)));
+        const bT = Math.max(0, Math.min(1, (t - A_END) / (B_END - A_END)));
+        const cT = Math.max(0, Math.min(1, (t - B_END) / (C_END - B_END)));
 
-          let zoom, panX, panY;
-          const target = (state._levels === 3 ? state.hypers : state.supers)[zoomTarget];
+        // Smoothstep easing for all phases
+        const aE = aT * aT * (3 - 2 * aT);
+        const bE = bT * bT * (3 - 2 * bT);
+        const cE = cT * cT * (3 - 2 * cT);
 
-          if (zoomElapsed < z2Start) {
-            zoom = 5 + (1 - 5) * z1eased;
-            panX = (CX - target.x) * (1 - z1eased);
-            panY = (CY - target.y) * (1 - z1eased);
-          } else {
-            zoom = 1 + (0.04 - 1) * z2eased;
-            panX = 0; panY = 0;
-          }
-
-          drawBodies(zoom, panX, panY, true, 0);
-
-          // White glow during collapse
-          if (z2eased > 0.01) {
-            const glowRadius = 20 + z2eased * 80;
-            const glowAlpha = z2eased * 0.9;
-            const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
-            wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
-            wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
-            wg.addColorStop(1, "rgba(232,232,240,0)");
-            ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
-            ctx.fillStyle = wg; ctx.fill();
-
-            // Signal poem title to begin crystallizing at glow peak
-            if (z2eased >= 0.95 && !veilParted) {
-              veilParted = true;
-              if (onVeilPartedRef.current) onVeilPartedRef.current();
-            }
-          }
+        // Zoom: 5→1→0.04→1 (one continuous value)
+        let zoom, panX, panY;
+        if (t < A_END) {
+          zoom = 5 + (1 - 5) * aE;
+          panX = (CX - target.x) * (1 - aE);
+          panY = (CY - target.y) * (1 - aE);
+        } else if (t < B_END) {
+          zoom = 1 + (0.04 - 1) * bE;
+          panX = 0; panY = 0;
         } else {
-          // Phase 2: Expansion — white hole opens back to multiverse
-          const expandElapsed = zoomElapsed - DANCE_END;
-          const EXPAND_DUR = 4.236;
-          const expandT = Math.min(1, expandElapsed / EXPAND_DUR);
-          const expandEased = expandT * expandT * (3 - 2 * expandT);
+          zoom = 0.04 + (1 - 0.04) * cE;
+          panX = 0; panY = 0;
+        }
 
-          const zoom = 0.04 + (1 - 0.04) * expandEased;
-          const glowFade = 1 - expandEased;
+        drawBodies(zoom, panX, panY, true, 0);
 
-          drawBodies(zoom, 0, 0, true, 0);
+        // Glow: builds during collapse (bE), fades during expansion (cE)
+        const glowIntensity = t < B_END ? bE : (1 - cE);
+        if (glowIntensity > 0.01) {
+          const glowRadius = 20 + glowIntensity * 80;
+          const glowAlpha = glowIntensity * 0.9;
+          const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
+          wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
+          wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
+          wg.addColorStop(1, "rgba(232,232,240,0)");
+          ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
+          ctx.fillStyle = wg; ctx.fill();
+        }
 
-          if (glowFade > 0.01) {
-            const glowRadius = 20 + glowFade * 80;
-            const glowAlpha = glowFade * 0.9;
-            const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
-            wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
-            wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
-            wg.addColorStop(1, "rgba(232,232,240,0)");
-            ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
-            ctx.fillStyle = wg; ctx.fill();
-          }
-
-          // veilParted already fired at glow peak — expansion continues behind the poem
+        // Signal poem title to crystallize at glow peak
+        if (bE >= 0.95 && !veilParted) {
+          veilParted = true;
+          if (onVeilPartedRef.current) onVeilPartedRef.current();
         }
       }
 
