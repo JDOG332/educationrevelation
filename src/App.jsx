@@ -869,8 +869,8 @@ export default function TheoryOfEverything() {
                 style={{
                   position: 'absolute',
                   bottom: `${Math.round(13 * PHI)}%`,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
+                  right: '12.5%',
+                  transform: 'translateX(50%)',
                   zIndex: 10,
                   pointerEvents: 'none',
                   cursor: 'pointer',
