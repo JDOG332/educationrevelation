@@ -1,12 +1,12 @@
 /**
- * GROUND TRUTH & DARE — Layer -1
+ * GROUND TRUTH & DARE — A Measurement of the Depth of Truth
  * 
- * The opposite of Google. The game you play at bars.
+ * Write what you believe is true.
+ * Your words are compared against every sentence on the site.
+ * 954 sentences. ~280,000 comparisons. <2ms.
+ * No AI. No API. Just raw truth against raw truth.
  * 
- * Write what you believe is true → Get your Ground Truth score (1.0–10.0)
- * Score low? YOU OWE A DARE. Click it. Learn something. Come back and dig again.
- * 
- * Ψ = R₁₂ × G → Ground Truth Score
+ * Ψ = R₁₂ × G → Depth of Truth (1.0–10.0)
  * DUST → TOPSOIL → CLAY → ROOTS → STONE → BEDROCK → CORE → MAGMA → CRYSTAL → SEED
  */
 
@@ -118,7 +118,7 @@ function GroundTruthRing({ score, tier, depthName, R12, G, visible }) {
         {depthName}
       </div>
 
-      {/* GROUND TRUTH & DARE label */}
+      {/* DEPTH OF TRUTH label */}
       <div style={{
         fontFamily: FONT_DISPLAY,
         fontSize: 7,
@@ -128,7 +128,7 @@ function GroundTruthRing({ score, tier, depthName, R12, G, visible }) {
         textAlign: "center",
         marginTop: -4,
       }}>
-        GROUND TRUTH & DARE
+        DEPTH OF TRUTH
       </div>
     </div>
   );
@@ -371,6 +371,11 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
             fontWeight: 400, color: `${BONE}0.9)`, letterSpacing: 4, lineHeight: 1.1,
             margin: 0, marginBottom: S1,
           }}>GROUND TRUTH<br /><span style={{ fontSize: "0.55em", letterSpacing: 6, color: `${GOLD}0.5)` }}>&amp; DARE</span></h1>
+          <div style={{
+            fontFamily: FONT_BODY, fontSize: `clamp(10px, 2.2vw, 12px)`,
+            fontStyle: "italic", fontWeight: 300, color: `${BONE}0.2)`,
+            letterSpacing: 3, marginBottom: S2,
+          }}>a measurement of the depth of truth</div>
           <div style={{
             fontFamily: FONT_BODY, fontSize: `clamp(13px, 3vw, 17px)`,
             fontStyle: "italic", fontWeight: 300, color: `${BONE}0.35)`,
