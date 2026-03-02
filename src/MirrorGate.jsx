@@ -372,11 +372,6 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
             fontWeight: 400, letterSpacing: 4, lineHeight: 1.1,
             margin: 0, marginBottom: S1, whiteSpace: "nowrap",
           }}><span style={{ color: `${BONE}0.9)` }}>TRUTH</span> <span style={{ fontSize: "0.85em", letterSpacing: 6, color: `${GOLD}0.6)` }}>&amp; DARE</span></h1>
-          <div style={{
-            fontFamily: FONT_BODY, fontSize: `clamp(10px, 2.2vw, 12px)`,
-            fontStyle: "italic", fontWeight: 300, color: `${BONE}0.2)`,
-            letterSpacing: 3, marginBottom: S1,
-          }}>a measurement of the depth of truth</div>
         </div>
 
         {/* ── INPUT — Google-style single line ── */}
@@ -430,12 +425,6 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
               }}>DIG AGAIN</button>
             </div>
           )}
-          <div style={{
-            textAlign: "center", marginTop: S1,
-            fontFamily: FONT_BODY, fontSize: `clamp(12px, 2.5vw, 15px)`,
-            fontStyle: "italic", fontWeight: 300, color: `${BONE}0.25)`,
-            lineHeight: PHI,
-          }}>don't ask a question — state what you believe</div>
         </div>
 
         {/* ── DIGGING STATE ── */}
@@ -568,7 +557,8 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
         {/* Skip */}
         {phase === "gate" && (
           <div onClick={onEnter} style={{
-            position: "fixed", bottom: S4, left: "50%", transform: "translateX(-50%)",
+            position: "fixed", bottom: S4, left: 0, width: "100%",
+            textAlign: "center",
             fontFamily: FONT_DISPLAY, fontSize: `clamp(11px, 2.8vw, 14px)`, letterSpacing: 6,
             color: `${BONE}0.18)`, cursor: "pointer", transition: "color 0.5s ease, letter-spacing 0.5s ease",
             textTransform: "uppercase", zIndex: 3, animation: "mirrorReveal 1s ease 2s both",
