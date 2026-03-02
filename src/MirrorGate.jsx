@@ -1,11 +1,12 @@
 /**
- * GROUND TRUTH — Layer -1
+ * GROUND TRUTH & DARE — Layer -1
  * 
- * The opposite of Google.
- * Google says: "Ask me anything."
- * This says: "Tell me what you know."
+ * The opposite of Google. The game you play at bars.
  * 
- * Ψ = R₁₂ × G → Ground Truth Score (1.0 – 10.0)
+ * Write what you believe is true → Get your Ground Truth score (1.0–10.0)
+ * Score low? YOU OWE A DARE. Click it. Learn something. Come back and dig again.
+ * 
+ * Ψ = R₁₂ × G → Ground Truth Score
  * DUST → TOPSOIL → CLAY → ROOTS → STONE → BEDROCK → CORE → MAGMA → CRYSTAL → SEED
  */
 
@@ -117,7 +118,7 @@ function GroundTruthRing({ score, tier, depthName, R12, G, visible }) {
         {depthName}
       </div>
 
-      {/* GROUND TRUTH label */}
+      {/* GROUND TRUTH & DARE label */}
       <div style={{
         fontFamily: FONT_DISPLAY,
         fontSize: 7,
@@ -127,7 +128,7 @@ function GroundTruthRing({ score, tier, depthName, R12, G, visible }) {
         textAlign: "center",
         marginTop: -4,
       }}>
-        GROUND TRUTH
+        GROUND TRUTH & DARE
       </div>
     </div>
   );
@@ -369,12 +370,12 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
             fontFamily: FONT_DISPLAY, fontSize: `clamp(${S3}px, 9vw, ${S5}px)`,
             fontWeight: 400, color: `${BONE}0.9)`, letterSpacing: 4, lineHeight: 1.1,
             margin: 0, marginBottom: S1,
-          }}>GROUND TRUTH</h1>
+          }}>GROUND TRUTH<br /><span style={{ fontSize: "0.55em", letterSpacing: 6, color: `${GOLD}0.5)` }}>&amp; DARE</span></h1>
           <div style={{
             fontFamily: FONT_BODY, fontSize: `clamp(13px, 3vw, 17px)`,
             fontStyle: "italic", fontWeight: 300, color: `${BONE}0.35)`,
             lineHeight: PHI, maxWidth: 380, margin: "0 auto",
-          }}>Don't ask a question.<br />Write what you believe is true.</div>
+          }}>Don't ask a question.<br />Write what you believe is true.<br /><span style={{ color: `${GOLD}0.3)` }}>Score low? You owe a dare.</span></div>
         </div>
 
         {/* ── INPUT ── */}
@@ -493,9 +494,23 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
                 width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: S2,
               }}>
                 <div style={{
-                  fontFamily: FONT_DISPLAY, fontSize: 8, letterSpacing: 4,
-                  color: `${GOLD}0.25)`, textTransform: "uppercase", marginBottom: S1,
-                }}>Go deeper</div>
+                  fontFamily: FONT_DISPLAY, fontSize: truthResult.tier <= 4 ? 10 : 8,
+                  letterSpacing: truthResult.tier <= 4 ? 5 : 4,
+                  color: truthResult.tier <= 4 ? `${BONE}0.5)` : `${GOLD}0.25)`,
+                  textTransform: "uppercase", marginBottom: S1, textAlign: "center",
+                }}>{truthResult.tier <= 3 ? "YOU OWE A DARE" : truthResult.tier <= 5 ? "DARE TO GO DEEPER?" : "GO DEEPER"}</div>
+                {truthResult.tier <= 4 && (
+                  <div style={{
+                    fontFamily: FONT_BODY, fontSize: `clamp(13px, 2.8vw, 16px)`,
+                    fontStyle: "italic", color: `${BONE}0.35)`, textAlign: "center",
+                    lineHeight: PHI, marginBottom: S1, maxWidth: 380,
+                    animation: "mirrorReveal 0.6s ease 0.7s both",
+                  }}>
+                    {truthResult.tier <= 2
+                      ? "You're still in the dust. Pick a dare. No excuses."
+                      : "You hit clay. The real stuff is below. Pick one."}
+                  </div>
+                )}
                 {mirrorResult.dares.map((node, i) => (
                   <DareCard key={node.id} node={node} index={i} onNavigate={handleNavigateToLayer} />
                 ))}
