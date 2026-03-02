@@ -770,14 +770,14 @@ export default function TheoryOfEverything() {
 
             const waitForVeil = () => {
               if (!veilParted) { frameRef.current = requestAnimationFrame(waitForVeil); return; }
-              // Crystallize: fade in the title slowly from the mist
-              scroller.style.transition = "opacity 2.618s ease";
+              // Reverse dissolve: title precipitates out of the bright mist
+              scroller.style.transition = "opacity 6.854s cubic-bezier(0.23, 1, 0.32, 1)";
               scroller.style.opacity = "1";
-              // Hold for PHI² seconds while title materializes, then start scrolling
+              // Hold for the full dissolve before scrolling begins
               setTimeout(() => {
                 lastTime.current = null;
                 frameRef.current = requestAnimationFrame(scroll);
-              }, 2618);
+              }, 6854);
             };
 
             function scroll(now) {
