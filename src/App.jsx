@@ -881,7 +881,7 @@ export default function TheoryOfEverything() {
               {/* GO BACK — fades in via ref after one cycle */}
               <div
                 ref={goBackRef}
-                onClick={() => returnToVoid()}
+                onClick={() => { setDepth(-1); window.scrollTo(0, 0); }}
                 style={{
                   position: 'absolute',
                   bottom: `${Math.round(13 * PHI)}%`,
