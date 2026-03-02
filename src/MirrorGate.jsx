@@ -573,7 +573,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
           }}
             onMouseEnter={(e) => { e.target.style.color = `${BONE}0.4)`; e.target.style.letterSpacing = "8px"; }}
             onMouseLeave={(e) => { e.target.style.color = `${BONE}0.18)`; e.target.style.letterSpacing = "6px"; }}
-          >enter the void</div>
+          >see the light</div>
         )}
       </div>
 
