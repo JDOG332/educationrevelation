@@ -547,14 +547,14 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
         {/* Skip */}
         {phase === "gate" && (
           <div onClick={onEnter} style={{
-            position: "fixed", bottom: S3, left: "50%", transform: "translateX(-50%)",
-            fontFamily: FONT_DISPLAY, fontSize: 9, letterSpacing: 4,
-            color: `${BONE}0.12)`, cursor: "pointer", transition: "color 0.4s ease",
+            position: "fixed", bottom: S4, left: "50%", transform: "translateX(-50%)",
+            fontFamily: FONT_DISPLAY, fontSize: `clamp(11px, 2.8vw, 14px)`, letterSpacing: 6,
+            color: `${BONE}0.18)`, cursor: "pointer", transition: "color 0.5s ease, letter-spacing 0.5s ease",
             textTransform: "uppercase", zIndex: 3, animation: "mirrorReveal 1s ease 2s both",
           }}
-            onMouseEnter={(e) => e.target.style.color = `${BONE}0.3)`}
-            onMouseLeave={(e) => e.target.style.color = `${BONE}0.12)`}
-          >skip</div>
+            onMouseEnter={(e) => { e.target.style.color = `${BONE}0.4)`; e.target.style.letterSpacing = "8px"; }}
+            onMouseLeave={(e) => { e.target.style.color = `${BONE}0.18)`; e.target.style.letterSpacing = "6px"; }}
+          >enter the void</div>
         )}
       </div>
 
