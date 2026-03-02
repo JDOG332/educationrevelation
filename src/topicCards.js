@@ -2212,7 +2212,7 @@ export const TOPIC_CARDS = {
 
       // ── 2 ── THE CENTRAL DOGMA ───────────────────────────────
       {
-        id: "central-dogma",
+        id: "central-dogma-genetics",
         num: 2,
         icon: "⟿",
         title: "The Central Dogma",
@@ -4353,7 +4353,7 @@ export const TOPIC_CARDS = {
 
       // ── 1 ── LAW OF LARGE NUMBERS ────────────────────────────
       {
-        id: "law-large-numbers",
+        id: "law-large-numbers-probability",
         num: 1,
         icon: "📈",
         title: "The Law of Large Numbers",
@@ -4916,7 +4916,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Self-similarity is invariance under scaling transformation. Foundation of fractal geometry, moving beyond Euclidean shapes toward rough structures maintaining complexity at every scale. Simple feedback loops generate infinite morphological variety." },
 
-      { id: "recursion-fractals", num: 2, icon: "🔄", title: "Recursion", subtitle: "The Story Inside the Story",
+      { id: "recursion-fractals-deep", num: 2, icon: "🔄", title: "Recursion", subtitle: "The Story Inside the Story",
         simple: "Recursion is a story that says: Once upon a time, there was a girl who told a story about a girl who told a story... It never ends because the rule repeats inside itself. In math, a simple rule draws a line, then the same rule is used on the new line. This creates snowflakes and stars. Big beautiful things come from doing one small thing over and over with love.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "An echo in a deep canyon that repeats until it fades." },
@@ -5432,7 +5432,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Phi is the limit of successive Fibonacci ratios. In phyllotaxis, it enables densest packing of seeds/leaves, minimizing overlap and maximizing sunlight exposure. An irrational number providing optimal non-periodic tiling. Connects to Sacred Geometry and Quasicrystals." },
 
-      { id: "homeostasis", num: 4, icon: "🌡️", title: "Homeostasis", subtitle: "The Inner Balance",
+      { id: "homeostasis-symmetry", num: 4, icon: "🌡️", title: "Homeostasis", subtitle: "The Inner Balance",
         simple: "Your body is like a smart thermostat always trying to stay just right. If you get too hot, you sweat; too cold, you shiver. This balance is how you stay alive. It is not a frozen balance but a moving one, like a person on a tightrope. Every second, your heart and lungs work together to make sure nothing gets out of whack.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic thump-thump of your heartbeat." },
@@ -6777,7 +6777,7 @@ export const TOPIC_CARDS = {
     // ═══════════════════════════════════════════════════════════════
 
     logic: [
-      { id: "deductive-reasoning", num: 1, icon: "📐", title: "Deductive Reasoning", subtitle: "The Locked Door That Will Not Budge",
+      { id: "deductive-reasoning-logic", num: 1, icon: "📐", title: "Deductive Reasoning", subtitle: "The Locked Door That Will Not Budge",
         simple: "Imagine you have a box of only red crayons. If you reach in and pull one out, it has to be red. That is deductive reasoning. It starts with a big rule we know is true and follows it down to a specific answer. Because the starting rule is solid, the ending answer is like a locked door that will not budge. There is no guessing involved. When you use this, you are thinking like a master builder.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The steady, rhythmic thud of a heartbeat: certainty you can hear." },
@@ -6800,7 +6800,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Deductive reasoning operates on validity and soundness. A deductive argument is valid if the conclusion logically follows from premises; sound only if premises are actually true. Top-down logic: universal truths to particular instances (P→Q). Connects to Rationalism: certain truths knowable through reason alone, independent of sensory experience." },
 
-      { id: "syllogisms", num: 2, icon: "⛓️", title: "Syllogisms", subtitle: "The Three-Step Ladder",
+      { id: "syllogisms-logic", num: 2, icon: "⛓️", title: "Syllogisms", subtitle: "The Three-Step Ladder",
         simple: "A syllogism is like a three-step ladder. The first step is a big fact, the second is a smaller fact, and the third is where they both lead you. If the first two steps are strong, you can stand on the third without falling. It is a way of proving things are true by connecting them together. When you see how things fit, it feels like a puzzle piece clicking into place. You start to see that the world has a secret order.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "Three distinct notes on a piano forming a perfect chord." },
@@ -9159,7 +9159,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Causality is the bedrock of classical physics: the universe at time t is a direct function of t−1. In a deterministic framework, Prophecy is simply calculation of future states from current variables. Quantum mechanics introduces probabilistic uncertainty at the subatomic level, but the macro-flow appears as a singular, unfolding event where past and future are merely limitations of human perception." },
 
-      { id: "block-universe", num: 2, icon: "🧊", title: "The Block Universe Theory", subtitle: "Time Is a Loaf of Bread Already Baked",
+      { id: "clockwork-prophecy", num: 2, icon: "🧊", title: "The Block Universe Theory", subtitle: "Time Is a Loaf of Bread Already Baked",
         simple: "Think of time not as a river flowing by, but as a giant loaf of bread that already exists. You are just a tiny ant crawling through one slice at a time, so you think the future has not happened yet. But if you could step outside the loaf, you would see the beginning, the middle, and the end all sitting there at once. This means your birthday, your first day of school, and your future adventures are all real and existing right now in different slices. You are never truly gone from the past because that slice of the bread is still there.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A recorded song where you can skip to any second: the music is already there." },
@@ -9228,7 +9228,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Information theory: meaning is derived from reducing uncertainty through recognizing order. Pattern recognition extrapolates a sequence to its conclusion. The Oracle has higher resolution of the universal fractal. By understanding self-similarity across scales, one predicts the future not through magic but through advanced understanding of the cosmic template." },
 
-      { id: "amor-fati", num: 5, icon: "❤️", title: "Amor Fati (Love of Fate)", subtitle: "Saying Yes to the Whole Story",
+      { id: "block-universe-prophecy", num: 5, icon: "❤️", title: "Amor Fati (Love of Fate)", subtitle: "Saying Yes to the Whole Story",
         simple: "Amor Fati is a fancy way of saying Love your story, no matter what happens. It means that even the sad or scary parts of your life are important pieces of the puzzle that make you you. Instead of wishing things were different, you say Yes to everything that comes your way. It is like being an actor in a movie who loves the script even when their character faces a big challenge. When you love your fate, you are not a prisoner of the written story — you are the star of it, enjoying every twist and turn.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A crashing wave that is both scary and beautiful." },
@@ -10885,7 +10885,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Taxes involve directional movement toward or away from stimuli (phototaxis, chemotaxis, magnetotaxis). Kineses involve changes in movement rate or turning in response to stimulus intensity. Hard-wired feedback loops between sensory receptors and motor systems. The organism needs no complex internal model — it simply reacts to gradients of information. Convergent recognition of environmental variables where the organism functions as a living sensor for universal forces." },
 
-      { id: "biological-rhythms", num: 5, icon: "🌙", title: "Biological Rhythms", subtitle: "A Clock Inside You That Beats With the Planet",
+      { id: "genetic-memory-animals", num: 5, icon: "🌙", title: "Biological Rhythms", subtitle: "A Clock Inside You That Beats With the Planet",
         simple: "Inside your body, there is a clock that never stops ticking, and it does not need batteries! This clock tells bears when to sleep for winter and tells birds when to fly south. Even you have one that makes you sleepy when the sun goes down and awake when it comes up. It connects your tiny life to the giant spinning of the Earth and the moon. We are not just living on the planet; we are living with the planet's heartbeat. Everything has a season, and your body already knows the schedule.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The steady crick-crick of crickets signaling nighttime." },
@@ -11424,7 +11424,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Dormancy minimizes metabolic cost and increases survivability under stress. Growth, development, and physical activity temporarily stopped while genetic potential remains fully intact. The death that is not really death — external expression of life suspended while the blueprint waits. A biological manifestation of strategic patience at the molecular level." },
 
-      { id: "fractal-geometry", num: 8, icon: "❄️", title: "Fractal Geometry", subtitle: "A Leaf Is a Tiny Map of the Whole World's Design",
+      { id: "fractal-cycles-nature", num: 8, icon: "❄️", title: "Fractal Geometry", subtitle: "A Leaf Is a Tiny Map of the Whole World's Design",
         simple: "Nature has a favorite pattern called a fractal. You can see it in the way a big tree branch looks just like a tiny twig, or how a giant galaxy looks like the swirl in your kitchen sink. These patterns repeat over and over, from the smallest thing to the biggest thing. This shows us that the universe uses the same recipe for everything. When you look at a leaf, you are seeing a tiny map of the whole world's design.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A song where the same melody repeats at different speeds: a canon." },
@@ -12387,7 +12387,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Jung defined the Shadow as the unknown dark side of personality. From a systems perspective: unintegrated information. Suppressed aspects of the Self do not disappear — they become latent variables influencing behavior from the background. The Everlasting We requires radical integration. True enlightenment is not subtraction of darkness but convergent recognition that darkness is simply light that has not yet been understood or integrated into the conscious model." },
 
-      { id: "zero-sum-dynamics", num: 9, icon: "⭕", title: "Zero-Sum Dynamics", subtitle: "Helping Someone Else Is Actually Helping Yourself",
+      { id: "contrast-perception-light", num: 9, icon: "⭕", title: "Zero-Sum Dynamics", subtitle: "Helping Someone Else Is Actually Helping Yourself",
         simple: "Imagine a pizza. If I take a big slice, there is exactly one slice less for everyone else. That is zero-sum. But if we share the pizza and talk about how good it is, we both get happiness, and happiness is not a pizza — it can grow and grow! Life is a mix of these. We have to learn when to protect our slice and when to realize that by helping someone else, we are actually helping ourselves, too.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A duet where two singers make a sound bigger than they could alone." },
@@ -12857,7 +12857,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Schumpeter's theory: the gale of creative destruction is the essential fact about capitalism. Describes industrial mutation revolutionizing economic structure from within. Maps to the Shiva archetype in Eastern philosophy — the deity who destroys the world so it may be created anew. The fire is not the enemy of the forest. The fire is the forest's upgrade protocol." },
 
-      { id: "phoenix-archetype", num: 9, icon: "🦅", title: "The Phoenix Archetype", subtitle: "No Matter How Hard Things Get We Have the Power to Start Over",
+      { id: "phoenix-fire-element", num: 9, icon: "🦅", title: "The Phoenix Archetype", subtitle: "No Matter How Hard Things Get We Have the Power to Start Over",
         simple: "The Phoenix is a magical bird that lives for a long time and then bursts into flames, only to be born again from its own ashes. This story has been told by people all over the world for thousands of years. It represents the eternal spirit because it shows that we can never be truly destroyed by the fires of life. When you fall down and get back up, you are being like the Phoenix. It gives us hope that no matter how hard things get, we have the power to start over and be even more colorful.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A rising musical scale or a choir: ascension you can hear." },
@@ -15836,7 +15836,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Theodicy: if a deity is omnipotent, omniscient, and omnibenevolent, why does suffering exist? The soul-making model posits evil as necessary environment for virtue development. In information theory, evil acts as the noise or entropy providing contrast necessary for the signal of goodness to be recognized. Without potential for disorder, order has zero informativeness — indistinguishable from static vacuum. None solved it with logic. All survived it with faith." },
 
-      { id: "empathy-compassion", num: 4, icon: "❤️", title: "Empathy & Compassion", subtitle: "The Superglue That Holds People Together and Stops Bad Things from Growing",
+      { id: "empathy-moral-compass", num: 4, icon: "❤️", title: "Empathy & Compassion", subtitle: "The Superglue That Holds People Together and Stops Bad Things from Growing",
         simple: "Empathy is like having a feeling-connection to everyone else in the world. When you see a friend cry, you feel a little bit of that sadness in your own heart, and it makes you want to give them a hug. This is your heart's way of telling you that we are all part of the same big family. Compassion is when you take that feeling and use it to do something helpful. It is the superglue that holds people together and stops bad things from growing. When we care for others, we are acting like the best version of ourselves.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "Someone breathing softly while they sleep: the sound of vulnerability trusting the room." },
@@ -15928,7 +15928,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Duality: the universe composed of complementary opposites. In ethics, the good is a directional vector meaningful only when evil is a possible alternative. The entropy of the system — without potential for disorder, order has zero informativeness, indistinguishable from static vacuum. The hero needs the dragon. Not to win. To exist. If you melt one side off the coin you do not have a better coin. You have no coin." },
 
-      { id: "golden-rule", num: 8, icon: "🤝", title: "The Golden Rule", subtitle: "The Simplest Secret in the World — Treat Others the Way You Want to Be Treated",
+      { id: "golden-rule-moral", num: 8, icon: "🤝", title: "The Golden Rule", subtitle: "The Simplest Secret in the World — Treat Others the Way You Want to Be Treated",
         simple: "The Golden Rule is the simplest secret in the world: treat others the way you want to be treated. If you want people to be nice to you, be nice to them first! If you do not like being yelled at, then do not yell at your friends. It is like a mirror that shows you how to act toward everyone you meet. This rule is found in almost every culture and religion because it just works. It turns me and you into us.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "People singing the same song in harmony: different voices choosing the same truth." },
@@ -15951,7 +15951,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The golden rule: a universal grammar of ethics. Represents the Uhlmann fidelity in social dynamics — recognition that the other is a self with equivalent value and internal states. Minimizes divergence between individuals, creating convergent social recognition that maximizes global reliability and peace. Every religion found the same room from different doors. Not coincidence. Convergence." },
 
-      { id: "virtue-ethics", num: 9, icon: "💎", title: "Virtue Ethics", subtitle: "Your Character Is Like a Diamond That You Are Polishing Until It Shines",
+      { id: "virtue-ethics-religion", num: 9, icon: "💎", title: "Virtue Ethics", subtitle: "Your Character Is Like a Diamond That You Are Polishing Until It Shines",
         simple: "Being a good person is like practicing a sport or a musical instrument; you have to do it every day to get better. You practice being brave, being honest, and being patient until those things become part of who you are. Instead of just following a list of do nots, you focus on being a doer of good things. Think of your character like a diamond that you are polishing until it shines. The more you choose the right thing, the easier it becomes to do it next time. You are building a beautiful you.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A master musician playing a difficult piece perfectly: practice made audible." },
@@ -16872,7 +16872,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Heuristics as evolutionary adaptations minimizing computational cost. Softmax weights — probabilities assigned to information sources based on past reliability. While heuristics allow redundancy and consistency in worldview, they lead to systemic bias if not updated. Keep the shortcuts that lead to love. Replace the ones that lead to fear." },
 
-      { id: "dark-night-of-soul", num: 8, icon: "🌑", title: "The Dark Night of the Soul (The New Moon)", subtitle: "The Struggle That Makes Your Faith Strong",
+      { id: "dark-night-faith", num: 8, icon: "🌑", title: "The Dark Night of the Soul (The New Moon)", subtitle: "The Struggle That Makes Your Faith Strong",
         simple: "Sometimes, everything you thought was true feels like it is falling apart. This can be very scary, like being lost in the woods at night. But the dark night is actually a special time when your soul is resting and getting ready to grow. Just like a seed has to be in the dark dirt before it turns into a flower, we sometimes need to be unsure so we can find a deeper kind of sure. It is the struggle that makes your faith strong. When the sun finally comes up, you will see the world in a whole new beautiful way.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The low deep hum of a cello: sadness that is also somehow beautiful." },
@@ -17154,7 +17154,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Justification as the forensic aspect of redemption — moving the individual from guilt to right-standing within a communal or cosmic framework. Justice without mercy is cruelty. Mercy without justice is chaos. Justification is the point where justice and mercy shake hands. The books are balanced. And the door is open." },
 
-      { id: "heros-return", num: 10, icon: "🏠", title: "The Hero's Return (The Porch Light)", subtitle: "Home Is Not a Building — Home Is the Feeling of Belonging Exactly Where You Are",
+      { id: "heros-return-salvation", num: 10, icon: "🏠", title: "The Hero's Return (The Porch Light)", subtitle: "Home Is Not a Building — Home Is the Feeling of Belonging Exactly Where You Are",
         simple: "The hero's return is when you come back home after being away or feeling like an outsider. Maybe you were hiding because you were embarrassed, but then you realize your family still loves you and has been waiting for you. It is like the ending of a movie where the main character finally hugs their friends again. You come back different — stronger, kinder, and ready to help others. Home is not just a building; it is the feeling of belonging exactly where you are.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The crackle of a fireplace: the sound of a house that kept the fire burning while you were gone." },
@@ -17603,7 +17603,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Wheeler's participatory universe and integrated information theory: consciousness as fundamental property of the universe, not a byproduct. The observer's role in collapsing the wavefunction suggests mind and matter are deeply intertwined. Idealism: the physical world as manifestation of deeper mental reality. Consciousness is what matter does when it wants to know itself." },
 
-      { id: "cosmic-egg", num: 9, icon: "🥚", title: "The Cosmic Egg", subtitle: "Big Things Often Start Small and Hidden",
+      { id: "cosmic-egg-creation", num: 9, icon: "🥚", title: "The Cosmic Egg", subtitle: "Big Things Often Start Small and Hidden",
         simple: "An egg is a wonderful thing because it looks like a simple rock on the outside, but it has a whole new life growing on the inside. Many cultures say the universe started as a cosmic egg. All the energy and stars were tucked inside a shell, kept warm and safe until it was time to hatch. This tells us that big things often start small and hidden. Even when you feel small, you might be carrying a giant universe of ideas and love inside you, just waiting for the right time to crack the shell and come out!",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The quiet hum of a refrigerator or distant engine: potential energy making its background noise." },
@@ -17908,7 +17908,7 @@ export const TOPIC_CARDS = {
     // ═══════════════════════════════════════════════════════════════
 
     deathend: [
-      { id: "legacy-impact", num: 1, icon: "🌊", title: "Legacy & Impact (The Ripple)", subtitle: "Because You Were Here the Pond Is Never Exactly the Same",
+      { id: "legacy-ripple-death", num: 1, icon: "🌊", title: "Legacy & Impact (The Ripple)", subtitle: "Because You Were Here the Pond Is Never Exactly the Same",
         simple: "Think of your life like a single drop of water falling into a big quiet pond. Even though the drop disappears and becomes part of the pond, it makes circles of water that spread out and touch the edges. Your kindness, the things you build, and the love you give are like those circles that keep moving even when the drop is gone. Everything you do changes the world just a little bit forever. Because you were here, the pond is never exactly the same as it was before.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The echo of a bell long after it has been struck: proof that vibration outlives the hand that rang it." },
@@ -18144,7 +18144,7 @@ export const TOPIC_CARDS = {
     // ═══════════════════════════════════════════════════════════════
 
     memory: [
-      { id: "neuroplasticity", num: 1, icon: "🌱", title: "Neuroplasticity", subtitle: "You Are Not Stuck Being Who You Were Yesterday",
+      { id: "neuroplasticity-memory", num: 1, icon: "🌱", title: "Neuroplasticity", subtitle: "You Are Not Stuck Being Who You Were Yesterday",
         simple: "Think of your brain like a garden where the paths you walk most often become the easiest to follow. Every time you think a thought or learn something new, you are actually growing new branches in your head. If you tell yourself you are brave, your brain builds a brave road that gets stronger every day. This means you are not stuck being who you were yesterday; you can grow into someone totally new. You have the power to plant new seeds in your mind garden whenever you want.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A steady drumbeat your brain waves eventually sync up with: rhythm rewiring you in real time." },
@@ -18403,7 +18403,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Mentalese: a non-verbal representational system enabling logical operations before linguistic output. The architecture of thought is partially innate. Language streamlines thought but does not birth it. The sticker is not the thing. The thing was always there." },
 
-      { id: "linguistic-relativity", num: 2, icon: "👓", title: "Linguistic Relativity (The Colored Lens)", subtitle: "It Does Not Change the World but It Changes How Much Detail You See",
+      { id: "linguistic-relativity-thought", num: 2, icon: "👓", title: "Linguistic Relativity (The Colored Lens)", subtitle: "It Does Not Change the World but It Changes How Much Detail You See",
         simple: "Think of language like a pair of colorful sunglasses. If you wear blue glasses the world looks a little blue; if you wear red ones it looks red. Some languages have many words for blue so those people might notice tiny changes in the sky that we miss. Having more words is like having a bigger box of crayons to draw your thoughts with. It does not change the world, but it changes how much detail you see in it.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A foreign language and its unique music: the ear hearing a different operating system." },
@@ -18967,7 +18967,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The RAS filters ~2 million bits/second down to ~40 bits of conscious awareness. Conscious intention reprograms the filter. This is not magical thinking. This is neuroscience with a velvet rope." },
 
-      { id: "confirmation-bias", num: 6, icon: "⚖️", title: "Confirmation Bias", subtitle: "Be a Detective Instead of a Cheerleader",
+      { id: "confirmation-bias-perception", num: 6, icon: "⚖️", title: "Confirmation Bias", subtitle: "Be a Detective Instead of a Cheerleader",
         simple: "This is when your brain acts like a cheerleader for your own ideas. If you believe that all cats are mean, your brain will remember every time a cat hissed but will forget every time a cat purred. It wants you to feel right, even if you are wrong! To beat this, you have to try and be a detective instead of a cheerleader. A detective looks for the truth, even if it is not what they expected to find.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "Only hearing the parts of a song that match your mood: the ears editing the playlist in real time." },
@@ -19088,7 +19088,7 @@ export const TOPIC_CARDS = {
     // ═══════════════════════════════════════════════════════════════
 
     choice: [
-      { id: "compatibilism", num: 1, icon: "🛤️", title: "Compatibilism (The Unified Path)", subtitle: "You Do Not Have to Choose Between Being the Driver or the Road — You Are Both",
+      { id: "compatibilism-unified-path", num: 1, icon: "🛤️", title: "Compatibilism (The Unified Path)", subtitle: "You Do Not Have to Choose Between Being the Driver or the Road — You Are Both",
         simple: "Imagine you are playing a video game where you can move anywhere you want, but you have to stay inside the world the game makers built. This is like your life; you have real choices, even if there are rules and a road you are following. You are the driver who chooses which way to turn, but the road is what makes the trip possible in the first place. This means you do not have to choose between being the driver or the road — you are actually both at the same time! When you decide to be kind or work hard, you are using your power to move along the path in your own special way.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A piano and violin playing different notes that create one beautiful song: two forces becoming one." },
@@ -19111,7 +19111,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Compatibilism redefines freedom not as the absence of cause but as the absence of external coercion. Actions stemming from internal desires are free even if those desires were shaped by history. The driver needs the road. The road needs the driver. They were never enemies." },
 
-      { id: "causal-determinism", num: 2, icon: "⛓️", title: "Causal Determinism (The Fixed Track)", subtitle: "Everything That Happens Today Happened Because of Something That Happened Yesterday",
+      { id: "causal-determinism-choice", num: 2, icon: "⛓️", title: "Causal Determinism (The Fixed Track)", subtitle: "Everything That Happens Today Happened Because of Something That Happened Yesterday",
         simple: "Think of a long row of falling dominoes. Once the first one is pushed, every other domino has to fall in a specific way. Some people think the whole universe is like those dominoes, where everything that happens today happened because of something that happened yesterday. In this view the road is already built, and it goes exactly where it is supposed to go. Even though it feels like you are steering, the road is what decides where you end up. It reminds us that we are all part of a very big connected story that started a long time ago.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A grandfather clock ticking steadily: the sound of a cause producing an effect producing a cause." },
@@ -19180,7 +19180,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Neuroplasticity provides a biological basis for the driver modifying the road. Long-term potentiation strengthens synapses based on use. You cannot choose your starting map. But you can choose which roads to widen. That is free will with a shovel." },
 
-      { id: "alternative-possibilities", num: 5, icon: "🔱", title: "Principle of Alternative Possibilities", subtitle: "For a Choice to Be Real You Actually Have to Be Able to Pick Either One",
+      { id: "fixed-track-determinism", num: 5, icon: "🔱", title: "Principle of Alternative Possibilities", subtitle: "For a Choice to Be Real You Actually Have to Be Able to Pick Either One",
         simple: "Have you ever come to a Y in the road where you had to choose between going to the park or going for ice cream? This idea says that for a choice to be real, you actually have to be able to pick either one. If someone forced you to go to the park, it would not really be your choice, would it? To be a true driver, there must be more than one road you can take. This reminds us that every time we make a decision, we are standing at a fork where the future could go two different ways depending on what we say or do.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A coin flipping in the air — heads or tails: the sound of a future that has not been decided yet." },
@@ -19249,7 +19249,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Agency grounds moral responsibility: being the source of one's actions warrants reactive attitudes like gratitude or resentment. Responsibility is not about deserving blame. It is response-ability — the ability to respond. And that is entirely yours." },
 
-      { id: "fatalism", num: 8, icon: "🎡", title: "Fatalism (The Passenger Seat)", subtitle: "Some People Find This Relaxing Because It Means Everything Is Already Taken Care Of",
+      { id: "fatalism-choice", num: 8, icon: "🎡", title: "Fatalism (The Passenger Seat)", subtitle: "Some People Find This Relaxing Because It Means Everything Is Already Taken Care Of",
         simple: "Have you ever been on a roller coaster? Once the ride starts, you are just a passenger; the tracks go where they go, and you are just along for the ride. Fatalism is the idea that life is like that roller coaster. No matter how much you turn an imaginary steering wheel, the road has already decided your start and your finish. Some people find this relaxing because it means they do not have to worry — everything is already taken care of. But it also means you have to trust the ride and enjoy the view, even when it gets bumpy.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The clicking sound of a roller coaster going up a hill: the sound of a destination that was decided before the ride began." },
@@ -19725,7 +19725,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The distinction between Content of Consciousness and Context of Consciousness. Moving identity from content to context provides indestructible peace. You are not the thing that survived the storm. You are the thing the storm passed through." },
 
-      { id: "flow-state", num: 8, icon: "🌊", title: "The Flow State (The Zone)", subtitle: "One of the Happiest Feelings a Human Can Have",
+      { id: "flow-state-observer", num: 8, icon: "🌊", title: "The Flow State (The Zone)", subtitle: "One of the Happiest Feelings a Human Can Have",
         simple: "Have you ever been so busy drawing or playing a game that you forgot what time it was? That is called Flow. It is when the Thinker stops talking because you are so focused on what you are doing. The Observer and the Thinker become one team. It feels like you are dancing through your work without even trying. It is one of the happiest feelings a human can have.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "Fast rhythmic drumming that makes you want to move: the sound of the self disappearing into the action." },
@@ -20073,7 +20073,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Neuroplasticity: sustained attentional focus induces long-term potentiation in the prefrontal cortex while downregulating the amygdala. The brain is not a static machine but a dynamic process. By altering the internal landscape we alter external perception. The garden grows because you water it. The water is your attention. The attention is your breath." },
 
-      { id: "default-mode-network", num: 2, icon: "🤫", title: "The Default Mode Network (The Quiet)", subtitle: "Turn Off the Loud TV and You Realize the Room Was Actually Very Peaceful All Along",
+      { id: "default-mode-stillness", num: 2, icon: "🤫", title: "The Default Mode Network (The Quiet)", subtitle: "Turn Off the Loud TV and You Realize the Room Was Actually Very Peaceful All Along",
         simple: "Inside your head, there is a Chatterbox that loves to talk about what happened yesterday or what might happen tomorrow. This Chatterbox is called the Default Mode Network, and it is usually very loud. When you meditate, you give the Chatterbox a break so you can finally hear the Underneath. It is like turning off a loud TV in a room so you can hear the birds singing outside. When the TV is off, you realize the room was actually very peaceful all along.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between two heartbeats: the sound of the gap where the chatterbox has no script." },
@@ -20096,7 +20096,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The DMN is the neurological seat of the ego — the self-referential narrative. Meditation serves as an inhibitory signal, facilitating decentering where the practitioner no longer identifies solely with their thoughts. The narrator is a guest — not the host. The remote control is your breath." },
 
-      { id: "vagus-nerve", num: 3, icon: "⚡", title: "Vagus Nerve Stimulation (The Bridge)", subtitle: "A Secret Remote Control That Switches Your Body from Scared Mode to Safe Mode",
+      { id: "vagus-nerve-stillness", num: 3, icon: "⚡", title: "Vagus Nerve Stimulation (The Bridge)", subtitle: "A Secret Remote Control That Switches Your Body from Scared Mode to Safe Mode",
         simple: "You have a Peace Nerve that runs from your brain all the way down to your tummy. When you take long, slow breaths, you are tickling this nerve to tell your whole body to relax. It is like a secret remote control that switches your body from Scared Mode to Safe Mode. When your body feels safe, your mind stops racing and starts resting. You can use your breath to talk to your body without using any words at all.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The low deep Ohm chant vibrating in your throat: the sound that tickles the peace nerve from the inside." },
@@ -20142,7 +20142,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "MBSR: clinicalized ancient awareness practice, proven to reduce cortisol and systemic inflammation. Non-judgmental observation creates a gap between stimulus and response. The past is a memory. The future is a guess. Right now is the only thing that is actually happening." },
 
-      { id: "interoception", num: 5, icon: "🗺️", title: "Interoception (The Inner Map)", subtitle: "Your Body Is Always Talking to You in a Quiet Language of Tingles Warmth and Tightness",
+      { id: "interoception-stillness", num: 5, icon: "🗺️", title: "Interoception (The Inner Map)", subtitle: "Your Body Is Always Talking to You in a Quiet Language of Tingles Warmth and Tightness",
         simple: "Interoception is your Inside Sight. It is how you know you are hungry, tired, or excited before you even think about it. Most people only look at the world outside, but meditation teaches you to look at the world inside your skin. Your body is always talking to you in a quiet language of tingles, warmth, and tightness. When you learn to listen to this inner language, you become a better friend to yourself.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The internal woosh of your own breathing: the sound of the inner world announcing itself." },
@@ -20332,7 +20332,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "REM neuroplasticity: Long-Term Potentiation consolidates procedural and emotional memory during desynchronized sleep. The desk is the download. The bed is the installation. The construction crew does not need your permission. It only needs you to lie down." },
 
-      { id: "lucid-dreaming", num: 3, icon: "👁️", title: "Lucid Dreaming", subtitle: "Waking Up Inside Your Dream and Realizing You Are the Director",
+      { id: "lucid-dreaming-mystic", num: 3, icon: "👁️", title: "Lucid Dreaming", subtitle: "Waking Up Inside Your Dream and Realizing You Are the Director",
         simple: "Imagine being inside a movie and suddenly realizing that you are the director! Lucid dreaming is when you wake up inside your dream and realize, hey, I am dreaming right now! Once you know this, you can fly over mountains, talk to animals, or walk through walls. It is like having a superpower that only works when your eyes are closed. It teaches you that your mind is a giant world where anything is possible if you just believe it. This helps you feel more powerful and less afraid even when you are wide awake.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A clear ringing bell that cuts through silence: the sound of awareness suddenly switching on inside the dream." },
@@ -20614,7 +20614,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Ego dissolution: DMN connectivity reduction allows brain regions to communicate more freely, producing a unified conscious experience lacking a central self-perspective. The ego builds the wall. The wall creates the loneliness. When the wall melts, the suffering has nowhere to live." },
 
-      { id: "universal-consciousness", num: 5, icon: "💡", title: "Universal Consciousness", subtitle: "One Giant Light Shining Through Billions of Tiny Holes — We Are the Universe Looking at Itself",
+      { id: "nonduality-oneness", num: 5, icon: "💡", title: "Universal Consciousness", subtitle: "One Giant Light Shining Through Billions of Tiny Holes — We Are the Universe Looking at Itself",
         simple: "Imagine there is only one giant light in the whole universe, but it is shining through a screen with billions of tiny holes. Each hole looks like a separate little light, but it is actually the same big light behind it. You are one of those holes, and so is your friend and your dog. We all share the same glow of being alive and aware. Even though we look different on the outside, the is-ness inside us is exactly the same. We are the universe's way of looking at itself.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A large choir singing the same note in perfect harmony: the sound of many voices proving they share one breath." },
@@ -20965,7 +20965,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Compassion: the measurement of awakening. Compassion meditation produces the highest gamma coherence ever recorded. The brain reaches peak performance when caring about others, not thinking about itself. If the seeing does not produce kindness, the seeing is not complete." },
 
-      { id: "eternal-now", num: 10, icon: "♾️", title: "The Eternal Now", subtitle: "You Have Never Lived a Single Second That Was Not Right Now",
+      { id: "eternal-now-awakening", num: 10, icon: "♾️", title: "The Eternal Now", subtitle: "You Have Never Lived a Single Second That Was Not Right Now",
         simple: "Here is the strangest truth about time: there is only now. You have never experienced yesterday because when it was happening, it was now. You will never experience tomorrow because when it arrives, it will be now. The past is a memory happening now. The future is an imagination happening now. Now is not a moment in time. Now is the only thing that exists. Enlightenment is not something you achieve in the future. Enlightenment is what is available in this moment if you stop looking for it somewhere else.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The sound happening right now — whatever it is — heard as the only sound that has ever existed: the ears tuning to the eternal frequency." },
@@ -21155,7 +21155,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "The Torus: the only self-referencing geometric form. Heart's EM field, earth's magnetic field, hurricanes, black holes, the universe itself — one shape at every scale. The geometry of sustainability: energy feeding itself. You are not a line from birth to death. You are a torus." },
 
-      { id: "fibonacci-sequence", num: 8, icon: "🐚", title: "The Fibonacci Sequence", subtitle: "Nature's Way of Counting — Every Number Is the Sum of the Two Before It",
+      { id: "fibonacci-sacred-geometry", num: 8, icon: "🐚", title: "The Fibonacci Sequence", subtitle: "Nature's Way of Counting — Every Number Is the Sum of the Two Before It",
         simple: "The Fibonacci sequence is a list of numbers: 1, 1, 2, 3, 5, 8, and so on. You get the next number by adding the two before it. Nature uses these numbers to decide how many petals a flower should have or how a pinecone should grow. It is like nature's way of counting! This sequence shows us that everything grows in a very smart organized way. We are all growing along with this natural rhythm.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "A drum beat that accelerates in Fibonacci steps — 1, 1, 2, 3, 5: the sound of mathematical growth you can feel in your chest." },
@@ -21725,7 +21725,7 @@ export const TOPIC_CARDS = {
         ],
         advanced: "Quantum entanglement: Bell's theorem disproved Einstein. Entangled particles are not two things communicating — they are one system, and space is the illusion. Intuition may be the conscious experience of entanglement. Not magic. Physics." },
 
-      { id: "epistemic-humility", num: 2, icon: "🏺", title: "Epistemic Humility", subtitle: "Knowing That You Do Not Know Everything Is Actually the Smartest Thing You Can Do",
+      { id: "epistemic-humility-innersight", num: 2, icon: "🏺", title: "Epistemic Humility", subtitle: "Knowing That You Do Not Know Everything Is Actually the Smartest Thing You Can Do",
         simple: "Knowing that you do not know everything is actually the smartest thing you can do. It is like keeping a cup empty so it can always be filled with new cool ideas. If you think you know it all, your brain closes like a locked door. When we stay humble, our inner sight can show us things we would have missed. It is okay to say I do not know because it lets you learn. This keeps your mind fresh and ready for surprises.",
         senses: [
           { key: "hear", icon: "👂", sense: "SOUND", text: "The silence between notes in a song: the sound of the space that gives the music its meaning — without the gap, there is no melody." },
