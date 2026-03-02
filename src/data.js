@@ -211,34 +211,34 @@ export const ETYMOLOGIES = [
 
 export const POEMS = [
   // 1 — MIRROR OPEN
-  "the rhythm of life\nis fast & its slow...",
+  "It's the rhythm of life.",
   "",
   // 2
-  "in the heartbeats & wishes\n& feelings below...",
-  "every life holds the secret\nso heavy to show...",
+  "Every hope, A heartbeat.\nEvery wish, A dream.",
+  "The moon never wishing...\nThe sun it could be.",
   "",
   // 3
-  "but the moon never wishes\nthe sun it could be...",
-  "always sharing her light\nin the darkness for me...",
-  "inner sinner gets sainthood\nso precious to see...",
+  "Every life, A purpose...\nHidden inside.",
+  "Every sinner, A saint...\nTrying to hide.",
   "",
   // 4 — THE WIDEST POINT — THE EYE OPENS
-  "every girl needs a mountain\nto climb up and slide...",
-  "every man holds a boy\ngrowing wildly inside...",
-  "every beast wears a burden\nit never deserved...",
-  "every eagle's an eaglet\ntoo frightened to serve...",
+  "Every girl needs a mountain,\nTo climb up and slide.",
+  "Every man has a boy...\nGrowing inside.",
   "",
   // 3
-  "til the branch finally breaks...\nand the sky calms her nerves...",
-  "every deck has a dealer\nfor trump she will play...",
-  "just don't carve hard rules\nor we'll crumble to clay...",
+  "Every beast has the burden...\nOf scary and mean.",
+  "Every eagle, An eaglet...\nWaiting to scream.",
   "",
   // 2
-  "every baby is born\nwith all that it needs...",
-  "just wisdom & love\n& the chance to breathe...",
+  "Every deck\nNeeds a dealer...\nFor trump she will make.",
+  "But don't make hard rules,\nYou're not ready to break.",
   "",
-  // 1 — MIRROR CLOSE
-  "the rhythm of life\nis fast & its slow...",
+  // 1
+  "Every baby is born,\nWith all that it needs...",
+  "Just wisdom and love...\nAnd the chance to breathe.",
+  "",
+  // MIRROR CLOSE
+  "It's the rhythm of life.",
 ];
 
 export const THE_ANSWER = {
