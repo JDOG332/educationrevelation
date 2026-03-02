@@ -761,14 +761,49 @@ export default function TheoryOfEverything() {
             const cycleDuration = Math.round(PHI * PHI * 23.6) * 1000;
             const speed = oneCycleH / cycleDuration; // px per ms
 
-            // Start below the viewport
-            let y = viewH + 50;
+            // Start at center — title crystallizes from the glow
+            const titleH = kids[0] ? kids[0].offsetHeight : 0;
+            let y = (viewH - titleH) / 2;
             let totalElapsed = 0;
             scroller.style.transform = `translateY(${y}px)`;
+            scroller.style.opacity = "0";
+
+            // The first bookend: start white, tiny, blurred — will transition to gold, full-size, crisp
+            const firstTitle = kids[0];
+            if (firstTitle) {
+              firstTitle.style.color = 'rgba(255,255,255,0.9)';
+              firstTitle.style.WebkitTextFillColor = 'rgba(255,255,255,0.9)';
+              firstTitle.style.background = 'none';
+              firstTitle.style.filter = 'blur(30px)';
+              firstTitle.style.transform = 'scale(0.05)';
+            }
+
+            const CRYSTALLIZE_DUR = 4236; // PHI³ ms
 
             const waitForVeil = () => {
               if (!veilParted) { frameRef.current = requestAnimationFrame(waitForVeil); return; }
-              setTimeout(() => { lastTime.current = null; frameRef.current = requestAnimationFrame(scroll); }, 618);
+
+              // Phase 1: Make scroller visible (title is still white/tiny/blurred)
+              scroller.style.opacity = "1";
+
+              // Phase 2: Crystallize — blur→sharp, scale→full, white→gold all at once
+              if (firstTitle) {
+                firstTitle.style.transition = `filter ${CRYSTALLIZE_DUR}ms cubic-bezier(0.23, 1, 0.32, 1), transform ${CRYSTALLIZE_DUR}ms cubic-bezier(0.23, 1, 0.32, 1), color ${CRYSTALLIZE_DUR}ms ease, -webkit-text-fill-color ${CRYSTALLIZE_DUR}ms ease, background ${CRYSTALLIZE_DUR}ms ease`;
+                firstTitle.style.filter = 'blur(0px)';
+                firstTitle.style.transform = 'scale(1)';
+                // Restore the gold shimmer gradient
+                firstTitle.style.background = 'linear-gradient(90deg, rgba(201,168,76,0.5) 0%, rgba(255,245,220,0.95) 25%, rgba(201,168,76,1) 50%, rgba(255,245,220,0.95) 75%, rgba(201,168,76,0.5) 100%)';
+                firstTitle.style.backgroundSize = '200% 100%';
+                firstTitle.style.WebkitBackgroundClip = 'text';
+                firstTitle.style.WebkitTextFillColor = 'transparent';
+                firstTitle.style.backgroundClip = 'text';
+              }
+
+              // Hold while title crystallizes, then start scrolling
+              setTimeout(() => {
+                lastTime.current = null;
+                frameRef.current = requestAnimationFrame(scroll);
+              }, CRYSTALLIZE_DUR);
             };
 
             function scroll(now) {
