@@ -738,71 +738,62 @@ export default function TheoryOfEverything() {
           const scrollRef = useRef(null);
           const lastTime = useRef(null);
           const frameRef = useRef(null);
-          const elapsedRef = useRef(0);
-          const [showMoveOn, setShowMoveOn] = useState(false);
+          const moveOnRef = useRef(null);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
             const container = wheelRef.current;
             const scroller = scrollRef.current;
-
-            // We render 3 copies of the poem. Each copy starts with the golden bridge line.
-            // When scroll passes 1 full cycle, we silently jump back by 1 cycle height.
-            const children = scroller.children;
-            const totalChildren = children.length;
-            const oneCycleCount = POEMS.length; // lines in one cycle
-            
-            // Measure one cycle height after render
-            let oneCycleH = 0;
-            for (let c = 0; c < oneCycleCount && c < totalChildren; c++) {
-              oneCycleH += children[c].getBoundingClientRect().height;
-            }
-
             const viewH = container.clientHeight;
-            const DURATION_PER_CYCLE = Math.round(PHI * PHI * 23.6) * 1000; // ~62s per cycle
-            const pxPerMs = oneCycleH / DURATION_PER_CYCLE;
 
-            // Start: golden line enters from below
-            let scrollY = viewH + 100;
-            scroller.style.transform = `translateY(${scrollY}px)`;
-
-            const checkReady = () => {
-              if (!veilParted) {
-                frameRef.current = requestAnimationFrame(checkReady);
-                return;
-              }
-              setTimeout(() => {
-                lastTime.current = null;
-                frameRef.current = requestAnimationFrame(tick);
-              }, 618);
-            };
-
-            function tick(now) {
-              if (!lastTime.current) { lastTime.current = now; }
-              const dt = now - lastTime.current;
-              lastTime.current = now;
-
-              elapsedRef.current += dt;
-              if (elapsedRef.current >= DURATION_PER_CYCLE && !showMoveOn) {
-                setShowMoveOn(true);
-              }
-
-              scrollY -= pxPerMs * dt;
-
-              // When we've scrolled past one full cycle, jump back by one cycle height
-              // This is invisible because the content repeats identically
-              if (scrollY < -oneCycleH) {
-                scrollY += oneCycleH;
-              }
-
-              scroller.style.transform = `translateY(${scrollY}px)`;
-              frameRef.current = requestAnimationFrame(tick);
+            // Measure one cycle: count DOM children for exactly POEMS.length items
+            const oneCycleCount = POEMS.length;
+            let oneCycleH = 0;
+            const kids = scroller.children;
+            for (let c = 0; c < oneCycleCount && c < kids.length; c++) {
+              oneCycleH += kids[c].offsetHeight;
             }
 
-            frameRef.current = requestAnimationFrame(checkReady);
-            return () => {
-              if (frameRef.current) cancelAnimationFrame(frameRef.current);
+            // Speed: one cycle in ~62 seconds (PHI² × 23.6)
+            const cycleDuration = Math.round(PHI * PHI * 23.6) * 1000;
+            const speed = oneCycleH / cycleDuration; // px per ms
+
+            // Start below the viewport
+            let y = viewH + 50;
+            let totalElapsed = 0;
+            scroller.style.transform = `translateY(${y}px)`;
+
+            const waitForVeil = () => {
+              if (!veilParted) { frameRef.current = requestAnimationFrame(waitForVeil); return; }
+              setTimeout(() => { lastTime.current = null; frameRef.current = requestAnimationFrame(scroll); }, 618);
             };
+
+            function scroll(now) {
+              if (!lastTime.current) lastTime.current = now;
+              const dt = Math.min(now - lastTime.current, 50); // cap dt to avoid jumps on tab-switch
+              lastTime.current = now;
+              totalElapsed += dt;
+
+              y -= speed * dt;
+
+              // Silent jump-back: when we've scrolled past one full cycle, snap back
+              if (y < viewH - oneCycleH * 2) {
+                y += oneCycleH;
+              }
+
+              scroller.style.transform = `translateY(${y}px)`;
+
+              // Show MOVE ON after one full cycle (no state update — just DOM)
+              if (totalElapsed >= cycleDuration && moveOnRef.current) {
+                moveOnRef.current.style.opacity = "1";
+                moveOnRef.current.style.pointerEvents = "auto";
+              }
+
+              frameRef.current = requestAnimationFrame(scroll);
+            }
+
+            frameRef.current = requestAnimationFrame(waitForVeil);
+            return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current); };
           }, []);
 
           // Golden ratio font sizes: base 17 × PHI = 28, × PHI² = 44
@@ -877,23 +868,24 @@ export default function TheoryOfEverything() {
                 })}
               </div>
 
-              {/* MOVE ON — appears after poem plays once */}
-              {showMoveOn && (
-                <div
-                  onClick={() => goDeeper()}
-                  style={{
-                    position: 'absolute',
-                    bottom: `${Math.round(13 * PHI)}%`,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    zIndex: 10,
-                    pointerEvents: 'auto',
-                    cursor: 'pointer',
-                    textAlign: 'center',
-                    animation: 'fadeSlideUp 1.5s ease',
-                    WebkitTapHighlightColor: 'transparent',
-                  }}
-                >
+              {/* MOVE ON — fades in via ref after one cycle */}
+              <div
+                ref={moveOnRef}
+                onClick={() => goDeeper()}
+                style={{
+                  position: 'absolute',
+                  bottom: `${Math.round(13 * PHI)}%`,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 10,
+                  pointerEvents: 'none',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                  opacity: 0,
+                  transition: 'opacity 1.5s ease',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
+              >
                   <div style={{
                     fontFamily: "'Cinzel', serif",
                     fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
@@ -904,8 +896,7 @@ export default function TheoryOfEverything() {
                     borderRadius: 10,
                     background: 'rgba(3,3,6,0.85)',
                   }}>MOVE ON</div>
-                </div>
-              )}
+              </div>
 
               {/* Tap to skip — bottom quartile (silent, always present) */}
               <div
