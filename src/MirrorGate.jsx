@@ -360,73 +360,82 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
       {/* Content */}
       <div style={{
         position: "relative", zIndex: 2, width: "100%", maxWidth: 618,
-        padding: `${S5}px ${S3}px ${S5 * 2}px`,
+        padding: `${S4}px ${S3}px ${S5 * 2}px`,
         display: "flex", flexDirection: "column", alignItems: "center", minHeight: "100vh",
+        justifyContent: "flex-start", paddingTop: `clamp(${S3}px, 12vh, ${S5}px)`,
       }}>
 
         {/* ── HEADER ── */}
-        <div style={{ textAlign: "center", marginBottom: S4, animation: "mirrorReveal 1s ease 0.1s both" }}>
+        <div style={{ textAlign: "center", marginBottom: S2, animation: "mirrorReveal 1s ease 0.1s both" }}>
           <h1 style={{
             fontFamily: FONT_DISPLAY, fontSize: `clamp(${S3}px, 9vw, ${S5}px)`,
-            fontWeight: 400, color: `${BONE}0.9)`, letterSpacing: 4, lineHeight: 1.1,
-            margin: 0, marginBottom: S1,
-          }}>GROUND TRUTH<br /><span style={{ fontSize: "0.55em", letterSpacing: 6, color: `${GOLD}0.5)` }}>&amp; DARE</span></h1>
+            fontWeight: 400, letterSpacing: 4, lineHeight: 1.1,
+            margin: 0, marginBottom: S1, whiteSpace: "nowrap",
+          }}><span style={{ color: `${BONE}0.9)` }}>TRUTH</span> <span style={{ fontSize: "0.85em", letterSpacing: 6, color: `${GOLD}0.6)` }}>&amp; DARE</span></h1>
           <div style={{
             fontFamily: FONT_BODY, fontSize: `clamp(10px, 2.2vw, 12px)`,
             fontStyle: "italic", fontWeight: 300, color: `${BONE}0.2)`,
-            letterSpacing: 3, marginBottom: S2,
+            letterSpacing: 3, marginBottom: S1,
           }}>a measurement of the depth of truth</div>
-          <div style={{
-            fontFamily: FONT_BODY, fontSize: `clamp(13px, 3vw, 17px)`,
-            fontStyle: "italic", fontWeight: 300, color: `${BONE}0.35)`,
-            lineHeight: PHI, maxWidth: 380, margin: "0 auto",
-          }}>Don't ask a question.<br />Write what you believe is true.</div>
         </div>
 
-        {/* ── INPUT ── */}
-        <div style={{ width: "100%", marginBottom: S4, animation: "mirrorReveal 0.8s ease 0.4s both" }}>
-          <textarea ref={inputRef} value={input}
-            onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown}
-            placeholder="everything is connected..."
-            disabled={phase === "reflecting"} rows={3}
-            style={{
-              width: "100%", padding: `${S2}px ${S3}px`,
-              fontFamily: FONT_BODY, fontSize: `clamp(16px, 3.5vw, 20px)`,
-              fontStyle: "italic", fontWeight: 300, color: `${BONE}0.85)`,
-              background: `${GOLD}0.02)`, border: `1px solid ${GOLD}0.1)`,
-              borderRadius: 8, outline: "none", resize: "none",
-              lineHeight: PHI, letterSpacing: 0.5,
-              transition: "border-color 0.4s ease, background 0.4s ease",
-              caretColor: `${GOLD}0.5)`,
-            }}
-            onFocus={(e) => { e.target.style.borderColor = `${GOLD}0.22)`; e.target.style.background = `${GOLD}0.035)`; }}
-            onBlur={(e) => { e.target.style.borderColor = `${GOLD}0.1)`; e.target.style.background = `${GOLD}0.02)`; }}
-          />
-          <div style={{ display: "flex", justifyContent: "center", marginTop: S2, gap: S2 }}>
-            {phase !== "revealed" && (
-              <button onClick={handleReflect}
-                disabled={input.trim().length < 2 || phase === "reflecting"}
-                style={{
-                  fontFamily: FONT_DISPLAY, fontSize: `clamp(10px, 2.2vw, 12px)`,
-                  letterSpacing: 5,
-                  color: input.trim().length < 2 ? `${BONE}0.12)` : `${GOLD}0.65)`,
-                  background: "transparent",
-                  border: `1px solid ${input.trim().length < 2 ? `${GOLD}0.05)` : `${GOLD}0.18)`}`,
-                  borderRadius: 6, padding: `${S1}px ${S3}px`,
-                  cursor: input.trim().length < 2 ? "default" : "pointer",
-                  transition: "all 0.4s ease", textTransform: "uppercase",
-                }}>{phase === "reflecting" ? "DIGGING..." : "DIG"}</button>
-            )}
-            {phase === "revealed" && (
+        {/* ── INPUT — Google-style single line ── */}
+        <div style={{ width: "100%", marginBottom: S2, animation: "mirrorReveal 0.8s ease 0.3s both" }}>
+          <div style={{
+            display: "flex", alignItems: "center", gap: 0,
+            background: `${GOLD}0.02)`, border: `1px solid ${GOLD}0.1)`,
+            borderRadius: 24, overflow: "hidden",
+            transition: "border-color 0.4s ease, box-shadow 0.4s ease",
+          }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = `${GOLD}0.18)`; e.currentTarget.style.boxShadow = `0 2px 12px ${GOLD}0.06)`; }}
+            onMouseLeave={e => { if (document.activeElement !== inputRef.current) { e.currentTarget.style.borderColor = `${GOLD}0.1)`; e.currentTarget.style.boxShadow = "none"; } }}
+          >
+            <input ref={inputRef} type="text" value={input}
+              onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown}
+              placeholder="write what you believe is true..."
+              disabled={phase === "reflecting"}
+              style={{
+                flex: 1, padding: `${S1 + 2}px ${S2}px`,
+                fontFamily: FONT_BODY, fontSize: `clamp(15px, 3vw, 18px)`,
+                fontStyle: "italic", fontWeight: 300, color: `${BONE}0.85)`,
+                background: "transparent", border: "none", outline: "none",
+                letterSpacing: 0.5,
+                caretColor: `${GOLD}0.5)`,
+              }}
+              onFocus={(e) => { e.target.closest("div").style.borderColor = `${GOLD}0.25)`; e.target.closest("div").style.boxShadow = `0 4px 20px ${GOLD}0.08)`; }}
+              onBlur={(e) => { e.target.closest("div").style.borderColor = `${GOLD}0.1)`; e.target.closest("div").style.boxShadow = "none"; }}
+            />
+            <button onClick={handleReflect}
+              disabled={input.trim().length < 2 || phase === "reflecting"}
+              style={{
+                fontFamily: FONT_DISPLAY, fontSize: `clamp(9px, 2vw, 11px)`,
+                letterSpacing: 4,
+                color: input.trim().length < 2 ? `${BONE}0.12)` : `${GOLD}0.6)`,
+                background: "transparent",
+                border: "none", borderLeft: `1px solid ${GOLD}0.06)`,
+                padding: `${S1}px ${S2}px`,
+                cursor: input.trim().length < 2 ? "default" : "pointer",
+                transition: "all 0.4s ease", textTransform: "uppercase",
+                whiteSpace: "nowrap",
+              }}>{phase === "reflecting" ? "..." : "DIG"}</button>
+          </div>
+          {phase === "revealed" && (
+            <div style={{ display: "flex", justifyContent: "center", marginTop: S1 }}>
               <button onClick={handleReset} style={{
-                fontFamily: FONT_DISPLAY, fontSize: `clamp(10px, 2.2vw, 12px)`,
-                letterSpacing: 4, color: `${BONE}0.35)`, background: "transparent",
-                border: `1px solid ${GOLD}0.08)`, borderRadius: 6,
-                padding: `${S1}px ${S3}px`, cursor: "pointer",
+                fontFamily: FONT_DISPLAY, fontSize: `clamp(9px, 2vw, 11px)`,
+                letterSpacing: 4, color: `${BONE}0.3)`, background: "transparent",
+                border: `1px solid ${GOLD}0.06)`, borderRadius: 16,
+                padding: `${Math.round(S1 * 0.7)}px ${S2}px`, cursor: "pointer",
                 transition: "all 0.4s ease", textTransform: "uppercase",
               }}>DIG AGAIN</button>
-            )}
-          </div>
+            </div>
+          )}
+          <div style={{
+            textAlign: "center", marginTop: S1,
+            fontFamily: FONT_BODY, fontSize: `clamp(12px, 2.5vw, 15px)`,
+            fontStyle: "italic", fontWeight: 300, color: `${BONE}0.25)`,
+            lineHeight: PHI,
+          }}>don't ask a question — state what you believe</div>
         </div>
 
         {/* ── DIGGING STATE ── */}
