@@ -496,7 +496,13 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
                 <div style={{
                   fontFamily: FONT_DISPLAY, fontSize: 8, letterSpacing: 4,
                   color: `${GOLD}0.25)`, textTransform: "uppercase", marginBottom: S1,
-                }}>Go deeper</div>
+                }}>We dare you</div>
+                <div style={{
+                  fontFamily: FONT_BODY, fontSize: `clamp(13px, 2.8vw, 16px)`,
+                  fontStyle: "italic", fontWeight: 300, color: `${BONE}0.4)`,
+                  textAlign: "center", lineHeight: PHI, maxWidth: 400, marginBottom: S2,
+                  animation: "mirrorReveal 0.6s ease 0.7s both",
+                }}>to learn more&hellip; open your mind to exploring &amp; expanding your personal truth.</div>
                 {mirrorResult.dares.map((node, i) => (
                   <DareCard key={node.id} node={node} index={i} onNavigate={handleNavigateToLayer} />
                 ))}
