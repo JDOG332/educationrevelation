@@ -761,23 +761,14 @@ export default function TheoryOfEverything() {
             const cycleDuration = Math.round(PHI * PHI * 23.6) * 1000;
             const speed = oneCycleH / cycleDuration; // px per ms
 
-            // Start at center — title crystallizes from the light
-            // Offset by half the first child's height so the title is perfectly centered on the glow
-            const titleH = kids[0] ? kids[0].offsetHeight : 0;
-            let y = (viewH - titleH) / 2;
+            // Start below the viewport
+            let y = viewH + 50;
             let totalElapsed = 0;
             scroller.style.transform = `translateY(${y}px)`;
 
             const waitForVeil = () => {
               if (!veilParted) { frameRef.current = requestAnimationFrame(waitForVeil); return; }
-              // Reverse dissolve: title precipitates out of the bright mist
-              scroller.style.transition = "opacity 6.854s cubic-bezier(0.23, 1, 0.32, 1)";
-              scroller.style.opacity = "1";
-              // Hold for the full dissolve before scrolling begins
-              setTimeout(() => {
-                lastTime.current = null;
-                frameRef.current = requestAnimationFrame(scroll);
-              }, 6854);
+              setTimeout(() => { lastTime.current = null; frameRef.current = requestAnimationFrame(scroll); }, 618);
             };
 
             function scroll(now) {
@@ -840,7 +831,6 @@ export default function TheoryOfEverything() {
                 position: 'absolute', left: 0, width: '100%',
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
                 padding: '0 5%',
-                opacity: 0,
               }}>
                 {[...POEMS, ...POEMS, ...POEMS].map((line, i) => {
                   if (line === "") {

@@ -342,11 +342,6 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
             ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
             ctx.fillStyle = wg; ctx.fill();
 
-            // Signal poem title to crystallize from the glow
-            if (z2eased >= 0.95 && !veilParted) {
-              veilParted = true;
-              if (onVeilPartedRef.current) onVeilPartedRef.current();
-            }
           }
         } else {
           // Phase 2: Expansion — white hole opens back to multiverse
@@ -371,7 +366,11 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
             ctx.fillStyle = wg; ctx.fill();
           }
 
-          // veilParted already fired during glow peak — expansion continues behind the poem
+          // Signal poem reveal once expansion is complete
+          if (expandT >= 1 && !veilParted) {
+            veilParted = true;
+            if (onVeilPartedRef.current) onVeilPartedRef.current();
+          }
         }
       }
 
