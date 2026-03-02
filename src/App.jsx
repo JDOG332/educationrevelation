@@ -171,7 +171,7 @@ export default function TheoryOfEverything() {
         container.style.transition = "opacity 0.618s cubic-bezier(0.23, 1, 0.32, 1)";
         container.style.opacity = "0";
         container.style.pointerEvents = "none";
-        setDepth(1);
+        setDepth(2);
         return;
       }
 
@@ -669,7 +669,7 @@ export default function TheoryOfEverything() {
       />}
 
       {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
-      {depth <= 1 && (
+      {depth <= 2 && (
         <div ref={openingRef} style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
           zIndex: 10000,
@@ -723,10 +723,10 @@ export default function TheoryOfEverything() {
       {depth <= 2 && (
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
-          zIndex: depth <= 1 ? 1500 : 5000,
+          zIndex: 1500,
           overflow: "hidden",
           opacity: 1,
-          pointerEvents: depth <= 1 ? "auto" : "none",
+          pointerEvents: "none",
         }}>
           <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onVeilParted={() => setVeilParted(true)} />
 
@@ -741,6 +741,7 @@ export default function TheoryOfEverything() {
           const lastTime = useRef(null);
           const frameRef = useRef(null);
           const moveOnRef = useRef(null);
+          const goBackRef = useRef(null);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
@@ -785,6 +786,11 @@ export default function TheoryOfEverything() {
 
               scroller.style.transform = `translateY(${y}px)`;
 
+              // Show GO BACK early (after 10s) — it's navigation, not a gate
+              if (totalElapsed >= 10000 && goBackRef.current) {
+                goBackRef.current.style.opacity = "1";
+                goBackRef.current.style.pointerEvents = "auto";
+              }
               // Show MOVE ON after one full cycle (no state update — just DOM)
               if (totalElapsed >= cycleDuration && moveOnRef.current) {
                 moveOnRef.current.style.opacity = "1";
@@ -810,13 +816,13 @@ export default function TheoryOfEverything() {
               {/* Top fade */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, width: '100%', height: '38.2%',
-                background: 'linear-gradient(to bottom, rgba(3,3,6,1) 0%, rgba(3,3,6,0.95) 30%, rgba(3,3,6,0) 100%)',
+                background: 'linear-gradient(to bottom, rgba(3,3,6,0.7) 0%, rgba(3,3,6,0.5) 30%, rgba(3,3,6,0) 100%)',
                 zIndex: 2, pointerEvents: 'none',
               }} />
               {/* Bottom fade */}
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, width: '100%', height: '38.2%',
-                background: 'linear-gradient(to top, rgba(3,3,6,1) 0%, rgba(3,3,6,0.95) 30%, rgba(3,3,6,0) 100%)',
+                background: 'linear-gradient(to top, rgba(3,3,6,0.7) 0%, rgba(3,3,6,0.5) 30%, rgba(3,3,6,0) 100%)',
                 zIndex: 2, pointerEvents: 'none',
               }} />
 
@@ -862,6 +868,36 @@ export default function TheoryOfEverything() {
                     </div>
                   );
                 })}
+              </div>
+
+              {/* GO BACK — fades in via ref after one cycle */}
+              <div
+                ref={goBackRef}
+                onClick={() => returnToVoid()}
+                style={{
+                  position: 'absolute',
+                  bottom: `${Math.round(13 * PHI)}%`,
+                  left: '12.5%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 10,
+                  pointerEvents: 'none',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                  opacity: 0,
+                  transition: 'opacity 1.5s ease',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
+              >
+                  <div style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
+                    color: 'rgba(201,168,76,0.6)',
+                    letterSpacing: '0.25em',
+                    padding: `${Math.round(6 * PHI)}px ${Math.round(13 * PHI)}px`,
+                    border: '1px solid rgba(201,168,76,0.2)',
+                    borderRadius: 10,
+                    background: 'rgba(3,3,6,0.85)',
+                  }}>GO BACK</div>
               </div>
 
               {/* MOVE ON — fades in via ref after one cycle */}

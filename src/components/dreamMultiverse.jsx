@@ -174,7 +174,6 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
     const zoomTarget = [0,1,2,3,5,6,7,8][Math.floor(Math.random()*8)];
 
     let mvTime = 0;
-    let transitioned = false;
     let depth2Start = null;
     let veilParted = false;
 
@@ -301,86 +300,76 @@ export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted })
 
       ctx.clearRect(0, 0, W, H);
 
-      // === DEPTH 1: The Dance ===
-      if (depthRef.current === 1) {
-        simulate("dance", 0);
-
-        const z1Start = 0.618, z1End = 5.236;  // PHI_INV → PHI² + PHI_INV + 2
-        const z1t = Math.max(0, Math.min(1, (zoomElapsed - z1Start) / (z1End - z1Start)));
-        const z1eased = z1t * z1t * (3 - 2 * z1t);
-
-        const z2Start = 5.236, z2End = 8.472;  // z1End → z1End + PHI²
-        const z2t = Math.max(0, Math.min(1, (zoomElapsed - z2Start) / (z2End - z2Start)));
-        const z2eased = z2t * z2t * (3 - 2 * z2t);
-
-        let zoom, panX, panY;
-        const target = (state._levels === 3 ? state.hypers : state.supers)[zoomTarget];
-
-        if (zoomElapsed < z2Start) {
-          zoom = 5 + (1 - 5) * z1eased;
-          panX = (CX - target.x) * (1 - z1eased);
-          panY = (CY - target.y) * (1 - z1eased);
-        } else {
-          zoom = 1 + (0.04 - 1) * z2eased;
-          panX = 0; panY = 0;
-        }
-
-        drawBodies(zoom, panX, panY, true, 0);
-
-        // White glow during collapse
-        if (z2eased > 0.01) {
-          const glowRadius = 20 + z2eased * 80;
-          const glowAlpha = z2eased * 0.9;
-          const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
-          wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
-          wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
-          wg.addColorStop(1, "rgba(232,232,240,0)");
-          ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
-          ctx.fillStyle = wg; ctx.fill();
-        }
-
-
-        // Auto-transition to depth 2
-        if (zoomElapsed > 9.09 && !transitioned) {  // z2End + PHI_INV
-          transitioned = true;
-          goDeeperRef.current(true);
-        }
-      }
-
-      // === DEPTH 2: White hole expands back to multiverse, then poem appears ===
+      // === DEPTH 2: Dance → Expansion → Poems (universe explodes behind text) ===
       if (depthRef.current === 2) {
-        // Reverse the collapse: zoom from 0.04x back to 1x over PHI² + 1.618 seconds
-        const EXPAND_DUR = 4.236;
-        const expandT = Math.min(1, veilElapsed / EXPAND_DUR);
-        const expandEased = expandT * expandT * (3 - 2 * expandT);
-
-        // Zoom: 0.04 → 1 (reverse of the collapse)
-        const zoom = 0.04 + (1 - 0.04) * expandEased;
-
-        // White glow fades as we expand
-        const glowFade = 1 - expandEased;
-
-        // Keep simulation running
         simulate("dance", 0);
 
-        drawBodies(zoom, 0, 0, true, 0);
+        // Phase 1: The Dance (explosion) — same animation that was depth 1
+        const DANCE_END = 9.09;  // z2End + PHI_INV
+        const z1Start = 0.618, z1End = 5.236;
+        const z2Start = 5.236, z2End = 8.472;
 
-        // White glow shrinking as multiverse re-emerges
-        if (glowFade > 0.01) {
-          const glowRadius = 20 + glowFade * 80;
-          const glowAlpha = glowFade * 0.9;
-          const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
-          wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
-          wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
-          wg.addColorStop(1, "rgba(232,232,240,0)");
-          ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
-          ctx.fillStyle = wg; ctx.fill();
-        }
+        if (zoomElapsed < DANCE_END) {
+          // Dance phase: zoom in, collapse, glow builds
+          const z1t = Math.max(0, Math.min(1, (zoomElapsed - z1Start) / (z1End - z1Start)));
+          const z1eased = z1t * z1t * (3 - 2 * z1t);
 
-        // Signal poem reveal once expansion is complete
-        if (expandT >= 1 && !veilParted) {
-          veilParted = true;
-          if (onVeilPartedRef.current) onVeilPartedRef.current();
+          const z2t = Math.max(0, Math.min(1, (zoomElapsed - z2Start) / (z2End - z2Start)));
+          const z2eased = z2t * z2t * (3 - 2 * z2t);
+
+          let zoom, panX, panY;
+          const target = (state._levels === 3 ? state.hypers : state.supers)[zoomTarget];
+
+          if (zoomElapsed < z2Start) {
+            zoom = 5 + (1 - 5) * z1eased;
+            panX = (CX - target.x) * (1 - z1eased);
+            panY = (CY - target.y) * (1 - z1eased);
+          } else {
+            zoom = 1 + (0.04 - 1) * z2eased;
+            panX = 0; panY = 0;
+          }
+
+          drawBodies(zoom, panX, panY, true, 0);
+
+          // White glow during collapse
+          if (z2eased > 0.01) {
+            const glowRadius = 20 + z2eased * 80;
+            const glowAlpha = z2eased * 0.9;
+            const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
+            wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
+            wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
+            wg.addColorStop(1, "rgba(232,232,240,0)");
+            ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
+            ctx.fillStyle = wg; ctx.fill();
+          }
+        } else {
+          // Phase 2: Expansion — white hole opens back to multiverse
+          const expandElapsed = zoomElapsed - DANCE_END;
+          const EXPAND_DUR = 4.236;
+          const expandT = Math.min(1, expandElapsed / EXPAND_DUR);
+          const expandEased = expandT * expandT * (3 - 2 * expandT);
+
+          const zoom = 0.04 + (1 - 0.04) * expandEased;
+          const glowFade = 1 - expandEased;
+
+          drawBodies(zoom, 0, 0, true, 0);
+
+          if (glowFade > 0.01) {
+            const glowRadius = 20 + glowFade * 80;
+            const glowAlpha = glowFade * 0.9;
+            const wg = ctx.createRadialGradient(CX, CY, 0, CX, CY, glowRadius);
+            wg.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
+            wg.addColorStop(0.4, `rgba(232,232,240,${glowAlpha * 0.5})`);
+            wg.addColorStop(1, "rgba(232,232,240,0)");
+            ctx.beginPath(); ctx.arc(CX, CY, glowRadius, 0, Math.PI*2);
+            ctx.fillStyle = wg; ctx.fill();
+          }
+
+          // Signal poem scroll start once expansion is complete
+          if (expandT >= 1 && !veilParted) {
+            veilParted = true;
+            if (onVeilPartedRef.current) onVeilPartedRef.current();
+          }
         }
       }
 
