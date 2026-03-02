@@ -507,10 +507,12 @@ export default function TheoryOfEverything() {
       {currentPage === "theory" && depth === -1 && (
         <MirrorGate
           onEnter={() => setDepth(0)}
-          onNavigateToDepth={() => {
-            setActiveConvergence(null);
-            setActiveSubcategory(null);
-            setActiveIdea(null);
+          onNavigateToDepth={(route) => {
+            // Apply the full route — land on the exact content page
+            setActiveConvergence(route && route.convergence ? route.convergence : null);
+            setActiveSubcategory(route && route.subcategory ? route.subcategory : null);
+            setActiveIdea(route && route.idea ? route.idea : null);
+            setActiveFilterQ(route && route.filterQ !== undefined ? route.filterQ : null);
             setDepth(4);
             window.scrollTo({ top: 0, behavior: "instant" });
           }}

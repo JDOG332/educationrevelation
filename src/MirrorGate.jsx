@@ -249,7 +249,7 @@ function DareCard({ node, index, onNavigate }) {
   const [hovered, setHovered] = useState(false);
   const delay = 0.8 + index * 0.2;
   return (
-    <div onClick={() => onNavigate(node.depth)}
+    <div onClick={() => onNavigate(node.route)}
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       style={{
         padding: `${S2}px ${S3}px`,
@@ -335,7 +335,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
     setTimeout(() => inputRef.current?.focus(), 100);
   };
 
-  const handleNavigateToLayer = (depth) => { if (onNavigateToDepth) onNavigateToDepth(depth); };
+  const handleNavigateToLayer = (route) => { if (onNavigateToDepth) onNavigateToDepth(route); };
 
   return (
     <div style={{
@@ -477,7 +477,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
                 }}>What you touched</div>
                 {mirrorResult.matched.slice(0, 3).map((node, i) => (
                   <div key={node.id}
-                    onClick={() => handleNavigateToLayer(node.depth)}
+                    onClick={() => handleNavigateToLayer(node.route)}
                     style={{
                       padding: `${S1}px ${S2}px`, borderBottom: `1px solid ${GOLD}0.05)`,
                       animation: `mirrorReveal 0.5s ease ${0.8 + i * 0.12}s both`,
