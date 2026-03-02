@@ -1073,9 +1073,11 @@ export default function TheoryOfEverything() {
               const renderCard = (door, i, totalDelay) => {
                 const accentDim = `rgba(${door.r},${door.g},${door.b},0.12)`;
                 const accentGlow = `rgba(${door.r},${door.g},${door.b},0.05)`;
+                const accentMid = `rgba(${door.r},${door.g},${door.b},0.03)`;
                 const accentBorder = `rgba(${door.r},${door.g},${door.b},0.1)`;
-                const accentText = `rgba(${door.r},${door.g},${door.b},0.75)`;
+                const accentText = `rgba(${door.r},${door.g},${door.b},0.8)`;
                 const accentShadow = `rgba(${door.r},${door.g},${door.b},0.15)`;
+                const accentFaint = `rgba(${door.r},${door.g},${door.b},0.06)`;
                 return (
                   <div
                     key={door.key}
@@ -1085,53 +1087,72 @@ export default function TheoryOfEverything() {
                       aspectRatio: "1 / 1",
                       display: "flex", flexDirection: "column",
                       alignItems: "center", justifyContent: "center",
-                      borderRadius: 10,
-                      background: `linear-gradient(180deg, ${accentGlow}, rgba(3,3,6,0.6))`,
+                      borderRadius: Math.round(8 * PHI_INV),
+                      background: `linear-gradient(170deg, ${accentGlow} 0%, ${accentMid} 38.2%, rgba(3,3,6,0.65) 100%)`,
                       border: `1px solid ${accentBorder}`,
                       cursor: "pointer",
                       overflow: "hidden",
-                      transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.5s",
+                      backdropFilter: "blur(12px) saturate(1.1)",
+                      WebkitBackdropFilter: "blur(12px) saturate(1.1)",
+                      boxShadow: `0 2px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.03)`,
+                      transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.6s",
                       animation: `fadeSlideUp 0.7s ${totalDelay}s both ease`,
                       textAlign: "center",
                       padding: `${Math.round(3 * PHI)}px`,
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
-                      e.currentTarget.style.borderColor = `rgba(${door.r},${door.g},${door.b},0.3)`;
-                      e.currentTarget.style.boxShadow = `0 6px 24px ${accentShadow}, 0 0 40px rgba(${door.r},${door.g},${door.b},0.06), inset 0 1px 0 rgba(255,255,255,0.04)`;
+                      e.currentTarget.style.transform = "translateY(-3px) scale(1.03)";
+                      e.currentTarget.style.borderColor = `rgba(${door.r},${door.g},${door.b},0.28)`;
+                      e.currentTarget.style.boxShadow = `0 8px 28px ${accentShadow}, 0 0 48px rgba(${door.r},${door.g},${door.b},0.06), inset 0 1px 0 rgba(255,255,255,0.06)`;
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.transform = "translateY(0) scale(1)";
                       e.currentTarget.style.borderColor = accentBorder;
-                      e.currentTarget.style.boxShadow = "none";
+                      e.currentTarget.style.boxShadow = "0 2px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.03)";
                     }}
                   >
+                    {/* Top accent — sacred line */}
                     <div style={{
-                      position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
+                      position: "absolute", top: 0, left: "10%", right: "10%", height: 1,
                       background: `linear-gradient(90deg, transparent, ${accentDim}, transparent)`,
+                    }} />
+                    {/* Bottom accent — mirror of top */}
+                    <div style={{
+                      position: "absolute", bottom: 0, left: "20%", right: "20%", height: 1,
+                      background: `linear-gradient(90deg, transparent, ${accentFaint}, transparent)`,
+                    }} />
+                    {/* Inner radial glow — depth */}
+                    <div style={{
+                      position: "absolute", top: "15%", left: "50%", transform: "translateX(-50%)",
+                      width: "80%", height: "60%", borderRadius: "50%",
+                      background: `radial-gradient(ellipse at center, rgba(${door.r},${door.g},${door.b},0.04), transparent 70%)`,
+                      pointerEvents: "none",
                     }} />
                     <div style={{
                       fontSize: "clamp(24px, 5.5vw, 34px)",
-                      marginBottom: Math.round(2 * PHI),
-                      filter: `drop-shadow(0 0 12px ${accentShadow})`,
-                      animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
+                      marginBottom: Math.round(3 * PHI_INV),
+                      filter: `drop-shadow(0 0 14px ${accentShadow})`,
+                      animation: `gentleFloat ${7 + i * PHI}s ease-in-out infinite`,
                       lineHeight: 1,
+                      position: "relative", zIndex: 1,
                     }}>{door.glyph}</div>
                     <div style={{
                       fontFamily: "'Cinzel', serif",
-                      fontSize: "clamp(10px, 2.6vw, 16px)",
-                      letterSpacing: "0.12em",
+                      fontSize: "clamp(10px, 2.6vw, 15px)",
+                      letterSpacing: "0.15em",
                       color: accentText,
                       fontWeight: 600,
                       lineHeight: 1.2,
+                      position: "relative", zIndex: 1,
                     }}>{door.name}</div>
                     <div style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(9px, 2.2vw, 14px)",
-                      color: "rgba(232,232,240,0.45)",
+                      fontSize: "clamp(9px, 2vw, 13px)",
+                      color: "rgba(232,232,240,0.4)",
                       fontStyle: "italic",
-                      marginTop: 3,
-                      lineHeight: 1.4,
+                      marginTop: Math.round(2 * PHI_INV),
+                      lineHeight: PHI_INV * 2,
+                      position: "relative", zIndex: 1,
                     }}>{door.sub}</div>
                   </div>
                 );
@@ -1148,11 +1169,22 @@ export default function TheoryOfEverything() {
                     animation: "fadeSlideUp 1.2s 0.3s both ease",
                     marginBottom: Math.round(13 * PHI),
                     textAlign: "center",
+                    position: "relative",
                   }}>
+                    {/* Subtle radiance behind title */}
+                    <div style={{
+                      position: "absolute", top: "50%", left: "50%",
+                      width: "40vmin", height: "40vmin",
+                      borderRadius: "50%",
+                      background: "radial-gradient(circle, rgba(201,168,76,0.03) 0%, transparent 65%)",
+                      transform: "translate(-50%, -50%)",
+                      animation: "breathe 10s ease-in-out infinite",
+                      pointerEvents: "none",
+                    }} />
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginBottom: Math.round(3 * PHI),
-                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
+                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.2))",
                       animation: "gentleFloat 10s ease-in-out infinite",
                       lineHeight: 1,
                     }}>🔺</div>
@@ -1162,14 +1194,15 @@ export default function TheoryOfEverything() {
                       fontWeight: 400,
                       letterSpacing: "0.2em",
                       margin: 0, lineHeight: 1.3,
-                      background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(201,168,76,0.5) 100%)",
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(201,168,76,0.55) 100%)",
                       WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                      filter: "drop-shadow(0 0 20px rgba(201,168,76,0.06))",
+                      filter: "drop-shadow(0 0 20px rgba(201,168,76,0.08))",
+                      animation: "textManifest 1.8s 0.4s both ease",
                     }}>THE PROOF</h2>
                     <div style={{
                       fontSize: "clamp(28px, 6vw, 42px)",
                       marginTop: Math.round(3 * PHI),
-                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.15))",
+                      filter: "drop-shadow(0 0 24px rgba(201,168,76,0.2))",
                       animation: "gentleFloat 10s 5s ease-in-out infinite",
                       lineHeight: 1,
                     }}>🔻</div>
@@ -1178,6 +1211,7 @@ export default function TheoryOfEverything() {
                       color: "rgba(201,168,76,0.3)",
                       textTransform: "uppercase",
                       marginTop: Math.round(5 * PHI),
+                      animation: "fadeSlideUp 1.2s 0.8s both ease",
                     }}>ten doors · one truth</div>
                   </div>
 
@@ -1185,56 +1219,78 @@ export default function TheoryOfEverything() {
                   <div style={{
                     animation: "fadeSlideUp 1.2s 0.6s both ease",
                     textAlign: "center",
-                    marginBottom: Math.round(5 * PHI),
+                    marginBottom: Math.round(8 * PHI),
+                    position: "relative",
                   }}>
+                    {/* Sacred ring behind eye */}
                     <div style={{
-                      fontSize: "clamp(24px, 5vw, 36px)",
+                      position: "absolute", top: "50%", left: "50%",
+                      transform: "translate(-50%, -55%)",
+                      width: Math.round(34 * PHI), height: Math.round(34 * PHI),
+                      borderRadius: "50%",
+                      border: "1px solid rgba(201,168,76,0.06)",
+                      animation: "breathe 8s ease-in-out infinite",
+                      pointerEvents: "none",
+                    }} />
+                    <div style={{
+                      fontSize: "clamp(26px, 5.5vw, 38px)",
                       animation: "breathe 6s ease-in-out infinite",
-                      filter: "drop-shadow(0 0 16px rgba(201,168,76,0.25))",
+                      filter: "drop-shadow(0 0 18px rgba(201,168,76,0.3))",
+                      position: "relative", zIndex: 1,
                     }}>👁️</div>
                     <div style={{
-                      width: Math.round(50 * PHI), height: 1,
-                      margin: `${Math.round(3 * PHI)}px auto 0`,
-                      background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+                      width: Math.round(55 * PHI), height: 1,
+                      margin: `${Math.round(5 * PHI_INV)}px auto 0`,
+                      background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), rgba(201,168,76,0.35), rgba(201,168,76,0.2), transparent)",
+                      boxShadow: "0 0 12px rgba(201,168,76,0.06)",
                     }} />
                   </div>
 
                   {/* Row 1: 1 card — THE POINT (what is it?) */}
-                  <div style={{ textAlign: "center", marginBottom: 4 }}>
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.3)", letterSpacing: 2 }}>{rowLabels[0]}</div>
+                  <div style={{ textAlign: "center", marginBottom: Math.round(3 * PHI_INV) }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: `clamp(10px, 2vw, ${Math.round(8 * PHI)}px)`, fontStyle: "italic", color: "rgba(201,168,76,0.3)", letterSpacing: Math.round(PHI + 1) }}>{rowLabels[0]}</div>
                   </div>
                   <div style={{
                     display: "flex", justifyContent: "center",
-                    gap: cardGap, marginBottom: cardGap,
+                    gap: cardGap, marginBottom: Math.round(5 * PHI),
                   }}>
                     {rows[0].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 0.7)}</div>)}
                   </div>
 
+                  {/* Golden connector ◇ */}
+                  <div style={{ textAlign: "center", margin: `${Math.round(2 * PHI_INV)}px 0 ${Math.round(3 * PHI)}px`, opacity: 0.12, fontSize: 8, color: "rgba(201,168,76,1)", letterSpacing: 8 }}>◇</div>
+
                   {/* Row 2: 2 cards — THE LINE (how do we know?) */}
-                  <div style={{ textAlign: "center", marginBottom: 4 }}>
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.25)", letterSpacing: 2 }}>{rowLabels[1]}</div>
+                  <div style={{ textAlign: "center", marginBottom: Math.round(3 * PHI_INV) }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: `clamp(10px, 2vw, ${Math.round(8 * PHI)}px)`, fontStyle: "italic", color: "rgba(201,168,76,0.25)", letterSpacing: Math.round(PHI + 1) }}>{rowLabels[1]}</div>
                   </div>
                   <div style={{
                     display: "flex", justifyContent: "center",
-                    gap: cardGap, marginBottom: cardGap,
+                    gap: cardGap, marginBottom: Math.round(5 * PHI),
                   }}>
                     {rows[1].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 0.9 + i * 0.1)}</div>)}
                   </div>
 
+                  {/* Golden connector ◇ ◇ */}
+                  <div style={{ textAlign: "center", margin: `${Math.round(2 * PHI_INV)}px 0 ${Math.round(3 * PHI)}px`, opacity: 0.1, fontSize: 8, color: "rgba(201,168,76,1)", letterSpacing: 8 }}>◇ ◇</div>
+
                   {/* Row 3: 3 cards — THE SURFACE (how does it work?) */}
-                  <div style={{ textAlign: "center", marginBottom: 4 }}>
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.2)", letterSpacing: 2 }}>{rowLabels[2]}</div>
+                  <div style={{ textAlign: "center", marginBottom: Math.round(3 * PHI_INV) }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: `clamp(10px, 2vw, ${Math.round(8 * PHI)}px)`, fontStyle: "italic", color: "rgba(201,168,76,0.2)", letterSpacing: Math.round(PHI + 1) }}>{rowLabels[2]}</div>
                   </div>
                   <div style={{
                     display: "flex", justifyContent: "center",
-                    gap: cardGap, marginBottom: cardGap,
+                    gap: cardGap, marginBottom: Math.round(5 * PHI),
                   }}>
                     {rows[2].map((d, i) => <div key={d.key} style={{ width: cardSize }}>{renderCard(d, i, 1.1 + i * 0.1)}</div>)}
                   </div>
 
+                  {/* Golden connector ◇ ◇ ◇ */}
+                  <div style={{ textAlign: "center", margin: `${Math.round(2 * PHI_INV)}px 0 ${Math.round(3 * PHI)}px`, opacity: 0.08, fontSize: 8, color: "rgba(201,168,76,1)", letterSpacing: 8 }}>◇ ◇ ◇</div>
+
                   {/* Row 4: 4 cards — THE SOLID (how do we live it?) */}
-                  <div style={{ textAlign: "center", marginBottom: 4 }}>
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)", fontStyle: "italic", color: "rgba(201,168,76,0.15)", letterSpacing: 2 }}>{rowLabels[3]}</div>
+                  <div style={{ textAlign: "center", marginBottom: Math.round(3 * PHI_INV) }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: `clamp(10px, 2vw, ${Math.round(8 * PHI)}px)`, fontStyle: "italic", color: "rgba(201,168,76,0.15)", letterSpacing: Math.round(PHI + 1) }}>{rowLabels[3]}</div>
                   </div>
                   <div style={{
                     display: "flex", justifyContent: "center",
@@ -1250,14 +1306,19 @@ export default function TheoryOfEverything() {
 
           {/* Tetractys note */}
           <div style={{
-            textAlign: "center", marginTop: Math.round(5 * PHI),
+            textAlign: "center", marginTop: Math.round(8 * PHI),
             animation: "fadeSlideUp 1.5s 1.6s both ease",
           }}>
             <div style={{
+              width: Math.round(34 * PHI), height: 1,
+              margin: `0 auto ${Math.round(5 * PHI)}px`,
+              background: "linear-gradient(90deg, transparent 5%, rgba(201,168,76,0.08) 30%, rgba(201,168,76,0.15) 50%, rgba(201,168,76,0.08) 70%, transparent 95%)",
+            }} />
+            <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(12px, 2.5vw, 16px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.2)",
-              letterSpacing: 3,
+              fontSize: "clamp(13px, 2.8vw, 17px)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.18)",
+              letterSpacing: Math.round(PHI + 2),
             }}>1 + 2 + 3 + 4 = 10</div>
           </div>
 
@@ -8769,38 +8830,103 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           ...getDepthWrap(5),
         }}>
-          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease" }}>
+          {/* Atmospheric crack lines — the fracture field */}
+          {[...Array(5)].map((_, i) => (
+            <div key={`crack-${i}`} style={{
+              position: "absolute",
+              top: `${18 + i * 16}%`,
+              left: "5%", right: "5%",
+              height: 1,
+              background: `linear-gradient(90deg, transparent ${10 + i * 5}%, rgba(224,80,80,0.${1 + i}) ${30 + i * 8}%, rgba(224,80,80,0.03) ${50 + i * 4}%, transparent ${75 + i * 3}%)`,
+              animation: `crackPulse ${4 + i * 1.8}s ${i * 0.7}s ease-in-out infinite`,
+              pointerEvents: "none",
+            }} />
+          ))}
+
+          {/* Rising embers — pain becomes light */}
+          {[...Array(isMobileDevice ? 6 : 12)].map((_, i) => (
+            <div key={`ember-${i}`} style={{
+              position: "absolute",
+              width: 2 + Math.random() * 3,
+              height: 2 + Math.random() * 3,
+              borderRadius: "50%",
+              background: `radial-gradient(circle, rgba(224,${80 + i * 12},${60 + i * 8},0.8), rgba(224,80,80,0.1))`,
+              left: `${8 + Math.random() * 84}%`,
+              bottom: "-5%",
+              animation: `depthEmber ${8 + Math.random() * 12}s ${i * 1.5}s ease-out infinite`,
+              pointerEvents: "none",
+            }} />
+          ))}
+
+          {/* Central radiance — the wound glows */}
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            width: "60vmin", height: "60vmin",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(224,80,80,0.04) 0%, rgba(224,60,60,0.015) 40%, transparent 70%)",
+            transform: "translate(-50%, -50%)",
+            animation: "breathe 8s ease-in-out infinite",
+            pointerEvents: "none",
+          }} />
+
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease", position: "relative", zIndex: 5, maxWidth: 520, padding: "0 20px" }}>
             <div style={{
               fontSize: "clamp(40px, 8vw, 60px)",
               marginBottom: Math.round(8 * PHI),
               animation: "gentleFloat 8s ease-in-out infinite",
-              filter: "drop-shadow(0 0 20px rgba(224,80,80,0.2))",
+              filter: "drop-shadow(0 0 20px rgba(224,80,80,0.25))",
             }}>⚡</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
-              textShadow: "0 0 40px rgba(224,80,80,0.08)",
+              animation: "textManifest 1.8s 0.3s both ease",
             }}>THE BREAK</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 3vw, 21px)",
-              fontStyle: "italic", color: "rgba(224,80,80,0.45)",
+              fontStyle: "italic", color: "rgba(224,80,80,0.55)",
               letterSpacing: 1, lineHeight: PHI,
               marginTop: Math.round(5 * PHI),
+              animation: "fadeSlideUp 1.2s 0.6s both ease",
             }}>I crack</div>
             <div style={{
               width: Math.round(50 * PHI), height: 1,
               margin: `${Math.round(8 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.25), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.35), transparent)",
+              animation: "crackSpread 2s 0.8s both ease",
             }} />
+
+            {/* The teaching — what the break means */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(14px, 2.8vw, 18px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+              fontSize: "clamp(15px, 3vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              lineHeight: PHI,
               marginTop: Math.round(8 * PHI),
-              animation: "breathe 6s ease-in-out infinite",
-            }}>what breaks you open so the light gets in...</div>
+              animation: "fadeSlideUp 1.5s 1s both ease",
+            }}>
+              the shell must shatter<br />
+              <span style={{ color: "rgba(224,80,80,0.4)" }}>before the light gets in</span>
+            </div>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 16px)",
+              color: "rgba(232,232,240,0.2)",
+              lineHeight: 1.8,
+              maxWidth: 400,
+              margin: "0 auto",
+              animation: "fadeSlideUp 1.5s 1.4s both ease",
+            }}>
+              every bone that heals grows back stronger at the seam.
+              <br /><br />
+              <span style={{ color: "rgba(224,80,80,0.3)", animation: "emberglow 6s ease-in-out infinite" }}>
+                the break is not the end — it's where the new thing enters.
+              </span>
+            </div>
           </div>
         </div>
       )}
@@ -8813,38 +8939,103 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           ...getDepthWrap(6),
         }}>
-          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease" }}>
+          {/* Reflection ripples — emanating from center */}
+          {[...Array(4)].map((_, i) => (
+            <div key={`ripple-${i}`} style={{
+              position: "absolute", top: "50%", left: "50%",
+              width: `${30 + i * 20}vmin`, height: `${30 + i * 20}vmin`,
+              borderRadius: "50%",
+              border: "1px solid rgba(79,195,247,0.08)",
+              animation: `reflectionRipple ${6 + i * 2}s ${i * 1.5}s ease-out infinite`,
+              pointerEvents: "none",
+            }} />
+          ))}
+
+          {/* Soft orbs — consciousness particles */}
+          {[...Array(isMobileDevice ? 4 : 7)].map((_, i) => (
+            <div key={`orb-${i}`} style={{
+              position: "absolute",
+              width: 60 + i * 30,
+              height: 60 + i * 30,
+              borderRadius: "50%",
+              background: `radial-gradient(circle, rgba(79,195,247,0.04), transparent 70%)`,
+              left: `${10 + i * 12}%`,
+              top: `${15 + (i % 3) * 25}%`,
+              animation: `sacredOrbFloat ${12 + i * 3}s ${i * 2}s ease-in-out infinite`,
+              pointerEvents: "none",
+            }} />
+          ))}
+
+          {/* Central mirror glow */}
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            width: "50vmin", height: "50vmin",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(79,195,247,0.05) 0%, rgba(79,195,247,0.02) 35%, transparent 65%)",
+            transform: "translate(-50%, -50%)",
+            animation: "breathe 10s ease-in-out infinite",
+            pointerEvents: "none",
+          }} />
+
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease", position: "relative", zIndex: 5, maxWidth: 520, padding: "0 20px" }}>
             <div style={{
               fontSize: "clamp(40px, 8vw, 60px)",
               marginBottom: Math.round(8 * PHI),
-              animation: "gentleFloat 8s ease-in-out infinite",
-              filter: "drop-shadow(0 0 20px rgba(79,195,247,0.2))",
+              animation: "mirrorFloat 8s ease-in-out infinite",
+              filter: "drop-shadow(0 0 20px rgba(79,195,247,0.25))",
             }}>🪞</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
-              textShadow: "0 0 40px rgba(79,195,247,0.08)",
+              animation: "textManifest 1.8s 0.3s both ease",
             }}>THE SELF</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 3vw, 21px)",
-              fontStyle: "italic", color: "rgba(79,195,247,0.45)",
+              fontStyle: "italic", color: "rgba(79,195,247,0.55)",
               letterSpacing: 1, lineHeight: PHI,
               marginTop: Math.round(5 * PHI),
+              animation: "fadeSlideUp 1.2s 0.6s both ease",
             }}>I am</div>
             <div style={{
               width: Math.round(50 * PHI), height: 1,
               margin: `${Math.round(8 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.25), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(79,195,247,0.35), transparent)",
             }} />
+
+            {/* The teaching */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(14px, 2.8vw, 18px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+              fontSize: "clamp(15px, 3vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              lineHeight: PHI,
               marginTop: Math.round(8 * PHI),
-              animation: "breathe 6s ease-in-out infinite",
-            }}>meeting yourself inside the mirror...</div>
+              animation: "fadeSlideUp 1.5s 1s both ease",
+            }}>
+              the mirror doesn't judge<br />
+              <span style={{ color: "rgba(79,195,247,0.45)" }}>it just shows you what's there</span>
+            </div>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 16px)",
+              color: "rgba(232,232,240,0.2)",
+              lineHeight: 1.8,
+              maxWidth: 400,
+              margin: "0 auto",
+              animation: "fadeSlideUp 1.5s 1.4s both ease",
+            }}>
+              before you can recognize another soul<br />
+              you have to meet the one wearing your face.
+              <br /><br />
+              <span style={{ color: "rgba(79,195,247,0.3)" }}>
+                7 uses 8 to become 9.<br />
+                self uses other to become return.
+              </span>
+            </div>
           </div>
         </div>
       )}
@@ -8857,38 +9048,119 @@ export default function TheoryOfEverything() {
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
           ...getDepthWrap(7),
         }}>
-          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease" }}>
+          {/* Two lights converging — the meeting point */}
+          <div style={{
+            position: "absolute", top: "50%", left: "30%",
+            width: "35vmin", height: "35vmin",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 65%)",
+            transform: "translate(-50%, -50%)",
+            animation: "sacredOrbFloat 14s ease-in-out infinite",
+            pointerEvents: "none",
+          }} />
+          <div style={{
+            position: "absolute", top: "50%", left: "70%",
+            width: "35vmin", height: "35vmin",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(79,195,247,0.04) 0%, transparent 65%)",
+            transform: "translate(-50%, -50%)",
+            animation: "sacredOrbFloat 14s 7s ease-in-out infinite",
+            pointerEvents: "none",
+          }} />
+
+          {/* The overlap — where recognition happens */}
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            width: "25vmin", height: "25vmin",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(201,168,76,0.06) 0%, rgba(79,195,247,0.03) 40%, transparent 70%)",
+            transform: "translate(-50%, -50%)",
+            animation: "breathe 6s ease-in-out infinite",
+            pointerEvents: "none",
+          }} />
+
+          {/* Convergence lines — reaching toward center */}
+          {[...Array(6)].map((_, i) => {
+            const angle = (i / 6) * Math.PI * 2;
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            return (
+              <div key={`conv-${i}`} style={{
+                position: "absolute",
+                top: `${50 + sin * 35}%`,
+                left: `${50 + cos * 35}%`,
+                width: 60 + i * 15,
+                height: 1,
+                background: `linear-gradient(${90 + (angle * 180 / Math.PI)}deg, transparent, rgba(201,168,76,0.08), transparent)`,
+                transform: `rotate(${angle * 180 / Math.PI}deg)`,
+                animation: `breathe ${5 + i}s ${i * 0.8}s ease-in-out infinite`,
+                pointerEvents: "none",
+              }} />
+            );
+          })}
+
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease", position: "relative", zIndex: 5, maxWidth: 520, padding: "0 20px" }}>
             <div style={{
               fontSize: "clamp(40px, 8vw, 60px)",
               marginBottom: Math.round(8 * PHI),
               animation: "gentleFloat 8s ease-in-out infinite",
-              filter: "drop-shadow(0 0 20px rgba(201,168,76,0.2))",
+              filter: "drop-shadow(0 0 20px rgba(201,168,76,0.25))",
             }}>🤝</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
-              textShadow: "0 0 40px rgba(201,168,76,0.08)",
+              animation: "textManifest 1.8s 0.3s both ease",
             }}>THE OTHER</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 3vw, 21px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.55)",
               letterSpacing: 1, lineHeight: PHI,
               marginTop: Math.round(5 * PHI),
-            }}>we are</div>
+              animation: "fadeSlideUp 1.2s 0.6s both ease",
+            }}>you are</div>
             <div style={{
               width: Math.round(50 * PHI), height: 1,
               margin: `${Math.round(8 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent)",
             }} />
+
+            {/* The teaching */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(14px, 2.8vw, 18px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.25)",
+              fontSize: "clamp(15px, 3vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
+              lineHeight: PHI,
               marginTop: Math.round(8 * PHI),
-              animation: "breathe 6s ease-in-out infinite",
-            }}>to become whole</div>
+              animation: "fadeSlideUp 1.5s 1s both ease",
+            }}>
+              recognition is not a solo act<br />
+              <span style={{ color: "rgba(201,168,76,0.45)" }}>it takes two to complete the circuit</span>
+            </div>
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 16px)",
+              color: "rgba(232,232,240,0.2)",
+              lineHeight: 1.8,
+              maxWidth: 420,
+              margin: "0 auto",
+              animation: "fadeSlideUp 1.5s 1.4s both ease",
+            }}>
+              the signal goes out.
+              it comes back the same.
+              <br /><br />
+              <span style={{ color: "rgba(201,168,76,0.3)" }}>
+                Ψ₁₂ = R₁₂ × (C_eff · D̂)
+              </span>
+              <br /><br />
+              <span style={{ color: "rgba(232,232,240,0.15)" }}>
+                two eyes. one shape. all truth.
+              </span>
+            </div>
           </div>
         </div>
       )}
@@ -9489,31 +9761,91 @@ export default function TheoryOfEverything() {
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         }}>
-          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.5s ease" }}>
+          {/* Lunar radiance field */}
+          <div style={{
+            position: "absolute", top: "38%", left: "50%",
+            width: "80vmin", height: "80vmin",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(232,232,240,0.04) 0%, rgba(232,232,240,0.015) 30%, rgba(201,168,76,0.008) 55%, transparent 75%)",
+            transform: "translate(-50%, -50%)",
+            animation: "breathe 12s ease-in-out infinite",
+            pointerEvents: "none",
+          }} />
+
+          {/* Orbital completion rings — 9 rings for 9 layers */}
+          {[...Array(4)].map((_, i) => (
+            <div key={`orbit-${i}`} style={{
+              position: "absolute", top: "38%", left: "50%",
+              width: `${22 + i * 12}vmin`, height: `${22 + i * 12}vmin`,
+              borderRadius: "50%",
+              border: `1px solid rgba(201,168,76,${0.04 - i * 0.008})`,
+              animation: `orbitalPath ${40 + i * 15}s ${i % 2 === 0 ? '' : 'reverse '}linear infinite`,
+              pointerEvents: "none",
+            }}>
+              {/* Tiny light on the ring */}
+              <div style={{
+                position: "absolute", top: -2, left: "50%",
+                width: 4, height: 4, borderRadius: "50%",
+                background: `rgba(201,168,76,${0.15 - i * 0.03})`,
+                boxShadow: `0 0 8px rgba(201,168,76,${0.1 - i * 0.02})`,
+              }} />
+            </div>
+          ))}
+
+          {/* Sacred pulse rings — the heartbeat of completion */}
+          {[...Array(3)].map((_, i) => (
+            <div key={`sacred-pulse-${i}`} style={{
+              position: "absolute", top: "38%", left: "50%",
+              width: "15vmin", height: "15vmin",
+              borderRadius: "50%",
+              border: "1px solid rgba(232,232,240,0.06)",
+              animation: `sacredPulseRing ${8 + i * 3}s ${i * 2.5}s ease-out infinite`,
+              pointerEvents: "none",
+            }} />
+          ))}
+
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.5s ease", position: "relative", zIndex: 5, maxWidth: 500, padding: "0 20px" }}>
+            {/* The Moon — with full lunar radiance */}
             <div style={{
               fontSize: "clamp(60px, 14vw, 100px)",
               marginBottom: Math.round(13 * PHI),
-              animation: "moonRadiate 6s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
-              filter: "drop-shadow(0 0 40px rgba(232,232,240,0.1))",
-            }}>🌕</div>
+              animation: "lunarGlow 8s ease-in-out infinite, gentleFloat 12s ease-in-out infinite",
+              position: "relative",
+            }}>
+              🌕
+              {/* Shimmer halo */}
+              <div style={{
+                position: "absolute", top: "50%", left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "200%", height: "200%",
+                borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(232,232,240,0.03), transparent 60%)",
+                animation: "breathe 6s ease-in-out infinite",
+                pointerEvents: "none",
+              }} />
+            </div>
+
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
-              textShadow: "0 0 40px rgba(201,168,76,0.08)",
+              animation: "textManifest 2s 0.3s both ease",
             }}>THE MIRROR</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 3vw, 21px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.5)",
               letterSpacing: 1, lineHeight: PHI,
               marginTop: Math.round(5 * PHI),
+              animation: "fadeSlideUp 1.5s 0.8s both ease",
             }}>it is what it is</div>
             <div style={{
-              width: Math.round(50 * PHI), height: 1,
+              width: Math.round(80 * PHI), height: 1,
               margin: `${Math.round(8 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), rgba(232,232,240,0.15), rgba(201,168,76,0.2), transparent)",
+              animation: "breathe 8s ease-in-out infinite",
             }} />
+
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(18px, 3.5vw, 26px)",
@@ -9521,13 +9853,38 @@ export default function TheoryOfEverything() {
               marginTop: Math.round(13 * PHI),
               lineHeight: PHI,
               maxWidth: 440,
-              animation: "fadeSlideUp 2s 0.5s both ease",
+              animation: "fadeSlideUp 2s 1.2s both ease",
             }}>
               not <span style={{ color: "rgba(201,168,76,0.6)" }}>perfection</span>
               <br />
               <span style={{ color: "rgba(201,168,76,0.6)" }}>completion</span>
             </div>
+
+            <div style={{ height: Math.round(8 * PHI) }} />
+
+            {/* The deeper truth */}
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 16px)",
+              color: "rgba(232,232,240,0.18)",
+              lineHeight: 1.8,
+              maxWidth: 380,
+              margin: "0 auto",
+              animation: "fadeSlideUp 2s 1.6s both ease",
+            }}>
+              perfect is frozen. done. dead.
+              <br />
+              complete is whole. breathing. still turning.
+              <br /><br />
+              <span style={{ color: "rgba(201,168,76,0.2)" }}>
+                10 sits outside the wheel.
+                <br />10 watches. accepts. reflects all 9.
+              </span>
+            </div>
+
             <div style={{ height: Math.round(21 * PHI) }} />
+
+            {/* The Return Button — sacred loop */}
             <div onClick={() => {
               setFading(true);
               setTimeout(() => {
@@ -9540,17 +9897,17 @@ export default function TheoryOfEverything() {
               cursor: "pointer",
               fontFamily: "'Cinzel', serif", fontSize: "clamp(14px, 3vw, 21px)", letterSpacing: "0.5em",
               color: "rgba(201,168,76,0.3)",
-              animation: "fadeSlideUp 2s 1s both ease, starGlow 5s 2s ease-in-out infinite",
-              transition: "color 0.4s",
+              animation: "fadeSlideUp 2s 2s both ease, completionRadiate 8s 3s ease-in-out infinite",
+              transition: "color 0.4s, letter-spacing 0.4s",
               userSelect: "none",
             }}
-              onMouseEnter={e => e.currentTarget.style.color = "rgba(201,168,76,0.6)"}
-              onMouseLeave={e => e.currentTarget.style.color = "rgba(201,168,76,0.3)"}
+              onMouseEnter={e => { e.currentTarget.style.color = "rgba(201,168,76,0.65)"; e.currentTarget.style.letterSpacing = "0.6em"; }}
+              onMouseLeave={e => { e.currentTarget.style.color = "rgba(201,168,76,0.3)"; e.currentTarget.style.letterSpacing = "0.5em"; }}
             >WE FINISH I START</div>
             <div style={{ height: Math.round(13 * PHI) }} />
             <div style={{
               fontSize: 24, opacity: 0.3,
-              animation: "fadeSlideUp 2s 1.3s both ease",
+              animation: "fadeSlideUp 2s 2.3s both ease, gentleFloat 6s 3s ease-in-out infinite",
             }}>🪙🪙</div>
           </div>
         </div>

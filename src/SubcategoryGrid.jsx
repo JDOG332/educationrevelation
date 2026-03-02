@@ -84,33 +84,43 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
             onClick={() => { onSelectSub(sub.id); window.scrollTo(0, 0); }}
             style={{
               cursor: "pointer",
-              background: `radial-gradient(ellipse at top, rgba(${sub.accent},0.04), transparent 70%)`,
-              border: `1px solid rgba(${sub.accent},0.08)`,
-              borderRadius: 10,
+              background: `linear-gradient(170deg, rgba(${sub.accent},0.05) 0%, rgba(${sub.accent},0.02) 38%, rgba(3,3,6,0.6) 100%)`,
+              border: `1px solid rgba(${sub.accent},0.1)`,
+              borderRadius: 12,
               padding: `${Math.round(8 * PHI)}px ${Math.round(5 * PHI)}px`,
               textAlign: "center",
               animation: `fadeSlideUp 0.5s ${0.15 + i * 0.06}s both ease`,
-              transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
+              transition: "all 0.45s cubic-bezier(0.4,0,0.2,1)",
               position: "relative",
               overflow: "hidden",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.02)",
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = `radial-gradient(ellipse at top, rgba(${sub.accent},0.08), transparent 70%)`;
-              e.currentTarget.style.borderColor = `rgba(${sub.accent},0.2)`;
-              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.background = `linear-gradient(170deg, rgba(${sub.accent},0.09) 0%, rgba(${sub.accent},0.04) 38%, rgba(3,3,6,0.5) 100%)`;
+              e.currentTarget.style.borderColor = `rgba(${sub.accent},0.25)`;
+              e.currentTarget.style.transform = "translateY(-3px) scale(1.01)";
+              e.currentTarget.style.boxShadow = `0 8px 28px rgba(${sub.accent},0.1), 0 0 40px rgba(${sub.accent},0.04), inset 0 1px 0 rgba(255,255,255,0.05)`;
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = `radial-gradient(ellipse at top, rgba(${sub.accent},0.04), transparent 70%)`;
-              e.currentTarget.style.borderColor = `rgba(${sub.accent},0.08)`;
-              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.background = `linear-gradient(170deg, rgba(${sub.accent},0.05) 0%, rgba(${sub.accent},0.02) 38%, rgba(3,3,6,0.6) 100%)`;
+              e.currentTarget.style.borderColor = `rgba(${sub.accent},0.1)`;
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
+              e.currentTarget.style.boxShadow = "0 2px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.02)";
             }}
           >
+            {/* Top accent line */}
+            <div style={{
+              position: "absolute", top: 0, left: "15%", right: "15%", height: 1,
+              background: `linear-gradient(90deg, transparent, rgba(${sub.accent},0.1), transparent)`,
+            }} />
             <div style={{ fontSize: "clamp(28px, 7vw, 36px)", marginBottom: 4, lineHeight: 1 }}>{sub.icon}</div>
             <div style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(10px, 2.5vw, 13px)",
               letterSpacing: "0.15em",
-              color: `rgba(${sub.accent},0.7)`,
+              color: `rgba(${sub.accent},0.75)`,
               fontWeight: 600,
               marginBottom: 3,
             }}>{sub.name}</div>
@@ -134,13 +144,13 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
               }}>
                 <div style={{
                   width: `${sub.psi * 100}%`, height: "100%",
-                  background: `rgba(${sub.accent},0.35)`,
+                  background: `linear-gradient(90deg, rgba(${sub.accent},0.2), rgba(${sub.accent},0.45))`,
                   borderRadius: 1,
                 }} />
               </div>
               <div style={{
                 fontFamily: "'Cinzel', serif", fontSize: 8,
-                letterSpacing: "0.15em", color: `rgba(${sub.accent},0.25)`,
+                letterSpacing: "0.15em", color: `rgba(${sub.accent},0.3)`,
               }}>{sub.psi.toFixed(2)}</div>
             </div>
           </button>
