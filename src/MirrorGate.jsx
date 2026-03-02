@@ -387,14 +387,14 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
           >
             <input ref={inputRef} type="text" value={input}
               onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown}
-              placeholder="What's the meaning of life?"
+              placeholder="What's the meaning & purpose of life?"
               disabled={phase === "reflecting"}
               style={{
                 flex: 1, padding: `${S1 + 2}px ${S2}px`,
                 fontFamily: FONT_BODY, fontSize: `clamp(15px, 3vw, 18px)`,
                 fontStyle: "italic", fontWeight: 300, color: `${BONE}0.85)`,
                 background: "transparent", border: "none", outline: "none",
-                letterSpacing: 0.5,
+                letterSpacing: 0.5, textAlign: "center",
                 caretColor: `${GOLD}0.5)`,
               }}
               onFocus={(e) => { e.target.closest("div").style.borderColor = `${GOLD}0.25)`; e.target.closest("div").style.boxShadow = `0 4px 20px ${GOLD}0.08)`; }}
