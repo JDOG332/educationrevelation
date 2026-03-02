@@ -1480,7 +1480,7 @@ export default function TheoryOfEverything() {
                 value={doorInput}
                 onChange={e => { setDoorInput(e.target.value); setDoorResults(null); setDoorExpanded(null); }}
                 onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); if (doorInput.trim().length >= 3) { setDoorResults(classifyContent(doorInput)); setDoorExpanded(null); } }}}
-                placeholder="What's on your mind? A question, a belief, a doubt, anything..."
+                placeholder="What's the meaning of life?"
                 style={{
                   width: "100%", minHeight: 100, padding: Math.round(5 * PHI),
                   background: "rgba(201,168,76,0.03)", border: "1px solid rgba(201,168,76,0.12)",
