@@ -768,8 +768,13 @@ export default function TheoryOfEverything() {
             scroller.style.transform = `translateY(${y}px)`;
             scroller.style.opacity = "0";
 
-            // The first bookend: start white, tiny, blurred — will transition to gold, full-size, crisp
+            // Hide all lines except the first title — they appear when scrolling starts
             const firstTitle = kids[0];
+            for (let c = 1; c < kids.length; c++) {
+              kids[c].style.opacity = "0";
+            }
+
+            // The first bookend: start white, tiny, blurred — will transition to gold, full-size, crisp
             if (firstTitle) {
               firstTitle.style.color = 'rgba(255,255,255,0.9)';
               firstTitle.style.WebkitTextFillColor = 'rgba(255,255,255,0.9)';
@@ -799,8 +804,12 @@ export default function TheoryOfEverything() {
                 firstTitle.style.backgroundClip = 'text';
               }
 
-              // Hold while title crystallizes, then start scrolling
+              // Hold while title crystallizes, then reveal poem lines and start scrolling
               setTimeout(() => {
+                for (let c = 1; c < kids.length; c++) {
+                  kids[c].style.transition = "opacity 1.618s ease";
+                  kids[c].style.opacity = "1";
+                }
                 lastTime.current = null;
                 frameRef.current = requestAnimationFrame(scroll);
               }, CRYSTALLIZE_DUR);
