@@ -350,13 +350,13 @@ export function testTruth(userText) {
 
   // THE DEPTH CHART — 10 layers of earth
   const DEPTH_CHART = [
-    { level: 1,  name: "DUST",    label: "You haven't broken the surface. You owe a dare." },
-    { level: 2,  name: "TOPSOIL", label: "Barely scratching. You owe a dare." },
-    { level: 3,  name: "CLAY",    label: "Resistance. You're pushing but not through. Dare up." },
+    { level: 1,  name: "DUST",    label: "The surface hasn't been broken yet." },
+    { level: 2,  name: "TOPSOIL", label: "Scratching the surface. There's more below." },
+    { level: 3,  name: "CLAY",    label: "Resistance. You're pushing through something real." },
     { level: 4,  name: "ROOTS",   label: "You've hit something alive down here." },
-    { level: 5,  name: "STONE",   label: "Foundation. You can't fake this depth." },
-    { level: 6,  name: "BEDROCK", label: "Solid ground. This is where most people stop." },
-    { level: 7,  name: "CORE",    label: "The layers are connecting. You're seeing it." },
+    { level: 5,  name: "STONE",   label: "Foundation. This depth can't be faked." },
+    { level: 6,  name: "BEDROCK", label: "Solid ground. Most people never reach this." },
+    { level: 7,  name: "CORE",    label: "The layers are connecting across the theory." },
     { level: 8,  name: "MAGMA",   label: "Molten. Everything is moving and fusing together." },
     { level: 9,  name: "CRYSTAL", label: "Compressed clarity. Truth under pressure." },
     { level: 10, name: "SEED",    label: "The deepest point IS the beginning. Full circle." },

@@ -375,7 +375,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
             fontFamily: FONT_BODY, fontSize: `clamp(13px, 3vw, 17px)`,
             fontStyle: "italic", fontWeight: 300, color: `${BONE}0.35)`,
             lineHeight: PHI, maxWidth: 380, margin: "0 auto",
-          }}>Don't ask a question.<br />Write what you believe is true.<br /><span style={{ color: `${GOLD}0.3)` }}>Score low? You owe a dare.</span></div>
+          }}>Don't ask a question.<br />Write what you believe is true.</div>
         </div>
 
         {/* ── INPUT ── */}
@@ -488,29 +488,15 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
               </div>
             )}
 
-            {/* We dare you */}
+            {/* Deeper doors */}
             {mirrorResult.dares.length > 0 && (
               <div style={{
                 width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: S2,
               }}>
                 <div style={{
-                  fontFamily: FONT_DISPLAY, fontSize: truthResult.tier <= 4 ? 10 : 8,
-                  letterSpacing: truthResult.tier <= 4 ? 5 : 4,
-                  color: truthResult.tier <= 4 ? `${BONE}0.5)` : `${GOLD}0.25)`,
-                  textTransform: "uppercase", marginBottom: S1, textAlign: "center",
-                }}>{truthResult.tier <= 3 ? "YOU OWE A DARE" : truthResult.tier <= 5 ? "DARE TO GO DEEPER?" : "GO DEEPER"}</div>
-                {truthResult.tier <= 4 && (
-                  <div style={{
-                    fontFamily: FONT_BODY, fontSize: `clamp(13px, 2.8vw, 16px)`,
-                    fontStyle: "italic", color: `${BONE}0.35)`, textAlign: "center",
-                    lineHeight: PHI, marginBottom: S1, maxWidth: 380,
-                    animation: "mirrorReveal 0.6s ease 0.7s both",
-                  }}>
-                    {truthResult.tier <= 2
-                      ? "You're still in the dust. Pick a dare. No excuses."
-                      : "You hit clay. The real stuff is below. Pick one."}
-                  </div>
-                )}
+                  fontFamily: FONT_DISPLAY, fontSize: 8, letterSpacing: 4,
+                  color: `${GOLD}0.25)`, textTransform: "uppercase", marginBottom: S1,
+                }}>Go deeper</div>
                 {mirrorResult.dares.map((node, i) => (
                   <DareCard key={node.id} node={node} index={i} onNavigate={handleNavigateToLayer} />
                 ))}
