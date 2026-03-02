@@ -387,7 +387,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
           >
             <input ref={inputRef} type="text" value={input}
               onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown}
-              placeholder="write what you believe is true..."
+              placeholder="write what you believe is true about the meaning of life & love & joy & sorrow..."
               disabled={phase === "reflecting"}
               style={{
                 flex: 1, padding: `${S1 + 2}px ${S2}px`,
