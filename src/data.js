@@ -210,35 +210,27 @@ export const ETYMOLOGIES = [
 ];
 
 export const POEMS = [
-  // 1 — MIRROR OPEN
-  "It's the rhythm of life.",
+  "its the rhythm of life",
   "",
-  // 2
-  "Every hope, A heartbeat.\nEvery wish, A dream.",
-  "The moon never wishing...\nThe sun it could be.",
+  "every hope a heartbeat\nevery wish a dream",
+  "the moon never wishing\nthe sun it could be",
   "",
-  // 3
-  "Every life, A purpose...\nHidden inside.",
-  "Every sinner, A saint...\nTrying to hide.",
+  "every life a purpose\nhidden inside",
+  "every sinner a saint\ntrying to hide",
   "",
-  // 4 — THE WIDEST POINT — THE EYE OPENS
-  "Every girl needs a mountain,\nTo climb up and slide.",
-  "Every man has a boy...\nGrowing inside.",
+  "every girl needs a mountain\nto climb up and slide",
+  "every man has a boy\ngrowing inside",
   "",
-  // 3
-  "Every beast has the burden...\nOf scary and mean.",
-  "Every eagle, An eaglet...\nWaiting to scream.",
+  "every beast has the burden\nof scary and mean",
+  "every eagle an eaglet\nwaiting to scream",
   "",
-  // 2
-  "Every deck\nNeeds a dealer...\nFor trump she will make.",
-  "But don't make hard rules,\nYou're not ready to break.",
+  "every deck\nneeds a dealer\nfor trump she will make",
+  "but dont make hard rules\nyoure not ready to break",
   "",
-  // 1
-  "Every baby is born,\nWith all that it needs...",
-  "Just wisdom and love...\nAnd the chance to breathe.",
+  "every baby is born\nwith all that it needs",
+  "just wisdom and love\nand the chance to breathe",
   "",
-  // MIRROR CLOSE
-  "It's the rhythm of life.",
+  "its the rhythm of life",
 ];
 
 export const THE_ANSWER = {
