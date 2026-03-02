@@ -286,8 +286,14 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
   const [mirrorResult, setMirrorResult] = useState(null);
   const [phase, setPhase] = useState("gate");
   const [animScore, setAnimScore] = useState(1.0);
+  const [dissolving, setDissolving] = useState(false);
   const inputRef = useRef(null);
   const revealRef = useRef(null);
+
+  const handleEnter = useCallback(() => {
+    setDissolving(true);
+    setTimeout(() => onEnter(), 618);
+  }, [onEnter]);
 
   useEffect(() => {
     const t = setTimeout(() => { if (inputRef.current) inputRef.current.focus(); }, 1200);
@@ -342,6 +348,8 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
       position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
       background: DARK, display: "flex", flexDirection: "column", alignItems: "center",
       overflowY: "auto", overflowX: "hidden", zIndex: 10000, WebkitOverflowScrolling: "touch",
+      opacity: dissolving ? 0 : 1,
+      transition: "opacity 0.618s cubic-bezier(0.23, 1, 0.32, 1)",
     }}>
       {/* Grain */}
       <div style={{
@@ -540,7 +548,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
 
             {/* Enter */}
             <div style={{ marginTop: S2, animation: "mirrorReveal 0.8s ease 1.3s both" }}>
-              <button onClick={onEnter} style={{
+              <button onClick={handleEnter} style={{
                 fontFamily: FONT_DISPLAY, fontSize: `clamp(9px, 2.2vw, 12px)`,
                 letterSpacing: 5, color: `${GOLD}0.45)`, background: "transparent",
                 border: `1px solid ${GOLD}0.12)`, borderRadius: 8,
@@ -556,7 +564,7 @@ export default function MirrorGate({ onEnter, onNavigateToDepth }) {
 
         {/* Skip */}
         {phase === "gate" && (
-          <div onClick={onEnter} style={{
+          <div onClick={handleEnter} style={{
             position: "fixed", bottom: S4, left: 0, width: "100%",
             textAlign: "center",
             fontFamily: FONT_DISPLAY, fontSize: `clamp(11px, 2.8vw, 14px)`, letterSpacing: 6,

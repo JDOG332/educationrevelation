@@ -210,7 +210,7 @@ export const ETYMOLOGIES = [
 ];
 
 export const POEMS = [
-  "its the rhythm of life",
+  "it's the rhythm of life",
   "",
   "every hope is a heartbeat\nand every wish is a dream…",
   "",
@@ -234,7 +234,7 @@ export const POEMS = [
   "",
   "but don't make hard rules\nyou're not ready to break",
   "",
-  "because each baby is born\nwith all that it needs...",
+  "because each baby is born\nwith all that it needs…",
   "",
   "just wisdom and love\nand the chance to breathe",
   "",

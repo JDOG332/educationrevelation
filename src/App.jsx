@@ -157,7 +157,7 @@ export default function TheoryOfEverything() {
     w1.style.opacity = "0";
     w2.style.opacity = "0";
 
-    const SILENCE = 1.0;
+    const SILENCE = 0;
     const PHASE1  = 2.618;   // PHI²
     const PHASE2  = 2.618;   // mirror — same duration as phase 1
     const TOTAL   = SILENCE + PHASE1 + PHASE2; // ~6.24s
@@ -865,7 +865,7 @@ export default function TheoryOfEverything() {
                   if (line === "") {
                     return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
                   }
-                  const isBookend = (line === "its the rhythm of life");
+                  const isBookend = (line === "it's the rhythm of life");
                   const parts = line.split("\n");
                   return (
                     <div key={i} style={{
