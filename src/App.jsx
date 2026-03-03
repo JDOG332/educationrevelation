@@ -30,7 +30,7 @@ import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
 
 export default function TheoryOfEverything() {
   const [currentPage, setCurrentPage] = useState("theory"); // "theory" | "multiverse" | "math"
-  const [depth, setDepth] = useState(-1);
+  const [depth, setDepth] = useState(-2);
   // ═══ UI FOCUS STATE — single source of truth ═══
   const uiInitial = {
     activeLayer: null,
@@ -489,6 +489,102 @@ export default function TheoryOfEverything() {
         </>
       )}
 
+      {/* ===== BINARY LANDING — Layer -2, the first door ===== */}
+      {currentPage === "theory" && depth === -2 && (() => {
+        const BinaryLanding = () => {
+          const [dissolving, setDissolving] = React.useState(false);
+          const choiceRef = React.useRef(null);
+
+          const handleChoice = (target) => {
+            if (dissolving) return;
+            choiceRef.current = target;
+            setDissolving(true);
+            setTimeout(() => {
+              setDepth(target);
+              window.scrollTo(0, 0);
+            }, 618);
+          };
+
+          return (
+            <div style={{
+              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+              background: "#030306", display: "flex", flexDirection: "column",
+              alignItems: "center", justifyContent: "center",
+              zIndex: 10001,
+              opacity: dissolving ? 0 : 1,
+              transition: "opacity 0.618s cubic-bezier(0.23, 1, 0.32, 1)",
+            }}>
+              {/* Grain */}
+              <div style={{
+                position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+                opacity: 0.02, pointerEvents: "none", zIndex: 1,
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+                backgroundSize: "200px",
+              }} />
+
+              {/* Two choices */}
+              <div style={{
+                display: "flex", flexDirection: "row", gap: "clamp(40px, 10vw, 100px)",
+                alignItems: "center", justifyContent: "center",
+                zIndex: 2,
+                animation: "fadeSlideUp 1.2s ease 0.3s both",
+              }}>
+                {/* ASK */}
+                <div
+                  onClick={() => handleChoice(-1)}
+                  style={{
+                    display: "flex", flexDirection: "column", alignItems: "center",
+                    cursor: "pointer", gap: 12,
+                    transition: "transform 0.5s ease",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.08)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+                >
+                  <div style={{
+                    fontSize: "clamp(40px, 10vw, 72px)",
+                    lineHeight: 1,
+                    filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
+                  }}>🔮</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: "clamp(14px, 3.5vw, 20px)",
+                    letterSpacing: "0.3em",
+                    color: "rgba(232,232,240,0.5)",
+                    transition: "color 0.5s ease",
+                  }}>ASK</div>
+                </div>
+
+                {/* EXPLORE */}
+                <div
+                  onClick={() => handleChoice(0)}
+                  style={{
+                    display: "flex", flexDirection: "column", alignItems: "center",
+                    cursor: "pointer", gap: 12,
+                    transition: "transform 0.5s ease",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.08)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+                >
+                  <div style={{
+                    fontSize: "clamp(40px, 10vw, 72px)",
+                    lineHeight: 1,
+                    filter: "drop-shadow(0 0 20px rgba(201,168,76,0.15))",
+                  }}>🌌</div>
+                  <div style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: "clamp(14px, 3.5vw, 20px)",
+                    letterSpacing: "0.3em",
+                    color: "rgba(232,232,240,0.5)",
+                    transition: "color 0.5s ease",
+                  }}>EXPLORE</div>
+                </div>
+              </div>
+            </div>
+          );
+        };
+        return <BinaryLanding />;
+      })()}
+
       {/* ===== MIRROR GATE — Layer -1, the first view ===== */}
       {currentPage === "theory" && depth === -1 && (
         <MirrorGate
@@ -653,7 +749,7 @@ export default function TheoryOfEverything() {
       />}
 
       {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
-      {depth <= 2 && (
+      {depth >= 0 && depth <= 2 && (
         <div ref={openingRef} style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
           zIndex: 10000,
@@ -704,7 +800,7 @@ export default function TheoryOfEverything() {
 
       {/* DREAM MULTIVERSE — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
-      {depth <= 2 && (
+      {depth >= 0 && depth <= 2 && (
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
           zIndex: 1500,
@@ -902,7 +998,7 @@ export default function TheoryOfEverything() {
               {/* GO BACK — fades in via ref after one cycle */}
               <div
                 ref={goBackRef}
-                onClick={() => { setDepth(-1); window.scrollTo(0, 0); }}
+                onClick={() => { setDepth(-2); window.scrollTo(0, 0); }}
                 style={{
                   position: 'absolute',
                   bottom: `${Math.round(13 * PHI)}%`,
