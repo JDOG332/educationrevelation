@@ -303,6 +303,10 @@ export default function TheoryOfEverything() {
         setUserPath(targetPath);
         setSkipIntro(true);
       }
+      // THE VOID — skip opening act so it doesn't auto-advance
+      if (targetDepth === 0) {
+        setSkipIntro(true);
+      }
       setDepth(targetDepth);
       clearAllSubs();
       setFading(false);
@@ -619,7 +623,8 @@ export default function TheoryOfEverything() {
 
       {/* DREAM MULTIVERSE / DIAMOND GENESIS — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
-      {depth >= 0 && depth <= 2 && (
+      {/* depth 0 = THE VOID — pure nothingness, no canvas */}
+      {depth >= 1 && depth <= 2 && (
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
           zIndex: 1500,
