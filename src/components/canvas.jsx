@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { PHI } from "../data.js";
 
 export const OCTANT_COLORS = [
   "201,168,76",   // Recognition+Spirit+Intuition — warm gold

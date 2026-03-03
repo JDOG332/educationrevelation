@@ -216,21 +216,6 @@ html, body {
   .gold-line { margin: 8px 0 !important; }
 }
 
-/* Edge navigation chevrons — glow on hover/touch */
-.nav-chevron-left, .nav-chevron-right {
-  opacity: 0.15 !important;
-  transition: opacity 0.4s ease, text-shadow 0.4s ease !important;
-}
-div:hover > .nav-chevron-left,
-div:hover > .nav-chevron-right {
-  opacity: 0.5 !important;
-  text-shadow: 0 0 20px rgba(201,168,76,0.5), 0 0 40px rgba(201,168,76,0.2) !important;
-}
-div:active > .nav-chevron-left,
-div:active > .nav-chevron-right {
-  opacity: 0.8 !important;
-  text-shadow: 0 0 30px rgba(201,168,76,0.7), 0 0 60px rgba(201,168,76,0.3) !important;
-}
 
 /* ===== SACRED DEPTH ATMOSPHERES ===== */
 

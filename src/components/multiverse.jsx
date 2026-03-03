@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import { PHI, PHI2 } from "../data.js";
+import { useEffect, useRef } from "react";
 import {
-  psiSimulateStep, createPsiSystem, initializeBlochVectors,
-  computeR12, computeInertia, isMirrorPair
+  psiSimulateStep, initializeBlochVectors,
+  computeR12, computeInertia
 } from "../psi-engine.js";
 
 /* ============================================================

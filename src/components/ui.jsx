@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { PHI, PHI_INV, PHI2, LAYERS } from "../data.js";
+import { PHI, PHI_INV } from "../data.js";
 
 export function GrainOverlay() {
   const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
@@ -282,7 +282,6 @@ export function LayerCard({ layer, index, onClick, style: extraStyle }) {
 
 export function StringVibration() {
   const phaseRef = useRef(0);
-  const svgRef = useRef(null);
   const fundamentalRef = useRef(null);
   const harmonicRef = useRef(null);
   const frameRef = useRef(null);
@@ -316,7 +315,7 @@ export function StringVibration() {
   }, []);
 
   return (
-    <svg ref={svgRef} viewBox="0 0 300 60" width="100%" height="50" style={{ display: "block", margin: "12px 0", opacity: 0.8 }}>
+    <svg viewBox="0 0 300 60" width="100%" height="50" style={{ display: "block", margin: "12px 0", opacity: 0.8 }}>
       <defs>
         <linearGradient id="stringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="rgba(201,168,76,0)" />

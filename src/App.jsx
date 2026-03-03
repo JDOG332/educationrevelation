@@ -10,19 +10,19 @@ import MirrorGate from "./MirrorGate.jsx";
 import "./global.css";
 import {
   PHI, PHI_INV, PHI2, PHI3,
-  LAYERS, CORES, SENSES, MIRRORS, BURIED,
-  PROOFS_IN_THE_WORLD, WORD_MIRRORS, THREE_PILLARS,
+  LAYERS, CORES, MIRRORS, BURIED,
+  THREE_PILLARS,
   CONVERGENCE_DEPTHS, DEPTH_NAMES, DEPTH_ATMOSPHERES,
-  TRANSLATIONS, ETYMOLOGIES, POEMS, ASK_POEMS,
-  THE_ANSWER, THE_BEFORE, THE_CONSTANTS, SAMENESS_TRUTH,
+  POEMS, ASK_POEMS,
+  SAMENESS_TRUTH,
 } from "./data.js";
 import {
-  GrainOverlay, DepthIndicator, Particle, PulseRing, SenseIcon,
-  GlassCard, DeeperButton, ReturnButton, LayerCard,
+  GrainOverlay, DepthIndicator, Particle,
+  GlassCard, ReturnButton,
   StringVibration, TheEquation, MiracleGlow,
 } from "./components/ui.jsx";
 import { SacredTriquetra } from "./components/sacred.jsx";
-import { OctahedronPact, OCTANT_COLORS } from "./components/canvas.jsx";
+import { OctahedronPact } from "./components/canvas.jsx";
 import { Multiverse } from "./components/multiverse.jsx";
 import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
 import DiamondGenesisCanvas from "./components/diamondGenesis.jsx";
@@ -36,11 +36,7 @@ export default function TheoryOfEverything() {
   // ═══ UI FOCUS STATE — single source of truth ═══
   const uiInitial = {
     activeLayer: null,
-    activeSense: null,
     activePair: null,
-    activeMirrorSense: null,
-    activeMirrorProof: false,
-    activeProof: false,
     activeConvergence: null,
     activeFilterQ: null,
     activeIdea: null,
@@ -68,11 +64,7 @@ export default function TheoryOfEverything() {
 
   // Convenience setters — keep call sites readable
   const setActiveLayer = (v) => dispatch({ type: 'SET', key: 'activeLayer', value: v });
-  const setActiveSense = (v) => dispatch({ type: 'SET', key: 'activeSense', value: v });
   const setActivePair = (v) => dispatch({ type: 'SET', key: 'activePair', value: v });
-  const setActiveMirrorSense = (v) => dispatch({ type: 'SET', key: 'activeMirrorSense', value: v });
-  const setActiveMirrorProof = (v) => dispatch({ type: 'SET', key: 'activeMirrorProof', value: v });
-  const setActiveProof = (v) => dispatch({ type: 'SET', key: 'activeProof', value: v });
   const setActiveConvergence = (v) => dispatch({ type: 'SET', key: 'activeConvergence', value: v });
   const setActiveFilterQ = (v) => dispatch({ type: 'SET', key: 'activeFilterQ', value: v });
   const setActiveIdea = (v) => dispatch({ type: 'SET', key: 'activeIdea', value: v });
@@ -89,10 +81,10 @@ export default function TheoryOfEverything() {
   const setGoldenFlood = (v) => dispatch({ type: 'SET', key: 'goldenFlood', value: v });
 
   // Destructure for existing code compatibility
-  const { activeLayer, activeSense, activePair, activeMirrorSense, activeMirrorProof,
-    activeProof, activeConvergence, activeFilterQ, activeIdea, activeSubcategory, activePillar,
-    activeSamenessProof, activeAnswer, activeAnswerProof, activeBefore, activeBeforeProof,
-    activeConstants, activeConstantsProof, openSection, goldenFlood } = ui;
+  const { activeLayer, activePair, activeConvergence, activeFilterQ, activeIdea,
+    activeSubcategory, activePillar, activeSamenessProof, activeAnswer, activeAnswerProof,
+    activeBefore, activeBeforeProof, activeConstants, activeConstantsProof,
+    openSection, goldenFlood } = ui;
   const [fading, setFading] = useState(false);
   // Waterfall transition system
   const [transitioning, setTransitioning] = useState(false);
@@ -112,8 +104,6 @@ export default function TheoryOfEverything() {
   const [doorInput, setDoorInput] = useState("");
   const [doorResults, setDoorResults] = useState(null);
   const [doorExpanded, setDoorExpanded] = useState(null);
-  const poemSeen = useRef(false);
-
   // Stable particle seeds — generated once, never re-randomized on re-render
   const mathParticles = useMemo(() =>
     Array.from({ length: 16 }, (_, i) => ({
@@ -133,7 +123,6 @@ export default function TheoryOfEverything() {
     })), []);
 
   // Sacred easing — zero derivative at both ends (organic breath, not mechanical slide)
-  const smoothstep = (t) => t * t * (3 - 2 * t);
   const smootherstep = (t) => t * t * t * (t * (t * 6 - 15) + 10);
 
   // THE OPENING ACT — words devour the darkness, then the light
@@ -286,77 +275,6 @@ export default function TheoryOfEverything() {
     } catch (e) { /* aborted — user clicked again */ }
   }, [depth, transitioning, clearAllSubs]);
 
-  const goBack = useCallback(async () => {
-    if (transitioning) return;
-
-    transAbortRef.current?.abort();
-    const controller = new AbortController();
-    transAbortRef.current = controller;
-
-    try {
-      setTransDir('back');
-      setTransPhase('exit');
-      setTransitioning(true);
-      setPrevDepth(depth);
-      setFading(true);
-
-      await wait(SACRED_EXIT, controller.signal);
-      window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(d => {
-        const newD = Math.max(d - 1, 0);
-        return newD;
-      });
-      clearAllSubs();
-      setFading(false);
-      setTransPhase('enter');
-
-      await wait(SACRED_ENTER, controller.signal);
-      setTransPhase('settle');
-
-      await wait(SACRED_SETTLE, controller.signal);
-      setTransPhase('idle');
-      setTransitioning(false);
-      setPrevDepth(null);
-    } catch (e) { /* aborted */ }
-  }, [depth, transitioning, clearAllSubs]);
-
-  const returnToVoid = useCallback(async () => {
-    if (transitioning) return;
-
-    transAbortRef.current?.abort();
-    const controller = new AbortController();
-    transAbortRef.current = controller;
-
-    try {
-      setTransDir('void');
-      setTransPhase('exit');
-      setTransitioning(true);
-      setPrevDepth(depth);
-      setFading(true);
-
-      await wait(SACRED_EXIT, controller.signal);
-      window.scrollTo({ top: 0, behavior: "instant" });
-      setDepth(0);
-      clearAllSubs();
-      setFading(false);
-      setTransPhase('enter');
-
-      await wait(SACRED_ENTER, controller.signal);
-      setTransPhase('settle');
-
-      await wait(SACRED_SETTLE, controller.signal);
-      setTransPhase('idle');
-      setTransitioning(false);
-      setPrevDepth(null);
-    } catch (e) { /* aborted */ }
-  }, [depth, transitioning, clearAllSubs]);
-
-  const openLayer = (i) => {
-    setActiveLayer(i);
-    setActiveSense(null);
-    setActiveProof(false);
-  };
-
   const navigateToDepth = useCallback(async (targetDepth) => {
     if (targetDepth === depth || transitioning) return;
 
@@ -389,9 +307,6 @@ export default function TheoryOfEverything() {
       setPrevDepth(null);
     } catch (e) { /* aborted */ }
   }, [depth, transitioning, clearAllSubs]);
-
-  const layer = activeLayer !== null ? LAYERS[activeLayer] : null;
-  const senseKeys = ["see", "hear", "feel", "smell", "taste"];
 
   // Waterfall animation for each depth screen
   const getDepthWrap = useCallback((screenDepth) => {
@@ -556,8 +471,8 @@ export default function TheoryOfEverything() {
       {/* Grain overlay — hidden during pure black/white landing phases */}
       {(depth >= 1) && <GrainOverlay />}
 
-      {/* Depth indicator — 10 dots with hover labels */}
-      {(depth >= 0) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
+      {/* Depth indicator — 10 dots with hover labels (hidden during opening act) */}
+      {(depth >= 1) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
 
       {/* Vignette — hidden during landing */}
       {(depth >= 1) && (<>
@@ -704,7 +619,7 @@ export default function TheoryOfEverything() {
         }}>
           {userPath === "ask"
             ? <DiamondGenesisCanvas depth={depth} onVeilParted={() => setVeilParted(true)} />
-            : <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onVeilParted={() => setVeilParted(true)} />
+            : <DreamMultiverseCanvas depth={depth} onVeilParted={() => setVeilParted(true)} />
           }
         </div>
       )}
@@ -890,9 +805,6 @@ export default function TheoryOfEverything() {
 
       {/* ===== DEPTH 3 — THE PACT — 3D OCTAHEDRON ===== */}
       {depth === 3 && (() => {
-        const octantColors = OCTANT_COLORS;
-
-
         return (
           <div style={{
             height: "100vh", width: "100%", position: "relative", overflowX: "hidden",

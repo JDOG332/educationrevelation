@@ -25,15 +25,13 @@ const CLUSTER_COLORS = [
 ];
 const MIRROR_PAIRS = [[0,8],[1,7],[2,6],[3,5]];
 
-export default function DreamMultiverseCanvas({ depth, goDeeper, onVeilParted }) {
+export default function DreamMultiverseCanvas({ depth, onVeilParted }) {
   const canvasRef = useRef(null);
   const stateRef = useRef(null);
   const frameRef = useRef(null);
   const depthRef = useRef(depth);
-  const goDeeperRef = useRef(goDeeper);
   const onVeilPartedRef = useRef(onVeilParted);
   depthRef.current = depth;
-  goDeeperRef.current = goDeeper;
   onVeilPartedRef.current = onVeilParted;
 
   useEffect(() => {
