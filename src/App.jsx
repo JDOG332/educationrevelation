@@ -770,9 +770,6 @@ export default function TheoryOfEverything() {
           const scrollRef = useRef(null);
           const lastTime = useRef(null);
           const frameRef = useRef(null);
-          const moveOnRef = useRef(null);
-          const goBackRef = useRef(null);
-          const skipRef = useRef(null);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
@@ -862,20 +859,6 @@ export default function TheoryOfEverything() {
 
               scroller.style.transform = `translateY(${y}px)`;
 
-              // Show GO BACK and MOVE ON after one full cycle (no state update — just DOM)
-              if (totalElapsed >= cycleDuration) {
-                if (goBackRef.current) {
-                  goBackRef.current.style.opacity = "1";
-                  goBackRef.current.style.pointerEvents = "auto";
-                }
-                if (moveOnRef.current) {
-                  moveOnRef.current.style.opacity = "1";
-                  moveOnRef.current.style.pointerEvents = "auto";
-                }
-                if (skipRef.current) {
-                  skipRef.current.style.pointerEvents = "auto";
-                }
-              }
 
               frameRef.current = requestAnimationFrame(scroll);
             }
@@ -951,88 +934,6 @@ export default function TheoryOfEverything() {
                 })}
               </div>
 
-              {/* 🔮 ASK — fades in via ref after one cycle */}
-              <div
-                ref={goBackRef}
-                onClick={() => { setUserPath("ask"); setDepth(-1); window.scrollTo(0, 0); }}
-                style={{
-                  position: 'absolute',
-                  bottom: `${Math.round(13 * PHI)}%`,
-                  left: '12.5%',
-                  transform: 'translateX(-50%)',
-                  zIndex: 10,
-                  pointerEvents: 'none',
-                  cursor: 'pointer',
-                  textAlign: 'center',
-                  opacity: 0,
-                  transition: 'opacity 1.5s ease',
-                  WebkitTapHighlightColor: 'transparent',
-                }}
-              >
-                  <div style={{
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
-                    padding: `${Math.round(6 * PHI)}px ${Math.round(13 * PHI)}px`,
-                    border: '1px solid rgba(201,168,76,0.2)',
-                    borderRadius: 10,
-                    background: 'rgba(3,3,6,0.85)',
-                  }}>
-                    <div style={{ fontSize: 'clamp(20px, 5vw, 28px)', lineHeight: 1 }}>🔮</div>
-                    <div style={{
-                      fontFamily: "'Cinzel', serif",
-                      fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
-                      color: 'rgba(201,168,76,0.6)',
-                      letterSpacing: '0.25em',
-                    }}>ASK</div>
-                  </div>
-              </div>
-
-              {/* 🌌 EXPLORE — fades in via ref after one cycle */}
-              <div
-                ref={moveOnRef}
-                onClick={() => goDeeper()}
-                style={{
-                  position: 'absolute',
-                  bottom: `${Math.round(13 * PHI)}%`,
-                  right: '12.5%',
-                  transform: 'translateX(50%)',
-                  zIndex: 10,
-                  pointerEvents: 'none',
-                  cursor: 'pointer',
-                  textAlign: 'center',
-                  opacity: 0,
-                  transition: 'opacity 1.5s ease',
-                  WebkitTapHighlightColor: 'transparent',
-                }}
-              >
-                  <div style={{
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
-                    padding: `${Math.round(6 * PHI)}px ${Math.round(13 * PHI)}px`,
-                    border: '1px solid rgba(201,168,76,0.2)',
-                    borderRadius: 10,
-                    background: 'rgba(3,3,6,0.85)',
-                  }}>
-                    <div style={{ fontSize: 'clamp(20px, 5vw, 28px)', lineHeight: 1 }}>🌌</div>
-                    <div style={{
-                      fontFamily: "'Cinzel', serif",
-                      fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
-                      color: 'rgba(201,168,76,0.6)',
-                      letterSpacing: '0.25em',
-                    }}>EXPLORE</div>
-                  </div>
-              </div>
-
-              {/* Tap to skip — bottom quartile (enabled after one cycle alongside buttons) */}
-              <div
-                ref={skipRef}
-                onClick={() => goDeeper()}
-                style={{
-                  position: 'absolute', bottom: 0, left: 0,
-                  width: '100%', height: '25%',
-                  zIndex: 3, cursor: 'default',
-                  pointerEvents: 'none',
-                  background: 'transparent',
-                }}
-              />
             </div>
           );
         };
