@@ -108,6 +108,7 @@ export default function TheoryOfEverything() {
   const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
   const [diamondPlayed, setDiamondPlayed] = useState(false); // true once diamond genesis completes
   const [userPath, setUserPath] = useState(null); // "ask" | "explore" — which path the user chose
+  const [skipIntro, setSkipIntro] = useState(false); // true when jumping directly from landing to a deep depth
   const [doorInput, setDoorInput] = useState("");
   const [doorResults, setDoorResults] = useState(null);
   const [doorExpanded, setDoorExpanded] = useState(null);
@@ -508,12 +509,16 @@ export default function TheoryOfEverything() {
         <BinaryLandingCanvas onChoice={(path) => {
           if (path === "death-or-life") {
             setUserPath("ask");
+            setVeilParted(true);
+            setSkipIntro(true);
             setDepth(2);
           } else if (path === "pact") {
             setUserPath("ask");
             setDepth(3);
           } else if (path === "rhythm-of-life") {
             setUserPath("explore");
+            setVeilParted(true);
+            setSkipIntro(true);
             setDepth(2);
           }
           window.scrollTo(0, 0);
@@ -694,7 +699,7 @@ export default function TheoryOfEverything() {
       />}
 
       {/* ===== THE OPENING ACT — direct DOM, zero re-renders ===== */}
-      {depth >= 0 && depth <= 2 && (
+      {depth >= 0 && depth <= 2 && !skipIntro && (
         <div ref={openingRef} style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
           zIndex: 10000,
@@ -745,7 +750,7 @@ export default function TheoryOfEverything() {
 
       {/* DREAM MULTIVERSE / DIAMOND GENESIS — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
-      {depth >= 0 && depth <= 2 && (
+      {depth >= 0 && depth <= 2 && !skipIntro && (
         <div style={{
           height: "100vh", width: "100%", position: "fixed", top: 0, left: 0,
           zIndex: 1500,
