@@ -390,9 +390,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
       {/* === Labels — equal screen positions, same entrance delay === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
-        {/* Left — 25% */}
+        {/* Left — center of first third: 16.67% */}
         <div style={{
-          position: "absolute", top: goldenV, left: "25%",
+          position: "absolute", top: goldenV, left: "16.67%",
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -436,9 +436,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
           }}>{isEven ? kPrev : kWord}</div>
         </div>
 
-        {/* Right — 75% */}
+        {/* Right — center of last third: 83.33% */}
         <div style={{
-          position: "absolute", top: goldenV, left: "75%",
+          position: "absolute", top: goldenV, left: "83.33%",
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
