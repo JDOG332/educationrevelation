@@ -341,10 +341,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const cubicEase = "cubic-bezier(0.23, 1, 0.32, 1)";
   const crossfade = `opacity ${CROSSFADE_MS}ms ${cubicEase}`;
 
-  // Golden ratio layout — three zones: 38.2% | 23.6% | 38.2% = 100%
-  const sideWidth  = `${(1 - PHI_INV) * 100}%`;                // 38.2% each side
-  const centerW    = `${(2 * PHI_INV - 1) * 100}%`;             // 23.6% center (≈ 1/PHI³)
-  const centerLeft = `${(1 - PHI_INV) * 100}%`;                 // center starts at 38.2%
+  // Golden ratio layout
   const goldenV    = `${(1 - 1/PHI3) * 100}%`;                  // 76.4% from top
   const goldenLS   = `${PHI_INV * PHI_INV}em`;                  // 0.382em letter-spacing
 
@@ -380,19 +377,22 @@ export default function BinaryLandingCanvas({ onChoice }) {
         pointerEvents: "none", zIndex: 1,
       }} />
 
-      {/* === Left click zone — 0% to 38.2% === */}
-      <div
-        onClick={() => handleChoice("ask")}
-        onMouseEnter={() => setHovered("left")}
-        onMouseLeave={() => setHovered(null)}
-        style={{
-          position: "absolute", top: 0, left: 0, width: sideWidth, height: "100%",
-          cursor: "pointer", zIndex: 3,
-        }}
-      >
+      {/* === Invisible click zones (no labels) === */}
+      <div onClick={() => handleChoice("ask")}
+        onMouseEnter={() => setHovered("left")} onMouseLeave={() => setHovered(null)}
+        style={{ position: "absolute", top: 0, left: 0, width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
+      <div onClick={() => handleChoice("proof")}
+        onMouseEnter={() => setHovered("center")} onMouseLeave={() => setHovered(null)}
+        style={{ position: "absolute", top: 0, left: "33.33%", width: "33.34%", height: "100%", cursor: "pointer", zIndex: 3 }} />
+      <div onClick={() => handleChoice("explore")}
+        onMouseEnter={() => setHovered("right")} onMouseLeave={() => setHovered(null)}
+        style={{ position: "absolute", top: 0, left: "66.67%", width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
+
+      {/* === Labels — equal screen positions, same entrance delay === */}
+      <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
+        {/* Left — 25% */}
         <div style={{
-          position: "absolute",
-          top: goldenV, left: "50%",
+          position: "absolute", top: goldenV, left: "25%",
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -403,94 +403,60 @@ export default function BinaryLandingCanvas({ onChoice }) {
             color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
             textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
             transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
-          }}>
-            {isEven ? pair[0] : prevPair[0]}
-          </div>
+          }}>{isEven ? pair[0] : prevPair[0]}</div>
           <div style={{
             ...labelFont,
             color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
             textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
             transition: crossfade, opacity: isEven ? 0 : 1,
             position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
-          }}>
-            {isEven ? prevPair[0] : pair[0]}
-          </div>
+          }}>{isEven ? prevPair[0] : pair[0]}</div>
         </div>
-      </div>
 
-      {/* === Center click zone — 38.2% to 61.8% — KNOWLEDGE → THE PROOF === */}
-      <div
-        onClick={() => handleChoice("proof")}
-        onMouseEnter={() => setHovered("center")}
-        onMouseLeave={() => setHovered(null)}
-        style={{
-          position: "absolute", top: 0, left: centerLeft, width: centerW, height: "100%",
-          cursor: "pointer", zIndex: 3,
-        }}
-      >
+        {/* Center — 50% */}
         <div style={{
-          position: "absolute",
-          top: goldenV, left: "50%",
+          position: "absolute", top: goldenV, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "center" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: `fadeSlideUp 1.2s ease ${PHI_INV * 0.5}s both`,
+          animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
         }}>
           <div style={{
             ...labelFont,
             color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
             textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
             transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
-          }}>
-            {isEven ? kWord : kPrev}
-          </div>
+          }}>{isEven ? kWord : kPrev}</div>
           <div style={{
             ...labelFont,
             color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
             textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
             transition: crossfade, opacity: isEven ? 0 : 1,
             position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
-          }}>
-            {isEven ? kPrev : kWord}
-          </div>
+          }}>{isEven ? kPrev : kWord}</div>
         </div>
-      </div>
 
-      {/* === Right click zone — 61.8% to 100% === */}
-      <div
-        onClick={() => handleChoice("explore")}
-        onMouseEnter={() => setHovered("right")}
-        onMouseLeave={() => setHovered(null)}
-        style={{
-          position: "absolute", top: 0, left: `${PHI_INV * 100}%`, width: sideWidth, height: "100%",
-          cursor: "pointer", zIndex: 3,
-        }}
-      >
+        {/* Right — 75% */}
         <div style={{
-          position: "absolute",
-          top: goldenV, left: "50%",
+          position: "absolute", top: goldenV, left: "75%",
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: `fadeSlideUp 1.2s ease ${PHI_INV * PHI_INV}s both`,
+          animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
         }}>
           <div style={{
             ...labelFont,
             color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
             textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
             transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
-          }}>
-            {isEven ? pair[1] : prevPair[1]}
-          </div>
+          }}>{isEven ? pair[1] : prevPair[1]}</div>
           <div style={{
             ...labelFont,
             color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
             textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
             transition: crossfade, opacity: isEven ? 0 : 1,
             position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
-          }}>
-            {isEven ? prevPair[1] : pair[1]}
-          </div>
+          }}>{isEven ? prevPair[1] : pair[1]}</div>
         </div>
       </div>
     </div>
