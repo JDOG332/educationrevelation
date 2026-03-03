@@ -314,13 +314,13 @@ export const ASK_POEMS = [
   "", "",
   "the moment's now\n&\nwe want to change…",
   "",
-  "just don't know how\nto stay the same",
+  "just don't know how\nto be the same",
   "", "",
   "should I dance\nor\nshould I sing",
   "", "",
   "it does not matter",
   "", "",
-  "but it does for me",
+  "but it might for me",
   "",
 ];
 
