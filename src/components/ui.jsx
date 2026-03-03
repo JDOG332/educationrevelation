@@ -28,21 +28,47 @@ export function GrainOverlay() {
   );
 }
 
-export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) {
+export function DepthIndicator({ depth, onNavigate, depthNames, userPath }) {
   const [hovered, setHovered] = useState(null);
   const [expanded, setExpanded] = useState(false);
   const isMobile = typeof window !== "undefined" && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
   const showLabel = (i) => isMobile ? expanded : hovered === i;
+
+  // Nav entries: indices 2 and 3 both map to depth 2 (two poems)
+  // Index 0→depth 0, 1→1, 2→2(ask), 3→2(explore), 4→3, 5→4, ...
+  const navToDepth = (navIndex) => {
+    if (navIndex <= 1) return navIndex;
+    if (navIndex <= 3) return 2;
+    return navIndex - 1;
+  };
+  const navToPath = (navIndex) => {
+    if (navIndex === 2) return "ask";
+    if (navIndex === 3) return "explore";
+    return null;
+  };
+  const isCurrent = (navIndex) => {
+    const d = navToDepth(navIndex);
+    if (d !== depth) return false;
+    if (navIndex === 2) return depth === 2 && userPath === "ask";
+    if (navIndex === 3) return depth === 2 && userPath === "explore";
+    return true;
+  };
+  const isPast = (navIndex) => {
+    const d = navToDepth(navIndex);
+    return d < depth;
+  };
+
+  const totalEntries = depthNames.length;
 
   return (
     <div style={{
       position: "fixed", right: 24, top: "50%", transform: "translateY(-50%)",
       zIndex: 10100, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 0,
     }}>
-      {Array.from({ length: maxDepth + 1 }, (_, i) => {
-        const isCurrent = i === depth;
+      {Array.from({ length: totalEntries }, (_, i) => {
+        const current = isCurrent(i);
         const show = showLabel(i);
-        const isPast = i < depth;
+        const past = isPast(i);
         return (
           <div key={i}
             onClick={onNavigate ? (e) => {
@@ -50,7 +76,7 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
               if (isMobile && !expanded) {
                 setExpanded(true);
               } else {
-                onNavigate(i);
+                onNavigate(navToDepth(i), navToPath(i));
                 setExpanded(false);
               }
             } : undefined}
@@ -67,9 +93,9 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
             <div style={{
               fontFamily: "'Cinzel', serif",
               fontSize: 8, letterSpacing: 3,
-              color: isCurrent
+              color: current
                 ? "rgba(201,168,76,0.85)"
-                : isPast
+                : past
                   ? "rgba(201,168,76,0.5)"
                   : "rgba(232,232,240,0.4)",
               opacity: show ? 1 : 0,
@@ -77,30 +103,30 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
               transition: `all 0.4s cubic-bezier(0.23,1,0.32,1) ${expanded ? i * 30 : 0}ms`,
               whiteSpace: "nowrap",
               pointerEvents: "none",
-              textShadow: isCurrent ? "0 0 12px rgba(201,168,76,0.3)" : "none",
+              textShadow: current ? "0 0 12px rgba(201,168,76,0.3)" : "none",
             }}>
               {depthNames[i]}
             </div>
             {/* Dot */}
             <div style={{
-              width: isCurrent ? 8 : show ? 6 : 4,
-              height: isCurrent ? 8 : show ? 6 : 4,
+              width: current ? 8 : show ? 6 : 4,
+              height: current ? 8 : show ? 6 : 4,
               borderRadius: "50%",
               flexShrink: 0,
-              background: isCurrent
+              background: current
                 ? "rgba(201,168,76,0.8)"
                 : show
                   ? "rgba(201,168,76,0.6)"
-                  : isPast
+                  : past
                     ? "rgba(201,168,76,0.2)"
                     : "rgba(255,255,255,0.07)",
               transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
-              boxShadow: isCurrent
+              boxShadow: current
                 ? "0 0 10px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.12)"
                 : show
                   ? "0 0 8px rgba(201,168,76,0.25)"
                   : "none",
-              animation: isCurrent ? "breathe 6s ease-in-out infinite" : "none",
+              animation: current ? "breathe 6s ease-in-out infinite" : "none",
             }} />
           </div>
         );

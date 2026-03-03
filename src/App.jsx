@@ -275,8 +275,13 @@ export default function TheoryOfEverything() {
     } catch (e) { /* aborted — user clicked again */ }
   }, [depth, transitioning, clearAllSubs]);
 
-  const navigateToDepth = useCallback(async (targetDepth) => {
-    if (targetDepth === depth || transitioning) return;
+  const navigateToDepth = useCallback(async (targetDepth, targetPath) => {
+    if ((targetDepth === depth && !targetPath) || transitioning) return;
+    // If same depth but different poem path, just switch the path
+    if (targetDepth === depth && targetPath) {
+      setUserPath(targetPath);
+      return;
+    }
 
     transAbortRef.current?.abort();
     const controller = new AbortController();
@@ -293,6 +298,11 @@ export default function TheoryOfEverything() {
 
       await wait(SACRED_EXIT, controller.signal);
       window.scrollTo({ top: 0, behavior: "instant" });
+      // Set poem path when navigating to depth 2
+      if (targetDepth === 2 && targetPath) {
+        setUserPath(targetPath);
+        setSkipIntro(true);
+      }
       setDepth(targetDepth);
       clearAllSubs();
       setFading(false);
@@ -472,7 +482,7 @@ export default function TheoryOfEverything() {
       {(depth >= 1) && <GrainOverlay />}
 
       {/* Depth indicator — 10 dots with hover labels (hidden during opening act) */}
-      {(depth >= 1) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
+      {(depth >= 1) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} userPath={userPath} />}
 
       {/* Vignette — hidden during landing */}
       {(depth >= 1) && (<>
