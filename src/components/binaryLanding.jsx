@@ -460,6 +460,11 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
   const goldenLS = `${PHI_INV * PHI_INV}em`;
 
+  // Golden ratio opacity scale: 1 - PHI_INV^n
+  const alphaRest  = 1 - PHI_INV * PHI_INV;                       // n=2 → 0.618 (satellite)
+  const alphaAnchor = 1 - PHI_INV * PHI_INV * PHI_INV;            // n=3 → 0.764 (center)
+  const alphaHover = 1 - PHI_INV * PHI_INV * PHI_INV * PHI_INV;   // n=4 → 0.854 (hover)
+
   const labelFont = {
     fontFamily: "'Cinzel', serif",
     fontSize: `clamp(29px, ${PHI * PHI * PHI}vw, 55px)`,
@@ -516,13 +521,13 @@ export default function BinaryLandingCanvas({ onChoice }) {
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
               ...labelFont,
-              color: `rgba(180,190,220,${hovered === "left" ? 0.95 : 0.7})`,
+              color: `rgba(180,190,220,${hovered === "left" ? alphaHover : alphaRest})`,
               textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
             }}>{isEven ? pair[0] : prevPair[0]}</div>
             <div style={{
               ...labelFont,
-              color: `rgba(180,190,220,${hovered === "left" ? 0.95 : 0.7})`,
+              color: `rgba(180,190,220,${hovered === "left" ? alphaHover : alphaRest})`,
               textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 0 : 1,
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
@@ -540,13 +545,13 @@ export default function BinaryLandingCanvas({ onChoice }) {
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
               ...labelFont,
-              color: `rgba(232,232,240,${hovered === "center" ? 0.95 : 0.65})`,
+              color: `rgba(232,232,240,${hovered === "center" ? alphaHover : alphaAnchor})`,
               textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
               transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
             }}>{isEven ? kWord : kPrev}</div>
             <div style={{
               ...labelFont,
-              color: `rgba(232,232,240,${hovered === "center" ? 0.95 : 0.65})`,
+              color: `rgba(232,232,240,${hovered === "center" ? alphaHover : alphaAnchor})`,
               textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
               transition: crossfade, opacity: isEven ? 0 : 1,
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
@@ -564,13 +569,13 @@ export default function BinaryLandingCanvas({ onChoice }) {
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
               ...labelFont,
-              color: `rgba(232,220,180,${hovered === "right" ? 0.95 : 0.7})`,
+              color: `rgba(232,220,180,${hovered === "right" ? alphaHover : alphaRest})`,
               textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
             }}>{isEven ? pair[1] : prevPair[1]}</div>
             <div style={{
               ...labelFont,
-              color: `rgba(232,220,180,${hovered === "right" ? 0.95 : 0.7})`,
+              color: `rgba(232,220,180,${hovered === "right" ? alphaHover : alphaRest})`,
               textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 0 : 1,
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
