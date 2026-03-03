@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS, KNOWLEDGE_WORDS, SEPHIROT, SEPH_PATHS } from "../data.js";
+import { PHI, PHI_INV, OPPOSITE_PAIRS, KNOWLEDGE_WORDS, SEPHIROT, SEPH_PATHS } from "../data.js";
 
 /* ============================================================
    BINARY LANDING — Symmetric Fractal Tree
@@ -469,7 +469,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
   return (
     <div style={{
       position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-      background: "#030306", zIndex: 10001,
+      background: "#000000", zIndex: 10001,
       opacity: dissolving ? 0 : 1,
       transition: `opacity ${DISSOLVE_MS}ms ${cubicEase}`,
     }}>

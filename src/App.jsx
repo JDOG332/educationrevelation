@@ -21,7 +21,7 @@ import {
   GlassCard, DeeperButton, ReturnButton, LayerCard,
   StringVibration, TheEquation, MiracleGlow,
 } from "./components/ui.jsx";
-import { SacredDiamond, SacredTriquetra } from "./components/sacred.jsx";
+import { SacredTriquetra } from "./components/sacred.jsx";
 import { OctahedronPact, OCTANT_COLORS } from "./components/canvas.jsx";
 import { Multiverse } from "./components/multiverse.jsx";
 import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
