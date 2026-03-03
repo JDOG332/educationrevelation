@@ -25,6 +25,7 @@ import { SacredDiamond, SacredTriquetra } from "./components/sacred.jsx";
 import { OctahedronPact, OCTANT_COLORS } from "./components/canvas.jsx";
 import { Multiverse } from "./components/multiverse.jsx";
 import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
+import DiamondGenesisCanvas from "./components/diamondGenesis.jsx";
 
 /* ========== MAIN ========== */
 
@@ -104,6 +105,7 @@ export default function TheoryOfEverything() {
   const SACRED_ENTER  = Math.round(PHI * 618);  // 1000ms — The Manifestation  
   const SACRED_SETTLE = Math.round(PHI_INV * 618); // 382ms — The Settling
   const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
+  const [diamondPlayed, setDiamondPlayed] = useState(false); // true once diamond genesis completes
   const [doorInput, setDoorInput] = useState("");
   const [doorResults, setDoorResults] = useState(null);
   const [doorExpanded, setDoorExpanded] = useState(null);
@@ -209,6 +211,11 @@ export default function TheoryOfEverything() {
   // Reset veil state when leaving depth 2
   useEffect(() => {
     if (depth !== 2) setVeilParted(false);
+  }, [depth]);
+
+  // Reset diamond state when leaving depth -1
+  useEffect(() => {
+    if (depth !== -1) setDiamondPlayed(false);
   }, [depth]);
 
   // Golden flood — when depth 5 activates, start the 20-second countdown
@@ -628,8 +635,18 @@ export default function TheoryOfEverything() {
         return <BinaryLanding />;
       })()}
 
-      {/* ===== MIRROR GATE — Layer -1, the first view ===== */}
-      {currentPage === "theory" && depth === -1 && (
+      {/* ===== DIAMOND GENESIS — plays before MirrorGate on ASK path ===== */}
+      {currentPage === "theory" && depth === -1 && !diamondPlayed && (
+        <div style={{
+          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+          zIndex: 10000, background: "#030306",
+        }}>
+          <DiamondGenesisCanvas onComplete={() => setDiamondPlayed(true)} />
+        </div>
+      )}
+
+      {/* ===== MIRROR GATE — Layer -1, appears after diamond genesis ===== */}
+      {currentPage === "theory" && depth === -1 && diamondPlayed && (
         <MirrorGate
           onEnter={() => setDepth(0)}
           onNavigateToDepth={(route) => {
