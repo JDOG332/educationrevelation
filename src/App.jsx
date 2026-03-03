@@ -13,7 +13,7 @@ import {
   LAYERS, CORES, SENSES, MIRRORS, BURIED,
   PROOFS_IN_THE_WORLD, WORD_MIRRORS, THREE_PILLARS,
   CONVERGENCE_DEPTHS, DEPTH_NAMES, DEPTH_ATMOSPHERES,
-  TRANSLATIONS, ETYMOLOGIES, POEMS,
+  TRANSLATIONS, ETYMOLOGIES, POEMS, ASK_POEMS,
   THE_ANSWER, THE_BEFORE, THE_CONSTANTS, SAMENESS_TRUTH,
 } from "./data.js";
 import {
@@ -106,6 +106,7 @@ export default function TheoryOfEverything() {
   const SACRED_SETTLE = Math.round(PHI_INV * 618); // 382ms — The Settling
   const [veilParted, setVeilParted] = useState(false); // true once the star curtain has parted
   const [diamondPlayed, setDiamondPlayed] = useState(false); // true once diamond genesis completes
+  const [userPath, setUserPath] = useState(null); // "ask" | "explore" — which path the user chose
   const [doorInput, setDoorInput] = useState("");
   const [doorResults, setDoorResults] = useState(null);
   const [doorExpanded, setDoorExpanded] = useState(null);
@@ -216,6 +217,11 @@ export default function TheoryOfEverything() {
   // Reset diamond state when leaving depth -1
   useEffect(() => {
     if (depth !== -1) setDiamondPlayed(false);
+  }, [depth]);
+
+  // Reset path when returning to landing
+  useEffect(() => {
+    if (depth === -2) setUserPath(null);
   }, [depth]);
 
   // Golden flood — when depth 5 activates, start the 20-second countdown
@@ -503,12 +509,13 @@ export default function TheoryOfEverything() {
           const [hovered, setHovered] = React.useState(null);
           const choiceRef = React.useRef(null);
 
-          const handleChoice = (target) => {
+          const handleChoice = (path) => {
             if (dissolving) return;
-            choiceRef.current = target;
+            choiceRef.current = path;
+            setUserPath(path);
             setDissolving(true);
             setTimeout(() => {
-              setDepth(target);
+              setDepth(0); // both paths start at depth 0 (breath)
               window.scrollTo(0, 0);
             }, 618);
           };
@@ -554,7 +561,7 @@ export default function TheoryOfEverything() {
               }}>
                 {/* ASK */}
                 <div
-                  onClick={() => handleChoice(-1)}
+                  onClick={() => handleChoice("ask")}
                   onMouseEnter={() => setHovered("ask")}
                   onMouseLeave={() => setHovered(null)}
                   style={{
@@ -597,7 +604,7 @@ export default function TheoryOfEverything() {
 
                 {/* EXPLORE */}
                 <div
-                  onClick={() => handleChoice(0)}
+                  onClick={() => handleChoice("explore")}
                   onMouseEnter={() => setHovered("explore")}
                   onMouseLeave={() => setHovered(null)}
                   style={{
@@ -858,7 +865,7 @@ export default function TheoryOfEverything() {
 
       {/* SECRET PASSAGE — removed for now. Hidden in plain sight later. */}
 
-      {/* DREAM MULTIVERSE — the crown jewel */}
+      {/* DREAM MULTIVERSE / DIAMOND GENESIS — the crown jewel */}
       {/* Stays mounted through depth 2 transition to avoid flash-unmount */}
       {depth >= 0 && depth <= 2 && (
         <div style={{
@@ -868,8 +875,10 @@ export default function TheoryOfEverything() {
           opacity: 1,
           pointerEvents: "none",
         }}>
-          <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onVeilParted={() => setVeilParted(true)} />
-
+          {userPath === "ask"
+            ? <DiamondGenesisCanvas depth={depth} onVeilParted={() => setVeilParted(true)} />
+            : <DreamMultiverseCanvas depth={depth} goDeeper={goDeeper} onVeilParted={() => setVeilParted(true)} />
+          }
         </div>
       )}
 
@@ -882,6 +891,7 @@ export default function TheoryOfEverything() {
           const frameRef = useRef(null);
           const moveOnRef = useRef(null);
           const goBackRef = useRef(null);
+          const skipRef = useRef(null);
 
           useEffect(() => {
             if (!wheelRef.current || !scrollRef.current) return;
@@ -889,8 +899,9 @@ export default function TheoryOfEverything() {
             const scroller = scrollRef.current;
             const viewH = container.clientHeight;
 
-            // Measure one cycle: count DOM children for exactly POEMS.length items
-            const oneCycleCount = POEMS.length;
+            // Measure one cycle: count DOM children for exactly one poem's items
+            const activePoems = userPath === "ask" ? ASK_POEMS : POEMS;
+            const oneCycleCount = activePoems.length;
             let oneCycleH = 0;
             const kids = scroller.children;
             for (let c = 0; c < oneCycleCount && c < kids.length; c++) {
@@ -980,6 +991,9 @@ export default function TheoryOfEverything() {
                   moveOnRef.current.style.opacity = "1";
                   moveOnRef.current.style.pointerEvents = "auto";
                 }
+                if (skipRef.current) {
+                  skipRef.current.style.pointerEvents = "auto";
+                }
               }
 
               frameRef.current = requestAnimationFrame(scroll);
@@ -1017,11 +1031,12 @@ export default function TheoryOfEverything() {
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
                 padding: '0 5%',
               }}>
-                {[...POEMS, ...POEMS, ...POEMS].map((line, i) => {
+                {(() => { const ap = userPath === "ask" ? ASK_POEMS : POEMS; return [...ap, ...ap, ...ap]; })().map((line, i) => {
                   if (line === "") {
                     return <div key={i} style={{ height: `${Math.round(38 * PHI)}px` }} />;
                   }
-                  const isBookend = (line === "it's the rhythm of life");
+                  const bookendTitle = userPath === "ask" ? "death or life" : "it's the rhythm of life";
+                  const isBookend = (line === bookendTitle);
                   const parts = line.split("\n");
                   return (
                     <div key={i} style={{
@@ -1058,7 +1073,7 @@ export default function TheoryOfEverything() {
               {/* 🔮 ASK — fades in via ref after one cycle */}
               <div
                 ref={goBackRef}
-                onClick={() => { setDepth(-1); window.scrollTo(0, 0); }}
+                onClick={() => { setUserPath("ask"); setDepth(-1); window.scrollTo(0, 0); }}
                 style={{
                   position: 'absolute',
                   bottom: `${Math.round(13 * PHI)}%`,
@@ -1125,14 +1140,15 @@ export default function TheoryOfEverything() {
                   </div>
               </div>
 
-              {/* Tap to skip — bottom quartile (silent, always present) */}
+              {/* Tap to skip — bottom quartile (enabled after one cycle alongside buttons) */}
               <div
+                ref={skipRef}
                 onClick={() => goDeeper()}
                 style={{
                   position: 'absolute', bottom: 0, left: 0,
                   width: '100%', height: '25%',
                   zIndex: 3, cursor: 'default',
-                  pointerEvents: 'auto',
+                  pointerEvents: 'none',
                   background: 'transparent',
                 }}
               />

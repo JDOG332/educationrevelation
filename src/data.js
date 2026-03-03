@@ -240,6 +240,37 @@ export const POEMS = [
   "",
 ];
 
+export const ASK_POEMS = [
+  "death or life",
+  "",
+  "alive when dancing\n&\ndead when not…",
+  "",
+  "dance all day\n&\nnever stop",
+  "", "",
+  "find a partner\n&\nshow me how",
+  "",
+  "dance for others\n&\nnot just now",
+  "", "",
+  "we need to dance\nto be set free…",
+  "",
+  "so I hope a reason,\nsoon finds me",
+  "", "",
+  "try too hard\nbut something's wrong…",
+  "",
+  "so we sing instead\na happy song",
+  "", "",
+  "the moment's now\n&\nwe want to change…",
+  "",
+  "just don't know how\nto stay the same",
+  "", "",
+  "should I dance\nor\nshould I sing",
+  "", "",
+  "it does not matter",
+  "", "",
+  "but it does for me",
+  "",
+];
+
 export const THE_ANSWER = {
   core: "There is something rather than nothing because the universe is a giant matching game. Everything in existence is constantly looking for its other half to prove that it is real. When two different things look at each other and see the same pattern, they click together. This click creates a solid spark of reality. If nothing ever matched, everything would stay as a blurry, quiet nothingness. But because things can overlap and agree on what they see, they create a Something that stays stuck together.",
   buried: "Existence is what happens when the universe recognizes itself.",
