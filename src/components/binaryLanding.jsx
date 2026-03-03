@@ -332,6 +332,19 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const cubicEase = "cubic-bezier(0.23, 1, 0.32, 1)";
   const crossfade = `opacity ${CROSSFADE_MS}ms ${cubicEase}`;
 
+  // Golden ratio layout — every position derived from PHI
+  const goldenV   = `${(1 - PHI_INV) * 100}%`;  // 38.2% from top
+  const goldenL   = `${(1 - PHI_INV) * 100}%`;   // 38.2% within left half → 19.1% of screen
+  const goldenR   = `${PHI_INV * 100}%`;           // 61.8% within right half → 80.9% of screen
+  const goldenLS  = `${PHI_INV * PHI_INV}em`;      // 0.382em letter-spacing
+
+  // Shared label style
+  const labelFont = {
+    fontFamily: "'Cinzel', serif",
+    fontSize: `clamp(20px, ${PHI * PHI}vw, 36px)`,
+    letterSpacing: goldenLS,
+  };
+
   return (
     <div style={{
       position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
@@ -351,10 +364,10 @@ export default function BinaryLandingCanvas({ onChoice }) {
         backgroundImage: GRAIN_BG, backgroundSize: "200px",
       }} />
 
-      {/* Vignette */}
+      {/* Vignette — centered at golden vertical point */}
       <div style={{
         position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-        background: "radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%)",
+        background: `radial-gradient(ellipse at 50% ${goldenV}, transparent 20%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%)`,
         pointerEvents: "none", zIndex: 1,
       }} />
 
@@ -370,18 +383,16 @@ export default function BinaryLandingCanvas({ onChoice }) {
       >
         <div style={{
           position: "absolute",
-          top: "25%", left: "50%",
+          top: goldenV, left: goldenL,
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: "fadeSlideUp 1.2s ease 0.5s both",
+          animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
         }}>
           <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(20px, 5vw, 36px)",
-            letterSpacing: "0.25em",
+            ...labelFont,
             color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
-            textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.2)" : "none",
+            textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
             transition: crossfade,
             opacity: isEven ? 1 : 0,
             position: "relative",
@@ -389,11 +400,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
             {isEven ? pair[0] : prevPair[0]}
           </div>
           <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(20px, 5vw, 36px)",
-            letterSpacing: "0.25em",
+            ...labelFont,
             color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
-            textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.2)" : "none",
+            textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
             transition: crossfade,
             opacity: isEven ? 0 : 1,
             position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
@@ -416,18 +425,16 @@ export default function BinaryLandingCanvas({ onChoice }) {
       >
         <div style={{
           position: "absolute",
-          top: "25%", left: "50%",
+          top: goldenV, left: goldenR,
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: "fadeSlideUp 1.2s ease 0.7s both",
+          animation: `fadeSlideUp 1.2s ease ${PHI_INV * PHI_INV}s both`,
         }}>
           <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(20px, 5vw, 36px)",
-            letterSpacing: "0.25em",
+            ...labelFont,
             color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
-            textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.2)" : "none",
+            textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
             transition: crossfade,
             opacity: isEven ? 1 : 0,
             position: "relative",
@@ -435,11 +442,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
             {isEven ? pair[1] : prevPair[1]}
           </div>
           <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(20px, 5vw, 36px)",
-            letterSpacing: "0.25em",
+            ...labelFont,
             color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
-            textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.2)" : "none",
+            textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
             transition: crossfade,
             opacity: isEven ? 0 : 1,
             position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
