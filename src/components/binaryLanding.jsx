@@ -209,18 +209,21 @@ export default function BinaryLandingCanvas({ onChoice }) {
     const ident = (y) => y;
     function drawBranches(hov, mirror) {
       const yT = mirror ? mirrorY : ident;
+      // "top" hover brightens upper (mirrored) branches; "bottom" brightens lower (normal)
+      const zoneMatch = hov === "top" ? mirror : hov === "bottom" ? !mirror : false;
+      const zoneDim   = hov === "top" ? !mirror : hov === "bottom" ? mirror : false;
 
       // Glow pass — wide, soft
       for (let i = 0; i < tree.branches.length; i++) {
         const b = tree.branches[i];
-        const isLeft = b.bias < 0.5;
         let alpha = 0.09 * Math.pow(0.75, b.depth);
 
-        if (hov === "left")        alpha *= isLeft ? 2 : 0.4;
-        else if (hov === "right") alpha *= isLeft ? 0.4 : 2;
-        else if (hov === "center") alpha *= b.depth < 2 ? 2 : 0.5;
+        if (zoneMatch)              alpha *= 2;
+        else if (zoneDim)           alpha *= 0.4;
+        else if (hov === "center")  alpha *= b.depth < 2 ? 2 : 0.5;
 
         const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
+        const isLeft = b.bias < 0.5;
         const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
         const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
 
@@ -234,14 +237,14 @@ export default function BinaryLandingCanvas({ onChoice }) {
       // Core pass — thin, brighter
       for (let i = 0; i < tree.branches.length; i++) {
         const b = tree.branches[i];
-        const isLeft = b.bias < 0.5;
         let alpha = 0.18 * Math.pow(0.75, b.depth);
 
-        if (hov === "left")        alpha *= isLeft ? 2.5 : 0.35;
-        else if (hov === "right") alpha *= isLeft ? 0.35 : 2.5;
-        else if (hov === "center") alpha *= b.depth < 2 ? 2.5 : 0.4;
+        if (zoneMatch)              alpha *= 2.5;
+        else if (zoneDim)           alpha *= 0.35;
+        else if (hov === "center")  alpha *= b.depth < 2 ? 2.5 : 0.4;
 
         const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
+        const isLeft = b.bias < 0.5;
         const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
         const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
 
@@ -281,7 +284,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
       const hov = hoveredRef.current;
       const isDiss = dissolvingRef.current;
       const chosen = chosenRef.current;
-      const chosenSide = chosen === "ask" ? "left" : chosen === "explore" ? "right" : chosen === "proof" ? "center" : null;
+      const chosenSide = chosen === "death-or-life" ? "top" : chosen === "rhythm-of-life" ? "bottom" : chosen === "pact" ? "center" : null;
 
       // --- Draw trunk spine (full height) ---
       ctx.beginPath();
@@ -299,14 +302,16 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
       // --- Draw Sephirot paths (two passes: glow + core) ---
       const sephBreath = (now % GLOW_BREATHE_MS) / GLOW_BREATHE_MS;
+      // Map hover zones to pillar names: top→left(blue), bottom→right(gold), center→center(white)
+      const hovPillar = hov === "top" ? "left" : hov === "bottom" ? "right" : hov === "center" ? "center" : null;
       for (let i = 0; i < SEPH_PATHS.length; i++) {
         const [a, b] = SEPH_PATHS[i];
         const pa = sephPositions[a], pb = sephPositions[b];
         const ca = pillarColor(pa.pillar), cb = pillarColor(pb.pillar);
         const color = lerpColor(ca, cb, 0.5);
         let alpha = 0.07;
-        if (hov) {
-          const match = pa.pillar === hov || pb.pillar === hov;
+        if (hovPillar) {
+          const match = pa.pillar === hovPillar || pb.pillar === hovPillar;
           alpha *= match ? 2 : 0.35;
         }
         ctx.beginPath();
@@ -322,8 +327,8 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const ca = pillarColor(pa.pillar), cb = pillarColor(pb.pillar);
         const color = lerpColor(ca, cb, 0.5);
         let alpha = 0.15;
-        if (hov) {
-          const match = pa.pillar === hov || pb.pillar === hov;
+        if (hovPillar) {
+          const match = pa.pillar === hovPillar || pb.pillar === hovPillar;
           alpha *= match ? 2 : 0.35;
         }
         ctx.beginPath();
@@ -343,7 +348,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const phase = (sephBreath + i * 0.1) % 1;
         const breath = 0.5 + 0.5 * Math.sin(phase * Math.PI * 2);
         let bright = 1;
-        if (hov) { bright = sp.pillar === hov ? 1.8 : 0.5; }
+        if (hovPillar) { bright = sp.pillar === hovPillar ? 1.8 : 0.5; }
 
         const gr = sephGlowR * (0.8 + breath * 0.4);
         const haloGrad = ctx.createRadialGradient(sp.x, sp.y, 0, sp.x, sp.y, gr);
@@ -384,6 +389,47 @@ export default function BinaryLandingCanvas({ onChoice }) {
       ctx.fillStyle = gradUpper;
       ctx.fillRect(CX - glowR, upperForkY - glowR, glowR * 2, glowR * 2);
 
+      // --- Hover threshold glow lines at zone boundaries ---
+      if (hov) {
+        const lineColor = hov === "top" ? LEFT_COLOR : hov === "bottom" ? RIGHT_COLOR : TRUNK_COLOR;
+        const lineAlpha = 0.12 + Math.sin(breathPhase * Math.PI * 2) * 0.04;
+        const glowH = 40; // vertical spread of the glow
+
+        // Draw at sephTop boundary (top zone / center zone border)
+        if (hov === "top" || hov === "center") {
+          const grad = ctx.createLinearGradient(0, sephTop - glowH, 0, sephTop + glowH);
+          grad.addColorStop(0, "rgba(0,0,0,0)");
+          grad.addColorStop(0.5, rgbaStr(lineColor, lineAlpha));
+          grad.addColorStop(1, "rgba(0,0,0,0)");
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, sephTop - glowH, W, glowH * 2);
+          // Crisp core line
+          ctx.beginPath();
+          ctx.moveTo(0, sephTop);
+          ctx.lineTo(W, sephTop);
+          ctx.strokeStyle = rgbaStr(lineColor, lineAlpha * 1.5);
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+
+        // Draw at sephBot boundary (center zone / bottom zone border)
+        if (hov === "bottom" || hov === "center") {
+          const grad = ctx.createLinearGradient(0, sephBot - glowH, 0, sephBot + glowH);
+          grad.addColorStop(0, "rgba(0,0,0,0)");
+          grad.addColorStop(0.5, rgbaStr(lineColor, lineAlpha));
+          grad.addColorStop(1, "rgba(0,0,0,0)");
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, sephBot - glowH, W, glowH * 2);
+          // Crisp core line
+          ctx.beginPath();
+          ctx.moveTo(0, sephBot);
+          ctx.lineTo(W, sephBot);
+          ctx.strokeStyle = rgbaStr(lineColor, lineAlpha * 1.5);
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+
       // --- Update & draw particles (additive glow + core) ---
       ctx.globalCompositeOperation = "lighter";
       for (let i = 0; i < particles.length; i++) {
@@ -394,7 +440,8 @@ export default function BinaryLandingCanvas({ onChoice }) {
           if (chosenSide === "center") {
             if (p.progress > 0.15) { speed *= 0.3; p.baseAlpha *= 0.97; }
             else speed *= 2;
-          } else if (p.side === chosenSide) speed *= 3;
+          } else if ((chosenSide === "top" && p.direction === "up") ||
+                     (chosenSide === "bottom" && p.direction === "down")) speed *= 3;
           else { speed *= 0.3; p.baseAlpha *= 0.97; }
         }
 
@@ -410,9 +457,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const color = lerpColor(TRUNK_COLOR, p.baseColor, depthBlend);
 
         let alpha = p.baseAlpha;
-        if (hov === "left")        alpha *= p.side === "left" ? 1.5 : 0.4;
-        else if (hov === "right") alpha *= p.side === "right" ? 1.5 : 0.4;
-        else if (hov === "center") alpha *= p.progress < 0.25 ? 1.5 : 0.6;
+        if (hov === "top")          alpha *= p.direction === "up" ? 1.5 : 0.4;
+        else if (hov === "bottom")  alpha *= p.direction === "down" ? 1.5 : 0.4;
+        else if (hov === "center")  alpha *= p.progress < 0.25 ? 1.5 : 0.6;
 
         // Fade in near center, fade out at tips
         if (p.progress < 0.04) alpha *= p.progress / 0.04;
@@ -503,37 +550,37 @@ export default function BinaryLandingCanvas({ onChoice }) {
         pointerEvents: "none", zIndex: 1,
       }} />
 
-      {/* === Invisible click zones (left/center/right thirds) === */}
-      <div onClick={() => handleChoice("ask")}
-        onMouseEnter={() => setHovered("left")} onMouseLeave={() => setHovered(null)}
-        style={{ position: "absolute", top: 0, left: 0, width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
-      <div onClick={() => handleChoice("proof")}
+      {/* === Invisible click zones (top/center/bottom horizontal strips) === */}
+      <div onClick={() => handleChoice("death-or-life")}
+        onMouseEnter={() => setHovered("top")} onMouseLeave={() => setHovered(null)}
+        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "38%", cursor: "pointer", zIndex: 3 }} />
+      <div onClick={() => handleChoice("pact")}
         onMouseEnter={() => setHovered("center")} onMouseLeave={() => setHovered(null)}
-        style={{ position: "absolute", top: 0, left: "33.33%", width: "33.34%", height: "100%", cursor: "pointer", zIndex: 3 }} />
-      <div onClick={() => handleChoice("explore")}
-        onMouseEnter={() => setHovered("right")} onMouseLeave={() => setHovered(null)}
-        style={{ position: "absolute", top: 0, left: "66.67%", width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
+        style={{ position: "absolute", top: "38%", left: 0, width: "100%", height: "24%", cursor: "pointer", zIndex: 3 }} />
+      <div onClick={() => handleChoice("rhythm-of-life")}
+        onMouseEnter={() => setHovered("bottom")} onMouseLeave={() => setHovered(null)}
+        style={{ position: "absolute", top: "62%", left: 0, width: "100%", height: "38%", cursor: "pointer", zIndex: 3 }} />
 
       {/* === Labels — vertical stack === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
         {/* Top — pair[0] (shadow/dark side) */}
         <div style={{
           position: "absolute", top: labelTopPos, left: "50%",
-          transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
+          transform: `translate(-50%, -50%) ${hovered === "top" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
               ...labelFont,
-              color: `rgba(180,190,220,${hovered === "left" ? alphaHover : alphaRest})`,
-              textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
+              color: `rgba(180,190,220,${hovered === "top" ? alphaHover : alphaRest})`,
+              textShadow: hovered === "top" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
             }}>{isEven ? pair[0] : prevPair[0]}</div>
             <div style={{
               ...labelFont,
-              color: `rgba(180,190,220,${hovered === "left" ? alphaHover : alphaRest})`,
-              textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
+              color: `rgba(180,190,220,${hovered === "top" ? alphaHover : alphaRest})`,
+              textShadow: hovered === "top" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 0 : 1,
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
             }}>{isEven ? prevPair[0] : pair[0]}</div>
@@ -567,21 +614,21 @@ export default function BinaryLandingCanvas({ onChoice }) {
         {/* Bottom — pair[1] (light/active side) */}
         <div style={{
           position: "absolute", top: labelBotPos, left: "50%",
-          transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
+          transform: `translate(-50%, -50%) ${hovered === "bottom" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
               ...labelFont,
-              color: `rgba(232,220,180,${hovered === "right" ? alphaHover : alphaRest})`,
-              textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
+              color: `rgba(232,220,180,${hovered === "bottom" ? alphaHover : alphaRest})`,
+              textShadow: hovered === "bottom" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
             }}>{isEven ? pair[1] : prevPair[1]}</div>
             <div style={{
               ...labelFont,
-              color: `rgba(232,220,180,${hovered === "right" ? alphaHover : alphaRest})`,
-              textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
+              color: `rgba(232,220,180,${hovered === "bottom" ? alphaHover : alphaRest})`,
+              textShadow: hovered === "bottom" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
               transition: crossfade, opacity: isEven ? 0 : 1,
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
             }}>{isEven ? prevPair[1] : pair[1]}</div>

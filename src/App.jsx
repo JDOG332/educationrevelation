@@ -506,12 +506,15 @@ export default function TheoryOfEverything() {
       {/* ===== BINARY LANDING — Layer -2, two diverging rivers of light ===== */}
       {currentPage === "theory" && depth === -2 && (
         <BinaryLandingCanvas onChoice={(path) => {
-          if (path === "proof") {
+          if (path === "death-or-life") {
+            setUserPath("ask");
+            setDepth(2);
+          } else if (path === "pact") {
+            setUserPath("ask");
+            setDepth(3);
+          } else if (path === "rhythm-of-life") {
             setUserPath("explore");
-            setDepth(4);
-          } else {
-            setUserPath(path);
-            setDepth(0);
+            setDepth(2);
           }
           window.scrollTo(0, 0);
         }} />
