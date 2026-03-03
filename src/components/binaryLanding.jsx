@@ -63,7 +63,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
     const isMobile = window.innerWidth < 768 || navigator.maxTouchPoints > 0;
     const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 2 : 3);
     const MAX_DEPTH = isMobile ? 5 : 7;
-    const PARTICLE_COUNT = isMobile ? 120 : 250;
+    const PARTICLE_COUNT = isMobile ? 400 : 800;
     const TRUNK_FRAC = 0.08;
 
     let W, H, CX;
@@ -92,12 +92,12 @@ export default function BinaryLandingCanvas({ onChoice }) {
       function addBranch(sx, sy, depth, dir, bias) {
         const vStep = vBase * Math.pow(vDecay, depth);
         const hSpread = hBase * Math.pow(hDecay, depth);
-        const jx = (Math.random() - 0.5) * hSpread * 0.25;
-        const jy = (Math.random() - 0.5) * vStep * 0.12;
+        const jx = (Math.random() - 0.5) * hSpread * 0.35;
+        const jy = (Math.random() - 0.5) * vStep * 0.18;
         const ex = sx + dir * hSpread + jx;
         const ey = sy + vStep + jy;
-        const cx = (sx + ex) / 2 + (Math.random() - 0.5) * hSpread * 0.15;
-        const cy = (sy + ey) / 2 + (Math.random() - 0.5) * vStep * 0.08;
+        const cx = (sx + ex) / 2 + (Math.random() - 0.5) * hSpread * 0.4;
+        const cy = (sy + ey) / 2 + (Math.random() - 0.5) * vStep * 0.25;
         const idx = branches.length;
         branches.push({ sx, sy, ex, ey, cx, cy, depth, bias, left: -1, right: -1 });
         if (depth < MAX_DEPTH - 1) {
@@ -142,10 +142,10 @@ export default function BinaryLandingCanvas({ onChoice }) {
       );
       return {
         progress: randomProgress ? Math.random() : 0,
-        speed: (0.0006 + Math.random() * 0.001) * PHI,
+        speed: (0.001 + Math.random() * 0.0015) * PHI,
         route, branchPath, sideBias, side, baseColor,
-        size: 0.8 + Math.random() * 1.8,
-        baseAlpha: 0.2 + Math.random() * 0.45,
+        size: 1 + Math.random() * 2,
+        baseAlpha: 0.3 + Math.random() * 0.5,
       };
     }
 
@@ -194,22 +194,31 @@ export default function BinaryLandingCanvas({ onChoice }) {
       const chosen = chosenRef.current;
       const chosenSide = chosen === "ask" ? "left" : chosen === "explore" ? "right" : null;
 
-      // --- Draw trunk hint line ---
+      // --- Draw trunk ---
+      // Glow pass
       ctx.beginPath();
       ctx.moveTo(CX, 0);
       ctx.lineTo(CX, tree.trunkEndY);
-      ctx.strokeStyle = "rgba(232,232,240,0.05)";
+      ctx.strokeStyle = "rgba(232,232,240,0.08)";
+      ctx.lineWidth = 6;
+      ctx.stroke();
+      // Core pass
+      ctx.beginPath();
+      ctx.moveTo(CX, 0);
+      ctx.lineTo(CX, tree.trunkEndY);
+      ctx.strokeStyle = "rgba(232,232,240,0.15)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      // --- Draw branch hint lines ---
+      // --- Draw branch lines (two passes: glow + core) ---
+      // Glow pass — wide, soft
       for (let i = 0; i < tree.branches.length; i++) {
         const b = tree.branches[i];
         const isLeft = b.bias < 0.5;
-        let alpha = 0.04 * Math.pow(0.7, b.depth);
+        let alpha = 0.06 * Math.pow(0.72, b.depth);
 
-        if (hov === "left")       alpha *= isLeft ? 2.5 : 0.4;
-        else if (hov === "right") alpha *= isLeft ? 0.4 : 2.5;
+        if (hov === "left")       alpha *= isLeft ? 2 : 0.4;
+        else if (hov === "right") alpha *= isLeft ? 0.4 : 2;
 
         const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
         const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
@@ -219,22 +228,43 @@ export default function BinaryLandingCanvas({ onChoice }) {
         ctx.moveTo(b.sx, b.sy);
         ctx.quadraticCurveTo(b.cx, b.cy, b.ex, b.ey);
         ctx.strokeStyle = rgbaStr(color, alpha);
-        ctx.lineWidth = Math.max(0.5, 1.5 - b.depth * 0.15);
+        ctx.lineWidth = Math.max(1, 5 - b.depth * 0.6);
+        ctx.stroke();
+      }
+      // Core pass — thin, brighter
+      for (let i = 0; i < tree.branches.length; i++) {
+        const b = tree.branches[i];
+        const isLeft = b.bias < 0.5;
+        let alpha = 0.12 * Math.pow(0.72, b.depth);
+
+        if (hov === "left")       alpha *= isLeft ? 2.5 : 0.35;
+        else if (hov === "right") alpha *= isLeft ? 0.35 : 2.5;
+
+        const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
+        const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
+        const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
+
+        ctx.beginPath();
+        ctx.moveTo(b.sx, b.sy);
+        ctx.quadraticCurveTo(b.cx, b.cy, b.ex, b.ey);
+        ctx.strokeStyle = rgbaStr(color, alpha);
+        ctx.lineWidth = Math.max(0.5, 1.8 - b.depth * 0.18);
         ctx.stroke();
       }
 
       // --- Fork glow ---
       const breathPhase = (now % GLOW_BREATHE_MS) / GLOW_BREATHE_MS;
-      const breathAlpha = 0.04 + Math.sin(breathPhase * Math.PI * 2) * 0.03;
-      const glowR = Math.min(W, H) * 0.08;
+      const breathAlpha = 0.06 + Math.sin(breathPhase * Math.PI * 2) * 0.04;
+      const glowR = Math.min(W, H) * 0.10;
       const grad = ctx.createRadialGradient(CX, tree.trunkEndY, 0, CX, tree.trunkEndY, glowR);
-      grad.addColorStop(0, `rgba(200,190,180,${breathAlpha})`);
-      grad.addColorStop(0.5, `rgba(180,170,200,${breathAlpha * 0.4})`);
+      grad.addColorStop(0, `rgba(220,210,200,${breathAlpha})`);
+      grad.addColorStop(0.4, `rgba(190,180,210,${breathAlpha * 0.4})`);
       grad.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = grad;
       ctx.fillRect(CX - glowR, tree.trunkEndY - glowR, glowR * 2, glowR * 2);
 
-      // --- Update & draw particles ---
+      // --- Update & draw particles (additive glow + core) ---
+      ctx.globalCompositeOperation = "lighter";
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         let speed = p.speed * (dt / 16);
@@ -256,18 +286,27 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const color = lerpColor(TRUNK_COLOR, p.baseColor, depthBlend);
 
         let alpha = p.baseAlpha;
-        if (hov === "left")       alpha *= p.side === "left" ? 1.5 : 0.5;
-        else if (hov === "right") alpha *= p.side === "right" ? 1.5 : 0.5;
+        if (hov === "left")       alpha *= p.side === "left" ? 1.5 : 0.4;
+        else if (hov === "right") alpha *= p.side === "right" ? 1.5 : 0.4;
 
-        if (p.progress < 0.05) alpha *= p.progress / 0.05;
-        if (p.progress > 0.88) alpha *= (1 - p.progress) / 0.12;
+        // Fade in at top, fade out at tips
+        if (p.progress < 0.04) alpha *= p.progress / 0.04;
+        if (p.progress > 0.85) alpha *= (1 - p.progress) / 0.15;
         alpha = Math.min(Math.max(alpha, 0), 1);
 
+        // Glow halo — larger, softer, creates the "stream" blending
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, p.size * 3, 0, Math.PI * 2);
+        ctx.fillStyle = rgbaStr(color, alpha * 0.06);
+        ctx.fill();
+
+        // Core — bright center
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = rgbaStr(color, alpha);
+        ctx.fillStyle = rgbaStr(color, alpha * 0.35);
         ctx.fill();
       }
+      ctx.globalCompositeOperation = "source-over";
 
       frameRef.current = requestAnimationFrame(animate);
     }
