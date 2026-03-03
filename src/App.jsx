@@ -995,10 +995,10 @@ export default function TheoryOfEverything() {
                 })}
               </div>
 
-              {/* GO BACK — fades in via ref after one cycle */}
+              {/* 🔮 ASK — fades in via ref after one cycle */}
               <div
                 ref={goBackRef}
-                onClick={() => { setDepth(-2); window.scrollTo(0, 0); }}
+                onClick={() => { setDepth(-1); window.scrollTo(0, 0); }}
                 style={{
                   position: 'absolute',
                   bottom: `${Math.round(13 * PHI)}%`,
@@ -1014,18 +1014,23 @@ export default function TheoryOfEverything() {
                 }}
               >
                   <div style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
-                    color: 'rgba(201,168,76,0.6)',
-                    letterSpacing: '0.25em',
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
                     padding: `${Math.round(6 * PHI)}px ${Math.round(13 * PHI)}px`,
                     border: '1px solid rgba(201,168,76,0.2)',
                     borderRadius: 10,
                     background: 'rgba(3,3,6,0.85)',
-                  }}>GO BACK</div>
+                  }}>
+                    <div style={{ fontSize: 'clamp(20px, 5vw, 28px)', lineHeight: 1 }}>🔮</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
+                      color: 'rgba(201,168,76,0.6)',
+                      letterSpacing: '0.25em',
+                    }}>ASK</div>
+                  </div>
               </div>
 
-              {/* MOVE ON — fades in via ref after one cycle */}
+              {/* 🌌 EXPLORE — fades in via ref after one cycle */}
               <div
                 ref={moveOnRef}
                 onClick={() => goDeeper()}
@@ -1044,15 +1049,20 @@ export default function TheoryOfEverything() {
                 }}
               >
                   <div style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
-                    color: 'rgba(201,168,76,0.6)',
-                    letterSpacing: '0.25em',
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
                     padding: `${Math.round(6 * PHI)}px ${Math.round(13 * PHI)}px`,
                     border: '1px solid rgba(201,168,76,0.2)',
                     borderRadius: 10,
                     background: 'rgba(3,3,6,0.85)',
-                  }}>MOVE ON</div>
+                  }}>
+                    <div style={{ fontSize: 'clamp(20px, 5vw, 28px)', lineHeight: 1 }}>🌌</div>
+                    <div style={{
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: `clamp(${Math.round(10 * PHI)}px, 4vw, ${Math.round(10 * PHI * PHI)}px)`,
+                      color: 'rgba(201,168,76,0.6)',
+                      letterSpacing: '0.25em',
+                    }}>EXPLORE</div>
+                  </div>
               </div>
 
               {/* Tap to skip — bottom quartile (silent, always present) */}
