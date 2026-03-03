@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS } from "../data.js";
+import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS, KNOWLEDGE_WORDS } from "../data.js";
 
 /* ============================================================
    BINARY LANDING — Fractal Root System
@@ -192,7 +192,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
       const hov = hoveredRef.current;
       const isDiss = dissolvingRef.current;
       const chosen = chosenRef.current;
-      const chosenSide = chosen === "ask" ? "left" : chosen === "explore" ? "right" : null;
+      const chosenSide = chosen === "ask" ? "left" : chosen === "explore" ? "right" : chosen === "proof" ? "center" : null;
 
       // --- Draw trunk ---
       // Glow pass
@@ -217,8 +217,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const isLeft = b.bias < 0.5;
         let alpha = 0.06 * Math.pow(0.72, b.depth);
 
-        if (hov === "left")       alpha *= isLeft ? 2 : 0.4;
+        if (hov === "left")        alpha *= isLeft ? 2 : 0.4;
         else if (hov === "right") alpha *= isLeft ? 0.4 : 2;
+        else if (hov === "center") alpha *= b.depth < 2 ? 2 : 0.5;
 
         const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
         const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
@@ -237,8 +238,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const isLeft = b.bias < 0.5;
         let alpha = 0.12 * Math.pow(0.72, b.depth);
 
-        if (hov === "left")       alpha *= isLeft ? 2.5 : 0.35;
+        if (hov === "left")        alpha *= isLeft ? 2.5 : 0.35;
         else if (hov === "right") alpha *= isLeft ? 0.35 : 2.5;
+        else if (hov === "center") alpha *= b.depth < 2 ? 2.5 : 0.4;
 
         const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
         const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
@@ -254,7 +256,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
       // --- Fork glow ---
       const breathPhase = (now % GLOW_BREATHE_MS) / GLOW_BREATHE_MS;
-      const breathAlpha = 0.06 + Math.sin(breathPhase * Math.PI * 2) * 0.04;
+      const breathAlpha = (hov === "center" ? 0.10 : 0.06) + Math.sin(breathPhase * Math.PI * 2) * 0.04;
       const glowR = Math.min(W, H) * 0.10;
       const grad = ctx.createRadialGradient(CX, tree.trunkEndY, 0, CX, tree.trunkEndY, glowR);
       grad.addColorStop(0, `rgba(220,210,200,${breathAlpha})`);
@@ -270,7 +272,11 @@ export default function BinaryLandingCanvas({ onChoice }) {
         let speed = p.speed * (dt / 16);
 
         if (isDiss && chosenSide) {
-          if (p.side === chosenSide) speed *= 3;
+          if (chosenSide === "center") {
+            // Rush toward trunk
+            if (p.progress > 0.15) { speed *= 0.3; p.baseAlpha *= 0.97; }
+            else speed *= 2;
+          } else if (p.side === chosenSide) speed *= 3;
           else { speed *= 0.3; p.baseAlpha *= 0.97; }
         }
 
@@ -286,8 +292,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
         const color = lerpColor(TRUNK_COLOR, p.baseColor, depthBlend);
 
         let alpha = p.baseAlpha;
-        if (hov === "left")       alpha *= p.side === "left" ? 1.5 : 0.4;
+        if (hov === "left")        alpha *= p.side === "left" ? 1.5 : 0.4;
         else if (hov === "right") alpha *= p.side === "right" ? 1.5 : 0.4;
+        else if (hov === "center") alpha *= p.progress < 0.25 ? 1.5 : 0.6;
 
         // Fade in at top, fade out at tips
         if (p.progress < 0.04) alpha *= p.progress / 0.04;
@@ -329,20 +336,21 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const pair = OPPOSITE_PAIRS[pairIndex];
   const isEven = pairIndex % 2 === 0;
   const prevPair = OPPOSITE_PAIRS[(pairIndex - 1 + OPPOSITE_PAIRS.length) % OPPOSITE_PAIRS.length];
+  const kWord = KNOWLEDGE_WORDS[pairIndex % KNOWLEDGE_WORDS.length];
+  const kPrev = KNOWLEDGE_WORDS[(pairIndex - 1 + KNOWLEDGE_WORDS.length) % KNOWLEDGE_WORDS.length];
   const cubicEase = "cubic-bezier(0.23, 1, 0.32, 1)";
   const crossfade = `opacity ${CROSSFADE_MS}ms ${cubicEase}`;
 
-  // Golden ratio layout — every position derived from PHI
-  // Labels sit BELOW the root tips — the roots reach toward the words
-  const goldenV   = `${(1 - 1/PHI3) * 100}%`;     // 76.4% from top — just below root endpoints
-  const goldenL   = `${(1 - PHI_INV) * 100}%`;     // 38.2% within left half → 19.1% of screen
-  const goldenR   = `${PHI_INV * 100}%`;            // 61.8% within right half → 80.9% of screen
-  const goldenLS  = `${PHI_INV * PHI_INV}em`;       // 0.382em letter-spacing
+  // Golden ratio layout — three zones: 38.2% | 23.6% | 38.2% = 100%
+  const sideWidth  = `${(1 - PHI_INV) * 100}%`;                // 38.2% each side
+  const centerW    = `${(2 * PHI_INV - 1) * 100}%`;             // 23.6% center (≈ 1/PHI³)
+  const centerLeft = `${(1 - PHI_INV) * 100}%`;                 // center starts at 38.2%
+  const goldenV    = `${(1 - 1/PHI3) * 100}%`;                  // 76.4% from top
+  const goldenLS   = `${PHI_INV * PHI_INV}em`;                  // 0.382em letter-spacing
 
-  // Shared label style
   const labelFont = {
     fontFamily: "'Cinzel', serif",
-    fontSize: `clamp(20px, ${PHI * PHI}vw, 36px)`,
+    fontSize: `clamp(18px, ${PHI * PHI}vw, 34px)`,
     letterSpacing: goldenLS,
   };
 
@@ -365,26 +373,26 @@ export default function BinaryLandingCanvas({ onChoice }) {
         backgroundImage: GRAIN_BG, backgroundSize: "200px",
       }} />
 
-      {/* Vignette — centered at golden vertical point */}
+      {/* Vignette */}
       <div style={{
         position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
         background: `radial-gradient(ellipse at 50% ${goldenV}, transparent 20%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%)`,
         pointerEvents: "none", zIndex: 1,
       }} />
 
-      {/* Left click zone + labels */}
+      {/* === Left click zone — 0% to 38.2% === */}
       <div
         onClick={() => handleChoice("ask")}
         onMouseEnter={() => setHovered("left")}
         onMouseLeave={() => setHovered(null)}
         style={{
-          position: "absolute", top: 0, left: 0, width: "50%", height: "100%",
+          position: "absolute", top: 0, left: 0, width: sideWidth, height: "100%",
           cursor: "pointer", zIndex: 3,
         }}
       >
         <div style={{
           position: "absolute",
-          top: goldenV, left: goldenL,
+          top: goldenV, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -394,9 +402,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
             ...labelFont,
             color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
             textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
-            transition: crossfade,
-            opacity: isEven ? 1 : 0,
-            position: "relative",
+            transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
           }}>
             {isEven ? pair[0] : prevPair[0]}
           </div>
@@ -404,29 +410,65 @@ export default function BinaryLandingCanvas({ onChoice }) {
             ...labelFont,
             color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
             textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
-            transition: crossfade,
-            opacity: isEven ? 0 : 1,
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-            whiteSpace: "nowrap",
+            transition: crossfade, opacity: isEven ? 0 : 1,
+            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
           }}>
             {isEven ? prevPair[0] : pair[0]}
           </div>
         </div>
       </div>
 
-      {/* Right click zone + labels */}
+      {/* === Center click zone — 38.2% to 61.8% — KNOWLEDGE → THE PROOF === */}
       <div
-        onClick={() => handleChoice("explore")}
-        onMouseEnter={() => setHovered("right")}
+        onClick={() => handleChoice("proof")}
+        onMouseEnter={() => setHovered("center")}
         onMouseLeave={() => setHovered(null)}
         style={{
-          position: "absolute", top: 0, right: 0, width: "50%", height: "100%",
+          position: "absolute", top: 0, left: centerLeft, width: centerW, height: "100%",
           cursor: "pointer", zIndex: 3,
         }}
       >
         <div style={{
           position: "absolute",
-          top: goldenV, left: goldenR,
+          top: goldenV, left: "50%",
+          transform: `translate(-50%, -50%) ${hovered === "center" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
+          transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
+          textAlign: "center",
+          animation: `fadeSlideUp 1.2s ease ${PHI_INV * 0.5}s both`,
+        }}>
+          <div style={{
+            ...labelFont,
+            color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
+            textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
+            transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
+          }}>
+            {isEven ? kWord : kPrev}
+          </div>
+          <div style={{
+            ...labelFont,
+            color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
+            textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
+            transition: crossfade, opacity: isEven ? 0 : 1,
+            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
+          }}>
+            {isEven ? kPrev : kWord}
+          </div>
+        </div>
+      </div>
+
+      {/* === Right click zone — 61.8% to 100% === */}
+      <div
+        onClick={() => handleChoice("explore")}
+        onMouseEnter={() => setHovered("right")}
+        onMouseLeave={() => setHovered(null)}
+        style={{
+          position: "absolute", top: 0, left: `${PHI_INV * 100}%`, width: sideWidth, height: "100%",
+          cursor: "pointer", zIndex: 3,
+        }}
+      >
+        <div style={{
+          position: "absolute",
+          top: goldenV, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -436,9 +478,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
             ...labelFont,
             color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
             textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
-            transition: crossfade,
-            opacity: isEven ? 1 : 0,
-            position: "relative",
+            transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
           }}>
             {isEven ? pair[1] : prevPair[1]}
           </div>
@@ -446,10 +486,8 @@ export default function BinaryLandingCanvas({ onChoice }) {
             ...labelFont,
             color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
             textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
-            transition: crossfade,
-            opacity: isEven ? 0 : 1,
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-            whiteSpace: "nowrap",
+            transition: crossfade, opacity: isEven ? 0 : 1,
+            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
           }}>
             {isEven ? prevPair[1] : pair[1]}
           </div>

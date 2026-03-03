@@ -506,8 +506,13 @@ export default function TheoryOfEverything() {
       {/* ===== BINARY LANDING — Layer -2, two diverging rivers of light ===== */}
       {currentPage === "theory" && depth === -2 && (
         <BinaryLandingCanvas onChoice={(path) => {
-          setUserPath(path);
-          setDepth(0);
+          if (path === "proof") {
+            setUserPath("explore");
+            setDepth(4);
+          } else {
+            setUserPath(path);
+            setDepth(0);
+          }
           window.scrollTo(0, 0);
         }} />
       )}
