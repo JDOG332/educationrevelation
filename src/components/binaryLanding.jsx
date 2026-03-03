@@ -329,7 +329,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
       >
         <div style={{
           position: "absolute",
-          top: "55%", left: "30%",
+          top: "25%", left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -378,7 +378,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
       >
         <div style={{
           position: "absolute",
-          top: "55%", left: "70%",
+          top: "25%", left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
