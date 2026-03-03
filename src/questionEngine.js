@@ -108,7 +108,7 @@ function searchTopicCards(userTokens) {
 // ═══════════════════════════════════════════════════════════
 
 export function findAnswers(query) {
-  if (!query || query.trim().length < 2) return [];
+  if (!query || query.trim().length < 2) return { results: [] };
 
   const userTokens = tokenize(query);
 
@@ -168,8 +168,30 @@ export function findAnswers(query) {
     }
   }
 
-  // Return top 3
-  return Array.from(seen.values())
+  const results = Array.from(seen.values())
     .sort((a, b) => b.psi - a.psi)
     .slice(0, 3);
+
+  // Pick the best dare from mirror matches
+  const dare = (mirror.matched || []).find(n => n.dare)?.dare
+    || (mirror.dares || []).find(n => n.dare)?.dare
+    || null;
+
+  return {
+    results,
+    psi: truth.psi,
+    R12: truth.R12,
+    G: truth.G,
+    C_eff: truth.C_eff,
+    D_hat: truth.D_hat,
+    groundTruth: truth.groundTruth,
+    tier: truth.tier,
+    depthName: truth.depthName,
+    depthLabel: truth.depthLabel,
+    layerHits: truth.layerHits,
+    doorsActivated: truth.doorsActivated,
+    userBloch: truth.userBloch,
+    dare,
+    mirrorDepthScore: mirror.depthScore,
+  };
 }

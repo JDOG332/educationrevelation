@@ -302,6 +302,30 @@ html, body {
   }
 }
 
+/* ===== ORACLE REVELATION ANIMATIONS ===== */
+@keyframes layerIgnite {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.8); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes valueReveal {
+  0% { opacity: 0; transform: translateY(8px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes depthManifest {
+  0% { opacity: 0; transform: scale(0.8); filter: blur(8px); letter-spacing: 1.2em; }
+  60% { filter: blur(2px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); letter-spacing: 0.35em; }
+}
+@keyframes dareReveal {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(6px); border-color: transparent; }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); border-color: rgba(201,168,76,0.3); }
+}
+@keyframes numberCountGlow {
+  0%, 100% { text-shadow: 0 0 8px rgba(201,168,76,0.3); }
+  50% { text-shadow: 0 0 20px rgba(201,168,76,0.6), 0 0 40px rgba(201,168,76,0.2); }
+}
+
 /* ===== MOBILE PERFORMANCE OVERRIDES ===== */
 /* Reduce GPU compositing load on A15 and older chips. */
 @media (max-width: 767px), (hover: none) and (pointer: coarse) {
