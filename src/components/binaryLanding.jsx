@@ -389,6 +389,8 @@ export default function BinaryLandingCanvas({ onChoice }) {
         style={{ position: "absolute", top: 0, left: "66.67%", width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
 
       {/* === Labels — equal screen positions, same entrance delay === */}
+      {/* Outer divs handle centering (translate -50%,-50%), inner divs handle entrance animation.
+         Separated so the fadeSlideUp animation's transform doesn't override the centering transform. */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
         {/* Left — center of first third: 16.67% */}
         <div style={{
@@ -396,21 +398,22 @@ export default function BinaryLandingCanvas({ onChoice }) {
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
         }}>
-          <div style={{
-            ...labelFont,
-            color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
-            textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
-            transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
-          }}>{isEven ? pair[0] : prevPair[0]}</div>
-          <div style={{
-            ...labelFont,
-            color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
-            textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
-            transition: crossfade, opacity: isEven ? 0 : 1,
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
-          }}>{isEven ? prevPair[0] : pair[0]}</div>
+          <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
+            <div style={{
+              ...labelFont,
+              color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
+              textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
+              transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
+            }}>{isEven ? pair[0] : prevPair[0]}</div>
+            <div style={{
+              ...labelFont,
+              color: `rgba(180,190,220,${hovered === "left" ? 0.85 : 0.5})`,
+              textShadow: hovered === "left" ? "0 0 24px rgba(140,160,220,0.25)" : "none",
+              transition: crossfade, opacity: isEven ? 0 : 1,
+              position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
+            }}>{isEven ? prevPair[0] : pair[0]}</div>
+          </div>
         </div>
 
         {/* Center — 50% */}
@@ -419,21 +422,22 @@ export default function BinaryLandingCanvas({ onChoice }) {
           transform: `translate(-50%, -50%) ${hovered === "center" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
         }}>
-          <div style={{
-            ...labelFont,
-            color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
-            textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
-            transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
-          }}>{isEven ? kWord : kPrev}</div>
-          <div style={{
-            ...labelFont,
-            color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
-            textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
-            transition: crossfade, opacity: isEven ? 0 : 1,
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
-          }}>{isEven ? kPrev : kWord}</div>
+          <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
+            <div style={{
+              ...labelFont,
+              color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
+              textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
+              transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
+            }}>{isEven ? kWord : kPrev}</div>
+            <div style={{
+              ...labelFont,
+              color: `rgba(232,232,240,${hovered === "center" ? 0.85 : 0.45})`,
+              textShadow: hovered === "center" ? "0 0 24px rgba(232,232,240,0.2)" : "none",
+              transition: crossfade, opacity: isEven ? 0 : 1,
+              position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
+            }}>{isEven ? kPrev : kWord}</div>
+          </div>
         </div>
 
         {/* Right — center of last third: 83.33% */}
@@ -442,21 +446,22 @@ export default function BinaryLandingCanvas({ onChoice }) {
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
         }}>
-          <div style={{
-            ...labelFont,
-            color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
-            textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
-            transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
-          }}>{isEven ? pair[1] : prevPair[1]}</div>
-          <div style={{
-            ...labelFont,
-            color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
-            textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
-            transition: crossfade, opacity: isEven ? 0 : 1,
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
-          }}>{isEven ? prevPair[1] : pair[1]}</div>
+          <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
+            <div style={{
+              ...labelFont,
+              color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
+              textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
+              transition: crossfade, opacity: isEven ? 1 : 0, position: "relative",
+            }}>{isEven ? pair[1] : prevPair[1]}</div>
+            <div style={{
+              ...labelFont,
+              color: `rgba(232,220,180,${hovered === "right" ? 0.85 : 0.5})`,
+              textShadow: hovered === "right" ? "0 0 24px rgba(201,168,76,0.25)" : "none",
+              transition: crossfade, opacity: isEven ? 0 : 1,
+              position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
+            }}>{isEven ? prevPair[1] : pair[1]}</div>
+          </div>
         </div>
       </div>
     </div>
