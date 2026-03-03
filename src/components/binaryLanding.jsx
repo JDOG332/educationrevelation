@@ -2,14 +2,15 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS, KNOWLEDGE_WORDS, SEPHIROT, SEPH_PATHS } from "../data.js";
 
 /* ============================================================
-   BINARY LANDING — Fractal Root System
+   BINARY LANDING — Symmetric Fractal Tree
 
-   A single trunk splits into a fractal binary tree — every branch
-   forks into two, hundreds of luminous roots growing downward from
-   one point. Left forks tint cool (ASK/shadow), right forks tint
-   warm (EXPLORE/light). Particles flow through the branching paths
-   like light through veins. Reversed, it would look like a thousand
-   streams converging into one river.
+   A vertical axis of symmetry: upper branches grow upward,
+   lower roots grow downward — perfect mirror images. The
+   Kabbalistic Tree of Life (Sephirot) sits at the center,
+   the source from which all branches emanate. Particles flow
+   outward from center in both directions. Labels stack
+   vertically: top word / center KNOWLEDGE / bottom word.
+   Three pillars: left=blue, center=white, right=gold.
    ============================================================ */
 
 const LABEL_CYCLE_MS = PHI * 1000;
@@ -68,9 +69,15 @@ export default function BinaryLandingCanvas({ onChoice }) {
     const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 2 : 3);
     const MAX_DEPTH = isMobile ? 5 : 7;
     const PARTICLE_COUNT = isMobile ? 400 : 800;
-    const TRUNK_FRAC = 0.18;
+    const TRUNK_FRAC = 0.15;
+
+    // --- Symmetric layout zones ---
+    const SEPH_TOP_FRAC = 0.38;
+    const SEPH_BOT_FRAC = 0.62;
+    const CENTER_Y_FRAC = 0.50;
 
     let W, H, CX;
+    let sephTop, sephBot, centerY, lowerForkY, upperForkY;
     let tree = null;
 
     function resize() {
@@ -82,13 +89,18 @@ export default function BinaryLandingCanvas({ onChoice }) {
       canvas.style.height = H + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       CX = W / 2;
+      sephTop    = H * SEPH_TOP_FRAC;
+      sephBot    = H * SEPH_BOT_FRAC;
+      centerY    = H * CENTER_Y_FRAC;
+      upperForkY = sephTop;
+      lowerForkY = sephBot;
     }
+
+    function mirrorY(y) { return 2 * centerY - y; }
 
     // ===== SEPHIROT POSITIONS =====
     let sephPositions = [];
     function computeSephPositions() {
-      const sephTop = H * 0.03;
-      const sephBot = H * 0.24;
       const sephW = Math.min(W * 0.45, H * 0.4);
       sephPositions = SEPHIROT.map(s => ({
         x: CX + (s.x - 0.5) * sephW,
@@ -98,9 +110,11 @@ export default function BinaryLandingCanvas({ onChoice }) {
     }
 
     // ===== FRACTAL TREE GENERATION =====
+    // Generated ONCE growing downward from lowerForkY.
+    // Upper branches are drawn by mirroring Y coordinates.
     function generateTree() {
       const branches = [];
-      const trunkEndY = H * 0.25;
+      const forkY = lowerForkY;
       const vBase = H * 0.11;
       const hBase = W * 0.14;
       const vDecay = 0.82;
@@ -125,9 +139,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
         return idx;
       }
 
-      const rootLeft  = addBranch(CX, trunkEndY, 0, -1, 0.25);
-      const rootRight = addBranch(CX, trunkEndY, 0,  1, 0.75);
-      return { branches, trunkEndY, rootLeft, rootRight };
+      const rootLeft  = addBranch(CX, forkY, 0, -1, 0.25);
+      const rootRight = addBranch(CX, forkY, 0,  1, 0.75);
+      return { branches, forkY, rootLeft, rootRight };
     }
 
     // ===== PARTICLE HELPERS =====
@@ -163,24 +177,81 @@ export default function BinaryLandingCanvas({ onChoice }) {
         route, branchPath, sideBias, side, baseColor,
         size: 1.5 + Math.random() * 2.5,
         baseAlpha: 0.45 + Math.random() * 0.5,
+        direction: Math.random() < 0.5 ? "up" : "down",
       };
     }
 
     function getParticlePos(p) {
+      let pos;
       if (p.progress < TRUNK_FRAC) {
+        // Trunk phase: center → fork (computed as downward, mirrored for "up")
         const t = p.progress / TRUNK_FRAC;
-        return { x: CX, y: lerp(-10, tree.trunkEndY, t) };
+        pos = { x: CX, y: lerp(centerY, tree.forkY, t) };
+      } else {
+        // Branch phase: traverse tree branches
+        const bp = (p.progress - TRUNK_FRAC) / (1 - TRUNK_FRAC);
+        const levelFloat = bp * MAX_DEPTH;
+        const level = Math.min(Math.floor(levelFloat), p.branchPath.length - 1);
+        const t = Math.min(levelFloat - level, 1);
+        const b = tree.branches[p.branchPath[level]];
+        const u = 1 - t;
+        pos = {
+          x: u * u * b.sx + 2 * u * t * b.cx + t * t * b.ex,
+          y: u * u * b.sy + 2 * u * t * b.cy + t * t * b.ey,
+        };
       }
-      const bp = (p.progress - TRUNK_FRAC) / (1 - TRUNK_FRAC);
-      const levelFloat = bp * MAX_DEPTH;
-      const level = Math.min(Math.floor(levelFloat), p.branchPath.length - 1);
-      const t = Math.min(levelFloat - level, 1);
-      const b = tree.branches[p.branchPath[level]];
-      const u = 1 - t;
-      return {
-        x: u * u * b.sx + 2 * u * t * b.cx + t * t * b.ex,
-        y: u * u * b.sy + 2 * u * t * b.cy + t * t * b.ey,
-      };
+      // Mirror for upward particles
+      if (p.direction === "up") pos.y = mirrorY(pos.y);
+      return pos;
+    }
+
+    // ===== BRANCH DRAWING HELPER =====
+    const ident = (y) => y;
+    function drawBranches(hov, mirror) {
+      const yT = mirror ? mirrorY : ident;
+
+      // Glow pass — wide, soft
+      for (let i = 0; i < tree.branches.length; i++) {
+        const b = tree.branches[i];
+        const isLeft = b.bias < 0.5;
+        let alpha = 0.09 * Math.pow(0.75, b.depth);
+
+        if (hov === "left")        alpha *= isLeft ? 2 : 0.4;
+        else if (hov === "right") alpha *= isLeft ? 0.4 : 2;
+        else if (hov === "center") alpha *= b.depth < 2 ? 2 : 0.5;
+
+        const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
+        const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
+        const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
+
+        ctx.beginPath();
+        ctx.moveTo(b.sx, yT(b.sy));
+        ctx.quadraticCurveTo(b.cx, yT(b.cy), b.ex, yT(b.ey));
+        ctx.strokeStyle = rgbaStr(color, alpha);
+        ctx.lineWidth = Math.max(1.5, 6 - b.depth * 0.6);
+        ctx.stroke();
+      }
+      // Core pass — thin, brighter
+      for (let i = 0; i < tree.branches.length; i++) {
+        const b = tree.branches[i];
+        const isLeft = b.bias < 0.5;
+        let alpha = 0.18 * Math.pow(0.75, b.depth);
+
+        if (hov === "left")        alpha *= isLeft ? 2.5 : 0.35;
+        else if (hov === "right") alpha *= isLeft ? 0.35 : 2.5;
+        else if (hov === "center") alpha *= b.depth < 2 ? 2.5 : 0.4;
+
+        const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
+        const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
+        const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
+
+        ctx.beginPath();
+        ctx.moveTo(b.sx, yT(b.sy));
+        ctx.quadraticCurveTo(b.cx, yT(b.cy), b.ex, yT(b.ey));
+        ctx.strokeStyle = rgbaStr(color, alpha);
+        ctx.lineWidth = Math.max(0.8, 2.4 - b.depth * 0.2);
+        ctx.stroke();
+      }
     }
 
     // ===== INIT =====
@@ -212,25 +283,22 @@ export default function BinaryLandingCanvas({ onChoice }) {
       const chosen = chosenRef.current;
       const chosenSide = chosen === "ask" ? "left" : chosen === "explore" ? "right" : chosen === "proof" ? "center" : null;
 
-      // --- Draw trunk ---
-      // Glow pass
+      // --- Draw trunk spine (full height) ---
       ctx.beginPath();
       ctx.moveTo(CX, 0);
-      ctx.lineTo(CX, tree.trunkEndY);
-      ctx.strokeStyle = "rgba(232,232,240,0.12)";
-      ctx.lineWidth = 8;
+      ctx.lineTo(CX, H);
+      ctx.strokeStyle = "rgba(232,232,240,0.08)";
+      ctx.lineWidth = 6;
       ctx.stroke();
-      // Core pass
       ctx.beginPath();
       ctx.moveTo(CX, 0);
-      ctx.lineTo(CX, tree.trunkEndY);
-      ctx.strokeStyle = "rgba(232,232,240,0.22)";
-      ctx.lineWidth = 2.5;
+      ctx.lineTo(CX, H);
+      ctx.strokeStyle = "rgba(232,232,240,0.16)";
+      ctx.lineWidth = 1.8;
       ctx.stroke();
 
       // --- Draw Sephirot paths (two passes: glow + core) ---
       const sephBreath = (now % GLOW_BREATHE_MS) / GLOW_BREATHE_MS;
-      // Glow pass
       for (let i = 0; i < SEPH_PATHS.length; i++) {
         const [a, b] = SEPH_PATHS[i];
         const pa = sephPositions[a], pb = sephPositions[b];
@@ -248,7 +316,6 @@ export default function BinaryLandingCanvas({ onChoice }) {
         ctx.lineWidth = 4.5;
         ctx.stroke();
       }
-      // Core pass
       for (let i = 0; i < SEPH_PATHS.length; i++) {
         const [a, b] = SEPH_PATHS[i];
         const pa = sephPositions[a], pb = sephPositions[b];
@@ -278,7 +345,6 @@ export default function BinaryLandingCanvas({ onChoice }) {
         let bright = 1;
         if (hov) { bright = sp.pillar === hov ? 1.8 : 0.5; }
 
-        // Glow halo
         const gr = sephGlowR * (0.8 + breath * 0.4);
         const haloGrad = ctx.createRadialGradient(sp.x, sp.y, 0, sp.x, sp.y, gr);
         haloGrad.addColorStop(0, rgbaStr(color, 0.15 * bright));
@@ -289,67 +355,34 @@ export default function BinaryLandingCanvas({ onChoice }) {
         ctx.fillStyle = haloGrad;
         ctx.fill();
 
-        // Core circle
         ctx.beginPath();
         ctx.arc(sp.x, sp.y, sephCoreR * (0.9 + breath * 0.15), 0, Math.PI * 2);
         ctx.fillStyle = rgbaStr(color, (0.4 + breath * 0.2) * bright);
         ctx.fill();
       }
 
-      // --- Draw branch lines (two passes: glow + core) ---
-      // Glow pass — wide, soft
-      for (let i = 0; i < tree.branches.length; i++) {
-        const b = tree.branches[i];
-        const isLeft = b.bias < 0.5;
-        let alpha = 0.09 * Math.pow(0.75, b.depth);
+      // --- Draw branches (lower roots + upper branches mirrored) ---
+      drawBranches(hov, false);
+      drawBranches(hov, true);
 
-        if (hov === "left")        alpha *= isLeft ? 2 : 0.4;
-        else if (hov === "right") alpha *= isLeft ? 0.4 : 2;
-        else if (hov === "center") alpha *= b.depth < 2 ? 2 : 0.5;
-
-        const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
-        const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
-        const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
-
-        ctx.beginPath();
-        ctx.moveTo(b.sx, b.sy);
-        ctx.quadraticCurveTo(b.cx, b.cy, b.ex, b.ey);
-        ctx.strokeStyle = rgbaStr(color, alpha);
-        ctx.lineWidth = Math.max(1.5, 6 - b.depth * 0.6);
-        ctx.stroke();
-      }
-      // Core pass — thin, brighter
-      for (let i = 0; i < tree.branches.length; i++) {
-        const b = tree.branches[i];
-        const isLeft = b.bias < 0.5;
-        let alpha = 0.18 * Math.pow(0.75, b.depth);
-
-        if (hov === "left")        alpha *= isLeft ? 2.5 : 0.35;
-        else if (hov === "right") alpha *= isLeft ? 0.35 : 2.5;
-        else if (hov === "center") alpha *= b.depth < 2 ? 2.5 : 0.4;
-
-        const depthBlend = Math.min(b.depth / (MAX_DEPTH - 1) * 1.5, 1);
-        const sideColor = isLeft ? LEFT_COLOR : RIGHT_COLOR;
-        const color = lerpColor(TRUNK_COLOR, sideColor, depthBlend);
-
-        ctx.beginPath();
-        ctx.moveTo(b.sx, b.sy);
-        ctx.quadraticCurveTo(b.cx, b.cy, b.ex, b.ey);
-        ctx.strokeStyle = rgbaStr(color, alpha);
-        ctx.lineWidth = Math.max(0.8, 2.4 - b.depth * 0.2);
-        ctx.stroke();
-      }
-
-      // --- Fork glow ---
+      // --- Fork glows (upper + lower) ---
       const breathPhase = (now % GLOW_BREATHE_MS) / GLOW_BREATHE_MS;
       const breathAlpha = (hov === "center" ? 0.10 : 0.06) + Math.sin(breathPhase * Math.PI * 2) * 0.04;
       const glowR = Math.min(W, H) * 0.10;
-      const grad = ctx.createRadialGradient(CX, tree.trunkEndY, 0, CX, tree.trunkEndY, glowR);
-      grad.addColorStop(0, `rgba(220,210,200,${breathAlpha})`);
-      grad.addColorStop(0.4, `rgba(190,180,210,${breathAlpha * 0.4})`);
-      grad.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.fillStyle = grad;
-      ctx.fillRect(CX - glowR, tree.trunkEndY - glowR, glowR * 2, glowR * 2);
+
+      const gradLower = ctx.createRadialGradient(CX, lowerForkY, 0, CX, lowerForkY, glowR);
+      gradLower.addColorStop(0, `rgba(220,210,200,${breathAlpha})`);
+      gradLower.addColorStop(0.4, `rgba(190,180,210,${breathAlpha * 0.4})`);
+      gradLower.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = gradLower;
+      ctx.fillRect(CX - glowR, lowerForkY - glowR, glowR * 2, glowR * 2);
+
+      const gradUpper = ctx.createRadialGradient(CX, upperForkY, 0, CX, upperForkY, glowR);
+      gradUpper.addColorStop(0, `rgba(220,210,200,${breathAlpha})`);
+      gradUpper.addColorStop(0.4, `rgba(190,180,210,${breathAlpha * 0.4})`);
+      gradUpper.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = gradUpper;
+      ctx.fillRect(CX - glowR, upperForkY - glowR, glowR * 2, glowR * 2);
 
       // --- Update & draw particles (additive glow + core) ---
       ctx.globalCompositeOperation = "lighter";
@@ -359,7 +392,6 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
         if (isDiss && chosenSide) {
           if (chosenSide === "center") {
-            // Rush toward trunk
             if (p.progress > 0.15) { speed *= 0.3; p.baseAlpha *= 0.97; }
             else speed *= 2;
           } else if (p.side === chosenSide) speed *= 3;
@@ -382,18 +414,16 @@ export default function BinaryLandingCanvas({ onChoice }) {
         else if (hov === "right") alpha *= p.side === "right" ? 1.5 : 0.4;
         else if (hov === "center") alpha *= p.progress < 0.25 ? 1.5 : 0.6;
 
-        // Fade in at top, fade out at tips
+        // Fade in near center, fade out at tips
         if (p.progress < 0.04) alpha *= p.progress / 0.04;
         if (p.progress > 0.85) alpha *= (1 - p.progress) / 0.15;
         alpha = Math.min(Math.max(alpha, 0), 1);
 
-        // Glow halo — larger, softer, creates the "stream" blending
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, p.size * 4, 0, Math.PI * 2);
         ctx.fillStyle = rgbaStr(color, alpha * 0.10);
         ctx.fill();
 
-        // Core — bright center
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, p.size * 1.3, 0, Math.PI * 2);
         ctx.fillStyle = rgbaStr(color, alpha * 0.5);
@@ -428,9 +458,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const cubicEase = "cubic-bezier(0.23, 1, 0.32, 1)";
   const crossfade = `opacity ${CROSSFADE_MS}ms ${cubicEase}`;
 
-  // Golden ratio layout
-  const goldenV    = `${(1 - 1/PHI3) * 100}%`;                  // 76.4% from top
-  const goldenLS   = `${PHI_INV * PHI_INV}em`;                  // 0.382em letter-spacing
+  const goldenLS = `${PHI_INV * PHI_INV}em`;
 
   const labelFont = {
     fontFamily: "'Cinzel', serif",
@@ -457,14 +485,14 @@ export default function BinaryLandingCanvas({ onChoice }) {
         backgroundImage: GRAIN_BG, backgroundSize: "200px",
       }} />
 
-      {/* Vignette */}
+      {/* Vignette — centered */}
       <div style={{
         position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-        background: `radial-gradient(ellipse at 50% ${goldenV}, transparent 20%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%)`,
+        background: "radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0.85) 100%)",
         pointerEvents: "none", zIndex: 1,
       }} />
 
-      {/* === Invisible click zones (no labels) === */}
+      {/* === Invisible click zones (left/center/right thirds) === */}
       <div onClick={() => handleChoice("ask")}
         onMouseEnter={() => setHovered("left")} onMouseLeave={() => setHovered(null)}
         style={{ position: "absolute", top: 0, left: 0, width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
@@ -475,13 +503,11 @@ export default function BinaryLandingCanvas({ onChoice }) {
         onMouseEnter={() => setHovered("right")} onMouseLeave={() => setHovered(null)}
         style={{ position: "absolute", top: 0, left: "66.67%", width: "33.33%", height: "100%", cursor: "pointer", zIndex: 3 }} />
 
-      {/* === Labels — equal screen positions, same entrance delay === */}
-      {/* Outer divs handle centering (translate -50%,-50%), inner divs handle entrance animation.
-         Separated so the fadeSlideUp animation's transform doesn't override the centering transform. */}
+      {/* === Labels — vertical stack === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
-        {/* Left — center of first third: 16.67% */}
+        {/* Top — pair[0] (shadow/dark side) */}
         <div style={{
-          position: "absolute", top: goldenV, left: "16.67%",
+          position: "absolute", top: "4%", left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -503,10 +529,10 @@ export default function BinaryLandingCanvas({ onChoice }) {
           </div>
         </div>
 
-        {/* Center — 50% */}
+        {/* Center — KNOWLEDGE word (on the Sephirot) */}
         <div style={{
-          position: "absolute", top: goldenV, left: "50%",
-          transform: `translate(-50%, -50%) ${hovered === "center" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
+          position: "absolute", top: "50%", left: "50%",
+          transform: `translate(-50%, -50%) ${hovered === "center" ? "scale(1.06)" : "scale(1)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
         }}>
@@ -527,10 +553,10 @@ export default function BinaryLandingCanvas({ onChoice }) {
           </div>
         </div>
 
-        {/* Right — center of last third: 83.33% */}
+        {/* Bottom — pair[1] (light/active side) */}
         <div style={{
-          position: "absolute", top: goldenV, left: "83.33%",
-          transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
+          position: "absolute", top: "96%", left: "50%",
+          transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
         }}>
