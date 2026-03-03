@@ -460,10 +460,15 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
   const goldenLS = `${PHI_INV * PHI_INV}em`;
 
-  // Golden ratio opacity scale: 1 - PHI_INV^n
-  const alphaRest  = 1 - PHI_INV * PHI_INV;                       // n=2 → 0.618 (satellite)
-  const alphaAnchor = 1 - PHI_INV * PHI_INV * PHI_INV;            // n=3 → 0.764 (center)
-  const alphaHover = 1 - PHI_INV * PHI_INV * PHI_INV * PHI_INV;   // n=4 → 0.854 (hover)
+  // Golden ratio scales: 1 - PHI_INV^n
+  const phi2 = PHI_INV * PHI_INV;
+  const phi3 = phi2 * PHI_INV;
+  const phi4 = phi3 * PHI_INV;
+  const alphaRest   = 1 - phi2;   // n=2 → 0.618 (satellite opacity)
+  const alphaAnchor = 1 - phi3;   // n=3 → 0.764 (center opacity)
+  const alphaHover  = 1 - phi4;   // n=4 → 0.854 (hover opacity + label positions)
+  const labelTopPos = `${phi4 * 100}%`;          // 14.6% from top
+  const labelBotPos = `${(1 - phi4) * 100}%`;    // 85.4% from top
 
   const labelFont = {
     fontFamily: "'Cinzel', serif",
@@ -513,7 +518,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
         {/* Top — pair[0] (shadow/dark side) */}
         <div style={{
-          position: "absolute", top: "4%", left: "50%",
+          position: "absolute", top: labelTopPos, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "left" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
@@ -561,7 +566,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
         {/* Bottom — pair[1] (light/active side) */}
         <div style={{
-          position: "absolute", top: "96%", left: "50%",
+          position: "absolute", top: labelBotPos, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "right" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
