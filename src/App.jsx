@@ -610,8 +610,8 @@ export default function TheoryOfEverything() {
       {/* Grain overlay — hidden during pure black/white landing phases */}
       {(depth >= 1) && <GrainOverlay />}
 
-      {/* Depth indicator — hidden during landing */}
-      {(depth >= 1) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
+      {/* Depth indicator — 10 dots with hover labels */}
+      {(depth >= 0) && <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} />}
 
       {/* Vignette — hidden during landing */}
       {(depth >= 1) && (<>

@@ -28,48 +28,71 @@ export function GrainOverlay() {
   );
 }
 
-export function DepthIndicator({ depth, maxDepth = 8, onNavigate, depthNames }) {
+export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) {
+  const [hovered, setHovered] = useState(null);
   return (
     <div style={{
-      position: "fixed", right: 8, top: "50%", transform: "translateY(-50%)",
-      zIndex: 100, display: "flex", flexDirection: "column", alignItems: "center", gap: 0,
+      position: "fixed", right: 12, top: "50%", transform: "translateY(-50%)",
+      zIndex: 100, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 0,
     }}>
-      {Array.from({ length: maxDepth + 1 }, (_, i) => (
-        <div key={i}
-          onClick={onNavigate ? (e) => { e.stopPropagation(); onNavigate(i); } : undefined}
-          style={{
-            /* 44px minimum tap target wrapping a smaller visible dot */
-            width: 44, height: 44,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            cursor: onNavigate ? "pointer" : "default",
-          }}
-        >
-          <div style={{
-            width: i === depth ? 10 : 5,
-            height: i === depth ? 10 : 5,
-            borderRadius: "50%",
-            background: i === depth
-              ? "rgba(201,168,76,0.8)"
-              : i < depth
-                ? "rgba(201,168,76,0.25)"
-                : "rgba(255,255,255,0.08)",
-            transition: "all 0.7s cubic-bezier(0.23,1,0.32,1)",
-            boxShadow: i === depth
-              ? "0 0 12px rgba(201,168,76,0.5), 0 0 24px rgba(201,168,76,0.15)"
-              : i < depth
-                ? "0 0 4px rgba(201,168,76,0.1)"
-                : "none",
-            pointerEvents: "none",
-          }} />
-        </div>
-      ))}
-      <div style={{
-        fontFamily: "'Cinzel', serif",
-        fontSize: 7, letterSpacing: 2,
-        color: "rgba(201,168,76,0.3)",
-        writingMode: "vertical-rl",
-        marginTop: 4,
-      }}>{depthNames[depth]}</div>
+      {Array.from({ length: maxDepth + 1 }, (_, i) => {
+        const isCurrent = i === depth;
+        const isHovered = hovered === i;
+        const isPast = i < depth;
+        return (
+          <div key={i}
+            onClick={onNavigate ? (e) => { e.stopPropagation(); onNavigate(i); } : undefined}
+            onMouseEnter={() => setHovered(i)}
+            onMouseLeave={() => setHovered(null)}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "flex-end",
+              height: 36, minWidth: 44, gap: 10,
+              cursor: onNavigate ? "pointer" : "default",
+              WebkitTapHighlightColor: "transparent",
+            }}
+          >
+            {/* Label — slides in on hover */}
+            <div style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: 8, letterSpacing: 3,
+              color: isCurrent
+                ? "rgba(201,168,76,0.85)"
+                : isPast
+                  ? "rgba(201,168,76,0.5)"
+                  : "rgba(232,232,240,0.4)",
+              opacity: isHovered ? 1 : 0,
+              transform: isHovered ? "translateX(0)" : "translateX(6px)",
+              transition: "all 0.4s cubic-bezier(0.23,1,0.32,1)",
+              whiteSpace: "nowrap",
+              pointerEvents: "none",
+              textShadow: isCurrent ? "0 0 12px rgba(201,168,76,0.3)" : "none",
+            }}>
+              {depthNames[i]}
+            </div>
+            {/* Dot */}
+            <div style={{
+              width: isCurrent ? 8 : isHovered ? 6 : 4,
+              height: isCurrent ? 8 : isHovered ? 6 : 4,
+              borderRadius: "50%",
+              flexShrink: 0,
+              background: isCurrent
+                ? "rgba(201,168,76,0.8)"
+                : isHovered
+                  ? "rgba(201,168,76,0.6)"
+                  : isPast
+                    ? "rgba(201,168,76,0.2)"
+                    : "rgba(255,255,255,0.07)",
+              transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
+              boxShadow: isCurrent
+                ? "0 0 10px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.12)"
+                : isHovered
+                  ? "0 0 8px rgba(201,168,76,0.25)"
+                  : "none",
+              animation: isCurrent ? "breathe 6s ease-in-out infinite" : "none",
+            }} />
+          </div>
+        );
+      })}
     </div>
   );
 }
