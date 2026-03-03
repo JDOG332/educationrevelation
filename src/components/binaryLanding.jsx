@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import { PHI, PHI_INV, OPPOSITE_PAIRS } from "../data.js";
+import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS } from "../data.js";
 
 /* ============================================================
    BINARY LANDING — Fractal Root System
@@ -333,10 +333,11 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const crossfade = `opacity ${CROSSFADE_MS}ms ${cubicEase}`;
 
   // Golden ratio layout — every position derived from PHI
-  const goldenV   = `${(1 - PHI_INV) * 100}%`;  // 38.2% from top
-  const goldenL   = `${(1 - PHI_INV) * 100}%`;   // 38.2% within left half → 19.1% of screen
-  const goldenR   = `${PHI_INV * 100}%`;           // 61.8% within right half → 80.9% of screen
-  const goldenLS  = `${PHI_INV * PHI_INV}em`;      // 0.382em letter-spacing
+  // Labels sit BELOW the root tips — the roots reach toward the words
+  const goldenV   = `${(1 - 1/PHI3) * 100}%`;     // 76.4% from top — just below root endpoints
+  const goldenL   = `${(1 - PHI_INV) * 100}%`;     // 38.2% within left half → 19.1% of screen
+  const goldenR   = `${PHI_INV * 100}%`;            // 61.8% within right half → 80.9% of screen
+  const goldenLS  = `${PHI_INV * PHI_INV}em`;       // 0.382em letter-spacing
 
   // Shared label style
   const labelFont = {
