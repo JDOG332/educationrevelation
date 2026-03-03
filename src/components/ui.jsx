@@ -34,23 +34,23 @@ export function DepthIndicator({ depth, onNavigate, depthNames, userPath }) {
   const isMobile = typeof window !== "undefined" && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
   const showLabel = (i) => isMobile ? expanded : hovered === i;
 
-  // Nav entries: indices 2 and 3 both map to depth 2 (two poems)
-  // Index 0→depth 0, 1→1, 2→2(ask), 3→2(explore), 4→3, 5→4, ...
+  // Nav entries: no THE DREAM, two poem entries both map to depth 2
+  // Index 0→depth 0, 1→2(ask), 2→2(explore), 3→3, 4→4, ...
   const navToDepth = (navIndex) => {
-    if (navIndex <= 1) return navIndex;
-    if (navIndex <= 3) return 2;
-    return navIndex - 1;
+    if (navIndex === 0) return 0;
+    if (navIndex <= 2) return 2;
+    return navIndex;
   };
   const navToPath = (navIndex) => {
-    if (navIndex === 2) return "ask";
-    if (navIndex === 3) return "explore";
+    if (navIndex === 1) return "ask";
+    if (navIndex === 2) return "explore";
     return null;
   };
   const isCurrent = (navIndex) => {
     const d = navToDepth(navIndex);
     if (d !== depth) return false;
-    if (navIndex === 2) return depth === 2 && userPath === "ask";
-    if (navIndex === 3) return depth === 2 && userPath === "explore";
+    if (navIndex === 1) return depth === 2 && userPath === "ask";
+    if (navIndex === 2) return depth === 2 && userPath === "explore";
     return true;
   };
   const isPast = (navIndex) => {
