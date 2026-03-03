@@ -30,6 +30,10 @@ export function GrainOverlay() {
 
 export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) {
   const [hovered, setHovered] = useState(null);
+  const [expanded, setExpanded] = useState(false);
+  const isMobile = typeof window !== "undefined" && (window.innerWidth < 768 || navigator.maxTouchPoints > 0);
+  const showLabel = (i) => isMobile ? expanded : hovered === i;
+
   return (
     <div style={{
       position: "fixed", right: 12, top: "50%", transform: "translateY(-50%)",
@@ -37,13 +41,21 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
     }}>
       {Array.from({ length: maxDepth + 1 }, (_, i) => {
         const isCurrent = i === depth;
-        const isHovered = hovered === i;
+        const show = showLabel(i);
         const isPast = i < depth;
         return (
           <div key={i}
-            onClick={onNavigate ? (e) => { e.stopPropagation(); onNavigate(i); } : undefined}
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
+            onClick={onNavigate ? (e) => {
+              e.stopPropagation();
+              if (isMobile && !expanded) {
+                setExpanded(true);
+              } else {
+                onNavigate(i);
+                setExpanded(false);
+              }
+            } : undefined}
+            onMouseEnter={isMobile ? undefined : () => setHovered(i)}
+            onMouseLeave={isMobile ? undefined : () => setHovered(null)}
             style={{
               display: "flex", alignItems: "center", justifyContent: "flex-end",
               height: 36, minWidth: 44, gap: 10,
@@ -51,7 +63,7 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
               WebkitTapHighlightColor: "transparent",
             }}
           >
-            {/* Label — slides in on hover */}
+            {/* Label — slides in on hover / expand */}
             <div style={{
               fontFamily: "'Cinzel', serif",
               fontSize: 8, letterSpacing: 3,
@@ -60,9 +72,9 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
                 : isPast
                   ? "rgba(201,168,76,0.5)"
                   : "rgba(232,232,240,0.4)",
-              opacity: isHovered ? 1 : 0,
-              transform: isHovered ? "translateX(0)" : "translateX(6px)",
-              transition: "all 0.4s cubic-bezier(0.23,1,0.32,1)",
+              opacity: show ? 1 : 0,
+              transform: show ? "translateX(0)" : "translateX(6px)",
+              transition: `all 0.4s cubic-bezier(0.23,1,0.32,1) ${expanded ? i * 30 : 0}ms`,
               whiteSpace: "nowrap",
               pointerEvents: "none",
               textShadow: isCurrent ? "0 0 12px rgba(201,168,76,0.3)" : "none",
@@ -71,13 +83,13 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
             </div>
             {/* Dot */}
             <div style={{
-              width: isCurrent ? 8 : isHovered ? 6 : 4,
-              height: isCurrent ? 8 : isHovered ? 6 : 4,
+              width: isCurrent ? 8 : show ? 6 : 4,
+              height: isCurrent ? 8 : show ? 6 : 4,
               borderRadius: "50%",
               flexShrink: 0,
               background: isCurrent
                 ? "rgba(201,168,76,0.8)"
-                : isHovered
+                : show
                   ? "rgba(201,168,76,0.6)"
                   : isPast
                     ? "rgba(201,168,76,0.2)"
@@ -85,7 +97,7 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
               transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
               boxShadow: isCurrent
                 ? "0 0 10px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.12)"
-                : isHovered
+                : show
                   ? "0 0 8px rgba(201,168,76,0.25)"
                   : "none",
               animation: isCurrent ? "breathe 6s ease-in-out infinite" : "none",
@@ -93,6 +105,13 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
           </div>
         );
       })}
+      {/* Tap-away to collapse on mobile */}
+      {isMobile && expanded && (
+        <div onClick={(e) => { e.stopPropagation(); setExpanded(false); }} style={{
+          position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+          zIndex: -1,
+        }} />
+      )}
     </div>
   );
 }
