@@ -27,6 +27,7 @@ import { Multiverse } from "./components/multiverse.jsx";
 import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
 import DiamondGenesisCanvas from "./components/diamondGenesis.jsx";
 import BinaryLandingCanvas from "./components/binaryLanding.jsx";
+import { findAnswers } from "./questionEngine.js";
 
 /* ========== MAIN ========== */
 
@@ -104,6 +105,7 @@ export default function TheoryOfEverything() {
   const [doorInput, setDoorInput] = useState("");
   const [doorResults, setDoorResults] = useState(null);
   const [doorExpanded, setDoorExpanded] = useState(null);
+  const [questionResults, setQuestionResults] = useState(null);
   // Stable particle seeds — generated once, never re-randomized on re-render
   const mathParticles = useMemo(() =>
     Array.from({ length: 16 }, (_, i) => ({
@@ -8745,7 +8747,11 @@ export default function TheoryOfEverything() {
         <div style={{
           height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
-          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          display: "flex", flexDirection: "column", alignItems: "center",
+          justifyContent: questionResults && questionResults.length > 0 ? "flex-start" : "center",
+          paddingTop: questionResults && questionResults.length > 0 ? "8vh" : 0,
+          overflowY: questionResults && questionResults.length > 0 ? "auto" : "hidden",
+          transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
           ...getDepthWrap(5),
         }}>
           {/* Atmospheric crack lines — the fracture field */}
@@ -8853,7 +8859,15 @@ export default function TheoryOfEverything() {
               <input
                 type="text"
                 value={doorInput}
-                onChange={(e) => setDoorInput(e.target.value)}
+                onChange={(e) => { setDoorInput(e.target.value); setQuestionResults(null); }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    if (doorInput.trim().length >= 3) {
+                      setQuestionResults(findAnswers(doorInput));
+                    }
+                  }
+                }}
                 placeholder="IF I COULD ASK JUST ONE QUESTION..."
                 style={{
                   width: "100%",
@@ -8880,6 +8894,109 @@ export default function TheoryOfEverything() {
                 }}
               />
             </div>
+
+            {/* ── QUESTION RESULTS — top 3 matches ── */}
+            {questionResults && questionResults.length > 0 && (
+              <div style={{
+                width: "100%", maxWidth: 520, marginTop: Math.round(13 * PHI),
+                display: "flex", flexDirection: "column", gap: Math.round(8 * PHI),
+              }}>
+                {questionResults.map((result, i) => (
+                  <div
+                    key={i}
+                    onClick={() => {
+                      if (result.route && result.route.convergence) {
+                        setActiveConvergence(result.route.convergence);
+                        setActiveSubcategory(result.route.subcategory || null);
+                        setActiveIdea(result.route.idea || null);
+                        setDepth(4);
+                        window.scrollTo(0, 0);
+                      }
+                    }}
+                    style={{
+                      background: "rgba(224,80,80,0.03)",
+                      border: "1px solid rgba(224,80,80,0.1)",
+                      borderRadius: Math.round(4 * PHI),
+                      padding: `${Math.round(8 * PHI)}px ${Math.round(10 * PHI)}px`,
+                      cursor: result.route && result.route.convergence ? "pointer" : "default",
+                      animation: `fadeSlideUp 0.8s ${0.2 + i * 0.3}s both ease`,
+                      transition: "all 0.4s cubic-bezier(0.23,1,0.32,1)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = "rgba(224,80,80,0.06)";
+                      e.currentTarget.style.borderColor = "rgba(224,80,80,0.2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "rgba(224,80,80,0.03)";
+                      e.currentTarget.style.borderColor = "rgba(224,80,80,0.1)";
+                    }}
+                  >
+                    {/* Ψ score bar */}
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                      <div style={{
+                        flex: 1, height: 2, borderRadius: 1,
+                        background: "rgba(224,80,80,0.08)",
+                        overflow: "hidden",
+                      }}>
+                        <div style={{
+                          width: `${Math.min(100, Math.round(result.psi * 100))}%`,
+                          height: "100%",
+                          background: "linear-gradient(90deg, rgba(224,80,80,0.5), rgba(201,168,76,0.5))",
+                          borderRadius: 1,
+                          transition: "width 1s ease",
+                        }} />
+                      </div>
+                      <span style={{
+                        fontFamily: "'Cinzel', serif",
+                        fontSize: 9, letterSpacing: 1,
+                        color: "rgba(224,80,80,0.4)",
+                      }}>
+                        Ψ {(result.psi * 100).toFixed(0)}
+                      </span>
+                    </div>
+
+                    {/* Source + Title */}
+                    <div style={{
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: "clamp(9px, 1.8vw, 11px)",
+                      letterSpacing: 2,
+                      color: "rgba(201,168,76,0.45)",
+                      marginBottom: 4,
+                      textTransform: "uppercase",
+                    }}>
+                      {result.source === "mirror" ? "CURATED" : result.source === "truth" ? "SITE TRUTH" : "TOPIC CARD"}
+                      {result.title ? ` — ${result.title}` : ""}
+                    </div>
+
+                    {/* Answer */}
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(14px, 2.8vw, 17px)",
+                      fontStyle: "italic",
+                      color: "rgba(232,232,240,0.6)",
+                      lineHeight: PHI,
+                    }}>
+                      {result.answer && result.answer.length > 200
+                        ? result.answer.slice(0, 200) + "..."
+                        : result.answer}
+                    </div>
+
+                    {/* Navigate hint */}
+                    {result.route && result.route.convergence && (
+                      <div style={{
+                        fontFamily: "'Cinzel', serif",
+                        fontSize: 9, letterSpacing: 2,
+                        color: "rgba(224,80,80,0.3)",
+                        marginTop: 8,
+                        textAlign: "right",
+                      }}>
+                        TAP TO EXPLORE →
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
