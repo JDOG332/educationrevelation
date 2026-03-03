@@ -8799,7 +8799,7 @@ export default function TheoryOfEverything() {
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
               animation: "textManifest 1.8s 0.3s both ease",
-            }}>THE BREAK</h2>
+            }}>THE QUESTIONING</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 3vw, 21px)",
@@ -8844,6 +8844,41 @@ export default function TheoryOfEverything() {
               <span style={{ color: "rgba(224,80,80,0.3)", animation: "emberglow 6s ease-in-out infinite" }}>
                 the break is not the end — it's where the new thing enters.
               </span>
+            </div>
+
+            <div style={{ height: Math.round(21 * PHI) }} />
+
+            {/* The Question — search bar */}
+            <div style={{ animation: "fadeSlideUp 1.5s 1.8s both ease", width: "100%" }}>
+              <input
+                type="text"
+                value={doorInput}
+                onChange={(e) => setDoorInput(e.target.value)}
+                placeholder="IF I COULD ASK JUST ONE QUESTION..."
+                style={{
+                  width: "100%",
+                  padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(11px, 2.2vw, 14px)",
+                  letterSpacing: 3,
+                  color: "rgba(232,232,240,0.85)",
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(224,80,80,0.15)",
+                  borderRadius: Math.round(4 * PHI),
+                  outline: "none",
+                  textAlign: "center",
+                  transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
+                  boxShadow: "0 0 30px rgba(224,80,80,0.03), inset 0 0 20px rgba(0,0,0,0.3)",
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = "rgba(224,80,80,0.35)";
+                  e.target.style.boxShadow = "0 0 40px rgba(224,80,80,0.08), inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = "rgba(224,80,80,0.15)";
+                  e.target.style.boxShadow = "0 0 30px rgba(224,80,80,0.03), inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+              />
             </div>
           </div>
         </div>
