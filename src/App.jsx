@@ -509,7 +509,6 @@ export default function TheoryOfEverything() {
         <BinaryLandingCanvas onChoice={(path) => {
           if (path === "death-or-life") {
             setUserPath("ask");
-            setVeilParted(true);
             setSkipIntro(true);
             setDepth(2);
           } else if (path === "pact") {
@@ -517,7 +516,6 @@ export default function TheoryOfEverything() {
             setDepth(3);
           } else if (path === "rhythm-of-life") {
             setUserPath("explore");
-            setVeilParted(true);
             setSkipIntro(true);
             setDepth(2);
           }
