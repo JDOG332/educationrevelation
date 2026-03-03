@@ -462,7 +462,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
   const labelFont = {
     fontFamily: "'Cinzel', serif",
-    fontSize: `clamp(18px, ${PHI * PHI}vw, 34px)`,
+    fontSize: `clamp(29px, ${PHI * PHI * PHI}vw, 55px)`,
     letterSpacing: goldenLS,
   };
 
