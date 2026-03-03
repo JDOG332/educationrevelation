@@ -552,60 +552,6 @@ export default function TheoryOfEverything() {
       {/* ===== THEORY PAGE (original content) ===== */}
       {currentPage === "theory" && depth >= 0 && (<>
 
-      {/* ===== GLOBAL EDGE NAVIGATION ===== */}
-      {/* Narrow edge strips (48px) + visible chevron arrows. */}
-      {/* Content in the center of the screen is now fully tappable. */}
-      {depth >= 1 && (
-        <>
-          {/* LEFT EDGE — go back */}
-          <div
-            onClick={(e) => { e.stopPropagation(); goBack(); }}
-            style={{
-              position: "fixed", top: 0, left: 0,
-              width: 48, height: "88%",
-              zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
-              background: "transparent",
-              display: "flex", alignItems: "center", justifyContent: "flex-start",
-              paddingLeft: 6,
-            }}
-          >
-            <div style={{
-              opacity: 0.15, fontSize: 22, color: "rgba(201,168,76,0.8)",
-              fontFamily: "'Cinzel', serif",
-              transition: "opacity 0.4s ease",
-              pointerEvents: "none",
-              textShadow: "0 0 12px rgba(201,168,76,0.3)",
-            }}
-              className="nav-chevron-left"
-            >‹</div>
-          </div>
-
-          {/* RIGHT EDGE — go deeper */}
-          {depth < 9 && (
-            <div
-              onClick={(e) => { e.stopPropagation(); goDeeper(); }}
-              style={{
-                position: "fixed", top: 0, right: 0,
-                width: 48, height: "88%",
-                zIndex: 9000, cursor: "pointer", touchAction: "pan-y",
-                background: "transparent",
-                display: "flex", alignItems: "center", justifyContent: "flex-end",
-                paddingRight: 6,
-              }}
-            >
-              <div style={{
-                opacity: 0.15, fontSize: 22, color: "rgba(201,168,76,0.8)",
-                fontFamily: "'Cinzel', serif",
-                transition: "opacity 0.4s ease",
-                pointerEvents: "none",
-                textShadow: "0 0 12px rgba(201,168,76,0.3)",
-              }}
-                className="nav-chevron-right"
-              >›</div>
-            </div>
-          )}
-        </>
-      )}
 
       {/* Grain overlay — hidden during pure black/white landing phases */}
       {(depth >= 1) && <GrainOverlay />}
