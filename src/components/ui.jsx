@@ -36,8 +36,8 @@ export function DepthIndicator({ depth, maxDepth = 9, onNavigate, depthNames }) 
 
   return (
     <div style={{
-      position: "fixed", right: 12, top: "50%", transform: "translateY(-50%)",
-      zIndex: 100, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 0,
+      position: "fixed", right: 24, top: "50%", transform: "translateY(-50%)",
+      zIndex: 10100, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 0,
     }}>
       {Array.from({ length: maxDepth + 1 }, (_, i) => {
         const isCurrent = i === depth;
