@@ -26,6 +26,7 @@ import { OctahedronPact, OCTANT_COLORS } from "./components/canvas.jsx";
 import { Multiverse } from "./components/multiverse.jsx";
 import DreamMultiverseCanvas from "./components/dreamMultiverse.jsx";
 import DiamondGenesisCanvas from "./components/diamondGenesis.jsx";
+import BinaryLandingCanvas from "./components/binaryLanding.jsx";
 
 /* ========== MAIN ========== */
 
@@ -502,145 +503,14 @@ export default function TheoryOfEverything() {
         </>
       )}
 
-      {/* ===== BINARY LANDING — Layer -2, the first door ===== */}
-      {currentPage === "theory" && depth === -2 && (() => {
-        const BinaryLanding = () => {
-          const [dissolving, setDissolving] = React.useState(false);
-          const [hovered, setHovered] = React.useState(null);
-          const choiceRef = React.useRef(null);
-
-          const handleChoice = (path) => {
-            if (dissolving) return;
-            choiceRef.current = path;
-            setUserPath(path);
-            setDissolving(true);
-            setTimeout(() => {
-              setDepth(0); // both paths start at depth 0 (breath)
-              window.scrollTo(0, 0);
-            }, 618);
-          };
-
-          return (
-            <div style={{
-              position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-              background: "#030306", display: "flex", flexDirection: "column",
-              alignItems: "center", justifyContent: "center",
-              zIndex: 10001,
-              opacity: dissolving ? 0 : 1,
-              transition: "opacity 0.618s cubic-bezier(0.23, 1, 0.32, 1)",
-            }}>
-              {/* Grain */}
-              <div style={{
-                position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                opacity: 0.02, pointerEvents: "none", zIndex: 1,
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                backgroundSize: "200px",
-              }} />
-              {/* Vignette */}
-              <div style={{
-                position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                background: "radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%)",
-                pointerEvents: "none", zIndex: 1,
-              }} />
-              {/* Central golden glow — breathes */}
-              <div style={{
-                position: "fixed", top: "50%", left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "clamp(300px, 60vw, 600px)", height: "clamp(300px, 60vw, 600px)",
-                borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 40%, transparent 70%)",
-                animation: "breathe 6s ease-in-out infinite",
-                pointerEvents: "none", zIndex: 1,
-              }} />
-
-              {/* Two choices */}
-              <div style={{
-                display: "flex", flexDirection: "row", gap: "clamp(60px, 15vw, 160px)",
-                alignItems: "center", justifyContent: "center",
-                zIndex: 2, position: "relative",
-              }}>
-                {/* ASK */}
-                <div
-                  onClick={() => handleChoice("ask")}
-                  onMouseEnter={() => setHovered("ask")}
-                  onMouseLeave={() => setHovered(null)}
-                  style={{
-                    display: "flex", flexDirection: "column", alignItems: "center",
-                    cursor: "pointer", gap: "clamp(12px, 3vw, 24px)",
-                    padding: "clamp(20px, 4vw, 40px)",
-                    borderRadius: 20,
-                    background: hovered === "ask" ? "rgba(201,168,76,0.03)" : "transparent",
-                    border: `1px solid rgba(201,168,76,${hovered === "ask" ? "0.15" : "0"})`,
-                    transform: hovered === "ask" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)",
-                    transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
-                    animation: "fadeSlideUp 1.2s ease 0.5s both",
-                  }}
-                >
-                  <div style={{
-                    fontSize: "clamp(48px, 12vw, 80px)",
-                    lineHeight: 1,
-                    filter: `drop-shadow(0 0 ${hovered === "ask" ? "30" : "12"}px rgba(201,168,76,${hovered === "ask" ? "0.4" : "0.12"}))`,
-                    transition: "filter 0.6s ease",
-                    animation: "gentleFloat 6s ease-in-out infinite",
-                  }}>🔮</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: "clamp(16px, 4vw, 24px)",
-                    letterSpacing: "0.35em",
-                    color: `rgba(232,232,240,${hovered === "ask" ? "0.85" : "0.45"})`,
-                    transition: "color 0.6s ease, text-shadow 0.6s ease",
-                    textShadow: hovered === "ask" ? "0 0 20px rgba(232,232,240,0.15)" : "none",
-                  }}>ASK</div>
-                </div>
-
-                {/* Divider — golden thread */}
-                <div style={{
-                  position: "absolute", top: "50%", left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: 1, height: "clamp(40px, 8vw, 80px)",
-                  background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.2), transparent)",
-                  animation: "fadeSlideUp 1.2s ease 0.8s both",
-                }} />
-
-                {/* EXPLORE */}
-                <div
-                  onClick={() => handleChoice("explore")}
-                  onMouseEnter={() => setHovered("explore")}
-                  onMouseLeave={() => setHovered(null)}
-                  style={{
-                    display: "flex", flexDirection: "column", alignItems: "center",
-                    cursor: "pointer", gap: "clamp(12px, 3vw, 24px)",
-                    padding: "clamp(20px, 4vw, 40px)",
-                    borderRadius: 20,
-                    background: hovered === "explore" ? "rgba(201,168,76,0.03)" : "transparent",
-                    border: `1px solid rgba(201,168,76,${hovered === "explore" ? "0.15" : "0"})`,
-                    transform: hovered === "explore" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)",
-                    transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
-                    animation: "fadeSlideUp 1.2s ease 0.7s both",
-                  }}
-                >
-                  <div style={{
-                    fontSize: "clamp(48px, 12vw, 80px)",
-                    lineHeight: 1,
-                    filter: `drop-shadow(0 0 ${hovered === "explore" ? "30" : "12"}px rgba(201,168,76,${hovered === "explore" ? "0.4" : "0.12"}))`,
-                    transition: "filter 0.6s ease",
-                    animation: "gentleFloat 6s ease-in-out 1s infinite",
-                  }}>🌌</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: "clamp(16px, 4vw, 24px)",
-                    letterSpacing: "0.35em",
-                    color: `rgba(232,232,240,${hovered === "explore" ? "0.85" : "0.45"})`,
-                    transition: "color 0.6s ease, text-shadow 0.6s ease",
-                    textShadow: hovered === "explore" ? "0 0 20px rgba(232,232,240,0.15)" : "none",
-                  }}>EXPLORE</div>
-                </div>
-              </div>
-            </div>
-          );
-        };
-        return <BinaryLanding />;
-      })()}
+      {/* ===== BINARY LANDING — Layer -2, two diverging rivers of light ===== */}
+      {currentPage === "theory" && depth === -2 && (
+        <BinaryLandingCanvas onChoice={(path) => {
+          setUserPath(path);
+          setDepth(0);
+          window.scrollTo(0, 0);
+        }} />
+      )}
 
       {/* ===== DIAMOND GENESIS — plays before MirrorGate on ASK path ===== */}
       {currentPage === "theory" && depth === -1 && !diamondPlayed && (

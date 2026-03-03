@@ -198,6 +198,19 @@ export const TRANSLATIONS = [
   { domain: "the triquetra", closing: "we are already braided" },
 ];
 
+export const OPPOSITE_PAIRS = [
+  ["DARK","LIGHT"],["MOON","SUN"],["NIGHT","DAY"],["SHADOW","FLAME"],["WINTER","SUMMER"],
+  ["EARTH","SKY"],["DEEP","HIGH"],["COLD","WARM"],["STILL","MOVING"],["SILENCE","SOUND"],
+  ["IN","OUT"],["ROOT","WING"],["BONE","SKIN"],["SEED","BLOOM"],["SLEEP","WAKE"],
+  ["DREAM","SIGHT"],["BREATH IN","BREATH OUT"],["CLOSED","OPEN"],["HIDDEN","SEEN"],["BURIED","RISING"],
+  ["DEATH","LIFE"],["END","BEGIN"],["EMPTY","FULL"],["NOTHING","EVERYTHING"],["QUESTION","ANSWER"],
+  ["DOUBT","FAITH"],["LOSS","GAIN"],["FALL","RISE"],["WOUND","HEALING"],["UNKNOWN","KNOWN"],
+  ["PULL","PUSH"],["RECEIVE","GIVE"],["LISTEN","SPEAK"],["GATHER","SCATTER"],["BELOW","ABOVE"],
+  ["WITHIN","BEYOND"],["DESCEND","ASCEND"],["CONTRACT","EXPAND"],["INHALE","EXHALE"],["RETURN","DEPART"],
+  ["MIRROR","WINDOW"],["GLASS","WATER"],["MOTHER","FATHER"],["MATTER","PATTERN"],["FLESH","SPIRIT"],
+  ["DUST","STAR"],["GRAVITY","GRACE"],["BLACK","WHITE"],["ZERO","ONE"],["THE KNOT","THE BRAID"],
+];
+
 export const ETYMOLOGIES = [
   ["SYMBOL", "SYM + BOL — to throw together"],
   ["SIGNAL", "SIGN + AL — a wound in matter"],
