@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS, KNOWLEDGE_WORDS } from "../data.js";
+import { PHI, PHI_INV, PHI3, OPPOSITE_PAIRS, KNOWLEDGE_WORDS, SEPHIROT, SEPH_PATHS } from "../data.js";
 
 /* ============================================================
    BINARY LANDING — Fractal Root System
@@ -24,6 +24,10 @@ const LEFT_ALT    = { r: 170, g: 140, b: 200 };
 const RIGHT_COLOR = { r: 201, g: 168, b: 76  };
 const RIGHT_ALT   = { r: 220, g: 180, b: 100 };
 const TRUNK_COLOR = { r: 232, g: 232, b: 240 };
+
+function pillarColor(p) {
+  return p === "left" ? LEFT_COLOR : p === "right" ? RIGHT_COLOR : TRUNK_COLOR;
+}
 
 function lerp(a, b, t) { return a + (b - a) * t; }
 function lerpColor(c1, c2, t) {
@@ -64,7 +68,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
     const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 2 : 3);
     const MAX_DEPTH = isMobile ? 5 : 7;
     const PARTICLE_COUNT = isMobile ? 400 : 800;
-    const TRUNK_FRAC = 0.08;
+    const TRUNK_FRAC = 0.18;
 
     let W, H, CX;
     let tree = null;
@@ -80,11 +84,24 @@ export default function BinaryLandingCanvas({ onChoice }) {
       CX = W / 2;
     }
 
+    // ===== SEPHIROT POSITIONS =====
+    let sephPositions = [];
+    function computeSephPositions() {
+      const sephTop = H * 0.03;
+      const sephBot = H * 0.24;
+      const sephW = Math.min(W * 0.45, H * 0.4);
+      sephPositions = SEPHIROT.map(s => ({
+        x: CX + (s.x - 0.5) * sephW,
+        y: sephTop + s.y * (sephBot - sephTop),
+        pillar: s.pillar,
+      }));
+    }
+
     // ===== FRACTAL TREE GENERATION =====
     function generateTree() {
       const branches = [];
-      const trunkEndY = H * 0.10;
-      const vBase = H * 0.14;
+      const trunkEndY = H * 0.25;
+      const vBase = H * 0.11;
       const hBase = W * 0.14;
       const vDecay = 0.82;
       const hDecay = 0.72;
@@ -168,6 +185,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
     // ===== INIT =====
     resize();
+    computeSephPositions();
     tree = generateTree();
     const particles = [];
     for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle(true));
@@ -209,6 +227,74 @@ export default function BinaryLandingCanvas({ onChoice }) {
       ctx.strokeStyle = "rgba(232,232,240,0.22)";
       ctx.lineWidth = 2.5;
       ctx.stroke();
+
+      // --- Draw Sephirot paths (two passes: glow + core) ---
+      const sephBreath = (now % GLOW_BREATHE_MS) / GLOW_BREATHE_MS;
+      // Glow pass
+      for (let i = 0; i < SEPH_PATHS.length; i++) {
+        const [a, b] = SEPH_PATHS[i];
+        const pa = sephPositions[a], pb = sephPositions[b];
+        const ca = pillarColor(pa.pillar), cb = pillarColor(pb.pillar);
+        const color = lerpColor(ca, cb, 0.5);
+        let alpha = 0.07;
+        if (hov) {
+          const match = pa.pillar === hov || pb.pillar === hov;
+          alpha *= match ? 2 : 0.35;
+        }
+        ctx.beginPath();
+        ctx.moveTo(pa.x, pa.y);
+        ctx.lineTo(pb.x, pb.y);
+        ctx.strokeStyle = rgbaStr(color, alpha);
+        ctx.lineWidth = 4.5;
+        ctx.stroke();
+      }
+      // Core pass
+      for (let i = 0; i < SEPH_PATHS.length; i++) {
+        const [a, b] = SEPH_PATHS[i];
+        const pa = sephPositions[a], pb = sephPositions[b];
+        const ca = pillarColor(pa.pillar), cb = pillarColor(pb.pillar);
+        const color = lerpColor(ca, cb, 0.5);
+        let alpha = 0.15;
+        if (hov) {
+          const match = pa.pillar === hov || pb.pillar === hov;
+          alpha *= match ? 2 : 0.35;
+        }
+        ctx.beginPath();
+        ctx.moveTo(pa.x, pa.y);
+        ctx.lineTo(pb.x, pb.y);
+        ctx.strokeStyle = rgbaStr(color, alpha);
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
+
+      // --- Draw Sephirot nodes ---
+      const sephCoreR = Math.min(W, H) * 0.012;
+      const sephGlowR = sephCoreR * (isMobile ? 3 : 5);
+      for (let i = 0; i < sephPositions.length; i++) {
+        const sp = sephPositions[i];
+        const color = pillarColor(sp.pillar);
+        const phase = (sephBreath + i * 0.1) % 1;
+        const breath = 0.5 + 0.5 * Math.sin(phase * Math.PI * 2);
+        let bright = 1;
+        if (hov) { bright = sp.pillar === hov ? 1.8 : 0.5; }
+
+        // Glow halo
+        const gr = sephGlowR * (0.8 + breath * 0.4);
+        const haloGrad = ctx.createRadialGradient(sp.x, sp.y, 0, sp.x, sp.y, gr);
+        haloGrad.addColorStop(0, rgbaStr(color, 0.15 * bright));
+        haloGrad.addColorStop(0.5, rgbaStr(color, 0.05 * bright));
+        haloGrad.addColorStop(1, "rgba(0,0,0,0)");
+        ctx.beginPath();
+        ctx.arc(sp.x, sp.y, gr, 0, Math.PI * 2);
+        ctx.fillStyle = haloGrad;
+        ctx.fill();
+
+        // Core circle
+        ctx.beginPath();
+        ctx.arc(sp.x, sp.y, sephCoreR * (0.9 + breath * 0.15), 0, Math.PI * 2);
+        ctx.fillStyle = rgbaStr(color, (0.4 + breath * 0.2) * bright);
+        ctx.fill();
+      }
 
       // --- Draw branch lines (two passes: glow + core) ---
       // Glow pass — wide, soft
@@ -322,6 +408,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
     function onResize() {
       resize();
+      computeSephPositions();
       tree = generateTree();
       for (const p of particles) p.branchPath = computeBranchPath(p.route);
     }

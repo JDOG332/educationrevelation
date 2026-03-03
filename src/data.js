@@ -224,6 +224,33 @@ export const OPPOSITE_PAIRS = [
   ["DUST","STAR"],["GRAVITY","GRACE"],["BLACK","WHITE"],["ZERO","ONE"],["THE KNOT","THE BRAID"],
 ];
 
+// Kabbalistic Tree of Life — 10 Sephirot with normalized positions and pillar
+export const SEPHIROT = [
+  { name: "Keter",    x: 0.50, y: 0.00, pillar: "center" },
+  { name: "Chokmah",  x: 0.80, y: 0.12, pillar: "right"  },
+  { name: "Binah",    x: 0.20, y: 0.12, pillar: "left"   },
+  { name: "Chesed",   x: 0.80, y: 0.38, pillar: "right"  },
+  { name: "Gevurah",  x: 0.20, y: 0.38, pillar: "left"   },
+  { name: "Tiferet",  x: 0.50, y: 0.50, pillar: "center" },
+  { name: "Netzach",  x: 0.80, y: 0.68, pillar: "right"  },
+  { name: "Hod",      x: 0.20, y: 0.68, pillar: "left"   },
+  { name: "Yesod",    x: 0.50, y: 0.82, pillar: "center" },
+  { name: "Malkuth",  x: 0.50, y: 1.00, pillar: "center" },
+];
+
+// 22 traditional connecting paths (index pairs into SEPHIROT)
+export const SEPH_PATHS = [
+  [0,1],[0,2],[0,5],       // Keter → Chokmah, Binah, Tiferet
+  [1,2],[1,3],[1,5],       // Chokmah → Binah, Chesed, Tiferet
+  [2,4],[2,5],             // Binah → Gevurah, Tiferet
+  [3,4],[3,5],[3,6],       // Chesed → Gevurah, Tiferet, Netzach
+  [4,5],[4,7],             // Gevurah → Tiferet, Hod
+  [5,6],[5,7],[5,8],       // Tiferet → Netzach, Hod, Yesod
+  [6,7],[6,8],[6,9],       // Netzach → Hod, Yesod, Malkuth
+  [7,8],[7,9],             // Hod → Yesod, Malkuth
+  [8,9],                   // Yesod → Malkuth
+];
+
 export const ETYMOLOGIES = [
   ["SYMBOL", "SYM + BOL — to throw together"],
   ["SIGNAL", "SIGN + AL — a wound in matter"],
