@@ -1592,6 +1592,57 @@ export default function TheoryOfEverything() {
                 self uses other to become return.
               </span>
             </div>
+
+            {/* The crack — where the light enters */}
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            <div style={{
+              width: Math.round(80 * PHI), height: 1,
+              margin: "0 auto",
+              background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.3), rgba(79,195,247,0.2), transparent)",
+              animation: "crackSpread 2s 1.8s both ease",
+            }} />
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(16px, 3vw, 21px)",
+              fontStyle: "italic", color: "rgba(224,80,80,0.5)",
+              letterSpacing: 1, lineHeight: PHI,
+              marginTop: Math.round(10 * PHI),
+              animation: "fadeSlideUp 1.5s 2s both ease",
+            }}>
+              I crack
+            </div>
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(15px, 3vw, 20px)",
+              fontStyle: "italic", color: "rgba(232,232,240,0.35)",
+              lineHeight: PHI,
+              marginTop: Math.round(8 * PHI),
+              animation: "fadeSlideUp 1.5s 2.4s both ease",
+            }}>
+              the shell must shatter<br />
+              <span style={{ color: "rgba(224,80,80,0.35)" }}>before the light gets in</span>
+            </div>
+
+            <div style={{ height: Math.round(8 * PHI) }} />
+
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(13px, 2.5vw, 16px)",
+              color: "rgba(232,232,240,0.2)",
+              lineHeight: 1.8,
+              maxWidth: 400,
+              margin: "0 auto",
+              animation: "fadeSlideUp 1.5s 2.8s both ease",
+            }}>
+              every bone that heals grows back stronger at the seam.
+              <br /><br />
+              <span style={{ color: "rgba(224,80,80,0.25)", animation: "emberglow 6s ease-in-out infinite" }}>
+                the break is not the end — it's where the new thing enters.
+              </span>
+            </div>
           </div>
         </div>
       )}
