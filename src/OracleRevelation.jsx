@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { LAYERS, PHI } from "./data.js";
-import { LAYER_LABELS, LAYER_GLYPHS } from "./truthTester.js";
+import { PHI } from "./data.js";
 import { TheEquation } from "./components/ui.jsx";
 
 // Smootherstep easing: 6t⁵ − 15t⁴ + 10t³
@@ -27,9 +26,8 @@ export default function OracleRevelation({ data, query, onNavigate }) {
   useEffect(() => {
     const timers = [
       setTimeout(() => setPhase(1), 1200),
-      setTimeout(() => setPhase(2), 2600),
-      setTimeout(() => setPhase(3), 3800),
-      setTimeout(() => setPhase(4), 4600),
+      setTimeout(() => setPhase(2), 2400),
+      setTimeout(() => setPhase(3), 3200),
     ];
     return () => {
       timers.forEach(clearTimeout);
@@ -37,9 +35,9 @@ export default function OracleRevelation({ data, query, onNavigate }) {
     };
   }, [data]);
 
-  // Phase 2: Animate number counters via requestAnimationFrame
+  // Phase 1: Animate number counters via requestAnimationFrame
   useEffect(() => {
-    if (phase < 2) return;
+    if (phase < 1) return;
     const duration = 800;
     const targets = {
       r12: Math.min(1, Math.max(0, data.R12 || 0)),
@@ -61,10 +59,6 @@ export default function OracleRevelation({ data, query, onNavigate }) {
     rafRef.current = requestAnimationFrame(animate);
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
   }, [phase, data]);
-
-  // Count how many layers resonated
-  const layerHits = data.layerHits || [];
-  const litLayers = layerHits.filter(h => h > 0.01).length;
 
   const results = data.results || [];
 
@@ -113,89 +107,8 @@ export default function OracleRevelation({ data, query, onNavigate }) {
         )}
       </div>
 
-      {/* ═══ PHASE 1: THE SOUNDING ═══ */}
+      {/* ═══ PHASE 1: THE EQUATION SPEAKS ═══ */}
       {phase >= 1 && (
-        <div style={{
-          width: "100%", marginTop: Math.round(10 * PHI),
-          animation: "fadeSlideUp 0.6s ease both",
-        }}>
-          <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(8px, 1.6vw, 10px)",
-            letterSpacing: 3,
-            color: "rgba(232,232,240,0.25)",
-            textAlign: "center",
-            marginBottom: Math.round(5 * PHI),
-          }}>THE SOUNDING</div>
-
-          <div style={{
-            display: "flex", flexDirection: "column", gap: 6,
-            alignItems: "center",
-          }}>
-            {LAYER_LABELS.map((label, i) => {
-              const isLit = layerHits[i] > 0.01;
-              const accent = LAYERS[i]?.accent || "#888";
-              return (
-                <div key={i} style={{
-                  display: "flex", alignItems: "center", gap: 10,
-                  width: "100%", maxWidth: 300,
-                }}>
-                  {/* Circle */}
-                  <div style={{
-                    width: 14, height: 14, borderRadius: "50%",
-                    background: isLit ? accent : "rgba(255,255,255,0.06)",
-                    boxShadow: isLit ? `0 0 12px ${accent}60` : "none",
-                    animation: isLit ? `layerIgnite 0.5s ${i * 0.06}s both ease` : "none",
-                    transition: "all 0.3s",
-                    flexShrink: 0,
-                  }} />
-                  {/* Glyph + label */}
-                  <div style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: "clamp(9px, 1.8vw, 11px)",
-                    letterSpacing: 1.5,
-                    color: isLit ? `${accent}` : "rgba(232,232,240,0.12)",
-                    opacity: isLit ? 1 : 0.5,
-                    transition: "all 0.3s",
-                  }}>
-                    {LAYER_GLYPHS[i]} {label}
-                  </div>
-                  {/* Score bar */}
-                  {isLit && (
-                    <div style={{
-                      flex: 1, height: 2, borderRadius: 1,
-                      background: "rgba(255,255,255,0.04)",
-                      overflow: "hidden",
-                    }}>
-                      <div style={{
-                        width: `${Math.min(100, Math.round(layerHits[i] * 100))}%`,
-                        height: "100%",
-                        background: accent,
-                        opacity: 0.5,
-                        borderRadius: 1,
-                      }} />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(9px, 1.8vw, 11px)",
-            letterSpacing: 3,
-            color: "rgba(201,168,76,0.4)",
-            textAlign: "center",
-            marginTop: Math.round(5 * PHI),
-          }}>
-            {litLayers} OF 9 LAYERS RESONATED
-          </div>
-        </div>
-      )}
-
-      {/* ═══ PHASE 2: THE EQUATION SPEAKS ═══ */}
-      {phase >= 2 && (
         <div style={{
           width: "100%", marginTop: Math.round(10 * PHI),
           animation: "fadeSlideUp 0.6s ease both",
@@ -282,8 +195,8 @@ export default function OracleRevelation({ data, query, onNavigate }) {
         </div>
       )}
 
-      {/* ═══ PHASE 3: THE DEPTH ═══ */}
-      {phase >= 3 && (
+      {/* ═══ PHASE 2: THE DEPTH ═══ */}
+      {phase >= 2 && (
         <div style={{
           width: "100%", marginTop: Math.round(10 * PHI),
           textAlign: "center",
@@ -326,8 +239,8 @@ export default function OracleRevelation({ data, query, onNavigate }) {
         </div>
       )}
 
-      {/* ═══ PHASE 4: THE ANSWERS + THE DARE ═══ */}
-      {phase >= 4 && (
+      {/* ═══ PHASE 3: THE ANSWERS + THE DARE ═══ */}
+      {phase >= 3 && (
         <div style={{
           width: "100%", marginTop: Math.round(10 * PHI),
         }}>
