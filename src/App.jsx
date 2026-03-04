@@ -1404,7 +1404,7 @@ export default function TheoryOfEverything() {
           transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
           ...getDepthWrap(5),
         }}>
-          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease", position: "relative", zIndex: 5, maxWidth: 520, padding: "0 20px" }}>
+          <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease", position: "relative", zIndex: 5, width: "100%", maxWidth: 720, padding: "0 20px" }}>
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
