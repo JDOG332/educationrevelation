@@ -417,7 +417,7 @@ export default function TheoryOfEverything() {
       )}
 
       {/* ===== BINARY LANDING — Layer -2, two diverging rivers of light ===== */}
-      {currentPage === "theory" && depth === -2 && (
+      {currentPage === "theory" && depth === -2 && (<>
         <BinaryLandingCanvas onChoice={(path) => {
           if (path === "death-or-life") {
             setUserPath("ask");
@@ -433,7 +433,13 @@ export default function TheoryOfEverything() {
           }
           window.scrollTo(0, 0);
         }} />
-      )}
+        {/* Nav dissolves in on landing — golden ratio timing */}
+        <div style={{
+          animation: `fadeSlideUp ${PHI * 1000}ms ${PHI * PHI * 1000}ms both cubic-bezier(0.23,1,0.32,1)`,
+        }}>
+          <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} userPath={userPath} />
+        </div>
+      </>)}
 
       {/* ===== DIAMOND GENESIS — plays before MirrorGate on ASK path ===== */}
       {currentPage === "theory" && depth === -1 && !diamondPlayed && (
