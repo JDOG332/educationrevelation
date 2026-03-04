@@ -435,6 +435,7 @@ export default function TheoryOfEverything() {
         }} />
         {/* Nav dissolves in on landing — golden ratio timing */}
         <div style={{
+          position: "fixed", top: 0, right: 0, zIndex: 10200,
           animation: `fadeSlideUp ${PHI * 1000}ms ${PHI * PHI * 1000}ms both cubic-bezier(0.23,1,0.32,1)`,
         }}>
           <DepthIndicator depth={depth} onNavigate={navigateToDepth} depthNames={DEPTH_NAMES} userPath={userPath} />
