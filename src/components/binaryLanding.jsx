@@ -160,6 +160,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const [pairIndex, setPairIndex] = useState(0);
   const [searchHovered, setSearchHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
+  const [labelsHidden, setLabelsHidden] = useState(false);
 
   hoveredRef.current = hovered;
 
@@ -666,6 +667,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
         onMouseEnter={() => setSearchHovered(true)}
         onMouseLeave={() => { setSearchHovered(false); setMousePos({ x: -100, y: -100 }); }}
         onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
+        onClick={() => { if (!labelsHidden) setLabelsHidden(true); }}
         style={{
           position: "absolute", top: 0, left: 0, width: "66.67%", height: "100%",
           cursor: "none", zIndex: 3,
@@ -678,7 +680,11 @@ export default function BinaryLandingCanvas({ onChoice }) {
       )}
 
       {/* === Labels — vertical stack === */}
-      <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
+      <div style={{
+        position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4,
+        opacity: labelsHidden ? 0 : 1,
+        transition: `opacity ${CROSSFADE_MS}ms ${cubicEase}`,
+      }}>
         {/* Top — pair[0] (shadow/dark side) */}
         <div style={{
           position: "absolute", top: labelTopPos, left: "50%",
