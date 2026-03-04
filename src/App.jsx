@@ -1481,14 +1481,6 @@ export default function TheoryOfEverything() {
                 data={wikiResults}
                 loading={wikiLoading}
                 query={wikiInput}
-                onNavigate={(route) => {
-                  setActiveConvergence(route.convergence);
-                  setActiveSubcategory(route.subcategory || null);
-                  setActiveIdea(route.idea || null);
-                  setActiveFilterQ(route.filterQ !== undefined ? route.filterQ : null);
-                  setDepth(4);
-                  window.scrollTo({ top: 0, behavior: "instant" });
-                }}
               />
             )}
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { PHI } from "./data.js";
 
-export default function WikiRevelation({ data, loading, query, onNavigate }) {
+export default function WikiRevelation({ data, loading, query }) {
   // Loading state — thinking dots
   if (loading) {
     return (
@@ -124,71 +124,28 @@ export default function WikiRevelation({ data, loading, query, onNavigate }) {
         ))}
       </div>
 
-      {/* Next steps */}
-      {data.nextSteps && data.nextSteps.length > 0 && (
+      {/* Source link */}
+      {data.url && (
         <div style={{
-          width: "100%",
-          marginTop: Math.round(13 * PHI),
+          marginTop: Math.round(10 * PHI),
+          textAlign: "center",
           animation: `fadeSlideUp 0.6s ${data.points.length * 0.08 + 0.3}s both ease`,
         }}>
-          <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(8px, 1.6vw, 10px)",
-            letterSpacing: 3,
-            color: "rgba(79,195,247,0.25)",
-            marginBottom: Math.round(5 * PHI),
-            textAlign: "center",
-          }}>
-            EXPLORE DEEPER
-          </div>
-
-          <div style={{
-            display: "flex", flexDirection: "column",
-            gap: Math.round(3 * PHI),
-          }}>
-            {data.nextSteps.map((step, i) => (
-              <div
-                key={i}
-                onClick={() => onNavigate && onNavigate(step.route)}
-                style={{
-                  display: "flex", alignItems: "center", gap: 10,
-                  padding: `${Math.round(4 * PHI)}px ${Math.round(6 * PHI)}px`,
-                  background: "rgba(201,168,76,0.02)",
-                  border: "1px solid rgba(201,168,76,0.1)",
-                  borderRadius: Math.round(3 * PHI),
-                  cursor: "pointer",
-                  transition: "all 0.4s cubic-bezier(0.23,1,0.32,1)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(201,168,76,0.05)";
-                  e.currentTarget.style.borderColor = "rgba(201,168,76,0.2)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(201,168,76,0.02)";
-                  e.currentTarget.style.borderColor = "rgba(201,168,76,0.1)";
-                }}
-              >
-                <span style={{ fontSize: 16 }}>{step.emoji}</span>
-                <span style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontSize: "clamp(9px, 1.8vw, 11px)",
-                  letterSpacing: 2,
-                  color: "rgba(201,168,76,0.5)",
-                  textTransform: "uppercase",
-                }}>
-                  {step.title}
-                </span>
-                <span style={{
-                  marginLeft: "auto",
-                  fontFamily: "'Cinzel', serif",
-                  fontSize: 9, letterSpacing: 2,
-                  color: "rgba(201,168,76,0.25)",
-                }}>
-                  →
-                </span>
-              </div>
-            ))}
-          </div>
+          <a
+            href={data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(8px, 1.6vw, 10px)",
+              letterSpacing: 3,
+              color: "rgba(79,195,247,0.3)",
+              textDecoration: "none",
+              borderBottom: "1px solid rgba(79,195,247,0.15)",
+            }}
+          >
+            READ FULL ARTICLE →
+          </a>
         </div>
       )}
     </div>
