@@ -183,12 +183,12 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onBack }) {
    Renders REAL topic cards when data exists, placeholders when not
    ═══════════════════════════════════════════════════════════════ */
 
-export function SubcategoryView({ doorKey, subId, onBack }) {
+export function SubcategoryView({ doorKey, subId, onBack, initialOpenCard }) {
   const meta = DOOR_META[doorKey];
   const subs = SUBCATEGORIES[doorKey] || [];
   const sub = subs.find(s => s.id === subId);
   const cards = getTopicCards(doorKey, subId);
-  const [openCard, setOpenCard] = useState(null);
+  const [openCard, setOpenCard] = useState(initialOpenCard || null);
   const [openTier, setOpenTier] = useState("simple");
 
   if (!meta || !sub) return null;

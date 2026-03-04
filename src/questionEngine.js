@@ -38,7 +38,7 @@ function getCardIndex() {
           answer: card.simple,
           tokens,
           tokenCount: tokens.length,
-          route: { convergence: doorKey, subcategory: subKey },
+          route: { convergence: doorKey, subcategory: subKey, idea: card.id },
           icon: card.icon || null,
         });
       }

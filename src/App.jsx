@@ -1240,6 +1240,16 @@ export default function TheoryOfEverything() {
         />
       )}
 
+      {/* ===== DEEP-LINK — Jump straight to a specific card ===== */}
+      {depth === 4 && activeConvergence !== null && activeSubcategory !== null && activeIdea !== null && (
+        <SubcategoryView
+          doorKey={activeConvergence}
+          subId={activeSubcategory}
+          initialOpenCard={activeIdea}
+          onBack={() => { setActiveIdea(null); window.scrollTo(0,0); }}
+        />
+      )}
+
       {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
       {depth === 5 && (
         <div style={{
