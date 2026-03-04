@@ -1255,7 +1255,7 @@ export default function TheoryOfEverything() {
         />
       )}
 
-      {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
+      {/* ===== DEPTH 5 — SEARCH ===== */}
       {depth === 5 && (
         <div style={{
           minHeight: "100vh", width: "100%", position: "relative", overflow: "visible",
@@ -1267,52 +1267,7 @@ export default function TheoryOfEverything() {
           transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
           ...getDepthWrap(5),
         }}>
-          {/* Atmospheric crack lines — the fracture field */}
-          {[...Array(5)].map((_, i) => (
-            <div key={`crack-${i}`} style={{
-              position: "absolute",
-              top: `${18 + i * 16}%`,
-              left: "5%", right: "5%",
-              height: 1,
-              background: `linear-gradient(90deg, transparent ${10 + i * 5}%, rgba(224,80,80,0.${1 + i}) ${30 + i * 8}%, rgba(224,80,80,0.03) ${50 + i * 4}%, transparent ${75 + i * 3}%)`,
-              animation: `crackPulse ${4 + i * 1.8}s ${i * 0.7}s ease-in-out infinite`,
-              pointerEvents: "none",
-            }} />
-          ))}
-
-          {/* Rising embers — pain becomes light */}
-          {[...Array(isMobileDevice ? 6 : 12)].map((_, i) => (
-            <div key={`ember-${i}`} style={{
-              position: "absolute",
-              width: 2 + Math.random() * 3,
-              height: 2 + Math.random() * 3,
-              borderRadius: "50%",
-              background: `radial-gradient(circle, rgba(224,${80 + i * 12},${60 + i * 8},0.8), rgba(224,80,80,0.1))`,
-              left: `${8 + Math.random() * 84}%`,
-              bottom: "-5%",
-              animation: `depthEmber ${8 + Math.random() * 12}s ${i * 1.5}s ease-out infinite`,
-              pointerEvents: "none",
-            }} />
-          ))}
-
-          {/* Central radiance — the wound glows */}
-          <div style={{
-            position: "absolute", top: "50%", left: "50%",
-            width: "60vmin", height: "60vmin",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(224,80,80,0.04) 0%, rgba(224,60,60,0.015) 40%, transparent 70%)",
-            transform: "translate(-50%, -50%)",
-            animation: "breathe 8s ease-in-out infinite",
-            pointerEvents: "none",
-          }} />
-
           <div style={{ textAlign: "center", animation: "fadeSlideUp 1.2s ease", position: "relative", zIndex: 5, maxWidth: 520, padding: "0 20px" }}>
-            <div style={{
-              fontSize: "clamp(40px, 8vw, 60px)",
-              marginBottom: Math.round(8 * PHI),
-              animation: "gentleFloat 8s ease-in-out infinite",
-              filter: "drop-shadow(0 0 20px rgba(224,80,80,0.25))",
-            }}>⚡</div>
             <h2 style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
@@ -1320,55 +1275,13 @@ export default function TheoryOfEverything() {
               animation: "textManifest 1.8s 0.3s both ease",
             }}>SEARCH</h2>
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 3vw, 21px)",
-              fontStyle: "italic", color: "rgba(224,80,80,0.55)",
-              letterSpacing: 1, lineHeight: PHI,
-              marginTop: Math.round(5 * PHI),
-              animation: "fadeSlideUp 1.2s 0.6s both ease",
-            }}>I crack</div>
-            <div style={{
               width: Math.round(50 * PHI), height: 1,
-              margin: `${Math.round(8 * PHI)}px auto`,
-              background: "linear-gradient(90deg, transparent, rgba(224,80,80,0.35), transparent)",
-              animation: "crackSpread 2s 0.8s both ease",
+              margin: `${Math.round(12 * PHI)}px auto`,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent)",
             }} />
 
-            {/* The teaching — what the break means */}
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(15px, 3vw, 20px)",
-              fontStyle: "italic", color: "rgba(232,232,240,0.4)",
-              lineHeight: PHI,
-              marginTop: Math.round(8 * PHI),
-              animation: "fadeSlideUp 1.5s 1s both ease",
-            }}>
-              the shell must shatter<br />
-              <span style={{ color: "rgba(224,80,80,0.4)" }}>before the light gets in</span>
-            </div>
-
-            <div style={{ height: Math.round(13 * PHI) }} />
-
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(13px, 2.5vw, 16px)",
-              color: "rgba(232,232,240,0.2)",
-              lineHeight: 1.8,
-              maxWidth: 400,
-              margin: "0 auto",
-              animation: "fadeSlideUp 1.5s 1.4s both ease",
-            }}>
-              every bone that heals grows back stronger at the seam.
-              <br /><br />
-              <span style={{ color: "rgba(224,80,80,0.3)", animation: "emberglow 6s ease-in-out infinite" }}>
-                the break is not the end — it's where the new thing enters.
-              </span>
-            </div>
-
-            <div style={{ height: Math.round(21 * PHI) }} />
-
             {/* The Question — search bar */}
-            <div style={{ animation: "fadeSlideUp 1.5s 1.8s both ease", width: "100%" }}>
+            <div style={{ animation: "fadeSlideUp 1.5s 0.6s both ease", width: "100%", marginTop: Math.round(8 * PHI) }}>
               <input
                 type="text"
                 value={doorInput}
@@ -1389,21 +1302,21 @@ export default function TheoryOfEverything() {
                   fontSize: "clamp(11px, 2.2vw, 14px)",
                   letterSpacing: 3,
                   color: "rgba(232,232,240,0.85)",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(224,80,80,0.15)",
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(232,232,240,0.08)",
                   borderRadius: Math.round(4 * PHI),
                   outline: "none",
                   textAlign: "center",
                   transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
-                  boxShadow: "0 0 30px rgba(224,80,80,0.03), inset 0 0 20px rgba(0,0,0,0.3)",
+                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.3)",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(224,80,80,0.35)";
-                  e.target.style.boxShadow = "0 0 40px rgba(224,80,80,0.08), inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(201,168,76,0.25)";
+                  e.target.style.boxShadow = "0 0 30px rgba(201,168,76,0.04), inset 0 0 20px rgba(0,0,0,0.3)";
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(224,80,80,0.15)";
-                  e.target.style.boxShadow = "0 0 30px rgba(224,80,80,0.03), inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(232,232,240,0.08)";
+                  e.target.style.boxShadow = "inset 0 0 20px rgba(0,0,0,0.3)";
                 }}
               />
             </div>
@@ -1424,10 +1337,10 @@ export default function TheoryOfEverything() {
               />
             )}
 
-            <div style={{ height: Math.round(13 * PHI) }} />
+            <div style={{ height: Math.round(21 * PHI) }} />
 
             {/* ── WIKIPEDIA SEARCH BAR ── */}
-            <div style={{ animation: "fadeSlideUp 1.5s 2.2s both ease", width: "100%" }}>
+            <div style={{ animation: "fadeSlideUp 1.5s 1s both ease", width: "100%" }}>
               <input
                 type="text"
                 value={wikiInput}
@@ -1456,21 +1369,21 @@ export default function TheoryOfEverything() {
                   fontSize: "clamp(11px, 2.2vw, 14px)",
                   letterSpacing: 3,
                   color: "rgba(232,232,240,0.85)",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(79,195,247,0.15)",
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(232,232,240,0.08)",
                   borderRadius: Math.round(4 * PHI),
                   outline: "none",
                   textAlign: "center",
                   transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
-                  boxShadow: "0 0 30px rgba(79,195,247,0.03), inset 0 0 20px rgba(0,0,0,0.3)",
+                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.3)",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(79,195,247,0.35)";
-                  e.target.style.boxShadow = "0 0 40px rgba(79,195,247,0.08), inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(201,168,76,0.25)";
+                  e.target.style.boxShadow = "0 0 30px rgba(201,168,76,0.04), inset 0 0 20px rgba(0,0,0,0.3)";
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(79,195,247,0.15)";
-                  e.target.style.boxShadow = "0 0 30px rgba(79,195,247,0.03), inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(232,232,240,0.08)";
+                  e.target.style.boxShadow = "inset 0 0 20px rgba(0,0,0,0.3)";
                 }}
               />
             </div>
