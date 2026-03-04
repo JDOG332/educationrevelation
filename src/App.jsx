@@ -507,15 +507,16 @@ export default function TheoryOfEverything() {
                         e.preventDefault();
                         if (wikiInput.trim().length >= 2) {
                           setWikiLoading(true);
-                          fetchWiki(wikiInput)
+                          const fetchDone = fetchWiki(wikiInput)
                             .then((r) => { setWikiResults(r); setWikiLoading(false); })
                             .catch(() => { setWikiResults(null); setWikiLoading(false); });
+                          const dissolveDone = new Promise(r => setTimeout(r, Math.round(PHI * PHI * 1000)));
                           setLandingDissolving(true);
-                          setTimeout(() => {
+                          Promise.all([fetchDone, dissolveDone]).then(() => {
                             setDepth(5);
                             setLandingDissolving(false);
                             window.scrollTo(0, 0);
-                          }, Math.round(PHI * PHI * 1000));
+                          });
                         }
                       }
                     }}
