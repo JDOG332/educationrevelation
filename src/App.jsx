@@ -453,7 +453,7 @@ export default function TheoryOfEverything() {
                       }
                     }
                   }}
-                  placeholder="THE PROOF"
+                  placeholder="ASK the proof a question"
                   style={{
                     width: "100%",
                     padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
