@@ -551,10 +551,6 @@ export default function BinaryLandingCanvas({ onChoice }) {
       }} />
 
 
-      {/* === Full-page click zone === */}
-      <div onClick={() => handleChoice("search")}
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", cursor: "pointer", zIndex: 3 }} />
-
       {/* === Labels — vertical stack === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
         {/* Top — pair[0] (shadow/dark side) */}
