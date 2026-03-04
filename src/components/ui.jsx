@@ -92,7 +92,7 @@ export function DepthIndicator({ depth, onNavigate, depthNames, userPath }) {
             {/* Label — slides in on hover / expand */}
             <div style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: Math.round(5 * PHI), letterSpacing: 3,
+              fontSize: Math.round(6 * PHI), letterSpacing: 3,
               color: current
                 ? "rgba(201,168,76,0.95)"
                 : past
@@ -109,8 +109,8 @@ export function DepthIndicator({ depth, onNavigate, depthNames, userPath }) {
             </div>
             {/* Dot */}
             <div style={{
-              width: current ? Math.round(6 * PHI) : show ? 8 : Math.round(3 * PHI),
-              height: current ? Math.round(6 * PHI) : show ? 8 : Math.round(3 * PHI),
+              width: current ? Math.round(8 * PHI) : show ? 10 : 7,
+              height: current ? Math.round(8 * PHI) : show ? 10 : 7,
               borderRadius: "50%",
               flexShrink: 0,
               background: current
