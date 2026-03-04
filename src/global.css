@@ -155,6 +155,10 @@ html, body {
   50% { opacity: 0.3; transform: scale(0.65); filter: blur(3px); }
   100% { opacity: 0; transform: scale(0.25); filter: blur(4px); }
 }
+@keyframes dissolveToBlack {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 @keyframes rippleOverlay {
   0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
   45% { opacity: 0.12; }

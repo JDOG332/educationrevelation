@@ -87,6 +87,7 @@ export default function TheoryOfEverything() {
   const [wikiInput, setWikiInput] = useState("");
   const [wikiResults, setWikiResults] = useState(null);
   const [wikiLoading, setWikiLoading] = useState(false);
+  const [landingDissolving, setLandingDissolving] = useState(false);
   // Stable particle seeds — generated once, never re-randomized on re-render
   const mathParticles = useMemo(() =>
     Array.from({ length: 16 }, (_, i) => ({
@@ -418,7 +419,7 @@ export default function TheoryOfEverything() {
 
       {/* ===== BINARY LANDING — Layer -2, two diverging rivers of light ===== */}
       {currentPage === "theory" && depth === -2 && (<>
-        <BinaryLandingCanvas onChoice={(path) => {
+        <BinaryLandingCanvas landingDissolving={landingDissolving} onChoice={(path) => {
           if (path === "death-or-life") {
             setUserPath("ask");
             setSkipIntro(true);
@@ -452,6 +453,12 @@ export default function TheoryOfEverything() {
                         e.preventDefault();
                         if (doorInput.trim().length >= 3) {
                           setQuestionResults(findAnswers(doorInput));
+                          setLandingDissolving(true);
+                          setTimeout(() => {
+                            setDepth(5);
+                            setLandingDissolving(false);
+                            window.scrollTo(0, 0);
+                          }, Math.round(PHI * PHI * 1000));
                         }
                       }
                     }}
@@ -501,6 +508,12 @@ export default function TheoryOfEverything() {
                         if (wikiInput.trim().length >= 2) {
                           setWikiLoading(true);
                           fetchWiki(wikiInput).then((r) => { setWikiResults(r); setWikiLoading(false); });
+                          setLandingDissolving(true);
+                          setTimeout(() => {
+                            setDepth(5);
+                            setLandingDissolving(false);
+                            window.scrollTo(0, 0);
+                          }, Math.round(PHI * PHI * 1000));
                         }
                       }
                     }}
@@ -535,6 +548,15 @@ export default function TheoryOfEverything() {
             </>
           }
         />
+        {/* Dissolve-to-black overlay when search submitted */}
+        {landingDissolving && (
+          <div style={{
+            position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
+            background: "#000",
+            zIndex: 99999,
+            animation: `dissolveToBlack ${PHI * PHI * 1000}ms cubic-bezier(0.23,1,0.32,1) both`,
+          }} />
+        )}
         {/* Nav dissolves in on landing — golden ratio timing */}
         <div style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 10200,

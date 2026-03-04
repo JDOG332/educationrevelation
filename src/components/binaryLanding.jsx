@@ -146,7 +146,7 @@ function InfinityCursor({ x, y }) {
   );
 }
 
-export default function BinaryLandingCanvas({ onChoice, searchOverlay }) {
+export default function BinaryLandingCanvas({ onChoice, searchOverlay, landingDissolving }) {
   const canvasRef = useRef(null);
   const frameRef = useRef(null);
   const hoveredRef = useRef(null);
@@ -640,8 +640,9 @@ export default function BinaryLandingCanvas({ onChoice, searchOverlay }) {
     <div style={{
       position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
       background: "#000000", zIndex: 10001,
-      opacity: dissolving ? 0 : 1,
-      transition: `opacity ${DISSOLVE_MS}ms ${cubicEase}`,
+      opacity: (dissolving || landingDissolving) ? 0 : 1,
+      filter: landingDissolving ? "blur(8px)" : "blur(0px)",
+      transition: `all ${landingDissolving ? PHI * PHI * 1000 : DISSOLVE_MS}ms ${cubicEase}`,
     }}>
       <canvas ref={canvasRef} style={{
         position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
