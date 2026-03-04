@@ -3,7 +3,7 @@ export const PHI_INV = 0.618;
 export const PHI2 = PHI * PHI; // 2.618
 export const PHI3 = PHI * PHI * PHI; // 4.236
 
-export const DEPTH_NAMES = ["THE VOID", "DEATH OR LIFE", "RHYTHM OF LIFE", "THE PACT", "THE PROOF", "QUESTIONING", "THE SELF", "THE OTHER", "THE RETURN", "THE MIRROR"];
+export const DEPTH_NAMES = ["THE VOID", "DEATH OR LIFE", "RHYTHM OF LIFE", "THE PACT", "THE PROOF", "SEARCH", "THE SELF", "THE OTHER", "THE RETURN", "THE MIRROR"];
 
 export const DEPTH_ATMOSPHERES = [
   "radial-gradient(ellipse at 50% 30%, rgba(14,10,28,1) 0%, #030306 80%)",     // 0 void — I want

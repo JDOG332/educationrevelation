@@ -1318,7 +1318,7 @@ export default function TheoryOfEverything() {
               fontSize: "clamp(26px, 5.5vw, 38px)", fontWeight: 400,
               color: "#e8e8f0", letterSpacing: "0.35em", margin: 0,
               animation: "textManifest 1.8s 0.3s both ease",
-            }}>THE QUESTIONING</h2>
+            }}>SEARCH</h2>
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 3vw, 21px)",
