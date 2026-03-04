@@ -140,31 +140,23 @@ const API = "https://en.wikipedia.org/w/api.php";
 export async function fetchWiki(query) {
   if (!query || query.trim().length < 2) return null;
 
-  // Extract keywords — strip stop words so full sentences still find articles
+  // Extract keywords — strip stop words so full sentences find the right article
   const keywords = stripStop(tokenize(query));
+  const searchTerm = keywords.length > 0 ? keywords.join(" ") : query.trim();
 
-  // Try progressively shorter keyword combos until Wikipedia finds a match
-  // "people worked egyptian pyramids" → "worked egyptian pyramids" → "egyptian pyramids" → ...
-  const candidates = keywords.length > 0
-    ? [...Array(keywords.length)].map((_, i) => keywords.slice(i).join(" ")).concat([query.trim()])
-    : [query.trim()];
+  // Step 1: Full-text search — handles natural language far better than OpenSearch
+  const searchUrl = new URL(API);
+  searchUrl.searchParams.set("action", "query");
+  searchUrl.searchParams.set("list", "search");
+  searchUrl.searchParams.set("srsearch", searchTerm);
+  searchUrl.searchParams.set("srlimit", "1");
+  searchUrl.searchParams.set("format", "json");
+  searchUrl.searchParams.set("origin", "*");
 
-  let title = null;
-  for (const term of candidates) {
-    if (term.length < 2) continue;
-    const searchUrl = new URL(API);
-    searchUrl.searchParams.set("action", "opensearch");
-    searchUrl.searchParams.set("search", term);
-    searchUrl.searchParams.set("limit", "1");
-    searchUrl.searchParams.set("format", "json");
-    searchUrl.searchParams.set("origin", "*");
-
-    const searchRes = await fetch(searchUrl);
-    if (!searchRes.ok) continue;
-    const searchData = await searchRes.json();
-    title = searchData[1]?.[0];
-    if (title) break;
-  }
+  const searchRes = await fetch(searchUrl);
+  if (!searchRes.ok) return { title: query, url: null, points: [] };
+  const searchData = await searchRes.json();
+  const title = searchData.query?.search?.[0]?.title;
   if (!title) return { title: query, url: null, points: [] };
 
   // Step 2: Fetch full article extract
