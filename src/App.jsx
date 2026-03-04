@@ -434,53 +434,105 @@ export default function TheoryOfEverything() {
           window.scrollTo(0, 0);
         }}
           searchOverlay={
-            <div style={{
-              position: "absolute", top: `${Math.pow(PHI_INV, 4) * 100}%`, left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "100%", maxWidth: 520, padding: "0 20px",
-              pointerEvents: "auto",
-            }}>
-              <div style={{ animation: `fadeSlideUp ${PHI * PHI * 1000}ms cubic-bezier(0.23,1,0.32,1) both` }}>
-                <input
-                  type="text"
-                  value={doorInput}
-                  onChange={(e) => { setDoorInput(e.target.value); setQuestionResults(null); }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      if (doorInput.trim().length >= 3) {
-                        setQuestionResults(findAnswers(doorInput));
+            <>
+              {/* Top: ASK THE MULTIVERSE (THE PROOF search) */}
+              <div style={{
+                position: "absolute", top: `${Math.pow(PHI_INV, 4) * 100}%`, left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "100%", maxWidth: 520, padding: "0 20px",
+                pointerEvents: "auto",
+              }}>
+                <div style={{ animation: `fadeSlideUp ${PHI * PHI * 1000}ms cubic-bezier(0.23,1,0.32,1) both` }}>
+                  <input
+                    type="text"
+                    value={doorInput}
+                    onChange={(e) => { setDoorInput(e.target.value); setQuestionResults(null); }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        if (doorInput.trim().length >= 3) {
+                          setQuestionResults(findAnswers(doorInput));
+                        }
                       }
-                    }
-                  }}
-                  placeholder="ASK THE MULTIVERSE"
-                  style={{
-                    width: "100%",
-                    padding: `${Math.round(10 * PHI)}px ${Math.round(14 * PHI)}px`,
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: "clamp(14px, 3vw, 20px)",
-                    fontWeight: 700,
-                    letterSpacing: 4,
-                    color: "rgba(232,232,240,0.95)",
-                    background: "rgba(0,0,0,0.5)",
-                    border: "1px solid rgba(201,168,76,0.3)",
-                    borderRadius: Math.round(4 * PHI),
-                    outline: "none",
-                    textAlign: "center",
-                    transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
-                    boxShadow: "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)",
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = "rgba(201,168,76,0.5)";
-                    e.target.style.boxShadow = "0 0 60px rgba(201,168,76,0.15), inset 0 0 30px rgba(0,0,0,0.5)";
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "rgba(201,168,76,0.3)";
-                    e.target.style.boxShadow = "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)";
-                  }}
-                />
+                    }}
+                    placeholder="ASK THE MULTIVERSE"
+                    style={{
+                      width: "100%",
+                      padding: `${Math.round(10 * PHI)}px ${Math.round(14 * PHI)}px`,
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: "clamp(14px, 3vw, 20px)",
+                      fontWeight: 700,
+                      letterSpacing: 4,
+                      color: "rgba(232,232,240,0.95)",
+                      background: "rgba(0,0,0,0.5)",
+                      border: "1px solid rgba(201,168,76,0.3)",
+                      borderRadius: Math.round(4 * PHI),
+                      outline: "none",
+                      textAlign: "center",
+                      transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
+                      boxShadow: "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)",
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = "rgba(201,168,76,0.5)";
+                      e.target.style.boxShadow = "0 0 60px rgba(201,168,76,0.15), inset 0 0 30px rgba(0,0,0,0.5)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = "rgba(201,168,76,0.3)";
+                      e.target.style.boxShadow = "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)";
+                    }}
+                  />
+                </div>
               </div>
-            </div>
+              {/* Bottom: ASK THE HUMANS (Wikipedia search) */}
+              <div style={{
+                position: "absolute", top: `${(1 - Math.pow(PHI_INV, 4)) * 100}%`, left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "100%", maxWidth: 520, padding: "0 20px",
+                pointerEvents: "auto",
+              }}>
+                <div style={{ animation: `fadeSlideUp ${PHI * PHI * 1000}ms ${PHI * 1000}ms cubic-bezier(0.23,1,0.32,1) both` }}>
+                  <input
+                    type="text"
+                    value={wikiInput}
+                    onChange={(e) => { setWikiInput(e.target.value); setWikiResults(null); }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        if (wikiInput.trim().length >= 2) {
+                          setWikiLoading(true);
+                          fetchWiki(wikiInput).then((r) => { setWikiResults(r); setWikiLoading(false); });
+                        }
+                      }
+                    }}
+                    placeholder="ASK THE HUMANS"
+                    style={{
+                      width: "100%",
+                      padding: `${Math.round(10 * PHI)}px ${Math.round(14 * PHI)}px`,
+                      fontFamily: "'Cinzel', serif",
+                      fontSize: "clamp(14px, 3vw, 20px)",
+                      fontWeight: 700,
+                      letterSpacing: 4,
+                      color: "rgba(232,232,240,0.95)",
+                      background: "rgba(0,0,0,0.5)",
+                      border: "1px solid rgba(201,168,76,0.3)",
+                      borderRadius: Math.round(4 * PHI),
+                      outline: "none",
+                      textAlign: "center",
+                      transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
+                      boxShadow: "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)",
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = "rgba(201,168,76,0.5)";
+                      e.target.style.boxShadow = "0 0 60px rgba(201,168,76,0.15), inset 0 0 30px rgba(0,0,0,0.5)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = "rgba(201,168,76,0.3)";
+                      e.target.style.boxShadow = "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)";
+                    }}
+                  />
+                </div>
+              </div>
+            </>
           }
         />
         {/* Nav dissolves in on landing — golden ratio timing */}
