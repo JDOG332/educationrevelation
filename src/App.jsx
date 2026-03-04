@@ -1589,7 +1589,7 @@ export default function TheoryOfEverything() {
               <br /><br />
               <span style={{ color: "rgba(79,195,247,0.3)" }}>
                 7 uses 8 to become 9.<br />
-                self uses other to become return.
+                self uses other to learn about self.
               </span>
             </div>
 
