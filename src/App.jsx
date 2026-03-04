@@ -8,11 +8,8 @@ import MirrorGate from "./MirrorGate.jsx";
 import "./global.css";
 import {
   PHI, PHI_INV, PHI2, PHI3,
-  LAYERS, CORES, MIRRORS, BURIED,
-  THREE_PILLARS,
-  CONVERGENCE_DEPTHS, DEPTH_NAMES, DEPTH_ATMOSPHERES,
+  DEPTH_NAMES, DEPTH_ATMOSPHERES,
   POEMS, ASK_POEMS,
-  SAMENESS_TRUTH,
 } from "./data.js";
 import {
   GrainOverlay, DepthIndicator, Particle,
@@ -41,15 +38,6 @@ export default function TheoryOfEverything() {
     activeFilterQ: null,
     activeIdea: null,
     activeSubcategory: null,
-    activePillar: null,
-    activeSamenessProof: null,
-    activeAnswer: false,
-    activeAnswerProof: null,
-    activeBefore: false,
-    activeBeforeProof: null,
-    activeConstants: false,
-    activeConstantsProof: null,
-    openSection: null,
     goldenFlood: false,
   };
   const uiReducer = (state, action) => {
@@ -69,22 +57,11 @@ export default function TheoryOfEverything() {
   const setActiveFilterQ = (v) => dispatch({ type: 'SET', key: 'activeFilterQ', value: v });
   const setActiveIdea = (v) => dispatch({ type: 'SET', key: 'activeIdea', value: v });
   const setActiveSubcategory = (v) => dispatch({ type: 'SET', key: 'activeSubcategory', value: v });
-  const setActivePillar = (v) => dispatch({ type: 'SET', key: 'activePillar', value: v });
-  const setActiveSamenessProof = (v) => dispatch({ type: 'SET', key: 'activeSamenessProof', value: v });
-  const setActiveAnswer = (v) => dispatch({ type: 'SET', key: 'activeAnswer', value: v });
-  const setActiveAnswerProof = (v) => dispatch({ type: 'SET', key: 'activeAnswerProof', value: v });
-  const setActiveBefore = (v) => dispatch({ type: 'SET', key: 'activeBefore', value: v });
-  const setActiveBeforeProof = (v) => dispatch({ type: 'SET', key: 'activeBeforeProof', value: v });
-  const setActiveConstants = (v) => dispatch({ type: 'SET', key: 'activeConstants', value: v });
-  const setActiveConstantsProof = (v) => dispatch({ type: 'SET', key: 'activeConstantsProof', value: v });
-  const setOpenSection = (v) => dispatch({ type: 'SET', key: 'openSection', value: v });
   const setGoldenFlood = (v) => dispatch({ type: 'SET', key: 'goldenFlood', value: v });
 
   // Destructure for existing code compatibility
   const { activeLayer, activePair, activeConvergence, activeFilterQ, activeIdea,
-    activeSubcategory, activePillar, activeSamenessProof, activeAnswer, activeAnswerProof,
-    activeBefore, activeBeforeProof, activeConstants, activeConstantsProof,
-    openSection, goldenFlood } = ui;
+    activeSubcategory, goldenFlood } = ui;
   const [fading, setFading] = useState(false);
   // Waterfall transition system
   const [transitioning, setTransitioning] = useState(false);
