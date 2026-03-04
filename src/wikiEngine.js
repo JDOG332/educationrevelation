@@ -141,22 +141,30 @@ export async function fetchWiki(query) {
   if (!query || query.trim().length < 2) return null;
 
   // Extract keywords — strip stop words so full sentences still find articles
-  // "How many people worked on the Egyptian Pyramids" → "people worked egyptian pyramids"
   const keywords = stripStop(tokenize(query));
-  const searchTerm = keywords.length > 0 ? keywords.join(" ") : query.trim();
 
-  // Step 1: Search for best matching article title
-  const searchUrl = new URL(API);
-  searchUrl.searchParams.set("action", "opensearch");
-  searchUrl.searchParams.set("search", searchTerm);
-  searchUrl.searchParams.set("limit", "1");
-  searchUrl.searchParams.set("format", "json");
-  searchUrl.searchParams.set("origin", "*");
+  // Try progressively shorter keyword combos until Wikipedia finds a match
+  // "people worked egyptian pyramids" → "worked egyptian pyramids" → "egyptian pyramids" → ...
+  const candidates = keywords.length > 0
+    ? [...Array(keywords.length)].map((_, i) => keywords.slice(i).join(" ")).concat([query.trim()])
+    : [query.trim()];
 
-  const searchRes = await fetch(searchUrl);
-  if (!searchRes.ok) return { title: query, url: null, points: [] };
-  const searchData = await searchRes.json();
-  const title = searchData[1]?.[0];
+  let title = null;
+  for (const term of candidates) {
+    if (term.length < 2) continue;
+    const searchUrl = new URL(API);
+    searchUrl.searchParams.set("action", "opensearch");
+    searchUrl.searchParams.set("search", term);
+    searchUrl.searchParams.set("limit", "1");
+    searchUrl.searchParams.set("format", "json");
+    searchUrl.searchParams.set("origin", "*");
+
+    const searchRes = await fetch(searchUrl);
+    if (!searchRes.ok) continue;
+    const searchData = await searchRes.json();
+    title = searchData[1]?.[0];
+    if (title) break;
+  }
   if (!title) return { title: query, url: null, points: [] };
 
   // Step 2: Fetch full article extract
