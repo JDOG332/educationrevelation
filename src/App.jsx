@@ -430,6 +430,8 @@ export default function TheoryOfEverything() {
             setUserPath("explore");
             setSkipIntro(true);
             setDepth(2);
+          } else if (path === "search") {
+            setDepth(5);
           }
           window.scrollTo(0, 0);
         }} />
