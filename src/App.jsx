@@ -1258,12 +1258,13 @@ export default function TheoryOfEverything() {
       {/* ===== DEPTH 5 — THE BREAK — I crack ===== */}
       {depth === 5 && (
         <div style={{
-          height: "100vh", width: "100%", position: "relative", overflowX: "hidden",
+          minHeight: "100vh", width: "100%", position: "relative", overflowX: "hidden",
           zIndex: 1500,
           display: "flex", flexDirection: "column", alignItems: "center",
-          justifyContent: questionResults?.results?.length > 0 ? "flex-start" : "center",
-          paddingTop: questionResults?.results?.length > 0 ? "8vh" : 0,
-          overflowY: questionResults?.results?.length > 0 ? "auto" : "hidden",
+          justifyContent: (questionResults?.results?.length > 0 || wikiResults || wikiLoading) ? "flex-start" : "center",
+          paddingTop: (questionResults?.results?.length > 0 || wikiResults || wikiLoading) ? "8vh" : 0,
+          paddingBottom: (wikiResults || wikiLoading) ? "8vh" : 0,
+          overflowY: "auto",
           transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
           ...getDepthWrap(5),
         }}>
