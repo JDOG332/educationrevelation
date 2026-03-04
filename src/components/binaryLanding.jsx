@@ -38,7 +38,7 @@ function rgbaStr(c, a) {
   return `rgba(${Math.round(c.r)},${Math.round(c.g)},${Math.round(c.b)},${a})`;
 }
 
-export default function BinaryLandingCanvas({ onChoice, onSearchHover, searchOverlay }) {
+export default function BinaryLandingCanvas({ onChoice }) {
   const canvasRef = useRef(null);
   const frameRef = useRef(null);
   const hoveredRef = useRef(null);
@@ -50,12 +50,6 @@ export default function BinaryLandingCanvas({ onChoice, onSearchHover, searchOve
   const [dissolving, setDissolving] = useState(false);
   const [hovered, setHovered] = useState(null);
   const [pairIndex, setPairIndex] = useState(0);
-  const [searchHovered, setSearchHovered] = useState(false);
-
-  const handleSearchHover = useCallback((val) => {
-    setSearchHovered(val);
-    onSearchHover?.(val);
-  }, [onSearchHover]);
 
   hoveredRef.current = hovered;
 
@@ -557,23 +551,14 @@ export default function BinaryLandingCanvas({ onChoice, onSearchHover, searchOve
       }} />
 
 
-      {/* === Left 2/3 hover zone — reveals search bars === */}
-      <div
-        onMouseEnter={() => handleSearchHover(true)}
-        onMouseLeave={() => handleSearchHover(false)}
-        style={{ position: "absolute", top: 0, left: 0, width: "66.67%", height: "100%",
-                 cursor: searchHovered ? "text" : "default", zIndex: 3 }}
-      />
-
       {/* === Labels — vertical stack === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
-        {/* Top — pair[0] (shadow/dark side) — fades out when search hovered */}
+        {/* Top — pair[0] (shadow/dark side) */}
         <div style={{
           position: "absolute", top: labelTopPos, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "top" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          opacity: searchHovered ? 0 : 1,
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
@@ -592,19 +577,14 @@ export default function BinaryLandingCanvas({ onChoice, onSearchHover, searchOve
           </div>
         </div>
 
-        {/* Center — KNOWLEDGE word or SEARCH when hovered */}
+        {/* Center — KNOWLEDGE word (on the Sephirot) */}
         <div style={{
           position: "absolute", top: "50%", left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "center" ? "scale(1.06)" : "scale(1)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
         }}>
-          {/* Rotating words — fade out when search hovered */}
-          <div style={{
-            animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both`,
-            opacity: searchHovered ? 0 : 1,
-            transition: `opacity ${CROSSFADE_MS}ms ${cubicEase}`,
-          }}>
+          <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
               ...labelFont,
               color: `rgba(232,232,240,${hovered === "center" ? alphaHover : alphaAnchor})`,
@@ -619,24 +599,14 @@ export default function BinaryLandingCanvas({ onChoice, onSearchHover, searchOve
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap",
             }}>{isEven ? kPrev : kWord}</div>
           </div>
-          {/* SEARCH — fades in when search hovered */}
-          <div style={{
-            ...labelFont,
-            color: `rgba(232,232,240,${alphaAnchor})`,
-            position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-            opacity: searchHovered ? 1 : 0,
-            transition: `opacity ${CROSSFADE_MS}ms ${cubicEase}`,
-            whiteSpace: "nowrap",
-          }}>SEARCH</div>
         </div>
 
-        {/* Bottom — pair[1] (light/active side) — fades out when search hovered */}
+        {/* Bottom — pair[1] (light/active side) */}
         <div style={{
           position: "absolute", top: labelBotPos, left: "50%",
           transform: `translate(-50%, -50%) ${hovered === "bottom" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
           transition: `all ${CROSSFADE_MS}ms ${cubicEase}`,
           textAlign: "center",
-          opacity: searchHovered ? 0 : 1,
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
@@ -654,9 +624,6 @@ export default function BinaryLandingCanvas({ onChoice, onSearchHover, searchOve
             }}>{isEven ? prevPair[1] : pair[1]}</div>
           </div>
         </div>
-
-        {/* Search bar overlay — rendered from App.jsx */}
-        {searchOverlay}
       </div>
     </div>
   );
