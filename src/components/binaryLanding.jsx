@@ -38,6 +38,114 @@ function rgbaStr(c, a) {
   return `rgba(${Math.round(c.r)},${Math.round(c.g)},${Math.round(c.b)},${a})`;
 }
 
+/* Infinity cursor — flowing glowing lemniscate, same palette as the tree */
+function InfinityCursor({ x, y }) {
+  const ref = useRef(null);
+  const frameRef2 = useRef(null);
+
+  useEffect(() => {
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const W = 80, H = 44;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const CX = W / 2, CY = H / 2;
+    const A = 26, B = 12; // lemniscate radii
+
+    // Lemniscate of Bernoulli parametric: x = a*cos(t)/(1+sin²(t)), y = a*sin(t)*cos(t)/(1+sin²(t))
+    function lemniscate(t) {
+      const s = Math.sin(t), c = Math.cos(t);
+      const d = 1 + s * s;
+      return { x: CX + A * c / d, y: CY + B * s * c / d };
+    }
+
+    // Create flowing particles
+    const PCOUNT = 24;
+    const particles = [];
+    for (let i = 0; i < PCOUNT; i++) {
+      const side = Math.random() < 0.5 ? 0 : 1;
+      particles.push({
+        t: (i / PCOUNT) * Math.PI * 2,
+        speed: (0.015 + Math.random() * 0.01) * PHI,
+        size: 1 + Math.random() * 2,
+        alpha: 0.4 + Math.random() * 0.5,
+        colorMix: Math.random(), // 0=gold, 1=blue
+      });
+    }
+
+    function draw(now) {
+      ctx.clearRect(0, 0, W, H);
+
+      // Draw the infinity path — glow pass
+      ctx.beginPath();
+      for (let i = 0; i <= 200; i++) {
+        const t = (i / 200) * Math.PI * 2;
+        const p = lemniscate(t);
+        i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = "rgba(201,168,76,0.12)";
+      ctx.lineWidth = 5;
+      ctx.stroke();
+
+      // Core pass
+      ctx.beginPath();
+      for (let i = 0; i <= 200; i++) {
+        const t = (i / 200) * Math.PI * 2;
+        const p = lemniscate(t);
+        i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = "rgba(201,168,76,0.25)";
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // Draw & update particles
+      ctx.globalCompositeOperation = "lighter";
+      const breath = 0.7 + 0.3 * Math.sin(now * 0.002 * PHI);
+      for (const p of particles) {
+        p.t += p.speed;
+        const pos = lemniscate(p.t);
+        const gold = { r: 201, g: 168, b: 76 };
+        const blue = { r: 140, g: 160, b: 220 };
+        const white = { r: 232, g: 232, b: 240 };
+        const c = p.colorMix < 0.5
+          ? lerpColor(gold, white, p.colorMix * 2)
+          : lerpColor(white, blue, (p.colorMix - 0.5) * 2);
+        const a = p.alpha * breath;
+
+        // Glow
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, p.size * 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = rgbaStr(c, a * 0.15);
+        ctx.fill();
+        // Core
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = rgbaStr(c, a * 0.7);
+        ctx.fill();
+      }
+      ctx.globalCompositeOperation = "source-over";
+
+      frameRef2.current = requestAnimationFrame(draw);
+    }
+    frameRef2.current = requestAnimationFrame(draw);
+    return () => cancelAnimationFrame(frameRef2.current);
+  }, []);
+
+  return (
+    <canvas ref={ref} style={{
+      position: "fixed", left: x - 40, top: y - 22,
+      width: 80, height: 44,
+      pointerEvents: "none", zIndex: 10300,
+    }} />
+  );
+}
+
 export default function BinaryLandingCanvas({ onChoice }) {
   const canvasRef = useRef(null);
   const frameRef = useRef(null);
@@ -566,59 +674,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
 
       {/* Tetraprism cursor — follows mouse in left 2/3 zone */}
       {searchHovered && (
-        <div style={{
-          position: "fixed", left: mousePos.x, top: mousePos.y,
-          transform: "translate(-50%, -50%)",
-          pointerEvents: "none", zIndex: 10300,
-        }}>
-          {/* Outer glow */}
-          <div style={{
-            position: "absolute", top: "50%", left: "50%",
-            width: 80, height: 80,
-            transform: "translate(-50%, -50%)",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 40%, transparent 70%)",
-            animation: `breathe ${PHI * 4}s ease-in-out infinite`,
-          }} />
-          {/* Rotating tetraprism — 3 triangular faces sharing apex */}
-          <div style={{
-            width: 36, height: Math.round(18 * PHI),
-            animation: `tetraSpin ${PHI * 5}s linear infinite`,
-            transformStyle: "preserve-3d",
-            position: "relative",
-          }}>
-            {/* Face 1 — gold */}
-            <div style={{
-              position: "absolute", top: 0, left: 0, width: 0, height: 0,
-              borderLeft: "18px solid transparent",
-              borderRight: "18px solid transparent",
-              borderBottom: `${Math.round(18 * PHI)}px solid rgba(201,168,76,0.5)`,
-              filter: "drop-shadow(0 0 6px rgba(201,168,76,0.4))",
-              transformOrigin: "18px 0",
-              transform: "rotateY(0deg) translateZ(10px)",
-            }} />
-            {/* Face 2 — white */}
-            <div style={{
-              position: "absolute", top: 0, left: 0, width: 0, height: 0,
-              borderLeft: "18px solid transparent",
-              borderRight: "18px solid transparent",
-              borderBottom: `${Math.round(18 * PHI)}px solid rgba(232,232,240,0.3)`,
-              filter: "drop-shadow(0 0 6px rgba(232,232,240,0.2))",
-              transformOrigin: "18px 0",
-              transform: "rotateY(120deg) translateZ(10px)",
-            }} />
-            {/* Face 3 — blue */}
-            <div style={{
-              position: "absolute", top: 0, left: 0, width: 0, height: 0,
-              borderLeft: "18px solid transparent",
-              borderRight: "18px solid transparent",
-              borderBottom: `${Math.round(18 * PHI)}px solid rgba(140,160,220,0.35)`,
-              filter: "drop-shadow(0 0 6px rgba(140,160,220,0.25))",
-              transformOrigin: "18px 0",
-              transform: "rotateY(240deg) translateZ(10px)",
-            }} />
-          </div>
-        </div>
+        <InfinityCursor x={mousePos.x} y={mousePos.y} />
       )}
 
       {/* === Labels — vertical stack === */}
