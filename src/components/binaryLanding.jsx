@@ -50,6 +50,8 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const [dissolving, setDissolving] = useState(false);
   const [hovered, setHovered] = useState(null);
   const [pairIndex, setPairIndex] = useState(0);
+  const [searchHovered, setSearchHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
 
   hoveredRef.current = hovered;
 
@@ -550,6 +552,71 @@ export default function BinaryLandingCanvas({ onChoice }) {
         pointerEvents: "none", zIndex: 1,
       }} />
 
+
+      {/* === Left 2/3 hover zone === */}
+      <div
+        onMouseEnter={() => setSearchHovered(true)}
+        onMouseLeave={() => { setSearchHovered(false); setMousePos({ x: -100, y: -100 }); }}
+        onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
+        style={{
+          position: "absolute", top: 0, left: 0, width: "66.67%", height: "100%",
+          cursor: "none", zIndex: 3,
+        }}
+      />
+
+      {/* Tetraprism cursor — follows mouse in left 2/3 zone */}
+      {searchHovered && (
+        <div style={{
+          position: "fixed", left: mousePos.x, top: mousePos.y,
+          transform: "translate(-50%, -50%)",
+          pointerEvents: "none", zIndex: 10300,
+        }}>
+          {/* Outer glow */}
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            width: 40, height: 40,
+            transform: "translate(-50%, -50%)",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 40%, transparent 70%)",
+            animation: `breathe ${PHI * 4}s ease-in-out infinite`,
+          }} />
+          {/* Rotating tetraprism — 3 triangular faces */}
+          <div style={{
+            width: 18, height: 18,
+            animation: `tetraSpin ${PHI * 5}s linear infinite`,
+            transformStyle: "preserve-3d",
+            position: "relative",
+          }}>
+            {/* Face 1 */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, width: 0, height: 0,
+              borderLeft: "9px solid transparent",
+              borderRight: "9px solid transparent",
+              borderBottom: `${Math.round(9 * PHI)}px solid rgba(201,168,76,0.5)`,
+              filter: "drop-shadow(0 0 4px rgba(201,168,76,0.4))",
+              transform: "rotateY(0deg) translateZ(5px)",
+            }} />
+            {/* Face 2 */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, width: 0, height: 0,
+              borderLeft: "9px solid transparent",
+              borderRight: "9px solid transparent",
+              borderBottom: `${Math.round(9 * PHI)}px solid rgba(232,232,240,0.3)`,
+              filter: "drop-shadow(0 0 4px rgba(232,232,240,0.2))",
+              transform: "rotateY(120deg) translateZ(5px)",
+            }} />
+            {/* Face 3 */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, width: 0, height: 0,
+              borderLeft: "9px solid transparent",
+              borderRight: "9px solid transparent",
+              borderBottom: `${Math.round(9 * PHI)}px solid rgba(140,160,220,0.35)`,
+              filter: "drop-shadow(0 0 4px rgba(140,160,220,0.25))",
+              transform: "rotateY(240deg) translateZ(5px)",
+            }} />
+          </div>
+        </div>
+      )}
 
       {/* === Labels — vertical stack === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
