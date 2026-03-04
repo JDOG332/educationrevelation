@@ -1431,7 +1431,7 @@ export default function TheoryOfEverything() {
                     }
                   }
                 }}
-                placeholder="THE PROOF"
+                placeholder="ASK THE MULTIVERSE"
                 style={{
                   width: "100%",
                   padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
@@ -1498,7 +1498,7 @@ export default function TheoryOfEverything() {
                     }
                   }
                 }}
-                placeholder="WIKIPEDIA"
+                placeholder="ASK THE HUMANS"
                 style={{
                   width: "100%",
                   padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
