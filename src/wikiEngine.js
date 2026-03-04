@@ -173,6 +173,7 @@ export async function fetchWiki(query) {
   extractUrl.searchParams.set("titles", title);
   extractUrl.searchParams.set("prop", "extracts");
   extractUrl.searchParams.set("explaintext", "1");
+  extractUrl.searchParams.set("redirects", "1");
   extractUrl.searchParams.set("format", "json");
   extractUrl.searchParams.set("origin", "*");
 
