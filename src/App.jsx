@@ -1282,6 +1282,13 @@ export default function TheoryOfEverything() {
 
             {/* The Question — search bar */}
             <div style={{ animation: "fadeSlideUp 1.5s 0.6s both ease", width: "100%", marginTop: Math.round(8 * PHI) }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(11px, 2.2vw, 14px)",
+                letterSpacing: "0.25em",
+                color: "rgba(232,232,240,0.35)",
+                marginBottom: Math.round(5 * PHI),
+              }}>THE PROOF</div>
               <input
                 type="text"
                 value={doorInput}
@@ -1341,6 +1348,13 @@ export default function TheoryOfEverything() {
 
             {/* ── WIKIPEDIA SEARCH BAR ── */}
             <div style={{ animation: "fadeSlideUp 1.5s 1s both ease", width: "100%" }}>
+              <div style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "clamp(11px, 2.2vw, 14px)",
+                letterSpacing: "0.25em",
+                color: "rgba(232,232,240,0.35)",
+                marginBottom: Math.round(5 * PHI),
+              }}>WIKIPEDIA</div>
               <input
                 type="text"
                 value={wikiInput}
