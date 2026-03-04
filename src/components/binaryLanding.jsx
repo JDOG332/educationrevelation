@@ -146,7 +146,7 @@ function InfinityCursor({ x, y }) {
   );
 }
 
-export default function BinaryLandingCanvas({ onChoice }) {
+export default function BinaryLandingCanvas({ onChoice, searchOverlay }) {
   const canvasRef = useRef(null);
   const frameRef = useRef(null);
   const hoveredRef = useRef(null);
@@ -760,6 +760,9 @@ export default function BinaryLandingCanvas({ onChoice }) {
             </div>
           </div>
         )}
+
+        {/* Search bar overlay — from App.jsx, appears with SEARCH */}
+        {showSearch && searchOverlay}
 
         {/* Bottom — pair[1] — dissolves second (PHI delay) */}
         <div style={{
