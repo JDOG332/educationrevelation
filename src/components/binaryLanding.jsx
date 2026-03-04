@@ -550,16 +550,6 @@ export default function BinaryLandingCanvas({ onChoice }) {
         pointerEvents: "none", zIndex: 1,
       }} />
 
-      {/* === Invisible click zones (top/center/bottom horizontal strips) === */}
-      <div onClick={() => handleChoice("death-or-life")}
-        onMouseEnter={() => setHovered("top")} onMouseLeave={() => setHovered(null)}
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "38%", cursor: "pointer", zIndex: 3 }} />
-      <div onClick={() => handleChoice("pact")}
-        onMouseEnter={() => setHovered("center")} onMouseLeave={() => setHovered(null)}
-        style={{ position: "absolute", top: "38%", left: 0, width: "100%", height: "24%", cursor: "pointer", zIndex: 3 }} />
-      <div onClick={() => handleChoice("rhythm-of-life")}
-        onMouseEnter={() => setHovered("bottom")} onMouseLeave={() => setHovered(null)}
-        style={{ position: "absolute", top: "62%", left: 0, width: "100%", height: "38%", cursor: "pointer", zIndex: 3 }} />
 
       {/* === Labels — vertical stack === */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4 }}>
