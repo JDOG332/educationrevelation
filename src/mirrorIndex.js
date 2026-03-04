@@ -115,7 +115,7 @@ export const MIRROR_NODES = [
     path: "Layer 5 → The Moon → The Center",
     depth: 5,
     weight: PHI * PHI,
-    route: { convergence: "pillars", idea: "moon" },
+    route: { convergence: "pillars", subcategory: "sky" },
   },
   {
     id: "moon-sense",
@@ -125,7 +125,7 @@ export const MIRROR_NODES = [
     path: "Layer 5 → The Moon → Senses",
     depth: 5,
     weight: 1,
-    route: { convergence: "pillars", idea: "moon" },
+    route: { convergence: "pillars", subcategory: "sky" },
   },
 
   // ── LAYER 6: THE SKIN ──
@@ -137,7 +137,7 @@ export const MIRROR_NODES = [
     path: "Layer 6 → The Skin → The Proof in Language",
     depth: 6,
     weight: PHI,
-    route: { convergence: "ancient", idea: "root" },
+    route: { convergence: "ancient", subcategory: "identity" },
   },
   {
     id: "skin-sense",
@@ -147,7 +147,7 @@ export const MIRROR_NODES = [
     path: "Layer 6 → The Skin → Senses",
     depth: 6,
     weight: 1,
-    route: { convergence: "ancient", idea: "root" },
+    route: { convergence: "ancient", subcategory: "identity" },
   },
 
   // ── LAYER 7: THE LOOP ──
@@ -159,7 +159,7 @@ export const MIRROR_NODES = [
     path: "Layer 7 → The Loop → The Proof in Math",
     depth: 7,
     weight: PHI,
-    route: { convergence: "promise", idea: "symbols" },
+    route: { convergence: "promise", subcategory: "patterns" },
   },
   {
     id: "loop-sense",
@@ -169,7 +169,7 @@ export const MIRROR_NODES = [
     path: "Layer 7 → The Loop → Senses",
     depth: 7,
     weight: 1,
-    route: { convergence: "filter", idea: "ache" },
+    route: { convergence: "filter", subcategory: "loneliness" },
   },
 
   // ── LAYER 8: THE EYE ──
@@ -181,7 +181,7 @@ export const MIRROR_NODES = [
     path: "Layer 8 → The Eye → The Universal Law",
     depth: 8,
     weight: PHI,
-    route: { convergence: "filter", idea: "connection" },
+    route: { convergence: "filter", subcategory: "community" },
   },
   {
     id: "eye-sense",
@@ -191,7 +191,7 @@ export const MIRROR_NODES = [
     path: "Layer 8 → The Eye → Senses",
     depth: 8,
     weight: 1,
-    route: { convergence: "filter", idea: "connection" },
+    route: { convergence: "filter", subcategory: "community" },
   },
 
   // ── LAYER 9: THE ARROW ──
@@ -255,7 +255,7 @@ export const MIRROR_NODES = [
     path: "Mirror Pair → Root ↔ Eye",
     depth: 4,
     weight: PHI,
-    route: { convergence: "ancient", idea: "eye" },
+    route: { convergence: "ancient", subcategory: "observer" },
   },
 
   // ── BURIED TRUTHS ──
@@ -267,7 +267,7 @@ export const MIRROR_NODES = [
     path: "Buried Truth #1",
     depth: 1,
     weight: 1,
-    route: { convergence: "rock", idea: "seed" },
+    route: { convergence: "rock", subcategory: "evolution" },
   },
   {
     id: "buried-2",
@@ -287,7 +287,7 @@ export const MIRROR_NODES = [
     path: "Buried Truth #5 → The Moon",
     depth: 5,
     weight: PHI,
-    route: { convergence: "pillars", idea: "moon" },
+    route: { convergence: "pillars", subcategory: "sky" },
   },
   {
     id: "buried-4",
@@ -403,7 +403,7 @@ export const MIRROR_NODES = [
     path: "Layer 8 → Connection is the Universal Law",
     depth: 8,
     weight: PHI * PHI,
-    route: { convergence: "filter", idea: "connection" },
+    route: { convergence: "filter", subcategory: "community" },
   },
 
   // ── LANGUAGE / ETYMOLOGY ──
@@ -415,7 +415,7 @@ export const MIRROR_NODES = [
     path: "Layer 6 → Etymology → The Proof in Language",
     depth: 6,
     weight: PHI,
-    route: { convergence: "ancient", idea: "root" },
+    route: { convergence: "ancient", subcategory: "identity" },
   },
 
   // ── GOD / SPIRIT / FAITH ──
@@ -439,7 +439,7 @@ export const MIRROR_NODES = [
     path: "Layer 9 → The Arrow → The Return",
     depth: 9,
     weight: PHI,
-    route: { convergence: "filter", idea: "weight" },
+    route: { convergence: "filter", subcategory: "grief" },
   },
 
   // ── TRUTH / REALITY ──
@@ -463,7 +463,7 @@ export const MIRROR_NODES = [
     path: "Layer 9 → FINISH I START",
     depth: 9,
     weight: PHI,
-    route: { convergence: "ancient", idea: "flashlight" },
+    route: { convergence: "ancient", subcategory: "langthought" },
   },
 
   // ── FEAR ──
@@ -475,7 +475,7 @@ export const MIRROR_NODES = [
     path: "Layer 1 → The Seed eats the dirt",
     depth: 1,
     weight: 1,
-    route: { convergence: "rock", idea: "seed" },
+    route: { convergence: "rock", subcategory: "evolution" },
   },
 
   // ── LEARNING / EDUCATION ──
