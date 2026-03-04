@@ -30,14 +30,17 @@ function stripStop(tokens) {
 }
 
 // ═══════════════════════════════════════════════════════════
-// CARD INDEX — reuse same lazy pattern as questionEngine
+// CARD INDEX + INVERTED INDEX — built once, lookup in O(1)
 // ═══════════════════════════════════════════════════════════
 
-let _cardIndex = null;
+let _cards = null;
+let _invertedIndex = null; // token → Set of card indices
 
-function getCardIndex() {
-  if (_cardIndex) return _cardIndex;
-  _cardIndex = [];
+function buildIndex() {
+  if (_cards) return;
+  _cards = [];
+  _invertedIndex = new Map();
+
   for (const [doorKey, subs] of Object.entries(TOPIC_CARDS)) {
     for (const [subKey, cards] of Object.entries(subs)) {
       for (const card of cards) {
@@ -47,116 +50,93 @@ function getCardIndex() {
           card.simple || "",
           card.intuition || "",
         ].join(" ");
-        const tokens = tokenize(searchText);
-        _cardIndex.push({
+        const tokens = stripStop(tokenize(searchText));
+        const cardIdx = _cards.length;
+        _cards.push({
           tokens,
+          tokenSet: new Set(tokens),
           tokenCount: tokens.length,
           door: doorKey,
           icon: card.icon || "🔍",
           route: { convergence: doorKey, subcategory: subKey, idea: card.id },
           title: card.title,
         });
+
+        // Build inverted index: each token → which cards have it
+        for (const t of new Set(tokens)) {
+          if (!_invertedIndex.has(t)) _invertedIndex.set(t, []);
+          _invertedIndex.get(t).push(cardIdx);
+        }
       }
     }
   }
-  return _cardIndex;
 }
 
 // ═══════════════════════════════════════════════════════════
-// TOKEN MATCHING — bidirectional recognition for a sentence
+// SCORE ONE CHUNK — find matching cards via inverted index
 // ═══════════════════════════════════════════════════════════
 
-function scoreTokens(sentenceTokens, cardTokens, cardTokenCount) {
-  if (sentenceTokens.length === 0 || cardTokenCount === 0) return 0;
+function scoreChunk(chunkTokens) {
+  buildIndex();
 
-  // Forward: sentence → card
-  let fwdHits = 0;
-  for (const st of sentenceTokens) {
-    let best = 0;
-    for (const ct of cardTokens) {
-      if (st === ct) { best = 1; break; }
-      if (st.length >= 4 && ct.length >= 4) {
-        if (st.slice(0, 4) === ct.slice(0, 4)) best = Math.max(best, 0.7);
-        else if (ct.includes(st) || st.includes(ct)) best = Math.max(best, 0.5);
-      }
+  // Use inverted index to find only cards that share tokens
+  const candidateCounts = new Map(); // cardIdx → overlap count
+  for (const t of chunkTokens) {
+    const cardIndices = _invertedIndex.get(t);
+    if (!cardIndices) continue;
+    for (const ci of cardIndices) {
+      candidateCounts.set(ci, (candidateCounts.get(ci) || 0) + 1);
     }
-    fwdHits += best;
   }
-  const forward = fwdHits / sentenceTokens.length;
 
-  // Backward: card → sentence (sampled)
-  const sampleTokens = cardTokenCount > 20
-    ? cardTokens.filter((_, i) => i % Math.ceil(cardTokenCount / 20) === 0)
-    : cardTokens;
-  const sentenceSet = new Set(sentenceTokens);
-  let bwdHits = 0;
-  for (const ct of sampleTokens) {
-    if (sentenceSet.has(ct)) { bwdHits += 1; continue; }
-    let best = 0;
-    for (const st of sentenceTokens) {
-      if (st.length >= 4 && ct.length >= 4) {
-        if (st.slice(0, 4) === ct.slice(0, 4)) best = Math.max(best, 0.7);
-        else if (ct.includes(st) || st.includes(ct)) best = Math.max(best, 0.5);
-      }
-    }
-    bwdHits += best;
+  if (candidateCounts.size === 0) {
+    return { psi: 0, emoji: "🔍", route: null, cardTitle: null };
   }
-  const backward = bwdHits / Math.max(sampleTokens.length, 1);
 
-  return Math.sqrt(forward * backward);
-}
-
-// ═══════════════════════════════════════════════════════════
-// SCORE ONE SENTENCE — full Ψ = R₁₂ × G
-// ═══════════════════════════════════════════════════════════
-
-function scoreSentence(sentenceTokens) {
-  const index = getCardIndex();
+  // Only score cards with 2+ token overlaps (skip noise)
+  const chunkSet = new Set(chunkTokens);
   const scored = [];
-  const sentenceSet = new Set(sentenceTokens);
 
-  for (const card of index) {
-    // Fast pre-filter: skip cards with zero exact token overlap
-    let hasOverlap = false;
-    for (const ct of card.tokens) {
-      if (sentenceSet.has(ct)) { hasOverlap = true; break; }
-    }
-    if (!hasOverlap) continue;
+  for (const [ci, overlap] of candidateCounts) {
+    if (overlap < 2) continue;
+    const card = _cards[ci];
 
-    const raw = scoreTokens(sentenceTokens, card.tokens, card.tokenCount);
-    if (raw > 0.02) {
-      scored.push({ raw, card });
+    // Forward only: % of chunk tokens found in card (exact=1.0, stem=0.5)
+    let hits = 0;
+    for (const ct of chunkTokens) {
+      if (card.tokenSet.has(ct)) { hits += 1; continue; }
+      if (ct.length >= 4) {
+        const prefix = ct.slice(0, 4);
+        let found = false;
+        for (const kt of card.tokens) {
+          if (kt.length >= 4 && kt.slice(0, 4) === prefix) { found = true; break; }
+        }
+        if (found) hits += 0.5;
+      }
     }
+    const raw = hits / chunkTokens.length;
+    if (raw > 0.05) scored.push({ raw, card });
+  }
+
+  if (scored.length === 0) {
+    return { psi: 0, emoji: "🔍", route: null, cardTitle: null };
   }
 
   scored.sort((a, b) => b.raw - a.raw);
   const top10 = scored.slice(0, 10);
-  const top5 = scored.slice(0, 5);
-
-  if (top10.length === 0) {
-    return { psi: 0, emoji: "🔍", route: null, cardTitle: null };
-  }
-
   const best = top10[0];
 
-  // R₁₂ = raw recognition × informativeness gate
-  const I_sentence = Math.min(1, sentenceTokens.length / 5);
+  // R₁₂ = raw × informativeness gate
+  const I_chunk = Math.min(1, chunkTokens.length / 5);
   const I_card = Math.min(1, best.card.tokenCount / 8);
-  const G_eps = Math.sqrt(I_sentence * I_card);
-  const R12 = best.raw * G_eps;
+  const R12 = best.raw * Math.sqrt(I_chunk * I_card);
 
   // G = C_eff × D_hat
-  // C_eff: fraction of top-10 cards sharing the same door as #1
   const bestDoor = best.card.door;
   const sameDoor = top10.filter(s => s.card.door === bestDoor).length;
   const C_eff = sameDoor / top10.length;
-
-  // D_hat: signal clarity — peak vs mean
-  const meanTop5 = top5.length > 0
-    ? top5.reduce((sum, s) => sum + s.raw, 0) / top5.length
-    : 0.001;
+  const meanTop5 = scored.slice(0, 5).reduce((s, x) => s + x.raw, 0) / Math.min(5, scored.length);
   const D_hat = Math.min(1, best.raw / Math.max(meanTop5, 0.001));
-
   const G = C_eff * D_hat;
 
   // Ψ = R₁₂ × G
@@ -189,6 +169,9 @@ const API = "https://en.wikipedia.org/w/api.php";
 export async function fetchWiki(query) {
   if (!query || query.trim().length < 2) return null;
 
+  // Pre-warm the card index while fetching
+  buildIndex();
+
   // Step 1: Search for best matching article title
   const searchUrl = new URL(API);
   searchUrl.searchParams.set("action", "opensearch");
@@ -203,7 +186,7 @@ export async function fetchWiki(query) {
   const title = searchData[1]?.[0];
   if (!title) return { title: query, url: null, points: [], nextSteps: [] };
 
-  // Step 2: Fetch article extract
+  // Step 2: Fetch full article extract
   const extractUrl = new URL(API);
   extractUrl.searchParams.set("action", "query");
   extractUrl.searchParams.set("titles", title);
@@ -226,25 +209,25 @@ export async function fetchWiki(query) {
     ? `https://en.wikipedia.org/?curid=${pageId}`
     : `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
 
-  // Step 3: Split into sentences, then chunk every 3 together
+  // Step 3: Split into sentences, chunk every 5
   const rawSentences = extract
     .split(/(?<=[.!?])\s+/)
     .map(s => s.trim())
     .filter(s => s.length > 10 && s.split(/\s+/).length >= 3);
 
   const chunks = [];
-  for (let i = 0; i < rawSentences.length; i += 3) {
-    chunks.push(rawSentences.slice(i, i + 3).join(" "));
+  for (let i = 0; i < rawSentences.length; i += 5) {
+    chunks.push(rawSentences.slice(i, i + 5).join(" "));
   }
 
-  // Step 4: Score each chunk (stop words stripped for speed)
+  // Step 4: Score each chunk
   const points = [];
   const seenRoutes = new Set();
 
   for (const chunk of chunks) {
     const tokens = stripStop(tokenize(chunk));
     if (tokens.length < 2) continue;
-    const { psi, emoji, route, cardTitle } = scoreSentence(tokens);
+    const { psi, emoji, route, cardTitle } = scoreChunk(tokens);
     const truthScore = Math.min(99, Math.round(psi * 100 * 5));
 
     if (truthScore >= 5) {
@@ -258,9 +241,9 @@ export async function fetchWiki(query) {
     }
   }
 
-  // Sort by truth score, highest first — keep top 10
+  // Sort by truth score — keep top 5
   points.sort((a, b) => b.truthScore - a.truthScore);
-  const top = points.slice(0, 10);
+  const top = points.slice(0, 5);
 
   // Step 5: Build next steps — top unique routes
   const nextSteps = [];
