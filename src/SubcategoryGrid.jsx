@@ -12,7 +12,7 @@ import { getTopicCards, hasTopicCards } from "./topicCards.js";
    SUBCATEGORY GRID — The 10 rooms inside a door
    ═══════════════════════════════════════════════════════════════ */
 
-export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent, onBack }) {
+export default function SubcategoryGrid({ doorKey, onSelectSub, onBack }) {
   const meta = DOOR_META[doorKey];
   const subs = SUBCATEGORIES[doorKey] || [];
 
@@ -156,26 +156,6 @@ export default function SubcategoryGrid({ doorKey, onSelectSub, onSelectContent,
           </button>
         ))}
       </div>
-
-      {/* Door Essay link */}
-      {onSelectContent && (
-        <div style={{ textAlign: "center", marginBottom: Math.round(13 * PHI) }}>
-          <button
-            onClick={() => { onSelectContent(); window.scrollTo(0, 0); }}
-            style={{
-              cursor: "pointer", background: "none",
-              border: "1px solid rgba(201,168,76,0.1)",
-              borderRadius: 8,
-              padding: `${Math.round(5 * PHI)}px ${Math.round(13 * PHI)}px`,
-              fontFamily: "'Cinzel', serif", fontSize: 11,
-              letterSpacing: "0.3em", color: "rgba(201,168,76,0.35)",
-              transition: "all 0.4s",
-            }}
-            onMouseEnter={e => { e.target.style.color = "rgba(201,168,76,0.6)"; e.target.style.borderColor = "rgba(201,168,76,0.25)"; }}
-            onMouseLeave={e => { e.target.style.color = "rgba(201,168,76,0.35)"; e.target.style.borderColor = "rgba(201,168,76,0.1)"; }}
-          >ENTER THE DOOR</button>
-        </div>
-      )}
 
       {/* Bottom */}
       <div style={{

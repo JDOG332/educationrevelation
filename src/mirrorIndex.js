@@ -27,7 +27,7 @@ export const MIRROR_NODES = [
     path: "Layer 1 → The Seed → The Nothing",
     depth: 1,
     weight: PHI,
-    route: { convergence: "pillars", subcategory: "__essay__" },
+    route: { convergence: "pillars" },
   },
   {
     id: "seed-sense",
@@ -37,7 +37,7 @@ export const MIRROR_NODES = [
     path: "Layer 1 → The Seed → Senses",
     depth: 1,
     weight: 1,
-    route: { convergence: "pillars", subcategory: "__essay__" },
+    route: { convergence: "pillars" },
   },
 
   // ── LAYER 2: THE ROOT ──
@@ -49,7 +49,7 @@ export const MIRROR_NODES = [
     path: "Layer 2 → The Root → The Law",
     depth: 2,
     weight: PHI,
-    route: { convergence: "rock", subcategory: "__essay__" },
+    route: { convergence: "rock" },
   },
   {
     id: "root-sense",
@@ -59,7 +59,7 @@ export const MIRROR_NODES = [
     path: "Layer 2 → The Root → Senses",
     depth: 2,
     weight: 1,
-    route: { convergence: "rock", subcategory: "__essay__" },
+    route: { convergence: "rock" },
   },
 
   // ── LAYER 3: THE SPINE ──
@@ -71,7 +71,7 @@ export const MIRROR_NODES = [
     path: "Layer 3 → The Spine → The Marriage",
     depth: 3,
     weight: PHI,
-    route: { convergence: "promise", subcategory: "__essay__" },
+    route: { convergence: "promise" },
   },
   {
     id: "spine-sense",
@@ -81,7 +81,7 @@ export const MIRROR_NODES = [
     path: "Layer 3 → The Spine → Senses",
     depth: 3,
     weight: 1,
-    route: { convergence: "promise", subcategory: "__essay__" },
+    route: { convergence: "promise" },
   },
 
   // ── LAYER 4: THE MIRROR ──
@@ -93,7 +93,7 @@ export const MIRROR_NODES = [
     path: "Layer 4 → The Mirror → The Door",
     depth: 4,
     weight: PHI,
-    route: { convergence: "ancient", subcategory: "__essay__" },
+    route: { convergence: "ancient" },
   },
   {
     id: "mirror-sense",
@@ -103,7 +103,7 @@ export const MIRROR_NODES = [
     path: "Layer 4 → The Mirror → Senses",
     depth: 4,
     weight: 1,
-    route: { convergence: "ancient", subcategory: "__essay__" },
+    route: { convergence: "ancient" },
   },
 
   // ── LAYER 5: THE MOON (CENTER) ──
@@ -203,7 +203,7 @@ export const MIRROR_NODES = [
     path: "Layer 9 → The Arrow → The Return",
     depth: 9,
     weight: PHI,
-    route: { convergence: "plain", subcategory: "__essay__" },
+    route: { convergence: "plain" },
   },
   {
     id: "arrow-sense",
@@ -213,7 +213,7 @@ export const MIRROR_NODES = [
     path: "Layer 9 → The Arrow → Senses",
     depth: 9,
     weight: 1,
-    route: { convergence: "plain", subcategory: "__essay__" },
+    route: { convergence: "plain" },
   },
 
   // ── MIRROR PAIRS ──
@@ -225,7 +225,7 @@ export const MIRROR_NODES = [
     path: "Mirror Pair → Seed ↔ Arrow",
     depth: 4,
     weight: PHI,
-    route: { convergence: "filter", subcategory: "__essay__" },
+    route: { convergence: "filter" },
   },
   {
     id: "pair-spine-loop",
@@ -235,7 +235,7 @@ export const MIRROR_NODES = [
     path: "Mirror Pair → Spine ↔ Loop",
     depth: 4,
     weight: PHI,
-    route: { convergence: "sameness", subcategory: "__essay__" },
+    route: { convergence: "sameness" },
   },
   {
     id: "pair-mirror-skin",
@@ -245,7 +245,7 @@ export const MIRROR_NODES = [
     path: "Mirror Pair → Mirror ↔ Skin",
     depth: 4,
     weight: PHI,
-    route: { convergence: "plain", subcategory: "__essay__" },
+    route: { convergence: "plain" },
   },
   {
     id: "pair-root-eye",
@@ -277,7 +277,7 @@ export const MIRROR_NODES = [
     path: "Buried Truth #4",
     depth: 4,
     weight: PHI,
-    route: { convergence: "ancient", subcategory: "__essay__" },
+    route: { convergence: "ancient" },
   },
   {
     id: "buried-3",
@@ -297,7 +297,7 @@ export const MIRROR_NODES = [
     path: "Buried Truth #7",
     depth: 7,
     weight: 1,
-    route: { convergence: "layers", subcategory: "__essay__" },
+    route: { convergence: "layers" },
   },
   {
     id: "buried-5",
@@ -307,7 +307,7 @@ export const MIRROR_NODES = [
     path: "Buried Truth #8",
     depth: 8,
     weight: PHI,
-    route: { convergence: "plain", subcategory: "__essay__" },
+    route: { convergence: "plain" },
   },
 
   // ── GOLDEN FILTER: THE BIG QUESTIONS ──
@@ -319,7 +319,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → What is Consciousness?",
     depth: 5,
     weight: PHI,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 0 },
+    route: { convergence: "filter" },
   },
   {
     id: "gf-something-nothing",
@@ -329,7 +329,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → Why Something Rather Than Nothing?",
     depth: 1,
     weight: PHI,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 1 },
+    route: { convergence: "filter" },
   },
   {
     id: "gf-life",
@@ -339,7 +339,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → How Did Life Start?",
     depth: 1,
     weight: PHI,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 4 },
+    route: { convergence: "filter" },
   },
   {
     id: "gf-gravity-quantum",
@@ -349,7 +349,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → Gravity & Quantum Mechanics",
     depth: 7,
     weight: PHI,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 5 },
+    route: { convergence: "filter" },
   },
   {
     id: "gf-time",
@@ -359,7 +359,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → What is Time?",
     depth: 5,
     weight: PHI,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 6 },
+    route: { convergence: "filter" },
   },
   {
     id: "gf-dark-energy",
@@ -369,7 +369,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → What is Dark Energy?",
     depth: 7,
     weight: 1,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 2 },
+    route: { convergence: "filter" },
   },
   {
     id: "gf-dark-matter",
@@ -379,7 +379,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → What is Dark Matter?",
     depth: 2,
     weight: 1,
-    route: { convergence: "filter", subcategory: "__essay__", filterQ: 3 },
+    route: { convergence: "filter" },
   },
 
   // ── THE EQUATION ──
@@ -391,7 +391,7 @@ export const MIRROR_NODES = [
     path: "The Equation → Ψ = R₁₂ × (C_eff · D̂)",
     depth: 7,
     weight: PHI * PHI,
-    route: { convergence: "plain", subcategory: "__essay__" },
+    route: { convergence: "plain" },
   },
 
   // ── CONNECT / DISCONNECT ──
@@ -427,7 +427,7 @@ export const MIRROR_NODES = [
     path: "Golden Filter → Consciousness + Layer 5 → The Moon",
     depth: 5,
     weight: PHI,
-    route: { convergence: "sameness", subcategory: "__essay__" },
+    route: { convergence: "sameness" },
   },
 
   // ── DEATH / ENDING ──
@@ -451,7 +451,7 @@ export const MIRROR_NODES = [
     path: "Mirror Pair → Mirror ↔ Skin → The Archway",
     depth: 4,
     weight: PHI,
-    route: { convergence: "plain", subcategory: "__essay__" },
+    route: { convergence: "plain" },
   },
 
   // ── IDENTITY / SELF ──
@@ -487,7 +487,7 @@ export const MIRROR_NODES = [
     path: "Mirror Pair → Spine ↔ Loop → The Tuning Fork",
     depth: 3,
     weight: PHI,
-    route: { convergence: "sameness", subcategory: "__essay__" },
+    route: { convergence: "sameness" },
   },
 ];
 

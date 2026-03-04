@@ -158,7 +158,7 @@ export function findAnswers(query) {
       answer: m.text,
       source: "truth",
       psi: m.score,
-      route: key ? { convergence: key, subcategory: "__essay__" } : null,
+      route: key ? { convergence: key } : null,
     };
   });
 
