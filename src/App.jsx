@@ -1660,63 +1660,6 @@ export default function TheoryOfEverything() {
                 fontStyle: "italic", color: "rgba(201,168,76,0.3)", lineHeight: PHI,
               }}>every answer from a different door... same room inside</div>
 
-            {/* ═══ KNOWLEDGE CARDS ═══ */}
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.3em",
-              color: "rgba(201,168,76,0.3)", textAlign: "center",
-              marginTop: Math.round(21 * PHI), marginBottom: Math.round(8 * PHI),
-            }}>EXPLORE THIS DOOR</div>
-            <div style={{
-              display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-              gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
-            }}>
-              {[
-                { key: "connection", icon: "🤘", title: "THE CONNECTION", hook: "Touch the spiderweb. Feel the whole thing wiggle.", accent: "120,180,80" },
-                { key: "layering", icon: "♾️", title: "LAYERING LOVE", hook: "Peel back layers. Find the rhythm underneath.", accent: "79,195,247" },
-                { key: "ache", icon: "💛", title: "THE ACHE", hook: "The pull is gravity. The signal is clean.", accent: "201,168,76" },
-                { key: "weight", icon: "🌑", title: "THE SHARED WEIGHT", hook: "The heavy backpack. The same rope. Different ends.", accent: "160,160,180" },
-                { key: "pulse", icon: "❤️", title: "THE PULSE", hook: "Love is the gravity of the soul. Part of, not apart from.", accent: "220,80,80" },
-                { key: "regrets", icon: "🚪", title: "THE WEIGHT OF LEAVING", hook: "The gravity that stays after you go.", accent: "200,160,100" },
-                { key: "livingbridge", icon: "🌉", title: "THE LIVING BRIDGE", hook: "The space between two people is alive.", accent: "180,160,220" },
-              ].map((idea, i) => (
-                <div
-                  key={idea.key}
-                  onClick={() => setActiveIdea(idea.key)}
-                  style={{
-                    padding: `${Math.round(10 * PHI)}px ${Math.round(6 * PHI)}px`,
-                    borderRadius: 10,
-                    background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                    border: `1px solid rgba(${idea.accent},0.08)`,
-                    cursor: "pointer", overflow: "hidden",
-                    transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                    animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                    textAlign: "center",
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = "translateY(-3px)";
-                    e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                    e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <div style={{ fontSize: 24, marginBottom: Math.round(2 * PHI) }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
-                    letterSpacing: "0.12em", color: `rgba(${idea.accent},0.7)`,
-                    marginBottom: Math.round(2 * PHI),
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)",
-                    fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-
             </div>
           </div>
         );
@@ -1761,59 +1704,6 @@ export default function TheoryOfEverything() {
           </div>
 
           <div style={{
-            display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-            gap: Math.round(8 * PHI),
-          }}>
-            {[
-              { key: "oneness", icon: "🎨", title: "THE ONENESS", hook: "Two colors swirl together. A new color stronger than both.", accent: "200,120,180" },
-            ].map((idea, i) => (
-              <div
-                key={idea.key}
-                onClick={() => setActiveIdea(idea.key)}
-                style={{
-                  position: "relative",
-                  padding: `${Math.round(13 * PHI)}px ${Math.round(8 * PHI)}px`,
-                  borderRadius: 10,
-                  background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                  border: `1px solid rgba(${idea.accent},0.08)`,
-                  cursor: "pointer", overflow: "hidden",
-                  transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                  animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                  textAlign: "center",
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                  e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div style={{
-                  position: "absolute", top: 0, left: "20%", right: "20%", height: 1,
-                  background: `linear-gradient(90deg, transparent, rgba(${idea.accent},0.2), transparent)`,
-                }} />
-                <div style={{
-                  fontSize: 39, marginBottom: Math.round(5 * PHI),
-                  filter: `drop-shadow(0 0 10px rgba(${idea.accent},0.2))`,
-                  animation: `gentleFloat ${7 + i * 1.3}s ease-in-out infinite`,
-                }}>{idea.icon}</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.15em",
-                  color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                }}>{idea.title}</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
-                  fontStyle: "italic", color: "rgba(232,232,240,0.7)", lineHeight: 1.5,
-                }}>{idea.hook}</div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{
             textAlign: "center", marginTop: Math.round(21 * PHI),
             fontFamily: "'Cormorant Garamond', serif", fontSize: 24,
             fontStyle: "italic", color: "rgba(201,168,76,0.2)",
@@ -1821,23 +1711,6 @@ export default function TheoryOfEverything() {
         </div>
       )}
 
-      {/* ===== PLAIN ENGLISH: THE SHARED WEIGHT ===== */}
-      {/* ===== PLAIN ENGLISH: THE HOUSE BUILT FOR YOU (Anthropic Principle) ===== */}
-      {/* ===== PLAIN ENGLISH: THE ISLAND ===== */}
-      {/* ===== PLAIN ENGLISH: THE WEB (3 Body Problem) ===== */}
-      {/* ===== PLAIN ENGLISH: THE SEARCH ===== */}
-      {/* ===== PLAIN ENGLISH: LET GO ===== */}
-      {/* ===== PLAIN ENGLISH: THE BREATH ===== */}
-      {/* ===== PLAIN ENGLISH: THE ROOT ===== */}
-      {/* ===== PLAIN ENGLISH: THE EYE (Consciousness) ===== */}
-      {/* ===== PLAIN ENGLISH: THE BONES (Physics & Reality) ===== */}
-      {/* ===== PLAIN ENGLISH: THE SEED (Life & Biology) ===== */}
-      {/* ===== PLAIN ENGLISH: THE FLASHLIGHT (Mind, Language & Meaning) ===== */}
-      {/* ===== PLAIN ENGLISH: THE PULSE (Love, Connection & Emotion) ===== */}
-      {/* ===== PLAIN ENGLISH: THE SCALE (Good, Evil & Ethics) ===== */}
-      {/* ===== PLAIN ENGLISH: THE MOON (God, Spirit & The Unknown) ===== */}
-      {/* ===== PLAIN ENGLISH: THE PENNY QUESTION ===== */}
-      {/* ===== PLAIN ENGLISH: THE ONENESS ===== */}
       {depth === 4 && activeConvergence === "gravity" && activeSubcategory === "__essay__" && activeIdea === null && (
         <div style={{
           maxWidth: 660, margin: "0 auto",
@@ -2145,47 +2018,6 @@ export default function TheoryOfEverything() {
             </div>
           </div>
 
-          {/* ===== GRAVITY: IDEA CARD GRID ===== */}
-          <div style={{
-            marginTop: Math.round(34 * PHI),
-            borderTop: "1px solid rgba(255,200,50,0.08)",
-            paddingTop: Math.round(21 * PHI),
-          }}>
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(255,200,50,0.3)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>DEEPER DOORS</div>
-
-            <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-            }}>
-              {[
-                { key: "regrets", icon: "⏳", title: "THE WEIGHT OF LEAVING", hook: "10 regrets from the dying. The mirror you can only read at the end.", accent: "255,200,50" },
-              ].map(idea => (
-                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                  transition: "all 0.4s ease", textAlign: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                >
-                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.4)`, marginBottom: 4,
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                    color: "rgba(232,232,240,0.65)", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Return */}
           <div style={{ textAlign: "center", marginTop: Math.round(21 * PHI) }}>
             <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
@@ -2369,101 +2201,6 @@ export default function TheoryOfEverything() {
               <span style={{ color: "rgba(201,168,76,0.25)" }}>isn't a phrase. It's a geometric instruction.</span>
             </div>
           </div>
-
-          {/* ===== THREE PILLARS: IDEA CARD GRID ===== */}
-          <div style={{
-            marginTop: Math.round(34 * PHI),
-            borderTop: "1px solid rgba(100,180,220,0.08)",
-            paddingTop: Math.round(21 * PHI),
-          }}>
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-              color: "rgba(100,180,220,0.3)", textAlign: "center",
-              marginBottom: Math.round(13 * PHI),
-            }}>DEEPER DOORS</div>
-
-            <div style={{
-              display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-            }}>
-              {[
-                { key: "dnahandshake", icon: "🧬", title: "THE DNA HANDSHAKE", hook: "Your body doesn't just eat. It performs a quality check against your DNA.", accent: "100,180,220" },
-              ].map(idea => (
-                <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                  cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                  background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                  borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                  transition: "all 0.4s ease", textAlign: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                >
-                  <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                    color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                    color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ═══ KNOWLEDGE CARDS ═══ */}
-          <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.3em",
-            color: "rgba(201,168,76,0.3)", textAlign: "center",
-            marginTop: Math.round(21 * PHI), marginBottom: Math.round(8 * PHI),
-          }}>EXPLORE THIS DOOR</div>
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-            gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
-          }}>
-            {[
-              { key: "web", icon: "🕸️", title: "THE WEB", hook: "One string shakes. The whole web feels it.", accent: "140,180,220" },
-              { key: "letgo", icon: "🔔", title: "LET GO", hook: "Stop controlling. Start feeling. The ocean carries you.", accent: "170,140,200" },
-              { key: "moon", icon: "🌀", title: "THE MOON", hook: "You are a wave. The water never goes away.", accent: "180,180,220" },
-            ].map((idea, i) => (
-              <div
-                key={idea.key}
-                onClick={() => setActiveIdea(idea.key)}
-                style={{
-                  padding: `${Math.round(10 * PHI)}px ${Math.round(6 * PHI)}px`,
-                  borderRadius: 10,
-                  background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                  border: `1px solid rgba(${idea.accent},0.08)`,
-                  cursor: "pointer", overflow: "hidden",
-                  transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                  animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                  textAlign: "center",
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                  e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div style={{ fontSize: 24, marginBottom: Math.round(2 * PHI) }}>{idea.icon}</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
-                  letterSpacing: "0.12em", color: `rgba(${idea.accent},0.7)`,
-                  marginBottom: Math.round(2 * PHI),
-                }}>{idea.title}</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)",
-                  fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
-                }}>{idea.hook}</div>
-              </div>
-            ))}
-          </div>
-
 
         </div>
       )}
@@ -2932,58 +2669,6 @@ export default function TheoryOfEverything() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* ═══ KNOWLEDGE CARDS ═══ */}
-          <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.3em",
-            color: "rgba(201,168,76,0.3)", textAlign: "center",
-            marginTop: Math.round(21 * PHI), marginBottom: Math.round(8 * PHI),
-          }}>EXPLORE THIS DOOR</div>
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-            gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
-          }}>
-            {[
-              { key: "animal", icon: "🔦", title: "THE ANIMAL IN THE DARK", hook: "Two people. One mystery. Three rules to be sure.", accent: "232,232,240" },
-              { key: "search", icon: "🧭", title: "THE SEARCH", hook: "The looking IS the finding. The search tiles us together.", accent: "180,160,120" },
-            ].map((idea, i) => (
-              <div
-                key={idea.key}
-                onClick={() => setActiveIdea(idea.key)}
-                style={{
-                  padding: `${Math.round(10 * PHI)}px ${Math.round(6 * PHI)}px`,
-                  borderRadius: 10,
-                  background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                  border: `1px solid rgba(${idea.accent},0.08)`,
-                  cursor: "pointer", overflow: "hidden",
-                  transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                  animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                  textAlign: "center",
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                  e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div style={{ fontSize: 24, marginBottom: Math.round(2 * PHI) }}>{idea.icon}</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
-                  letterSpacing: "0.12em", color: `rgba(${idea.accent},0.7)`,
-                  marginBottom: Math.round(2 * PHI),
-                }}>{idea.title}</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)",
-                  fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
-                }}>{idea.hook}</div>
-              </div>
-            ))}
           </div>
 
 
@@ -4487,106 +4172,6 @@ export default function TheoryOfEverything() {
 
             <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
           </div>
-
-          {/* ===== ANCIENT PROOF: DEEPER DOORS ===== */}
-          <div style={{
-            maxWidth: 680, margin: "0 auto",
-            padding: `0 24px ${Math.round(21 * PHI)}px`,
-          }}>
-            <div style={{
-              marginTop: Math.round(21 * PHI),
-              borderTop: "1px solid rgba(190,140,220,0.08)",
-              paddingTop: Math.round(21 * PHI),
-            }}>
-              <div style={{
-                fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: "0.5em",
-                color: "rgba(190,140,220,0.3)", textAlign: "center",
-                marginBottom: Math.round(13 * PHI),
-              }}>DEEPER DOORS</div>
-
-              <div style={{
-                display: "grid", gridTemplateColumns: "1fr 1fr", gap: Math.round(8 * PHI),
-              }}>
-                {[
-                  { key: "livingbridge", icon: "🍖", title: "THE LIVING BRIDGE", hook: "Why some ate their dead. Total Recognition. I will never let you disappear.", accent: "190,140,220" },
-                ].map(idea => (
-                  <div key={idea.key} onClick={() => setActiveIdea(idea.key)} style={{
-                    cursor: "pointer", padding: `${Math.round(10 * PHI)}px`,
-                    background: `radial-gradient(ellipse at top, rgba(${idea.accent},0.04), transparent 70%)`,
-                    borderRadius: 10, border: `1px solid rgba(${idea.accent},0.08)`,
-                    transition: "all 0.4s ease", textAlign: "center",
-                  }}
-                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`; }}
-                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`; }}
-                  >
-                    <div style={{ fontSize: 39, marginBottom: 6 }}>{idea.icon}</div>
-                    <div style={{
-                      fontFamily: "'Cinzel', serif", fontSize: 19, letterSpacing: 2,
-                      color: `rgba(${idea.accent},0.6)`, marginBottom: 4,
-                    }}>{idea.title}</div>
-                    <div style={{
-                      fontFamily: "'Cormorant Garamond', serif", fontSize: 19,
-                      color: "rgba(232,232,240,0.55)", fontStyle: "italic", lineHeight: 1.4,
-                    }}>{idea.hook}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          {/* ═══ KNOWLEDGE CARDS ═══ */}
-          <div style={{
-            fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.3em",
-            color: "rgba(201,168,76,0.3)", textAlign: "center",
-            marginTop: Math.round(21 * PHI), marginBottom: Math.round(8 * PHI),
-          }}>EXPLORE THIS DOOR</div>
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-            gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
-          }}>
-            {[
-              { key: "root", icon: "🌌", title: "THE ROOT", hook: "The Starting Spark. You are the universe looking at itself.", accent: "200,180,255" },
-              { key: "eye", icon: "🧠", title: "THE EYE", hook: "Your mind is a mirror. You are the part that woke up.", accent: "220,200,140" },
-              { key: "flashlight", icon: "💭", title: "THE FLASHLIGHT", hook: "Your mind paints meaning onto everything it touches.", accent: "240,180,200" },
-            ].map((idea, i) => (
-              <div
-                key={idea.key}
-                onClick={() => setActiveIdea(idea.key)}
-                style={{
-                  padding: `${Math.round(10 * PHI)}px ${Math.round(6 * PHI)}px`,
-                  borderRadius: 10,
-                  background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                  border: `1px solid rgba(${idea.accent},0.08)`,
-                  cursor: "pointer", overflow: "hidden",
-                  transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                  animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                  textAlign: "center",
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                  e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div style={{ fontSize: 24, marginBottom: Math.round(2 * PHI) }}>{idea.icon}</div>
-                <div style={{
-                  fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
-                  letterSpacing: "0.12em", color: `rgba(${idea.accent},0.7)`,
-                  marginBottom: Math.round(2 * PHI),
-                }}>{idea.title}</div>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)",
-                  fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
-                }}>{idea.hook}</div>
-              </div>
-            ))}
-          </div>
-
-          </div>
         </div>
       )}
 
@@ -4856,57 +4441,6 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI) }}>
               <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
 
-            {/* ═══ KNOWLEDGE CARDS ═══ */}
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.3em",
-              color: "rgba(201,168,76,0.3)", textAlign: "center",
-              marginTop: Math.round(21 * PHI), marginBottom: Math.round(8 * PHI),
-            }}>EXPLORE THIS DOOR</div>
-            <div style={{
-              display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-              gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
-            }}>
-              {[
-                { key: "scale", icon: "⚖️", title: "THE SCALE", hook: "Born with a compass. Heavy when you hurt. Light when you help.", accent: "200,200,160" },
-              ].map((idea, i) => (
-                <div
-                  key={idea.key}
-                  onClick={() => setActiveIdea(idea.key)}
-                  style={{
-                    padding: `${Math.round(10 * PHI)}px ${Math.round(6 * PHI)}px`,
-                    borderRadius: 10,
-                    background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                    border: `1px solid rgba(${idea.accent},0.08)`,
-                    cursor: "pointer", overflow: "hidden",
-                    transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                    animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                    textAlign: "center",
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = "translateY(-3px)";
-                    e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                    e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <div style={{ fontSize: 24, marginBottom: Math.round(2 * PHI) }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
-                    letterSpacing: "0.12em", color: `rgba(${idea.accent},0.7)`,
-                    marginBottom: Math.round(2 * PHI),
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)",
-                    fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-
             </div>
           </div>
         );
@@ -5054,62 +4588,6 @@ export default function TheoryOfEverything() {
             <div style={{ textAlign: "center", marginTop: Math.round(13 * PHI) }}>
               <ReturnButton onClick={() => { setActiveConvergence(null); setActiveIdea(null); window.scrollTo(0,0); }} />
 
-            {/* ═══ KNOWLEDGE CARDS ═══ */}
-            <div style={{
-              fontFamily: "'Cinzel', serif", fontSize: 11, letterSpacing: "0.3em",
-              color: "rgba(201,168,76,0.3)", textAlign: "center",
-              marginTop: Math.round(21 * PHI), marginBottom: Math.round(8 * PHI),
-            }}>EXPLORE THIS DOOR</div>
-            <div style={{
-              display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-              gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
-            }}>
-              {[
-                { key: "island", icon: "🔥", title: "THE ISLAND", hook: "Compete to survive. Connect to live. You ARE the island.", accent: "255,120,50" },
-                { key: "breath", icon: "🌬️", title: "THE BREATH", hook: "Chi. Life energy. One big living lung.", accent: "100,200,160" },
-                { key: "bones", icon: "🔬", title: "THE BONES", hook: "Nothing is separate. Everything vibrates the same energy.", accent: "100,160,220" },
-                { key: "seed", icon: "🧬", title: "THE SEED", hook: "You are a living book. Every creature is a different chapter.", accent: "80,200,120" },
-                { key: "penny", icon: "🪙", title: "THE PENNY QUESTION", hook: "The answer is One. Same energy. Different shapes.", accent: "201,168,76" },
-                { key: "dnahandshake", icon: "🧬", title: "THE DNA HANDSHAKE", hook: "Life reaches across the gap. Recognition in code.", accent: "100,200,150" },
-              ].map((idea, i) => (
-                <div
-                  key={idea.key}
-                  onClick={() => setActiveIdea(idea.key)}
-                  style={{
-                    padding: `${Math.round(10 * PHI)}px ${Math.round(6 * PHI)}px`,
-                    borderRadius: 10,
-                    background: `radial-gradient(ellipse at 50% 0%, rgba(${idea.accent},0.04), transparent 70%)`,
-                    border: `1px solid rgba(${idea.accent},0.08)`,
-                    cursor: "pointer", overflow: "hidden",
-                    transition: "transform 0.4s cubic-bezier(0.2,0.8,0.2,1), border-color 0.4s, box-shadow 0.5s",
-                    animation: `fadeSlideUp 0.6s ${0.1 + i * 0.1}s both ease`,
-                    textAlign: "center",
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = "translateY(-3px)";
-                    e.currentTarget.style.borderColor = `rgba(${idea.accent},0.2)`;
-                    e.currentTarget.style.boxShadow = `0 8px 30px rgba(${idea.accent},0.08)`;
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.borderColor = `rgba(${idea.accent},0.08)`;
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <div style={{ fontSize: 24, marginBottom: Math.round(2 * PHI) }}>{idea.icon}</div>
-                  <div style={{
-                    fontFamily: "'Cinzel', serif", fontSize: "clamp(10px, 2.2vw, 13px)",
-                    letterSpacing: "0.12em", color: `rgba(${idea.accent},0.7)`,
-                    marginBottom: Math.round(2 * PHI),
-                  }}>{idea.title}</div>
-                  <div style={{
-                    fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(10px, 2vw, 13px)",
-                    fontStyle: "italic", color: "rgba(232,232,240,0.3)", lineHeight: 1.5,
-                  }}>{idea.hook}</div>
-                </div>
-              ))}
-            </div>
-
             </div>
           </div>
         );
@@ -5175,9 +4653,6 @@ export default function TheoryOfEverything() {
             gap: Math.round(8 * PHI), marginBottom: Math.round(13 * PHI),
           }}>
             {[
-              { key: "pillars", icon: "🏛️", title: "3 PILLARS OF AHA", hook: "The traps that fool you. The gates that prove you.", accent: "201,168,76" },
-              { key: "symbols", icon: "🌍", title: "SAME SHAPES", hook: "36 symbols. Every civilization. Same truth.", accent: "190,140,220" },
-              { key: "anthropic", icon: "🏠", title: "THE HOUSE BUILT FOR YOU", hook: "The universe is tuned. You are the proof.", accent: "255,200,100" },
               { key: "convergencelist", icon: "🪙", title: "2 → 1", hook: "33 triads. 99 proofs. Every pair is the same equation.", accent: "201,168,76" },
             ].map((idea, i) => (
               <div
