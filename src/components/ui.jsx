@@ -84,7 +84,7 @@ export function DepthIndicator({ depth, onNavigate, depthNames, userPath }) {
             onMouseLeave={isMobile ? undefined : () => setHovered(null)}
             style={{
               display: "flex", alignItems: "center", justifyContent: "flex-end",
-              height: 36, minWidth: 44, gap: 10,
+              height: Math.round(22 * PHI), minWidth: 44, gap: Math.round(8 * PHI),
               cursor: onNavigate ? "pointer" : "default",
               WebkitTapHighlightColor: "transparent",
             }}
@@ -92,39 +92,39 @@ export function DepthIndicator({ depth, onNavigate, depthNames, userPath }) {
             {/* Label — slides in on hover / expand */}
             <div style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: 8, letterSpacing: 3,
+              fontSize: Math.round(5 * PHI), letterSpacing: 3,
               color: current
-                ? "rgba(201,168,76,0.85)"
+                ? "rgba(201,168,76,0.95)"
                 : past
-                  ? "rgba(201,168,76,0.5)"
-                  : "rgba(232,232,240,0.4)",
+                  ? "rgba(201,168,76,0.65)"
+                  : "rgba(232,232,240,0.55)",
               opacity: show ? 1 : 0,
               transform: show ? "translateX(0)" : "translateX(6px)",
               transition: `all 0.4s cubic-bezier(0.23,1,0.32,1) ${expanded ? i * 30 : 0}ms`,
               whiteSpace: "nowrap",
               pointerEvents: "none",
-              textShadow: current ? "0 0 12px rgba(201,168,76,0.3)" : "none",
+              textShadow: current ? "0 0 12px rgba(201,168,76,0.4)" : "none",
             }}>
               {depthNames[i]}
             </div>
             {/* Dot */}
             <div style={{
-              width: current ? 8 : show ? 6 : 4,
-              height: current ? 8 : show ? 6 : 4,
+              width: current ? Math.round(6 * PHI) : show ? 8 : Math.round(3 * PHI),
+              height: current ? Math.round(6 * PHI) : show ? 8 : Math.round(3 * PHI),
               borderRadius: "50%",
               flexShrink: 0,
               background: current
-                ? "rgba(201,168,76,0.8)"
+                ? "rgba(201,168,76,0.9)"
                 : show
-                  ? "rgba(201,168,76,0.6)"
+                  ? "rgba(201,168,76,0.7)"
                   : past
-                    ? "rgba(201,168,76,0.2)"
-                    : "rgba(255,255,255,0.07)",
+                    ? "rgba(201,168,76,0.35)"
+                    : "rgba(255,255,255,0.15)",
               transition: "all 0.5s cubic-bezier(0.23,1,0.32,1)",
               boxShadow: current
-                ? "0 0 10px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.12)"
+                ? "0 0 12px rgba(201,168,76,0.6), 0 0 24px rgba(201,168,76,0.15)"
                 : show
-                  ? "0 0 8px rgba(201,168,76,0.25)"
+                  ? "0 0 10px rgba(201,168,76,0.35)"
                   : "none",
               animation: current ? "breathe 6s ease-in-out infinite" : "none",
             }} />
