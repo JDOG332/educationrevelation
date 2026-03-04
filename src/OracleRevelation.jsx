@@ -8,13 +8,6 @@ function smootherstep(t) {
   return t * t * t * (t * (t * 6 - 15) + 10);
 }
 
-// Depth tier color: 1-3 ember, 4-6 gold, 7-10 white
-function tierColor(tier) {
-  if (tier <= 3) return "rgba(224,80,80,0.9)";
-  if (tier <= 6) return "rgba(201,168,76,0.9)";
-  return "rgba(232,232,240,0.9)";
-}
-
 export default function OracleRevelation({ data, query, onNavigate }) {
   const [phase, setPhase] = useState(0);
   const r12Ref = useRef(null);
@@ -22,12 +15,11 @@ export default function OracleRevelation({ data, query, onNavigate }) {
   const psiRef = useRef(null);
   const rafRef = useRef(null);
 
-  // Phase timeline
+  // Phase timeline: 0→1200ms→2400ms
   useEffect(() => {
     const timers = [
       setTimeout(() => setPhase(1), 1200),
       setTimeout(() => setPhase(2), 2400),
-      setTimeout(() => setPhase(3), 3200),
     ];
     return () => {
       timers.forEach(clearTimeout);
@@ -195,52 +187,8 @@ export default function OracleRevelation({ data, query, onNavigate }) {
         </div>
       )}
 
-      {/* ═══ PHASE 2: THE DEPTH ═══ */}
+      {/* ═══ PHASE 2: THE ANSWERS ═══ */}
       {phase >= 2 && (
-        <div style={{
-          width: "100%", marginTop: Math.round(10 * PHI),
-          textAlign: "center",
-          animation: "fadeSlideUp 0.6s ease both",
-        }}>
-          {/* Depth name */}
-          <div style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(20px, 4.5vw, 30px)",
-            fontWeight: 400,
-            color: tierColor(data.tier || 1),
-            letterSpacing: "0.35em",
-            animation: "depthManifest 0.8s ease both",
-          }}>
-            {data.depthName || "DUST"}
-          </div>
-
-          {/* Ground truth score */}
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 3.2vw, 22px)",
-            color: tierColor(data.tier || 1),
-            marginTop: Math.round(3 * PHI),
-            opacity: 0.7,
-          }}>
-            {data.groundTruth || "0.0"} / 10.0
-          </div>
-
-          {/* Depth label */}
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(13px, 2.5vw, 16px)",
-            fontStyle: "italic",
-            color: "rgba(232,232,240,0.35)",
-            marginTop: Math.round(3 * PHI),
-            animation: "fadeSlideUp 0.8s 0.3s both ease",
-          }}>
-            {data.depthLabel || ""}
-          </div>
-        </div>
-      )}
-
-      {/* ═══ PHASE 3: THE ANSWERS + THE DARE ═══ */}
-      {phase >= 3 && (
         <div style={{
           width: "100%", marginTop: Math.round(10 * PHI),
         }}>
@@ -299,7 +247,7 @@ export default function OracleRevelation({ data, query, onNavigate }) {
                   </span>
                 </div>
 
-                {/* Source + Title */}
+                {/* Title */}
                 <div style={{
                   fontFamily: "'Cinzel', serif",
                   fontSize: "clamp(9px, 1.8vw, 11px)",
@@ -308,8 +256,7 @@ export default function OracleRevelation({ data, query, onNavigate }) {
                   marginBottom: 4,
                   textTransform: "uppercase",
                 }}>
-                  {result.source === "mirror" ? "CURATED" : result.source === "truth" ? "SITE TRUTH" : "TOPIC CARD"}
-                  {result.title ? ` — ${result.title}` : ""}
+                  {result.title || ""}
                 </div>
 
                 {/* Answer */}
@@ -340,42 +287,6 @@ export default function OracleRevelation({ data, query, onNavigate }) {
               </div>
             ))}
           </div>
-
-          {/* THE MIRROR TURNS — The Dare */}
-          {data.dare && (
-            <div style={{
-              marginTop: Math.round(13 * PHI),
-              textAlign: "center",
-            }}>
-              <div style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "clamp(8px, 1.6vw, 10px)",
-                letterSpacing: 4,
-                color: "rgba(201,168,76,0.3)",
-                marginBottom: Math.round(5 * PHI),
-                animation: "fadeSlideUp 0.8s 0.6s both ease",
-              }}>THE MIRROR TURNS</div>
-
-              <div style={{
-                border: "1px solid rgba(201,168,76,0.3)",
-                borderRadius: Math.round(4 * PHI),
-                padding: `${Math.round(10 * PHI)}px ${Math.round(12 * PHI)}px`,
-                background: "rgba(201,168,76,0.02)",
-                animation: "dareReveal 1s 0.8s both ease",
-                boxShadow: "0 0 30px rgba(201,168,76,0.04)",
-              }}>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "clamp(16px, 3.2vw, 21px)",
-                  fontStyle: "italic",
-                  color: "rgba(201,168,76,0.7)",
-                  lineHeight: PHI,
-                }}>
-                  {data.dare}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>
