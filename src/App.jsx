@@ -1434,26 +1434,27 @@ export default function TheoryOfEverything() {
                 placeholder="ASK THE MULTIVERSE"
                 style={{
                   width: "100%",
-                  padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
+                  padding: `${Math.round(10 * PHI)}px ${Math.round(14 * PHI)}px`,
                   fontFamily: "'Cinzel', serif",
-                  fontSize: "clamp(11px, 2.2vw, 14px)",
-                  letterSpacing: 3,
-                  color: "rgba(232,232,240,0.85)",
-                  background: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(232,232,240,0.08)",
+                  fontSize: "clamp(14px, 3vw, 20px)",
+                  fontWeight: 700,
+                  letterSpacing: 4,
+                  color: "rgba(232,232,240,0.95)",
+                  background: "rgba(0,0,0,0.5)",
+                  border: "1px solid rgba(201,168,76,0.3)",
                   borderRadius: Math.round(4 * PHI),
                   outline: "none",
                   textAlign: "center",
                   transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
-                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.3)",
+                  boxShadow: "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(201,168,76,0.25)";
-                  e.target.style.boxShadow = "0 0 30px rgba(201,168,76,0.04), inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(201,168,76,0.5)";
+                  e.target.style.boxShadow = "0 0 60px rgba(201,168,76,0.15), inset 0 0 30px rgba(0,0,0,0.5)";
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(232,232,240,0.08)";
-                  e.target.style.boxShadow = "inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(201,168,76,0.3)";
+                  e.target.style.boxShadow = "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)";
                 }}
               />
             </div>
@@ -1501,26 +1502,27 @@ export default function TheoryOfEverything() {
                 placeholder="ASK THE HUMANS"
                 style={{
                   width: "100%",
-                  padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
+                  padding: `${Math.round(10 * PHI)}px ${Math.round(14 * PHI)}px`,
                   fontFamily: "'Cinzel', serif",
-                  fontSize: "clamp(11px, 2.2vw, 14px)",
-                  letterSpacing: 3,
-                  color: "rgba(232,232,240,0.85)",
-                  background: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(232,232,240,0.08)",
+                  fontSize: "clamp(14px, 3vw, 20px)",
+                  fontWeight: 700,
+                  letterSpacing: 4,
+                  color: "rgba(232,232,240,0.95)",
+                  background: "rgba(0,0,0,0.5)",
+                  border: "1px solid rgba(201,168,76,0.3)",
                   borderRadius: Math.round(4 * PHI),
                   outline: "none",
                   textAlign: "center",
                   transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
-                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.3)",
+                  boxShadow: "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(201,168,76,0.25)";
-                  e.target.style.boxShadow = "0 0 30px rgba(201,168,76,0.04), inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(201,168,76,0.5)";
+                  e.target.style.boxShadow = "0 0 60px rgba(201,168,76,0.15), inset 0 0 30px rgba(0,0,0,0.5)";
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(232,232,240,0.08)";
-                  e.target.style.boxShadow = "inset 0 0 20px rgba(0,0,0,0.3)";
+                  e.target.style.borderColor = "rgba(201,168,76,0.3)";
+                  e.target.style.boxShadow = "0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(0,0,0,0.5)";
                 }}
               />
             </div>
