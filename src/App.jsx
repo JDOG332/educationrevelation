@@ -24,6 +24,8 @@ import DiamondGenesisCanvas from "./components/diamondGenesis.jsx";
 import BinaryLandingCanvas from "./components/binaryLanding.jsx";
 import { findAnswers } from "./questionEngine.js";
 import OracleRevelation from "./OracleRevelation.jsx";
+import { fetchWiki } from "./wikiEngine.js";
+import WikiRevelation from "./WikiRevelation.jsx";
 
 /* ========== MAIN ========== */
 
@@ -82,6 +84,9 @@ export default function TheoryOfEverything() {
   const [doorResults, setDoorResults] = useState(null);
   const [doorExpanded, setDoorExpanded] = useState(null);
   const [questionResults, setQuestionResults] = useState(null);
+  const [wikiInput, setWikiInput] = useState("");
+  const [wikiResults, setWikiResults] = useState(null);
+  const [wikiLoading, setWikiLoading] = useState(false);
   // Stable particle seeds — generated once, never re-randomized on re-render
   const mathParticles = useMemo(() =>
     Array.from({ length: 16 }, (_, i) => ({
@@ -1403,11 +1408,79 @@ export default function TheoryOfEverything() {
               />
             </div>
 
-            {/* ── ORACLE REVELATION — 5-phase question experience ── */}
+            {/* ── ORACLE REVELATION — question experience ── */}
             {questionResults?.results?.length > 0 && (
               <OracleRevelation
                 data={questionResults}
                 query={doorInput}
+                onNavigate={(route) => {
+                  setActiveConvergence(route.convergence);
+                  setActiveSubcategory(route.subcategory || null);
+                  setActiveIdea(route.idea || null);
+                  setActiveFilterQ(route.filterQ !== undefined ? route.filterQ : null);
+                  setDepth(4);
+                  window.scrollTo({ top: 0, behavior: "instant" });
+                }}
+              />
+            )}
+
+            <div style={{ height: Math.round(13 * PHI) }} />
+
+            {/* ── WIKIPEDIA SEARCH BAR ── */}
+            <div style={{ animation: "fadeSlideUp 1.5s 2.2s both ease", width: "100%" }}>
+              <input
+                type="text"
+                value={wikiInput}
+                onChange={(e) => { setWikiInput(e.target.value); setWikiResults(null); }}
+                onKeyDown={async (e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    if (wikiInput.trim().length >= 2) {
+                      setWikiLoading(true);
+                      setWikiResults(null);
+                      try {
+                        const result = await fetchWiki(wikiInput);
+                        setWikiResults(result);
+                      } catch {
+                        setWikiResults(null);
+                      }
+                      setWikiLoading(false);
+                    }
+                  }
+                }}
+                placeholder="SEARCH A TOPIC ON WIKIPEDIA..."
+                style={{
+                  width: "100%",
+                  padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(11px, 2.2vw, 14px)",
+                  letterSpacing: 3,
+                  color: "rgba(232,232,240,0.85)",
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(79,195,247,0.15)",
+                  borderRadius: Math.round(4 * PHI),
+                  outline: "none",
+                  textAlign: "center",
+                  transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
+                  boxShadow: "0 0 30px rgba(79,195,247,0.03), inset 0 0 20px rgba(0,0,0,0.3)",
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = "rgba(79,195,247,0.35)";
+                  e.target.style.boxShadow = "0 0 40px rgba(79,195,247,0.08), inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = "rgba(79,195,247,0.15)";
+                  e.target.style.boxShadow = "0 0 30px rgba(79,195,247,0.03), inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+              />
+            </div>
+
+            {/* ── WIKI REVELATION — scored bullet points ── */}
+            {(wikiLoading || wikiResults) && (
+              <WikiRevelation
+                data={wikiResults}
+                loading={wikiLoading}
+                query={wikiInput}
                 onNavigate={(route) => {
                   setActiveConvergence(route.convergence);
                   setActiveSubcategory(route.subcategory || null);
