@@ -574,45 +574,48 @@ export default function BinaryLandingCanvas({ onChoice }) {
           {/* Outer glow */}
           <div style={{
             position: "absolute", top: "50%", left: "50%",
-            width: 40, height: 40,
+            width: 80, height: 80,
             transform: "translate(-50%, -50%)",
             borderRadius: "50%",
             background: "radial-gradient(circle, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 40%, transparent 70%)",
             animation: `breathe ${PHI * 4}s ease-in-out infinite`,
           }} />
-          {/* Rotating tetraprism — 3 triangular faces */}
+          {/* Rotating tetraprism — 3 triangular faces sharing apex */}
           <div style={{
-            width: 18, height: 18,
+            width: 36, height: Math.round(18 * PHI),
             animation: `tetraSpin ${PHI * 5}s linear infinite`,
             transformStyle: "preserve-3d",
             position: "relative",
           }}>
-            {/* Face 1 */}
+            {/* Face 1 — gold */}
             <div style={{
               position: "absolute", top: 0, left: 0, width: 0, height: 0,
-              borderLeft: "9px solid transparent",
-              borderRight: "9px solid transparent",
-              borderBottom: `${Math.round(9 * PHI)}px solid rgba(201,168,76,0.5)`,
-              filter: "drop-shadow(0 0 4px rgba(201,168,76,0.4))",
-              transform: "rotateY(0deg) translateZ(5px)",
+              borderLeft: "18px solid transparent",
+              borderRight: "18px solid transparent",
+              borderBottom: `${Math.round(18 * PHI)}px solid rgba(201,168,76,0.5)`,
+              filter: "drop-shadow(0 0 6px rgba(201,168,76,0.4))",
+              transformOrigin: "18px 0",
+              transform: "rotateY(0deg) translateZ(10px)",
             }} />
-            {/* Face 2 */}
+            {/* Face 2 — white */}
             <div style={{
               position: "absolute", top: 0, left: 0, width: 0, height: 0,
-              borderLeft: "9px solid transparent",
-              borderRight: "9px solid transparent",
-              borderBottom: `${Math.round(9 * PHI)}px solid rgba(232,232,240,0.3)`,
-              filter: "drop-shadow(0 0 4px rgba(232,232,240,0.2))",
-              transform: "rotateY(120deg) translateZ(5px)",
+              borderLeft: "18px solid transparent",
+              borderRight: "18px solid transparent",
+              borderBottom: `${Math.round(18 * PHI)}px solid rgba(232,232,240,0.3)`,
+              filter: "drop-shadow(0 0 6px rgba(232,232,240,0.2))",
+              transformOrigin: "18px 0",
+              transform: "rotateY(120deg) translateZ(10px)",
             }} />
-            {/* Face 3 */}
+            {/* Face 3 — blue */}
             <div style={{
               position: "absolute", top: 0, left: 0, width: 0, height: 0,
-              borderLeft: "9px solid transparent",
-              borderRight: "9px solid transparent",
-              borderBottom: `${Math.round(9 * PHI)}px solid rgba(140,160,220,0.35)`,
-              filter: "drop-shadow(0 0 4px rgba(140,160,220,0.25))",
-              transform: "rotateY(240deg) translateZ(5px)",
+              borderLeft: "18px solid transparent",
+              borderRight: "18px solid transparent",
+              borderBottom: `${Math.round(18 * PHI)}px solid rgba(140,160,220,0.35)`,
+              filter: "drop-shadow(0 0 6px rgba(140,160,220,0.25))",
+              transformOrigin: "18px 0",
+              transform: "rotateY(240deg) translateZ(10px)",
             }} />
           </div>
         </div>
