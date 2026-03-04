@@ -12,6 +12,23 @@
 import { tokenize } from "./mirrorIndex.js";
 import { TOPIC_CARDS } from "./topicCards.js";
 
+// Stop words — zero matching value, ~40-50% of all tokens
+const STOP = new Set([
+  "the","a","an","is","are","was","were","be","been","being","have","has","had",
+  "do","does","did","will","would","shall","should","may","might","can","could",
+  "to","of","in","for","on","with","at","by","from","as","into","through","during",
+  "before","after","above","below","between","under","again","further","then","once",
+  "that","this","these","those","it","its","he","she","they","them","his","her",
+  "their","we","our","you","your","which","who","whom","what","where","when","how",
+  "all","each","every","both","few","more","most","other","some","such","no","not",
+  "only","own","same","so","than","too","very","also","just","about","up","out",
+  "if","or","and","but","nor","yet","because","while","although","since","until",
+]);
+
+function stripStop(tokens) {
+  return tokens.filter(t => !STOP.has(t) && t.length > 2);
+}
+
 // ═══════════════════════════════════════════════════════════
 // CARD INDEX — reuse same lazy pattern as questionEngine
 // ═══════════════════════════════════════════════════════════
@@ -96,8 +113,16 @@ function scoreTokens(sentenceTokens, cardTokens, cardTokenCount) {
 function scoreSentence(sentenceTokens) {
   const index = getCardIndex();
   const scored = [];
+  const sentenceSet = new Set(sentenceTokens);
 
   for (const card of index) {
+    // Fast pre-filter: skip cards with zero exact token overlap
+    let hasOverlap = false;
+    for (const ct of card.tokens) {
+      if (sentenceSet.has(ct)) { hasOverlap = true; break; }
+    }
+    if (!hasOverlap) continue;
+
     const raw = scoreTokens(sentenceTokens, card.tokens, card.tokenCount);
     if (raw > 0.02) {
       scored.push({ raw, card });
@@ -201,36 +226,45 @@ export async function fetchWiki(query) {
     ? `https://en.wikipedia.org/?curid=${pageId}`
     : `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
 
-  // Step 3: Split into sentences
-  const sentences = extract
+  // Step 3: Split into sentences, then chunk every 3 together
+  const rawSentences = extract
     .split(/(?<=[.!?])\s+/)
     .map(s => s.trim())
     .filter(s => s.length > 10 && s.split(/\s+/).length >= 3);
 
-  // Step 4: Score each sentence
+  const chunks = [];
+  for (let i = 0; i < rawSentences.length; i += 3) {
+    chunks.push(rawSentences.slice(i, i + 3).join(" "));
+  }
+
+  // Step 4: Score each chunk (stop words stripped for speed)
   const points = [];
   const seenRoutes = new Set();
 
-  for (const sentence of sentences) {
-    const tokens = tokenize(sentence);
+  for (const chunk of chunks) {
+    const tokens = stripStop(tokenize(chunk));
+    if (tokens.length < 2) continue;
     const { psi, emoji, route, cardTitle } = scoreSentence(tokens);
-    const truthScore = Math.min(99, Math.round(psi * 100 * 5)); // scale to readable %
+    const truthScore = Math.min(99, Math.round(psi * 100 * 5));
 
-    points.push({
-      text: truncate(sentence),
-      emoji,
-      truthScore: Math.max(1, truthScore),
-      route,
-      cardTitle,
-    });
+    if (truthScore >= 5) {
+      points.push({
+        text: truncate(chunk),
+        emoji,
+        truthScore,
+        route,
+        cardTitle,
+      });
+    }
   }
 
-  // Sort by truth score, highest first
+  // Sort by truth score, highest first — keep top 10
   points.sort((a, b) => b.truthScore - a.truthScore);
+  const top = points.slice(0, 10);
 
   // Step 5: Build next steps — top unique routes
   const nextSteps = [];
-  for (const p of points) {
+  for (const p of top) {
     if (p.route && !seenRoutes.has(p.route.convergence + ":" + p.route.subcategory)) {
       seenRoutes.add(p.route.convergence + ":" + p.route.subcategory);
       nextSteps.push({ emoji: p.emoji, title: p.cardTitle, route: p.route });
@@ -238,5 +272,5 @@ export async function fetchWiki(query) {
     }
   }
 
-  return { title, url, points, nextSteps };
+  return { title, url, points: top, nextSteps };
 }
