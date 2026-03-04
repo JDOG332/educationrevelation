@@ -87,6 +87,7 @@ export default function TheoryOfEverything() {
   const [wikiInput, setWikiInput] = useState("");
   const [wikiResults, setWikiResults] = useState(null);
   const [wikiLoading, setWikiLoading] = useState(false);
+  const [landingSearchHovered, setLandingSearchHovered] = useState(false);
   // Stable particle seeds — generated once, never re-randomized on re-render
   const mathParticles = useMemo(() =>
     Array.from({ length: 16 }, (_, i) => ({
@@ -432,7 +433,111 @@ export default function TheoryOfEverything() {
             setDepth(2);
           }
           window.scrollTo(0, 0);
-        }} />
+        }}
+          onSearchHover={setLandingSearchHovered}
+          searchOverlay={landingSearchHovered ? (<>
+            {/* THE PROOF search bar — same as depth 5 */}
+            <div style={{
+              position: "absolute", top: `${Math.pow(PHI_INV, 4) * 100}%`, left: "50%",
+              transform: "translate(-50%, -50%)", width: "100%", maxWidth: 520, padding: "0 20px",
+              opacity: landingSearchHovered ? 1 : 0,
+              transition: `opacity ${PHI_INV * 1000}ms cubic-bezier(0.23,1,0.32,1)`,
+              pointerEvents: "auto",
+            }}>
+              <input
+                type="text"
+                value={doorInput}
+                onChange={(e) => { setDoorInput(e.target.value); setQuestionResults(null); }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    if (doorInput.trim().length >= 3) {
+                      setQuestionResults(findAnswers(doorInput));
+                    }
+                  }
+                }}
+                placeholder="THE PROOF"
+                style={{
+                  width: "100%",
+                  padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(11px, 2.2vw, 14px)",
+                  letterSpacing: 3,
+                  color: "rgba(232,232,240,0.85)",
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(232,232,240,0.08)",
+                  borderRadius: Math.round(4 * PHI),
+                  outline: "none",
+                  textAlign: "center",
+                  transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
+                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.3)",
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = "rgba(201,168,76,0.25)";
+                  e.target.style.boxShadow = "0 0 30px rgba(201,168,76,0.04), inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = "rgba(232,232,240,0.08)";
+                  e.target.style.boxShadow = "inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+              />
+            </div>
+            {/* WIKIPEDIA search bar — same as depth 5 */}
+            <div style={{
+              position: "absolute", top: `${(1 - Math.pow(PHI_INV, 4)) * 100}%`, left: "50%",
+              transform: "translate(-50%, -50%)", width: "100%", maxWidth: 520, padding: "0 20px",
+              opacity: landingSearchHovered ? 1 : 0,
+              transition: `opacity ${PHI_INV * 1000}ms cubic-bezier(0.23,1,0.32,1)`,
+              pointerEvents: "auto",
+            }}>
+              <input
+                type="text"
+                value={wikiInput}
+                onChange={(e) => { setWikiInput(e.target.value); setWikiResults(null); }}
+                onKeyDown={async (e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    if (wikiInput.trim().length >= 2) {
+                      setWikiLoading(true);
+                      setWikiResults(null);
+                      try {
+                        const result = await fetchWiki(wikiInput);
+                        setWikiResults(result);
+                      } catch {
+                        setWikiResults(null);
+                      }
+                      setWikiLoading(false);
+                    }
+                  }
+                }}
+                placeholder="WIKIPEDIA"
+                style={{
+                  width: "100%",
+                  padding: `${Math.round(8 * PHI)}px ${Math.round(12 * PHI)}px`,
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "clamp(11px, 2.2vw, 14px)",
+                  letterSpacing: 3,
+                  color: "rgba(232,232,240,0.85)",
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(232,232,240,0.08)",
+                  borderRadius: Math.round(4 * PHI),
+                  outline: "none",
+                  textAlign: "center",
+                  transition: "all 0.618s cubic-bezier(0.23,1,0.32,1)",
+                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.3)",
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = "rgba(201,168,76,0.25)";
+                  e.target.style.boxShadow = "0 0 30px rgba(201,168,76,0.04), inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = "rgba(232,232,240,0.08)";
+                  e.target.style.boxShadow = "inset 0 0 20px rgba(0,0,0,0.3)";
+                }}
+              />
+            </div>
+          </>) : null}
+        />
         {/* Nav dissolves in on landing — golden ratio timing */}
         <div style={{
           position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 10200,
