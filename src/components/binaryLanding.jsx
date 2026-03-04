@@ -161,6 +161,7 @@ export default function BinaryLandingCanvas({ onChoice }) {
   const [searchHovered, setSearchHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
   const [labelsHidden, setLabelsHidden] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   hoveredRef.current = hovered;
 
@@ -667,7 +668,13 @@ export default function BinaryLandingCanvas({ onChoice }) {
         onMouseEnter={() => setSearchHovered(true)}
         onMouseLeave={() => { setSearchHovered(false); setMousePos({ x: -100, y: -100 }); }}
         onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
-        onClick={() => { if (!labelsHidden) setLabelsHidden(true); }}
+        onClick={() => {
+          if (!labelsHidden) {
+            setLabelsHidden(true);
+            // SEARCH appears after center word fully dissolves: PHI² delay + PHI³ duration
+            setTimeout(() => setShowSearch(true), Math.round((PHI * PHI + PHI * PHI * PHI) * 1000));
+          }
+        }}
         style={{
           position: "absolute", top: 0, left: 0, width: "66.67%", height: "100%",
           cursor: "none", zIndex: 3,
@@ -734,6 +741,21 @@ export default function BinaryLandingCanvas({ onChoice }) {
             }}>{isEven ? kPrev : kWord}</div>
           </div>
         </div>
+
+        {/* SEARCH — fades in after all labels dissolve */}
+        {showSearch && (
+          <div style={{
+            position: "absolute", top: "50%", left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+            animation: `fadeSlideUp ${PHI * PHI * PHI * 1000}ms ${cubicEase} both`,
+          }}>
+            <div style={{
+              ...labelFont,
+              color: `rgba(232,232,240,${alphaAnchor})`,
+            }}>SEARCH</div>
+          </div>
+        )}
 
         {/* Bottom — pair[1] — dissolves second (PHI delay) */}
         <div style={{
