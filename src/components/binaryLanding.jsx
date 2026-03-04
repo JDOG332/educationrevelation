@@ -683,14 +683,14 @@ export default function BinaryLandingCanvas({ onChoice }) {
       <div style={{
         position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 4,
       }}>
-        {/* Top — pair[0] — dissolves first */}
+        {/* Top — pair[0] — dissolves first (immediate) */}
         <div style={{
           position: "absolute", top: labelTopPos, left: "50%",
-          transform: `translate(-50%, -50%) ${labelsHidden ? "scale(0.96) translateY(-12px)" : hovered === "top" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
-          transition: `all ${PHI * PHI * 1000}ms ${cubicEase}`,
+          transform: `translate(-50%, -50%) ${labelsHidden ? "scale(0.95) translateY(-16px)" : hovered === "top" ? "scale(1.06) translateY(-4px)" : "scale(1) translateY(0)"}`,
+          transition: `all ${PHI * PHI * PHI * 1000}ms ${cubicEase}`,
           textAlign: "center",
           opacity: labelsHidden ? 0 : 1,
-          filter: labelsHidden ? "blur(6px)" : "blur(0px)",
+          filter: labelsHidden ? "blur(8px)" : "blur(0px)",
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
@@ -709,14 +709,14 @@ export default function BinaryLandingCanvas({ onChoice }) {
           </div>
         </div>
 
-        {/* Center — KNOWLEDGE word — dissolves second (PHI delay) */}
+        {/* Center — KNOWLEDGE word — dissolves last (PHI² delay) */}
         <div style={{
           position: "absolute", top: "50%", left: "50%",
-          transform: `translate(-50%, -50%) ${labelsHidden ? "scale(0.96)" : hovered === "center" ? "scale(1.06)" : "scale(1)"}`,
-          transition: `all ${PHI * PHI * 1000}ms ${cubicEase} ${labelsHidden ? Math.round(PHI * 1000 * PHI_INV) : 0}ms`,
+          transform: `translate(-50%, -50%) ${labelsHidden ? "scale(0.95)" : hovered === "center" ? "scale(1.06)" : "scale(1)"}`,
+          transition: `all ${PHI * PHI * PHI * 1000}ms ${cubicEase} ${labelsHidden ? Math.round(PHI * PHI * 1000) : 0}ms`,
           textAlign: "center",
           opacity: labelsHidden ? 0 : 1,
-          filter: labelsHidden ? "blur(6px)" : "blur(0px)",
+          filter: labelsHidden ? "blur(8px)" : "blur(0px)",
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
@@ -735,14 +735,14 @@ export default function BinaryLandingCanvas({ onChoice }) {
           </div>
         </div>
 
-        {/* Bottom — pair[1] — dissolves last (PHI*PHI_INV² delay) */}
+        {/* Bottom — pair[1] — dissolves second (PHI delay) */}
         <div style={{
           position: "absolute", top: labelBotPos, left: "50%",
-          transform: `translate(-50%, -50%) ${labelsHidden ? "scale(0.96) translateY(12px)" : hovered === "bottom" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
-          transition: `all ${PHI * PHI * 1000}ms ${cubicEase} ${labelsHidden ? Math.round(PHI * 1000) : 0}ms`,
+          transform: `translate(-50%, -50%) ${labelsHidden ? "scale(0.95) translateY(16px)" : hovered === "bottom" ? "scale(1.06) translateY(4px)" : "scale(1) translateY(0)"}`,
+          transition: `all ${PHI * PHI * PHI * 1000}ms ${cubicEase} ${labelsHidden ? Math.round(PHI * 1000) : 0}ms`,
           textAlign: "center",
           opacity: labelsHidden ? 0 : 1,
-          filter: labelsHidden ? "blur(6px)" : "blur(0px)",
+          filter: labelsHidden ? "blur(8px)" : "blur(0px)",
         }}>
           <div style={{ animation: `fadeSlideUp 1.2s ease ${PHI_INV}s both` }}>
             <div style={{
