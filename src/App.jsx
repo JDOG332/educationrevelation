@@ -453,7 +453,7 @@ export default function TheoryOfEverything() {
                       }
                     }
                   }}
-                  placeholder="ASK the proof a question"
+                  placeholder="ASK THE UNIVERSE A QUESTION"
                   style={{
                     width: "100%",
                     padding: `${Math.round(10 * PHI)}px ${Math.round(14 * PHI)}px`,
