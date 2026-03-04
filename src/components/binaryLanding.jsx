@@ -671,8 +671,8 @@ export default function BinaryLandingCanvas({ onChoice }) {
         onClick={() => {
           if (!labelsHidden) {
             setLabelsHidden(true);
-            // SEARCH appears after center word fully dissolves: PHI² delay + PHI³ duration
-            setTimeout(() => setShowSearch(true), Math.round((PHI * PHI + PHI * PHI * PHI) * 1000));
+            // SEARCH appears as center word begins dissolving (PHI² delay)
+            setTimeout(() => setShowSearch(true), Math.round(PHI * PHI * 1000));
           }
         }}
         style={{
@@ -742,13 +742,14 @@ export default function BinaryLandingCanvas({ onChoice }) {
           </div>
         </div>
 
-        {/* SEARCH — fades in after all labels dissolve */}
+        {/* SEARCH — crossfades in as center word dissolves */}
         {showSearch && (
           <div style={{
             position: "absolute", top: "50%", left: "50%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
-            animation: `fadeSlideUp ${PHI * PHI * PHI * 1000}ms ${cubicEase} both`,
+            animation: `fadeSlideUp ${PHI * PHI * 1000}ms ${cubicEase} both`,
+            whiteSpace: "nowrap",
           }}>
             <div style={{
               ...labelFont,
