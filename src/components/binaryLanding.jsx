@@ -743,26 +743,7 @@ export default function BinaryLandingCanvas({ onChoice, searchOverlay, landingDi
           </div>
         </div>
 
-        {/* SEARCH — crossfades in as center word dissolves */}
-        {showSearch && (
-          <div style={{
-            position: "absolute", top: "50%", left: "50%",
-            transform: "translate(-50%, -50%)",
-            textAlign: "center",
-          }}>
-            <div style={{
-              animation: `fadeSlideUp ${PHI * PHI * 1000}ms ${cubicEase} both`,
-            }}>
-              <div style={{
-                ...labelFont,
-                color: `rgba(232,232,240,${alphaAnchor})`,
-                whiteSpace: "nowrap",
-              }}>SEARCH</div>
-            </div>
-          </div>
-        )}
-
-        {/* Search bar overlay — from App.jsx, appears with SEARCH */}
+        {/* Search bar overlay — appears after labels dissolve */}
         {showSearch && searchOverlay}
 
         {/* Bottom — pair[1] — dissolves second (PHI delay) */}
