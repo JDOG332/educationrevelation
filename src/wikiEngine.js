@@ -140,10 +140,15 @@ const API = "https://en.wikipedia.org/w/api.php";
 export async function fetchWiki(query) {
   if (!query || query.trim().length < 2) return null;
 
+  // Extract keywords — strip stop words so full sentences still find articles
+  // "How many people worked on the Egyptian Pyramids" → "people worked egyptian pyramids"
+  const keywords = stripStop(tokenize(query));
+  const searchTerm = keywords.length > 0 ? keywords.join(" ") : query.trim();
+
   // Step 1: Search for best matching article title
   const searchUrl = new URL(API);
   searchUrl.searchParams.set("action", "opensearch");
-  searchUrl.searchParams.set("search", query.trim());
+  searchUrl.searchParams.set("search", searchTerm);
   searchUrl.searchParams.set("limit", "1");
   searchUrl.searchParams.set("format", "json");
   searchUrl.searchParams.set("origin", "*");
