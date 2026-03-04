@@ -748,13 +748,16 @@ export default function BinaryLandingCanvas({ onChoice }) {
             position: "absolute", top: "50%", left: "50%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
-            animation: `fadeSlideUp ${PHI * PHI * 1000}ms ${cubicEase} both`,
-            whiteSpace: "nowrap",
           }}>
             <div style={{
-              ...labelFont,
-              color: `rgba(232,232,240,${alphaAnchor})`,
-            }}>SEARCH</div>
+              animation: `fadeSlideUp ${PHI * PHI * 1000}ms ${cubicEase} both`,
+            }}>
+              <div style={{
+                ...labelFont,
+                color: `rgba(232,232,240,${alphaAnchor})`,
+                whiteSpace: "nowrap",
+              }}>SEARCH</div>
+            </div>
           </div>
         )}
 
