@@ -8905,8 +8905,9 @@ export default function TheoryOfEverything() {
                   setActiveConvergence(route.convergence);
                   setActiveSubcategory(route.subcategory || null);
                   setActiveIdea(route.idea || null);
+                  setActiveFilterQ(route.filterQ !== undefined ? route.filterQ : null);
                   setDepth(4);
-                  window.scrollTo(0, 0);
+                  window.scrollTo({ top: 0, behavior: "instant" });
                 }}
               />
             )}

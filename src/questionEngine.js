@@ -14,6 +14,32 @@ import { testTruth } from "./truthTester.js";
 import { TOPIC_CARDS } from "./topicCards.js";
 
 // ═══════════════════════════════════════════════════════════
+// DOOR LABEL → CONVERGENCE KEY mapping
+// siteTruth.js uses uppercase labels; depth 4 expects lowercase keys
+// ═══════════════════════════════════════════════════════════
+
+const DOOR_TO_KEY = {
+  RELIGION: "sameness",
+  PHILOSOPHY: "layers",
+  SCIENCE: "rock",
+  MYSTICISM: "plain",
+  ART: "depths",
+  MATH: "promise",
+  MYTHOLOGY: "gravity",
+  MYTH: "gravity",
+  NATURE: "pillars",
+  LOVE: "filter",
+  CONSCIOUSNESS: "ancient",
+  SELF: "ancient",
+  SELF_DEPTH: "ancient",
+  RETURN: "filter",
+  GENERAL: "filter",
+  OTHER: "ancient",
+  BREAK: "ancient",
+  ARROW: "ancient",
+};
+
+// ═══════════════════════════════════════════════════════════
 // TOPIC CARD INDEX — lazy-built flat array of all ~1000 cards
 // ═══════════════════════════════════════════════════════════
 
@@ -125,13 +151,16 @@ export function findAnswers(query) {
 
   // Source 2: Truth Tester — 954 sentences, full CRT formula
   const truth = testTruth(query);
-  const truthResults = (truth.topMatches || []).map(m => ({
-    title: m.door ? m.door.replace(/_/g, " ").toUpperCase() : "SITE TRUTH",
-    answer: m.text,
-    source: "truth",
-    psi: m.score,
-    route: m.door ? { convergence: m.door } : null,
-  }));
+  const truthResults = (truth.topMatches || []).map(m => {
+    const key = m.door ? DOOR_TO_KEY[m.door] : null;
+    return {
+      title: m.door ? m.door.replace(/_/g, " ").toUpperCase() : "SITE TRUTH",
+      answer: m.text,
+      source: "truth",
+      psi: m.score,
+      route: key ? { convergence: key, subcategory: "__essay__" } : null,
+    };
+  });
 
   // Source 3: Topic Cards — 1000 cards, token overlap
   const cardResults = searchTopicCards(userTokens).map(c => ({
