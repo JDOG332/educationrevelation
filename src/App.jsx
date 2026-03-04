@@ -507,7 +507,9 @@ export default function TheoryOfEverything() {
                         e.preventDefault();
                         if (wikiInput.trim().length >= 2) {
                           setWikiLoading(true);
-                          fetchWiki(wikiInput).then((r) => { setWikiResults(r); setWikiLoading(false); });
+                          fetchWiki(wikiInput)
+                            .then((r) => { setWikiResults(r); setWikiLoading(false); })
+                            .catch(() => { setWikiResults(null); setWikiLoading(false); });
                           setLandingDissolving(true);
                           setTimeout(() => {
                             setDepth(5);
