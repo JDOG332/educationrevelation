@@ -1,0 +1,706 @@
+/* ═══════════════════════════════════════════════════════════
+   SIFT DIRT — Global Styles
+   Design: Dark, clean, each door has its own color world.
+   Typography: Cinzel (headings) + Cormorant Garamond (body)
+   ═══════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Door colors as CSS custom properties */
+  --door-religion: 201, 168, 76;
+  --door-philosophy: 150, 180, 220;
+  --door-science: 100, 200, 150;
+  --door-mysticism: 190, 140, 220;
+  --door-art: 224, 120, 100;
+  --door-mathematics: 201, 168, 76;
+  --door-mythology: 180, 160, 120;
+  --door-nature: 120, 180, 100;
+  --door-love: 220, 160, 160;
+  --door-consciousness: 200, 200, 230;
+
+  --bg: #08080c;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --text: #e8e4dc;
+  --text-dim: rgba(232, 228, 220, 0.5);
+  --text-bright: #fff;
+  --gold: rgb(201, 168, 76);
+  --gold-dim: rgba(201, 168, 76, 0.3);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-mono: 'SF Mono', 'Fira Code', monospace;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ─── Typography ─── */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
+h3 { font-size: clamp(1rem, 2.5vw, 1.4rem); }
+h4 { font-size: clamp(0.9rem, 2vw, 1.1rem); }
+
+p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ─── Layout ─── */
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.layout-header a {
+  color: var(--text-dim);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.layout-header a:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+}
+
+.layout-main {
+  flex: 1;
+  padding: 40px 0 80px;
+}
+
+/* ─── Breadcrumb ─── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+.breadcrumb a {
+  color: var(--text-dim);
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+}
+
+.breadcrumb .sep {
+  opacity: 0.3;
+}
+
+/* ─── The Search Bar ─── */
+
+.search-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px 20px 16px 48px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.search-input::placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.search-input:focus {
+  border-color: var(--gold-dim);
+  background: var(--bg-card-hover);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* ─── Door Grid (Home) ─── */
+
+.doors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.door-card {
+  position: relative;
+  padding: 28px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.door-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.door-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.door-card:hover::before {
+  opacity: 1;
+}
+
+.door-num {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.door-emoji {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.door-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--text-bright);
+  margin-bottom: 8px;
+}
+
+.door-question {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ─── Room Grid (Door Page) ─── */
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.room-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.room-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.room-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.room-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+}
+
+.room-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.room-psi {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-psi-bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.room-psi-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.room-psi-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+/* ─── Topic Cards Grid (Room Page) ─── */
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.topic-card {
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.topic-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+}
+
+.topic-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.topic-icon {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.topic-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.topic-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.topic-simple {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ─── Full Card View ─── */
+
+.card-detail {
+  max-width: 720px;
+}
+
+.card-header {
+  margin-bottom: 40px;
+}
+
+.card-header .topic-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.card-header h1 {
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.card-section {
+  margin-bottom: 40px;
+}
+
+.card-section-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-simple {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.card-intuition {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text);
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* Senses Grid */
+.senses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.sense-item {
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.sense-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sense-icon {
+  font-size: 1.1rem;
+}
+
+.sense-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+.sense-text {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Advanced Section */
+.card-advanced {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+/* Links & Songs */
+.card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+.card-songs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-song {
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.card-song .song-title {
+  color: var(--text);
+}
+
+/* ─── Search Results ─── */
+
+.search-results {
+  margin-top: 24px;
+}
+
+.search-result {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.search-result:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.result-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--text-bright);
+}
+
+.result-answer {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Psi Score Badge */
+.psi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gold);
+}
+
+.psi-symbol {
+  font-style: italic;
+}
+
+/* ─── Page Headers ─── */
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  margin-bottom: 8px;
+}
+
+.page-tagline {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.page-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ─── Home Hero ─── */
+
+.home-hero {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.home-hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 16px;
+  color: var(--text-bright);
+}
+
+.home-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-dim);
+  font-style: italic;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.home-equation {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+/* ─── Not Found ─── */
+
+.not-found {
+  text-align: center;
+  padding: 120px 0;
+}
+
+.not-found h1 {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  color: var(--text-dim);
+}
+
+/* ─── Animations ─── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease both;
+}
+
+.fade-in-delay-1 { animation-delay: 0.05s; }
+.fade-in-delay-2 { animation-delay: 0.1s; }
+.fade-in-delay-3 { animation-delay: 0.15s; }
+.fade-in-delay-4 { animation-delay: 0.2s; }
+
+/* ─── Scrollbar ─── */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ─── Mobile Adjustments ─── */
+
+@media (max-width: 600px) {
+  .doors-grid { grid-template-columns: 1fr; }
+  .rooms-grid { grid-template-columns: 1fr; }
+  .topics-grid { grid-template-columns: 1fr; }
+  .senses-grid { grid-template-columns: 1fr; }
+  .home-hero { padding: 40px 0 24px; }
+  .layout-main { padding: 24px 0 60px; }
+}
