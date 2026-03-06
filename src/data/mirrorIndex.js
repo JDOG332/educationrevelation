@@ -11,7 +11,7 @@
  *   - weight: importance multiplier
  */
 
-import { PHI } from "./data.js";
+import { PHI } from "./constants.js";
 
 // ═══════════════════════════════════════════════════════════
 // THE INDEX — every seed in the garden, tagged and mapped

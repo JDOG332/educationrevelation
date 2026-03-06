@@ -20,7 +20,7 @@
  *   evaluate_Psi(...)               →  evaluatePsi(body_i, body_j, G)
  */
 
-import { PHI, PHI_INV } from "./data.js";
+import { PHI, PHI_INV } from "../data/constants.js";
 
 // ═══════════════════════════════════════════════════════════
 // CONSTANTS — matching Python class defaults

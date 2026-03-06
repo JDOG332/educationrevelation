@@ -9,8 +9,8 @@
  * 100% client-side, instant.
  */
 
-import { tokenize } from "./mirrorIndex.js";
-import { TOPIC_CARDS } from "./topicCards.js";
+import { tokenize } from "../data/mirrorIndex.js";
+import { TOPIC_CARDS } from "../data/topicCards.js";
 
 // ═══════════════════════════════════════════════════════════
 // TOPIC CARD INDEX — lazy-built flat array of all ~1000 cards

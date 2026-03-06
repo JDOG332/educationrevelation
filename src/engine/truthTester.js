@@ -19,9 +19,9 @@
  *   ~280,000 comparisons. <2ms on any modern device.
  */
 
-import { PHI, PHI_INV } from "./data.js";
+import { PHI, PHI_INV } from "../data/constants.js";
 import { computeR12, initializeBlochVectors } from "./psi-engine.js";
-import { SITE_SENTENCES, DOOR_LAYERS, TOTAL_SENTENCES } from "./siteTruth.js";
+import { SITE_SENTENCES, DOOR_LAYERS, TOTAL_SENTENCES } from "../data/siteTruth.js";
 
 const LAYER_BLOCHS = initializeBlochVectors();
 
