@@ -54,16 +54,19 @@ export default function MathPage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem", width: "100%" }}>
           {[
-            { title: "THE VITRUVIAN MAN", sub: "Da Vinci's exact geometry — verified to the decimal", icon: "📐" },
-            { title: "CONVERGENT RECOGNITION", sub: "Ψ = R₁₂ × G — the master equation", icon: "Ψ" },
+            { title: "THE VITRUVIAN MAN", sub: "Da Vinci's exact geometry — verified to the decimal", icon: "📐", href: "/mathematics/vitruvian" },
+            { title: "CONVERGENT RECOGNITION", sub: "Ψ = R₁₂ × G — the master equation", icon: "Ψ", href: "/mathematics/convergent-recognition" },
           ].map((card, i) => (
-            <div key={card.title} style={{
-              padding: "1.618rem",
-              background: "rgba(201,168,76,0.06)",
-              border: "1px solid rgba(201,168,76,0.22)",
-              borderRadius: 6,
-              animation: `fadeUp 618ms ${382 + i * 200}ms both ease`,
-            }}>
+            <Link key={card.title} href={card.href} style={{ textDecoration: "none" }}>
+              <div style={{
+                padding: "1.618rem",
+                background: "rgba(201,168,76,0.06)",
+                border: "1px solid rgba(201,168,76,0.22)",
+                borderRadius: 6,
+                animation: `fadeUp 618ms ${382 + i * 200}ms both ease`,
+                cursor: "pointer",
+                transition: "all 618ms cubic-bezier(0.23,1,0.32,1)",
+              }}>
               <div style={{
                 fontFamily: "'Playfair Display', serif", fontWeight: 700,
                 fontSize: "clamp(16px, 2.618vmin, 22px)",
@@ -76,6 +79,7 @@ export default function MathPage() {
                 color: "rgba(201,168,76,0.45)",
               }}>{card.sub}</div>
             </div>
+            </Link>
           ))}
         </div>
       </div>
