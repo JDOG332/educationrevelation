@@ -76,6 +76,32 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
         marginTop: "0.618rem",
       }}>{card.simple}</p>
 
+      {/* "More inside" indicator when collapsed */}
+      {!expanded && (
+        <div
+          onClick={() => setExpanded(true)}
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "center",
+            gap: "0.618rem",
+            marginTop: "1rem",
+            padding: "0.618rem",
+            background: `rgba(${rgb},0.04)`,
+            border: `1px dashed rgba(${rgb},0.22)`,
+            borderRadius: 6,
+            cursor: "pointer",
+            transition: `all 382ms ${EASE}`,
+          }}
+        >
+          <span style={{ fontSize: 18 }}>💡</span>
+          <span style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontStyle: "italic",
+            fontSize: "clamp(16px, 2vmin, 20px)",
+            color: `rgba(${rgb},0.50)`,
+          }}>deeper intuition · full analysis · 6 senses · music · wikipedia</span>
+        </div>
+      )}
+
       {/* Expandable content */}
       {expanded && (
         <div style={{
@@ -239,13 +265,20 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           transition: `color 382ms ${EASE}`,
         }}
       >
-        <span>{expanded ? "▲ collapse" : "▼ tap to explore"}</span>
+        <span>{expanded ? "▲ collapse" : "▼ tap to explore more"}</span>
       </div>
+
+      {/* Divider between content and actions */}
+      <div style={{
+        width: "61.8%", height: 1,
+        background: `linear-gradient(90deg, transparent, rgba(${rgb},0.18), transparent)`,
+        margin: "1.618rem auto 1rem",
+      }} />
 
       {/* Share + View full card */}
       <div style={{
         display: "flex", justifyContent: "center", gap: "0.618rem",
-        marginTop: "0.618rem",
+        marginTop: "0",
       }}>
         <button
           onClick={handleShare}
