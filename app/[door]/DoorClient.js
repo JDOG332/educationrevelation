@@ -5,14 +5,70 @@ import Link from 'next/link';
 
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
-export default function DoorClient({ doorSlug, doorMeta }) {
+function SubCard({ sub, doorSlug, index }) {
+  const [hover, setHover] = useState(false);
+  const rgb = sub.accent;
+
+  return (
+    <Link href={`/${doorSlug}/${sub.id}`} style={{ textDecoration: "none" }}>
+      <div
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        style={{
+          padding: "1.618rem",
+          background: `rgba(${rgb},${hover ? 0.14 : 0.06})`,
+          border: `1px solid rgba(${rgb},${hover ? 0.45 : 0.22})`,
+          borderRadius: 6,
+          cursor: "pointer",
+          transition: `all 618ms ${EASE}`,
+          animation: `fadeUp 618ms ${200 + index * 80}ms both ease`,
+          boxShadow: hover
+            ? `0 0 18px rgba(${rgb},0.15), 0 0 40px rgba(${rgb},0.06)`
+            : "none",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "0.618rem", marginBottom: "0.382rem" }}>
+          <span style={{ fontSize: "clamp(22px, 4vmin, 32px)" }}>{sub.icon}</span>
+          <span style={{
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 700,
+            fontSize: "clamp(15px, 2.2vmin, 20px)",
+            color: `rgba(${rgb},${hover ? 1.0 : 0.85})`,
+            letterSpacing: "0.04em",
+            transition: `color 382ms ${EASE}`,
+          }}>{sub.name}</span>
+        </div>
+        <div style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontStyle: "italic",
+          fontSize: "clamp(14px, 2vmin, 18px)",
+          color: `rgba(${rgb},0.50)`,
+          lineHeight: 1.618,
+        }}>{sub.desc}</div>
+        {sub.psi && (
+          <div style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: "clamp(10px, 1.4vmin, 13px)",
+            color: `rgba(${rgb},0.30)`,
+            marginTop: "0.382rem",
+            fontWeight: 300,
+          }}>Ψ {sub.psi.toFixed(4)}</div>
+        )}
+      </div>
+    </Link>
+  );
+}
+
+export default function DoorClient({ doorSlug, doorMeta, subcategories, dataKey }) {
   const [backH, setBackH] = useState(false);
-  const rgb = doorMeta.color;
+
+  // Use first subcategory's accent for the door color, or default gold
+  const doorRgb = subcategories[0]?.accent || "201,168,76";
 
   return (
     <div style={{
       minHeight: "100vh",
-      background: `radial-gradient(ellipse at 50% 12%, rgba(${rgb},0.06) 0%, #03030a 61.8%)`,
+      background: `radial-gradient(ellipse at 50% 8%, rgba(${doorRgb},0.05) 0%, #03030a 50%)`,
       display: "flex", flexDirection: "column", alignItems: "center",
       padding: "0 1rem",
       paddingBottom: "4rem",
@@ -28,7 +84,7 @@ export default function DoorClient({ doorSlug, doorMeta }) {
         paddingLeft: "1.618rem",
         pointerEvents: "none",
       }}>
-        <Link href="/search" style={{ pointerEvents: "auto" }}>
+        <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span
             onMouseEnter={() => setBackH(true)}
             onMouseLeave={() => setBackH(false)}
@@ -36,7 +92,7 @@ export default function DoorClient({ doorSlug, doorMeta }) {
               fontFamily: "'Playfair Display', serif",
               fontWeight: 900,
               fontSize: "clamp(18px, 2.618vmin, 28px)",
-              color: `rgba(${rgb},${backH ? 1.0 : 0.618})`,
+              color: `rgba(201,168,76,${backH ? 1.0 : 0.618})`,
               letterSpacing: "-0.0382em",
               cursor: "pointer",
               transition: `color 618ms ${EASE}`,
@@ -56,7 +112,6 @@ export default function DoorClient({ doorSlug, doorMeta }) {
           fontSize: "clamp(48px, 10vmin, 72px)",
           animation: "fadeUp 618ms 100ms both ease",
           marginBottom: "0.618rem",
-          filter: `drop-shadow(0 0 18px rgba(${rgb},0.4))`,
         }}>{doorMeta.emoji}</div>
 
         {/* Door name */}
@@ -65,13 +120,13 @@ export default function DoorClient({ doorSlug, doorMeta }) {
           fontWeight: 900,
           fontSize: "clamp(22px, 4.236vmin, 36px)",
           letterSpacing: "0.236em",
-          color: `rgba(${rgb},0.80)`,
+          color: `rgba(${doorRgb},0.80)`,
           textAlign: "center",
-          animation: "fadeUp 618ms 200ms both ease",
+          animation: "fadeUp 618ms 150ms both ease",
           marginBottom: "0.618rem",
-          textShadow: `0 0 8px rgba(${rgb},0.382), 0 0 24px rgba(${rgb},0.146)`,
+          textShadow: `0 0 8px rgba(${doorRgb},0.3), 0 0 24px rgba(${doorRgb},0.12)`,
           lineHeight: 1.1,
-        }}>{doorMeta.name.toUpperCase()}</h1>
+        }}>{doorMeta.name}</h1>
 
         {/* Door question */}
         <p style={{
@@ -79,54 +134,41 @@ export default function DoorClient({ doorSlug, doorMeta }) {
           fontStyle: "italic",
           fontWeight: 300,
           fontSize: "clamp(18px, 2.618vmin, 28px)",
-          color: `rgba(${rgb},0.55)`,
+          color: `rgba(${doorRgb},0.50)`,
           textAlign: "center",
-          animation: "fadeUp 618ms 300ms both ease",
+          animation: "fadeUp 618ms 200ms both ease",
           marginBottom: "2.618rem",
           lineHeight: 1.618,
           maxWidth: "30rem",
-        }}>"{doorMeta.question}"</p>
+        }}>"{doorMeta.tagline}"</p>
 
-        {/* Divider */}
+        {/* Subcategories grid */}
         <div style={{
-          width: "61.8%", height: 1, maxWidth: 200,
-          background: `linear-gradient(90deg, transparent, rgba(${rgb},0.3), transparent)`,
-          marginBottom: "2.618rem",
-          animation: "fadeUp 618ms 400ms both ease",
-        }} />
-
-        {/* Placeholder for subcategories — will be populated from topicCards */}
-        <div style={{
+          display: "flex", flexDirection: "column",
+          gap: "0.618rem",
           width: "100%",
-          animation: "fadeUp 618ms 500ms both ease",
-          textAlign: "center",
         }}>
-          <p style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2vmin, 22px)",
-            color: "rgba(232,228,210,0.45)",
-            fontStyle: "italic",
-            lineHeight: 1.618,
-          }}>
-            This door is being built. The content from siftdirt.com will be mirrored here — every subcategory, every topic card, every sense, every song. Shareable. Indexable. Findable.
-          </p>
-
-          <Link href="/search" style={{
-            display: "inline-block",
-            marginTop: "2.618rem",
-            padding: "12px 28px",
-            border: `1px solid rgba(${rgb},0.30)`,
-            borderRadius: 6,
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(12px, 1.8vmin, 16px)",
-            letterSpacing: "0.15em",
-            fontWeight: 700,
-            color: `rgba(${rgb},0.80)`,
-            transition: `all 382ms ${EASE}`,
-          }}>
-            ← EXPLORE ALL DOORS
-          </Link>
+          {subcategories.map((sub, i) => (
+            <SubCard key={sub.id} sub={sub} doorSlug={doorSlug} index={i} />
+          ))}
         </div>
+
+        {/* Back to all doors */}
+        <Link href="/search" style={{
+          display: "inline-block",
+          marginTop: "2.618rem",
+          padding: "12px 28px",
+          border: "1px solid rgba(201,168,76,0.30)",
+          borderRadius: 6,
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "clamp(12px, 1.8vmin, 16px)",
+          letterSpacing: "0.15em",
+          fontWeight: 700,
+          color: "rgba(201,168,76,0.80)",
+          textDecoration: "none",
+        }}>
+          ← EXPLORE ALL DOORS
+        </Link>
       </div>
     </div>
   );
