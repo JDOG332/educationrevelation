@@ -407,7 +407,7 @@ export default function SearchClient() {
                 const el = document.getElementById("search-anchor");
                 if (el) {
                   const vh = window.innerHeight;
-                  const top = el.getBoundingClientRect().top + window.scrollY - (vh * 0.382);
+                  const top = el.getBoundingClientRect().top + window.scrollY - (vh * 0.20);
                   window.scrollTo({ top, behavior: "instant" });
                 }
               }, 50);
