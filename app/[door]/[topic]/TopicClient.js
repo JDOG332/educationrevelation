@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import WikiCard from '@/components/WikiCard';
 
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
@@ -177,7 +178,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
             </div>
           )}
 
-          {/* Wikipedia Links */}
+          {/* Wikipedia — Explore Further */}
           {card.links?.length > 0 && (
             <div>
               <div style={{
@@ -185,22 +186,12 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
                 fontSize: "clamp(22px, 3vmin, 28px)",
                 color: `rgba(${rgb},0.45)`,
                 letterSpacing: "0.15em",
-                marginBottom: "0.382rem",
+                marginBottom: "0.618rem",
                 fontWeight: 700,
               }}>EXPLORE FURTHER</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.382rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
                 {card.links.map((link, li) => (
-                  <a key={li} href={link.url} target="_blank" rel="noopener noreferrer" style={{
-                    padding: "0.236rem 0.618rem",
-                    border: `1px solid rgba(${rgb},0.18)`,
-                    borderRadius: 4,
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: "clamp(22px, 3vmin, 28px)",
-                    color: `rgba(${rgb},0.60)`,
-                    textDecoration: "none",
-                    fontWeight: 300,
-                    transition: `all 382ms ${EASE}`,
-                  }}>{link.label} ↗</a>
+                  <WikiCard key={li} label={link.label} url={link.url} rgb={rgb} index={li} />
                 ))}
               </div>
             </div>

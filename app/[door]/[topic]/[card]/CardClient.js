@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import WikiCard from '@/components/WikiCard';
 
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
@@ -294,18 +295,9 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
               marginBottom: "0.618rem",
               fontWeight: 700,
             }}>EXPLORE FURTHER</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.382rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
               {card.links.map((link, li) => (
-                <a key={li} href={link.url} target="_blank" rel="noopener noreferrer" style={{
-                  padding: "0.382rem 0.618rem",
-                  border: `1px solid rgba(${rgb},0.18)`,
-                  borderRadius: 4,
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(18px, 2.4vmin, 22px)",
-                  color: `rgba(${rgb},0.60)`,
-                  textDecoration: "none",
-                  fontWeight: 300,
-                }}>{link.label} ↗</a>
+                <WikiCard key={li} label={link.label} url={link.url} rgb={rgb} index={li} />
               ))}
             </div>
           </div>
