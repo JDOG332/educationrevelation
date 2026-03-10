@@ -5,9 +5,9 @@ import Link from 'next/link';
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
 const POEMS = [
-  { key: "dol", title: "It's the Rhythm of Life", subtitle: "Every hope is a heartbeat...", color: "201,168,76" },
-  { key: "rol", title: "Death or Life", subtitle: "Alive when dancing & dead when not...", color: "190,140,220" },
-  { key: "kal", title: "Kaleidoscope Sea", subtitle: "One door closes & another one opens...", color: "79,195,247" },
+  { key: "dol", slug: "rhythm-of-life",   title: "It's the Rhythm of Life", subtitle: "Every hope is a heartbeat...", color: "201,168,76" },
+  { key: "rol", slug: "death-or-life",    title: "Death or Life", subtitle: "Alive when dancing & dead when not...", color: "190,140,220" },
+  { key: "kal", slug: "kaleidoscope-sea",  title: "Kaleidoscope Sea", subtitle: "One door closes & another one opens...", color: "79,195,247" },
 ];
 
 export default function PoemsClient() {
@@ -60,32 +60,34 @@ export default function PoemsClient() {
         }}>POEMS</h1>
 
         {POEMS.map((poem, i) => (
-          <div key={poem.key} style={{
-            width: "100%",
-            padding: "1.618rem",
-            background: `rgba(${poem.color},0.06)`,
-            border: `1px solid rgba(${poem.color},0.22)`,
-            borderRadius: 6,
-            cursor: "pointer",
-            transition: `all 618ms ${EASE}`,
-            animation: `fadeUp 618ms ${200 + i * 150}ms both ease`,
-          }}>
+          <Link key={poem.key} href={`/poems/${poem.slug}`} style={{ textDecoration: "none", width: "100%" }}>
             <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 700,
-              fontSize: "clamp(16px, 2.618vmin, 22px)",
-              color: `rgba(${poem.color},0.90)`,
-              marginBottom: "0.382rem",
-              letterSpacing: "0.06em",
-            }}>{poem.title}</div>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontSize: "clamp(14px, 2vmin, 18px)",
-              color: `rgba(${poem.color},0.50)`,
-              lineHeight: 1.618,
-            }}>{poem.subtitle}</div>
-          </div>
+              width: "100%",
+              padding: "1.618rem",
+              background: `rgba(${poem.color},0.06)`,
+              border: `1px solid rgba(${poem.color},0.22)`,
+              borderRadius: 6,
+              cursor: "pointer",
+              transition: `all 618ms ${EASE}`,
+              animation: `fadeUp 618ms ${200 + i * 150}ms both ease`,
+            }}>
+              <div style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 700,
+                fontSize: "clamp(16px, 2.618vmin, 22px)",
+                color: `rgba(${poem.color},0.90)`,
+                marginBottom: "0.382rem",
+                letterSpacing: "0.06em",
+              }}>{poem.title}</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontSize: "clamp(14px, 2vmin, 18px)",
+                color: `rgba(${poem.color},0.50)`,
+                lineHeight: 1.618,
+              }}>{poem.subtitle}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
