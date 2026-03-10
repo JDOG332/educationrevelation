@@ -7,7 +7,32 @@ const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
 export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, prevCard, nextCard }) {
   const [backH, setBackH] = useState(false);
+  const [shared, setShared] = useState(false);
   const rgb = sub.accent;
+
+  const shareUrl = typeof window !== "undefined"
+    ? window.location.href
+    : `https://educationrevelation.com/${doorSlug}/${topicSlug}/${card.id}`;
+
+  const handleShare = async () => {
+    const shareData = {
+      title: `${card.icon} ${card.title}`,
+      text: card.simple?.slice(0, 120) + '...',
+      url: shareUrl,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(shareUrl);
+        setShared(true);
+        setTimeout(() => setShared(false), 2000);
+      }
+    } catch (e) {
+      // User cancelled share — that's fine
+    }
+  };
 
   return (
     <div style={{
@@ -24,8 +49,9 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         height: "clamp(56px, 8vh, 72px)",
         background: "linear-gradient(180deg, rgba(3,3,10,0.92) 0%, rgba(3,3,10,0.6) 70%, transparent 100%)",
         backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        display: "flex", alignItems: "center",
+        display: "flex", alignItems: "center", justifyContent: "space-between",
         paddingLeft: "1.618rem",
+        paddingRight: "1.618rem",
         pointerEvents: "none",
       }}>
         <Link href={`/${doorSlug}/${topicSlug}`} style={{ pointerEvents: "auto", textDecoration: "none" }}>
@@ -42,6 +68,32 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
               transition: `color 618ms ${EASE}`,
             }}>← {sub.name}</span>
         </Link>
+
+        {/* Share button */}
+        <button
+          onClick={handleShare}
+          style={{
+            pointerEvents: "auto",
+            background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.06)`,
+            border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.30})`,
+            borderRadius: 6,
+            padding: "8px 20px",
+            display: "flex", alignItems: "center", gap: "8px",
+            cursor: "pointer",
+            transition: `all 382ms ${EASE}`,
+          }}
+        >
+          <span style={{ fontSize: "clamp(16px, 2.2vmin, 20px)" }}>
+            {shared ? "✓" : "↗"}
+          </span>
+          <span style={{
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 700,
+            fontSize: "clamp(11px, 1.4vmin, 14px)",
+            letterSpacing: "0.12em",
+            color: `rgba(${rgb},${shared ? 1.0 : 0.80})`,
+          }}>{shared ? "COPIED" : "SHARE"}</span>
+        </button>
       </div>
 
       {/* Content */}
