@@ -5,8 +5,29 @@ import Link from 'next/link';
 
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
-function CardContent({ card, rgb, index }) {
+function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
   const [expanded, setExpanded] = useState(false);
+  const [shared, setShared] = useState(false);
+
+  const cardUrl = `https://educationrevelation.com/${doorSlug}/${topicSlug}/${card.id}`;
+
+  const handleShare = async (e) => {
+    e.stopPropagation();
+    const shareData = {
+      title: `${card.icon} ${card.title}`,
+      text: card.simple?.slice(0, 120) + '...',
+      url: cardUrl,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(cardUrl);
+        setShared(true);
+        setTimeout(() => setShared(false), 2000);
+      }
+    } catch (e) {}
+  };
 
   return (
     <div style={{
@@ -224,7 +245,57 @@ function CardContent({ card, rgb, index }) {
           userSelect: "none",
           transition: `color 382ms ${EASE}`,
         }}
-      >{expanded ? "▲ collapse" : "▼ tap to explore"}</div>
+      >
+        <span>{expanded ? "▲ collapse" : "▼ tap to explore"}</span>
+      </div>
+
+      {/* Share + View full card */}
+      <div style={{
+        display: "flex", justifyContent: "center", gap: "0.618rem",
+        marginTop: "0.618rem",
+      }}>
+        <button
+          onClick={handleShare}
+          style={{
+            background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.04)`,
+            border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.22})`,
+            borderRadius: 6,
+            padding: "6px 16px",
+            display: "flex", alignItems: "center", gap: "6px",
+            cursor: "pointer",
+            transition: `all 382ms ${EASE}`,
+          }}
+        >
+          <span style={{ fontSize: 14 }}>{shared ? "✓" : "↗"}</span>
+          <span style={{
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 700,
+            fontSize: "clamp(10px, 1.3vmin, 12px)",
+            letterSpacing: "0.10em",
+            color: `rgba(${rgb},${shared ? 1.0 : 0.65})`,
+          }}>{shared ? "COPIED" : "SHARE"}</span>
+        </button>
+        <Link href={`/${doorSlug}/${topicSlug}/${card.id}`} style={{ textDecoration: "none" }}>
+          <div style={{
+            background: `rgba(${rgb},0.04)`,
+            border: `1px solid rgba(${rgb},0.22)`,
+            borderRadius: 6,
+            padding: "6px 16px",
+            display: "flex", alignItems: "center", gap: "6px",
+            cursor: "pointer",
+            transition: `all 382ms ${EASE}`,
+          }}>
+            <span style={{ fontSize: 14 }}>◎</span>
+            <span style={{
+              fontFamily: "'Playfair Display', serif",
+              fontWeight: 700,
+              fontSize: "clamp(10px, 1.3vmin, 12px)",
+              letterSpacing: "0.10em",
+              color: `rgba(${rgb},0.65)`,
+            }}>VIEW FULL</span>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }
@@ -332,7 +403,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
           width: "100%",
         }}>
           {cards.map((card, i) => (
-            <CardContent key={card.id} card={card} rgb={rgb} index={i} />
+            <CardContent key={card.id} card={card} rgb={rgb} index={i} doorSlug={doorSlug} topicSlug={sub.id} />
           ))}
         </div>
 
