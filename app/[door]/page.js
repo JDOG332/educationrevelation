@@ -3,7 +3,8 @@ import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
 import DoorClient from './DoorClient';
 
 export async function generateStaticParams() {
-  return ALL_DOOR_SLUGS.map((door) => ({ door }));
+  // mathematics has its own explicit route at /mathematics (the hub page)
+  return ALL_DOOR_SLUGS.filter(d => d !== "mathematics").map((door) => ({ door }));
 }
 
 export async function generateMetadata({ params }) {
