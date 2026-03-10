@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import WikiCard from '@/components/WikiCard';
+import SongRow from '@/components/SongRow';
 
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
@@ -319,14 +320,9 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
               marginBottom: "0.618rem",
               fontWeight: 700,
             }}>MUSIC</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
               {card.songs.map((song, si) => (
-                <div key={si} style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(22px, 3vmin, 28px)",
-                  color: "rgba(232,228,210,0.50)",
-                  fontWeight: 300,
-                }}>♫ {song.title} — <span style={{ fontStyle: "italic" }}>{song.artist}</span></div>
+                <SongRow key={si} song={song} rgb={rgb} />
               ))}
             </div>
           </div>
