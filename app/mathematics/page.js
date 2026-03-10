@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Mathematics — Education Revelation',
-  description: 'The hidden pattern beneath everything. Explore the Vitruvian Man geometry and Convergent Recognition Theory (Ψ = R₁₂ × G).',
+  title: 'The Hidden Pattern — Da Vinci\'s Vitruvian Man Geometry & Convergent Recognition Theory (Ψ = R₁₂ × G)',
+  description: 'Explore the mathematics hidden beneath all things. Da Vinci\'s Vitruvian Man geometry verified to the decimal — circle radius 0.70, golden section R/H = 0.6089, two positions between heaven and earth. Plus Convergent Recognition Theory: the master equation Ψ = R₁₂ × G that measures how two systems recognize each other.',
 };
 
 export default function MathPage() {

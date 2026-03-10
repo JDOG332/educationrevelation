@@ -2,9 +2,9 @@ import { POEMS, ASK_POEMS, KAL_POEMS } from '@/lib/data';
 import PoemExperience from '@/components/PoemExperience';
 
 const POEM_MAP = {
-  'rhythm-of-life':    { key: 'explore', title: "It's the Rhythm of Life",  lines: POEMS,     description: "Every hope is a heartbeat and every wish is a dream..." },
-  'death-or-life':     { key: 'ask',     title: "Death or Life",            lines: ASK_POEMS,  description: "Alive when dancing & dead when not... dance all day & never stop." },
-  'kaleidoscope-sea':  { key: 'kal',     title: "Kaleidoscope Sea",         lines: KAL_POEMS,  description: "One door closes & another one opens... shatter your glass & live in the kaleidoscope sea." },
+  'rhythm-of-life':    { key: 'explore', title: "It's the Rhythm of Life",  lines: POEMS,     description: "An original poem about hope, purpose, and the heartbeat of existence. Every hope is a heartbeat, every wish is a dream. Though the moon never wishes the sun it would be. Each life has a purpose hidden inside. An interactive visual experience with a living multiverse animation." },
+  'death-or-life':     { key: 'ask',     title: "Death or Life",            lines: ASK_POEMS,  description: "An original poem about choosing to live fully. Alive when dancing and dead when not — dance all day and never stop. A meditation on movement, purpose, freedom, and the choice between being alive and merely existing. Interactive diamond genesis animation." },
+  'kaleidoscope-sea':  { key: 'kal',     title: "Kaleidoscope Sea",         lines: KAL_POEMS,  description: "An original poem about breaking free from self-imposed limitations. One door closes and another one opens — but the doors were open long before your mind got in the way. Shatter your glass, break down your walls, and live in the kaleidoscope sea. Interactive ocean of light animation." },
 };
 
 export async function generateStaticParams() {
@@ -17,10 +17,10 @@ export async function generateMetadata({ params }) {
   if (!poem) return { title: 'Not Found' };
 
   return {
-    title: `${poem.title} — Education Revelation`,
+    title: `"${poem.title}" — Original Poem — Education Revelation`,
     description: poem.description,
     openGraph: {
-      title: `${poem.title} — Education Revelation`,
+      title: `"${poem.title}" — Original Poem`,
       description: poem.description,
     },
   };

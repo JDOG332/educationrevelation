@@ -25,13 +25,14 @@ export async function generateMetadata({ params }) {
 
   const cards = (TOPIC_CARDS[dataKey]?.[p.topic] || []);
   const cardTitles = cards.slice(0, 5).map(c => c.title).join(', ');
+  const firstSimple = cards[0]?.simple ? ` ${cards[0].simple.slice(0, 120)}...` : '';
 
   return {
-    title: `${sub.name} — ${doorMeta.name} — Education Revelation`,
-    description: `${sub.icon} ${sub.desc}. Explore: ${cardTitles}${cards.length > 5 ? '...' : ''}.`,
+    title: `${sub.name} — ${sub.desc} | ${doorMeta.name} — Education Revelation`,
+    description: `${sub.icon} ${sub.desc}${firstSimple} Explore ${cards.length} perspectives including: ${cardTitles}${cards.length > 5 ? ', and more' : ''}. Each topic includes a simple explanation, deeper intuition, advanced analysis, six sensory experiences, music, and Wikipedia links.`,
     openGraph: {
-      title: `${sub.name} — ${doorMeta.name}`,
-      description: sub.desc,
+      title: `${sub.name} — ${sub.desc}`,
+      description: `${cards.length} perspectives on ${sub.name.toLowerCase()} through the lens of ${doorMeta.name.toLowerCase()}. Part of Education Revelation — ten doors of human knowledge.`,
     },
   };
 }

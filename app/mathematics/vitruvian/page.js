@@ -1,11 +1,12 @@
 import VitruvianClient from './VitruvianClient';
 
 export const metadata = {
-  title: "The Vitruvian Man — Da Vinci's Geometry Verified — Education Revelation",
-  description: "Leonardo da Vinci's Vitruvian Man geometry verified to the decimal. Circle radius from navel = 0.70 (verified: 0.699996). The golden section R/H = 0.6089. Two positions — square (exhale) and circle (inhale) — one body.",
+  title: "The Vitruvian Man Explained — Da Vinci's Sacred Geometry Verified to the Decimal",
+  description: "Leonardo da Vinci's Vitruvian Man is not a static drawing — it is two positions of the same body breathing between heaven and earth. Circle (cosmos) center = navel, radius = 0.70 (verified: 0.699996). Square (earth) center = genitals. The golden section R/H = 0.6089. Arms at 34.35° touch the circle exactly. Legs at 30° form an equilateral triangle — da Vinci wrote this himself. Interactive 3D geometry with exact measurements.",
+  keywords: "vitruvian man, da vinci, sacred geometry, golden ratio, human proportions, circle and square, leonardo da vinci geometry, vitruvian man meaning, vitruvian man explained, human body proportions, sacred geometry meaning",
   openGraph: {
-    title: "The Vitruvian Man — Da Vinci's Geometry Verified",
-    description: "Two positions. One body. The man breathes between heaven and earth.",
+    title: "The Vitruvian Man — Da Vinci's Sacred Geometry Verified",
+    description: "Two positions. One body. The man breathes between heaven and earth. Every measurement verified to the decimal.",
   },
 };
 
