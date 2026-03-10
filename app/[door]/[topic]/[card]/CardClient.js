@@ -61,7 +61,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             style={{
               fontFamily: "'Playfair Display', serif",
               fontWeight: 900,
-              fontSize: "clamp(22px, 3.4vmin, 34px)",
+              fontSize: "clamp(28px, 5.4vmin, 42px)",
               color: `rgba(${rgb},${backH ? 1.0 : 0.618})`,
               letterSpacing: "-0.0382em",
               cursor: "pointer",
@@ -83,13 +83,13 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             transition: `all 382ms ${EASE}`,
           }}
         >
-          <span style={{ fontSize: "clamp(20px, 2.8vmin, 26px)" }}>
+          <span style={{ fontSize: "clamp(24px, 3.6vmin, 32px)" }}>
             {shared ? "✓" : "↗"}
           </span>
           <span style={{
             fontFamily: "'Playfair Display', serif",
             fontWeight: 700,
-            fontSize: "clamp(14px, 1.8vmin, 18px)",
+            fontSize: "clamp(18px, 2.4vmin, 22px)",
             letterSpacing: "0.12em",
             color: `rgba(${rgb},${shared ? 1.0 : 0.80})`,
           }}>{shared ? "COPIED" : "SHARE"}</span>
@@ -106,7 +106,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         {/* Breadcrumb */}
         <div style={{
           fontFamily: "'Inter', sans-serif",
-          fontSize: "clamp(16px, 2vmin, 20px)",
+          fontSize: "clamp(20px, 2.6vmin, 24px)",
           color: "rgba(201,168,76,0.30)",
           letterSpacing: "0.12em",
           marginBottom: "1rem",
@@ -125,7 +125,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         <h1 style={{
           fontFamily: "'Playfair Display', serif",
           fontWeight: 900,
-          fontSize: "clamp(28px, 5.4vmin, 44px)",
+          fontSize: "clamp(36px, 6.854vmin, 52px)",
           letterSpacing: "0.06em",
           color: `rgba(${rgb},0.90)`,
           textAlign: "center",
@@ -139,7 +139,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         {card.subtitle && (
           <div style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(20px, 2.8vmin, 26px)",
+            fontSize: "clamp(24px, 3.6vmin, 32px)",
             color: `rgba(${rgb},0.45)`,
             fontWeight: 300,
             letterSpacing: "0.06em",
@@ -166,7 +166,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         }}>
           <p style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(22px, 3.4vmin, 32px)",
+            fontSize: "clamp(28px, 5.4vmin, 40px)",
             color: "rgba(232,228,210,0.85)",
             lineHeight: 1.618,
             margin: 0,
@@ -187,7 +187,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           }}>
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(18px, 2.4vmin, 22px)",
+              fontSize: "clamp(22px, 3vmin, 28px)",
               color: `rgba(${rgb},0.50)`,
               letterSpacing: "0.15em",
               marginBottom: "0.618rem",
@@ -196,7 +196,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             <p style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontStyle: "italic",
-              fontSize: "clamp(20px, 2.8vmin, 28px)",
+              fontSize: "clamp(24px, 3.6vmin, 34px)",
               color: "rgba(232,228,210,0.65)",
               lineHeight: 1.618,
               margin: 0,
@@ -217,7 +217,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           }}>
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(18px, 2.4vmin, 22px)",
+              fontSize: "clamp(22px, 3vmin, 28px)",
               color: "rgba(232,228,210,0.40)",
               letterSpacing: "0.15em",
               marginBottom: "0.618rem",
@@ -225,7 +225,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             }}>THE FULL PICTURE</div>
             <p style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(18px, 2.4vmin, 24px)",
+              fontSize: "clamp(22px, 3vmin, 28px)",
               color: "rgba(232,228,210,0.55)",
               lineHeight: 1.618,
               fontWeight: 300,
@@ -243,7 +243,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           }}>
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(18px, 2.4vmin, 22px)",
+              fontSize: "clamp(22px, 3vmin, 28px)",
               color: `rgba(${rgb},0.45)`,
               letterSpacing: "0.15em",
               marginBottom: "0.618rem",
@@ -255,18 +255,18 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                 <div key={s.key} style={{
                   display: "flex", gap: "0.618rem", alignItems: "flex-start",
                 }}>
-                  <span style={{ fontSize: 28, flexShrink: 0 }}>{s.icon}</span>
+                  <span style={{ fontSize: 34, flexShrink: 0 }}>{s.icon}</span>
                   <div>
                     <span style={{
                       fontFamily: "'Inter', sans-serif",
-                      fontSize: "clamp(16px, 2vmin, 20px)",
+                      fontSize: "clamp(20px, 2.6vmin, 24px)",
                       color: `rgba(${rgb},0.45)`,
                       fontWeight: 600,
                       letterSpacing: "0.08em",
                     }}>{s.sense}</span>
                     <p style={{
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(18px, 2.4vmin, 24px)",
+                      fontSize: "clamp(22px, 3vmin, 28px)",
                       color: "rgba(232,228,210,0.60)",
                       lineHeight: 1.618,
                       margin: 0,
@@ -288,7 +288,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           }}>
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(18px, 2.4vmin, 22px)",
+              fontSize: "clamp(22px, 3vmin, 28px)",
               color: `rgba(${rgb},0.45)`,
               letterSpacing: "0.15em",
               marginBottom: "0.618rem",
@@ -301,7 +301,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                   border: `1px solid rgba(${rgb},0.18)`,
                   borderRadius: 4,
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(15px, 2vmin, 18px)",
+                  fontSize: "clamp(18px, 2.4vmin, 22px)",
                   color: `rgba(${rgb},0.60)`,
                   textDecoration: "none",
                   fontWeight: 300,
@@ -321,7 +321,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           }}>
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(18px, 2.4vmin, 22px)",
+              fontSize: "clamp(22px, 3vmin, 28px)",
               color: `rgba(${rgb},0.45)`,
               letterSpacing: "0.15em",
               marginBottom: "0.618rem",
@@ -331,7 +331,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
               {card.songs.map((song, si) => (
                 <div key={si} style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(18px, 2.4vmin, 22px)",
+                  fontSize: "clamp(22px, 3vmin, 28px)",
                   color: "rgba(232,228,210,0.50)",
                   fontWeight: 300,
                 }}>♫ {song.title} — <span style={{ fontStyle: "italic" }}>{song.artist}</span></div>
@@ -360,14 +360,14 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             }}>
               <div style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(16px, 2vmin, 20px)",
+                fontSize: "clamp(20px, 2.6vmin, 24px)",
                 color: `rgba(${rgb},0.40)`,
                 letterSpacing: "0.08em",
                 marginBottom: "0.236rem",
               }}>← PREVIOUS</div>
               <div style={{
                 fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(16px, 2vmin, 20px)",
+                fontSize: "clamp(20px, 2.6vmin, 24px)",
                 color: `rgba(${rgb},0.70)`,
                 fontWeight: 700,
               }}>{prevCard.icon} {prevCard.title}</div>
@@ -385,14 +385,14 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             }}>
               <div style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(16px, 2vmin, 20px)",
+                fontSize: "clamp(20px, 2.6vmin, 24px)",
                 color: `rgba(${rgb},0.40)`,
                 letterSpacing: "0.08em",
                 marginBottom: "0.236rem",
               }}>NEXT →</div>
               <div style={{
                 fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(16px, 2vmin, 20px)",
+                fontSize: "clamp(20px, 2.6vmin, 24px)",
                 color: `rgba(${rgb},0.70)`,
                 fontWeight: 700,
               }}>{nextCard.icon} {nextCard.title}</div>
@@ -411,7 +411,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             border: `1px solid rgba(${rgb},0.25)`,
             borderRadius: 6,
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(14px, 2vmin, 18px)",
+            fontSize: "clamp(18px, 2.4vmin, 22px)",
             letterSpacing: "0.12em",
             fontWeight: 700,
             color: `rgba(${rgb},0.70)`,
@@ -422,7 +422,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             border: `1px solid rgba(${rgb},0.18)`,
             borderRadius: 6,
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(14px, 2vmin, 18px)",
+            fontSize: "clamp(18px, 2.4vmin, 22px)",
             letterSpacing: "0.12em",
             fontWeight: 700,
             color: `rgba(${rgb},0.50)`,
@@ -433,7 +433,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             border: "1px solid rgba(201,168,76,0.15)",
             borderRadius: 6,
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(14px, 2vmin, 18px)",
+            fontSize: "clamp(18px, 2.4vmin, 22px)",
             letterSpacing: "0.12em",
             fontWeight: 700,
             color: "rgba(201,168,76,0.50)",
