@@ -111,7 +111,7 @@ export default function LandingClient() {
         <button
           onMouseEnter={() => setEnterHover(true)}
           onMouseLeave={() => setEnterHover(false)}
-          onClick={() => router.push('/search')}
+          onClick={() => router.push('/intro')}
           className={enterHover ? "" : "start-pulse"}
           style={{
             background: enterHover
