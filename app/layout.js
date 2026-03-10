@@ -1,4 +1,5 @@
 import './globals.css';
+import CursorProvider from '@/components/CursorProvider';
 
 export const metadata = {
   title: 'Education Revelation — Connecting Consciousness',
@@ -21,7 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CursorProvider />
+        {children}
+      </body>
     </html>
   );
 }
