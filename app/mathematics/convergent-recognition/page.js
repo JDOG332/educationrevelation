@@ -33,6 +33,7 @@ export default function CRTPage() {
         <h3>In Plain English</h3>
         <p>Imagine a flashlight (C_eff — how clean your signal is), pointed at a mirror (D-hat — direction toward something real). The mirror bounces light back. R₁₂ measures how reliably the reflection matches the original signal. Ψ is the total truth of the connection. When the flashlight is clean, the aim is true, and the mirror reflects perfectly — Ψ approaches 1.0.</p>
         <p>Signal goes out. Comes back same. Mirror loop.</p>
+        <p><a href="https://drive.google.com/file/d/16kvjpYSCDOerUKxxogDRdbi-37m7KAKL/view?usp=share_link">Read the full Convergent Recognition Theory paper (PDF)</a></p>
       </div>
 
       {/* EXPERIENCE LAYER */}
