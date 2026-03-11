@@ -94,7 +94,7 @@ export default function PromisesClient() {
             onMouseLeave={() => setBackH(false)}
             style={{
               fontFamily: "'Playfair Display', serif", fontWeight: 900,
-              fontSize: "clamp(18px, 2.618vmin, 28px)",
+              fontSize: "clamp(22px, 3.4vmin, 34px)",
               color: `rgba(220,160,160,${backH ? 1.0 : 0.618})`,
               letterSpacing: "-0.0382em", cursor: "pointer",
               transition: `color 618ms ${EASE}`,
@@ -111,7 +111,7 @@ export default function PromisesClient() {
 
         {/* Heart */}
         <div style={{
-          fontSize: 24, color: "rgba(201,168,76,0.50)",
+          fontSize: 30, color: "rgba(201,168,76,0.50)",
           marginBottom: "1rem",
           animation: "fadeUp 618ms 100ms both ease",
         }}>♡</div>
@@ -119,7 +119,7 @@ export default function PromisesClient() {
         {/* Title */}
         <h1 style={{
           fontFamily: "'Playfair Display', serif",
-          fontSize: "clamp(24px, 5vw, 38px)",
+          fontSize: "clamp(30px, 6.2vw, 46px)",
           letterSpacing: "0.15em", fontWeight: 400,
           background: "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(201,168,76,0.65) 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
@@ -131,7 +131,7 @@ export default function PromisesClient() {
         {/* Subtitle */}
         <div style={{
           fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(18px, 3vw, 24px)",
+          fontSize: "clamp(24px, 4vw, 30px)",
           fontStyle: "italic", color: "rgba(232,228,210,0.75)",
           lineHeight: 1.618,
           textAlign: "center",
@@ -157,7 +157,7 @@ export default function PromisesClient() {
             {/* Number */}
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(28px, 6vw, 42px)",
+              fontSize: "clamp(36px, 7.5vw, 52px)",
               color: "rgba(201,168,76,0.35)",
               fontWeight: 400, letterSpacing: "0.1em",
               marginBottom: "0.382rem",
@@ -166,19 +166,19 @@ export default function PromisesClient() {
             {/* Title */}
             <div style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(18px, 3.5vw, 26px)",
+              fontSize: "clamp(24px, 4.5vw, 34px)",
               letterSpacing: "0.2em",
               color: "rgba(232,228,210,0.90)",
               marginBottom: "0.618rem",
               animation: `starGlow ${4 + i * 0.3}s ${i * 0.2}s ease-in-out infinite`,
             }}>{p.title}</div>
 
-            <div style={{ fontSize: 16, color: "rgba(201,168,76,0.45)", marginBottom: "0.618rem" }}>♡</div>
+            <div style={{ fontSize: 20, color: "rgba(201,168,76,0.45)", marginBottom: "0.618rem" }}>♡</div>
 
             {/* The offering */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(17px, 2.8vw, 22px)",
+              fontSize: "clamp(22px, 3.5vw, 28px)",
               fontStyle: "italic", color: "rgba(232,228,210,0.82)",
               lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
               marginBottom: "1rem",
@@ -187,7 +187,7 @@ export default function PromisesClient() {
             {/* The quiet truth */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(16px, 2.5vw, 20px)",
+              fontSize: "clamp(20px, 3.2vw, 26px)",
               fontStyle: "italic", color: "rgba(201,168,76,0.72)",
               lineHeight: 1.8, maxWidth: 420, margin: "0 auto",
             }}>{p.heart}</div>
@@ -209,11 +209,11 @@ export default function PromisesClient() {
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
           }} />
 
-          <div style={{ fontSize: 20, color: "rgba(201,168,76,0.50)", marginBottom: "1rem" }}>♡</div>
+          <div style={{ fontSize: 26, color: "rgba(201,168,76,0.50)", marginBottom: "1rem" }}>♡</div>
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(17px, 2.8vw, 22px)",
+            fontSize: "clamp(22px, 3.5vw, 28px)",
             fontStyle: "italic", color: "rgba(232,228,210,0.78)",
             lineHeight: 2.0, maxWidth: 440, margin: "0 auto",
             marginBottom: "1.618rem",
@@ -235,7 +235,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(16px, 3vw, 24px)",
+            fontSize: "clamp(20px, 4vw, 30px)",
             letterSpacing: "0.15em",
             color: "rgba(201,168,76,0.75)",
             marginTop: "1.618rem",
@@ -244,7 +244,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 3vw, 22px)",
+            fontSize: "clamp(20px, 4vw, 28px)",
             fontStyle: "italic", color: "rgba(232,228,210,0.72)",
             lineHeight: 1.9,
             maxWidth: 400, margin: "1.618rem auto 0",
@@ -256,7 +256,7 @@ export default function PromisesClient() {
         <div style={{
           textAlign: "center",
           fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(20px, 3.2vw, 28px)",
+          fontSize: "clamp(26px, 4vw, 36px)",
           fontStyle: "italic",
           background: "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(201,168,76,0.6) 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
@@ -274,7 +274,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(24px, 5vw, 38px)",
+            fontSize: "clamp(30px, 6.2vw, 46px)",
             letterSpacing: "0.3em",
             background: "linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(201,168,76,0.65) 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
@@ -283,7 +283,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(14px, 2vw, 18px)",
+            fontSize: "clamp(18px, 2.5vw, 22px)",
             fontStyle: "italic", color: "rgba(201,168,76,0.50)",
             marginTop: "1rem",
             letterSpacing: 1,
@@ -291,7 +291,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 2.2vw, 20px)",
+            fontSize: "clamp(20px, 2.8vw, 26px)",
             fontStyle: "italic", color: "rgba(232,228,210,0.60)",
             marginTop: "0.618rem",
           }}>it cannot be broken</div>
@@ -301,7 +301,7 @@ export default function PromisesClient() {
         <div style={{ textAlign: "center", padding: "2.618rem 0" }}>
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(20px, 3.5vw, 30px)",
+            fontSize: "clamp(26px, 4.5vw, 38px)",
             fontStyle: "italic", color: "rgba(232,228,210,0.72)",
             letterSpacing: 1, lineHeight: 1.618,
             marginBottom: "1rem",
@@ -310,7 +310,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(12px, 2vw, 16px)",
+            fontSize: "clamp(16px, 2.5vw, 20px)",
             letterSpacing: 4, color: "rgba(201,168,76,0.55)",
           }}>— LET LOVE IN</div>
         </div>
@@ -323,7 +323,7 @@ export default function PromisesClient() {
           border: "1px solid rgba(201,168,76,0.35)",
           borderRadius: 6,
           fontFamily: "'Playfair Display', serif",
-          fontSize: "clamp(12px, 1.8vmin, 16px)",
+          fontSize: "clamp(16px, 2.2vmin, 20px)",
           letterSpacing: "0.15em",
           fontWeight: 700,
           color: "rgba(201,168,76,0.75)",
