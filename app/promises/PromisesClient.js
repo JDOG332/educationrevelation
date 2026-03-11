@@ -7,16 +7,56 @@ const PHI = 1.618033988749895;
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
 const PROMISES = [
-  { num: "I", title: "SAFETY", offering: "You deserve to walk through life knowing someone already thought about the locks, the money, and the backup plan. I want to make your world smaller in the ways that keep you safe and wider in every way that sets you free.", heart: "Your space should be where you exhale, not brace." },
-  { num: "II", title: "TO BE SEEN", offering: "I do not love the version of you the world gets to see. I love the one who cries in the car and burns dinner and doubts herself on Tuesday afternoons. I choose you with your mess showing — not in spite of it — because the real you is the only one worth knowing.", heart: "Your life song deserves to be sung loud and proud." },
-  { num: "III", title: "AGENCY", offering: "Your body is yours. Your time is yours. Your no is a complete sentence and you never have to defend it. A love that requires your shrinking is not love at all.", heart: "Your choices do not need my approval. The way you see the world is not wrong. It is rare." },
-  { num: "IV", title: "PARTNERSHIP", offering: "I refuse to be another thing you manage. I want to notice the laundry, remember the appointments, and handle the things before you have to carry them in your head. You deserve a partner, not a project.", heart: "If you are carrying something heavy that nobody else sees — name it and I want to help you put it down." },
-  { num: "V", title: "TO BE BELIEVED", offering: "When you tell me something hurts, I choose not to argue with your pain. When you say something is wrong, I choose not to need a second opinion. Your voice was never meant to be an echo.", heart: "I want to be a man who hears you the first time." },
-  { num: "VI", title: "PURPOSE", offering: "You are not just someone's mother, someone's partner, someone's daughter. You are a whole person with a fire that existed before I ever showed up. I want to protect your right to chase whatever lights you up — especially when it is inconvenient.", heart: "You are rare and you do not look like anyone else — on the inside or the outside." },
-  { num: "VII", title: "REST WITHOUT GUILT", offering: "You do not have to earn a nap. You do not have to finish the list before you sit down. I want to guard your rest the way I guard everything else I love — fiercely and without negotiation.", heart: "Your only job that day is to rest. My only job is to make sure nothing stops you." },
-  { num: "VIII", title: "EMOTIONAL RECIPROCITY", offering: "I choose to ask you how you are and mean it. I choose to sit in the heavy silence instead of trying to fix it. You have carried everyone else's feelings long enough. Put some of that weight on me. I am built to hold it.", heart: "A permanent open line between us where music says what words sometimes cannot." },
-  { num: "IX", title: "COMMUNITY", offering: "I choose to never be jealous of the women who know you best. Your friendships are not competition — they are oxygen that keeps you alive in ways I cannot. Go to brunch. Take the trip. Answer the call.", heart: "I have the fort. And I go with you when you need me to." },
-  { num: "X", title: "CHOSEN EVERY SINGLE DAY", offering: "I choose not to win you and then coast. Day three thousand looks like day three — intentional, specific, and unmistakable. I choose you out loud, in front of people, in the small moments, and in the hard ones. You never have to wonder.", heart: "I — with everything I have and everything I am building." },
+  {
+    num: "I", title: "SAFETY",
+    offering: "You deserve to move through this life knowing that the ground beneath you is solid. Not because you earned it — because you exist. The locks, the shelter, the backup plan — those were always meant to be yours. You were built to exhale, not to brace.",
+    heart: "The ground has always been holding you. You just forgot to feel it."
+  },
+  {
+    num: "II", title: "TO BE SEEN",
+    offering: "Not the version of you that performs for the world. The one who cries in the car. The one who burns dinner. The one who doubts herself on Tuesday afternoons. That one — the real one — is the only one worth knowing. You do not need to be polished to be loved.",
+    heart: "You were never meant to be a highlight reel. You were meant to be a whole person."
+  },
+  {
+    num: "III", title: "AGENCY",
+    offering: "Your body is yours. Your time is yours. Your no is a complete sentence and you never have to defend it. Any love that requires your shrinking is not love at all. The way you see the world is not wrong. It is rare.",
+    heart: "You do not need permission to take up space. The space was made for you."
+  },
+  {
+    num: "IV", title: "PARTNERSHIP",
+    offering: "You deserve someone who notices — not someone you have to manage. The laundry, the appointments, the invisible labor you carry in your head — you were never meant to hold all of that alone. You deserve a partner, not a project.",
+    heart: "If you are carrying something heavy that nobody else sees — it is real, and it deserves to be shared."
+  },
+  {
+    num: "V", title: "TO BE BELIEVED",
+    offering: "When you say something hurts, the correct response is not to argue with your pain. When you say something is wrong, the correct response is not to need a second opinion. Your voice was never meant to be an echo.",
+    heart: "You deserve to be heard the first time."
+  },
+  {
+    num: "VI", title: "PURPOSE",
+    offering: "You are not just someone's parent, someone's partner, someone's child. You are a whole person with a fire that existed before any role was assigned to you. Your right to chase whatever lights you up is sacred — especially when it is inconvenient for others.",
+    heart: "You are rare and you do not look like anyone else — on the inside or the outside."
+  },
+  {
+    num: "VII", title: "REST WITHOUT GUILT",
+    offering: "You do not have to earn a nap. You do not have to finish the list before you sit down. Rest is not a reward for productivity. It is a birthright. Your body has been asking you to stop. Listen to it.",
+    heart: "You are not a machine. You are a living thing that needs stillness to grow."
+  },
+  {
+    num: "VIII", title: "EMOTIONAL RECIPROCITY",
+    offering: "You have carried everyone else's feelings long enough. You have been the strong one, the steady one, the one who holds the room together. You are allowed to put that weight down. You are allowed to be held.",
+    heart: "The silence between two people who trust each other is the safest place on earth."
+  },
+  {
+    num: "IX", title: "COMMUNITY",
+    offering: "The people who love you are not in competition with each other. Your friendships are oxygen — they keep you alive in ways that no single person can. Go to brunch. Take the trip. Answer the call. Your people are not a threat to your love. They are the proof of it.",
+    heart: "You were never meant to be everything to one person or one person to everything."
+  },
+  {
+    num: "X", title: "CHOSEN EVERY SINGLE DAY",
+    offering: "You deserve to be chosen out loud, in front of people, in the small moments, and in the hard ones. Not won and then coasted on. Not claimed and then forgotten. Day three thousand should look like day three — intentional, specific, and unmistakable.",
+    heart: "You should never have to wonder."
+  },
 ];
 
 export default function PromisesClient() {
@@ -86,17 +126,27 @@ export default function PromisesClient() {
           marginBottom: "0.618rem",
           textAlign: "center",
           animation: "fadeUp 618ms 200ms both ease",
-        }}>TEN PROMISES OF LOVE</h1>
+        }}>TEN PROMISES</h1>
 
         {/* Subtitle */}
         <div style={{
           fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(16px, 2.8vw, 22px)",
-          fontStyle: "italic", color: "rgba(232,228,210,0.40)",
+          fontSize: "clamp(18px, 3vw, 24px)",
+          fontStyle: "italic", color: "rgba(232,228,210,0.50)",
           lineHeight: 1.618,
           textAlign: "center",
           animation: "fadeUp 618ms 300ms both ease",
-        }}>freely given · no strings · no conditions · no commandments</div>
+          marginBottom: "0.618rem",
+        }}>from the universe to you</div>
+
+        <div style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: "clamp(15px, 2.5vw, 20px)",
+          fontStyle: "italic", color: "rgba(232,228,210,0.30)",
+          lineHeight: 1.618,
+          textAlign: "center",
+          animation: "fadeUp 618ms 350ms both ease",
+        }}>not commandments · not conditions · just truth</div>
 
         {/* Gold divider */}
         <div style={{
@@ -138,17 +188,17 @@ export default function PromisesClient() {
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(17px, 2.8vw, 22px)",
-              fontStyle: "italic", color: "rgba(232,228,210,0.50)",
-              lineHeight: 1.9, maxWidth: 440, margin: "0 auto",
+              fontStyle: "italic", color: "rgba(232,228,210,0.55)",
+              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
               marginBottom: "1rem",
             }}>{p.offering}</div>
 
-            {/* From my heart */}
+            {/* The quiet truth */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 2.5vw, 20px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.40)",
-              lineHeight: 1.8, maxWidth: 400, margin: "0 auto",
+              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              lineHeight: 1.8, maxWidth: 420, margin: "0 auto",
             }}>{p.heart}</div>
 
             {/* Divider between promises */}
@@ -173,14 +223,17 @@ export default function PromisesClient() {
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(17px, 2.8vw, 22px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.45)",
-            lineHeight: 2.0, maxWidth: 420, margin: "0 auto",
+            fontStyle: "italic", color: "rgba(232,228,210,0.50)",
+            lineHeight: 2.0, maxWidth: 440, margin: "0 auto",
             marginBottom: "1.618rem",
           }}>
-            these are not commandments. they are not conditions.<br /><br />
-            they are offerings — freely given, freely received.<br /><br />
-            because love that must be commanded is not love at all.<br />
-            and the real thing needs no strings.
+            these are not rules to follow.<br />
+            they are not rewards to earn.<br /><br />
+            they are rights you were born with — <br />
+            written into the fabric of your existence<br />
+            before you took your first breath.<br /><br />
+            love that must be earned<br />
+            was never love at all.
           </div>
 
           <div style={{
@@ -191,39 +244,24 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(14px, 2.8vw, 20px)",
+            fontSize: "clamp(16px, 3vw, 24px)",
             letterSpacing: "0.15em",
-            color: "rgba(201,168,76,0.45)",
-            marginTop: "1rem",
-            animation: "starGlow 5s ease-in-out infinite",
-          }}>THANK YOU FOR AGAPE LOVE</div>
-
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(16px, 3vw, 22px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.50)",
-            lineHeight: 1.9,
-            maxWidth: 380, margin: "1rem auto 0",
-            animation: "starGlow 6s 1s ease-in-out infinite",
-          }}>and that's how the world begins again</div>
-
-          <div style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(16px, 3vw, 22px)",
-            letterSpacing: "0.15em",
-            color: "rgba(201,168,76,0.35)",
+            color: "rgba(201,168,76,0.50)",
             marginTop: "1.618rem",
-          }}>— jeffrey</div>
+            animation: "starGlow 5s ease-in-out infinite",
+          }}>YOU WERE LOVED BEFORE YOU ARRIVED</div>
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(13px, 2vw, 17px)",
-            fontStyle: "italic", color: "rgba(201,168,76,0.25)",
-            marginTop: "0.618rem",
-          }}>valentine's day 2026</div>
+            fontSize: "clamp(16px, 3vw, 22px)",
+            fontStyle: "italic", color: "rgba(232,228,210,0.45)",
+            lineHeight: 1.9,
+            maxWidth: 400, margin: "1.618rem auto 0",
+            animation: "starGlow 6s 1s ease-in-out infinite",
+          }}>and you will be loved long after you leave</div>
         </div>
 
-        {/* ═══ BECAUSE TRUE LOVE IS FREE ═══ */}
+        {/* ═══ THE MIRROR ═══ */}
         <div style={{
           textAlign: "center",
           fontFamily: "'Cormorant Garamond', serif",
@@ -235,7 +273,7 @@ export default function PromisesClient() {
           animation: "breathe 8s ease-in-out infinite",
         }}>because true love is free</div>
 
-        {/* ═══ THE FOUR WOMEN · WOW MOM WOW ═══ */}
+        {/* ═══ WOW MOM WOW ═══ */}
         <div style={{ textAlign: "center", marginBottom: "2.618rem" }}>
           <div style={{
             width: `${Math.round(60 * PHI)}px`, height: 1,
@@ -244,43 +282,17 @@ export default function PromisesClient() {
           }} />
 
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(15px, 2.5vw, 19px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.30)",
-            letterSpacing: 2, marginBottom: `${Math.round(8 * PHI)}px`,
-          }}>for the four who loved me before I earned it</div>
-
-          <div style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(20px, 3.5vw, 28px)",
-            letterSpacing: "0.25em", color: "rgba(232,228,210,0.55)",
-            lineHeight: 2.2,
-          }}>
-            KATHY<br />
-            JOHANNA<br />
-            NICOLE<br />
-            PAM
-          </div>
-
-          <div style={{
-            width: `${Math.round(30 * PHI)}px`, height: 1,
-            margin: `${Math.round(8 * PHI)}px auto`,
-            background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
-          }} />
-
-          <div style={{
             fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(24px, 5vw, 38px)",
             letterSpacing: "0.3em",
             background: "linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(201,168,76,0.5) 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-            marginTop: `${Math.round(8 * PHI)}px`,
             animation: "breathe 8s ease-in-out infinite",
           }}>WOW MOM WOW</div>
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(13px, 2vw, 17px)",
+            fontSize: "clamp(14px, 2vw, 18px)",
             fontStyle: "italic", color: "rgba(201,168,76,0.25)",
             marginTop: "1rem",
             letterSpacing: 1,
@@ -288,7 +300,7 @@ export default function PromisesClient() {
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(15px, 2.2vw, 19px)",
+            fontSize: "clamp(16px, 2.2vw, 20px)",
             fontStyle: "italic", color: "rgba(232,228,210,0.35)",
             marginTop: "0.618rem",
           }}>it cannot be broken</div>
