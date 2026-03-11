@@ -9,13 +9,13 @@ const EASE = "cubic-bezier(0.23,1,0.32,1)";
 const PROMISES = [
   {
     num: "I", title: "SAFETY",
-    offering: "You deserve to move through life knowing that the ground beneath you is solid. Not because you earned it, but because you exist. The shelter, the steadiness, the knowing that someone already thought ahead...those were always meant to be yours. You were built to always live life and breathe deeply.",
+    offering: "You deserve to move through life knowing that the ground beneath you is solid. Not because you earned it, but because you exist. The shelter, the steadiness, the knowing that someone already thought ahead...those were always meant to be yours. You were made to always breathe deeply and live life to its fullest.",
     heart: "The ground will always hold you."
   },
   {
     num: "II", title: "TO BE SEEN",
     offering: "You deserve to be fully seen and known. Not the version of you that performs for the world. The one who cries alone. The one who fails. The one who laughs at strange and silly jokes. The unpolished, unfiltered you is the only one worth knowing.",
-    heart: "You were never meant to be a highlight reel. You are meant to be whole."
+    heart: "You are meant to be whole."
   },
   {
     num: "III", title: "AGENCY",
@@ -40,7 +40,7 @@ const PROMISES = [
   {
     num: "VII", title: "REST WITHOUT GUILT",
     offering: "You do not have to earn a nap. You do not have to finish the list before you sit down. Rest is not a reward for productivity. It is a birthright. Your body has been asking you to stop. Listen to it.",
-    heart: "You are not a machine. You are a living thing that needs stillness to grow."
+    heart: "You are a living thing that needs stillness to grow."
   },
   {
     num: "VIII", title: "TO BE HELD",
@@ -111,7 +111,7 @@ export default function PromisesClient() {
 
         {/* Heart */}
         <div style={{
-          fontSize: 24, color: "rgba(201,168,76,0.30)",
+          fontSize: 24, color: "rgba(201,168,76,0.50)",
           marginBottom: "1rem",
           animation: "fadeUp 618ms 100ms both ease",
         }}>♡</div>
@@ -121,7 +121,7 @@ export default function PromisesClient() {
           fontFamily: "'Playfair Display', serif",
           fontSize: "clamp(24px, 5vw, 38px)",
           letterSpacing: "0.15em", fontWeight: 400,
-          background: "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(201,168,76,0.5) 100%)",
+          background: "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(201,168,76,0.65) 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           marginBottom: "0.618rem",
           textAlign: "center",
@@ -132,7 +132,7 @@ export default function PromisesClient() {
         <div style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: "clamp(18px, 3vw, 24px)",
-          fontStyle: "italic", color: "rgba(232,228,210,0.50)",
+          fontStyle: "italic", color: "rgba(232,228,210,0.75)",
           lineHeight: 1.618,
           textAlign: "center",
           animation: "fadeUp 618ms 300ms both ease",
@@ -158,7 +158,7 @@ export default function PromisesClient() {
             <div style={{
               fontFamily: "'Playfair Display', serif",
               fontSize: "clamp(28px, 6vw, 42px)",
-              color: "rgba(201,168,76,0.15)",
+              color: "rgba(201,168,76,0.35)",
               fontWeight: 400, letterSpacing: "0.1em",
               marginBottom: "0.382rem",
             }}>{p.num}</div>
@@ -168,18 +168,18 @@ export default function PromisesClient() {
               fontFamily: "'Playfair Display', serif",
               fontSize: "clamp(18px, 3.5vw, 26px)",
               letterSpacing: "0.2em",
-              color: "rgba(232,228,210,0.70)",
+              color: "rgba(232,228,210,0.90)",
               marginBottom: "0.618rem",
               animation: `starGlow ${4 + i * 0.3}s ${i * 0.2}s ease-in-out infinite`,
             }}>{p.title}</div>
 
-            <div style={{ fontSize: 16, color: "rgba(201,168,76,0.25)", marginBottom: "0.618rem" }}>♡</div>
+            <div style={{ fontSize: 16, color: "rgba(201,168,76,0.45)", marginBottom: "0.618rem" }}>♡</div>
 
             {/* The offering */}
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(17px, 2.8vw, 22px)",
-              fontStyle: "italic", color: "rgba(232,228,210,0.55)",
+              fontStyle: "italic", color: "rgba(232,228,210,0.82)",
               lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
               marginBottom: "1rem",
             }}>{p.offering}</div>
@@ -188,7 +188,7 @@ export default function PromisesClient() {
             <div style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(16px, 2.5vw, 20px)",
-              fontStyle: "italic", color: "rgba(201,168,76,0.45)",
+              fontStyle: "italic", color: "rgba(201,168,76,0.72)",
               lineHeight: 1.8, maxWidth: 420, margin: "0 auto",
             }}>{p.heart}</div>
 
@@ -209,12 +209,12 @@ export default function PromisesClient() {
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
           }} />
 
-          <div style={{ fontSize: 20, color: "rgba(201,168,76,0.25)", marginBottom: "1rem" }}>♡</div>
+          <div style={{ fontSize: 20, color: "rgba(201,168,76,0.50)", marginBottom: "1rem" }}>♡</div>
 
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(17px, 2.8vw, 22px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.50)",
+            fontStyle: "italic", color: "rgba(232,228,210,0.78)",
             lineHeight: 2.0, maxWidth: 440, margin: "0 auto",
             marginBottom: "1.618rem",
           }}>
@@ -237,7 +237,7 @@ export default function PromisesClient() {
             fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(16px, 3vw, 24px)",
             letterSpacing: "0.15em",
-            color: "rgba(201,168,76,0.50)",
+            color: "rgba(201,168,76,0.75)",
             marginTop: "1.618rem",
             animation: "starGlow 5s ease-in-out infinite",
           }}>YOU WERE LOVED BEFORE YOU ARRIVED</div>
@@ -245,7 +245,7 @@ export default function PromisesClient() {
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(16px, 3vw, 22px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.45)",
+            fontStyle: "italic", color: "rgba(232,228,210,0.72)",
             lineHeight: 1.9,
             maxWidth: 400, margin: "1.618rem auto 0",
             animation: "starGlow 6s 1s ease-in-out infinite",
@@ -258,7 +258,7 @@ export default function PromisesClient() {
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: "clamp(20px, 3.2vw, 28px)",
           fontStyle: "italic",
-          background: "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(201,168,76,0.4) 100%)",
+          background: "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(201,168,76,0.6) 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           marginBottom: "2.618rem",
           animation: "breathe 8s ease-in-out infinite",
@@ -276,7 +276,7 @@ export default function PromisesClient() {
             fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(24px, 5vw, 38px)",
             letterSpacing: "0.3em",
-            background: "linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(201,168,76,0.5) 100%)",
+            background: "linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(201,168,76,0.65) 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
             animation: "breathe 8s ease-in-out infinite",
           }}>WOW MOM WOW</div>
@@ -284,7 +284,7 @@ export default function PromisesClient() {
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(14px, 2vw, 18px)",
-            fontStyle: "italic", color: "rgba(201,168,76,0.25)",
+            fontStyle: "italic", color: "rgba(201,168,76,0.50)",
             marginTop: "1rem",
             letterSpacing: 1,
           }}>read it forward · read it backward · flip it upside down</div>
@@ -292,7 +292,7 @@ export default function PromisesClient() {
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(16px, 2.2vw, 20px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.35)",
+            fontStyle: "italic", color: "rgba(232,228,210,0.60)",
             marginTop: "0.618rem",
           }}>it cannot be broken</div>
         </div>
@@ -302,7 +302,7 @@ export default function PromisesClient() {
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(20px, 3.5vw, 30px)",
-            fontStyle: "italic", color: "rgba(232,228,210,0.45)",
+            fontStyle: "italic", color: "rgba(232,228,210,0.72)",
             letterSpacing: 1, lineHeight: 1.618,
             marginBottom: "1rem",
             animation: "starGlow 5s ease-in-out infinite",
@@ -311,7 +311,7 @@ export default function PromisesClient() {
           <div style={{
             fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(12px, 2vw, 16px)",
-            letterSpacing: 4, color: "rgba(201,168,76,0.30)",
+            letterSpacing: 4, color: "rgba(201,168,76,0.55)",
           }}>— LET LOVE IN</div>
         </div>
 
@@ -320,13 +320,13 @@ export default function PromisesClient() {
           display: "inline-block",
           marginTop: "1rem",
           padding: "12px 28px",
-          border: "1px solid rgba(201,168,76,0.20)",
+          border: "1px solid rgba(201,168,76,0.35)",
           borderRadius: 6,
           fontFamily: "'Playfair Display', serif",
           fontSize: "clamp(12px, 1.8vmin, 16px)",
           letterSpacing: "0.15em",
           fontWeight: 700,
-          color: "rgba(201,168,76,0.60)",
+          color: "rgba(201,168,76,0.75)",
           textDecoration: "none",
         }}>
           ← EXPLORE ALL DOORS
