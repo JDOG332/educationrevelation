@@ -339,6 +339,15 @@ export default function SearchClient() {
               color: "rgba(201,168,76,0.618)", cursor: "pointer",
             }}>✦ MATH</button>
           </Link>
+          <Link href="/promises">
+            <button style={{
+              background: "rgba(220,160,160,0.04)", border: "1px solid rgba(220,160,160,0.236)",
+              borderRadius: "0.382rem", padding: "0.618rem 2.618rem",
+              fontFamily: "'Playfair Display', serif", fontWeight: 900,
+              fontSize: "clamp(15px, 1.618vmin, 22px)", letterSpacing: "0.146em",
+              color: "rgba(220,160,160,0.618)", cursor: "pointer",
+            }}>✦ PROMISES</button>
+          </Link>
         </div>
 
         {/* Ten Doors — Pyramid / Grid */}
