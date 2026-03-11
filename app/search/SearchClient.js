@@ -330,14 +330,14 @@ export default function SearchClient() {
               color: "rgba(201,168,76,0.618)", cursor: "pointer",
             }}>✦ POEMS</button>
           </Link>
-          <Link href="/mathematics">
+          <Link href="/math">
             <button style={{
               background: "rgba(201,168,76,0.04)", border: "1px solid rgba(201,168,76,0.236)",
               borderRadius: "0.382rem", padding: "0.618rem 2.618rem",
               fontFamily: "'Playfair Display', serif", fontWeight: 900,
               fontSize: "clamp(15px, 1.618vmin, 22px)", letterSpacing: "0.146em",
               color: "rgba(201,168,76,0.618)", cursor: "pointer",
-            }}>✦ MATHEMATICS</button>
+            }}>✦ MATH</button>
           </Link>
         </div>
 

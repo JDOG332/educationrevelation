@@ -1,15 +1,15 @@
-import Link from 'next/link';
-import MathClient from './MathClient';
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
+import DoorClient from '../[door]/DoorClient';
 
 export const metadata = {
-  title: 'Mathematics — Da Vinci\'s Vitruvian Man, Convergent Recognition Theory & 100 Topics on Hidden Patterns',
-  description: 'Explore the mathematics hidden beneath all things. Da Vinci\'s Vitruvian Man geometry verified to the decimal. Convergent Recognition Theory (Ψ = R₁₂ × G). Plus 100 topics across Arithmetic, Patterns, Geometry, Algebra, Probability, Zero, Fractals, Ratio, Symmetry, and Proof.',
+  title: 'Mathematics — Arithmetic, Patterns, Geometry, Algebra, Probability, Fractals & More',
+  description: 'What is the hidden structure beneath all things? Explore 100 topics across 10 categories: Arithmetic & Number, Patterns & Sequences, Geometry & Shape, Algebra, Probability & Chance, Zero & Nothing, Fractals, Ratio & Proportion, Symmetry & Balance, Logic & Proof.',
 };
 
-export default function MathPage() {
-  const subs = SUBCATEGORIES["promise"] || [];
-  const meta = DOOR_META["promise"];
+export default function MathematicsPage() {
+  const dataKey = "promise";
+  const meta = DOOR_META[dataKey];
+  const subs = SUBCATEGORIES[dataKey] || [];
 
-  return <MathClient subcategories={subs} doorMeta={meta} />;
+  return <DoorClient doorSlug="mathematics" doorMeta={meta} subcategories={subs} dataKey={dataKey} />;
 }
