@@ -9,12 +9,12 @@ const EASE = "cubic-bezier(0.23,1,0.32,1)";
 const PROMISES = [
   {
     num: "I", title: "SAFETY",
-    offering: "You deserve to move through this life knowing that the ground beneath you is solid. Not because you earned it — because you exist. The locks, the shelter, the backup plan — those were always meant to be yours. You were built to exhale, not to brace.",
+    offering: "You deserve to move through this life knowing that the ground beneath you is solid. Not because you earned it — because you exist. The shelter, the steadiness, the knowing that someone already thought ahead — those were always meant to be yours. You were built to exhale, not to brace.",
     heart: "The ground has always been holding you. You just forgot to feel it."
   },
   {
     num: "II", title: "TO BE SEEN",
-    offering: "Not the version of you that performs for the world. The one who cries in the car. The one who burns dinner. The one who doubts herself on Tuesday afternoons. That one — the real one — is the only one worth knowing. You do not need to be polished to be loved.",
+    offering: "Not the version of you that performs for the world. The one who cries alone. The one who fails in the kitchen. The one who doubts everything on Tuesday afternoons. That one — the unpolished, unfiltered, trembling one — is the only one worth knowing.",
     heart: "You were never meant to be a highlight reel. You were meant to be a whole person."
   },
   {
@@ -24,17 +24,17 @@ const PROMISES = [
   },
   {
     num: "IV", title: "PARTNERSHIP",
-    offering: "You deserve someone who notices — not someone you have to manage. The laundry, the appointments, the invisible labor you carry in your head — you were never meant to hold all of that alone. You deserve a partner, not a project.",
+    offering: "You deserve someone who notices — not someone you have to carry. The invisible labor, the unspoken weight, the things you hold in your head that nobody sees — you were never meant to hold all of that alone. You deserve a partner, not a project.",
     heart: "If you are carrying something heavy that nobody else sees — it is real, and it deserves to be shared."
   },
   {
     num: "V", title: "TO BE BELIEVED",
-    offering: "When you say something hurts, the correct response is not to argue with your pain. When you say something is wrong, the correct response is not to need a second opinion. Your voice was never meant to be an echo.",
-    heart: "You deserve to be heard the first time."
+    offering: "When you say something hurts, the correct response is not to argue with your pain. When you say something is wrong, the correct response is not to need a second opinion. Your voice was never meant to be an echo. It was meant to be heard.",
+    heart: "You deserve to be believed the first time you speak."
   },
   {
     num: "VI", title: "PURPOSE",
-    offering: "You are not just someone's parent, someone's partner, someone's child. You are a whole person with a fire that existed before any role was assigned to you. Your right to chase whatever lights you up is sacred — especially when it is inconvenient for others.",
+    offering: "You are not just someone's child, someone's partner, someone's parent, someone's employee. You are a whole person with a fire that existed before any role was ever assigned to you. Your right to chase whatever lights you up is sacred — especially when it is inconvenient for others.",
     heart: "You are rare and you do not look like anyone else — on the inside or the outside."
   },
   {
@@ -43,18 +43,18 @@ const PROMISES = [
     heart: "You are not a machine. You are a living thing that needs stillness to grow."
   },
   {
-    num: "VIII", title: "EMOTIONAL RECIPROCITY",
-    offering: "You have carried everyone else's feelings long enough. You have been the strong one, the steady one, the one who holds the room together. You are allowed to put that weight down. You are allowed to be held.",
+    num: "VIII", title: "TO BE HELD",
+    offering: "You have carried everyone else's feelings long enough. You have been the strong one, the steady one, the one who holds the room together when it wants to fall apart. You are allowed to put that weight down. You are allowed to fall into someone else's arms and let them hold the roof up for a while.",
     heart: "The silence between two people who trust each other is the safest place on earth."
   },
   {
     num: "IX", title: "COMMUNITY",
-    offering: "The people who love you are not in competition with each other. Your friendships are oxygen — they keep you alive in ways that no single person can. Go to brunch. Take the trip. Answer the call. Your people are not a threat to your love. They are the proof of it.",
+    offering: "The people who love you are not in competition with each other. Your friendships are oxygen — they keep you alive in ways no single person can. Answer the call. Take the trip. Show up for the people who show up for you. Your people are not a threat to your love. They are the proof of it.",
     heart: "You were never meant to be everything to one person or one person to everything."
   },
   {
     num: "X", title: "CHOSEN EVERY SINGLE DAY",
-    offering: "You deserve to be chosen out loud, in front of people, in the small moments, and in the hard ones. Not won and then coasted on. Not claimed and then forgotten. Day three thousand should look like day three — intentional, specific, and unmistakable.",
+    offering: "You deserve to be chosen out loud, in front of people, in the small moments, and in the hard ones. Not won and then coasted on. Not claimed and then forgotten. The thousandth day should feel like the third — intentional, specific, and unmistakable.",
     heart: "You should never have to wonder."
   },
 ];
@@ -138,15 +138,6 @@ export default function PromisesClient() {
           animation: "fadeUp 618ms 300ms both ease",
           marginBottom: "0.618rem",
         }}>from the universe to you</div>
-
-        <div style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(15px, 2.5vw, 20px)",
-          fontStyle: "italic", color: "rgba(232,228,210,0.30)",
-          lineHeight: 1.618,
-          textAlign: "center",
-          animation: "fadeUp 618ms 350ms both ease",
-        }}>not commandments · not conditions · just truth</div>
 
         {/* Gold divider */}
         <div style={{
