@@ -177,18 +177,14 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
         }}>{card.simple}</p>
       </div>
 
-      {/* Tab pills — always visible */}
+      {/* Tab pills — always visible, wrap on mobile */}
       {tabs.length > 0 && (
         <div style={{
           padding: "0 1.618rem 0.618rem",
-          overflowX: "auto",
-          WebkitOverflowScrolling: "touch",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
         }}>
           <div style={{
             display: "flex", gap: "0.382rem",
-            minWidth: "min-content",
+            flexWrap: "wrap",
           }}>
             {tabs.map((t, ti) => (
               <TabPill key={t.key} icon={t.icon} label={t.label}

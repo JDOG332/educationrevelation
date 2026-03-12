@@ -224,15 +224,13 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           <div className="stagger-fade" style={{
             width: "100%",
             padding: "0 1.618rem 0.618rem",
-            overflowX: "auto",
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
             animationDelay: "450ms",
             display: "flex", justifyContent: "center",
           }}>
             <div style={{
               display: "flex", gap: "0.382rem",
-              minWidth: "min-content",
+              flexWrap: "wrap",
+              justifyContent: "center",
             }}>
               {tabs.map((t, ti) => (
                 <TabPill key={t.key} icon={t.icon} label={t.label}
