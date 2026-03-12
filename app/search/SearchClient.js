@@ -430,29 +430,32 @@ export default function SearchClient() {
         {/* Ten Doors — Pyramid (desktop) / Grid (mobile) */}
         <div style={{ marginBottom: "1.618rem", width: "100%" }}>
           {isMobile ? (
-            /* ── Mobile: 2-column grid ── */
-            <div className="stagger-fade" style={{
+            /* ── Mobile: 2-column grid, staggered pairs ── */
+            <div style={{
               display: "grid", gridTemplateColumns: "1fr 1fr",
               gap: "0.618rem", width: "100%",
-              animationDelay: "382ms",
             }}>
-              {DOORS.map((door) => (
-                <DoorCard key={door.slug} door={door}
-                  score={doorScores[door.key]} isTop={topDoor === door.key}
-                  hasScores={hasScores} size="grid"
-                  onClick={() => handleDoorClick(door)} />
+              {DOORS.map((door, di) => (
+                <div key={door.slug} className="stagger-fade" style={{
+                  animationDelay: `${382 + Math.floor(di / 2) * 162}ms`,
+                }}>
+                  <DoorCard door={door}
+                    score={doorScores[door.key]} isTop={topDoor === door.key}
+                    hasScores={hasScores} size="grid"
+                    onClick={() => handleDoorClick(door)} />
+                </div>
               ))}
             </div>
           ) : (
-            /* ── Desktop: Sacred Pyramid 1-2-3-4 ── */
-            <div className="stagger-fade" style={{
+            /* ── Desktop: Sacred Pyramid 1-2-3-4, rows build sequentially ── */
+            <div style={{
               display: "flex", flexDirection: "column", alignItems: "center",
               gap: "0.618rem", width: "100%",
-              animationDelay: "382ms",
             }}>
               {PYRAMID.map((rowIndices, ri) => (
-                <div key={ri} style={{
+                <div key={ri} className="stagger-fade" style={{
                   display: "flex", gap: "0.618rem", justifyContent: "center",
+                  animationDelay: `${382 + ri * 236}ms`,
                 }}>
                   {rowIndices.map((di) => {
                     const door = DOORS[di];
