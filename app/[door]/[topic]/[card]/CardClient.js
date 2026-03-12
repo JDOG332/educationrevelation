@@ -5,10 +5,26 @@ import Link from 'next/link';
 import WikiCard from '@/components/WikiCard';
 import SongRow from '@/components/SongRow';
 
-const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
+/* ─── SECTION HEADER ──────────────────────────────────────────── */
+function SectionLabel({ children, rgb }) {
+  return (
+    <div style={{
+      fontFamily: "var(--font-display)",
+      fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+      color: `rgba(${rgb},0.75)`,
+      letterSpacing: "0.15em",
+      marginBottom: "0.618rem",
+      fontWeight: 700,
+    }}>{children}</div>
+  );
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   INDIVIDUAL CARD PAGE (1 of 1,001)
+   ═══════════════════════════════════════════════════════════════ */
 export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, prevCard, nextCard }) {
-  const [backH, setBackH] = useState(false);
   const [shared, setShared] = useState(false);
   const rgb = sub.accent;
 
@@ -22,7 +38,6 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
       text: card.simple?.slice(0, 120) + '...',
       url: shareUrl,
     };
-
     try {
       if (navigator.share) {
         await navigator.share(shareData);
@@ -31,44 +46,22 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         setShared(true);
         setTimeout(() => setShared(false), 2000);
       }
-    } catch (e) {
-      // User cancelled share — that's fine
-    }
+    } catch (e) {}
   };
 
   return (
-    <div style={{
-      minHeight: "100vh",
+    <div className="phi-page" style={{
       background: `radial-gradient(ellipse at 50% 8%, rgba(${rgb},0.06) 0%, #03030a 50%)`,
-      display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "0 1rem",
-      paddingBottom: "4rem",
+      paddingBottom: "4.236rem",
     }}>
 
-      {/* Frosted header */}
-      <div style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 99,
-        height: "clamp(56px, 8vh, 72px)",
-        background: "linear-gradient(180deg, rgba(3,3,10,0.92) 0%, rgba(3,3,10,0.6) 70%, transparent 100%)",
-        backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        paddingLeft: "1.618rem",
+      {/* Frosted header — with SHARE button on right */}
+      <div className="frosted-header" style={{
+        justifyContent: "space-between",
         paddingRight: "1.618rem",
-        pointerEvents: "none",
       }}>
         <Link href={`/${doorSlug}/${topicSlug}`} style={{ pointerEvents: "auto", textDecoration: "none" }}>
-          <span
-            onMouseEnter={() => setBackH(true)}
-            onMouseLeave={() => setBackH(false)}
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 900,
-              fontSize: "clamp(28px, 5.4vmin, 42px)",
-              color: `rgba(${rgb},${backH ? 1.0 : 0.618})`,
-              letterSpacing: "-0.0382em",
-              cursor: "pointer",
-              transition: `color 618ms ${EASE}`,
-            }}>← {sub.name}</span>
+          <span className="back-link">← BACK</span>
         </Link>
 
         {/* Share button */}
@@ -78,20 +71,20 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             pointerEvents: "auto",
             background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.06)`,
             border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.30})`,
-            borderRadius: 6,
-            padding: "8px 20px",
-            display: "flex", alignItems: "center", gap: "8px",
+            borderRadius: "0.382rem",
+            padding: "0.382rem 1.25rem",
+            display: "flex", alignItems: "center", gap: "0.382rem",
             cursor: "pointer",
-            transition: `all 382ms ${EASE}`,
+            transition: "all 382ms var(--ease-snap)",
           }}
         >
-          <span style={{ fontSize: "clamp(24px, 3.6vmin, 32px)" }}>
+          <span style={{ fontSize: "clamp(1.5rem, 3.6vmin + 0.15rem, 2rem)" }}>
             {shared ? "✓" : "↗"}
           </span>
           <span style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 700,
-            fontSize: "clamp(18px, 2.4vmin, 22px)",
+            fontSize: "clamp(1.125rem, 2.4vmin + 0.15rem, 1.375rem)",
             letterSpacing: "0.12em",
             color: `rgba(${rgb},${shared ? 1.0 : 0.80})`,
           }}>{shared ? "COPIED" : "SHARE"}</span>
@@ -99,108 +92,100 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
       </div>
 
       {/* Content */}
-      <div style={{
-        width: "100%", maxWidth: "42rem",
+      <div className="content-below-header" style={{
+        width: "100%", maxWidth: "var(--content-max)",
         display: "flex", flexDirection: "column", alignItems: "center",
-        paddingTop: "clamp(72px, 11vh, 110px)",
       }}>
 
         {/* Breadcrumb */}
-        <div style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: "clamp(20px, 2.6vmin, 24px)",
+        <div className="stagger-fade" style={{
+          fontFamily: "var(--font-body)",
+          fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
           color: "rgba(201,168,76,0.30)",
           letterSpacing: "0.12em",
           marginBottom: "1rem",
-          animation: "fadeUp 618ms 100ms both ease",
+          animationDelay: "100ms",
           textAlign: "center",
         }}>{doorMeta.emoji} {doorMeta.name} → {sub.name}</div>
 
         {/* Card icon */}
-        <div style={{
-          fontSize: "clamp(56px, 12vmin, 84px)",
-          animation: "fadeUp 618ms 150ms both ease",
+        <div className="stagger-fade" style={{
+          fontSize: "clamp(3.5rem, 12vmin + 0.5rem, 5.236rem)",
+          animationDelay: "150ms",
           marginBottom: "0.618rem",
         }}>{card.icon}</div>
 
         {/* Card title */}
-        <h1 style={{
-          fontFamily: "'Playfair Display', serif",
+        <h1 className="stagger-fade" style={{
+          fontFamily: "var(--font-display)",
           fontWeight: 900,
-          fontSize: "clamp(36px, 6.854vmin, 52px)",
+          fontSize: "clamp(2.25rem, 6.854vmin + 0.25rem, 3.25rem)",
           letterSpacing: "0.06em",
           color: `rgba(${rgb},0.90)`,
           textAlign: "center",
-          animation: "fadeUp 618ms 200ms both ease",
+          animationDelay: "200ms",
           marginBottom: "0.382rem",
-          textShadow: `0 0 8px rgba(${rgb},0.25)`,
+          textShadow: `0 0 0.5rem rgba(${rgb},0.25)`,
           lineHeight: 1.1,
         }}>{card.title}</h1>
 
         {/* Subtitle */}
         {card.subtitle && (
-          <div style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(24px, 3.6vmin, 32px)",
-            color: `rgba(${rgb},0.45)`,
+          <div className="stagger-fade" style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
+            color: `rgba(${rgb},0.75)`,
             fontWeight: 300,
             letterSpacing: "0.06em",
             marginBottom: "1rem",
-            animation: "fadeUp 618ms 250ms both ease",
+            animationDelay: "250ms",
             textAlign: "center",
           }}>{card.subtitle}</div>
         )}
 
         {/* Divider */}
-        <div style={{
-          width: "61.8%", height: 1, maxWidth: 200,
+        <div className="stagger-fade" style={{
+          width: "61.8%", height: 1, maxWidth: "12.5rem",
           background: `linear-gradient(90deg, transparent, rgba(${rgb},0.30), transparent)`,
           marginBottom: "1.618rem",
-          animation: "fadeUp 618ms 300ms both ease",
+          animationDelay: "300ms",
         }} />
 
-        {/* ═══ SIMPLE ═══ */}
-        <div style={{
+        {/* ═══ SIMPLE ═══ (Cormorant — short poetic first impression) */}
+        <div className="stagger-fade" style={{
           width: "100%",
           padding: "1.618rem",
-          animation: "fadeUp 618ms 350ms both ease",
+          animationDelay: "350ms",
           marginBottom: "1rem",
         }}>
           <p style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(28px, 5.4vmin, 40px)",
-            color: "rgba(232,228,210,0.85)",
+            fontFamily: "var(--font-accent)",
+            fontSize: "clamp(1.75rem, 5.4vmin + 0.2rem, 2.5rem)",
+            color: "rgba(232,228,210,0.92)",
             lineHeight: 1.618,
             margin: 0,
             textAlign: "center",
           }}>{card.simple}</p>
         </div>
 
-        {/* ═══ GO DEEPER ═══ */}
+        {/* ═══ GO DEEPER ═══ (Inter for readability) */}
         {card.intuition && (
-          <div style={{
+          <div className="stagger-fade" style={{
             width: "100%",
             padding: "1.618rem",
             background: `rgba(${rgb},0.04)`,
             borderLeft: `3px solid rgba(${rgb},0.30)`,
-            borderRadius: "0 6px 6px 0",
-            animation: "fadeUp 618ms 450ms both ease",
+            borderRadius: "0 0.382rem 0.382rem 0",
+            animationDelay: "450ms",
             marginBottom: "1rem",
           }}>
-            <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vmin, 28px)",
-              color: `rgba(${rgb},0.50)`,
-              letterSpacing: "0.15em",
-              marginBottom: "0.618rem",
-              fontWeight: 700,
-            }}>GO DEEPER</div>
+            <SectionLabel rgb={rgb}>GO DEEPER</SectionLabel>
             <p style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontSize: "clamp(24px, 3.6vmin, 34px)",
-              color: "rgba(232,228,210,0.65)",
+              fontFamily: "var(--font-body)",
+              fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+              color: "rgba(232,228,210,0.85)",
               lineHeight: 1.618,
+              fontWeight: 300,
               margin: 0,
             }}>{card.intuition}</p>
           </div>
@@ -208,27 +193,20 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
 
         {/* ═══ FULL PICTURE ═══ */}
         {card.advanced && (
-          <div style={{
+          <div className="stagger-fade" style={{
             width: "100%",
             padding: "1.618rem",
             background: "rgba(232,228,210,0.02)",
             borderLeft: "3px solid rgba(232,228,210,0.12)",
-            borderRadius: "0 6px 6px 0",
-            animation: "fadeUp 618ms 550ms both ease",
+            borderRadius: "0 0.382rem 0.382rem 0",
+            animationDelay: "550ms",
             marginBottom: "1rem",
           }}>
-            <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vmin, 28px)",
-              color: "rgba(232,228,210,0.40)",
-              letterSpacing: "0.15em",
-              marginBottom: "0.618rem",
-              fontWeight: 700,
-            }}>THE FULL PICTURE</div>
+            <SectionLabel rgb="232,228,210">THE FULL PICTURE</SectionLabel>
             <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(22px, 3vmin, 28px)",
-              color: "rgba(232,228,210,0.55)",
+              fontFamily: "var(--font-body)",
+              fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+              color: "rgba(232,228,210,0.82)",
               lineHeight: 1.618,
               fontWeight: 300,
               margin: 0,
@@ -238,39 +216,34 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
 
         {/* ═══ SIX SENSES ═══ */}
         {card.senses?.length > 0 && (
-          <div style={{
+          <div className="stagger-fade" style={{
             width: "100%",
-            animation: "fadeUp 618ms 650ms both ease",
+            animationDelay: "650ms",
             marginBottom: "1rem",
           }}>
-            <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vmin, 28px)",
-              color: `rgba(${rgb},0.45)`,
-              letterSpacing: "0.15em",
-              marginBottom: "0.618rem",
-              fontWeight: 700,
-              paddingLeft: "1.618rem",
-            }}>SIX SENSES</div>
+            <div style={{ paddingLeft: "1.618rem" }}>
+              <SectionLabel rgb={rgb}>SIX SENSES</SectionLabel>
+            </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.618rem", padding: "0 1.618rem" }}>
               {card.senses.map((s) => (
                 <div key={s.key} style={{
                   display: "flex", gap: "0.618rem", alignItems: "flex-start",
                 }}>
-                  <span style={{ fontSize: 34, flexShrink: 0 }}>{s.icon}</span>
+                  <span style={{ fontSize: "2.118rem", flexShrink: 0 }}>{s.icon}</span>
                   <div>
                     <span style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: "clamp(20px, 2.6vmin, 24px)",
-                      color: `rgba(${rgb},0.45)`,
+                      fontFamily: "var(--font-body)",
+                      fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+                      color: `rgba(${rgb},0.72)`,
                       fontWeight: 600,
                       letterSpacing: "0.08em",
                     }}>{s.sense}</span>
                     <p style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: "clamp(22px, 3vmin, 28px)",
-                      color: "rgba(232,228,210,0.60)",
+                      fontFamily: "var(--font-body)",
+                      fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+                      color: "rgba(232,228,210,0.85)",
                       lineHeight: 1.618,
+                      fontWeight: 300,
                       margin: 0,
                     }}>{s.text}</p>
                   </div>
@@ -282,20 +255,13 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
 
         {/* ═══ EXPLORE FURTHER ═══ */}
         {card.links?.length > 0 && (
-          <div style={{
+          <div className="stagger-fade" style={{
             width: "100%",
             padding: "0 1.618rem",
-            animation: "fadeUp 618ms 750ms both ease",
+            animationDelay: "750ms",
             marginBottom: "1rem",
           }}>
-            <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vmin, 28px)",
-              color: `rgba(${rgb},0.45)`,
-              letterSpacing: "0.15em",
-              marginBottom: "0.618rem",
-              fontWeight: 700,
-            }}>EXPLORE FURTHER</div>
+            <SectionLabel rgb={rgb}>EXPLORE FURTHER</SectionLabel>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
               {card.links.map((link, li) => (
                 <WikiCard key={li} label={link.label} url={link.url} rgb={rgb} index={li} />
@@ -306,20 +272,13 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
 
         {/* ═══ MUSIC ═══ */}
         {card.songs?.length > 0 && (
-          <div style={{
+          <div className="stagger-fade" style={{
             width: "100%",
             padding: "0 1.618rem",
-            animation: "fadeUp 618ms 850ms both ease",
+            animationDelay: "850ms",
             marginBottom: "1.618rem",
           }}>
-            <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vmin, 28px)",
-              color: `rgba(${rgb},0.45)`,
-              letterSpacing: "0.15em",
-              marginBottom: "0.618rem",
-              fontWeight: 700,
-            }}>MUSIC</div>
+            <SectionLabel rgb={rgb}>MUSIC</SectionLabel>
             <div style={{ display: "flex", flexDirection: "column" }}>
               {card.songs.map((song, si) => (
                 <SongRow key={si} song={song} rgb={rgb} />
@@ -329,34 +288,34 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         )}
 
         {/* ═══ PREV / NEXT NAVIGATION ═══ */}
-        <div style={{
+        <div className="stagger-fade" style={{
           width: "100%",
           display: "flex", gap: "0.618rem",
           justifyContent: "space-between",
           padding: "0 1.618rem",
           marginTop: "1rem",
-          animation: "fadeUp 618ms 900ms both ease",
+          animationDelay: "900ms",
         }}>
           {prevCard ? (
             <Link href={`/${doorSlug}/${topicSlug}/${prevCard.id}`} style={{
               flex: 1,
               padding: "1rem",
               border: `1px solid rgba(${rgb},0.18)`,
-              borderRadius: 6,
+              borderRadius: "0.382rem",
               textDecoration: "none",
               textAlign: "left",
             }}>
               <div style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(20px, 2.6vmin, 24px)",
-                color: `rgba(${rgb},0.40)`,
+                fontFamily: "var(--font-body)",
+                fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+                color: `rgba(${rgb},0.50)`,
                 letterSpacing: "0.08em",
                 marginBottom: "0.236rem",
               }}>← PREVIOUS</div>
               <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(20px, 2.6vmin, 24px)",
-                color: `rgba(${rgb},0.70)`,
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+                color: `rgba(${rgb},0.75)`,
                 fontWeight: 700,
               }}>{prevCard.icon} {prevCard.title}</div>
             </Link>
@@ -367,64 +326,44 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
               flex: 1,
               padding: "1rem",
               border: `1px solid rgba(${rgb},0.18)`,
-              borderRadius: 6,
+              borderRadius: "0.382rem",
               textDecoration: "none",
               textAlign: "right",
             }}>
               <div style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(20px, 2.6vmin, 24px)",
-                color: `rgba(${rgb},0.40)`,
+                fontFamily: "var(--font-body)",
+                fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+                color: `rgba(${rgb},0.50)`,
                 letterSpacing: "0.08em",
                 marginBottom: "0.236rem",
               }}>NEXT →</div>
               <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(20px, 2.6vmin, 24px)",
-                color: `rgba(${rgb},0.70)`,
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+                color: `rgba(${rgb},0.75)`,
                 fontWeight: 700,
               }}>{nextCard.icon} {nextCard.title}</div>
             </Link>
           ) : <div style={{ flex: 1 }} />}
         </div>
 
-        {/* Back to topic + all doors */}
-        <div style={{
+        {/* Back to topic + door + all doors */}
+        <div className="stagger-fade" style={{
           display: "flex", gap: "0.618rem", marginTop: "1.618rem",
           flexWrap: "wrap", justifyContent: "center",
-          animation: "fadeUp 618ms 950ms both ease",
+          animationDelay: "950ms",
         }}>
-          <Link href={`/${doorSlug}/${topicSlug}`} style={{
-            padding: "12px 24px",
-            border: `1px solid rgba(${rgb},0.25)`,
-            borderRadius: 6,
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(18px, 2.4vmin, 22px)",
-            letterSpacing: "0.12em",
-            fontWeight: 700,
+          <Link href={`/${doorSlug}/${topicSlug}`} className="btn-ghost" style={{
+            borderColor: `rgba(${rgb},0.25)`,
             color: `rgba(${rgb},0.70)`,
             textDecoration: "none",
           }}>← {sub.name}</Link>
-          <Link href={`/${doorSlug}`} style={{
-            padding: "12px 24px",
-            border: `1px solid rgba(${rgb},0.18)`,
-            borderRadius: 6,
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(18px, 2.4vmin, 22px)",
-            letterSpacing: "0.12em",
-            fontWeight: 700,
-            color: `rgba(${rgb},0.50)`,
+          <Link href={`/${doorSlug}`} className="btn-ghost" style={{
+            borderColor: `rgba(${rgb},0.18)`,
+            color: `rgba(${rgb},0.60)`,
             textDecoration: "none",
           }}>{doorMeta.emoji} {doorMeta.name}</Link>
-          <Link href="/search" style={{
-            padding: "12px 24px",
-            border: "1px solid rgba(201,168,76,0.15)",
-            borderRadius: 6,
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(18px, 2.4vmin, 22px)",
-            letterSpacing: "0.12em",
-            fontWeight: 700,
-            color: "rgba(201,168,76,0.50)",
+          <Link href="/search" className="btn-ghost" style={{
             textDecoration: "none",
           }}>ALL DOORS</Link>
         </div>
