@@ -186,6 +186,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           <div style={{
             display: "flex", gap: "0.618rem",
             flexWrap: "wrap",
+            justifyContent: "center",
           }}>
             {tabs.map((t, ti) => (
               <TabPill key={t.key} icon={t.icon} label={t.label}
