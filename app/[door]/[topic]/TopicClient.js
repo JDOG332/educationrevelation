@@ -5,8 +5,54 @@ import Link from 'next/link';
 import WikiCard from '@/components/WikiCard';
 import SongRow from '@/components/SongRow';
 
-const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
+/* ─── SECTION HEADER (shared style for GO DEEPER, SIX SENSES, etc.) ── */
+function SectionLabel({ children, rgb }) {
+  return (
+    <div style={{
+      fontFamily: "var(--font-display)",
+      fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+      color: `rgba(${rgb},0.75)`,
+      letterSpacing: "0.15em",
+      marginBottom: "0.382rem",
+      fontWeight: 700,
+    }}>{children}</div>
+  );
+}
+
+
+/* ─── ACTION BUTTON (SHARE / VIEW FULL) ───────────────────────── */
+function ActionBtn({ children, icon, rgb, opacity = 0.65, onClick, style }) {
+  return (
+    <div
+      onClick={onClick}
+      style={{
+        background: `rgba(${rgb},0.04)`,
+        border: `1px solid rgba(${rgb},0.22)`,
+        borderRadius: "0.382rem",
+        padding: "0.382rem 1rem",
+        display: "flex", alignItems: "center", gap: "0.382rem",
+        cursor: "pointer",
+        transition: "all 382ms var(--ease-snap)",
+        ...style,
+      }}
+    >
+      <span style={{ fontSize: "1.375rem" }}>{icon}</span>
+      <span style={{
+        fontFamily: "var(--font-display)",
+        fontWeight: 700,
+        fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+        letterSpacing: "0.10em",
+        color: `rgba(${rgb},${opacity})`,
+      }}>{children}</span>
+    </div>
+  );
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CARD CONTENT (expandable topic card)
+   ═══════════════════════════════════════════════════════════════ */
 function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
   const [expanded, setExpanded] = useState(false);
   const [shared, setShared] = useState(false);
@@ -36,21 +82,25 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
       padding: "1.618rem",
       background: `rgba(${rgb},${expanded ? 0.08 : 0.04})`,
       border: `1px solid rgba(${rgb},${expanded ? 0.35 : 0.18})`,
-      borderRadius: 6,
-      transition: `all 618ms ${EASE}`,
+      borderRadius: "0.382rem",
+      transition: "all 618ms var(--ease-snap)",
       animation: `fadeUp 618ms ${200 + index * 100}ms both ease`,
     }}>
+
       {/* Header — clickable */}
       <div
         onClick={() => setExpanded(!expanded)}
         style={{ cursor: "pointer", userSelect: "none" }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "0.618rem", marginBottom: "0.382rem" }}>
-          <span style={{ fontSize: 38 }}>{card.icon}</span>
+        <div style={{
+          display: "flex", alignItems: "center",
+          gap: "0.618rem", marginBottom: "0.382rem",
+        }}>
+          <span style={{ fontSize: "2.618rem" }}>{card.icon}</span>
           <h3 style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 700,
-            fontSize: "clamp(24px, 4vmin, 34px)",
+            fontSize: "clamp(1.5rem, 4vmin + 0.2rem, 2.118rem)",
             color: `rgba(${rgb},0.90)`,
             margin: 0,
             letterSpacing: "0.02em",
@@ -58,9 +108,9 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
         </div>
         {card.subtitle && (
           <div style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(22px, 3vmin, 28px)",
-            color: `rgba(${rgb},0.45)`,
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+            color: `rgba(${rgb},0.75)`,
             fontWeight: 300,
             letterSpacing: "0.06em",
             marginBottom: "0.618rem",
@@ -68,11 +118,11 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
         )}
       </div>
 
-      {/* Simple — always visible */}
+      {/* Simple — always visible (Cormorant for poetic first impression) */}
       <p style={{
-        fontFamily: "'Cormorant Garamond', serif",
-        fontSize: "clamp(24px, 3.6vmin, 32px)",
-        color: "rgba(232,228,210,0.75)",
+        fontFamily: "var(--font-accent)",
+        fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
+        color: "rgba(232,228,210,0.92)",
         lineHeight: 1.618,
         marginTop: "0.618rem",
       }}>{card.simple}</p>
@@ -88,17 +138,17 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
             padding: "0.618rem",
             background: `rgba(${rgb},0.04)`,
             border: `1px dashed rgba(${rgb},0.22)`,
-            borderRadius: 6,
+            borderRadius: "0.382rem",
             cursor: "pointer",
-            transition: `all 382ms ${EASE}`,
+            transition: "all 382ms var(--ease-snap)",
           }}
         >
-          <span style={{ fontSize: 18 }}>💡</span>
+          <span style={{ fontSize: "1.125rem" }}>💡</span>
           <span style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-accent)",
             fontStyle: "italic",
-            fontSize: "clamp(16px, 2vmin, 20px)",
-            color: `rgba(${rgb},0.50)`,
+            fontSize: "clamp(1rem, 2vmin + 0.15rem, 1.25rem)",
+            color: `rgba(${rgb},0.65)`,
           }}>deeper intuition · full analysis · 6 senses · music · wikipedia</span>
         </div>
       )}
@@ -111,28 +161,21 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           animation: "fadeUp 382ms ease both",
         }}>
 
-          {/* Intuition */}
+          {/* Intuition — Inter for readability, not italic */}
           {card.intuition && (
             <div style={{
               padding: "1rem",
               background: `rgba(${rgb},0.04)`,
               borderLeft: `3px solid rgba(${rgb},0.30)`,
-              borderRadius: "0 6px 6px 0",
+              borderRadius: "0 0.382rem 0.382rem 0",
             }}>
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: `rgba(${rgb},0.50)`,
-                letterSpacing: "0.15em",
-                marginBottom: "0.382rem",
-                fontWeight: 700,
-              }}>GO DEEPER</div>
+              <SectionLabel rgb={rgb}>GO DEEPER</SectionLabel>
               <p style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontStyle: "italic",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: "rgba(232,228,210,0.60)",
+                fontFamily: "var(--font-body)",
+                fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+                color: "rgba(232,228,210,0.85)",
                 lineHeight: 1.618,
+                fontWeight: 300,
                 margin: 0,
               }}>{card.intuition}</p>
             </div>
@@ -143,21 +186,14 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
             <div style={{
               padding: "1rem",
               background: "rgba(232,228,210,0.02)",
-              borderLeft: `3px solid rgba(232,228,210,0.12)`,
-              borderRadius: "0 6px 6px 0",
+              borderLeft: "3px solid rgba(232,228,210,0.12)",
+              borderRadius: "0 0.382rem 0.382rem 0",
             }}>
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: "rgba(232,228,210,0.40)",
-                letterSpacing: "0.15em",
-                marginBottom: "0.382rem",
-                fontWeight: 700,
-              }}>THE FULL PICTURE</div>
+              <SectionLabel rgb="232,228,210">THE FULL PICTURE</SectionLabel>
               <p style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: "rgba(232,228,210,0.50)",
+                fontFamily: "var(--font-body)",
+                fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+                color: "rgba(232,228,210,0.82)",
                 lineHeight: 1.618,
                 fontWeight: 300,
                 margin: 0,
@@ -168,34 +204,28 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           {/* Six Senses */}
           {card.senses?.length > 0 && (
             <div>
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: `rgba(${rgb},0.45)`,
-                letterSpacing: "0.15em",
-                marginBottom: "0.618rem",
-                fontWeight: 700,
-              }}>SIX SENSES</div>
+              <SectionLabel rgb={rgb}>SIX SENSES</SectionLabel>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
                 {card.senses.map((s) => (
                   <div key={s.key} style={{
                     display: "flex", gap: "0.618rem", alignItems: "flex-start",
                     padding: "0.382rem 0",
                   }}>
-                    <span style={{ fontSize: 28, flexShrink: 0 }}>{s.icon}</span>
+                    <span style={{ fontSize: "1.75rem", flexShrink: 0 }}>{s.icon}</span>
                     <div>
                       <span style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: "clamp(20px, 2.6vmin, 24px)",
-                        color: `rgba(${rgb},0.45)`,
+                        fontFamily: "var(--font-body)",
+                        fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+                        color: `rgba(${rgb},0.72)`,
                         fontWeight: 600,
                         letterSpacing: "0.08em",
                       }}>{s.sense}</span>
                       <p style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "clamp(22px, 3vmin, 28px)",
-                        color: "rgba(232,228,210,0.55)",
+                        fontFamily: "var(--font-body)",
+                        fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+                        color: "rgba(232,228,210,0.85)",
                         lineHeight: 1.618,
+                        fontWeight: 300,
                         margin: 0,
                       }}>{s.text}</p>
                     </div>
@@ -208,14 +238,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           {/* Wikipedia — Explore Further */}
           {card.links?.length > 0 && (
             <div>
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: `rgba(${rgb},0.45)`,
-                letterSpacing: "0.15em",
-                marginBottom: "0.618rem",
-                fontWeight: 700,
-              }}>EXPLORE FURTHER</div>
+              <SectionLabel rgb={rgb}>EXPLORE FURTHER</SectionLabel>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
                 {card.links.map((link, li) => (
                   <WikiCard key={li} label={link.label} url={link.url} rgb={rgb} index={li} />
@@ -227,14 +250,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           {/* Songs */}
           {card.songs?.length > 0 && (
             <div>
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(22px, 3vmin, 28px)",
-                color: `rgba(${rgb},0.45)`,
-                letterSpacing: "0.15em",
-                marginBottom: "0.618rem",
-                fontWeight: 700,
-              }}>MUSIC</div>
+              <SectionLabel rgb={rgb}>MUSIC</SectionLabel>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {card.songs.map((song, si) => (
                   <SongRow key={si} song={song} rgb={rgb} />
@@ -251,14 +267,14 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
         style={{
           textAlign: "center",
           marginTop: "0.618rem",
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "var(--font-display)",
           fontWeight: 700,
-          fontSize: "clamp(22px, 3vmin, 28px)",
+          fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
           letterSpacing: "0.10em",
           color: `rgba(${rgb},0.618)`,
           cursor: "pointer",
           userSelect: "none",
-          transition: `color 382ms ${EASE}`,
+          transition: "color 382ms var(--ease-snap)",
         }}
       >
         <span>{expanded ? "▲ collapse" : "▼ tap to explore more"}</span>
@@ -274,146 +290,97 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
       {/* Share + View full card */}
       <div style={{
         display: "flex", justifyContent: "center", gap: "0.618rem",
-        marginTop: "0",
       }}>
-        <button
+        <ActionBtn
+          icon={shared ? "✓" : "↗"}
+          rgb={rgb}
+          opacity={shared ? 1.0 : 0.65}
           onClick={handleShare}
-          style={{
-            background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.04)`,
-            border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.22})`,
-            borderRadius: 6,
-            padding: "6px 16px",
-            display: "flex", alignItems: "center", gap: "6px",
-            cursor: "pointer",
-            transition: `all 382ms ${EASE}`,
-          }}
-        >
-          <span style={{ fontSize: 22 }}>{shared ? "✓" : "↗"}</span>
-          <span style={{
-            fontFamily: "'Playfair Display', serif",
-            fontWeight: 700,
-            fontSize: "clamp(20px, 2.6vmin, 24px)",
-            letterSpacing: "0.10em",
-            color: `rgba(${rgb},${shared ? 1.0 : 0.65})`,
-          }}>{shared ? "COPIED" : "SHARE"}</span>
-        </button>
+          style={shared ? {
+            background: `rgba(${rgb},0.15)`,
+            borderColor: `rgba(${rgb},0.618)`,
+          } : {}}
+        >{shared ? "COPIED" : "SHARE"}</ActionBtn>
         <Link href={`/${doorSlug}/${topicSlug}/${card.id}`} style={{ textDecoration: "none" }}>
-          <div style={{
-            background: `rgba(${rgb},0.04)`,
-            border: `1px solid rgba(${rgb},0.22)`,
-            borderRadius: 6,
-            padding: "6px 16px",
-            display: "flex", alignItems: "center", gap: "6px",
-            cursor: "pointer",
-            transition: `all 382ms ${EASE}`,
-          }}>
-            <span style={{ fontSize: 22 }}>◎</span>
-            <span style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 700,
-              fontSize: "clamp(20px, 2.6vmin, 24px)",
-              letterSpacing: "0.10em",
-              color: `rgba(${rgb},0.65)`,
-            }}>VIEW FULL</span>
-          </div>
+          <ActionBtn icon="◎" rgb={rgb}>VIEW FULL</ActionBtn>
         </Link>
       </div>
     </div>
   );
 }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   TOPIC PAGE
+   ═══════════════════════════════════════════════════════════════ */
 export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
-  const [backH, setBackH] = useState(false);
   const rgb = sub.accent;
 
   return (
-    <div style={{
-      minHeight: "100vh",
+    <div className="phi-page" style={{
       background: `radial-gradient(ellipse at 50% 8%, rgba(${rgb},0.05) 0%, #03030a 50%)`,
-      display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "0 1rem",
-      paddingBottom: "4rem",
+      paddingBottom: "4.236rem",
     }}>
 
       {/* Frosted header */}
-      <div style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 99,
-        height: "clamp(56px, 8vh, 72px)",
-        background: "linear-gradient(180deg, rgba(3,3,10,0.92) 0%, rgba(3,3,10,0.6) 70%, transparent 100%)",
-        backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        display: "flex", alignItems: "center",
-        paddingLeft: "1.618rem",
-        pointerEvents: "none",
-      }}>
+      <div className="frosted-header">
         <Link href={`/${doorSlug}`} style={{ pointerEvents: "auto", textDecoration: "none" }}>
-          <span
-            onMouseEnter={() => setBackH(true)}
-            onMouseLeave={() => setBackH(false)}
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 900,
-              fontSize: "clamp(28px, 5.4vmin, 42px)",
-              color: `rgba(${rgb},${backH ? 1.0 : 0.618})`,
-              letterSpacing: "-0.0382em",
-              cursor: "pointer",
-              transition: `color 618ms ${EASE}`,
-            }}>← {doorMeta.name}</span>
+          <span className="back-link">← BACK</span>
         </Link>
       </div>
 
       {/* Content */}
-      <div style={{
-        width: "100%", maxWidth: "42rem",
+      <div className="content-below-header" style={{
+        width: "100%", maxWidth: "var(--content-max)",
         display: "flex", flexDirection: "column", alignItems: "center",
-        paddingTop: "clamp(72px, 11vh, 110px)",
       }}>
 
         {/* Topic icon */}
-        <div style={{
-          fontSize: "clamp(56px, 12vmin, 84px)",
-          animation: "fadeUp 618ms 100ms both ease",
+        <div className="stagger-fade" style={{
+          fontSize: "clamp(3.5rem, 12vmin + 0.5rem, 5.236rem)",
+          animationDelay: "100ms",
           marginBottom: "0.382rem",
         }}>{sub.icon}</div>
 
         {/* Topic name */}
-        <h1 style={{
-          fontFamily: "'Playfair Display', serif",
+        <h1 className="stagger-fade" style={{
+          fontFamily: "var(--font-display)",
           fontWeight: 900,
-          fontSize: "clamp(28px, 5.4vmin, 44px)",
+          fontSize: "clamp(1.75rem, 5.4vmin + 0.25rem, 2.618rem)",
           letterSpacing: "0.15em",
           color: `rgba(${rgb},0.85)`,
           textAlign: "center",
-          animation: "fadeUp 618ms 150ms both ease",
+          animationDelay: "150ms",
           marginBottom: "0.382rem",
-          textShadow: `0 0 8px rgba(${rgb},0.25)`,
+          textShadow: `0 0 0.5rem rgba(${rgb},0.25)`,
           lineHeight: 1.1,
         }}>{sub.name.toUpperCase()}</h1>
 
         {/* Topic description */}
-        <p style={{
-          fontFamily: "'Cormorant Garamond', serif",
+        <p className="stagger-fade" style={{
+          fontFamily: "var(--font-accent)",
           fontStyle: "italic",
-          fontSize: "clamp(24px, 3.6vmin, 34px)",
-          color: `rgba(${rgb},0.45)`,
+          fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
+          color: `rgba(${rgb},0.72)`,
           textAlign: "center",
-          animation: "fadeUp 618ms 200ms both ease",
+          animationDelay: "200ms",
           marginBottom: "0.382rem",
           lineHeight: 1.618,
         }}>{sub.desc}</p>
 
         {/* Door breadcrumb */}
-        <div style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: "clamp(20px, 2.6vmin, 24px)",
+        <div className="stagger-fade" style={{
+          fontFamily: "var(--font-body)",
+          fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
           color: "rgba(201,168,76,0.30)",
           letterSpacing: "0.12em",
           marginBottom: "2rem",
-          animation: "fadeUp 618ms 250ms both ease",
+          animationDelay: "250ms",
         }}>{doorMeta.emoji} {doorMeta.name} → {sub.name}</div>
 
         {/* Divider */}
         <div style={{
-          width: "61.8%", height: 1, maxWidth: 200,
+          width: "61.8%", height: 1, maxWidth: "12.5rem",
           background: `linear-gradient(90deg, transparent, rgba(${rgb},0.25), transparent)`,
           marginBottom: "1.618rem",
         }} />
@@ -434,26 +401,12 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
           display: "flex", gap: "0.618rem", marginTop: "2.618rem",
           flexWrap: "wrap", justifyContent: "center",
         }}>
-          <Link href={`/${doorSlug}`} style={{
-            padding: "12px 24px",
-            border: `1px solid rgba(${rgb},0.25)`,
-            borderRadius: 6,
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(22px, 3vmin, 28px)",
-            letterSpacing: "0.12em",
-            fontWeight: 700,
+          <Link href={`/${doorSlug}`} className="btn-ghost" style={{
+            borderColor: `rgba(${rgb},0.25)`,
             color: `rgba(${rgb},0.70)`,
             textDecoration: "none",
           }}>← {doorMeta.name}</Link>
-          <Link href="/search" style={{
-            padding: "12px 24px",
-            border: "1px solid rgba(201,168,76,0.20)",
-            borderRadius: 6,
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(22px, 3vmin, 28px)",
-            letterSpacing: "0.12em",
-            fontWeight: 700,
-            color: "rgba(201,168,76,0.60)",
+          <Link href="/search" className="btn-ghost" style={{
             textDecoration: "none",
           }}>ALL DOORS</Link>
         </div>
