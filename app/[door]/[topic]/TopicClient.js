@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import WikiCard from '@/components/WikiCard';
 import SongRow from '@/components/SongRow';
+import { autoParagraph } from '@/lib/paragraphs';
 
 
 /* ─── SECTION LABEL ───────────────────────────────────────────── */
@@ -210,12 +211,16 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
               borderRadius: "0 0.382rem 0.382rem 0",
             }}>
               <SectionLabel rgb={rgb}>GO DEEPER</SectionLabel>
-              <p style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "clamp(1.125rem, 2.6vmin + 0.12rem, 1.5rem)",
-                color: "rgba(232,228,210,0.85)",
-                lineHeight: 1.618, fontWeight: 300, margin: 0,
-              }}>{card.intuition}</p>
+              {autoParagraph(card.intuition, 4).map((para, pi) => (
+                <p key={pi} style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "clamp(1.125rem, 2.6vmin + 0.12rem, 1.5rem)",
+                  color: "rgba(232,228,210,0.85)",
+                  lineHeight: 1.618, fontWeight: 300,
+                  margin: 0,
+                  marginBottom: pi < autoParagraph(card.intuition, 4).length - 1 ? "1rem" : 0,
+                }}>{para}</p>
+              ))}
             </div>
           )}
 
@@ -227,12 +232,16 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
               borderRadius: "0 0.382rem 0.382rem 0",
             }}>
               <SectionLabel rgb="232,228,210">THE FULL PICTURE</SectionLabel>
-              <p style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "clamp(1.125rem, 2.6vmin + 0.12rem, 1.5rem)",
-                color: "rgba(232,228,210,0.82)",
-                lineHeight: 1.618, fontWeight: 300, margin: 0,
-              }}>{card.advanced}</p>
+              {autoParagraph(card.advanced, 4).map((para, pi) => (
+                <p key={pi} style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "clamp(1.125rem, 2.6vmin + 0.12rem, 1.5rem)",
+                  color: "rgba(232,228,210,0.82)",
+                  lineHeight: 1.618, fontWeight: 300,
+                  margin: 0,
+                  marginBottom: pi < autoParagraph(card.advanced, 4).length - 1 ? "1rem" : 0,
+                }}>{para}</p>
+              ))}
             </div>
           )}
 
