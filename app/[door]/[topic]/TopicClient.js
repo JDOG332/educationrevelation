@@ -12,7 +12,7 @@ function SectionLabel({ children, rgb }) {
     <div style={{
       fontFamily: "var(--font-display)",
       fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-      color: `rgba(${rgb},0.50)`,
+      color: `rgba(${rgb},0.75)`,
       letterSpacing: "0.15em",
       marginBottom: "0.382rem",
       fontWeight: 700,
@@ -110,7 +110,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           <div style={{
             fontFamily: "var(--font-body)",
             fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-            color: `rgba(${rgb},0.45)`,
+            color: `rgba(${rgb},0.75)`,
             fontWeight: 300,
             letterSpacing: "0.06em",
             marginBottom: "0.618rem",
@@ -118,11 +118,11 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
         )}
       </div>
 
-      {/* Simple — always visible */}
+      {/* Simple — always visible (Cormorant for poetic first impression) */}
       <p style={{
         fontFamily: "var(--font-accent)",
         fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
-        color: "rgba(232,228,210,0.75)",
+        color: "rgba(232,228,210,0.92)",
         lineHeight: 1.618,
         marginTop: "0.618rem",
       }}>{card.simple}</p>
@@ -148,7 +148,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
             fontFamily: "var(--font-accent)",
             fontStyle: "italic",
             fontSize: "clamp(1rem, 2vmin + 0.15rem, 1.25rem)",
-            color: `rgba(${rgb},0.50)`,
+            color: `rgba(${rgb},0.65)`,
           }}>deeper intuition · full analysis · 6 senses · music · wikipedia</span>
         </div>
       )}
@@ -161,7 +161,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           animation: "fadeUp 382ms ease both",
         }}>
 
-          {/* Intuition */}
+          {/* Intuition — Inter for readability, not italic */}
           {card.intuition && (
             <div style={{
               padding: "1rem",
@@ -171,11 +171,11 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
             }}>
               <SectionLabel rgb={rgb}>GO DEEPER</SectionLabel>
               <p style={{
-                fontFamily: "var(--font-accent)",
-                fontStyle: "italic",
+                fontFamily: "var(--font-body)",
                 fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-                color: "rgba(232,228,210,0.60)",
+                color: "rgba(232,228,210,0.85)",
                 lineHeight: 1.618,
+                fontWeight: 300,
                 margin: 0,
               }}>{card.intuition}</p>
             </div>
@@ -193,7 +193,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
               <p style={{
                 fontFamily: "var(--font-body)",
                 fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-                color: "rgba(232,228,210,0.50)",
+                color: "rgba(232,228,210,0.82)",
                 lineHeight: 1.618,
                 fontWeight: 300,
                 margin: 0,
@@ -216,15 +216,16 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
                       <span style={{
                         fontFamily: "var(--font-body)",
                         fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
-                        color: `rgba(${rgb},0.45)`,
+                        color: `rgba(${rgb},0.72)`,
                         fontWeight: 600,
                         letterSpacing: "0.08em",
                       }}>{s.sense}</span>
                       <p style={{
-                        fontFamily: "var(--font-accent)",
+                        fontFamily: "var(--font-body)",
                         fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-                        color: "rgba(232,228,210,0.55)",
+                        color: "rgba(232,228,210,0.85)",
                         lineHeight: 1.618,
+                        fontWeight: 300,
                         margin: 0,
                       }}>{s.text}</p>
                     </div>
@@ -360,7 +361,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
           fontFamily: "var(--font-accent)",
           fontStyle: "italic",
           fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
-          color: `rgba(${rgb},0.45)`,
+          color: `rgba(${rgb},0.72)`,
           textAlign: "center",
           animationDelay: "200ms",
           marginBottom: "0.382rem",
