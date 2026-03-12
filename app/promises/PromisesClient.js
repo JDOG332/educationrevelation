@@ -73,10 +73,11 @@ export default function PromisesClient() {
       `}</style>
 
       {/* Frosted header */}
-      <div className="frosted-header">
+      <div className="frosted-header" style={{ justifyContent: "space-between", paddingRight: "1.618rem" }}>
         <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link" style={{ color: "rgba(220,160,160,1.0)" }}>← BACK</span>
         </Link>
+        <Link href="/search" className="explore-link">SEARCH & EXPLORE</Link>
       </div>
 
       {/* Content */}

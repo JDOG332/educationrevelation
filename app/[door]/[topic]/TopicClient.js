@@ -333,10 +333,11 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
     }}>
 
       {/* Frosted header */}
-      <div className="frosted-header">
+      <div className="frosted-header" style={{ justifyContent: "space-between", paddingRight: "1.618rem" }}>
         <Link href={`/${doorSlug}`} style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link">← BACK</span>
         </Link>
+        <Link href="/search" className="explore-link">SEARCH & EXPLORE</Link>
       </div>
 
       {/* Content */}

@@ -10,10 +10,11 @@ export default function MathHubPage() {
     <div className="phi-page bg-glow-center" style={{ paddingBottom: "4.236rem" }}>
 
       {/* Frosted header */}
-      <div className="frosted-header">
+      <div className="frosted-header" style={{ justifyContent: "space-between", paddingRight: "1.618rem" }}>
         <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link">← BACK</span>
         </Link>
+        <Link href="/search" className="explore-link" style={{ pointerEvents: "auto" }}>SEARCH & EXPLORE</Link>
       </div>
 
       <div className="content-below-header" style={{

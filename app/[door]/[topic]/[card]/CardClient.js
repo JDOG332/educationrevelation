@@ -117,7 +117,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
       paddingBottom: "4.236rem",
     }}>
 
-      {/* Frosted header — with SHARE button */}
+      {/* Frosted header — with SHARE + EXPLORE */}
       <div className="frosted-header" style={{
         justifyContent: "space-between",
         paddingRight: "1.618rem",
@@ -126,26 +126,29 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
           <span className="back-link">← BACK</span>
         </Link>
 
-        <button onClick={handleShare} style={{
-          pointerEvents: "auto",
-          background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.06)`,
-          border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.30})`,
-          borderRadius: "0.382rem",
-          padding: "0.382rem 1.25rem",
-          display: "flex", alignItems: "center", gap: "0.382rem",
-          cursor: "pointer",
-          transition: "all 382ms var(--ease-snap)",
-        }}>
-          <span style={{ fontSize: "clamp(1.5rem, 3.6vmin + 0.15rem, 2rem)" }}>
-            {shared ? "✓" : "↗"}
-          </span>
-          <span style={{
-            fontFamily: "var(--font-display)", fontWeight: 700,
-            fontSize: "clamp(1.125rem, 2.4vmin + 0.15rem, 1.375rem)",
-            letterSpacing: "0.12em",
-            color: `rgba(${rgb},${shared ? 1.0 : 0.80})`,
-          }}>{shared ? "COPIED" : "SHARE"}</span>
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem", pointerEvents: "auto" }}>
+          <Link href="/search" className="explore-link">EXPLORE</Link>
+
+          <button onClick={handleShare} style={{
+            background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.06)`,
+            border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.30})`,
+            borderRadius: "0.382rem",
+            padding: "0.382rem 1.25rem",
+            display: "flex", alignItems: "center", gap: "0.382rem",
+            cursor: "pointer",
+            transition: "all 382ms var(--ease-snap)",
+          }}>
+            <span style={{ fontSize: "clamp(1.5rem, 3.6vmin + 0.15rem, 2rem)" }}>
+              {shared ? "✓" : "↗"}
+            </span>
+            <span style={{
+              fontFamily: "var(--font-display)", fontWeight: 700,
+              fontSize: "clamp(1.125rem, 2.4vmin + 0.15rem, 1.375rem)",
+              letterSpacing: "0.12em",
+              color: `rgba(${rgb},${shared ? 1.0 : 0.80})`,
+            }}>{shared ? "COPIED" : "SHARE"}</span>
+          </button>
+        </div>
       </div>
 
       {/* Content */}

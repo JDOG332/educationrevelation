@@ -488,3 +488,21 @@ a {
 .tab-pill-enter {
   animation: pillShimmer 1.618s var(--ease-snap) both;
 }
+
+/* ── Explore link (top-right header nav) ── */
+.explore-link {
+  pointer-events: auto;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(0.875rem, 2vmin + 0.15rem, 1.25rem);
+  color: rgba(201,168,76,0.382);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 382ms var(--ease-snap);
+  white-space: nowrap;
+}
+
+.explore-link:hover {
+  color: rgba(201,168,76,0.75);
+}
