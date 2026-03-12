@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { classifyContent } from '@/lib/tenDoors';
-import { siftSearch, getRandomCardPath } from '@/lib/siftEngine';
+import { siftSearch, getRandomCardPath, getDailyCard } from '@/lib/siftEngine';
 import { KEY_TO_SLUG } from '@/lib/doorMap';
 
 const PHI  = 1.618033988749895;
@@ -510,6 +510,69 @@ export default function SearchClient() {
             ))}
           </div>
         )}
+
+        {/* Daily Card — same card for everyone, changes at midnight */}
+        {results.length === 0 && (() => {
+          const daily = getDailyCard();
+          const doorData = DOORS.find(d => d.slug === daily.doorSlug);
+          const rgb = doorData?.color || "201,168,76";
+          return (
+            <div className="stagger-fade" style={{
+              width: "100%", marginBottom: "1.618rem",
+              animationDelay: "500ms",
+            }}>
+              <div style={{
+                textAlign: "center",
+                marginBottom: "0.618rem",
+              }}>
+                <span style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  fontSize: "clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)",
+                  letterSpacing: "0.236em",
+                  color: "rgba(201,168,76,0.35)",
+                }}>TODAY'S CARD</span>
+              </div>
+              <div
+                onClick={() => router.push(daily.path)}
+                style={{
+                  display: "flex", alignItems: "center", gap: "1rem",
+                  padding: "1rem 1.618rem",
+                  background: `rgba(${rgb},0.06)`,
+                  border: `1px solid rgba(${rgb},0.22)`,
+                  borderRadius: "0.382rem",
+                  cursor: "pointer",
+                  transition: "all 382ms var(--ease-snap)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = `rgba(${rgb},0.45)`;
+                  e.currentTarget.style.background = `rgba(${rgb},0.10)`;
+                  e.currentTarget.style.boxShadow = `0 0 1.125rem rgba(${rgb},0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = `rgba(${rgb},0.22)`;
+                  e.currentTarget.style.background = `rgba(${rgb},0.06)`;
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <span style={{ fontSize: "2.618rem" }}>{daily.icon}</span>
+                <div>
+                  <div style={{
+                    fontFamily: "var(--font-display)", fontWeight: 700,
+                    fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.618rem)",
+                    color: `rgba(${rgb},0.90)`,
+                    letterSpacing: "0.02em",
+                  }}>{daily.title}</div>
+                  <div style={{
+                    fontFamily: "var(--font-accent)", fontStyle: "italic",
+                    fontSize: "clamp(0.875rem, 1.8vmin + 0.1rem, 1.125rem)",
+                    color: `rgba(${rgb},0.50)`,
+                  }}>tap to explore today's card</div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Ten Doors — Pyramid (desktop) / Grid (mobile) */}
         <div style={{ marginBottom: "1.618rem", width: "100%" }}>

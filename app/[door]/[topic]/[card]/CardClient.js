@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import WikiCard from '@/components/WikiCard';
 import SongRow from '@/components/SongRow';
 import { autoParagraph } from '@/lib/paragraphs';
+import { getRelatedCards } from '@/lib/siftEngine';
 
 
 /* ─── SECTION LABEL ───────────────────────────────────────────── */
@@ -109,6 +110,12 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
   if (card.senses?.length > 0) tabs.push({ key: "senses", icon: "✨", label: "6 Senses" });
   if (card.songs?.length > 0)  tabs.push({ key: "music",  icon: "🎵", label: "Music" });
   if (card.links?.length > 0)  tabs.push({ key: "explore", icon: "📖", label: "Explore" });
+
+  // Related cards from different doors
+  const related = useMemo(() =>
+    getRelatedCards(card.title, card.simple, doorSlug, card.id),
+    [card.title, card.simple, doorSlug, card.id]
+  );
 
   return (
     <div className="phi-page" style={{
@@ -336,6 +343,75 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                 ))}
               </div>
             )}
+          </div>
+        )}
+
+        {/* Related Cards — cross-door connections */}
+        {related.length > 0 && (
+          <div className="stagger-fade" style={{
+            width: "100%", padding: "0 1.618rem",
+            marginTop: "1.618rem",
+            animationDelay: "500ms",
+          }}>
+            <div style={{
+              width: "61.8%", height: 1, margin: "0 auto 1.618rem",
+              background: `linear-gradient(90deg, transparent, rgba(${rgb},0.18), transparent)`,
+            }} />
+            <div style={{
+              textAlign: "center", marginBottom: "1rem",
+            }}>
+              <span style={{
+                fontFamily: "var(--font-display)", fontWeight: 700,
+                fontSize: "clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)",
+                letterSpacing: "0.236em",
+                color: `rgba(${rgb},0.35)`,
+              }}>SEE THIS THROUGH ANOTHER DOOR</span>
+            </div>
+            <div style={{
+              display: "flex", flexDirection: "column", gap: "0.618rem",
+            }}>
+              {related.map((r, ri) => (
+                <Link key={ri} href={r.path} style={{ textDecoration: "none" }}>
+                  <div style={{
+                    display: "flex", alignItems: "center", gap: "0.618rem",
+                    padding: "0.618rem 1rem",
+                    background: "rgba(201,168,76,0.03)",
+                    border: "1px solid rgba(201,168,76,0.15)",
+                    borderRadius: "0.382rem",
+                    transition: "all 382ms var(--ease-snap)",
+                    cursor: "pointer",
+                  }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(201,168,76,0.40)";
+                      e.currentTarget.style.background = "rgba(201,168,76,0.08)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(201,168,76,0.15)";
+                      e.currentTarget.style.background = "rgba(201,168,76,0.03)";
+                    }}
+                  >
+                    <span style={{ fontSize: "1.618rem", flexShrink: 0 }}>{r.icon}</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{
+                        fontFamily: "var(--font-display)", fontWeight: 700,
+                        fontSize: "clamp(1rem, 2.2vmin + 0.12rem, 1.25rem)",
+                        color: "rgba(232,228,210,0.85)",
+                        letterSpacing: "0.02em",
+                      }}>{r.title}</div>
+                      <div style={{
+                        fontFamily: "var(--font-accent)", fontStyle: "italic",
+                        fontSize: "clamp(0.812rem, 1.6vmin + 0.1rem, 1rem)",
+                        color: "rgba(201,168,76,0.45)",
+                      }}>{r.doorEmoji} {r.doorName}</div>
+                    </div>
+                    <span style={{
+                      fontSize: "clamp(0.875rem, 1.6vmin + 0.1rem, 1rem)",
+                      color: "rgba(201,168,76,0.30)",
+                    }}>→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
 
