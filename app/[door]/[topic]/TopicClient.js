@@ -35,8 +35,8 @@ function TabPill({ icon, label, active, onClick, index = 0 }) {
       onMouseLeave={() => setHover(false)}
       className={!active ? "tab-pill-enter" : undefined}
       style={{
-        display: "flex", alignItems: "center", gap: "0.236rem",
-        padding: "0.382rem 0.618rem",
+        display: "flex", alignItems: "center", gap: "0.382rem",
+        padding: "0.618rem 1rem",
         borderRadius: "100px",
         border: `1px solid rgba(var(--pill-rgb),${active ? 0.618 : hover ? 0.50 : 0.25})`,
         background: active
@@ -58,10 +58,10 @@ function TabPill({ icon, label, active, onClick, index = 0 }) {
         animationDelay: `${index * 100}ms`,
       }}
     >
-      <span style={{ fontSize: "0.875rem", lineHeight: 1 }}>{icon}</span>
+      <span style={{ fontSize: "1.125rem", lineHeight: 1 }}>{icon}</span>
       <span style={{
         fontFamily: "var(--font-display)", fontWeight: 700,
-        fontSize: "clamp(0.618rem, 1.2vmin + 0.1rem, 0.75rem)",
+        fontSize: "clamp(0.75rem, 1.6vmin + 0.12rem, 0.938rem)",
         letterSpacing: "0.08em",
         color: `rgba(var(--pill-rgb),${active ? 0.92 : hover ? 0.80 : 0.50})`,
         textTransform: "uppercase",
@@ -184,7 +184,7 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
           padding: "0 1.618rem 0.618rem",
         }}>
           <div style={{
-            display: "flex", gap: "0.382rem",
+            display: "flex", gap: "0.618rem",
             flexWrap: "wrap",
           }}>
             {tabs.map((t, ti) => (
