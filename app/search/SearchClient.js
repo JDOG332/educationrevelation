@@ -378,6 +378,27 @@ export default function SearchClient() {
           />
         </div>
 
+        {/* Search Results — appear RIGHT below search bar, push doors down */}
+        {results.length > 0 && (
+          <div style={{
+            width: "100%", display: "flex", flexDirection: "column",
+            gap: "0.618rem", marginBottom: "1.618rem",
+          }}>
+            <div style={{
+              width: "100%", height: 1,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.236), transparent)",
+              marginBottom: "0.382rem",
+            }} />
+            {results.map((r, i) => (
+              r.type === "mirror"
+                ? <MirrorResult key={`mirror-${i}`} result={r} index={i}
+                    onClick={r.navDoorKey ? () => handleResultClick(r) : undefined} />
+                : <CardResult key={`card-${i}`} result={r} index={i}
+                    onClick={() => handleResultClick(r)} />
+            ))}
+          </div>
+        )}
+
         {/* Ten Doors — Pyramid (desktop) / Grid (mobile) */}
         <div style={{ marginBottom: "1.618rem", width: "100%" }}>
           {isMobile ? (
@@ -421,27 +442,6 @@ export default function SearchClient() {
             </div>
           )}
         </div>
-
-        {/* Search Results */}
-        {results.length > 0 && (
-          <div style={{
-            width: "100%", display: "flex", flexDirection: "column",
-            gap: "0.618rem", marginBottom: "2.618rem",
-          }}>
-            <div style={{
-              width: "100%", height: 1,
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.236), transparent)",
-              marginBottom: "0.382rem",
-            }} />
-            {results.map((r, i) => (
-              r.type === "mirror"
-                ? <MirrorResult key={`mirror-${i}`} result={r} index={i}
-                    onClick={r.navDoorKey ? () => handleResultClick(r) : undefined} />
-                : <CardResult key={`card-${i}`} result={r} index={i}
-                    onClick={() => handleResultClick(r)} />
-            ))}
-          </div>
-        )}
 
         {/* Expansion spacer — gives results room to breathe */}
         {searchFocused && (
