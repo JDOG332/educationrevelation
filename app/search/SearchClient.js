@@ -324,7 +324,7 @@ export default function SearchClient() {
           animationDelay: "236ms",
           marginBottom: "1.618rem",
           lineHeight: 1.618,
-        }}>Click to explore or type your search below.</p>
+        }}>Search anything or explore the ten doors.</p>
 
         {/* Nav links — special pages outside the 10-door system */}
         <div className="stagger-fade" style={{
@@ -352,6 +352,30 @@ export default function SearchClient() {
               ✦ PROMISES
             </button>
           </Link>
+        </div>
+
+        {/* Search input — ABOVE doors so it's always visible */}
+        <div id="search-anchor" className="stagger-fade" style={{
+          width: "100%", animationDelay: "350ms", marginBottom: "1.618rem",
+        }}>
+          <input ref={inputRef} value={query} onChange={handleInput}
+            placeholder="What are you searching for?"
+            spellCheck={false}
+            className="phi-search-input"
+            style={{
+              borderColor: query
+                ? "rgba(201,168,76,0.382)"
+                : "rgba(201,168,76,0.236)",
+              boxShadow: query
+                ? "0 0 1.5rem rgba(201,168,76,0.08), inset 0 0 0.75rem rgba(201,168,76,0.02)"
+                : "none",
+            }}
+            onFocus={(e) => {
+              e.target.style.borderColor = "rgba(201,168,76,0.618)";
+              setSearchFocused(true);
+            }}
+            onBlur={(e) => e.target.style.borderColor = "rgba(201,168,76,0.236)"}
+          />
         </div>
 
         {/* Ten Doors — Pyramid (desktop) / Grid (mobile) */}
@@ -396,38 +420,6 @@ export default function SearchClient() {
               ))}
             </div>
           )}
-        </div>
-
-        {/* Search input */}
-        <div id="search-anchor" className="stagger-fade" style={{
-          width: "100%", animationDelay: "618ms", marginBottom: "1.618rem",
-        }}>
-          <input ref={inputRef} value={query} onChange={handleInput}
-            placeholder="What are you searching for?"
-            spellCheck={false}
-            className="phi-search-input"
-            style={{
-              borderColor: query
-                ? "rgba(201,168,76,0.382)"
-                : "rgba(201,168,76,0.236)",
-              boxShadow: query
-                ? "0 0 1.5rem rgba(201,168,76,0.08), inset 0 0 0.75rem rgba(201,168,76,0.02)"
-                : "none",
-            }}
-            onFocus={(e) => {
-              e.target.style.borderColor = "rgba(201,168,76,0.618)";
-              setSearchFocused(true);
-              setTimeout(() => {
-                const el = document.getElementById("search-anchor");
-                if (el) {
-                  const vh = window.innerHeight;
-                  const top = el.getBoundingClientRect().top + window.scrollY - (vh * PHIi * PHIi);
-                  window.scrollTo({ top, behavior: "instant" });
-                }
-              }, 50);
-            }}
-            onBlur={(e) => e.target.style.borderColor = "rgba(201,168,76,0.236)"}
-          />
         </div>
 
         {/* Search Results */}
