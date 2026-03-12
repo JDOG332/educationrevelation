@@ -6,7 +6,7 @@ import WikiCard from '@/components/WikiCard';
 import SongRow from '@/components/SongRow';
 
 
-/* ─── SECTION HEADER (shared style for GO DEEPER, SIX SENSES, etc.) ── */
+/* ─── SECTION LABEL ───────────────────────────────────────────── */
 function SectionLabel({ children, rgb }) {
   return (
     <div style={{
@@ -21,27 +21,73 @@ function SectionLabel({ children, rgb }) {
 }
 
 
-/* ─── ACTION BUTTON (SHARE / VIEW FULL) ───────────────────────── */
-function ActionBtn({ children, icon, rgb, opacity = 0.65, onClick, style }) {
+/* ─── TAB PILL ────────────────────────────────────────────────── */
+function TabPill({ icon, label, active, onClick, index = 0 }) {
+  const [hover, setHover] = useState(false);
+
+  const isLit = active || hover;
+
   return (
-    <div
+    <button
       onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={!active ? "tab-pill-enter" : undefined}
       style={{
-        background: `rgba(${rgb},0.04)`,
-        border: `1px solid rgba(${rgb},0.22)`,
-        borderRadius: "0.382rem",
-        padding: "0.382rem 1rem",
-        display: "flex", alignItems: "center", gap: "0.382rem",
+        display: "flex", alignItems: "center", gap: "0.236rem",
+        padding: "0.382rem 0.618rem",
+        borderRadius: "100px",
+        border: `1px solid rgba(var(--pill-rgb),${active ? 0.618 : hover ? 0.50 : 0.25})`,
+        background: active
+          ? "rgba(var(--pill-rgb),0.14)"
+          : hover
+            ? "rgba(var(--pill-rgb),0.08)"
+            : "transparent",
+        boxShadow: hover && !active
+          ? "0 0 0.618rem rgba(var(--pill-rgb),0.15)"
+          : active
+            ? "0 0 0.618rem rgba(var(--pill-rgb),0.20)"
+            : "none",
         cursor: "pointer",
-        transition: "all 382ms var(--ease-snap)",
-        ...style,
+        whiteSpace: "nowrap",
+        transition: "all 262ms var(--ease-snap)",
+        transform: isLit ? "scale(1.04)" : "scale(1)",
+        flexShrink: 0,
+        WebkitTapHighlightColor: "transparent",
+        animationDelay: `${index * 100}ms`,
       }}
     >
-      <span style={{ fontSize: "1.375rem" }}>{icon}</span>
+      <span style={{ fontSize: "0.875rem", lineHeight: 1 }}>{icon}</span>
       <span style={{
-        fontFamily: "var(--font-display)",
-        fontWeight: 700,
-        fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+        fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: "clamp(0.618rem, 1.2vmin + 0.1rem, 0.75rem)",
+        letterSpacing: "0.08em",
+        color: `rgba(var(--pill-rgb),${active ? 0.92 : hover ? 0.80 : 0.50})`,
+        textTransform: "uppercase",
+        transition: "color 262ms var(--ease-snap)",
+      }}>{label}</span>
+    </button>
+  );
+}
+
+
+/* ─── ACTION BUTTON (SHARE / VIEW FULL) ───────────────────────── */
+function ActionBtn({ children, icon, rgb, opacity = 0.55, onClick, style }) {
+  return (
+    <div onClick={onClick} style={{
+      background: `rgba(${rgb},0.04)`,
+      border: `1px solid rgba(${rgb},0.15)`,
+      borderRadius: "0.382rem",
+      padding: "0.382rem 1rem",
+      display: "flex", alignItems: "center", gap: "0.382rem",
+      cursor: "pointer",
+      transition: "all 382ms var(--ease-snap)",
+      ...style,
+    }}>
+      <span style={{ fontSize: "1rem" }}>{icon}</span>
+      <span style={{
+        fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: "clamp(0.75rem, 1.6vmin + 0.1rem, 0.938rem)",
         letterSpacing: "0.10em",
         color: `rgba(${rgb},${opacity})`,
       }}>{children}</span>
@@ -51,24 +97,23 @@ function ActionBtn({ children, icon, rgb, opacity = 0.65, onClick, style }) {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   CARD CONTENT (expandable topic card)
+   TAB CARD (one per topic card)
    ═══════════════════════════════════════════════════════════════ */
 function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
-  const [expanded, setExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState(null);
   const [shared, setShared] = useState(false);
 
   const cardUrl = `https://educationrevelation.com/${doorSlug}/${topicSlug}/${card.id}`;
 
   const handleShare = async (e) => {
     e.stopPropagation();
-    const shareData = {
-      title: `${card.icon} ${card.title}`,
-      text: card.simple?.slice(0, 120) + '...',
-      url: cardUrl,
-    };
     try {
       if (navigator.share) {
-        await navigator.share(shareData);
+        await navigator.share({
+          title: `${card.icon} ${card.title}`,
+          text: card.simple?.slice(0, 120) + '...',
+          url: cardUrl,
+        });
       } else {
         await navigator.clipboard.writeText(cardUrl);
         setShared(true);
@@ -77,92 +122,91 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
     } catch (e) {}
   };
 
+  const toggle = (tab) => setActiveTab(activeTab === tab ? null : tab);
+
+  // Build tab list dynamically based on what content exists
+  const tabs = [];
+  if (card.intuition) tabs.push({ key: "deeper", icon: "💡", label: "Deeper" });
+  if (card.advanced)  tabs.push({ key: "full",   icon: "🔍", label: "Full Picture" });
+  if (card.senses?.length > 0) tabs.push({ key: "senses", icon: "✨", label: "6 Senses" });
+  if (card.songs?.length > 0)  tabs.push({ key: "music",  icon: "🎵", label: "Music" });
+  if (card.links?.length > 0)  tabs.push({ key: "explore", icon: "📖", label: "Explore" });
+
   return (
     <div style={{
-      padding: "1.618rem",
-      background: `rgba(${rgb},${expanded ? 0.08 : 0.04})`,
-      border: `1px solid rgba(${rgb},${expanded ? 0.35 : 0.18})`,
+      "--pill-rgb": rgb,
       borderRadius: "0.382rem",
+      overflow: "hidden",
+      background: `rgba(${rgb},${activeTab ? 0.06 : 0.04})`,
+      border: `1px solid rgba(${rgb},${activeTab ? 0.30 : 0.18})`,
       transition: "all 618ms var(--ease-snap)",
       animation: `fadeUp 618ms ${200 + index * 100}ms both ease`,
     }}>
 
-      {/* Header — clickable */}
-      <div
-        onClick={() => setExpanded(!expanded)}
-        style={{ cursor: "pointer", userSelect: "none" }}
-      >
+      {/* Header */}
+      <div style={{ padding: "1.618rem 1.618rem 0.382rem" }}>
         <div style={{
           display: "flex", alignItems: "center",
           gap: "0.618rem", marginBottom: "0.382rem",
         }}>
           <span style={{ fontSize: "2.618rem" }}>{card.icon}</span>
           <h3 style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 700,
+            fontFamily: "var(--font-display)", fontWeight: 700,
             fontSize: "clamp(1.5rem, 4vmin + 0.2rem, 2.118rem)",
             color: `rgba(${rgb},0.90)`,
-            margin: 0,
-            letterSpacing: "0.02em",
+            margin: 0, letterSpacing: "0.02em",
           }}>{card.title}</h3>
         </div>
         {card.subtitle && (
           <div style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+            fontSize: "clamp(1.125rem, 2.5vmin + 0.15rem, 1.375rem)",
             color: `rgba(${rgb},0.75)`,
-            fontWeight: 300,
-            letterSpacing: "0.06em",
-            marginBottom: "0.618rem",
+            fontWeight: 300, letterSpacing: "0.04em",
           }}>{card.subtitle}</div>
         )}
       </div>
 
-      {/* Simple — always visible (Cormorant for poetic first impression) */}
-      <p style={{
-        fontFamily: "var(--font-accent)",
-        fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
-        color: "rgba(232,228,210,0.92)",
-        lineHeight: 1.618,
-        marginTop: "0.618rem",
-      }}>{card.simple}</p>
+      {/* Simple — always visible */}
+      <div style={{ padding: "0.618rem 1.618rem 1rem" }}>
+        <p style={{
+          fontFamily: "var(--font-accent)",
+          fontSize: "clamp(1.375rem, 3.2vmin + 0.2rem, 1.75rem)",
+          color: "rgba(232,228,210,0.92)",
+          lineHeight: 1.618, margin: 0,
+        }}>{card.simple}</p>
+      </div>
 
-      {/* "More inside" indicator when collapsed */}
-      {!expanded && (
-        <div
-          onClick={() => setExpanded(true)}
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center",
-            gap: "0.618rem",
-            marginTop: "1rem",
-            padding: "0.618rem",
-            background: `rgba(${rgb},0.04)`,
-            border: `1px dashed rgba(${rgb},0.22)`,
-            borderRadius: "0.382rem",
-            cursor: "pointer",
-            transition: "all 382ms var(--ease-snap)",
-          }}
-        >
-          <span style={{ fontSize: "1.125rem" }}>💡</span>
-          <span style={{
-            fontFamily: "var(--font-accent)",
-            fontStyle: "italic",
-            fontSize: "clamp(1rem, 2vmin + 0.15rem, 1.25rem)",
-            color: `rgba(${rgb},0.65)`,
-          }}>deeper intuition · full analysis · 6 senses · music · wikipedia</span>
+      {/* Tab pills — always visible */}
+      {tabs.length > 0 && (
+        <div style={{
+          padding: "0 1.618rem 0.618rem",
+          overflowX: "auto",
+          WebkitOverflowScrolling: "touch",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}>
+          <div style={{
+            display: "flex", gap: "0.382rem",
+            minWidth: "min-content",
+          }}>
+            {tabs.map((t, ti) => (
+              <TabPill key={t.key} icon={t.icon} label={t.label}
+                active={activeTab === t.key} index={ti}
+                onClick={() => toggle(t.key)} />
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Expandable content */}
-      {expanded && (
-        <div style={{
-          marginTop: "1rem",
-          display: "flex", flexDirection: "column", gap: "1rem",
-          animation: "fadeUp 382ms ease both",
+      {/* Tab content — one section at a time */}
+      {activeTab && (
+        <div key={activeTab} style={{
+          padding: "0 1.618rem 1rem",
+          animation: "fadeUp 382ms var(--ease-out) both",
         }}>
 
-          {/* Intuition — Inter for readability, not italic */}
-          {card.intuition && (
+          {activeTab === "deeper" && card.intuition && (
             <div style={{
               padding: "1rem",
               background: `rgba(${rgb},0.04)`,
@@ -172,17 +216,14 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
               <SectionLabel rgb={rgb}>GO DEEPER</SectionLabel>
               <p style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+                fontSize: "clamp(1.125rem, 2.6vmin + 0.12rem, 1.5rem)",
                 color: "rgba(232,228,210,0.85)",
-                lineHeight: 1.618,
-                fontWeight: 300,
-                margin: 0,
+                lineHeight: 1.618, fontWeight: 300, margin: 0,
               }}>{card.intuition}</p>
             </div>
           )}
 
-          {/* Advanced */}
-          {card.advanced && (
+          {activeTab === "full" && card.advanced && (
             <div style={{
               padding: "1rem",
               background: "rgba(232,228,210,0.02)",
@@ -192,109 +233,72 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
               <SectionLabel rgb="232,228,210">THE FULL PICTURE</SectionLabel>
               <p style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
+                fontSize: "clamp(1.125rem, 2.6vmin + 0.12rem, 1.5rem)",
                 color: "rgba(232,228,210,0.82)",
-                lineHeight: 1.618,
-                fontWeight: 300,
-                margin: 0,
+                lineHeight: 1.618, fontWeight: 300, margin: 0,
               }}>{card.advanced}</p>
             </div>
           )}
 
-          {/* Six Senses */}
-          {card.senses?.length > 0 && (
-            <div>
-              <SectionLabel rgb={rgb}>SIX SENSES</SectionLabel>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
-                {card.senses.map((s) => (
-                  <div key={s.key} style={{
-                    display: "flex", gap: "0.618rem", alignItems: "flex-start",
-                    padding: "0.382rem 0",
-                  }}>
-                    <span style={{ fontSize: "1.75rem", flexShrink: 0 }}>{s.icon}</span>
-                    <div>
-                      <span style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
-                        color: `rgba(${rgb},0.72)`,
-                        fontWeight: 600,
-                        letterSpacing: "0.08em",
-                      }}>{s.sense}</span>
-                      <p style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-                        color: "rgba(232,228,210,0.85)",
-                        lineHeight: 1.618,
-                        fontWeight: 300,
-                        margin: 0,
-                      }}>{s.text}</p>
-                    </div>
+          {activeTab === "senses" && card.senses?.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
+              {card.senses.map((s) => (
+                <div key={s.key} style={{
+                  display: "flex", gap: "0.618rem", alignItems: "flex-start",
+                  padding: "0.382rem 0",
+                }}>
+                  <span style={{ fontSize: "1.618rem", flexShrink: 0 }}>{s.icon}</span>
+                  <div>
+                    <span style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "clamp(0.875rem, 1.8vmin + 0.1rem, 1.125rem)",
+                      color: `rgba(${rgb},0.72)`,
+                      fontWeight: 600, letterSpacing: "0.06em",
+                      display: "block", marginBottom: "0.146rem",
+                    }}>{s.sense}</span>
+                    <span style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "clamp(1rem, 2.2vmin + 0.1rem, 1.25rem)",
+                      color: "rgba(232,228,210,0.85)",
+                      lineHeight: 1.618, fontWeight: 300,
+                    }}>{s.text}</span>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           )}
 
-          {/* Wikipedia — Explore Further */}
-          {card.links?.length > 0 && (
-            <div>
-              <SectionLabel rgb={rgb}>EXPLORE FURTHER</SectionLabel>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
-                {card.links.map((link, li) => (
-                  <WikiCard key={li} label={link.label} url={link.url} rgb={rgb} index={li} />
-                ))}
-              </div>
+          {activeTab === "music" && card.songs?.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {card.songs.map((song, si) => (
+                <SongRow key={si} song={song} rgb={rgb} />
+              ))}
             </div>
           )}
 
-          {/* Songs */}
-          {card.songs?.length > 0 && (
-            <div>
-              <SectionLabel rgb={rgb}>MUSIC</SectionLabel>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                {card.songs.map((song, si) => (
-                  <SongRow key={si} song={song} rgb={rgb} />
-                ))}
-              </div>
+          {activeTab === "explore" && card.links?.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
+              {card.links.map((link, li) => (
+                <WikiCard key={li} label={link.label} url={link.url} rgb={rgb} index={li} />
+              ))}
             </div>
           )}
         </div>
       )}
 
-      {/* Expand indicator */}
-      <div
-        onClick={() => setExpanded(!expanded)}
-        style={{
-          textAlign: "center",
-          marginTop: "0.618rem",
-          fontFamily: "var(--font-display)",
-          fontWeight: 700,
-          fontSize: "clamp(1.375rem, 3vmin + 0.2rem, 1.75rem)",
-          letterSpacing: "0.10em",
-          color: `rgba(${rgb},0.618)`,
-          cursor: "pointer",
-          userSelect: "none",
-          transition: "color 382ms var(--ease-snap)",
-        }}
-      >
-        <span>{expanded ? "▲ collapse" : "▼ tap to explore more"}</span>
-      </div>
-
-      {/* Divider between content and actions */}
+      {/* Divider + actions */}
       <div style={{
         width: "61.8%", height: 1,
-        background: `linear-gradient(90deg, transparent, rgba(${rgb},0.18), transparent)`,
-        margin: "1.618rem auto 1rem",
+        background: `linear-gradient(90deg, transparent, rgba(${rgb},0.12), transparent)`,
+        margin: "0.382rem auto",
       }} />
 
-      {/* Share + View full card */}
       <div style={{
         display: "flex", justifyContent: "center", gap: "0.618rem",
+        padding: "0 1.618rem 1.618rem",
       }}>
-        <ActionBtn
-          icon={shared ? "✓" : "↗"}
-          rgb={rgb}
-          opacity={shared ? 1.0 : 0.65}
+        <ActionBtn icon={shared ? "✓" : "↗"} rgb={rgb}
+          opacity={shared ? 1.0 : 0.55}
           onClick={handleShare}
           style={shared ? {
             background: `rgba(${rgb},0.15)`,
@@ -344,8 +348,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
 
         {/* Topic name */}
         <h1 className="stagger-fade" style={{
-          fontFamily: "var(--font-display)",
-          fontWeight: 900,
+          fontFamily: "var(--font-display)", fontWeight: 900,
           fontSize: "clamp(1.75rem, 5.4vmin + 0.25rem, 2.618rem)",
           letterSpacing: "0.15em",
           color: `rgba(${rgb},0.85)`,
@@ -358,8 +361,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
 
         {/* Topic description */}
         <p className="stagger-fade" style={{
-          fontFamily: "var(--font-accent)",
-          fontStyle: "italic",
+          fontFamily: "var(--font-accent)", fontStyle: "italic",
           fontSize: "clamp(1.5rem, 3.6vmin + 0.2rem, 2rem)",
           color: `rgba(${rgb},0.72)`,
           textAlign: "center",
@@ -368,7 +370,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
           lineHeight: 1.618,
         }}>{sub.desc}</p>
 
-        {/* Door breadcrumb */}
+        {/* Breadcrumb */}
         <div className="stagger-fade" style={{
           fontFamily: "var(--font-body)",
           fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
@@ -388,11 +390,11 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
         {/* Cards */}
         <div style={{
           display: "flex", flexDirection: "column",
-          gap: "0.618rem",
-          width: "100%",
+          gap: "0.618rem", width: "100%",
         }}>
           {cards.map((card, i) => (
-            <CardContent key={card.id} card={card} rgb={rgb} index={i} doorSlug={doorSlug} topicSlug={sub.id} />
+            <CardContent key={card.id} card={card} rgb={rgb} index={i}
+              doorSlug={doorSlug} topicSlug={sub.id} />
           ))}
         </div>
 
