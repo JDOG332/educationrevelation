@@ -44,7 +44,7 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
   const txtOp = hasScores ? Math.max(0.70, Math.min(1.0, pct / 100 * 1.4)) : 0.90;
   const emjOp = hasScores ? Math.max(0.75, Math.min(1.0, pct / 60)) : 0.95;
 
-  const showTag = hover || size === "grid";
+  const showTag = size === "grid" && door.tag;
 
   return (
     <div
