@@ -41,7 +41,7 @@ export default function Home() {
         <h2>The Ten Doors of Human Knowledge</h2>
         <h2>The Ten Doors of Human Knowledge</h2>
         <nav>
-          <a href="/search">Search & Explore All 1,001 Topics</a>
+          <a href="/search">Search All 1,001 Topics</a>
           <a href="/love">Love — Connection, Grief, Trust, Family & Friendship</a>
           <a href="/science">Science — Biology, Physics, Evolution, DNA & Cosmos</a>
           <a href="/consciousness">Consciousness — Awareness, Identity, Dreams & Death</a>

@@ -127,7 +127,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
         </Link>
 
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", pointerEvents: "auto" }}>
-          <Link href="/search" className="explore-link">EXPLORE</Link>
+          <Link href="/search" className="explore-link">SEARCH</Link>
 
           <button onClick={handleShare} style={{
             background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.06)`,

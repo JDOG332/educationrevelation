@@ -83,7 +83,7 @@ export default function DoorClient({ doorSlug, doorMeta, subcategories, dataKey 
         <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link">← BACK</span>
         </Link>
-        <Link href="/search" className="explore-link">SEARCH & EXPLORE</Link>
+        <Link href="/search" className="explore-link">SEARCH</Link>
       </div>
 
       {/* Content */}

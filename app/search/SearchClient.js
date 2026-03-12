@@ -313,7 +313,7 @@ export default function SearchClient() {
           marginBottom: "0.618rem",
           textShadow: "0 0 0.5rem rgba(201,168,76,0.382), 0 0 1.5rem rgba(201,168,76,0.146)",
           lineHeight: 1.1,
-        }}>SEARCH & EXPLORE</h1>
+        }}>SEARCH</h1>
 
         {/* Subtitle */}
         <p className="stagger-fade t-accent" style={{
@@ -324,7 +324,7 @@ export default function SearchClient() {
           animationDelay: "236ms",
           marginBottom: "1.618rem",
           lineHeight: 1.618,
-        }}>Search anything or explore the ten doors.</p>
+        }}>Search anything or pick a door.</p>
 
         {/* Nav links — special pages outside the 10-door system */}
         <div className="stagger-fade" style={{

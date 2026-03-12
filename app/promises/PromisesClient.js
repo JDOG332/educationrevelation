@@ -77,7 +77,7 @@ export default function PromisesClient() {
         <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link" style={{ color: "rgba(220,160,160,1.0)" }}>← BACK</span>
         </Link>
-        <Link href="/search" className="explore-link">SEARCH & EXPLORE</Link>
+        <Link href="/search" className="explore-link">SEARCH</Link>
       </div>
 
       {/* Content */}

@@ -14,7 +14,7 @@ export default function MathHubPage() {
         <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link">← BACK</span>
         </Link>
-        <Link href="/search" className="explore-link" style={{ pointerEvents: "auto" }}>SEARCH & EXPLORE</Link>
+        <Link href="/search" className="explore-link" style={{ pointerEvents: "auto" }}>SEARCH</Link>
       </div>
 
       <div className="content-below-header" style={{

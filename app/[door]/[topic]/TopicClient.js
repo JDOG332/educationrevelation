@@ -337,7 +337,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
         <Link href={`/${doorSlug}`} style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link">← BACK</span>
         </Link>
-        <Link href="/search" className="explore-link">SEARCH & EXPLORE</Link>
+        <Link href="/search" className="explore-link">SEARCH</Link>
       </div>
 
       {/* Content */}
