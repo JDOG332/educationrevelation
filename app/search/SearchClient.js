@@ -11,16 +11,16 @@ const PHI  = 1.618033988749895;
 const PHIi = 1 / PHI;
 
 const DOORS = [
-  { name: "LOVE",          emoji: "💛", slug: "love",          color: "220,160,160", key: "Love",          tag: "The space between us" },
-  { name: "MYSTICISM",     emoji: "✨", slug: "mysticism",     color: "190,140,220", key: "Mysticism",     tag: "Beyond what we can see" },
-  { name: "CONSCIOUSNESS", emoji: "👁️", slug: "consciousness", color: "200,200,230", key: "Consciousness", tag: "What is this awareness?" },
-  { name: "RELIGION",      emoji: "⛪", slug: "religion",      color: "201,168,76",  key: "Religion",      tag: "What has been revealed?" },
-  { name: "ART",           emoji: "🎨", slug: "art",           color: "224,120,100", key: "Art",           tag: "Truth through creation" },
-  { name: "NATURE",        emoji: "🌿", slug: "nature",        color: "120,180,100", key: "Nature",        tag: "What the Earth teaches" },
-  { name: "MYTHOLOGY",     emoji: "📖", slug: "mythology",     color: "200,160,100", key: "Mythology",     tag: "Stories that keep telling themselves" },
-  { name: "PHILOSOPHY",    emoji: "🏛️", slug: "philosophy",    color: "150,180,220", key: "Philosophy",    tag: "What can reason know?" },
-  { name: "SCIENCE",       emoji: "🔬", slug: "science",       color: "79,195,247",  key: "Science",       tag: "How the universe works" },
-  { name: "MATHEMATICS",   emoji: "📐", slug: "mathematics",   color: "201,168,76",  key: "Mathematics",   tag: "The hidden structure" },
+  { name: "LOVE",          emoji: "💛", slug: "love",          color: "220,160,160", key: "Love" },
+  { name: "MYSTICISM",     emoji: "✨", slug: "mysticism",     color: "190,140,220", key: "Mysticism" },
+  { name: "CONSCIOUSNESS", emoji: "👁️", slug: "consciousness", color: "200,200,230", key: "Consciousness" },
+  { name: "RELIGION",      emoji: "⛪", slug: "religion",      color: "201,168,76",  key: "Religion" },
+  { name: "ART",           emoji: "🎨", slug: "art",           color: "224,120,100", key: "Art" },
+  { name: "NATURE",        emoji: "🌿", slug: "nature",        color: "120,180,100", key: "Nature" },
+  { name: "MYTHOLOGY",     emoji: "📖", slug: "mythology",     color: "200,160,100", key: "Mythology" },
+  { name: "PHILOSOPHY",    emoji: "🏛️", slug: "philosophy",    color: "150,180,220", key: "Philosophy" },
+  { name: "SCIENCE",       emoji: "🔬", slug: "science",       color: "79,195,247",  key: "Science" },
+  { name: "MATHEMATICS",   emoji: "📐", slug: "mathematics",   color: "201,168,76",  key: "Mathematics" },
 ];
 
 const DOOR_COLORS = {};
@@ -44,8 +44,6 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
   const txtOp = hasScores ? Math.max(0.70, Math.min(1.0, pct / 100 * 1.4)) : 0.90;
   const emjOp = hasScores ? Math.max(0.75, Math.min(1.0, pct / 60)) : 0.95;
 
-  const showTag = size === "grid" && door.tag;
-
   return (
     <div
       onClick={onClick}
@@ -57,7 +55,7 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
         minWidth: size === "fixed" ? "9.416rem" : undefined,
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
-        gap: "0.236rem",
+        gap: "0.382rem",
         borderRadius: "0.382rem",
         background: `rgba(${rgb},${hover ? bgOp + 0.06 : bgOp})`,
         border: `1px solid rgba(${rgb},${hover ? borOp + 0.15 : borOp})`,
@@ -66,10 +64,9 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
           : hover ? `0 0 1.125rem rgba(${rgb},0.15)` : "none",
         transition: "all 618ms var(--ease-snap)",
         cursor: "pointer",
-        padding: "0.618rem 0.618rem",
+        padding: "0.618rem 1rem",
         userSelect: "none",
         position: "relative",
-        overflow: "hidden",
       }}
     >
       <div style={{
@@ -87,21 +84,6 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
         lineHeight: 1.1,
         whiteSpace: "nowrap",
       }}>{door.name}</div>
-      {door.tag && (
-        <div style={{
-          fontFamily: "var(--font-accent)",
-          fontStyle: "italic",
-          fontSize: "clamp(0.5rem, 1.2vmin + 0.08rem, 0.688rem)",
-          color: `rgba(${rgb},${showTag ? 0.55 : 0})`,
-          textAlign: "center",
-          lineHeight: 1.3,
-          transition: "color 382ms var(--ease-snap), opacity 382ms var(--ease-snap)",
-          opacity: showTag ? 1 : 0,
-          maxHeight: showTag ? "2rem" : "0",
-          overflow: "hidden",
-          padding: showTag ? "0.146rem 0" : "0",
-        }}>{door.tag}</div>
-      )}
       {hasScores && pct > 0 && (
         <div style={{
           fontFamily: "var(--font-body)",
