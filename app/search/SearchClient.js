@@ -67,7 +67,11 @@ function LivingPulse({ onNavigate }) {
     const interval = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
-        setIndex(i => (i + 1) % PULSE_CARDS.length);
+        setIndex(prev => {
+          let next;
+          do { next = Math.floor(Math.random() * PULSE_CARDS.length); } while (next === prev);
+          return next;
+        });
         setVisible(true);
       }, FADE);
     }, CYCLE);
