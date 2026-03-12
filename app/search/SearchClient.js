@@ -7,9 +7,8 @@ import { classifyContent } from '@/lib/tenDoors';
 import { siftSearch } from '@/lib/siftEngine';
 import { KEY_TO_SLUG } from '@/lib/doorMap';
 
-const PHI = 1.618033988749895;
+const PHI  = 1.618033988749895;
 const PHIi = 1 / PHI;
-const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
 const DOORS = [
   { name: "LOVE",          emoji: "💛", slug: "love",          color: "220,160,160", key: "Love" },
@@ -32,11 +31,14 @@ const PYRAMID = [[0], [1, 2], [3, 4, 5], [6, 7, 8, 9]];
 const SLUG_MAP = {};
 DOORS.forEach(d => { SLUG_MAP[d.key] = d.slug; });
 
-// ─── DOOR CARD (with real-time scoring) ─────────────────────────
+
+/* ─── DOOR CARD (with real-time scoring) ──────────────────────── */
 function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
   const [hover, setHover] = useState(false);
   const rgb = door.color;
   const pct = score || 0;
+
+  // Dynamic scoring opacity — sacred, don't change this math
   const bgOp  = hasScores ? Math.max(0.08, pct / 100 * 0.9) : 0.12;
   const borOp = hasScores ? Math.max(0.22, pct / 100 * 0.6) : 0.30;
   const txtOp = hasScores ? Math.max(0.70, Math.min(1.0, pct / 100 * 1.4)) : 0.90;
@@ -49,42 +51,53 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
       onMouseLeave={() => setHover(false)}
       style={{
         width: size === "grid" ? "100%" : undefined,
-        minHeight: size === "grid" ? 100 : 90,
+        aspectRatio: size === "grid" ? undefined : `${PHI} / 1`,
+        minWidth: size === "fixed" ? "9.416rem" : undefined,
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
-        gap: 6, borderRadius: 6,
+        gap: "0.382rem",
+        borderRadius: "0.382rem",
         background: `rgba(${rgb},${hover ? bgOp + 0.06 : bgOp})`,
         border: `1px solid rgba(${rgb},${hover ? borOp + 0.15 : borOp})`,
         boxShadow: isTop
-          ? `0 0 24px rgba(${rgb},0.22), 0 0 48px rgba(${rgb},0.07)`
-          : hover ? `0 0 18px rgba(${rgb},0.15)` : "none",
-        transition: `all 618ms ${EASE}`,
+          ? `0 0 1.5rem rgba(${rgb},0.22), 0 0 3rem rgba(${rgb},0.07)`
+          : hover ? `0 0 1.125rem rgba(${rgb},0.15)` : "none",
+        transition: "all 618ms var(--ease-snap)",
         cursor: "pointer",
-        padding: "12px 16px",
+        padding: "0.618rem 1rem",
         userSelect: "none",
         position: "relative",
       }}
     >
-      <div style={{ fontSize: 32, lineHeight: 1, opacity: emjOp }}>{door.emoji}</div>
       <div style={{
-        fontFamily: "'Playfair Display', serif", fontWeight: 900,
-        fontSize: "clamp(10px, 2.5vw, 14px)",
+        fontSize: "2.618rem",
+        lineHeight: 1,
+        opacity: emjOp,
+      }}>{door.emoji}</div>
+      <div style={{
+        fontFamily: "var(--font-display)",
+        fontWeight: 900,
+        fontSize: "clamp(0.618rem, 2.5vw + 0.1rem, 0.875rem)",
         letterSpacing: "0.04em",
         color: `rgba(${rgb},${txtOp})`,
-        textAlign: "center", lineHeight: 1.1, whiteSpace: "nowrap",
+        textAlign: "center",
+        lineHeight: 1.1,
+        whiteSpace: "nowrap",
       }}>{door.name}</div>
       {hasScores && pct > 0 && (
         <div style={{
-          fontFamily: "'Inter', sans-serif", fontWeight: 300,
-          fontSize: "clamp(8px, 1.2vmin, 11px)",
-          color: `rgba(${rgb},${Math.max(0.3, pct/100)})`,
+          fontFamily: "var(--font-body)",
+          fontWeight: 300,
+          fontSize: "clamp(0.5rem, 1.2vmin + 0.1rem, 0.688rem)",
+          color: `rgba(${rgb},${Math.max(0.3, pct / 100)})`,
         }}>{Math.round(pct)}%</div>
       )}
     </div>
   );
 }
 
-// ─── CARD RESULT ────────────────────────────────────────────────
+
+/* ─── CARD RESULT ─────────────────────────────────────────────── */
 function CardResult({ result, index, onClick }) {
   const [hover, setHover] = useState(false);
   const rgb = DOOR_COLORS[result.doorName] || "201,168,76";
@@ -98,46 +111,54 @@ function CardResult({ result, index, onClick }) {
         border: `1px solid rgba(${rgb},${hover ? 0.618 : 0.236})`,
         borderRadius: "0.382rem",
         cursor: "pointer",
-        transition: `all 382ms ${EASE}`,
+        transition: "all 382ms var(--ease-snap)",
         animation: `fadeUp 618ms ${100 + index * 100}ms both ease`,
         display: "flex", flexDirection: "column", gap: "0.382rem",
-        boxShadow: hover ? `0 0 18px rgba(${rgb},0.15), 0 0 40px rgba(${rgb},0.06)` : "none",
+        boxShadow: hover ? `0 0 1.125rem rgba(${rgb},0.15), 0 0 2.5rem rgba(${rgb},0.06)` : "none",
       }}
     >
       <span style={{
-        fontFamily: "'Playfair Display', serif", fontWeight: 900,
-        fontSize: "clamp(15px, 1.618vmin, 22px)",
+        fontFamily: "var(--font-display)",
+        fontWeight: 900,
+        fontSize: "clamp(0.938rem, 1.618vmin + 0.25rem, 1.375rem)",
         color: `rgba(${rgb},1.0)`,
-        lineHeight: 1.1, letterSpacing: "-0.0382em",
+        lineHeight: 1.1,
+        letterSpacing: "-0.0382em",
       }}>
         {result.doorEmoji} {result.doorName}
         {result.subName && (
           <span style={{
-            fontFamily: "'Inter', sans-serif", fontWeight: 300,
-            fontSize: "clamp(15px, 1.618vmin, 22px)",
+            fontFamily: "var(--font-body)",
+            fontWeight: 300,
+            fontSize: "clamp(0.938rem, 1.618vmin + 0.25rem, 1.375rem)",
             color: "rgba(232,228,210,0.618)",
             marginLeft: "0.618rem",
           }}>{result.subName}</span>
         )}
       </span>
       <span style={{
-        fontFamily: "'Inter', sans-serif", fontWeight: 400,
-        fontSize: "clamp(18px, 2.618vmin, 28px)",
+        fontFamily: "var(--font-body)",
+        fontWeight: 400,
+        fontSize: "clamp(1.125rem, 2.618vmin + 0.25rem, 1.75rem)",
         color: `rgba(232,228,210,${hover ? 1.0 : 0.618})`,
-        transition: `color 382ms ${EASE}`, lineHeight: 1.618,
+        transition: "color 382ms var(--ease-snap)",
+        lineHeight: 1.618,
       }}>{result.card?.title || "Untitled"}</span>
       {result.card?.simple && (
         <span style={{
-          fontFamily: "'Inter', sans-serif", fontWeight: 300,
-          fontSize: "clamp(15px, 1.618vmin, 22px)",
-          color: "rgba(232,228,210,0.618)", lineHeight: 1.618,
+          fontFamily: "var(--font-body)",
+          fontWeight: 300,
+          fontSize: "clamp(0.938rem, 1.618vmin + 0.25rem, 1.375rem)",
+          color: "rgba(232,228,210,0.618)",
+          lineHeight: 1.618,
         }}>{result.card.simple}</span>
       )}
     </div>
   );
 }
 
-// ─── MIRROR RESULT ──────────────────────────────────────────────
+
+/* ─── MIRROR RESULT ───────────────────────────────────────────── */
 function MirrorResult({ result, index, onClick }) {
   const [hover, setHover] = useState(false);
   const truth = result.node?.truth || "";
@@ -155,7 +176,7 @@ function MirrorResult({ result, index, onClick }) {
         border: `1px solid rgba(201,168,76,${hover ? 0.618 : 0.236})`,
         borderRadius: "0.382rem",
         cursor: onClick ? "pointer" : "default",
-        transition: `all 618ms ${EASE}`,
+        transition: "all 618ms var(--ease-snap)",
         animation: `fadeUp 618ms ${100 + index * 100}ms both ease`,
         display: "flex", flexDirection: "column", alignItems: "center",
         textAlign: "center", gap: "0.618rem",
@@ -163,17 +184,21 @@ function MirrorResult({ result, index, onClick }) {
       }}
     >
       <span style={{
-        fontFamily: "'Playfair Display', serif", fontWeight: 900,
-        fontSize: "clamp(11px, 1vmin, 16px)",
+        fontFamily: "var(--font-display)",
+        fontWeight: 900,
+        fontSize: "clamp(0.688rem, 1vmin + 0.15rem, 1rem)",
         letterSpacing: "0.236em",
         color: "rgba(201,168,76,0.236)",
       }}>✦ LAYER {depth} ✦</span>
       {truth && (
         <div style={{
-          fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 300,
-          fontSize: "clamp(18px, 2.618vmin, 28px)",
+          fontFamily: "var(--font-accent)",
+          fontStyle: "italic",
+          fontWeight: 300,
+          fontSize: "clamp(1.125rem, 2.618vmin + 0.25rem, 1.75rem)",
           color: `rgba(232,228,210,${hover ? 1.0 : 0.618})`,
-          lineHeight: 1.618, maxWidth: "36rem",
+          lineHeight: 1.618,
+          maxWidth: "36rem",
         }}>"{truth}"</div>
       )}
       <div style={{
@@ -182,19 +207,22 @@ function MirrorResult({ result, index, onClick }) {
       }} />
       {dare && (
         <div style={{
-          fontFamily: "'Inter', sans-serif", fontWeight: 400,
-          fontSize: "clamp(15px, 1.618vmin, 22px)",
+          fontFamily: "var(--font-body)",
+          fontWeight: 400,
+          fontSize: "clamp(0.938rem, 1.618vmin + 0.25rem, 1.375rem)",
           color: `rgba(201,168,76,${hover ? 0.618 : 0.236})`,
-          maxWidth: "30rem", lineHeight: 1.618,
+          maxWidth: "30rem",
+          lineHeight: 1.618,
         }}>{dare}</div>
       )}
     </div>
   );
 }
 
-// ═══════════════════════════════════════════════════════════════
-// SEARCH PAGE
-// ═══════════════════════════════════════════════════════════════
+
+/* ═══════════════════════════════════════════════════════════════
+   SEARCH PAGE
+   ═══════════════════════════════════════════════════════════════ */
 export default function SearchClient() {
   const W = typeof window !== "undefined" ? window.innerWidth : 800;
   const isMobile = W < 520;
@@ -245,17 +273,13 @@ export default function SearchClient() {
   };
 
   return (
-    <div style={{
-      minHeight: "100vh",
+    <div className="phi-page bg-glow-center" style={{
       position: "relative",
-      background: "radial-gradient(ellipse at 50% 23.6%, rgba(14,10,28,0.618) 0%, #03030a 61.8%)",
-      display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "0 1rem",
       paddingBottom: "6.854rem",
       overflowX: "hidden",
     }}>
 
-      {/* Ambient glow */}
+      {/* Ambient glow — φ-proportioned */}
       <div style={{
         position: "fixed", top: 0, left: "50%", transform: "translateX(-50%)",
         width: "61.8vw", height: "38.2vh",
@@ -264,99 +288,80 @@ export default function SearchClient() {
       }} />
 
       {/* Frosted header */}
-      <div style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 99,
-        height: "clamp(56px, 8vh, 72px)",
-        background: "linear-gradient(180deg, rgba(3,3,10,0.92) 0%, rgba(3,3,10,0.6) 70%, transparent 100%)",
-        backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        display: "flex", alignItems: "center",
-        paddingLeft: "1.618rem",
-        pointerEvents: "none",
-      }}>
+      <div className="frosted-header">
         <Link href="/" style={{ pointerEvents: "auto", textDecoration: "none" }}>
-          <span style={{
-            fontFamily: "'Playfair Display', serif", fontWeight: 900,
-            fontSize: "clamp(18px, 2.618vmin, 28px)",
-            color: "rgba(201,168,76,0.618)",
-            letterSpacing: "-0.0382em", cursor: "pointer",
-          }}>← BACK</span>
+          <span className="back-link">← BACK</span>
         </Link>
       </div>
 
       {/* Content */}
-      <div style={{
-        width: "100%", maxWidth: "40rem",
+      <div className="content-below-header" style={{
+        width: "100%", maxWidth: "var(--content-max)",
         display: "flex", flexDirection: "column", alignItems: "center",
-        paddingTop: "clamp(72px, 11vh, 110px)",
         position: "relative", zIndex: 1,
       }}>
 
         {/* Title */}
-        <h1 style={{
-          fontFamily: "'Playfair Display', serif", fontWeight: 900,
-          fontSize: "clamp(22px, 4.236vmin, 36px)",
+        <h1 className="stagger-fade" style={{
+          fontFamily: "var(--font-display)",
+          fontWeight: 900,
+          fontSize: "clamp(1.375rem, 4.236vmin + 0.25rem, 2.25rem)",
           letterSpacing: "0.236em",
           color: "rgba(201,168,76,0.618)",
           textAlign: "center",
-          animation: "fadeUp 1s 100ms both ease",
+          animationDelay: "100ms",
           marginBottom: "0.618rem",
-          textShadow: "0 0 8px rgba(201,168,76,0.382), 0 0 24px rgba(201,168,76,0.146)",
+          textShadow: "0 0 0.5rem rgba(201,168,76,0.382), 0 0 1.5rem rgba(201,168,76,0.146)",
           lineHeight: 1.1,
         }}>SEARCH & EXPLORE</h1>
 
         {/* Subtitle */}
-        <p style={{
-          fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 300,
-          fontSize: "clamp(18px, 2.618vmin, 28px)",
+        <p className="stagger-fade t-accent" style={{
+          fontSize: "clamp(1.125rem, 2.618vmin + 0.25rem, 1.75rem)",
+          fontWeight: 300,
           color: "rgba(232,228,210,0.618)",
           textAlign: "center",
-          animation: "fadeUp 1s 236ms both ease",
+          animationDelay: "236ms",
           marginBottom: "1.618rem",
           lineHeight: 1.618,
         }}>Click to explore or type your search below.</p>
 
-        {/* Nav links */}
-        <div style={{
+        {/* Nav links — special pages outside the 10-door system */}
+        <div className="stagger-fade" style={{
           display: "flex", gap: "0.618rem", marginBottom: "1.618rem",
-          animation: "fadeUp 618ms 300ms both ease",
+          animationDelay: "300ms",
           flexWrap: "wrap", justifyContent: "center",
         }}>
           <Link href="/poems">
-            <button style={{
-              background: "rgba(201,168,76,0.04)", border: "1px solid rgba(201,168,76,0.236)",
-              borderRadius: "0.382rem", padding: "0.618rem 2.618rem",
-              fontFamily: "'Playfair Display', serif", fontWeight: 900,
-              fontSize: "clamp(15px, 1.618vmin, 22px)", letterSpacing: "0.146em",
-              color: "rgba(201,168,76,0.618)", cursor: "pointer",
-            }}>✦ POEMS</button>
+            <button className="btn-ghost" style={{ letterSpacing: "0.146em" }}>
+              ✦ POEMS
+            </button>
           </Link>
           <Link href="/math">
-            <button style={{
-              background: "rgba(201,168,76,0.04)", border: "1px solid rgba(201,168,76,0.236)",
-              borderRadius: "0.382rem", padding: "0.618rem 2.618rem",
-              fontFamily: "'Playfair Display', serif", fontWeight: 900,
-              fontSize: "clamp(15px, 1.618vmin, 22px)", letterSpacing: "0.146em",
-              color: "rgba(201,168,76,0.618)", cursor: "pointer",
-            }}>✦ MATH</button>
+            <button className="btn-ghost" style={{ letterSpacing: "0.146em" }}>
+              ✦ MATH
+            </button>
           </Link>
           <Link href="/promises">
-            <button style={{
-              background: "rgba(220,160,160,0.04)", border: "1px solid rgba(220,160,160,0.236)",
-              borderRadius: "0.382rem", padding: "0.618rem 2.618rem",
-              fontFamily: "'Playfair Display', serif", fontWeight: 900,
-              fontSize: "clamp(15px, 1.618vmin, 22px)", letterSpacing: "0.146em",
-              color: "rgba(220,160,160,0.618)", cursor: "pointer",
-            }}>✦ PROMISES</button>
+            <button className="btn-ghost" style={{
+              letterSpacing: "0.146em",
+              borderColor: "rgba(220,160,160,0.236)",
+              color: "rgba(220,160,160,0.618)",
+              background: "rgba(220,160,160,0.04)",
+            }}>
+              ✦ PROMISES
+            </button>
           </Link>
         </div>
 
-        {/* Ten Doors — Pyramid / Grid */}
+        {/* Ten Doors — Pyramid (desktop) / Grid (mobile) */}
         <div style={{ marginBottom: "1.618rem", width: "100%" }}>
           {isMobile ? (
-            <div style={{
+            /* ── Mobile: 2-column grid ── */
+            <div className="stagger-fade" style={{
               display: "grid", gridTemplateColumns: "1fr 1fr",
-              gap: 12, width: "100%", padding: "0",
-              animation: "fadeUp 1s 382ms both ease",
+              gap: "0.618rem", width: "100%",
+              animationDelay: "382ms",
             }}>
               {DOORS.map((door) => (
                 <DoorCard key={door.slug} door={door}
@@ -366,17 +371,20 @@ export default function SearchClient() {
               ))}
             </div>
           ) : (
-            <div style={{
+            /* ── Desktop: Sacred Pyramid 1-2-3-4 ── */
+            <div className="stagger-fade" style={{
               display: "flex", flexDirection: "column", alignItems: "center",
-              gap: 10, width: "100%",
-              animation: "fadeUp 1s 382ms both ease",
+              gap: "0.618rem", width: "100%",
+              animationDelay: "382ms",
             }}>
               {PYRAMID.map((rowIndices, ri) => (
-                <div key={ri} style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+                <div key={ri} style={{
+                  display: "flex", gap: "0.618rem", justifyContent: "center",
+                }}>
                   {rowIndices.map((di) => {
                     const door = DOORS[di];
                     return (
-                      <div key={door.slug} style={{ width: 150, height: 100 }}>
+                      <div key={door.slug} style={{ width: "9.416rem" }}>
                         <DoorCard door={door}
                           score={doorScores[door.key]} isTop={topDoor === door.key}
                           hasScores={hasScores} size="fixed"
@@ -391,23 +399,20 @@ export default function SearchClient() {
         </div>
 
         {/* Search input */}
-        <div id="search-anchor" style={{ width: "100%", animation: "fadeUp 618ms 618ms both ease", marginBottom: "1.618rem" }}>
+        <div id="search-anchor" className="stagger-fade" style={{
+          width: "100%", animationDelay: "618ms", marginBottom: "1.618rem",
+        }}>
           <input ref={inputRef} value={query} onChange={handleInput}
             placeholder="What are you searching for?"
             spellCheck={false}
+            className="phi-search-input"
             style={{
-              width: "100%",
-              background: "rgba(232,228,210,0.03)",
-              border: `1px solid rgba(201,168,76,${query ? 0.382 : 0.236})`,
-              borderRadius: "0.382rem",
-              padding: "1rem 1.618rem",
-              fontFamily: "'Inter', sans-serif", fontWeight: 400,
-              fontSize: "clamp(18px, 2.618vmin, 28px)",
-              color: "rgba(232,228,210,1.0)",
-              outline: "none",
-              transition: `all 618ms ${EASE}`,
-              lineHeight: 1.618,
-              boxShadow: query ? "0 0 24px rgba(201,168,76,0.08), inset 0 0 12px rgba(201,168,76,0.02)" : "none",
+              borderColor: query
+                ? "rgba(201,168,76,0.382)"
+                : "rgba(201,168,76,0.236)",
+              boxShadow: query
+                ? "0 0 1.5rem rgba(201,168,76,0.08), inset 0 0 0.75rem rgba(201,168,76,0.02)"
+                : "none",
             }}
             onFocus={(e) => {
               e.target.style.borderColor = "rgba(201,168,76,0.618)";
@@ -416,7 +421,7 @@ export default function SearchClient() {
                 const el = document.getElementById("search-anchor");
                 if (el) {
                   const vh = window.innerHeight;
-                  const top = el.getBoundingClientRect().top + window.scrollY - (vh * 0.20);
+                  const top = el.getBoundingClientRect().top + window.scrollY - (vh * PHIi * PHIi);
                   window.scrollTo({ top, behavior: "instant" });
                 }
               }, 50);
@@ -427,8 +432,15 @@ export default function SearchClient() {
 
         {/* Search Results */}
         {results.length > 0 && (
-          <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "0.618rem", marginBottom: "2.618rem" }}>
-            <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.236), transparent)", marginBottom: "0.382rem" }} />
+          <div style={{
+            width: "100%", display: "flex", flexDirection: "column",
+            gap: "0.618rem", marginBottom: "2.618rem",
+          }}>
+            <div style={{
+              width: "100%", height: 1,
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.236), transparent)",
+              marginBottom: "0.382rem",
+            }} />
             {results.map((r, i) => (
               r.type === "mirror"
                 ? <MirrorResult key={`mirror-${i}`} result={r} index={i}
@@ -439,7 +451,7 @@ export default function SearchClient() {
           </div>
         )}
 
-        {/* Expansion spacer */}
+        {/* Expansion spacer — gives results room to breathe */}
         {searchFocused && (
           <div style={{ minHeight: "100vh", pointerEvents: "none" }} />
         )}
