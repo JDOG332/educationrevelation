@@ -473,3 +473,18 @@ a {
     padding-bottom: var(--s-lg);
   }
 }
+
+
+/* ═══════════════════════════════════════
+   TAB PILLS — interactive affordance
+   ═══════════════════════════════════════ */
+
+@keyframes pillShimmer {
+  0%   { border-color: rgba(var(--pill-rgb, 201,168,76), 0.15); }
+  40%  { border-color: rgba(var(--pill-rgb, 201,168,76), 0.50); }
+  100% { border-color: rgba(var(--pill-rgb, 201,168,76), 0.15); }
+}
+
+.tab-pill-enter {
+  animation: pillShimmer 1.618s var(--ease-snap) both;
+}

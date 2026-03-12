@@ -22,27 +22,49 @@ function SectionLabel({ children, rgb }) {
 
 
 /* ─── TAB PILL ────────────────────────────────────────────────── */
-function TabPill({ icon, label, active, onClick }) {
+function TabPill({ icon, label, active, onClick, index = 0 }) {
+  const [hover, setHover] = useState(false);
+
+  const isLit = active || hover;
+
   return (
-    <button onClick={onClick} style={{
-      display: "flex", alignItems: "center", gap: "0.236rem",
-      padding: "0.382rem 0.618rem",
-      borderRadius: "100px",
-      border: `1px solid rgba(var(--pill-rgb),${active ? 0.618 : 0.15})`,
-      background: active ? "rgba(var(--pill-rgb),0.14)" : "transparent",
-      cursor: "pointer",
-      whiteSpace: "nowrap",
-      transition: "all 262ms var(--ease-snap)",
-      flexShrink: 0,
-      WebkitTapHighlightColor: "transparent",
-    }}>
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={!active ? "tab-pill-enter" : undefined}
+      style={{
+        display: "flex", alignItems: "center", gap: "0.236rem",
+        padding: "0.382rem 0.618rem",
+        borderRadius: "100px",
+        border: `1px solid rgba(var(--pill-rgb),${active ? 0.618 : hover ? 0.50 : 0.25})`,
+        background: active
+          ? "rgba(var(--pill-rgb),0.14)"
+          : hover
+            ? "rgba(var(--pill-rgb),0.08)"
+            : "transparent",
+        boxShadow: hover && !active
+          ? "0 0 0.618rem rgba(var(--pill-rgb),0.15)"
+          : active
+            ? "0 0 0.618rem rgba(var(--pill-rgb),0.20)"
+            : "none",
+        cursor: "pointer",
+        whiteSpace: "nowrap",
+        transition: "all 262ms var(--ease-snap)",
+        transform: isLit ? "scale(1.04)" : "scale(1)",
+        flexShrink: 0,
+        WebkitTapHighlightColor: "transparent",
+        animationDelay: `${index * 100}ms`,
+      }}
+    >
       <span style={{ fontSize: "0.875rem", lineHeight: 1 }}>{icon}</span>
       <span style={{
         fontFamily: "var(--font-display)", fontWeight: 700,
         fontSize: "clamp(0.618rem, 1.2vmin + 0.1rem, 0.75rem)",
         letterSpacing: "0.08em",
-        color: `rgba(var(--pill-rgb),${active ? 0.92 : 0.45})`,
+        color: `rgba(var(--pill-rgb),${active ? 0.92 : hover ? 0.80 : 0.50})`,
         textTransform: "uppercase",
+        transition: "color 262ms var(--ease-snap)",
       }}>{label}</span>
     </button>
   );
@@ -168,9 +190,9 @@ function CardContent({ card, rgb, index, doorSlug, topicSlug }) {
             display: "flex", gap: "0.382rem",
             minWidth: "min-content",
           }}>
-            {tabs.map(t => (
+            {tabs.map((t, ti) => (
               <TabPill key={t.key} icon={t.icon} label={t.label}
-                active={activeTab === t.key}
+                active={activeTab === t.key} index={ti}
                 onClick={() => toggle(t.key)} />
             ))}
           </div>
