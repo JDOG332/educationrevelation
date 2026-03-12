@@ -4,7 +4,7 @@ import { useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { classifyContent } from '@/lib/tenDoors';
-import { siftSearch } from '@/lib/siftEngine';
+import { siftSearch, getRandomCardPath } from '@/lib/siftEngine';
 import { KEY_TO_SLUG } from '@/lib/doorMap';
 
 const PHI  = 1.618033988749895;
@@ -377,6 +377,34 @@ export default function SearchClient() {
             onBlur={(e) => e.target.style.borderColor = "rgba(201,168,76,0.236)"}
           />
         </div>
+
+        {/* Discover something unexpected — subtle random card link */}
+        {results.length === 0 && (
+          <div className="stagger-fade" style={{
+            textAlign: "center",
+            marginTop: "-0.618rem",
+            marginBottom: "1.618rem",
+            animationDelay: "450ms",
+          }}>
+            <span
+              onClick={() => {
+                const c = getRandomCardPath();
+                if (c) router.push(`/${c.doorSlug}/${c.subId}/${c.cardId}`);
+              }}
+              style={{
+                fontFamily: "var(--font-accent)",
+                fontStyle: "italic",
+                fontSize: "clamp(1rem, 2.2vmin + 0.15rem, 1.375rem)",
+                color: "rgba(201,168,76,0.382)",
+                cursor: "pointer",
+                transition: "color 382ms var(--ease-snap)",
+                letterSpacing: "0.02em",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.75)"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.382)"}
+            >✦ or discover something unexpected</span>
+          </div>
+        )}
 
         {/* Search Results — appear RIGHT below search bar, push doors down */}
         {results.length > 0 && (
