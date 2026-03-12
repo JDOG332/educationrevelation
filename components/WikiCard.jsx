@@ -3,12 +3,10 @@
  * WIKI CARD — Click to fetch Wikipedia summary
  * Uses the Ψ-based wikiEngine to score sentences and return
  * the top 5 most important points with emoji rankings.
- * Then links to the full Wikipedia article at the bottom.
  */
 
 import React, { useState } from "react";
 import { fetchWiki } from '@/lib/wikiEngine.js';
-import { F, S, A, GOLD, IVORY, EASE, TEXT, DISPLAY_STYLE, BODY_STYLE, ACCENT_STYLE, textGlow, boxGlow } from '@/lib/phi.js';
 
 export default function WikiCard({ label, url, rgb, index = 0 }) {
   const [open, setOpen] = useState(false);
@@ -20,19 +18,12 @@ export default function WikiCard({ label, url, rgb, index = 0 }) {
   function handleClick() {
     setOpen(o => {
       const next = !o;
-      // Fetch on first open
       if (next && !data && !loading) {
         setLoading(true);
         setError(false);
         fetchWiki(label)
-          .then((result) => {
-            setData(result);
-            setLoading(false);
-          })
-          .catch(() => {
-            setError(true);
-            setLoading(false);
-          });
+          .then((result) => { setData(result); setLoading(false); })
+          .catch(() => { setError(true); setLoading(false); });
       }
       return next;
     });
@@ -47,34 +38,34 @@ export default function WikiCard({ label, url, rgb, index = 0 }) {
         style={{
           width: "100%",
           display: "flex", alignItems: "center", justifyContent: "space-between",
-          gap: S.xs,
+          gap: "0.618rem",
           background: hover
-            ? `rgba(${rgb},${A.ghost})`
+            ? `rgba(${rgb},0.236)`
             : open
               ? `rgba(${rgb},0.10)`
               : `rgba(${rgb},0.04)`,
-          border: `1px solid rgba(${rgb},${hover ? A.phi : A.ghost})`,
-          borderRadius: open ? `${S._2xs} ${S._2xs} 0 0` : S._2xs,
+          border: `1px solid rgba(${rgb},${hover ? 0.618 : 0.236})`,
+          borderRadius: open ? "0.382rem 0.382rem 0 0" : "0.382rem",
           cursor: "pointer",
-          padding: `${S.xs} ${S.sm}`,
-          transition: `all 382ms ${EASE}`,
-          boxShadow: hover ? `0 0 18px rgba(${rgb},0.08)` : "none",
+          padding: "0.618rem 1rem",
+          transition: "all 382ms var(--ease-snap)",
+          boxShadow: hover ? `0 0 1.125rem rgba(${rgb},0.08)` : "none",
           textAlign: "left",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: S.xs, flex: 1 }}>
-          <span style={{ fontSize: TEXT.body }}>📖</span>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.618rem", flex: 1 }}>
+          <span style={{ fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)" }}>📖</span>
           <span style={{
-            ...BODY_STYLE, fontWeight: 400,
-            fontSize: TEXT.body,
-            color: `rgba(${rgb},${hover ? A.full : A.phi})`,
-            transition: `color 382ms ${EASE}`,
+            fontFamily: "var(--font-body)", fontWeight: 400,
+            fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+            color: `rgba(${rgb},${hover ? 1.0 : 0.75})`,
+            transition: "color 382ms var(--ease-snap)",
           }}>{label}</span>
         </div>
         <span style={{
-          fontSize: TEXT.body,
-          color: `rgba(${rgb},${hover ? A.full : A.phi})`,
-          transition: `all 382ms ${EASE}`,
+          fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+          color: `rgba(${rgb},${hover ? 1.0 : 0.618})`,
+          transition: "all 382ms var(--ease-snap)",
           transform: open ? "rotate(180deg)" : "none",
           display: "inline-block",
           flexShrink: 0,
@@ -84,92 +75,86 @@ export default function WikiCard({ label, url, rgb, index = 0 }) {
       {/* Expanded content — Wikipedia summary */}
       {open && (
         <div style={{
-          padding: S.sm,
+          padding: "1rem",
           background: `rgba(${rgb},0.03)`,
-          border: `1px solid rgba(${rgb},${A.ghost})`,
+          border: `1px solid rgba(${rgb},0.236)`,
           borderTop: "none",
-          borderRadius: `0 0 ${S._2xs} ${S._2xs}`,
+          borderRadius: "0 0 0.382rem 0.382rem",
           animation: "fadeIn 382ms ease",
           display: "flex", flexDirection: "column",
-          gap: S.xs,
+          gap: "0.618rem",
         }}>
-          {/* Loading state */}
+          {/* Loading */}
           {loading && (
             <div style={{
-              ...ACCENT_STYLE,
-              fontSize: TEXT.body,
-              color: `rgba(${rgb},${A.phi})`,
+              fontFamily: "var(--font-accent)", fontStyle: "italic",
+              fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+              color: `rgba(${rgb},0.618)`,
               textAlign: "center",
-              padding: `${S.sm} 0`,
+              padding: "1rem 0",
               animation: "breathe 1.618s ease-in-out infinite",
             }}>Sifting Wikipedia...</div>
           )}
 
-          {/* Error state */}
+          {/* Error */}
           {error && (
             <div style={{
-              ...BODY_STYLE,
-              fontSize: TEXT.body,
-              color: "rgba(220,100,100,0.618)",
+              fontFamily: "var(--font-body)", fontWeight: 300,
+              fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+              color: "rgba(220,100,100,0.75)",
               textAlign: "center",
-              padding: `${S.xs} 0`,
+              padding: "0.618rem 0",
             }}>Could not fetch this article. Try the direct link below.</div>
           )}
 
           {/* Results — emoji bullet points */}
           {data && !loading && data.points && data.points.length > 0 && (
             <>
-              {/* Article title + source */}
               {data.title && (
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: S._3xs, marginBottom: S._3xs }}>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.236rem", marginBottom: "0.236rem" }}>
                   <div style={{
-                    ...DISPLAY_STYLE,
-                    fontSize: TEXT.label,
+                    fontFamily: "var(--font-display)", fontWeight: 900,
+                    fontSize: "clamp(0.938rem, 1.618vmin + 0.15rem, 1.375rem)",
                     letterSpacing: "0.06em",
-                    color: `rgba(${rgb},${A.phi})`,
+                    color: `rgba(${rgb},0.75)`,
                     textAlign: "center",
                   }}>{data.title}</div>
                   <div style={{
-                    ...BODY_STYLE,
-                    fontSize: TEXT.caption,
-                    color: `rgba(${rgb},${A.ghost})`,
+                    fontFamily: "var(--font-body)", fontWeight: 300,
+                    fontSize: "clamp(0.688rem, 1vmin + 0.1rem, 1rem)",
+                    color: `rgba(${rgb},0.35)`,
                   }}>{data.source === "simple" ? "Simple English Wikipedia" : "Wikipedia"}</div>
                 </div>
               )}
 
-              {/* Bullet points — simplified, ranked by truth (scores hidden) */}
-              <div style={{ display: "flex", flexDirection: "column", gap: S._2xs }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.382rem" }}>
                 {data.points.map((point, i) => (
                   <div key={i} style={{
-                    display: "flex", gap: S.xs,
+                    display: "flex", gap: "0.618rem",
                     alignItems: "flex-start",
-                    padding: `${S._2xs} ${S._2xs}`,
+                    padding: "0.382rem",
                     background: i === 0 ? `rgba(${rgb},0.06)` : "transparent",
-                    borderRadius: S._3xs,
+                    borderRadius: "0.236rem",
                   }}>
                     <span style={{
-                      fontSize: TEXT.body,
-                      lineHeight: 1,
-                      flexShrink: 0,
-                      marginTop: S._3xs,
+                      fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+                      lineHeight: 1, flexShrink: 0, marginTop: "0.236rem",
                     }}>{point.emoji}</span>
                     <div style={{
-                      ...BODY_STYLE, fontWeight: 400,
-                      fontSize: TEXT.body,
-                      color: IVORY(i === 0 ? A.full : A.phi),
-                      lineHeight: 1.618,
-                      flex: 1,
+                      fontFamily: "var(--font-body)", fontWeight: 400,
+                      fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+                      color: i === 0 ? "rgba(232,228,210,1.0)" : "rgba(232,228,210,0.82)",
+                      lineHeight: 1.618, flex: 1,
                     }}>{point.text}</div>
                   </div>
                 ))}
               </div>
 
-              {/* Gold divider */}
               <div style={{
                 width: "61.8%", height: 1,
-                background: `linear-gradient(90deg, transparent, rgba(${rgb},${A.ghost}), transparent)`,
+                background: `linear-gradient(90deg, transparent, rgba(${rgb},0.236), transparent)`,
                 alignSelf: "center",
-                margin: `${S._2xs} 0`,
+                margin: "0.382rem 0",
               }} />
             </>
           )}
@@ -177,43 +162,42 @@ export default function WikiCard({ label, url, rgb, index = 0 }) {
           {/* No results */}
           {data && !loading && (!data.points || data.points.length === 0) && (
             <div style={{
-              ...BODY_STYLE,
-              fontSize: TEXT.body,
-              color: IVORY(A.ghost),
+              fontFamily: "var(--font-body)", fontWeight: 300,
+              fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
+              color: "rgba(232,228,210,0.35)",
               textAlign: "center",
-              padding: `${S.xs} 0`,
+              padding: "0.618rem 0",
             }}>No summary available.</div>
           )}
 
-          {/* Full article link — always show if we have a URL */}
+          {/* Full article link */}
           <a href={data?.url || url} target="_blank" rel="noopener noreferrer"
             style={{
               display: "flex", alignItems: "center", justifyContent: "center",
-              gap: S.xs,
-              padding: `${S.xs} ${S.sm}`,
+              gap: "0.618rem",
+              padding: "0.618rem 1rem",
               background: `rgba(${rgb},0.06)`,
-              border: `1px solid rgba(${rgb},${A.ghost})`,
-              borderRadius: S._3xs,
+              border: `1px solid rgba(${rgb},0.236)`,
+              borderRadius: "0.236rem",
               textDecoration: "none",
-              transition: `all 382ms ${EASE}`,
+              transition: "all 382ms var(--ease-snap)",
               alignSelf: "center",
-              width: "100%",
-              maxWidth: "20rem",
+              width: "100%", maxWidth: "20rem",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = `rgba(${rgb},${A.ghost})`;
-              e.currentTarget.style.borderColor = `rgba(${rgb},${A.phi})`;
+              e.currentTarget.style.background = `rgba(${rgb},0.236)`;
+              e.currentTarget.style.borderColor = `rgba(${rgb},0.618)`;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = `rgba(${rgb},0.06)`;
-              e.currentTarget.style.borderColor = `rgba(${rgb},${A.ghost})`;
+              e.currentTarget.style.borderColor = `rgba(${rgb},0.236)`;
             }}
           >
             <span style={{
-              ...DISPLAY_STYLE,
-              fontSize: TEXT.label,
+              fontFamily: "var(--font-display)", fontWeight: 900,
+              fontSize: "clamp(0.938rem, 1.618vmin + 0.15rem, 1.375rem)",
               letterSpacing: "0.06em",
-              color: `rgba(${rgb},${A.phi})`,
+              color: `rgba(${rgb},0.75)`,
             }}>READ FULL ARTICLE →</span>
           </a>
         </div>

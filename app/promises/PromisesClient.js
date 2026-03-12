@@ -1,10 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 
 const PHI = 1.618033988749895;
-const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
 const PROMISES = [
   {
@@ -59,105 +57,83 @@ const PROMISES = [
   },
 ];
 
-export default function PromisesClient() {
-  const [backH, setBackH] = useState(false);
 
+export default function PromisesClient() {
   return (
-    <div style={{
-      minHeight: "100vh",
+    <div className="phi-page" style={{
       background: "radial-gradient(ellipse at 50% 15%, rgba(40,20,30,0.5) 0%, #03030a 50%)",
-      display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "0 1rem",
-      paddingBottom: "4rem",
+      paddingBottom: "4.236rem",
     }}>
 
       <style>{`
         @keyframes starGlow {
-          0%, 100% { text-shadow: 0 0 12px rgba(201,168,76,0.5), 0 0 32px rgba(201,168,76,0.2); }
-          50%      { text-shadow: 0 0 24px rgba(201,168,76,0.8), 0 0 56px rgba(201,168,76,0.4); }
+          0%, 100% { text-shadow: 0 0 0.75rem rgba(201,168,76,0.5), 0 0 2rem rgba(201,168,76,0.2); }
+          50%      { text-shadow: 0 0 1.5rem rgba(201,168,76,0.8), 0 0 3.5rem rgba(201,168,76,0.4); }
         }
       `}</style>
 
       {/* Frosted header */}
-      <div style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 99,
-        height: "clamp(56px, 8vh, 72px)",
-        background: "linear-gradient(180deg, rgba(3,3,10,0.92) 0%, rgba(3,3,10,0.6) 70%, transparent 100%)",
-        backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        display: "flex", alignItems: "center",
-        paddingLeft: "1.618rem",
-        pointerEvents: "none",
-      }}>
+      <div className="frosted-header">
         <Link href="/search" style={{ pointerEvents: "auto", textDecoration: "none" }}>
-          <span
-            onMouseEnter={() => setBackH(true)}
-            onMouseLeave={() => setBackH(false)}
-            style={{
-              fontFamily: "'Playfair Display', serif", fontWeight: 900,
-              fontSize: "clamp(22px, 3.4vmin, 34px)",
-              color: `rgba(220,160,160,1.0)`,
-              letterSpacing: "-0.0382em", cursor: "pointer",
-              transition: `color 618ms ${EASE}`,
-            }}>← BACK</span>
+          <span className="back-link" style={{ color: "rgba(220,160,160,1.0)" }}>← BACK</span>
         </Link>
       </div>
 
       {/* Content */}
-      <div style={{
-        width: "100%", maxWidth: "36rem",
+      <div className="content-below-header" style={{
+        width: "100%", maxWidth: "var(--content-narrow)",
         display: "flex", flexDirection: "column", alignItems: "center",
-        paddingTop: "clamp(80px, 14vh, 130px)",
       }}>
 
         {/* Heart */}
-        <div style={{
-          fontSize: 30, color: "rgba(201,168,76,1.0)",
+        <div className="stagger-fade" style={{
+          fontSize: "1.875rem", color: "rgba(201,168,76,1.0)",
           marginBottom: "1rem",
-          animation: "fadeUp 618ms 100ms both ease",
+          animationDelay: "100ms",
         }}>♡</div>
 
         {/* Title */}
-        <h1 style={{
-          fontFamily: "'Playfair Display', serif",
-          fontSize: "clamp(30px, 6.2vw, 46px)",
+        <h1 className="stagger-fade" style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(1.875rem, 6.2vw + 0.25rem, 2.875rem)",
           letterSpacing: "0.15em", fontWeight: 400,
           background: "linear-gradient(180deg, rgba(255,255,255,1.0) 0%, rgba(201,168,76,1.0) 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           marginBottom: "0.618rem",
           textAlign: "center",
-          animation: "fadeUp 618ms 200ms both ease",
+          animationDelay: "200ms",
         }}>TEN PROMISES</h1>
 
         {/* Subtitle */}
-        <div style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(24px, 4vw, 30px)",
+        <div className="stagger-fade" style={{
+          fontFamily: "var(--font-accent)",
+          fontSize: "clamp(1.5rem, 4vw + 0.2rem, 1.875rem)",
           color: "rgba(232,228,210,1.0)",
           lineHeight: 1.618,
           textAlign: "center",
-          animation: "fadeUp 618ms 300ms both ease",
+          animationDelay: "300ms",
           marginBottom: "0.618rem",
         }}>from the universe to you</div>
 
         {/* Gold divider */}
-        <div style={{
-          width: "61.8%", height: 1, maxWidth: 200,
+        <div className="stagger-fade" style={{
+          width: "61.8%", height: 1, maxWidth: "12.5rem",
           margin: "2.618rem auto",
           background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent)",
-          animation: "fadeUp 618ms 400ms both ease",
+          animationDelay: "400ms",
         }} />
 
         {/* The Ten Promises */}
         {PROMISES.map((p, i) => (
-          <div key={i} style={{
+          <div key={i} className="stagger-fade" style={{
             textAlign: "center",
-            marginBottom: `${Math.round(21 * PHI)}px`,
-            animation: `fadeUp 618ms ${500 + i * 100}ms both ease`,
+            marginBottom: "2.118rem",
+            animationDelay: `${500 + i * 100}ms`,
           }}>
             {/* Number */}
             <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(36px, 7.5vw, 52px)",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.25rem, 7.5vw + 0.2rem, 3.25rem)",
               color: "rgba(201,168,76,0.618)",
               fontWeight: 400, letterSpacing: "0.1em",
               marginBottom: "0.382rem",
@@ -165,37 +141,37 @@ export default function PromisesClient() {
 
             {/* Title */}
             <div style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(24px, 4.5vw, 34px)",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(1.5rem, 4.5vw + 0.2rem, 2.118rem)",
               letterSpacing: "0.2em",
               color: "rgba(232,228,210,1.0)",
               marginBottom: "0.618rem",
               animation: `starGlow ${4 + i * 0.3}s ${i * 0.2}s ease-in-out infinite`,
             }}>{p.title}</div>
 
-            <div style={{ fontSize: 20, color: "rgba(201,168,76,1.0)", marginBottom: "0.618rem" }}>♡</div>
+            <div style={{ fontSize: "1.25rem", color: "rgba(201,168,76,1.0)", marginBottom: "0.618rem" }}>♡</div>
 
             {/* The offering */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(22px, 3.5vw, 28px)",
+              fontFamily: "var(--font-accent)",
+              fontSize: "clamp(1.375rem, 3.5vw + 0.15rem, 1.75rem)",
               color: "rgba(232,228,210,1.0)",
-              lineHeight: 1.9, maxWidth: 460, margin: "0 auto",
+              lineHeight: 1.9, maxWidth: "28.75rem", margin: "0 auto",
               marginBottom: "1rem",
             }}>{p.offering}</div>
 
             {/* The quiet truth */}
             <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(20px, 3.2vw, 26px)",
+              fontFamily: "var(--font-accent)",
+              fontSize: "clamp(1.25rem, 3.2vw + 0.15rem, 1.618rem)",
               color: "rgba(201,168,76,1.0)",
-              lineHeight: 1.8, maxWidth: 420, margin: "0 auto",
+              lineHeight: 1.8, maxWidth: "26.25rem", margin: "0 auto",
             }}>{p.heart}</div>
 
             {/* Divider between promises */}
             {i < 9 && <div style={{
-              width: `${Math.round(30 * PHI)}px`, height: 1,
-              margin: `${Math.round(13 * PHI)}px auto 0`,
+              width: "3rem", height: 1,
+              margin: "1.309rem auto 0",
               background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
             }} />}
           </div>
@@ -204,18 +180,18 @@ export default function PromisesClient() {
         {/* ═══ CLOSING ═══ */}
         <div style={{ textAlign: "center", marginTop: "1rem", marginBottom: "2.618rem" }}>
           <div style={{
-            width: `${Math.round(60 * PHI)}px`, height: 1,
-            margin: `0 auto ${Math.round(8 * PHI)}px`,
+            width: "6.054rem", height: 1,
+            margin: "0 auto 0.809rem",
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)",
           }} />
 
-          <div style={{ fontSize: 26, color: "rgba(201,168,76,1.0)", marginBottom: "1rem" }}>♡</div>
+          <div style={{ fontSize: "1.618rem", color: "rgba(201,168,76,1.0)", marginBottom: "1rem" }}>♡</div>
 
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(22px, 3.5vw, 28px)",
+            fontFamily: "var(--font-accent)",
+            fontSize: "clamp(1.375rem, 3.5vw + 0.15rem, 1.75rem)",
             color: "rgba(232,228,210,1.0)",
-            lineHeight: 2.0, maxWidth: 440, margin: "0 auto",
+            lineHeight: 2.0, maxWidth: "27.5rem", margin: "0 auto",
             marginBottom: "1.618rem",
           }}>
             these are not rules to follow.<br />
@@ -228,14 +204,14 @@ export default function PromisesClient() {
           </div>
 
           <div style={{
-            width: `${Math.round(30 * PHI)}px`, height: 1,
-            margin: `${Math.round(8 * PHI)}px auto`,
+            width: "3rem", height: 1,
+            margin: "0.809rem auto",
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent)",
           }} />
 
           <div style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(20px, 4vw, 30px)",
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(1.25rem, 4vw + 0.2rem, 1.875rem)",
             letterSpacing: "0.15em",
             color: "rgba(201,168,76,1.0)",
             marginTop: "1.618rem",
@@ -243,11 +219,11 @@ export default function PromisesClient() {
           }}>YOU WERE LOVED BEFORE YOU ARRIVED</div>
 
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(20px, 4vw, 28px)",
+            fontFamily: "var(--font-accent)",
+            fontSize: "clamp(1.25rem, 4vw + 0.2rem, 1.75rem)",
             color: "rgba(232,228,210,1.0)",
             lineHeight: 1.9,
-            maxWidth: 400, margin: "1.618rem auto 0",
+            maxWidth: "25rem", margin: "1.618rem auto 0",
             animation: "starGlow 6s 1s ease-in-out infinite",
           }}>and you will be loved long after you leave</div>
         </div>
@@ -255,8 +231,8 @@ export default function PromisesClient() {
         {/* ═══ THE MIRROR ═══ */}
         <div style={{
           textAlign: "center",
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(26px, 4vw, 36px)",
+          fontFamily: "var(--font-accent)",
+          fontSize: "clamp(1.618rem, 4vw + 0.2rem, 2.25rem)",
           fontStyle: "italic",
           background: "linear-gradient(180deg, rgba(255,255,255,1.0) 0%, rgba(201,168,76,1.0) 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
@@ -267,14 +243,14 @@ export default function PromisesClient() {
         {/* ═══ WOW MOM WOW ═══ */}
         <div style={{ textAlign: "center", marginBottom: "2.618rem" }}>
           <div style={{
-            width: `${Math.round(60 * PHI)}px`, height: 1,
-            margin: `0 auto ${Math.round(13 * PHI)}px`,
+            width: "6.054rem", height: 1,
+            margin: "0 auto 1.309rem",
             background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent)",
           }} />
 
           <div style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(30px, 6.2vw, 46px)",
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(1.875rem, 6.2vw + 0.25rem, 2.875rem)",
             letterSpacing: "0.3em",
             background: "linear-gradient(180deg, rgba(255,255,255,1.0) 0%, rgba(201,168,76,1.0) 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
@@ -282,16 +258,16 @@ export default function PromisesClient() {
           }}>WOW MOM WOW</div>
 
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(18px, 2.5vw, 22px)",
+            fontFamily: "var(--font-accent)",
+            fontSize: "clamp(1.125rem, 2.5vw + 0.15rem, 1.375rem)",
             color: "rgba(201,168,76,1.0)",
             marginTop: "1rem",
-            letterSpacing: 1,
+            letterSpacing: "0.0618em",
           }}>read it forward · read it backward · flip it upside down</div>
 
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(20px, 2.8vw, 26px)",
+            fontFamily: "var(--font-accent)",
+            fontSize: "clamp(1.25rem, 2.8vw + 0.15rem, 1.618rem)",
             color: "rgba(232,228,210,1.0)",
             marginTop: "0.618rem",
           }}>it cannot be broken</div>
@@ -300,33 +276,26 @@ export default function PromisesClient() {
         {/* ═══ THE LAST WHISPER ═══ */}
         <div style={{ textAlign: "center", padding: "2.618rem 0" }}>
           <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(26px, 4.5vw, 38px)",
+            fontFamily: "var(--font-accent)",
+            fontSize: "clamp(1.618rem, 4.5vw + 0.2rem, 2.382rem)",
             color: "rgba(232,228,210,1.0)",
-            letterSpacing: 1, lineHeight: 1.618,
+            letterSpacing: "0.0618em", lineHeight: 1.618,
             marginBottom: "1rem",
             animation: "starGlow 5s ease-in-out infinite",
           }}>"...the end of fear is where we begin..."</div>
 
           <div style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(16px, 2.5vw, 20px)",
-            letterSpacing: 4, color: "rgba(201,168,76,1.0)",
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(1rem, 2.5vw + 0.15rem, 1.25rem)",
+            letterSpacing: "0.25em", color: "rgba(201,168,76,1.0)",
           }}>— LET LOVE IN</div>
         </div>
 
         {/* Navigation back */}
-        <Link href="/search" style={{
-          display: "inline-block",
+        <Link href="/search" className="btn-ghost" style={{
           marginTop: "1rem",
-          padding: "12px 28px",
-          border: "1px solid rgba(201,168,76,0.35)",
-          borderRadius: 6,
-          fontFamily: "'Playfair Display', serif",
-          fontSize: "clamp(16px, 2.2vmin, 20px)",
-          letterSpacing: "0.15em",
-          fontWeight: 700,
           color: "rgba(201,168,76,1.0)",
+          borderColor: "rgba(201,168,76,0.35)",
           textDecoration: "none",
         }}>
           ← EXPLORE ALL DOORS
