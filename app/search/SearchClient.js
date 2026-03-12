@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { classifyContent } from '@/lib/tenDoors';
@@ -30,6 +30,84 @@ const PYRAMID = [[0], [1, 2], [3, 4, 5], [6, 7, 8, 9]];
 
 const SLUG_MAP = {};
 DOORS.forEach(d => { SLUG_MAP[d.key] = d.slug; });
+
+/* ─── LIVING PULSE — curated titles that rotate ────────────────── */
+const PULSE_CARDS = [
+  { title: "Golden Repair (Kintsugi)",      path: "/love/grief/kintsugi" },
+  { title: "The Observer Effect",           path: "/consciousness/awareness/observer-effect" },
+  { title: "The Golden Ratio",              path: "/mathematics/ratio/golden-ratio" },
+  { title: "The Hero's Journey",            path: "/mythology/hero/heros-journey" },
+  { title: "Quantum Entanglement",          path: "/science/physics/entanglement" },
+  { title: "Sacred Geometry",               path: "/mysticism/geometry/sacred-geometry" },
+  { title: "The Meaning of Life",           path: "/philosophy/meaning/meaning-of-life" },
+  { title: "Ego Dissolution",               path: "/mysticism/surrender/ego-dissolution" },
+  { title: "The Double-Slit Experiment",    path: "/science/physics/double-slit" },
+  { title: "Why Music Makes Us Cry",        path: "/art/music/why-music-makes-us-cry" },
+  { title: "The Fibonacci Sequence",        path: "/mathematics/patterns/fibonacci" },
+  { title: "What Happens When We Die",      path: "/religion/afterlife/what-happens-when-we-die" },
+  { title: "The Butterfly Effect",          path: "/science/ecology/butterfly-effect" },
+  { title: "Free Will vs. Fate",            path: "/philosophy/freewill/free-will-vs-fate" },
+  { title: "Photosynthesis",                path: "/nature/trees/photosynthesis" },
+  { title: "Lucid Dreaming",                path: "/consciousness/dreams/lucid-dreaming" },
+  { title: "The Problem of Evil",           path: "/religion/goodevil/problem-of-evil" },
+  { title: "Why We Tell Stories",           path: "/mythology/storytelling/why-we-tell-stories" },
+  { title: "Neuroplasticity",               path: "/consciousness/brain/neuroplasticity" },
+  { title: "The Big Bang",                  path: "/science/astronomy/big-bang" },
+];
+
+function LivingPulse({ onNavigate }) {
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * PULSE_CARDS.length));
+  const [visible, setVisible] = useState(true);
+  const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    const CYCLE = 4236; // φ³ × 1000ms
+    const FADE = 382;
+
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIndex(i => (i + 1) % PULSE_CARDS.length);
+        setVisible(true);
+      }, FADE);
+    }, CYCLE);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const card = PULSE_CARDS[index];
+
+  return (
+    <div
+      onClick={() => onNavigate(card.path)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        textAlign: "center",
+        cursor: "pointer",
+        padding: "0.236rem 0",
+      }}
+    >
+      <span style={{
+        fontFamily: "var(--font-accent)",
+        fontStyle: "italic",
+        fontSize: "clamp(0.938rem, 2vmin + 0.12rem, 1.25rem)",
+        color: `rgba(201,168,76,${hover ? 0.75 : 0.35})`,
+        transition: `color 382ms var(--ease-snap), opacity 382ms var(--ease-snap)`,
+        opacity: visible ? 1 : 0,
+        letterSpacing: "0.02em",
+      }}>Someone is reading about... <em style={{
+        fontStyle: "normal",
+        fontFamily: "var(--font-display)",
+        fontWeight: 700,
+        fontSize: "clamp(0.938rem, 2vmin + 0.12rem, 1.25rem)",
+        color: `rgba(201,168,76,${hover ? 0.90 : 0.50})`,
+        letterSpacing: "0.04em",
+        transition: "color 382ms var(--ease-snap)",
+      }}>{card.title}</em></span>
+    </div>
+  );
+}
 
 
 /* ─── DOOR CARD (with real-time scoring) ──────────────────────── */
@@ -378,14 +456,16 @@ export default function SearchClient() {
           />
         </div>
 
-        {/* Discover something unexpected — subtle random card link */}
+        {/* Living Pulse + Discover — below search bar when not searching */}
         {results.length === 0 && (
           <div className="stagger-fade" style={{
             textAlign: "center",
             marginTop: "-0.618rem",
             marginBottom: "1.618rem",
             animationDelay: "450ms",
+            display: "flex", flexDirection: "column", gap: "0.382rem",
           }}>
+            <LivingPulse onNavigate={(path) => router.push(path)} />
             <span
               onClick={() => {
                 const c = getRandomCardPath();
@@ -394,14 +474,14 @@ export default function SearchClient() {
               style={{
                 fontFamily: "var(--font-accent)",
                 fontStyle: "italic",
-                fontSize: "clamp(1rem, 2.2vmin + 0.15rem, 1.375rem)",
-                color: "rgba(201,168,76,0.382)",
+                fontSize: "clamp(0.875rem, 1.8vmin + 0.1rem, 1.125rem)",
+                color: "rgba(201,168,76,0.25)",
                 cursor: "pointer",
                 transition: "color 382ms var(--ease-snap)",
                 letterSpacing: "0.02em",
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.75)"}
-              onMouseLeave={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.382)"}
+              onMouseEnter={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.618)"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.25)"}
             >✦ or discover something unexpected</span>
           </div>
         )}
