@@ -215,11 +215,7 @@ function PlanesTab() {
       </div>
       <p style={{ ...S.accent, margin: 0 }}>{plane.simple}</p>
       <p style={{ ...S.body, margin: 0 }}>{plane.body}</p>
-      <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: '0.382rem', padding: '0.875rem 1.236rem' }}>
-        <div style={S.goldLabel}>Honest Note</div>
-        <div style={S.note}>{plane.note}</div>
-        <div style={{ ...S.note, marginTop: '0.382rem', color: 'rgba(201,168,76,0.5)' }}>TRUTH SCORE: {plane.truth}%</div>
-      </div>
+
       <div style={{ background: 'rgba(232,228,212,0.03)', border: '1px solid rgba(232,228,212,0.07)', borderRadius: '0.618rem', padding: '1.236rem' }}>
         <div style={S.goldLabel}>The Big Idea</div>
         <p style={{ ...S.accent, margin: 0, color: 'rgba(232,228,212,0.7)' }}>
@@ -476,7 +472,7 @@ function MathTab() {
         <p style={{ ...S.accent, margin: 0, color: 'rgba(100,181,246,0.8)' }}>Science raises G. Philosophy raises R&#8321;&#8322;. Love raises both. All three matter. None is enough alone.</p>
       </div>
       <div style={{ ...S.note, textAlign: 'center', padding: '0.618rem' }}>
-        CRT is an original theoretical framework. Its philosophical claims are internally consistent and cross-tradition aligned. Its precise mathematical predictions are still speculative. That is honest.
+        CRT is an original theoretical framework. Its philosophical claims are internally consistent and cross-tradition aligned. Its precise mathematical predictions are still speculative.
       </div>
     </div>
   );
