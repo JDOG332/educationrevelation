@@ -110,6 +110,12 @@ const SHIFT_STEPS = [
     stuck: 'Even your spiritual experiences feel like "mine." There is still a "me" having them.',
     move: 'Ask: "Who is watching this?" Follow that question back to its source.',
   },
+  {
+    from: 'Divine',
+    color: '232,224,255',
+    stuck: 'You cannot get here by trying. Effort is the last wall.',
+    move: 'Stop trying to get here. It is already the case. This plane does not open — it is recognized.',
+  },
 ];
 
 const RELEASE_TECHNIQUES = [
@@ -268,6 +274,11 @@ function ShiftTab() {
           )}
         </div>
       ))}
+      <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '1rem', margin: '0.618rem 0' }}>
+        <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, rgba(52,211,153,0.25), transparent)' }} />
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.22em', color: 'rgba(52,211,153,0.4)', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Separate From the Planes</span>
+        <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, rgba(52,211,153,0.25), transparent)' }} />
+      </div>
       <div style={{ background: 'rgba(52,211,153,0.05)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.236rem 1.618rem' }}>
         <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.55)' }}>Watch Out For This</div>
         <p style={{ ...S.accent, margin: '0 0 0.618rem', color: 'rgba(232,228,212,0.88)' }}>
