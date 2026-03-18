@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { classifyContent } from '@/lib/tenDoors';
-import { siftSearch, getRandomCardPath, getDailyCard } from '@/lib/siftEngine';
+import { siftSearch, getDailyCard } from '@/lib/siftEngine';
 import { KEY_TO_SLUG } from '@/lib/doorMap';
 
 const PHI  = 1.618033988749895;
@@ -369,11 +369,16 @@ export default function SearchClient() {
         pointerEvents: "none", zIndex: 0,
       }} />
 
-      {/* Frosted header */}
-      <div className="frosted-header">
+      {/* Frosted header — BACK + site nav */}
+      <div className="frosted-header" style={{ justifyContent: "space-between", paddingRight: "1.618rem" }}>
         <Link href="/" style={{ pointerEvents: "auto", textDecoration: "none" }}>
           <span className="back-link">← BACK</span>
         </Link>
+        <div style={{ display: "flex", gap: "0.618rem", pointerEvents: "auto" }}>
+          <Link href="/poems" className="explore-link">POEMS</Link>
+          <Link href="/math" className="explore-link">MATH</Link>
+          <Link href="/promises" className="explore-link" style={{ color: "rgba(220,160,160,0.382)" }}>PROMISES</Link>
+        </div>
       </div>
 
       {/* Content */}
@@ -471,33 +476,17 @@ export default function SearchClient() {
           );
         })()}
 
-        {/* Nav links — special pages outside the 10-door system */}
-        <div className="stagger-fade" style={{
-          display: "flex", gap: "0.618rem", marginBottom: "1.618rem",
-          animationDelay: "300ms",
-          flexWrap: "wrap", justifyContent: "center",
-        }}>
-          <Link href="/poems">
-            <button className="btn-ghost" style={{ letterSpacing: "0.146em" }}>
-              ✦ POEMS
-            </button>
-          </Link>
-          <Link href="/math">
-            <button className="btn-ghost" style={{ letterSpacing: "0.146em" }}>
-              ✦ MATH
-            </button>
-          </Link>
-          <Link href="/promises">
-            <button className="btn-ghost" style={{
-              letterSpacing: "0.146em",
-              borderColor: "rgba(220,160,160,0.236)",
-              color: "rgba(220,160,160,0.618)",
-              background: "rgba(220,160,160,0.04)",
-            }}>
-              ✦ PROMISES
-            </button>
-          </Link>
-        </div>
+        {/* Living Pulse — directly under Today's Card */}
+        {results.length === 0 && (
+          <div className="stagger-fade" style={{
+            textAlign: "center",
+            marginTop: "-0.618rem",
+            marginBottom: "1.618rem",
+            animationDelay: "280ms",
+          }}>
+            <LivingPulse onNavigate={(path) => router.push(path)} />
+          </div>
+        )}
 
         {/* Search input — ABOVE doors so it's always visible */}
         <div id="search-anchor" className="stagger-fade" style={{
@@ -522,36 +511,6 @@ export default function SearchClient() {
             onBlur={(e) => e.target.style.borderColor = "rgba(201,168,76,0.236)"}
           />
         </div>
-
-        {/* Living Pulse + Discover — below search bar when not searching */}
-        {results.length === 0 && (
-          <div className="stagger-fade" style={{
-            textAlign: "center",
-            marginTop: "-0.618rem",
-            marginBottom: "1.618rem",
-            animationDelay: "450ms",
-            display: "flex", flexDirection: "column", gap: "0.382rem",
-          }}>
-            <LivingPulse onNavigate={(path) => router.push(path)} />
-            <span
-              onClick={() => {
-                const c = getRandomCardPath();
-                if (c) router.push(`/${c.doorSlug}/${c.subId}/${c.cardId}`);
-              }}
-              style={{
-                fontFamily: "var(--font-accent)",
-                fontStyle: "italic",
-                fontSize: "clamp(0.875rem, 1.8vmin + 0.1rem, 1.125rem)",
-                color: "rgba(201,168,76,0.25)",
-                cursor: "pointer",
-                transition: "color 382ms var(--ease-snap)",
-                letterSpacing: "0.02em",
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.618)"}
-              onMouseLeave={(e) => e.currentTarget.style.color = "rgba(201,168,76,0.25)"}
-            >✦ or discover something unexpected</span>
-          </div>
-        )}
 
         {/* Search Results — appear RIGHT below search bar, push doors down */}
         {results.length > 0 && (
