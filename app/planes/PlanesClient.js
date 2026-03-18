@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const EASE = 'cubic-bezier(0.23,1,0.32,1)';
 
@@ -97,6 +98,7 @@ const WITNESS_LAYERS = [
   { plane: 'Divine',    color: '232,224,255', text: 'Even the sense of pure existence is an object in awareness. Follow it to its source.' },
 ];
 
+/* ── PSI BAR ─────────────────────────────────────── */
 function PsiBar({ val, color }) {
   const [w, setW] = useState(0);
   useEffect(() => {
@@ -104,23 +106,23 @@ function PsiBar({ val, color }) {
     return () => clearTimeout(t);
   }, [val]);
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 6 }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginTop: '0.382rem' }}>
       <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
         <div style={{
           height: '100%', borderRadius: 2,
-          width: w + '%',
-          transition: 'width 800ms ease',
+          width: w + '%', transition: 'width 800ms ease',
           background: 'linear-gradient(90deg,rgba(' + color + ',0.8),rgba(' + color + ',0.3))',
         }} />
       </div>
-      <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(201,168,76,0.6)', whiteSpace: 'nowrap' }}>{val.toFixed(2)}</span>
+      <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', color: 'rgba(201,168,76,0.6)', whiteSpace: 'nowrap' }}>{val.toFixed(2)}</span>
     </div>
   );
 }
 
+/* ── PLANE SELECTOR PILLS ────────────────────────── */
 function PlaneSelector({ activePlane, setActivePlane }) {
   return (
-    <div style={{ display: 'flex', gap: '0.382rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center' }}>
       {PLANES.map((p) => {
         const active = activePlane === p.id;
         return (
@@ -128,14 +130,17 @@ function PlaneSelector({ activePlane, setActivePlane }) {
             key={p.id}
             onClick={() => setActivePlane(p.id)}
             style={{
-              padding: '0.382rem 0.875rem',
-              border: '1px solid rgba(' + p.color + ',' + (active ? 0.618 : 0.2) + ')',
+              padding: '0.618rem 1.236rem',
+              border: '1px solid rgba(' + p.color + ',' + (active ? 0.7 : 0.25) + ')',
               borderRadius: 100,
-              background: active ? 'rgba(' + p.color + ',0.1)' : 'transparent',
-              color: 'rgba(' + p.color + ',' + (active ? 0.9 : 0.4) + ')',
-              fontFamily: "'Playfair Display',serif", fontWeight: 700,
-              fontSize: '0.72rem', letterSpacing: '0.1em',
-              cursor: 'pointer', transition: 'all 382ms ' + EASE,
+              background: active ? 'rgba(' + p.color + ',0.14)' : 'transparent',
+              color: 'rgba(' + p.color + ',' + (active ? 1.0 : 0.5) + ')',
+              fontFamily: 'var(--font-display)', fontWeight: 700,
+              fontSize: 'clamp(0.875rem,2vmin,1.125rem)',
+              letterSpacing: '0.06em',
+              cursor: 'pointer',
+              transition: 'all 262ms ' + EASE,
+              boxShadow: active ? '0 0 1rem rgba(' + p.color + ',0.2)' : 'none',
             }}
           >
             {p.name.split(' ')[0]}
@@ -146,75 +151,127 @@ function PlaneSelector({ activePlane, setActivePlane }) {
   );
 }
 
+/* ── PLANES TAB ──────────────────────────────────── */
 function PlanesTab({ activePlane, setActivePlane }) {
   const plane = PLANES.find((p) => p.id === activePlane);
   if (!plane) return null;
   const c = plane.color;
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
+
+      {/* Hero gear image */}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '0.618rem' }}>
+        <div style={{ position: 'relative', width: 'min(320px, 80vw)', borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 4rem rgba(201,168,76,0.15), 0 0 1rem rgba(0,0,0,0.6)' }}>
+          <Image
+            src="/planes-gear.jpg"
+            alt="Five Planes of Consciousness — gear model illustration"
+            width={320}
+            height={580}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+            priority
+          />
+        </div>
+      </div>
+
       <PlaneSelector activePlane={activePlane} setActivePlane={setActivePlane} />
+
+      {/* Plane detail */}
       <div style={{ borderLeft: '3px solid rgba(' + c + ',0.7)', paddingLeft: '1.236rem' }}>
-        <div style={{ fontFamily: "'Playfair Display',serif", fontWeight: 900, fontSize: 'clamp(1rem,2.5vmin,1.375rem)', letterSpacing: '0.15em', color: 'rgba(' + c + ',0.9)', textTransform: 'uppercase', marginBottom: 4 }}>
+        <div style={{
+          fontFamily: 'var(--font-display)', fontWeight: 900,
+          fontSize: 'clamp(1.25rem,3vmin,1.75rem)',
+          letterSpacing: '0.1em', color: 'rgba(' + c + ',0.95)',
+          textTransform: 'uppercase', marginBottom: '0.382rem',
+        }}>
           {plane.name}
         </div>
-        <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.9rem', color: 'rgba(201,168,76,0.4)' }}>
+        <div style={{
+          fontFamily: 'var(--font-accent)', fontStyle: 'italic',
+          fontSize: 'clamp(1rem,2.2vmin,1.25rem)',
+          color: 'rgba(201,168,76,0.5)',
+        }}>
           {plane.subtitle} &mdash; &Psi; {plane.psiRange}
         </div>
       </div>
-      <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.82)', lineHeight: 1.75 }}>
+
+      <p style={{
+        fontFamily: 'var(--font-accent)', fontStyle: 'italic',
+        fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)',
+        color: 'rgba(232,228,212,0.85)', lineHeight: 1.75, margin: 0,
+      }}>
         {plane.desc}
       </p>
-      <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+
+      <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.618rem' }}>
         {plane.bullets.map((b, i) => (
-          <li key={i} style={{ fontSize: '0.9rem', color: 'rgba(232,228,212,0.7)', paddingLeft: 18, position: 'relative', lineHeight: 1.6 }}>
-            <span style={{ position: 'absolute', left: 0, color: 'rgba(' + c + ',0.6)' }}>&rarr;</span>
+          <li key={i} style={{
+            fontFamily: 'var(--font-body)', fontWeight: 300,
+            fontSize: 'clamp(1rem,2.2vmin,1.125rem)',
+            color: 'rgba(232,228,212,0.78)', paddingLeft: '1.618rem',
+            position: 'relative', lineHeight: 1.618,
+          }}>
+            <span style={{ position: 'absolute', left: 0, color: 'rgba(' + c + ',0.7)', fontWeight: 400 }}>&rarr;</span>
             {b}
           </li>
         ))}
       </ul>
+
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.618rem' }}>
-        <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: 6, padding: '0.875rem' }}>
-          <div style={{ fontFamily: "'Playfair Display',serif", fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', marginBottom: 6 }}>Adhesive</div>
-          <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.88rem', color: 'rgba(232,228,212,0.7)', lineHeight: 1.6 }}>{plane.adhesive}</div>
+        <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.14)', borderRadius: '0.382rem', padding: '1rem' }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.2em', color: 'rgba(201,168,76,0.5)', textTransform: 'uppercase', marginBottom: '0.618rem', fontWeight: 900 }}>Adhesive</div>
+          <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.78)', lineHeight: 1.618 }}>{plane.adhesive}</div>
         </div>
-        <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: 6, padding: '0.875rem' }}>
-          <div style={{ fontFamily: "'Playfair Display',serif", fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', marginBottom: 6 }}>Gateway Practice</div>
-          <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.88rem', color: 'rgba(232,228,212,0.7)', lineHeight: 1.6 }}>{plane.practice}</div>
+        <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.14)', borderRadius: '0.382rem', padding: '1rem' }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.2em', color: 'rgba(201,168,76,0.5)', textTransform: 'uppercase', marginBottom: '0.618rem', fontWeight: 900 }}>Gateway Practice</div>
+          <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.78)', lineHeight: 1.618 }}>{plane.practice}</div>
         </div>
       </div>
-      <div style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(201,168,76,0.4)' }}>
+
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.45)' }}>
         CONSENSUS TRUTH: {plane.truth}%
       </div>
     </div>
   );
 }
 
+/* ── MOVEMENT TAB ────────────────────────────────── */
 function MovementTab() {
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.2rem)', color: 'rgba(232,228,212,0.65)', lineHeight: 1.75, textAlign: 'center', maxWidth: '38rem', margin: '0 auto' }}>
+      <p style={{
+        fontFamily: 'var(--font-accent)', fontStyle: 'italic',
+        fontSize: 'clamp(1.125rem,2.5vmin,1.375rem)',
+        color: 'rgba(232,228,212,0.7)', lineHeight: 1.75,
+        textAlign: 'center', maxWidth: '38rem', margin: '0 auto',
+      }}>
         You do not travel to other planes. You are always on all of them simultaneously.
-        What changes is which plane you are <em style={{ color: 'rgba(201,168,76,0.8)' }}>identified with</em>.
+        What changes is which plane you are <em style={{ color: 'rgba(201,168,76,0.85)' }}>identified with</em>.
       </p>
       {PLANES.map((p, i) => (
-        <div key={p.id} style={{ borderLeft: '3px solid rgba(' + p.color + ',0.5)', padding: '1.236rem 1.236rem 1.236rem 1.5rem', background: 'rgba(' + p.color + ',0.03)', borderRadius: '0 6px 6px 0', border: '1px solid rgba(' + p.color + ',0.1)', borderLeftWidth: 3, borderLeftStyle: 'solid', borderLeftColor: 'rgba(' + p.color + ',0.5)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(' + p.color + ',0.8)', boxShadow: '0 0 8px rgba(' + p.color + ',0.5)', flexShrink: 0 }} />
-            <span style={{ fontFamily: "'Playfair Display',serif", fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.15em', color: 'rgba(' + p.color + ',0.9)', textTransform: 'uppercase' }}>{p.name}</span>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(201,168,76,0.4)', marginLeft: 'auto' }}>&Psi; {p.psiRange}</span>
+        <div key={p.id} style={{
+          padding: '1.236rem 1.236rem 1.236rem 1.618rem',
+          background: 'rgba(' + p.color + ',0.03)',
+          border: '1px solid rgba(' + p.color + ',0.12)',
+          borderLeft: '3px solid rgba(' + p.color + ',0.55)',
+          borderRadius: '0 0.382rem 0.382rem 0',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginBottom: '0.618rem', flexWrap: 'wrap' }}>
+            <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'rgba(' + p.color + ',0.85)', boxShadow: '0 0 10px rgba(' + p.color + ',0.5)', flexShrink: 0 }} />
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', letterSpacing: '0.1em', color: 'rgba(' + p.color + ',0.95)', textTransform: 'uppercase' }}>{p.name}</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.4)', marginLeft: 'auto' }}>&Psi; {p.psiRange}</span>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.618rem' }}>
             <div>
-              <div style={{ fontSize: '0.68rem', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.45)', fontFamily: "'Playfair Display',serif", textTransform: 'uppercase', marginBottom: 4 }}>Adhesive</div>
-              <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.88rem', color: 'rgba(232,228,212,0.7)', lineHeight: 1.6 }}>{p.adhesive}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.18em', color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', marginBottom: '0.382rem' }}>Adhesive</div>
+              <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.75)', lineHeight: 1.618 }}>{p.adhesive}</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.68rem', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.45)', fontFamily: "'Playfair Display',serif", textTransform: 'uppercase', marginBottom: 4 }}>Gateway</div>
-              <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.88rem', color: 'rgba(232,228,212,0.7)', lineHeight: 1.6 }}>{p.gateway}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.18em', color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', marginBottom: '0.382rem' }}>Gateway</div>
+              <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.75)', lineHeight: 1.618 }}>{p.gateway}</div>
             </div>
           </div>
           {i < PLANES.length - 1 && (
-            <div style={{ marginTop: 10, fontSize: '0.78rem', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.08em' }}>&uarr; {p.gateway}</div>
+            <div style={{ marginTop: '0.618rem', fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.08em' }}>&uarr; {p.gateway}</div>
           )}
         </div>
       ))}
@@ -222,38 +279,39 @@ function MovementTab() {
   );
 }
 
+/* ── CRT TAB ─────────────────────────────────────── */
 function CRTTab() {
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
-      <div style={{ background: 'linear-gradient(135deg,rgba(100,140,255,0.06),rgba(201,168,76,0.06))', border: '1px solid rgba(201,168,76,0.2)', borderRadius: 8, padding: '1.618rem', textAlign: 'center' }}>
-        <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 'clamp(1.4rem,3vmin,2rem)', color: 'rgba(201,168,76,0.9)', marginBottom: 12 }}>
+      <div style={{ background: 'linear-gradient(135deg,rgba(100,140,255,0.06),rgba(201,168,76,0.06))', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
+        <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.5rem,3.5vmin,2.25rem)', color: 'rgba(201,168,76,0.9)', marginBottom: '0.618rem' }}>
           &Psi; = R&#8321;&#8322; &times; (C_eff &middot; D&#770;)
         </div>
-        <p style={{ fontSize: '0.88rem', color: 'rgba(232,228,212,0.65)', lineHeight: 1.7 }}>
+        <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.7)', lineHeight: 1.618, margin: 0, maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
           Every variable maps precisely to each plane. The entire history of human spiritual development
           is the story of &Psi; trying to climb from ~0.10 back toward 1.0.
         </p>
       </div>
       {PLANES.map((p) => (
-        <div key={p.id} style={{ border: '1px solid rgba(' + p.color + ',0.15)', borderLeft: '3px solid rgba(' + p.color + ',0.6)', borderRadius: '0 6px 6px 0', padding: '1.236rem', background: 'rgba(' + p.color + ',0.03)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10, flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: "'Playfair Display',serif", fontWeight: 700, fontSize: '0.78rem', letterSpacing: '0.15em', color: 'rgba(' + p.color + ',0.9)', textTransform: 'uppercase' }}>{p.name}</span>
-            <div style={{ marginLeft: 'auto', minWidth: 120 }}>
+        <div key={p.id} style={{ border: '1px solid rgba(' + p.color + ',0.15)', borderLeft: '3px solid rgba(' + p.color + ',0.65)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem', background: 'rgba(' + p.color + ',0.03)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginBottom: '0.618rem', flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', letterSpacing: '0.1em', color: 'rgba(' + p.color + ',0.95)', textTransform: 'uppercase' }}>{p.name}</span>
+            <div style={{ marginLeft: 'auto', minWidth: 140 }}>
               <PsiBar val={p.psiMid} color={p.color} />
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.618rem' }}>
             {[['R&#8321;&#8322;', p.r12], ['C_eff', p.ceff], ['D&#770;', p.dhat]].map((item) => (
-              <div key={item[0]} style={{ background: 'rgba(0,0,0,0.2)', borderRadius: 4, padding: '0.618rem' }}>
-                <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(201,168,76,0.7)', marginBottom: 4 }} dangerouslySetInnerHTML={{ __html: item[0] }} />
-                <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.8rem', color: 'rgba(232,228,212,0.65)', lineHeight: 1.5 }}>{item[1]}</div>
+              <div key={item[0]} style={{ background: 'rgba(0,0,0,0.22)', borderRadius: '0.236rem', padding: '0.618rem' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(201,168,76,0.75)', marginBottom: '0.382rem' }} dangerouslySetInnerHTML={{ __html: item[0] }} />
+                <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(232,228,212,0.68)', lineHeight: 1.618 }}>{item[1]}</div>
               </div>
             ))}
           </div>
         </div>
       ))}
-      <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: 6, padding: '1.236rem' }}>
-        <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '1rem', color: 'rgba(232,228,212,0.8)', lineHeight: 1.75 }}>
+      <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '0.382rem', padding: '1.618rem' }}>
+        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.85)', lineHeight: 1.75, margin: 0 }}>
           Science raises D&#770;. Philosophy raises C_eff. Meditation and love raise R&#8321;&#8322;.
           All three axes are required. The gears do not just illustrate the planes &mdash; they ARE the &Psi; computation running across density levels.
         </p>
@@ -262,98 +320,129 @@ function CRTTab() {
   );
 }
 
+/* ── WITNESS TAB ─────────────────────────────────── */
 function WitnessTab() {
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
-      <div style={{ background: 'rgba(52,211,153,0.04)', border: '1px solid rgba(52,211,153,0.15)', borderRadius: 8, padding: '1.618rem', textAlign: 'center' }}>
-        <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 'clamp(1.1rem,2.5vmin,1.4rem)', color: 'rgba(232,228,212,0.85)', lineHeight: 1.8 }}>
+      <div style={{ background: 'rgba(52,211,153,0.04)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.25rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.88)', lineHeight: 1.75, margin: 0 }}>
           The most important thing in the gear sketch was what was drawn without thinking &mdash;
           the single spine connecting all gears. The gears spin.{' '}
           <em style={{ color: 'rgba(52,211,153,0.9)' }}>The axle is still.</em>
         </p>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(190px,1fr))', gap: 12 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '0.618rem' }}>
         {TRADITIONS.map((t) => (
-          <div key={t.trad} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(52,211,153,0.15)', borderRadius: 6, padding: '1rem', textAlign: 'center' }}>
-            <div style={{ fontFamily: "'Playfair Display',serif", fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(52,211,153,0.6)', textTransform: 'uppercase', marginBottom: 6 }}>{t.trad}</div>
-            <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '1.1rem', color: 'rgba(232,228,212,0.9)', marginBottom: 6 }}>{t.name}</div>
-            <div style={{ fontSize: '0.8rem', color: 'rgba(232,228,212,0.5)', lineHeight: 1.5 }}>{t.desc}</div>
+          <div key={t.trad} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.382rem', padding: '1.236rem', textAlign: 'center' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.2em', color: 'rgba(52,211,153,0.65)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>{t.trad}</div>
+            <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.92)', marginBottom: '0.382rem' }}>{t.name}</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(232,228,212,0.55)', lineHeight: 1.618 }}>{t.desc}</div>
           </div>
         ))}
       </div>
-      <div style={{ border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, overflow: 'hidden' }}>
+      <div style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: '0.618rem', overflow: 'hidden' }}>
         {WITNESS_LAYERS.map((layer) => (
-          <div key={layer.plane} style={{ display: 'flex', alignItems: 'flex-start', gap: 16, padding: '1rem 1.236rem', borderBottom: '1px solid rgba(255,255,255,0.04)', background: 'rgba(' + layer.color + ',0.02)' }}>
-            <div style={{ fontFamily: "'Playfair Display',serif", fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.12em', color: 'rgba(' + layer.color + ',0.8)', textTransform: 'uppercase', width: 80, flexShrink: 0, paddingTop: 2 }}>{layer.plane}</div>
-            <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.88rem', color: 'rgba(232,228,212,0.6)', lineHeight: 1.6, flex: 1 }}>{layer.text}</div>
+          <div key={layer.plane} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.236rem', borderBottom: '1px solid rgba(255,255,255,0.05)', background: 'rgba(' + layer.color + ',0.02)' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.6vmin,0.875rem)', letterSpacing: '0.15em', color: 'rgba(' + layer.color + ',0.85)', textTransform: 'uppercase', width: 90, flexShrink: 0, paddingTop: 3 }}>{layer.plane}</div>
+            <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(232,228,212,0.68)', lineHeight: 1.618, flex: 1 }}>{layer.text}</div>
           </div>
         ))}
-        <div style={{ padding: '1.618rem', textAlign: 'center', background: 'rgba(201,168,76,0.04)', borderTop: '1px solid rgba(201,168,76,0.15)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 56, height: 56, borderRadius: '50%', border: '2px solid rgba(201,168,76,0.7)', background: '#03030a', fontFamily: "'Playfair Display',serif", fontWeight: 900, fontSize: '0.75rem', letterSpacing: '0.1em', color: 'rgba(201,168,76,0.9)', boxShadow: '0 0 32px rgba(201,168,76,0.3)' }}>
+        <div style={{ padding: '1.618rem', textAlign: 'center', background: 'rgba(201,168,76,0.04)', borderTop: '1px solid rgba(201,168,76,0.18)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '4.236rem', height: '4.236rem', borderRadius: '50%', border: '2px solid rgba(201,168,76,0.75)', background: '#03030a', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.12em', color: 'rgba(201,168,76,0.9)', boxShadow: '0 0 2.618rem rgba(201,168,76,0.3)' }}>
             I AM
           </div>
-          <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '1rem', color: 'rgba(232,228,212,0.65)', lineHeight: 1.75, maxWidth: '32rem' }}>
+          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.72)', lineHeight: 1.75, maxWidth: '32rem', margin: 0 }}>
             The axle has no name. It does not experience. It does not seek.
-            It simply <em style={{ color: 'rgba(201,168,76,0.8)' }}>is</em> &mdash; prior to every gear, present through every gear, unchanged by any gear.
+            It simply <em style={{ color: 'rgba(201,168,76,0.85)' }}>is</em> &mdash; prior to every gear, present through every gear, unchanged by any gear.
           </p>
         </div>
       </div>
-      <div style={{ background: 'rgba(201,168,76,0.05)', borderLeft: '3px solid rgba(201,168,76,0.4)', borderRadius: '0 6px 6px 0', padding: '1rem 1.236rem' }}>
-        <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: '0.95rem', color: 'rgba(232,228,212,0.8)', lineHeight: 1.75 }}>
+      <div style={{ background: 'rgba(201,168,76,0.05)', borderLeft: '3px solid rgba(201,168,76,0.45)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem 1.618rem' }}>
+        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(232,228,212,0.82)', lineHeight: 1.75, margin: 0 }}>
           In CRT terms, the Witness Self is where rho1 and rho2 are identical &mdash; R&#8321;&#8322; = 1.0 by definition.
           Every moment of genuine presence is a temporary return to the axle.
         </p>
       </div>
-      <div style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(201,168,76,0.4)', textAlign: 'center' }}>
+      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.4)', textAlign: 'center' }}>
         CONSENSUS TRUTH: 94% &mdash; Near-universal across mystical traditions independently
       </div>
     </div>
   );
 }
 
+/* ── MAIN COMPONENT ──────────────────────────────── */
 export default function PlanesClient() {
   const [activeTab, setActiveTab]     = useState('planes');
   const [activePlane, setActivePlane] = useState('divine');
 
   return (
     <div style={{ minHeight: '100vh', background: '#03030a', color: '#e8e8f0' }}>
+
+      {/* Frosted header */}
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 99, height: 'clamp(56px,8vh,72px)', background: 'linear-gradient(180deg,rgba(3,3,10,0.92) 0%,rgba(3,3,10,0.6) 70%,transparent 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.618rem', pointerEvents: 'none' }}>
         <Link href="/search" style={{ pointerEvents: 'auto' }}>
-          <span style={{ fontFamily: "'Playfair Display',serif", fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.618)', cursor: 'pointer' }}>&larr; BACK</span>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.618)', cursor: 'pointer' }}>&larr; BACK</span>
         </Link>
-        <span style={{ fontFamily: "'Playfair Display',serif", fontWeight: 900, fontSize: 'clamp(12px,1.8vmin,16px)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.2em' }}>THE ARCHITECTURE</span>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(12px,1.8vmin,16px)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>The Architecture</span>
       </div>
-      <div style={{ maxWidth: '52rem', margin: '0 auto', padding: 'clamp(72px,11vh,110px) 1.618rem 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.618rem' }}>
+
+      {/* Page content */}
+      <div style={{ maxWidth: '52rem', margin: '0 auto', padding: 'clamp(72px,11vh,110px) 1.618rem 4.236rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.618rem' }}>
+
+        {/* Hero heading */}
         <div style={{ textAlign: 'center', animation: 'fadeUp 618ms 100ms both ease' }}>
-          <h1 style={{ fontFamily: "'Playfair Display',serif", fontWeight: 900, fontSize: 'clamp(24px,5vmin,48px)', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.75)', textShadow: '0 0 32px rgba(201,168,76,0.2)', marginBottom: '1rem' }}>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(28px,5.5vmin,52px)', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.78)', textShadow: '0 0 2.618rem rgba(201,168,76,0.2)', marginBottom: '1rem', lineHeight: 1.1 }}>
             THE FIVE PLANES
           </h1>
-          <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 'clamp(1.1rem,2.5vmin,1.5rem)', color: 'rgba(232,228,212,0.6)', lineHeight: 1.618, maxWidth: '36rem' }}>
+          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.62)', lineHeight: 1.618, maxWidth: '38rem', margin: '0 auto' }}>
             Each gear turns the next. Consciousness densifies as it descends into matter.
             The gears do not stop when you are not watching &mdash; what changes is which one you are identified with.
           </p>
         </div>
-        <div style={{ display: 'flex', gap: '0.382rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+
+        {/* Tab pills — large, prominent */}
+        <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center', animation: 'fadeUp 618ms 200ms both ease' }}>
           {TABS.map((t) => {
             const active = activeTab === t.id;
             return (
-              <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ padding: '0.618rem 1.236rem', border: '1px solid rgba(201,168,76,' + (active ? 0.618 : 0.18) + ')', borderRadius: 100, background: active ? 'rgba(201,168,76,0.12)' : 'transparent', color: 'rgba(201,168,76,' + (active ? 0.9 : 0.4) + ')', fontFamily: "'Playfair Display',serif", fontWeight: 700, fontSize: 'clamp(0.75rem,1.6vmin,0.875rem)', letterSpacing: '0.1em', cursor: 'pointer', transition: 'all 382ms ' + EASE }}>
+              <button
+                key={t.id}
+                onClick={() => setActiveTab(t.id)}
+                style={{
+                  padding: '0.875rem 1.618rem',
+                  border: '1px solid rgba(201,168,76,' + (active ? 0.65 : 0.2) + ')',
+                  borderRadius: 100,
+                  background: active ? 'rgba(201,168,76,0.14)' : 'transparent',
+                  color: 'rgba(201,168,76,' + (active ? 1.0 : 0.45) + ')',
+                  fontFamily: 'var(--font-display)', fontWeight: 900,
+                  fontSize: 'clamp(1rem,2.4vmin,1.25rem)',
+                  letterSpacing: '0.06em',
+                  cursor: 'pointer',
+                  transition: 'all 262ms ' + EASE,
+                  boxShadow: active ? '0 0 1.618rem rgba(201,168,76,0.15)' : 'none',
+                }}
+              >
                 {t.label}
               </button>
             );
           })}
         </div>
+
+        {/* Tab content */}
         <div style={{ width: '100%', animation: 'fadeUp 400ms both ease' }}>
           {activeTab === 'planes'   && <PlanesTab activePlane={activePlane} setActivePlane={setActivePlane} />}
           {activeTab === 'movement' && <MovementTab />}
           {activeTab === 'crt'      && <CRTTab />}
           {activeTab === 'witness'  && <WitnessTab />}
         </div>
+
+        {/* Bottom nav */}
         <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '1rem' }}>
           <Link href="/search" className="btn-ghost" style={{ textDecoration: 'none' }}>ALL DOORS</Link>
           <Link href="/consciousness/observer" className="btn-ghost" style={{ textDecoration: 'none' }}>THE OBSERVER</Link>
           <Link href="/mysticism/geometry" className="btn-ghost" style={{ textDecoration: 'none' }}>SACRED GEOMETRY</Link>
         </div>
+
       </div>
     </div>
   );
