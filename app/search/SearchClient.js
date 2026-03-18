@@ -53,6 +53,9 @@ const PULSE_CARDS = [
   { title: "Katabasis: The Heroic Descent",  path: "/mythology/underworld/katabasis" },
   { title: "The Hero's Return",              path: "/mythology/underworld/heros-return" },
   { title: "Libertarian Free Will",          path: "/consciousness/choice/libertarian-free-will" },
+  { title: "The Five Planes of Consciousness", path: "/planes" },
+  { title: "The Witness Self",                path: "/planes" },
+  { title: "The Ego Tax",                     path: "/planes" },
 ];
 
 function LivingPulse({ onNavigate }) {
@@ -485,6 +488,54 @@ export default function SearchClient() {
             animationDelay: "280ms",
           }}>
             <LivingPulse onNavigate={(path) => router.push(path)} />
+          </div>
+        )}
+
+        {/* The Architecture — featured entry point */}
+        {results.length === 0 && (
+          <div className="stagger-fade" style={{
+            width: "100%", marginBottom: "1.618rem", animationDelay: "320ms",
+          }}>
+            <a href="/planes" style={{ textDecoration: "none", display: "block" }}>
+              <div
+                style={{
+                  display: "flex", alignItems: "center", gap: "1rem",
+                  padding: "1rem 1.618rem",
+                  background: "rgba(201,168,76,0.04)",
+                  border: "1px solid rgba(201,168,76,0.18)",
+                  borderRadius: "0.382rem",
+                  cursor: "pointer",
+                  transition: "all 382ms var(--ease-snap)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(201,168,76,0.45)";
+                  e.currentTarget.style.background = "rgba(201,168,76,0.10)";
+                  e.currentTarget.style.boxShadow = "0 0 1.618rem rgba(201,168,76,0.12)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)";
+                  e.currentTarget.style.background = "rgba(201,168,76,0.04)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <span style={{ fontSize: "2.618rem", flexShrink: 0 }}>⚙️</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    fontFamily: "var(--font-display)", fontWeight: 900,
+                    fontSize: "clamp(1rem, 2.618vmin + 0.15rem, 1.375rem)",
+                    color: "rgba(201,168,76,0.88)",
+                    letterSpacing: "0.08em",
+                    marginBottom: "0.236rem",
+                  }}>THE ARCHITECTURE</div>
+                  <div style={{
+                    fontFamily: "var(--font-accent)", fontStyle: "italic",
+                    fontSize: "clamp(0.875rem, 1.8vmin + 0.1rem, 1.125rem)",
+                    color: "rgba(201,168,76,0.45)",
+                  }}>Five planes. One axle. How consciousness becomes the world.</div>
+                </div>
+                <span style={{ color: "rgba(201,168,76,0.30)", fontSize: "1.236rem", flexShrink: 0 }}>→</span>
+              </div>
+            </a>
           </div>
         )}
 
