@@ -526,6 +526,48 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             </Link>
           )}
 
+          {/* Gone With the Wind — shown for 8 matching topic slugs */}
+          {['hero', 'trickster', 'grief', 'awakening', 'oneness', 'identity', 'observer', 'giving'].includes(topicSlug) && (
+            <Link href="/gonewiththewind" style={{ textDecoration: 'none', width: '100%', display: 'block', marginTop: '0.618rem' }}>
+              <div style={{
+                padding: '1rem 1.236rem',
+                background: 'rgba(212,162,76,0.04)',
+                border: '1px solid rgba(212,162,76,0.20)',
+                borderRadius: '0.382rem',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                gap: '0.618rem',
+                transition: 'all 382ms cubic-bezier(0.23,1,0.32,1)',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,162,76,0.10)'; e.currentTarget.style.borderColor = 'rgba(212,162,76,0.45)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(212,162,76,0.04)'; e.currentTarget.style.borderColor = 'rgba(212,162,76,0.20)'; }}
+              >
+                <div>
+                  <div style={{
+                    fontFamily: 'var(--font-display)', fontWeight: 700,
+                    fontSize: 'clamp(0.875rem, 2vmin, 1rem)',
+                    color: 'rgba(212,162,76,0.85)', letterSpacing: '0.05em',
+                    marginBottom: '0.236rem',
+                  }}>Gone With the Wind — 10 Truths Hidden in Plain Sight</div>
+                  <div style={{
+                    fontFamily: 'var(--font-accent)', fontStyle: 'italic',
+                    fontSize: 'clamp(0.812rem, 1.6vmin, 0.95rem)',
+                    color: 'rgba(212,162,76,0.45)',
+                  }}>
+                    {topicSlug === 'hero'      && "Scarlett’s entire arc is the hero’s journey"}
+                    {topicSlug === 'trickster' && 'Rhett Butler is the textbook trickster archetype'}
+                    {topicSlug === 'grief'     && 'The wound becomes the most beautiful part'}
+                    {topicSlug === 'awakening' && 'The Civil War is the Dark Night of the Soul made visible'}
+                    {topicSlug === 'oneness'   && 'Ego stripped layer by layer until only truth remains'}
+                    {topicSlug === 'identity'  && 'Every costume ripped away until only Scarlett remains'}
+                    {topicSlug === 'observer'  && 'Scarlett and Belle — shadow projection in two characters'}
+                    {topicSlug === 'giving'    && 'Melanie — the purest love almost nobody noticed'}
+                  </div>
+                </div>
+                <span style={{ color: 'rgba(212,162,76,0.40)', fontSize: '1.236rem', flexShrink: 0 }}>→</span>
+              </div>
+            </Link>
+          )}
+
       </div>
     </div>
   );
