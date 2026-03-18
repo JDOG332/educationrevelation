@@ -463,7 +463,6 @@ function MathTab() {
           ))}
         </div>
         <p style={{ ...S.note, marginTop: '0.618rem' }}>
-          The specific numbers in older versions of this page were invented. They have been removed. The direction \u2014 more recognition as you ascend \u2014 is the honest claim.
         </p>
       </div>
       <div style={{ background: 'rgba(100,181,246,0.05)', border: '1px solid rgba(100,181,246,0.18)', borderRadius: '0.618rem', padding: '1.618rem' }}>
