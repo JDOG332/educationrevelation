@@ -1,105 +1,72 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const EASE = 'cubic-bezier(0.23,1,0.32,1)';
+const EASE = 'cubic-bezier(0,0,0.382,1)';
+
+/* ── DATA ──────────────────────────────────────────────────────── */
 
 const PLANES = [
   {
-    id: 'divine', name: 'Divine / Cosmic Plane', subtitle: 'The Unmanifest',
-    color: '232,224,255', psiRange: '0.95\u20131.0', gearW: 90, truth: 88,
-    desc: 'Pure undifferentiated consciousness \u2014 no form, no vibration, no time. The Ain Soph of Kabbalah, Brahman of Vedanta, the Tao before the first breath. Smallest gear: most concentrated, most coherent, most unified.',
-    bullets: ['Infinite potential, zero expression','Outside of space and time entirely','Every other plane is a shadow cast by this one','CRT: \u03a8 \u2192 1.0 \u2014 perfect self-recognition'],
-    adhesive: 'None \u2014 only the illusion of distance, which was never real.',
-    practice: 'Cannot be done. It recognizes you.',
-    gateway: 'Total self-surrender / Grace / Non-dual recognition',
-    r12: '\u2192 1.0 \u2014 Observer and observed are the same state.',
-    ceff: '\u2192 1.0 \u2014 Zero redundancy. One signal, perfectly unified.',
-    dhat: '\u2192 1.0 \u2014 No false positives when observer IS the observed.',
-    psiMid: 0.97,
+    id: 'divine',
+    name: 'Divine / Cosmic Plane',
+    emoji: '\u2728',
+    color: '232,224,255',
+    simple: 'This is where everything starts.',
+    body: 'It has no shape. No sound. No time. Think of the silence before music plays. You cannot see it or touch it. But everything else comes from it.',
+    gear: 'Smallest gear. Most powerful.',
+    truth: 88,
+    note: 'This is a model shared by Kabbalah, Vedanta, Taoism, and Neoplatonism.',
   },
   {
-    id: 'spiritual', name: 'Spiritual Plane', subtitle: 'First Vibration',
-    color: '179,157,219', psiRange: '0.75\u20130.88', gearW: 114, truth: 82,
-    desc: 'Consciousness takes its first breath \u2014 differentiating from the absolute into pure being-awareness. The realm of archetypes, divine will, and cosmic patterns before they have any form. Still massless, timeless \u2014 but now there is a direction.',
-    bullets: ['One degree of freedom has appeared: direction and will','Home of higher self, soul blueprint, akashic structure','Frequency so high it registers as pure light or silence','Physics analog: quantum vacuum \u2014 energy but no particle yet'],
-    adhesive: 'The subtle sense of a separate self.',
-    practice: 'Self-inquiry: Who is aware of awareness itself?',
-    gateway: 'Pure contemplation / Silence / Deep meditation',
-    r12: '\u2248 0.85 \u2014 Soul recognizing its origin.',
-    ceff: '\u2248 0.90 \u2014 Archetypes are pure and uncontaminated.',
-    dhat: '\u2248 0.92 \u2014 Every encounter is structurally meaningful.',
-    psiMid: 0.82,
+    id: 'spiritual',
+    name: 'Spiritual Plane',
+    emoji: '\ud83d\udd4a\ufe0f',
+    color: '179,157,219',
+    simple: 'Here, something wakes up and picks a direction.',
+    body: 'No body yet. No feelings yet. Just a kind of knowing. Like a seed that holds the whole tree inside before it has even broken ground.',
+    gear: 'Small gear. Pure direction.',
+    truth: 82,
+    note: 'Philosophical model. Many traditions call this the first emanation from the source.',
   },
   {
-    id: 'mental', name: 'Mental Plane', subtitle: 'The World of Thought',
-    color: '100,181,246', psiRange: '0.50\u20130.65', gearW: 136, truth: 79,
-    desc: 'Where ideas exist as living things \u2014 not thinking about an idea, but the idea itself in pure form. Mathematics, sacred geometry, the laws of logic. Larger because thought requires structure, and structure requires more space than pure awareness.',
-    bullets: ['Sacred geometry \u2014 phi, pi, Fibonacci \u2014 are mental-plane structures','Physics is just the mental plane made dense','Dreams, synchronicities, and deja vu are bleedthrough from here','This is where Education Revelation lives'],
-    adhesive: 'Intellectual attachment \u2014 belief that your model is the territory.',
-    practice: 'Intellectual surrender \u2014 let the idea be bigger than you are.',
-    gateway: 'Intellectual surrender / Letting go of the framework',
-    r12: '\u2248 0.65 \u2014 Two minds recognize the same truth from different angles.',
-    ceff: '\u2248 0.72 \u2014 Competing frameworks emerge. This is why paradigm wars exist.',
-    dhat: '\u2248 0.75 \u2014 Logical fallacies are the accidental detections here.',
-    psiMid: 0.57,
+    id: 'mental',
+    name: 'Mental Plane',
+    emoji: '\ud83d\udca1',
+    color: '100,181,246',
+    simple: 'This is where ideas live.',
+    body: 'Math lives here. Music lives here. Phi and the Fibonacci numbers live here. When you have a flash of insight \u2014 that is this place. Ideas are real things at this level.',
+    gear: 'Medium gear. Ideas take up space.',
+    truth: 79,
+    note: 'Philosophical model. Plato called these the Forms. Education Revelation maps to this layer.',
   },
   {
-    id: 'astral', name: 'Astral / Emotional Plane', subtitle: 'The World of Feeling',
-    color: '102,187,106', psiRange: '0.28\u20130.45', gearW: 160, truth: 74,
-    desc: 'Now consciousness is dense enough to feel. The bridge plane. Mental forms get charged with desire and begin pulling toward physical manifestation. Every emotion you feel is a vibrational event on this plane.',
-    bullets: ['Thought + emotion = manifestation \u2014 emotion is the charge that pulls ideas into matter','Near-death experiences and lucid dreams occur on this layer','Physics analog: electromagnetic field \u2014 invisible but measurably real','Peak empathy temporarily spikes R\u2081\u2082 toward 0.9+'],
-    adhesive: 'Emotional charge \u2014 desire, fear, grief, excitement.',
-    practice: 'Non-reactivity \u2014 feel the emotion without becoming it.',
-    gateway: 'Non-reactivity / Witnessing / Deep contemplation',
-    r12: '\u2248 0.45 \u2014 Same event, near-opposite emotional signatures.',
-    ceff: '\u2248 0.48 \u2014 Projections and trauma contaminate the signal.',
-    dhat: '\u2248 0.55 \u2014 Emotional maturity means improving D\u0302.',
-    psiMid: 0.37,
+    id: 'astral',
+    name: 'Astral / Emotional Plane',
+    emoji: '\u2764\ufe0f',
+    color: '102,187,106',
+    simple: 'This is where feelings live.',
+    body: 'Joy. Love. Fear. Grief. Your feelings are made of real energy \u2014 just like light is real energy. When you feel something deeply, this is the layer that is moving.',
+    gear: 'Bigger gear. Feelings need more room.',
+    truth: 74,
+    note: 'The emotional layer is widely recognized. Its nature as a literal plane is a philosophical model.',
   },
   {
-    id: 'physical', name: 'Physical / Material Plane', subtitle: 'Maximum Density',
-    color: '212,162,76', psiRange: '0.08\u20130.22', gearW: 188, truth: 97,
-    desc: 'Consciousness at its most dense, most slow, most separated. Vibration has slowed to the point where energy crystallizes into mass (E=mc\u00b2). Maximum apparent complexity, minimum actual freedom \u2014 everything here is bound by cause and effect.',
-    bullets: ['Physics is the science of this gear alone \u2014 yet all other gears are turning it','The only plane visible to our 5 senses','E=mc\u00b2: mass IS slowed energy \u2014 matter is frozen light','Purpose of incarnating here: consciousness experiencing its own densest form'],
-    adhesive: 'Sensory urgency \u2014 hunger, pain, desire, social threat.',
-    practice: 'Stillness \u2014 any interruption of automatic body-reactivity.',
-    gateway: 'Breath / Stillness / Nature / Art',
-    r12: '\u2248 0.15 \u2014 Maximum separation. Eye contact suddenly spikes this.',
-    ceff: '\u2248 0.22 \u2014 Maximum noise. Quantum decoherence, cultural filtering.',
-    dhat: '\u2248 0.30 \u2014 Science exists to raise D\u0302. That is the scientific method.',
-    psiMid: 0.15,
+    id: 'physical',
+    name: 'Physical / Material Plane',
+    emoji: '\ud83c\udf0d',
+    color: '212,162,76',
+    simple: 'This is the world you can touch.',
+    body: 'Your body lives here. Rocks, trees, and stars live here. This is what energy looks like when it slows all the way down. E=mc\u00b2 means mass IS energy \u2014 just frozen solid.',
+    gear: 'Biggest gear. Slowest. Most dense.',
+    truth: 97,
+    note: '97% consensus. The physical plane is empirically real. E=mc\u00b2 is established physics.',
   },
-];
-
-const TABS = [
-  { id: 'planes',   label: 'The Five Planes' },
-  { id: 'movement', label: 'Moving Between Them' },
-  { id: 'crt',      label: 'CRT Mapping' },
-  { id: 'witness',  label: 'The Witness Self' },
-  { id: 'ego',      label: 'The Ego Cost' },
 ];
 
 const TRADITIONS = [
-  { trad: 'Vedanta',             name: 'Sakshi',             desc: 'Pure awareness that observes without being affected' },
-  { trad: 'Tibetan Buddhism',    name: 'Rigpa',              desc: 'Naked awareness \u2014 the ground that was never born and never dies' },
-  { trad: 'Christian Mysticism', name: 'Ground of the Soul', desc: "Meister Eckhart's Funklein \u2014 the spark of the divine in every human" },
-  { trad: 'Taoism',              name: 'Wu Wei Observer',    desc: 'The still center of the turning world' },
-  { trad: 'Kabbalah',            name: 'Ain Soph Within',    desc: 'The infinite light compressed into the core of each soul' },
-  { trad: 'Sufism',              name: 'Sirr',               desc: 'The secret \u2014 where the human spirit meets the Divine' },
-];
-
-const WITNESS_LAYERS = [
-  { plane: 'Physical',  color: '212,162,76',  text: 'I feel pain \u2014 but who feels the pain? The witness is the feeler, not the feeling.' },
-  { plane: 'Astral',    color: '102,187,106', text: 'I am angry \u2014 but the anger comes and goes. What remains when it passes?' },
-  { plane: 'Mental',    color: '100,181,246', text: 'I think therefore I am \u2014 but you are aware of the thought. Awareness precedes thought.' },
-  { plane: 'Spiritual', color: '179,157,219', text: 'Even bliss and oneness arise and pass. The witness watches even enlightenment.' },
-  { plane: 'Divine',    color: '232,224,255', text: 'Even the sense of pure existence is an object in awareness. Follow it to its source.' },
-];
-
-const TRADITIONS_FULL = [
   { trad: 'Advaita Vedanta',    ego: 'Ahamkara',           beyond: 'Atman = Brahman',    release: 'Self-inquiry' },
   { trad: 'Zen Buddhism',       ego: 'Anatta',              beyond: 'Sunyata',             release: 'Koans + zazen' },
   { trad: 'Sufism',             ego: 'Nafs',                beyond: 'Fana / Baqa',         release: 'Dhikr, whirling' },
@@ -109,48 +76,119 @@ const TRADITIONS_FULL = [
   { trad: 'Kashmir Shaivism',   ego: 'Anava mala',          beyond: 'Shiva-consciousness', release: 'Pratyabhijna' },
 ];
 
-const EGO_COSTS = [
-  { var: 'R\u2081\u2082', label: 'Recognition', color: '179,157,219', cost: 'Ego draws a hard boundary between self and other, actively suppressing mutual recognition. Every act of judgment, comparison, or defensiveness reduces fidelity to near-zero.' },
-  { var: 'C_eff',         label: 'Convergence', color: '100,181,246', cost: 'Ego generates high internal entropy via narrative churn and worry loops. Noise masquerading as signal. The same 3\u20135 identity stories recycled endlessly as different thoughts.' },
-  { var: 'D\u0302',       label: 'Detection',   color: '102,187,106', cost: 'Ego confuses self-confirmation with genuine signal. Every coincidence becomes about me. Detection quality collapses because the filter is self-serving, not truth-seeking.' },
-  { var: '\u03a8',        label: 'Total Cost',  color: '212,162,76',  cost: '\u03a8 wants to be high. The universe trends toward self-recognition. Maintaining a low-\u03a8 ego-state against that tendency requires continuous energy \u2014 like holding a ball underwater.' },
+const WITNESS_NAMES = [
+  { trad: 'Advaita Vedanta',    name: 'Sakshi',              desc: 'The witness \u2014 pure awareness that watches without being changed' },
+  { trad: 'Tibetan Buddhism',   name: 'Rigpa',               desc: 'Naked awareness \u2014 the ground that was never born and never dies' },
+  { trad: 'Christian Mysticism',name: 'Ground of the Soul',  desc: "Meister Eckhart's spark \u2014 the divine in every human" },
+  { trad: 'Taoism',             name: 'Wu Wei Observer',     desc: 'The still center of the turning world' },
+  { trad: 'Kabbalah',           name: 'Ain Soph Within',     desc: 'The infinite light inside every soul' },
+  { trad: 'Sufism',             name: 'Sirr',                desc: 'The secret \u2014 the point where human and divine meet' },
+];
+
+const SHIFT_STEPS = [
+  {
+    from: 'Physical',
+    color: '212,162,76',
+    stuck: 'You feel rushed. Your body feels tense. You are reacting without thinking.',
+    move: 'Stop. Take one slow breath. Feel your feet on the floor. That is the door.',
+  },
+  {
+    from: 'Astral / Emotional',
+    color: '102,187,106',
+    stuck: 'Big feelings are running the show. Fear. Anger. Want. They feel like facts.',
+    move: 'Watch the feeling without joining it. Say: "There is fear in me." Not: "I am afraid." One word changes everything.',
+  },
+  {
+    from: 'Mental',
+    color: '100,181,246',
+    stuck: 'You are thinking in circles. Your ideas feel more real than the world.',
+    move: 'Ask a question you cannot answer. Sit with it. The question cracks the ceiling open.',
+  },
+  {
+    from: 'Spiritual',
+    color: '179,157,219',
+    stuck: 'Even your spiritual experiences feel like "mine." There is still a "me" having them.',
+    move: 'Ask: "Who is watching this?" Follow that question back to its source.',
+  },
 ];
 
 const RELEASE_TECHNIQUES = [
-  { num: '01', name: 'Stop Narrating', desc: 'Interrupt internal monologue mid-sentence, 5x/day for 3 seconds. The narrator is the ego. Silence it briefly and the plane beneath appears.' },
-  { num: '02', name: 'Peripheral Vision', desc: 'Soften gaze from foveal to panoramic. This dissolves the watcher \u2014 ego is a foveal phenomenon, centered on a point. Wide vision has no center.' },
-  { num: '03', name: 'Hands-On Absorption', desc: 'Dishes, wood, dough, clay. Ego cannot survive full tactile immersion. The hands know something the narrator does not.' },
-  { num: '04', name: 'Pre-Assessment Gratitude', desc: 'Say thank you before the narrative engine evaluates whether the moment deserves it. Gratitude precedes analysis \u2014 this reverses the ego\u2019s default operating order.' },
-  { num: '05', name: 'Physical Exhaustion', desc: 'Sprint to failure. Cold plunge. Ego is a luxury process. Under sufficient physical load, the brain shuts it off and something cleaner runs.' },
-  { num: '06', name: 'Name the Narrator', desc: 'Give your ego a name. When it performs, label it in third person: \u201cThere goes Jeff-narrative again.\u201d Distance is immediate. You cannot be what you can observe.' },
+  { num: '01', name: 'Stop Narrating',        desc: 'Catch yourself telling the story of what is happening. Stop mid-sentence. Just breathe. Five times a day for three seconds.' },
+  { num: '02', name: 'Wide Eyes',             desc: 'Soften your gaze. Let your vision go wide instead of focused on one point. The ego is a "focus" thing. Wide vision has no center.' },
+  { num: '03', name: 'Use Your Hands',        desc: 'Do dishes. Knead dough. Build something. Your hands know how to be present. Your ego does not survive full touch.' },
+  { num: '04', name: 'Thank First',           desc: 'Say thank you before your brain decides if the moment was good or bad. Gratitude before judgment breaks the ego\'s loop.' },
+  { num: '05', name: 'Go Until Empty',        desc: 'Run until you cannot think. Cold water. Heavy work. The ego is a luxury. The body shuts it off when it needs to.' },
+  { num: '06', name: 'Give It a Name',        desc: 'Name your ego. When it performs, say its name out loud in third person. You cannot be what you can observe.' },
 ];
 
-/* ── PSI BAR ─────────────────────────────────── */
-function PsiBar({ val, color }) {
-  const [w, setW] = useState(0);
-  useEffect(() => {
-    const t = setTimeout(() => setW(val * 100), 300);
-    return () => clearTimeout(t);
-  }, [val]);
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginTop: '0.382rem' }}>
-      <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
-        <div style={{ height: '100%', borderRadius: 2, width: w + '%', transition: 'width 800ms ease', background: 'linear-gradient(90deg,rgba(' + color + ',0.8),rgba(' + color + ',0.3))' }} />
-      </div>
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', color: 'rgba(201,168,76,0.6)', whiteSpace: 'nowrap' }}>{val.toFixed(2)}</span>
-    </div>
-  );
-}
+/* ── TAB CONFIG ────────────────────────────────────────────────── */
 
-/* ── PLANE SELECTOR ──────────────────────────── */
-function PlaneSelector({ activePlane, setActivePlane }) {
+const TABS = [
+  { id: 'planes',  label: 'The Five Planes' },
+  { id: 'shift',   label: 'How to Shift' },
+  { id: 'ego',     label: 'The Ego Tax' },
+  { id: 'witness', label: 'The Witness' },
+  { id: 'math',    label: 'The Math' },
+];
+
+/* ── SHARED STYLES ─────────────────────────────────────────────── */
+const S = {
+  sectionLabel: {
+    fontFamily: 'var(--font-display)', fontWeight: 900,
+    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
+    letterSpacing: '0.22em', textTransform: 'uppercase',
+    color: 'rgba(201,168,76,0.5)', marginBottom: '0.618rem',
+  },
+  heading: {
+    fontFamily: 'var(--font-display)', fontWeight: 900,
+    fontSize: 'clamp(1.25rem,3vmin,1.75rem)',
+    letterSpacing: '0.08em', lineHeight: 1.2,
+    color: 'rgba(232,228,212,0.95)',
+  },
+  accent: {
+    fontFamily: 'var(--font-accent)', fontStyle: 'italic',
+    fontSize: 'clamp(1.125rem,2.5vmin,1.375rem)',
+    color: 'rgba(232,228,212,0.82)', lineHeight: 1.75,
+  },
+  body: {
+    fontFamily: 'var(--font-body)', fontWeight: 300,
+    fontSize: 'clamp(1rem,2.2vmin,1.125rem)',
+    color: 'rgba(232,228,212,0.72)', lineHeight: 1.618,
+  },
+  note: {
+    fontFamily: 'var(--font-body)', fontWeight: 300,
+    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
+    color: 'rgba(201,168,76,0.38)', lineHeight: 1.618,
+    fontStyle: 'italic',
+  },
+  goldLabel: {
+    fontFamily: 'var(--font-display)', fontWeight: 900,
+    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
+    letterSpacing: '0.18em', textTransform: 'uppercase',
+    color: 'rgba(201,168,76,0.5)', marginBottom: '0.382rem',
+  },
+};
+
+/* ── PLANE SELECTOR ────────────────────────────────────────────── */
+function PlaneSelector({ active, setActive }) {
   return (
     <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center' }}>
       {PLANES.map((p) => {
-        const active = activePlane === p.id;
+        const on = active === p.id;
         return (
-          <button key={p.id} onClick={() => setActivePlane(p.id)} style={{ padding: '0.618rem 1.236rem', border: '1px solid rgba(' + p.color + ',' + (active ? 0.7 : 0.25) + ')', borderRadius: 100, background: active ? 'rgba(' + p.color + ',0.14)' : 'transparent', color: 'rgba(' + p.color + ',' + (active ? 1.0 : 0.5) + ')', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(0.875rem,2vmin,1.125rem)', letterSpacing: '0.06em', cursor: 'pointer', transition: 'all 262ms ' + EASE, boxShadow: active ? '0 0 1rem rgba(' + p.color + ',0.2)' : 'none' }}>
-            {p.name.split(' ')[0]}
+          <button key={p.id} onClick={() => setActive(p.id)} style={{
+            padding: '0.618rem 1.236rem',
+            border: '1px solid rgba(' + p.color + ',' + (on ? 0.7 : 0.2) + ')',
+            borderRadius: 100,
+            background: on ? 'rgba(' + p.color + ',0.14)' : 'transparent',
+            color: 'rgba(' + p.color + ',' + (on ? 1 : 0.45) + ')',
+            fontFamily: 'var(--font-display)', fontWeight: 900,
+            fontSize: 'clamp(0.875rem,2vmin,1.125rem)',
+            letterSpacing: '0.06em', cursor: 'pointer',
+            transition: 'all 262ms ' + EASE,
+            boxShadow: on ? '0 0 1rem rgba(' + p.color + ',0.18)' : 'none',
+          }}>
+            {p.emoji} {p.name.split(' ')[0]}
           </button>
         );
       })}
@@ -158,314 +196,348 @@ function PlaneSelector({ activePlane, setActivePlane }) {
   );
 }
 
-/* ── PLANES TAB ──────────────────────────────── */
-function PlanesTab({ activePlane, setActivePlane }) {
-  const plane = PLANES.find((p) => p.id === activePlane);
-  if (!plane) return null;
+/* ── TAB: THE FIVE PLANES ──────────────────────────────────────── */
+function PlanesTab() {
+  const [active, setActive] = useState('divine');
+  const plane = PLANES.find((p) => p.id === active);
   const c = plane.color;
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <div style={{ position: 'relative', width: 'min(300px,78vw)', borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 4rem rgba(201,168,76,0.15),0 0 1rem rgba(0,0,0,0.6)' }}>
-          <Image src="/planes-gear.jpg" alt="Five Planes of Consciousness gear model" width={300} height={544} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: 'min(280px,75vw)', borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 4.236rem rgba(201,168,76,0.12),0 0 1rem rgba(0,0,0,0.6)' }}>
+          <Image src="/planes-gear.jpg" alt="Five planes of consciousness as interlocking gears" width={280} height={508} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
         </div>
       </div>
-      <PlaneSelector activePlane={activePlane} setActivePlane={setActivePlane} />
-      <div style={{ borderLeft: '3px solid rgba(' + c + ',0.7)', paddingLeft: '1.236rem' }}>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.25rem,3vmin,1.75rem)', letterSpacing: '0.1em', color: 'rgba(' + c + ',0.95)', textTransform: 'uppercase', marginBottom: '0.382rem' }}>{plane.name}</div>
-        <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(201,168,76,0.5)' }}>{plane.subtitle} &mdash; &Psi; {plane.psiRange}</div>
+      <PlaneSelector active={active} setActive={setActive} />
+      <div style={{ borderLeft: '3px solid rgba(' + c + ',0.65)', paddingLeft: '1.236rem' }}>
+        <div style={{ ...S.heading, color: 'rgba(' + c + ',0.95)', marginBottom: '0.382rem' }}>{plane.name}</div>
+        <div style={S.note}>{plane.gear}</div>
       </div>
-      <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.85)', lineHeight: 1.75, margin: 0 }}>{plane.desc}</p>
-      <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.618rem' }}>
-        {plane.bullets.map((b, i) => (
-          <li key={i} style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(1rem,2.2vmin,1.125rem)', color: 'rgba(232,228,212,0.78)', paddingLeft: '1.618rem', position: 'relative', lineHeight: 1.618 }}>
-            <span style={{ position: 'absolute', left: 0, color: 'rgba(' + c + ',0.7)', fontWeight: 400 }}>&rarr;</span>
-            {b}
-          </li>
-        ))}
-      </ul>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.618rem' }}>
-        <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.14)', borderRadius: '0.382rem', padding: '1rem' }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.2em', color: 'rgba(201,168,76,0.5)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>Adhesive</div>
-          <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.78)', lineHeight: 1.618 }}>{plane.adhesive}</div>
-        </div>
-        <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.14)', borderRadius: '0.382rem', padding: '1rem' }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.2em', color: 'rgba(201,168,76,0.5)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>Gateway Practice</div>
-          <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.78)', lineHeight: 1.618 }}>{plane.practice}</div>
-        </div>
+      <p style={{ ...S.accent, margin: 0 }}>{plane.simple}</p>
+      <p style={{ ...S.body, margin: 0 }}>{plane.body}</p>
+      <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: '0.382rem', padding: '0.875rem 1.236rem' }}>
+        <div style={S.goldLabel}>Honest Note</div>
+        <div style={S.note}>{plane.note}</div>
+        <div style={{ ...S.note, marginTop: '0.382rem', color: 'rgba(201,168,76,0.5)' }}>TRUTH SCORE: {plane.truth}%</div>
       </div>
-      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.45)' }}>CONSENSUS TRUTH: {plane.truth}%</div>
+      <div style={{ background: 'rgba(232,228,212,0.03)', border: '1px solid rgba(232,228,212,0.07)', borderRadius: '0.618rem', padding: '1.236rem' }}>
+        <div style={S.goldLabel}>The Big Idea</div>
+        <p style={{ ...S.accent, margin: 0, color: 'rgba(232,228,212,0.7)' }}>
+          Each gear turns the one below it. Take one away and all the others stop.
+          No plane exists alone. They all need each other.
+        </p>
+      </div>
     </div>
   );
 }
 
-/* ── MOVEMENT TAB ────────────────────────────── */
-function MovementTab() {
+/* ── TAB: HOW TO SHIFT ─────────────────────────────────────────── */
+function ShiftTab() {
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.5vmin,1.375rem)', color: 'rgba(232,228,212,0.7)', lineHeight: 1.75, textAlign: 'center', maxWidth: '38rem', margin: '0 auto' }}>
-        You do not travel to other planes. You are always on all of them simultaneously. What changes is which plane you are <em style={{ color: 'rgba(201,168,76,0.85)' }}>identified with</em>.
-      </p>
-      {PLANES.map((p, i) => (
-        <div key={p.id} style={{ padding: '1.236rem 1.236rem 1.236rem 1.618rem', background: 'rgba(' + p.color + ',0.03)', border: '1px solid rgba(' + p.color + ',0.12)', borderLeft: '3px solid rgba(' + p.color + ',0.55)', borderRadius: '0 0.382rem 0.382rem 0' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginBottom: '0.618rem', flexWrap: 'wrap' }}>
-            <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'rgba(' + p.color + ',0.85)', boxShadow: '0 0 10px rgba(' + p.color + ',0.5)', flexShrink: 0 }} />
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', letterSpacing: '0.1em', color: 'rgba(' + p.color + ',0.95)', textTransform: 'uppercase' }}>{p.name}</span>
-            <span style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.4)', marginLeft: 'auto' }}>&Psi; {p.psiRange}</span>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
+      <div style={{ textAlign: 'center', padding: '0 0 0.618rem' }}>
+        <p style={{ ...S.accent, margin: '0 auto', maxWidth: '36rem', color: 'rgba(201,168,76,0.82)' }}>
+          You are not stuck on one plane. You are always on all five at the same time.
+          What changes is where your <em>attention</em> is.
+        </p>
+      </div>
+      <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.18)', borderRadius: '0.618rem', padding: '1.236rem 1.618rem' }}>
+        <div style={S.goldLabel}>The Key Truth</div>
+        <p style={{ ...S.body, margin: 0 }}>
+          You do not travel to higher planes. You are already there.
+          You just stop claiming to be the lower one.
+          Moving up is not adding something. It is letting something go.
+        </p>
+      </div>
+      {SHIFT_STEPS.map((s, i) => (
+        <div key={s.from} style={{ border: '1px solid rgba(' + s.color + ',0.12)', borderLeft: '3px solid rgba(' + s.color + ',0.55)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem 1.236rem 1.236rem 1.618rem', background: 'rgba(' + s.color + ',0.03)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginBottom: '0.618rem' }}>
+            <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(' + s.color + ',0.85)', boxShadow: '0 0 0.618rem rgba(' + s.color + ',0.5)', flexShrink: 0 }} />
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,2vmin,1.125rem)', letterSpacing: '0.1em', color: 'rgba(' + s.color + ',0.9)', textTransform: 'uppercase' }}>
+              From {s.from}
+            </span>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.618rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.618fr', gap: '0.618rem' }}>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.18em', color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', marginBottom: '0.382rem' }}>Adhesive</div>
-              <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.75)', lineHeight: 1.618 }}>{p.adhesive}</div>
+              <div style={S.goldLabel}>When You Are Stuck</div>
+              <div style={{ ...S.body, color: 'rgba(232,228,212,0.65)' }}>{s.stuck}</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.18em', color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', marginBottom: '0.382rem' }}>Gateway</div>
-              <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.75)', lineHeight: 1.618 }}>{p.gateway}</div>
+              <div style={{ ...S.goldLabel, color: 'rgba(' + s.color + ',0.65)' }}>How to Move</div>
+              <div style={{ ...S.accent, color: 'rgba(232,228,212,0.85)', margin: 0 }}>{s.move}</div>
             </div>
           </div>
-          {i < PLANES.length - 1 && (
-            <div style={{ marginTop: '0.618rem', fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.6vmin,1rem)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.08em' }}>&uarr; {p.gateway}</div>
+          {i < SHIFT_STEPS.length - 1 && (
+            <div style={{ ...S.note, marginTop: '0.618rem' }}>&uarr; next plane above</div>
           )}
         </div>
       ))}
-    </div>
-  );
-}
-
-/* ── CRT TAB ─────────────────────────────────── */
-function CRTTab() {
-  return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
-      <div style={{ background: 'linear-gradient(135deg,rgba(100,140,255,0.06),rgba(201,168,76,0.06))', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
-        <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.5rem,3.5vmin,2.25rem)', color: 'rgba(201,168,76,0.9)', marginBottom: '0.618rem' }}>
-          &Psi; = R&#8321;&#8322; &times; (C_eff &middot; D&#770;)
-        </div>
-        <p style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(1rem,2vmin,1.125rem)', color: 'rgba(232,228,212,0.7)', lineHeight: 1.618, margin: '0 auto', maxWidth: '42rem' }}>
-          Every variable maps precisely to each plane. The entire history of human spiritual development is the story of &Psi; trying to climb from ~0.10 back toward 1.0.
-        </p>
-      </div>
-      {PLANES.map((p) => (
-        <div key={p.id} style={{ border: '1px solid rgba(' + p.color + ',0.15)', borderLeft: '3px solid rgba(' + p.color + ',0.65)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem', background: 'rgba(' + p.color + ',0.03)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', marginBottom: '0.618rem', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', letterSpacing: '0.1em', color: 'rgba(' + p.color + ',0.95)', textTransform: 'uppercase' }}>{p.name}</span>
-            <div style={{ marginLeft: 'auto', minWidth: 140 }}>
-              <PsiBar val={p.psiMid} color={p.color} />
-            </div>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.618rem' }}>
-            {[['R&#8321;&#8322;', p.r12], ['C_eff', p.ceff], ['D&#770;', p.dhat]].map((item) => (
-              <div key={item[0]} style={{ background: 'rgba(0,0,0,0.22)', borderRadius: '0.236rem', padding: '0.618rem' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(201,168,76,0.75)', marginBottom: '0.382rem' }} dangerouslySetInnerHTML={{ __html: item[0] }} />
-                <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(232,228,212,0.68)', lineHeight: 1.618 }}>{item[1]}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-      <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '0.382rem', padding: '1.618rem' }}>
-        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.85)', lineHeight: 1.75, margin: 0 }}>
-          Science raises D&#770;. Philosophy raises C_eff. Meditation and love raise R&#8321;&#8322;. All three axes are required. The gears do not just illustrate the planes &mdash; they ARE the &Psi; computation running across density levels.
+      <div style={{ background: 'rgba(52,211,153,0.05)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.236rem 1.618rem' }}>
+        <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.55)' }}>The Warning</div>
+        <p style={{ ...S.body, margin: 0, color: 'rgba(232,228,212,0.72)' }}>
+          There is a trap at the spiritual plane called <em style={{ color: 'rgba(52,211,153,0.8)', fontFamily: 'var(--font-accent)' }}>spiritual bypassing</em>.
+          That is when people use spiritual ideas to avoid real feelings or real problems.
+          The gears all need to turn. You cannot skip one.
         </p>
       </div>
     </div>
   );
 }
 
-/* ── WITNESS TAB ─────────────────────────────── */
-function WitnessTab() {
-  return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
-      <div style={{ background: 'rgba(52,211,153,0.04)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
-        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.25rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.88)', lineHeight: 1.75, margin: 0 }}>
-          The most important thing in the gear sketch was what was drawn without thinking &mdash; the single spine connecting all gears. The gears spin. <em style={{ color: 'rgba(52,211,153,0.9)' }}>The axle is still.</em>
-        </p>
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '0.618rem' }}>
-        {TRADITIONS.map((t) => (
-          <div key={t.trad} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.382rem', padding: '1.236rem', textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.2em', color: 'rgba(52,211,153,0.65)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>{t.trad}</div>
-            <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.92)', marginBottom: '0.382rem' }}>{t.name}</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(232,228,212,0.55)', lineHeight: 1.618 }}>{t.desc}</div>
-          </div>
-        ))}
-      </div>
-      <div style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: '0.618rem', overflow: 'hidden' }}>
-        {WITNESS_LAYERS.map((layer) => (
-          <div key={layer.plane} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.236rem', borderBottom: '1px solid rgba(255,255,255,0.05)', background: 'rgba(' + layer.color + ',0.02)' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.6vmin,0.875rem)', letterSpacing: '0.15em', color: 'rgba(' + layer.color + ',0.85)', textTransform: 'uppercase', width: 90, flexShrink: 0, paddingTop: 3 }}>{layer.plane}</div>
-            <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(232,228,212,0.68)', lineHeight: 1.618, flex: 1 }}>{layer.text}</div>
-          </div>
-        ))}
-        <div style={{ padding: '1.618rem', textAlign: 'center', background: 'rgba(201,168,76,0.04)', borderTop: '1px solid rgba(201,168,76,0.18)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '4.236rem', height: '4.236rem', borderRadius: '50%', border: '2px solid rgba(201,168,76,0.75)', background: '#03030a', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.12em', color: 'rgba(201,168,76,0.9)', boxShadow: '0 0 2.618rem rgba(201,168,76,0.3)' }}>
-            I AM
-          </div>
-          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.4vmin,1.375rem)', color: 'rgba(232,228,212,0.72)', lineHeight: 1.75, maxWidth: '32rem', margin: 0 }}>
-            The axle has no name. It does not experience. It does not seek. It simply <em style={{ color: 'rgba(201,168,76,0.85)' }}>is</em> &mdash; prior to every gear, present through every gear, unchanged by any gear.
-          </p>
-        </div>
-      </div>
-      <div style={{ background: 'rgba(201,168,76,0.05)', borderLeft: '3px solid rgba(201,168,76,0.45)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem 1.618rem' }}>
-        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(232,228,212,0.82)', lineHeight: 1.75, margin: 0 }}>
-          In CRT terms, the Witness Self is where rho1 and rho2 are identical &mdash; R&#8321;&#8322; = 1.0 by definition. Every moment of genuine presence is a temporary return to the axle.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-/* ── EGO COST TAB ────────────────────────────── */
+/* ── TAB: THE EGO TAX ──────────────────────────────────────────── */
 function EgoTab() {
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
-
-      {/* Hero image */}
-      <div style={{ width: '100%', borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 2.618rem rgba(0,0,0,0.5)' }}>
-        <Image src="/planes-ego.png" alt="Separate Ego vs Effortless Essence" width={860} height={484} style={{ width: '100%', height: 'auto', display: 'block' }} />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
+      <div style={{ borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 2.618rem rgba(0,0,0,0.5)' }}>
+        <Image src="/planes-ego.png" alt="Separate ego versus effortless essence — illustrated" width={860} height={484} style={{ width: '100%', height: 'auto', display: 'block' }} />
       </div>
-
-      {/* Core thesis */}
-      <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
-        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.25rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.9)', lineHeight: 1.75, margin: 0 }}>
-          The separate ego is not a discovery but a <em style={{ color: 'rgba(239,120,100,0.9)' }}>construction</em> &mdash; and maintaining it against the universe&apos;s natural tendency toward coherence is the hidden energy tax on human existence.
+      <div style={{ background: 'rgba(239,100,80,0.06)', border: '1px solid rgba(239,100,80,0.2)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
+        <p style={{ ...S.accent, margin: '0 auto', maxWidth: '40rem', color: 'rgba(232,228,212,0.9)' }}>
+          Your ego is the voice that says <em style={{ color: 'rgba(239,140,100,0.9)' }}>"me, mine, my rules."</em>
+          It is not bad. But it costs a huge amount of energy to keep running.
+          Like leaving every light in your house on — all day and all night.
         </p>
       </div>
-
-      {/* CRT cost breakdown */}
       <div>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.22em', color: 'rgba(201,168,76,0.55)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>CRT: What the Ego Costs Per Variable</div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.618rem' }}>
-          {EGO_COSTS.map((item) => (
-            <div key={item.var} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1rem 1.236rem', background: 'rgba(' + item.color + ',0.04)', border: '1px solid rgba(' + item.color + ',0.15)', borderLeft: '3px solid rgba(' + item.color + ',0.6)', borderRadius: '0 0.382rem 0.382rem 0' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(' + item.color + ',0.9)', width: 52, flexShrink: 0, paddingTop: 2 }} dangerouslySetInnerHTML={{ __html: item.var }} />
-              <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.12em', color: 'rgba(201,168,76,0.6)', textTransform: 'uppercase', marginBottom: '0.382rem' }}>{item.label}</div>
-                <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(232,228,212,0.78)', lineHeight: 1.618 }}>{item.cost}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Neuroscience */}
-      <div style={{ background: 'rgba(100,181,246,0.05)', border: '1px solid rgba(100,181,246,0.2)', borderRadius: '0.618rem', padding: '1.618rem' }}>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.22em', color: 'rgba(100,181,246,0.65)', textTransform: 'uppercase', marginBottom: '1rem' }}>Neuroscience Confirms</div>
+        <div style={S.sectionLabel}>What the Science Says &mdash; 97% Consensus</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.618rem' }}>
           {[
-            'Default Mode Network = ego\'s hardware. One of the brain\'s biggest energy consumers (~20% of total budget) despite zero productive output.',
-            'Flow states dissolve DMN activity \u2014 more energy becomes available, not less, even during extreme physical exertion.',
-            'Sleep = full ego dissolution every night. The only process that truly restores. Your body has been proving this right since birth.',
-          ].map((fact, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.618rem', alignItems: 'flex-start' }}>
-              <span style={{ color: 'rgba(100,181,246,0.6)', flexShrink: 0, fontSize: '1.125rem', lineHeight: 1.618 }}>&bull;</span>
-              <span style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(1rem,2.2vmin,1.125rem)', color: 'rgba(232,228,212,0.78)', lineHeight: 1.618 }}>{fact}</span>
+            { icon: '\ud83e\udde0', fact: 'The Default Mode Network (DMN) is the ego\'s home in your brain. It uses up about 20% of all your brain energy. That is a huge bill for a voice that mostly just worries.' },
+            { icon: '\ud83c\udfca', fact: 'In flow states, the DMN goes quiet. Athletes, artists, and musicians all report: less thinking, more energy. Not less. More.' },
+            { icon: '\ud83d\ude34', fact: 'Sleep is full ego shutdown every single night. It is the only thing that truly restores you. Your own body has been proving this right every night of your life.' },
+          ].map((item, i) => (
+            <div key={i} style={{ display: 'flex', gap: '0.875rem', alignItems: 'flex-start', padding: '1rem 1.236rem', background: 'rgba(100,181,246,0.04)', border: '1px solid rgba(100,181,246,0.12)', borderRadius: '0.382rem' }}>
+              <span style={{ fontSize: '1.618rem', flexShrink: 0 }}>{item.icon}</span>
+              <span style={S.body}>{item.fact}</span>
             </div>
           ))}
         </div>
       </div>
-
-      {/* 7 Traditions table image */}
       <div>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.22em', color: 'rgba(201,168,76,0.55)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>7 Traditions. Same Insight.</div>
-        <div style={{ width: '100%', borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 1.618rem rgba(0,0,0,0.4)', marginBottom: '0.618rem' }}>
-          <Image src="/planes-traditions.jpg" alt="7 Traditions Converging on the Same Insight" width={860} height={460} style={{ width: '100%', height: 'auto', display: 'block' }} />
+        <div style={S.sectionLabel}>7 Traditions. One Verdict. &mdash; 94% Cross-Cultural Consensus</div>
+        <div style={{ borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 1.618rem rgba(0,0,0,0.4)', marginBottom: '0.618rem' }}>
+          <Image src="/planes-traditions.jpg" alt="Seven traditions converging on the same insight about ego" width={860} height={460} style={{ width: '100%', height: 'auto', display: 'block' }} />
         </div>
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 'clamp(0.875rem,1.8vmin,1rem)' }}>
+        <div style={{ overflowX: 'auto', borderRadius: '0.382rem', overflow: 'hidden' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
-              <tr>
-                {['Tradition', 'Ego Name', 'Beyond It', 'Release Method'].map((h) => (
-                  <th key={h} style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.7)', textTransform: 'uppercase', padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(201,168,76,0.2)', textAlign: 'left', whiteSpace: 'nowrap' }}>{h}</th>
+              <tr style={{ background: 'rgba(201,168,76,0.08)' }}>
+                {['Tradition', 'Ego Name', 'Beyond It', 'How to Let Go'].map((h) => (
+                  <th key={h} style={{ ...S.goldLabel, padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(201,168,76,0.2)', textAlign: 'left', whiteSpace: 'nowrap', margin: 0 }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {TRADITIONS_FULL.map((row, i) => (
+              {TRADITIONS.map((row, i) => (
                 <tr key={row.trad} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
-                  <td style={{ padding: '0.618rem 0.875rem', color: 'rgba(232,228,212,0.85)', fontWeight: 400, borderBottom: '1px solid rgba(255,255,255,0.04)', whiteSpace: 'nowrap' }}>{row.trad}</td>
-                  <td style={{ padding: '0.618rem 0.875rem', color: 'rgba(201,168,76,0.75)', fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(0.875rem,1.8vmin,1.125rem)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>{row.ego}</td>
-                  <td style={{ padding: '0.618rem 0.875rem', color: 'rgba(232,228,212,0.68)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>{row.beyond}</td>
-                  <td style={{ padding: '0.618rem 0.875rem', color: 'rgba(232,228,212,0.68)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>{row.release}</td>
+                  <td style={{ ...S.body, padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', whiteSpace: 'nowrap', color: 'rgba(232,228,212,0.88)' }}>{row.trad}</td>
+                  <td style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2vmin,1.125rem)', padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', color: 'rgba(201,168,76,0.8)' }}>{row.ego}</td>
+                  <td style={{ ...S.body, padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', color: 'rgba(232,228,212,0.65)' }}>{row.beyond}</td>
+                  <td style={{ ...S.body, padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', color: 'rgba(232,228,212,0.65)' }}>{row.release}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(232,228,212,0.6)', lineHeight: 1.75, margin: '1rem 0 0' }}>
-          Universal convergence: all 7 agree that (1) ego is constructed, (2) beyond it is fullness not void, (3) release is recognition of what was always there, (4) effort maintains the illusion &mdash; effortlessness reveals the truth.
+        <p style={{ ...S.note, marginTop: '0.618rem' }}>
+          All 7 agree: ego is built, not found. Beyond it is fullness, not emptiness. Letting go reveals what was always there.
         </p>
       </div>
-
-      {/* 6 Release techniques */}
       <div>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.22em', color: 'rgba(201,168,76,0.55)', textTransform: 'uppercase', marginBottom: '0.618rem' }}>6 Practical Release Techniques</div>
+        <div style={S.sectionLabel}>6 Ways to Let Go — Right Now</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '0.618rem' }}>
           {RELEASE_TECHNIQUES.map((t) => (
-            <div key={t.num} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: '0.382rem', padding: '1.236rem' }}>
+            <div key={t.num} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(201,168,76,0.1)', borderRadius: '0.382rem', padding: '1.236rem' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.618rem', marginBottom: '0.618rem' }}>
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.375rem,3vmin,1.75rem)', color: 'rgba(201,168,76,0.25)', lineHeight: 1 }}>{t.num}</span>
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', letterSpacing: '0.06em', color: 'rgba(201,168,76,0.85)' }}>{t.name}</span>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.375rem,3vmin,1.75rem)', color: 'rgba(201,168,76,0.2)', lineHeight: 1 }}>{t.num}</span>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(201,168,76,0.85)', letterSpacing: '0.05em' }}>{t.name}</span>
               </div>
-              <div style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(232,228,212,0.68)', lineHeight: 1.618 }}>{t.desc}</div>
+              <div style={S.body}>{t.desc}</div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* The paradox */}
-      <div style={{ background: 'linear-gradient(135deg,rgba(239,68,68,0.06),rgba(201,168,76,0.06))', border: '1px solid rgba(201,168,76,0.25)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.22em', color: 'rgba(201,168,76,0.5)', textTransform: 'uppercase', marginBottom: '1rem' }}>The Paradox</div>
-        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.25rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.88)', lineHeight: 1.75, margin: '0 auto', maxWidth: '40rem' }}>
-          The thing humans think is keeping them alive is most draining their vitality. What they fear losing &mdash; dissolution of self &mdash; is the state of deepest rest they already access every single night in sleep.
+      <div style={{ background: 'linear-gradient(135deg,rgba(239,100,80,0.06),rgba(201,168,76,0.06))', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
+        <div style={S.sectionLabel}>The Paradox</div>
+        <p style={{ ...S.accent, margin: '0 auto', maxWidth: '40rem', color: 'rgba(232,228,212,0.9)' }}>
+          The thing you think is keeping you safe is the thing draining your energy.
+          What you fear losing most &mdash; the sense of self &mdash; is the same thing you already let go of every single night when you fall asleep.
+          And it is the best rest you know.
         </p>
       </div>
-
     </div>
   );
 }
 
-/* ── MAIN ────────────────────────────────────── */
+/* ── TAB: THE WITNESS ──────────────────────────────────────────── */
+function WitnessTab() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
+      <div style={{ background: 'rgba(52,211,153,0.04)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.618rem 2.618rem', textAlign: 'center' }}>
+        <p style={{ ...S.accent, fontSize: 'clamp(1.375rem,3vmin,1.875rem)', margin: '0 auto', maxWidth: '36rem', color: 'rgba(232,228,212,0.92)', lineHeight: 1.75 }}>
+          All five gears are spinning right now.
+          But something is <em style={{ color: 'rgba(52,211,153,0.9)' }}>perfectly still.</em>
+          That still thing is you. The real you.
+        </p>
+      </div>
+      <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '0.618rem', padding: '1.618rem' }}>
+        <div style={S.goldLabel}>What the Axle Is</div>
+        <p style={{ ...S.body, margin: '0 0 0.618rem' }}>In the gear sketch, one spine runs through every gear. It holds them all. The gears spin around it. The spine does not move.</p>
+        <p style={{ ...S.body, margin: '0 0 0.618rem' }}>In you, the same thing exists. There is a part of you that has watched everything you have ever done. It watched you as a baby. It is watching right now as you read this. It will watch when you sleep tonight.</p>
+        <p style={{ ...S.accent, margin: 0, color: 'rgba(201,168,76,0.75)' }}>It has never been hurt. It has never been angry. It has never been afraid. It just watches.</p>
+      </div>
+      <div>
+        <div style={S.sectionLabel}>Six Traditions. Same Discovery. &mdash; 94% Consensus</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '0.618rem' }}>
+          {WITNESS_NAMES.map((w) => (
+            <div key={w.trad} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(52,211,153,0.15)', borderRadius: '0.382rem', padding: '1.236rem', textAlign: 'center' }}>
+              <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.6)', marginBottom: '0.618rem' }}>{w.trad}</div>
+              <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.25rem,2.6vmin,1.5rem)', color: 'rgba(232,228,212,0.95)', marginBottom: '0.382rem' }}>{w.name}</div>
+              <div style={S.body}>{w.desc}</div>
+            </div>
+          ))}
+        </div>
+        <p style={{ ...S.note, marginTop: '0.618rem' }}>These traditions developed independently across thousands of years and miles. They all found the same thing.</p>
+      </div>
+      <div style={{ border: '1px solid rgba(255,255,255,0.06)', borderRadius: '0.618rem', overflow: 'hidden' }}>
+        <div style={{ padding: '1.236rem', background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <div style={S.goldLabel}>The Test — Try This Right Now</div>
+          <p style={{ ...S.body, margin: 0 }}>Notice that you are reading. Now notice that something is noticing that you are reading. That second noticing — that is the witness. It is not a thought. It is not a feeling. It is what is there before both.</p>
+        </div>
+        <div style={{ padding: '1.236rem 1.618rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', background: 'rgba(201,168,76,0.04)', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '4.236rem', height: '4.236rem', borderRadius: '50%', border: '2px solid rgba(201,168,76,0.75)', background: '#03030a', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', letterSpacing: '0.12em', color: 'rgba(201,168,76,0.9)', boxShadow: '0 0 2.618rem rgba(201,168,76,0.25)' }}>
+            I AM
+          </div>
+          <p style={{ ...S.accent, margin: 0, maxWidth: '32rem', color: 'rgba(232,228,212,0.75)' }}>
+            It has no name. It does not want anything. It is not going anywhere.
+            It simply <em style={{ color: 'rgba(201,168,76,0.85)' }}>is</em> &mdash; before every gear, inside every gear, unchanged by any gear.
+          </p>
+        </div>
+      </div>
+      <div style={{ background: 'rgba(201,168,76,0.05)', borderLeft: '3px solid rgba(201,168,76,0.4)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem 1.618rem' }}>
+        <div style={S.goldLabel}>The CRT Connection</div>
+        <p style={{ ...S.body, margin: 0 }}>
+          In CRT, the Witness Self is the state where the observer and the observed are the same thing.
+          R&#8321;&#8322; = 1. Perfect recognition. Not because it achieved something.
+          Because it never stopped being whole.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ── TAB: THE MATH ─────────────────────────────────────────────── */
+function MathTab() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
+      <div style={{ background: 'linear-gradient(135deg,rgba(100,140,255,0.06),rgba(201,168,76,0.06))', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '0.618rem', padding: '1.618rem 2.618rem', textAlign: 'center' }}>
+        <div style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.618rem,4vmin,2.618rem)', color: 'rgba(201,168,76,0.9)', marginBottom: '0.618rem' }}>
+          &Psi; = R&#8321;&#8322; &times; G
+        </div>
+        <p style={{ ...S.body, margin: '0 auto', maxWidth: '40rem', textAlign: 'center' }}>
+          This is the master equation from Convergent Recognition Theory (CRT). Here is what it means in plain words.
+        </p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.618rem' }}>
+        {[
+          { sym: '\u03a8', name: 'Psi', color: '201,168,76',  simple: 'How much two things truly recognize each other.', deep: 'When two things meet and really "see" each other \u2014 not just touch, but recognize \u2014 Psi is high. Between a rock and a wall: near zero. Between two people in a real moment of love: near one.' },
+          { sym: 'R\u2081\u2082', name: 'Recognition', color: '179,157,219', simple: 'How close are the two things? How much do they share?', deep: 'Two people who have been through the same thing have high R\u2081\u2082. A person fully present in their own body has high R\u2081\u2082 with themselves. The ego lowers this by building walls.' },
+          { sym: 'G',    name: 'Signal Quality', color: '100,181,246', simple: 'How clear and real is the signal between them?', deep: 'A clear mind gives a clean signal. A mind full of fear, noise, and ego-chatter gives a bad signal. G rewards real information over noise. The ego is mostly noise.' },
+        ].map((item) => (
+          <div key={item.sym} style={{ border: '1px solid rgba(' + item.color + ',0.18)', borderLeft: '3px solid rgba(' + item.color + ',0.65)', borderRadius: '0 0.382rem 0.382rem 0', padding: '1.236rem', background: 'rgba(' + item.color + ',0.03)' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.875rem', marginBottom: '0.618rem' }}>
+              <span style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.618rem,3.5vmin,2.25rem)', color: 'rgba(' + item.color + ',0.9)', lineHeight: 1 }}>{item.sym}</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', letterSpacing: '0.1em', color: 'rgba(' + item.color + ',0.85)', textTransform: 'uppercase' }}>{item.name}</span>
+            </div>
+            <p style={{ ...S.accent, margin: '0 0 0.618rem', color: 'rgba(232,228,212,0.9)' }}>{item.simple}</p>
+            <p style={{ ...S.body, margin: 0 }}>{item.deep}</p>
+          </div>
+        ))}
+      </div>
+      <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '0.618rem', padding: '1.618rem' }}>
+        <div style={S.sectionLabel}>How the Planes Map to CRT</div>
+        <p style={{ ...S.body, margin: '0 0 0.618rem' }}>As you move up the gear stack, Psi rises. Not because we measured it \u2014 this is a philosophical model, not a formula. But the direction is real:</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.382rem' }}>
+          {PLANES.map((p) => (
+            <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', padding: '0.382rem 0' }}>
+              <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(' + p.color + ',0.8)', flexShrink: 0 }} />
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.8vmin,1rem)', color: 'rgba(' + p.color + ',0.85)', textTransform: 'uppercase', letterSpacing: '0.08em', width: '10rem', flexShrink: 0 }}>{p.name.split('/')[0].trim()}</span>
+              <span style={{ ...S.body, margin: 0 }}>{p.simple}</span>
+            </div>
+          ))}
+        </div>
+        <p style={{ ...S.note, marginTop: '0.618rem' }}>
+          The specific numbers in older versions of this page were invented. They have been removed. The direction \u2014 more recognition as you ascend \u2014 is the honest claim.
+        </p>
+      </div>
+      <div style={{ background: 'rgba(100,181,246,0.05)', border: '1px solid rgba(100,181,246,0.18)', borderRadius: '0.618rem', padding: '1.618rem' }}>
+        <div style={S.sectionLabel}>What CRT Adds That Is New</div>
+        <p style={{ ...S.body, margin: '0 0 0.618rem' }}>CRT says the universe is not just a collection of things. It is a system that is always trying to recognize itself. Psi is the measure of how well it is doing that.</p>
+        <p style={{ ...S.accent, margin: 0, color: 'rgba(100,181,246,0.8)' }}>Science raises G. Philosophy raises R&#8321;&#8322;. Love raises both. All three matter. None is enough alone.</p>
+      </div>
+      <div style={{ ...S.note, textAlign: 'center', padding: '0.618rem' }}>
+        CRT is an original theoretical framework. Its philosophical claims are internally consistent and cross-tradition aligned. Its precise mathematical predictions are still speculative. That is honest.
+      </div>
+    </div>
+  );
+}
+
+/* ── MAIN ──────────────────────────────────────────────────────── */
 export default function PlanesClient() {
-  const [activeTab, setActiveTab]     = useState('planes');
-  const [activePlane, setActivePlane] = useState('divine');
+  const [activeTab, setActiveTab] = useState('planes');
 
   return (
     <div style={{ minHeight: '100vh', background: '#03030a', color: '#e8e8f0' }}>
-      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 99, height: 'clamp(56px,8vh,72px)', background: 'linear-gradient(180deg,rgba(3,3,10,0.92) 0%,rgba(3,3,10,0.6) 70%,transparent 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.618rem', pointerEvents: 'none' }}>
+
+      {/* Frosted header */}
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 8, height: 'clamp(56px,8vh,72px)', background: 'linear-gradient(180deg,rgba(3,3,10,0.92) 0%,rgba(3,3,10,0.6) 70%,transparent 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.618rem', pointerEvents: 'none' }}>
         <Link href="/search" style={{ pointerEvents: 'auto' }}>
           <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.618)', cursor: 'pointer' }}>&larr; BACK</span>
         </Link>
         <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(12px,1.8vmin,16px)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>The Architecture</span>
       </div>
+
       <div style={{ maxWidth: '52rem', margin: '0 auto', padding: 'clamp(72px,11vh,110px) 1.618rem 4.236rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.618rem' }}>
+
+        {/* Hero */}
         <div style={{ textAlign: 'center', animation: 'fadeUp 618ms 100ms both ease' }}>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(28px,5.5vmin,52px)', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.78)', textShadow: '0 0 2.618rem rgba(201,168,76,0.2)', marginBottom: '1rem', lineHeight: 1.1 }}>THE FIVE PLANES</h1>
-          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.62)', lineHeight: 1.618, maxWidth: '38rem', margin: '0 auto' }}>
-            Each gear turns the next. Consciousness densifies as it descends into matter. The gears do not stop when you are not watching &mdash; what changes is which one you are identified with.
+          <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(28px,5.5vmin,52px)', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.78)', textShadow: '0 0 2.618rem rgba(201,168,76,0.18)', marginBottom: '1rem', lineHeight: 1.1 }}>
+            THE FIVE PLANES
+          </h1>
+          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.58)', lineHeight: 1.618, maxWidth: '38rem', margin: '0 auto' }}>
+            Five gears. One axle. Everything turning everything else.
+            This is how consciousness becomes the world you live in.
           </p>
         </div>
+
+        {/* Tab pills */}
         <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center', animation: 'fadeUp 618ms 200ms both ease' }}>
           {TABS.map((t) => {
-            const active = activeTab === t.id;
+            const on = activeTab === t.id;
             return (
-              <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ padding: '0.875rem 1.618rem', border: '1px solid rgba(201,168,76,' + (active ? 0.65 : 0.2) + ')', borderRadius: 100, background: active ? 'rgba(201,168,76,0.14)' : 'transparent', color: 'rgba(201,168,76,' + (active ? 1.0 : 0.45) + ')', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.4vmin,1.25rem)', letterSpacing: '0.06em', cursor: 'pointer', transition: 'all 262ms ' + EASE, boxShadow: active ? '0 0 1.618rem rgba(201,168,76,0.15)' : 'none' }}>
+              <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ padding: '0.875rem 1.618rem', border: '1px solid rgba(201,168,76,' + (on ? 0.65 : 0.18) + ')', borderRadius: 100, background: on ? 'rgba(201,168,76,0.14)' : 'transparent', color: 'rgba(201,168,76,' + (on ? 1 : 0.45) + ')', fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.4vmin,1.25rem)', letterSpacing: '0.06em', cursor: 'pointer', transition: 'all 262ms ' + EASE, boxShadow: on ? '0 0 1.618rem rgba(201,168,76,0.14)' : 'none' }}>
                 {t.label}
               </button>
             );
           })}
         </div>
+
+        {/* Content */}
         <div style={{ width: '100%', animation: 'fadeUp 400ms both ease' }}>
-          {activeTab === 'planes'   && <PlanesTab activePlane={activePlane} setActivePlane={setActivePlane} />}
-          {activeTab === 'movement' && <MovementTab />}
-          {activeTab === 'crt'      && <CRTTab />}
-          {activeTab === 'witness'  && <WitnessTab />}
-          {activeTab === 'ego'      && <EgoTab />}
+          {activeTab === 'planes'  && <PlanesTab />}
+          {activeTab === 'shift'   && <ShiftTab />}
+          {activeTab === 'ego'     && <EgoTab />}
+          {activeTab === 'witness' && <WitnessTab />}
+          {activeTab === 'math'    && <MathTab />}
         </div>
+
+        {/* Bottom nav */}
         <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '1rem' }}>
           <Link href="/search" className="btn-ghost" style={{ textDecoration: 'none' }}>ALL DOORS</Link>
           <Link href="/consciousness/observer" className="btn-ghost" style={{ textDecoration: 'none' }}>THE OBSERVER</Link>
           <Link href="/mysticism/geometry" className="btn-ghost" style={{ textDecoration: 'none' }}>SACRED GEOMETRY</Link>
         </div>
+
       </div>
     </div>
   );
