@@ -494,9 +494,9 @@ a {
   pointer-events: auto;
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(0.875rem, 2vmin + 0.15rem, 1.25rem);
-  color: rgba(201,168,76,0.382);
-  letter-spacing: 0.08em;
+  font-size: clamp(1.125rem, 2.618vmin + 0.25rem, 1.75rem);
+  color: rgba(201,168,76, var(--alpha-phi));
+  letter-spacing: -0.0382em;
   cursor: pointer;
   text-decoration: none;
   transition: color 382ms var(--ease-snap);
@@ -504,5 +504,5 @@ a {
 }
 
 .explore-link:hover {
-  color: rgba(201,168,76,0.75);
+  color: rgba(201,168,76, var(--alpha-full));
 }
