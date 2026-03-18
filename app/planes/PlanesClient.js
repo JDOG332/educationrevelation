@@ -269,11 +269,30 @@ function ShiftTab() {
         </div>
       ))}
       <div style={{ background: 'rgba(52,211,153,0.05)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.236rem 1.618rem' }}>
-        <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.55)' }}>The Warning</div>
+        <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.55)' }}>Watch Out For This</div>
+        <p style={{ ...S.accent, margin: '0 0 0.618rem', color: 'rgba(232,228,212,0.88)' }}>
+          There is a trap called <em style={{ color: 'rgba(52,211,153,0.85)' }}>spiritual bypassing.</em>
+        </p>
+        <p style={{ ...S.body, margin: '0 0 0.618rem', color: 'rgba(232,228,212,0.72)' }}>
+          It is when someone uses spiritual words or ideas to hide from real feelings.
+          They look calm on the outside. But underneath, the hurt is just buried — not healed.
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.382rem', margin: '0.618rem 0' }}>
+          {[
+            '“Everything happens for a reason” — said to skip grieving',
+            '“I’m above anger” — said while being angry',
+            '“I just need to meditate more” — said instead of getting real help',
+            'Forgiving fast before actually feeling the hurt',
+            'Using “oneness” talk to avoid a hard conversation',
+          ].map((ex, i) => (
+            <div key={i} style={{ display: 'flex', gap: '0.618rem', alignItems: 'flex-start' }}>
+              <span style={{ color: 'rgba(52,211,153,0.5)', flexShrink: 0, lineHeight: 1.618 }}>&rarr;</span>
+              <span style={{ ...S.body, margin: 0, color: 'rgba(232,228,212,0.65)', fontStyle: 'italic', fontFamily: 'var(--font-accent)', fontSize: 'clamp(1rem,2vmin,1.125rem)' }}>{ex}</span>
+            </div>
+          ))}
+        </div>
         <p style={{ ...S.body, margin: 0, color: 'rgba(232,228,212,0.72)' }}>
-          There is a trap at the spiritual plane called <em style={{ color: 'rgba(52,211,153,0.8)', fontFamily: 'var(--font-accent)' }}>spiritual bypassing</em>.
-          That is when people use spiritual ideas to avoid real feelings or real problems.
-          The gears all need to turn. You cannot skip one.
+          The gears all have to turn. You cannot skip one. Feelings are not the enemy of spiritual growth — they are part of it.
         </p>
       </div>
     </div>
