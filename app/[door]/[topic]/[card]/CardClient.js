@@ -487,6 +487,45 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             textDecoration: "none",
           }}>ALL DOORS</Link>
         </div>
+          {/* Planes link — shown for consciousness/mysticism/geometry topics */}
+          {['meditation', 'awakening', 'geometry', 'observer', 'identity'].includes(topicSlug) && (
+            <Link href="/planes" style={{ textDecoration: 'none', width: '100%', display: 'block', marginTop: '0.618rem' }}>
+              <div style={{
+                padding: '1rem 1.236rem',
+                background: 'rgba(201,168,76,0.04)',
+                border: '1px solid rgba(201,168,76,0.20)',
+                borderRadius: '0.382rem',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                gap: '0.618rem',
+                transition: 'all 382ms cubic-bezier(0.23,1,0.32,1)',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.10)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.45)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.04)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.20)'; }}
+              >
+                <div>
+                  <div style={{
+                    fontFamily: 'var(--font-display)', fontWeight: 700,
+                    fontSize: 'clamp(0.875rem, 2vmin, 1rem)',
+                    color: 'rgba(201,168,76,0.85)', letterSpacing: '0.05em',
+                    marginBottom: '0.236rem',
+                  }}>THE ARCHITECTURE — Five Planes of Consciousness</div>
+                  <div style={{
+                    fontFamily: 'var(--font-accent)', fontStyle: 'italic',
+                    fontSize: 'clamp(0.812rem, 1.6vmin, 0.95rem)',
+                    color: 'rgba(201,168,76,0.45)',
+                  }}>
+                    {topicSlug === 'meditation'  && 'The five planes you move between in practice'}
+                    {topicSlug === 'awakening'   && 'The gear stack you are ascending through'}
+                    {topicSlug === 'geometry'    && 'The plane where sacred geometry is born'}
+                    {topicSlug === 'observer'    && 'The axle that holds all the gears together'}
+                    {topicSlug === 'identity'    && 'What the axle reveals beneath every identity'}
+                  </div>
+                </div>
+                <span style={{ color: 'rgba(201,168,76,0.40)', fontSize: '1.236rem', flexShrink: 0 }}>→</span>
+              </div>
+            </Link>
+          )}
+
       </div>
     </div>
   );
