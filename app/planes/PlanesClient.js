@@ -482,7 +482,7 @@ function MathTab() {
       </div>
       <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '0.618rem', padding: '1.618rem' }}>
         <div style={S.sectionLabel}>How the Planes Map to CRT</div>
-        <p style={{ ...S.body, margin: '0 0 0.618rem' }}>As you move up the gear stack, Psi rises. Not because we measured it \u2014 this is a philosophical model, not a formula. But the direction is real:</p>
+        <p style={{ ...S.body, margin: '0 0 0.618rem' }}>As you move up the gear stack, Psi rises. Not because we measured it — this is a philosophical model, not a formula. But the direction is real:</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.382rem' }}>
           {PLANES.map((p) => (
             <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: '0.618rem', padding: '0.382rem 0' }}>
