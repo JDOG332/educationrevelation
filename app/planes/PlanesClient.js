@@ -76,6 +76,95 @@ const TRADITIONS = [
   { trad: 'Kashmir Shaivism',   ego: 'Anava mala',          beyond: 'Shiva-consciousness', release: 'Pratyabhijna' },
 ];
 
+
+const TRADITION_DETAILS = [
+  {
+    trad: 'Advaita Vedanta', emoji: '\u{1F549}', color: '255,183,77', truth: 98,
+    key: 'You are not the \u201cI.\u201d You are what watches the \u201cI.\u201d',
+    steps: [
+      'Ask: \u201cWho am I?\u201d \u2014 not as a riddle, but as a real hunt.',
+      'Every time a thought shows up, ask: \u201cWho is noticing this?\u201d',
+      'Follow that question back. Keep going.',
+      'The one doing the looking cannot be looked at. It has no shape.',
+      'That shapeless thing \u2014 that is you. The space thoughts happen in.',
+    ],
+  },
+  {
+    trad: 'Zen Buddhism', emoji: '\u2638\uFE0F', color: '179,157,219', truth: 95,
+    key: 'You are not your thoughts. You are the space they appear in.',
+    steps: [
+      'Sit quietly. Don\u2019t try to think. Don\u2019t try not to think.',
+      'Watch thoughts come and go \u2014 like clouds crossing a sky.',
+      'You are the sky. Not the clouds.',
+      'A teacher may give you a puzzle no thinking can solve.',
+      'When thinking gives up \u2014 something opens. That is the real you.',
+    ],
+  },
+  {
+    trad: 'Sufism', emoji: '\u262A\uFE0F', color: '102,187,106', truth: 90,
+    key: 'Repeat one true thing long enough \u2014 and the noise stops.',
+    steps: [
+      'Repeat a name for God, over and over, in a steady rhythm.',
+      'The constant chatter in your head gets replaced by one clear signal.',
+      'Keep going until even the one repeating disappears.',
+      'This is called Fana \u2014 your small self dissolved into something bigger.',
+      'You do not vanish. You come back \u2014 as a vessel, not a wall.',
+    ],
+  },
+  {
+    trad: 'Christian Mysticism', emoji: '\u271D\uFE0F', color: '232,224,255', truth: 88,
+    key: 'Empty yourself of your own wants \u2014 even the want to feel holy.',
+    steps: [
+      'Read one sacred sentence. Then let it go quiet.',
+      'Release every idea about what God is \u2014 even the good ones.',
+      'This is the Cloud of Unknowing. Sit in it with nothing but trust.',
+      'Your need to feel \u201cspiritual\u201d must be let go too.',
+      'What remains is not a reward. It is simply union.',
+    ],
+  },
+  {
+    trad: 'Kabbalah', emoji: '\u2721\uFE0F', color: '100,181,246', truth: 87,
+    key: '\u201cI am a separate thing\u201d is the only illusion. Let it go transparent.',
+    steps: [
+      'Think about what the infinite really means \u2014 not as a word, but as a real thing.',
+      'Notice how that makes your \u201cI\u201d feel very small.',
+      'That smallness is not bad. It is honest.',
+      'Bittul means releasing the grip of \u201cI am something separate.\u201d',
+      'The world does not disappear. It becomes see-through. Light comes through.',
+    ],
+  },
+  {
+    trad: 'Taoism', emoji: '\u262F\uFE0F', color: '212,162,76', truth: 96,
+    key: 'Forcing things is the problem. Stopping the forcing is the whole practice.',
+    steps: [
+      'Watch what happens when you force something. Feel the friction.',
+      'Now watch water. It does not try. It just flows.',
+      'Empty your mind of what you think should happen.',
+      'Act \u2014 but like water acts. Responding to what is real, not what you planned.',
+      'When striving stops, you will feel it. That feeling is Wu Wei.',
+    ],
+  },
+  {
+    trad: 'Kashmir Shaivism', emoji: '\uD83D\uDD31', color: '52,211,153', truth: 85,
+    key: 'You are already free. The whole practice is just remembering.',
+    steps: [
+      'Feel any sensation \u2014 warmth, sound, breath.',
+      'Instead of naming it, just feel it fully.',
+      'That aliveness pulsing through it? That is the divine itself.',
+      'You do not escape the world. The world IS the divine playing.',
+      'The moment you stop feeling small and contracted \u2014 that is recognition.',
+    ],
+  },
+];
+
+const CONVERGENCE = [
+  { layer: 'The Problem',   truth: 'Ego is a case of mistaken identity \u2014 not an enemy to destroy' },
+  { layer: 'The Direction', truth: 'Inward, not outward. You look for what was never missing.' },
+  { layer: 'The Method',    truth: 'All 7 use attention \u2014 not belief, not willpower, not rules' },
+  { layer: 'The Paradox',   truth: 'The one trying to lose the ego is the ego' },
+  { layer: 'The Result',    truth: 'Life keeps going \u2014 but without a \u201cme\u201d claiming credit for all of it' },
+];
+
 const WITNESS_NAMES = [
   { trad: 'Advaita Vedanta',    name: 'Sakshi',              desc: 'The witness \u2014 pure awareness that watches without being changed' },
   { trad: 'Tibetan Buddhism',   name: 'Rigpa',               desc: 'Naked awareness \u2014 the ground that was never born and never dies' },
@@ -310,6 +399,35 @@ function ShiftTab() {
   );
 }
 
+
+/* ── TRADITION ACCORDION ───────────────────────────────────────── */
+function TraditionAccordion({ item }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ border: '1px solid rgba(' + item.color + ',' + (open ? 0.3 : 0.12) + ')', borderRadius: '0.382rem', overflow: 'hidden', transition: 'border-color 262ms ' + EASE, background: open ? 'rgba(' + item.color + ',0.04)' : 'transparent' }}>
+      <button onClick={() => setOpen(!open)} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.236rem', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
+        <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>{item.emoji}</span>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,2vmin,1.125rem)', letterSpacing: '0.06em', color: 'rgba(' + item.color + ',0.9)', textTransform: 'uppercase', flex: 1 }}>{item.trad}</span>
+        <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', color: 'rgba(201,168,76,0.4)', flexShrink: 0, marginRight: '0.382rem' }}>{item.truth}%</span>
+        <span style={{ color: 'rgba(' + item.color + ',0.6)', flexShrink: 0, display: 'inline-block', transition: 'transform 262ms ' + EASE, transform: open ? 'rotate(180deg)' : 'rotate(0deg)', fontSize: '0.75rem' }}>&#9660;</span>
+      </button>
+      {open && (
+        <div style={{ padding: '0 1.236rem 1.236rem 3.25rem', display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(' + item.color + ',0.85)', margin: 0, lineHeight: 1.75 }}>{item.key}</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            {item.steps.map((step, i) => (
+              <div key={i} style={{ display: 'flex', gap: '0.618rem', alignItems: 'flex-start' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '0.75rem', color: 'rgba(' + item.color + ',0.35)', flexShrink: 0, paddingTop: '0.25rem', minWidth: '1rem' }}>{i + 1}</span>
+                <span style={{ ...S.body, margin: 0 }}>{step}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ── TAB: THE EGO TAX ──────────────────────────────────────────── */
 function EgoTab() {
   return (
@@ -370,7 +488,43 @@ function EgoTab() {
         </p>
       </div>
       <div>
-        <div style={S.sectionLabel}>6 Ways to Let Go — Right Now</div>
+        <div style={S.sectionLabel}>Click Any Tradition &#8212; See Exactly How It Works</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.382rem' }}>
+          {TRADITION_DETAILS.map((t) => (
+            <TraditionAccordion key={t.trad} item={t} />
+          ))}
+        </div>
+      </div>
+      <div style={{ background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '0.618rem', padding: '1.618rem' }}>
+        <div style={S.sectionLabel}>What All 7 Agree On &#8212; 91% Consensus</div>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ background: 'rgba(201,168,76,0.08)' }}>
+                {['Layer', 'What Every Tradition Agrees On'].map((h) => (
+                  <th key={h} style={{ ...S.goldLabel, padding: '0.618rem 0.875rem', borderBottom: '1px solid rgba(201,168,76,0.2)', textAlign: 'left', margin: 0 }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {CONVERGENCE.map((row, i) => (
+                <tr key={row.layer} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
+                  <td style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', padding: '0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', whiteSpace: 'nowrap' }}>{row.layer}</td>
+                  <td style={{ ...S.body, padding: '0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>{row.truth}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style={{ background: 'linear-gradient(135deg,rgba(201,168,76,0.07),rgba(179,157,219,0.07))', border: '1px solid rgba(201,168,76,0.32)', borderRadius: '0.618rem', padding: '2.618rem 1.618rem', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.375rem,3.5vmin,1.875rem)', color: 'rgba(232,228,212,0.95)', margin: '0 auto', maxWidth: '36rem', lineHeight: 1.75 }}>
+          Stop mistaking the observer for the observed.
+        </p>
+        <p style={{ ...S.note, marginTop: '1rem' }}>The point all 7 traditions arrive at &#8212; independently, across thousands of years.</p>
+      </div>
+      <div>
+        <div style={S.sectionLabel}>6 Ways to Let Go &#8212; Right Now</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '0.618rem' }}>
           {RELEASE_TECHNIQUES.map((t) => (
             <div key={t.num} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(201,168,76,0.1)', borderRadius: '0.382rem', padding: '1.236rem' }}>
