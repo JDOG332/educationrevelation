@@ -546,6 +546,33 @@ export default function AlanWattsClient() {
           ))}
         </div>
 
+        {/* Explore These Doors */}
+        <div style={{
+          width: '100%', padding: '0 1.618rem',
+          marginBottom: '1.618rem',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem',
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(0.65rem, 1.3vmin, 0.75rem)',
+            letterSpacing: '0.25em',
+            color: `rgba(${GOLD},0.35)`,
+          }}>EXPLORE THESE DOORS</div>
+          <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Link href="/mysticism/songs/ego-dissolution" className="btn-ghost" style={{ textDecoration: 'none' }}>EGO DISSOLUTION</Link>
+            <Link href="/mysticism/songs/zazen" className="btn-ghost" style={{ textDecoration: 'none' }}>ZAZEN</Link>
+            <Link href="/mysticism/songs/dark-night-soul" className="btn-ghost" style={{ textDecoration: 'none' }}>DARK NIGHT OF THE SOUL</Link>
+            <Link href="/philosophy/songs/limits-of-language" className="btn-ghost" style={{ textDecoration: 'none' }}>LIMITS OF LANGUAGE</Link>
+            <Link href="/philosophy/songs/present-moment" className="btn-ghost" style={{ textDecoration: 'none' }}>THE PRESENT MOMENT</Link>
+            <Link href="/philosophy/songs/impermanence" className="btn-ghost" style={{ textDecoration: 'none' }}>IMPERMANENCE</Link>
+            <Link href="/philosophy/songs/void-as-potential" className="btn-ghost" style={{ textDecoration: 'none' }}>THE VOID AS POTENTIAL</Link>
+            <Link href="/consciousness/identity/true-self" className="btn-ghost" style={{ textDecoration: 'none' }}>THE TRUE SELF</Link>
+            <Link href="/consciousness/songs/flow-state" className="btn-ghost" style={{ textDecoration: 'none' }}>FLOW STATE</Link>
+            <Link href="/mythology/songs/divine-play-lila" className="btn-ghost" style={{ textDecoration: 'none' }}>DIVINE PLAY — LILA</Link>
+            <Link href="/art/story/heros-journey" className="btn-ghost" style={{ textDecoration: 'none' }}>THE HERO&apos;S JOURNEY</Link>
+          </div>
+        </div>
+
         {/* Footer */}
         <div style={{
           width: '100%', padding: '2.618rem 1.618rem 0',
