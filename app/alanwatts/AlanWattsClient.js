@@ -559,16 +559,16 @@ export default function AlanWattsClient() {
             color: `rgba(${GOLD},0.35)`,
           }}>EXPLORE THESE DOORS</div>
           <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/mysticism/songs/ego-dissolution" className="btn-ghost" style={{ textDecoration: 'none' }}>EGO DISSOLUTION</Link>
-            <Link href="/mysticism/songs/zazen" className="btn-ghost" style={{ textDecoration: 'none' }}>ZAZEN</Link>
-            <Link href="/mysticism/songs/dark-night-soul" className="btn-ghost" style={{ textDecoration: 'none' }}>DARK NIGHT OF THE SOUL</Link>
-            <Link href="/philosophy/songs/limits-of-language" className="btn-ghost" style={{ textDecoration: 'none' }}>LIMITS OF LANGUAGE</Link>
-            <Link href="/philosophy/songs/present-moment" className="btn-ghost" style={{ textDecoration: 'none' }}>THE PRESENT MOMENT</Link>
-            <Link href="/philosophy/songs/impermanence" className="btn-ghost" style={{ textDecoration: 'none' }}>IMPERMANENCE</Link>
-            <Link href="/philosophy/songs/void-as-potential" className="btn-ghost" style={{ textDecoration: 'none' }}>THE VOID AS POTENTIAL</Link>
+            <Link href="/mysticism/oneness/ego-dissolution" className="btn-ghost" style={{ textDecoration: 'none' }}>EGO DISSOLUTION</Link>
+            <Link href="/mysticism/meditation/zazen" className="btn-ghost" style={{ textDecoration: 'none' }}>ZAZEN</Link>
+            <Link href="/mysticism/awakening/dark-night-soul" className="btn-ghost" style={{ textDecoration: 'none' }}>DARK NIGHT OF THE SOUL</Link>
+            <Link href="/philosophy/language/limits-of-language" className="btn-ghost" style={{ textDecoration: 'none' }}>LIMITS OF LANGUAGE</Link>
+            <Link href="/philosophy/timechange/present-moment" className="btn-ghost" style={{ textDecoration: 'none' }}>THE PRESENT MOMENT</Link>
+            <Link href="/philosophy/timechange/impermanence" className="btn-ghost" style={{ textDecoration: 'none' }}>IMPERMANENCE</Link>
+            <Link href="/philosophy/existence/void-as-potential" className="btn-ghost" style={{ textDecoration: 'none' }}>THE VOID AS POTENTIAL</Link>
             <Link href="/consciousness/identity/true-self" className="btn-ghost" style={{ textDecoration: 'none' }}>THE TRUE SELF</Link>
-            <Link href="/consciousness/songs/flow-state" className="btn-ghost" style={{ textDecoration: 'none' }}>FLOW STATE</Link>
-            <Link href="/mythology/songs/divine-play-lila" className="btn-ghost" style={{ textDecoration: 'none' }}>DIVINE PLAY — LILA</Link>
+            <Link href="/consciousness/attention/flow-state" className="btn-ghost" style={{ textDecoration: 'none' }}>FLOW STATE</Link>
+            <Link href="/mythology/trickster/divine-play-lila" className="btn-ghost" style={{ textDecoration: 'none' }}>DIVINE PLAY — LILA</Link>
             <Link href="/art/story/heros-journey" className="btn-ghost" style={{ textDecoration: 'none' }}>THE HERO&apos;S JOURNEY</Link>
           </div>
         </div>
