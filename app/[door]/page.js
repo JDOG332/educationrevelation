@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
 import DoorClient from './DoorClient';
@@ -46,7 +47,7 @@ export default async function DoorPage({ params }) {
   const meta = DOOR_META[dataKey];
 
   if (!meta) {
-    return <div style={{ minHeight: "100vh", background: "#03030a", display: "flex", alignItems: "center", justifyContent: "center", color: "#e8e8f0" }}>Door not found.</div>;
+    notFound();
   }
 
   const subs = SUBCATEGORIES[dataKey] || [];

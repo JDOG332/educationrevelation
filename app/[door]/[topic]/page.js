@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { TOPIC_CARDS } from '@/lib/topicCards';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
@@ -44,7 +45,7 @@ export default async function TopicPage({ params }) {
   const sub = (SUBCATEGORIES[dataKey] || []).find(s => s.id === p.topic);
 
   if (!doorMeta || !sub) {
-    return <div style={{ minHeight: "100vh", background: "#03030a", display: "flex", alignItems: "center", justifyContent: "center", color: "#e8e8f0" }}>Topic not found.</div>;
+    notFound();
   }
 
   const cards = TOPIC_CARDS[dataKey]?.[p.topic] || [];

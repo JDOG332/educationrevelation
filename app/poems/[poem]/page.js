@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { POEMS, ASK_POEMS, KAL_POEMS } from '@/lib/data';
 import PoemExperience from '@/components/PoemExperience';
 
@@ -31,7 +32,7 @@ export default async function PoemPage({ params }) {
   const poem = POEM_MAP[p.poem];
 
   if (!poem) {
-    return <div style={{ minHeight: "100vh", background: "#03030a", display: "flex", alignItems: "center", justifyContent: "center", color: "#e8e8f0" }}>Poem not found.</div>;
+    notFound();
   }
 
   // Extract clean text lines (skip empty strings and dividers)

@@ -5,8 +5,8 @@ import Link from 'next/link';
 const EASE = "cubic-bezier(0.23,1,0.32,1)";
 
 const POEMS = [
-  { key: "dol", slug: "rhythm-of-life",   title: "It's the Rhythm of Life", subtitle: "Every hope is a heartbeat...", color: "201,168,76" },
-  { key: "rol", slug: "death-or-life",    title: "Death or Life", subtitle: "Alive when dancing & dead when not...", color: "190,140,220" },
+  { key: "rol", slug: "rhythm-of-life",   title: "It's the Rhythm of Life", subtitle: "Every hope is a heartbeat...", color: "201,168,76" },
+  { key: "dol", slug: "death-or-life",    title: "Death or Life", subtitle: "Alive when dancing & dead when not...", color: "190,140,220" },
   { key: "kal", slug: "kaleidoscope-sea",  title: "Kaleidoscope Sea", subtitle: "One door closes & another one opens...", color: "79,195,247" },
 ];
 

@@ -346,7 +346,7 @@ export default function SearchClient() {
   const handleResultClick = (r) => {
     if (r.type === "card") {
       const slug = KEY_TO_SLUG[r.doorKey];
-      if (slug) router.push(`/${slug}/${r.subId}`);
+      if (slug) router.push(`/${slug}/${r.subId}/${r.cardId}`);
     } else if (r.type === "mirror" && r.navDoorKey) {
       const slug = KEY_TO_SLUG[r.navDoorKey];
       if (slug) router.push(`/${slug}`);

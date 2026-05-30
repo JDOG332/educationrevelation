@@ -39,7 +39,6 @@ export default function Home() {
         <p>The Vitruvian Man breathes at the center — Da Vinci's exact geometry verified to the decimal. Two positions between the circle (cosmos) and the square (earth). Inhale: arms raised, touching the divine. Exhale: arms down, grounded in matter.</p>
         <p>Built on Convergent Recognition Theory (Ψ = R₁₂ × G) — a mathematical framework measuring how two systems recognize each other. The site itself is proof: ten lenses, one truth, all converging.</p>
         <h2>The Ten Doors of Human Knowledge</h2>
-        <h2>The Ten Doors of Human Knowledge</h2>
         <nav>
           <a href="/search">Search All 1,001 Topics</a>
           <a href="/love">Love — Connection, Grief, Trust, Family & Friendship</a>
