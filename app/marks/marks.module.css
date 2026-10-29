@@ -1,0 +1,45 @@
+.stanzas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-md);
+}
+
+.stanza {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3xs);
+  font-family: var(--font-accent);
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+  line-height: 1.5;
+  color: rgba(232, 232, 240, 0.9);
+}
+
+.line {
+  display: block;
+}
+
+.gold {
+  color: rgba(201, 168, 76, 0.92);
+  font-style: italic;
+}
+
+.senses {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-xs);
+}
+
+.sense {
+  display: flex;
+  gap: var(--s-sm);
+  align-items: baseline;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: rgba(232, 232, 240, 0.88);
+}
+
+.emoji {
+  flex: 0 0 1.75rem;
+  font-size: 1.25rem;
+}
