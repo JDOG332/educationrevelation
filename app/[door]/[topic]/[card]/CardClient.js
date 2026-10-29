@@ -5,7 +5,6 @@ import Link from 'next/link';
 import WikiCard from '@/components/WikiCard';
 import SongRow from '@/components/SongRow';
 import { autoParagraph } from '@/lib/paragraphs';
-import { getRelatedCards } from '@/lib/siftEngine';
 
 
 /* ─── SECTION LABEL ───────────────────────────────────────────── */
@@ -76,7 +75,7 @@ function TabPill({ icon, label, active, onClick, index = 0 }) {
 /* ═══════════════════════════════════════════════════════════════
    INDIVIDUAL CARD PAGE (1 of 1,001) — TAB SYSTEM
    ═══════════════════════════════════════════════════════════════ */
-export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, prevCard, nextCard }) {
+export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, prevCard, nextCard, related: relatedProp }) {
   const [shared, setShared] = useState(false);
   const [activeTab, setActiveTab] = useState(null);
   const rgb = sub.accent;
@@ -111,11 +110,8 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
   if (card.songs?.length > 0)  tabs.push({ key: "music",  icon: "🎵", label: "Music" });
   if (card.links?.length > 0)  tabs.push({ key: "explore", icon: "📖", label: "Explore" });
 
-  // Related cards from different doors
-  const related = useMemo(() =>
-    getRelatedCards(card.title, card.simple, doorSlug, card.id),
-    [card.title, card.simple, doorSlug, card.id]
-  );
+  // Related cards from different doors arrive as a prop (worked out at build time)
+  const related = relatedProp || [];
 
   return (
     <div className="phi-page" style={{

@@ -1,6 +1,7 @@
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { TOPIC_CARDS } from '@/lib/topicCards';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
+import { getRelatedCards } from '@/lib/siftEngine';
 import CardClient from './CardClient';
 
 export async function generateStaticParams() {
@@ -64,6 +65,10 @@ export default async function CardPage({ params }) {
   const prevCard = cardIndex > 0 ? cards[cardIndex - 1] : null;
   const nextCard = cardIndex < cards.length - 1 ? cards[cardIndex + 1] : null;
 
+  // Related cards are worked out here at build time, so the browser never
+  // downloads the full topic card library just to show three links.
+  const related = getRelatedCards(card.title, card.simple, p.door, card.id);
+
   return (
     <>
       {/* SEO LAYER — Google/AI reads this */}
@@ -96,6 +101,7 @@ export default async function CardPage({ params }) {
         doorMeta={doorMeta}
         doorSlug={p.door}
         topicSlug={p.topic}
+        related={related}
         prevCard={prevCard ? { id: prevCard.id, title: prevCard.title, icon: prevCard.icon } : null}
         nextCard={nextCard ? { id: nextCard.id, title: nextCard.title, icon: nextCard.icon } : null}
       />
