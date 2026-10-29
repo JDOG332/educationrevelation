@@ -286,17 +286,6 @@ export default function SearchClient() {
         pointerEvents: "none", zIndex: 0,
       }} />
 
-      {/* Frosted header — BACK + site nav */}
-      <div className="frosted-header" style={{ justifyContent: "space-between", paddingRight: "1.618rem" }}>
-        <Link href="/" style={{ pointerEvents: "auto", textDecoration: "none" }}>
-          <span className="back-link">← BACK</span>
-        </Link>
-        <div style={{ display: "flex", gap: "1.618rem", pointerEvents: "auto" }}>
-          <Link href="/poems" className="explore-link">POEMS</Link>
-          <Link href="/math" className="explore-link">MATH</Link>
-          <Link href="/promises" className="explore-link" style={{ color: "rgba(220,160,160,0.382)" }}>PROMISES</Link>
-        </div>
-      </div>
 
       {/* Content */}
       <div className="content-below-header" style={{

@@ -1,5 +1,6 @@
 import './globals.css';
 import CursorProvider from '@/components/CursorProvider';
+import SiteHeader from '@/components/SiteHeader';
 import { SITE_URL } from '@/lib/meta';
 
 export const metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <CursorProvider />
+        <SiteHeader />
         {children}
       </body>
     </html>

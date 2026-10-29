@@ -120,19 +120,26 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
       paddingBottom: "4.236rem",
     }}>
 
-      {/* Frosted header — with SHARE + EXPLORE */}
-      <div className="frosted-header" style={{
-        justifyContent: "space-between",
-        paddingRight: "1.618rem",
+      {/* Content */}
+      <div className="content-below-header" style={{
+        width: "100%", maxWidth: "var(--content-max)",
+        display: "flex", flexDirection: "column", alignItems: "center",
       }}>
-        <Link href={`/${doorSlug}/${topicSlug}`} style={{ pointerEvents: "auto", textDecoration: "none" }}>
-          <span className="back-link">← BACK</span>
-        </Link>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem", pointerEvents: "auto" }}>
-          <Link href="/search" className="explore-link">SEARCH</Link>
+        {/* Breadcrumb */}
+        <div className="stagger-fade" style={{
+          fontFamily: "var(--font-body)",
+          fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
+          color: "rgba(201,168,76,0.75)",
+          letterSpacing: "0.12em",
+          marginBottom: "0.75rem",
+          animationDelay: "100ms",
+          textAlign: "center",
+        }}>{doorMeta.emoji} {doorMeta.name} → {sub.name}</div>
 
-          <button onClick={handleShare} style={{
+        {/* Share this card */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.25rem" }}>
+          <button aria-label="Copy a link to this card" onClick={handleShare} style={{
             background: shared ? `rgba(${rgb},0.15)` : `rgba(${rgb},0.06)`,
             border: `1px solid rgba(${rgb},${shared ? 0.618 : 0.30})`,
             borderRadius: "0.382rem",
@@ -152,24 +159,6 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             }}>{shared ? "COPIED" : "SHARE"}</span>
           </button>
         </div>
-      </div>
-
-      {/* Content */}
-      <div className="content-below-header" style={{
-        width: "100%", maxWidth: "var(--content-max)",
-        display: "flex", flexDirection: "column", alignItems: "center",
-      }}>
-
-        {/* Breadcrumb */}
-        <div className="stagger-fade" style={{
-          fontFamily: "var(--font-body)",
-          fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
-          color: "rgba(201,168,76,0.30)",
-          letterSpacing: "0.12em",
-          marginBottom: "1rem",
-          animationDelay: "100ms",
-          textAlign: "center",
-        }}>{doorMeta.emoji} {doorMeta.name} → {sub.name}</div>
 
         {/* Card icon */}
         <div className="stagger-fade" style={{
