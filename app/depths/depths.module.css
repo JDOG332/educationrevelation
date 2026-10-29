@@ -1,0 +1,71 @@
+.row {
+  flex-direction: row !important;
+  align-items: center;
+  gap: var(--s-sm) !important;
+  padding: var(--s-sm) var(--s-md) !important;
+}
+
+.closed {
+  border-style: dashed !important;
+}
+
+.n {
+  flex: 0 0 2rem;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: rgba(201, 168, 76, 0.88);
+  text-align: center;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgba(232, 232, 240, 0.95);
+}
+
+.breath {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: rgba(201, 168, 76, 0.85);
+}
+
+.open {
+  font-size: 1.125rem;
+  color: rgba(201, 168, 76, 0.85);
+}
+
+/* single depth page */
+.big {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 4.236rem);
+  line-height: 1;
+  color: rgba(201, 168, 76, 0.9);
+}
+
+.gist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3xs);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+  line-height: 1.5;
+  color: rgba(232, 232, 240, 0.92);
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-sm);
+  flex-wrap: wrap;
+}
