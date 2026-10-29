@@ -37,6 +37,7 @@ export default function sitemap() {
     entry('/chamber', 0.6),
     entry('/wright', 0.4),
     entry('/depths', 0.6),
+    entry('/tree', 0.6),
     entry('/depths/break', 0.5),
     entry('/depths/self', 0.5),
     entry('/depths/other', 0.5),
