@@ -16,9 +16,8 @@ export default function sitemap() {
   const pages = [
     entry('/', 1.0, 'weekly'),
     entry('/search', 0.9, 'weekly'),
-    entry('/mathematics/convergent-recognition', 0.9),
+    entry('/theory', 0.9, 'weekly'),
     entry('/mathematics/vitruvian', 0.7),
-    entry('/math', 0.5),
     entry('/promises', 0.7),
     entry('/poems', 0.6),
     entry('/poems/rhythm-of-life', 0.5),

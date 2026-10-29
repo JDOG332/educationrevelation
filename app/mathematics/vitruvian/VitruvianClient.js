@@ -7,5 +7,5 @@ const VitruvianPage = dynamic(() => import('@/components/VitruvianPage'), { ssr:
 
 export default function VitruvianClient() {
   const router = useRouter();
-  return <VitruvianPage onBack={() => router.push('/math')} />;
+  return <VitruvianPage onBack={() => router.push('/mathematics')} />;
 }

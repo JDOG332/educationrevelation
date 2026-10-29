@@ -51,12 +51,12 @@ function SubCard({ sub, doorSlug, index }) {
           lineHeight: 1.618,
         }}>{sub.desc}</div>
         {sub.psi && (
-          <div style={{
+          <div title="A felt score, set by hand, not computed. See /theory#rooms" style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(0.618rem, 1.4vmin + 0.1rem, 0.812rem)",
-            color: `rgba(${rgb},0.30)`,
+            fontSize: "0.875rem",
+            color: `rgba(${rgb},0.62)`,
             marginTop: "0.382rem",
-            fontWeight: 300,
+            fontWeight: 400,
           }}>Ψ {sub.psi.toFixed(4)}</div>
         )}
       </div>
@@ -68,7 +68,7 @@ function SubCard({ sub, doorSlug, index }) {
 /* ═══════════════════════════════════════════════════════════════
    DOOR PAGE
    ═══════════════════════════════════════════════════════════════ */
-export default function DoorClient({ doorSlug, doorMeta, subcategories, dataKey }) {
+export default function DoorClient({ doorSlug, doorMeta, subcategories, dataKey, lead }) {
   // Door color from first subcategory's accent, fallback to gold
   const doorRgb = subcategories[0]?.accent || "201,168,76";
 
@@ -119,6 +119,29 @@ export default function DoorClient({ doorSlug, doorMeta, subcategories, dataKey 
           lineHeight: 1.618,
           maxWidth: "30rem",
         }}>"{doorMeta.tagline}"</p>
+
+        {/* A door may carry one lead tile above its rooms (the Mathematics door leads with the theory) */}
+        {lead && (
+          <Link href={lead.href} style={{ textDecoration: "none", width: "100%", marginBottom: "1rem" }}>
+            <div className="phi-card stagger-fade" style={{
+              borderColor: `rgba(${doorRgb},0.55)`,
+              background: `rgba(${doorRgb},0.08)`,
+              animationDelay: "250ms",
+            }}>
+              <div style={{
+                fontFamily: "var(--font-display)", fontWeight: 700,
+                fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.5rem)",
+                color: `rgba(${doorRgb},0.95)`,
+                marginBottom: "0.382rem",
+              }}>{lead.icon} {lead.title}</div>
+              <div style={{
+                fontFamily: "var(--font-accent)", fontStyle: "italic",
+                fontSize: "clamp(1rem, 2vmin + 0.15rem, 1.25rem)",
+                color: `rgba(232,232,240,0.85)`,
+              }}>{lead.sub}</div>
+            </div>
+          </Link>
+        )}
 
         {/* Subcategories */}
         <div style={{

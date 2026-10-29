@@ -12,5 +12,12 @@ export default function MathematicsPage() {
   const meta = DOOR_META[dataKey];
   const subs = SUBCATEGORIES[dataKey] || [];
 
-  return <DoorClient doorSlug="mathematics" doorMeta={meta} subcategories={subs} dataKey={dataKey} />;
+  const lead = {
+    href: "/theory",
+    icon: "Ψ",
+    title: "CONVERGENT RECOGNITION THEORY",
+    sub: "Ψ = R₁₂ × Γ. The equation underneath the site, with the paper, a live calculator and the tests. Then the Vitruvian Man at /mathematics/vitruvian.",
+  };
+
+  return <DoorClient doorSlug="mathematics" doorMeta={meta} subcategories={subs} dataKey={dataKey} lead={lead} />;
 }
