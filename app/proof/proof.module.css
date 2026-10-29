@@ -1,0 +1,27 @@
+.rowHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3xs);
+}
+
+.dots {
+  display: flex;
+  gap: var(--s-2xs);
+  margin-bottom: var(--s-3xs);
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.85);
+}
+
+.sum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.75rem, 4vw + 1rem, 2.618rem);
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: rgba(201, 168, 76, 0.92);
+}
