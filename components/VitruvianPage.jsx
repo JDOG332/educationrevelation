@@ -291,7 +291,7 @@ export default function VitruvianPage({ onBack }) {
           <FactRow label="Square corners" value="Distance 0.906 from navel" sub="Corners reach OUTSIDE the circle. Earth extends beyond cosmos at its corners." />
           <FactRow label="Man's height" value="1.1496 = arm span" sub="Da Vinci: height equals arm span. The square's side equals both." />
           <FactRow label="Head size" value="1/8 of total height = 0.0719" sub="Da Vinci's proportion. Head top = square top." />
-          <FactRow label="Navel height" value="60.89% from feet" sub="The golden section. R/H = 137/225 ≈ 0.6089." />
+          <FactRow label="Navel height" value="60.89% from feet" sub="Da Vinci's own ratio, R/H = 137/225 ≈ 0.6089, a hair below the golden section φ⁻¹ ≈ 0.618." />
           <FactRow label="Arm angle (X-pose)" value="34.35° above horizontal" sub="Exact: tip distance from navel = 0.699996. Sub-degree precision." />
           <FactRow label="Leg spread (X-pose)" value="30° each = 60° total" sub="Equilateral triangle. Da Vinci wrote: 'space between legs will be an equilateral triangle.'" />
         </div>

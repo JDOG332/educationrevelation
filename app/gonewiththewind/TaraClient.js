@@ -261,7 +261,7 @@ export default function TaraClient() {
         {/* Bottom nav */}
         <div style={{ display: 'flex', gap: '0.618rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           <Link href="/search" className="btn-ghost" style={{ textDecoration: 'none' }}>ALL DOORS</Link>
-          <Link href="/mythology/heros-journey" className="btn-ghost" style={{ textDecoration: 'none' }}>THE HERO&apos;S JOURNEY</Link>
+          <Link href="/mythology/hero" className="btn-ghost" style={{ textDecoration: 'none' }}>THE HERO&apos;S JOURNEY</Link>
           <Link href="/consciousness/identity" className="btn-ghost" style={{ textDecoration: 'none' }}>IDENTITY &amp; THE SELF</Link>
         </div>
 

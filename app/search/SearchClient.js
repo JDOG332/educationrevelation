@@ -31,92 +31,6 @@ const PYRAMID = [[0], [1, 2], [3, 4, 5], [6, 7, 8, 9]];
 const SLUG_MAP = {};
 DOORS.forEach(d => { SLUG_MAP[d.key] = d.slug; });
 
-/* ─── LIVING PULSE — curated titles that rotate ────────────────── */
-const PULSE_CARDS = [
-  { title: "The Golden Repair (Kintsugi)",   path: "/love/grief/golden-repair-kintsugi" },
-  { title: "The Observer Effect",            path: "/consciousness/perception/observer-effect" },
-  { title: "The Golden Ratio (φ)",           path: "/mathematics/number/golden-ratio" },
-  { title: "The Hero's Journey",             path: "/art/story/heros-journey" },
-  { title: "Quantum Entanglement",           path: "/mysticism/oneness/quantum-entanglement-unity" },
-  { title: "Sacred Geometry",                path: "/mysticism/geometry/golden-ratio-sacred" },
-  { title: "Ego Dissolution",                path: "/mysticism/oneness/ego-dissolution" },
-  { title: "The Fibonacci Sequence",         path: "/mathematics/patterns/fibonacci-sequence" },
-  { title: "Lucid Dreaming",                 path: "/consciousness/dreamsleep/lucid-dreaming" },
-  { title: "The Problem of Evil",            path: "/religion/goodevil/problem-of-evil" },
-  { title: "The Butterfly Effect",           path: "/philosophy/freewill/butterfly-effect" },
-  { title: "Free Will",                      path: "/religion/goodevil/free-will" },
-  { title: "Neuroplasticity",                path: "/science/medicine/neuroplasticity" },
-  { title: "The Big Bang Theory",            path: "/science/cosmos/big-bang" },
-  { title: "Photosynthesis",                 path: "/mysticism/lifeforce/photosynthesis-drinking-light" },
-  { title: "The Flow State",                 path: "/consciousness/observer/flow-state-observer" },
-  { title: "Non-Duality",                    path: "/consciousness/observer/nonduality-observer" },
-  { title: "Katabasis: The Heroic Descent",  path: "/mythology/underworld/katabasis" },
-  { title: "The Hero's Return",              path: "/mythology/underworld/heros-return" },
-  { title: "Libertarian Free Will",          path: "/consciousness/choice/libertarian-free-will" },
-  { title: "The Five Planes of Consciousness", path: "/planes" },
-  { title: "The Witness Self",                path: "/planes" },
-  { title: "The Ego Tax",                     path: "/planes" },
-];
-
-function LivingPulse({ onNavigate }) {
-  const [index, setIndex] = useState(() => Math.floor(Math.random() * PULSE_CARDS.length));
-  const [visible, setVisible] = useState(true);
-  const [hover, setHover] = useState(false);
-
-  useEffect(() => {
-    const CYCLE = 4236; // φ³ × 1000ms
-    const FADE = 382;
-
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setIndex(prev => {
-          let next;
-          do { next = Math.floor(Math.random() * PULSE_CARDS.length); } while (next === prev);
-          return next;
-        });
-        setVisible(true);
-      }, FADE);
-    }, CYCLE);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const card = PULSE_CARDS[index];
-
-  return (
-    <div
-      onClick={() => onNavigate(card.path)}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{
-        textAlign: "center",
-        cursor: "pointer",
-        padding: "0.236rem 0",
-      }}
-    >
-      <span style={{
-        fontFamily: "var(--font-accent)",
-        fontStyle: "italic",
-        fontSize: "clamp(0.938rem, 2vmin + 0.12rem, 1.25rem)",
-        color: `rgba(201,168,76,${hover ? 0.75 : 0.35})`,
-        transition: `color 382ms var(--ease-snap), opacity 382ms var(--ease-snap)`,
-        opacity: visible ? 1 : 0,
-        letterSpacing: "0.02em",
-      }}>Someone is reading about... <em style={{
-        fontStyle: "normal",
-        fontFamily: "var(--font-display)",
-        fontWeight: 700,
-        fontSize: "clamp(0.938rem, 2vmin + 0.12rem, 1.25rem)",
-        color: `rgba(201,168,76,${hover ? 0.90 : 0.50})`,
-        letterSpacing: "0.04em",
-        transition: "color 382ms var(--ease-snap)",
-      }}>{card.title}</em></span>
-    </div>
-  );
-}
-
-
 /* ─── DOOR CARD (with real-time scoring) ──────────────────────── */
 function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
   const [hover, setHover] = useState(false);
@@ -487,7 +401,6 @@ export default function SearchClient() {
             marginBottom: "1.618rem",
             animationDelay: "280ms",
           }}>
-            <LivingPulse onNavigate={(path) => router.push(path)} />
           </div>
         )}
 
