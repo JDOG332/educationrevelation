@@ -1,120 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import WatchLink from './WatchLink';
+
+// The ideas data is loaded only when the By idea view is opened.
+const IdeasView = dynamic(() => import('./IdeasView'), {
+  ssr: false,
+  loading: () => (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9375rem', color: 'rgba(232,232,240,0.70)', textAlign: 'center' }}>
+      Loading ideas
+    </p>
+  ),
+});
 import { ALAN_WATTS_CATEGORIES, countLinkTypes, displayYear } from '@/lib/alanWattsData';
 
 const GOLD = '201,168,76';
 const PHI = 1.618;
-
-/* ─── LINK BUTTON ─────────────────────────────────────────────── */
-function WatchLink({ lecture }) {
-  const { linkType, link, title } = lecture;
-
-  if (linkType === 'url') {
-    return (
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: '0.382rem',
-          padding: '0.382rem 0.854rem',
-          background: `rgba(${GOLD},0.08)`,
-          border: `1px solid rgba(${GOLD},0.30)`,
-          borderRadius: '0.382rem',
-          fontFamily: 'var(--font-display)', fontWeight: 700,
-          fontSize: 'clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)',
-          letterSpacing: '0.10em',
-          color: `rgba(${GOLD},0.85)`,
-          textDecoration: 'none',
-          transition: 'all 262ms var(--ease-snap)',
-          whiteSpace: 'nowrap',
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.background = `rgba(${GOLD},0.15)`;
-          e.currentTarget.style.borderColor = `rgba(${GOLD},0.60)`;
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.background = `rgba(${GOLD},0.08)`;
-          e.currentTarget.style.borderColor = `rgba(${GOLD},0.30)`;
-        }}
-      >
-        ▶ WATCH
-      </a>
-    );
-  }
-
-  if (linkType === 'podcast') {
-    return (
-      <a
-        href="https://www.youtube.com/playlist?list=PLqGJSfj5N-pKxwOFjYC6bxQhTEWegGDdZ"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: '0.382rem',
-          padding: '0.382rem 0.854rem',
-          background: 'rgba(180,140,220,0.08)',
-          border: '1px solid rgba(180,140,220,0.30)',
-          borderRadius: '0.382rem',
-          fontFamily: 'var(--font-display)', fontWeight: 700,
-          fontSize: 'clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)',
-          letterSpacing: '0.10em',
-          color: 'rgba(180,140,220,0.85)',
-          textDecoration: 'none',
-          transition: 'all 262ms var(--ease-snap)',
-          whiteSpace: 'nowrap',
-        }}
-        title={link}
-        onMouseEnter={e => {
-          e.currentTarget.style.background = 'rgba(180,140,220,0.15)';
-          e.currentTarget.style.borderColor = 'rgba(180,140,220,0.60)';
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.background = 'rgba(180,140,220,0.08)';
-          e.currentTarget.style.borderColor = 'rgba(180,140,220,0.30)';
-        }}
-      >
-        🎙️ {link}
-      </a>
-    );
-  }
-
-  // Search term
-  const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(link)}`;
-  return (
-    <a
-      href={searchUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: 'inline-flex', alignItems: 'center', gap: '0.382rem',
-        padding: '0.382rem 0.854rem',
-        background: 'rgba(100,160,220,0.08)',
-        border: '1px solid rgba(100,160,220,0.25)',
-        borderRadius: '0.382rem',
-        fontFamily: 'var(--font-display)', fontWeight: 700,
-        fontSize: 'clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)',
-        letterSpacing: '0.10em',
-        color: 'rgba(100,160,220,0.80)',
-        textDecoration: 'none',
-        transition: 'all 262ms var(--ease-snap)',
-        whiteSpace: 'nowrap',
-      }}
-      title={`Search: "${link}"`}
-      onMouseEnter={e => {
-        e.currentTarget.style.background = 'rgba(100,160,220,0.15)';
-        e.currentTarget.style.borderColor = 'rgba(100,160,220,0.50)';
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.background = 'rgba(100,160,220,0.08)';
-        e.currentTarget.style.borderColor = 'rgba(100,160,220,0.25)';
-      }}
-    >
-      🔍 SEARCH
-    </a>
-  );
-}
 
 /* ─── QUALITY DOTS ─────────────────────────────────────────────── */
 function QualityDots({ quality }) {
@@ -385,8 +288,61 @@ function CategoryAccordion({ cat, defaultOpen = false }) {
 /* ═══════════════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════════════ */
+const VIEWS = [
+  { id: 'category', label: 'By category' },
+  { id: 'ideas', label: 'By idea' },
+];
+
+function ViewToggle({ view, onChange }) {
+  return (
+    <div
+      role="group"
+      aria-label="Choose a view"
+      style={{
+        display: 'flex', width: '100%', maxWidth: '22rem', margin: '0 auto',
+        border: `1px solid rgba(${GOLD},0.35)`, borderRadius: '100px', padding: '3px',
+      }}
+    >
+      {VIEWS.map(v => {
+        const active = view === v.id;
+        return (
+          <button
+            key={v.id}
+            type="button"
+            aria-pressed={active}
+            onClick={() => onChange(v.id)}
+            style={{
+              flex: 1, minHeight: '40px', borderRadius: '100px', border: 'none', cursor: 'pointer',
+              background: active ? `rgba(${GOLD},0.18)` : 'transparent',
+              fontFamily: 'var(--font-body)', fontSize: '0.9375rem', fontWeight: active ? 600 : 400,
+              color: active ? `rgba(${GOLD},1)` : `rgba(${GOLD},0.80)`,
+            }}
+          >
+            {v.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function AlanWattsClient() {
   const [search, setSearch] = useState('');
+  const [view, setView] = useState('category');
+
+  // #ideas opens the By idea view directly.
+  useEffect(() => {
+    const sync = () => setView(window.location.hash === '#ideas' ? 'ideas' : 'category');
+    sync();
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, []);
+
+  const changeView = next => {
+    setView(next);
+    const url = window.location.pathname + window.location.search + (next === 'ideas' ? '#ideas' : '');
+    window.history.replaceState(null, '', url);
+  };
 
   const totalLectures = ALAN_WATTS_CATEGORIES.reduce((sum, cat) => sum + cat.lectures.length, 0);
   const linkCounts = countLinkTypes();
@@ -441,6 +397,10 @@ export default function AlanWattsClient() {
         className="content-below-header"
         style={{ width: '100%', maxWidth: 'var(--content-max)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
       >
+        {/* View toggle */}
+        <div style={{ width: '100%', padding: '0 16px', marginBottom: '1.618rem' }}>
+          <ViewToggle view={view} onChange={changeView} />
+        </div>
         {/* Header */}
         <div className="stagger-fade" style={{ textAlign: 'center', padding: '0 1.618rem 2rem', animationDelay: '100ms' }}>
           <div style={{
@@ -515,6 +475,13 @@ export default function AlanWattsClient() {
           </div>
         </div>
 
+        {view === 'ideas' && (
+          <div style={{ width: '100%', marginBottom: '2.618rem' }}>
+            <IdeasView />
+          </div>
+        )}
+
+        {view === 'category' && (<>
         {/* Search bar */}
         <div className="stagger-fade" style={{
           width: '100%', padding: '0 1.618rem',
@@ -583,6 +550,7 @@ export default function AlanWattsClient() {
             />
           ))}
         </div>
+        </>)}
 
         {/* Explore These Doors */}
         <div style={{
