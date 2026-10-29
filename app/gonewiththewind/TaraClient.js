@@ -121,9 +121,9 @@ const TRUTHS = [
 const S = {
   label: {
     fontFamily: 'var(--font-display)', fontWeight: 900,
-    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
+    fontSize: 'clamp(0.875rem,1.5vmin,0.875rem)',
     letterSpacing: '0.22em', textTransform: 'uppercase',
-    color: 'rgba(201,168,76,0.5)',
+    color: 'rgba(201,168,76,0.78)',
   },
   heading: {
     fontFamily: 'var(--font-display)', fontWeight: 900,
@@ -178,12 +178,12 @@ function TruthCard({ truth, open, onToggle }) {
           <p style={{ ...S.accent, color: 'rgba(232,228,212,0.9)', margin: 0 }}>{truth.simple}</p>
           <p style={{ ...S.body, color: 'rgba(232,228,212,0.72)', margin: 0 }}>{truth.body}</p>
           <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.1)', borderRadius: '0.382rem', padding: '0.618rem 0.875rem' }}>
-            <span style={{ ...S.label, color: 'rgba(201,168,76,0.4)', marginRight: '0.618rem' }}>Seen in:</span>
-            <span style={{ ...S.small, color: 'rgba(232,228,212,0.55)', fontStyle: 'italic', fontFamily: 'var(--font-accent)' }}>{truth.cross}</span>
+            <span style={{ ...S.label, color: 'rgba(201,168,76,0.78)', marginRight: '0.618rem' }}>Seen in:</span>
+            <span style={{ ...S.small, color: 'rgba(232,228,212,0.65)', fontStyle: 'italic', fontFamily: 'var(--font-accent)' }}>{truth.cross}</span>
           </div>
           {truth.crt && (
             <div style={{ background: 'rgba(100,181,246,0.05)', border: '1px solid rgba(100,181,246,0.18)', borderRadius: '0.382rem', padding: '0.618rem 0.875rem' }}>
-              <div style={{ ...S.label, color: 'rgba(100,181,246,0.5)', marginBottom: '0.382rem' }}>CRT Connection</div>
+              <div style={{ ...S.label, color: 'rgba(100,181,246,0.65)', marginBottom: '0.382rem' }}>CRT Connection</div>
               <p style={{ ...S.small, color: 'rgba(232,228,212,0.65)', margin: 0 }}>{truth.crt}</p>
             </div>
           )}
@@ -202,9 +202,9 @@ export default function TaraClient() {
       {/* Frosted header */}
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 8, height: 'clamp(56px,8vh,72px)', background: 'linear-gradient(180deg,rgba(3,3,10,0.92) 0%,rgba(3,3,10,0.6) 70%,transparent 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.618rem', pointerEvents: 'none' }}>
         <Link href="/search" style={{ pointerEvents: 'auto' }}>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.618)', cursor: 'pointer' }}>&larr; BACK</span>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.78)', cursor: 'pointer' }}>&larr; BACK</span>
         </Link>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(12px,1.8vmin,16px)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>Gone With the Wind</span>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(14px,1.8vmin,16px)', color: 'rgba(201,168,76,0.78)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>Gone With the Wind</span>
       </div>
 
       <div style={{ maxWidth: '52rem', margin: '0 auto', padding: 'clamp(72px,11vh,110px) 1.618rem 4.236rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.618rem' }}>
@@ -230,7 +230,7 @@ export default function TaraClient() {
           <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(24px,5vmin,44px)', letterSpacing: '0.12em', color: 'rgba(201,168,76,0.78)', textShadow: '0 0 2.618rem rgba(201,168,76,0.18)', marginBottom: '1rem', lineHeight: 1.1 }}>
             10 TRUTHS HIDDEN<br />IN PLAIN SIGHT
           </h1>
-          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.55)', lineHeight: 1.618, maxWidth: '36rem', margin: '0 auto' }}>
+          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.65)', lineHeight: 1.618, maxWidth: '36rem', margin: '0 auto' }}>
             This story is not about the Civil War. It is about what happens to a soul when the universe takes away everything that was never real.
           </p>
         </div>
@@ -252,7 +252,7 @@ export default function TaraClient() {
 
         {/* CRT closing thought */}
         <div style={{ width: '100%', background: 'linear-gradient(135deg,rgba(100,181,246,0.05),rgba(201,168,76,0.05))', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '0.618rem', padding: '1.618rem 2.618rem', textAlign: 'center', animation: 'fadeUp 618ms 300ms both ease' }}>
-          <div style={{ ...S.label, color: 'rgba(201,168,76,0.45)', marginBottom: '1rem' }}>The Through Line</div>
+          <div style={{ ...S.label, color: 'rgba(201,168,76,0.78)', marginBottom: '1rem' }}>The Through Line</div>
           <p style={{ ...S.accent, color: 'rgba(232,228,212,0.85)', margin: '0 auto', maxWidth: '40rem' }}>
             Every great story is the same story. A self gets built. The universe breaks it open. Something real is found inside the wreckage. That is not just Gone With the Wind. That is every human life. That is the only story there is.
           </p>

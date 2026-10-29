@@ -121,7 +121,7 @@ export default function WikiCard({ label, url, rgb, index = 0 }) {
                   }}>{data.title}</div>
                   <div style={{
                     fontFamily: "var(--font-body)", fontWeight: 300,
-                    fontSize: "clamp(0.688rem, 1vmin + 0.1rem, 1rem)",
+                    fontSize: "clamp(0.875rem, 1vmin + 0.1rem, 1rem)",
                     color: `rgba(${rgb},0.35)`,
                   }}>{data.source === "simple" ? "Simple English Wikipedia" : "Wikipedia"}</div>
                 </div>
@@ -164,7 +164,7 @@ export default function WikiCard({ label, url, rgb, index = 0 }) {
             <div style={{
               fontFamily: "var(--font-body)", fontWeight: 300,
               fontSize: "clamp(1.125rem, 2.618vmin + 0.15rem, 1.75rem)",
-              color: "rgba(232,228,210,0.35)",
+              color: "rgba(232,228,210,0.65)",
               textAlign: "center",
               padding: "0.618rem 0",
             }}>No summary available.</div>

@@ -1,7 +1,13 @@
 import './globals.css';
+import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google';
 import CursorProvider from '@/components/CursorProvider';
 import SiteHeader from '@/components/SiteHeader';
 import { SITE_URL } from '@/lib/meta';
+
+// Self-hosted fonts: no render-blocking @import, only the weights the site uses.
+const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400', '600', '700', '900'], style: ['normal', 'italic'], variable: '--font-playfair', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-inter', display: 'swap' });
+const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['300', '400', '500'], style: ['normal', 'italic'], variable: '--font-cormorant', display: 'swap' });
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}>
       <body>
         <CursorProvider />
         <SiteHeader />

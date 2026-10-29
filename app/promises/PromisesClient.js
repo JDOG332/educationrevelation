@@ -138,7 +138,7 @@ export default function PromisesClient() {
             <div style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2.25rem, 7.5vw + 0.2rem, 3.25rem)",
-              color: "rgba(201,168,76,0.618)",
+              color: "rgba(201,168,76,0.78)",
               fontWeight: 400, letterSpacing: "0.1em",
               marginBottom: "0.382rem",
             }}>{p.num}</div>

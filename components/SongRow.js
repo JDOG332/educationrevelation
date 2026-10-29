@@ -27,8 +27,8 @@ export default function SongRow({ song, rgb }) {
         }}>{song.title}</span>
         <span style={{
           fontFamily: "var(--font-body)", fontWeight: 300,
-          fontSize: "clamp(0.75rem, 1.4vmin + 0.1rem, 0.875rem)",
-          color: "rgba(232,228,210,0.40)",
+          fontSize: "clamp(0.875rem, 1.4vmin + 0.1rem, 0.875rem)",
+          color: "rgba(232,228,210,0.65)",
         }}>{song.artist}</span>
       </div>
       <div style={{
@@ -39,7 +39,7 @@ export default function SongRow({ song, rgb }) {
           <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer"
             style={{
               fontFamily: "var(--font-display)", fontWeight: 700,
-              fontSize: "clamp(0.618rem, 1.1vmin + 0.1rem, 0.75rem)",
+              fontSize: "clamp(0.875rem, 1.1vmin + 0.1rem, 0.75rem)",
               letterSpacing: "0.06em",
               color: `rgba(${rgb},0.55)`,
               textDecoration: "none",

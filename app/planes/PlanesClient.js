@@ -230,9 +230,9 @@ const TABS = [
 const S = {
   sectionLabel: {
     fontFamily: 'var(--font-display)', fontWeight: 900,
-    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
+    fontSize: 'clamp(0.875rem,1.5vmin,0.875rem)',
     letterSpacing: '0.22em', textTransform: 'uppercase',
-    color: 'rgba(201,168,76,0.5)', marginBottom: '0.618rem',
+    color: 'rgba(201,168,76,0.78)', marginBottom: '0.618rem',
   },
   heading: {
     fontFamily: 'var(--font-display)', fontWeight: 900,
@@ -252,15 +252,15 @@ const S = {
   },
   note: {
     fontFamily: 'var(--font-body)', fontWeight: 300,
-    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
-    color: 'rgba(201,168,76,0.38)', lineHeight: 1.618,
+    fontSize: 'clamp(0.875rem,1.5vmin,0.875rem)',
+    color: 'rgba(201,168,76,0.78)', lineHeight: 1.618,
     fontStyle: 'italic',
   },
   goldLabel: {
     fontFamily: 'var(--font-display)', fontWeight: 900,
-    fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)',
+    fontSize: 'clamp(0.875rem,1.5vmin,0.875rem)',
     letterSpacing: '0.18em', textTransform: 'uppercase',
-    color: 'rgba(201,168,76,0.5)', marginBottom: '0.382rem',
+    color: 'rgba(201,168,76,0.78)', marginBottom: '0.382rem',
   },
 };
 
@@ -300,7 +300,7 @@ function PlanesTab() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: 'min(280px,75vw)', borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 4.236rem rgba(201,168,76,0.12),0 0 1rem rgba(0,0,0,0.6)' }}>
-          <Image src="/planes-gear.jpg" alt="Five planes of consciousness as interlocking gears" width={280} height={508} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
+          <Image src="/planes-gear.webp" alt="Five planes of consciousness as interlocking gears" width={280} height={508} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
         </div>
       </div>
       <PlaneSelector active={active} setActive={setActive} />
@@ -365,11 +365,11 @@ function ShiftTab() {
       ))}
       <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '1rem', margin: '0.618rem 0' }}>
         <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, rgba(52,211,153,0.25), transparent)' }} />
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', letterSpacing: '0.22em', color: 'rgba(52,211,153,0.4)', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Separate From the Planes</span>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.4vmin,0.875rem)', letterSpacing: '0.22em', color: 'rgba(52,211,153,0.65)', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Separate From the Planes</span>
         <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, rgba(52,211,153,0.25), transparent)' }} />
       </div>
       <div style={{ background: 'rgba(52,211,153,0.05)', border: '1px solid rgba(52,211,153,0.18)', borderRadius: '0.618rem', padding: '1.236rem 1.618rem' }}>
-        <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.55)' }}>Watch Out For This</div>
+        <div style={{ ...S.goldLabel, color: 'rgba(52,211,153,0.65)' }}>Watch Out For This</div>
         <p style={{ ...S.accent, margin: '0 0 0.618rem', color: 'rgba(232,228,212,0.88)' }}>
           There is a trap called <em style={{ color: 'rgba(52,211,153,0.85)' }}>spiritual bypassing.</em>
         </p>
@@ -386,7 +386,7 @@ function ShiftTab() {
             'Using “oneness” talk to avoid a hard conversation',
           ].map((ex, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.618rem', alignItems: 'flex-start' }}>
-              <span style={{ color: 'rgba(52,211,153,0.5)', flexShrink: 0, lineHeight: 1.618 }}>&rarr;</span>
+              <span style={{ color: 'rgba(52,211,153,0.65)', flexShrink: 0, lineHeight: 1.618 }}>&rarr;</span>
               <span style={{ ...S.body, margin: 0, color: 'rgba(232,228,212,0.65)', fontStyle: 'italic', fontFamily: 'var(--font-accent)', fontSize: 'clamp(1rem,2vmin,1.125rem)' }}>{ex}</span>
             </div>
           ))}
@@ -408,7 +408,7 @@ function TraditionAccordion({ item }) {
       <button onClick={() => setOpen(!open)} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.236rem', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
         <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>{item.emoji}</span>
         <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,2vmin,1.125rem)', letterSpacing: '0.06em', color: 'rgba(' + item.color + ',0.9)', textTransform: 'uppercase', flex: 1 }}>{item.trad}</span>
-        <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.75rem,1.4vmin,0.875rem)', color: 'rgba(201,168,76,0.4)', flexShrink: 0, marginRight: '0.382rem' }}>{item.truth}%</span>
+        <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.875rem,1.4vmin,0.875rem)', color: 'rgba(201,168,76,0.78)', flexShrink: 0, marginRight: '0.382rem' }}>{item.truth}%</span>
         <span style={{ color: 'rgba(' + item.color + ',0.6)', flexShrink: 0, display: 'inline-block', transition: 'transform 262ms ' + EASE, transform: open ? 'rotate(180deg)' : 'rotate(0deg)', fontSize: '0.75rem' }}>&#9660;</span>
       </button>
       {open && (
@@ -433,7 +433,7 @@ function EgoTab() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.618rem' }}>
       <div style={{ borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 2.618rem rgba(0,0,0,0.5)' }}>
-        <Image src="/planes-ego.png" alt="Separate ego versus effortless essence — illustrated" width={860} height={484} style={{ width: '100%', height: 'auto', display: 'block' }} />
+        <Image src="/planes-ego.webp" alt="Separate ego versus effortless essence — illustrated" width={860} height={484} style={{ width: '100%', height: 'auto', display: 'block' }} />
       </div>
       <div style={{ background: 'rgba(239,100,80,0.06)', border: '1px solid rgba(239,100,80,0.2)', borderRadius: '0.618rem', padding: '1.618rem', textAlign: 'center' }}>
         <p style={{ ...S.accent, margin: '0 auto', maxWidth: '40rem', color: 'rgba(232,228,212,0.9)' }}>
@@ -460,7 +460,7 @@ function EgoTab() {
       <div>
         <div style={S.sectionLabel}>7 Traditions. One Verdict. &mdash; 94% Cross-Cultural Consensus</div>
         <div style={{ borderRadius: '0.618rem', overflow: 'hidden', boxShadow: '0 0 1.618rem rgba(0,0,0,0.4)', marginBottom: '0.618rem' }}>
-          <Image src="/planes-traditions.jpg" alt="Seven traditions converging on the same insight about ego" width={860} height={460} style={{ width: '100%', height: 'auto', display: 'block' }} />
+          <Image src="/planes-traditions.webp" alt="Seven traditions converging on the same insight about ego" width={860} height={460} style={{ width: '100%', height: 'auto', display: 'block' }} />
         </div>
         <div style={{ overflowX: 'auto', borderRadius: '0.382rem', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -509,7 +509,7 @@ function EgoTab() {
             <tbody>
               {CONVERGENCE.map((row, i) => (
                 <tr key={row.layer} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
-                  <td style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.75rem,1.5vmin,0.875rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', padding: '0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', whiteSpace: 'nowrap' }}>{row.layer}</td>
+                  <td style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(0.875rem,1.5vmin,0.875rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.75)', padding: '0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)', whiteSpace: 'nowrap' }}>{row.layer}</td>
                   <td style={{ ...S.body, padding: '0.875rem', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>{row.truth}</td>
                 </tr>
               ))}
@@ -529,7 +529,7 @@ function EgoTab() {
           {RELEASE_TECHNIQUES.map((t) => (
             <div key={t.num} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(201,168,76,0.1)', borderRadius: '0.382rem', padding: '1.236rem' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.618rem', marginBottom: '0.618rem' }}>
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.375rem,3vmin,1.75rem)', color: 'rgba(201,168,76,0.2)', lineHeight: 1 }}>{t.num}</span>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1.375rem,3vmin,1.75rem)', color: 'rgba(201,168,76,0.78)', lineHeight: 1 }}>{t.num}</span>
                 <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(1rem,2.2vmin,1.25rem)', color: 'rgba(201,168,76,0.85)', letterSpacing: '0.05em' }}>{t.name}</span>
               </div>
               <div style={S.body}>{t.desc}</div>
@@ -671,9 +671,9 @@ export default function PlanesClient() {
       {/* Frosted header */}
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 8, height: 'clamp(56px,8vh,72px)', background: 'linear-gradient(180deg,rgba(3,3,10,0.92) 0%,rgba(3,3,10,0.6) 70%,transparent 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.618rem', pointerEvents: 'none' }}>
         <Link href="/search" style={{ pointerEvents: 'auto' }}>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.618)', cursor: 'pointer' }}>&larr; BACK</span>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(18px,2.618vmin,28px)', color: 'rgba(201,168,76,0.78)', cursor: 'pointer' }}>&larr; BACK</span>
         </Link>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(12px,1.8vmin,16px)', color: 'rgba(201,168,76,0.3)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>The Architecture</span>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(14px,1.8vmin,16px)', color: 'rgba(201,168,76,0.78)', letterSpacing: '0.22em', textTransform: 'uppercase' }}>The Architecture</span>
       </div>
 
       <div style={{ maxWidth: '52rem', margin: '0 auto', padding: 'clamp(72px,11vh,110px) 1.618rem 4.236rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.618rem' }}>
@@ -683,7 +683,7 @@ export default function PlanesClient() {
           <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(28px,5.5vmin,52px)', letterSpacing: '0.15em', color: 'rgba(201,168,76,0.78)', textShadow: '0 0 2.618rem rgba(201,168,76,0.18)', marginBottom: '1rem', lineHeight: 1.1 }}>
             THE FIVE PLANES
           </h1>
-          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.58)', lineHeight: 1.618, maxWidth: '38rem', margin: '0 auto' }}>
+          <p style={{ fontFamily: 'var(--font-accent)', fontStyle: 'italic', fontSize: 'clamp(1.125rem,2.8vmin,1.618rem)', color: 'rgba(232,228,212,0.65)', lineHeight: 1.618, maxWidth: '38rem', margin: '0 auto' }}>
             Five gears. One axle. Everything turning everything else.
             This is how consciousness becomes the world you live in.
           </p>

@@ -18,7 +18,7 @@ const buttonStyle = (hover) => ({
   border: `1px solid rgba(201,168,76,${hover ? 0.90 : 0.55})`,
   borderRadius: 3,
   padding: "12px 22px",
-  fontFamily: "'Playfair Display', serif",
+  fontFamily: "var(--font-display)",
   fontSize: "clamp(14px, 1.9vmin, 17px)",
   letterSpacing: "0.28em",
   fontWeight: 600,
@@ -49,7 +49,7 @@ export default function LandingClient() {
       position: "fixed", inset: 0,
       background: "radial-gradient(ellipse at 50% 38%, rgba(14,10,28,1) 0%, #030306 72%)",
       overflow: "hidden",
-      fontFamily: "'Playfair Display', serif",
+      fontFamily: "var(--font-display)",
     }}>
 
       {/* CSS animations */}
@@ -98,7 +98,7 @@ export default function LandingClient() {
         <div
           className="foot-glow"
           style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "var(--font-display)",
             fontSize: "clamp(28px, 6.854vmin, 48px)",
             letterSpacing: "0.55em",
             fontWeight: 600,
@@ -123,7 +123,7 @@ export default function LandingClient() {
         zIndex: 10,
       }}>
         <p style={{
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-accent)",
           fontSize: "clamp(18px, 3vmin, 28px)",
           fontWeight: 500,
           color: "rgba(220,215,200,0.92)",
@@ -134,7 +134,7 @@ export default function LandingClient() {
           margin: 0,
         }}>Ten doors into human knowledge, and one equation underneath.</p>
         <p style={{
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-body)",
           fontSize: "clamp(14px, 1.8vmin, 16px)",
           fontWeight: 400,
           color: "rgba(201,168,76,0.85)",
@@ -163,7 +163,7 @@ export default function LandingClient() {
           onClick={() => router.push('/intro')}
           style={{
             background: "none", border: "none", cursor: "pointer",
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-accent)",
             fontSize: "clamp(15px, 2vmin, 18px)",
             fontStyle: "italic",
             color: "rgba(201,168,76,0.75)",

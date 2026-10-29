@@ -76,7 +76,7 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
       <div style={{
         fontFamily: "var(--font-display)",
         fontWeight: 900,
-        fontSize: "clamp(0.618rem, 2.5vw + 0.1rem, 0.875rem)",
+        fontSize: "clamp(0.875rem, 2.5vw + 0.1rem, 0.875rem)",
         letterSpacing: "0.04em",
         color: `rgba(${rgb},${txtOp})`,
         textAlign: "center",
@@ -87,7 +87,7 @@ function DoorCard({ door, score, isTop, hasScores, size, onClick }) {
         <div style={{
           fontFamily: "var(--font-body)",
           fontWeight: 300,
-          fontSize: "clamp(0.5rem, 1.2vmin + 0.1rem, 0.688rem)",
+          fontSize: "clamp(0.875rem, 1.2vmin + 0.1rem, 0.688rem)",
           color: `rgba(${rgb},${Math.max(0.3, pct / 100)})`,
         }}>{Math.round(pct)}%</div>
       )}
@@ -185,9 +185,9 @@ function MirrorResult({ result, index, onClick }) {
       <span style={{
         fontFamily: "var(--font-display)",
         fontWeight: 900,
-        fontSize: "clamp(0.688rem, 1vmin + 0.15rem, 1rem)",
+        fontSize: "clamp(0.875rem, 1vmin + 0.15rem, 1rem)",
         letterSpacing: "0.236em",
-        color: "rgba(201,168,76,0.236)",
+        color: "rgba(201,168,76,0.78)",
       }}>✦ LAYER {depth} ✦</span>
       {truth && (
         <div style={{
@@ -300,7 +300,7 @@ export default function SearchClient() {
           fontWeight: 900,
           fontSize: "clamp(1.375rem, 4.236vmin + 0.25rem, 2.25rem)",
           letterSpacing: "0.236em",
-          color: "rgba(201,168,76,0.618)",
+          color: "rgba(201,168,76,0.78)",
           textAlign: "center",
           animationDelay: "100ms",
           marginBottom: "0.618rem",
@@ -336,9 +336,9 @@ export default function SearchClient() {
                 <span style={{
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  fontSize: "clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)",
+                  fontSize: "clamp(0.875rem, 1.4vmin + 0.1rem, 0.812rem)",
                   letterSpacing: "0.236em",
-                  color: "rgba(201,168,76,0.35)",
+                  color: "rgba(201,168,76,0.78)",
                 }}>TODAY'S CARD</span>
               </div>
               <div

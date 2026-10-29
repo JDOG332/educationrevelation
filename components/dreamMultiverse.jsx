@@ -5,6 +5,7 @@ import {
   psiSimulateStep, initializeBlochVectors,
   computeR12, computeInertia
 } from '@/lib/psi-engine.js';
+import { prefersReducedMotion } from '@/lib/motion';
 
 /* ============================================================
    DREAM MULTIVERSE — Exact Ψ N-body simulation
@@ -357,9 +358,12 @@ export default function DreamMultiverseCanvas({ depth, onVeilParted }) {
       }
 
       if (depthRef.current > 2) return;
+      if (reduced) return;
       frameRef.current = requestAnimationFrame(loop);
     }
 
+    const reduced = prefersReducedMotion();
+    if (reduced && onVeilPartedRef.current) onVeilPartedRef.current();
     frameRef.current = requestAnimationFrame(loop);
     const handleResize = () => { ({ W, H } = resize()); };
     window.addEventListener("resize", handleResize);

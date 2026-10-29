@@ -36,10 +36,10 @@ export default function PoemsClient() {
       }}>
         <Link href="/search" style={{ pointerEvents: "auto" }}>
           <span style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 900,
             fontSize: "clamp(18px, 2.618vmin, 28px)",
-            color: "rgba(201,168,76,0.618)",
+            color: "rgba(201,168,76,0.78)",
             cursor: "pointer",
           }}>← BACK</span>
         </Link>
@@ -54,7 +54,7 @@ export default function PoemsClient() {
       }}>
 
         <h1 style={{
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "var(--font-display)",
           fontWeight: 900,
           fontSize: "clamp(22px, 4.236vmin, 36px)",
           letterSpacing: "0.236em",
@@ -63,7 +63,7 @@ export default function PoemsClient() {
           textShadow: "0 0 8px rgba(201,168,76,0.382), 0 0 24px rgba(201,168,76,0.146)",
         }}>POEMS</h1>
         <div style={{
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "var(--font-body)",
           fontSize: "0.9rem",
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -85,7 +85,7 @@ export default function PoemsClient() {
               animation: `fadeUp 618ms ${200 + i * 150}ms both ease`,
             }}>
               <div style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 fontSize: "clamp(16px, 2.618vmin, 22px)",
                 color: `rgba(${poem.color},0.90)`,
@@ -93,7 +93,7 @@ export default function PoemsClient() {
                 letterSpacing: "0.06em",
               }}>{poem.title}</div>
               <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-accent)",
                 fontStyle: "italic",
                 fontSize: "clamp(14px, 2vmin, 18px)",
                 color: `rgba(${poem.color},0.78)`,

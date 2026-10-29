@@ -19,6 +19,7 @@
  */
 
 import { useEffect, useRef } from "react";
+import { prefersReducedMotion } from '@/lib/motion';
 
 const PHI = 1.6180339887;
 const BUTTON_PAD = 22;
@@ -50,6 +51,8 @@ export default function InfinityCursor() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     const isTouch = navigator.maxTouchPoints > 0;
+    // Less motion asked for: keep the system cursor and draw no trail at all.
+    if (prefersReducedMotion()) return;
 
     function resize() {
       canvas.width  = window.innerWidth;

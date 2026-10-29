@@ -13,6 +13,7 @@
 
 import { useRef, useEffect } from "react";
 import { PHI, PHI_INV } from '@/lib/data.js';
+import { prefersReducedMotion } from '@/lib/motion';
 
 const PHI_2 = PHI * PHI;
 const PHI_NEG2 = PHI_INV * PHI_INV;
@@ -452,9 +453,12 @@ export default function DiamondGenesisCanvas({ depth, onComplete, onVeilParted }
         if (t > INTRO_D + 2) return;
       }
 
+      if (reduced) return;
       frameRef.current = requestAnimationFrame(tick);
     }
 
+    const reduced = prefersReducedMotion();
+    if (reduced && onCompleteRef.current) onCompleteRef.current();
     frameRef.current = requestAnimationFrame(tick);
 
     return () => {

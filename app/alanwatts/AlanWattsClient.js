@@ -67,7 +67,7 @@ function LectureRow({ lecture, index }) {
         {/* Number */}
         <span style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(0.65rem, 1.2vmin + 0.1rem, 0.75rem)',
+          fontSize: 'clamp(0.875rem, 1.2vmin + 0.1rem, 0.75rem)',
           color: `rgba(${GOLD},0.35)`,
           letterSpacing: '0.08em',
           minWidth: '1.8rem',
@@ -103,8 +103,8 @@ function LectureRow({ lecture, index }) {
           }}>
             <span style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.688rem, 1.3vmin + 0.1rem, 0.75rem)',
-              color: 'rgba(232,232,240,0.30)',
+              fontSize: 'clamp(0.875rem, 1.3vmin + 0.1rem, 0.75rem)',
+              color: 'rgba(232,232,240,0.65)',
             }}>{displayYear(lecture.year)} · {lecture.dur}{lecture.source ? ` · ${lecture.source}` : ''}</span>
             <QualityDots quality={lecture.quality} />
             <span style={{
@@ -154,7 +154,7 @@ function LectureRow({ lecture, index }) {
                 }}>▸</span>
                 <span style={{
                   fontFamily: 'var(--font-body)',
-                  fontSize: 'clamp(0.813rem, 1.6vmin + 0.1rem, 0.938rem)',
+                  fontSize: 'clamp(0.875rem, 1.6vmin + 0.1rem, 0.938rem)',
                   color: 'rgba(232,232,240,0.75)',
                   lineHeight: 1.55,
                 }}>{truth}</span>
@@ -171,7 +171,7 @@ function LectureRow({ lecture, index }) {
             <span style={{
               fontFamily: 'var(--font-body)',
               fontSize: '0.688rem',
-              color: 'rgba(232,232,240,0.25)',
+              color: 'rgba(232,232,240,0.65)',
               fontStyle: 'italic',
             }}>{lecture.notes?.replace(' ⭐ Recommended', '').replace('⭐ Recommended', '')}</span>
           </div>
@@ -233,7 +233,7 @@ function CategoryAccordion({ cat, defaultOpen = false }) {
             }}>{cat.num}. {cat.name}</span>
             <span style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(0.65rem, 1.3vmin, 0.75rem)',
+              fontSize: 'clamp(0.875rem, 1.3vmin, 0.75rem)',
               color: `rgba(${GOLD},0.35)`,
               letterSpacing: '0.10em',
             }}>{totalLectures} lectures</span>
@@ -241,8 +241,8 @@ function CategoryAccordion({ cat, defaultOpen = false }) {
           {!open && (
             <p style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.75rem, 1.5vmin + 0.1rem, 0.875rem)',
-              color: 'rgba(232,232,240,0.40)',
+              fontSize: 'clamp(0.875rem, 1.5vmin + 0.1rem, 0.875rem)',
+              color: 'rgba(232,232,240,0.65)',
               margin: '0.2rem 0 0',
               lineHeight: 1.4,
               fontStyle: 'italic',
@@ -266,7 +266,7 @@ function CategoryAccordion({ cat, defaultOpen = false }) {
           {/* Theme line */}
           <p style={{
             fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(0.813rem, 1.6vmin + 0.1rem, 0.938rem)',
+            fontSize: 'clamp(0.875rem, 1.6vmin + 0.1rem, 0.938rem)',
             color: `rgba(${GOLD},0.45)`,
             fontStyle: 'italic',
             margin: '0 0 1rem',
@@ -397,7 +397,7 @@ export default function AlanWattsClient() {
         <div className="stagger-fade" style={{ textAlign: 'center', padding: '0 1.618rem 2rem', animationDelay: '100ms' }}>
           <div style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)',
+            fontSize: 'clamp(0.875rem, 1.4vmin + 0.1rem, 0.812rem)',
             letterSpacing: '0.25em',
             color: `rgba(${GOLD},0.40)`,
             marginBottom: '0.618rem',
@@ -416,7 +416,7 @@ export default function AlanWattsClient() {
           <div style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.0rem, 2.2vmin + 0.1rem, 1.25rem)',
-            color: 'rgba(232,232,240,0.45)',
+            color: 'rgba(232,232,240,0.65)',
             letterSpacing: '0.10em',
             marginBottom: '0.618rem',
           }}>1915 — 1973</div>
@@ -424,7 +424,7 @@ export default function AlanWattsClient() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(0.875rem, 1.8vmin + 0.1rem, 1.0rem)',
-            color: 'rgba(232,232,240,0.50)',
+            color: 'rgba(232,232,240,0.65)',
             lineHeight: 1.65,
             maxWidth: '30rem',
             margin: '0 auto 1rem',
@@ -552,7 +552,7 @@ export default function AlanWattsClient() {
         }}>
           <div style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(0.65rem, 1.3vmin, 0.75rem)',
+            fontSize: 'clamp(0.875rem, 1.3vmin, 0.75rem)',
             letterSpacing: '0.25em',
             color: `rgba(${GOLD},0.35)`,
           }}>EXPLORE THESE DOORS</div>
@@ -583,7 +583,7 @@ export default function AlanWattsClient() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '0.75rem',
-            color: 'rgba(232,232,240,0.25)',
+            color: 'rgba(232,232,240,0.65)',
             lineHeight: 1.6,
             maxWidth: '28rem',
             margin: '0 auto 0.618rem',

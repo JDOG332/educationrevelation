@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { prefersReducedMotion } from '@/lib/motion';
 
 const PHI  = 1.6180339887;
 const TAU  = Math.PI * 2;
@@ -157,9 +158,10 @@ export default function VitruvianCanvas({ stateRef }) {
       ctx.arc(cx, cy, 2.2, 0, TAU);
       ctx.fillStyle = GOLD(0.35); ctx.fill();
 
-      raf = requestAnimationFrame(frame);
+      if (!reduced) raf = requestAnimationFrame(frame);
     }
 
+    const reduced = prefersReducedMotion();
     raf = requestAnimationFrame(frame);
     return () => { cancelAnimationFrame(raf); ro.disconnect(); };
   }, []);

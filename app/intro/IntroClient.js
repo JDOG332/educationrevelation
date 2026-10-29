@@ -27,7 +27,7 @@ export default function IntroClient() {
           border: "1px solid rgba(201,168,76,0.55)",
           borderRadius: 3,
           padding: "0.6rem 1.1rem",
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "var(--font-display)",
           fontSize: "0.95rem",
           letterSpacing: "0.22em",
           color: "rgba(201,168,76,0.9)",

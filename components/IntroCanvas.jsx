@@ -43,6 +43,7 @@ import {
   isMirrorPair,
   isAdjacent,
 } from '@/lib/psi-engine.js';
+import { prefersReducedMotion } from '@/lib/motion';
 
 const TOTAL_MS = 10000;
 const DOOR_COLORS = DOORS.map(d => d.color);
@@ -591,6 +592,14 @@ export default function IntroCanvas({ onComplete, seedState }) {
     window.addEventListener("resize", resize);
 
     stateRef.current = buildState();
+
+    if (prefersReducedMotion()) {
+      // One still frame from the middle of the sequence, then on to the doors.
+      simulate(stateRef.current, 0.28);
+      draw(ctx, stateRef.current, 0.55, TOTAL_MS * 0.55, canvas.width, canvas.height, seedState);
+      const t = setTimeout(() => { if (!doneRef.current) { doneRef.current = true; onComplete?.(); } }, 1500);
+      return () => { clearTimeout(t); window.removeEventListener("resize", resize); };
+    }
 
     function loop(now) {
       if (!startRef.current) startRef.current = now;

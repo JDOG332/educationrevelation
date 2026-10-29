@@ -61,7 +61,7 @@ function TabPill({ icon, label, active, onClick, index = 0 }) {
       <span style={{ fontSize: "1.125rem", lineHeight: 1 }}>{icon}</span>
       <span style={{
         fontFamily: "var(--font-display)", fontWeight: 700,
-        fontSize: "clamp(0.75rem, 1.6vmin + 0.12rem, 0.938rem)",
+        fontSize: "clamp(0.875rem, 1.6vmin + 0.12rem, 0.938rem)",
         letterSpacing: "0.08em",
         color: `rgba(var(--pill-rgb),${active ? 0.92 : hover ? 0.80 : 0.50})`,
         textTransform: "uppercase",
@@ -347,7 +347,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
             }}>
               <span style={{
                 fontFamily: "var(--font-display)", fontWeight: 700,
-                fontSize: "clamp(0.688rem, 1.4vmin + 0.1rem, 0.812rem)",
+                fontSize: "clamp(0.875rem, 1.4vmin + 0.1rem, 0.812rem)",
                 letterSpacing: "0.236em",
                 color: `rgba(${rgb},0.35)`,
               }}>SEE THIS THROUGH ANOTHER DOOR</span>
@@ -385,13 +385,13 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                       }}>{r.title}</div>
                       <div style={{
                         fontFamily: "var(--font-accent)", fontStyle: "italic",
-                        fontSize: "clamp(0.812rem, 1.6vmin + 0.1rem, 1rem)",
-                        color: "rgba(201,168,76,0.45)",
+                        fontSize: "clamp(0.875rem, 1.6vmin + 0.1rem, 1rem)",
+                        color: "rgba(201,168,76,0.78)",
                       }}>{r.doorEmoji} {r.doorName}</div>
                     </div>
                     <span style={{
                       fontSize: "clamp(0.875rem, 1.6vmin + 0.1rem, 1rem)",
-                      color: "rgba(201,168,76,0.30)",
+                      color: "rgba(201,168,76,0.78)",
                     }}>→</span>
                   </div>
                 </Link>
@@ -496,8 +496,8 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                   }}>THE ARCHITECTURE — Five Planes of Consciousness</div>
                   <div style={{
                     fontFamily: 'var(--font-accent)', fontStyle: 'italic',
-                    fontSize: 'clamp(0.812rem, 1.6vmin, 0.95rem)',
-                    color: 'rgba(201,168,76,0.45)',
+                    fontSize: 'clamp(0.875rem, 1.6vmin, 0.95rem)',
+                    color: 'rgba(201,168,76,0.78)',
                   }}>
                     {topicSlug === 'meditation'  && 'The five planes you move between in practice'}
                     {topicSlug === 'awakening'   && 'The gear stack you are ascending through'}
@@ -506,7 +506,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                     {topicSlug === 'identity'    && 'What the axle reveals beneath every identity'}
                   </div>
                 </div>
-                <span style={{ color: 'rgba(201,168,76,0.40)', fontSize: '1.236rem', flexShrink: 0 }}>→</span>
+                <span style={{ color: 'rgba(201,168,76,0.78)', fontSize: '1.236rem', flexShrink: 0 }}>→</span>
               </div>
             </Link>
           )}
@@ -535,8 +535,8 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                   }}>Gone With the Wind — 10 Truths Hidden in Plain Sight</div>
                   <div style={{
                     fontFamily: 'var(--font-accent)', fontStyle: 'italic',
-                    fontSize: 'clamp(0.812rem, 1.6vmin, 0.95rem)',
-                    color: 'rgba(212,162,76,0.45)',
+                    fontSize: 'clamp(0.875rem, 1.6vmin, 0.95rem)',
+                    color: 'rgba(212,162,76,0.65)',
                   }}>
                     {topicSlug === 'hero'      && "Scarlett’s entire arc is the hero’s journey"}
                     {topicSlug === 'trickster' && 'Rhett Butler is the textbook trickster archetype'}
@@ -548,7 +548,7 @@ export default function CardClient({ card, sub, doorMeta, doorSlug, topicSlug, p
                     {topicSlug === 'giving'    && 'Melanie — the purest love almost nobody noticed'}
                   </div>
                 </div>
-                <span style={{ color: 'rgba(212,162,76,0.40)', fontSize: '1.236rem', flexShrink: 0 }}>→</span>
+                <span style={{ color: 'rgba(212,162,76,0.65)', fontSize: '1.236rem', flexShrink: 0 }}>→</span>
               </div>
             </Link>
           )}

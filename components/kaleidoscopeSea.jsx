@@ -12,6 +12,7 @@
  * onVeilParted fires at start of Phase 3 (poem scroll begins)
  */
 import { useEffect, useRef } from "react";
+import { prefersReducedMotion } from '@/lib/motion';
 
 const PHI  = 1.618033988749895;
 const PHIi = 0.6180339887498949;
@@ -461,9 +462,12 @@ export default function KaleidoscopeSeaCanvas({ onVeilParted }) {
         drawSea(seaElapsed);
       }
 
+      if (reduced) return;
       animId = requestAnimationFrame(frame);
     };
 
+    const reduced = prefersReducedMotion();
+    if (reduced && !veilCalled && onVeilParted) { veilCalled = true; onVeilParted(); }
     animId = requestAnimationFrame(frame);
 
     return () => {

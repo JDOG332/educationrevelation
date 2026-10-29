@@ -7,7 +7,7 @@ const NAVY  = "#03030a";
 const GOLD  = (a=1) => `rgba(201,168,76,${a})`;
 const IVORY = (a=1) => `rgba(236,228,210,${a})`;
 const CINZEL = "'Cinzel', serif";
-const CORRO  = "'Cormorant Garamond', serif";
+const CORRO  = "var(--font-accent)";
 
 // ─── LIVE CANVAS — full da Vinci geometry ───────────────────────
 function VitruvianCanvas() {

@@ -61,7 +61,7 @@ function TabPill({ icon, label, active, onClick, index = 0 }) {
       <span style={{ fontSize: "1.125rem", lineHeight: 1 }}>{icon}</span>
       <span style={{
         fontFamily: "var(--font-display)", fontWeight: 700,
-        fontSize: "clamp(0.75rem, 1.6vmin + 0.12rem, 0.938rem)",
+        fontSize: "clamp(0.875rem, 1.6vmin + 0.12rem, 0.938rem)",
         letterSpacing: "0.08em",
         color: `rgba(var(--pill-rgb),${active ? 0.92 : hover ? 0.80 : 0.50})`,
         textTransform: "uppercase",
@@ -88,7 +88,7 @@ function ActionBtn({ children, icon, rgb, opacity = 0.55, onClick, style }) {
       <span style={{ fontSize: "1rem" }}>{icon}</span>
       <span style={{
         fontFamily: "var(--font-display)", fontWeight: 700,
-        fontSize: "clamp(0.75rem, 1.6vmin + 0.1rem, 0.938rem)",
+        fontSize: "clamp(0.875rem, 1.6vmin + 0.1rem, 0.938rem)",
         letterSpacing: "0.10em",
         color: `rgba(${rgb},${opacity})`,
       }}>{children}</span>
@@ -374,7 +374,7 @@ export default function TopicClient({ doorSlug, doorMeta, sub, cards }) {
         <div className="stagger-fade" style={{
           fontFamily: "var(--font-body)",
           fontSize: "clamp(1.25rem, 2.6vmin + 0.15rem, 1.5rem)",
-          color: "rgba(201,168,76,0.30)",
+          color: "rgba(201,168,76,0.78)",
           letterSpacing: "0.12em",
           marginBottom: "2rem",
           animationDelay: "250ms",

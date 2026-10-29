@@ -88,7 +88,7 @@ export default async function Image({ params }) {
         <div
           style={{
             fontSize: 18,
-            color: 'rgba(201,168,76,0.50)',
+            color: 'rgba(201,168,76,0.78)',
             letterSpacing: '0.15em',
           }}
         >
@@ -101,7 +101,7 @@ export default async function Image({ params }) {
             position: 'absolute',
             bottom: 30,
             fontSize: 16,
-            color: 'rgba(201,168,76,0.30)',
+            color: 'rgba(201,168,76,0.78)',
             letterSpacing: '0.25em',
           }}
         >

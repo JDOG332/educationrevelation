@@ -16,7 +16,7 @@ const PHI    = 1.618033988749895;
 const PHI_INV= 0.6180339887498949;
 const PHI2   = PHI * PHI;
 const CINZEL = "'Cinzel', serif";
-const CORM   = "'Cormorant Garamond', serif";
+const CORM   = "var(--font-accent)";
 const GOLD   = (a) => `rgba(201,168,76,${a})`;
 
 // ── Back button ──────────────────────────────────────────────────
