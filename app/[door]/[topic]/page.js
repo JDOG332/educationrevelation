@@ -1,6 +1,11 @@
+import { pageMeta } from '@/lib/meta';
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { TOPIC_CARDS } from '@/lib/topicCards';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
+import { notFound } from 'next/navigation';
+
+// Only the paths generateStaticParams lists exist; anything else is a real 404.
+export const dynamicParams = false;
 import TopicClient from './TopicClient';
 
 export async function generateStaticParams() {
@@ -21,20 +26,20 @@ export async function generateMetadata({ params }) {
   const doorMeta = DOOR_META[dataKey];
   const sub = (SUBCATEGORIES[dataKey] || []).find(s => s.id === p.topic);
 
-  if (!doorMeta || !sub) return { title: 'Not Found' };
+  if (!doorMeta || !sub) return { title: 'Not found' };
 
   const cards = (TOPIC_CARDS[dataKey]?.[p.topic] || []);
   const cardTitles = cards.slice(0, 5).map(c => c.title).join(', ');
   const firstSimple = cards[0]?.simple ? ` ${cards[0].simple.slice(0, 120)}...` : '';
 
-  return {
+  return pageMeta(`/${p.door}/${p.topic}`, {
     title: `${sub.name} — ${sub.desc} | ${doorMeta.name} — Education Revelation`,
     description: `${sub.icon} ${sub.desc}${firstSimple} Explore ${cards.length} perspectives including: ${cardTitles}${cards.length > 5 ? ', and more' : ''}. Each topic includes a simple explanation, deeper intuition, advanced analysis, six sensory experiences, music, and Wikipedia links.`,
     openGraph: {
       title: `${sub.name} — ${sub.desc}`,
       description: `${cards.length} perspectives on ${sub.name.toLowerCase()} through the lens of ${doorMeta.name.toLowerCase()}. Part of Education Revelation — ten doors of human knowledge.`,
     },
-  };
+  });
 }
 
 export default async function TopicPage({ params }) {
@@ -44,7 +49,7 @@ export default async function TopicPage({ params }) {
   const sub = (SUBCATEGORIES[dataKey] || []).find(s => s.id === p.topic);
 
   if (!doorMeta || !sub) {
-    return <div style={{ minHeight: "100vh", background: "#03030a", display: "flex", alignItems: "center", justifyContent: "center", color: "#e8e8f0" }}>Topic not found.</div>;
+    notFound();
   }
 
   const cards = TOPIC_CARDS[dataKey]?.[p.topic] || [];

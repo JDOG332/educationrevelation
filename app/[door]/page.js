@@ -1,5 +1,10 @@
+import { pageMeta } from '@/lib/meta';
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
+import { notFound } from 'next/navigation';
+
+// Only the paths generateStaticParams lists exist; anything else is a real 404.
+export const dynamicParams = false;
 import DoorClient from './DoorClient';
 
 export async function generateStaticParams() {
@@ -24,20 +29,20 @@ export async function generateMetadata({ params }) {
   const p = await params;
   const dataKey = SLUG_TO_KEY[p.door];
   const meta = DOOR_META[dataKey];
-  if (!meta) return { title: 'Not Found' };
+  if (!meta) return { title: 'Not found' };
 
   const seo = DOOR_SEO[p.door];
   const subs = SUBCATEGORIES[dataKey] || [];
   const subNames = subs.map(s => s.name).join(', ');
 
-  return {
+  return pageMeta(`/${p.door}`, {
     title: seo?.title || `${meta.name} — Education Revelation`,
     description: seo?.seoDesc || `${meta.emoji} ${meta.tagline} Explore: ${subNames}.`,
     openGraph: {
       title: seo?.title || `${meta.name} — Education Revelation`,
       description: meta.tagline,
     },
-  };
+  });
 }
 
 export default async function DoorPage({ params }) {
@@ -46,7 +51,7 @@ export default async function DoorPage({ params }) {
   const meta = DOOR_META[dataKey];
 
   if (!meta) {
-    return <div style={{ minHeight: "100vh", background: "#03030a", display: "flex", alignItems: "center", justifyContent: "center", color: "#e8e8f0" }}>Door not found.</div>;
+    notFound();
   }
 
   const subs = SUBCATEGORIES[dataKey] || [];

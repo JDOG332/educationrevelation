@@ -1,6 +1,7 @@
+import { pageMeta } from '@/lib/meta';
 import CRTClient from './CRTClient';
 
-export const metadata = {
+export const metadata = pageMeta('/mathematics/convergent-recognition', {
   title: "Convergent Recognition Theory — The Master Equation Ψ = R₁₂ × G | How Two Systems Recognize Each Other",
   description: "Convergent Recognition Theory (CRT) is a mathematical framework that measures how reliably two systems recognize each other. The master equation Ψ = R₁₂ × G uses quantum fidelity (R₁₂) and global reliability (G = C_eff × D-hat) to compute a coherence score from 0 to 1. When the signal is clean, the aim is true, and the mirror reflects perfectly — Ψ approaches 1.0. Signal goes out. Comes back same. The universe recognizes itself.",
   keywords: "convergent recognition theory, CRT, psi equation, quantum fidelity, consciousness theory, unified theory, information theory, recognition, coherence, quantum statistical manifolds, self-recognizing universe",
@@ -8,7 +9,7 @@ export const metadata = {
     title: "Convergent Recognition Theory (Ψ = R₁₂ × G)",
     description: "The master equation that measures how two systems recognize each other. Signal goes out. Comes back same.",
   },
-};
+});
 
 export default function CRTPage() {
   return (

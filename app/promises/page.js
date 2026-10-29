@@ -1,6 +1,7 @@
+import { pageMeta } from '@/lib/meta';
 import PromisesClient from './PromisesClient';
 
-export const metadata = {
+export const metadata = pageMeta('/promises', {
   title: 'Ten Promises — From the Universe to You — Education Revelation',
   description: 'Ten promises from the universe to you. Safety. To be seen. Agency. Partnership. To be believed. Purpose. Rest. To be held. Community. To be chosen every single day. These are not rules to follow — they are rights you were born with. You were loved before you arrived.',
   keywords: 'you are loved, you deserve love, unconditional love, self worth, you are enough, universe loves you, promises, what do I deserve, am I enough, human rights, being seen, being believed, being held',
@@ -8,7 +9,7 @@ export const metadata = {
     title: 'Ten Promises — From the Universe to You',
     description: 'These are not rules to follow. They are rights you were born with. You were loved before you arrived.',
   },
-};
+});
 
 export default function PromisesPage() {
   return (

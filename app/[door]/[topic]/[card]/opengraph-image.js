@@ -3,7 +3,6 @@ import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { TOPIC_CARDS } from '@/lib/topicCards';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
 
-export const runtime = 'edge';
 export const alt = 'Education Revelation';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
@@ -82,7 +81,7 @@ export default async function Image({ params }) {
             marginBottom: 30,
           }}
         >
-          {simple}{simple.length >= 140 ? '...' : ''}
+          {simple + (simple.length >= 140 ? '...' : '')}
         </div>
 
         {/* Door breadcrumb */}
@@ -93,7 +92,7 @@ export default async function Image({ params }) {
             letterSpacing: '0.15em',
           }}
         >
-          {doorMeta?.emoji} {doorName} → {subName}
+          {`${doorMeta?.emoji || ''} ${doorName} → ${subName}`}
         </div>
 
         {/* Site name */}

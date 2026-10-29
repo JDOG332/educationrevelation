@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/meta';
 import { POEMS, ASK_POEMS, KAL_POEMS } from '@/lib/data';
 import PoemExperience from '@/components/PoemExperience';
 
@@ -16,14 +17,14 @@ export async function generateMetadata({ params }) {
   const poem = POEM_MAP[p.poem];
   if (!poem) return { title: 'Not Found' };
 
-  return {
+  return pageMeta(`/poems/${p.poem}`, {
     title: `"${poem.title}" — Original Poem — Education Revelation`,
     description: poem.description,
     openGraph: {
       title: `"${poem.title}" — Original Poem`,
       description: poem.description,
     },
-  };
+  });
 }
 
 export default async function PoemPage({ params }) {

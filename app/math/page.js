@@ -1,9 +1,10 @@
+import { pageMeta } from '@/lib/meta';
 import Link from 'next/link';
 
-export const metadata = {
+export const metadata = pageMeta('/math', {
   title: "The Hidden Pattern — Da Vinci's Vitruvian Man & Convergent Recognition Theory (Ψ = R₁₂ × G)",
   description: "Da Vinci's Vitruvian Man geometry verified to the decimal — circle radius 0.70, golden section R/H = 0.6089. Plus Convergent Recognition Theory: the master equation Ψ = R₁₂ × G that measures how two systems recognize each other.",
-};
+});
 
 export default function MathHubPage() {
   return (

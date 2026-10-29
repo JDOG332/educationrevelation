@@ -1,6 +1,11 @@
+import { pageMeta } from '@/lib/meta';
 import { SUBCATEGORIES, DOOR_META } from '@/lib/subcategories';
 import { TOPIC_CARDS } from '@/lib/topicCards';
 import { SLUG_TO_KEY, ALL_DOOR_SLUGS } from '@/lib/doorMap';
+import { notFound } from 'next/navigation';
+
+// Only the paths generateStaticParams lists exist; anything else is a real 404.
+export const dynamicParams = false;
 import { getRelatedCards } from '@/lib/siftEngine';
 import CardClient from './CardClient';
 
@@ -27,11 +32,11 @@ export async function generateMetadata({ params }) {
   const cards = TOPIC_CARDS[dataKey]?.[p.topic] || [];
   const card = cards.find(c => c.id === p.card);
 
-  if (!doorMeta || !sub || !card) return { title: 'Not Found' };
+  if (!doorMeta || !sub || !card) return { title: 'Not found' };
 
   const simplePreview = card.simple?.slice(0, 200) || sub.desc;
 
-  return {
+  return pageMeta(`/${p.door}/${p.topic}/${p.card}`, {
     title: `${card.title} — ${sub.name} | ${doorMeta.name} — Education Revelation`,
     description: `${card.icon} ${simplePreview}`,
     openGraph: {
@@ -45,7 +50,7 @@ export async function generateMetadata({ params }) {
       title: `${card.icon} ${card.title}`,
       description: simplePreview,
     },
-  };
+  });
 }
 
 export default async function CardPage({ params }) {
@@ -57,7 +62,7 @@ export default async function CardPage({ params }) {
   const card = cards.find(c => c.id === p.card);
 
   if (!doorMeta || !sub || !card) {
-    return <div style={{ minHeight: "100vh", background: "#03030a", display: "flex", alignItems: "center", justifyContent: "center", color: "#e8e8f0" }}>Card not found.</div>;
+    notFound();
   }
 
   // Find card index for prev/next navigation
