@@ -58,10 +58,19 @@ export default function PoemsClient() {
           fontWeight: 900,
           fontSize: "clamp(22px, 4.236vmin, 36px)",
           letterSpacing: "0.236em",
-          color: "rgba(201,168,76,0.618)",
+          color: "rgba(201,168,76,0.85)",
           animation: "fadeUp 618ms 100ms both ease",
           textShadow: "0 0 8px rgba(201,168,76,0.382), 0 0 24px rgba(201,168,76,0.146)",
         }}>POEMS</h1>
+        <div style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: "0.9rem",
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "rgba(201,168,76,0.85)",
+          marginTop: "-0.5rem",
+          animation: "fadeUp 618ms 150ms both ease",
+        }}>by Jeff Sellers</div>
 
         {POEMS.map((poem, i) => (
           <Link key={poem.key} href={`/poems/${poem.slug}`} style={{ textDecoration: "none", width: "100%" }}>

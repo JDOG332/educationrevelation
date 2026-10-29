@@ -109,6 +109,16 @@ export default function PromisesClient() {
           marginBottom: "0.618rem",
         }}>from the universe to you</div>
 
+        <div className="stagger-fade" style={{
+          fontFamily: "var(--font-body)",
+          fontSize: "0.9rem",
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "rgba(201,168,76,0.85)",
+          textAlign: "center",
+          animationDelay: "350ms",
+        }}>written by Jeff Sellers</div>
+
         {/* Gold divider */}
         <div className="stagger-fade" style={{
           width: "61.8%", height: 1, maxWidth: "12.5rem",
