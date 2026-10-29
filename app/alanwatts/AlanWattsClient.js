@@ -367,36 +367,28 @@ export default function AlanWattsClient() {
         paddingBottom: '4.236rem',
       }}
     >
-      {/* Frosted header */}
-      <div className="frosted-header" style={{ justifyContent: 'space-between', paddingRight: '1.618rem' }}>
-        <Link href="/" style={{ pointerEvents: 'auto', textDecoration: 'none' }}>
-          <span className="back-link">← BACK</span>
-        </Link>
-        <a
-          href="https://alanwatts.org/real-alan-watts"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            fontFamily: 'var(--font-display)', fontWeight: 700,
-            fontSize: 'clamp(0.65rem, 1.4vmin + 0.1rem, 0.75rem)',
-            letterSpacing: '0.12em',
-            color: `rgba(${GOLD},0.40)`,
-            textDecoration: 'none',
-            pointerEvents: 'auto',
-            transition: 'color 200ms',
-          }}
-          onMouseEnter={e => e.currentTarget.style.color = `rgba(${GOLD},0.80)`}
-          onMouseLeave={e => e.currentTarget.style.color = `rgba(${GOLD},0.40)`}
-        >
-          VERIFY REAL WATTS ↗
-        </a>
-      </div>
-
       {/* Content */}
       <div
         className="content-below-header"
         style={{ width: '100%', maxWidth: 'var(--content-max)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
       >
+        <a
+          href="https://alanwatts.org/real-alan-watts"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            alignSelf: 'flex-end',
+            fontFamily: 'var(--font-display)', fontWeight: 700,
+            fontSize: '0.875rem',
+            letterSpacing: '0.12em',
+            color: `rgba(${GOLD},0.78)`,
+            textDecoration: 'none',
+            marginBottom: '0.75rem',
+          }}
+        >
+          VERIFY REAL WATTS ↗
+        </a>
+
         {/* View toggle */}
         <div style={{ width: '100%', padding: '0 16px', marginBottom: '1.618rem' }}>
           <ViewToggle view={view} onChange={changeView} />

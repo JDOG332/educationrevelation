@@ -62,10 +62,11 @@ const CSS = `
 .aw-ideas-select option { background: #03030a; color: #e8e8f0; }
 .aw-ideas-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .aw-ideas-chip {
-  min-height: 36px; padding: 0.382rem 0.75rem; border-radius: 100px;
+  min-height: 34px; padding: 0.3rem 0.6rem; border-radius: 100px; white-space: nowrap;
   border: 1px solid rgba(${GOLD},0.35); background: transparent; cursor: pointer;
   font-family: var(--font-body); font-size: 0.875rem; color: rgba(${GOLD},0.85);
 }
+@media (max-width: 420px) { .aw-ideas-chip { font-size: 0.8125rem; padding: 0.25rem 0.5rem; } }
 .aw-ideas-chip[aria-pressed="true"] { background: rgba(${GOLD},0.16); border-color: rgba(${GOLD},0.80); color: rgba(${GOLD},1); }
 .aw-ideas-list { list-style: none; margin: 0; padding: 0; }
 .aw-ideas-item { border-bottom: 1px solid rgba(${GOLD},0.12); }
