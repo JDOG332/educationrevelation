@@ -1,13 +1,29 @@
 import './globals.css';
-import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google';
+import localFont from 'next/font/local';
 import CursorProvider from '@/components/CursorProvider';
 import SiteHeader from '@/components/SiteHeader';
 import { SITE_URL } from '@/lib/meta';
 
-// Self-hosted fonts: no render-blocking @import, only the weights the site uses.
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400', '600', '700', '900'], style: ['normal', 'italic'], variable: '--font-playfair', display: 'swap' });
-const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-inter', display: 'swap' });
-const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['300', '400', '500'], style: ['normal', 'italic'], variable: '--font-cormorant', display: 'swap' });
+// Self-hosted fonts, vendored in app/fonts (variable woff2 from Google Fonts, latin subset),
+// so a build never depends on fetching fonts.googleapis.com.
+const playfair = localFont({
+  src: [
+    { path: './fonts/playfair-variable.woff2', weight: '400 900', style: 'normal' },
+    { path: './fonts/playfair-italic-variable.woff2', weight: '400 900', style: 'italic' },
+  ],
+  variable: '--font-playfair', display: 'swap',
+});
+const inter = localFont({
+  src: [{ path: './fonts/inter-variable.woff2', weight: '100 900', style: 'normal' }],
+  variable: '--font-inter', display: 'swap',
+});
+const cormorant = localFont({
+  src: [
+    { path: './fonts/cormorant-variable.woff2', weight: '300 700', style: 'normal' },
+    { path: './fonts/cormorant-italic-variable.woff2', weight: '300 700', style: 'italic' },
+  ],
+  variable: '--font-cormorant', display: 'swap',
+});
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
