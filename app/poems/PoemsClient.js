@@ -8,6 +8,10 @@ const POEMS = [
   { key: "dol", slug: "rhythm-of-life",   title: "It's the Rhythm of Life", subtitle: "Every hope is a heartbeat...", color: "201,168,76" },
   { key: "rol", slug: "death-or-life",    title: "Death or Life", subtitle: "Alive when dancing & dead when not...", color: "190,140,220" },
   { key: "kal", slug: "kaleidoscope-sea",  title: "Kaleidoscope Sea", subtitle: "One door closes & another one opens...", color: "79,195,247" },
+  // Plain-text readings (no animation)
+  { key: "rol-original", slug: "rhythm-of-life-original",    title: "Rhythm of Life (the original, 2016)", subtitle: "The first text, read plain", color: "201,168,76" },
+  { key: "kal-original", slug: "kaleidoscope-sea-original",  title: "Kaleidoscope Sea (the original, 2020)", subtitle: "The first text, read plain", color: "79,195,247" },
+  { key: "gap",          slug: "recognition-across-the-gap", title: "Recognition Across the Gap", subtitle: "Grief is the proof that you were here", color: "220,160,160" },
 ];
 
 export default function PoemsClient() {
@@ -83,7 +87,7 @@ export default function PoemsClient() {
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: "italic",
                 fontSize: "clamp(14px, 2vmin, 18px)",
-                color: `rgba(${poem.color},0.50)`,
+                color: `rgba(${poem.color},0.78)`,
                 lineHeight: 1.618,
               }}>{poem.subtitle}</div>
             </div>
