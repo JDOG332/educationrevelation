@@ -575,8 +575,8 @@ def write_report(R, path):
           f"{', '.join(f'{v:.3f}' for v in fo['cov_eigenvalues'][:15])}.")
         a("")
         rd = e["rel_I_change_dreg_1e-4_at_N1e4"]
-        a(f"Regularization: relative change of I_hat when delta_reg goes from 0 to 1e-4 (LI estimates, N = 1e4): {rd[0]:.3e} +/- {rd[1]:.1e} "
-          "(prediction -2 delta = -2e-4).")
+        a(f"Regularization ({nm}): relative change of I_hat when delta_reg goes from 0 to 1e-4 (LI estimates, N = 1e4): mean {rd[0]:.3e}, "
+          f"SD over runs {rd[1]:.1e} (SE {rd[1] / math.sqrt(R['floor']['S']):.1e}); prediction -2 delta = -2e-4.")
         a("")
     a("Pure-state reconstruction: deterministic offset 1 - I(rho~) from delta_reg alone (exact closed form, d = 4):")
     a("")
@@ -685,6 +685,21 @@ def summary_section(R):
     g05 = [e for e in D["grid"] if e["state"].startswith("tilted") and e["gamma"] == 0.5][0]
     t10 = [e for e in D["grid"] if e["state"].startswith("tilted") and e["gamma"] == 1.0][0]
     p10 = [e for e in D["grid"] if e["state"].startswith("|+>") and e["gamma"] == 1.0][0]
+    rdI = R["floor"]["states"]["I/4"]["rel_I_change_dreg_1e-4_at_N1e4"]
+    # Phase 3 (referee follow-up) supersedes the 100-seed floor constant and supplies the LL gaps
+    p3json = os.path.join(HERE, "results", "phase3", "results3.json")
+    gap_text = "for the SIC-aligned Bell state LI trails MLE by tens of nats; see results/phase3/REPORT3.md"
+    a_final, a_final_se, a_src = f1["a_at_b1"], f1["a_at_b1_err"], "Phase 2, 100 seeds per N"
+    a_pred, a_pred_se = fo["E_sqrt_N_Ihat_sq"], float("nan")
+    if os.path.exists(p3json):
+        with open(p3json) as fh:
+            R3 = json.load(fh)
+        g = R3["GH"]["gaps"]["Bell aligned, N = 1e4"]
+        gap_text = (f"for the SIC-aligned Bell state the cross-validated gap LL(MLE) - LL(LI) has median {g['median']:.0f} nats, "
+                    f"range {g['min']:.0f} to {g['max']:.0f} over {g['S']} runs (Phase 3), so w_LI is at most {g['w_LI_max']:.0e}")
+        b1 = R3["F"]["states"]["I/4"]["fits_N_ge_1e4"]["b1"]
+        a_final, a_final_se, a_src = b1["a"], b1["a_se"], "Phase 3, 3000 seeds per N, fit over N >= 1e4"
+        a_pred, a_pred_se = R3["F"]["mc"]["pred"], R3["F"]["mc"]["pred_se"]
     L = []
     a = L.append
     a("## 5. Summary, recommendations and suggested paper text")
@@ -701,7 +716,8 @@ def summary_section(R):
     a(f"2. Floor law: for I/4, R12 = a N^-b with a = {f1['a']:.2f} +/- {f1['a_err']:.2f}, b = {f1['b']:.4f} +/- {f1['b_err']:.4f} "
       f"(chi^2 {f1['chi2']:.1f} / {f1['dof']}); with b = 1, a = {f1['a_at_b1']:.2f} +/- {f1['a_at_b1_err']:.2f}. First-order theory: "
       f"N E[I_hat] = (sum_k p_k Tr D_k^2 - Tr rho^2)/ln 2 = 24.75/ln 2 = {fo['E_N_Ihat']:.2f} (measured mean N I_hat {NI:.2f}), and "
-      f"N E[sqrt(I_hat1 I_hat2)] = {fo['E_sqrt_N_Ihat_sq']:.2f}; the fitted a is {100 * (1 - f1['a_at_b1'] / fo['E_sqrt_N_Ihat_sq']):.1f}% below it. "
+      f"N E[sqrt(I_hat1 I_hat2)] = {fo['E_sqrt_N_Ihat_sq']:.2f}. This 100-seed fit is a low draw: the 3000-seed rerun ({a_src}) gives "
+      f"a = {a_final:.2f} +/- {a_final_se:.2f} (b = 1) against the prediction {a_pred:.2f} +/- {a_pred_se:.2f}. "
       "LI/MLE and MLE/MLE pairings are identical here, because for I/4 the LI estimate was always positive, and then LI equals the MLE.")
     a(f"3. P3: the asymmetry is first order (linear) only for inputs with Bloch components both along and across the measured axes "
       f"(tilted input: exponent k = {t10['small (theta <= 0.2)']['power_exponent']:.2f}). For |+>|0> and for cos(pi/8)|00>+sin(pi/8)|11> it is "
@@ -730,13 +746,14 @@ def summary_section(R):
     a("2. Algorithm 1, step 3: use delta_ij = min(delta_i, delta_j), not max, and a non-strict test JSD <= delta_ij. With max, one unstable "
       "model sets the tolerance for every pair (delta_R1 = 0.126, 330 times the others for I/4). With a strict test, exact duplicates "
       "(JSD = 0 = delta at infinite N) are not merged, so R jumps from 1/2 at every finite N to 1 at N = infinity.")
-    a("3. Weights: with tau = 1 on summed log-likelihoods the softmax is one-hot at N = 1e4 (Bell: LI trails MLE by 48 nats, weight 1e-21). Either "
-      "use per-count log-likelihoods (tau = N) together with recommendation 2, or state plainly that C_eff = 1/n_unique in practice and treat it "
+    a(f"3. Weights: with tau = 1 on summed log-likelihoods the softmax is one-hot at N = 1e4 ({gap_text}). Either "
+      "use per-count log-likelihoods (tau = N) together with recommendation 2, or state plainly that C_eff = n_unique/n_active in practice "
+      "(= 1/n_active in every run here, since n_unique = 1 throughout) and treat it "
       "as a count of distinct estimator families, not as a measure of agreement.")
-    a(f"4. V2 and the gate floor: replace F_gated ~ eps/(1+eps) by the floor law R12 = a/N with a = {f1['a_at_b1']:.1f} for this POVM and pipeline "
+    a(f"4. V2 and the gate floor: replace F_gated ~ eps/(1+eps) by the floor law R12 = a/N with a = {a_final:.1f} +/- {a_final_se:.1f} ({a_src}) for this POVM and pipeline "
       "(Section 2 above). Optionally bias-correct I_hat by subtracting (sum_k p_k Tr D_k^2 - Tr rho_hat^2)/(N ln 2) near I/4.")
     a("5. Regularization: state the deterministic offsets instead of a blanket 1e-5 bound. Near I/4, I(rho~) = (1 - delta)^2 I(rho_hat), a relative "
-      "change of -2 delta (measured -2.008e-4 at delta = 1e-4). For a pure reconstruction, 1 - I(rho~) = S(rho~)/2 = 8.8e-6 at delta = 1e-6 and "
+      f"change of -2 delta (measured {rdI[0]:.3e} for I/4 at delta = 1e-4, SD over runs {rdI[1]:.1e}). For a pure reconstruction, 1 - I(rho~) = S(rho~)/2 = 8.8e-6 at delta = 1e-6 and "
       "6.3e-4 at delta = 1e-4. The 1e-5 claim holds only for delta_reg <= 1e-6.")
     a("6. P3: use the signed difference of means across runs, not the mean of per-run abs(Psi12 - Psi21), whose noise floor is about "
       "1.13 x SD(Psi) (6.1e-3 at N = 1e4). Test linearity with the log-log exponent, not R^2 > 0.9. Calibrate with projective or near-projective "
@@ -753,9 +770,9 @@ def summary_section(R):
       f"{max(p['max_abs_dCeff'] for p in T['perN']):.0e} and never changed the redundancy partition.")
     a("")
     a(f"*Floor law.* For a state with I(rho) = 0 reconstructed by linear inversion (or R rho R MLE) from N counts per batch of the 16-outcome "
-      f"product SIC-POVM, R12 = a N^-1 (1 + o(1)) with a = {f1['a_at_b1']:.1f} +/- {f1['a_at_b1_err']:.1f} (simulation; first-order theory "
-      f"{fo['E_sqrt_N_Ihat_sq']:.1f}), so the ignorance floor eps/(1+eps) is reached only for N of order a/eps, about 3e9. A laboratory value "
-      f"of a outside roughly [{0.9 * f1['a_at_b1']:.0f}, {1.1 * f1['a_at_b1']:.0f}] (10 percent, to allow for detector and calibration effects) "
+      f"product SIC-POVM, R12 = a N^-1 (1 + o(1)) with a = {a_final:.1f} +/- {a_final_se:.1f} (simulation, {a_src}; first-order theory "
+      f"{a_pred:.2f}), so the ignorance floor eps/(1+eps) is reached only for N of order a/eps, about 3e9. A laboratory value "
+      f"of a outside roughly [{0.9 * a_final:.0f}, {1.1 * a_final:.0f}] (10 percent, to allow for detector and calibration effects) "
       "falsifies the stated pipeline model. Psi at the floor is D_hat x C_eff x a/N, linear in D_hat.")
     a("")
     a(f"*P3.* The order asymmetry of Psi is linear in the commutator norm only when the input has Bloch components along and across the "

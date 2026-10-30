@@ -536,8 +536,10 @@ def write_report(R, path):
     a(f"1. B.1's Werner values 0.71 and 0.28 are impossible under Eqs. 4 to 6: I(Werner 0.8) = {b1['Werner p = 0.8']['exact']['I']:.4f} and "
       f"I(Werner 0.2) = {b1['Werner p = 0.2']['exact']['I']:.4f} exactly, so Psi <= G_eps x D_hat = {b1['Werner p = 0.8']['exact']['psi_upper']:.4f} and "
       f"{b1['Werner p = 0.2']['exact']['psi_upper']:.4f}. Regenerated: {w8['psi_mean']:.4f} +/- {w8['psi_sd']:.4f} and {w2['psi_mean']:.4f} +/- {w2['psi_sd']:.4f}.")
-    a("2. With n = 2 models (LI-PSD and MLE), C_eff takes only two values in practice. For every mixed state the two estimators coincide "
-      "(JSD between them about 1e-17 bits), so they are merged as redundant: n_unique = 1, R = C_eff = 1/2. For the Bell state the "
+    sep_jsd = b1["Separable mixed (|00><00| + |11><11|)/2"]["modes"]["sampling"]["components"]["JSD_LI_MLE"][0]
+    a("2. With n = 2 models (LI-PSD and MLE), C_eff takes only two values in practice. For every full-rank state the two estimators coincide "
+      f"(JSD between them about 1e-17 bits); for the rank-2 separable state they nearly coincide (JSD {sep_jsd:.1e} bits). Both are far "
+      "below delta_i of about 3e-4 to 7e-4, so the models are merged as redundant: n_unique = 1, R = C_eff = 1/2. For the Bell state the "
       "cross-validated log-likelihoods differ by tens of nats, so n_active = 1 and C_eff = 1 (the convergence factor did not participate). "
       "In every reported mean C0 stays within 1e-5 of 1, so C_eff never varies informatively here (Open Question 7).")
     a("3. The epsilon sweep satisfies the 1e-5 bound for every state, but not the 1e-7 bound B.1 claims for the maximally mixed state. "

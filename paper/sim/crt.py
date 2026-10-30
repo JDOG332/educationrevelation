@@ -553,7 +553,7 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
                    one resample, two reconstructions of the same family with
                    different starting seeds; delta_i = 95th percentile of the
                    JSD between them (estimator-internal variability only).
-      'sampling' : alternative reading ("combined spread from sampling
+      'sampling' : primary reading ("combined spread from sampling
                    variability and estimator stochasticity"): two
                    independent resamples, each reconstructed by family i
                    from a different random start; delta_i = 95th percentile.

@@ -141,3 +141,25 @@ gamma between 0.1, 0.5 and 1.0; nearest theta of 0.1 and pi/4; scaled by
 1/sqrt(N)); the 5 sigma rule n = 50 SD^2 / (beta^2 Sxx) runs per order per
 theta, with a minimum of 2; total counts = n x theta points x 2 orders x 2 batches x N;
 and C_eff in the exact P3 asymmetry taken from the Monte Carlo mean.
+
+## Phase 3 (`run_phase3.py`, referee follow-ups)
+
+```
+python3 run_phase3.py                # full run, 344 s on 2 CPUs
+python3 run_phase3.py --report-only  # rebuild REPORT3.md from results3.json
+```
+
+Master seed `MASTER_SEED3 = 20261031`, 2 workers. Results are in `results/phase3/`
+(`results3.json`, `REPORT3.md`, `run3.log`).
+
+- Floor constant: I/4 with 3000 seeds per N, and thermal q = 0.02 with 1000 seeds per N, for
+  N in {1e3, 3e3, 1e4, 3e4, 1e5, 3e5, 1e6}. Fits use free b, b = 1, and b = 1 with a
+  free offset. The first-order prediction is recomputed with 4e6 Monte Carlo draws and its SE.
+- Locally rotated Bell and |00> controls: the SIC-aligned state and 5 Haar-random
+  local unitaries, 20 seeds each, N = 1e4 and 1e5.
+- LL gap LL(MLE) - LL(LI) distributions and the one-hot threshold ln((1 - eta)/eta).
+- P3 small-angle exponents (theta = 0.01 to 0.04), the normalized slope, and the
+  O1 = sigma_y, x-y plane variant.
+
+`run_phase2.py --report-only` reads `results/phase3/results3.json` when present, so the Phase 2 summary
+quotes the Phase 3 floor constant and the computed LL gaps (no hard-coded numbers).
