@@ -1,0 +1,56 @@
+========================================================================
+1. Partial information I(S:F_m), pure c-maybe, closed form
+   I = h((1+c^N)/2) + h((1+c^m)/2) - h((1+c^(N-m))/2), c = cos(theta)
+  theta=pi/4 N_E=12: closed form [0.0, 0.6011, 0.8118, 0.9091, 0.9571, 0.9828, 0.9998, 1.0168, 1.0426, 1.0906, 1.1878, 1.3986, 1.9996]
+     max |closed - brute statevector| = 8.44e-15
+     max |closed - REPORT| = 0.0004
+  theta=pi/8 N_E=8: closed form [0.0, 0.2726, 0.4643, 0.6303, 0.786, 0.9416, 1.1076, 1.2993, 1.5719]
+     max |closed - brute statevector| = 1.33e-15
+  theta=pi/16 N_E=12: closed form [0.0, 0.1028, 0.1867, 0.2642, 0.3381, 0.4101, 0.4811, 0.5521, 0.6241, 0.698, 0.7755, 0.8594, 0.9622]
+     max |closed - brute statevector| = 3.00e-15
+
+  m_delta^MI (delta=0.1), referee vs REPORT:
+    pi/8  N_E= 6: 4.025  (REPORT 4.03)
+    pi/8  N_E=12: 6.103  (REPORT 6.1)
+    pi/6  N_E= 8: 3.825  (REPORT 3.83)
+    pi/4  N_E=10: 2.871  (REPORT 2.87)
+    pi/4  N_E=12: 2.907  (REPORT 2.91)
+    pi/3  N_E= 6: 1.607  (REPORT 1.61)
+    pi/3  N_E=12: 1.620  (REPORT 1.62)
+    pi/2  N_E=12: 0.900  (REPORT 0.9)
+========================================================================
+2. Helstrom records, pure c-maybe (closed forms)
+   P_e = (1 - sqrt(1 - c^(2m)))/2, q = 2 P_e (1 - P_e), I(r_A:r_B) = 1 - h(q), J_H = 1 - h(P_e)
+  pi/4  m=3: Pe=0.0323 q=0.0625 I(rA:rB)=0.6627 (brute 0.6627) J_H=0.7942   REPORT (0.0323, 0.0625, 0.6627, 0.7942)
+  pi/8  m=4: Pe=0.1575 q=0.2654 I(rA:rB)=0.1652 (brute 0.1652) J_H=0.3717   REPORT (0.1575, 0.2654, 0.1652, 0.3717)
+  pi/6  m=5: Pe=0.0633 q=0.1187 I(rA:rB)=0.4745 (brute 0.4745) J_H=0.6594   REPORT (0.0633, 0.1187, 0.4745, 0.6594)
+  pi/16 m=6: Pe=0.2721 q=0.3961 I(rA:rB)=0.0313 (brute 0.0313) J_H=0.1555   REPORT (0.2721, 0.3961, 0.0313, 0.1555)
+
+  Onset ratio with exact curves (large-N_E MI; exact record gate, level 0.9 of 1/2):
+   MI: h((1+c^m)/2)=0.9 -> c^m = x1;  records: 1-h(2Pe(1-Pe)) = 0.9 -> c^m = x2
+   x1 = 0.3680, x2 = 0.1612, ratio ln x2 / ln x1 = 1.826  (pre-registration: 0.368, 0.161, 1.83)
+========================================================================
+3. Identity I_v11 = I_c + (I(rho_A) + I(rho_B))/2 on random two-qubit states
+   max deviation over 2000 states: 2.22e-16  (an algebraic identity: log4 - S = [1-S_A]+[1-S_B]+I)
+   Separable (|00><00|+|11><11|)/2: I_c = 1/2; Werner(p) I_c = I_v11 = 1 - S/2. Crossing p:
+   p* = 0.7476 (phase-2 report corrects 0.749 -> 0.7476)
+========================================================================
+4. Scrambled environment (independent Haar sampling via full Haar unitary at N_E=8,
+   and via (v0, g v0 + sqrt(1-g^2) w) at N_E=12)
+   pi/2 N_E=8, 20 full-Haar-unitary draws: mean I(S:F_m) = [0.0, 0.013, 0.065, 0.275, 0.998, 1.735, 1.935, 1.988, 2.0]
+     REPORT phase 1:  0.000, 0.015, 0.064, 0.274, 1.000, 1.726, 1.931, 1.987, 2.000
+   pi/2 N_E=12: mean I(S:F_m), 20 draws = [0.0, 0.001, 0.004, 0.017, 0.066, 0.269, 1.001, 1.732, 1.933, 1.984, 1.996, 1.999, 2.0]
+     m=1: N*I_v11 exact mean     1.5 (median   1.19, max     6.6);  N*I_c exact mean  0.45;  I(rA:rB) mean 9.01e-05
+     m=2: N*I_v11 exact mean   113.4 (median   1.12, max  1919.6);  N*I_c exact mean  0.50;  I(rA:rB) mean 9.94e-05
+     m=3: N*I_v11 exact mean    64.4 (median   2.35, max   420.7);  N*I_c exact mean  1.06;  I(rA:rB) mean 2.12e-04
+   pi/4 N_E=12: mean I(S:F_m), 20 draws = [0.0, 0.001, 0.004, 0.016, 0.066, 0.268, 0.998, 1.728, 1.932, 1.984, 1.996, 1.999, 2.0]
+     m=1: N*I_v11 exact mean     1.3 (median   1.00, max     4.6);  N*I_c exact mean  0.38;  I(rA:rB) mean 7.53e-05
+     m=2: N*I_v11 exact mean   125.1 (median   1.17, max  1911.4);  N*I_c exact mean  0.41;  I(rA:rB) mean 8.26e-05
+     m=3: N*I_v11 exact mean    50.1 (median   1.84, max   443.5);  N*I_c exact mean  0.76;  I(rA:rB) mean 1.52e-04
+   REPORT phase 2 (pi/2, N_E=12): N I_c 0.60/0.41/0.88, N I_v11 1.6/93.7/55.9; (pi/4): 0.54/0.51/0.83, 1.6/105.5/58.3
+========================================================================
+5. Horodecki example (Le & Olaya-Castro Eq. C1, p=0.8) and c-maybe m=1 discord
+   H(S)=0.9044 I(S:E)=0.9044 chi_ptr=0.1825 chi_max(grid)=0.7219
+   REPORT: H(S)=0.9044 I=0.9044 chi_ptr=0.1825 chi_max=0.7219
+   J(S|E) (measure E, grid) = 0.5715  REPORT 0.5715
+   c-maybe pi/4 N_E=12 m=1: I=0.6011 chi_ptr=0.6009 J(S|F)=0.3992  (REPORT 0.6011, 0.6009, 0.3992; J_H closed form 0.3991)

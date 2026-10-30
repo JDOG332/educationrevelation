@@ -1,0 +1,48 @@
+(1) rho_E = (|0..0><0..0| + |1..1><1..1|)/2 (phi = pi/2): by the X-flip symmetry the Helstrom
+    record ignores k, so records stay conditionally independent and no false positive arises:
+theta   m   J_H(one obs)   I(rA:rB)   I(rA:rB|s)   I(rA:rB) if cond.-indep. with same J_H   gate v12 = I/2
+pi/16   1       0.0000      0.0000      0.0000         0.0000       0.0000
+pi/16   2       0.0359      0.0017      0.0000         0.0018       0.0008
+pi/16   3       0.0807      0.0087      0.0000         0.0087       0.0044
+pi/16   4       0.1063      0.0150      0.0000         0.0150       0.0075
+pi/16   5       0.1312      0.0226     -0.0000         0.0226       0.0113
+pi/8    1       0.0000      0.0000      0.0000         0.0000       0.0000
+pi/8    2       0.1301      0.0190      0.0000         0.0222       0.0095
+pi/8    3       0.2906      0.1040     -0.0000         0.1040       0.0520
+pi/8    4       0.3708      0.1645      0.0000         0.1645       0.0823
+pi/8    5       0.4419      0.2280      0.0000         0.2280       0.1140
+pi/4    1       0.0000      0.0000      0.0000         0.0000       0.0000
+pi/4    2       0.3113      0.0738     -0.0000         0.1184       0.0369
+pi/4    3       0.6454      0.4564      0.0000         0.4564       0.2282
+pi/4    4       0.7884      0.6540      0.0000         0.6540       0.3270
+pi/4    5       0.8824      0.7994     -0.0000         0.7994       0.3997
+
+(2) rho_E = (|0..0><0..0| + |b..b><b..b|)/2, |b> = cos(phi)|0> + sin(phi)|1> (hidden bit k not
+    symmetric under the coupling): search over phi, theta, m <= 6 for the largest excess of
+    I(rA:rB) over the conditionally-independent value at the same J_H.
+   phi     theta    m    J_H      I(rA:rB)  I(rA:rB|s)  I_ci(same J_H)
+   1.520  0.050   1   0.0000   0.9746    0.9745     0.0000
+   1.622  0.050   1   0.0000   0.9746    0.9745     0.0000
+   1.520  0.102   1   0.0000   0.9435    0.9435     0.0000
+   1.622  0.102   1   0.0000   0.9435    0.9435     0.0000
+   1.723  0.050   1   0.0000   0.9019    0.9019     0.0000
+   1.419  0.050   1   0.0000   0.9019    0.9019     0.0000
+   largest I(rA:rB) with J_H < 0.2 bit:
+   phi=1.520 theta=0.050 m=1: J_H=0.0000, I(rA:rB)=0.9746 (gate 0.4873, N*gate = 4873 vs floor 27.9), I(rA:rB|s)=0.9745, cond.-indep. value 0.0000
+   phi=1.622 theta=0.050 m=1: J_H=0.0000, I(rA:rB)=0.9746 (gate 0.4873, N*gate = 4873 vs floor 27.9), I(rA:rB|s)=0.9745, cond.-indep. value 0.0000
+   phi=1.520 theta=0.102 m=1: J_H=0.0000, I(rA:rB)=0.9435 (gate 0.4718, N*gate = 4718 vs floor 27.9), I(rA:rB|s)=0.9435, cond.-indep. value 0.0000
+
+(3) hand-picked, non-degenerate points (phi = pi/3, pi/4):
+   phi    theta   m    J_H      I(rA:rB)  I(rA:rB|s)  I_ci(same J_H)  N*gate_v12 (N=1e4)
+   pi/3  pi/16   1   0.0069   0.4303    0.4245     0.0001          2152
+   pi/3  pi/16   2   0.0198   0.0278    0.0235     0.0005           139
+   pi/3  pi/16   4   0.0899   0.0109    0.0000     0.0108            54
+   pi/3  pi/8    1   0.0266   0.3618    0.3405     0.0010          1809
+   pi/3  pi/8    2   0.0735   0.0981    0.0672     0.0072           490
+   pi/3  pi/8    4   0.2889   0.1051    0.0000     0.1028           526
+   pi/4  pi/16   1   0.0138   0.1887    0.1796     0.0003           944
+   pi/4  pi/16   2   0.0147   0.2179    0.2156     0.0003          1089
+   pi/4  pi/16   4   0.0547   0.0096    0.0014     0.0040            48
+   pi/4  pi/8    1   0.0535   0.1887    0.1538     0.0039           944
+   pi/4  pi/8    2   0.0573   0.2383    0.2204     0.0044          1191
+   pi/4  pi/8    4   0.1643   0.0656    0.0074     0.0349           328
