@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 
 /**
  * A live Ψ for two qubit states, computed exactly as the paper defines it
- * (v8.7, section 3), for the case d = 2:
+ * (v11.0, section 3; unchanged since v8.7), for the case d = 2:
  *   ρ = (I + r·σ)/2 with Bloch vector r, |r| ≤ 1
  *   F  = Tr(ρ₁ρ₂) + 2√(det ρ₁ det ρ₂)   (Uhlmann fidelity for qubits)
  *   I  = 1 − S(ρ)/log₂ 2 = 1 − S(ρ)      (S in bits, eigenvalues (1 ± |r|)/2)

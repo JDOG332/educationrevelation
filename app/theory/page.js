@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { pageMeta, SITE_URL } from '@/lib/meta';
 import {
-  PAPER, EQUATION, IN_ONE_BREATH, CLAIMS, GLOSSARY, TESTS, SENSITIVITY,
+  PAPER, PREVIOUS, EQUATION, IN_ONE_BREATH, CLAIMS, WHAT_V11_FOUND, GLOSSARY, TESTS, SENSITIVITY,
   RELATED, VERSIONS, HOW_IT_WAS_WRITTEN, CITE, ROOM_PSI_NOTE,
 } from '@/lib/content/theory';
 import PsiCalculator from './PsiCalculator';
@@ -102,6 +102,7 @@ export default function TheoryPage() {
           <nav className="theory-toc" aria-label="On this page" style={{ marginTop: 'var(--s-md)' }}>
             <a href="#breath">In one breath</a>
             <a href="#claims">What it claims</a>
+            <a href="#found">What v11 found</a>
             <a href="#pieces">Piece by piece</a>
             <a href="#try">Try it</a>
             <a href="#tests">What would prove it wrong</a>
@@ -129,6 +130,16 @@ export default function TheoryPage() {
           <p>The paper keeps those two apart on purpose. This site is the second one, lived out loud: the poems, the doors, the Vitruvian Man breathing between the circle and the square. The first one is the part a lab could check.</p>
         </Section>
 
+        <Section id="found" kicker="Version 11" title="What happened when the tests were run">
+          <p>Up to version 8.7 the paper described its tests. Version 11 ran them, in code released with the paper, and then had a fresh reviewer check every number against that code. This is what came out, with the failures first.</p>
+          <ul className="theory-list">
+            {WHAT_V11_FOUND.map((f) => <li key={f.s}><b>{f.s}.</b> {f.m}</li>)}
+          </ul>
+          <p style={{ marginTop: 'var(--s-sm)', fontSize: '0.95rem', color: 'rgba(232,232,240,0.75)' }}>
+            The code: <a href={PAPER.code} style={{ color: `rgba(${GOLD},0.9)` }}>paper/sim on GitHub</a>. The source of the paper: <a href={PAPER.source} style={{ color: `rgba(${GOLD},0.9)` }}>paper/CRT-v11.0.md</a>. Every simulated number in the paper is produced by that code.
+          </p>
+        </Section>
+
         <Section id="pieces" kicker="Piece by piece" title="Every symbol in the equation">
           <p>Each factor is a plain number between 0 and 1. Multiply them and you have Ψ. Written as a sum of costs, Ψ = 2^(−S_eff): every factor below 1 adds bits to S_eff, and Ψ pays for them.</p>
           <table className="theory-table">
@@ -150,20 +161,20 @@ export default function TheoryPage() {
           <p>Two pictures of one qubit. Tilt and turn each one, make it pure or mixed, then set how much the reconstruction methods agree and how clean the detector was. The numbers are computed exactly as the paper defines them for d = 2.</p>
           <PsiCalculator />
           <p style={{ marginTop: 'var(--s-sm)', fontSize: '0.95rem', color: 'rgba(232,232,240,0.75)' }}>
-            Watch the third preset: two blank pictures match perfectly (F near 1) and still score nothing, because the gate will not let shared ignorance count as recognition. That one line is the heart of the paper.
+            Watch the third preset: two blank pictures match perfectly (F near 1) and still score nothing, because the gate will not let shared ignorance count as recognition. That one line is the heart of the paper. (In a real measurement with N counts the blank score is not zero but about 34.3/N; the calculator shows the exact, infinite-data value.)
           </p>
           <table className="theory-table" style={{ marginTop: 'var(--s-sm)' }}>
-            <thead><tr><th>Simulated state (paper, appendix B.1)</th><th>Ψ</th></tr></thead>
+            <thead><tr><th>Simulated state (paper, appendix B.1; 10,000 counts per batch)</th><th>Ψ̂ measured</th><th>Ψ upper bound</th></tr></thead>
             <tbody>
               {SENSITIVITY.map((s) => (
-                <tr key={s.state}><td>{s.state}</td><td className="range">{s.psi}</td></tr>
+                <tr key={s.state}><td>{s.state}</td><td className="range">{s.psi}</td><td className="range">{s.upper}</td></tr>
               ))}
             </tbody>
           </table>
         </Section>
 
         <Section id="tests" kicker="What would prove it wrong" title="The tests, with their failure conditions">
-          <p>No experiment has been run yet. These are the ones the paper sets out, each with the result that would count against it.</p>
+          <p>No laboratory experiment has been run yet. These are the tests the paper sets out, each with the result that would count against it. Version 11 ran them in simulation first; one failed and is kept here as a withdrawn prediction.</p>
           {TESTS.map((t) => (
             <div className="theory-test" key={t.id}>
               <h3><span>{t.id} · {t.kind}</span>{t.name}</h3>
@@ -197,10 +208,11 @@ export default function TheoryPage() {
             ))}
           </ul>
           <p style={{ marginTop: 'var(--s-sm)', fontSize: '0.95rem', color: 'rgba(232,232,240,0.75)' }}>
-            The hosted PDF carries the author metadata; its SHA-256 is below. The original bytes as written on {PAPER.date} are kept unchanged at <a href={PAPER.originalPdf} style={{ color: `rgba(${GOLD},0.9)` }}>the archive copy</a>.
+            Both hosted PDFs carry the author metadata; their SHA-256 hashes are below. Version {PREVIOUS.version} stays hosted at <a href={PREVIOUS.pdf} style={{ color: `rgba(${GOLD},0.9)` }}>its own link</a>, and its original bytes as written on {PREVIOUS.date} are kept unchanged at <a href={PREVIOUS.originalPdf} style={{ color: `rgba(${GOLD},0.9)` }}>the archive copy</a>.
           </p>
           <div className="theory-mono">v{PAPER.version} hosted: {PAPER.sha256}</div>
-          <div className="theory-mono">v{PAPER.version} original: {PAPER.originalSha256}</div>
+          <div className="theory-mono">v{PREVIOUS.version} hosted: {PREVIOUS.sha256}</div>
+          <div className="theory-mono">v{PREVIOUS.version} original: {PREVIOUS.originalSha256}</div>
         </Section>
 
         <Section id="cite" kicker="Cite" title="How to cite this">
