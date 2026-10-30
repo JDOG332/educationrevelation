@@ -1,0 +1,19 @@
+M2 N_E=8: 94 open cells x 16 times; M4 N_E=8: 32 open states  (wall 465 s)
+
+[single] M2: 94 eligible cells; frac C1 0.011, frac C2 0.011; median r +0.147; median per-cell q95|r-med| 0.520 (tol 0.223)
+     conserving     : 14 cells, frac C2 0.071, median r +0.978, median q95|r-med| 0.554
+     non-conserving : 80 cells, frac C2 0.000, median r +0.115, median q95|r-med| 0.518
+     M4 per state: 21 eligible, frac C1 0.048, frac C2 0.190, median r +0.305, median q95|r-med| 0.395
+
+[pair] M2: 94 eligible cells; frac C1 0.011, frac C2 0.011; median r +0.127; median per-cell q95|r-med| 0.542 (tol 0.223)
+     conserving     : 14 cells, frac C2 0.071, median r +0.923, median q95|r-med| 0.540
+     non-conserving : 80 cells, frac C2 0.000, median r +0.096, median q95|r-med| 0.542
+     M4 per state: 21 eligible, frac C1 0.048, frac C2 0.190, median r +0.223, median q95|r-med| 0.503
+
+[frag] M2: 94 eligible cells; frac C1 0.234, frac C2 0.649; median r -0.086; median per-cell q95|r-med| 0.127 (tol 0.223)
+     conserving     : 14 cells, frac C2 0.071, median r +0.871, median q95|r-med| 0.358
+     non-conserving : 80 cells, frac C2 0.750, median r -0.095, median q95|r-med| 0.120
+     M4 per state: 21 eligible, frac C1 0.333, frac C2 0.333, median r +0.222, median q95|r-med| 0.371
+
+additivity: median over M2 states of median_F xi(F) / sum_k xi_k = 0.999 (p10 0.626, p90 2.597); <1 = subadditive local rates
+(wall 481 s)

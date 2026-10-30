@@ -1,0 +1,67 @@
+J=0 h0.75 V0 t=1 (== run's J=1 VB hom)
+   N=   8: S(rho_S)=0.9673  delta_half z=0.4065  opt-basis=0.1797
+   N=  10: S(rho_S)=0.9691  delta_half z=0.3845  opt-basis=0.1890
+   N=  12: S(rho_S)=0.9705  delta_half z=0.3638  opt-basis=0.1908
+   N=  14: S(rho_S)=0.9719  delta_half z=0.3455  opt-basis=0.1890
+   N=  20: S(rho_S)=0.9757  delta_half z=0.3039  opt-basis=0.1790
+   N=  40: S(rho_S)=0.9837  delta_half z=0.2313  opt-basis=0.1516
+   N=  80: S(rho_S)=0.9902  delta_half z=0.1715  opt-basis=0.1219
+   N= 160: S(rho_S)=0.9944  delta_half z=0.1243  opt-basis=0.0942
+   N= 320: S(rho_S)=0.9970  delta_half z=0.0885  opt-basis=0.0707
+   T4 rule (8 vs 12): z FLOOR, opt FLOOR; z at N=320 / N=8 = 0.218, opt 0.394
+J=0 h0.75 V0 t=2
+   N=   8: S(rho_S)=0.8338  delta_half z=0.5274  opt-basis=0.3955
+   N=  10: S(rho_S)=0.8569  delta_half z=0.4952  opt-basis=0.3807
+   N=  12: S(rho_S)=0.8739  delta_half z=0.4705  opt-basis=0.3685
+   N=  14: S(rho_S)=0.8871  delta_half z=0.4501  opt-basis=0.3574
+   N=  20: S(rho_S)=0.9135  delta_half z=0.4038  opt-basis=0.3292
+   N=  40: S(rho_S)=0.9504  delta_half z=0.3192  opt-basis=0.2702
+   N=  80: S(rho_S)=0.9726  delta_half z=0.2447  opt-basis=0.2127
+   N= 160: S(rho_S)=0.9853  delta_half z=0.1827  opt-basis=0.1623
+   N= 320: S(rho_S)=0.9923  delta_half z=0.1337  opt-basis=0.1210
+   T4 rule (8 vs 12): z FLOOR, opt FLOOR; z at N=320 / N=8 = 0.254, opt 0.306
+J=0 h0.25 V0 t=1
+   N=   8: S(rho_S)=0.9993  delta_half z=0.0926  opt-basis=0.0338
+   N=  10: S(rho_S)=0.9995  delta_half z=0.0844  opt-basis=0.0332
+   N=  12: S(rho_S)=0.9996  delta_half z=0.0779  opt-basis=0.0330
+   N=  14: S(rho_S)=0.9996  delta_half z=0.0724  opt-basis=0.0324
+   N=  20: S(rho_S)=0.9996  delta_half z=0.0601  opt-basis=0.0297
+   N=  40: S(rho_S)=0.9998  delta_half z=0.0408  opt-basis=0.0232
+   N=  80: S(rho_S)=0.9999  delta_half z=0.0273  opt-basis=0.0173
+   N= 160: S(rho_S)=0.9999  delta_half z=0.0182  opt-basis=0.0126
+   N= 320: S(rho_S)=1.0000  delta_half z=0.0122  opt-basis=0.0090
+   T4 rule (8 vs 12): z FLOOR, opt UNDECIDED; z at N=320 / N=8 = 0.131, opt 0.267
+J=0 h0.25 V0 t=3
+   N=   8: S(rho_S)=0.1635  delta_half z=0.6070  opt-basis=0.4758
+   N=  10: S(rho_S)=0.2064  delta_half z=0.5681  opt-basis=0.4495
+   N=  12: S(rho_S)=0.2461  delta_half z=0.5403  opt-basis=0.4329
+   N=  14: S(rho_S)=0.2830  delta_half z=0.5185  opt-basis=0.4215
+   N=  20: S(rho_S)=0.3799  delta_half z=0.4718  opt-basis=0.4010
+   N=  40: S(rho_S)=0.6037  delta_half z=0.3844  opt-basis=0.3540
+   N=  80: S(rho_S)=0.8254  delta_half z=0.2830  opt-basis=0.2699
+   N= 160: S(rho_S)=0.9616  delta_half z=0.1588  opt-basis=0.1525
+   N= 320: S(rho_S)=0.9971  delta_half z=0.0554  opt-basis=0.0523
+   T4 rule (8 vs 12): z FLOOR, opt FLOOR; z at N=320 / N=8 = 0.091, opt 0.110
+J=0 h0.75 VA t=1 (== run's J=1 VC hom)
+   N=   8: S(rho_S)=0.8652  delta_half z=0.3866  opt-basis=0.2092
+   N=  10: S(rho_S)=0.8707  delta_half z=0.3513  opt-basis=0.2091
+   N=  12: S(rho_S)=0.8767  delta_half z=0.3196  opt-basis=0.2030
+   N=  14: S(rho_S)=0.8830  delta_half z=0.2922  opt-basis=0.1951
+   N=  20: S(rho_S)=0.9026  delta_half z=0.2310  opt-basis=0.1728
+   N=  40: S(rho_S)=0.9521  delta_half z=0.1388  opt-basis=0.1219
+   N=  80: S(rho_S)=0.9769  delta_half z=0.0866  opt-basis=0.0743
+   N= 160: S(rho_S)=0.9863  delta_half z=0.0449  opt-basis=0.0377
+   N= 320: S(rho_S)=0.9922  delta_half z=0.0218  opt-basis=0.0178
+   T4 rule (8 vs 12): z FLOOR, opt FLOOR; z at N=320 / N=8 = 0.057, opt 0.085
+J=0 h0 V0 t=1 (product control)
+   N=   8: S(rho_S)=1.0000  delta_half z=0.0052  opt-basis=0.0052
+   N=  10: S(rho_S)=1.0000  delta_half z=0.0015  opt-basis=0.0015
+   N=  12: S(rho_S)=1.0000  delta_half z=0.0004  opt-basis=0.0004
+   N=  14: S(rho_S)=1.0000  delta_half z=0.0001  opt-basis=0.0001
+   N=  20: S(rho_S)=1.0000  delta_half z=0.0000  opt-basis=0.0000
+   N=  40: S(rho_S)=1.0000  delta_half z=0.0000  opt-basis=0.0000
+   N=  80: S(rho_S)=1.0000  delta_half z=-0.0000  opt-basis=-0.0000
+   N= 160: S(rho_S)=1.0000  delta_half z=0.0000  opt-basis=0.0000
+   N= 320: S(rho_S)=1.0000  delta_half z=0.0000  opt-basis=0.0000
+   T4 rule (8 vs 12): z DECAY, opt DECAY; z at N=320 / N=8 = 0.000, opt 0.000
+(wall 49 s)

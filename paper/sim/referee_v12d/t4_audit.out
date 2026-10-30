@@ -1,0 +1,44 @@
+1. Product law under the T4 rule (m = N/2, N = 8 vs 12)
+   product law (decays to 0 exponentially) is classified FLOOR for every xi <= 0.148 nats
+   xi=0.04: d8=0.382 d12=0.360 ratio=0.942 -> FLOOR
+   xi=0.10: d8=0.321 d12=0.278 ratio=0.866 -> FLOOR
+   xi=0.15: d8=0.278 d12=0.222 ratio=0.799 -> UNDECIDED
+   xi=0.30: d8=0.175 d12=0.105 ratio=0.601 -> UNDECIDED
+   xi=0.50: d8=0.088 d12=0.034 ratio=0.393 -> DECAY
+
+2. Derivable product cells (excluded from the counts) under the T4 rule
+   M2 derivable (cell, t) points: {'FLOOR': 4, 'UNDECIDED': 2, 'DECAY': 24}
+   M4 derivable (cell, t) points: {'UNDECIDED': 1, 'DECAY': 2}
+
+3. Open cells: observed class vs product-law prediction from the state's own single-site rates
+   M2: 1439 eligible points; (observed, product-law-predicted) counts:
+      ('DECAY', 'DECAY'): 137
+      ('DECAY', 'FLOOR'): 3
+      ('DECAY', 'UNDECIDED'): 18
+      ('FLOOR', 'DECAY'): 84
+      ('FLOOR', 'FLOOR'): 340
+      ('FLOOR', 'UNDECIDED'): 193
+      ('UNDECIDED', 'DECAY'): 203
+      ('UNDECIDED', 'FLOOR'): 206
+      ('UNDECIDED', 'UNDECIDED'): 255
+      mean single-site rate at N=12 in observed-FLOOR points: median 0.156, p90 0.482 nats
+   M4: 20 eligible points; (observed, product-law-predicted) counts:
+      ('DECAY', 'DECAY'): 4
+      ('DECAY', 'UNDECIDED'): 1
+      ('FLOOR', 'FLOOR'): 6
+      ('UNDECIDED', 'DECAY'): 3
+      ('UNDECIDED', 'FLOOR'): 3
+      ('UNDECIDED', 'UNDECIDED'): 3
+      mean single-site rate at N=12 in observed-FLOOR points: median 0.109, p90 0.147 nats
+   M3: 18 eligible points; (observed, product-law-predicted) counts:
+      ('DECAY', 'DECAY'): 1
+      ('DECAY', 'FLOOR'): 9
+      ('DECAY', 'UNDECIDED'): 2
+      ('UNDECIDED', 'FLOOR'): 6
+
+4. Inhomogeneous g_k (redrawn per N_E): eligible M2 (cell, t) points with d12 > d8
+   g=hom: 32 of 696 points have d12 > d8
+   g=inh: 162 of 743 points have d12 > d8
+   inhomogeneous g_k at N=8: mean 0.992, first 4 [0.8, 0.604, 0.898, 1.408]
+   inhomogeneous g_k at N=10: mean 1.033, first 4 [1.272, 0.461, 1.155, 1.305]
+   inhomogeneous g_k at N=12: mean 0.908, first 4 [1.363, 1.118, 0.548, 1.059]

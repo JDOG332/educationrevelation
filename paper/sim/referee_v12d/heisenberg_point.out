@@ -1,0 +1,28 @@
+hom J=1 VB vs J=0 V0 max diff 8.171241461241152e-14
+hom J=1 VC vs J=0 VA max diff 1.87960758069039e-13
+inh J=1 VB vs J=0 V0 max diff 0.7167705736737083
+inh J=1 VC vs J=0 VA max diff 0.47932472994640096
+main|N12|J1.0|h0.0|hom|VB True -0.0
+main|N12|J1.0|h0.0|hom|VC False 0.333
+main|N12|J1.0|h0.25|hom|VB False 0.827
+main|N12|J1.0|h0.25|hom|VC False 0.413
+main|N12|J1.0|h0.75|hom|VB False 0.968
+main|N12|J1.0|h0.75|hom|VC False 0.454
+main|N10|J1.0|h0.0|hom|VB True -0.0
+main|N10|J1.0|h0.0|hom|VC False 0.234
+main|N10|J1.0|h0.25|hom|VB False 0.487
+main|N10|J1.0|h0.25|hom|VC False 0.405
+main|N10|J1.0|h0.75|hom|VB False 0.821
+main|N10|J1.0|h0.75|hom|VC False 0.543
+main|N8|J1.0|h0.0|hom|VB True -0.0
+main|N8|J1.0|h0.0|hom|VC False 0.337
+main|N8|J1.0|h0.25|hom|VB False 0.517
+main|N8|J1.0|h0.25|hom|VC False 0.397
+main|N8|J1.0|h0.75|hom|VB False 0.73
+main|N8|J1.0|h0.75|hom|VC False 0.693
+main|J1.0|h0.0|hom|VB DECAY
+main|J1.0|h0.0|hom|VC UNDECIDED
+main|J1.0|h0.25|hom|VB UNDECIDED
+main|J1.0|h0.25|hom|VC UNDECIDED
+main|J1.0|h0.75|hom|VB FLOOR
+main|J1.0|h0.75|hom|VC UNDECIDED

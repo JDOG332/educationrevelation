@@ -1,0 +1,39 @@
+T3 reachable outcomes
+   M4 main: 96 open cells, states per cell = {1} (< MIN_STATES = 3) -> M4 is INCONCLUSIVE whatever the data
+   if M2 = COLLAPSE                   -> overall (run's precedence) = INCONCLUSIVE
+   if M2 = COLLAPSE UP TO PREFACTOR   -> overall (run's precedence) = INCONCLUSIVE
+   if M2 = PARTIAL                    -> overall (run's precedence) = INCONCLUSIVE
+   if M2 = NO COLLAPSE                -> overall (run's precedence) = NO COLLAPSE, r > 0 (subadditive)
+   if M2 = INCONCLUSIVE               -> overall (run's precedence) = INCONCLUSIVE
+   Alternative reading (any INCONCLUSIVE model makes the overall INCONCLUSIVE): overall = INCONCLUSIVE
+   R grid: M2 at N_E = 10 has 6 cells (< 10 -> INCONCLUSIVE by construction); M4R cells hold one state -> T3-R is INCONCLUSIVE by construction, so T3 could never be ROBUST
+
+T3 sign: per-cell median r in M2
+   282 cells; median +0.180; frac < 0 0.160; IQR [+0.022, +0.405]
+
+T4/S
+   main M2: counts {'FLOOR': 24, 'DECAY': 6, 'UNDECIDED': 64}, frac FLOOR 0.255, frac DECAY 0.064
+   main M3: counts {'FLOOR': 0, 'DECAY': 12, 'UNDECIDED': 6}, frac FLOOR 0.000, frac DECAY 0.667
+   main M4: counts {'FLOOR': 6, 'DECAY': 5, 'UNDECIDED': 9}, frac FLOOR 0.300, frac DECAY 0.250
+   S rule: SUPPORTED needs >= 2 models with FLOOR >= 0.5: none -> MIXED
+   R grid cells pointer-conserving: 0 of 14 (all non-conserving: h_S in {0.5, 1} with VC; lambda in {0.25, 0.6})
+   R verdict SUPPORTED, main MIXED -> S_final MIXED
+
+T5/H5
+   eligible 219, of which k = 1: 40 (log ratio identically 0.0e+00: a single record is trivially its own CI law)
+   product M4 point (lambda = mu = 0) rows in H5: 16
+   as run      : n = 219, frac within ln1.25 = 0.685 -> NOT SUPPORTED
+   k>=2        : n = 179, frac within ln1.25 = 0.615 -> NOT SUPPORTED
+   k>=2, open  : n = 165, frac within ln1.25 = 0.582 -> NOT SUPPORTED
+   Helstrom: median log(delta/delta_ci) = +0.331, frac > 0 = 0.924
+   Local: median log(delta/delta_ci) = +0.068, frac > 0 = 0.709
+
+T2
+   (d) rows: [('M1d|N12|pi/8|0.8', True, True), ('M1d|N12|pi/6|0.8', True, True), ('M1d|N12|pi/4|0.8', True, True), ('M1d|N12|pi/3|0.8', True, True), ('M1d|N12|3pi/8|0.8', True, True), ('M1d|N12|7pi/16|0.8', True, True)]
+   verdict FAIL is the rule applied to a wrong prediction (C1 was predicted to fail and passes)
+
+T3c
+   d* = [1] in all cells: the pass fraction is already ~0 at the smallest non-zero depth, so the grid does not resolve a crossover
+
+T6(c) prior
+   {'M2': {'frac_states_holding': 0.625, 'n': 288}, 'M3': {'frac_states_holding': 0.6166666666666667, 'n': 180}, 'M4': {'frac_states_holding': 0.2777777777777778, 'n': 36}}

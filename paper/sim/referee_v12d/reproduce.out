@@ -1,0 +1,33 @@
+A. Product law, M1(a) theta = pi/4, N_E = 12: delta_chi(m) from dense partial traces vs D7 and stored
+   m= 1: mine 0.399018119940  D_ref 0.399018119940  stored 0.399018119940
+   m= 3: mine 0.091987782646  D_ref 0.091987782646  stored 0.091987782646
+   m= 6: mine 0.011126433869  D_ref 0.011126433869  stored 0.011126433869
+   m= 9: mine 0.001233440684  D_ref 0.001233440684  stored 0.001233440684
+   m=11: mine 0.000176162763  D_ref 0.000176162763  stored 0.000176162763
+   max |mine - D_ref|, |mine - stored| over m: 3.13e-13
+
+B. Chain cells: best half-size deficit vs N_E (exhaustive at every N_E, incl. all 924 at N_E = 12)
+   J=1.0 hS=0.25 hom VC t=2.0:
+      N=8: mine 0.164707  stored 0.164707  diff -1.39e-15   S(rho_S) mine 0.9362215186 stored 0.9362215186
+      N=10: mine 0.132169  stored 0.132169  diff -1.08e-15   S(rho_S) mine 0.9463078122 stored 0.9463078122
+      N=12: mine 0.111546  stored 0.111546  diff +1.53e-15   S(rho_S) mine 0.9526664950 stored 0.9526664950
+   J=1.0 hS=0.0 hom V0 t=2.0:
+      N=8: mine 0.025027  stored 0.025027  diff -1.60e-16   S(rho_S) mine 0.9997838685 stored 0.9997838685
+      N=10: mine 0.009741  stored 0.009741  diff +2.57e-16   S(rho_S) mine 0.9998142064 stored 0.9998142064
+      N=12: mine 0.003981  stored 0.004724  diff +7.43e-04   S(rho_S) mine 0.9999347711 stored 0.9999347711
+   J=1.0 hS=0.75 hom VB t=1.0:
+      N=8: mine 0.406534  stored 0.406534  diff -5.61e-15   S(rho_S) mine 0.9672742454 stored 0.9672742454
+      N=10: mine 0.384537  stored 0.384537  diff -4.44e-16   S(rho_S) mine 0.9691209789 stored 0.9691209789
+      N=12: mine 0.363805  stored 0.363805  diff -1.83e-15   S(rho_S) mine 0.9705444809 stored 0.9705444809
+   J=2.0 hS=0.75 hom V0 t=1.5:
+      N=8: mine 0.481753  stored 0.481753  diff +0.00e+00   S(rho_S) mine 0.9446126334 stored 0.9446126334
+      N=10: mine 0.447643  stored 0.447643  diff +4.44e-16   S(rho_S) mine 0.9531094616 stored 0.9531094616
+      N=12: mine 0.399638  stored 0.399638  diff -3.89e-16   S(rho_S) mine 0.9601391837 stored 0.9601391837
+
+C. Self-measurement D_O (T6), N_E = 8, independent marginals
+   J=1.0 hS=0.25 hom VC t=2.0: delta_self(k=1..9) = [0.7948, 0.7541, 0.7265, 0.7, 0.6648, 0.6012, 0.4887, 0.3112, -0.0]; max D for O in E = 6.081e-01
+   J=0.0 hS=0.0 inh V0 t=2.0: delta_self(k=1..9) = [1.0, 0.9999, 0.9961, 0.9401, 0.7324, 0.247, 0.1239, 0.0524, -0.0]; max D for O in E = 0.000e+00
+      D_(S alone) = 2.586228507e-06; closed form prod|cos(g_k t)| = 2.586228507e-06 (run's post-hoc: 2.586229e-06)
+   J=2.0 hS=0.75 inh VA t=1.0: delta_self(k=1..9) = [0.7345, 0.6264, 0.5321, 0.466, 0.3783, 0.2701, 0.149, 0.0572, -0.0]; max D for O in E = 6.732e-01
+
+(wall 16 s)
