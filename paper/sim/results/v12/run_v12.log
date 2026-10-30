@@ -1,0 +1,17 @@
+[    0.0 s] stage 0: exact quantities and task list
+[   35.7 s] stage 0 done: 3080 Psi-hat runs
+[   41.0 s]   250/3080 runs
+[   46.4 s]   500/3080 runs
+[   54.8 s]   750/3080 runs
+[   72.8 s]   1000/3080 runs
+[  174.2 s]   1250/3080 runs
+[  282.7 s]   1500/3080 runs
+[  339.2 s]   1750/3080 runs
+[  345.3 s]   2000/3080 runs
+[  350.9 s]   2250/3080 runs
+[  356.2 s]   2500/3080 runs
+[  363.4 s]   2750/3080 runs
+[  384.0 s]   3000/3080 runs
+[  386.8 s] Psi-hat runs done; analysis
+[  388.7 s] verdicts: S1 PASS, S2 FAIL, S3 NULL (no clean gap)
+[  388.7 s] wrote /home/claude/educationrevelation/paper/sim/results/v12/results_v12.json, /home/claude/educationrevelation/paper/sim/results/v12/REPORT.md

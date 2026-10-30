@@ -1192,11 +1192,69 @@ def report(A, meta, suffix=""):
     for pth in meta.get("figures", []):
         a(f"- `{os.path.relpath(pth, OUT)}`")
     a("")
+    a(posthoc(A))
     a(CAVEATS)
     path = os.path.join(OUT, f"REPORT{suffix}.md")
     with open(path, "w") as fh:
         fh.write("\n".join(L) + "\n")
     return path
+
+
+def posthoc(A):
+    """Observations made after the results were in. They explain the numbers;
+    they do not change any verdict."""
+    L = ["## Post-hoc observations (after results; no verdict changed)", ""]
+    a = L.append
+    # 1. Simulation 2 failure mechanism
+    c12 = A["s2"]["configs"]
+    for key in ("pi/2|12", "pi/4|12"):
+        row = c12[key]["rows"][3]
+        a(f"- **Why Simulation 2 fails (theta = {key.split('|')[0]}, N_E = 12, m = 3).** N x R12-hat (R1) = "
+          f"{row['R1']['N_R12_mean']:.1f}, against a mean exact record gate of N x {row['exact']['I_gate_exact']:.2e} = "
+          f"{row['exact']['N_I_gate_exact']:.1f} while the exact record mutual information I(r_A:r_B) is only "
+          f"{row['exact']['I_records']:.1e} bits. The excess is record bias, not shared information: in some Haar draws "
+          "the Helstrom projector of an m-qubit fragment has unequal rank, the record marginal leaves 1/2, and the "
+          "entropy gate scores the lower record entropy as information. After the shared relabelling (R2) the "
+          f"same points give {row['R2']['N_R12_mean']:.1f} [{row['R2']['ci95'][0]:.1f}, {row['R2']['ci95'][1]:.1f}], "
+          "inside the floor band. The draw-to-draw distribution is heavy-tailed (see the m = 2 intervals).")
+    a("- **The same mechanism in the hazy grid of Simulation 3.** For even m the hazy conditional states give "
+      "p0 rho0 - p1 rho1 an exactly zero eigenspace, which the pre-stated tie rule assigns to r = 1, so the record "
+      "is biased (P(r = 0) = 0.29 to 0.47). Example, theta = pi/2, h = 0.6, m = 2: I(r_A:r_B) = 0.026 bits but "
+      "exact gate 0.144; at m = 3 (no tie, unbiased) the gate is 0.038 for I(r_A:r_B) = 0.076. This is why the hazy "
+      "Psi-hat points zig-zag in fig3. It does not affect the Simulation 3 verdict: no hazy configuration "
+      "reaches R_delta^MI >= 3.")
+    a("- **General lesson.** Applied to records, Psi's gate is 1 - H(r_A, r_B)/2. It equals I(r_A:r_B)/2 only "
+      "for unbiased records. Psi therefore needs a record definition with uniform marginals (or a symmetrized "
+      "record, R2) to act as an agreement witness; otherwise it is, as Lemma 4 says, an entropy score.")
+    # 2. Simulation 1 onset ratio: finite-N reference vs exact reference
+    ex_ratio = []
+    for key, c in A["s1"]["configs"].items():
+        th, ne = key.split("|")
+        ne = int(ne)
+        if not c["status"].startswith("PASS") or th == "pi/2":
+            continue
+        ys = [0.0] + [A["cm_psi"][f"{th}|{m}"]["exact"]["psi_inf_lemma4"] / (0.5 * DHAT * 0.5)
+                      for m in range(1, ne // 2 + 1)]
+        mpe = crossing(list(range(ne // 2 + 1)), ys, 1 - DELTA)
+        ex_ratio.append(f"{th}, N_E = {ne}: {f4(c['onset_ratio'], 2)} (finite-N reference) vs "
+                        f"{f4(mpe / c['m_delta_MI'] if mpe else None, 2)} (exact reference)")
+    a("- **Onset ratio in Simulation 1.** The pre-stated reference Psi_perf is the finite-N value "
+      f"{A['psi_perf']['mean']:.4f}, below the exact 0.2375 (rank-2 state, F < 1), which lowers the Psi threshold and "
+      "the onset ratio. With the exact (Lemma 4) record curve and exact reference the ratios are closer to the "
+      "closed-form 1.83 disclosed before running: " + "; ".join(ex_ratio) + ". theta = pi/2 passes trivially "
+      "(perfect records from one qubit; both crossings are interpolation from m = 0). With the exact "
+      "reference, theta = pi/4 at N_E = 10 would not reach 0.9 within m <= 5 and would be INCONCLUSIVE instead of "
+      "PASS; the overall verdict would still be PASS (9 of 15 pass, none fail) under the pre-stated rule, but the "
+      "Simulation 1 pass depends in part on the finite-N reference that the rule specified.")
+    a("- **Simulation 3, where the discord is.** In the pure c-maybe model the discord measured on S (Le and "
+      "Olaya-Castro's D(S_Pi:F)) is essentially zero wherever MI is near H_S (theta = pi/4, N_E = 12, m = 1: "
+      "1.8e-4 bits) because the rest of the environment has decohered S. The discord measured on the fragment, "
+      "D_F = I - J(S|F), from non-orthogonal records, is large (0.20 of 0.60 bits at theta = pi/4, m = 1), and it is "
+      "what separates R_delta^MI = 4.13 from R_delta^J_H = 2.76 (theta = pi/4, N_E = 12). Psi tracks J_H "
+      "(R_delta^Psi = 2.67), not the floor. The Horodecki example shows MI = H(S) with large pointer-basis discord, "
+      "but it has one environment qubit, so no redundancy and no observer pair.")
+    a("")
+    return "\n".join(L)
 
 
 CAVEATS = """## Definitional choices and caveats

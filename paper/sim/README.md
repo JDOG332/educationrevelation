@@ -163,3 +163,30 @@ Master seed `MASTER_SEED3 = 20261031`, 2 workers. Results are in `results/phase3
 
 `run_phase2.py --report-only` reads `results/phase3/results3.json` when present, so the Phase 2 summary
 quotes the Phase 3 floor constant and the computed LL gaps (no hard-coded numbers).
+
+## v12: quantum Darwinism (`run_v12.py`, `test_v12.py`)
+
+```
+python3 test_v12.py                # unit tests, a few seconds
+python3 run_v12.py                 # full run, about 10 minutes on 2 CPUs
+python3 run_v12.py --report-only   # rebuild REPORT.md and figures from results_v12.json
+```
+
+Master seed `MASTER_SEED_V12 = 20261101`, 2 workers. Results are in `results/v12/`
+(`results_v12.json`, `REPORT.md`, `fig1_plateau.png`, `fig2_scrambled.png`,
+`fig3_discord.png`, `run_v12.log`).
+
+The predictions, failure conditions and verdict rules of the three simulations are in the
+docstring of `run_v12.py`; they were committed (63a4baa) before any result was computed.
+
+| Simulation | What it does |
+|---|---|
+| 1 Redundancy plateau | System qubit in \|+> decohering into N_E = 6 to 12 qubits by controlled rotations (theta = pi/8 to pi/2). Exact partial-information plot I(S:F) against fragment fraction, and Psi-hat of two observers holding disjoint m-qubit fragments. |
+| 2 Scrambled environment | The same state followed by a Haar-random unitary on E (sampled exactly). MI curve and Psi-hat of small fragments against the 34.3/N floor. |
+| 3 Discord gap | Pure and hazy environments and the Horodecki et al. example: I, Holevo quantity, discord (on S and on the fragment), one-observer accessible information, Psi-hat, and R_delta under each. |
+
+How Psi is applied (a choice, see REPORT.md): each observer makes the Helstrom measurement
+between its fragment's pointer-conditional states and keeps one record bit. The two
+observers' joint record state rho_R = diag(P(r_A, r_B)) is a two-qubit state, and Psi-hat is
+the unchanged v11 functional on it (`crt.simulate` + `crt.functional`, N = 1e4 per batch,
+B = 20, D_hat = 0.95).
