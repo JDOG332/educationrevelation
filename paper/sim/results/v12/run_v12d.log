@@ -1,0 +1,24 @@
+[    0.0 s] unit tests (L1-L9) before any study
+[    1.5 s] tests passed: True
+[  320.6 s] 50/882 tasks done
+[  710.1 s] 100/882 tasks done
+[ 1129.7 s] 150/882 tasks done
+[ 1145.5 s] 200/882 tasks done
+[ 1160.4 s] 250/882 tasks done
+[ 1176.1 s] 300/882 tasks done
+[ 1198.1 s] 350/882 tasks done
+[ 1335.7 s] 400/882 tasks done
+[ 1515.5 s] 450/882 tasks done
+[ 1698.5 s] 500/882 tasks done
+[ 1804.5 s] 550/882 tasks done
+[ 1834.6 s] 600/882 tasks done
+[ 1891.2 s] 650/882 tasks done
+[ 1895.4 s] 700/882 tasks done
+[ 1896.5 s] 750/882 tasks done
+[ 1897.7 s] 800/882 tasks done
+[ 1900.2 s] 850/882 tasks done
+[ 1904.4 s] 882/882 tasks done
+[ 1904.4 s] CPU seconds by study: M2 1911, M3 1103, HAAR 251, M2R 176, M1 121, M4 49, M4R 9, T5 184
+[ 1904.4 s] spot checks (Section 8)
+[ 1906.8 s] analysis
+[ 1937.3 s] done; stop conditions triggered: ['T6(b)']

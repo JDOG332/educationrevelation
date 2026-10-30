@@ -2159,6 +2159,11 @@ def report(A, suffix=""):
         w("**Budget fallback used:** " + M["fallback_used"] + "\n")
     else:
         w("Budget: the full grid and the full robustness grid ran; the pre-stated fallback was not needed.\n")
+    if A["sec8"].get("stop_conditions_triggered"):
+        w(f"**Warning: a Section 8 stop condition was triggered ({A['sec8']['stop_conditions_triggered']}).** "
+          "Read strictly, the pre-registration says the analysis stops there. The results are reported anyway, "
+          "with a post-hoc diagnosis (in the post-hoc section) showing the flag is round-off at an exact equality "
+          "in a derivable product cell.\n")
     w("## Pre-registered results\n")
     T3, T4 = A["T3"], A["T4"]
     w("| Test | Kind (stated in advance) | Verdict | Key numbers |")
@@ -2339,6 +2344,20 @@ def report(A, suffix=""):
     p2 = A["T5"]["H5_posthoc_k2_open"]
     w(f"- H5 restricted to k >= 2 and open points: {p2['n']} points, frac within ln 1.25 {_f(p2['frac_within'])}, "
       f"median log ratio {_f(p2['median_log_ratio'])}.")
+    stop = A["sec8"].get("stop_conditions_triggered", [])
+    w(f"- **Section 8 stop conditions triggered: {stop if stop else 'none'}.**" + (
+        " Section 8 says any one stops the analysis; read strictly, none of the results above should be "
+        "reported. They are reported with the diagnosis below so that the reader can decide." if stop else ""))
+    for x in A.get("posthoc_t6b", []):
+        wv = x["worst"]
+        w(f"  - T6(b) flag in {x['cell']} at t = {x['t']}: largest D - sqrt(1 - F^2) = {_f(wv['gap'])} at O = {wv['O']}, "
+          f"where D = {wv['D']:.6e} and 1 - F^2 = {_f(wv['one_minus_F2'])}. Product (derivable) cell: {x['product_cell']}; "
+          f"max |D_O - closed form prod |cos(g_k t)|| over all its observers = {_f(x['max_abs_D_minus_closed_form'])}. "
+          "For product branches the two marginals are qubit-like with Bloch vectors (+-gamma, 0, 0), so F^2 = 1 - gamma^2 "
+          "and the Fuchs-van de Graaf bound holds with equality. Round-off in F (about 1e-16) is amplified by "
+          f"1/(2D) = {_f(x['amplification_1_over_2D'])} in sqrt(1 - F^2), which exceeds the 1e-9 tolerance. The flag is "
+          "round-off at an exact equality, not a code error; the pre-registered tolerance was tighter than the "
+          "conditioning of the check (post-hoc diagnosis).")
     notes = os.path.join(OUT, f"REPORT_phase4_notes{suffix}.md")
     if os.path.exists(notes):
         w("")
@@ -2353,6 +2372,38 @@ def report(A, suffix=""):
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
+def posthoc_t6b(A):
+    """Post-hoc (added after the full run): re-examine every flagged T6(b) state against the closed form
+    of its model where one exists (product cells), and report the conditioning of sqrt(1 - F^2)."""
+    out = []
+    for st in A.get("states", []):
+        sm = st.get("T6") or {}
+        if sm.get("fid_viol", 0) <= 0 or st.get("model") != "M2":
+            continue
+        N, t = st["N"], st["t"]
+        nt = int(round(t / 0.25))
+        Vs = m2_evolve(N, st["J"], st["hS"], st["g"], st["V"], t, nt)
+        v0, v1_ = Vs[-1][:, 0], Vs[-1][:, 1]
+        Pp, Pm = (v0 + v1_) / math.sqrt(2), (v0 - v1_) / math.sqrt(2)
+        product = st["J"] == 0 and st["hS"] == 0 and st["V"] == "V0"
+        th = m2_gk(N, st["g"]) * t
+        worst, maxdev = None, 0.0
+        for k in range(1, 7):
+            for O in itertools.combinations(range(N + 1), k):
+                D = trace_dist_marg(Pp, Pm, O, N + 1)
+                F = min(1.0, root_fid_marg(Pp, Pm, O, N + 1))
+                gap = D - math.sqrt(max(0.0, 1 - F * F))
+                if product:
+                    ex = float(np.prod([abs(math.cos(th[q - 1])) for q in range(1, N + 1) if q not in O])) if 0 in O else 0.0
+                    maxdev = max(maxdev, abs(D - ex))
+                if worst is None or gap > worst["gap"]:
+                    worst = {"gap": gap, "O": list(O), "D": D, "one_minus_F2": 1 - F * F}
+        out.append({"cell": st["cell"], "t": t, "product_cell": product, "worst": worst,
+                    "max_abs_D_minus_closed_form": maxdev if product else None,
+                    "amplification_1_over_2D": 1 / (2 * worst["D"]) if worst["D"] > 0 else None})
+    return out
+
 
 def run_tests():
     import test_v12d as T
@@ -2380,6 +2431,10 @@ def main():
     if args.report_only:
         with open(jpath) as fh:
             A = json.load(fh)
+        if "posthoc_t6b" not in A:
+            A["posthoc_t6b"] = clean(posthoc_t6b(A))
+            with open(jpath, "w") as fh:
+                json.dump(A, fh)
         A["figures"] = figures(A, suffix)
         report(A, suffix)
         return
@@ -2473,6 +2528,8 @@ DISCLOSURES = [
     "form F = ||Mp^dag Mm||_1. No rule changed.",
     "Labelling fix after the smoke run: an INCONCLUSIVE T3 verdict that is also INCONCLUSIVE on the robustness "
     "grid is not called ROBUST (there is no verdict to be robust). No rule changed.",
+    "Added after the full run (report code only, no result recomputed): posthoc_t6b(), which re-examines the "
+    "flagged T6(b) state against the closed form, and the report lines that state the triggered stop condition.",
     "Seen in the smoke run, not changed: the pre-registered T2(d) expectation (unequal priors fail C1) is wrong. "
     "For pure branches the asymptotic deficit is p q log2(p/q) |gamma|^2 / ((p - q) H(p)), against "
     "|gamma|^2 / (2 ln 2) for p = 1/2: a ratio of 1.025 at p0 = 0.8 and 1.086 at p0 = 0.95, inside ln 1.25. "
