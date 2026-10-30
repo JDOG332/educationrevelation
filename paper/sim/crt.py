@@ -120,6 +120,27 @@ def informativeness(rho: np.ndarray, d: int | None = None) -> float:
     return 1.0 - vn_entropy_bits(rho) / math.log2(d)
 
 
+def partial_trace(rho: np.ndarray, dA: int, dB: int, keep: str) -> np.ndarray:
+    """Reduced state of a bipartite operator on C^dA (x) C^dB; keep 'A' or 'B'."""
+    r = rho.reshape(dA, dB, dA, dB)
+    return np.einsum("ijkj->ik", r) if keep == "A" else np.einsum("ijil->jl", r)
+
+
+def mutual_information_bits(rho: np.ndarray, dA: int = 2, dB: int = 2) -> float:
+    """Quantum mutual information I(A:B) = S(A) + S(B) - S(AB), bits."""
+    return (vn_entropy_bits(partial_trace(rho, dA, dB, "A"))
+            + vn_entropy_bits(partial_trace(rho, dA, dB, "B")) - vn_entropy_bits(rho))
+
+
+def correlation_informativeness(rho: np.ndarray, dA: int = 2, dB: int = 2) -> float:
+    """v12 correlation informativeness I_c = I(A:B) / (2 log2 min(dA, dB)),
+    in [0, 1]. For two qubits, I(rho) = I_c(rho) + (I(rho_A) + I(rho_B))/2
+    exactly, so I_c equals the v11 informativeness iff both marginals are
+    maximally mixed (see run_v12b.py). Clipped to [0, 1] against round-off."""
+    ic = mutual_information_bits(rho, dA, dB) / (2.0 * math.log2(min(dA, dB)))
+    return min(max(ic, 0.0), 1.0)
+
+
 def gate(i1: float, i2: float, eps: float = EPS_DEFAULT) -> float:
     """Normalized smooth gate G_eps = sqrt((I1+eps)(I2+eps))/(1+eps) (Eq. 5).
     I is clipped at 0 from below only to absorb round-off (I >= 0 exactly)."""
@@ -543,7 +564,8 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
                delta_reg: float = DELTA_REG_DEFAULT, eta: float = ETA_DEFAULT,
                H_min: float = H_MIN_DEFAULT, tau: float = TAU_DEFAULT,
                Dhat: float | None = None, redundancy: str = "sampling",
-               pipeline1: str = "LI", models: tuple | None = None) -> dict:
+               pipeline1: str = "LI", models: tuple | None = None,
+               gate_kind: str = "v11") -> dict:
     """Evaluate Psi and all mandated diagnostics on a simulated run.
 
     pipeline1: 'LI' (default: pipeline 1 = LI-PSD on batch A) or 'MLE'
@@ -556,7 +578,8 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
       'sampling' : primary reading ("combined spread from sampling
                    variability and estimator stochasticity"): two
                    independent resamples, each reconstructed by family i
-                   from a different random start; delta_i = 95th percentile.
+                   from a different random start; delta_i = 95th percentile.    gate_kind: 'v11' (default, Eq. 4 informativeness) or 'v12' (correlation
+      informativeness I_c of the two-qubit reconstructions, run_v12b.py).
     """
     if Dhat is None:
         Dhat = d_hat()
@@ -564,8 +587,14 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
     r1 = regularize(rho1, delta_reg)
     r2 = regularize(raw.rho2, delta_reg)
     F = fidelity(r1, r2)
-    I1 = informativeness(r1)
-    I2 = informativeness(r2)
+    if gate_kind == "v11":
+        I1 = informativeness(r1)
+        I2 = informativeness(r2)
+    elif gate_kind == "v12":
+        I1 = correlation_informativeness(r1)
+        I2 = correlation_informativeness(r2)
+    else:
+        raise ValueError(gate_kind)
     G = gate(I1, I2, eps)
     R12 = F * G
 
