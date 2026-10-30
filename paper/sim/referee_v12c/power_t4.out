@@ -1,0 +1,11 @@
+J=1 cells, h_S in {0.25,1}: max over rows where max(pred, Im) >= 0.1 of |pred - Im|; #violations (>0.1)
+  RA (author)                    counted  32  max gap 0.056  violations 0
+  zero                           counted  30  max gap 0.598  violations 30
+  C_rec (records only, P_nat)    counted  45  max gap 0.180  violations 12
+  I(r_A:r_B) under P_do          counted  44  max gap 0.191  violations 4
+  J_A = I(X:r_A)                 counted  60  max gap 0.233  violations 44
+  min(J_A,J_B)                   counted  60  max gap 0.233  violations 44
+largest max(RA, Im) on J=1, h_S>0 rows: 0.598 bit
+J=1, h_S>0: Pearson r(RA, Im) = 0.992; median |gap|/max(|RA|,|Im|) over rows with max>=0.02: 0.10
+rows with opposite signs and max(|RA|,|Im|) >= 0.01: 8
+J=1: TYZ quantum Im(F:F'|S) min/max: -0.12 0.688 ; fraction negative: 0.25

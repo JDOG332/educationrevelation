@@ -1,0 +1,15 @@
+(1) J=0: |alpha_1 - beta_0| = 4.4e-16 | Im alpha_0 | = 2.5e-16 | Re alpha_1 | = 2.3e-16
+    sigma_z^S conj(H) sigma_z^S + H = 0.0e+00
+(2) law gap max|P_do - P_nat| and RA - Im_rec, fragments [1] and [5,6]:
+   baseline J=0, h=0.7 sigma_x                   Z: 1.3e-16/+2.2e-16  X: 8.3e-17/+2.2e-16  Y: 4.7e-02/+1.0e-03  Hel: 1.2e-16/-2.0e-15
+   J=0, h=3, g=0.4                               Z: 4.4e-16/-2.0e-15  X: 2.2e-16/-8.9e-16  Y: 2.8e-02/+7.5e-05  Hel: 2.2e-16/-8.9e-16
+   J=0, inhomogeneous g_k                        Z: 2.2e-16/-1.3e-15  X: 1.7e-16/-2.2e-16  Y: 2.2e-02/+1.1e-04  Hel: 1.7e-16/-1.1e-15
+   J=0, field sigma_y on S                       Z: 1.7e-01/+9.3e-02  X: 1.2e-01/-4.0e-02  Y: 9.2e-03/+3.0e-04  Hel: 1.4e-01/+4.2e-02
+   J=0, field sigma_x + 0.5 sigma_z              Z: 7.3e-02/+5.7e-03  X: 2.6e-02/+8.7e-03  Y: 6.1e-02/+6.7e-04  Hel: 7.5e-02/+1.1e-02
+   J=0, extra env field 0.3 sum Z_k              Z: 9.1e-02/-5.9e-02  X: 1.1e-01/+2.3e-02  Y: 1.1e-01/-1.2e-02  Hel: 7.2e-02/-4.4e-02
+   J=0, extra env field 0.3 sum Y_k              Z: 3.1e-16/+1.1e-16  X: 2.2e-16/-5.6e-16  Y: 4.7e-02/+1.0e-03  Hel: 1.7e-16/-7.8e-16
+   J=0, Ising Y_k Y_k+1 (commutes with control)  Z: 1.4e-02/-2.7e-03  X: 2.8e-02/-6.9e-05  Y: 4.7e-02/+1.0e-03  Hel: 7.3e-03/+1.1e-02
+   J=0.1 hopping                                 Z: 1.5e-02/+5.4e-03  X: 1.9e-02/-9.8e-04  Y: 5.5e-02/+7.1e-04  Hel: 1.4e-02/-4.9e-03
+   J=1 hopping                                   Z: 6.0e-02/-6.6e-03  X: 8.8e-02/+6.8e-03  Y: 4.8e-02/-8.6e-04  Hel: 3.5e-02/+1.2e-03
+   J=0, E starts in |+>^N (real)                 Z: 2.2e-16
+   J=0, E starts in complex product state        Z: 8.1e-02

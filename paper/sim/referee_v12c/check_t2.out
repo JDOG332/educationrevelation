@@ -1,0 +1,19 @@
+(b) E2 points selected by T2(b): exact f_resp vs bound J/I
+   phi=pi/4 theta=pi/16 m=1 Helstrom f=+0.048 bound=0.073
+   phi=pi/4 theta=pi/16 m=1 Local    f=+0.042 bound=0.094
+   phi=pi/4 theta=pi/16 m=2 Helstrom f=+0.048 bound=0.073
+   phi=pi/4 theta=pi/16 m=2 Local    f=+0.042 bound=0.094
+   phi=pi/4 theta=pi/16 m=4 Local    f=-0.011 bound=0.088
+   phi=pi/4 theta=pi/8 m=1 Local    f=+0.174 bound=0.307  <-- exact f outside [-0.1,0.1]
+   phi=pi/4 theta=pi/8 m=2 Local    f=+0.174 bound=0.307  <-- exact f outside [-0.1,0.1]
+   phi=pi/4 theta=pi/8 m=4 Local    f=-0.009 bound=0.171
+   phi=pi/3 theta=pi/16 m=1 Helstrom f=+0.013 bound=0.016
+   phi=pi/3 theta=pi/16 m=1 Local    f=-0.001 bound=0.018
+   phi=pi/3 theta=pi/16 m=2 Local    f=-0.001 bound=0.018
+   phi=pi/3 theta=pi/16 m=4 Local    f=-0.038 bound=0.005
+   phi=pi/3 theta=pi/8 m=1 Helstrom f=+0.059 bound=0.073
+   phi=pi/3 theta=pi/8 m=1 Local    f=+0.050 bound=0.074
+   phi=pi/3 theta=pi/8 m=2 Local    f=+0.050 bound=0.074
+   phi=pi/3 theta=pi/8 m=4 Local    f=-0.010 bound=0.015
+(c) perfect-agreement common cause, 300 datasets of N=10000: pre-registered rule (CI contains 0 or hi < tau_RA=1.97e-04) FAILS in 100% of datasets
+    permutation test of X vs (r_A,r_B): false-positive rate at alpha=0.05: 0.040, at 0.01: 0.013

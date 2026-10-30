@@ -1,0 +1,11 @@
+J=0.0 h=1.0 t=1.5 m=2 Helstrom: mine RA=0.0938 Im=0.0938 | theirs RA=0.0938 Im=0.0938
+J=0.0 h=1.0 t=1.5 m=2 Local: mine RA=0.0941 Im=0.0941 | theirs RA=0.0941 Im=0.0941
+J=0.0 h=1.0 t=1.75 m=2 Helstrom: mine RA=0.0825 Im=0.0825 | theirs RA=0.0825 Im=0.0825
+J=0.0 h=1.0 t=1.75 m=2 Local: mine RA=0.0780 Im=0.0780 | theirs RA=0.0780 Im=0.0780
+J=1.0 h=1.0 t=1.5 m=2 Helstrom: mine RA=0.0800 Im=0.0509 | theirs RA=0.0800 Im=0.0509
+J=1.0 h=1.0 t=1.5 m=2 Local: mine RA=0.0408 Im=0.0567 | theirs RA=0.0408 Im=0.0567
+J=1.0 h=1.0 t=1.75 m=2 Helstrom: mine RA=0.0649 Im=0.0089 | theirs RA=0.0649 Im=0.0089
+J=1.0 h=1.0 t=1.75 m=2 Local: mine RA=0.0173 Im=0.0153 | theirs RA=0.0173 Im=0.0153
+288 points; max |RA mine - theirs| = 3.33e-15; max |Im mine - theirs| = 3.33e-15
+largest counted gap: (0.05613865198278156, True, 1.0, 1.0, 1.25, 2, 'Helstrom')
+largest uncounted gap: (0.06601804139928125, False, 1.0, 1.0, 2.0, 2, 'Helstrom')

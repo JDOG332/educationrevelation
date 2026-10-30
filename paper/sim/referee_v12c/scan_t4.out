@@ -1,0 +1,13 @@
+g=1.0 J=1.0 h_S=1.0: counted 5/96, max counted gap 0.056, violations 0 (t<=3: 0), qualitative mismatches 1; worst (1.25, 2, 'Helstrom', 0.113, 0.057)
+g=1.0 J=1.0 h_S=2.0: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+g=1.0 J=1.0 h_S=4.0: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+g=1.0 J=0.25 h_S=1.0: counted 10/96, max counted gap 0.056, violations 0 (t<=3: 0), qualitative mismatches 1; worst (1.75, 2, 'Helstrom', 0.094, 0.151)
+g=1.0 J=0.5 h_S=1.0: counted 9/96, max counted gap 0.051, violations 0 (t<=3: 0), qualitative mismatches 2; worst (1.25, 2, 'Helstrom', 0.128, 0.076)
+g=1.0 J=2.0 h_S=1.0: counted 1/96, max counted gap 0.038, violations 0 (t<=3: 0), qualitative mismatches 1; worst (0.75, 2, 'Helstrom', 0.085, 0.123)
+g=1.0 J=4.0 h_S=1.0: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+g=0.5 J=1.0 h_S=1.0: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+g=2.0 J=1.0 h_S=1.0: counted 16/96, max counted gap 0.041, violations 0 (t<=3: 0), qualitative mismatches 1; worst (1.25, 2, 'Helstrom', 0.121, 0.079)
+g=0.3 J=1.0 h_S=0.5: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+g=1.0 J=2.0 h_S=2.0: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+g=0.5 J=2.0 h_S=0.5: counted 0/96, max counted gap 0.000, violations 0 (t<=3: 0), qualitative mismatches 0; worst -
+N_E=10; total violations of the H4 rule outside the grid: 0; elapsed 146s
