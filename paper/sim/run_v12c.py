@@ -1065,11 +1065,77 @@ def report(R, suffix=""):
 
 POSTHOC = """## Post-hoc observations (after results; no verdict changed)
 
-(to be written after the results are seen)"""
+- **Implementation fixes made before the full run (quick smoke run only).** (i) The environment size was
+  passed where the total qubit count was expected in three study functions (crash; fixed). (ii) The
+  first trace-distance routine took eigenvalues of a non-symmetric 4 x 4 product and lost precision
+  (1.8e-8 for identical states); it was replaced by a QR-orthonormalized Hermitian form (4e-15 for the
+  twins, 0.44 for a genuinely different state). The T1 threshold 1e-12 is unchanged. The smoke run
+  already showed the T2(b) failure below; nothing was changed in response to it.
+- **Why T2 fails, part (b): the fraction window was too tight, not the physics.** At E2, phi = pi/4,
+  theta = pi/8, Local observers, m = 1 and 2 (identical laws: a two-qubit majority with fair ties equals
+  one qubit), the exact values are J = I(X:r_A) = 0.0488 (just inside the J <= 0.05 selection),
+  I(r_A:r_B) = 0.1589 and RA = 0.0276, so f_resp = 0.174 exactly. The bound L3 holds (RA <= J), and RA
+  removes about 83% of the records-only agreement, but J / I(r_A:r_B) = 0.31 allows a fraction above
+  0.1 when the agreement itself is small. A window on RA itself (RA <= J, or RA below a fixed number of
+  bits) would have passed; that is not the pre-stated rule.
+- **Why T2 fails, part (c): the null calibration does not cover perfectly correlated records.** At the
+  E1-twin with theta = pi/2 the hidden bit is copied perfectly, r_A = r_B = K, and then
+  RA-hat = I-hat(X:K), a plug-in mutual information, which is never negative. Its percentile interval
+  therefore excludes 0 (lower ends 1e-8 to 1e-6), and its upper end (3.4e-4 to 9.0e-4) exceeds
+  tau_RA = 1.97e-4, which was calibrated on a null with imperfect agreement (exact I(r_A:r_B) = 0.27 bit),
+  where RA-hat is centred at -7.2e-5. The exact RA is 0 at every one of these points, and RA-hat
+  itself is 1e-8 to 1.8e-4. A null calibrated per agreement level, or a bias-corrected estimator,
+  would be needed. All other T2(c) points (28 of 36) hold.
+- **T4, J = 0: the interventional and S-access quantities are equal to machine precision even with
+  h_S > 0** (all 8 cells, all 12 times: gap 0 to 1e-15), although the pointer is not conserved and the
+  records change strongly with h_S (e.g. t = 1.5, m = 1, Helstrom: RA = 0.975, 0.774, 0.095 at
+  h_S = 0, 0.25, 1). The joint law of (s(t), r_A, r_B) under the natural protocol equals that of
+  (X, r_A, r_B) under do(S = X). I have no derivation of this; it is reported as unexplained. With
+  hopping (J = 1) the two differ, by at most 0.056 bit at counted points (0.066 at uncounted ones).
+- **T4 margin.** H4 passes with the largest counted gap 0.056 bit against a tolerance of 0.1, so the
+  margin is about a factor of 2 in a 10-site chain, at one coupling g, two hopping values, two fields
+  and t <= 3. Larger chains, longer times or stronger hopping were not run.
+- **The CRT score cannot see the difference; RA can.** Psi_v12-hat for E1 and its twin (theta = pi/4,
+  m = 1 to 4) agrees within about 3%: 0.0468 vs 0.0453, 0.1112 vs 0.1112, 0.1610 vs 0.1572, 0.1924 vs
+  0.1907, as the no-go requires, while exact RA is 0.189, 0.456, 0.663, 0.799 against 0 for the twin.
+  For the referee point (E2, phi = pi/3, theta = pi/16, m = 1) Psi_v12-hat = 0.1045 (N R12-hat = 2200,
+  about 79 times the floor) with RA = 0.0058 bit.
+- **RA is negative at 5.6% of E4 points** (synergy between the records and the setting), always small
+  in magnitude; such points count as no responsive agreement.
+- **TYZ quantum refined consensus is negative in the common-cause environment** (E2, phi = pi/3,
+  theta = pi/16, m = 1: -0.060 bit), consistent with TYZ's remark that the refined measure can be
+  negative when conditioning on S reveals correlations."""
 
 ATTACKS = """## What a referee would attack
 
-(to be written after the results are seen)"""
+1. **Two of three checks behaved as designed only up to the thresholds I chose.** T2 failed by its own
+   rule for two reasons that are about rule design (a fraction window and a null that does not cover
+   perfect agreement), not about the quantity; a referee may read that as an excuse. The rule is applied
+   as written: T2 FAILS.
+2. **T4 is one small model.** A 10-site XY chain, one g, J in {0, 1}, h_S in {0.25, 1}, t <= 3, two
+   fragment sizes at the chain ends. The exact equality at J = 0 is unexplained; until it is, the
+   J = 1 agreement (gaps <= 0.056 bit) is the only evidence that interventions track S access when the
+   pointer is not conserved, and the tolerance (0.1 bit) is generous relative to the signals (0.1 to 1 bit).
+3. **The intervention assumptions do the work.** do(S = X) must be free, surgical (X reaches E only
+   through S), and in the pointer basis the environment records. An environment that couples to the
+   actuator, a wrong preparation basis, or an intervention that only changes phases (L8: RA = 0)
+   breaks it. The observers also need to share X, which is extra classical communication beyond the
+   records.
+4. **Novelty is operational at most.** Interventions separating cause from confounder are textbook
+   (Pearl; Ried et al. 2015; Allen et al. 2017), and for pointer-conserving dynamics RA is exactly the
+   records-level version of Touil, Yan & Zurek's refined consensus (L5, checked to 1e-12 and 1e-15).
+   The contribution is the observation that a shared intervention can stand in for reading S, and the
+   no-go that nothing on E alone can.
+5. **The no-go is elementary.** Its proof is one line (outcome statistics depend only on rho_E). Its
+   value is as a framing statement, not as a theorem.
+6. **Observers are model-based (Helstrom) or crude (local majority).** Helstrom needs the
+   pointer-conditional fragment states at time t; in the twin it uses the Darwinian states by
+   assumption. Other measurements could change RA quantitatively.
+7. **Estimator.** Plug-in mutual informations from 1e4 shots, percentile intervals from 1000 bootstrap
+   resamples; the plug-in RA is biased (about -1/(2 N ln 2) under independence, non-negative at perfect
+   agreement), which is what broke T2(c). Miller-Madow values are in the JSON.
+8. **Scope.** Qubit environments, one-qubit S, the c-maybe coupling family plus one chain; no bosonic
+   or structured environments; N_shots fixed at 1e4."""
 
 
 # ---------------------------------------------------------------------------

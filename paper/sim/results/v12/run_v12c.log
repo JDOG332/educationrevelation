@@ -1,0 +1,9 @@
+[    0.0 s] null calibration (study 0), before any test
+[    0.0 s] tau_RA = 1.966e-04, tau_C = 4.585e-04
+[    0.0 s] T1/T2 grid (E1, twin, E2)
+[    0.9 s] E3 scrambled
+[    7.1 s] E4 spin chain
+[   63.2 s] Psi_v12 baselines
+[  473.3 s] verdicts
+[  474.6 s] verdicts: T1 PASS, T2 FAIL, T3 PASS, T4 H4 SUPPORTED
+[  474.6 s] wrote /home/claude/educationrevelation/paper/sim/results/v12/results_v12c.json, /home/claude/educationrevelation/paper/sim/results/v12/REPORT_phase3.md
