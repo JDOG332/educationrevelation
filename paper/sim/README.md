@@ -110,3 +110,34 @@ also listed in `results/REPORT.md`.
 About 10 to 15 minutes in total on 2 CPUs (see `results/run.log` and
 `params.stage_times_s` in `results/results.json`). Seeds per point: B.1 20,
 V2 20, P2 30 per p per family, P3 300 per theta per order.
+
+## Phase 2 (`run_phase2.py`)
+
+```
+python3 run_phase2.py                # full run, 889 s on 2 CPUs
+python3 run_phase2.py --report-only  # rebuild REPORT2.md and figures from results2.json
+```
+
+Master seed `MASTER_SEED2 = 20261030` (set in `run_phase2.py`), 2 workers. Results are in
+`results/phase2/`: `results2.json`, `REPORT2.md` (tables, findings,
+recommendations, suggested paper text), `spectrum_lemma.png`, `floor_law.png`, `run2.log`.
+
+| Stage | What it does | Seeds |
+|---|---|---|
+| 1 Spectrum lemma | Werner p in {0.3, 0.6, 0.9} against 4 same-spectrum separable states each (product-basis diagonal plus 3 Haar-random local rotations), N = 1e3 to 1e6 | 30 per state per N |
+| 2 Floor law | R12 for I/4 and a q = 0.02 thermal state, N = 1e3 to 1e6 (10 points), both pairings; fit a N^-b; first-order delta-method prediction from the SIC frame | 100 per N |
+| 3 P3 design | 4 inputs x 6 gammas x 6 thetas, exact asymmetry; single-run SD from Monte Carlo at 24 points (N = 1e4) plus a 1/sqrt(N) check at N = 1e5, 1e6; runs for a 5 sigma slope | 50 per point |
+| 4 C_eff map | 5 B.1 states, model sets {LI, MLE}, + BME, + rank-1 MLE, all four; tau = 1 and tau = N | 20 per state |
+
+New in `crt.py` for Phase 2: `bme_dirichlet` (Dirichlet(n + 1) posterior on
+outcome probabilities, 100 draws, each mapped by LI + SGS projection, then
+averaged), `mle_rank1` (pure-state constrained MLE by L-BFGS), `add_models`
+(fits these on exactly the data of an existing run), a `models` argument to
+`functional`, and stored bootstrap and CV counts in `RawRun`. The Phase 1
+random streams are unchanged, so Phase 1 results reproduce.
+
+Phase 2 choices not fixed by the paper: the P3 SD interpolation (linear in
+gamma between 0.1, 0.5 and 1.0; nearest theta of 0.1 and pi/4; scaled by
+1/sqrt(N)); the 5 sigma rule n = 50 SD^2 / (beta^2 Sxx) runs per order per
+theta, with a minimum of 2; total counts = n x theta points x 2 orders x 2 batches x N;
+and C_eff in the exact P3 asymmetry taken from the Monte Carlo mean.

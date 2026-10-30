@@ -448,6 +448,13 @@ class RawRun:
     boot_sampling: dict              # model -> (B, 2, d, d), two independent resamples
     mle_iters_max: int
     mle_all_converged: bool
+    # counts kept so that further models can be fitted to identical data
+    counts_AB: np.ndarray | None = None
+    cv_train_counts: np.ndarray | None = None
+    boot_lit_counts: np.ndarray | None = None
+    boot_s1_counts: np.ndarray | None = None
+    boot_s2_counts: np.ndarray | None = None
+    models: tuple = MODELS
 
 
 def _split_folds(counts: np.ndarray, K: int, rng: np.random.Generator) -> np.ndarray:
@@ -517,6 +524,8 @@ def simulate(rho_true: np.ndarray, seed, cfg: SimConfig = SimConfig()) -> RawRun
         boot_sampling={"LI": li_smp, "MLE": mle_smp},
         mle_iters_max=int(iters.max()),
         mle_all_converged=bool(conv.all()),
+        counts_AB=cAB, cv_train_counts=train, boot_lit_counts=boot_lit,
+        boot_s1_counts=boot_s1, boot_s2_counts=boot_s2,
     )
 
 
@@ -534,7 +543,7 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
                delta_reg: float = DELTA_REG_DEFAULT, eta: float = ETA_DEFAULT,
                H_min: float = H_MIN_DEFAULT, tau: float = TAU_DEFAULT,
                Dhat: float | None = None, redundancy: str = "sampling",
-               pipeline1: str = "LI") -> dict:
+               pipeline1: str = "LI", models: tuple | None = None) -> dict:
     """Evaluate Psi and all mandated diagnostics on a simulated run.
 
     pipeline1: 'LI' (default: pipeline 1 = LI-PSD on batch A) or 'MLE'
@@ -561,9 +570,10 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
     R12 = F * G
 
     # ---- models on combined data ----------------------------------------
-    P = np.array([_probs_reg(raw.model_full[m], delta_reg) for m in MODELS])
-    LL = np.zeros(len(MODELS))
-    for i, m in enumerate(MODELS):
+    MODELS_ = tuple(models) if models is not None else MODELS
+    P = np.array([_probs_reg(raw.model_full[m], delta_reg) for m in MODELS_])
+    LL = np.zeros(len(MODELS_))
+    for i, m in enumerate(MODELS_):
         ptr = _probs_reg(raw.cv_train[m], delta_reg)          # (K, n_out)
         LL[i] = float(np.sum(raw.cv_test * np.log(ptr)))      # nats
     w_raw = softmax_nats(LL, tau)
@@ -581,8 +591,8 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
 
     # ---- Algorithm 1: thresholds and redundancy graph -------------------
     boot = raw.boot_literal if redundancy == "literal" else raw.boot_sampling
-    delta = np.zeros(len(MODELS))
-    for i, m in enumerate(MODELS):
+    delta = np.zeros(len(MODELS_))
+    for i, m in enumerate(MODELS_):
         pb = _probs_reg(boot[m], delta_reg)                    # (B, 2, n_out)
         js = np.array([jsd_pair(a, b) for a, b in pb])
         delta[i] = float(np.percentile(js, 95))
@@ -606,8 +616,31 @@ def functional(raw: RawRun, eps: float = EPS_DEFAULT,
         "H_w": Hw, "JSD_w": jsdw, "JSD_norm": jsd_norm, "C0": C0,
         "delta_i": delta.tolist(), "JSD_LI_MLE": jsd_li_mle,
         "n_unique": n_unique, "R": Rr, "C_eff": C_eff, "D_hat": Dhat,
-        "Gamma": Gamma,
+        "Gamma": Gamma, "models": list(MODELS_), "active": [MODELS_[i] for i in active],
+        "components": _components(adj, [MODELS_[i] for i in active]),
+        "pair_jsd": {f"{MODELS_[i]}-{MODELS_[j]}": jsd_pair(P[i], P[j])
+                     for i in range(len(MODELS_)) for j in range(i + 1, len(MODELS_))},
     }
+
+
+def _components(adj, names):
+    n = len(names)
+    seen = [False] * n
+    out = []
+    for s0 in range(n):
+        if seen[s0]:
+            continue
+        comp, stack = [], [s0]
+        seen[s0] = True
+        while stack:
+            u = stack.pop()
+            comp.append(names[u])
+            for v in np.nonzero(adj[u])[0]:
+                if not seen[v]:
+                    seen[v] = True
+                    stack.append(v)
+        out.append(sorted(comp))
+    return out
 
 
 def exact_psi(rho: np.ndarray, eps: float = EPS_DEFAULT,
@@ -650,3 +683,84 @@ def lueders_channel_qubitA(rho: np.ndarray, n_axis, gamma: float = 0.5) -> np.nd
 
 def op_norm(a: np.ndarray) -> float:
     return float(np.linalg.norm(a, 2))
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: additional reconstruction methods for the C_eff study
+# ---------------------------------------------------------------------------
+
+def bme_dirichlet(counts: np.ndarray, rng: np.random.Generator, M: int = 100) -> np.ndarray:
+    """Approximate Bayesian mean estimate ('BME').
+
+    Posterior over the 16 outcome probabilities: Dirichlet(n_k + 1) (uniform
+    prior on the outcome simplex). Each draw q is mapped to a state by linear
+    inversion and Smolin-Gambetta-Smith projection; the estimate is the
+    average of the M projected states. This is a Bayesian-bootstrap
+    approximation to the posterior mean, not an exact posterior over the
+    state space (the prior is on outcome probabilities, not on states)."""
+    c = np.asarray(counts, dtype=float)
+    q = rng.dirichlet(c + 1.0, size=M)                      # (M, K)
+    lin = herm(np.einsum("mk,kij->mij", q, POVM_D))
+    acc = np.zeros((DIM, DIM), dtype=complex)
+    for x in lin:
+        acc += project_psd_sgs(x)
+    return herm(acc / M)
+
+
+def mle_rank1(counts: np.ndarray, rng: np.random.Generator, n_random_starts: int = 2) -> np.ndarray:
+    """Rank-1 constrained MLE ('R1'): maximize sum_k n_k ln <psi|E_k|psi>
+    over pure states, by L-BFGS on the real 8-vector of psi with analytic
+    gradient. Starts: the top eigenvector of the LI-PSD estimate plus
+    `n_random_starts` random vectors; the best optimum is kept. Deliberately
+    misspecified for mixed states."""
+    from scipy.optimize import minimize
+    c = np.asarray(counts, dtype=float)
+    Ntot = c.sum()
+    mask = c > 0
+    Em = POVM_E[mask]
+    cm = c[mask]
+
+    def fg(x):
+        psi = x[:DIM] + 1j * x[DIM:]
+        nrm = float(np.real(np.vdot(psi, psi)))
+        Ep = Em @ psi                                        # (K', d)
+        p = np.real(np.einsum("i,ki->k", np.conj(psi), Ep))
+        p = np.maximum(p, 1e-300)
+        f = -float(np.sum(cm * np.log(p))) + Ntot * math.log(nrm)
+        g = -np.einsum("k,ki->i", cm / p, Ep) + Ntot * psi / nrm
+        return f, 2.0 * np.concatenate([g.real, g.imag])
+
+    w, v = np.linalg.eigh(li_psd(c))
+    starts = [v[:, -1]] + [rng.normal(size=DIM) + 1j * rng.normal(size=DIM) for _ in range(n_random_starts)]
+    best = None
+    for s0 in starts:
+        x0 = np.concatenate([s0.real, s0.imag])
+        r = minimize(fg, x0, jac=True, method="L-BFGS-B", options={"maxiter": 500, "gtol": 1e-10})
+        if best is None or r.fun < best.fun:
+            best = r
+    psi = best.x[:DIM] + 1j * best.x[DIM:]
+    psi = psi / np.linalg.norm(psi)
+    return np.outer(psi, np.conj(psi))
+
+
+EXTRA_MODELS = ("BME", "R1")
+
+
+def add_models(raw: RawRun, names=EXTRA_MODELS, seed=0, bme_draws: int = 100) -> RawRun:
+    """Fit additional models on exactly the data already used by `raw`
+    (pooled counts, CV training folds, both 'sampling' bootstrap resamples).
+    Only the 'sampling' reading of Algorithm 1 is supported for them."""
+    rng = np.random.default_rng(np.random.SeedSequence(seed))
+    for m in names:
+        if m == "BME":
+            fit = lambda c: bme_dirichlet(c, rng, bme_draws)  # noqa: E731
+        elif m == "R1":
+            fit = lambda c: mle_rank1(c, rng)  # noqa: E731
+        else:
+            raise ValueError(m)
+        raw.model_full[m] = fit(raw.counts_AB)
+        raw.cv_train[m] = np.array([fit(c) for c in raw.cv_train_counts])
+        raw.boot_sampling[m] = np.stack([np.array([fit(c) for c in raw.boot_s1_counts]),
+                                         np.array([fit(c) for c in raw.boot_s2_counts])], axis=1)
+    raw.models = tuple(list(MODELS) + [m for m in names if m not in MODELS])
+    return raw
