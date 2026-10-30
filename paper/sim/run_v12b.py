@@ -913,6 +913,7 @@ def report(A, meta, suffix=""):
       "exactly 1: the v12 gate no longer rewards their bias, but their I(r_A:r_B) is not the symmetric-record "
       "function of J_H.")
     a("")
+    a(posthoc2(A))
     a("## What a referee would attack")
     a("")
     a(ATTACKS)
@@ -925,6 +926,40 @@ def report(A, meta, suffix=""):
     with open(path, "w") as fh:
         fh.write("\n".join(L) + "\n")
     return path
+
+
+def posthoc2(A):
+    """Observations made after the phase-2 results were in; no verdict changes."""
+    cal, s2 = A["cal"], A["s2"]
+    band = cal["band"]
+    L = ["## Post-hoc observations (after results; no verdict changed)", ""]
+    a = L.append
+    c12 = s2["configs"]["pi/2|12"]["rows"]
+    a(f"- **The v11 gate on the same runs reproduces the phase-1 failure.** At theta = pi/2, N_E = 12, the v11 "
+      f"gate gives N R12-hat = {c12[2]['N_R12_v11']:.1f} [{c12[2]['ci95_v11'][0]:.1f}, {c12[2]['ci95_v11'][1]:.1f}] "
+      f"(m = 2) and {c12[3]['N_R12_v11']:.1f} [{c12[3]['ci95_v11'][0]:.1f}, {c12[3]['ci95_v11'][1]:.1f}] (m = 3) "
+      f"with 100 draws, against {c12[2]['N_R12']:.1f} and {c12[3]['N_R12']:.1f} with the v12 gate. The phase-2 "
+      "pass is the gate change, not the new seeds or the extra draws.")
+    a(f"- **The finite-N floor still depends on record bias.** Independent records with exact I_c = 0 give "
+      f"N R12-hat = {cal['I/4']['a']:.2f} (unbiased), {cal['biased p=0.4']['a']:.2f} (bias 0.4) and "
+      f"{cal['biased p=0.3']['a']:.2f} (bias 0.3, outside the band [{band[0]:.2f}, {band[1]:.2f}]). The pre-stated "
+      "check covered p = 0.4 only (inside). The v12 gate removes the exact (N = inf) bias reward completely and "
+      "the finite-N one only partly: the sampling covariance of the reconstruction depends on the marginals. "
+      f"In Simulation 2 the mean |bias - 1/2| is 0.004 to 0.026 with a maximum over draws of 0.26, so a few "
+      "draws sit where the floor is raised; the N_E = 12 means are inside the band anyway. A floor law "
+      "a_c(bias) would be needed for a test on strongly biased records.")
+    c8, c10 = s2["configs"]["pi/2|8"]["rows"], s2["configs"]["pi/2|10"]["rows"]
+    a(f"- **Above-floor values at N_E = 8 and 10 are genuine finite-size information, not bias.** For example "
+      f"N_E = 8, m = 3: N R12-hat = {c8[3]['N_R12']:.1f} with exact N I_c = {c8[3]['N_Ic_exact']:.1f}; N_E = 10, "
+      f"m = 4: {c10[4]['N_R12']:.1f} with N I_c = {c10[4]['N_Ic_exact']:.1f}. In each row the excess over the "
+      "floor tracks the exact shared record information (I(r_A:r_B) of about 0.002 to 0.02 bits from a Haar "
+      "state of 9 to 11 qubits). These configurations were not in the pre-stated test (N_E = 12 only).")
+    a("- **The fair tie break makes even m no better than m - 1 in the hazy grid.** With R1t, the exact gate at "
+      "m = 2 equals that at m = 1, and m = 4 equals m = 3 (for example theta = pi/2, h = 0.6: 0.0093 and 0.0382): "
+      "with a fair coin on the tied subspace the extra qubit adds nothing to a one-bit Helstrom record. The "
+      "primary records at even m score lower than v11 by exactly their bias term.")
+    a("")
+    return "\n".join(L)
 
 
 ATTACKS = """1. **The gate was changed after a failure.** The v12 gate was designed in response to phase 1's
@@ -947,15 +982,18 @@ ATTACKS = """1. **The gate was changed after a failure.** The v12 gate was desig
    information about the records, as in v11.
 6. **Thresholds are not calibrated to each other.** 0.9 of the two-observer gate and 0.9 H_S of MI are different
    demands; onset ratios depend on that pairing and on the finite-N reference (secondary column).
-7. **Finite statistics.** One N (1e4); B = 200 (S1, S3) and 100 (S2), not 1000; 40 / 30 runs per point; 100 Haar
+7. **The floor is bias-dependent at finite N.** Independent records at bias 0.3 give a_c = 31.9 against
+   27.9 unbiased (calibration rows): the v12 gate removes the exact bias reward but not the finite-N one.
+   A test on strongly biased records needs a floor law a_c(bias); this was not pre-stated beyond p = 0.4.
+8. **Finite statistics.** One N (1e4); B = 200 (S1, S3) and 100 (S2), not 1000; 40 / 30 runs per point; 100 Haar
    draws. The floor band is +/- 8 to 10 percent around a calibrated constant, as in V2; biased independent
    records have their own finite-N floor (calibration rows above).
-8. **Regularization is not product-preserving.** rho~ = (1 - delta_reg) rho + delta_reg I/4 of an exactly
+9. **Regularization is not product-preserving.** rho~ = (1 - delta_reg) rho + delta_reg I/4 of an exactly
    independent record state carries a small shared information: I_c(rho~) is 0 for unbiased product states
    but up to 2.4e-6 for the pure product |00> (7e-9 at bias 0.4 against a constant record). Negligible
    against the floor (a_c/N = 2.8e-3 at N = 1e4), but the exact "eps floor" of L3 holds only before
    regularization.
-9. **Scope.** All environments are qubits with one coupling angle; no structured, bosonic or spin-chain
+10. **Scope.** All environments are qubits with one coupling angle; no structured, bosonic or spin-chain
    environment, no multi-level S; the discord gap was searched only in the pre-registered grid."""
 
 

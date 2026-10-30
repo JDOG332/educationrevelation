@@ -1,0 +1,24 @@
+[    0.0 s] stage 0: exact quantities and task lists
+[   50.6 s] stage 0 done: 3000 calibration runs, 4380 test runs
+[   50.6 s] stage C: floor calibration (separate seed stream), before any test
+[   75.0 s] stage C done: a_c,cal = 27.88 +/- 0.21
+[  541.5 s]   250/4380 test runs
+[ 1001.1 s]   500/4380 test runs
+[ 1041.2 s]   750/4380 test runs
+[ 1096.9 s]   1000/4380 test runs
+[ 1200.4 s]   1250/4380 test runs
+[ 1535.3 s]   1500/4380 test runs
+[ 1557.6 s]   1750/4380 test runs
+[ 1579.1 s]   2000/4380 test runs
+[ 1600.8 s]   2250/4380 test runs
+[ 1621.4 s]   2500/4380 test runs
+[ 1642.3 s]   2750/4380 test runs
+[ 1663.3 s]   3000/4380 test runs
+[ 1684.6 s]   3250/4380 test runs
+[ 1705.2 s]   3500/4380 test runs
+[ 1759.0 s]   3750/4380 test runs
+[ 1802.3 s]   4000/4380 test runs
+[ 1938.5 s]   4250/4380 test runs
+[ 1963.8 s] analysis
+[ 1966.3 s] verdicts: S1 PASS, S2 PASS, S3 NULL (no clean gap)
+[ 1966.3 s] wrote /home/claude/educationrevelation/paper/sim/results/v12/results_v12b.json, /home/claude/educationrevelation/paper/sim/results/v12/REPORT_phase2.md
