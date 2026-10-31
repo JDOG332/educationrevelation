@@ -6,7 +6,15 @@ Pre-registration: docstring of `run_v12d.py`, commit 0170e16, pushed to GitHub o
 
 Budget: the full grid and the full robustness grid ran; the pre-stated fallback was not needed.
 
-**Warning: a Section 8 stop condition was triggered (['T6(b)']).** Read strictly, the pre-registration says the analysis stops there. The results are reported anyway, with a post-hoc diagnosis (in the post-hoc section) showing the flag is round-off at an exact equality in a derivable product cell.
+## Protocol deviation (declared before the results; added 2026-10-31 by decision of the author)
+
+A pre-registered Section 8 stop condition was triggered: T6(b), D - sqrt(1 - F^2) = 1.5e-9 against an absolute tolerance of 1e-9, at a product cell where the bound holds with exact equality. Read strictly, the pre-registration says the analysis stops there. The results below were nevertheless computed and are reported. Consequences, decided by the author after the independent referee report (paper/sim/referee_v12d/REPORT.md):
+
+1. T6(b) stays FAIL as registered; the tolerance is not changed retroactively.
+2. An independent extended-precision check (referee, t6b_check.py) confirms the flag is round-off in the float64 Uhlmann fidelity (an 18-ulp error in F, amplified near F = 1; larger than the run's own post-hoc estimate, which understated it by about 40x). A well-conditioned form of the same check (D^2 + F^2 - 1) gives 0 violations over all 86,490 (state, O) pairs. This is a post-hoc amendment.
+3. The flagged routines are used only in T6, so they cannot affect T1 to T5; that argument is the only basis for reporting T1 to T5.
+4. **All phase-4 verdicts are exploratory, not confirmatory.** Any claim drawn from phase 4 requires a fresh pre-registered rerun with conditioning-aware tolerances.
+5. The referee further found that the T4 FLOOR rule classifies slow (including exponential) decay as FLOOR, that the checkable "floors" decay at large N_E (about N_E^-1/2 to N_E = 320), that T3 could not return a collapse by design, and that the J = 1, VB/VC homogeneous cells are J = 0 cells in disguise. Read every verdict below with that report.
 
 ## Pre-registered results
 
