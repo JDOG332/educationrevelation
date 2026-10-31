@@ -1,0 +1,45 @@
+[     0.0 s] S1: unit tests (test_v12e.py)
+[     1.9 s] S2: symmetry audit at N_E = 8
+[   123.6 s]    170 cells, 0 mismatches
+[   123.6 s] E1: expm_multiply vs dense eigendecomposition at N_E = 10
+[   288.6 s]    max amplitude error 5.09e-14
+[   288.6 s] bridge to phase 3 (N_E = 10)
+[   290.9 s]    288 rows, max diffs {'RA': 2.886579864025407e-15, 'Im_rec_S': 3.4416913763379853e-15, 'TYZ_quantum': 4.2521541843143495e-14}
+[   290.9 s] T-N: null calibration (study 0)
+[   300.1 s]    N1 twin theta=pi/8: rej@0.05 0.051, rej@0.01 0.010, ok True
+[   300.1 s]    N1 twin theta=pi/4: rej@0.05 0.056, rej@0.01 0.016, ok True
+[   300.1 s]    N1 twin theta=pi/2: rej@0.05 0.052, rej@0.01 0.008, ok True
+[   300.1 s]    N2 E2 theta=0 phi=pi/3: rej@0.05 0.041, rej@0.01 0.005, ok True
+[   300.1 s]    N3 chain g=0 ends: rej@0.05 0.054, rej@0.01 0.008, ok True
+[   300.1 s]    N3 chain g=0 adjacent: rej@0.05 0.048, rej@0.01 0.009, ok True
+[   300.1 s] S6: dry run of 6 of 120 main cells
+[   386.9 s]    28.9 CPU-s per main cell; extrapolated total 1.24 h
+[   386.9 s] main grid, N_E = 16
+[   422.7 s]    10/120 cells
+[   571.2 s]    20/120 cells
+[   698.5 s]    30/120 cells
+[   839.4 s]    40/120 cells
+[   959.3 s]    50/120 cells
+[  1118.0 s]    60/120 cells
+[  1342.6 s]    70/120 cells
+[  1491.9 s]    80/120 cells
+[  1641.0 s]    90/120 cells
+[  1825.1 s]    100/120 cells
+[  1954.2 s]    110/120 cells
+[  2077.9 s]    120/120 cells
+[  2080.5 s]    norm drift 5.54e-13; schedule gap 1.71e-13 (8 cells); z-direction check 3.46e-14
+[  2080.5 s] S3 controls: ok True; worst {'F_P_cq_gap': 8.708613766707056e-16, 'F_P_info_q': 1.3042344981784026e-13, 'F_P_law': 4.440892098500626e-16, 'F_P_info_rec': 1.7763568394002505e-15, 'F_BC_law': 2.0539125955565396e-15, 'F_BC_info_rec': 3.3306690738754696e-15}
+[  2081.2 s]    H1: REFUTED  f=0.1722 n=24716 fam={'F_P': 0.230613279270147, 'F_BC': 0.27202472952086554, 'F_C': 0.1886988076723691, 'F_R': 0.15716486902927582, 'F_RC': 0.13882747068676718} comp={'zero': 0.012906619194044344, 'C_rec': 0.15192587797378215, 'I_ab_do': 0.1488914063764363, 'I_xa': 0.21577116038193883}
+[  2081.2 s]    H2: INCONCLUSIVE partial f=0.6504 n=9246 fam={'F_BC': 1.0, 'F_C': 0.9470404984423676, 'F_R': 0.6199376947040498, 'F_RC': 0.5824460824460824} comp={'zero': 0.005948518278174345, 'I_FF_nat': 0.1355180618645901, 'I_FF_dobar': 0.14514384598745403}
+[  2081.2 s]    H3: INCONCLUSIVE partial f=0.7384 n=10477 fam={'F_C': 0.9541864139020537, 'F_R': 0.8551068883610451, 'F_RC': 0.7017064846416382} comp={'zero': 0.006490407559415864, 'C_rec': 0.3568769685978811, 'I_ab_do': 0.3502911138684738, 'I_xa': 0.10193757755082562}
+[  2081.2 s] held-out grid, N_E = 14
+[  2380.7 s]    held H1: REFUTED  f=0.1223 -> ROBUST
+[  2380.7 s]    held H2: INCONCLUSIVE partial f=0.6500 -> ROBUST
+[  2380.7 s]    held H3: INCONCLUSIVE partial f=0.7603 -> ROBUST
+[  2380.7 s] size series N_E = 10, 12, 14
+[  2424.6 s]    N_E=10: {'H1': {'n': 26485, 'f': 0.13396262035114215, 'median_abs_gap': 0.1175046824223295}, 'H2': {'n': 10183, 'f': 0.47176666994009625, 'median_abs_gap': 0.03213809281579516}, 'H3': {'n': 10035, 'f': 0.6484304932735426, 'median_abs_gap': 0.018205520714068557}, 'controls_ok': True}
+[  2508.5 s]    N_E=12: {'H1': {'n': 25375, 'f': 0.14920197044334976, 'median_abs_gap': 0.10735750230192953}, 'H2': {'n': 9628, 'f': 0.5459077690070627, 'median_abs_gap': 0.025107472565503552}, 'H3': {'n': 10155, 'f': 0.6927621861152142, 'median_abs_gap': 0.01649098509168423}, 'controls_ok': True}
+[  2749.8 s]    N_E=14: {'H1': {'n': 24970, 'f': 0.1616740088105727, 'median_abs_gap': 0.1024738761363825}, 'H2': {'n': 9360, 'f': 0.6068376068376068, 'median_abs_gap': 0.020926963999136877}, 'H3': {'n': 10265, 'f': 0.7264490988796882, 'median_abs_gap': 0.014374142028198533}, 'controls_ok': True}
+[  2749.9 s] finite counts and permutation tests (main grid)
+[  2824.9 s]    {'n_points': 24882, 'power_RA_ge_0.05_at_0.01': 1.0, 'n_RA_ge_0.05': 14965, 'reject_rate_absRA_lt_1e-3_at_0.01': 0.5007309941520468, 'n_absRA_lt_1e-3': 1368, 'frac_cond_dependence_at_0.01': 0.7844224740776465, 'median_abs_RAhat_minus_RA': 0.0025416893170890353}
+[  2824.9 s] done
