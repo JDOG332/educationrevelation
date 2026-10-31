@@ -605,13 +605,38 @@ Total: about 2 hours of CPU time, about 1 to 1.5 hours wall time on 2 CPUs
 """
 
 # =============================================================================
-# Stub only (pre-registration commit). No experiment logic. The constants
-# below restate the grids of the docstring so the implementation cannot drift
-# from them silently; the implementation will be appended later.
+# Implementation (appended after the pre-registration commit 1448f34, pushed
+# to GitHub as branch paper-v12 at 2026-10-31T11:30:54Z; the docstring above,
+# lines 1-605, is unchanged). The constants restate the docstring's grids.
 # =============================================================================
 
-import math
+from __future__ import annotations  # noqa: E402
 
+import argparse  # noqa: E402
+import gzip  # noqa: E402
+import json  # noqa: E402
+import math  # noqa: E402
+import os  # noqa: E402
+import platform  # noqa: E402
+import subprocess  # noqa: E402
+import sys  # noqa: E402
+import time  # noqa: E402
+from functools import reduce  # noqa: E402
+from multiprocessing import Pool  # noqa: E402
+
+import numpy as np  # noqa: E402
+import scipy  # noqa: E402
+import scipy.sparse as sp  # noqa: E402
+from scipy.sparse.linalg import expm_multiply  # noqa: E402
+from scipy.stats import spearmanr  # noqa: E402
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import run_v12 as v1  # noqa: E402
+import run_v12c as c3  # noqa: E402
+from run_v12b import helstrom_tiefix  # noqa: E402
+
+OUT = os.path.join(HERE, "results", "phase5")
 MASTER_SEED_V12E = 20261105          # disjoint from phases 1-4 (20261101-20261104)
 
 # Main grid (Section 4)
@@ -640,9 +665,1000 @@ TAU_INFO = 1e-6
 IDENTITY_THRESHOLD = 1e-9
 COMPLEX_E = {"main": (math.pi / 8, math.pi / 4), "held": (math.pi / 6, math.pi / 3)}
 
+N_SHOTS = 10_000
+N_PERM = 2000
+N_NULL = 1000
+B_CELLS = 2000
+N_DIRS = 200                         # Fibonacci directions for TYZ_opt (S6 fallback: 50)
+LN2 = math.log(2)
+
+FAMILIES = ("F_P", "F_BC", "F_C", "F_R", "F_RC")
+OPEN_FAM = {"H1": ("F_P", "F_BC", "F_C", "F_R", "F_RC"),
+            "H2": ("F_BC", "F_C", "F_R", "F_RC"),
+            "H3": ("F_C", "F_R", "F_RC")}
+REQ_FAM = {"H1": 3, "H2": 3, "H3": 2}
+
+
+def seed(*items):
+    return np.random.SeedSequence((MASTER_SEED_V12E,) + tuple(int(x) for x in items))
+
+
+# ---------------------------------------------------------------------------
+# Model: variants, Hamiltonian, initial states (Section 3)
+# ---------------------------------------------------------------------------
+
+def eta_held():
+    return np.random.default_rng(seed(99)).standard_normal(16)
+
+
+def cell_params(variant, J, h, grid="main", n_env=N_E_MAIN, g_zero=False):
+    """Coefficients of the Hamiltonian family of Section 3 for one cell."""
+    held = grid == "held"
+    if held:
+        g = 1.5 * (1 + 0.3 * eta_held()[:n_env])
+    else:
+        g = np.ones(n_env)
+    if g_zero:
+        g = np.zeros(n_env)
+    p = {"variant": variant, "J": float(J), "h": float(h), "grid": grid, "n_env": n_env,
+         "g": g.tolist(), "lam": 0.0, "b": 0.0, "c": 0.0, "D": 0.0, "nS": (1.0, 0.0, 0.0), "e0": None}
+    if variant == "VA":
+        p["nS"] = (0.0, 1.0, 0.0)
+    elif variant == "VB":
+        v = np.array([1.0, 0.0, 0.5 if held else 1.0])
+        p["nS"] = tuple((v / np.linalg.norm(v)).tolist())
+    elif variant == "VC":
+        p["b"] = 0.6 if held else 0.3
+    elif variant == "VD":
+        p["lam"] = 0.25 if held else 0.5
+    elif variant == "VE":
+        p["e0"] = COMPLEX_E["held" if held else "main"]
+    elif variant == "VF":
+        p["c"] = 0.3
+    elif variant == "VG":
+        p["D"] = 0.25 if held else 0.5
+    elif variant != "V0":
+        raise ValueError(variant)
+    return p
+
+
+def family(variant, J, h):
+    if h == 0:
+        return "F_P"
+    if J > 0:
+        return "F_RC"
+    if variant in ("V0", "VF"):
+        return "F_BC"
+    if variant in ("VB", "VD", "VE"):
+        return "F_C"
+    if variant == "VG":
+        return "F_R"
+    return "F_RC"                    # VA, VC
+
+
+_I = sp.identity(2, format="csr", dtype=complex)
+_X = sp.csr_matrix(np.array([[0, 1], [1, 0]], complex))
+_Y = sp.csr_matrix(np.array([[0, -1j], [1j, 0]], complex))
+_Z = sp.csr_matrix(np.array([[1, 0], [0, -1]], complex))
+_P1 = sp.csr_matrix(np.array([[0, 0], [0, 1]], complex))
+
+
+def _on(ops, n):
+    return reduce(lambda a, b: sp.kron(a, b, format="csr"), [ops.get(k, _I) for k in range(n)])
+
+
+def build_H(p):
+    n_env = p["n_env"]
+    n = n_env + 1
+    terms = []
+    for k in range(1, n):
+        if p["g"][k - 1]:
+            terms.append(p["g"][k - 1] * _on({0: _P1, k: _Y}, n))
+    for k in range(1, n - 1):
+        if p["J"]:
+            terms.append((p["J"] / 2) * (_on({k: _X, k + 1: _X}, n) + _on({k: _Y, k + 1: _Y}, n)))
+        if p["lam"]:
+            terms.append(p["lam"] * _on({k: _Y, k + 1: _Y}, n))
+        if p["D"]:
+            terms.append(p["D"] * (_on({k: _X, k + 1: _Y}, n) - _on({k: _Y, k + 1: _X}, n)))
+    for k in range(1, n):
+        if p["b"]:
+            terms.append(p["b"] * _on({k: _Z}, n))
+        if p["c"]:
+            terms.append(p["c"] * _on({k: _Y}, n))
+    if p["h"]:
+        nx, ny, nz = p["nS"]
+        for coef, P in ((nx, _X), (ny, _Y), (nz, _Z)):
+            if coef:
+                terms.append(p["h"] * coef * _on({0: P}, n))
+    H = reduce(lambda a, b: a + b, terms, sp.csr_matrix((2 ** n, 2 ** n), dtype=complex))
+    return H.tocsr()
+
+
+def e0_vec(p):
+    if p["e0"] is None:
+        return np.array([1.0, 0.0], complex)
+    a, ph = p["e0"]
+    return np.array([math.cos(a), np.exp(1j * ph) * math.sin(a)], complex)
+
+
+def init_states(p):
+    E = reduce(np.kron, [e0_vec(p)] * p["n_env"], np.array([1.0 + 0j]))
+    return {x: np.kron(np.eye(2, dtype=complex)[x], E) for x in (0, 1)}
+
+
+def evolve(H, psi0, tmax, nt):
+    """States at t = tmax k / nt, k = 1..nt (one expm_multiply call)."""
+    out = expm_multiply(-1j * H, psi0, start=0.0, stop=tmax, num=nt + 1, endpoint=True)
+    return out[1:]
+
+
+# ---------------------------------------------------------------------------
+# Entropies and co-information (bits)
+# ---------------------------------------------------------------------------
+
+def _ent_eigs(ev):
+    ev = np.clip(ev, 0.0, None)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        t = np.where(ev > 0, ev * np.log2(np.where(ev > 0, ev, 1.0)), 0.0)
+    return -t.sum(axis=-1)
+
+
+def S_bits(rho):
+    rho = 0.5 * (rho + np.conj(np.swapaxes(rho, -1, -2)))
+    return _ent_eigs(np.linalg.eigvalsh(rho))
+
+
+def mi_q(rho, dA, dB):
+    """I(A:B) for (batched) density matrices on A (x) B."""
+    sh = rho.shape[:-2]
+    r = rho.reshape(sh + (dA, dB, dA, dB))
+    rA = np.einsum("...ijkj->...ik", r)
+    rB = np.einsum("...ijil->...jl", r)
+    return S_bits(rA) + S_bits(rB) - S_bits(rho)
+
+
+def coi_blocks(blocks, dA, dB, pmin=1e-14):
+    """Co-information of a cq-state given UNNORMALISED conditional blocks
+    q_k sigma_k (traces q_k): I(F_A:F_B)_mix - sum_k q_k I(F_A:F_B)_{sigma_k}."""
+    mix = sum(blocks)
+    val = mi_q(mix, dA, dB)
+    for B in blocks:
+        q = float(np.real(np.trace(B)))
+        if q > pmin:
+            val -= q * mi_q(B / q, dA, dB)
+    return float(val)
+
+
+def fib_dirs(n):
+    i = np.arange(n)
+    z = 1 - (2 * i + 1) / n
+    r = np.sqrt(1 - z ** 2)
+    phi = i * math.pi * (3 - math.sqrt(5))
+    d = np.stack([r * np.cos(phi), r * np.sin(phi), z], axis=1)
+    return np.vstack([[0, 0, 1.0], [0, 0, -1.0], d])
+
+
+PAULI2 = np.array([[[0, 1], [1, 0]], [[0, -1j], [1j, 0]], [[1, 0], [0, -1]]], complex)
+
+
+def tyz_dirs(Rn, d, dA, dB, dirs):
+    """Im(F_A:F_B|S_n) for every direction n; Rn = rho of S F_A F_B (natural)."""
+    Rr = Rn.reshape(2, d, 2, d)
+    P = 0.5 * (np.eye(2)[None] + np.einsum("ki,iab->kab", dirs, PAULI2))
+    Cp = np.einsum("kab,bjal->kjl", P, Rr)
+    rFF = Rr[0, :, 0, :] + Rr[1, :, 1, :]
+    Cm = rFF[None] - Cp
+    I_nat = float(mi_q(rFF, dA, dB))
+    out = np.full(len(dirs), I_nat)
+    for C in (Cp, Cm):
+        q = np.real(np.einsum("kjj->k", C))
+        ok = q > 1e-14
+        Iq = np.zeros(len(dirs))
+        Iq[ok] = mi_q(C[ok] / q[ok, None, None], dA, dB)
+        out -= np.where(ok, q * Iq, 0.0)
+    return out
+
+
+def trace_norm(A):
+    return float(np.sum(np.abs(np.linalg.eigvalsh(0.5 * (A + np.conj(A.T))))))
+
+
+# ---------------------------------------------------------------------------
+# One time point: all fragment pairs, all quantities (Section 2)
+# ---------------------------------------------------------------------------
+
+def frag_pairs(n_env, ms=M_FRAG, geoms=GEOMETRIES):
+    out = []
+    for g in geoms:
+        for m in ms:
+            fA = list(range(1, m + 1))
+            fB = list(range(n_env - m + 1, n_env + 1)) if g == "ends" else list(range(m + 1, 2 * m + 1))
+            out.append((g, m, fA, fB))
+    return out
+
+
+def _ptrace_B(rho, dA, dB):
+    return np.einsum("ijkj->ik", rho.reshape(dA, dB, dA, dB))
+
+
+def _ptrace_A(rho, dA, dB):
+    return np.einsum("ijil->jl", rho.reshape(dA, dB, dA, dB))
+
+
+def process_time(psi0, psi1, n, pairs, dirs=None):
+    psin = (psi0 + psi1) / math.sqrt(2)
+    rows = []
+    rhoS = None
+    for (geom, m, fA, fB) in pairs:
+        keep = [0] + fA + fB
+        dA, dB = 2 ** len(fA), 2 ** len(fB)
+        d = dA * dB
+        R = [v1.reduced_dm_pure(v, n, keep).reshape(2, d, 2, d) for v in (psi0, psi1, psin)]
+        rdo = [R[x][0, :, 0, :] + R[x][1, :, 1, :] for x in (0, 1)]          # Tr_S, trace 1 each
+        Bn = [R[2][s, :, s, :] for s in (0, 1)]                              # traces p_s
+        ps = [float(np.real(np.trace(B))) for B in Bn]
+        if rhoS is None:
+            rs = np.einsum("ajbj->ab", R[2])
+            rhoS = rs
+        SrhoS = float(S_bits(rhoS))
+        RA_q = coi_blocks([0.5 * rdo[0], 0.5 * rdo[1]], dA, dB)
+        RA_q_w = coi_blocks([ps[0] * rdo[0], ps[1] * rdo[1]], dA, dB)
+        TYZ = coi_blocks(Bn, dA, dB)
+        I_nat = float(mi_q(Bn[0] + Bn[1], dA, dB))
+        I_dobar = float(mi_q(0.5 * (rdo[0] + rdo[1]), dA, dB))
+        cq_gap = 0.5 * sum(trace_norm(Bn[s] - 0.5 * rdo[s]) for s in (0, 1))
+        row = {"geom": geom, "m": m, "p0": ps[0], "S_rhoS": SrhoS, "RA_q": RA_q, "RA_q_w": RA_q_w,
+               "TYZ_Pi": TYZ, "I_FF_nat": I_nat, "I_FF_dobar": I_dobar, "cq_gap": cq_gap,
+               "TYZ_norm": TYZ / SrhoS if SrhoS >= 0.1 else None}
+        if dirs is not None:
+            vals = tyz_dirs(R[2].reshape(2 * d, 2 * d), d, dA, dB, dirs)
+            k = int(np.argmax(vals))
+            row["TYZ_opt"] = float(vals[k])
+            row["TYZ_opt_dir"] = dirs[k].tolist()
+            row["TYZ_z_check"] = float(vals[0])                               # must equal TYZ_Pi
+        obs = {}
+        for kind in OBSERVERS:
+            if kind == "Local":
+                PiA = c3.local_majority_pi0(len(fA))
+                PiB = c3.local_majority_pi0(len(fB))
+            else:
+                PiA = helstrom_tiefix(_ptrace_B(rdo[0], dA, dB), _ptrace_B(rdo[1], dA, dB))[0]
+                PiB = helstrom_tiefix(_ptrace_A(rdo[0], dA, dB), _ptrace_A(rdo[1], dA, dB))[0]
+            MA = (PiA, np.eye(dA) - PiA)
+            MB = (PiB, np.eye(dB) - PiB)
+            Pdo = np.zeros((2, 2, 2))
+            Pnat = np.zeros((2, 2, 2))
+            for a in (0, 1):
+                for b in (0, 1):
+                    KT = np.kron(MA[a], MB[b]).T
+                    for x in (0, 1):
+                        Pdo[x, a, b] = 0.5 * float(np.real(np.sum(rdo[x] * KT)))
+                        Pnat[x, a, b] = float(np.real(np.sum(Bn[x] * KT)))
+            Pdo = np.clip(Pdo, 0, None)
+            Pnat = np.clip(Pnat, 0, None)
+            Pdo /= Pdo.sum()
+            Pnat /= Pnat.sum()
+            qd = c3.info_xab(Pdo)
+            qn = c3.info_xab(Pnat)
+            obs[kind] = {"RA_rec": float(qd["RA"]), "Im_rec": float(qn["RA"]), "I_ab_do": float(qd["I_ab"]),
+                         "I_xa": float(qd["I_xa"]), "C_rec": float(c3.mi_ab(Pnat.sum(0))),
+                         "law_gap": float(np.max(np.abs(Pnat - Pdo))),
+                         "Pdo": Pdo.ravel().tolist(), "Pnat": Pnat.ravel().tolist()}
+        row["obs"] = obs
+        rows.append(row)
+    return rows
+
+
+# ---------------------------------------------------------------------------
+# One cell (worker)
+# ---------------------------------------------------------------------------
+
+def run_cell(args):
+    p, times, with_dirs, n_dirs, sched_check = args
+    t0 = time.time()
+    n = p["n_env"] + 1
+    H = build_H(p)
+    init = init_states(p)
+    tmax, nt = times[-1], len(times)
+    ev = {x: evolve(H, init[x], tmax, nt) for x in (0, 1)}
+    drift = max(abs(np.linalg.norm(ev[x][k]) - 1) for x in (0, 1) for k in range(nt))
+    sched = None
+    if sched_check:
+        sched = 0.0
+        for t in (1.5, 3.0, 6.0):
+            k = int(round(t / (tmax / nt))) - 1
+            for x in (0, 1):
+                v = expm_multiply(-1j * t * H, init[x])
+                sched = max(sched, float(np.linalg.norm(v - ev[x][k])))
+    dirs = fib_dirs(n_dirs) if with_dirs else None
+    pairs = frag_pairs(p["n_env"])
+    pts = []
+    for k, t in enumerate(times):
+        for r in process_time(ev[0][k], ev[1][k], n, pairs, dirs):
+            r["t"] = float(t)
+            r["t_idx"] = k
+            pts.append(r)
+    return {"params": p, "family": family(p["variant"], p["J"], p["h"]), "points": pts,
+            "norm_drift": float(drift), "sched_gap": sched, "wall_s": time.time() - t0}
+
+
+def main_cells(n_env=N_E_MAIN):
+    cells = []
+    for V in VARIANTS:
+        for J in J_MAIN:
+            for h in H_MAIN:
+                if h == 0 and V in ("VA", "VB"):
+                    continue                     # identical to V0 at h = 0; not double counted
+                cells.append(cell_params(V, J, h, "main", n_env))
+    return cells
+
+
+def held_cells():
+    return [cell_params(V, J, h, "held", N_E_HELD) for V in VARIANTS_HELD for J in J_HELD for h in H_HELD]
+
+
+def cell_key(p):
+    return f"{p['variant']} J={p['J']:g} h={p['h']:g}"
+
+
+# ---------------------------------------------------------------------------
+# Section 3: symmetry audit (dense, N_E = 8)
+# ---------------------------------------------------------------------------
+
+def predicted_status(p):
+    commY = p["J"] == 0 and p["b"] == 0 and p["D"] == 0
+    symS = p["h"] == 0 or p["nS"][1] == 0
+    chiral = (p["J"] == 0 and p["lam"] == 0 and p["b"] == 0
+              and (p["h"] == 0 or (p["nS"][1] == 0 and p["nS"][2] == 0)))
+    return {"commutes_Y": commY, "R": commY and symS, "chiral_H": chiral, "real_e0": p["e0"] is None,
+            "pointer": p["h"] == 0 or (p["nS"][0] == 0 and p["nS"][1] == 0)}
+
+
+def audit_cell(p):
+    n = p["n_env"] + 1
+    H = build_H(p).toarray()
+    pred = predicted_status(p)
+    obsv = {}
+    Ys = [_on({k: _Y}, n).toarray() for k in range(1, n)]
+    obsv["commutes_Y"] = max(np.max(np.abs(H @ Y - Y @ H)) for Y in Ys)
+    sz = np.kron(np.diag([1.0, -1.0]), np.eye(2 ** (n - 1)))
+    obsv["chiral_H"] = float(np.max(np.abs(sz @ np.conj(H) @ sz + H)))
+    obsv["pointer"] = float(np.max(np.abs(sz @ H - H @ sz)))
+    if obsv["commutes_Y"] < 1e-12:
+        Rk = np.array([[1, 1], [1j, -1j]], complex) / math.sqrt(2)
+        W = np.kron(np.eye(2), reduce(np.kron, [Rk] * (n - 1)))
+        Hp = np.conj(W.T) @ H @ W
+        dE = 2 ** (n - 1)
+        off = np.array([Hp[i, dE + i] for i in range(dE)])
+        blockdiag = max(np.max(np.abs(Hp[:dE, :dE] - np.diag(np.diag(Hp[:dE, :dE])))),
+                        np.max(np.abs(Hp[:dE, dE:] - np.diag(off))))
+        obsv["R"] = float(max(np.max(np.abs(np.imag(off))), blockdiag))
+    else:
+        obsv["R"] = float(obsv["commutes_Y"])
+    mism = []
+    for key in ("commutes_Y", "R", "chiral_H", "pointer"):
+        v = obsv[key]
+        if pred[key] and not v < 1e-12:
+            mism.append(f"{key}: predicted 0, got {v:.2e}")
+        if not pred[key] and not v > 1e-6:
+            mism.append(f"{key}: predicted nonzero, got {v:.2e}")
+    w, V = np.linalg.eigh(H)
+    init = init_states(p)
+    amp = {"A10_minus_A01": 0.0, "phase_violation": 0.0}
+    dE = 2 ** (n - 1)
+    for t in (0.5, 1.5, 3.0):
+        U = V @ np.diag(np.exp(-1j * w * t)) @ np.conj(V.T)
+        A = {(x, s): (U @ init[x])[s * dE:(s + 1) * dE] for x in (0, 1) for s in (0, 1)}
+        amp["A10_minus_A01"] = max(amp["A10_minus_A01"], float(np.max(np.abs(A[(1, 0)] - A[(0, 1)]))))
+        amp["phase_violation"] = max(amp["phase_violation"], float(max(
+            np.max(np.abs(np.imag(A[(0, 0)]))), np.max(np.abs(np.imag(A[(1, 1)]))),
+            np.max(np.abs(np.real(A[(0, 1)]))), np.max(np.abs(np.real(A[(1, 0)]))))))
+    if pred["R"] and not amp["A10_minus_A01"] < 1e-12:
+        mism.append(f"A10-A01 predicted 0, got {amp['A10_minus_A01']:.2e}")
+    if pred["chiral_H"] and pred["real_e0"] and not amp["phase_violation"] < 1e-12:
+        mism.append(f"A-phases predicted, violation {amp['phase_violation']:.2e}")
+    return {"cell": cell_key(p), "grid": p["grid"], "pred": pred, "observed": obsv, "amplitudes": amp,
+            "mismatches": mism}
+
+
+def symmetry_audit():
+    out = []
+    for V in VARIANTS:
+        for J in J_MAIN:
+            for h in H_MAIN:
+                out.append(audit_cell(cell_params(V, J, h, "main", 8)))
+    for V in VARIANTS_HELD:
+        for J in J_HELD:
+            for h in H_HELD:
+                p = cell_params(V, J, h, "held", 8)
+                out.append(audit_cell(p))
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Section 9 E1: evolution accuracy at N_E = 10 (dense eigendecomposition)
+# ---------------------------------------------------------------------------
+
+def evo_check_cell(p):
+    H = build_H(p)
+    w, V = np.linalg.eigh(H.toarray())
+    init = init_states(p)
+    err = 0.0
+    for x in (0, 1):
+        ev = evolve(H, init[x], T_MAIN[-1], len(T_MAIN))
+        c0 = np.conj(V.T) @ init[x]
+        for k, t in enumerate(T_MAIN):
+            err = max(err, float(np.max(np.abs(V @ (np.exp(-1j * w * t) * c0) - ev[k]))))
+    return cell_key(p), err
+
+
+# ---------------------------------------------------------------------------
+# Bridge: phase-3 E4 values (results_v12c.json) at N_E = 10
+# ---------------------------------------------------------------------------
+
+def bridge():
+    R3 = json.load(open(os.path.join(HERE, "results", "v12", "results_v12c.json")))
+    by = {(r["J"], r["h_S"], round(r["t"], 6), r["m"], r["obs"]): r for r in R3["e4"]}
+    worst = {"RA": 0.0, "Im_rec_S": 0.0, "TYZ_quantum": 0.0}
+    nrow = 0
+    times = tuple(0.25 * k for k in range(1, 13))
+    for J in (0.0, 1.0):
+        for h in (0.0, 0.25, 1.0):
+            p = cell_params("V0", J, h, "main", 10)
+            res = run_cell((p, times, False, 0, False))
+            for r in res["points"]:
+                if r["geom"] != "ends" or r["m"] > 2:
+                    continue
+                for kind in OBSERVERS:
+                    o = by[(J, h, round(r["t"], 6), r["m"], kind)]
+                    worst["RA"] = max(worst["RA"], abs(r["obs"][kind]["RA_rec"] - o["RA"]))
+                    worst["Im_rec_S"] = max(worst["Im_rec_S"], abs(r["obs"][kind]["Im_rec"] - o["Im_rec_S"]))
+                    worst["TYZ_quantum"] = max(worst["TYZ_quantum"], abs(r["TYZ_Pi"] - o["TYZ_quantum"]))
+                    nrow += 1
+    return {"n_rows": nrow, "max_abs_diff": worst, "ok": max(worst.values()) <= 1e-10}
+
+
+# ---------------------------------------------------------------------------
+# Section 7: permutation (shuffle) tests
+# ---------------------------------------------------------------------------
+
+def perm_test_X(cdo, rng, n_perm=None):
+    """One-sided permutation p-value of RA-hat under X independent of (r_A, r_B);
+    permutation distribution drawn as a 2 x 4 table with both margins fixed."""
+    n_perm = n_perm or N_PERM
+    obs_ra = float(c3.info_xab(cdo)["RA"])
+    colors = cdo.sum(0).ravel().astype(np.int64)
+    n0 = int(cdo[0].sum())
+    row0 = rng.multivariate_hypergeometric(colors, n0, size=n_perm)
+    tab = np.stack([row0, colors[None, :] - row0], axis=1).reshape(n_perm, 2, 2, 2)
+    ra = c3.info_xab(tab.astype(float))["RA"]
+    return (1 + int(np.sum(ra >= obs_ra - 1e-12))) / (n_perm + 1), obs_ra
+
+
+def perm_test_cond(cdo, rng, n_perm=None):
+    """One-sided p-value of I-hat(r_A:r_B|X), r_B permuted within X strata."""
+    n_perm = n_perm or N_PERM
+    obs = float(c3.info_xab(cdo)["I_ab_x"])
+    tabs = np.zeros((n_perm, 2, 2, 2))
+    for x in (0, 1):
+        T = cdo[x]
+        colb = T.sum(0).astype(np.int64)
+        na0 = int(T[0].sum())
+        r0 = rng.multivariate_hypergeometric(colb, na0, size=n_perm)
+        tabs[:, x, 0, :] = r0
+        tabs[:, x, 1, :] = colb[None, :] - r0
+    st = c3.info_xab(tabs)["I_ab_x"]
+    return (1 + int(np.sum(st >= obs - 1e-12))) / (n_perm + 1), obs
+
+
+def _null_task(args):
+    name, Pdo, idx = args
+    rng = np.random.default_rng(seed(0, idx))
+    P = np.clip(np.asarray(Pdo, float).ravel(), 0, None)
+    P /= P.sum()
+    ps = []
+    for k in range(N_NULL):
+        cdo = rng.multinomial(N_SHOTS, P).reshape(2, 2, 2).astype(float)
+        ps.append(perm_test_X(cdo, rng)[0])
+    ps = np.array(ps)
+    r05, r01 = float(np.mean(ps <= 0.05)), float(np.mean(ps <= 0.01))
+    return name, {"rej_0.05": r05, "rej_0.01": r01, "ok": r05 <= 0.05 + 3 * math.sqrt(0.05 * 0.95 / N_NULL)
+                  and r01 <= 0.01 + 3 * math.sqrt(0.01 * 0.99 / N_NULL)}
+
+
+def null_settings():
+    out = []
+    n = 12
+    for thn, th in (("pi/8", math.pi / 8), ("pi/4", math.pi / 4), ("pi/2", math.pi / 2)):
+        do, _ = c3.e1_ensembles(th, n)
+        tdo, tnat = c3.twin_ensembles(th, n)
+        e = c3.exact_point(tdo, tnat, n + 1, [1], [2], "Local", do_ref=do, tyz=False)
+        out.append((f"N1 twin theta={thn}", e["Pdo"]))
+    do, nat = c3.e2_ensembles(math.pi / 3, 0.0, n)
+    out.append(("N2 E2 theta=0 phi=pi/3", c3.exact_point(do, nat, n + 1, [1], [2], "Local", tyz=False)["Pdo"]))
+    p = cell_params("VC", 1.0, 0.5, "main", 10, g_zero=True)
+    p["e0"] = COMPLEX_E["main"]
+    res = run_cell((p, (3.0,), False, 0, False))
+    for r in res["points"]:
+        if r["m"] == 1:
+            out.append((f"N3 chain g=0 {r['geom']}", np.array(r["obs"]["Local"]["Pdo"]).reshape(2, 2, 2).tolist()))
+    for name, P in out:
+        P = np.asarray(P)
+        assert np.max(np.abs(P[0] - P[1])) < 1e-12, name       # X independent of the records
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Section 6: rules and verdicts
+# ---------------------------------------------------------------------------
+
+def agrees(a, b):
+    return abs(a - b) <= AGREE_ABS + AGREE_REL * max(abs(a), abs(b))
+
+
+def boundary(a, b):
+    return (abs(abs(a - b) - (AGREE_ABS + AGREE_REL * max(abs(a), abs(b)))) <= 1e-6
+            or abs(max(abs(a), abs(b)) - COUNT_FLOOR) <= 1e-6)
+
+
+def entries(cells, hyp):
+    """(cell_idx, family, A, B, competitors) per point (and observer for H1/H3)."""
+    out = []
+    for ci, cell in enumerate(cells):
+        fam = cell["family"]
+        for r in cell["points"]:
+            if hyp == "H2":
+                out.append((ci, fam, r["RA_q"], r["TYZ_Pi"], {"zero": 0.0, "I_FF_nat": r["I_FF_nat"],
+                                                              "I_FF_dobar": r["I_FF_dobar"]}))
+            else:
+                for kind in OBSERVERS:
+                    o = r["obs"][kind]
+                    B = r["TYZ_Pi"] if hyp == "H1" else o["Im_rec"]
+                    out.append((ci, fam, o["RA_rec"], B, {"zero": 0.0, "C_rec": o["C_rec"],
+                                                          "I_ab_do": o["I_ab_do"], "I_xa": o["I_xa"]}))
+    return out
+
+
+def identity_cells(cells, hyp):
+    ids = []
+    for ci, cell in enumerate(cells):
+        if cell["family"] not in OPEN_FAM[hyp] or hyp == "H1":
+            continue
+        if hyp == "H2":
+            g = max(r["cq_gap"] for r in cell["points"])
+        else:
+            g = max(r["obs"][k]["law_gap"] for r in cell["points"] for k in OBSERVERS)
+        if g <= IDENTITY_THRESHOLD:
+            ids.append(ci)
+    return ids
+
+
+def _classify(f_pool, fam_f, disc, nfam30, req):
+    if f_pool is None:
+        return "INCONCLUSIVE", "insufficient"
+    if f_pool < 0.5 or any(f < 0.5 for f in fam_f.values()):
+        return "REFUTED", ""
+    sup_core = f_pool >= 0.95 and all(f >= 0.90 for f in fam_f.values())
+    if sup_core and nfam30 >= req and disc:
+        return "SUPPORTED", ""
+    if sup_core and nfam30 >= req and not disc:
+        return "INCONCLUSIVE", "non-discriminating"
+    if sup_core and nfam30 < req:
+        return "INCONCLUSIVE", "insufficient"
+    return "INCONCLUSIVE", "partial"
+
+
+def verdict(cells, hyp, ss):
+    ids = set(identity_cells(cells, hyp))
+    E = [e for e in entries(cells, hyp) if e[1] in OPEN_FAM[hyp] and e[0] not in ids]
+    cnt = [e for e in E if max(abs(e[2]), abs(e[3])) >= COUNT_FLOOR]
+    ag = np.array([agrees(e[2], e[3]) for e in cnt], bool)
+    f_pool = float(ag.mean()) if len(cnt) else None
+    fam_n, fam_f, fam_all = {}, {}, {}
+    for fam in OPEN_FAM[hyp]:
+        sel = np.array([e[1] == fam for e in cnt], bool)
+        fam_n[fam] = int(sel.sum())
+        fam_all[fam] = float(ag[sel].mean()) if sel.sum() else None
+        if sel.sum() >= 30:
+            fam_f[fam] = float(ag[sel].mean())
+    comp = {}
+    for k in cnt[0][4] if cnt else []:
+        comp[k] = float(np.mean([agrees(e[4][k], e[3]) for e in cnt]))
+    disc = bool(cnt) and all(v <= 0.5 for v in comp.values())
+    nfam30 = len(fam_f)
+    cat, why = _classify(f_pool, fam_f, disc, nfam30, REQ_FAM[hyp])
+    # boundary sensitivity
+    bmask = [boundary(e[2], e[3]) for e in E]
+    nb = int(sum(bmask))
+    flags = set()
+    if nb:
+        for force in (True, False):
+            cc, aa, ff = [], [], []
+            for e, bm in zip(E, bmask):
+                isc = max(abs(e[2]), abs(e[3])) >= COUNT_FLOOR
+                a = agrees(e[2], e[3])
+                if bm:
+                    isc, a = force, force
+                if isc:
+                    cc.append(e)
+                    aa.append(a)
+            aa = np.array(aa, bool)
+            fp = float(aa.mean()) if len(aa) else None
+            ffam = {}
+            for fam in OPEN_FAM[hyp]:
+                s = np.array([x[1] == fam for x in cc], bool)
+                if s.sum() >= 30:
+                    ffam[fam] = float(aa[s].mean())
+            flags.add(_classify(fp, ffam, disc, len(ffam), REQ_FAM[hyp])[0])
+    sens = len(flags | {cat}) > 1
+    # per-cell counts (vacuous / thin), bootstrap over cells
+    per_cell = {}
+    for ci, cell in enumerate(cells):
+        if cell["family"] not in OPEN_FAM[hyp]:
+            continue
+        sel = [i for i, e in enumerate(cnt) if e[0] == ci]
+        per_cell[ci] = {"cell": cell_key(cell["params"]), "family": cell["family"], "n_counted": len(sel),
+                        "n_agree": int(ag[sel].sum()) if sel else 0, "identity": ci in ids,
+                        "max_abs_gap": max((abs(cnt[i][2] - cnt[i][3]) for i in sel), default=None)}
+    open_cells = [ci for ci in per_cell if ci not in ids]
+    vac = [per_cell[ci]["cell"] for ci in open_cells if per_cell[ci]["n_counted"] == 0]
+    thin = [per_cell[ci]["cell"] for ci in open_cells if 1 <= per_cell[ci]["n_counted"] <= 4]
+    rng = np.random.default_rng(ss)
+    na = np.array([per_cell[ci]["n_agree"] for ci in open_cells], float)
+    nc = np.array([per_cell[ci]["n_counted"] for ci in open_cells], float)
+    boot = []
+    if len(open_cells) and nc.sum() > 0:
+        for _ in range(B_CELLS):
+            idx = rng.integers(0, len(open_cells), len(open_cells))
+            if nc[idx].sum() > 0:
+                boot.append(na[idx].sum() / nc[idx].sum())
+    ci95 = [float(np.percentile(boot, 2.5)), float(np.percentile(boot, 97.5))] if boot else None
+    gaps = np.array([abs(e[2] - e[3]) for e in cnt])
+    return {"verdict": cat, "reason": why, "f_pooled": f_pool, "f_pooled_boot95_over_cells": ci95,
+            "n_counted": len(cnt), "n_points_open": len(E), "family_n_counted": fam_n,
+            "family_f": fam_all, "families_with_30": sorted(fam_f), "competitor_f": comp,
+            "discriminates": disc, "identity_cells": [cell_key(cells[i]["params"]) for i in sorted(ids)],
+            "n_open_cells": len(open_cells), "vacuous_cells": vac, "thin_cells": thin,
+            "n_boundary_points": nb, "boundary_sensitive": sens,
+            "median_abs_gap_counted": float(np.median(gaps)) if len(gaps) else None,
+            "max_abs_gap_counted": float(gaps.max()) if len(gaps) else None,
+            "per_cell": list(per_cell.values())}
+
+
+def tracks(cells, hyp_pairs):
+    """H4: per family with >= 30 counted points."""
+    out = {}
+    for name, hyp in hyp_pairs:
+        ids = set(identity_cells(cells, "H2")) if hyp == "H2" else set()
+        E = [e for e in entries(cells, hyp) if e[1] in OPEN_FAM[hyp] and e[0] not in ids]
+        cnt = [e for e in E if max(abs(e[2]), abs(e[3])) >= COUNT_FLOOR]
+        res = {}
+        for fam in OPEN_FAM[hyp]:
+            sel = [e for e in cnt if e[1] == fam]
+            if len(sel) < 30:
+                res[fam] = {"n": len(sel), "verdict": "not scored (<30 points)"}
+                continue
+            a = np.array([e[2] for e in sel])
+            b = np.array([e[3] for e in sel])
+            rho = float(spearmanr(a, b).correlation)
+            sg = np.mean(((a > 0.01) & (b > 0.01)) | ((a < -0.01) & (b < -0.01)) |
+                         ((np.abs(a) <= 0.01) & (np.abs(b) <= 0.01)))
+            v = "TRACKS" if (rho >= 0.9 and sg >= 0.9) else ("DOES NOT TRACK" if rho < 0.7 else "INCONCLUSIVE")
+            res[fam] = {"n": len(sel), "spearman": rho, "sign_agree": float(sg), "verdict": v}
+        out[name] = res
+    return out
+
+
+def controls(cells):
+    """S3: Lemma P (F_P) and Lemma BC (F_BC) controls."""
+    bad = []
+    worst = {"F_P_cq_gap": 0.0, "F_P_info_q": 0.0, "F_P_law": 0.0, "F_P_info_rec": 0.0,
+             "F_BC_law": 0.0, "F_BC_info_rec": 0.0}
+    for cell in cells:
+        fam = cell["family"]
+        if fam not in ("F_P", "F_BC"):
+            continue
+        for r in cell["points"]:
+            lab = f"{cell_key(cell['params'])} t={r['t']:g} {r['geom']} m={r['m']}"
+            if fam == "F_P":
+                worst["F_P_cq_gap"] = max(worst["F_P_cq_gap"], r["cq_gap"])
+                gq = abs(r["RA_q"] - r["TYZ_Pi"])
+                worst["F_P_info_q"] = max(worst["F_P_info_q"], gq)
+                if r["cq_gap"] > TAU_LAW or gq > TAU_INFO:
+                    bad.append(f"{lab}: cq_gap {r['cq_gap']:.2e}, |RA_q-TYZ| {gq:.2e}")
+            for kind in OBSERVERS:
+                o = r["obs"][kind]
+                gi = abs(o["RA_rec"] - o["Im_rec"])
+                worst[f"{fam}_law"] = max(worst[f"{fam}_law"], o["law_gap"])
+                worst[f"{fam}_info_rec"] = max(worst[f"{fam}_info_rec"], gi)
+                if o["law_gap"] > TAU_LAW or gi > TAU_INFO:
+                    bad.append(f"{lab} {kind}: law gap {o['law_gap']:.2e}, |RA-Im_rec| {gi:.2e}")
+    return {"ok": not bad, "violations": bad, "worst": worst}
+
+
+# ---------------------------------------------------------------------------
+# Finite counts on the main grid (Section 7)
+# ---------------------------------------------------------------------------
+
+def _finite_task(args):
+    ci, pi, kind, Pdo, Pnat, ra_exact, n_perm = args
+    ss = seed(3, ci, pi, OBSERVERS.index(kind))
+    rng = np.random.default_rng(ss)
+    Pd = np.clip(np.asarray(Pdo, float), 0, None)
+    Pn = np.clip(np.asarray(Pnat, float), 0, None)
+    cdo = rng.multinomial(N_SHOTS, (Pd / Pd.sum()).ravel()).reshape(2, 2, 2).astype(float)
+    cnat = rng.multinomial(N_SHOTS, (Pn / Pn.sum()).ravel()).reshape(2, 2, 2).astype(float)
+    pX, ra = perm_test_X(cdo, rng, n_perm)
+    pC, _ = perm_test_cond(cdo, rng, n_perm)
+    return {"ci": ci, "pi": pi, "obs": kind, "RA_exact": ra_exact, "RA_hat": ra,
+            "RA_mm": float(c3.info_xab(cdo, mm=True)["RA"]), "Im_rec_hat": float(c3.info_xab(cnat)["RA"]),
+            "C_rec_hat": float(c3.mi_ab(cnat.sum(0))), "p_perm_X": pX, "p_perm_cond": pC}
+
+
+# ---------------------------------------------------------------------------
+# Helpers for reporting
+# ---------------------------------------------------------------------------
+
+def _f(x, nd=4):
+    if x is None:
+        return "-"
+    if isinstance(x, (list, tuple)):
+        return "[" + ", ".join(_f(v, nd) for v in x) + "]"
+    if isinstance(x, bool):
+        return str(x)
+    if x == 0:
+        return "0"
+    if abs(x) < 1e-3 or abs(x) >= 1e4:
+        return f"{x:.2e}"
+    return f"{x:.{nd}f}"
+
+
+def pooled_f_nov(cells, hyp):
+    """Pooled agreement fraction without verdict (size series, secondary pairs)."""
+    E = [e for e in entries(cells, hyp) if e[1] in OPEN_FAM[hyp]]
+    cnt = [e for e in E if max(abs(e[2]), abs(e[3])) >= COUNT_FLOOR]
+    if not cnt:
+        return {"n": 0}
+    ag = [agrees(e[2], e[3]) for e in cnt]
+    return {"n": len(cnt), "f": float(np.mean(ag)), "median_abs_gap": float(np.median([abs(e[2] - e[3]) for e in cnt]))}
+
+
+def secondary_pairs(cells):
+    out = {}
+    for nameA, nameB in (("RA_q", "TYZ_opt"), ("RA_q_w", "TYZ_Pi"), ("RA_q", "TYZ_norm")):
+        cnt, ag = 0, 0
+        for cell in cells:
+            if cell["family"] not in OPEN_FAM["H2"]:
+                continue
+            for r in cell["points"]:
+                a, b = r.get(nameA), r.get(nameB)
+                if a is None or b is None:
+                    continue
+                if max(abs(a), abs(b)) >= COUNT_FLOOR:
+                    cnt += 1
+                    ag += agrees(a, b)
+        out[f"{nameA} vs {nameB}"] = {"n_counted": cnt, "f_agree": ag / cnt if cnt else None}
+    return out
+
+
+def gap_decomp(cells):
+    res = {}
+    for fam in FAMILIES:
+        d1, d2 = [], []
+        for cell in cells:
+            if cell["family"] != fam:
+                continue
+            for r in cell["points"]:
+                for kind in OBSERVERS:
+                    if max(abs(r["obs"][kind]["RA_rec"]), abs(r["TYZ_Pi"])) >= COUNT_FLOOR:
+                        d1.append(r["TYZ_Pi"] - r["RA_q"])
+                        d2.append(r["RA_q"] - r["obs"][kind]["RA_rec"])
+        if d1:
+            res[fam] = {"n": len(d1), "median_TYZ_minus_RAq": float(np.median(d1)),
+                        "median_abs_TYZ_minus_RAq": float(np.median(np.abs(d1))),
+                        "median_RAq_minus_RArec": float(np.median(d2)),
+                        "median_abs_RAq_minus_RArec": float(np.median(np.abs(d2)))}
+    return res
+
+
+def _dump_gz(obj, path):
+    with gzip.open(path, "wt") as fh:
+        json.dump(obj, fh)
+
+
+def _strip_cells(cells):
+    return [{"params": c["params"], "family": c["family"], "norm_drift": c["norm_drift"],
+             "sched_gap": c["sched_gap"], "wall_s": c["wall_s"], "points": c["points"]} for c in cells]
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+class Stop(Exception):
+    pass
+
 
 def main():
-    raise SystemExit("run_v12e.py is a pre-registration only (phase 5); no experiment code exists yet.")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--workers", type=int, default=2)
+    args = ap.parse_args()
+    os.makedirs(OUT, exist_ok=True)
+    t0 = time.time()
+    log = open(os.path.join(OUT, "run_v12e.log"), "w")
+    R = {"meta": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__,
+                  "workers": args.workers, "master_seed": MASTER_SEED_V12E}, "stop_events": []}
+
+    def say(msg):
+        line = f"[{time.time() - t0:8.1f} s] {msg}"
+        print(line, flush=True)
+        log.write(line + "\n")
+        log.flush()
+
+    def save():
+        with open(os.path.join(OUT, "results_v12e.json"), "w") as fh:
+            json.dump(v1.clean(R), fh, indent=1)
+
+    pool = Pool(args.workers)
+    try:
+        # S1: unit tests
+        say("S1: unit tests (test_v12e.py)")
+        tr = subprocess.run([sys.executable, os.path.join(HERE, "test_v12e.py")], capture_output=True, text=True)
+        R["unit_tests"] = {"returncode": tr.returncode, "stdout": tr.stdout[-4000:], "stderr": tr.stderr[-4000:]}
+        if tr.returncode != 0:
+            raise Stop("S1: unit tests failed")
+        # S2: symmetry audit
+        say("S2: symmetry audit at N_E = 8")
+        aud = symmetry_audit()
+        mm = [a for a in aud if a["mismatches"]]
+        R["symmetry_audit"] = {"n_cells": len(aud), "n_mismatch": len(mm), "cells": aud}
+        say(f"   {len(aud)} cells, {len(mm)} mismatches")
+        if mm:
+            raise Stop("S2: symmetry audit disagrees with the table")
+        # S5 / E1: evolution accuracy at N_E = 10
+        say("E1: expm_multiply vs dense eigendecomposition at N_E = 10")
+        sub = [cell_params(V, J, h, "main", 10) for V in VARIANTS for J in (0.0, 2.0) for h in (0.5, 1.0)]
+        ev = pool.map(evo_check_cell, sub)
+        emax = max(e for _, e in ev)
+        R["evolution_check_NE10"] = {"cells": dict(ev), "max_amp_err": emax, "ok": emax <= 1e-11}
+        say(f"   max amplitude error {emax:.2e}")
+        if emax > 1e-11:
+            raise Stop("S5: evolution check at N_E = 10 failed")
+        # bridge (part of S1)
+        say("bridge to phase 3 (N_E = 10)")
+        br = bridge()
+        R["bridge"] = br
+        say(f"   {br['n_rows']} rows, max diffs {br['max_abs_diff']}")
+        if not br["ok"]:
+            raise Stop("S1: bridge to phase 3 failed")
+        # null calibration (study 0)
+        say("T-N: null calibration (study 0)")
+        ns = null_settings()
+        nres = dict(pool.map(_null_task, [(nm, P, i) for i, (nm, P) in enumerate(ns)]))
+        R["null_calibration"] = {"settings": nres, "ok": all(v["ok"] for v in nres.values())}
+        for k, v in nres.items():
+            say(f"   {k}: rej@0.05 {v['rej_0.05']:.3f}, rej@0.01 {v['rej_0.01']:.3f}, ok {v['ok']}")
+        if not R["null_calibration"]["ok"]:
+            raise Stop("S4: null calibration failed")
+        save()
+        # S6: dry run (5% of main cells), then main grid
+        cells_p = main_cells()
+        dry_idx = list(range(0, len(cells_p), max(1, len(cells_p) // 6)))[:6]
+        say(f"S6: dry run of {len(dry_idx)} of {len(cells_p)} main cells")
+        n_dirs = N_DIRS
+        n_perm_used = N_PERM
+        td = time.time()
+        sched_set = {i for i, p in enumerate(cells_p) if p["J"] == 1.0 and p["h"] == 0.5}
+        dry = pool.map(run_cell, [(cells_p[i], T_MAIN, True, n_dirs, i in sched_set) for i in dry_idx])
+        per = (time.time() - td) / len(dry_idx) * args.workers   # CPU-seconds per cell
+        extrap = per * (len(cells_p) + 42 * 0.25 + 3 * 120 * 0.15) / args.workers / 3600 + 0.5
+        R["dry_run"] = {"cells": len(dry_idx), "cpu_s_per_cell": per, "extrapolated_hours": extrap}
+        say(f"   {per:.1f} CPU-s per main cell; extrapolated total {extrap:.2f} h")
+        if extrap > 4:
+            n_dirs = 50
+            R["stop_events"].append(f"S6 fallback 1: extrapolated {extrap:.2f} h > 4 h; TYZ_opt 50 directions, 1000 permutations")
+            n_perm_used = 1000
+            dry = pool.map(run_cell, [(cells_p[i], T_MAIN, True, n_dirs, i in sched_set) for i in dry_idx])
+        R["meta"]["n_dirs"] = n_dirs
+        R["meta"]["n_perm"] = n_perm_used
+        say("main grid, N_E = 16")
+        rest = [i for i in range(len(cells_p)) if i not in dry_idx]
+        res = dict(zip(dry_idx, dry))
+        for i, r in zip(rest, pool.imap(run_cell, [(cells_p[i], T_MAIN, True, n_dirs, i in sched_set) for i in rest])):
+            res[i] = r
+            if len(res) % 10 == 0:
+                say(f"   {len(res)}/{len(cells_p)} cells")
+        cells = [res[i] for i in range(len(cells_p))]
+        _dump_gz(_strip_cells(cells), os.path.join(OUT, "points_main.json.gz"))
+        drift = max(cl["norm_drift"] for cl in cells)
+        sg = [cl["sched_gap"] for cl in cells if cl["sched_gap"] is not None]
+        zc = max(abs(r["TYZ_z_check"] - r["TYZ_Pi"]) for cl in cells for r in cl["points"])
+        R["evolution_check_NE16"] = {"max_norm_drift": drift, "max_schedule_gap": max(sg), "n_sched_cells": len(sg),
+                                     "TYZ_dir_z_vs_Pi": zc,
+                                     "ok": drift <= 1e-12 and max(sg) <= 1e-10}
+        say(f"   norm drift {drift:.2e}; schedule gap {max(sg):.2e} ({len(sg)} cells); z-direction check {zc:.2e}")
+        if not R["evolution_check_NE16"]["ok"]:
+            raise Stop("S5: evolution checks at N_E = 16 failed")
+        # S3: controls
+        ctl = controls(cells)
+        R["controls_main"] = ctl
+        say(f"S3 controls: ok {ctl['ok']}; worst {ctl['worst']}")
+        if not ctl["ok"]:
+            R["stop_events"].append(f"S3: {len(ctl['violations'])} control violations")
+            save()
+            raise Stop("S3: controls failed (contingency C1 needed)")
+        # verdicts
+        V = {h: verdict(cells, h, seed(4, k)) for k, h in enumerate(("H1", "H2", "H3"))}
+        V["H4"] = tracks(cells, (("RA_q vs TYZ_Pi", "H2"), ("RA_rec vs TYZ_Pi", "H1")))
+        R["verdicts_main"] = V
+        R["secondary_main"] = {"pairs": secondary_pairs(cells), "gap_decomposition": gap_decomp(cells),
+                               "frac_RA_q_negative": float(np.mean([r["RA_q"] < -1e-9 for cl in cells for r in cl["points"]])),
+                               "frac_TYZ_negative": float(np.mean([r["TYZ_Pi"] < -1e-9 for cl in cells for r in cl["points"]]))}
+        for h in ("H1", "H2", "H3"):
+            say(f"   {h}: {V[h]['verdict']} {V[h]['reason']} f={_f(V[h]['f_pooled'])} n={V[h]['n_counted']} "
+                f"fam={V[h]['family_f']} comp={V[h]['competitor_f']}")
+        save()
+        # held-out grid
+        say("held-out grid, N_E = 14")
+        hp = held_cells()
+        hcells = pool.map(run_cell, [(p, T_HELD, True, n_dirs, False) for p in hp])
+        _dump_gz(_strip_cells(hcells), os.path.join(OUT, "points_held.json.gz"))
+        hctl_drift = max(cl["norm_drift"] for cl in hcells)
+        Vh = {h: verdict(hcells, h, seed(5, k)) for k, h in enumerate(("H1", "H2", "H3"))}
+        Vh["H4"] = tracks(hcells, (("RA_q vs TYZ_Pi", "H2"), ("RA_rec vs TYZ_Pi", "H1")))
+        R["verdicts_held"] = Vh
+        R["held_norm_drift"] = hctl_drift
+        R["controls_held_BC"] = controls(hcells)
+        R["robustness"] = {h: ("ROBUST" if V[h]["verdict"] == Vh[h]["verdict"] else "GRID-DEPENDENT")
+                           for h in ("H1", "H2", "H3")}
+        for h in ("H1", "H2", "H3"):
+            say(f"   held {h}: {Vh[h]['verdict']} {Vh[h]['reason']} f={_f(Vh[h]['f_pooled'])} -> {R['robustness'][h]}")
+        save()
+        # size series
+        say("size series N_E = 10, 12, 14")
+        R["size_series"] = {}
+        for ne in N_E_SIZE_SERIES:
+            cs = pool.map(run_cell, [(p, T_MAIN, False, 0, False) for p in main_cells(ne)])
+            R["size_series"][ne] = {h: pooled_f_nov(cs, h) for h in ("H1", "H2", "H3")}
+            R["size_series"][ne]["controls_ok"] = controls(cs)["ok"]
+            say(f"   N_E={ne}: {R['size_series'][ne]}")
+        R["size_series"][N_E_MAIN] = {h: pooled_f_nov(cells, h) for h in ("H1", "H2", "H3")}
+        save()
+        # finite counts
+        say("finite counts and permutation tests (main grid)")
+        tasks = []
+        for ci, cl in enumerate(cells):
+            for pi, r in enumerate(cl["points"]):
+                for kind in OBSERVERS:
+                    o = r["obs"][kind]
+                    if (max(abs(o["RA_rec"]), abs(r["TYZ_Pi"])) >= COUNT_FLOOR
+                            or max(abs(o["RA_rec"]), abs(o["Im_rec"])) >= COUNT_FLOOR):
+                        tasks.append((ci, pi, kind, np.array(o["Pdo"]).reshape(2, 2, 2).tolist(),
+                                      np.array(o["Pnat"]).reshape(2, 2, 2).tolist(), o["RA_rec"], n_perm_used))
+        fin = pool.map(_finite_task, tasks, chunksize=64)
+        _dump_gz(fin, os.path.join(OUT, "finite_main.json.gz"))
+        big = [x for x in fin if x["RA_exact"] >= 0.05]
+        tiny = [x for x in fin if abs(x["RA_exact"]) < 1e-3]
+        R["finite_main"] = {"n_points": len(fin),
+                            "power_RA_ge_0.05_at_0.01": float(np.mean([x["p_perm_X"] <= 0.01 for x in big])) if big else None,
+                            "n_RA_ge_0.05": len(big),
+                            "reject_rate_absRA_lt_1e-3_at_0.01": float(np.mean([x["p_perm_X"] <= 0.01 for x in tiny])) if tiny else None,
+                            "n_absRA_lt_1e-3": len(tiny),
+                            "frac_cond_dependence_at_0.01": float(np.mean([x["p_perm_cond"] <= 0.01 for x in fin])),
+                            "median_abs_RAhat_minus_RA": float(np.median([abs(x["RA_hat"] - x["RA_exact"]) for x in fin]))}
+        say(f"   {R['finite_main']}")
+        R["meta"]["wall_s"] = time.time() - t0
+        save()
+        say("done")
+    except Stop as e:
+        R["stopped"] = str(e)
+        R["meta"]["wall_s"] = time.time() - t0
+        save()
+        say(f"STOP: {e}")
+    finally:
+        pool.close()
+        log.close()
 
 
 if __name__ == "__main__":
